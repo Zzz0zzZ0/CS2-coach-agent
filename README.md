@@ -9,9 +9,6 @@
 [![ChromaDB](https://img.shields.io/badge/ChromaDB-RAG-8B5CF6?style=flat-square)](https://www.trychroma.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
 
-*"没有数据支持的战术 = 祈祷。下次汇报，我要看到血、看到烟、看到精确到帧的 crossfire timing。"*
-*— Coach [REDACTED], Ex-Natus Vincere Tactical Lead*
-
 </div>
 
 ---
