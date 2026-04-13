@@ -62,26 +62,25 @@ class TacticalRetriever:
             logger.error(f"[PRF] 查询重写失败，退回原始查询。错误信息: {e}")
             return original_query
 
-    def retrieve_with_mmr(self, query: str, k: int = 4, fetch_k: int = 20) -> List[Document]:
+    def retrieve_with_mmr(self, query: str, metadata_filter: dict = None, k: int = 4, fetch_k: int = 20) -> List[Document]:
         """
         [高级特性 2] MMR (最大边界相关性) 检索
         执行向量检索时强制使用 MMR 算法，在召回的相关性与多样性之间取得平衡，避免由于碎片高度相似导致战术视角单一。
-        
-        :param query: 用户的查询语句或 PRF 扩展后的查询语句
-        :param k: 最终返回的战术片段数量
-        :param fetch_k: 从向量数据库中初次拉取的候选池大小，保证充足的多样性选择空间
         """
-        logger.info(f"[MMR] 开始多边际检索 | Query: '{query}' | 返回数(k): {k} | 候选池大小(fetch_k): {fetch_k}")
+        logger.info(f"[MMR] 开始多边际检索 | Query: '{query}' | 过滤: {metadata_filter} | 返回数(k): {k}")
         
         try:
-            # 将底层 Retriever 强制配置为 MMR (Maximal Marginal Relevance) 模式
+            search_kwargs = {
+                "k": k,
+                "fetch_k": fetch_k,
+                "lambda_mult": 0.5
+            }
+            if metadata_filter:
+                search_kwargs["filter"] = metadata_filter
+
             retriever = self.vectorstore.as_retriever(
                 search_type="mmr",
-                search_kwargs={
-                    "k": k,
-                    "fetch_k": fetch_k,
-                    "lambda_mult": 0.5  # 0.5 代表在相关性和多样性之间五五开
-                }
+                search_kwargs=search_kwargs
             )
             
             docs = retriever.invoke(query)
@@ -91,3 +90,93 @@ class TacticalRetriever:
         except Exception as e:
             logger.error(f"[MMR] 检索时发生异常: {e}")
             return []
+
+    def _sparse_search(self, query: str, docs: List[Document]) -> List[tuple[Document, float]]:
+        """
+        Python 原生模拟的 TF-IDF 关键字检索
+        计算 query 分词在 docs 中的词频来近似 BM25 打分。
+        """
+        import re
+        import math
+        from collections import Counter
+        
+        # 英文词汇及字母粗略分词
+        query_words = re.findall(r'\w+', query.lower())
+        if not query_words:
+            return [(d, 0.0) for d in docs]
+        
+        num_docs = len(docs)
+        df = Counter()
+        doc_words_list = []
+        
+        for doc in docs:
+            words = re.findall(r'\w+', doc.page_content.lower())
+            doc_words_list.append(words)
+            for word in set(words):
+                df[word] += 1
+                
+        # 计算 IDF
+        idf = {}
+        for word in query_words:
+            idf[word] = math.log((num_docs + 1) / (df[word] + 1)) + 1
+            
+        scored_docs = []
+        for i, doc in enumerate(docs):
+            words = doc_words_list[i]
+            tf = Counter(words)
+            score = 0.0
+            for word in query_words:
+                tf_score = tf[word] / (len(words) + 1e-6)
+                score += tf_score * idf.get(word, 0)
+            scored_docs.append((doc, score))
+            
+        scored_docs.sort(key=lambda x: x[1], reverse=True)
+        return scored_docs
+
+    def hybrid_search(self, query: str, metadata_filter: dict = None, k: int = 4) -> List[Document]:
+        """
+        [高级特性 3] 基于 RRF (Reciprocal Rank Fusion) 的混合检索。
+        将大模型 Dense MMR 的语义结果与字面稀疏搜索进行倒数加权排序。
+        """
+        logger.info(f"[HybridSearch] 启动混合检索 | Query: '{query}' | 拦截器: {metadata_filter}")
+        # 1. 密集检索 (Dense)
+        dense_docs = self.retrieve_with_mmr(query, metadata_filter=metadata_filter, k=k, fetch_k=20)
+        
+        # 2. 获取元数据隔离后的底层集合
+        filter_kwargs = {"where": metadata_filter} if metadata_filter else {}
+        try:
+            # chroma api
+            raw_coll = self.vectorstore._collection
+            candidate_resp = raw_coll.get(**filter_kwargs)
+            candidate_docs = []
+            if candidate_resp and candidate_resp.get('ids'):
+                for i in range(len(candidate_resp['ids'])):
+                    doc = Document(page_content=candidate_resp['documents'][i], metadata=candidate_resp['metadatas'][i])
+                    candidate_docs.append(doc)
+        except Exception as e:
+            logger.warning(f"[HybridSearch] 提取稀疏层候选集失败: {e}，将直接回落至单纯 Dense。")
+            return dense_docs
+
+        if not candidate_docs:
+            return dense_docs
+
+        # 3. 稀疏降维打击 (Sparse)
+        sparse_scored = self._sparse_search(query, candidate_docs)
+        
+        # 4. RRF 裁判融合
+        doc_scores = {}
+        for rank, doc in enumerate(dense_docs):
+            doc_scores[doc.page_content] = {"doc": doc, "score": 1.0 / (60 + rank)}
+            
+        for rank, (doc, raw_score) in enumerate(sparse_scored[:20]): # 截取前20打底
+            content = doc.page_content
+            if content not in doc_scores:
+                doc_scores[content] = {"doc": doc, "score": 0.0}
+            doc_scores[content]["score"] += 1.0 / (60 + rank)
+            
+        fused = sorted(doc_scores.values(), key=lambda x: x["score"], reverse=True)
+        final_docs = [item["doc"] for item in fused[:k]]
+        
+        top_score = fused[0]['score'] if fused else 0
+        logger.info(f"[HybridSearch] RRF融合决断完毕 | 归一化夺魁得分: {top_score:.4f} | 最终输出 {len(final_docs)} 条干货。")
+        return final_docs
