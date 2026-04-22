@@ -1,5 +1,6 @@
-# 敏感信息
+# 敏感信息与内部计划
 .env
+PROJECT_PLAN.md
 
 # Python
 __pycache__/
