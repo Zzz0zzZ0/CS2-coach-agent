@@ -10,7 +10,7 @@ class Settings:
     MODEL_NAME: str = os.getenv("MODEL_NAME", "qwen-plus")
     EMBEDDING_MODEL: str = "text-embedding-v2"
     
-    # 向量库配置 (Milvus 替换 Chroma)
+    # 向量库配置 (Milvus)
     MILVUS_URI: str = os.getenv("MILVUS_URI", "http://localhost:19530")
     MILVUS_TOKEN: str = os.getenv("MILVUS_TOKEN", "")
     

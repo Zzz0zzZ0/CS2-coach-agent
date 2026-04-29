@@ -8,12 +8,12 @@ import json
 import logging
 from pathlib import Path
 
-# 将项目根目录加入可用模块路径，以兼容从不同目录下的 script 启动
+# 将项目根目录加入可用模块路径
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
-# 引入我们刚才重构的 Parser 和流转模型
-from src.data_parser import TacticalDemoParser
-from src.agent_orchestrator import workflow_app
+from app.services.parser_service import TacticalDemoParser
+from app.api.dependencies import get_llm, get_kb_client
+from app.agentic.workflow import create_workflow_app
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - [%(levelname)s] - %(message)s")
 logger = logging.getLogger(__name__)
@@ -50,6 +50,9 @@ async def analyze_demo(demo_path: str):
 
     logger.info("=== [Phase 2: 编排节点流转] 唤醒 LangGraph 多智能体... ===")
     try:
+        llm = get_llm()
+        kb_client = get_kb_client()
+        workflow_app = create_workflow_app(llm, kb_client)
         final_state = await workflow_app.ainvoke(initial_state)
     except Exception as e:
         logger.error(f"流转过程中发生异常: {e}", exc_info=True)

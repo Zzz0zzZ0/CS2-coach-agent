@@ -120,8 +120,7 @@ MILVUS_TOKEN=""
 CELERY_BROKER_URL="redis://localhost:6379/0"
 CELERY_RESULT_BACKEND="redis://localhost:6379/1"
 
-# ChromaDB (used by seed script only)
-CHROMA_DB_DIR="./chroma_db"
+
 ```
 
 ### 3. Start Infrastructure
@@ -139,7 +138,7 @@ docker run -d --name redis -p 6379:6379 redis:latest
 ### 4. Initialize the Tactical Knowledge Vector Store
 
 ```bash
-python scripts/seed_chroma.py
+python scripts/seed_knowledge.py
 ```
 
 > This step injects professional tactical analysis documents covering Mirage / Inferno / Dust2 / Nuke / Ancient into the knowledge base.
@@ -159,11 +158,7 @@ python scripts/analyze_local.py data/your_match.dem
 
 **Option B: Start the Web service to receive third-party Webhooks**
 ```bash
-# DDD architecture version (recommended for production)
 python -m app.main
-
-# Or use the root monolithic entry (Legacy compatible)
-python main.py
 ```
 
 Then send a POST request to `http://127.0.0.1:8000/api/webhook/match-end`:
@@ -220,16 +215,10 @@ CS2-coach-agent/
 │           ├── critique_node.py   # Critique: retrieval quality review (0.0-1.0)
 │           ├── analyst_node.py    # Analyst: HLTV cold data report
 │           └── coach_node.py      # Coach: B1ad3 tactical debrief
-├── src/                           # Legacy Modules (monolithic version)
-│   ├── data_parser.py             # Early demo parser
-│   ├── agent_orchestrator.py      # Early LangGraph orchestration
-│   ├── advanced_rag.py            # Early RAG implementation
-│   └── prompts.py                 # Early prompt templates
 ├── scripts/                       # Utility Scripts
-│   ├── seed_chroma.py             # Knowledge base seed script
+│   ├── seed_knowledge.py          # Milvus knowledge base seed script
 │   ├── analyze_local.py           # Local demo direct analysis entry
 │   └── test_webhook.py            # Webhook API test script
-├── main.py                        # Root monolithic entry (Legacy compatible)
 ├── test_main.py                   # End-to-end integration test
 ├── .env.example                   # Environment variable template
 ├── requirements.txt               # Python dependencies

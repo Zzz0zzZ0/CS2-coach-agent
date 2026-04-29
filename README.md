@@ -120,8 +120,7 @@ MILVUS_TOKEN=""
 CELERY_BROKER_URL="redis://localhost:6379/0"
 CELERY_RESULT_BACKEND="redis://localhost:6379/1"
 
-# ChromaDB（仅 seed 脚本使用）
-CHROMA_DB_DIR="./chroma_db"
+
 ```
 
 ### 3. 启动基础设施
@@ -139,7 +138,7 @@ docker run -d --name redis -p 6379:6379 redis:latest
 ### 4. 初始化战术知识向量库
 
 ```bash
-python scripts/seed_chroma.py
+python scripts/seed_knowledge.py
 ```
 
 > 这一步会向知识库注入涵盖 Mirage / Inferno / Dust2 / Nuke / Ancient 的顶级战术分析片段。
@@ -159,11 +158,7 @@ python scripts/analyze_local.py data/your_match.dem
 
 **方式 B：启动 Web 服务，接收第三方 Webhook**
 ```bash
-# DDD 架构版（推荐生产使用）
 python -m app.main
-
-# 或使用根目录单体入口（Legacy 兼容）
-python main.py
 ```
 
 随后发送 POST 请求到 `http://127.0.0.1:8000/api/webhook/match-end`：
@@ -220,16 +215,10 @@ CS2-coach-agent/
 │           ├── critique_node.py   # Critique：检索质量评审 (0.0-1.0)
 │           ├── analyst_node.py    # Analyst：HLTV 冷酷数据报告
 │           └── coach_node.py      # Coach：B1ad3 高压战术复盘
-├── src/                           # Legacy 遗留模块（单体版）
-│   ├── data_parser.py             # 早期 Demo 解析器
-│   ├── agent_orchestrator.py      # 早期 LangGraph 编排
-│   ├── advanced_rag.py            # 早期 RAG 实现
-│   └── prompts.py                 # 早期提示词
 ├── scripts/                       # 工具脚本
-│   ├── seed_chroma.py             # 知识库初始化种子脚本
+│   ├── seed_knowledge.py          # Milvus 知识库初始化种子脚本
 │   ├── analyze_local.py           # 本地 Demo 直接分析入口
 │   └── test_webhook.py            # Webhook 接口测试脚本
-├── main.py                        # 根目录单体入口（Legacy 兼容）
 ├── test_main.py                   # 端到端集成测试
 ├── .env.example                   # 环境变量模板
 ├── requirements.txt               # Python 依赖

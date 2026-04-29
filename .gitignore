@@ -12,9 +12,6 @@ venv/
 dist/
 build/
 
-# 数据库与向量存储（体积巨大，本地生成）
-chroma_db/
-
 # 用户上传的 Demo 和解析输出（含比赛原始录像及 LLM 输出）
 data/
 output/

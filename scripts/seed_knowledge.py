@@ -1,3 +1,7 @@
+"""
+战术知识库种子脚本 —— 向 Milvus 注入 CS2 战术知识文档。
+用法: python scripts/seed_knowledge.py
+"""
 import os
 import sys
 from pathlib import Path
@@ -7,9 +11,8 @@ from dotenv import load_dotenv
 load_dotenv(dotenv_path=Path(__file__).parent.parent / ".env")
 
 from langchain_community.embeddings import DashScopeEmbeddings
-from langchain_chroma import Chroma
+from langchain_milvus import Milvus
 from langchain_core.documents import Document
-import chromadb
 
 # ============================================================
 # 硬核 CS2 战术种子数据（顶级分析师视角）
@@ -88,11 +91,12 @@ CS2_TACTICAL_DOCS = [
 ]
 
 
-def seed_chroma_db() -> None:
-    persist_directory = os.getenv("CHROMA_DB_DIR", "./chroma_db")
+def seed_milvus_db() -> None:
     collection_name = "cs2_tactical_knowledge"
+    milvus_uri = os.getenv("MILVUS_URI", "http://localhost:19530")
+    milvus_token = os.getenv("MILVUS_TOKEN", "")
 
-    print(f"=== [战术知识库初始化] 目标路径: {persist_directory} ===")
+    print(f"=== [战术知识库初始化] 目标: Milvus @ {milvus_uri} ===")
 
     # 初始化 DashScope Embeddings
     api_key = os.getenv("DASHSCOPE_API_KEY")
@@ -105,35 +109,28 @@ def seed_chroma_db() -> None:
         dashscope_api_key=api_key
     )
 
-    # 先用原生 chromadb 客户端清空旧 Collection，防止重复插入数据堆叠
-    print(f"-> 正在清空旧的 Collection: '{collection_name}' ...")
-    raw_client = chromadb.PersistentClient(path=persist_directory)
+    # 通过 LangChain Milvus 封装直接写入
+    print(f"-> 正在向量化并写入 {len(CS2_TACTICAL_DOCS)} 条战术文档到 Collection '{collection_name}' ...")
+
     try:
-        raw_client.delete_collection(collection_name)
-        print(f"   旧 Collection 已清除。")
-    except Exception:
-        print(f"   Collection 不存在，跳过清除步骤。")
-
-    # 逐条写入，规避 DashScope embedding 接口 batch 大小限制导致的连接重置
-    print(f"-> 正在逐条向量化并写入 {len(CS2_TACTICAL_DOCS)} 条战术文档...")
-    vectorstore = None
-    for i, doc in enumerate(CS2_TACTICAL_DOCS):
-        print(f"   [{i + 1}/{len(CS2_TACTICAL_DOCS)}] 正在写入: {doc.metadata.get('map')} - {doc.metadata.get('tactic_type')}")
-        if vectorstore is None:
-            vectorstore = Chroma.from_documents(
-                documents=[doc],
-                embedding=embeddings,
-                persist_directory=persist_directory,
-                collection_name=collection_name,
-            )
-        else:
-            vectorstore.add_documents([doc])
-
-    # 验证写入结果
-    inserted_count = len(vectorstore.get()["ids"])
-    print(f"\n战术知识库初始化成功，共插入 {inserted_count} 条记录。")
-    print("Advanced RAG 模块弹药装填完毕，等待 Webhook 实战唤醒。")
+        vectorstore = Milvus.from_documents(
+            documents=CS2_TACTICAL_DOCS,
+            embedding=embeddings,
+            connection_args={
+                "uri": milvus_uri,
+                "token": milvus_token,
+            },
+            collection_name=collection_name,
+            drop_old=True,  # 清空旧数据后重建
+            auto_id=True,
+        )
+        print(f"\n✅ 战术知识库初始化成功，共写入 {len(CS2_TACTICAL_DOCS)} 条记录。")
+        print("Advanced RAG 模块弹药装填完毕，等待 Webhook 实战唤醒。")
+    except Exception as e:
+        print(f"\n❌ 写入 Milvus 失败: {e}")
+        print("请确保 Milvus 服务已启动且 .env 中的 MILVUS_URI 配置正确。")
+        sys.exit(1)
 
 
 if __name__ == "__main__":
-    seed_chroma_db()
+    seed_milvus_db()
