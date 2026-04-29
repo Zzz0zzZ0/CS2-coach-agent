@@ -29,34 +29,33 @@ It can:
 
 ```
           ┌─────────────────────────────────────────────────────┐
-          │              FastAPI Web Service (main.py)          │
+          │              FastAPI Web Service (app/main.py)      │
           │                                                     │
           │   POST /api/webhook/match-end  (JSON Payload)       │
           │   POST /api/upload-demo        (.dem file upload)   │
+          │   GET  /api/tasks/{task_id}    (Task status query)  │
           └──────────────────────┬──────────────────────────────┘
-                                 │ BackgroundTasks (non-blocking)
+                                 │ Celery task.delay() Push
+                                 ▼
+                          ┌────────────┐
+                          │  Redis MQ  │
+                          └──────┬─────┘
+                                 │ Dispatch to Celery Worker
                                  ▼
           ┌──────────────────────────────────────────────────────┐
-          │           LangGraph Multi-Agent State Machine        │
+          │         LangGraph Multi-Agent State Machine          │
           │                                                      │
-          │   [node_retrieve] ──► [node_analyst] ──► [node_coach]│
-          │        │                    │                  │     │
-          │   PRF Query Rewrite    HLTV Data Report    B1ad3 Review│
-          │   MMR Diverse Recall   ADR/KAST/FirstKill  Tac Decision│
+          │   [Router] ──► [Retrieve] ──► [Critique] ──► [Analyst] ──► [Coach]
+          │                  │                                   │
+          │             PRF Query Rewrite                   HLTV Data Report
+          │             MMR Diverse Recall                  B1ad3 Review
           └──────────────────────────────────────────────────────┘
-                │                       ▲
-                ▼                       │
+                 │                       ▲
+                 ▼                       │
           ┌──────────┐          ┌───────────────┐
-          │ ChromaDB │          │ DashScope LLM │
+          │  Milvus  │          │ DashScope LLM │
           │ Vector DB│          │ (Qwen)        │
           └──────────┘          └───────────────┘
-                ▲
-                │ seed_chroma.py
-          ┌──────────────────┐
-          │ CS2 Tactical     │
-          │ Knowledge Docs   │
-          │ (5 Maps)         │
-          └──────────────────┘
 ```
 
 ---
@@ -65,13 +64,14 @@ It can:
 
 | Layer | Technology | Description |
 |-------|-----------|-------------|
-| **Web Layer** | FastAPI + Uvicorn | Async Webhook service with `.dem` file upload support |
-| **Agent Orchestration** | LangGraph (StateGraph) | Retrieve → Analyst → Coach three-node pipeline |
-| **Advanced Retrieval (RAG)** | LangChain + ChromaDB | PRF query rewriting + MMR diversity recall |
-| **LLM** | Alibaba Cloud DashScope / Qwen | `qwen-plus` model inference |
+| **Web Layer** | FastAPI + Uvicorn | Async Webhook service, supporting `.dem` uploads and task queries |
+| **Async Queue** | Celery + Redis | Enterprise background task queue for high concurrency & scale-out |
+| **Agent Orchestration** | LangGraph (StateGraph) | Router → Retrieve → Critique → Analyst → Coach five-node pipeline |
+| **Advanced Retrieval (RAG)** | LangChain + Milvus | PRF query rewriting + MMR diversity recall (Billion-scale support) |
+| **LLM** | Alibaba Cloud DashScope / Qwen | `qwen-plus` model inference & emotion/status evaluation |
 | **Embedding** | DashScopeEmbeddings | `text-embedding-v2` vectorization |
 | **Demo Parsing** | awpy + demoparser2 | Precise CS2 demo frame event extraction |
-| **Data Validation** | Pydantic v2 | Strict Webhook payload validation |
+| **Architecture** | DDD (Domain-Driven Design) | High cohesion, low coupling Clean Architecture pattern |
 
 ---
 
@@ -148,18 +148,28 @@ curl -X POST http://127.0.0.1:8000/api/upload-demo \
 
 ```
 CS2-coach-agent/
-├── main.py                    # FastAPI service entry (Webhook + file upload)
+├── app/
+│   ├── api/                   # API Layer: FastAPI routers & dependency injection
+│   │   ├── dependencies.py
+│   │   └── routers/
+│   ├── core/                  # Core config: Env variables & Celery app
+│   │   ├── config.py
+│   │   └── celery_app.py
+│   ├── domain/                # Domain models: Pydantic schemas
+│   │   └── match_models.py
+│   ├── services/              # Application Services: RAG and Demo Parsing
+│   │   ├── rag_service.py     # Milvus hybrid search integration
+│   │   ├── parser_service.py  # demoparser2 wrapper
+│   │   └── tasks.py           # Celery async tasks definitions
+│   ├── agentic/               # Agent Orchestration: LangGraph
+│   │   ├── nodes/             # Router, Retrieve, Analyst, Coach, Critique
+│   │   ├── prompts.py
+│   │   ├── states.py
+│   │   └── workflow.py
+│   └── main.py                # Service entry point
+├── test_main.py               # End-to-end integration test script
 ├── .env.example               # Environment variable template
 ├── requirements.txt           # Python dependencies
-├── src/
-│   ├── data_parser.py         # CS2 Demo parser (TacticalDemoParser)
-│   ├── advanced_rag.py        # PRF query rewriting + MMR retrieval (TacticalRetriever)
-│   ├── agent_orchestrator.py  # LangGraph state machine & node definitions
-│   └── prompts.py             # ANALYST_PROMPT & COACH_PROMPT
-├── scripts/
-│   ├── analyze_local.py       # Local one-click analysis CLI
-│   ├── seed_chroma.py         # Vector knowledge base initialization
-│   └── test_webhook.py        # End-to-end Webhook integration test
 └── data/                      # Place .dem demo files here (local only, not committed)
 ```
 

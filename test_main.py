@@ -1,6 +1,8 @@
 import logging
 from fastapi.testclient import TestClient
-from main import app
+from app.core.celery_app import celery_app
+celery_app.conf.update(task_always_eager=True)
+from app.main import app
 
 MOCK_PAYLOAD = {
     "match_id": "test-match-123",
@@ -20,8 +22,10 @@ def test_webhook_match_end():
     response = client.post("/api/webhook/match-end", json=MOCK_PAYLOAD)
     
     assert response.status_code == 200
-    assert response.json() == {"status": "processing"}
-    print("Test passed! Returned 200 processing.")
+    resp_json = response.json()
+    assert resp_json.get("status") == "processing_in_mq"
+    assert "task_id" in resp_json
+    print(f"Test passed! Returned 200 processing with task_id: {resp_json['task_id']}")
 
 if __name__ == "__main__":
     test_webhook_match_end()

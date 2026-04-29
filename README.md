@@ -29,33 +29,33 @@
 
 ```
           ┌─────────────────────────────────────────────────────┐
-          │              FastAPI Web Service (main.py)          │
+          │              FastAPI Web Service (app/main.py)      │
           │                                                     │
           │   POST /api/webhook/match-end  (JSON Payload)       │
           │   POST /api/upload-demo        (.dem 实体文件上传)  │
+          │   GET  /api/tasks/{task_id}    (查询异步任务状态)   │
           └──────────────────────┬──────────────────────────────┘
-                                 │ BackgroundTasks (非阻塞)
+                                 │ Celery task.delay() 推送
+                                 ▼
+                          ┌────────────┐
+                          │  Redis MQ  │
+                          └──────┬─────┘
+                                 │ 分发给 Celery Worker
                                  ▼
           ┌──────────────────────────────────────────────────────┐
-          │           LangGraph 多智能体状态机                   │
+          │           LangGraph 多智能体状态机 (Agentic Workflow)│
           │                                                      │
-          │   [node_retrieve] ──► [node_analyst] ──► [node_coach]│
-          │        │                    │                  │     │
-          │   PRF重写查询           HLTV数据报告        B1ad3复盘│
-          │   MMR多样性召回         ADR/KAST/首杀率    战术裁决  │
+          │   [Router] ──► [Retrieve] ──► [Critique] ──► [Analyst] ──► [Coach]
+          │                  │                                   │
+          │             PRF重写查询                         HLTV数据报告
+          │             MMR多样性召回                       B1ad3高压复盘
           └──────────────────────────────────────────────────────┘
-                │                       ▲
-                ▼                       │
+                 │                       ▲
+                 ▼                       │
           ┌──────────┐          ┌───────────────┐
-          │ ChromaDB │          │ DashScope LLM │
+          │  Milvus  │          │ DashScope LLM │
           │ 向量知识库│          │ (通义千问)    │
           └──────────┘          └───────────────┘
-                ▲
-                │ seed_chroma.py
-          ┌──────────────────┐
-          │ CS2 战术知识片段  │
-          │ (5张地图专业文本) │
-          └──────────────────┘
 ```
 
 ---
@@ -64,13 +64,14 @@
 
 | 层级 | 技术 | 说明 |
 |------|------|------|
-| **Web 层** | FastAPI + Uvicorn | 异步 Webhook 服务，支持 `.dem` 文件上传 |
-| **智能体编排** | LangGraph (StateGraph) | Retrieve → Analyst → Coach 三节点流水线 |
-| **高级检索 (RAG)** | LangChain + ChromaDB | PRF 查询重写 + MMR 多样性召回 |
-| **LLM** | 阿里云 DashScope / 通义千问 | `qwen-plus` 模型推理 |
+| **Web 层** | FastAPI + Uvicorn | 异步 Webhook 服务，支持 `.dem` 文件上传及任务查询 |
+| **异步队列** | Celery + Redis | 企业级后台耗时任务队列，实现系统高并发与横向扩展 |
+| **智能体编排** | LangGraph (StateGraph) | Router → Retrieve → Critique → Analyst → Coach 五节点流水线 |
+| **高级检索 (RAG)**| LangChain + Milvus | PRF 查询重写 + MMR 多样性召回（支持亿级并发检索） |
+| **LLM** | 阿里云 DashScope / 通义千问 | `qwen-plus` 模型推理与情感/状态评估 |
 | **Embedding** | DashScopeEmbeddings | `text-embedding-v2` 向量化 |
 | **Demo 解析** | awpy + demoparser2 | CS2 录像帧事件精准提取 |
-| **数据验证** | Pydantic v2 | 严格的 Webhook Payload 校验 |
+| **架构规范** | DDD (领域驱动设计) | 高内聚低耦合的 Clean Architecture 目录规范 |
 
 ---
 
@@ -147,18 +148,28 @@ curl -X POST http://127.0.0.1:8000/api/upload-demo \
 
 ```
 CS2-coach-agent/
-├── main.py                    # FastAPI 服务入口 (Webhook + 文件上传)
+├── app/
+│   ├── api/                   # 接入层：FastAPI 路由与依赖注入
+│   │   ├── dependencies.py
+│   │   └── routers/
+│   ├── core/                  # 核心配置：环境变量与 Celery 应用
+│   │   ├── config.py
+│   │   └── celery_app.py
+│   ├── domain/                # 领域模型：Pydantic 数据验证
+│   │   └── match_models.py
+│   ├── services/              # 应用服务层：RAG 与数据解析
+│   │   ├── rag_service.py     # 封装 Milvus 混合检索
+│   │   ├── parser_service.py  # 封装 demoparser2
+│   │   └── tasks.py           # Celery 异步任务定义
+│   ├── agentic/               # 智能体编排层：LangGraph 节点
+│   │   ├── nodes/             # Router, Retrieve, Analyst, Coach, Critique
+│   │   ├── prompts.py
+│   │   ├── states.py
+│   │   └── workflow.py
+│   └── main.py                # 服务入口点
+├── test_main.py               # 端到端集成测试脚本
 ├── .env.example               # 环境变量模板
 ├── requirements.txt           # Python 依赖
-├── src/
-│   ├── data_parser.py         # CS2 Demo 解析器 (TacticalDemoParser)
-│   ├── advanced_rag.py        # PRF 查询重写 + MMR 检索 (TacticalRetriever)
-│   ├── agent_orchestrator.py  # LangGraph 状态机与节点定义
-│   └── prompts.py             # ANALYST_PROMPT & COACH_PROMPT
-├── scripts/
-│   ├── analyze_local.py       # 本地一键分析 CLI
-│   ├── seed_chroma.py         # 向量知识库初始化
-│   └── test_webhook.py        # 端到端 Webhook 集成测试
 └── data/                      # 放置 .dem 录像文件 (本地，不入库)
 ```
 
