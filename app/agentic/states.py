@@ -9,3 +9,6 @@ class GraphState(TypedDict):
     retrieval_metadata: dict
     critique_score: float
     retry_count: int
+    is_high_quality: bool
+    ingested_tactics_count: int
+

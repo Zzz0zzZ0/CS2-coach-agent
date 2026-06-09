@@ -7,6 +7,7 @@ from app.agentic.nodes.retrieve_node import create_retrieve_node
 from app.agentic.nodes.critique_node import create_critique_node
 from app.agentic.nodes.analyst_node import create_analyst_node
 from app.agentic.nodes.coach_node import create_coach_node
+from app.agentic.nodes.ingest_node import create_ingest_node
 
 logger = logging.getLogger(__name__)
 
@@ -22,6 +23,7 @@ def create_workflow_app(llm, kb_client):
     node_critique = create_critique_node(llm)
     node_analyst = create_analyst_node(llm)
     node_coach = create_coach_node(llm)
+    node_ingest = create_ingest_node()
 
     # 注入节点
     workflow.add_node("Router", node_router)
@@ -29,6 +31,7 @@ def create_workflow_app(llm, kb_client):
     workflow.add_node("Critique", node_critique)
     workflow.add_node("Analyst", node_analyst)
     workflow.add_node("Coach", node_coach)
+    workflow.add_node("Ingest", node_ingest)
 
     # 构建边
     workflow.add_edge(START, "Router")
@@ -56,6 +59,7 @@ def create_workflow_app(llm, kb_client):
     )
 
     workflow.add_edge("Analyst", "Coach")
-    workflow.add_edge("Coach", END)
+    workflow.add_edge("Coach", "Ingest")
+    workflow.add_edge("Ingest", END)
 
     return workflow.compile()

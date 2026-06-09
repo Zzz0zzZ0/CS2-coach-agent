@@ -1,0 +1,67 @@
+version: '3.8'
+
+services:
+  # ----------------------------------------------------
+  # 1. Redis 服务 (用于 Celery 消息队列)
+  # ----------------------------------------------------
+  redis:
+    container_name: cs2-redis
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./data/redis_data:/data
+    command: redis-server --appendonly yes
+    restart: always
+
+  # ----------------------------------------------------
+  # 2. Milvus 向量数据库依赖 (etcd & minio)
+  # ----------------------------------------------------
+  etcd:
+    container_name: milvus-etcd
+    image: quay.io/coreos/etcd:v3.5.5
+    environment:
+      - ETCD_AUTO_COMPACTION_MODE=revision
+      - ETCD_AUTO_COMPACTION_RETENTION=1000
+      - ETCD_QUOTA_BACKEND_BYTES=4294967296
+      - ETCD_SNAPSHOT_COUNT=50000
+    volumes:
+      - ./data/milvus/etcd:/etcd
+    command: etcd -advertise-client-urls=http://127.0.0.1:2379 -listen-client-urls http://0.0.0.0:2379 --data-dir /etcd
+    restart: always
+
+  minio:
+    container_name: milvus-minio
+    image: minio/minio:RELEASE.2023-03-20T20-16-18Z
+    environment:
+      MINIO_ACCESS_KEY: minioadmin
+      MINIO_SECRET_KEY: minioadmin
+    volumes:
+      - ./data/milvus/minio:/minio_data
+    command: minio server /minio_data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    restart: always
+
+  # ----------------------------------------------------
+  # 3. Milvus Standalone (核心向量检索引擎)
+  # ----------------------------------------------------
+  standalone:
+    container_name: milvus-standalone
+    image: milvusdb/milvus:v2.4.0
+    command: ["milvus", "run", "standalone"]
+    environment:
+      ETCD_ENDPOINTS: etcd:2379
+      MINIO_ADDRESS: minio:9000
+    volumes:
+      - ./data/milvus/milvus_data:/var/lib/milvus
+    ports:
+      - "19530:19530"
+      - "9091:9091"
+    depends_on:
+      - "etcd"
+      - "minio"
+    restart: always

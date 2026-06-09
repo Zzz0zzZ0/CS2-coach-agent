@@ -22,6 +22,7 @@
 
 It can:
 - Ingest `.dem` demo files directly, leveraging `demoparser2` to automatically parse kill chains, grenade landing positions, flash-blind sequences, and bomb plant events for every round.
+- Built-in **HLTV data scraper and demo downloader**, supporting automated acquisition of high-value professional match Demo datasets.
 - Drive five serial nodes (**Router → Retrieve → Critique → Analyst → Coach**) to form an end-to-end tactical inference pipeline with a built-in **Refine Loop for self-healing**.
 - The Critique node triggers an **automatic retry loop** when retrieval quality falls below a threshold, ensuring the context fed into the Analyst is always up to standard.
 - Extract core metrics such as ADR, KAST, and first-kill rate from an **HLTV Chief Data Analyst** perspective, then deliver a high-pressure tactical breakdown through a **B1ad3-style Coach**.
@@ -77,6 +78,7 @@ It can:
 | **Advanced Retrieval (RAG)** | LangChain + Milvus | PRF query rewriting + MMR diversity recall + BM25 sparse retrieval fusion (RRF hybrid ranking) |
 | **LLM** | Alibaba Cloud DashScope / Qwen | `qwen-plus` model inference (via OpenAI-compatible API) |
 | **Embedding** | DashScopeEmbeddings | `text-embedding-v2` vectorization |
+| **Data Acquisition**| requests + BeautifulSoup4 | HLTV match data scraping and automated `.dem` downloads |
 | **Demo Parsing** | awpy + demoparser2 | Precise CS2 demo frame event extraction (kills/grenades/flashes/plants) |
 | **Architecture** | DDD (Domain-Driven Design) | High cohesion, low coupling Clean Architecture pattern |
 
@@ -205,6 +207,9 @@ CS2-coach-agent/
 │   │   ├── rag_service.py         # Advanced RAG: PRF rewrite + MMR + sparse hybrid search
 │   │   ├── parser_service.py      # Demo parser: demoparser2 wrapper
 │   │   └── tasks.py               # Celery async task definitions
+│   ├── scrapers/                  # Data Acquisition Layer
+│   │   ├── hltv_scraper.py        # HLTV match metadata scraper
+│   │   └── demo_downloader.py     # Professional demo automated downloader
 │   └── agentic/                   # Agent Orchestration Layer
 │       ├── states.py              # GraphState global state definition
 │       ├── prompts.py             # Analyst / Coach prompt templates

@@ -22,6 +22,7 @@
 
 它能够：
 - 直接吃入 `.dem` 录像文件，通过 `demoparser2` 自动解析每一回合的击杀链、道具落点、闪光致盲序列和下包行为。
+- 内置 **HLTV 数据爬虫与录像下载器**，支持自动化获取职业赛事高价值 Demo 数据集。
 - 驱动五个串行节点（**Router → Retrieve → Critique → Analyst → Coach**）构成一条带有 **Refine Loop 自修复** 的端到端战术推演流水线。
 - Critique 节点在检索质量低于阈值时触发 **自动重试回路**，确保送入分析节点的上下文始终达标。
 - 以 **HLTV 首席数据师** 的冷酷视角提炼 ADR、KAST、首杀率等核心指标，再通过 **B1ad3 风格教练** 的高压战术复盘进行专业拆解。
@@ -77,6 +78,7 @@
 | **高级检索 (RAG)** | LangChain + Milvus | PRF 查询重写 + MMR 多样性召回 + BM25 稀疏检索融合（RRF 混合排序） |
 | **LLM** | 阿里云 DashScope / 通义千问 | `qwen-plus` 模型推理（通过 OpenAI 兼容接口接入） |
 | **Embedding** | DashScopeEmbeddings | `text-embedding-v2` 向量化 |
+| **数据采集** | requests + BeautifulSoup4 | HLTV 赛事数据爬取与 `.dem` 自动化下载 |
 | **Demo 解析** | awpy + demoparser2 | CS2 录像帧事件精准提取（击杀链/道具/闪光/下包） |
 | **架构规范** | DDD (领域驱动设计) | 高内聚低耦合的 Clean Architecture 目录规范 |
 
@@ -205,6 +207,9 @@ CS2-coach-agent/
 │   │   ├── rag_service.py         # 高级 RAG：PRF 重写 + MMR + 稀疏混合检索
 │   │   ├── parser_service.py      # Demo 解析器：demoparser2 封装
 │   │   └── tasks.py               # Celery 异步任务定义
+│   ├── scrapers/                  # 数据采集层
+│   │   ├── hltv_scraper.py        # HLTV 赛事元数据爬虫
+│   │   └── demo_downloader.py     # 职业录像自动化下载器
 │   └── agentic/                   # 智能体编排层
 │       ├── states.py              # GraphState 全局状态定义
 │       ├── prompts.py             # Analyst / Coach 提示词模板

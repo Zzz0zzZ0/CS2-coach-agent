@@ -13,8 +13,10 @@ logger = logging.getLogger(__name__)
 @celery_app.task(bind=True, name="process_webhook_match_task")
 def process_webhook_match_task(self, payload_dict: dict):
     """
-    处理 Webhook 推送的赛后数据，由于底层 LangGraph 是 async，
-    在 Celery (同步 worker) 中需要用 async_to_sync 包装运行。
+    处理 Webhook 或爬虫推送的赛后数据任务。
+    
+    因底层 LangGraph 工作流（Workflow）采用异步调用，
+    在 Celery 的同步 worker 中使用 `async_to_sync` 包装并阻塞执行。
     """
     try:
         payload = MatchWebhookPayload(**payload_dict)
@@ -23,11 +25,14 @@ def process_webhook_match_task(self, payload_dict: dict):
         
         raw_data_str = json.dumps(payload.model_dump(), ensure_ascii=False)
         
+        is_high_quality = payload.extra_data.get("is_high_quality", False)
+        
         initial_state = {
             "raw_data": raw_data_str,
             "rag_context": "",
             "analyst_report": "",
-            "coach_advice": ""
+            "coach_advice": "",
+            "is_high_quality": is_high_quality
         }
         
         llm = get_llm()
@@ -58,7 +63,7 @@ def process_webhook_match_task(self, payload_dict: dict):
         raise e
 
 @celery_app.task(bind=True, name="parse_and_analyze_demo_task")
-def parse_and_analyze_demo_task(self, file_path_str: str, original_filename: str):
+def parse_and_analyze_demo_task(self, file_path_str: str, original_filename: str = "", is_high_quality: bool = True, auto_delete: bool = False):
     """
     独立任务：解析物理 Demo，然后生成 payload，再进行后续分析
     """
@@ -74,13 +79,42 @@ def parse_and_analyze_demo_task(self, file_path_str: str, original_filename: str
             match_id=dem_dict.get("match_id", "upload_demo"),
             map_name=dem_dict.get("map_name", "unknown"),
             rounds=dem_dict.get("rounds", []),
-            extra_data={"source": "direct_upload", "filename": original_filename}
+            extra_data={
+                "source": "direct_upload", 
+                "filename": original_filename or Path(file_path_str).name,
+                "is_high_quality": is_high_quality
+            }
         )
         
-        # 解析完成后，直接复用 workflow 逻辑
-        return process_webhook_match_task(payload.model_dump())
+        # 解析完成后，发送给核心分析队列
+        result = process_webhook_match_task(self, payload.model_dump())
+        return result
         
     except Exception as e:
         logger.error(f"Celery 解析 Demo 异常: {e}", exc_info=True)
+        self.update_state(state="FAILURE", meta={"exc_type": type(e).__name__, "exc_message": str(e)})
+        raise e
+    finally:
+        if auto_delete:
+            try:
+                Path(file_path_str).unlink(missing_ok=True)
+                logger.info(f"=== [Cleanup] 成功删除已解析的 DEMO 文件: {file_path_str} ===")
+            except Exception as cleanup_err:
+                logger.warning(f"=== [Cleanup Error] 删除 DEMO 文件失败: {cleanup_err} ===")
+
+@celery_app.task(bind=True, name="ingest_knowledge_task")
+def ingest_knowledge_task(self, source_text: str, source_name: str):
+    """
+    独立任务：从原始文本中提取战术片段并插入 Milvus 向量库
+    """
+    logger.info(f"====== [Celery Worker] 开始知识摄取任务: {self.request.id} ======")
+    from app.services.knowledge_extraction_service import KnowledgeExtractionService
+    try:
+        extractor = KnowledgeExtractionService()
+        inserted_count = extractor.process_and_ingest(source_text, source_name)
+        logger.info(f"====== [Celery Worker] 知识摄取任务完成: {self.request.id} ======")
+        return {"status": "success", "inserted_count": inserted_count}
+    except Exception as e:
+        logger.error(f"Celery 知识摄取异常: {e}", exc_info=True)
         self.update_state(state="FAILURE", meta={"exc_type": type(e).__name__, "exc_message": str(e)})
         raise e

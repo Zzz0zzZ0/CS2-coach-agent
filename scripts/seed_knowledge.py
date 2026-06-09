@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 load_dotenv(dotenv_path=Path(__file__).parent.parent / ".env")
 
 from langchain_community.embeddings import DashScopeEmbeddings
-from langchain_milvus import Milvus
+from langchain_community.vectorstores import Milvus
 from langchain_core.documents import Document
 
 # ============================================================
@@ -113,6 +113,12 @@ def seed_milvus_db() -> None:
     print(f"-> 正在向量化并写入 {len(CS2_TACTICAL_DOCS)} 条战术文档到 Collection '{collection_name}' ...")
 
     try:
+        from pymilvus import connections
+        connections.connect("default", uri=milvus_uri, token=milvus_token)
+    except Exception as e:
+        print(f"Failed to connect to Milvus directly: {e}")
+
+    try:
         vectorstore = Milvus.from_documents(
             documents=CS2_TACTICAL_DOCS,
             embedding=embeddings,
@@ -121,8 +127,7 @@ def seed_milvus_db() -> None:
                 "token": milvus_token,
             },
             collection_name=collection_name,
-            drop_old=True,  # 清空旧数据后重建
-            auto_id=True,
+            drop_old=False,
         )
         print(f"\n✅ 战术知识库初始化成功，共写入 {len(CS2_TACTICAL_DOCS)} 条记录。")
         print("Advanced RAG 模块弹药装填完毕，等待 Webhook 实战唤醒。")

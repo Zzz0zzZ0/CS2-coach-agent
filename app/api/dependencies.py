@@ -39,7 +39,6 @@ def get_kb_client():
                     "token": settings.MILVUS_TOKEN
                 },
                 collection_name="cs2_tactical_knowledge",
-                auto_id=True
             )
             _kb_client_instance = KnowledgeBaseClient(vectorstore=vectorstore, llm=get_llm())
         except Exception as e:
