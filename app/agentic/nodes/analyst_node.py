@@ -1,4 +1,5 @@
 import logging
+import json
 from app.agentic.states import GraphState
 from app.agentic.prompts import ANALYST_PROMPT
 from langchain_core.prompts import PromptTemplate
@@ -17,6 +18,12 @@ def create_analyst_node(llm):
         
         response = await chain.ainvoke({
             "raw_data": state.get("raw_data", ""),
+            "metrics": json.dumps(state.get("metrics", {}), ensure_ascii=False),
+            "analysis_plan": json.dumps(state.get("analysis_plan", []), ensure_ascii=False),
+            "analysis_mode": state.get("analysis_mode", "demo_forensic"),
+            "supervisor_decision": json.dumps(
+                state.get("supervisor_decision", {}), ensure_ascii=False
+            ),
             "rag_context": state.get("rag_context", "")
         })
         analyst_report = response.content if hasattr(response, 'content') else str(response)

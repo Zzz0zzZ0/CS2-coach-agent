@@ -1,14 +1,72 @@
-import json
 import logging
 from pathlib import Path
 from asgiref.sync import async_to_sync
 from app.core.celery_app import celery_app
 from app.domain.match_models import MatchWebhookPayload
-from app.api.dependencies import get_llm, get_kb_client
-from app.agentic.workflow import create_workflow_app
+from app.core.providers import get_graph_client, get_llm, get_kb_client
+from app.core.config import settings
+from app.services.analysis_pipeline import AnalysisPipeline
 from app.services.parser_service import TacticalDemoParser
 
 logger = logging.getLogger(__name__)
+
+def _run_match_analysis(payload: MatchWebhookPayload, task_id: str):
+    logger.info(f"====== [Celery Worker] 开始处理 Webhook 任务: {task_id} ======")
+    logger.info(f"比赛 ID: {payload.match_id} | 地图名称: {payload.map_name}")
+
+    pipeline = AnalysisPipeline(get_llm(), get_kb_client(), get_graph_client())
+    result = async_to_sync(pipeline.analyze)(payload)
+    coach_advice = result.coach_advice or "教练由于未知原因未给出战术建议。"
+
+    output_dir = Path("output")
+    output_dir.mkdir(exist_ok=True)
+    with open(output_dir / "analysis.log", "a", encoding="utf-8") as f:
+        f.write(f"\n[{payload.match_id} | {payload.map_name} | CeleryTask:{task_id}]\n")
+        f.write("=== Coach Tactical Advice ===\n")
+        f.write(coach_advice + "\n")
+        f.write("=========================================\n")
+
+    verification = result.verification_report or {}
+    approved = bool(payload.extra_data.get("knowledge_approved", False))
+    review_reasons = []
+    if not settings.AUTO_INGEST_ENABLED:
+        review_reasons.append("auto_ingest_disabled")
+    if not payload.is_high_quality:
+        review_reasons.append("source_not_marked_high_quality")
+    if not approved:
+        review_reasons.append("explicit_human_approval_required")
+    if verification.get("status") != "pass":
+        review_reasons.append("verification_not_passed")
+
+    knowledge_task_id = None
+    if not review_reasons and coach_advice:
+        knowledge_task = ingest_knowledge_task.delay(
+            source_text=(
+                f"【数据分析报告】\n{result.analyst_report}\n\n"
+                f"【教练战术复盘】\n{coach_advice}"
+            ),
+            source_name=f"self_learning_loop:{payload.match_id}",
+        )
+        knowledge_task_id = knowledge_task.id
+
+    knowledge_review = {
+        "status": "approved" if not review_reasons else "pending_review",
+        "eligible": not review_reasons,
+        "reasons": review_reasons,
+    }
+    result.knowledge_review = knowledge_review
+
+    logger.info(f"====== [Celery Worker] 任务完成: {task_id} ======")
+    return {
+        "status": "success",
+        "coach_advice": coach_advice,
+        "analyst_report": result.analyst_report,
+        "metrics": result.metrics.model_dump(),
+        "analysis": result.model_dump(),
+        "knowledge_task_id": knowledge_task_id,
+        "knowledge_review": knowledge_review,
+    }
+
 
 @celery_app.task(bind=True, name="process_webhook_match_task")
 def process_webhook_match_task(self, payload_dict: dict):
@@ -20,42 +78,7 @@ def process_webhook_match_task(self, payload_dict: dict):
     """
     try:
         payload = MatchWebhookPayload(**payload_dict)
-        logger.info(f"====== [Celery Worker] 开始处理 Webhook 任务: {self.request.id} ======")
-        logger.info(f"比赛 ID: {payload.match_id} | 地图名称: {payload.map_name}")
-        
-        raw_data_str = json.dumps(payload.model_dump(), ensure_ascii=False)
-        
-        is_high_quality = payload.extra_data.get("is_high_quality", False)
-        
-        initial_state = {
-            "raw_data": raw_data_str,
-            "rag_context": "",
-            "analyst_report": "",
-            "coach_advice": "",
-            "is_high_quality": is_high_quality
-        }
-        
-        llm = get_llm()
-        kb_client = get_kb_client()
-        workflow_app = create_workflow_app(llm, kb_client)
-        
-        # 阻塞等待异步工作流执行完毕
-        final_state = async_to_sync(workflow_app.ainvoke)(initial_state)
-        
-        coach_advice = final_state.get("coach_advice", "教练由于未知原因未给出战术建议。")
-        
-        output_dir = Path("output")
-        output_dir.mkdir(exist_ok=True)
-        log_file = output_dir / "analysis.log"
-        
-        with open(log_file, "a", encoding="utf-8") as f:
-            f.write(f"\n[{payload.match_id} | {payload.map_name} | CeleryTask:{self.request.id}]\n")
-            f.write("=== Coach Tactical Advice ===\n")
-            f.write(coach_advice + "\n")
-            f.write("=========================================\n")
-            
-        logger.info(f"====== [Celery Worker] 任务完成: {self.request.id} ======")
-        return {"status": "success", "coach_advice": coach_advice}
+        return _run_match_analysis(payload, self.request.id)
         
     except Exception as e:
         logger.error(f"Celery 执行阻断级异常: {e}", exc_info=True)
@@ -86,8 +109,8 @@ def parse_and_analyze_demo_task(self, file_path_str: str, original_filename: str
             }
         )
         
-        # 解析完成后，发送给核心分析队列
-        result = process_webhook_match_task(self, payload.model_dump())
+        # 解析完成后，复用统一的核心分析接口
+        result = _run_match_analysis(payload, self.request.id)
         return result
         
     except Exception as e:
@@ -108,9 +131,9 @@ def ingest_knowledge_task(self, source_text: str, source_name: str):
     独立任务：从原始文本中提取战术片段并插入 Milvus 向量库
     """
     logger.info(f"====== [Celery Worker] 开始知识摄取任务: {self.request.id} ======")
-    from app.services.knowledge_extraction_service import KnowledgeExtractionService
     try:
-        extractor = KnowledgeExtractionService()
+        from app.services.knowledge_extraction_service import KnowledgeExtractionService
+        extractor = KnowledgeExtractionService(get_llm(), get_kb_client())
         inserted_count = extractor.process_and_ingest(source_text, source_name)
         logger.info(f"====== [Celery Worker] 知识摄取任务完成: {self.request.id} ======")
         return {"status": "success", "inserted_count": inserted_count}

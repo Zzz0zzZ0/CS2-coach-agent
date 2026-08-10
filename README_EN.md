@@ -23,9 +23,9 @@
 It can:
 - Ingest `.dem` demo files directly, leveraging `demoparser2` to automatically parse kill chains, grenade landing positions, flash-blind sequences, and bomb plant events for every round.
 - Built-in **HLTV data scraper and demo downloader**, supporting automated acquisition of high-value professional match Demo datasets.
-- Drive five serial nodes (**Router → Retrieve → Critique → Analyst → Coach**) to form an end-to-end tactical inference pipeline with a built-in **Refine Loop for self-healing**.
-- The Critique node triggers an **automatic retry loop** when retrieval quality falls below a threshold, ensuring the context fed into the Analyst is always up to standard.
-- Extract core metrics such as ADR, KAST, and first-kill rate from an **HLTV Chief Data Analyst** perspective, then deliver a high-pressure tactical breakdown through a **B1ad3-style Coach**.
+- Drive **Supervisor (bounded tool calling) → Tools → Router → parallel task retrieval → Critique → Analyst → Coach → Verifier** with a feedback-based **Refine Loop**; knowledge ingestion requires verification, explicit approval, and a configuration switch.
+- The Critique node triggers a **feedback-based retry loop** when retrieval quality falls below a threshold; after the maximum attempts it preserves the low-quality signal instead of pretending the context passed.
+- Compute verifiable kill, first-kill, and round metrics in code first, then use an **HLTV Chief Data Analyst** and **B1ad3-style Coach** for reporting and tactical review; unavailable data is never fabricated as ADR/KAST.
 - Support both **FACEIT / 5E Webhook data streams** and **direct `.dem` file uploads** as data ingestion modes.
 - All heavy tasks are processed through a **Celery + Redis** async message queue, supporting high concurrency and horizontal scaling.
 
@@ -51,12 +51,11 @@ It can:
           ┌──────────────────────────────────────────────────────┐
           │        LangGraph Multi-Agent State Machine           │
           │                                                      │
-          │   [Router] ──► [Retrieve] ──► [Critique] ──► [Analyst] ──► [Coach]
-          │                    │              │                  │
-          │                    │    score<0.7? │                  │
-          │                    ◄──── Refine ───┘                  │
-          │               PRF Query Rewrite                 HLTV Data Report
-          │               MMR+Sparse Hybrid                 B1ad3 Review
+          │   [Supervisor] ──► [Tools] ──► [Router] ──► [Task Retrieval] ──► [Critique] ──► [Analyst] ──► [Coach] ──► [Verifier]
+          │                    │                    │                  │
+          │                    │       missing task? │                  │
+          │                    ◄──── Refine only failed tasks             │
+          │               opening/utility/round/map tasks          citation and fact checks
           └──────────────────────────────────────────────────────┘
                  │                       ▲
                  ▼                       │
@@ -74,11 +73,11 @@ It can:
 |-------|-----------|-------------|
 | **Web Layer** | FastAPI + Uvicorn | Async Webhook service, supporting `.dem` uploads and task status queries |
 | **Async Queue** | Celery + Redis | Enterprise background task queue for high concurrency & horizontal scaling |
-| **Agent Orchestration** | LangGraph (StateGraph) | Router → Retrieve → Critique → Analyst → Coach five-node pipeline with Refine Loop |
-| **Advanced Retrieval (RAG)** | LangChain + Milvus | PRF query rewriting + MMR diversity recall + BM25 sparse retrieval fusion (RRF hybrid ranking) |
+| **Agent Orchestration** | LangGraph (StateGraph) | Bounded tool calling → deterministic tools → parallel retrieval → rule/LLM review → analysis → coaching → citation verification |
+| **Retrieval (RAG)** | Milvus 2.6 + LangChain | Dense + native BM25 hybrid retrieval, RRF, parent context, corrective retrieval, and evidence tracing |
 | **LLM** | Alibaba Cloud DashScope / Qwen | `qwen-plus` model inference (via OpenAI-compatible API) |
-| **Embedding** | DashScopeEmbeddings | `text-embedding-v2` vectorization |
-| **Data Acquisition**| requests + BeautifulSoup4 | HLTV match data scraping and automated `.dem` downloads |
+| **Embedding** | FastEmbed + ONNX | Local multilingual embeddings without DashScope embedding usage |
+| **Data Acquisition**| DrissionPage | HLTV match data scraping and automated `.dem` downloads |
 | **Demo Parsing** | awpy + demoparser2 | Precise CS2 demo frame event extraction (kills/grenades/flashes/plants) |
 | **Architecture** | DDD (Domain-Driven Design) | High cohesion, low coupling Clean Architecture pattern |
 
@@ -91,15 +90,10 @@ It can:
 ```bash
 git clone https://github.com/Zzz0zzZ0/CS2-coach-agent.git
 cd CS2-coach-agent
-
-python -m venv .venv
-# Windows
-.\.venv\Scripts\Activate.ps1
-# Linux / macOS
-source .venv/bin/activate
-
-pip install -r requirements.txt
+make bootstrap
 ```
+
+`make bootstrap` creates the Python 3.11 virtual environment, installs runtime/development dependencies, and starts the Redis/Milvus infrastructure.
 
 ### 2. Configure Environment Variables
 
@@ -121,49 +115,59 @@ MILVUS_TOKEN=""
 # Celery Message Queue (requires local Redis)
 CELERY_BROKER_URL="redis://localhost:6379/0"
 CELERY_RESULT_BACKEND="redis://localhost:6379/1"
-
-
 ```
 
-### 3. Start Infrastructure
-
-Ensure **Redis** and **Milvus** are running (Docker recommended):
-
-```bash
-# Redis
-docker run -d --name redis -p 6379:6379 redis:latest
-
-# Milvus Standalone
-# See: https://milvus.io/docs/install_standalone-docker.md
-```
-
-### 4. Initialize the Tactical Knowledge Vector Store
+### 3. Initialize the Tactical Knowledge Vector Store
 
 ```bash
 python scripts/seed_knowledge.py
 ```
 
-> This step injects professional tactical analysis documents covering Mirage / Inferno / Dust2 / Nuke / Ancient into the knowledge base.
+> This reads `data/demos/*.dem`, builds structured documents for match summaries, opening-duel evidence, and round events, then replaces the old seed documents in `cs2_tactical_knowledge`. Run `python scripts/seed_knowledge.py --dry-run` first to inspect the document count.
 
-### 5. Start Celery Worker
+### GraphRAG sidecar
+
+Build the deterministic local graph from parsed Demo events:
 
 ```bash
-celery -A app.core.celery_app worker --loglevel=info
+make graph-build
 ```
 
-### 6. Usage
+The sidecar uses SQLite for match, map, round, event, and player relationships. It provides round-level local paths plus map-topic community summaries for global search across matches. Every summary keeps round source IDs and preserves the existing `[E#]` evidence contract. If the graph database is absent, the workflow falls back to Milvus only.
+
+### 4. Start the API and Worker
+
+```bash
+make dev
+```
+
+### 5. Usage
 
 **Option A: Analyze a local Demo directly (recommended for development)**
 ```bash
-python scripts/analyze_local.py data/your_match.dem
+make analyze DEMO=data/your_match.dem
 ```
 
-**Option B: Start the Web service to receive third-party Webhooks**
+**Option B: Fetch recent professional match Demos**
+
+By default, the scraper queries completed matches from the last 7 days with at least 2 HLTV stars and an explicitly available Demo. If that window has no usable Demos, it widens to the last 30 days and writes match manifests to `data/demos/manifests/`.
+
 ```bash
-python -m app.main
+# Discover matches only; do not download large archives
+make fetch-demos ARGS="--days 7 --min-rating 2 --max-matches 10"
+
+# Download and extract .dem files (requires unar, 7z, unrar, or bsdtar)
+make fetch-demos ARGS="--days 30 --min-rating 2 --max-matches 10 --download"
 ```
 
-Then send a POST request to `http://127.0.0.1:8000/api/webhook/match-end`:
+The downloader only follows an official Demo link exposed on the HLTV match page. It stores a per-match manifest, skips an existing manifest by default, and requires `--force` to download that match again.
+
+**Option C: Start the Web service to receive third-party Webhooks**
+```bash
+make dev
+```
+
+Then send a POST request to `http://127.0.0.1:8001/api/webhook/match-end`:
 
 ```json
 {
@@ -175,7 +179,7 @@ Then send a POST request to `http://127.0.0.1:8000/api/webhook/match-end`:
 
 Or upload a demo file directly:
 ```bash
-curl -X POST http://127.0.0.1:8000/api/upload-demo \
+curl -X POST http://127.0.0.1:8001/api/upload-demo \
   -F "file=@data/sample.dem"
 ```
 
@@ -193,18 +197,23 @@ CS2-coach-agent/
 ├── app/                           # DDD Architecture Main Application
 │   ├── main.py                    # FastAPI service entry point
 │   ├── api/                       # API Layer: FastAPI routers & dependency injection
-│   │   ├── dependencies.py        # LLM / Milvus singleton factory
+│   │   ├── dependencies.py        # FastAPI compatibility exports
 │   │   └── routers/
 │   │       ├── webhooks.py        # POST /api/webhook/match-end
 │   │       ├── uploads.py         # POST /api/upload-demo
 │   │       └── tasks.py           # GET  /api/tasks/{task_id}
 │   ├── core/                      # Core Configuration
 │   │   ├── config.py              # Centralized env variable management (Settings)
+│   │   ├── providers.py           # LLM / Milvus providers
 │   │   └── celery_app.py          # Celery application instance
 │   ├── domain/                    # Domain Models
-│   │   └── match_models.py        # Pydantic validation schemas
+│   │   ├── match_models.py        # Pydantic validation schemas
+│   │   └── analysis_models.py     # Metrics and analysis result models
 │   ├── services/                  # Application Services
-│   │   ├── rag_service.py         # Advanced RAG: PRF rewrite + MMR + sparse hybrid search
+│   │   ├── rag_service.py         # RAG: query rewrite + MMR retrieval
+│   │   ├── graph_rag_service.py    # GraphRAG: graph, communities, Global Search
+│   │   ├── metrics_service.py     # Deterministic match metrics
+│   │   ├── analysis_pipeline.py   # Unified analysis entry point
 │   │   ├── parser_service.py      # Demo parser: demoparser2 wrapper
 │   │   └── tasks.py               # Celery async task definitions
 │   ├── scrapers/                  # Data Acquisition Layer
@@ -214,19 +223,29 @@ CS2-coach-agent/
 │       ├── states.py              # GraphState global state definition
 │       ├── prompts.py             # Analyst / Coach prompt templates
 │       ├── workflow.py            # LangGraph state machine builder (with Refine Loop)
-│       └── nodes/                 # Five agent nodes
+│       └── nodes/                 # Controlled agent and deterministic tool nodes
+│           ├── supervisor_node.py # Supervisor: bounded analysis modes
+│           ├── tool_node.py       # Tools: deterministic metrics first
 │           ├── router_node.py     # Router: metadata extraction & filter signal
 │           ├── retrieve_node.py   # Retrieve: vector search dispatch
 │           ├── critique_node.py   # Critique: retrieval quality review (0.0-1.0)
 │           ├── analyst_node.py    # Analyst: HLTV cold data report
-│           └── coach_node.py      # Coach: B1ad3 tactical debrief
+│           ├── coach_node.py      # Coach: B1ad3 tactical debrief
+│           └── verify_node.py     # Verifier: citation and fact checks
 ├── scripts/                       # Utility Scripts
 │   ├── seed_knowledge.py          # Milvus knowledge base seed script
+│   ├── build_graph.py             # Build GraphRAG graph and communities
+│   ├── evaluate_retrieval.py      # Offline RAG smoke evaluation
+│   ├── fetch_recent_demos.py      # HLTV professional Demo fetch entrypoint
 │   ├── analyze_local.py           # Local demo direct analysis entry
 │   └── test_webhook.py            # Webhook API test script
 ├── test_main.py                   # End-to-end integration test
+├── test_agentic.py                # Agent orchestration and tool tests
+├── test_graph_rag.py              # GraphRAG path and Global Search tests
 ├── .env.example                   # Environment variable template
+├── Makefile                        # Simplified development entry points
 ├── requirements.txt               # Python dependencies
+├── requirements-dev.txt            # Development and test dependencies
 ├── data/                          # .dem demo files (local only, not committed)
 └── output/                        # Analysis results output (logs/JSON, not committed)
 ```
@@ -236,20 +255,41 @@ CS2-coach-agent/
 ## 🎭 Agent Role Design
 
 ### 🧭 Router (Metadata Extractor)
-> Uses LLM to intelligently extract structured metadata like map names from raw post-match data, generating filter signals for the downstream Retrieve node. **Silently degrades to global search on extraction failure.**
+> Uses normalized match metadata to generate retrieval filters, avoiding a redundant LLM extraction step.
+
+### 🧠 Supervisor / Tools (Controlled Orchestration and Tool Layer)
+> Supervisor uses the allowlisted `select_analysis_plan` tool to autonomously choose an analysis mode and retrieval tasks. Failed or unsupported tool calls fall back to deterministic routing. Tools computes deterministic metrics before any LLM reasoning.
 
 ### 📚 Retrieve (Tactical Knowledge Retriever)
-> Invokes the `KnowledgeBaseClient` advanced RAG pipeline: first uses LLM for PRF query rewriting, then performs RRF hybrid ranking through MMR + BM25 sparse retrieval to recall the most relevant tactical knowledge fragments.
+> Invokes `KnowledgeBaseClient` for LLM query rewriting followed by Milvus native dense + BM25 hybrid retrieval with parent context and evidence provenance.
+
+The knowledge base defaults to Milvus native dense + BM25 hybrid retrieval and preserves match/map parent summaries with each evidence hit. Set `RAG_HYBRID_ENABLED=false` for the legacy dense fallback. Run `make eval-rag` for the fixed-query retrieval smoke evaluation.
 
 ### ⚖️ Critique (Retrieval Quality Judge)
-> Acts as a demanding CS2 tactical judge, scoring retrieval results on a 0.0-1.0 scale. **When the score falls below 0.7 and retry count hasn't exceeded the limit, triggers a Refine Loop back to the Retrieve node for re-retrieval.**
+> Acts as a demanding CS2 tactical judge and returns structured retrieval feedback. **When the score falls below 0.7, that feedback is added to the next query, with up to three attempts.**
+
+### ✅ Verifier (Fact and Citation Checker)
+> Uses no LLM. It checks that `[E#]` citations exist, rejects unknown evidence IDs, and flags key recommendations without evidence markers.
 
 ### 🔬 Analyst (HLTV Chief Data Analyst)
-> Cold and objective. Extracts only ADR, KAST, first-kill rate, and other metrics from raw data. **Subjective recommendations are strictly forbidden.**
+> Cold and objective. Reports deterministic metrics and evidence; marks ADR, KAST, and other unavailable metrics as unavailable. **Subjective recommendations are strictly forbidden.**
 
 ### 🎯 Coach (B1ad3-Style Tactical Enforcer)
 > A frontline professional team coach. Uses professional jargon (Exec, Retake, Trading, Default Control) to conduct tactical deductions and debriefs based on the Analyst's report.
 > *Does not accept reports without coordinates, health values, or voice logs.*
+
+### 🔐 Knowledge Ingestion Review Gate
+> Self-learning ingestion is disabled by default. It runs only when `AUTO_INGEST_ENABLED=true`, `extra_data.knowledge_approved=true`, the source is marked high quality, and Verifier passes. Otherwise the result is returned as `knowledge_review.status=pending_review`; an operator can review it and submit it through `/api/knowledge/ingest`.
+
+### ✅ Local Validation
+
+```bash
+make test       # Unit and integration tests
+make eval-rag   # Fixed-query Milvus RAG evaluation
+make graph-build
+```
+
+Community summaries are currently deterministic and extractive: they summarize parsed facts, preserve round-level sources, and do not promote small-sample observations into universal professional tactics.
 
 ---
 

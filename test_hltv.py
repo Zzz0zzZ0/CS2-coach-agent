@@ -1,7 +1,8 @@
 import asyncio
-from hltv_async_api import Hltv
 
-async def test():
+async def probe():
+    from hltv_async_api import Hltv
+
     hltv = Hltv()
     print("Fetching recent results...")
     try:
@@ -22,4 +23,4 @@ async def test():
         traceback.print_exc()
 
 if __name__ == "__main__":
-    asyncio.run(test())
+    asyncio.run(probe())

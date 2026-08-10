@@ -4,7 +4,6 @@ from pydantic import BaseModel, Field
 from langchain_core.prompts import PromptTemplate
 from langchain_core.documents import Document
 from langchain_core.output_parsers import PydanticOutputParser
-from app.api.dependencies import get_llm, get_kb_client
 
 logger = logging.getLogger(__name__)
 
@@ -18,9 +17,9 @@ class ExtractionResult(BaseModel):
     tactics: List[TacticInfo] = Field(description="从文本中提取出的所有战术列表")
 
 class KnowledgeExtractionService:
-    def __init__(self):
-        self.llm = get_llm()
-        self.kb_client = get_kb_client()
+    def __init__(self, llm, kb_client):
+        self.llm = llm
+        self.kb_client = kb_client
         self.parser = PydanticOutputParser(pydantic_object=ExtractionResult)
         
         self.prompt = PromptTemplate(

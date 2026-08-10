@@ -5,7 +5,6 @@ import traceback
 import numpy as np
 import pandas as pd
 
-from awpy import Demo
 from demoparser2 import DemoParser
 
 logger = logging.getLogger(__name__)
@@ -37,6 +36,22 @@ class TacticalDemoParser:
             return bool(val)
         return str(val) if val is not None else None
 
+    def _parse_event(self, event_name: str, *, player=None, other=None) -> pd.DataFrame:
+        """Read one event with demoparser2's current API.
+
+        demoparser2 returns an empty list for events that do not occur in a
+        demo, while populated events are returned as DataFrames. Normalizing
+        both cases here keeps the rest of the pipeline format-independent.
+        """
+        if not self.parser:
+            return pd.DataFrame()
+        try:
+            frame = self.parser.parse_event(event_name, player=player, other=other)
+        except Exception as error:
+            logger.warning("Unable to parse demo event %s: %s", event_name, error)
+            return pd.DataFrame()
+        return frame if isinstance(frame, pd.DataFrame) else pd.DataFrame()
+
     def parse_to_dict(self) -> dict:
         if not self.parser:
             logger.error("解析引擎空转，因为并未成功持有一个真实的 .dem 文件句柄。")
@@ -45,18 +60,20 @@ class TacticalDemoParser:
         logger.info(f"🚀 核心解析引擎已挂载！开始切入 Demo: {self.demo_path}")
         
         try:
-            df_rounds_end = dict(self.parser.parse_events(["round_end"])).get("round_end", pd.DataFrame())
+            df_rounds_end = self._parse_event("round_end")
+            if "round" in df_rounds_end.columns:
+                df_rounds_end = df_rounds_end[df_rounds_end["round"] > 0].reset_index(drop=True)
             if df_rounds_end.empty:
                 logger.warning("并未捕获到有效回合数据，文件可能已损坏。")
                 return {}
 
-            df_kills = dict(self.parser.parse_events(["player_death"], player=["X", "Y", "Z"], other=["X", "Y", "Z"])).get("player_death", pd.DataFrame())
-            df_blind = dict(self.parser.parse_events(["player_blind"])).get("player_blind", pd.DataFrame())
-            df_bomb = dict(self.parser.parse_events(["bomb_planted"])).get("bomb_planted", pd.DataFrame())
+            df_kills = self._parse_event("player_death", player=["X", "Y", "Z"])
+            df_blind = self._parse_event("player_blind")
+            df_bomb = self._parse_event("bomb_planted")
             
-            df_smokes = dict(self.parser.parse_events(["smokegrenade_detonate"], player=["X", "Y", "Z"])).get("smokegrenade_detonate", pd.DataFrame())
-            df_inferno = dict(self.parser.parse_events(["inferno_startfire"], player=["X", "Y", "Z"])).get("inferno_startfire", pd.DataFrame())
-            df_he = dict(self.parser.parse_events(["hegrenade_detonate"], player=["X", "Y", "Z"])).get("hegrenade_detonate", pd.DataFrame())
+            df_smokes = self._parse_event("smokegrenade_detonate", player=["X", "Y", "Z"])
+            df_inferno = self._parse_event("inferno_startfire", player=["X", "Y", "Z"])
+            df_he = self._parse_event("hegrenade_detonate", player=["X", "Y", "Z"])
 
             try:
                 map_name = self.parser.parse_header().get('map_name', 'Unknown')
@@ -72,9 +89,9 @@ class TacticalDemoParser:
             logger.info(f"=== 地图识别完毕: [{map_name}], 共探测到 {len(df_rounds_end)} 个有效回合 ===")
 
             round_idx = 1
-            for idx, round_row in df_rounds_end.iterrows():
+            for position, (_, round_row) in enumerate(df_rounds_end.iterrows()):
                 current_tick = round_row.get("tick", 0)
-                prev_tick = df_rounds_end.iloc[idx - 1]["tick"] if idx > 0 else 0
+                prev_tick = df_rounds_end.iloc[position - 1]["tick"] if position > 0 else 0
                 
                 round_detail = {
                     "round_number": round_idx,

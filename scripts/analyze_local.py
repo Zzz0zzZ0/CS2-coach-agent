@@ -4,7 +4,6 @@
 """
 import sys
 import asyncio
-import json
 import logging
 from pathlib import Path
 
@@ -12,8 +11,9 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
 from app.services.parser_service import TacticalDemoParser
-from app.api.dependencies import get_llm, get_kb_client
-from app.agentic.workflow import create_workflow_app
+from app.core.providers import get_llm, get_kb_client
+from app.domain.match_models import MatchWebhookPayload
+from app.services.analysis_pipeline import AnalysisPipeline
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - [%(levelname)s] - %(message)s")
 logger = logging.getLogger(__name__)
@@ -35,31 +35,22 @@ async def analyze_demo(demo_path: str):
     
     logger.info(f"提取成功！比赛ID: {match_id} | 地图: {map_name} | 回合数: {total_rounds}")
 
-    # ===== 状态机构建 =====
-    raw_data_str = json.dumps(demo_dict, ensure_ascii=False)
-    if len(raw_data_str) > 8000:
-        logger.warning(f"数据量极大 ({len(raw_data_str)} chars)，截断至 8000 字符喂给分析师以防爆 Token。")
-        raw_data_str = raw_data_str[:8000] + "\n... [truncated for token limit]"
-
-    initial_state = {
-        "raw_data": raw_data_str,
-        "rag_context": "",
-        "analyst_report": "",
-        "coach_advice": ""
-    }
-
     logger.info("=== [Phase 2: 编排节点流转] 唤醒 LangGraph 多智能体... ===")
     try:
-        llm = get_llm()
-        kb_client = get_kb_client()
-        workflow_app = create_workflow_app(llm, kb_client)
-        final_state = await workflow_app.ainvoke(initial_state)
+        payload = MatchWebhookPayload(
+            match_id=match_id,
+            map_name=map_name,
+            rounds=demo_dict.get("rounds", []),
+            extra_data={"source": "local_demo", "filename": demo_path},
+        )
+        pipeline = AnalysisPipeline(get_llm(), get_kb_client())
+        result = await pipeline.analyze(payload)
     except Exception as e:
         logger.error(f"流转过程中发生异常: {e}", exc_info=True)
         return
 
-    analyst_report = final_state.get("analyst_report", "")
-    coach_advice   = final_state.get("coach_advice", "")
+    analyst_report = result.analyst_report
+    coach_advice = result.coach_advice
 
     # ===== 结果落地 =====
     OUTPUT_LOG_PATH.parent.mkdir(exist_ok=True)

@@ -1,5 +1,8 @@
+import asyncio
 import logging
-from typing import List
+import re
+from dataclasses import dataclass, field
+from typing import Any, Dict, List, Tuple
 
 from langchain_core.prompts import PromptTemplate
 from langchain_core.language_models.chat_models import BaseChatModel
@@ -8,15 +11,160 @@ from langchain_core.documents import Document
 
 logger = logging.getLogger(__name__)
 
+
+class MilvusHybridSearcher:
+    """Small adapter for Milvus native dense + BM25 retrieval."""
+
+    def __init__(self, client: Any, collection_name: str, embeddings: Any):
+        self.client = client
+        self.collection_name = collection_name
+        self.embeddings = embeddings
+
+    def search(self, query: str, expr: str | None, limit: int) -> List[Tuple[Document, float]]:
+        from pymilvus import AnnSearchRequest, RRFRanker
+
+        dense_request = AnnSearchRequest(
+            data=[self.embeddings.embed_query(query)],
+            anns_field="vector",
+            param={"metric_type": "COSINE", "params": {}},
+            limit=limit,
+            filter=expr,
+        )
+        sparse_request = AnnSearchRequest(
+            data=[query],
+            anns_field="sparse",
+            param={"metric_type": "BM25", "params": {}},
+            limit=limit,
+            filter=expr,
+        )
+        hits = self.client.hybrid_search(
+            collection_name=self.collection_name,
+            reqs=[dense_request, sparse_request],
+            ranker=RRFRanker(),
+            limit=limit,
+            output_fields=[
+                "map",
+                "side",
+                "tactic_type",
+                "source",
+                "match_id",
+                "round_number",
+                "parent_id",
+                "context_level",
+                "parent_content",
+                "text",
+            ],
+        )
+        rows = hits[0] if hits and isinstance(hits[0], list) else hits
+        result = []
+        for hit in rows or []:
+            entity = hit.get("entity", {})
+            content = entity.get("text", "")
+            if not content:
+                continue
+            metadata = {
+                key: entity.get(key)
+                for key in (
+                    "map",
+                    "side",
+                    "tactic_type",
+                    "source",
+                    "match_id",
+                    "round_number",
+                    "parent_id",
+                    "context_level",
+                    "parent_content",
+                )
+                if entity.get(key) is not None
+            }
+            result.append(
+                (
+                    Document(page_content=content, metadata=metadata),
+                    float(hit.get("distance", hit.get("score", 0.0))),
+                )
+            )
+        return result
+
+
+@dataclass(frozen=True)
+class Evidence:
+    """One traceable knowledge-base hit returned to the agent graph."""
+
+    content: str
+    metadata: Dict[str, Any]
+    score: float
+    source_id: str
+
+    def as_dict(self) -> Dict[str, Any]:
+        return {
+            "content": self.content,
+            "metadata": self.metadata,
+            "score": self.score,
+            "source_id": self.source_id,
+        }
+
+
+@dataclass
+class RetrievalResult:
+    """Structured retrieval output; callers may still use ``context``."""
+
+    query: str
+    rewritten_query: str
+    filters: Dict[str, Any] = field(default_factory=dict)
+    evidence: List[Evidence] = field(default_factory=list)
+    warnings: List[str] = field(default_factory=list)
+    strategy: str = "dense_lexical"
+    confidence: float = 0.0
+    corrected: bool = False
+
+    @property
+    def context(self) -> str:
+        return KnowledgeBaseClient.format_evidence_context(self.evidence)
+
+
 class KnowledgeBaseClient:
     """
-    高级战术检索器 (Advanced RAG System) 的服务封装。
-    实现了基于 MMR 的多样性检索，以及基于 LLM 的 PRF 查询重写。
+    战术检索器的服务封装。
+    实现了基于 MMR 的多样性检索，以及基于 LLM 的查询重写。
     """
 
-    def __init__(self, vectorstore: VectorStore, llm: BaseChatModel):
+    @staticmethod
+    def format_evidence_context(evidence: List[Any]) -> str:
+        """Format one or many evidence objects with stable global citations."""
+        if not evidence:
+            return "暂无匹配的历史上下文数据"
+        blocks = []
+        for index, item in enumerate(evidence, start=1):
+            metadata = item.metadata if hasattr(item, "metadata") else item.get("metadata", {})
+            content = item.content if hasattr(item, "content") else item.get("content", "")
+            source_id = item.source_id if hasattr(item, "source_id") else item.get("source_id", "unknown")
+            score = item.score if hasattr(item, "score") else item.get("score", 0.0)
+            source = metadata.get("source", source_id)
+            location = "/".join(
+                str(value)
+                for value in (
+                    metadata.get("map"),
+                    metadata.get("match_id"),
+                    metadata.get("round_number"),
+                )
+                if value not in (None, "", "0")
+            )
+            blocks.append(
+                f"[E{index}] source={source} location={location or 'unknown'} "
+                f"type={metadata.get('tactic_type', 'unknown')} score={score:.3f}\n"
+                + (
+                    f"Parent context: {metadata['parent_content']}\n"
+                    if metadata.get("parent_content") and metadata["parent_content"] != content
+                    else ""
+                )
+                + content
+            )
+        return "\n---\n".join(blocks)
+
+    def __init__(self, vectorstore: VectorStore, llm: BaseChatModel, hybrid_searcher: Any = None):
         self.vectorstore = vectorstore
         self.llm = llm
+        self.hybrid_searcher = hybrid_searcher
 
         self.rewrite_prompt = PromptTemplate(
             input_variables=["original_query"],
@@ -33,13 +181,110 @@ class KnowledgeBaseClient:
         """
         供 Agent 调用的高层接口，屏蔽了底层的 PRF 和 MMR 逻辑
         """
-        complex_query = await self._rewrite_query(query)
-        docs = self._hybrid_search(complex_query, metadata_filter)
-        if not docs:
-            return "暂无匹配的历史上下文数据"
-        return "\n---\n".join([doc.page_content for doc in docs])
+        result = await self.retrieve(query, metadata_filter=metadata_filter)
+        return result.context
+
+    async def retrieve(
+        self,
+        query: str,
+        metadata_filter: dict = None,
+        query_variants: List[str] = None,
+        k: int = 6,
+        fetch_k: int = 12,
+    ) -> RetrievalResult:
+        """Retrieve ranked, deduplicated evidence while keeping provenance."""
+        normalized_filters = self._normalize_filters(metadata_filter or {})
+        rewritten_query = await self._rewrite_query(query)
+        variants = self._unique_queries([rewritten_query, query, *(query_variants or [])])
+        candidates: Dict[str, Dict[str, Any]] = {}
+        errors = []
+        strategy = "hybrid_rrf" if self.hybrid_searcher else "dense_lexical"
+
+        async def collect(search_variants: List[str], search_limit: int) -> None:
+            for variant_index, variant in enumerate(search_variants):
+                try:
+                    hits = await self._search_variant(variant, normalized_filters, search_limit)
+                except Exception as error:
+                    logger.warning("[RAG] query variant failed: %s", error)
+                    errors.append(f"query variant failed: {type(error).__name__}")
+                    continue
+
+                for rank, (document, raw_score) in enumerate(hits, start=1):
+                    key = self._evidence_key(document)
+                    lexical_score = self._lexical_score(variant, document)
+                    parent_bonus = 0.08 if document.metadata.get("parent_content") else 0.0
+                    rank_score = lexical_score * 0.62 + (1.0 / (rank + 1)) * 0.3 + parent_bonus
+                    candidate = candidates.setdefault(
+                        key,
+                        {
+                            "document": document,
+                            "rank_score": 0.0,
+                            "raw_score": float(raw_score),
+                            "variant_index": variant_index,
+                            "lexical_score": 0.0,
+                        },
+                    )
+                    candidate["rank_score"] = max(candidate["rank_score"], rank_score)
+                    candidate["lexical_score"] = max(candidate["lexical_score"], lexical_score)
+
+        await collect(variants, min(fetch_k, 20))
+        initial_count = len(candidates)
+        top_score = max((item["rank_score"] for item in candidates.values()), default=0.0)
+        top_lexical = max((item["lexical_score"] for item in candidates.values()), default=0.0)
+        corrected = initial_count == 0 or top_score < 0.22 or top_lexical < 0.05
+        if corrected:
+            corrected_query = f"professional CS2 demo evidence tactical event {query}"
+            await collect([corrected_query], min(fetch_k * 2, 40))
+            if initial_count == 0 and not candidates:
+                errors.append("corrective retrieval returned no evidence")
+
+        ranked = sorted(
+            candidates.values(),
+            key=lambda item: item["rank_score"],
+            reverse=True,
+        )
+        evidence = []
+        for item in ranked[:k]:
+            document = item["document"]
+            evidence.append(
+                Evidence(
+                    content=document.page_content,
+                    metadata=dict(document.metadata),
+                    score=float(item["rank_score"]),
+                    source_id=self._evidence_key(document),
+                )
+            )
+
+        confidence = min(1.0, max((item.score for item in evidence), default=0.0))
+        return RetrievalResult(
+            query=query,
+            rewritten_query=rewritten_query,
+            filters=normalized_filters,
+            evidence=evidence,
+            warnings=list(dict.fromkeys(errors)),
+            strategy=strategy,
+            confidence=confidence,
+            corrected=corrected,
+        )
+
+    async def _search_variant(
+        self, query: str, metadata_filter: Dict[str, Any], limit: int
+    ) -> List[Tuple[Document, float]]:
+        expression = self._metadata_expr(metadata_filter)
+        if self.hybrid_searcher:
+            return await asyncio.to_thread(self.hybrid_searcher.search, query, expression, limit)
+        kwargs = {"k": limit}
+        if expression:
+            kwargs["expr"] = expression
+        return await asyncio.to_thread(
+            self.vectorstore.similarity_search_with_score,
+            query,
+            **kwargs,
+        )
 
     async def _rewrite_query(self, original_query: str) -> str:
+        if not self.llm:
+            return original_query
         try:
             logger.info(f"[PRF] 开始查询重写，原始查询: '{original_query[:50]}...'")
             chain = self.rewrite_prompt | self.llm
@@ -54,20 +299,79 @@ class KnowledgeBaseClient:
             logger.error(f"[PRF] 查询重写失败，退回原始查询。错误信息: {e}")
             return original_query
 
+    @staticmethod
+    def _unique_queries(queries: List[str]) -> List[str]:
+        result = []
+        seen = set()
+        for query in queries:
+            value = str(query or "").strip()
+            if value and value.lower() not in seen:
+                seen.add(value.lower())
+                result.append(value)
+        return result or ["CS2 tactical review"]
+
+    @staticmethod
+    def _normalize_filters(metadata_filter: Dict[str, Any]) -> Dict[str, Any]:
+        filters = dict(metadata_filter)
+        map_name = filters.get("map")
+        if isinstance(map_name, str) and map_name.lower().startswith("de_"):
+            filters["map"] = {
+                "de_ancient": "Ancient",
+                "de_dust2": "Dust2",
+                "de_inferno": "Inferno",
+                "de_mirage": "Mirage",
+                "de_nuke": "Nuke",
+                "de_overpass": "Overpass",
+                "de_vertigo": "Vertigo",
+            }.get(map_name.lower(), map_name[3:].title())
+        return filters
+
+    @staticmethod
+    def _metadata_expr(metadata_filter: Dict[str, Any]) -> str | None:
+        if not metadata_filter:
+            return None
+        parts = []
+        for key, value in metadata_filter.items():
+            if isinstance(value, str):
+                escaped = value.replace("\\", "\\\\").replace("'", "\\'")
+                parts.append(f"{key} == '{escaped}'")
+            else:
+                parts.append(f"{key} == {value}")
+        return " and ".join(parts)
+
+    @staticmethod
+    def _evidence_key(document: Document) -> str:
+        metadata = document.metadata
+        return "|".join(
+            str(value)
+            for value in (
+                metadata.get("source", "unknown"),
+                metadata.get("map", "unknown"),
+                metadata.get("round_number", "0"),
+                metadata.get("tactic_type", "unknown"),
+                document.page_content,
+            )
+        )
+
+    @staticmethod
+    def _lexical_score(query: str, document: Document) -> float:
+        tokens = set(re.findall(r"[a-z0-9_]+|[\u4e00-\u9fff]", query.lower()))
+        if not tokens:
+            return 0.0
+        haystack = " ".join(
+            [document.page_content.lower()]
+            + [str(value).lower() for value in document.metadata.values()]
+        )
+        return sum(token in haystack for token in tokens) / len(tokens)
+
     def _retrieve_with_mmr(self, query: str, metadata_filter: dict = None, k: int = 4, fetch_k: int = 20) -> List[Document]:
         logger.info(f"[MMR] 开始多边际检索 | 过滤: {metadata_filter} | 返回数: {k}")
         try:
+            normalized_filters = self._normalize_filters(metadata_filter or {})
             search_kwargs = {"k": k, "fetch_k": fetch_k, "lambda_mult": 0.5}
-            if metadata_filter:
-                # 适配 Milvus 的 expr 语法 (k == 'v')
-                expr_parts = []
-                for key, val in metadata_filter.items():
-                    if isinstance(val, str):
-                        expr_parts.append(f"{key} == '{val}'")
-                    else:
-                        expr_parts.append(f"{key} == {val}")
-                if expr_parts:
-                    search_kwargs["expr"] = " and ".join(expr_parts)
+            expression = self._metadata_expr(normalized_filters)
+            if expression:
+                search_kwargs["expr"] = expression
 
             retriever = self.vectorstore.as_retriever(search_type="mmr", search_kwargs=search_kwargs)
             docs = retriever.invoke(query)
@@ -75,76 +379,3 @@ class KnowledgeBaseClient:
         except Exception as e:
             logger.error(f"[MMR] 检索时发生异常: {e}")
             return []
-
-    def _sparse_search(self, query: str, docs: List[Document]) -> List[tuple[Document, float]]:
-        import re
-        import math
-        from collections import Counter
-        
-        query_words = re.findall(r'\w+', query.lower())
-        if not query_words:
-            return [(d, 0.0) for d in docs]
-        
-        num_docs = len(docs)
-        df = Counter()
-        doc_words_list = []
-        
-        for doc in docs:
-            words = re.findall(r'\w+', doc.page_content.lower())
-            doc_words_list.append(words)
-            for word in set(words):
-                df[word] += 1
-                
-        idf = {}
-        for word in query_words:
-            idf[word] = math.log((num_docs + 1) / (df[word] + 1)) + 1
-            
-        scored_docs = []
-        for i, doc in enumerate(docs):
-            words = doc_words_list[i]
-            tf = Counter(words)
-            score = 0.0
-            for word in query_words:
-                tf_score = tf[word] / (len(words) + 1e-6)
-                score += tf_score * idf.get(word, 0)
-            scored_docs.append((doc, score))
-            
-        scored_docs.sort(key=lambda x: x[1], reverse=True)
-        return scored_docs
-
-    def _hybrid_search(self, query: str, metadata_filter: dict = None, k: int = 4) -> List[Document]:
-        logger.info("[HybridSearch] 启动混合检索")
-        dense_docs = self._retrieve_with_mmr(query, metadata_filter=metadata_filter, k=k, fetch_k=20)
-        
-        filter_kwargs = {"where": metadata_filter} if metadata_filter else {}
-        try:
-            raw_coll = self.vectorstore._collection
-            candidate_resp = raw_coll.get(**filter_kwargs)
-            candidate_docs = []
-            if candidate_resp and candidate_resp.get('ids'):
-                for i in range(len(candidate_resp['ids'])):
-                    doc = Document(page_content=candidate_resp['documents'][i], metadata=candidate_resp['metadatas'][i])
-                    candidate_docs.append(doc)
-        except Exception as e:
-            logger.warning(f"[HybridSearch] 提取稀疏层候选集失败: {e}，将直接回落至单纯 Dense。")
-            return dense_docs
-
-        if not candidate_docs:
-            return dense_docs
-
-        sparse_scored = self._sparse_search(query, candidate_docs)
-        
-        doc_scores = {}
-        for rank, doc in enumerate(dense_docs):
-            doc_scores[doc.page_content] = {"doc": doc, "score": 1.0 / (60 + rank)}
-            
-        for rank, (doc, raw_score) in enumerate(sparse_scored[:20]):
-            content = doc.page_content
-            if content not in doc_scores:
-                doc_scores[content] = {"doc": doc, "score": 0.0}
-            doc_scores[content]["score"] += 1.0 / (60 + rank)
-            
-        fused = sorted(doc_scores.values(), key=lambda x: x["score"], reverse=True)
-        final_docs = [item["doc"] for item in fused[:k]]
-        
-        return final_docs

@@ -1,7 +1,7 @@
-import cloudscraper
-from bs4 import BeautifulSoup
+def probe():
+    import cloudscraper
+    from bs4 import BeautifulSoup
 
-def test():
     scraper = cloudscraper.create_scraper()
     print("Fetching HLTV results...")
     url = "https://www.hltv.org/results?stars=3"
@@ -22,4 +22,4 @@ def test():
         print("Error:", e)
 
 if __name__ == "__main__":
-    test()
+    probe()

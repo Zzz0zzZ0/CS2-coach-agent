@@ -23,9 +23,9 @@
 它能够：
 - 直接吃入 `.dem` 录像文件，通过 `demoparser2` 自动解析每一回合的击杀链、道具落点、闪光致盲序列和下包行为。
 - 内置 **HLTV 数据爬虫与录像下载器**，支持自动化获取职业赛事高价值 Demo 数据集。
-- 驱动五个串行节点（**Router → Retrieve → Critique → Analyst → Coach**）构成一条带有 **Refine Loop 自修复** 的端到端战术推演流水线。
-- Critique 节点在检索质量低于阈值时触发 **自动重试回路**，确保送入分析节点的上下文始终达标。
-- 以 **HLTV 首席数据师** 的冷酷视角提炼 ADR、KAST、首杀率等核心指标，再通过 **B1ad3 风格教练** 的高压战术复盘进行专业拆解。
+- 驱动 **Supervisor（受控 Tool Calling）→ Tools → Router → 并行任务检索 → Critique → Analyst → Coach → Verifier** 构成一条带有反馈式 **Refine Loop** 的端到端战术推演流水线；知识摄取必须通过验证、人工批准和配置开关三重闸门。
+- Critique 节点在检索质量低于阈值时触发 **反馈式重试回路**；达到最大尝试次数后会保留低质量标记并继续分析，不伪装成达标。
+- 由代码先计算可验证的击杀、首杀和回合指标，再通过 **HLTV 首席数据师** 与 **B1ad3 风格教练** 完成报告和战术复盘；缺失数据不会被伪造为 ADR/KAST。
 - 同时支持 **FACEIT / 5E Webhook 数据流** 和 **实体 `.dem` 文件上传** 两种数据接入模式。
 - 全部耗时任务通过 **Celery + Redis** 异步消息队列处理，支持高并发与横向扩展。
 
@@ -51,12 +51,11 @@
           ┌──────────────────────────────────────────────────────┐
           │        LangGraph 多智能体状态机 (Agentic Workflow)   │
           │                                                      │
-          │   [Router] ──► [Retrieve] ──► [Critique] ──► [Analyst] ──► [Coach]
-          │                    │              │                  │
-          │                    │    score<0.7? │                  │
-          │                    ◄──── Refine ───┘                  │
-          │               PRF重写查询                        HLTV数据报告
-          │               MMR+稀疏混合检索                   B1ad3高压复盘
+          │   [Supervisor] ──► [Tools] ──► [Router] ──► [Task Retrieval] ──► [Critique] ──► [Analyst] ──► [Coach] ──► [Verifier]
+          │                    │                    │                  │
+          │                    │       缺失任务?     │                  │
+          │                    ◄──── Refine only failed tasks             │
+          │               首杀/道具/回合/地图任务                  引用与事实校验
           └──────────────────────────────────────────────────────┘
                  │                       ▲
                  ▼                       │
@@ -74,11 +73,11 @@
 |------|------|------|
 | **Web 层** | FastAPI + Uvicorn | 异步 Webhook 服务，支持 `.dem` 文件上传及任务状态查询 |
 | **异步队列** | Celery + Redis | 企业级后台耗时任务队列，实现高并发与横向扩展 |
-| **智能体编排** | LangGraph (StateGraph) | Router → Retrieve → Critique → Analyst → Coach 五节点流水线，含 Refine Loop |
-| **高级检索 (RAG)** | LangChain + Milvus | PRF 查询重写 + MMR 多样性召回 + BM25 稀疏检索融合（RRF 混合排序） |
+| **智能体编排** | LangGraph (StateGraph) | 受控 Tool Calling → 确定性工具 → 并行检索 → 规则/LLM 评审 → 分析 → 教练 → 引用校验 |
+| **检索 (RAG)** | Milvus 2.6 + LangChain | dense + 原生 BM25 混合召回、RRF、父子上下文、纠错检索与证据追踪 |
 | **LLM** | 阿里云 DashScope / 通义千问 | `qwen-plus` 模型推理（通过 OpenAI 兼容接口接入） |
-| **Embedding** | DashScopeEmbeddings | `text-embedding-v2` 向量化 |
-| **数据采集** | requests + BeautifulSoup4 | HLTV 赛事数据爬取与 `.dem` 自动化下载 |
+| **Embedding** | FastEmbed + ONNX | 本地多语言 embedding，不消耗 DashScope embedding 额度 |
+| **数据采集** | DrissionPage | HLTV 赛事数据爬取与 `.dem` 自动化下载 |
 | **Demo 解析** | awpy + demoparser2 | CS2 录像帧事件精准提取（击杀链/道具/闪光/下包） |
 | **架构规范** | DDD (领域驱动设计) | 高内聚低耦合的 Clean Architecture 目录规范 |
 
@@ -91,15 +90,10 @@
 ```bash
 git clone https://github.com/Zzz0zzZ0/CS2-coach-agent.git
 cd CS2-coach-agent
-
-python -m venv .venv
-# Windows
-.\.venv\Scripts\Activate.ps1
-# Linux / macOS
-source .venv/bin/activate
-
-pip install -r requirements.txt
+make bootstrap
 ```
+
+`make bootstrap` 会创建 Python 3.11 虚拟环境、安装运行/开发依赖并启动 Redis/Milvus 基础设施。
 
 ### 2. 配置环境变量
 
@@ -121,49 +115,59 @@ MILVUS_TOKEN=""
 # Celery 消息队列（需要本地运行 Redis）
 CELERY_BROKER_URL="redis://localhost:6379/0"
 CELERY_RESULT_BACKEND="redis://localhost:6379/1"
-
-
 ```
 
-### 3. 启动基础设施
-
-确保 **Redis** 和 **Milvus** 服务已运行（推荐使用 Docker）：
-
-```bash
-# Redis
-docker run -d --name redis -p 6379:6379 redis:latest
-
-# Milvus Standalone
-# 参考: https://milvus.io/docs/install_standalone-docker.md
-```
-
-### 4. 初始化战术知识向量库
+### 3. 初始化战术知识向量库
 
 ```bash
 python scripts/seed_knowledge.py
 ```
 
-> 这一步会向知识库注入涵盖 Mirage / Inferno / Dust2 / Nuke / Ancient 的顶级战术分析片段。
+> 这一步会读取 `data/demos/*.dem`，按比赛摘要、首杀证据和回合事件生成结构化文档，并替换 `cs2_tactical_knowledge` 集合中的旧种子。可先执行 `python scripts/seed_knowledge.py --dry-run` 查看文档数量。
 
-### 5. 启动 Celery Worker
+### GraphRAG 图谱侧车
+
+GraphRAG 使用本地 SQLite 保存由 Demo 解析出的比赛、地图、回合、事件和玩家关系，不依赖付费 embedding，也不让 LLM 臆造图谱关系：
 
 ```bash
-celery -A app.core.celery_app worker --loglevel=info
+make graph-build
 ```
 
-### 6. 使用方式
+分析请求会自动并行检索 Milvus 与图谱。图谱包含两种检索层：回合级 Local Search 用于追溯事件路径，地图主题级 Community Summary + Global Search 用于跨比赛汇总。所有摘要都保留回合来源 ID，并以 `Graph ... Evidence` 和 `[E#]` 引用进入现有 Analyst、Coach、Verifier 链；没有 `data/graph/cs2_graph.sqlite` 时自动退回 Milvus。
+
+### 4. 启动 API 与 Worker
+
+```bash
+make dev
+```
+
+### 5. 使用方式
 
 **方式 A：直接分析本地 Demo（推荐开发使用）**
 ```bash
-python scripts/analyze_local.py data/your_match.dem
+make analyze DEMO=data/your_match.dem
 ```
 
-**方式 B：启动 Web 服务，接收第三方 Webhook**
+**方式 B：获取较新的职业比赛 Demo**
+
+默认查询最近 7 天、HLTV 至少 2 星且明确提供 Demo 的已结束比赛；如果窗口内没有可用 Demo，会自动扩大到最近 30 天，并把比赛元数据写入 `data/demos/manifests/`。
+
 ```bash
-python -m app.main
+# 只抓取比赛目录，不下载大文件
+make fetch-demos ARGS="--days 7 --min-rating 2 --max-matches 10"
+
+# 下载并解压 .dem 文件（需要本机有 unar、7z、unrar 或 bsdtar 之一）
+make fetch-demos ARGS="--days 30 --min-rating 2 --max-matches 10 --download"
 ```
 
-随后发送 POST 请求到 `http://127.0.0.1:8000/api/webhook/match-end`：
+下载器只接受 HLTV 比赛页明确暴露的官方 Demo 链接，不会把普通比赛页面误当作录像源；下载完成后会保留按比赛命名的 manifest，重复执行默认跳过已有 manifest，使用 `--force` 才会重新下载。
+
+**方式 C：启动 Web 服务，接收第三方 Webhook**
+```bash
+make dev
+```
+
+随后发送 POST 请求到 `http://127.0.0.1:8001/api/webhook/match-end`：
 
 ```json
 {
@@ -175,7 +179,7 @@ python -m app.main
 
 或者上传实体录像文件：
 ```bash
-curl -X POST http://127.0.0.1:8000/api/upload-demo \
+curl -X POST http://127.0.0.1:8001/api/upload-demo \
   -F "file=@data/sample.dem"
 ```
 
@@ -193,18 +197,23 @@ CS2-coach-agent/
 ├── app/                           # DDD 架构主应用
 │   ├── main.py                    # FastAPI 服务入口点
 │   ├── api/                       # 接入层：FastAPI 路由与依赖注入
-│   │   ├── dependencies.py        # LLM / Milvus 单例工厂
+│   │   ├── dependencies.py        # FastAPI 兼容依赖导出
 │   │   └── routers/
 │   │       ├── webhooks.py        # POST /api/webhook/match-end
 │   │       ├── uploads.py         # POST /api/upload-demo
 │   │       └── tasks.py           # GET  /api/tasks/{task_id}
 │   ├── core/                      # 核心配置
 │   │   ├── config.py              # 环境变量统一管理 (Settings)
+│   │   ├── providers.py           # LLM / Milvus provider
 │   │   └── celery_app.py          # Celery 应用实例
 │   ├── domain/                    # 领域模型
-│   │   └── match_models.py        # Pydantic 数据验证 Schema
+│   │   ├── match_models.py        # Pydantic 数据验证 Schema
+│   │   └── analysis_models.py     # 指标与分析结果模型
 │   ├── services/                  # 应用服务层
-│   │   ├── rag_service.py         # 高级 RAG：PRF 重写 + MMR + 稀疏混合检索
+│   │   ├── rag_service.py         # RAG：查询重写 + MMR 检索
+│   │   ├── graph_rag_service.py    # GraphRAG：图谱、社区摘要与 Global Search
+│   │   ├── metrics_service.py     # 确定性比赛指标计算
+│   │   ├── analysis_pipeline.py   # 统一分析入口
 │   │   ├── parser_service.py      # Demo 解析器：demoparser2 封装
 │   │   └── tasks.py               # Celery 异步任务定义
 │   ├── scrapers/                  # 数据采集层
@@ -214,19 +223,29 @@ CS2-coach-agent/
 │       ├── states.py              # GraphState 全局状态定义
 │       ├── prompts.py             # Analyst / Coach 提示词模板
 │       ├── workflow.py            # LangGraph 状态机构建 (含 Refine Loop)
-│       └── nodes/                 # 五个智能体节点
+│       └── nodes/                 # 受控 Agent 节点与确定性工具节点
+│           ├── supervisor_node.py # Supervisor：选择受控分析模式
+│           ├── tool_node.py       # Tools：先执行确定性指标计算
 │           ├── router_node.py     # Router：元数据抽取 & 过滤信号
 │           ├── retrieve_node.py   # Retrieve：向量检索调度
 │           ├── critique_node.py   # Critique：检索质量评审 (0.0-1.0)
 │           ├── analyst_node.py    # Analyst：HLTV 冷酷数据报告
-│           └── coach_node.py      # Coach：B1ad3 高压战术复盘
+│           ├── coach_node.py      # Coach：B1ad3 高压战术复盘
+│           └── verify_node.py     # Verifier：引用和事实校验
 ├── scripts/                       # 工具脚本
 │   ├── seed_knowledge.py          # Milvus 知识库初始化种子脚本
+│   ├── build_graph.py             # GraphRAG 图谱与社区摘要构建
+│   ├── evaluate_retrieval.py      # RAG 离线 smoke evaluation
+│   ├── fetch_recent_demos.py      # HLTV 职业 Demo 获取入口
 │   ├── analyze_local.py           # 本地 Demo 直接分析入口
 │   └── test_webhook.py            # Webhook 接口测试脚本
 ├── test_main.py                   # 端到端集成测试
+├── test_agentic.py                # Agent 编排与工具测试
+├── test_graph_rag.py              # GraphRAG 路径与 Global Search 测试
 ├── .env.example                   # 环境变量模板
+├── Makefile                        # 简化开发入口
 ├── requirements.txt               # Python 依赖
+├── requirements-dev.txt            # 开发与测试依赖
 ├── data/                          # .dem 录像文件存放（本地，不入库）
 └── output/                        # 分析结果输出（日志/JSON，不入库）
 ```
@@ -236,20 +255,41 @@ CS2-coach-agent/
 ## 🎭 智能体角色设计
 
 ### 🧭 Router（元数据抽取器）
-> 使用 LLM 从原始赛后数据中智能抽取地图名称等结构化元数据，生成过滤信号供下游 Retrieve 节点使用。**抽取失败时静默退化为全局检索。**
+> 使用规范化输入中的地图元数据生成过滤信号供下游 Retrieve 节点使用，避免让 LLM 重复抽取已有字段。
+
+### 🧠 Supervisor / Tools（受控编排与工具层）
+> Supervisor 通过白名单 `select_analysis_plan` 工具自主选择四种模式及检索任务；工具调用失败时自动回退到确定性路由。Tools 节点先运行确定性指标计算，LLM 只能解释其结果。
 
 ### 📚 Retrieve（战术知识检索器）
-> 调用 `KnowledgeBaseClient` 的高级 RAG 管线：先用 LLM 做 PRF 查询重写，再通过 MMR + BM25 稀疏检索的 RRF 混合排序召回最相关的战术知识片段。
+> 调用 `KnowledgeBaseClient`：先用 LLM 做查询重写，再通过 Milvus 原生 dense + BM25 混合检索并保留父摘要与证据来源。
+
+知识库默认使用 Milvus 原生 dense + BM25 混合检索，并在证据中保留比赛/地图父摘要；旧的 dense 集合仍可通过 `RAG_HYBRID_ENABLED=false` 走兼容 fallback。使用 `make eval-rag` 运行固定查询的离线 smoke evaluation。
 
 ### ⚖️ Critique（检索质量裁判）
-> 以苛刻的 CS2 战术法官身份，对检索结果进行 0.0-1.0 的质量打分。**当评分低于 0.7 且重试次数未超限时，触发 Refine Loop 回退至 Retrieve 节点重新检索。**
+> 以苛刻的 CS2 战术法官身份，对检索结果进行结构化质量评审。**评分低于 0.7 时，评审反馈会加入下一轮查询，最多重试三次。**
+
+### ✅ Verifier（事实与引用校验器）
+> 不调用 LLM，检查报告中的 `[E#]` 是否存在、是否有未知引用，以及关键建议是否缺少证据标记。
 
 ### 🔬 Analyst（HLTV 首席数据师）
-> 冷酷客观，仅从数据中提取 ADR、KAST、首杀率等指标。**绝对禁止给出主观建议。**
+> 冷酷客观，只陈述确定性指标和其证据；缺失 ADR、KAST 等原始数据时明确标记 unavailable。**绝对禁止给出主观建议。**
 
 ### 🎯 Coach（B1ad3 风格战术执行官）
 > 一线职业队教练。根据数据师的报告，使用专业黑话（Exec、Retake、Trading、默认控制权）进行战术推演和复盘。
 > *不接受"没坐标、没血量、没语音日志"的汇报。*
+
+### 🔐 知识摄取审核闸门
+> 自学习入库默认关闭。只有 `AUTO_INGEST_ENABLED=true`、输入标记 `extra_data.knowledge_approved=true`、来源标记为高质量且 Verifier 通过时，分析任务才会提交入库；否则结果会返回 `knowledge_review.status=pending_review`，可由人工确认后调用手动 `/api/knowledge/ingest`。
+
+### ✅ 本地验证
+
+```bash
+make test       # 单元与集成测试
+make eval-rag   # 固定查询的 Milvus RAG 评估
+make graph-build
+```
+
+GraphRAG 当前采用确定性抽取式社区摘要；摘要只概括解析到的事实，并保留回合来源，不把小样本观察直接升级为职业战术定律。
 
 ---
 

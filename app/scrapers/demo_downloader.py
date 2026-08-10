@@ -1,113 +1,131 @@
-import os
-import uuid
-import shutil
-import aiohttp
 import asyncio
-import subprocess
 import logging
+import re
+import shutil
+import subprocess
+import time
+import uuid
 from pathlib import Path
 
+from app.core.config import settings
+
 logger = logging.getLogger(__name__)
-DOWNLOAD_DIR = Path("d:/newproject/data/demos")
+DOWNLOAD_DIR = Path(settings.DEMO_DOWNLOAD_DIR)
+
+
+def safe_match_name(value: str) -> str:
+    value = re.sub(r"[^A-Za-z0-9._-]+", "_", value).strip("._")
+    return value[:160] or f"match_{uuid.uuid4().hex[:8]}"
+
+
+def _extract_archive(archive_path: Path, extract_dir: Path) -> bool:
+    """Use an installed native archive tool; keep the archive if none works."""
+    extract_dir.mkdir(parents=True, exist_ok=True)
+    commands = [
+        ["unar", "-o", str(extract_dir), str(archive_path)],
+        ["7z", "x", "-y", f"-o{extract_dir}", str(archive_path)],
+        ["7zz", "x", "-y", f"-o{extract_dir}", str(archive_path)],
+        ["unrar", "x", "-o+", str(archive_path), str(extract_dir)],
+        ["bsdtar", "-xf", str(archive_path), "-C", str(extract_dir)],
+        ["bz.exe", "x", f"-o:{extract_dir}", str(archive_path)],
+    ]
+    for command in commands:
+        if shutil.which(command[0]) is None:
+            continue
+        try:
+            subprocess.run(command, check=True, capture_output=True)
+            return True
+        except subprocess.CalledProcessError as error:
+            logger.warning("Archive extractor %s failed: %s", command[0], error.stderr.decode(errors="ignore"))
+    return False
+
 
 async def download_and_extract_demo(demo_url: str, match_name: str) -> list[str]:
-    """
-    下载 rar 文件并使用 Bandizip (bz.exe) 解压出 .dem 文件。
-    返回解压后的 .dem 文件绝对路径列表。
-    """
+    """Download a HLTV archive and return extracted .dem paths."""
     DOWNLOAD_DIR.mkdir(parents=True, exist_ok=True)
-    rar_name = f"{match_name}_{uuid.uuid4().hex[:6]}.rar"
-    rar_path = DOWNLOAD_DIR / rar_name
-    extract_dir = DOWNLOAD_DIR / f"{match_name}_extract"
-    
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
-        "Referer": "https://www.hltv.org/"
+    safe_name = safe_match_name(match_name)
+    archive_path = DOWNLOAD_DIR / f"{safe_name}_{uuid.uuid4().hex[:6]}.rar"
+    extract_dir = DOWNLOAD_DIR / f"{safe_name}_extract"
+
+    logger.info("Downloading demo from %s to %s", demo_url, DOWNLOAD_DIR)
+
+    before_files = {
+        path.resolve() for path in DOWNLOAD_DIR.iterdir() if path.is_file()
     }
-    
-    logger.info(f"Downloading demo using DrissionPage from {demo_url} to {DOWNLOAD_DIR}...")
-    
-    # 1. 下载 RAR
+    before_archives = {path.resolve() for path in DOWNLOAD_DIR.glob("*.rar")}
+
     def _download_sync():
         from DrissionPage import ChromiumPage, ChromiumOptions
+
         co = ChromiumOptions()
         co.headless(False)
-        co.set_argument('--window-position=-2000,-2000')
-        co.set_paths(download_path=r"d:\newproject\data\demos")
+        co.set_argument("--window-position=-2000,-2000")
+        co.set_paths(download_path=str(DOWNLOAD_DIR.absolute()))
         page = ChromiumPage(co)
+        page.set.download_path(str(DOWNLOAD_DIR.absolute()))
         try:
-            # 开启拦截下载
-            mission = page.get(demo_url)
-            # 等待下载开始并获取任务对象
-            page.wait.download_begin()
-            # 等待所有下载任务完成
-            page.wait.all_downloads_done()
-            # 由于可能下载的文件名是未知的（服务器返回），我们尝试从目录中找到最新的 rar，或者依赖重命名
-            # 但是最简单的办法是抓取刚刚创建的 rar
-            # 不过我们后续可以直接扫描 extract_dir，但原代码期望知道 rar_path
-        except Exception as e:
-            logger.error(f"Error downloading {demo_url} via DrissionPage: {e}")
+            page.get(demo_url)
+            deadline = time.time() + 300
+            last_size = -1
+            stable_checks = 0
+            while time.time() < deadline:
+                archives = [
+                    path
+                    for path in DOWNLOAD_DIR.glob("*.rar")
+                    if path.resolve() not in before_archives
+                ]
+                if archives:
+                    current_size = max(path.stat().st_size for path in archives)
+                    if current_size == last_size and current_size > 0:
+                        stable_checks += 1
+                        if stable_checks >= 3:
+                            return
+                    else:
+                        stable_checks = 0
+                        last_size = current_size
+                time.sleep(2)
+            raise TimeoutError("Timed out waiting for the new HLTV archive")
         finally:
             page.quit()
 
     try:
         await asyncio.to_thread(_download_sync)
-    except Exception as e:
-        logger.error(f"Error executing download thread: {e}")
-        return []
-    
-    # 因为 DrissionPage 接管下载后，文件名是服务器指定的（如 IEM-Chengdu-2024-xxx.rar）
-    # 我们需要在 DOWNLOAD_DIR 中找到最新下载的 rar
-    try:
-        rars = list(DOWNLOAD_DIR.glob("*.rar"))
-        if not rars:
-            logger.error("No downloaded rar found.")
-            return []
-        rars.sort(key=lambda x: x.stat().st_mtime, reverse=True)
-        actual_rar_path = rars[0]
-        # 重命名为我们期望的 rar_path
-        if actual_rar_path != rar_path:
-            actual_rar_path.rename(rar_path)
-    except Exception as e:
-        logger.error(f"Failed to locate or rename downloaded rar: {e}")
+    except Exception:
+        logger.exception("Failed to download demo archive")
         return []
 
-    logger.info(f"Download complete. Extracting {rar_path} to {extract_dir} using Bandizip...")
-    
-    # 2. 解压 (依赖系统中已安装并加到PATH的 Bandizip CLI: bz.exe)
-    extract_dir.mkdir(parents=True, exist_ok=True)
-    try:
-        # Bandizip 解压命令: bz.exe x -o:[dir] [archive]
-        subprocess.run(["bz.exe", "x", f"-o:{str(extract_dir)}", str(rar_path)], check=True, capture_output=True)
-        logger.info("Extraction successful.")
-    except FileNotFoundError:
-        logger.error("Bandizip (bz.exe) not found in PATH! Cannot extract.")
-        # 回退清理压缩包
-        if rar_path.exists():
-            rar_path.unlink()
+    new_archives = [
+        path for path in DOWNLOAD_DIR.glob("*.rar") if path.resolve() not in before_archives
+    ]
+    if not new_archives:
+        logger.error("HLTV download completed without a new .rar archive")
         return []
-    except subprocess.CalledProcessError as e:
-        logger.error(f"Extraction failed: {e.stderr.decode('utf-8', errors='ignore')}")
+    actual_archive = max(new_archives, key=lambda path: path.stat().st_mtime)
+    actual_archive.rename(archive_path)
+
+    for path in DOWNLOAD_DIR.iterdir():
+        if not path.is_file() or path.resolve() in before_files or path == archive_path:
+            continue
+        try:
+            path.unlink()
+            logger.info("Removed temporary download artifact: %s", path.name)
+        except OSError:
+            logger.warning("Could not remove temporary download artifact: %s", path)
+
+    if not _extract_archive(archive_path, extract_dir):
+        logger.error("No working archive extractor found; archive retained at %s", archive_path)
         return []
-        
-    # 3. 收集 .dem 文件
-    dem_files = list(extract_dir.rglob("*.dem"))
+
+    dem_files = sorted(extract_dir.rglob("*.dem"))
     results = []
-    
-    for i, dem in enumerate(dem_files):
-        new_name = DOWNLOAD_DIR / f"{match_name}_map{i+1}.dem"
-        # 覆盖同名文件
-        if new_name.exists():
-            new_name.unlink()
-        dem.rename(new_name)
-        results.append(str(new_name.absolute()))
-        logger.info(f"Extracted and prepared dem file: {new_name}")
-        
-    # 4. 清理残留包和解压目录
-    try:
-        rar_path.unlink(missing_ok=True)
-        shutil.rmtree(extract_dir, ignore_errors=True)
-    except Exception as e:
-        logger.warning(f"Cleanup warning: {e}")
-        
+    for index, dem in enumerate(dem_files, start=1):
+        target = DOWNLOAD_DIR / f"{safe_name}_map{index}.dem"
+        if target.exists():
+            target.unlink()
+        dem.rename(target)
+        results.append(str(target.absolute()))
+        logger.info("Extracted demo: %s", target)
+
+    archive_path.unlink(missing_ok=True)
+    shutil.rmtree(extract_dir, ignore_errors=True)
     return results

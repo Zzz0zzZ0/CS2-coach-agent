@@ -16,11 +16,12 @@ async def upload_and_analyze_demo(file: UploadFile = File(...)):
     接受直接从客户端上传的 .dem 物理文件。
     将文件流转交给 Celery 后台解析。
     """
-    if not file.filename.endswith('.dem'):
+    filename = file.filename or ""
+    if not filename.lower().endswith('.dem'):
         raise HTTPException(status_code=400, detail="Only .dem files are allowed.")
     
     os.makedirs("data", exist_ok=True)
-    safe_filename = f"{uuid.uuid4().hex[:8]}_{file.filename}"
+    safe_filename = f"{uuid.uuid4().hex[:8]}_{Path(filename).name}"
     file_path = Path("data") / safe_filename
     
     try:

@@ -8,3 +8,7 @@ class MatchWebhookPayload(BaseModel):
     extra_data: Dict[str, Any] = Field(default_factory=dict, description="其他未明确定义的结构数据兜底")
 
     model_config = ConfigDict(extra="allow")
+
+    @property
+    def is_high_quality(self) -> bool:
+        return bool(self.extra_data.get("is_high_quality", False))

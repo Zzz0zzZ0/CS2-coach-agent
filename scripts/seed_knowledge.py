@@ -1,141 +1,329 @@
+"""Build the tactical knowledge base from parsed professional demos.
+
+The seed is deliberately deterministic: it stores observed match evidence and
+does not ask an LLM to invent tactical conclusions from a small sample.
+
+Usage:
+    make seed
+    .venv/bin/python scripts/seed_knowledge.py --dry-run
 """
-战术知识库种子脚本 —— 向 Milvus 注入 CS2 战术知识文档。
-用法: python scripts/seed_knowledge.py
-"""
+import argparse
+import json
+import logging
 import os
+import re
 import sys
+from collections import Counter
 from pathlib import Path
+
 from dotenv import load_dotenv
-
-# 确保从项目根目录加载 .env
-load_dotenv(dotenv_path=Path(__file__).parent.parent / ".env")
-
-from langchain_community.embeddings import DashScopeEmbeddings
-from langchain_community.vectorstores import Milvus
 from langchain_core.documents import Document
+from pymilvus import DataType, Function, FunctionType, MilvusClient
 
-# ============================================================
-# 硬核 CS2 战术种子数据（顶级分析师视角）
-# ============================================================
-CS2_TACTICAL_DOCS = [
-    Document(
-        page_content=(
-            "[Mirage A区防守 - CT Default Setup] "
-            "标准CT防守A区需构建两层交叉火力（Crossfire）：主防站位于警家（Jungle），副防巡逻跳台（Ticket Booth）。"
-            "当T方尝试A1爆弹（A Ramp Execute）时，警家守角CT需第一时间卡住Short角防止A1被快速清场；"
-            "跳台CT负责压制A主道（A Main）的挤压推进。"
-            "标准防守Util配置：警家一颗HE+燃烧弹（Molotov）封A1出口，Cross区顶楼甩一颗Flashbang致盲入场T。"
-            "若T方给出VIP烟雾（Jungle smoke）断视野后执行爆弹，CT须立即启动Retake预案："
-            "A包点CT后退至CT通道（CT Spawn）等待主队Retake集结，Anchor one player at site until tradeouts are confirmed。"
-            "禁忌动作：在信息真空时从警家Dry-peek A主道，极易被预瞄吃掉导致2换0劣势。"
-        ),
-        metadata={"map": "Mirage", "side": "CT", "tactic_type": "Default Defensive Setup & Retake"}
-    ),
-    Document(
-        page_content=(
-            "[Inferno 香蕉道（Banana）争夺 - T方默认流程与CT反清] "
-            "T方开局默认抢占香蕉道控制权的标准序列（Default Banana Take）："
-            "Round start即向树位（Tree/Logs）投掷燃烧弹（Incendiary）驱逐前顶CT；"
-            "随后一人进入半墙（Half-wall）位与沙袋（Sandbags）位构成交叉压制，逼迫CT退守Banana尽头。"
-            "CT方反制（Counter-take）：需两人配合，一人从B包点（B Site）门洞抛出高闪（Pop-flash），"
-            "另一人在闪光爆出同时Peek半墙，利用对方致盲窗口完成First Blood争夺。"
-            "CT若放弃香蕉控制权缩回B包点，T方将把烟雾落在棺材（Car）、警家（CT）、B门三点，"
-            "形成完整Exec压制：进场后Anchor一人守棺材交叉角，主推强行清Car背板和B门警家位。"
-            "数据参考：职业赛事中，Inferno CT方在Banana被完全放弃后，B包点Retake成功率仅约31%。"
-        ),
-        metadata={"map": "Inferno", "side": "Both", "tactic_type": "Map Control & Utility Exec"}
-    ),
-    Document(
-        page_content=(
-            "[Dust2 中路控制与A/B分割进攻（Mid Split）] "
-            "T方中路控制的核心在于Xbox烟（X-box smoke）配合门烟（Doors smoke）安全穿越中路。"
-            "过中后兵分两路执行Split：一路从A小道（Short）爆A区（需Short烟+CT家烟封堵回防），"
-            "另一路绕B中门（Mid-to-B）从隧道上方强下B区，利用CT双向拉扯无法同时兼顾的信息差完成爆弹。"
-            "时间节点是关键：Xbox烟必须在Round开始后≤5秒落地，否则CT有足够时间前压中路抢占优势角。"
-            "CT反制：可安排一人Middle Doors卡窗口，以AWP点杀过中T；主防B区CT须提前感知中出方向，"
-            "避免在B Long与Short两路夹击下陷入1v2的Crossfire困境。"
-            "Lurk战术补充：T方可留一人在A Long假装施压牵制CT注意力，为Split主攻方向创造时间差。"
-        ),
-        metadata={"map": "Dust2", "side": "T", "tactic_type": "Mid Control & Split Execute"}
-    ),
-    Document(
-        page_content=(
-            "[Nuke 外场（Outside）控制与上下包夹（Vertical Split）] "
-            "Nuke的核心地图控制逻辑在于外场（Outside）与Ramp的双重压制。"
-            "T方夺取外场后可选择通过Season（外场楼梯）进入上包（Upper Site），"
-            "或绕行Ramp下压Lower Site，形成CT需要同时兼顾上下两层的Vertical Split困境。"
-            "职业标准Util序列（T侧）：外场Molotov清Heaven位（Squeaky门正上方），"
-            "Smoke封锁Hut视野，Flashbang从Outside墙面反弹致盲Yard区CT后再强进Ramp。"
-            "CT防守要点：必须在T方拿到外场控制前完成Ramp断前（通常2人组合利用Ramp入口角）。"
-            "若外场失守，退守原则：Upper守角ST（Squeaky-to-电话亭）交叉，Lower保持Trophy-Lockers"
-            " crossfire，绝对禁止单人从Ramp干探，否则必遭Trade击杀。"
-            "核心数据：Nuke上包在外场完全失控情形下，CT Retake胜率不足25%，属于高风险被动态势。"
-        ),
-        metadata={"map": "Nuke", "side": "Both", "tactic_type": "Vertical Control & Site Split"}
-    ),
-    Document(
-        page_content=(
-            "[Ancient B区慢推（Slow Play）与Lurk接应策略] "
-            "Ancient地图B区慢推（Slow Play）是高Elo对局中极为主流的消耗策略。"
-            "T方一名Lurker提前卡住中路会议室（Cave），通过信息骚扰牵制CT回防节奏；"
-            "其余四人在B区逐步推进，利用Donut（圆形通道）与B门的双向进攻路径制造选择压力。"
-            "关键道具：B主道进场需提前给出遮蔽CT包点（Site）视野的烟雾，覆盖CT进场角与Pillar后站位；"
-            "一颗Molotov精准落在B包点中央可有效拆散CT的交叉火力（Crossfire）站位。"
-            "CT侧应对：B区Anchor需维持Pillar交叉—禁止贴墙单线防守，必须与支援位形成夹角。"
-            "当Cave方向出现压力信号时，CT必须依赖Radio（语音纪律）传递信息，"
-            "确认Lurk位置后方可动用人数优势Flank包抄，否则盲目Rotate将暴露A区空档。"
-            "数据参考：职业赛事中Ancient B区慢推战术的爆弹成功率约为42%，高于全图平均水平。"
-        ),
-        metadata={"map": "Ancient", "side": "T", "tactic_type": "Slow Methodical Push & Lurk Support"}
-    ),
-]
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+load_dotenv(dotenv_path=PROJECT_ROOT / ".env")
+
+sys.path.insert(0, str(PROJECT_ROOT))
+from app.core.config import settings  # noqa: E402
+from app.core.providers import get_embeddings  # noqa: E402
+from app.services.parser_service import TacticalDemoParser  # noqa: E402
+
+logger = logging.getLogger(__name__)
+COLLECTION_NAME = "cs2_tactical_knowledge"
+MAP_NAMES = {
+    "de_ancient": "Ancient",
+    "de_dust2": "Dust2",
+    "de_inferno": "Inferno",
+    "de_mirage": "Mirage",
+    "de_nuke": "Nuke",
+    "de_overpass": "Overpass",
+    "de_vertigo": "Vertigo",
+}
 
 
-def seed_milvus_db() -> None:
-    collection_name = "cs2_tactical_knowledge"
-    milvus_uri = os.getenv("MILVUS_URI", "http://localhost:19530")
-    milvus_token = os.getenv("MILVUS_TOKEN", "")
+def _map_name(raw_name: str) -> str:
+    return MAP_NAMES.get(raw_name, raw_name.removeprefix("de_").title())
 
-    print(f"=== [战术知识库初始化] 目标: Milvus @ {milvus_uri} ===")
 
-    # 初始化 DashScope Embeddings
-    api_key = os.getenv("DASHSCOPE_API_KEY")
-    if not api_key:
-        print("ERROR: 未找到 DASHSCOPE_API_KEY，请检查 .env 配置文件。")
-        sys.exit(1)
+def _match_id_from_path(path: Path) -> str:
+    match = re.search(r"-(\d{5,})-", path.stem)
+    return match.group(1) if match else path.stem
 
-    embeddings = DashScopeEmbeddings(
-        model="text-embedding-v2",
-        dashscope_api_key=api_key
+
+def _manifest_for(path: Path) -> dict:
+    manifest_path = path.parent / "manifests" / f"{_match_id_from_path(path)}.json"
+    if not manifest_path.exists():
+        return {}
+    try:
+        return json.loads(manifest_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        logger.warning("Invalid demo manifest: %s", manifest_path)
+        return {}
+
+
+def _text(value, fallback: str = "Unknown") -> str:
+    if value is None or str(value) in {"", "None", "nan"}:
+        return fallback
+    return str(value)
+
+
+def _event_counts(rounds: list[dict]) -> dict[str, int]:
+    counts = Counter()
+    for round_data in rounds:
+        counts["kills"] += len(round_data.get("kills", []))
+        counts["grenades"] += len(round_data.get("grenades", []))
+        counts["flash_blinds"] += len(round_data.get("flash_blinds", []))
+        counts["plants"] += len(round_data.get("plants", []))
+    return dict(counts)
+
+
+def _metadata(
+    *,
+    map_name: str,
+    match_id: str,
+    tactic_type: str,
+    round_number: str = "0",
+    parent_id: str = "",
+    context_level: str = "evidence",
+    parent_content: str = "",
+) -> dict[str, str]:
+    return {
+        "map": map_name,
+        "side": "Both",
+        "tactic_type": tactic_type,
+        "source": f"hltv_demo:{match_id}",
+        "match_id": match_id,
+        "round_number": round_number,
+        "parent_id": parent_id,
+        "context_level": context_level,
+        "parent_content": parent_content,
+    }
+
+
+def _round_content(map_name: str, round_data: dict) -> str:
+    round_number = _text(round_data.get("round_number"), "?")
+    winner = _text(round_data.get("winner"))
+    reason = _text(round_data.get("reason"))
+    kills = round_data.get("kills", [])
+    grenades = round_data.get("grenades", [])
+    blinds = round_data.get("flash_blinds", [])
+    plants = round_data.get("plants", [])
+
+    kill_lines = []
+    for kill in kills:
+        killer = _text(kill.get("killer"))
+        victim = _text(kill.get("victim"))
+        weapon = _text(kill.get("weapon"))
+        first = " [first kill]" if kill.get("is_first_kill") else ""
+        kill_lines.append(f"{killer} killed {victim} with {weapon}{first}")
+
+    grenade_counts = Counter(_text(grenade.get("type")) for grenade in grenades)
+    grenade_text = ", ".join(f"{kind}: {count}" for kind, count in sorted(grenade_counts.items()))
+    plant_text = ", ".join(
+        f"{_text(plant.get('planter'))} at {_text(plant.get('site'))}" for plant in plants
     )
 
-    # 通过 LangChain Milvus 封装直接写入
-    print(f"-> 正在向量化并写入 {len(CS2_TACTICAL_DOCS)} 条战术文档到 Collection '{collection_name}' ...")
+    sections = [
+        f"[Professional Demo Evidence | {map_name} | Round {round_number}]",
+        f"Round winner: {winner}. End reason: {reason}.",
+        f"Kills ({len(kills)}): " + ("; ".join(kill_lines) if kill_lines else "none recorded."),
+        f"Grenades ({len(grenades)}): " + (grenade_text or "none recorded."),
+        f"Flash blinds: {len(blinds)}.",
+        f"Bomb plants ({len(plants)}): " + (plant_text or "none recorded."),
+        "This entry records parsed events only; it does not assert a causal tactical conclusion.",
+    ]
+    return " ".join(sections)
 
-    try:
-        from pymilvus import connections
-        connections.connect("default", uri=milvus_uri, token=milvus_token)
-    except Exception as e:
-        print(f"Failed to connect to Milvus directly: {e}")
 
-    try:
-        vectorstore = Milvus.from_documents(
-            documents=CS2_TACTICAL_DOCS,
-            embedding=embeddings,
-            connection_args={
-                "uri": milvus_uri,
-                "token": milvus_token,
-            },
-            collection_name=collection_name,
-            drop_old=False,
+def _build_documents(demo_dir: Path) -> list[Document]:
+    documents: list[Document] = []
+    demo_paths = sorted(demo_dir.glob("*.dem"))
+    if not demo_paths:
+        raise FileNotFoundError(f"No .dem files found in {demo_dir}")
+
+    for demo_path in demo_paths:
+        parsed = TacticalDemoParser(str(demo_path)).parse_to_dict()
+        rounds = parsed.get("rounds", []) if parsed else []
+        if not rounds:
+            logger.warning("Skipping demo without parsed rounds: %s", demo_path)
+            continue
+
+        map_name = _map_name(_text(parsed.get("map_name"), "Unknown"))
+        match_id = _match_id_from_path(demo_path)
+        manifest = _manifest_for(demo_path)
+        match = manifest.get("match", {})
+        teams = f"{_text(match.get('team1'))} vs {_text(match.get('team2'))}"
+        event = _text(match.get("event"))
+        counts = _event_counts(rounds)
+        winners = Counter(_text(item.get("winner")) for item in rounds)
+        first_kills = [
+            kill
+            for item in rounds
+            for kill in item.get("kills", [])
+            if kill.get("is_first_kill")
+        ]
+        first_kill_weapons = Counter(_text(kill.get("weapon")) for kill in first_kills)
+        first_kill_players = Counter(_text(kill.get("killer")) for kill in first_kills)
+
+        base = (
+            f"[Professional Demo Summary | {map_name}] Match {teams}, event {event}, "
+            f"HLTV match id {match_id}. Source file: {demo_path.name}. "
         )
-        print(f"\n✅ 战术知识库初始化成功，共写入 {len(CS2_TACTICAL_DOCS)} 条记录。")
-        print("Advanced RAG 模块弹药装填完毕，等待 Webhook 实战唤醒。")
-    except Exception as e:
-        print(f"\n❌ 写入 Milvus 失败: {e}")
-        print("请确保 Milvus 服务已启动且 .env 中的 MILVUS_URI 配置正确。")
-        sys.exit(1)
+        summary = (
+            base
+            + f"Parsed {len(rounds)} rounds, {counts.get('kills', 0)} kills, "
+            + f"{len(first_kills)} first kills, {counts.get('grenades', 0)} grenades, "
+            + f"{counts.get('flash_blinds', 0)} flash-blind events, and {counts.get('plants', 0)} bomb plants. "
+            + "Round winners: "
+            + ", ".join(f"{side} {count}" for side, count in sorted(winners.items()))
+            + ". This is a factual event summary from a professional demo; tactical causality requires coach review."
+        )
+        parent_id = f"{match_id}:{map_name}:summary"
+        documents.append(
+            Document(
+                page_content=summary,
+                metadata=_metadata(
+                    map_name=map_name,
+                    match_id=match_id,
+                    tactic_type="Professional Match Summary",
+                    parent_id=parent_id,
+                    context_level="parent",
+                    parent_content=summary,
+                ),
+            )
+        )
+
+        opening = (
+            base
+            + f"Opening-duel evidence: {len(first_kills)} first kills. "
+            + "Weapons: "
+            + (", ".join(f"{weapon} {count}" for weapon, count in first_kill_weapons.most_common()) or "none")
+            + ". First-kill players: "
+            + (", ".join(f"{player} {count}" for player, count in first_kill_players.most_common()) or "none")
+            + ". Individual round evidence is stored separately."
+        )
+        documents.append(
+            Document(
+                page_content=opening,
+                metadata=_metadata(
+                    map_name=map_name,
+                    match_id=match_id,
+                    tactic_type="Opening Duel Evidence",
+                    parent_id=parent_id,
+                    parent_content=summary,
+                ),
+            )
+        )
+
+        for round_data in rounds:
+            round_number = _text(round_data.get("round_number"), "0")
+            documents.append(
+                Document(
+                    page_content=_round_content(map_name, round_data),
+                    metadata=_metadata(
+                        map_name=map_name,
+                        match_id=match_id,
+                        tactic_type="Round Event Evidence",
+                        round_number=round_number,
+                        parent_id=parent_id,
+                        parent_content=summary,
+                    ),
+                )
+            )
+
+    return documents
+
+
+def seed_milvus_db(documents: list[Document], *, append: bool = False) -> None:
+    milvus_uri = os.getenv("MILVUS_URI", "http://localhost:19530")
+    milvus_token = os.getenv("MILVUS_TOKEN", "")
+    embeddings = get_embeddings()
+    print(
+        f"=== [职业 Demo 战术知识库初始化] Milvus @ {milvus_uri} | "
+        f"documents={len(documents)} | replace={not append} ==="
+    )
+    client = MilvusClient(uri=milvus_uri, token=milvus_token)
+    if append and client.has_collection(COLLECTION_NAME):
+        fields = client.describe_collection(COLLECTION_NAME).get("fields", [])
+        field_names = {field.get("name") for field in fields}
+        if "sparse" not in field_names:
+            raise RuntimeError("现有集合不支持 BM25，请先用默认的 make seed 重建，不能对旧 dense 集合 append。")
+    elif client.has_collection(COLLECTION_NAME):
+        client.drop_collection(COLLECTION_NAME)
+
+    vectors = embeddings.embed_documents([document.page_content for document in documents])
+    if not append or not client.has_collection(COLLECTION_NAME):
+        schema = client.create_schema(auto_id=True, enable_dynamic_field=False)
+        schema.add_field(field_name="pk", datatype=DataType.INT64, is_primary=True, auto_id=True)
+        schema.add_field(field_name="map", datatype=DataType.VARCHAR, max_length=65535)
+        schema.add_field(field_name="side", datatype=DataType.VARCHAR, max_length=65535)
+        schema.add_field(field_name="tactic_type", datatype=DataType.VARCHAR, max_length=65535)
+        schema.add_field(field_name="source", datatype=DataType.VARCHAR, max_length=65535)
+        schema.add_field(field_name="match_id", datatype=DataType.VARCHAR, max_length=65535)
+        schema.add_field(field_name="round_number", datatype=DataType.VARCHAR, max_length=65535)
+        schema.add_field(field_name="parent_id", datatype=DataType.VARCHAR, max_length=65535)
+        schema.add_field(field_name="context_level", datatype=DataType.VARCHAR, max_length=65535)
+        schema.add_field(field_name="parent_content", datatype=DataType.VARCHAR, max_length=65535)
+        schema.add_field(
+            field_name="text",
+            datatype=DataType.VARCHAR,
+            max_length=65535,
+            enable_analyzer=True,
+        )
+        schema.add_field(field_name="vector", datatype=DataType.FLOAT_VECTOR, dim=len(vectors[0]))
+        schema.add_field(field_name="sparse", datatype=DataType.SPARSE_FLOAT_VECTOR)
+        schema.add_function(
+            Function(
+                name="text_bm25_emb",
+                input_field_names=["text"],
+                output_field_names=["sparse"],
+                function_type=FunctionType.BM25,
+            )
+        )
+        index_params = client.prepare_index_params()
+        index_params.add_index(field_name="vector", index_type="AUTOINDEX", metric_type="COSINE")
+        index_params.add_index(
+            field_name="sparse",
+            index_type="SPARSE_INVERTED_INDEX",
+            metric_type="BM25",
+            params={"inverted_index_algo": "DAAT_MAXSCORE", "bm25_k1": 1.2, "bm25_b": 0.75},
+        )
+        client.create_collection(
+            collection_name=COLLECTION_NAME,
+            schema=schema,
+            index_params=index_params,
+        )
+
+    rows = []
+    for document, vector in zip(documents, vectors):
+        rows.append(
+            {
+                **document.metadata,
+                "text": document.page_content,
+                "vector": vector,
+            }
+        )
+    client.insert(COLLECTION_NAME, rows)
+    client.flush(COLLECTION_NAME)
+    client.load_collection(COLLECTION_NAME)
+    print(f"✅ 已写入 {len(documents)} 条结构化 Demo 证据到 '{COLLECTION_NAME}'。")
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Seed Milvus from parsed professional CS2 demos")
+    parser.add_argument("--demo-dir", type=Path, default=Path(settings.DEMO_DOWNLOAD_DIR))
+    parser.add_argument("--dry-run", action="store_true", help="parse and count documents without writing Milvus")
+    parser.add_argument("--append", action="store_true", help="append instead of replacing the collection")
+    args = parser.parse_args()
+
+    logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
+    documents = _build_documents(args.demo_dir)
+    counts = Counter(document.metadata["tactic_type"] for document in documents)
+    print(f"发现 {len(documents)} 条文档: {dict(counts)}")
+    if args.dry_run:
+        return
+    seed_milvus_db(documents, append=args.append)
 
 
 if __name__ == "__main__":
-    seed_milvus_db()
+    main()

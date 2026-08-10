@@ -1,4 +1,5 @@
 import logging
+import json
 from app.agentic.states import GraphState
 from app.agentic.prompts import COACH_PROMPT
 from langchain_core.prompts import PromptTemplate
@@ -16,7 +17,13 @@ def create_coach_node(llm):
         chain = prompt | llm
         
         response = await chain.ainvoke({
-            "analyst_report": state.get("analyst_report", "")
+            "analyst_report": state.get("analyst_report", ""),
+            "metrics": json.dumps(state.get("metrics", {}), ensure_ascii=False),
+            "analysis_mode": state.get("analysis_mode", "demo_forensic"),
+            "supervisor_decision": json.dumps(
+                state.get("supervisor_decision", {}), ensure_ascii=False
+            ),
+            "rag_context": state.get("rag_context", ""),
         })
         coach_advice = response.content if hasattr(response, 'content') else str(response)
 
