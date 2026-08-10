@@ -3,7 +3,7 @@ import uuid
 import shutil
 import logging
 from pathlib import Path
-from fastapi import APIRouter, HTTPException, UploadFile, File
+from fastapi import APIRouter, File, Form, HTTPException, UploadFile
 
 from app.services.tasks import parse_and_analyze_demo_task
 
@@ -11,7 +11,10 @@ logger = logging.getLogger(__name__)
 router = APIRouter()
 
 @router.post("/upload-demo", status_code=200)
-async def upload_and_analyze_demo(file: UploadFile = File(...)):
+async def upload_and_analyze_demo(
+    file: UploadFile = File(...),
+    analysis_mode: str = Form(default="demo_forensic"),
+):
     """
     接受直接从客户端上传的 .dem 物理文件。
     将文件流转交给 Celery 后台解析。
@@ -32,7 +35,9 @@ async def upload_and_analyze_demo(file: UploadFile = File(...)):
         raise HTTPException(status_code=500, detail="Failed to save demo file.")
         
     # 交给 MQ 独立解析
-    task = parse_and_analyze_demo_task.delay(str(file_path), safe_filename)
+    task = parse_and_analyze_demo_task.delay(
+        str(file_path), safe_filename, analysis_mode=analysis_mode
+    )
     
     return {
         "status": "processing_in_mq", 

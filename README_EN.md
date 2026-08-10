@@ -83,6 +83,105 @@ It can:
 
 ---
 
+## 🔬 Technical Implementation Details
+
+### 1. Data Flow: Demo to Coaching Advice
+
+```text
+.dem / Webhook JSON
+        │
+        ▼
+TacticalDemoParser
+        │  round_end / player_death / grenade / flash / bomb events
+        ▼
+Structured MatchWebhookPayload
+        │
+        ├── Tools: deterministic metrics
+        ├── Milvus: hybrid text retrieval
+        ├── GraphRAG: relationship paths and community summaries
+        │
+        ▼
+Critique: task coverage, map match, evidence count and relevance
+        │  retry only missing tasks, up to three attempts
+        ▼
+Analyst: facts only
+        ▼
+Coach: evidence-bound tactical advice
+        ▼
+Verifier: [E#] citation and unsupported-claim checks
+```
+
+The parser stores observable events and does not directly infer that a utility caused a round win. Causal interpretation is left to Analyst/Coach and must remain tied to evidence, keeping raw facts, model interpretation, and coaching recommendations separate.
+
+### 2. LangGraph State Machine and Bounded Agents
+
+All nodes communicate through `GraphState`. Important fields include:
+
+| Field | Purpose |
+|-------|---------|
+| `metrics` | Code-computed round, kill, first-kill, and player metrics |
+| `analysis_plan` | Router tasks for opening, utility, round flow, and map context |
+| `retrieval_task_results` | Per-task coverage, source counts, and warnings |
+| `retrieval_evidence` | Traceable evidence normalized into `[E#]` citations |
+| `agent_trace` / `tool_trace` | Execution trace shown by the frontend |
+| `verification_report` | Unknown citations, missing citations, and review status |
+
+The Supervisor may choose an analysis mode through an allowlisted tool, but cannot create graph nodes, execute code, access the network, or write to the knowledge base. Unsupported or failed tool calls use a deterministic fallback, so model output cannot change the workflow topology.
+
+### 3. Milvus Hybrid RAG
+
+The vector collection is `cs2_tactical_knowledge`. Each document keeps `map`, `match_id`, `round_number`, `tactic_type`, `parent_id`, and `parent_content` metadata.
+
+Each retrieval follows this sequence:
+
+1. Rewrite the natural-language query into CS2 terminology; fall back to the original query when the LLM is unavailable.
+2. Generate a 384-dimensional dense embedding locally with FastEmbed/ONNX, avoiding paid embedding API usage.
+3. Run native Milvus BM25 sparse retrieval and merge dense/sparse results with RRF.
+4. Retrieve original, rewritten, and task-variant queries, then rerank using lexical overlap, rank, and parent-context bonus.
+5. Deduplicate with stable evidence keys and reserve a small slice for every task so one topic cannot consume the whole context window.
+6. Let Critique retry only uncovered tasks instead of repeating successful retrieval work.
+
+If Milvus is unavailable, the workflow can continue with GraphRAG factual paths; if the GraphRAG database is absent, it falls back to Milvus.
+
+### 4. Two-Level GraphRAG Retrieval
+
+GraphRAG uses a standard-library SQLite sidecar and does not replace Milvus:
+
+```text
+nodes:
+  match → map → round → event → player
+
+edges:
+  HAS_MAP / HAS_ROUND / KILL / USES_UTILITY /
+  FLASH_BLIND / PLANTS_BOMB / KILLER / VICTIM
+```
+
+- Local Search filters rounds by map, task, and keywords, then returns evidence along `map → round → event → player` paths.
+- Community Summary aggregates rounds by “map × topic”; topics currently include overview, opening, utility, and round_flow.
+- Global Search ranks multiple community summaries and returns their round source IDs; Analyst/Coach performs the final cross-community synthesis.
+
+Community summaries are deterministic and extractive. They report observed rounds, matches, kills, first kills, utilities, plants, winners, and opening players; they do not promote a small sample into a universal professional tactic.
+
+### 5. Frontend Review Console
+
+`frontend/` is an independent React + Vite application that uses the `/api` proxy and does not duplicate backend business logic:
+
+- The upload form submits a `.dem` and `analysis_mode`; the backend returns a Celery `task_id`.
+- The console polls `GET /api/tasks/{task_id}` every two seconds and renders the `analysis` payload after SUCCESS.
+- The dashboard shows metrics, the Agent execution chain, Analyst/Coach reports, Verifier status, and `[E#]` evidence.
+- The GraphRAG panel loads maps, nodes/edges, and Global Search results through read-only endpoints.
+- The subgraph is drawn with SVG instead of a large visualization dependency; CSS breakpoints collapse the layout on mobile.
+
+### 6. Reliability and Review Boundaries
+
+- Deterministic metrics run before any LLM call; missing ADR/KAST cannot be fabricated.
+- Critique evaluates evidence relevance and coverage, not whether the model agrees with a tactic.
+- Verifier is LLM-free and checks unknown `[E#]` citations, unsupported key recommendations, and verification status.
+- Automatic knowledge ingestion is disabled by default and requires a high-quality source, explicit human approval, and a passing Verifier.
+- Demos, parsed outputs, the SQLite graph, Milvus volumes, and `.env` are local runtime data and are excluded from Git.
+
+---
+
 ## 🚀 Quick Start
 
 ### 1. Clone and Initialize Environment
@@ -141,7 +240,27 @@ The sidecar uses SQLite for match, map, round, event, and player relationships. 
 make dev
 ```
 
-### 5. Usage
+### 5. Start the Frontend Review Console
+
+In a second terminal:
+
+```bash
+make frontend-install
+make frontend
+```
+
+Open `http://localhost:5173`. The console provides Demo upload, async progress, metric cards, Analyst/Coach reports, evidence citations, a GraphRAG subgraph, and Global Search. Vite proxies `/api` requests to port `8001`.
+
+Read-only GraphRAG display endpoints:
+
+```text
+GET /api/graph/stats
+GET /api/graph/maps
+GET /api/graph/search?q=...
+GET /api/graph/subgraph?map_name=Mirage
+```
+
+### 6. Usage
 
 **Option A: Analyze a local Demo directly (recommended for development)**
 ```bash
@@ -185,7 +304,7 @@ curl -X POST http://127.0.0.1:8001/api/upload-demo \
 
 Query async task status:
 ```bash
-curl http://127.0.0.1:8000/api/tasks/{task_id}
+curl http://127.0.0.1:8001/api/tasks/{task_id}
 ```
 
 ---
@@ -201,6 +320,7 @@ CS2-coach-agent/
 │   │   └── routers/
 │   │       ├── webhooks.py        # POST /api/webhook/match-end
 │   │       ├── uploads.py         # POST /api/upload-demo
+│   │       ├── graph.py           # GET  /api/graph/*
 │   │       └── tasks.py           # GET  /api/tasks/{task_id}
 │   ├── core/                      # Core Configuration
 │   │   ├── config.py              # Centralized env variable management (Settings)
@@ -246,6 +366,10 @@ CS2-coach-agent/
 ├── Makefile                        # Simplified development entry points
 ├── requirements.txt               # Python dependencies
 ├── requirements-dev.txt            # Development and test dependencies
+├── frontend/                       # React + Vite review console
+│   ├── src/main.jsx                # Dashboard and GraphRAG UI
+│   ├── src/api.js                  # Backend request helpers
+│   └── src/styles.css              # Dark tactical console styling
 ├── data/                          # .dem demo files (local only, not committed)
 └── output/                        # Analysis results output (logs/JSON, not committed)
 ```

@@ -86,7 +86,14 @@ def process_webhook_match_task(self, payload_dict: dict):
         raise e
 
 @celery_app.task(bind=True, name="parse_and_analyze_demo_task")
-def parse_and_analyze_demo_task(self, file_path_str: str, original_filename: str = "", is_high_quality: bool = True, auto_delete: bool = False):
+def parse_and_analyze_demo_task(
+    self,
+    file_path_str: str,
+    original_filename: str = "",
+    is_high_quality: bool = True,
+    auto_delete: bool = False,
+    analysis_mode: str = "demo_forensic",
+):
     """
     独立任务：解析物理 Demo，然后生成 payload，再进行后续分析
     """
@@ -105,7 +112,8 @@ def parse_and_analyze_demo_task(self, file_path_str: str, original_filename: str
             extra_data={
                 "source": "direct_upload", 
                 "filename": original_filename or Path(file_path_str).name,
-                "is_high_quality": is_high_quality
+                "is_high_quality": is_high_quality,
+                "analysis_mode": analysis_mode,
             }
         )
         

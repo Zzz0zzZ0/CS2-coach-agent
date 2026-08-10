@@ -2,7 +2,7 @@ import logging
 import uvicorn
 from fastapi import FastAPI
 from app.core.config import settings
-from app.api.routers import webhooks, uploads, tasks, knowledge, scrapers
+from app.api.routers import webhooks, uploads, tasks, knowledge, scrapers, graph
 
 logging.basicConfig(
     level=logging.INFO,
@@ -21,6 +21,7 @@ app.include_router(uploads.router, prefix="/api", tags=["uploads"])
 app.include_router(tasks.router, prefix="/api/tasks", tags=["tasks"])
 app.include_router(knowledge.router, prefix="/api/knowledge", tags=["knowledge"])
 app.include_router(scrapers.router, prefix="/api", tags=["scrapers"])
+app.include_router(graph.router, prefix="/api")
 
 if __name__ == "__main__":
     uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)

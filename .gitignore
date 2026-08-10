@@ -11,6 +11,7 @@ venv/
 *.egg-info/
 dist/
 build/
+frontend/node_modules/
 
 # 用户上传的 Demo 和解析输出（含比赛原始录像及 LLM 输出）
 data/

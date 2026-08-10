@@ -139,6 +139,80 @@ class GraphRAGClient:
         finally:
             connection.close()
 
+    def maps(self) -> list[str]:
+        if not self.available():
+            return []
+        connection = self._connect()
+        try:
+            return [
+                row[0]
+                for row in connection.execute(
+                    "SELECT DISTINCT map_name FROM nodes "
+                    "WHERE node_type='map' ORDER BY map_name"
+                ).fetchall()
+            ]
+        finally:
+            connection.close()
+
+    def subgraph(self, map_name: str | None, limit_nodes: int, limit_edges: int) -> dict:
+        """Return a bounded graph projection suitable for a browser canvas."""
+        connection = self._connect()
+        try:
+            columns = "node_id,node_type,label,map_name,match_id,round_number,properties"
+            anchors = connection.execute(
+                f"SELECT {columns} FROM nodes WHERE (? IS NULL OR map_name=?) "
+                "AND node_type IN ('match','map') ORDER BY node_type,node_id",
+                (map_name, map_name),
+            ).fetchall()
+            remaining = max(0, limit_nodes - len(anchors))
+            round_limit = min(24, remaining // 2 or remaining)
+            rounds = connection.execute(
+                f"SELECT {columns} FROM nodes WHERE (? IS NULL OR map_name=?) "
+                "AND node_type='round' ORDER BY match_id,round_number LIMIT ?",
+                (map_name, map_name, round_limit),
+            ).fetchall()
+            remaining -= len(rounds)
+            events = connection.execute(
+                f"SELECT {columns} FROM nodes WHERE (? IS NULL OR map_name=?) "
+                "AND node_type='event' ORDER BY match_id,round_number,node_id LIMIT ?",
+                (map_name, map_name, remaining),
+            ).fetchall()
+            rows = [*anchors, *rounds, *events]
+            node_ids = {row["node_id"] for row in rows}
+            if not node_ids:
+                return {"nodes": [], "edges": []}
+            placeholders = ",".join("?" for _ in node_ids)
+            edge_rows = connection.execute(
+                f"SELECT source_id,relation,target_id FROM edges "
+                f"WHERE source_id IN ({placeholders}) AND target_id IN ({placeholders}) "
+                "LIMIT ?",
+                [*node_ids, *node_ids, limit_edges],
+            ).fetchall()
+            return {
+                "nodes": [
+                    {
+                        "id": row["node_id"],
+                        "type": row["node_type"],
+                        "label": row["label"],
+                        "map": row["map_name"],
+                        "match_id": row["match_id"],
+                        "round_number": row["round_number"],
+                        "properties": json.loads(row["properties"]),
+                    }
+                    for row in rows
+                ],
+                "edges": [
+                    {
+                        "source": row["source_id"],
+                        "relation": row["relation"],
+                        "target": row["target_id"],
+                    }
+                    for row in edge_rows
+                ],
+            }
+        finally:
+            connection.close()
+
     def _connect(self) -> sqlite3.Connection:
         connection = sqlite3.connect(self.db_path)
         connection.row_factory = sqlite3.Row

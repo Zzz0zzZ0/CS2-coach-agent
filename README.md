@@ -83,6 +83,105 @@
 
 ---
 
+## 🔬 技术实现详解
+
+### 1. 从 Demo 到教练建议的数据流
+
+```text
+.dem / Webhook JSON
+        │
+        ▼
+TacticalDemoParser
+        │  round_end / player_death / grenade / flash / bomb events
+        ▼
+结构化 MatchWebhookPayload
+        │
+        ├── Tools：计算确定性指标
+        ├── Milvus：混合文本检索
+        ├── GraphRAG：关系路径与社区摘要检索
+        │
+        ▼
+Critique：任务覆盖、地图匹配、证据数量与相关性评分
+        │  只重试缺失任务，最多三次
+        ▼
+Analyst：只陈述数据事实
+        ▼
+Coach：基于数据和证据生成战术建议
+        ▼
+Verifier：校验 [E#] 引用和无证据建议
+```
+
+Demo 解析层只保存可观测事件，不直接推断“某个道具导致了胜利”。因果判断留给 Analyst/Coach，并要求引用证据。这使原始事实、模型解释和教练建议在系统中可以区分。
+
+### 2. LangGraph 状态机与受控 Agent
+
+所有节点通过 `GraphState` 传递状态，关键字段包括：
+
+| 字段 | 作用 |
+|------|------|
+| `metrics` | 代码计算的回合、击杀、首杀和玩家指标 |
+| `analysis_plan` | Router 生成的 opening / utility / round flow / map context 任务 |
+| `retrieval_task_results` | 每个检索任务的覆盖度、来源数量和告警 |
+| `retrieval_evidence` | 统一的可追溯证据，最终映射为 `[E#]` |
+| `agent_trace` / `tool_trace` | 前端展示 Supervisor、Tools 和检索执行过程 |
+| `verification_report` | 未知引用、缺失引用和审核状态 |
+
+Supervisor 可以通过白名单 Tool Calling 选择分析模式，但不能创建新节点、执行代码、访问网络或直接写入知识库。Tool Calling 失败时使用确定性 fallback，因此模型输出不会改变工作流拓扑。
+
+### 3. Milvus Hybrid RAG
+
+当前向量检索集合为 `cs2_tactical_knowledge`，每条文档保留 `map`、`match_id`、`round_number`、`tactic_type`、`parent_id` 和 `parent_content` 等元数据。
+
+一次检索包含以下步骤：
+
+1. LLM 将口语查询改写为 CS2 专业术语查询；LLM 不可用时退回原查询。
+2. 使用本地 FastEmbed/ONNX 模型生成 384 维 dense embedding，避免调用付费 embedding API。
+3. Milvus 原生 BM25 对文本字段进行稀疏检索，dense 与 sparse 结果使用 RRF 合并。
+4. 查询原文、改写查询和任务变体共同召回，按 lexical overlap、rank 和 parent-context bonus 重新排序。
+5. 使用稳定的 evidence key 去重，并为每个任务优先保留少量证据，避免某一个主题占满上下文。
+6. Critique 只把未覆盖的任务加入下一次检索，不重复执行已经通过的任务。
+
+当 Milvus 不可用时，系统仍可用 GraphRAG 事实路径继续工作；当 GraphRAG 数据库不存在时，则自动退回 Milvus。
+
+### 4. GraphRAG 两级检索
+
+GraphRAG 使用标准库 SQLite 作为本地图谱侧车，不改变 Milvus 的职责。
+
+```text
+nodes:
+  match → map → round → event → player
+
+edges:
+  HAS_MAP / HAS_ROUND / KILL / USES_UTILITY /
+  FLASH_BLIND / PLANTS_BOMB / KILLER / VICTIM
+```
+
+- Local Search：以地图、任务和关键词筛选回合，沿 `map → round → event → player` 路径返回事件证据。
+- Community Summary：按“地图 × 主题”聚合回合，当前主题包括 overview、opening、utility、round_flow。
+- Global Search：对多个社区摘要进行全局排序，返回社区摘要及其回合来源 ID；最终综合由 Analyst/Coach 完成。
+
+社区摘要采用确定性抽取式统计，包含回合数、比赛数、击杀、首杀、道具、下包、回合胜者和首杀玩家等事实。它不会把少量样本直接表达为“所有职业队都这样打”。
+
+### 5. 前端复盘工作台
+
+`frontend/` 是独立的 React + Vite 应用，采用 `/api` proxy 连接 FastAPI，不复制后端业务逻辑：
+
+- 上传页提交 `.dem` 和 `analysis_mode`，后端返回 Celery `task_id`。
+- 前端每两秒轮询 `GET /api/tasks/{task_id}`，在 SUCCESS 后展示 `analysis` 结果。
+- Dashboard 展示指标、Agent 执行链、Analyst/Coach 报告、Verifier 状态和 `[E#]` 证据。
+- GraphRAG 面板通过只读接口加载地图、节点/边和 Global Search 结果。
+- 子图使用 SVG 绘制，避免引入大型图可视化依赖；移动端通过 CSS breakpoint 降级为单列布局。
+
+### 6. 可靠性和审核边界
+
+- 指标计算先于 LLM，模型不能伪造缺失的 ADR/KAST。
+- Critique 只评价证据相关性和覆盖度，不让模型决定是否“战术正确”。
+- Verifier 不调用 LLM，检查未知 `[E#]`、未引用的关键建议和验证状态。
+- 自动知识摄取默认关闭，同时要求高质量来源、显式人工批准和 Verifier 通过。
+- Demo、解析输出、SQLite 图谱、Milvus 卷和 `.env` 均属于本地运行数据，不进入 Git。
+
+---
+
 ## 🚀 快速开始
 
 ### 1. 克隆并初始化环境
@@ -141,7 +240,27 @@ make graph-build
 make dev
 ```
 
-### 5. 使用方式
+### 5. 启动前端复盘工作台
+
+另开一个终端执行：
+
+```bash
+make frontend-install
+make frontend
+```
+
+浏览器打开 `http://localhost:5173`。前端提供 Demo 上传、异步进度、指标卡片、Analyst/Coach 报告、证据引用、GraphRAG 子图和 Global Search；Vite 会把 `/api` 请求代理到 `8001`。
+
+新增只读 GraphRAG 展示接口：
+
+```text
+GET /api/graph/stats
+GET /api/graph/maps
+GET /api/graph/search?q=...
+GET /api/graph/subgraph?map_name=Mirage
+```
+
+### 6. 使用方式
 
 **方式 A：直接分析本地 Demo（推荐开发使用）**
 ```bash
@@ -185,7 +304,7 @@ curl -X POST http://127.0.0.1:8001/api/upload-demo \
 
 查询异步任务状态：
 ```bash
-curl http://127.0.0.1:8000/api/tasks/{task_id}
+curl http://127.0.0.1:8001/api/tasks/{task_id}
 ```
 
 ---
@@ -201,6 +320,7 @@ CS2-coach-agent/
 │   │   └── routers/
 │   │       ├── webhooks.py        # POST /api/webhook/match-end
 │   │       ├── uploads.py         # POST /api/upload-demo
+│   │       ├── graph.py           # GET  /api/graph/*
 │   │       └── tasks.py           # GET  /api/tasks/{task_id}
 │   ├── core/                      # 核心配置
 │   │   ├── config.py              # 环境变量统一管理 (Settings)
@@ -246,6 +366,10 @@ CS2-coach-agent/
 ├── Makefile                        # 简化开发入口
 ├── requirements.txt               # Python 依赖
 ├── requirements-dev.txt            # 开发与测试依赖
+├── frontend/                       # React + Vite 复盘工作台
+│   ├── src/main.jsx                # Dashboard 与 GraphRAG 展示
+│   ├── src/api.js                  # 后端请求封装
+│   └── src/styles.css              # 深色战术控制台样式
 ├── data/                          # .dem 录像文件存放（本地，不入库）
 └── output/                        # 分析结果输出（日志/JSON，不入库）
 ```
