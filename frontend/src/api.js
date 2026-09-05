@@ -60,7 +60,8 @@ export function searchGraph(query, mapName) {
   return request(`/api/graph/search?${params}`);
 }
 
-export function getGraphRound(sourceId) {
+export function getGraphRound(sourceId, team) {
   const params = new URLSearchParams({ source_id: sourceId });
+  if (team) params.set("team", team);
   return request(`/api/graph/round?${params}`);
 }

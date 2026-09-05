@@ -101,7 +101,9 @@ async def evaluate(dataset_path: Path, graph_db: Path) -> dict:
         )
         expected = case["expected"]
         if expected["structured"]:
-            first_source = brief.get("sources", [{}])[0].get("round_id") if brief and brief.get("sources") else None
+            first_source_item = brief.get("sources", [{}])[0] if brief and brief.get("sources") else {}
+            first_source = first_source_item.get("round_id")
+            contrast = client.round_comparison(first_source, first_source_item.get("team")) if first_source else None
             checks = {
                 "structured_result": tactical is not None,
                 "coach_brief": brief is not None,
@@ -109,6 +111,16 @@ async def evaluate(dataset_path: Path, graph_db: Path) -> dict:
                 "coach_caveat": bool(brief and "因果" in brief.get("caveat", "")),
                 "round_drilldown": bool(first_source and client.round_detail(first_source)),
                 "key_round_filters": bool(brief and brief.get("round_groups")),
+                "round_contrast": bool(
+                    contrast
+                    and contrast.get("contrasts")
+                    and all(
+                        item["map"] == contrast["selected"]["map"]
+                        and item["side"] == contrast["selected"]["side"]
+                        and item["outcome"] != contrast["selected"]["outcome"]
+                        for item in contrast["contrasts"]
+                    )
+                ),
             }
             if tactical:
                 checks.update(_score_positive(client, tactical, expected))
@@ -165,6 +177,10 @@ async def evaluate(dataset_path: Path, graph_db: Path) -> dict:
             ),
             "key_round_filter_coverage_pct": _percent(
                 sum(row["checks"].get("key_round_filters", False) for row in positive_rows),
+                len(positive_rows),
+            ),
+            "round_contrast_coverage_pct": _percent(
+                sum(row["checks"].get("round_contrast", False) for row in positive_rows),
                 len(positive_rows),
             ),
             "latency_ms": {

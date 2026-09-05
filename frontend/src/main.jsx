@@ -20,6 +20,7 @@ const FEATURED_TEAMS = ["Falcons", "Spirit", "Vitality", "FURIA", "MOUZ"];
 const ROUND_KIND_LABELS = { kill: "击杀", grenade: "道具", flash: "闪白", plant: "下包", tactical_sequence: "战术标签" };
 const ROUND_REASON_LABELS = { bomb_defused: "拆包结束", bomb_exploded: "炸弹爆炸", ct_killed: "CT 被淘汰", t_killed: "T 被淘汰", time_ran_out: "时间耗尽" };
 const ROUND_OUTCOME_LABELS = { won: "胜", lost: "负", unknown: "未知" };
+const ROUND_TACTIC_LABELS = { OPENING_DUEL: "首杀优势", OPENING_LOST: "首杀劣势", TRADE_KILL: "补枪", UTILITY_BURST: "道具爆发", EXECUTE_CANDIDATE: "爆弹候选", POST_PLANT: "下包后", RETAKE_CONTACT: "回防接触" };
 const TACTIC_COLUMNS = [
   ["OPENING_DUEL", "首杀回合"],
   ["TRADE_KILL", "补枪"],
@@ -52,6 +53,7 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [coachBrief, setCoachBrief] = useState(null);
   const [roundDetail, setRoundDetail] = useState(null);
+  const [roundComparison, setRoundComparison] = useState(null);
   const [roundLoading, setRoundLoading] = useState(false);
   const [teamComparison, setTeamComparison] = useState([]);
   const [playerTeam, setPlayerTeam] = useState(FEATURED_TEAMS[0]);
@@ -152,16 +154,18 @@ function App() {
       setSearchResults(response.results || []);
       setCoachBrief(response.answer || null);
       setRoundDetail(null);
+      setRoundComparison(null);
     } catch (reason) {
       setError(reason.message);
     }
   }
 
-  async function handleRoundSource(sourceId) {
+  async function handleRoundSource(sourceId, team) {
     setRoundLoading(true);
     try {
-      const response = await getGraphRound(sourceId);
+      const response = await getGraphRound(sourceId, team);
       setRoundDetail(response.detail || null);
+      setRoundComparison(response.comparison || null);
     } catch (reason) {
       setError(reason.message);
     } finally {
@@ -210,7 +214,7 @@ function App() {
 
         <section className="report-card card"><div className="section-heading"><div><p className="eyebrow">03 / COACHING REPORT</p><h2>Analyst × Coach</h2></div><span className="chip">EVIDENCE-BOUND</span></div><div className="report-columns"><ReportBlock title="ANALYST / 发生了什么" text={analysis?.analyst_report} empty="提交 Demo 后，这里显示确定性指标与数据报告。" /><ReportBlock title="COACH / 应该怎么做" text={analysis?.coach_advice} empty="Coach 会基于指标和 [E#] 证据生成训练建议。" /></div></section>
 
-        <section className="graph-card card"><div className="section-heading"><div><p className="eyebrow">04 / GRAPH RAG</p><h2>战术关系图谱</h2></div><div className="stats-inline"><span>{formatNumber(graphStats.nodes)} nodes</span><span>{formatNumber(graphStats.edges)} edges</span><span>{formatNumber(graphStats.tactical_sequences)} sequences</span><span>{formatNumber(graphStats.communities)} communities</span></div></div><div className="graph-toolbar"><select value={map} onChange={(event) => setMap(event.target.value)}><option value="">All maps</option>{maps.map((item) => <option key={item}>{item}</option>)}</select><form onSubmit={handleSearch}><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="例如：猎鹰 Dust2 T侧首杀后胜率" /><button>Ask Graph</button></form></div><div className="graph-layout"><GraphCanvas positions={positions} edges={graph.edges || []} /><div className="search-results">{coachBrief && <CoachBrief brief={coachBrief} onSource={handleRoundSource} loading={roundLoading} />}{roundDetail && <RoundEvidence detail={roundDetail} onClose={() => setRoundDetail(null)} />}{searchResults.length ? searchResults.map((item) => <article key={item.source_id} className="raw-evidence"><div className="result-meta">{item.metadata?.community_id || item.metadata?.tactic_type} · {Number(item.score || 0).toFixed(2)}</div><p>{item.content}</p></article>) : !coachBrief && <div className="empty-search">输入战队、地图、阵营或对手，检索结构化战术画像与社区摘要。<br /><small>点击简报中的 [G#] 可展开对应回合时间线。</small></div>}</div></div></section>
+        <section className="graph-card card"><div className="section-heading"><div><p className="eyebrow">04 / GRAPH RAG</p><h2>战术关系图谱</h2></div><div className="stats-inline"><span>{formatNumber(graphStats.nodes)} nodes</span><span>{formatNumber(graphStats.edges)} edges</span><span>{formatNumber(graphStats.tactical_sequences)} sequences</span><span>{formatNumber(graphStats.communities)} communities</span></div></div><div className="graph-toolbar"><select value={map} onChange={(event) => setMap(event.target.value)}><option value="">All maps</option>{maps.map((item) => <option key={item}>{item}</option>)}</select><form onSubmit={handleSearch}><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="例如：猎鹰 Dust2 T侧首杀后胜率" /><button>Ask Graph</button></form></div><div className="graph-layout"><GraphCanvas positions={positions} edges={graph.edges || []} /><div className="search-results">{coachBrief && <CoachBrief brief={coachBrief} onSource={handleRoundSource} loading={roundLoading} />}{roundDetail && <RoundEvidence detail={roundDetail} comparison={roundComparison} onSource={handleRoundSource} loading={roundLoading} onClose={() => { setRoundDetail(null); setRoundComparison(null); }} />}{searchResults.length ? searchResults.map((item) => <article key={item.source_id} className="raw-evidence"><div className="result-meta">{item.metadata?.community_id || item.metadata?.tactic_type} · {Number(item.score || 0).toFixed(2)}</div><p>{item.content}</p></article>) : !coachBrief && <div className="empty-search">输入战队、地图、阵营或对手，检索结构化战术画像与社区摘要。<br /><small>点击简报中的 [G#] 可展开对应回合时间线。</small></div>}</div></div></section>
 
         <section className="analytics-card card">
           <div className="section-heading"><div><p className="eyebrow">05 / CROSS-MATCH INTELLIGENCE</p><h2>选手画像 × 五队战术对比</h2></div><span className="chip">PER 100 ROUNDS</span></div>
@@ -242,7 +246,7 @@ function Metric({ label, value, suffix = "", accent = false, text = false }) { r
 
 function ReportBlock({ title, text, empty }) { return <article className="report-block"><div className="block-label">{title}</div><div className="report-text">{text || <span className="placeholder">{empty}</span>}</div></article>; }
 
-function CoachBrief({ brief, onSource, loading }) { return <article className="coach-brief"><div className="brief-head"><div><div className="result-meta">DETERMINISTIC COACH BRIEF</div><h3>{brief.title}</h3></div><span className="chip">样本可信度 · {brief.sample_confidence}</span></div><p className="brief-summary">{brief.summary}</p><div className="brief-section"><b>数据判读</b>{brief.findings.map((item) => <p key={item}>{item}</p>)}</div><div className="brief-section action"><b>训练重点</b>{brief.actions.map((item) => <p key={item}>{item}</p>)}</div><p className="brief-caveat">{brief.caveat}</p>{brief.sources.length > 0 && <div className="brief-sources">{brief.sources.map((item) => <button key={item.id} disabled={loading} onClick={() => onSource(item.round_id)}>[{item.id}] · {ROUND_OUTCOME_LABELS[item.outcome]} · {item.round_id}</button>)}</div>}<KeyRoundFilter key={`${brief.title}:${brief.focus_metric?.key || "all"}`} groups={brief.round_groups || []} focusKey={brief.focus_metric?.key} showTeam={brief.kind === "comparison"} onSource={onSource} loading={loading} /></article>; }
+function CoachBrief({ brief, onSource, loading }) { return <article className="coach-brief"><div className="brief-head"><div><div className="result-meta">DETERMINISTIC COACH BRIEF</div><h3>{brief.title}</h3></div><span className="chip">样本可信度 · {brief.sample_confidence}</span></div><p className="brief-summary">{brief.summary}</p><div className="brief-section"><b>数据判读</b>{brief.findings.map((item) => <p key={item}>{item}</p>)}</div><div className="brief-section action"><b>训练重点</b>{brief.actions.map((item) => <p key={item}>{item}</p>)}</div><p className="brief-caveat">{brief.caveat}</p>{brief.sources.length > 0 && <div className="brief-sources">{brief.sources.map((item) => <button key={item.id} disabled={loading} onClick={() => onSource(item.round_id, item.team)}>[{item.id}] · {ROUND_OUTCOME_LABELS[item.outcome]} · {item.round_id}</button>)}</div>}<KeyRoundFilter key={`${brief.title}:${brief.focus_metric?.key || "all"}`} groups={brief.round_groups || []} focusKey={brief.focus_metric?.key} showTeam={brief.kind === "comparison"} onSource={onSource} loading={loading} /></article>; }
 
 function KeyRoundFilter({ groups, focusKey, showTeam, onSource, loading }) {
   const initialMetric = groups.some((group) => group.key === focusKey) ? focusKey : "all";
@@ -251,10 +255,15 @@ function KeyRoundFilter({ groups, focusKey, showTeam, onSource, loading }) {
   const group = groups.find((item) => item.key === metric) || groups[0];
   const examples = (group?.examples || []).filter((item) => outcome === "all" || item.outcome === outcome);
   if (!group) return null;
-  return <div className="key-round-filter"><div className="result-meta">KEY ROUND SAMPLES</div><div className="key-round-controls"><select aria-label="战术类型" value={metric} onChange={(event) => setMetric(event.target.value)}>{groups.map((item) => <option key={item.key} value={item.key}>{item.label} · {item.total}</option>)}</select><select aria-label="回合结果" value={outcome} onChange={(event) => setOutcome(event.target.value)}><option value="all">全部结果</option><option value="lost">失利</option><option value="won">获胜</option><option value="unknown">未知</option></select></div><div className="key-round-list">{examples.map((item) => <button key={`${item.team}:${item.source_id}`} disabled={loading} onClick={() => onSource(item.source_id)}><b>{ROUND_OUTCOME_LABELS[item.outcome]}</b>{showTeam && <span>{item.team}</span>}<span>{item.map} · R{item.round_number}</span><small>{item.match_id}</small></button>)}{!examples.length && <p>当前筛选没有可展示的回合样本。</p>}</div><p className="brief-caveat">{showTeam ? "每队每类" : "每类"}最多展示 12 个胜负交错样本；统计值仍使用该条件下的全部回合。</p></div>;
+  return <div className="key-round-filter"><div className="result-meta">KEY ROUND SAMPLES</div><div className="key-round-controls"><select aria-label="战术类型" value={metric} onChange={(event) => setMetric(event.target.value)}>{groups.map((item) => <option key={item.key} value={item.key}>{item.label} · {item.total}</option>)}</select><select aria-label="回合结果" value={outcome} onChange={(event) => setOutcome(event.target.value)}><option value="all">全部结果</option><option value="lost">失利</option><option value="won">获胜</option><option value="unknown">未知</option></select></div><div className="key-round-list">{examples.map((item) => <button key={`${item.team}:${item.source_id}`} disabled={loading} onClick={() => onSource(item.source_id, item.team)}><b>{ROUND_OUTCOME_LABELS[item.outcome]}</b>{showTeam && <span>{item.team}</span>}<span>{item.map} · R{item.round_number}</span><small>{item.match_id}</small></button>)}{!examples.length && <p>当前筛选没有可展示的回合样本。</p>}</div><p className="brief-caveat">{showTeam ? "每队每类" : "每类"}最多展示 12 个胜负交错样本；统计值仍使用该条件下的全部回合。</p></div>;
 }
 
-function RoundEvidence({ detail, onClose }) { return <article className="round-evidence"><div className="brief-head"><div><div className="result-meta">ROUND EVIDENCE</div><h3>{detail.map} · Round {detail.round_number}</h3></div><button className="round-close" onClick={onClose}>关闭</button></div><div className="round-outcome"><span>{detail.teams.join(" vs ")}</span><b>胜方 {detail.winner || "—"}</b><small>{ROUND_REASON_LABELS[detail.reason] || detail.reason || "未知结束原因"}</small></div><div className="round-counts">{Object.entries(detail.counts).map(([kind, count]) => <span key={kind}>{ROUND_KIND_LABELS[kind] || kind} · {count}</span>)}</div><div className="round-timeline">{detail.timeline.map((item) => <div key={item.id} className={`timeline-${item.kind}`}><time>{item.tick == null ? "—" : item.tick}</time><i /><p>{item.label}</p></div>)}</div><div className="brief-caveat">来源：{detail.source_id} · 时间单位为 Demo tick；战术标签与原始事件并列展示。</div></article>; }
+function RoundEvidence({ detail, comparison, onSource, loading, onClose }) { return <article className="round-evidence"><div className="brief-head"><div><div className="result-meta">ROUND EVIDENCE</div><h3>{detail.map} · Round {detail.round_number}</h3></div><button className="round-close" onClick={onClose}>关闭</button></div><div className="round-outcome"><span>{detail.teams.join(" vs ")}</span><b>胜方 {detail.winner || "—"}</b><small>{ROUND_REASON_LABELS[detail.reason] || detail.reason || "未知结束原因"}</small></div><div className="round-counts">{Object.entries(detail.counts).map(([kind, count]) => <span key={kind}>{ROUND_KIND_LABELS[kind] || kind} · {count}</span>)}</div>{comparison && <RoundContrast comparison={comparison} onSource={onSource} loading={loading} />}<div className="round-timeline">{detail.timeline.map((item) => <div key={item.id} className={`timeline-${item.kind}`}><time>{item.tick == null ? "—" : item.tick}</time><i /><p>{item.label}</p></div>)}</div><div className="brief-caveat">来源：{detail.source_id} · 时间单位为 Demo tick；战术标签与原始事件并列展示。</div></article>; }
+
+function RoundContrast({ comparison, onSource, loading }) {
+  const selected = comparison.selected;
+  return <div className="round-contrast"><div className="result-meta">SIMILAR ROUND CONTRAST · {comparison.team} · {selected.side}</div><div className="contrast-grid"><div className="contrast-selected"><b>当前 · {ROUND_OUTCOME_LABELS[selected.outcome]}</b><span>{selected.labels.map((item) => ROUND_TACTIC_LABELS[item] || item).join(" · ") || "无战术标签"}</span><small>{selected.sites.length ? `${selected.sites.join("/")} 点 · ` : ""}{selected.counts.kill || 0} 击杀 · {selected.counts.grenade || 0} 道具</small></div>{comparison.contrasts.map((item) => <button key={item.source_id} disabled={loading} onClick={() => onSource(item.source_id, comparison.team)} aria-label={`查看相似回合 ${item.map} 第 ${item.round_number} 回合`}><b>对照 · {ROUND_OUTCOME_LABELS[item.outcome]} · {item.similarity_pct}%</b><span>{item.shared_labels.map((label) => ROUND_TACTIC_LABELS[label] || label).join(" · ") || "同地图同阵营"}</span><small>{item.match_id} · R{item.round_number} · {item.counts.kill || 0} 击杀</small></button>)}</div>{!comparison.contrasts.length && <p className="brief-caveat">当前数据中没有同地图、同阵营且相反结果的可比回合。</p>}<p className="brief-caveat">相似度按战术标签与包点集合的 Jaccard 重合度计算；仅用于案例检索，不代表战术因果。</p></div>;
+}
 
 function PlayerProfile({ profile }) {
   const combat = profile.combat || {};

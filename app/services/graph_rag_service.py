@@ -67,6 +67,14 @@ TACTICAL_LABEL_NAMES = {
     "POST_PLANT": "下包后",
     "RETAKE_CONTACT": "回防接触",
 }
+TEAM_SIDE_FIELDS = (
+    ("killer_team", "killer_side"),
+    ("victim_team", "victim_side"),
+    ("assister_team", "assister_side"),
+    ("thrower_team", "thrower_side"),
+    ("attacker_team", "attacker_side"),
+    ("planter_team", "planter_side"),
+)
 
 
 def _query_text(query: str) -> str:
@@ -452,14 +460,6 @@ class GraphRAGClient:
                     "labels": [],
                 }
 
-            team_side_fields = (
-                ("killer_team", "killer_side"),
-                ("victim_team", "victim_side"),
-                ("assister_team", "assister_side"),
-                ("thrower_team", "thrower_side"),
-                ("attacker_team", "attacker_side"),
-                ("planter_team", "planter_side"),
-            )
             for row in connection.execute(
                 "SELECT match_id,map_name,round_number,properties "
                 "FROM nodes WHERE node_type='event'"
@@ -469,7 +469,7 @@ class GraphRAGClient:
                 if not context:
                     continue
                 props = json.loads(row["properties"])
-                for team_field, side_field in team_side_fields:
+                for team_field, side_field in TEAM_SIDE_FIELDS:
                     name = _team_name(props.get(team_field))
                     normalized = _team_key(name)
                     if not normalized or name == "Unknown":
@@ -870,6 +870,117 @@ class GraphRAGClient:
                 "counts": dict(counts),
                 "timeline": timeline,
                 "methodology": "parsed-events-plus-silver-labels-v1",
+            }
+        finally:
+            connection.close()
+
+    def round_comparison(self, source_id: str, team: str, limit: int = 4) -> dict | None:
+        """Find opposite-outcome rounds with the same map, side, and tactical shape."""
+        match = re.fullmatch(r"(?:graph|round):([^:]+):([^:]+):(\d+)", source_id)
+        target_key = _team_key(team)
+        if not match or not target_key or not self.available():
+            return None
+        match_id, map_name, round_number = match.groups()
+        source_key = (match_id, round_number)
+        connection = self._connect()
+        try:
+            contexts = {}
+            for row in connection.execute(
+                "SELECT match_id,round_number,properties FROM nodes "
+                "WHERE node_type='round' AND map_name=?",
+                (map_name,),
+            ):
+                properties = json.loads(row["properties"])
+                contexts[(str(row["match_id"]), str(row["round_number"]))] = {
+                    "winner": _side_name(properties.get("winner")),
+                    "reason": properties.get("reason"),
+                    "team_sides": Counter(),
+                    "labels": set(),
+                    "sites": set(),
+                    "opposing_opening": False,
+                    "counts": Counter(),
+                }
+
+            for row in connection.execute(
+                "SELECT match_id,round_number,properties FROM nodes "
+                "WHERE node_type='event' AND map_name=?",
+                (map_name,),
+            ):
+                context = contexts.get((str(row["match_id"]), str(row["round_number"])))
+                if not context:
+                    continue
+                properties = json.loads(row["properties"])
+                context["counts"][properties.get("kind", "event")] += 1
+                for team_field, side_field in TEAM_SIDE_FIELDS:
+                    if _team_key(properties.get(team_field)) == target_key:
+                        observed_side = _side_name(properties.get(side_field))
+                        if observed_side:
+                            context["team_sides"][observed_side] += 1
+
+            for row in connection.execute(
+                "SELECT match_id,round_number,properties FROM nodes "
+                "WHERE node_type='tactical_sequence' AND map_name=?",
+                (map_name,),
+            ):
+                context = contexts.get((str(row["match_id"]), str(row["round_number"])))
+                if not context:
+                    continue
+                properties = json.loads(row["properties"])
+                context["counts"]["tactical_sequence"] += 1
+                label_type = properties.get("label_type")
+                label_team = _team_key(properties.get("team"))
+                if label_team == target_key:
+                    if label_type:
+                        context["labels"].add(label_type)
+                    if properties.get("site"):
+                        context["sites"].add(str(properties["site"]))
+                elif label_type == "OPENING_DUEL" and label_team:
+                    context["opposing_opening"] = True
+
+            def summarize(key: tuple[str, str], context: dict) -> dict | None:
+                if not context["team_sides"]:
+                    return None
+                side = context["team_sides"].most_common(1)[0][0]
+                outcome = "won" if context["winner"] == side else "lost" if context["winner"] else "unknown"
+                labels = set(context["labels"])
+                if context["opposing_opening"]:
+                    labels.add("OPENING_LOST")
+                return {
+                    "source_id": f"graph:{key[0]}:{map_name}:{key[1]}",
+                    "match_id": key[0],
+                    "map": map_name,
+                    "round_number": int(key[1]),
+                    "side": side,
+                    "outcome": outcome,
+                    "winner": context["winner"],
+                    "reason": context["reason"],
+                    "labels": sorted(labels),
+                    "sites": sorted(context["sites"]),
+                    "counts": dict(context["counts"]),
+                }
+
+            selected = summarize(source_key, contexts.get(source_key, {})) if source_key in contexts else None
+            if not selected:
+                return None
+            desired_outcome = "lost" if selected["outcome"] == "won" else "won"
+            source_features = set(selected["labels"]) | {f"SITE:{site}" for site in selected["sites"]}
+            candidates = []
+            for key, context in contexts.items():
+                candidate = summarize(key, context)
+                if not candidate or key == source_key or candidate["side"] != selected["side"] or candidate["outcome"] != desired_outcome:
+                    continue
+                candidate_features = set(candidate["labels"]) | {f"SITE:{site}" for site in candidate["sites"]}
+                union = source_features | candidate_features
+                candidate["similarity_pct"] = round(100 * len(source_features & candidate_features) / len(union), 1) if union else 0.0
+                candidate["shared_labels"] = sorted(set(selected["labels"]) & set(candidate["labels"]))
+                candidates.append(candidate)
+            candidates.sort(key=lambda item: (-item["similarity_pct"], item["match_id"] == match_id, item["match_id"], item["round_number"]))
+            return {
+                "team": TEAM_DISPLAY_NAMES.get(target_key, _team_name(team)),
+                "selected": selected,
+                "contrasts": candidates[:limit],
+                "available_count": len(candidates),
+                "methodology": "same-map-side-opposite-outcome-jaccard-v1",
             }
         finally:
             connection.close()
