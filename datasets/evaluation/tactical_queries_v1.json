@@ -1,0 +1,186 @@
+{
+  "version": "tactical-query-v1",
+  "description": "Deterministic silver-standard queries for team, context, comparison, numeric, and provenance validation.",
+  "cases": [
+    {
+      "id": "team_falcons_overall",
+      "category": "team_profile",
+      "query": "猎鹰最近的整体战术表现如何？",
+      "expected": {"structured": true, "context_level": "team_tactical_profile", "team": "Falcons", "map": "All", "side": "Both", "opponent": null, "min_rounds": 1}
+    },
+    {
+      "id": "team_spirit_overall",
+      "category": "team_profile",
+      "query": "总结绿龙的战术转化表现",
+      "expected": {"structured": true, "context_level": "team_tactical_profile", "team": "Spirit", "map": "All", "side": "Both", "opponent": null, "min_rounds": 1}
+    },
+    {
+      "id": "team_vitality_overall",
+      "category": "team_profile",
+      "query": "蜜蜂的首杀、补枪和残局表现怎么样？",
+      "expected": {"structured": true, "context_level": "team_tactical_profile", "team": "Vitality", "map": "All", "side": "Both", "opponent": null, "min_rounds": 1}
+    },
+    {
+      "id": "team_furia_overall",
+      "category": "team_profile",
+      "query": "给我黑豹的总体战术画像",
+      "expected": {"structured": true, "context_level": "team_tactical_profile", "team": "FURIA", "map": "All", "side": "Both", "opponent": null, "min_rounds": 1}
+    },
+    {
+      "id": "team_mouz_overall",
+      "category": "team_profile",
+      "query": "老鼠近期比赛的回合转化率",
+      "expected": {"structured": true, "context_level": "team_tactical_profile", "team": "MOUZ", "map": "All", "side": "Both", "opponent": null, "min_rounds": 1}
+    },
+    {
+      "id": "falcons_dust2_t",
+      "category": "map_side_slice",
+      "query": "猎鹰 Dust2 T侧首杀后胜率",
+      "expected": {"structured": true, "context_level": "team_tactical_profile", "team": "Falcons", "map": "Dust2", "side": "T", "opponent": null, "min_rounds": 1}
+    },
+    {
+      "id": "falcons_nuke_ct",
+      "category": "map_side_slice",
+      "query": "Falcons 在 Nuke CT侧的回防表现",
+      "expected": {"structured": true, "context_level": "team_tactical_profile", "team": "Falcons", "map": "Nuke", "side": "CT", "opponent": null, "min_rounds": 1}
+    },
+    {
+      "id": "spirit_nuke_ct",
+      "category": "map_side_slice",
+      "query": "绿龙 Nuke 防守侧补枪回合胜率",
+      "expected": {"structured": true, "context_level": "team_tactical_profile", "team": "Spirit", "map": "Nuke", "side": "CT", "opponent": null, "min_rounds": 1}
+    },
+    {
+      "id": "spirit_ancient_t",
+      "category": "map_side_slice",
+      "query": "Spirit Ancient 进攻侧的道具爆发转化",
+      "expected": {"structured": true, "context_level": "team_tactical_profile", "team": "Spirit", "map": "Ancient", "side": "T", "opponent": null, "min_rounds": 1}
+    },
+    {
+      "id": "vitality_nuke_ct",
+      "category": "map_side_slice",
+      "query": "蜜蜂在 Nuke CT侧丢首杀后的翻盘率",
+      "expected": {"structured": true, "context_level": "team_tactical_profile", "team": "Vitality", "map": "Nuke", "side": "CT", "opponent": null, "min_rounds": 1}
+    },
+    {
+      "id": "vitality_dust2_t",
+      "category": "map_side_slice",
+      "query": "Vitality Dust2 T side post plant win rate",
+      "expected": {"structured": true, "context_level": "team_tactical_profile", "team": "Vitality", "map": "Dust2", "side": "T", "opponent": null, "min_rounds": 1}
+    },
+    {
+      "id": "furia_ancient_ct",
+      "category": "map_side_slice",
+      "query": "黑豹 Ancient 防守方的首杀转化",
+      "expected": {"structured": true, "context_level": "team_tactical_profile", "team": "FURIA", "map": "Ancient", "side": "CT", "opponent": null, "min_rounds": 1}
+    },
+    {
+      "id": "furia_cache_t",
+      "category": "map_side_slice",
+      "query": "FURIA Cache 进攻方 execute 回合表现",
+      "expected": {"structured": true, "context_level": "team_tactical_profile", "team": "FURIA", "map": "Cache", "side": "T", "opponent": null, "min_rounds": 1}
+    },
+    {
+      "id": "mouz_dust2_ct",
+      "category": "map_side_slice",
+      "query": "老鼠 Dust2 CT侧的补枪效率",
+      "expected": {"structured": true, "context_level": "team_tactical_profile", "team": "MOUZ", "map": "Dust2", "side": "CT", "opponent": null, "min_rounds": 1}
+    },
+    {
+      "id": "mouz_nuke_t",
+      "category": "map_side_slice",
+      "query": "MOUZ Nuke T侧下包后胜率",
+      "expected": {"structured": true, "context_level": "team_tactical_profile", "team": "MOUZ", "map": "Nuke", "side": "T", "opponent": null, "min_rounds": 1}
+    },
+    {
+      "id": "falcons_vs_spirit",
+      "category": "opponent_slice",
+      "query": "猎鹰面对绿龙时的回合转化表现",
+      "expected": {"structured": true, "context_level": "team_tactical_profile", "team": "Falcons", "map": "All", "side": "Both", "opponent": "Spirit", "min_rounds": 1}
+    },
+    {
+      "id": "spirit_vs_vitality",
+      "category": "opponent_slice",
+      "query": "Spirit 对阵 Vitality 的首杀后胜率",
+      "expected": {"structured": true, "context_level": "team_tactical_profile", "team": "Spirit", "map": "All", "side": "Both", "opponent": "Vitality", "min_rounds": 1}
+    },
+    {
+      "id": "vitality_vs_furia",
+      "category": "opponent_slice",
+      "query": "蜜蜂面对黑豹时的补枪回合表现",
+      "expected": {"structured": true, "context_level": "team_tactical_profile", "team": "Vitality", "map": "All", "side": "Both", "opponent": "FURIA", "min_rounds": 1}
+    },
+    {
+      "id": "furia_vs_spirit",
+      "category": "opponent_slice",
+      "query": "FURIA 打 Spirit 时的回防接触胜率",
+      "expected": {"structured": true, "context_level": "team_tactical_profile", "team": "FURIA", "map": "All", "side": "Both", "opponent": "Spirit", "min_rounds": 1}
+    },
+    {
+      "id": "mouz_vs_falcons",
+      "category": "opponent_slice",
+      "query": "老鼠对猎鹰的整体战术表现",
+      "expected": {"structured": true, "context_level": "team_tactical_profile", "team": "MOUZ", "map": "All", "side": "Both", "opponent": "Falcons", "min_rounds": 1}
+    },
+    {
+      "id": "compare_spirit_vitality_nuke_ct",
+      "category": "comparison",
+      "query": "对比 Spirit 和 Vitality 在 Nuke CT侧的补枪回合",
+      "expected": {"structured": true, "context_level": "team_tactical_comparison", "teams": ["Spirit", "Vitality"], "map": "Nuke", "side": "CT", "min_rounds": 1}
+    },
+    {
+      "id": "compare_falcons_mouz_dust2_t",
+      "category": "comparison",
+      "query": "比较猎鹰与老鼠在 Dust2 T侧的首杀转化",
+      "expected": {"structured": true, "context_level": "team_tactical_comparison", "teams": ["Falcons", "MOUZ"], "map": "Dust2", "side": "T", "min_rounds": 1}
+    },
+    {
+      "id": "compare_furia_vitality_nuke_ct",
+      "category": "comparison",
+      "query": "FURIA 和 Vitality 在 Nuke CT side 的回防表现有什么差异？",
+      "expected": {"structured": true, "context_level": "team_tactical_comparison", "teams": ["FURIA", "Vitality"], "map": "Nuke", "side": "CT", "min_rounds": 1}
+    },
+    {
+      "id": "compare_spirit_furia_ancient",
+      "category": "comparison",
+      "query": "对比绿龙和黑豹在 Ancient 的整体胜率",
+      "expected": {"structured": true, "context_level": "team_tactical_comparison", "teams": ["Spirit", "FURIA"], "map": "Ancient", "side": "Both", "min_rounds": 1}
+    },
+    {
+      "id": "compare_falcons_vitality_all",
+      "category": "comparison",
+      "query": "比较 Falcons 与 Vitality 的战术转化区别",
+      "expected": {"structured": true, "context_level": "team_tactical_comparison", "teams": ["Falcons", "Vitality"], "map": "All", "side": "Both", "min_rounds": 1}
+    },
+    {
+      "id": "negative_unrelated_invoice",
+      "category": "negative",
+      "query": "quantum banana payroll invoice",
+      "expected": {"structured": false}
+    },
+    {
+      "id": "negative_unknown_team",
+      "category": "negative",
+      "query": "Mars Rovers 在 Moonbase 的战术表现",
+      "expected": {"structured": false}
+    },
+    {
+      "id": "negative_map_only",
+      "category": "negative",
+      "query": "Nuke 这张地图有哪些常见区域？",
+      "expected": {"structured": false}
+    },
+    {
+      "id": "negative_player_only",
+      "category": "negative",
+      "query": "m0NESY 最近的个人表现",
+      "expected": {"structured": false}
+    },
+    {
+      "id": "negative_generic_cs2",
+      "category": "negative",
+      "query": "CS2 的经济系统是怎样的？",
+      "expected": {"structured": false}
+    }
+  ]
+}

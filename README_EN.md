@@ -369,9 +369,11 @@ CS2-coach-agent/
 │   ├── seed_knowledge.py          # Milvus knowledge base seed script
 │   ├── build_graph.py             # Build GraphRAG graph and communities
 │   ├── evaluate_retrieval.py      # Offline RAG smoke evaluation
+│   ├── evaluate_tactical_queries.py # Tactical natural-language contract evaluation
 │   ├── fetch_recent_demos.py      # HLTV professional Demo fetch entrypoint
 │   ├── analyze_local.py           # Local demo direct analysis entry
 │   └── test_webhook.py            # Webhook API test script
+├── datasets/evaluation/           # Fixed query set and reproducible report
 ├── test_main.py                   # End-to-end integration test
 ├── test_agentic.py                # Agent orchestration and tool tests
 ├── test_graph_rag.py              # GraphRAG path and Global Search tests
@@ -423,6 +425,7 @@ The knowledge base defaults to Milvus native dense + BM25 hybrid retrieval and p
 ```bash
 make test       # Unit and integration tests
 make eval-rag   # Fixed-query Milvus RAG evaluation
+make eval-tactics # 30-case GraphRAG tactical query contract evaluation
 make graph-build
 make silver-dataset # build evidence-linked tactical silver annotations
 ```
@@ -430,6 +433,10 @@ make silver-dataset # build evidence-linked tactical silver annotations
 Community summaries are currently deterministic and extractive: they summarize parsed facts, preserve round-level sources, and do not promote small-sample observations into universal professional tactics.
 
 `make silver-dataset` writes round-level research data to `datasets/silver/v0.2/`. v0.2 uses the fixed 20-match selection in `datasets/selections/five_teams_recent_20_v1.json`, covering 49 maps, 1,030 rounds, and 5,325 tactical silver labels; v0.1 remains as the original single-match baseline. Opening duels and post-plant phases come directly from event facts; trade kills, Utility Bursts, and Retake Contacts use explicit temporal rules. A weakly supervised Execute Candidate is added only when a T-side utility sequence is followed by a plant. Every label retains its rule version, confidence, review status, and evidence event IDs. The result is explicitly a reproducible silver-label dataset, not expert-annotated gold data.
+
+### Tactical Query Evaluation
+
+`datasets/evaluation/tactical_queries_v1.json` fixes 30 Chinese and English queries that require no manual annotation. They cover overall team profiles, map × side slices, opponent filters, two-team comparisons, and rejection of unrelated questions. `make eval-tactics` checks parsed context, minimum sample size, exact agreement with deterministic SQLite aggregation, and round-level provenance coverage. The current `datasets/evaluation/tactical_query_eval_v1_report.json` passes 30/30 cases with 100% context accuracy, numeric consistency, and source coverage. This is a silver-standard interface and data-contract evaluation, not expert gold evaluation of coaching quality, and it does not establish tactical causality.
 
 ---
 

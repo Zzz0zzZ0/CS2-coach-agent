@@ -369,9 +369,11 @@ CS2-coach-agent/
 │   ├── seed_knowledge.py          # Milvus 知识库初始化种子脚本
 │   ├── build_graph.py             # GraphRAG 图谱与社区摘要构建
 │   ├── evaluate_retrieval.py      # RAG 离线 smoke evaluation
+│   ├── evaluate_tactical_queries.py # 战术自然语言查询契约评测
 │   ├── fetch_recent_demos.py      # HLTV 职业 Demo 获取入口
 │   ├── analyze_local.py           # 本地 Demo 直接分析入口
 │   └── test_webhook.py            # Webhook 接口测试脚本
+├── datasets/evaluation/           # 固定查询集与可复现评测报告
 ├── test_main.py                   # 端到端集成测试
 ├── test_agentic.py                # Agent 编排与工具测试
 ├── test_graph_rag.py              # GraphRAG 路径与 Global Search 测试
@@ -423,6 +425,7 @@ CS2-coach-agent/
 ```bash
 make test       # 单元与集成测试
 make eval-rag   # 固定查询的 Milvus RAG 评估
+make eval-tactics # 30 条 GraphRAG 战术查询契约评测
 make graph-build
 make silver-dataset # 生成带置信度与证据来源的战术银标数据集
 ```
@@ -430,6 +433,10 @@ make silver-dataset # 生成带置信度与证据来源的战术银标数据集
 GraphRAG 当前采用确定性抽取式社区摘要；摘要只概括解析到的事实，并保留回合来源，不把小样本观察直接升级为职业战术定律。
 
 `make silver-dataset` 会将本地 Demo 转换为 `datasets/silver/v0.2/` 下的回合级研究数据。v0.2 固定采用 `datasets/selections/five_teams_recent_20_v1.json` 的 20 场近期比赛，共 49 张地图、1,030 回合和 5,325 个战术银标；v0.1 作为单场初始基线保留。首杀和下包阶段来自直接事件事实；补枪、Utility Burst 与 Retake Contact 来自明确的时间窗规则；只有 T 方道具序列后成功下包才会追加弱监督的 Execute Candidate。所有标签都保存规则版本、置信度、审核状态和证据事件 ID。该数据集定位为可复现的 silver labels，不宣称是职业教练人工标注的 gold labels。
+
+### 战术查询评测
+
+`datasets/evaluation/tactical_queries_v1.json` 固定了 30 条无需人工标注的中英文查询，覆盖五支战队的整体画像、地图 × 阵营切片、交手过滤、双队对比和无关问题拒绝。`make eval-tactics` 会校验查询上下文、样本下限、GraphRAG 返回值与 SQLite 确定性聚合的一致性，以及回合级来源覆盖。当前报告 `datasets/evaluation/tactical_query_eval_v1_report.json` 为 30/30 通过，结构上下文准确率、数值一致性和来源覆盖率均为 100%。这是 silver-standard 的接口与数据契约评测，不等同于教练对战术结论的人工 gold evaluation，也不证明因果关系。
 
 ---
 
