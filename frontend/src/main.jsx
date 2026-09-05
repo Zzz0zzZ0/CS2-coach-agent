@@ -19,6 +19,7 @@ const FLOW = ["Supervisor", "Tools", "Router", "RAG + Graph", "Critique", "Analy
 const FEATURED_TEAMS = ["Falcons", "Spirit", "Vitality", "FURIA", "MOUZ"];
 const ROUND_KIND_LABELS = { kill: "击杀", grenade: "道具", flash: "闪白", plant: "下包", tactical_sequence: "战术标签" };
 const ROUND_REASON_LABELS = { bomb_defused: "拆包结束", bomb_exploded: "炸弹爆炸", ct_killed: "CT 被淘汰", t_killed: "T 被淘汰", time_ran_out: "时间耗尽" };
+const ROUND_OUTCOME_LABELS = { won: "胜", lost: "负", unknown: "未知" };
 const TACTIC_COLUMNS = [
   ["OPENING_DUEL", "首杀回合"],
   ["TRADE_KILL", "补枪"],
@@ -241,7 +242,17 @@ function Metric({ label, value, suffix = "", accent = false, text = false }) { r
 
 function ReportBlock({ title, text, empty }) { return <article className="report-block"><div className="block-label">{title}</div><div className="report-text">{text || <span className="placeholder">{empty}</span>}</div></article>; }
 
-function CoachBrief({ brief, onSource, loading }) { return <article className="coach-brief"><div className="brief-head"><div><div className="result-meta">DETERMINISTIC COACH BRIEF</div><h3>{brief.title}</h3></div><span className="chip">样本可信度 · {brief.sample_confidence}</span></div><p className="brief-summary">{brief.summary}</p><div className="brief-section"><b>数据判读</b>{brief.findings.map((item) => <p key={item}>{item}</p>)}</div><div className="brief-section action"><b>训练重点</b>{brief.actions.map((item) => <p key={item}>{item}</p>)}</div><p className="brief-caveat">{brief.caveat}</p>{brief.sources.length > 0 && <div className="brief-sources">{brief.sources.map((item) => <button key={item.id} disabled={loading} onClick={() => onSource(item.round_id)}>[{item.id}] {item.round_id}</button>)}</div>}</article>; }
+function CoachBrief({ brief, onSource, loading }) { return <article className="coach-brief"><div className="brief-head"><div><div className="result-meta">DETERMINISTIC COACH BRIEF</div><h3>{brief.title}</h3></div><span className="chip">样本可信度 · {brief.sample_confidence}</span></div><p className="brief-summary">{brief.summary}</p><div className="brief-section"><b>数据判读</b>{brief.findings.map((item) => <p key={item}>{item}</p>)}</div><div className="brief-section action"><b>训练重点</b>{brief.actions.map((item) => <p key={item}>{item}</p>)}</div><p className="brief-caveat">{brief.caveat}</p>{brief.sources.length > 0 && <div className="brief-sources">{brief.sources.map((item) => <button key={item.id} disabled={loading} onClick={() => onSource(item.round_id)}>[{item.id}] · {ROUND_OUTCOME_LABELS[item.outcome]} · {item.round_id}</button>)}</div>}<KeyRoundFilter key={`${brief.title}:${brief.focus_metric?.key || "all"}`} groups={brief.round_groups || []} focusKey={brief.focus_metric?.key} showTeam={brief.kind === "comparison"} onSource={onSource} loading={loading} /></article>; }
+
+function KeyRoundFilter({ groups, focusKey, showTeam, onSource, loading }) {
+  const initialMetric = groups.some((group) => group.key === focusKey) ? focusKey : "all";
+  const [metric, setMetric] = useState(initialMetric);
+  const [outcome, setOutcome] = useState("all");
+  const group = groups.find((item) => item.key === metric) || groups[0];
+  const examples = (group?.examples || []).filter((item) => outcome === "all" || item.outcome === outcome);
+  if (!group) return null;
+  return <div className="key-round-filter"><div className="result-meta">KEY ROUND SAMPLES</div><div className="key-round-controls"><select aria-label="战术类型" value={metric} onChange={(event) => setMetric(event.target.value)}>{groups.map((item) => <option key={item.key} value={item.key}>{item.label} · {item.total}</option>)}</select><select aria-label="回合结果" value={outcome} onChange={(event) => setOutcome(event.target.value)}><option value="all">全部结果</option><option value="lost">失利</option><option value="won">获胜</option><option value="unknown">未知</option></select></div><div className="key-round-list">{examples.map((item) => <button key={`${item.team}:${item.source_id}`} disabled={loading} onClick={() => onSource(item.source_id)}><b>{ROUND_OUTCOME_LABELS[item.outcome]}</b>{showTeam && <span>{item.team}</span>}<span>{item.map} · R{item.round_number}</span><small>{item.match_id}</small></button>)}{!examples.length && <p>当前筛选没有可展示的回合样本。</p>}</div><p className="brief-caveat">{showTeam ? "每队每类" : "每类"}最多展示 12 个胜负交错样本；统计值仍使用该条件下的全部回合。</p></div>;
+}
 
 function RoundEvidence({ detail, onClose }) { return <article className="round-evidence"><div className="brief-head"><div><div className="result-meta">ROUND EVIDENCE</div><h3>{detail.map} · Round {detail.round_number}</h3></div><button className="round-close" onClick={onClose}>关闭</button></div><div className="round-outcome"><span>{detail.teams.join(" vs ")}</span><b>胜方 {detail.winner || "—"}</b><small>{ROUND_REASON_LABELS[detail.reason] || detail.reason || "未知结束原因"}</small></div><div className="round-counts">{Object.entries(detail.counts).map(([kind, count]) => <span key={kind}>{ROUND_KIND_LABELS[kind] || kind} · {count}</span>)}</div><div className="round-timeline">{detail.timeline.map((item) => <div key={item.id} className={`timeline-${item.kind}`}><time>{item.tick == null ? "—" : item.tick}</time><i /><p>{item.label}</p></div>)}</div><div className="brief-caveat">来源：{detail.source_id} · 时间单位为 Demo tick；战术标签与原始事件并列展示。</div></article>; }
 

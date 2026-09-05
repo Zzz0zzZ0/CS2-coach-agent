@@ -410,6 +410,8 @@ def test_cross_match_player_profiles_and_team_comparison(tmp_path, monkeypatch):
     assert tactics["role_leaders"]["opening_kills"][0]["name"] == "entry"
     assert tactics["site_breakdown"][0]["site"] == "A"
     assert tactics["source_round_ids"]
+    assert tactics["round_examples"]["opening_won"][0]["outcome"] == "won"
+    assert tactics["round_examples"]["opening_lost_recovery"][0]["outcome"] == "lost"
     assert client.team_tactics("does-not-exist") is None
     empty_slice = client.team_tactics("Alpha", map_name="Inferno")
     assert empty_slice["sample_size"]["rounds"] == 0
@@ -432,6 +434,8 @@ def test_cross_match_player_profiles_and_team_comparison(tmp_path, monkeypatch):
     assert profile_brief["kind"] == "team_profile"
     assert profile_brief["focus_metric"]["key"] == "opening_won"
     assert profile_brief["sources"][0]["id"] == "G1"
+    assert profile_brief["sources"][0]["round_id"] == tactics["round_examples"]["opening_won"][0]["source_id"]
+    assert {group["key"] for group in profile_brief["round_groups"]} >= {"all", "opening_won", "post_plant"}
     assert "silver labels" in profile_brief["caveat"]
     round_detail = client.round_detail(profile_brief["sources"][0]["round_id"])
     assert round_detail["map"] == "Mirage"
@@ -451,6 +455,7 @@ def test_cross_match_player_profiles_and_team_comparison(tmp_path, monkeypatch):
     )
     assert comparison_brief["kind"] == "comparison"
     assert comparison_brief["focus_metric"]["key"] == "trade_round"
+    assert any(group["key"] == "trade_round" for group in comparison_brief["round_groups"])
 
     api = FastAPI()
     api.include_router(graph_router.router, prefix="/api")

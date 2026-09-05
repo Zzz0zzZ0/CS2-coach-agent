@@ -138,6 +138,40 @@ def _requested_metric(query: str) -> str | None:
     return next((key for key, terms in keywords if any(term in lowered for term in terms)), None)
 
 
+def _coach_round_groups(profiles: list[dict]) -> list[dict]:
+    groups = []
+    for key, label in (("all", "全部回合"), *[(key, value[0]) for key, value in COACH_METRICS.items()]):
+        per_team = [
+            [
+                {**item, "team": profile["team"]}
+                for item in profile.get("round_examples", {}).get(key, [])
+            ]
+            for profile in profiles
+        ]
+        examples = []
+        while len(examples) < 24 and any(per_team):
+            for items in per_team:
+                if items and len(examples) < 24:
+                    examples.append(items.pop(0))
+        total = sum(
+            profile.get("sample_size", {}).get("rounds", 0)
+            if key == "all"
+            else profile.get("conversions", {}).get(key, {}).get("opportunities", 0)
+            for profile in profiles
+        )
+        groups.append({"key": key, "label": label, "total": total, "examples": examples})
+    return groups
+
+
+def _brief_sources(round_groups: list[dict], focus_key: str | None) -> list[dict]:
+    selected_key = focus_key or "all"
+    selected = next((group for group in round_groups if group["key"] == selected_key), None)
+    return [
+        {"id": f"G{index}", "round_id": item["source_id"], "outcome": item["outcome"], "team": item["team"]}
+        for index, item in enumerate((selected or {}).get("examples", [])[:6], start=1)
+    ]
+
+
 def _event_tick(properties: dict) -> int | None:
     value = properties.get("tick", properties.get("start_tick"))
     try:
@@ -560,6 +594,27 @@ class GraphRAGClient:
                     "round_win_pct": _pct(won, len(known)),
                 }
 
+            def round_examples(round_keys: set) -> list[dict]:
+                buckets = {"lost": [], "won": [], "unknown": []}
+                for match_key, map_key, number in sorted(
+                    round_keys,
+                    key=lambda key: (key[0], key[1], (0, int(key[2])) if str(key[2]).isdigit() else (1, str(key[2]))),
+                ):
+                    outcome = "won" if decided.get((match_key, map_key, number)) is True else "lost" if decided.get((match_key, map_key, number)) is False else "unknown"
+                    buckets[outcome].append({
+                        "source_id": f"graph:{match_key}:{map_key}:{number}",
+                        "match_id": match_key,
+                        "map": map_key,
+                        "round_number": int(number) if str(number).isdigit() else number,
+                        "outcome": outcome,
+                    })
+                examples = []
+                while len(examples) < 12 and any(buckets.values()):
+                    for outcome in ("lost", "won", "unknown"):
+                        if buckets[outcome] and len(examples) < 12:
+                            examples.append(buckets[outcome].pop(0))
+                return examples
+
             def leaders(counter: Counter) -> list[dict]:
                 total = sum(counter.values())
                 return [
@@ -611,6 +666,16 @@ class GraphRAGClient:
                     "post_plant": conversion(label_rounds["POST_PLANT"]),
                     "retake_contact": conversion(label_rounds["RETAKE_CONTACT"]),
                 },
+                "round_examples": {
+                    "all": round_examples(set(decided)),
+                    "opening_won": round_examples(label_rounds["OPENING_DUEL"]),
+                    "opening_lost_recovery": round_examples(opening_lost_rounds),
+                    "trade_round": round_examples(label_rounds["TRADE_KILL"]),
+                    "utility_burst_round": round_examples(label_rounds["UTILITY_BURST"]),
+                    "execute_candidate": round_examples(label_rounds["EXECUTE_CANDIDATE"]),
+                    "post_plant": round_examples(label_rounds["POST_PLANT"]),
+                    "retake_contact": round_examples(label_rounds["RETAKE_CONTACT"]),
+                },
                 "role_leaders": {
                     "opening_kills": leaders(opening_players),
                     "trade_kills": leaders(trade_players),
@@ -657,12 +722,6 @@ class GraphRAGClient:
         if not tactical:
             return None
         metadata = tactical.metadata
-        source_ids = metadata.get("source_round_ids", [])[:6]
-        sources = [
-            {"id": f"G{index}", "round_id": source_id}
-            for index, source_id in enumerate(source_ids, start=1)
-        ]
-        source_note = "；可复核回合样本见 " + "、".join(f"[{item['id']}]" for item in sources) if sources else ""
         map_name = metadata.get("map", "All")
         side = metadata.get("side", "Both")
         context = f"{map_name if map_name != 'All' else '全部地图'} · {side if side != 'Both' else '双阵营'}"
@@ -673,6 +732,9 @@ class GraphRAGClient:
             if len(profiles) < 2:
                 return None
             focus_key = _requested_metric(query)
+            round_groups = _coach_round_groups(profiles)
+            sources = _brief_sources(round_groups, focus_key)
+            source_note = "；对应指标样本见 " + "、".join(f"[{item['id']}]" for item in sources) if sources else ""
             label = COACH_METRICS[focus_key][0] if focus_key else "整体回合"
             values = []
             for profile in profiles[:2]:
@@ -704,6 +766,7 @@ class GraphRAGClient:
                 "sample_confidence": "中" if min(item["rounds"] for item in values) >= 30 else "低",
                 "caveat": caveat,
                 "sources": sources,
+                "round_groups": round_groups,
                 "methodology": "deterministic-coach-brief-v1",
             }
 
@@ -723,6 +786,9 @@ class GraphRAGClient:
         ]
         focus_key = _requested_metric(query)
         focus = next((row for row in conversion_rows if row["key"] == focus_key), None)
+        round_groups = _coach_round_groups([{**metadata, "team": team}])
+        sources = _brief_sources(round_groups, focus_key if focus else None)
+        source_note = "；对应指标样本见 " + "、".join(f"[{item['id']}]" for item in sources) if sources else ""
         ranked = sorted(conversion_rows, key=lambda row: row["win_pct"])
         findings = [f"{sample.get('matches', 0)} 场、{sample.get('maps', 0)} 张地图、{rounds} 回合；整体回合胜率 {_zh_pct(metadata.get('outcomes', {}).get('round_win_pct'))}。"]
         if focus:
@@ -747,6 +813,7 @@ class GraphRAGClient:
             "sample_confidence": "高" if rounds >= 100 else "中" if rounds >= 30 else "低",
             "caveat": caveat,
             "sources": sources,
+            "round_groups": round_groups,
             "methodology": "deterministic-coach-brief-v1",
         }
 
@@ -1568,6 +1635,7 @@ class GraphRAGClient:
                         "sample_size": profile["sample_size"],
                         "outcomes": profile["outcomes"],
                         "conversions": profile["conversions"],
+                        "round_examples": profile["round_examples"],
                     } for profile in profiles],
                     "source_round_count": len(sources),
                     "source_round_ids": sources[:12],
@@ -1628,6 +1696,7 @@ class GraphRAGClient:
                 "outcomes": profile["outcomes"],
                 "conversions": conversions,
                 "role_leaders": leaders,
+                "round_examples": profile["round_examples"],
                 "source_round_count": len(profile["source_round_ids"]),
                 "source_round_ids": profile["source_round_ids"],
             },

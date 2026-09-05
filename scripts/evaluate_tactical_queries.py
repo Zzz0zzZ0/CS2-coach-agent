@@ -108,6 +108,7 @@ async def evaluate(dataset_path: Path, graph_db: Path) -> dict:
                 "coach_sources": bool(brief and brief.get("sources")),
                 "coach_caveat": bool(brief and "因果" in brief.get("caveat", "")),
                 "round_drilldown": bool(first_source and client.round_detail(first_source)),
+                "key_round_filters": bool(brief and brief.get("round_groups")),
             }
             if tactical:
                 checks.update(_score_positive(client, tactical, expected))
@@ -160,6 +161,10 @@ async def evaluate(dataset_path: Path, graph_db: Path) -> dict:
             ),
             "round_drilldown_coverage_pct": _percent(
                 sum(row["checks"].get("round_drilldown", False) for row in positive_rows),
+                len(positive_rows),
+            ),
+            "key_round_filter_coverage_pct": _percent(
+                sum(row["checks"].get("key_round_filters", False) for row in positive_rows),
                 len(positive_rows),
             ),
             "latency_ms": {
