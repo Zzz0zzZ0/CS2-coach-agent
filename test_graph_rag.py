@@ -415,6 +415,26 @@ def test_cross_match_player_profiles_and_team_comparison(tmp_path, monkeypatch):
     assert empty_slice["sample_size"]["rounds"] == 0
     assert empty_slice["outcomes"]["round_win_pct"] is None
 
+    profile_evidence = asyncio.run(client.retrieve(
+        "Alpha 对阵 Bravo 的 Mirage T侧首杀战术",
+        {"map": "Nuke"},
+        global_search=True,
+    ))
+    assert profile_evidence[0].metadata["context_level"] == "team_tactical_profile"
+    assert profile_evidence[0].metadata["map"] == "Mirage"
+    assert profile_evidence[0].metadata["side"] == "T"
+    assert profile_evidence[0].metadata["opponent"] == "Bravo"
+    assert "Opening won: 1 rounds" in profile_evidence[0].content
+    assert "Graph source paths:" in profile_evidence[0].content
+
+    comparison_evidence = asyncio.run(client.retrieve(
+        "对比 Alpha 和 Bravo 在 Mirage 的补枪差异",
+        {"map": "Mirage"},
+        global_search=True,
+    ))
+    assert comparison_evidence[0].metadata["context_level"] == "team_tactical_comparison"
+    assert comparison_evidence[0].metadata["teams"] == ["Alpha", "Bravo"]
+
     api = FastAPI()
     api.include_router(graph_router.router, prefix="/api")
     monkeypatch.setattr(graph_router, "get_graph_client", lambda: client)

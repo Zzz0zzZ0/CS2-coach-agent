@@ -19,6 +19,8 @@ logger = logging.getLogger(__name__)
 
 MAP_NAMES = {
     "de_ancient": "Ancient",
+    "de_anubis": "Anubis",
+    "de_cache": "Cache",
     "de_dust2": "Dust2",
     "de_inferno": "Inferno",
     "de_mirage": "Mirage",
@@ -95,6 +97,18 @@ def _side_name(value: Any) -> str | None:
 
 def _pct(numerator: int, denominator: int) -> float | None:
     return round(100 * numerator / denominator, 2) if denominator else None
+
+
+def _pct_text(value: float | None) -> str:
+    return "unavailable" if value is None else f"{value:.2f}%"
+
+
+def _query_map_name(query: str) -> str | None:
+    lowered = query.lower()
+    return next(
+        (name for name in sorted(set(MAP_NAMES.values())) if name.lower() in lowered),
+        None,
+    )
 
 
 def _match_id(path: Path, parsed: dict) -> str:
@@ -1234,8 +1248,166 @@ class GraphRAGClient:
         summary = prefix + body + " This is an extractive factual summary; it does not establish tactical causality."
         return summary, source_ids, properties
 
+    def _tactical_query_context(self, query: str, fallback_map: str | None) -> dict:
+        connection = self._connect()
+        try:
+            available_teams = [
+                row[0] for row in connection.execute(
+                    "SELECT DISTINCT json_extract(properties, '$.team') FROM nodes "
+                    "WHERE node_type='tactical_sequence' "
+                    "AND json_extract(properties, '$.team') IS NOT NULL"
+                )
+            ]
+        finally:
+            connection.close()
+        lowered = query.lower()
+        mentions = []
+        for alias, name in TEAM_ALIASES.items():
+            position = lowered.find(alias.lower())
+            if position >= 0:
+                mentions.append((position, TEAM_DISPLAY_NAMES.get(name, name.title())))
+        for name in available_teams:
+            position = lowered.find(str(name).lower())
+            if position >= 0:
+                mentions.append((position, _team_name(name)))
+        teams = []
+        seen = set()
+        for _, name in sorted(mentions):
+            key = _team_key(name)
+            if key not in seen:
+                seen.add(key)
+                teams.append(name)
+
+        has_t = bool(re.search(r"(?<![a-z0-9])t(?:\s*side|侧)?(?![a-z0-9])", lowered)) or "进攻侧" in query or "进攻方" in query
+        has_ct = bool(re.search(r"(?<![a-z0-9])ct(?:\s*side|侧)?(?![a-z0-9])", lowered)) or "防守侧" in query or "防守方" in query
+        side = "T" if has_t and not has_ct else "CT" if has_ct and not has_t else None
+        return {
+            "teams": teams,
+            "map": _query_map_name(query) or fallback_map,
+            "side": side,
+            "comparison": len(teams) > 1 and any(
+                word in lowered for word in ("compare", "comparison", "difference", "对比", "比较", "区别", "差异")
+            ),
+        }
+
+    def _tactical_query_evidence(
+        self, query: str, fallback_map: str | None,
+    ) -> list[Evidence]:
+        context = self._tactical_query_context(query, fallback_map)
+        teams = context["teams"]
+        if not teams:
+            return []
+        if context["comparison"]:
+            profiles = [
+                self.team_tactics(team, map_name=context["map"], side=context["side"])
+                for team in teams[:2]
+            ]
+            profiles = [profile for profile in profiles if profile]
+            if not profiles:
+                return []
+            lines = [
+                f"[Graph Tactical Comparison | {' vs '.join(profile['team'] for profile in profiles)}]"
+            ]
+            for profile in profiles:
+                sample = profile["sample_size"]
+                conversions = profile["conversions"]
+                lines.append(
+                    f"{profile['team']}: {sample['matches']} matches, {sample['maps']} maps, "
+                    f"{sample['rounds']} rounds; round win {_pct_text(profile['outcomes']['round_win_pct'])}; "
+                    f"opening-to-win {_pct_text(conversions['opening_won']['round_win_pct'])}; "
+                    f"trade-round win {_pct_text(conversions['trade_round']['round_win_pct'])}; "
+                    f"post-plant win {_pct_text(conversions['post_plant']['round_win_pct'])}; "
+                    f"retake-contact win {_pct_text(conversions['retake_contact']['round_win_pct'])}."
+                )
+            sources = sorted({
+                source for profile in profiles for source in profile["source_round_ids"]
+            })
+            source_id = "graph-comparison:" + ":".join(_team_key(item["team"]) for item in profiles)
+            return [Evidence(
+                content=" ".join(lines) + " Descriptive silver-label evidence only; no causal claim. Graph source paths: " + ", ".join(sources[:12]),
+                metadata={
+                    "map": context["map"] or "All",
+                    "side": context["side"] or "Both",
+                    "teams": [profile["team"] for profile in profiles],
+                    "tactic_type": "Graph Tactical Comparison",
+                    "source": source_id,
+                    "topic": self._topic(None, set(), query) or "overview",
+                    "context_level": "team_tactical_comparison",
+                    "profiles": [{
+                        "team": profile["team"],
+                        "sample_size": profile["sample_size"],
+                        "outcomes": profile["outcomes"],
+                        "conversions": profile["conversions"],
+                    } for profile in profiles],
+                    "source_round_count": len(sources),
+                },
+                score=1.0 if any(profile["sample_size"]["rounds"] for profile in profiles) else 0.6,
+                source_id=source_id,
+            )]
+
+        opponent = teams[1] if len(teams) > 1 else None
+        profile = self.team_tactics(
+            teams[0], map_name=context["map"], side=context["side"], opponent=opponent,
+        )
+        if not profile:
+            return []
+        sample = profile["sample_size"]
+        conversions = profile["conversions"]
+        leaders = profile["role_leaders"]
+        leader_text = ", ".join(
+            f"{label} {items[0]['name']} ({items[0]['count']})"
+            for label, items in (
+                ("opening", leaders["opening_kills"]),
+                ("trade", leaders["trade_kills"]),
+                ("utility", leaders["utility_burst_participation"]),
+            )
+            if items
+        ) or "none"
+        source_id = "graph-profile:" + ":".join(filter(None, (
+            _team_key(profile["team"]), context["map"], context["side"], _team_key(opponent),
+        )))
+        content = (
+            f"[Graph Team Tactical Profile | {profile['team']} | {context['map'] or 'All maps'} | "
+            f"{context['side'] or 'Both sides'}{f' | vs {opponent}' if opponent else ''}] "
+            f"Sample: {sample['matches']} matches, {sample['maps']} maps, {sample['rounds']} rounds. "
+            f"Round win: {_pct_text(profile['outcomes']['round_win_pct'])}. "
+            f"Opening won: {conversions['opening_won']['opportunities']} rounds, then won "
+            f"{_pct_text(conversions['opening_won']['round_win_pct'])}; opening lost: "
+            f"{conversions['opening_lost_recovery']['opportunities']} rounds, recovered "
+            f"{_pct_text(conversions['opening_lost_recovery']['round_win_pct'])}. "
+            f"Trade-round win: {_pct_text(conversions['trade_round']['round_win_pct'])}; "
+            f"post-plant win: {_pct_text(conversions['post_plant']['round_win_pct'])}; "
+            f"retake-contact win: {_pct_text(conversions['retake_contact']['round_win_pct'])}; "
+            f"execute-candidate win: {_pct_text(conversions['execute_candidate']['round_win_pct'])}. "
+            f"Role leaders: {leader_text}. Descriptive silver-label evidence only; no causal claim. "
+            f"Graph source paths: {', '.join(profile['source_round_ids'])}."
+        )
+        return [Evidence(
+            content=content,
+            metadata={
+                "map": context["map"] or "All",
+                "side": context["side"] or "Both",
+                "team": profile["team"],
+                "opponent": opponent,
+                "tactic_type": "Graph Team Tactical Profile",
+                "source": source_id,
+                "topic": self._topic(None, set(), query) or "overview",
+                "context_level": "team_tactical_profile",
+                "sample_size": sample,
+                "outcomes": profile["outcomes"],
+                "conversions": conversions,
+                "role_leaders": leaders,
+                "source_round_count": len(profile["source_round_ids"]),
+            },
+            score=1.0 if sample["rounds"] else 0.6,
+            source_id=source_id,
+        )]
+
     def _global_search_sync(self, query: str, metadata: dict, k: int) -> list[Evidence]:
-        map_name = _map_name(metadata["map"]) if metadata.get("map") else None
+        map_name = _query_map_name(query) or (
+            _map_name(metadata["map"]) if metadata.get("map") else None
+        )
+        tactical = self._tactical_query_evidence(query, map_name)
         terms = set(re.findall(r"[a-z0-9_]+|[\u4e00-\u9fff]", query.lower()))
         topic = self._topic(None, terms, query)
         connection = self._connect()
@@ -1258,7 +1430,11 @@ class GraphRAGClient:
                 score = min(1.0, overlap * 0.08 + topic_bonus)
                 ranked.append((score, row))
             ranked.sort(key=lambda item: item[0], reverse=True)
-            return [self._community_evidence(score, row) for score, row in ranked[:k]]
+            communities = [
+                self._community_evidence(score, row)
+                for score, row in ranked[:max(0, k - len(tactical))]
+            ]
+            return [*tactical, *communities][:k]
         finally:
             connection.close()
 

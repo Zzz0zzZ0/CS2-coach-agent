@@ -238,6 +238,8 @@ The sidecar uses SQLite for match, map, round, event, player, and tactical-seque
 
 The same SQLite graph now powers cross-match analytics. Player profiles aggregate kills, deaths, assists, opening duels, trades, utility, plants, and participation in all six tactical sequence types. Team comparison normalizes every sequence to 100 observed team rounds so unequal match counts do not distort totals. Tactical slices filter by map, T/CT side, and opponent, then calculate round conversion after opening wins/losses, trade rounds, post-plants, retake contacts, and execute candidates. They also expose player responsibility shares for openings, trades, and utility bursts. Each result retains `graph:{match}:{map}:{round}` sources. These are descriptive metrics, not causal claims; profile methodology metadata explicitly flags unavailable flash-event coverage.
 
+Global Search now extracts team, map, T/CT side, and opponent from natural-language questions and returns the matching tactical slice as its highest-priority structured evidence. When two teams and comparison intent are present, it generates a same-context tactical comparison. Examples include `Falcons Dust2 T-side opening conversion`, `Falcons versus Spirit retake performance`, and `compare Spirit and Vitality trade rounds on Nuke CT`. This path is deterministic and adds no LLM call.
+
 ### 4. Start the API and Worker
 
 ```bash

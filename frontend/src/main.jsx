@@ -41,10 +41,10 @@ function App() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [maps, setMaps] = useState([]);
-  const [map, setMap] = useState("Mirage");
+  const [map, setMap] = useState("");
   const [graphStats, setGraphStats] = useState({});
   const [graph, setGraph] = useState({ nodes: [], edges: [] });
-  const [query, setQuery] = useState("职业比赛中 Mirage 的首杀和道具模式");
+  const [query, setQuery] = useState("猎鹰 Dust2 T侧首杀后胜率");
   const [searchResults, setSearchResults] = useState([]);
   const [teamComparison, setTeamComparison] = useState([]);
   const [playerTeam, setPlayerTeam] = useState(FEATURED_TEAMS[0]);
@@ -65,7 +65,6 @@ function App() {
         setMaps(mapData.maps || []);
         setGraphStats(stats);
         setTeamComparison(comparison.teams || []);
-        if (mapData.maps?.length && !mapData.maps.includes(map)) setMap(mapData.maps[0]);
       })
       .catch((reason) => setError(reason.message));
   }, []);
@@ -190,7 +189,7 @@ function App() {
 
         <section className="report-card card"><div className="section-heading"><div><p className="eyebrow">03 / COACHING REPORT</p><h2>Analyst × Coach</h2></div><span className="chip">EVIDENCE-BOUND</span></div><div className="report-columns"><ReportBlock title="ANALYST / 发生了什么" text={analysis?.analyst_report} empty="提交 Demo 后，这里显示确定性指标与数据报告。" /><ReportBlock title="COACH / 应该怎么做" text={analysis?.coach_advice} empty="Coach 会基于指标和 [E#] 证据生成训练建议。" /></div></section>
 
-        <section className="graph-card card"><div className="section-heading"><div><p className="eyebrow">04 / GRAPH RAG</p><h2>战术关系图谱</h2></div><div className="stats-inline"><span>{formatNumber(graphStats.nodes)} nodes</span><span>{formatNumber(graphStats.edges)} edges</span><span>{formatNumber(graphStats.tactical_sequences)} sequences</span><span>{formatNumber(graphStats.communities)} communities</span></div></div><div className="graph-toolbar"><select value={map} onChange={(event) => setMap(event.target.value)}>{maps.map((item) => <option key={item}>{item}</option>)}</select><form onSubmit={handleSearch}><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索社区摘要与职业模式…" /><button>Global Search</button></form></div><div className="graph-layout"><GraphCanvas positions={positions} edges={graph.edges || []} /><div className="search-results">{searchResults.length ? searchResults.map((item) => <article key={item.source_id}><div className="result-meta">{item.metadata?.community_id} · {Number(item.score || 0).toFixed(2)}</div><p>{item.content}</p></article>) : <div className="empty-search">输入问题，检索 {map} 的社区摘要。<br /><small>结果保留回合来源 ID，可继续追溯到 Local Search。</small></div>}</div></div></section>
+        <section className="graph-card card"><div className="section-heading"><div><p className="eyebrow">04 / GRAPH RAG</p><h2>战术关系图谱</h2></div><div className="stats-inline"><span>{formatNumber(graphStats.nodes)} nodes</span><span>{formatNumber(graphStats.edges)} edges</span><span>{formatNumber(graphStats.tactical_sequences)} sequences</span><span>{formatNumber(graphStats.communities)} communities</span></div></div><div className="graph-toolbar"><select value={map} onChange={(event) => setMap(event.target.value)}><option value="">All maps</option>{maps.map((item) => <option key={item}>{item}</option>)}</select><form onSubmit={handleSearch}><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="例如：猎鹰 Dust2 T侧首杀后胜率" /><button>Ask Graph</button></form></div><div className="graph-layout"><GraphCanvas positions={positions} edges={graph.edges || []} /><div className="search-results">{searchResults.length ? searchResults.map((item) => <article key={item.source_id}><div className="result-meta">{item.metadata?.community_id || item.metadata?.tactic_type} · {Number(item.score || 0).toFixed(2)}</div><p>{item.content}</p></article>) : <div className="empty-search">输入战队、地图、阵营或对手，检索结构化战术画像与社区摘要。<br /><small>结果保留回合来源 ID，可继续追溯到 Local Search。</small></div>}</div></div></section>
 
         <section className="analytics-card card">
           <div className="section-heading"><div><p className="eyebrow">05 / CROSS-MATCH INTELLIGENCE</p><h2>选手画像 × 五队战术对比</h2></div><span className="chip">PER 100 ROUNDS</span></div>
