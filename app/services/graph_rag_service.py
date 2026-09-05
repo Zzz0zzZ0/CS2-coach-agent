@@ -26,6 +26,19 @@ MAP_NAMES = {
     "de_overpass": "Overpass",
     "de_vertigo": "Vertigo",
 }
+TEAM_ALIASES = {
+    "猎鹰": "falcons",
+    "绿龙": "spirit",
+    "蜜蜂": "vitality",
+    "黑豹": "furia",
+    "老鼠": "mouz",
+}
+
+
+def _query_text(query: str) -> str:
+    return query.lower() + " " + " ".join(
+        name for alias, name in TEAM_ALIASES.items() if alias in query
+    )
 
 
 def _text(value: Any, fallback: str = "Unknown") -> str:
@@ -388,8 +401,9 @@ class GraphRAGClient:
 
     def _retrieve_sync(self, query: str, metadata: dict, task_id: str | None, k: int) -> list[Evidence]:
         map_name = _map_name(metadata["map"]) if metadata.get("map") else None
-        terms = set(re.findall(r"[a-z0-9_]+", query.lower()))
-        topic = self._topic(task_id, terms, query)
+        expanded_query = _query_text(query)
+        terms = set(re.findall(r"[a-z0-9_]+", expanded_query))
+        topic = self._topic(task_id, terms, expanded_query)
         connection = self._connect()
         try:
             rows = connection.execute(
@@ -409,7 +423,7 @@ class GraphRAGClient:
                 for item in event_rows:
                     event = json.loads(item["properties"])
                     events.append((event.get("kind", item["label"]), event))
-                score = self._round_score(events, props, topic, terms, query)
+                score = self._round_score(events, props, topic, terms, expanded_query)
                 if score > 0:
                     scored.append((score, row, props, events))
             scored.sort(key=lambda item: item[0], reverse=True)
@@ -674,9 +688,22 @@ class GraphRAGClient:
             requested_types.add("POST_PLANT")
         if requested_types:
             score += 0.4 if requested_types & sequence_types else -0.4
+        identity_keys = {
+            "team", "killer", "killer_team", "victim", "victim_team", "assister",
+            "thrower", "thrower_team", "attacker", "planter", "planter_team",
+        }
+        identity_text = " ".join(
+            str(value).lower()
+            for _, event in events
+            for key, value in event.items()
+            if key in identity_keys and value
+        )
+        score += min(0.6, sum(
+            1 for term in terms if len(term) >= 3 and term in identity_text
+        ) * 0.3)
         text = " ".join([props.get("winner", ""), props.get("reason", "")] + [kind for kind, _ in events]).lower()
         score += min(0.5, sum(1 for term in terms if term in text) * 0.05)
-        return min(1.0, score)
+        return score
 
     @staticmethod
     def _evidence(item: tuple, topic: str | None) -> Evidence:
@@ -730,6 +757,6 @@ class GraphRAGClient:
                 "tactical_labels": sorted(set(tactical_labels)),
                 "tactical_label_details": tactical_label_details,
             },
-            score=float(score),
+            score=float(min(1.0, score)),
             source_id=source,
         )

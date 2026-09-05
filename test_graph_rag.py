@@ -2,7 +2,7 @@ import asyncio
 import json
 import sqlite3
 
-from app.services.graph_rag_service import GraphRAGClient
+from app.services.graph_rag_service import GraphRAGClient, _query_text
 
 
 def test_graph_rag_returns_a_traceable_opening_path(tmp_path):
@@ -175,6 +175,29 @@ def test_graph_global_search_rejects_irrelevant_queries(tmp_path):
     )
 
     assert evidence == []
+
+
+def test_round_score_prefers_requested_team():
+    falcons = [("tactical_sequence", {
+        "label_type": "EXECUTE_CANDIDATE", "team": "Team Falcons",
+    })]
+    spirit = [("tactical_sequence", {
+        "label_type": "EXECUTE_CANDIDATE", "team": "Team Spirit",
+    })]
+
+    falcons_score = GraphRAGClient._round_score(
+        falcons, {}, "utility", {"falcons", "execute"}, "猎鹰 execute falcons",
+    )
+    spirit_score = GraphRAGClient._round_score(
+        spirit, {}, "utility", {"falcons", "execute"}, "猎鹰 execute falcons",
+    )
+
+    assert falcons_score > spirit_score
+
+
+def test_chinese_team_aliases_expand_for_retrieval():
+    assert "falcons" in _query_text("Nuke 猎鹰 execute")
+    assert "spirit" in _query_text("Dust2 绿龙 补枪")
 
 
 def test_silver_tactical_sequences_are_connected_and_retrievable(tmp_path):

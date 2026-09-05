@@ -279,6 +279,9 @@ make fetch-demos ARGS="--days 7 --min-rating 2 --max-matches 10"
 
 # Download and extract .dem files (requires unar, 7z, unrar, or bsdtar)
 make fetch-demos ARGS="--days 30 --min-rating 2 --max-matches 10 --download"
+
+# Download a reviewed fixed selection for reproducible experiments
+make fetch-demos ARGS="--selection-file datasets/selections/five_teams_recent_20_v1.json --download"
 ```
 
 The downloader only follows an official Demo link exposed on the HLTV match page. It stores a per-match manifest, skips an existing manifest by default, and requires `--force` to download that match again.
@@ -418,7 +421,7 @@ make silver-dataset # build evidence-linked tactical silver annotations
 
 Community summaries are currently deterministic and extractive: they summarize parsed facts, preserve round-level sources, and do not promote small-sample observations into universal professional tactics.
 
-`make silver-dataset` writes round-level research data to `datasets/silver/v0.1/`. Opening duels and post-plant phases come directly from event facts; trade kills, Utility Bursts, and Retake Contacts use explicit temporal rules. A weakly supervised Execute Candidate is added only when a T-side utility sequence is followed by a plant. Every label retains its rule version, confidence, review status, and evidence event IDs. The result is explicitly a reproducible silver-label dataset, not expert-annotated gold data.
+`make silver-dataset` writes round-level research data to `datasets/silver/v0.2/`. v0.2 uses the fixed 20-match selection in `datasets/selections/five_teams_recent_20_v1.json`, covering 49 maps, 1,030 rounds, and 5,325 tactical silver labels; v0.1 remains as the original single-match baseline. Opening duels and post-plant phases come directly from event facts; trade kills, Utility Bursts, and Retake Contacts use explicit temporal rules. A weakly supervised Execute Candidate is added only when a T-side utility sequence is followed by a plant. Every label retains its rule version, confidence, review status, and evidence event IDs. The result is explicitly a reproducible silver-label dataset, not expert-annotated gold data.
 
 ---
 

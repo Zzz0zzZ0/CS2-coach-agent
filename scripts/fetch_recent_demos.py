@@ -35,15 +35,30 @@ def _write_manifest(match: dict, *, filters: dict, demo_files: list[str], status
     return path
 
 
+def _manifest_complete(path: Path) -> bool:
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        return payload.get("status") == "downloaded" and all(
+            Path(demo_file).exists() for demo_file in payload.get("demo_files", [])
+        ) and bool(payload.get("demo_files"))
+    except (OSError, ValueError):
+        return False
+
+
 async def run(args) -> list[dict]:
     filters = {"days": args.days, "min_rating": args.min_rating, "max_matches": args.max_matches}
-    matches = await fetch_high_quality_matches(**filters)
+    if args.selection_file:
+        payload = json.loads(args.selection_file.read_text(encoding="utf-8"))
+        matches = payload["matches"]
+        filters = {"selection_file": str(args.selection_file)}
+    else:
+        matches = await fetch_high_quality_matches(**filters)
     unique_matches = {match["match_id"]: match for match in matches}
     output = []
 
     for match in unique_matches.values():
         manifest_path = _manifest_path(match["match_id"])
-        if args.download and manifest_path.exists() and not args.force:
+        if args.download and _manifest_complete(manifest_path) and not args.force:
             output.append({"match": match, "status": "skipped_existing_manifest"})
             continue
 
@@ -79,6 +94,7 @@ def main() -> None:
     parser.add_argument("--max-matches", type=int, default=10)
     parser.add_argument("--download", action="store_true", help="download and extract demos")
     parser.add_argument("--force", action="store_true", help="redownload matches with manifests")
+    parser.add_argument("--selection-file", type=Path, help="use a reviewed JSON match selection")
     args = parser.parse_args()
     print(json.dumps(asyncio.run(run(args)), ensure_ascii=False, indent=2))
 

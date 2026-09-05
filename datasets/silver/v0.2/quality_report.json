@@ -1,0 +1,55 @@
+{
+  "schema_version": "0.1",
+  "label_policy": "AI-assisted silver labels; not expert gold labels",
+  "matches": 20,
+  "demos": 49,
+  "maps": [
+    "Ancient",
+    "Anubis",
+    "Cache",
+    "Dust2",
+    "Inferno",
+    "Mirage",
+    "Nuke"
+  ],
+  "rounds": 1030,
+  "events": 29880,
+  "labels": 5325,
+  "event_types": {
+    "bomb_plant": 542,
+    "grenade": 22549,
+    "kill": 6789
+  },
+  "label_types": {
+    "EXECUTE_CANDIDATE": 146,
+    "OPENING_DUEL": 1028,
+    "POST_PLANT": 542,
+    "RETAKE_CONTACT": 310,
+    "TRADE_KILL": 1430,
+    "UTILITY_BURST": 1869
+  },
+  "label_sources": {
+    "deterministic_rule": 3609,
+    "event_fact": 1570,
+    "weak_rule": 146
+  },
+  "review_statuses": {
+    "auto_accepted": 5325
+  },
+  "player_id_coverage": 0.9991,
+  "actor_team_coverage": 0.9989,
+  "actor_area_coverage": 0.9989,
+  "bomb_site_coverage": 1.0,
+  "mean_label_confidence": 0.9959,
+  "integrity": {
+    "missing_evidence_refs": 0,
+    "duplicate_event_ids": 0,
+    "tick_boundary_violations": 0
+  },
+  "limitations": [
+    "EXECUTE_CANDIDATE is a weak-rule label, not tactical-intent ground truth.",
+    "Bomb sites use the parser's place name; the numeric entity identifier is retained for audit.",
+    "UTILITY_BURST and RETAKE_CONTACT describe temporal patterns, not tactical intent or success.",
+    "No missed-trade label is produced without player trajectory and opportunity evidence."
+  ]
+}

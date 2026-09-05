@@ -58,6 +58,7 @@ async def download_and_extract_demo(demo_url: str, match_name: str) -> list[str]
         from DrissionPage import ChromiumPage, ChromiumOptions
 
         co = ChromiumOptions()
+        co.auto_port()
         co.headless(False)
         co.set_argument("--window-position=-2000,-2000")
         co.set_paths(download_path=str(DOWNLOAD_DIR.absolute()))

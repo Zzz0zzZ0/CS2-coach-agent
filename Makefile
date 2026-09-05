@@ -30,7 +30,7 @@ graph-build:
 	@PYTHONPATH=. $(PYTHON) scripts/build_graph.py
 
 silver-dataset:
-	@PYTHONPATH=. $(PYTHON) scripts/build_silver_dataset.py
+	@PYTHONPATH=. $(PYTHON) scripts/build_silver_dataset.py $(ARGS)
 
 frontend-install:
 	@npm --prefix frontend install

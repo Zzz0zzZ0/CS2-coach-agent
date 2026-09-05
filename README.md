@@ -279,6 +279,9 @@ make fetch-demos ARGS="--days 7 --min-rating 2 --max-matches 10"
 
 # 下载并解压 .dem 文件（需要本机有 unar、7z、unrar 或 bsdtar 之一）
 make fetch-demos ARGS="--days 30 --min-rating 2 --max-matches 10 --download"
+
+# 按已审核的固定比赛清单下载，便于复现实验数据集
+make fetch-demos ARGS="--selection-file datasets/selections/five_teams_recent_20_v1.json --download"
 ```
 
 下载器只接受 HLTV 比赛页明确暴露的官方 Demo 链接，不会把普通比赛页面误当作录像源；下载完成后会保留按比赛命名的 manifest，重复执行默认跳过已有 manifest，使用 `--force` 才会重新下载。
@@ -418,7 +421,7 @@ make silver-dataset # 生成带置信度与证据来源的战术银标数据集
 
 GraphRAG 当前采用确定性抽取式社区摘要；摘要只概括解析到的事实，并保留回合来源，不把小样本观察直接升级为职业战术定律。
 
-`make silver-dataset` 会将本地 Demo 转换为 `datasets/silver/v0.1/` 下的回合级研究数据。首杀和下包阶段来自直接事件事实；补枪、Utility Burst 与 Retake Contact 来自明确的时间窗规则；只有 T 方道具序列后成功下包才会追加弱监督的 Execute Candidate。所有标签都保存规则版本、置信度、审核状态和证据事件 ID。该数据集定位为可复现的 silver labels，不宣称是职业教练人工标注的 gold labels。
+`make silver-dataset` 会将本地 Demo 转换为 `datasets/silver/v0.2/` 下的回合级研究数据。v0.2 固定采用 `datasets/selections/five_teams_recent_20_v1.json` 的 20 场近期比赛，共 49 张地图、1,030 回合和 5,325 个战术银标；v0.1 作为单场初始基线保留。首杀和下包阶段来自直接事件事实；补枪、Utility Burst 与 Retake Contact 来自明确的时间窗规则；只有 T 方道具序列后成功下包才会追加弱监督的 Execute Candidate。所有标签都保存规则版本、置信度、审核状态和证据事件 ID。该数据集定位为可复现的 silver labels，不宣称是职业教练人工标注的 gold labels。
 
 ---
 

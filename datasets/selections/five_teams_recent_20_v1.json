@@ -1,0 +1,30 @@
+{
+  "selection_id": "five-teams-recent-20-v1",
+  "selected_at": "2026-09-06",
+  "date_range": ["2026-08-16", "2026-09-05"],
+  "criteria": "20 newest unique completed BO3/BO5 matches with an official HLTV demo, balanced across Falcons, Spirit, Vitality, FURIA, and MOUZ; single-map matches excluded.",
+  "target_teams": ["Falcons", "Spirit", "Vitality", "FURIA", "MOUZ"],
+  "coverage": {"Falcons": 5, "Spirit": 6, "Vitality": 5, "FURIA": 5, "MOUZ": 4},
+  "matches": [
+    {"match_id":"2396949","team1":"Spirit","team2":"Falcons","event":"BLAST Open Porto 2026","match_url":"https://www.hltv.org/matches/2396949/spirit-vs-falcons-blast-open-porto-2026","demo_url":"https://www.hltv.org/download/demo/111028"},
+    {"match_id":"2396948","team1":"FURIA","team2":"Vitality","event":"BLAST Open Porto 2026","match_url":"https://www.hltv.org/matches/2396948/furia-vs-vitality-blast-open-porto-2026","demo_url":"https://www.hltv.org/download/demo/110994"},
+    {"match_id":"2396947","team1":"Falcons","team2":"G2","event":"BLAST Open Porto 2026","match_url":"https://www.hltv.org/matches/2396947/falcons-vs-g2-blast-open-porto-2026","demo_url":"https://www.hltv.org/download/demo/110982"},
+    {"match_id":"2396946","team1":"FUT","team2":"Vitality","event":"BLAST Open Porto 2026","match_url":"https://www.hltv.org/matches/2396946/fut-vs-vitality-blast-open-porto-2026","demo_url":"https://www.hltv.org/download/demo/110851"},
+    {"match_id":"2396945","team1":"MOUZ","team2":"Falcons","event":"BLAST Open Porto 2026","match_url":"https://www.hltv.org/matches/2396945/mouz-vs-falcons-blast-open-porto-2026","demo_url":"https://www.hltv.org/download/demo/110839"},
+    {"match_id":"2396943","team1":"Spirit","team2":"FURIA","event":"BLAST Open Porto 2026","match_url":"https://www.hltv.org/matches/2396943/spirit-vs-furia-blast-open-porto-2026","demo_url":"https://www.hltv.org/download/demo/110821"},
+    {"match_id":"2396941","team1":"Vitality","team2":"Legacy","event":"BLAST Open Porto 2026","match_url":"https://www.hltv.org/matches/2396941/vitality-vs-legacy-blast-open-porto-2026","demo_url":"https://www.hltv.org/download/demo/110806"},
+    {"match_id":"2396938","team1":"Legacy","team2":"Falcons","event":"BLAST Open Porto 2026","match_url":"https://www.hltv.org/matches/2396938/legacy-vs-falcons-blast-open-porto-2026","demo_url":"https://www.hltv.org/download/demo/110733"},
+    {"match_id":"2396935","team1":"Vitality","team2":"9z","event":"BLAST Open Porto 2026","match_url":"https://www.hltv.org/matches/2396935/vitality-vs-9z-blast-open-porto-2026","demo_url":"https://www.hltv.org/download/demo/110710"},
+    {"match_id":"2396932","team1":"G2","team2":"Spirit","event":"BLAST Open Porto 2026","match_url":"https://www.hltv.org/matches/2396932/g2-vs-spirit-blast-open-porto-2026","demo_url":"https://www.hltv.org/download/demo/110675"},
+    {"match_id":"2396928","team1":"MOUZ","team2":"9z","event":"BLAST Open Porto 2026","match_url":"https://www.hltv.org/matches/2396928/mouz-vs-9z-blast-open-porto-2026","demo_url":"https://www.hltv.org/download/demo/110630"},
+    {"match_id":"2396926","team1":"FURIA","team2":"paiN","event":"BLAST Open Porto 2026","match_url":"https://www.hltv.org/matches/2396926/furia-vs-pain-blast-open-porto-2026","demo_url":"https://www.hltv.org/download/demo/110604"},
+    {"match_id":"2396614","team1":"FUT","team2":"Spirit","event":"Esports World Cup 2026","match_url":"https://www.hltv.org/matches/2396614/fut-vs-spirit-esports-world-cup-2026","demo_url":"https://www.hltv.org/download/demo/110499"},
+    {"match_id":"2396613","team1":"FURIA","team2":"Legacy","event":"Esports World Cup 2026","match_url":"https://www.hltv.org/matches/2396613/furia-vs-legacy-esports-world-cup-2026","demo_url":"https://www.hltv.org/download/demo/110491"},
+    {"match_id":"2396612","team1":"Legacy","team2":"Spirit","event":"Esports World Cup 2026","match_url":"https://www.hltv.org/matches/2396612/legacy-vs-spirit-esports-world-cup-2026","demo_url":"https://www.hltv.org/download/demo/110480"},
+    {"match_id":"2396610","team1":"Vitality","team2":"Spirit","event":"Esports World Cup 2026","match_url":"https://www.hltv.org/matches/2396610/vitality-vs-spirit-esports-world-cup-2026","demo_url":"https://www.hltv.org/download/demo/110462"},
+    {"match_id":"2396609","team1":"Legacy","team2":"Falcons","event":"Esports World Cup 2026","match_url":"https://www.hltv.org/matches/2396609/legacy-vs-falcons-esports-world-cup-2026","demo_url":"https://www.hltv.org/download/demo/110456"},
+    {"match_id":"2396608","team1":"FUT","team2":"MOUZ","event":"Esports World Cup 2026","match_url":"https://www.hltv.org/matches/2396608/fut-vs-mouz-esports-world-cup-2026","demo_url":"https://www.hltv.org/download/demo/110449"},
+    {"match_id":"2396607","team1":"G2","team2":"FURIA","event":"Esports World Cup 2026","match_url":"https://www.hltv.org/matches/2396607/g2-vs-furia-esports-world-cup-2026","demo_url":"https://www.hltv.org/download/demo/110436"},
+    {"match_id":"2396595","team1":"MOUZ","team2":"PARIVISION","event":"Esports World Cup 2026","match_url":"https://www.hltv.org/matches/2396595/mouz-vs-parivision-esports-world-cup-2026","demo_url":"https://www.hltv.org/download/demo/110336"}
+  ]
+}

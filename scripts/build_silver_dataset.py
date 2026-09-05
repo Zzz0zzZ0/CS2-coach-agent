@@ -74,7 +74,7 @@ This dataset contains AI-assisted silver labels generated from deterministic dem
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build CS2 silver tactical annotations")
     parser.add_argument("--demo-dir", type=Path, default=PROJECT_ROOT / "data" / "demos")
-    parser.add_argument("--output-dir", type=Path, default=PROJECT_ROOT / "datasets" / "silver" / "v0.1")
+    parser.add_argument("--output-dir", type=Path, default=PROJECT_ROOT / "datasets" / "silver" / "v0.2")
     parser.add_argument("--tick-rate", type=int, default=64)
     args = parser.parse_args()
 

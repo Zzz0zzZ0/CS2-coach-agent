@@ -1,4 +1,7 @@
+from argparse import Namespace
+import asyncio
 from datetime import date
+import json
 
 from app.scrapers.demo_downloader import safe_match_name
 from app.scrapers.hltv_scraper import (
@@ -7,6 +10,7 @@ from app.scrapers.hltv_scraper import (
     normalize_hltv_url,
     parse_result_card,
 )
+from scripts.fetch_recent_demos import _manifest_complete, run
 
 
 def test_results_url_is_bounded_to_recent_demo_matches():
@@ -51,3 +55,39 @@ def test_parse_current_hltv_result_card():
         "team2": "Team B",
         "event": "Example LAN",
     }
+
+
+def test_fetch_script_accepts_reviewed_selection(tmp_path):
+    selection = tmp_path / "selection.json"
+    selection.write_text(json.dumps({"matches": [{
+        "match_id": "12345",
+        "team1": "Spirit",
+        "team2": "Falcons",
+        "event": "Example LAN",
+        "match_url": "https://www.hltv.org/matches/12345/example",
+        "demo_url": "https://www.hltv.org/download/demo/999",
+    }]}), encoding="utf-8")
+
+    result = asyncio.run(run(Namespace(
+        days=7, min_rating=2, max_matches=10,
+        download=False, force=False, selection_file=selection,
+    )))
+
+    assert result[0]["match"]["match_id"] == "12345"
+    assert result[0]["status"] == "discovered"
+
+
+def test_only_complete_download_manifests_are_skipped(tmp_path):
+    demo = tmp_path / "map1.dem"
+    demo.write_bytes(b"demo")
+    manifest = tmp_path / "match.json"
+
+    manifest.write_text(json.dumps({
+        "status": "downloaded", "demo_files": [str(demo)],
+    }), encoding="utf-8")
+    assert _manifest_complete(manifest) is True
+
+    manifest.write_text(json.dumps({
+        "status": "download_failed", "demo_files": [],
+    }), encoding="utf-8")
+    assert _manifest_complete(manifest) is False
