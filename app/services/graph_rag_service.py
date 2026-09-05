@@ -59,6 +59,14 @@ COACH_METRICS = {
     "post_plant": ("下包后回合", "固定下包后的交叉站位、信息优先级和延时道具分工。"),
     "retake_contact": ("回防接触回合", "训练回防集合点、第一颗闪光和双人同步接触。"),
 }
+TACTICAL_LABEL_NAMES = {
+    "OPENING_DUEL": "首杀对局",
+    "TRADE_KILL": "补枪",
+    "UTILITY_BURST": "道具爆发",
+    "EXECUTE_CANDIDATE": "爆弹候选",
+    "POST_PLANT": "下包后",
+    "RETAKE_CONTACT": "回防接触",
+}
 
 
 def _query_text(query: str) -> str:
@@ -128,6 +136,42 @@ def _requested_metric(query: str) -> str | None:
         ("opening_won", ("首杀", "opening", "first kill")),
     )
     return next((key for key, terms in keywords if any(term in lowered for term in terms)), None)
+
+
+def _event_tick(properties: dict) -> int | None:
+    value = properties.get("tick", properties.get("start_tick"))
+    try:
+        return int(value) if value is not None else None
+    except (TypeError, ValueError):
+        return None
+
+
+def _round_event_label(properties: dict) -> str:
+    kind = properties.get("kind")
+    if kind == "kill":
+        flags = []
+        if properties.get("is_first_kill"):
+            flags.append("首杀")
+        if properties.get("is_headshot"):
+            flags.append("爆头")
+        suffix = f" · {' / '.join(flags)}" if flags else ""
+        return (
+            f"{properties.get('killer', 'Unknown')} 击杀 {properties.get('victim', 'Unknown')}"
+            f" · {properties.get('weapon', 'Unknown')}{suffix}"
+        )
+    if kind == "grenade":
+        area = properties.get("thrower_area")
+        return f"{properties.get('thrower', 'Unknown')} 投掷 {properties.get('type', '道具')}" + (f" · {area}" if area else "")
+    if kind == "flash":
+        return f"{properties.get('attacker', 'Unknown')} 闪白 {properties.get('victim', 'Unknown')}"
+    if kind == "plant":
+        site = str(properties.get("site", "Unknown")).removeprefix("Bombsite")
+        return f"{properties.get('planter', 'Unknown')} 在 {site} 点下包"
+    label_type = properties.get("label_type", "Unknown")
+    label = TACTICAL_LABEL_NAMES.get(label_type, label_type)
+    team = _team_name(properties.get("team"))
+    site = f" · {properties.get('site')} 点" if properties.get("site") else ""
+    return f"{label} · {team}{site} · 置信度 {float(properties.get('confidence', 0)):.2f}"
 
 
 def _query_map_name(query: str) -> str | None:
@@ -705,6 +749,63 @@ class GraphRAGClient:
             "sources": sources,
             "methodology": "deterministic-coach-brief-v1",
         }
+
+    def round_detail(self, source_id: str) -> dict | None:
+        """Return one cited round as a chronological event and tactical-label timeline."""
+        match = re.fullmatch(r"(?:graph|round):([^:]+):([^:]+):(\d+)", source_id)
+        if not match or not self.available():
+            return None
+        match_id, map_name, round_number = match.groups()
+        connection = self._connect()
+        try:
+            round_row = connection.execute(
+                "SELECT properties FROM nodes WHERE node_id=? AND node_type='round'",
+                (f"round:{match_id}:{map_name}:{round_number}",),
+            ).fetchone()
+            if not round_row:
+                return None
+            rows = connection.execute(
+                "SELECT node_id,node_type,properties FROM nodes "
+                "WHERE match_id=? AND map_name=? AND round_number=? "
+                "AND node_type IN ('event','tactical_sequence')",
+                (match_id, map_name, round_number),
+            ).fetchall()
+            timeline = []
+            counts = Counter()
+            teams = set()
+            for row in rows:
+                properties = json.loads(row["properties"])
+                kind = properties.get("kind", row["node_type"])
+                counts[kind] += 1
+                for field in ("team", "killer_team", "victim_team", "thrower_team", "attacker_team", "planter_team"):
+                    if properties.get(field):
+                        teams.add(_team_name(properties[field]))
+                timeline.append({
+                    "id": row["node_id"],
+                    "tick": _event_tick(properties),
+                    "kind": kind,
+                    "label": _round_event_label(properties),
+                    "team": _team_name(properties.get("team")) if properties.get("team") else None,
+                    "site": properties.get("site"),
+                    "label_source": properties.get("label_source"),
+                    "confidence": properties.get("confidence"),
+                })
+            timeline.sort(key=lambda item: (item["tick"] is None, item["tick"] or 0, item["kind"] == "tactical_sequence"))
+            outcome = json.loads(round_row["properties"])
+            return {
+                "source_id": f"graph:{match_id}:{map_name}:{round_number}",
+                "match_id": match_id,
+                "map": map_name,
+                "round_number": int(round_number),
+                "winner": outcome.get("winner"),
+                "reason": outcome.get("reason"),
+                "teams": sorted(team for team in teams if team != "Unknown"),
+                "counts": dict(counts),
+                "timeline": timeline,
+                "methodology": "parsed-events-plus-silver-labels-v1",
+            }
+        finally:
+            connection.close()
 
     def _analytics_snapshot(self) -> tuple[dict[str, dict], dict[str, dict]]:
         """Aggregate event and tactical nodes without adding a second datastore."""

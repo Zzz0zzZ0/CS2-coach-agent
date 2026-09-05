@@ -16,9 +16,10 @@
     "numeric_consistency_pct": 100.0,
     "source_coverage_pct": 100.0,
     "coach_brief_coverage_pct": 100.0,
+    "round_drilldown_coverage_pct": 100.0,
     "latency_ms": {
-      "p50": 226.32,
-      "p95": 457.21
+      "p50": 221.43,
+      "p95": 444.05
     },
     "categories": {
       "comparison": {
@@ -54,6 +55,7 @@
         "coach_brief": true,
         "coach_sources": true,
         "coach_caveat": true,
+        "round_drilldown": true,
         "context": true,
         "map": true,
         "side": true,
@@ -64,7 +66,7 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 224.43,
+      "latency_ms": 220.18,
       "result_type": "team_tactical_profile",
       "source_id": "graph-profile:falcons",
       "coach_brief_kind": "team_profile"
@@ -79,6 +81,7 @@
         "coach_brief": true,
         "coach_sources": true,
         "coach_caveat": true,
+        "round_drilldown": true,
         "context": true,
         "map": true,
         "side": true,
@@ -89,7 +92,7 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 227.46,
+      "latency_ms": 223.19,
       "result_type": "team_tactical_profile",
       "source_id": "graph-profile:spirit",
       "coach_brief_kind": "team_profile"
@@ -104,6 +107,7 @@
         "coach_brief": true,
         "coach_sources": true,
         "coach_caveat": true,
+        "round_drilldown": true,
         "context": true,
         "map": true,
         "side": true,
@@ -114,7 +118,7 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 235.54,
+      "latency_ms": 233.37,
       "result_type": "team_tactical_profile",
       "source_id": "graph-profile:vitality",
       "coach_brief_kind": "team_profile"
@@ -129,6 +133,7 @@
         "coach_brief": true,
         "coach_sources": true,
         "coach_caveat": true,
+        "round_drilldown": true,
         "context": true,
         "map": true,
         "side": true,
@@ -139,7 +144,7 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 222.94,
+      "latency_ms": 221.91,
       "result_type": "team_tactical_profile",
       "source_id": "graph-profile:furia",
       "coach_brief_kind": "team_profile"
@@ -154,6 +159,7 @@
         "coach_brief": true,
         "coach_sources": true,
         "coach_caveat": true,
+        "round_drilldown": true,
         "context": true,
         "map": true,
         "side": true,
@@ -164,7 +170,7 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 225.57,
+      "latency_ms": 218.84,
       "result_type": "team_tactical_profile",
       "source_id": "graph-profile:mouz",
       "coach_brief_kind": "team_profile"
@@ -179,6 +185,7 @@
         "coach_brief": true,
         "coach_sources": true,
         "coach_caveat": true,
+        "round_drilldown": true,
         "context": true,
         "map": true,
         "side": true,
@@ -189,7 +196,7 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 233.86,
+      "latency_ms": 232.92,
       "result_type": "team_tactical_profile",
       "source_id": "graph-profile:falcons:Dust2:T",
       "coach_brief_kind": "team_profile"
@@ -204,6 +211,7 @@
         "coach_brief": true,
         "coach_sources": true,
         "coach_caveat": true,
+        "round_drilldown": true,
         "context": true,
         "map": true,
         "side": true,
@@ -214,7 +222,7 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 228.91,
+      "latency_ms": 221.43,
       "result_type": "team_tactical_profile",
       "source_id": "graph-profile:falcons:Nuke:CT",
       "coach_brief_kind": "team_profile"
@@ -229,6 +237,7 @@
         "coach_brief": true,
         "coach_sources": true,
         "coach_caveat": true,
+        "round_drilldown": true,
         "context": true,
         "map": true,
         "side": true,
@@ -239,7 +248,7 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 229.18,
+      "latency_ms": 225.71,
       "result_type": "team_tactical_profile",
       "source_id": "graph-profile:spirit:Nuke:CT",
       "coach_brief_kind": "team_profile"
@@ -254,6 +263,7 @@
         "coach_brief": true,
         "coach_sources": true,
         "coach_caveat": true,
+        "round_drilldown": true,
         "context": true,
         "map": true,
         "side": true,
@@ -264,7 +274,7 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 221.25,
+      "latency_ms": 222.14,
       "result_type": "team_tactical_profile",
       "source_id": "graph-profile:spirit:Ancient:T",
       "coach_brief_kind": "team_profile"
@@ -279,6 +289,7 @@
         "coach_brief": true,
         "coach_sources": true,
         "coach_caveat": true,
+        "round_drilldown": true,
         "context": true,
         "map": true,
         "side": true,
@@ -289,7 +300,7 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 221.79,
+      "latency_ms": 220.55,
       "result_type": "team_tactical_profile",
       "source_id": "graph-profile:vitality:Nuke:CT",
       "coach_brief_kind": "team_profile"
@@ -304,6 +315,7 @@
         "coach_brief": true,
         "coach_sources": true,
         "coach_caveat": true,
+        "round_drilldown": true,
         "context": true,
         "map": true,
         "side": true,
@@ -314,7 +326,7 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 232.07,
+      "latency_ms": 238.41,
       "result_type": "team_tactical_profile",
       "source_id": "graph-profile:vitality:Dust2:T",
       "coach_brief_kind": "team_profile"
@@ -329,6 +341,7 @@
         "coach_brief": true,
         "coach_sources": true,
         "coach_caveat": true,
+        "round_drilldown": true,
         "context": true,
         "map": true,
         "side": true,
@@ -339,7 +352,7 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 223.38,
+      "latency_ms": 217.25,
       "result_type": "team_tactical_profile",
       "source_id": "graph-profile:furia:Ancient:CT",
       "coach_brief_kind": "team_profile"
@@ -354,6 +367,7 @@
         "coach_brief": true,
         "coach_sources": true,
         "coach_caveat": true,
+        "round_drilldown": true,
         "context": true,
         "map": true,
         "side": true,
@@ -364,7 +378,7 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 222.47,
+      "latency_ms": 220.28,
       "result_type": "team_tactical_profile",
       "source_id": "graph-profile:furia:Cache:T",
       "coach_brief_kind": "team_profile"
@@ -379,6 +393,7 @@
         "coach_brief": true,
         "coach_sources": true,
         "coach_caveat": true,
+        "round_drilldown": true,
         "context": true,
         "map": true,
         "side": true,
@@ -389,7 +404,7 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 230.4,
+      "latency_ms": 224.7,
       "result_type": "team_tactical_profile",
       "source_id": "graph-profile:mouz:Dust2:CT",
       "coach_brief_kind": "team_profile"
@@ -404,6 +419,7 @@
         "coach_brief": true,
         "coach_sources": true,
         "coach_caveat": true,
+        "round_drilldown": true,
         "context": true,
         "map": true,
         "side": true,
@@ -414,7 +430,7 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 224.19,
+      "latency_ms": 220.09,
       "result_type": "team_tactical_profile",
       "source_id": "graph-profile:mouz:Nuke:T",
       "coach_brief_kind": "team_profile"
@@ -429,6 +445,7 @@
         "coach_brief": true,
         "coach_sources": true,
         "coach_caveat": true,
+        "round_drilldown": true,
         "context": true,
         "map": true,
         "side": true,
@@ -439,7 +456,7 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 226.9,
+      "latency_ms": 217.33,
       "result_type": "team_tactical_profile",
       "source_id": "graph-profile:falcons:spirit",
       "coach_brief_kind": "team_profile"
@@ -454,6 +471,7 @@
         "coach_brief": true,
         "coach_sources": true,
         "coach_caveat": true,
+        "round_drilldown": true,
         "context": true,
         "map": true,
         "side": true,
@@ -464,7 +482,7 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 241.13,
+      "latency_ms": 229.89,
       "result_type": "team_tactical_profile",
       "source_id": "graph-profile:spirit:vitality",
       "coach_brief_kind": "team_profile"
@@ -479,6 +497,7 @@
         "coach_brief": true,
         "coach_sources": true,
         "coach_caveat": true,
+        "round_drilldown": true,
         "context": true,
         "map": true,
         "side": true,
@@ -489,7 +508,7 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 226.32,
+      "latency_ms": 218.81,
       "result_type": "team_tactical_profile",
       "source_id": "graph-profile:vitality:furia",
       "coach_brief_kind": "team_profile"
@@ -504,6 +523,7 @@
         "coach_brief": true,
         "coach_sources": true,
         "coach_caveat": true,
+        "round_drilldown": true,
         "context": true,
         "map": true,
         "side": true,
@@ -514,7 +534,7 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 224.71,
+      "latency_ms": 221.08,
       "result_type": "team_tactical_profile",
       "source_id": "graph-profile:furia:spirit",
       "coach_brief_kind": "team_profile"
@@ -529,6 +549,7 @@
         "coach_brief": true,
         "coach_sources": true,
         "coach_caveat": true,
+        "round_drilldown": true,
         "context": true,
         "map": true,
         "side": true,
@@ -539,7 +560,7 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 233.6,
+      "latency_ms": 227.59,
       "result_type": "team_tactical_profile",
       "source_id": "graph-profile:mouz:falcons",
       "coach_brief_kind": "team_profile"
@@ -554,6 +575,7 @@
         "coach_brief": true,
         "coach_sources": true,
         "coach_caveat": true,
+        "round_drilldown": true,
         "context": true,
         "map": true,
         "side": true,
@@ -563,7 +585,7 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 455.24,
+      "latency_ms": 441.74,
       "result_type": "team_tactical_comparison",
       "source_id": "graph-comparison:spirit:vitality",
       "coach_brief_kind": "comparison"
@@ -578,6 +600,7 @@
         "coach_brief": true,
         "coach_sources": true,
         "coach_caveat": true,
+        "round_drilldown": true,
         "context": true,
         "map": true,
         "side": true,
@@ -587,7 +610,7 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 449.86,
+      "latency_ms": 444.05,
       "result_type": "team_tactical_comparison",
       "source_id": "graph-comparison:falcons:mouz",
       "coach_brief_kind": "comparison"
@@ -602,6 +625,7 @@
         "coach_brief": true,
         "coach_sources": true,
         "coach_caveat": true,
+        "round_drilldown": true,
         "context": true,
         "map": true,
         "side": true,
@@ -611,7 +635,7 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 447.41,
+      "latency_ms": 439.71,
       "result_type": "team_tactical_comparison",
       "source_id": "graph-comparison:furia:vitality",
       "coach_brief_kind": "comparison"
@@ -626,6 +650,7 @@
         "coach_brief": true,
         "coach_sources": true,
         "coach_caveat": true,
+        "round_drilldown": true,
         "context": true,
         "map": true,
         "side": true,
@@ -635,7 +660,7 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 457.21,
+      "latency_ms": 443.34,
       "result_type": "team_tactical_comparison",
       "source_id": "graph-comparison:spirit:furia",
       "coach_brief_kind": "comparison"
@@ -650,6 +675,7 @@
         "coach_brief": true,
         "coach_sources": true,
         "coach_caveat": true,
+        "round_drilldown": true,
         "context": true,
         "map": true,
         "side": true,
@@ -659,7 +685,7 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 464.37,
+      "latency_ms": 453.47,
       "result_type": "team_tactical_comparison",
       "source_id": "graph-comparison:falcons:vitality",
       "coach_brief_kind": "comparison"
@@ -674,7 +700,7 @@
         "coach_rejection": true
       },
       "failures": [],
-      "latency_ms": 4.33,
+      "latency_ms": 4.36,
       "result_type": null,
       "source_id": null,
       "coach_brief_kind": null
@@ -689,7 +715,7 @@
         "coach_rejection": true
       },
       "failures": [],
-      "latency_ms": 4.6,
+      "latency_ms": 4.08,
       "result_type": null,
       "source_id": null,
       "coach_brief_kind": null
@@ -704,7 +730,7 @@
         "coach_rejection": true
       },
       "failures": [],
-      "latency_ms": 3.92,
+      "latency_ms": 3.74,
       "result_type": null,
       "source_id": null,
       "coach_brief_kind": null
@@ -719,7 +745,7 @@
         "coach_rejection": true
       },
       "failures": [],
-      "latency_ms": 4.31,
+      "latency_ms": 3.99,
       "result_type": null,
       "source_id": null,
       "coach_brief_kind": null
@@ -734,7 +760,7 @@
         "coach_rejection": true
       },
       "failures": [],
-      "latency_ms": 4.04,
+      "latency_ms": 3.73,
       "result_type": null,
       "source_id": null,
       "coach_brief_kind": null

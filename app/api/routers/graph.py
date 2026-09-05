@@ -92,6 +92,17 @@ async def graph_search(
     }
 
 
+@router.get("/round")
+async def graph_round_detail(
+    source_id: str = Query(min_length=1, max_length=200),
+):
+    client = get_graph_client()
+    detail = await asyncio.to_thread(client.round_detail, source_id)
+    if client.available() and detail is None:
+        raise HTTPException(status_code=404, detail="Round source not found in the local graph")
+    return {"available": client.available(), "detail": detail}
+
+
 @router.get("/subgraph")
 async def graph_subgraph(
     map_name: str | None = Query(default=None, max_length=64),

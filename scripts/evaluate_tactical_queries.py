@@ -101,11 +101,13 @@ async def evaluate(dataset_path: Path, graph_db: Path) -> dict:
         )
         expected = case["expected"]
         if expected["structured"]:
+            first_source = brief.get("sources", [{}])[0].get("round_id") if brief and brief.get("sources") else None
             checks = {
                 "structured_result": tactical is not None,
                 "coach_brief": brief is not None,
                 "coach_sources": bool(brief and brief.get("sources")),
                 "coach_caveat": bool(brief and "因果" in brief.get("caveat", "")),
+                "round_drilldown": bool(first_source and client.round_detail(first_source)),
             }
             if tactical:
                 checks.update(_score_positive(client, tactical, expected))
@@ -155,6 +157,10 @@ async def evaluate(dataset_path: Path, graph_db: Path) -> dict:
             "coach_brief_coverage_pct": _percent(
                 sum(row["checks"].get("coach_brief", row["checks"].get("coach_rejection", False)) for row in rows),
                 len(rows),
+            ),
+            "round_drilldown_coverage_pct": _percent(
+                sum(row["checks"].get("round_drilldown", False) for row in positive_rows),
+                len(positive_rows),
             ),
             "latency_ms": {
                 "p50": _percentile(latencies, 0.50),

@@ -433,6 +433,11 @@ def test_cross_match_player_profiles_and_team_comparison(tmp_path, monkeypatch):
     assert profile_brief["focus_metric"]["key"] == "opening_won"
     assert profile_brief["sources"][0]["id"] == "G1"
     assert "silver labels" in profile_brief["caveat"]
+    round_detail = client.round_detail(profile_brief["sources"][0]["round_id"])
+    assert round_detail["map"] == "Mirage"
+    assert round_detail["round_number"] == 1
+    assert {item["kind"] for item in round_detail["timeline"]} >= {"kill", "plant"}
+    assert client.round_detail("invalid-source") is None
 
     comparison_evidence = asyncio.run(client.retrieve(
         "对比 Alpha 和 Bravo 在 Mirage 的补枪差异",
@@ -468,3 +473,8 @@ def test_cross_match_player_profiles_and_team_comparison(tmp_path, monkeypatch):
     )
     assert response.status_code == 200
     assert response.json()["answer"]["kind"] == "team_profile"
+    source_id = response.json()["answer"]["sources"][0]["round_id"]
+    response = http.get("/api/graph/round", params={"source_id": source_id})
+    assert response.status_code == 200
+    assert response.json()["detail"]["timeline"]
+    assert http.get("/api/graph/round", params={"source_id": "invalid"}).status_code == 404

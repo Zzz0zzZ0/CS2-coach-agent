@@ -255,7 +255,7 @@ make frontend-install
 make frontend
 ```
 
-浏览器打开 `http://localhost:5173`。前端提供 Demo 上传、异步进度、指标卡片、Analyst/Coach 报告、证据引用、GraphRAG 子图、Global Search、跨比赛选手画像、五队战术对比和上下文战术切片；战队查询会先展示确定性中文教练简报，再保留原始图证据。Vite 会把 `/api` 请求代理到 `8001`。
+浏览器打开 `http://localhost:5173`。前端提供 Demo 上传、异步进度、指标卡片、Analyst/Coach 报告、证据引用、GraphRAG 子图、Global Search、跨比赛选手画像、五队战术对比和上下文战术切片；战队查询会先展示确定性中文教练简报，再保留原始图证据。点击简报中的 `[G#]` 可展开对应回合的原始事件与战术标签时间线。Vite 会把 `/api` 请求代理到 `8001`。
 
 新增只读 GraphRAG 展示接口：
 
@@ -263,6 +263,7 @@ make frontend
 GET /api/graph/stats
 GET /api/graph/maps
 GET /api/graph/search?q=... # 返回 answer 中文简报与 results 原始证据
+GET /api/graph/round?source_id=graph:2396609:Dust2:1
 GET /api/graph/subgraph?map_name=Mirage
 GET /api/graph/players?team=Falcons
 GET /api/graph/players/{steamid_or_nickname}
@@ -436,7 +437,7 @@ GraphRAG 当前采用确定性抽取式社区摘要；摘要只概括解析到�
 
 ### 战术查询评测
 
-`datasets/evaluation/tactical_queries_v1.json` 固定了 30 条无需人工标注的中英文查询，覆盖五支战队的整体画像、地图 × 阵营切片、交手过滤、双队对比和无关问题拒绝。`make eval-tactics` 会校验查询上下文、样本下限、GraphRAG 返回值与 SQLite 确定性聚合的一致性、中文教练简报及回合级来源覆盖。当前报告 `datasets/evaluation/tactical_query_eval_v1_report.json` 为 30/30 通过，结构上下文准确率、数值一致性、中文简报覆盖率和来源覆盖率均为 100%。这是 silver-standard 的接口与数据契约评测，不等同于教练对战术结论的人工 gold evaluation，也不证明因果关系。
+`datasets/evaluation/tactical_queries_v1.json` 固定了 30 条无需人工标注的中英文查询，覆盖五支战队的整体画像、地图 × 阵营切片、交手过滤、双队对比和无关问题拒绝。`make eval-tactics` 会校验查询上下文、样本下限、GraphRAG 返回值与 SQLite 确定性聚合的一致性、中文教练简报及回合级来源下钻。当前报告 `datasets/evaluation/tactical_query_eval_v1_report.json` 为 30/30 通过，结构上下文准确率、数值一致性、中文简报覆盖率、来源覆盖率和回合下钻覆盖率均为 100%。这是 silver-standard 的接口与数据契约评测，不等同于教练对战术结论的人工 gold evaluation，也不证明因果关系。
 
 ---
 

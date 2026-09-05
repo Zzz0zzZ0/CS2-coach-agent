@@ -59,3 +59,8 @@ export function searchGraph(query, mapName) {
   if (mapName) params.set("map_name", mapName);
   return request(`/api/graph/search?${params}`);
 }
+
+export function getGraphRound(sourceId) {
+  const params = new URLSearchParams({ source_id: sourceId });
+  return request(`/api/graph/round?${params}`);
+}
