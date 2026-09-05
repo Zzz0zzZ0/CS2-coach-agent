@@ -295,7 +295,7 @@ def test_cross_match_player_profiles_and_team_comparison(tmp_path, monkeypatch):
                 "round_number": 1,
                 "start_tick": 0,
                 "end_tick": 1000,
-                "winner": "Alpha",
+                "winner": "T",
                 "reason": "target_bombed",
                 "kills": [{
                     "tick": 200,
@@ -329,7 +329,7 @@ def test_cross_match_player_profiles_and_team_comparison(tmp_path, monkeypatch):
                 "round_number": 2,
                 "start_tick": 1001,
                 "end_tick": 2000,
-                "winner": "Bravo",
+                "winner": "CT",
                 "reason": "ct_win",
                 "kills": [{
                     "tick": 1300,
@@ -357,7 +357,7 @@ def test_cross_match_player_profiles_and_team_comparison(tmp_path, monkeypatch):
             "map_name": "de_nuke",
             "rounds": [{
                 "round_number": 1,
-                "winner": "Alpha",
+                "winner": "CT",
                 "reason": "ct_win",
                 "kills": [{
                     "tick": 300,
@@ -397,6 +397,24 @@ def test_cross_match_player_profiles_and_team_comparison(tmp_path, monkeypatch):
     assert alpha["labels"]["OPENING_DUEL"] == {"count": 2, "per_100_rounds": 66.67}
     assert comparison["methodology"]["causality"].startswith("descriptive")
 
+    tactics = client.team_tactics(
+        "Alpha", map_name="Mirage", side="T", opponent="Bravo",
+    )
+    assert tactics["sample_size"] == {
+        "matches": 1, "maps": 1, "rounds": 2, "decided_rounds": 2,
+    }
+    assert tactics["outcomes"] == {"rounds_won": 1, "round_win_pct": 50.0}
+    assert tactics["conversions"]["opening_won"]["round_win_pct"] == 100.0
+    assert tactics["conversions"]["opening_lost_recovery"]["round_win_pct"] == 0.0
+    assert tactics["conversions"]["post_plant"]["round_win_pct"] == 100.0
+    assert tactics["role_leaders"]["opening_kills"][0]["name"] == "entry"
+    assert tactics["site_breakdown"][0]["site"] == "A"
+    assert tactics["source_round_ids"]
+    assert client.team_tactics("does-not-exist") is None
+    empty_slice = client.team_tactics("Alpha", map_name="Inferno")
+    assert empty_slice["sample_size"]["rounds"] == 0
+    assert empty_slice["outcomes"]["round_win_pct"] is None
+
     api = FastAPI()
     api.include_router(graph_router.router, prefix="/api")
     monkeypatch.setattr(graph_router, "get_graph_client", lambda: client)
@@ -406,4 +424,10 @@ def test_cross_match_player_profiles_and_team_comparison(tmp_path, monkeypatch):
     response = http.get("/api/graph/teams/compare?teams=Alpha,Bravo")
     assert response.status_code == 200
     assert len(response.json()["teams"]) == 2
+    response = http.get(
+        "/api/graph/teams/Alpha/tactics?map_name=Mirage&side=T&opponent=Bravo"
+    )
+    assert response.status_code == 200
+    assert response.json()["profile"]["outcomes"]["round_win_pct"] == 50.0
+    assert http.get("/api/graph/teams/Alpha/tactics?side=invalid").status_code == 422
     assert http.get("/api/graph/players/does-not-exist").status_code == 404

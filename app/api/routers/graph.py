@@ -51,6 +51,26 @@ async def graph_team_comparison(
     return {"available": client.available(), **comparison}
 
 
+@router.get("/teams/{team}/tactics")
+async def graph_team_tactics(
+    team: str,
+    map_name: str | None = Query(default=None, max_length=64),
+    side: str | None = Query(default=None, pattern="^(T|CT|t|ct)$"),
+    opponent: str | None = Query(default=None, max_length=64),
+):
+    client = get_graph_client()
+    profile = await asyncio.to_thread(
+        client.team_tactics,
+        team,
+        map_name=map_name,
+        side=side,
+        opponent=opponent,
+    )
+    if client.available() and profile is None:
+        raise HTTPException(status_code=404, detail="Team not found in the local graph")
+    return {"available": client.available(), "profile": profile}
+
+
 @router.get("/search")
 async def graph_search(
     q: str = Query(min_length=1, max_length=500),

@@ -7,6 +7,7 @@ import {
   getGraphStats,
   getPlayerProfile,
   getSubgraph,
+  getTeamTactics,
   getTask,
   searchGraph,
   uploadDemo,
@@ -50,6 +51,10 @@ function App() {
   const [players, setPlayers] = useState([]);
   const [selectedPlayerId, setSelectedPlayerId] = useState("");
   const [playerProfile, setPlayerProfile] = useState(null);
+  const [tacticMap, setTacticMap] = useState("");
+  const [tacticSide, setTacticSide] = useState("");
+  const [tacticOpponent, setTacticOpponent] = useState("");
+  const [tacticProfile, setTacticProfile] = useState(null);
 
   const analysis = task?.status === "SUCCESS" ? task.result?.analysis || task.result : null;
   const metrics = analysis?.metrics || {};
@@ -84,6 +89,14 @@ function App() {
       .then((data) => setPlayerProfile(data.profile || null))
       .catch((reason) => setError(reason.message));
   }, [selectedPlayerId]);
+
+  useEffect(() => {
+    getTeamTactics(playerTeam, {
+      mapName: tacticMap, side: tacticSide, opponent: tacticOpponent,
+    })
+      .then((data) => setTacticProfile(data.profile || null))
+      .catch((reason) => setError(reason.message));
+  }, [playerTeam, tacticMap, tacticSide, tacticOpponent]);
 
   useEffect(() => {
     getSubgraph(map).then(setGraph).catch((reason) => setError(reason.message));
@@ -184,7 +197,7 @@ function App() {
           <div className="analytics-layout">
             <div className="player-pane">
               <div className="analytics-controls">
-                <label>战队<select value={playerTeam} onChange={(event) => setPlayerTeam(event.target.value)}>{FEATURED_TEAMS.map((item) => <option key={item}>{item}</option>)}</select></label>
+                <label>战队<select value={playerTeam} onChange={(event) => { setPlayerTeam(event.target.value); setTacticMap(""); setTacticSide(""); setTacticOpponent(""); }}>{FEATURED_TEAMS.map((item) => <option key={item}>{item}</option>)}</select></label>
                 <label>选手<select value={selectedPlayerId} onChange={(event) => setSelectedPlayerId(event.target.value)}>{players.map((item) => <option key={item.player_id} value={item.player_id}>{item.name}</option>)}</select></label>
               </div>
               {playerProfile ? <PlayerProfile profile={playerProfile} /> : <div className="empty-search">等待本地图谱返回选手画像。</div>}
@@ -194,6 +207,7 @@ function App() {
               <div className="comparison-scroll"><table className="comparison-table"><thead><tr><th>TEAM</th><th>SAMPLE</th>{TACTIC_COLUMNS.map(([key, label]) => <th key={key}>{label}</th>)}</tr></thead><tbody>{teamComparison.map((team) => <tr key={team.team}><td><strong>{team.team}</strong></td><td>{team.sample_size.matches}M · {team.sample_size.maps} maps<br /><small>{team.sample_size.rounds} rounds</small></td>{TACTIC_COLUMNS.map(([key]) => <td key={key}>{Number(team.labels[key]?.per_100_rounds || 0).toFixed(1)}</td>)}</tr>)}</tbody></table></div>
               <p className="method-note">基于事件事实和确定性 silver labels；爆弹候选为弱监督标签。用于描述样本，不直接推断战术因果。</p>
             </div>
+            <TacticalDrilldown profile={tacticProfile} map={tacticMap} side={tacticSide} opponent={tacticOpponent} onMap={setTacticMap} onSide={setTacticSide} onOpponent={setTacticOpponent} />
           </div>
         </section>
 
@@ -215,6 +229,18 @@ function PlayerProfile({ profile }) {
 }
 
 function ProfileMetric({ label, value }) { return <div><span>{label}</span><strong>{value}</strong></div>; }
+
+function TacticalDrilldown({ profile, map, side, opponent, onMap, onSide, onOpponent }) {
+  if (!profile) return <div className="tactic-drilldown empty-search">等待战术切片数据。</div>;
+  const conversions = profile.conversions || {};
+  const leader = (key) => profile.role_leaders?.[key]?.[0];
+  return <div className="tactic-drilldown"><div className="drilldown-head"><div><div className="result-meta">CONTEXTUAL TACTICAL SLICE</div><h3>{profile.team} · {map || "ALL MAPS"} · {side || "BOTH SIDES"}</h3></div><small>{profile.sample_size.matches} matches · {profile.sample_size.maps} maps · {profile.sample_size.rounds} rounds</small></div><div className="drilldown-filters"><select value={map} onChange={(event) => onMap(event.target.value)}><option value="">全部地图</option>{profile.available_filters.maps.map((item) => <option key={item}>{item}</option>)}</select><select value={side} onChange={(event) => onSide(event.target.value)}><option value="">T + CT</option><option value="T">T</option><option value="CT">CT</option></select><select value={opponent} onChange={(event) => onOpponent(event.target.value)}><option value="">全部对手</option>{profile.available_filters.opponents.map((item) => <option key={item}>{item}</option>)}</select></div><div className="conversion-grid"><ConversionMetric label="ROUND WIN" value={profile.outcomes.round_win_pct} count={profile.sample_size.decided_rounds} /><ConversionMetric label="OPENING → WIN" {...conversionProps(conversions.opening_won)} /><ConversionMetric label="OPENING LOSS → WIN" {...conversionProps(conversions.opening_lost_recovery)} /><ConversionMetric label="TRADE ROUND" {...conversionProps(conversions.trade_round)} /><ConversionMetric label="POST-PLANT" {...conversionProps(conversions.post_plant)} /><ConversionMetric label="RETAKE CONTACT" {...conversionProps(conversions.retake_contact)} /><ConversionMetric label="EXECUTE CANDIDATE" {...conversionProps(conversions.execute_candidate)} /></div><div className="role-strip"><RoleLeader label="OPENING" leader={leader("opening_kills")} /><RoleLeader label="TRADE" leader={leader("trade_kills")} /><RoleLeader label="UTILITY" leader={leader("utility_burst_participation")} />{profile.site_breakdown.map((item) => <div key={item.site}><span>SITE {item.site}</span><strong>{formatPercent(item.round_win_pct)}</strong><small>{item.rounds} tagged rounds</small></div>)}</div><div className="source-hint">SOURCE · {profile.source_round_ids?.[0] || "no rounds for this slice"}</div></div>;
+}
+
+function conversionProps(value = {}) { return { value: value.round_win_pct, count: value.opportunities }; }
+function formatPercent(value) { return value == null ? "—" : `${Number(value).toFixed(1)}%`; }
+function ConversionMetric({ label, value, count }) { return <div><span>{label}</span><strong>{formatPercent(value)}</strong><small>{count || 0} opportunities</small></div>; }
+function RoleLeader({ label, leader }) { return <div><span>{label} LEADER</span><strong>{leader?.name || "—"}</strong><small>{leader ? `${leader.count} · ${formatPercent(leader.share_pct)}` : "no observation"}</small></div>; }
 
 function GraphCanvas({ positions, edges }) { return <div className="graph-canvas"><svg viewBox="0 0 900 320" role="img" aria-label="CS2 tactical graph"><g className="edges">{edges.map((edge, index) => { const from = positions[edge.source]; const to = positions[edge.target]; return from && to ? <line key={index} x1={from.x} y1={from.y} x2={to.x} y2={to.y} /> : null; })}</g><g>{Object.values(positions).map(({ x, y, node }) => <g className={`graph-node node-${node.type}`} key={node.id} transform={`translate(${x}, ${y})`}><circle r="17" /><text x="25" y="4">{node.label?.slice(0, 24)}</text><title>{node.id}</title></g>)}</g></svg><div className="legend"><span><i className="legend-match" />match/map</span><span><i className="legend-round" />round</span><span><i className="legend-tactic" />tactical sequence</span><span><i className="legend-event" />event</span></div></div>; }
 

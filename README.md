@@ -236,7 +236,7 @@ make graph-build
 
 `make graph-build` 会同时重算当前 silver 战术标签，并把它们写为 `tactical_sequence` 节点，通过 `SUPPORTED_BY` 与原始事件连接。分析请求会自动并行检索 Milvus 与图谱；命中的标签及其 `label_source`、置信度会以 `Graph ... Evidence` 和 `[E#]` 引用进入现有 Analyst、Coach、Verifier 链。`weak_rule` 只作为候选序列，不视为人工确认战术。没有 `data/graph/cs2_graph.sqlite` 时自动退回 Milvus。
 
-同一个 SQLite 图谱还提供跨比赛分析：选手画像聚合击杀、死亡、助攻、首杀/首死、补枪、道具、下包和六类战术序列参与；战队对比则把战术序列统一换算为每 100 个实际参赛回合，避免不同比赛数量造成总量偏差。每个结果都保留 `graph:{match}:{map}:{round}` 来源。当前指标是描述性统计，不宣称战术因果；Flash 指标不可用时会在画像方法元数据中明确标记。
+同一个 SQLite 图谱还提供跨比赛分析：选手画像聚合击杀、死亡、助攻、首杀/首死、补枪、道具、下包和六类战术序列参与；战队对比则把战术序列统一换算为每 100 个实际参赛回合，避免不同比赛数量造成总量偏差。战术切片可按地图、T/CT 和对手过滤，并计算首杀后胜率、丢首杀翻盘率、补枪回合胜率、Post-plant、Retake contact 和 Execute candidate 的回合转化，同时列出首杀、补枪和道具协同的选手责任分布。每个结果都保留 `graph:{match}:{map}:{round}` 来源。当前指标是描述性统计，不宣称战术因果；Flash 指标不可用时会在画像方法元数据中明确标记。
 
 ### 4. 启动 API 与 Worker
 
@@ -253,7 +253,7 @@ make frontend-install
 make frontend
 ```
 
-浏览器打开 `http://localhost:5173`。前端提供 Demo 上传、异步进度、指标卡片、Analyst/Coach 报告、证据引用、GraphRAG 子图、Global Search、跨比赛选手画像和五队战术对比；Vite 会把 `/api` 请求代理到 `8001`。
+浏览器打开 `http://localhost:5173`。前端提供 Demo 上传、异步进度、指标卡片、Analyst/Coach 报告、证据引用、GraphRAG 子图、Global Search、跨比赛选手画像、五队战术对比和上下文战术切片；Vite 会把 `/api` 请求代理到 `8001`。
 
 新增只读 GraphRAG 展示接口：
 
@@ -265,6 +265,7 @@ GET /api/graph/subgraph?map_name=Mirage
 GET /api/graph/players?team=Falcons
 GET /api/graph/players/{steamid_or_nickname}
 GET /api/graph/teams/compare?teams=Falcons,Spirit,Vitality,FURIA,MOUZ
+GET /api/graph/teams/Falcons/tactics?map_name=Dust2&side=T&opponent=Spirit
 ```
 
 ### 6. 使用方式

@@ -236,7 +236,7 @@ make graph-build
 
 The sidecar uses SQLite for match, map, round, event, player, and tactical-sequence relationships. `make graph-build` recomputes the current silver labels and connects each sequence to its source events and participants. Local hits carry `label_source` and confidence into the existing Analyst, Coach, and Verifier `[E#]` contract; `weak_rule` remains a candidate rather than a human-confirmed tactic. If the graph database is absent, the workflow falls back to Milvus only.
 
-The same SQLite graph now powers cross-match analytics. Player profiles aggregate kills, deaths, assists, opening duels, trades, utility, plants, and participation in all six tactical sequence types. Team comparison normalizes every sequence to 100 observed team rounds so unequal match counts do not distort totals. Each result retains `graph:{match}:{map}:{round}` sources. These are descriptive metrics, not causal claims; profile methodology metadata explicitly flags unavailable flash-event coverage.
+The same SQLite graph now powers cross-match analytics. Player profiles aggregate kills, deaths, assists, opening duels, trades, utility, plants, and participation in all six tactical sequence types. Team comparison normalizes every sequence to 100 observed team rounds so unequal match counts do not distort totals. Tactical slices filter by map, T/CT side, and opponent, then calculate round conversion after opening wins/losses, trade rounds, post-plants, retake contacts, and execute candidates. They also expose player responsibility shares for openings, trades, and utility bursts. Each result retains `graph:{match}:{map}:{round}` sources. These are descriptive metrics, not causal claims; profile methodology metadata explicitly flags unavailable flash-event coverage.
 
 ### 4. Start the API and Worker
 
@@ -253,7 +253,7 @@ make frontend-install
 make frontend
 ```
 
-Open `http://localhost:5173`. The console provides Demo upload, async progress, metric cards, Analyst/Coach reports, evidence citations, a GraphRAG subgraph, Global Search, cross-match player profiles, and five-team tactical comparison. Vite proxies `/api` requests to port `8001`.
+Open `http://localhost:5173`. The console provides Demo upload, async progress, metric cards, Analyst/Coach reports, evidence citations, a GraphRAG subgraph, Global Search, cross-match player profiles, five-team tactical comparison, and contextual tactical slices. Vite proxies `/api` requests to port `8001`.
 
 Read-only GraphRAG display endpoints:
 
@@ -265,6 +265,7 @@ GET /api/graph/subgraph?map_name=Mirage
 GET /api/graph/players?team=Falcons
 GET /api/graph/players/{steamid_or_nickname}
 GET /api/graph/teams/compare?teams=Falcons,Spirit,Vitality,FURIA,MOUZ
+GET /api/graph/teams/Falcons/tactics?map_name=Dust2&side=T&opponent=Spirit
 ```
 
 ### 6. Usage

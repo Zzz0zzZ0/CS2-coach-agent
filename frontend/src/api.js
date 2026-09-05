@@ -40,6 +40,15 @@ export function compareGraphTeams(teams) {
   return request(`/api/graph/teams/compare?${params}`);
 }
 
+export function getTeamTactics(team, filters = {}) {
+  const params = new URLSearchParams();
+  if (filters.mapName) params.set("map_name", filters.mapName);
+  if (filters.side) params.set("side", filters.side);
+  if (filters.opponent) params.set("opponent", filters.opponent);
+  const query = params.size ? `?${params}` : "";
+  return request(`/api/graph/teams/${encodeURIComponent(team)}/tactics${query}`);
+}
+
 export function getSubgraph(mapName) {
   const query = mapName ? `?map_name=${encodeURIComponent(mapName)}` : "";
   return request(`/api/graph/subgraph${query}`);

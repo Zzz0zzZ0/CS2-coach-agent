@@ -84,6 +84,19 @@ def _team_name(value: Any) -> str:
     return TEAM_DISPLAY_NAMES.get(key, raw.removeprefix("Team ").strip() or key.title())
 
 
+def _side_name(value: Any) -> str | None:
+    return {
+        "T": "T",
+        "TERRORIST": "T",
+        "CT": "CT",
+        "COUNTERTERRORIST": "CT",
+    }.get(_text(value, "").upper())
+
+
+def _pct(numerator: int, denominator: int) -> float | None:
+    return round(100 * numerator / denominator, 2) if denominator else None
+
+
 def _match_id(path: Path, parsed: dict) -> str:
     parsed_id = _text(parsed.get("match_id"), "")
     match = re.search(r"(?:-|_)(\d{5,})(?:-|_|$)", path.stem)
@@ -282,6 +295,273 @@ class GraphRAGClient:
                 "causality": "descriptive counts only; no causal claim",
             },
         }
+
+    def team_tactics(
+        self,
+        team: str,
+        *,
+        map_name: str | None = None,
+        side: str | None = None,
+        opponent: str | None = None,
+    ) -> dict | None:
+        """Return contextual tactical outcomes for one team."""
+        if not self.available():
+            return None
+        target_key = _team_key(team)
+        requested_map = _map_name(map_name) if map_name else None
+        requested_side = _side_name(side) if side else None
+        opponent_key = _team_key(opponent) if opponent else ""
+        connection = self._connect()
+        try:
+            player_names = {
+                row["node_id"].removeprefix("player:"): row["label"]
+                for row in connection.execute(
+                    "SELECT node_id,label FROM nodes WHERE node_type='player'"
+                )
+            }
+            contexts = {}
+            for row in connection.execute(
+                "SELECT match_id,map_name,round_number,properties "
+                "FROM nodes WHERE node_type='round'"
+            ):
+                key = (row["match_id"], row["map_name"], row["round_number"])
+                contexts[key] = {
+                    "winner": json.loads(row["properties"]).get("winner"),
+                    "teams": set(),
+                    "team_names": Counter(),
+                    "team_sides": defaultdict(Counter),
+                    "labels": [],
+                }
+
+            team_side_fields = (
+                ("killer_team", "killer_side"),
+                ("victim_team", "victim_side"),
+                ("assister_team", "assister_side"),
+                ("thrower_team", "thrower_side"),
+                ("attacker_team", "attacker_side"),
+                ("planter_team", "planter_side"),
+            )
+            for row in connection.execute(
+                "SELECT match_id,map_name,round_number,properties "
+                "FROM nodes WHERE node_type='event'"
+            ):
+                key = (row["match_id"], row["map_name"], row["round_number"])
+                context = contexts.get(key)
+                if not context:
+                    continue
+                props = json.loads(row["properties"])
+                for team_field, side_field in team_side_fields:
+                    name = _team_name(props.get(team_field))
+                    normalized = _team_key(name)
+                    if not normalized or name == "Unknown":
+                        continue
+                    context["teams"].add(normalized)
+                    context["team_names"][name] += 1
+                    event_side = _side_name(props.get(side_field))
+                    if event_side:
+                        context["team_sides"][normalized][event_side] += 1
+
+            for row in connection.execute(
+                "SELECT match_id,map_name,round_number,properties "
+                "FROM nodes WHERE node_type='tactical_sequence'"
+            ):
+                key = (row["match_id"], row["map_name"], row["round_number"])
+                if key in contexts:
+                    contexts[key]["labels"].append(json.loads(row["properties"]))
+
+            target_contexts = []
+            target_display = TEAM_DISPLAY_NAMES.get(target_key, _team_name(team))
+            for key, context in contexts.items():
+                if target_key not in context["teams"]:
+                    continue
+                side_counts = context["team_sides"].get(target_key)
+                round_side = side_counts.most_common(1)[0][0] if side_counts else None
+                opponents = {
+                    _team_key(name): name
+                    for name in context["team_names"]
+                    if _team_key(name) not in {target_key, "unknown"}
+                }
+                target_contexts.append((key, context, round_side, opponents))
+            if not target_contexts:
+                return None
+
+            available_maps = sorted({key[1] for key, *_ in target_contexts})
+            available_opponents = sorted({
+                name
+                for _, _, _, opponents in target_contexts
+                for name in opponents.values()
+            })
+            selected = [
+                item for item in target_contexts
+                if (not requested_map or item[0][1] == requested_map)
+                and (not requested_side or item[2] == requested_side)
+                and (not opponent_key or opponent_key in item[3])
+            ]
+
+            matches = {key[0] for key, *_ in selected}
+            maps = {(key[0], key[1]) for key, *_ in selected}
+            decided = {}
+            labels = Counter()
+            label_rounds = defaultdict(set)
+            opening_lost_rounds = set()
+            sites = defaultdict(lambda: {
+                "rounds": set(), "post_plants": set(), "executes": set(), "retakes": set(),
+            })
+            opponent_stats = defaultdict(lambda: {
+                "name": "Unknown", "rounds": set(), "decided": set(),
+                "won": set(), "labels": Counter(),
+            })
+            opening_players = Counter()
+            trade_players = Counter()
+            utility_players = Counter()
+            sources = set()
+
+            for key, context, round_side, opponents in selected:
+                winner_side = _side_name(context["winner"])
+                won = round_side == winner_side if winner_side else None
+                decided[key] = won
+                sources.add(f"graph:{key[0]}:{key[1]}:{key[2]}")
+                target_labels = [
+                    label for label in context["labels"]
+                    if _team_key(label.get("team")) == target_key
+                ]
+                opposing_opening = any(
+                    label.get("label_type") == "OPENING_DUEL"
+                    and _team_key(label.get("team")) not in {target_key, "", "unknown"}
+                    for label in context["labels"]
+                )
+                if opposing_opening:
+                    opening_lost_rounds.add(key)
+                for label in target_labels:
+                    label_type = label.get("label_type", "Unknown")
+                    labels[label_type] += 1
+                    label_rounds[label_type].add(key)
+                    site = label.get("site")
+                    if site:
+                        sites[site]["rounds"].add(key)
+                        if label_type == "POST_PLANT":
+                            sites[site]["post_plants"].add(key)
+                        elif label_type == "EXECUTE_CANDIDATE":
+                            sites[site]["executes"].add(key)
+                        elif label_type == "RETAKE_CONTACT":
+                            sites[site]["retakes"].add(key)
+                    details = label.get("details") or {}
+                    if label_type == "OPENING_DUEL" and details.get("winner_steamid"):
+                        opening_players[str(details["winner_steamid"])] += 1
+                    elif label_type == "TRADE_KILL" and details.get("trader_steamid"):
+                        trade_players[str(details["trader_steamid"])] += 1
+                    elif label_type == "UTILITY_BURST":
+                        utility_players.update(str(item) for item in label.get("participant_ids", []))
+                for other_key, other_name in opponents.items():
+                    bucket = opponent_stats[other_key]
+                    bucket["name"] = other_name
+                    bucket["rounds"].add(key)
+                    if won is not None:
+                        bucket["decided"].add(key)
+                    if won:
+                        bucket["won"].add(key)
+                    bucket["labels"].update(label.get("label_type") for label in target_labels)
+
+            won_rounds = {key for key, won in decided.items() if won}
+            decided_rounds = {key for key, won in decided.items() if won is not None}
+
+            def conversion(round_keys: set) -> dict:
+                known = round_keys & decided_rounds
+                won = len(known & won_rounds)
+                return {
+                    "opportunities": len(round_keys),
+                    "decided": len(known),
+                    "rounds_won": won,
+                    "round_win_pct": _pct(won, len(known)),
+                }
+
+            def leaders(counter: Counter) -> list[dict]:
+                total = sum(counter.values())
+                return [
+                    {
+                        "player_id": player_id,
+                        "name": player_names.get(player_id, player_id),
+                        "count": count,
+                        "share_pct": _pct(count, total),
+                    }
+                    for player_id, count in counter.most_common(5)
+                ]
+
+            rounds = len(selected)
+            return {
+                "team": target_display,
+                "filters": {
+                    "map": requested_map,
+                    "side": requested_side,
+                    "opponent": _team_name(opponent) if opponent else None,
+                },
+                "available_filters": {
+                    "maps": available_maps,
+                    "sides": ["T", "CT"],
+                    "opponents": available_opponents,
+                },
+                "sample_size": {
+                    "matches": len(matches),
+                    "maps": len(maps),
+                    "rounds": rounds,
+                    "decided_rounds": len(decided_rounds),
+                },
+                "outcomes": {
+                    "rounds_won": len(won_rounds),
+                    "round_win_pct": _pct(len(won_rounds), len(decided_rounds)),
+                },
+                "labels": {
+                    label: {
+                        "count": labels[label],
+                        "per_100_rounds": _pct(labels[label], rounds) or 0.0,
+                    }
+                    for label in TACTICAL_LABELS
+                },
+                "conversions": {
+                    "opening_won": conversion(label_rounds["OPENING_DUEL"]),
+                    "opening_lost_recovery": conversion(opening_lost_rounds),
+                    "trade_round": conversion(label_rounds["TRADE_KILL"]),
+                    "utility_burst_round": conversion(label_rounds["UTILITY_BURST"]),
+                    "execute_candidate": conversion(label_rounds["EXECUTE_CANDIDATE"]),
+                    "post_plant": conversion(label_rounds["POST_PLANT"]),
+                    "retake_contact": conversion(label_rounds["RETAKE_CONTACT"]),
+                },
+                "role_leaders": {
+                    "opening_kills": leaders(opening_players),
+                    "trade_kills": leaders(trade_players),
+                    "utility_burst_participation": leaders(utility_players),
+                },
+                "site_breakdown": [
+                    {
+                        "site": site,
+                        "rounds": len(values["rounds"]),
+                        "round_win_pct": conversion(values["rounds"])["round_win_pct"],
+                        "post_plants": len(values["post_plants"]),
+                        "execute_candidates": len(values["executes"]),
+                        "retake_contacts": len(values["retakes"]),
+                    }
+                    for site, values in sorted(sites.items())
+                ],
+                "opponent_breakdown": [
+                    {
+                        "opponent": values["name"],
+                        "rounds": len(values["rounds"]),
+                        "decided_rounds": len(values["decided"]),
+                        "round_win_pct": _pct(len(values["won"]), len(values["decided"])),
+                        "labels": dict(values["labels"]),
+                    }
+                    for values in sorted(opponent_stats.values(), key=lambda item: item["name"])
+                ],
+                "source_round_ids": sorted(sources)[:12],
+                "methodology": {
+                    "version": "graph-tactics-v1",
+                    "winner": "round winner side matched to the team's observed side",
+                    "retake": "contact label plus round outcome; not proof of a coordinated retake",
+                    "execute": "weak-rule candidate plus round outcome; not tactical-intent ground truth",
+                },
+            }
+        finally:
+            connection.close()
 
     def _analytics_snapshot(self) -> tuple[dict[str, dict], dict[str, dict]]:
         """Aggregate event and tactical nodes without adding a second datastore."""
