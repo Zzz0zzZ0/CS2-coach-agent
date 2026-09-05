@@ -7,7 +7,7 @@ INFRA_SERVICES = redis etcd minio standalone
 CELERY = $(PYTHON) -m celery -A app.core.celery_app worker --loglevel=info
 UVICORN = $(PYTHON) -m uvicorn app.main:app --host 0.0.0.0 --port $(API_PORT)
 
-.PHONY: bootstrap infra status seed graph-build eval-rag frontend-install frontend frontend-build api worker dev analyze fetch-demos test clean
+.PHONY: bootstrap infra status seed graph-build silver-dataset eval-rag frontend-install frontend frontend-build api worker dev analyze fetch-demos test clean
 
 bootstrap:
 	@command -v $(PYTHON_BOOTSTRAP) >/dev/null || (echo "Missing $(PYTHON_BOOTSTRAP); override PYTHON_BOOTSTRAP=/path/to/python3.11" && exit 1)
@@ -28,6 +28,9 @@ seed:
 
 graph-build:
 	@PYTHONPATH=. $(PYTHON) scripts/build_graph.py
+
+silver-dataset:
+	@PYTHONPATH=. $(PYTHON) scripts/build_silver_dataset.py
 
 frontend-install:
 	@npm --prefix frontend install

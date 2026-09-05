@@ -411,9 +411,12 @@ CS2-coach-agent/
 make test       # 单元与集成测试
 make eval-rag   # 固定查询的 Milvus RAG 评估
 make graph-build
+make silver-dataset # 生成带置信度与证据来源的战术银标数据集
 ```
 
 GraphRAG 当前采用确定性抽取式社区摘要；摘要只概括解析到的事实，并保留回合来源，不把小样本观察直接升级为职业战术定律。
+
+`make silver-dataset` 会将本地 Demo 转换为 `datasets/silver/v0.1/` 下的回合级研究数据。首杀和下包阶段来自直接事件事实；补枪、Utility Burst 与 Retake Contact 来自明确的时间窗规则；只有 T 方道具序列后成功下包才会追加弱监督的 Execute Candidate。所有标签都保存规则版本、置信度、审核状态和证据事件 ID。该数据集定位为可复现的 silver labels，不宣称是职业教练人工标注的 gold labels。
 
 ---
 

@@ -411,9 +411,12 @@ The knowledge base defaults to Milvus native dense + BM25 hybrid retrieval and p
 make test       # Unit and integration tests
 make eval-rag   # Fixed-query Milvus RAG evaluation
 make graph-build
+make silver-dataset # build evidence-linked tactical silver annotations
 ```
 
 Community summaries are currently deterministic and extractive: they summarize parsed facts, preserve round-level sources, and do not promote small-sample observations into universal professional tactics.
+
+`make silver-dataset` writes round-level research data to `datasets/silver/v0.1/`. Opening duels and post-plant phases come directly from event facts; trade kills, Utility Bursts, and Retake Contacts use explicit temporal rules. A weakly supervised Execute Candidate is added only when a T-side utility sequence is followed by a plant. Every label retains its rule version, confidence, review status, and evidence event IDs. The result is explicitly a reproducible silver-label dataset, not expert-annotated gold data.
 
 ---
 

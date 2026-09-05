@@ -67,16 +67,18 @@ class TacticalDemoParser:
                 logger.warning("并未捕获到有效回合数据，文件可能已损坏。")
                 return {}
 
-            df_kills = self._parse_event("player_death", player=["X", "Y", "Z"])
+            player_fields = ["X", "Y", "Z", "team_name", "team_clan_name", "last_place_name"]
+            df_kills = self._parse_event("player_death", player=player_fields)
             df_blind = self._parse_event("player_blind")
-            df_bomb = self._parse_event("bomb_planted")
+            df_bomb = self._parse_event("bomb_planted", player=player_fields)
+            df_freeze_end = self._parse_event("round_freeze_end")
             
-            df_smokes = self._parse_event("smokegrenade_detonate", player=["X", "Y", "Z"])
-            df_flashes = self._parse_event("flashbang_detonate", player=["X", "Y", "Z"])
-            df_inferno = self._parse_event("inferno_startburn", player=["X", "Y", "Z"])
+            df_smokes = self._parse_event("smokegrenade_detonate", player=player_fields)
+            df_flashes = self._parse_event("flashbang_detonate", player=player_fields)
+            df_inferno = self._parse_event("inferno_startburn", player=player_fields)
             if df_inferno.empty:
-                df_inferno = self._parse_event("inferno_startfire", player=["X", "Y", "Z"])
-            df_he = self._parse_event("hegrenade_detonate", player=["X", "Y", "Z"])
+                df_inferno = self._parse_event("inferno_startfire", player=player_fields)
+            df_he = self._parse_event("hegrenade_detonate", player=player_fields)
 
             try:
                 map_name = self.parser.parse_header().get('map_name', 'Unknown')
@@ -98,6 +100,9 @@ class TacticalDemoParser:
                 
                 round_detail = {
                     "round_number": round_idx,
+                    "start_tick": self._safe_convert(prev_tick),
+                    "freeze_end_tick": None,
+                    "end_tick": self._safe_convert(current_tick),
                     "winner": str(round_row.get("winner", "Unknown")),
                     "reason": str(round_row.get("reason", "Unknown")),
                     "kills": [],
@@ -105,6 +110,14 @@ class TacticalDemoParser:
                     "flash_blinds": [],
                     "plants": []
                 }
+
+                if not df_freeze_end.empty and "tick" in df_freeze_end.columns:
+                    freeze_ticks = df_freeze_end[
+                        (df_freeze_end["tick"] > prev_tick)
+                        & (df_freeze_end["tick"] <= current_tick)
+                    ]["tick"]
+                    if not freeze_ticks.empty:
+                        round_detail["freeze_end_tick"] = self._safe_convert(freeze_ticks.min())
                 
                 if not df_kills.empty and 'tick' in df_kills.columns:
                     kills_in_round = df_kills[(df_kills['tick'] > prev_tick) & (df_kills['tick'] <= current_tick)]
@@ -115,10 +128,18 @@ class TacticalDemoParser:
                                 "tick": self._safe_convert(kill.get("tick")),
                                 "killer": str(kill.get("attacker_name", "Environment")),
                                 "killer_steamid": self._safe_convert(kill.get("attacker_steamid")),
+                                "killer_team": self._safe_convert(kill.get("attacker_team_clan_name")),
+                                "killer_side": self._safe_convert(kill.get("attacker_team_name")),
+                                "killer_area": self._safe_convert(kill.get("attacker_last_place_name")),
                                 "victim": str(kill.get("user_name", "Unknown")),
                                 "victim_steamid": self._safe_convert(kill.get("user_steamid")),
+                                "victim_team": self._safe_convert(kill.get("user_team_clan_name")),
+                                "victim_side": self._safe_convert(kill.get("user_team_name")),
+                                "victim_area": self._safe_convert(kill.get("user_last_place_name")),
                                 "assister": str(kill.get("assister_name", "Unknown")),
                                 "assister_steamid": self._safe_convert(kill.get("assister_steamid")),
+                                "assister_team": self._safe_convert(kill.get("assister_team_clan_name")),
+                                "assister_side": self._safe_convert(kill.get("assister_team_name")),
                                 "assisted_flash": self._safe_convert(kill.get("assistedflash", False)),
                                 "distance": self._safe_convert(kill.get("distance")),
                                 "through_smoke": self._safe_convert(kill.get("thrusmoke", False)),
@@ -146,6 +167,9 @@ class TacticalDemoParser:
                                 "type": nade_type,
                                 "thrower": str(nade.get("user_name", "Unknown")),
                                 "thrower_steamid": self._safe_convert(nade.get("user_steamid")),
+                                "thrower_team": self._safe_convert(nade.get("user_team_clan_name")),
+                                "thrower_side": self._safe_convert(nade.get("user_team_name")),
+                                "thrower_area": self._safe_convert(nade.get("user_last_place_name")),
                                 "thrower_xyz": [self._safe_convert(nade.get("user_X")), self._safe_convert(nade.get("user_Y")), self._safe_convert(nade.get("user_Z"))],
                                 "detonation_xyz": [self._safe_convert(nade.get("x", nade.get("user_X"))), self._safe_convert(nade.get("y", nade.get("user_Y"))), self._safe_convert(nade.get("z", nade.get("user_Z")))]
                             })
@@ -169,7 +193,12 @@ class TacticalDemoParser:
                             "tick": self._safe_convert(plant.get("tick")),
                             "planter": str(plant.get("user_name", "Unknown")),
                             "planter_steamid": self._safe_convert(plant.get("user_steamid")),
-                            "site": str(plant.get("site", "Unknown"))
+                            "planter_team": self._safe_convert(plant.get("user_team_clan_name")),
+                            "planter_side": self._safe_convert(plant.get("user_team_name")),
+                            "planter_area": self._safe_convert(plant.get("user_last_place_name")),
+                            "position": [self._safe_convert(plant.get("user_X")), self._safe_convert(plant.get("user_Y")), self._safe_convert(plant.get("user_Z"))],
+                            "site": str(plant.get("user_last_place_name") or plant.get("site", "Unknown")),
+                            "site_entity_id": self._safe_convert(plant.get("site")),
                         })
 
                 match_data["rounds"].append(round_detail)
