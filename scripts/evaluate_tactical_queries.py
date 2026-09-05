@@ -94,17 +94,26 @@ async def evaluate(dataset_path: Path, graph_db: Path) -> dict:
         started = time.perf_counter()
         evidence = await client.retrieve(case["query"], k=3, global_search=True)
         latency_ms = round((time.perf_counter() - started) * 1000, 2)
+        brief = client.coach_brief(case["query"], evidence)
         tactical = next(
             (item for item in evidence if item.metadata.get("context_level") in TACTICAL_LEVELS),
             None,
         )
         expected = case["expected"]
         if expected["structured"]:
-            checks = {"structured_result": tactical is not None}
+            checks = {
+                "structured_result": tactical is not None,
+                "coach_brief": brief is not None,
+                "coach_sources": bool(brief and brief.get("sources")),
+                "coach_caveat": bool(brief and "因果" in brief.get("caveat", "")),
+            }
             if tactical:
                 checks.update(_score_positive(client, tactical, expected))
         else:
-            checks = {"structured_rejection": tactical is None}
+            checks = {
+                "structured_rejection": tactical is None,
+                "coach_rejection": brief is None,
+            }
         failures = [name for name, passed in checks.items() if not passed]
         rows.append({
             "id": case["id"],
@@ -116,6 +125,7 @@ async def evaluate(dataset_path: Path, graph_db: Path) -> dict:
             "latency_ms": latency_ms,
             "result_type": tactical.metadata.get("context_level") if tactical else None,
             "source_id": tactical.source_id if tactical else None,
+            "coach_brief_kind": brief.get("kind") if brief else None,
         })
 
     positive_rows = [row for row in rows if row["category"] != "negative"]
@@ -141,6 +151,10 @@ async def evaluate(dataset_path: Path, graph_db: Path) -> dict:
             "source_coverage_pct": _percent(
                 sum(row["checks"].get("source_coverage", False) for row in positive_rows),
                 len(positive_rows),
+            ),
+            "coach_brief_coverage_pct": _percent(
+                sum(row["checks"].get("coach_brief", row["checks"].get("coach_rejection", False)) for row in rows),
+                len(rows),
             ),
             "latency_ms": {
                 "p50": _percentile(latencies, 0.50),

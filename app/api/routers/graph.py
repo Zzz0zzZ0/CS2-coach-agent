@@ -87,6 +87,7 @@ async def graph_search(
     return {
         "available": client.available(),
         "query": q,
+        "answer": client.coach_brief(q, evidence),
         "results": [item.as_dict() for item in evidence],
     }
 

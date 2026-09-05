@@ -50,6 +50,15 @@ TEAM_DISPLAY_NAMES = {
     "furia": "FURIA",
     "mouz": "MOUZ",
 }
+COACH_METRICS = {
+    "opening_won": ("首杀优势回合", "复盘首杀后的站位收缩、第二接触和交叉火力，避免人数优势被连续单挑消耗。"),
+    "opening_lost_recovery": ("首杀劣势回合", "训练首杀失利后 5 秒内的止损：撤点、补闪和双人再接触。"),
+    "trade_round": ("补枪回合", "检查首接触队员与补枪位的距离、枪线和同步时机。"),
+    "utility_burst_round": ("道具爆发回合", "核对最后一颗关键道具落地到第一接触之间的时间差。"),
+    "execute_candidate": ("爆弹候选回合", "逐回合复盘爆弹后的首个清点顺序与下包前区域控制。"),
+    "post_plant": ("下包后回合", "固定下包后的交叉站位、信息优先级和延时道具分工。"),
+    "retake_contact": ("回防接触回合", "训练回防集合点、第一颗闪光和双人同步接触。"),
+}
 
 
 def _query_text(query: str) -> str:
@@ -101,6 +110,24 @@ def _pct(numerator: int, denominator: int) -> float | None:
 
 def _pct_text(value: float | None) -> str:
     return "unavailable" if value is None else f"{value:.2f}%"
+
+
+def _zh_pct(value: float | None) -> str:
+    return "暂无" if value is None else f"{value:.1f}%"
+
+
+def _requested_metric(query: str) -> str | None:
+    lowered = query.lower()
+    keywords = (
+        ("opening_lost_recovery", ("首死", "丢首杀", "opening loss", "opening lost")),
+        ("trade_round", ("补枪", "trade")),
+        ("utility_burst_round", ("道具", "utility")),
+        ("execute_candidate", ("爆弹", "execute")),
+        ("post_plant", ("下包", "post plant", "post-plant")),
+        ("retake_contact", ("回防", "retake")),
+        ("opening_won", ("首杀", "opening", "first kill")),
+    )
+    return next((key for key, terms in keywords if any(term in lowered for term in terms)), None)
 
 
 def _query_map_name(query: str) -> str | None:
@@ -576,6 +603,108 @@ class GraphRAGClient:
             }
         finally:
             connection.close()
+
+    def coach_brief(self, query: str, evidence: list[Evidence]) -> dict | None:
+        """Turn structured tactical evidence into a cited Chinese coaching brief."""
+        tactical = next(
+            (item for item in evidence if item.metadata.get("context_level", "").startswith("team_tactical_")),
+            None,
+        )
+        if not tactical:
+            return None
+        metadata = tactical.metadata
+        source_ids = metadata.get("source_round_ids", [])[:6]
+        sources = [
+            {"id": f"G{index}", "round_id": source_id}
+            for index, source_id in enumerate(source_ids, start=1)
+        ]
+        source_note = "；可复核回合样本见 " + "、".join(f"[{item['id']}]" for item in sources) if sources else ""
+        map_name = metadata.get("map", "All")
+        side = metadata.get("side", "Both")
+        context = f"{map_name if map_name != 'All' else '全部地图'} · {side if side != 'Both' else '双阵营'}"
+        caveat = "结论来自确定性事件与 silver labels，只描述当前样本相关性，不代表战术意图或因果关系。"
+
+        if metadata["context_level"] == "team_tactical_comparison":
+            profiles = metadata.get("profiles", [])
+            if len(profiles) < 2:
+                return None
+            focus_key = _requested_metric(query)
+            label = COACH_METRICS[focus_key][0] if focus_key else "整体回合"
+            values = []
+            for profile in profiles[:2]:
+                metric = profile.get("conversions", {}).get(focus_key, {}) if focus_key else {}
+                values.append({
+                    "team": profile["team"],
+                    "rounds": profile.get("sample_size", {}).get("rounds", 0),
+                    "opportunities": metric.get("opportunities") if focus_key else profile.get("sample_size", {}).get("decided_rounds", 0),
+                    "win_pct": metric.get("round_win_pct") if focus_key else profile.get("outcomes", {}).get("round_win_pct"),
+                })
+            difference = None
+            if all(item["win_pct"] is not None for item in values):
+                difference = round(values[0]["win_pct"] - values[1]["win_pct"], 1)
+            findings = [
+                f"{item['team']}：{item['rounds']} 回合样本，{label}胜率 {_zh_pct(item['win_pct'])}"
+                + (f"（{item['opportunities']} 次机会）" if item["opportunities"] is not None else "")
+                for item in values
+            ]
+            if difference is not None:
+                findings.append(f"按 {values[0]['team']} − {values[1]['team']} 计算，差值为 {difference:+.1f} 个百分点{source_note}。")
+            action = COACH_METRICS[focus_key][1] if focus_key else "把差距继续拆到相同地图、阵营与对手，避免用不同样本结构直接判断战术强弱。"
+            return {
+                "kind": "comparison",
+                "title": f"{values[0]['team']} vs {values[1]['team']} · {context}",
+                "summary": f"当前对比聚焦{label}；两队样本量不同，先看方向，再下钻到同条件回合。",
+                "focus_metric": {"key": focus_key or "round_win", "label": label, "teams": values, "difference_pct_points": difference},
+                "findings": findings,
+                "actions": [action],
+                "sample_confidence": "中" if min(item["rounds"] for item in values) >= 30 else "低",
+                "caveat": caveat,
+                "sources": sources,
+                "methodology": "deterministic-coach-brief-v1",
+            }
+
+        sample = metadata.get("sample_size", {})
+        team = metadata.get("team", "Unknown")
+        opponent = metadata.get("opponent")
+        rounds = sample.get("rounds", 0)
+        conversion_rows = [
+            {
+                "key": key,
+                "label": COACH_METRICS[key][0],
+                "opportunities": value.get("opportunities", 0),
+                "win_pct": value.get("round_win_pct"),
+            }
+            for key, value in metadata.get("conversions", {}).items()
+            if key in COACH_METRICS and value.get("opportunities", 0) > 0 and value.get("round_win_pct") is not None
+        ]
+        focus_key = _requested_metric(query)
+        focus = next((row for row in conversion_rows if row["key"] == focus_key), None)
+        ranked = sorted(conversion_rows, key=lambda row: row["win_pct"])
+        findings = [f"{sample.get('matches', 0)} 场、{sample.get('maps', 0)} 张地图、{rounds} 回合；整体回合胜率 {_zh_pct(metadata.get('outcomes', {}).get('round_win_pct'))}。"]
+        if focus:
+            findings.append(f"查询指标：{focus['label']} {focus['opportunities']} 次机会，回合胜率 {_zh_pct(focus['win_pct'])}{source_note}。")
+        if ranked:
+            weakest, strongest = ranked[0], ranked[-1]
+            if not focus or weakest["key"] != focus["key"]:
+                findings.append(f"当前最低转化：{weakest['label']} {_zh_pct(weakest['win_pct'])}（{weakest['opportunities']} 次机会）。")
+            if strongest["key"] != weakest["key"] and (not focus or strongest["key"] != focus["key"]):
+                findings.append(f"当前最高转化：{strongest['label']} {_zh_pct(strongest['win_pct'])}（{strongest['opportunities']} 次机会）。")
+        priority = focus_key if focus else (ranked[0] if ranked else {}).get("key")
+        actions = [COACH_METRICS[priority][1]] if priority else ["当前切片没有足够的战术事件，先扩大地图、阵营或对手范围。"]
+        if rounds < 30:
+            actions.append("样本少于 30 回合，先补充相同条件 Demo，再把百分比用于训练决策。")
+        return {
+            "kind": "team_profile",
+            "title": f"{team}{f' vs {opponent}' if opponent else ''} · {context}",
+            "summary": "先按查询指标定位回合，再用最低转化项安排复盘；百分比不脱离机会次数解读。",
+            "focus_metric": focus,
+            "findings": findings,
+            "actions": actions,
+            "sample_confidence": "高" if rounds >= 100 else "中" if rounds >= 30 else "低",
+            "caveat": caveat,
+            "sources": sources,
+            "methodology": "deterministic-coach-brief-v1",
+        }
 
     def _analytics_snapshot(self) -> tuple[dict[str, dict], dict[str, dict]]:
         """Aggregate event and tactical nodes without adding a second datastore."""
@@ -1340,6 +1469,7 @@ class GraphRAGClient:
                         "conversions": profile["conversions"],
                     } for profile in profiles],
                     "source_round_count": len(sources),
+                    "source_round_ids": sources[:12],
                 },
                 score=1.0 if any(profile["sample_size"]["rounds"] for profile in profiles) else 0.6,
                 source_id=source_id,
@@ -1398,6 +1528,7 @@ class GraphRAGClient:
                 "conversions": conversions,
                 "role_leaders": leaders,
                 "source_round_count": len(profile["source_round_ids"]),
+                "source_round_ids": profile["source_round_ids"],
             },
             score=1.0 if sample["rounds"] else 0.6,
             source_id=source_id,

@@ -15,9 +15,10 @@
     "context_accuracy_pct": 100.0,
     "numeric_consistency_pct": 100.0,
     "source_coverage_pct": 100.0,
+    "coach_brief_coverage_pct": 100.0,
     "latency_ms": {
-      "p50": 224.0,
-      "p95": 454.07
+      "p50": 226.32,
+      "p95": 457.21
     },
     "categories": {
       "comparison": {
@@ -50,90 +51,9 @@
       "passed": true,
       "checks": {
         "structured_result": true,
-        "context": true,
-        "map": true,
-        "side": true,
-        "team": true,
-        "opponent": true,
-        "minimum_sample": true,
-        "numeric_consistency": true,
-        "source_coverage": true
-      },
-      "failures": [],
-      "latency_ms": 224.33,
-      "result_type": "team_tactical_profile",
-      "source_id": "graph-profile:falcons"
-    },
-    {
-      "id": "team_spirit_overall",
-      "category": "team_profile",
-      "query": "总结绿龙的战术转化表现",
-      "passed": true,
-      "checks": {
-        "structured_result": true,
-        "context": true,
-        "map": true,
-        "side": true,
-        "team": true,
-        "opponent": true,
-        "minimum_sample": true,
-        "numeric_consistency": true,
-        "source_coverage": true
-      },
-      "failures": [],
-      "latency_ms": 223.99,
-      "result_type": "team_tactical_profile",
-      "source_id": "graph-profile:spirit"
-    },
-    {
-      "id": "team_vitality_overall",
-      "category": "team_profile",
-      "query": "蜜蜂的首杀、补枪和残局表现怎么样？",
-      "passed": true,
-      "checks": {
-        "structured_result": true,
-        "context": true,
-        "map": true,
-        "side": true,
-        "team": true,
-        "opponent": true,
-        "minimum_sample": true,
-        "numeric_consistency": true,
-        "source_coverage": true
-      },
-      "failures": [],
-      "latency_ms": 237.69,
-      "result_type": "team_tactical_profile",
-      "source_id": "graph-profile:vitality"
-    },
-    {
-      "id": "team_furia_overall",
-      "category": "team_profile",
-      "query": "给我黑豹的总体战术画像",
-      "passed": true,
-      "checks": {
-        "structured_result": true,
-        "context": true,
-        "map": true,
-        "side": true,
-        "team": true,
-        "opponent": true,
-        "minimum_sample": true,
-        "numeric_consistency": true,
-        "source_coverage": true
-      },
-      "failures": [],
-      "latency_ms": 224.0,
-      "result_type": "team_tactical_profile",
-      "source_id": "graph-profile:furia"
-    },
-    {
-      "id": "team_mouz_overall",
-      "category": "team_profile",
-      "query": "老鼠近期比赛的回合转化率",
-      "passed": true,
-      "checks": {
-        "structured_result": true,
+        "coach_brief": true,
+        "coach_sources": true,
+        "coach_caveat": true,
         "context": true,
         "map": true,
         "side": true,
@@ -146,7 +66,108 @@
       "failures": [],
       "latency_ms": 224.43,
       "result_type": "team_tactical_profile",
-      "source_id": "graph-profile:mouz"
+      "source_id": "graph-profile:falcons",
+      "coach_brief_kind": "team_profile"
+    },
+    {
+      "id": "team_spirit_overall",
+      "category": "team_profile",
+      "query": "总结绿龙的战术转化表现",
+      "passed": true,
+      "checks": {
+        "structured_result": true,
+        "coach_brief": true,
+        "coach_sources": true,
+        "coach_caveat": true,
+        "context": true,
+        "map": true,
+        "side": true,
+        "team": true,
+        "opponent": true,
+        "minimum_sample": true,
+        "numeric_consistency": true,
+        "source_coverage": true
+      },
+      "failures": [],
+      "latency_ms": 227.46,
+      "result_type": "team_tactical_profile",
+      "source_id": "graph-profile:spirit",
+      "coach_brief_kind": "team_profile"
+    },
+    {
+      "id": "team_vitality_overall",
+      "category": "team_profile",
+      "query": "蜜蜂的首杀、补枪和残局表现怎么样？",
+      "passed": true,
+      "checks": {
+        "structured_result": true,
+        "coach_brief": true,
+        "coach_sources": true,
+        "coach_caveat": true,
+        "context": true,
+        "map": true,
+        "side": true,
+        "team": true,
+        "opponent": true,
+        "minimum_sample": true,
+        "numeric_consistency": true,
+        "source_coverage": true
+      },
+      "failures": [],
+      "latency_ms": 235.54,
+      "result_type": "team_tactical_profile",
+      "source_id": "graph-profile:vitality",
+      "coach_brief_kind": "team_profile"
+    },
+    {
+      "id": "team_furia_overall",
+      "category": "team_profile",
+      "query": "给我黑豹的总体战术画像",
+      "passed": true,
+      "checks": {
+        "structured_result": true,
+        "coach_brief": true,
+        "coach_sources": true,
+        "coach_caveat": true,
+        "context": true,
+        "map": true,
+        "side": true,
+        "team": true,
+        "opponent": true,
+        "minimum_sample": true,
+        "numeric_consistency": true,
+        "source_coverage": true
+      },
+      "failures": [],
+      "latency_ms": 222.94,
+      "result_type": "team_tactical_profile",
+      "source_id": "graph-profile:furia",
+      "coach_brief_kind": "team_profile"
+    },
+    {
+      "id": "team_mouz_overall",
+      "category": "team_profile",
+      "query": "老鼠近期比赛的回合转化率",
+      "passed": true,
+      "checks": {
+        "structured_result": true,
+        "coach_brief": true,
+        "coach_sources": true,
+        "coach_caveat": true,
+        "context": true,
+        "map": true,
+        "side": true,
+        "team": true,
+        "opponent": true,
+        "minimum_sample": true,
+        "numeric_consistency": true,
+        "source_coverage": true
+      },
+      "failures": [],
+      "latency_ms": 225.57,
+      "result_type": "team_tactical_profile",
+      "source_id": "graph-profile:mouz",
+      "coach_brief_kind": "team_profile"
     },
     {
       "id": "falcons_dust2_t",
@@ -155,6 +176,9 @@
       "passed": true,
       "checks": {
         "structured_result": true,
+        "coach_brief": true,
+        "coach_sources": true,
+        "coach_caveat": true,
         "context": true,
         "map": true,
         "side": true,
@@ -165,9 +189,10 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 233.38,
+      "latency_ms": 233.86,
       "result_type": "team_tactical_profile",
-      "source_id": "graph-profile:falcons:Dust2:T"
+      "source_id": "graph-profile:falcons:Dust2:T",
+      "coach_brief_kind": "team_profile"
     },
     {
       "id": "falcons_nuke_ct",
@@ -176,6 +201,9 @@
       "passed": true,
       "checks": {
         "structured_result": true,
+        "coach_brief": true,
+        "coach_sources": true,
+        "coach_caveat": true,
         "context": true,
         "map": true,
         "side": true,
@@ -186,9 +214,10 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 221.92,
+      "latency_ms": 228.91,
       "result_type": "team_tactical_profile",
-      "source_id": "graph-profile:falcons:Nuke:CT"
+      "source_id": "graph-profile:falcons:Nuke:CT",
+      "coach_brief_kind": "team_profile"
     },
     {
       "id": "spirit_nuke_ct",
@@ -197,6 +226,9 @@
       "passed": true,
       "checks": {
         "structured_result": true,
+        "coach_brief": true,
+        "coach_sources": true,
+        "coach_caveat": true,
         "context": true,
         "map": true,
         "side": true,
@@ -207,9 +239,10 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 231.61,
+      "latency_ms": 229.18,
       "result_type": "team_tactical_profile",
-      "source_id": "graph-profile:spirit:Nuke:CT"
+      "source_id": "graph-profile:spirit:Nuke:CT",
+      "coach_brief_kind": "team_profile"
     },
     {
       "id": "spirit_ancient_t",
@@ -218,6 +251,9 @@
       "passed": true,
       "checks": {
         "structured_result": true,
+        "coach_brief": true,
+        "coach_sources": true,
+        "coach_caveat": true,
         "context": true,
         "map": true,
         "side": true,
@@ -228,9 +264,10 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 221.54,
+      "latency_ms": 221.25,
       "result_type": "team_tactical_profile",
-      "source_id": "graph-profile:spirit:Ancient:T"
+      "source_id": "graph-profile:spirit:Ancient:T",
+      "coach_brief_kind": "team_profile"
     },
     {
       "id": "vitality_nuke_ct",
@@ -239,6 +276,9 @@
       "passed": true,
       "checks": {
         "structured_result": true,
+        "coach_brief": true,
+        "coach_sources": true,
+        "coach_caveat": true,
         "context": true,
         "map": true,
         "side": true,
@@ -249,9 +289,10 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 220.46,
+      "latency_ms": 221.79,
       "result_type": "team_tactical_profile",
-      "source_id": "graph-profile:vitality:Nuke:CT"
+      "source_id": "graph-profile:vitality:Nuke:CT",
+      "coach_brief_kind": "team_profile"
     },
     {
       "id": "vitality_dust2_t",
@@ -260,6 +301,9 @@
       "passed": true,
       "checks": {
         "structured_result": true,
+        "coach_brief": true,
+        "coach_sources": true,
+        "coach_caveat": true,
         "context": true,
         "map": true,
         "side": true,
@@ -270,9 +314,10 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 230.91,
+      "latency_ms": 232.07,
       "result_type": "team_tactical_profile",
-      "source_id": "graph-profile:vitality:Dust2:T"
+      "source_id": "graph-profile:vitality:Dust2:T",
+      "coach_brief_kind": "team_profile"
     },
     {
       "id": "furia_ancient_ct",
@@ -281,6 +326,9 @@
       "passed": true,
       "checks": {
         "structured_result": true,
+        "coach_brief": true,
+        "coach_sources": true,
+        "coach_caveat": true,
         "context": true,
         "map": true,
         "side": true,
@@ -291,9 +339,10 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 220.25,
+      "latency_ms": 223.38,
       "result_type": "team_tactical_profile",
-      "source_id": "graph-profile:furia:Ancient:CT"
+      "source_id": "graph-profile:furia:Ancient:CT",
+      "coach_brief_kind": "team_profile"
     },
     {
       "id": "furia_cache_t",
@@ -302,6 +351,9 @@
       "passed": true,
       "checks": {
         "structured_result": true,
+        "coach_brief": true,
+        "coach_sources": true,
+        "coach_caveat": true,
         "context": true,
         "map": true,
         "side": true,
@@ -312,9 +364,10 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 218.83,
+      "latency_ms": 222.47,
       "result_type": "team_tactical_profile",
-      "source_id": "graph-profile:furia:Cache:T"
+      "source_id": "graph-profile:furia:Cache:T",
+      "coach_brief_kind": "team_profile"
     },
     {
       "id": "mouz_dust2_ct",
@@ -323,6 +376,9 @@
       "passed": true,
       "checks": {
         "structured_result": true,
+        "coach_brief": true,
+        "coach_sources": true,
+        "coach_caveat": true,
         "context": true,
         "map": true,
         "side": true,
@@ -333,9 +389,10 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 229.67,
+      "latency_ms": 230.4,
       "result_type": "team_tactical_profile",
-      "source_id": "graph-profile:mouz:Dust2:CT"
+      "source_id": "graph-profile:mouz:Dust2:CT",
+      "coach_brief_kind": "team_profile"
     },
     {
       "id": "mouz_nuke_t",
@@ -344,6 +401,9 @@
       "passed": true,
       "checks": {
         "structured_result": true,
+        "coach_brief": true,
+        "coach_sources": true,
+        "coach_caveat": true,
         "context": true,
         "map": true,
         "side": true,
@@ -354,9 +414,10 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 222.59,
+      "latency_ms": 224.19,
       "result_type": "team_tactical_profile",
-      "source_id": "graph-profile:mouz:Nuke:T"
+      "source_id": "graph-profile:mouz:Nuke:T",
+      "coach_brief_kind": "team_profile"
     },
     {
       "id": "falcons_vs_spirit",
@@ -365,6 +426,9 @@
       "passed": true,
       "checks": {
         "structured_result": true,
+        "coach_brief": true,
+        "coach_sources": true,
+        "coach_caveat": true,
         "context": true,
         "map": true,
         "side": true,
@@ -375,9 +439,10 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 221.89,
+      "latency_ms": 226.9,
       "result_type": "team_tactical_profile",
-      "source_id": "graph-profile:falcons:spirit"
+      "source_id": "graph-profile:falcons:spirit",
+      "coach_brief_kind": "team_profile"
     },
     {
       "id": "spirit_vs_vitality",
@@ -386,6 +451,9 @@
       "passed": true,
       "checks": {
         "structured_result": true,
+        "coach_brief": true,
+        "coach_sources": true,
+        "coach_caveat": true,
         "context": true,
         "map": true,
         "side": true,
@@ -396,9 +464,10 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 240.58,
+      "latency_ms": 241.13,
       "result_type": "team_tactical_profile",
-      "source_id": "graph-profile:spirit:vitality"
+      "source_id": "graph-profile:spirit:vitality",
+      "coach_brief_kind": "team_profile"
     },
     {
       "id": "vitality_vs_furia",
@@ -407,6 +476,9 @@
       "passed": true,
       "checks": {
         "structured_result": true,
+        "coach_brief": true,
+        "coach_sources": true,
+        "coach_caveat": true,
         "context": true,
         "map": true,
         "side": true,
@@ -417,9 +489,10 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 225.94,
+      "latency_ms": 226.32,
       "result_type": "team_tactical_profile",
-      "source_id": "graph-profile:vitality:furia"
+      "source_id": "graph-profile:vitality:furia",
+      "coach_brief_kind": "team_profile"
     },
     {
       "id": "furia_vs_spirit",
@@ -428,6 +501,9 @@
       "passed": true,
       "checks": {
         "structured_result": true,
+        "coach_brief": true,
+        "coach_sources": true,
+        "coach_caveat": true,
         "context": true,
         "map": true,
         "side": true,
@@ -438,9 +514,10 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 222.21,
+      "latency_ms": 224.71,
       "result_type": "team_tactical_profile",
-      "source_id": "graph-profile:furia:spirit"
+      "source_id": "graph-profile:furia:spirit",
+      "coach_brief_kind": "team_profile"
     },
     {
       "id": "mouz_vs_falcons",
@@ -449,6 +526,9 @@
       "passed": true,
       "checks": {
         "structured_result": true,
+        "coach_brief": true,
+        "coach_sources": true,
+        "coach_caveat": true,
         "context": true,
         "map": true,
         "side": true,
@@ -459,9 +539,10 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 231.52,
+      "latency_ms": 233.6,
       "result_type": "team_tactical_profile",
-      "source_id": "graph-profile:mouz:falcons"
+      "source_id": "graph-profile:mouz:falcons",
+      "coach_brief_kind": "team_profile"
     },
     {
       "id": "compare_spirit_vitality_nuke_ct",
@@ -470,6 +551,9 @@
       "passed": true,
       "checks": {
         "structured_result": true,
+        "coach_brief": true,
+        "coach_sources": true,
+        "coach_caveat": true,
         "context": true,
         "map": true,
         "side": true,
@@ -479,9 +563,10 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 452.0,
+      "latency_ms": 455.24,
       "result_type": "team_tactical_comparison",
-      "source_id": "graph-comparison:spirit:vitality"
+      "source_id": "graph-comparison:spirit:vitality",
+      "coach_brief_kind": "comparison"
     },
     {
       "id": "compare_falcons_mouz_dust2_t",
@@ -490,6 +575,57 @@
       "passed": true,
       "checks": {
         "structured_result": true,
+        "coach_brief": true,
+        "coach_sources": true,
+        "coach_caveat": true,
+        "context": true,
+        "map": true,
+        "side": true,
+        "teams": true,
+        "minimum_sample": true,
+        "numeric_consistency": true,
+        "source_coverage": true
+      },
+      "failures": [],
+      "latency_ms": 449.86,
+      "result_type": "team_tactical_comparison",
+      "source_id": "graph-comparison:falcons:mouz",
+      "coach_brief_kind": "comparison"
+    },
+    {
+      "id": "compare_furia_vitality_nuke_ct",
+      "category": "comparison",
+      "query": "FURIA 和 Vitality 在 Nuke CT side 的回防表现有什么差异？",
+      "passed": true,
+      "checks": {
+        "structured_result": true,
+        "coach_brief": true,
+        "coach_sources": true,
+        "coach_caveat": true,
+        "context": true,
+        "map": true,
+        "side": true,
+        "teams": true,
+        "minimum_sample": true,
+        "numeric_consistency": true,
+        "source_coverage": true
+      },
+      "failures": [],
+      "latency_ms": 447.41,
+      "result_type": "team_tactical_comparison",
+      "source_id": "graph-comparison:furia:vitality",
+      "coach_brief_kind": "comparison"
+    },
+    {
+      "id": "compare_spirit_furia_ancient",
+      "category": "comparison",
+      "query": "对比绿龙和黑豹在 Ancient 的整体胜率",
+      "passed": true,
+      "checks": {
+        "structured_result": true,
+        "coach_brief": true,
+        "coach_sources": true,
+        "coach_caveat": true,
         "context": true,
         "map": true,
         "side": true,
@@ -501,47 +637,8 @@
       "failures": [],
       "latency_ms": 457.21,
       "result_type": "team_tactical_comparison",
-      "source_id": "graph-comparison:falcons:mouz"
-    },
-    {
-      "id": "compare_furia_vitality_nuke_ct",
-      "category": "comparison",
-      "query": "FURIA 和 Vitality 在 Nuke CT side 的回防表现有什么差异？",
-      "passed": true,
-      "checks": {
-        "structured_result": true,
-        "context": true,
-        "map": true,
-        "side": true,
-        "teams": true,
-        "minimum_sample": true,
-        "numeric_consistency": true,
-        "source_coverage": true
-      },
-      "failures": [],
-      "latency_ms": 447.54,
-      "result_type": "team_tactical_comparison",
-      "source_id": "graph-comparison:furia:vitality"
-    },
-    {
-      "id": "compare_spirit_furia_ancient",
-      "category": "comparison",
-      "query": "对比绿龙和黑豹在 Ancient 的整体胜率",
-      "passed": true,
-      "checks": {
-        "structured_result": true,
-        "context": true,
-        "map": true,
-        "side": true,
-        "teams": true,
-        "minimum_sample": true,
-        "numeric_consistency": true,
-        "source_coverage": true
-      },
-      "failures": [],
-      "latency_ms": 451.53,
-      "result_type": "team_tactical_comparison",
-      "source_id": "graph-comparison:spirit:furia"
+      "source_id": "graph-comparison:spirit:furia",
+      "coach_brief_kind": "comparison"
     },
     {
       "id": "compare_falcons_vitality_all",
@@ -550,6 +647,9 @@
       "passed": true,
       "checks": {
         "structured_result": true,
+        "coach_brief": true,
+        "coach_sources": true,
+        "coach_caveat": true,
         "context": true,
         "map": true,
         "side": true,
@@ -559,9 +659,10 @@
         "source_coverage": true
       },
       "failures": [],
-      "latency_ms": 454.07,
+      "latency_ms": 464.37,
       "result_type": "team_tactical_comparison",
-      "source_id": "graph-comparison:falcons:vitality"
+      "source_id": "graph-comparison:falcons:vitality",
+      "coach_brief_kind": "comparison"
     },
     {
       "id": "negative_unrelated_invoice",
@@ -569,12 +670,14 @@
       "query": "quantum banana payroll invoice",
       "passed": true,
       "checks": {
-        "structured_rejection": true
+        "structured_rejection": true,
+        "coach_rejection": true
       },
       "failures": [],
-      "latency_ms": 4.26,
+      "latency_ms": 4.33,
       "result_type": null,
-      "source_id": null
+      "source_id": null,
+      "coach_brief_kind": null
     },
     {
       "id": "negative_unknown_team",
@@ -582,12 +685,14 @@
       "query": "Mars Rovers 在 Moonbase 的战术表现",
       "passed": true,
       "checks": {
-        "structured_rejection": true
+        "structured_rejection": true,
+        "coach_rejection": true
       },
       "failures": [],
-      "latency_ms": 4.16,
+      "latency_ms": 4.6,
       "result_type": null,
-      "source_id": null
+      "source_id": null,
+      "coach_brief_kind": null
     },
     {
       "id": "negative_map_only",
@@ -595,12 +700,14 @@
       "query": "Nuke 这张地图有哪些常见区域？",
       "passed": true,
       "checks": {
-        "structured_rejection": true
+        "structured_rejection": true,
+        "coach_rejection": true
       },
       "failures": [],
-      "latency_ms": 3.85,
+      "latency_ms": 3.92,
       "result_type": null,
-      "source_id": null
+      "source_id": null,
+      "coach_brief_kind": null
     },
     {
       "id": "negative_player_only",
@@ -608,12 +715,14 @@
       "query": "m0NESY 最近的个人表现",
       "passed": true,
       "checks": {
-        "structured_rejection": true
+        "structured_rejection": true,
+        "coach_rejection": true
       },
       "failures": [],
-      "latency_ms": 4.06,
+      "latency_ms": 4.31,
       "result_type": null,
-      "source_id": null
+      "source_id": null,
+      "coach_brief_kind": null
     },
     {
       "id": "negative_generic_cs2",
@@ -621,12 +730,14 @@
       "query": "CS2 的经济系统是怎样的？",
       "passed": true,
       "checks": {
-        "structured_rejection": true
+        "structured_rejection": true,
+        "coach_rejection": true
       },
       "failures": [],
-      "latency_ms": 3.69,
+      "latency_ms": 4.04,
       "result_type": null,
-      "source_id": null
+      "source_id": null,
+      "coach_brief_kind": null
     }
   ],
   "limitations": [

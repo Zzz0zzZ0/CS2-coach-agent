@@ -255,14 +255,14 @@ make frontend-install
 make frontend
 ```
 
-Open `http://localhost:5173`. The console provides Demo upload, async progress, metric cards, Analyst/Coach reports, evidence citations, a GraphRAG subgraph, Global Search, cross-match player profiles, five-team tactical comparison, and contextual tactical slices. Vite proxies `/api` requests to port `8001`.
+Open `http://localhost:5173`. The console provides Demo upload, async progress, metric cards, Analyst/Coach reports, evidence citations, a GraphRAG subgraph, Global Search, cross-match player profiles, five-team tactical comparison, and contextual tactical slices. Team queries show a deterministic Chinese coaching brief before the raw graph evidence. Vite proxies `/api` requests to port `8001`.
 
 Read-only GraphRAG display endpoints:
 
 ```text
 GET /api/graph/stats
 GET /api/graph/maps
-GET /api/graph/search?q=...
+GET /api/graph/search?q=... # answer brief plus raw evidence results
 GET /api/graph/subgraph?map_name=Mirage
 GET /api/graph/players?team=Falcons
 GET /api/graph/players/{steamid_or_nickname}
@@ -436,7 +436,7 @@ Community summaries are currently deterministic and extractive: they summarize p
 
 ### Tactical Query Evaluation
 
-`datasets/evaluation/tactical_queries_v1.json` fixes 30 Chinese and English queries that require no manual annotation. They cover overall team profiles, map × side slices, opponent filters, two-team comparisons, and rejection of unrelated questions. `make eval-tactics` checks parsed context, minimum sample size, exact agreement with deterministic SQLite aggregation, and round-level provenance coverage. The current `datasets/evaluation/tactical_query_eval_v1_report.json` passes 30/30 cases with 100% context accuracy, numeric consistency, and source coverage. This is a silver-standard interface and data-contract evaluation, not expert gold evaluation of coaching quality, and it does not establish tactical causality.
+`datasets/evaluation/tactical_queries_v1.json` fixes 30 Chinese and English queries that require no manual annotation. They cover overall team profiles, map × side slices, opponent filters, two-team comparisons, and rejection of unrelated questions. `make eval-tactics` checks parsed context, minimum sample size, exact agreement with deterministic SQLite aggregation, Chinese coaching briefs, and round-level provenance coverage. The current `datasets/evaluation/tactical_query_eval_v1_report.json` passes 30/30 cases with 100% context accuracy, numeric consistency, coaching-brief coverage, and source coverage. This is a silver-standard interface and data-contract evaluation, not expert gold evaluation of coaching quality, and it does not establish tactical causality.
 
 ---
 

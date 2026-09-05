@@ -426,6 +426,13 @@ def test_cross_match_player_profiles_and_team_comparison(tmp_path, monkeypatch):
     assert profile_evidence[0].metadata["opponent"] == "Bravo"
     assert "Opening won: 1 rounds" in profile_evidence[0].content
     assert "Graph source paths:" in profile_evidence[0].content
+    profile_brief = client.coach_brief(
+        "Alpha 对阵 Bravo 的 Mirage T侧首杀战术", profile_evidence,
+    )
+    assert profile_brief["kind"] == "team_profile"
+    assert profile_brief["focus_metric"]["key"] == "opening_won"
+    assert profile_brief["sources"][0]["id"] == "G1"
+    assert "silver labels" in profile_brief["caveat"]
 
     comparison_evidence = asyncio.run(client.retrieve(
         "对比 Alpha 和 Bravo 在 Mirage 的补枪差异",
@@ -434,6 +441,11 @@ def test_cross_match_player_profiles_and_team_comparison(tmp_path, monkeypatch):
     ))
     assert comparison_evidence[0].metadata["context_level"] == "team_tactical_comparison"
     assert comparison_evidence[0].metadata["teams"] == ["Alpha", "Bravo"]
+    comparison_brief = client.coach_brief(
+        "对比 Alpha 和 Bravo 在 Mirage 的补枪差异", comparison_evidence,
+    )
+    assert comparison_brief["kind"] == "comparison"
+    assert comparison_brief["focus_metric"]["key"] == "trade_round"
 
     api = FastAPI()
     api.include_router(graph_router.router, prefix="/api")
@@ -451,3 +463,8 @@ def test_cross_match_player_profiles_and_team_comparison(tmp_path, monkeypatch):
     assert response.json()["profile"]["outcomes"]["round_win_pct"] == 50.0
     assert http.get("/api/graph/teams/Alpha/tactics?side=invalid").status_code == 422
     assert http.get("/api/graph/players/does-not-exist").status_code == 404
+    response = http.get(
+        "/api/graph/search", params={"q": "Alpha 对阵 Bravo 的 Mirage T侧首杀战术"},
+    )
+    assert response.status_code == 200
+    assert response.json()["answer"]["kind"] == "team_profile"
