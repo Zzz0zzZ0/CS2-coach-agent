@@ -149,18 +149,20 @@ GraphRAG uses a standard-library SQLite sidecar and does not replace Milvus:
 
 ```text
 nodes:
-  match → map → round → event → player
+  match → map → round ┬→ event → player
+                      └→ tactical_sequence → event/player
 
 edges:
   HAS_MAP / HAS_ROUND / KILL / USES_UTILITY /
-  FLASH_BLIND / PLANTS_BOMB / KILLER / VICTIM
+  FLASH_BLIND / PLANTS_BOMB / KILLER / VICTIM /
+  HAS_TACTICAL_SEQUENCE / SUPPORTED_BY / INVOLVES_PLAYER
 ```
 
-- Local Search filters rounds by map, task, and keywords, then returns evidence along `map → round → event → player` paths.
+- Local Search filters rounds by map, task, and keywords, then returns event paths plus `round → tactical_sequence → evidence/player` paths.
 - Community Summary aggregates rounds by “map × topic”; topics currently include overview, opening, utility, and round_flow.
 - Global Search ranks multiple community summaries and returns their round source IDs; Analyst/Coach performs the final cross-community synthesis.
 
-Community summaries are deterministic and extractive. They report observed rounds, matches, kills, first kills, utilities, plants, winners, and opening players; they do not promote a small sample into a universal professional tactic.
+Community summaries are deterministic and extractive. They report observed rounds, matches, kills, first kills, utilities, plants, tactical silver labels, winners, and opening players; they do not promote a small sample into a universal professional tactic.
 
 ### 5. Frontend Review Console
 
@@ -232,7 +234,7 @@ Build the deterministic local graph from parsed Demo events:
 make graph-build
 ```
 
-The sidecar uses SQLite for match, map, round, event, and player relationships. It provides round-level local paths plus map-topic community summaries for global search across matches. Every summary keeps round source IDs and preserves the existing `[E#]` evidence contract. If the graph database is absent, the workflow falls back to Milvus only.
+The sidecar uses SQLite for match, map, round, event, player, and tactical-sequence relationships. `make graph-build` recomputes the silver-v0.1 labels and connects each sequence to its source events and participants. Local hits carry `label_source` and confidence into the existing Analyst, Coach, and Verifier `[E#]` contract; `weak_rule` remains a candidate rather than a human-confirmed tactic. If the graph database is absent, the workflow falls back to Milvus only.
 
 ### 4. Start the API and Worker
 

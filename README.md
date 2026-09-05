@@ -149,18 +149,20 @@ GraphRAG 使用标准库 SQLite 作为本地图谱侧车，不改变 Milvus 的�
 
 ```text
 nodes:
-  match → map → round → event → player
+  match → map → round ┬→ event → player
+                      └→ tactical_sequence → event/player
 
 edges:
   HAS_MAP / HAS_ROUND / KILL / USES_UTILITY /
-  FLASH_BLIND / PLANTS_BOMB / KILLER / VICTIM
+  FLASH_BLIND / PLANTS_BOMB / KILLER / VICTIM /
+  HAS_TACTICAL_SEQUENCE / SUPPORTED_BY / INVOLVES_PLAYER
 ```
 
-- Local Search：以地图、任务和关键词筛选回合，沿 `map → round → event → player` 路径返回事件证据。
+- Local Search：以地图、任务和关键词筛选回合，沿事件路径及 `round → tactical_sequence → evidence/player` 路径返回证据。
 - Community Summary：按“地图 × 主题”聚合回合，当前主题包括 overview、opening、utility、round_flow。
 - Global Search：对多个社区摘要进行全局排序，返回社区摘要及其回合来源 ID；最终综合由 Analyst/Coach 完成。
 
-社区摘要采用确定性抽取式统计，包含回合数、比赛数、击杀、首杀、道具、下包、回合胜者和首杀玩家等事实。它不会把少量样本直接表达为“所有职业队都这样打”。
+社区摘要采用确定性抽取式统计，包含回合数、比赛数、击杀、首杀、道具、下包、战术银标、回合胜者和首杀玩家等事实。它不会把少量样本直接表达为“所有职业队都这样打”。
 
 ### 5. 前端复盘工作台
 
@@ -226,13 +228,13 @@ python scripts/seed_knowledge.py
 
 ### GraphRAG 图谱侧车
 
-GraphRAG 使用本地 SQLite 保存由 Demo 解析出的比赛、地图、回合、事件和玩家关系，不依赖付费 embedding，也不让 LLM 臆造图谱关系：
+GraphRAG 使用本地 SQLite 保存由 Demo 解析出的比赛、地图、回合、事件、玩家和战术序列关系，不依赖付费 embedding，也不让 LLM 臆造图谱关系：
 
 ```bash
 make graph-build
 ```
 
-分析请求会自动并行检索 Milvus 与图谱。图谱包含两种检索层：回合级 Local Search 用于追溯事件路径，地图主题级 Community Summary + Global Search 用于跨比赛汇总。所有摘要都保留回合来源 ID，并以 `Graph ... Evidence` 和 `[E#]` 引用进入现有 Analyst、Coach、Verifier 链；没有 `data/graph/cs2_graph.sqlite` 时自动退回 Milvus。
+`make graph-build` 会同时重算 silver-v0.1 战术标签，并把它们写为 `tactical_sequence` 节点，通过 `SUPPORTED_BY` 与原始事件连接。分析请求会自动并行检索 Milvus 与图谱；命中的标签及其 `label_source`、置信度会以 `Graph ... Evidence` 和 `[E#]` 引用进入现有 Analyst、Coach、Verifier 链。`weak_rule` 只作为候选序列，不视为人工确认战术。没有 `data/graph/cs2_graph.sqlite` 时自动退回 Milvus。
 
 ### 4. 启动 API 与 Worker
 

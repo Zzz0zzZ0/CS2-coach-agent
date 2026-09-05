@@ -1,4 +1,5 @@
 import asyncio
+import json
 import sqlite3
 
 from app.services.graph_rag_service import GraphRAGClient
@@ -61,6 +62,7 @@ def test_graph_rag_returns_a_traceable_opening_path(tmp_path):
         )
     }
     assert "Opening duels:" in summaries["opening"]
+    assert "Tactical labels: OPENING_DUEL 1" in summaries["opening"]
     assert "Utility usage:" in summaries["utility"]
     assert "Round flow:" in summaries["round_flow"]
     connection.commit()
@@ -173,3 +175,85 @@ def test_graph_global_search_rejects_irrelevant_queries(tmp_path):
     )
 
     assert evidence == []
+
+
+def test_silver_tactical_sequences_are_connected_and_retrievable(tmp_path):
+    client = GraphRAGClient(tmp_path / "graph.sqlite")
+    parsed = {
+        "map_name": "de_dust2",
+        "rounds": [{
+            "round_number": 1,
+            "start_tick": 0,
+            "end_tick": 1000,
+            "winner": "T",
+            "reason": "target_bombed",
+            "kills": [{
+                "tick": 180,
+                "killer": "entry", "killer_steamid": "111",
+                "killer_team": "Alpha", "killer_side": "TERRORIST",
+                "victim": "anchor", "victim_steamid": "222",
+                "victim_team": "Bravo", "victim_side": "CT",
+                "weapon": "ak47", "is_first_kill": True,
+                "location": {"killer_xyz": [1, 2, 3], "victim_xyz": [4, 5, 6]},
+            }],
+            "grenades": [
+                {
+                    "tick": 100, "type": "Smoke", "thrower": "support",
+                    "thrower_steamid": "333", "thrower_team": "Alpha",
+                    "thrower_side": "TERRORIST", "thrower_xyz": [1, 1, 1],
+                    "detonation_xyz": [10, 10, 0],
+                },
+                {
+                    "tick": 120, "type": "Flash", "thrower": "support",
+                    "thrower_steamid": "333", "thrower_team": "Alpha",
+                    "thrower_side": "TERRORIST", "thrower_xyz": [1, 1, 1],
+                    "detonation_xyz": [11, 10, 0],
+                },
+            ],
+            "flash_blinds": [],
+            "plants": [{
+                "tick": 400, "planter": "entry", "planter_steamid": "111",
+                "planter_team": "Alpha", "planter_side": "TERRORIST",
+                "site": "BombsiteA", "site_entity_id": 313,
+                "position": [20, 20, 0],
+            }],
+        }],
+    }
+    connection = sqlite3.connect(client.db_path)
+    connection.row_factory = sqlite3.Row
+    client._create_schema(connection)
+    nodes, edges = client._graph_rows(tmp_path / "demo-12345-map1.dem", parsed)
+    connection.executemany("INSERT INTO nodes VALUES (?,?,?,?,?,?,?)", nodes)
+    connection.executemany("INSERT INTO edges VALUES (?,?,?,?)", edges)
+    connection.commit()
+
+    sequence_rows = connection.execute(
+        "SELECT node_id, properties FROM nodes WHERE node_type='tactical_sequence'"
+    ).fetchall()
+    sequence_types = {json.loads(row["properties"])["label_type"] for row in sequence_rows}
+    assert {"OPENING_DUEL", "UTILITY_BURST", "EXECUTE_CANDIDATE", "POST_PLANT"} <= sequence_types
+
+    execute_id = next(
+        row["node_id"] for row in sequence_rows
+        if json.loads(row["properties"])["label_type"] == "EXECUTE_CANDIDATE"
+    )
+    execute_edges = {
+        (row[0], row[1]) for row in connection.execute(
+            "SELECT relation,target_id FROM edges WHERE source_id=?", (execute_id,)
+        )
+    }
+    assert ("INVOLVES_PLAYER", "player:111") in execute_edges
+    assert any(relation == "SUPPORTED_BY" and target.startswith("event:") for relation, target in execute_edges)
+    connection.close()
+
+    evidence = asyncio.run(
+        client.retrieve("Dust2 execute utility sequence", {"map": "Dust2"}, "utility")
+    )
+    assert "EXECUTE_CANDIDATE" in evidence[0].content
+    assert "EXECUTE_CANDIDATE" in evidence[0].metadata["tactical_labels"]
+    execute_detail = next(
+        item for item in evidence[0].metadata["tactical_label_details"]
+        if item["label_type"] == "EXECUTE_CANDIDATE"
+    )
+    assert execute_detail["label_source"] == "weak_rule"
+    assert execute_detail["evidence_event_ids"]

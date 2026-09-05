@@ -131,6 +131,27 @@ class _OffTopicGraph:
         )]
 
 
+class _TacticalGraph:
+    def available(self):
+        return True
+
+    async def retrieve(self, *args, **kwargs):
+        return [Evidence(
+            content=(
+                "Tactical label EXECUTE_CANDIDATE: team Alpha, site A, "
+                "source weak_rule, confidence 0.72."
+            ),
+            metadata={
+                "context_level": "graph_path",
+                "topic": "utility",
+                "tactic_type": "Graph Utility Evidence",
+                "tactical_labels": ["EXECUTE_CANDIDATE"],
+            },
+            score=0.9,
+            source_id="graph-execute",
+        )]
+
+
 def test_graph_evidence_only_covers_its_matching_task_topic():
     result = asyncio.run(create_retrieve_node(None, _OffTopicGraph())({
         "analysis_plan": [{
@@ -145,3 +166,23 @@ def test_graph_evidence_only_covers_its_matching_task_topic():
     }))
 
     assert result["retrieval_task_results"][0]["covered"] is False
+
+
+def test_tactical_graph_evidence_reaches_agent_context():
+    result = asyncio.run(create_retrieve_node(None, _TacticalGraph())({
+        "analysis_plan": [{
+            "id": "utility",
+            "query": "Dust2 execute utility",
+            "query_variants": [],
+            "required_tactic_types": ["Round Event Evidence"],
+        }],
+        "retrieval_evidence": [],
+        "retrieval_task_results": [],
+        "agent_trace": [],
+    }))
+
+    assert result["retrieval_task_results"][0]["covered"] is True
+    assert "EXECUTE_CANDIDATE" in result["rag_context"]
+    assert result["retrieval_evidence"][0]["metadata"]["tactical_labels"] == [
+        "EXECUTE_CANDIDATE"
+    ]
