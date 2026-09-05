@@ -1,4 +1,6 @@
-from fastapi import APIRouter, Query
+import asyncio
+
+from fastapi import APIRouter, HTTPException, Query
 
 from app.core.providers import get_graph_client
 
@@ -15,6 +17,38 @@ async def graph_stats():
 async def graph_maps():
     client = get_graph_client()
     return {"available": client.available(), "maps": client.maps()}
+
+
+@router.get("/players")
+async def graph_players(
+    team: str | None = Query(default=None, max_length=64),
+    limit: int = Query(default=30, ge=1, le=100),
+):
+    client = get_graph_client()
+    return {
+        "available": client.available(),
+        "team": team,
+        "players": await asyncio.to_thread(client.players, team, limit),
+    }
+
+
+@router.get("/players/{player_id}")
+async def graph_player_profile(player_id: str):
+    client = get_graph_client()
+    profile = await asyncio.to_thread(client.player_profile, player_id)
+    if client.available() and profile is None:
+        raise HTTPException(status_code=404, detail="Player not found in the local graph")
+    return {"available": client.available(), "profile": profile}
+
+
+@router.get("/teams/compare")
+async def graph_team_comparison(
+    teams: str = Query(min_length=1, max_length=300),
+):
+    client = get_graph_client()
+    requested = [item.strip() for item in teams.split(",") if item.strip()]
+    comparison = await asyncio.to_thread(client.compare_teams, requested)
+    return {"available": client.available(), **comparison}
 
 
 @router.get("/search")

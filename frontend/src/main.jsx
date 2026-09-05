@@ -1,8 +1,11 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
 import {
+  compareGraphTeams,
   getGraphMaps,
+  getGraphPlayers,
   getGraphStats,
+  getPlayerProfile,
   getSubgraph,
   getTask,
   searchGraph,
@@ -11,6 +14,15 @@ import {
 import "./styles.css";
 
 const FLOW = ["Supervisor", "Tools", "Router", "RAG + Graph", "Critique", "Analyst", "Coach", "Verifier"];
+const FEATURED_TEAMS = ["Falcons", "Spirit", "Vitality", "FURIA", "MOUZ"];
+const TACTIC_COLUMNS = [
+  ["OPENING_DUEL", "首杀回合"],
+  ["TRADE_KILL", "补枪"],
+  ["UTILITY_BURST", "道具协同"],
+  ["EXECUTE_CANDIDATE", "爆弹候选"],
+  ["POST_PLANT", "下包后"],
+  ["RETAKE_CONTACT", "回防接触"],
+];
 
 function formatNumber(value) {
   return new Intl.NumberFormat("en-US").format(value || 0);
@@ -33,19 +45,45 @@ function App() {
   const [graph, setGraph] = useState({ nodes: [], edges: [] });
   const [query, setQuery] = useState("职业比赛中 Mirage 的首杀和道具模式");
   const [searchResults, setSearchResults] = useState([]);
+  const [teamComparison, setTeamComparison] = useState([]);
+  const [playerTeam, setPlayerTeam] = useState(FEATURED_TEAMS[0]);
+  const [players, setPlayers] = useState([]);
+  const [selectedPlayerId, setSelectedPlayerId] = useState("");
+  const [playerProfile, setPlayerProfile] = useState(null);
 
   const analysis = task?.status === "SUCCESS" ? task.result?.analysis || task.result : null;
   const metrics = analysis?.metrics || {};
 
   useEffect(() => {
-    Promise.all([getGraphMaps(), getGraphStats()])
-      .then(([mapData, stats]) => {
+    Promise.all([getGraphMaps(), getGraphStats(), compareGraphTeams(FEATURED_TEAMS)])
+      .then(([mapData, stats, comparison]) => {
         setMaps(mapData.maps || []);
         setGraphStats(stats);
+        setTeamComparison(comparison.teams || []);
         if (mapData.maps?.length && !mapData.maps.includes(map)) setMap(mapData.maps[0]);
       })
       .catch((reason) => setError(reason.message));
   }, []);
+
+  useEffect(() => {
+    getGraphPlayers(playerTeam)
+      .then((data) => {
+        const nextPlayers = data.players || [];
+        setPlayers(nextPlayers);
+        setSelectedPlayerId(nextPlayers[0]?.player_id || "");
+      })
+      .catch((reason) => setError(reason.message));
+  }, [playerTeam]);
+
+  useEffect(() => {
+    if (!selectedPlayerId) {
+      setPlayerProfile(null);
+      return;
+    }
+    getPlayerProfile(selectedPlayerId)
+      .then((data) => setPlayerProfile(data.profile || null))
+      .catch((reason) => setError(reason.message));
+  }, [selectedPlayerId]);
 
   useEffect(() => {
     getSubgraph(map).then(setGraph).catch((reason) => setError(reason.message));
@@ -141,7 +179,25 @@ function App() {
 
         <section className="graph-card card"><div className="section-heading"><div><p className="eyebrow">04 / GRAPH RAG</p><h2>战术关系图谱</h2></div><div className="stats-inline"><span>{formatNumber(graphStats.nodes)} nodes</span><span>{formatNumber(graphStats.edges)} edges</span><span>{formatNumber(graphStats.tactical_sequences)} sequences</span><span>{formatNumber(graphStats.communities)} communities</span></div></div><div className="graph-toolbar"><select value={map} onChange={(event) => setMap(event.target.value)}>{maps.map((item) => <option key={item}>{item}</option>)}</select><form onSubmit={handleSearch}><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索社区摘要与职业模式…" /><button>Global Search</button></form></div><div className="graph-layout"><GraphCanvas positions={positions} edges={graph.edges || []} /><div className="search-results">{searchResults.length ? searchResults.map((item) => <article key={item.source_id}><div className="result-meta">{item.metadata?.community_id} · {Number(item.score || 0).toFixed(2)}</div><p>{item.content}</p></article>) : <div className="empty-search">输入问题，检索 {map} 的社区摘要。<br /><small>结果保留回合来源 ID，可继续追溯到 Local Search。</small></div>}</div></div></section>
 
-        <section className="evidence-card card"><div className="section-heading"><div><p className="eyebrow">05 / SOURCES</p><h2>证据引用</h2></div><span className="mono">{analysis?.retrieval_evidence?.length || 0} HITS</span></div><div className="evidence-list">{(analysis?.retrieval_evidence || []).slice(0, 8).map((item, index) => <article key={item.source_id || index}><span className="evidence-id">E{index + 1}</span><div><div className="result-meta">{item.metadata?.tactic_type} · {item.metadata?.map} · R{item.metadata?.round_number || "—"}</div><p>{item.content}</p></div></article>)}{!analysis?.retrieval_evidence?.length && <div className="empty-search">完成一次分析后，这里会列出 Milvus 与 GraphRAG 的可追溯证据。</div>}</div></section>
+        <section className="analytics-card card">
+          <div className="section-heading"><div><p className="eyebrow">05 / CROSS-MATCH INTELLIGENCE</p><h2>选手画像 × 五队战术对比</h2></div><span className="chip">PER 100 ROUNDS</span></div>
+          <div className="analytics-layout">
+            <div className="player-pane">
+              <div className="analytics-controls">
+                <label>战队<select value={playerTeam} onChange={(event) => setPlayerTeam(event.target.value)}>{FEATURED_TEAMS.map((item) => <option key={item}>{item}</option>)}</select></label>
+                <label>选手<select value={selectedPlayerId} onChange={(event) => setSelectedPlayerId(event.target.value)}>{players.map((item) => <option key={item.player_id} value={item.player_id}>{item.name}</option>)}</select></label>
+              </div>
+              {playerProfile ? <PlayerProfile profile={playerProfile} /> : <div className="empty-search">等待本地图谱返回选手画像。</div>}
+            </div>
+            <div className="team-pane">
+              <div className="result-meta table-title">战术序列频率 / 每 100 回合</div>
+              <div className="comparison-scroll"><table className="comparison-table"><thead><tr><th>TEAM</th><th>SAMPLE</th>{TACTIC_COLUMNS.map(([key, label]) => <th key={key}>{label}</th>)}</tr></thead><tbody>{teamComparison.map((team) => <tr key={team.team}><td><strong>{team.team}</strong></td><td>{team.sample_size.matches}M · {team.sample_size.maps} maps<br /><small>{team.sample_size.rounds} rounds</small></td>{TACTIC_COLUMNS.map(([key]) => <td key={key}>{Number(team.labels[key]?.per_100_rounds || 0).toFixed(1)}</td>)}</tr>)}</tbody></table></div>
+              <p className="method-note">基于事件事实和确定性 silver labels；爆弹候选为弱监督标签。用于描述样本，不直接推断战术因果。</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="evidence-card card"><div className="section-heading"><div><p className="eyebrow">06 / SOURCES</p><h2>证据引用</h2></div><span className="mono">{analysis?.retrieval_evidence?.length || 0} HITS</span></div><div className="evidence-list">{(analysis?.retrieval_evidence || []).slice(0, 8).map((item, index) => <article key={item.source_id || index}><span className="evidence-id">E{index + 1}</span><div><div className="result-meta">{item.metadata?.tactic_type} · {item.metadata?.map} · R{item.metadata?.round_number || "—"}</div><p>{item.content}</p></div></article>)}{!analysis?.retrieval_evidence?.length && <div className="empty-search">完成一次分析后，这里会列出 Milvus 与 GraphRAG 的可追溯证据。</div>}</div></section>
       </main>
       {error && <button className="error-toast" onClick={() => setError("")}>{error} ×</button>}
     </div>
@@ -151,6 +207,14 @@ function App() {
 function Metric({ label, value, suffix = "", accent = false, text = false }) { return <article className={`metric ${accent ? "accent" : ""}`}><span>{label}</span><strong className={text ? "metric-text" : ""}>{text ? value : formatNumber(value)}<small>{text ? "" : suffix}</small></strong></article>; }
 
 function ReportBlock({ title, text, empty }) { return <article className="report-block"><div className="block-label">{title}</div><div className="report-text">{text || <span className="placeholder">{empty}</span>}</div></article>; }
+
+function PlayerProfile({ profile }) {
+  const combat = profile.combat || {};
+  const rates = profile.rates_per_100_rounds || {};
+  return <div className="player-profile"><div className="player-title"><div><strong>{profile.name}</strong><span>{profile.team}</span></div><small>{profile.sample_size.matches} matches · {profile.sample_size.maps} maps · {profile.sample_size.rounds} rounds</small></div><div className="profile-metrics"><ProfileMetric label="K/D" value={combat.kd_ratio ?? "—"} /><ProfileMetric label="OPENING WIN" value={combat.opening_duel_win_pct == null ? "—" : `${combat.opening_duel_win_pct}%`} /><ProfileMetric label="KILLS / 100R" value={rates.kills} /><ProfileMetric label="TRADES / 100R" value={rates.trade_kills} /></div><div className="tactic-chips">{TACTIC_COLUMNS.map(([key, label]) => <span key={key}>{label}<b>{profile.tactical_participation?.[key] || 0}</b></span>)}</div><div className="source-hint">SOURCE · {profile.source_round_ids?.[0] || "unavailable"}</div></div>;
+}
+
+function ProfileMetric({ label, value }) { return <div><span>{label}</span><strong>{value}</strong></div>; }
 
 function GraphCanvas({ positions, edges }) { return <div className="graph-canvas"><svg viewBox="0 0 900 320" role="img" aria-label="CS2 tactical graph"><g className="edges">{edges.map((edge, index) => { const from = positions[edge.source]; const to = positions[edge.target]; return from && to ? <line key={index} x1={from.x} y1={from.y} x2={to.x} y2={to.y} /> : null; })}</g><g>{Object.values(positions).map(({ x, y, node }) => <g className={`graph-node node-${node.type}`} key={node.id} transform={`translate(${x}, ${y})`}><circle r="17" /><text x="25" y="4">{node.label?.slice(0, 24)}</text><title>{node.id}</title></g>)}</g></svg><div className="legend"><span><i className="legend-match" />match/map</span><span><i className="legend-round" />round</span><span><i className="legend-tactic" />tactical sequence</span><span><i className="legend-event" />event</span></div></div>; }
 

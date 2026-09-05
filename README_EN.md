@@ -171,7 +171,7 @@ Community summaries are deterministic and extractive. They report observed round
 - The upload form submits a `.dem` and `analysis_mode`; the backend returns a Celery `task_id`.
 - The console polls `GET /api/tasks/{task_id}` every two seconds and renders the `analysis` payload after SUCCESS.
 - The dashboard shows metrics, the Agent execution chain, Analyst/Coach reports, Verifier status, and `[E#]` evidence.
-- The GraphRAG panel loads maps, nodes/edges, and Global Search results through read-only endpoints.
+- The GraphRAG panel loads maps, nodes/edges, Global Search, player profiles, and team comparisons through read-only endpoints.
 - The subgraph is drawn with SVG instead of a large visualization dependency; CSS breakpoints collapse the layout on mobile.
 
 ### 6. Reliability and Review Boundaries
@@ -234,7 +234,9 @@ Build the deterministic local graph from parsed Demo events:
 make graph-build
 ```
 
-The sidecar uses SQLite for match, map, round, event, player, and tactical-sequence relationships. `make graph-build` recomputes the silver-v0.1 labels and connects each sequence to its source events and participants. Local hits carry `label_source` and confidence into the existing Analyst, Coach, and Verifier `[E#]` contract; `weak_rule` remains a candidate rather than a human-confirmed tactic. If the graph database is absent, the workflow falls back to Milvus only.
+The sidecar uses SQLite for match, map, round, event, player, and tactical-sequence relationships. `make graph-build` recomputes the current silver labels and connects each sequence to its source events and participants. Local hits carry `label_source` and confidence into the existing Analyst, Coach, and Verifier `[E#]` contract; `weak_rule` remains a candidate rather than a human-confirmed tactic. If the graph database is absent, the workflow falls back to Milvus only.
+
+The same SQLite graph now powers cross-match analytics. Player profiles aggregate kills, deaths, assists, opening duels, trades, utility, plants, and participation in all six tactical sequence types. Team comparison normalizes every sequence to 100 observed team rounds so unequal match counts do not distort totals. Each result retains `graph:{match}:{map}:{round}` sources. These are descriptive metrics, not causal claims; profile methodology metadata explicitly flags unavailable flash-event coverage.
 
 ### 4. Start the API and Worker
 
@@ -251,7 +253,7 @@ make frontend-install
 make frontend
 ```
 
-Open `http://localhost:5173`. The console provides Demo upload, async progress, metric cards, Analyst/Coach reports, evidence citations, a GraphRAG subgraph, and Global Search. Vite proxies `/api` requests to port `8001`.
+Open `http://localhost:5173`. The console provides Demo upload, async progress, metric cards, Analyst/Coach reports, evidence citations, a GraphRAG subgraph, Global Search, cross-match player profiles, and five-team tactical comparison. Vite proxies `/api` requests to port `8001`.
 
 Read-only GraphRAG display endpoints:
 
@@ -260,6 +262,9 @@ GET /api/graph/stats
 GET /api/graph/maps
 GET /api/graph/search?q=...
 GET /api/graph/subgraph?map_name=Mirage
+GET /api/graph/players?team=Falcons
+GET /api/graph/players/{steamid_or_nickname}
+GET /api/graph/teams/compare?teams=Falcons,Spirit,Vitality,FURIA,MOUZ
 ```
 
 ### 6. Usage

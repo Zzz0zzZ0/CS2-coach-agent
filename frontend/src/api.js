@@ -26,6 +26,20 @@ export function getGraphStats() {
   return request("/api/graph/stats");
 }
 
+export function getGraphPlayers(team, limit = 10) {
+  const params = new URLSearchParams({ team, limit: String(limit) });
+  return request(`/api/graph/players?${params}`);
+}
+
+export function getPlayerProfile(playerId) {
+  return request(`/api/graph/players/${encodeURIComponent(playerId)}`);
+}
+
+export function compareGraphTeams(teams) {
+  const params = new URLSearchParams({ teams: teams.join(",") });
+  return request(`/api/graph/teams/compare?${params}`);
+}
+
 export function getSubgraph(mapName) {
   const query = mapName ? `?map_name=${encodeURIComponent(mapName)}` : "";
   return request(`/api/graph/subgraph${query}`);

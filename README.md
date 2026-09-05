@@ -171,7 +171,7 @@ edges:
 - 上传页提交 `.dem` 和 `analysis_mode`，后端返回 Celery `task_id`。
 - 前端每两秒轮询 `GET /api/tasks/{task_id}`，在 SUCCESS 后展示 `analysis` 结果。
 - Dashboard 展示指标、Agent 执行链、Analyst/Coach 报告、Verifier 状态和 `[E#]` 证据。
-- GraphRAG 面板通过只读接口加载地图、节点/边和 Global Search 结果。
+- GraphRAG 面板通过只读接口加载地图、节点/边、Global Search、选手画像和战队对比结果。
 - 子图使用 SVG 绘制，避免引入大型图可视化依赖；移动端通过 CSS breakpoint 降级为单列布局。
 
 ### 6. 可靠性和审核边界
@@ -234,7 +234,9 @@ GraphRAG 使用本地 SQLite 保存由 Demo 解析出的比赛、地图、回合
 make graph-build
 ```
 
-`make graph-build` 会同时重算 silver-v0.1 战术标签，并把它们写为 `tactical_sequence` 节点，通过 `SUPPORTED_BY` 与原始事件连接。分析请求会自动并行检索 Milvus 与图谱；命中的标签及其 `label_source`、置信度会以 `Graph ... Evidence` 和 `[E#]` 引用进入现有 Analyst、Coach、Verifier 链。`weak_rule` 只作为候选序列，不视为人工确认战术。没有 `data/graph/cs2_graph.sqlite` 时自动退回 Milvus。
+`make graph-build` 会同时重算当前 silver 战术标签，并把它们写为 `tactical_sequence` 节点，通过 `SUPPORTED_BY` 与原始事件连接。分析请求会自动并行检索 Milvus 与图谱；命中的标签及其 `label_source`、置信度会以 `Graph ... Evidence` 和 `[E#]` 引用进入现有 Analyst、Coach、Verifier 链。`weak_rule` 只作为候选序列，不视为人工确认战术。没有 `data/graph/cs2_graph.sqlite` 时自动退回 Milvus。
+
+同一个 SQLite 图谱还提供跨比赛分析：选手画像聚合击杀、死亡、助攻、首杀/首死、补枪、道具、下包和六类战术序列参与；战队对比则把战术序列统一换算为每 100 个实际参赛回合，避免不同比赛数量造成总量偏差。每个结果都保留 `graph:{match}:{map}:{round}` 来源。当前指标是描述性统计，不宣称战术因果；Flash 指标不可用时会在画像方法元数据中明确标记。
 
 ### 4. 启动 API 与 Worker
 
@@ -251,7 +253,7 @@ make frontend-install
 make frontend
 ```
 
-浏览器打开 `http://localhost:5173`。前端提供 Demo 上传、异步进度、指标卡片、Analyst/Coach 报告、证据引用、GraphRAG 子图和 Global Search；Vite 会把 `/api` 请求代理到 `8001`。
+浏览器打开 `http://localhost:5173`。前端提供 Demo 上传、异步进度、指标卡片、Analyst/Coach 报告、证据引用、GraphRAG 子图、Global Search、跨比赛选手画像和五队战术对比；Vite 会把 `/api` 请求代理到 `8001`。
 
 新增只读 GraphRAG 展示接口：
 
@@ -260,6 +262,9 @@ GET /api/graph/stats
 GET /api/graph/maps
 GET /api/graph/search?q=...
 GET /api/graph/subgraph?map_name=Mirage
+GET /api/graph/players?team=Falcons
+GET /api/graph/players/{steamid_or_nickname}
+GET /api/graph/teams/compare?teams=Falcons,Spirit,Vitality,FURIA,MOUZ
 ```
 
 ### 6. 使用方式

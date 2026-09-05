@@ -2,6 +2,10 @@ import asyncio
 import json
 import sqlite3
 
+from fastapi import FastAPI
+from fastapi.testclient import TestClient
+
+from app.api.routers import graph as graph_router
 from app.services.graph_rag_service import GraphRAGClient, _query_text
 
 
@@ -280,3 +284,126 @@ def test_silver_tactical_sequences_are_connected_and_retrievable(tmp_path):
     )
     assert execute_detail["label_source"] == "weak_rule"
     assert execute_detail["evidence_event_ids"]
+
+
+def test_cross_match_player_profiles_and_team_comparison(tmp_path, monkeypatch):
+    client = GraphRAGClient(tmp_path / "graph.sqlite")
+    parsed = {
+        "map_name": "de_mirage",
+        "rounds": [
+            {
+                "round_number": 1,
+                "start_tick": 0,
+                "end_tick": 1000,
+                "winner": "Alpha",
+                "reason": "target_bombed",
+                "kills": [{
+                    "tick": 200,
+                    "killer": "entry", "killer_steamid": "111",
+                    "killer_team": "Alpha", "killer_side": "TERRORIST",
+                    "victim": "anchor", "victim_steamid": "222",
+                    "victim_team": "Bravo", "victim_side": "CT",
+                    "assister": "support", "assister_steamid": "333",
+                    "assister_team": "Alpha", "assister_side": "TERRORIST",
+                    "weapon": "ak47", "is_headshot": True, "is_first_kill": True,
+                }],
+                "grenades": [
+                    {
+                        "tick": 100, "type": "Smoke", "thrower": "support",
+                        "thrower_steamid": "333", "thrower_team": "Alpha",
+                        "thrower_side": "TERRORIST",
+                    },
+                    {
+                        "tick": 120, "type": "Flash", "thrower": "support",
+                        "thrower_steamid": "333", "thrower_team": "Alpha",
+                        "thrower_side": "TERRORIST",
+                    },
+                ],
+                "flash_blinds": [],
+                "plants": [{
+                    "tick": 400, "planter": "entry", "planter_steamid": "111",
+                    "planter_team": "Alpha", "planter_side": "TERRORIST", "site": "A",
+                }],
+            },
+            {
+                "round_number": 2,
+                "start_tick": 1001,
+                "end_tick": 2000,
+                "winner": "Bravo",
+                "reason": "ct_win",
+                "kills": [{
+                    "tick": 1300,
+                    "killer": "anchor", "killer_steamid": "222",
+                    "killer_team": "Bravo", "killer_side": "CT",
+                    "victim": "entry", "victim_steamid": "111",
+                    "victim_team": "Alpha", "victim_side": "TERRORIST",
+                    "weapon": "m4a1", "is_headshot": False, "is_first_kill": True,
+                }],
+                "grenades": [],
+                "flash_blinds": [],
+                "plants": [],
+            },
+        ],
+    }
+    connection = sqlite3.connect(client.db_path)
+    connection.row_factory = sqlite3.Row
+    client._create_schema(connection)
+    nodes, edges = client._graph_rows(tmp_path / "demo-12345-map1.dem", parsed)
+    connection.executemany("INSERT INTO nodes VALUES (?,?,?,?,?,?,?)", nodes)
+    connection.executemany("INSERT INTO edges VALUES (?,?,?,?)", edges)
+    second_nodes, second_edges = client._graph_rows(
+        tmp_path / "demo-12345-map2.dem",
+        {
+            "map_name": "de_nuke",
+            "rounds": [{
+                "round_number": 1,
+                "winner": "Alpha",
+                "reason": "ct_win",
+                "kills": [{
+                    "tick": 300,
+                    "killer": "substitute", "killer_steamid": "444",
+                    "killer_team": "Alpha", "killer_side": "CT",
+                    "victim": "anchor", "victim_steamid": "222",
+                    "victim_team": "Bravo", "victim_side": "TERRORIST",
+                    "weapon": "m4a1", "is_first_kill": True,
+                }],
+                "grenades": [], "flash_blinds": [], "plants": [],
+            }],
+        },
+    )
+    connection.executemany("INSERT OR REPLACE INTO nodes VALUES (?,?,?,?,?,?,?)", second_nodes)
+    connection.executemany("INSERT OR REPLACE INTO edges VALUES (?,?,?,?)", second_edges)
+    connection.commit()
+    connection.close()
+
+    alpha_players = client.players(team="Alpha")
+    assert {player["name"] for player in alpha_players} == {"entry", "support", "substitute"}
+    entry = client.player_profile("111")
+    assert entry["team"] == "Alpha"
+    assert entry["sample_size"] == {
+        "matches": 1, "maps": 1, "map_pool_size": 1, "rounds": 2,
+    }
+    assert entry["combat"]["kills"] == 1
+    assert entry["combat"]["deaths"] == 1
+    assert entry["combat"]["opening_duel_win_pct"] == 50.0
+    assert entry["rates_per_100_rounds"]["kills"] == 50.0
+    assert entry["source_round_ids"]
+    assert client.player_profile("444")["sample_size"]["rounds"] == 1
+
+    comparison = client.compare_teams(["Alpha", "Bravo"])
+    assert [team["team"] for team in comparison["teams"]] == ["Alpha", "Bravo"]
+    alpha = comparison["teams"][0]
+    assert alpha["sample_size"]["rounds"] == 3
+    assert alpha["labels"]["OPENING_DUEL"] == {"count": 2, "per_100_rounds": 66.67}
+    assert comparison["methodology"]["causality"].startswith("descriptive")
+
+    api = FastAPI()
+    api.include_router(graph_router.router, prefix="/api")
+    monkeypatch.setattr(graph_router, "get_graph_client", lambda: client)
+    http = TestClient(api)
+    assert http.get("/api/graph/players?team=Alpha").status_code == 200
+    assert http.get("/api/graph/players/111").json()["profile"]["name"] == "entry"
+    response = http.get("/api/graph/teams/compare?teams=Alpha,Bravo")
+    assert response.status_code == 200
+    assert len(response.json()["teams"]) == 2
+    assert http.get("/api/graph/players/does-not-exist").status_code == 404

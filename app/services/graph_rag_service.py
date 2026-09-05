@@ -8,7 +8,7 @@ import json
 import logging
 import re
 import sqlite3
-from collections import Counter
+from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
@@ -33,6 +33,21 @@ TEAM_ALIASES = {
     "黑豹": "furia",
     "老鼠": "mouz",
 }
+TACTICAL_LABELS = (
+    "OPENING_DUEL",
+    "TRADE_KILL",
+    "UTILITY_BURST",
+    "EXECUTE_CANDIDATE",
+    "POST_PLANT",
+    "RETAKE_CONTACT",
+)
+TEAM_DISPLAY_NAMES = {
+    "falcons": "Falcons",
+    "spirit": "Spirit",
+    "vitality": "Vitality",
+    "furia": "FURIA",
+    "mouz": "MOUZ",
+}
 
 
 def _query_text(query: str) -> str:
@@ -50,6 +65,23 @@ def _text(value: Any, fallback: str = "Unknown") -> str:
 def _map_name(value: str) -> str:
     raw = _text(value)
     return MAP_NAMES.get(raw.lower(), raw.removeprefix("de_").title())
+
+
+def _team_key(value: Any) -> str:
+    raw = _text(value, "").strip().lower()
+    for alias, expanded in TEAM_ALIASES.items():
+        if alias in raw:
+            raw = expanded
+            break
+    return re.sub(r"[^a-z0-9]+", "", raw.removeprefix("team "))
+
+
+def _team_name(value: Any) -> str:
+    raw = _text(value, "").strip()
+    key = _team_key(raw)
+    if not key:
+        return "Unknown"
+    return TEAM_DISPLAY_NAMES.get(key, raw.removeprefix("Team ").strip() or key.title())
 
 
 def _match_id(path: Path, parsed: dict) -> str:
@@ -180,6 +212,355 @@ class GraphRAGClient:
                     "WHERE node_type='map' ORDER BY map_name"
                 ).fetchall()
             ]
+        finally:
+            connection.close()
+
+    def players(self, team: str | None = None, limit: int = 100) -> list[dict]:
+        """Return cross-match player summaries derived from graph facts."""
+        if not self.available():
+            return []
+        profiles, _ = self._analytics_snapshot()
+        requested_team = _team_key(team) if team else ""
+        selected = [
+            profile for profile in profiles.values()
+            if not requested_team
+            or any(_team_key(item["team"]) == requested_team for item in profile["teams"])
+        ]
+        selected.sort(
+            key=lambda item: (
+                -item["sample_size"]["matches"],
+                -item["sample_size"]["rounds"],
+                -item["combat"]["kills"],
+                item["name"].lower(),
+            )
+        )
+        summary_keys = (
+            "player_id", "graph_id", "name", "team", "teams", "sample_size",
+            "combat", "utility", "tactical_participation", "rates_per_100_rounds",
+        )
+        return [
+            {key: profile[key] for key in summary_keys}
+            for profile in selected[:limit]
+        ]
+
+    def player_profile(self, player_id: str) -> dict | None:
+        """Return one traceable player profile by SteamID, graph id, or exact nickname."""
+        if not self.available():
+            return None
+        profiles, _ = self._analytics_snapshot()
+        graph_id = player_id if player_id.startswith("player:") else f"player:{player_id}"
+        if graph_id in profiles:
+            return profiles[graph_id]
+        lowered = player_id.lower()
+        return next(
+            (profile for profile in profiles.values() if profile["name"].lower() == lowered),
+            None,
+        )
+
+    def compare_teams(self, team_names: list[str]) -> dict:
+        """Compare tactical label frequencies using team-round denominators."""
+        if not self.available():
+            return {"teams": [], "available_teams": []}
+        _, team_profiles = self._analytics_snapshot()
+        by_key = {_team_key(profile["team"]): profile for profile in team_profiles.values()}
+        requested = []
+        seen = set()
+        for name in team_names:
+            key = _team_key(name)
+            if key and key not in seen:
+                seen.add(key)
+                profile = by_key.get(key)
+                if profile:
+                    requested.append(profile)
+        return {
+            "teams": requested,
+            "available_teams": sorted(profile["team"] for profile in team_profiles.values()),
+            "methodology": {
+                "version": "graph-analytics-v1",
+                "denominator": "parsed team-round appearances",
+                "labels": "deterministic silver labels; EXECUTE_CANDIDATE is weakly supervised",
+                "causality": "descriptive counts only; no causal claim",
+            },
+        }
+
+    def _analytics_snapshot(self) -> tuple[dict[str, dict], dict[str, dict]]:
+        """Aggregate event and tactical nodes without adding a second datastore."""
+        connection = self._connect()
+        try:
+            player_rows = connection.execute(
+                "SELECT node_id,label,properties FROM nodes WHERE node_type='player'"
+            ).fetchall()
+            players = {}
+            for row in player_rows:
+                props = json.loads(row["properties"])
+                players[row["node_id"]] = {
+                    "graph_id": row["node_id"],
+                    "player_id": props.get("steamid") or row["node_id"].removeprefix("player:"),
+                    "name": props.get("name") or row["label"],
+                    "team_events": Counter(),
+                    "team_maps": defaultdict(Counter),
+                    "observed_rounds": set(),
+                    "matches": set(),
+                    "maps": set(),
+                    "sources": set(),
+                    "combat": Counter(),
+                    "utility": Counter(),
+                    "tactics": Counter(),
+                    "map_metrics": defaultdict(Counter),
+                }
+
+            teams = {}
+
+            def team_bucket(name: Any) -> dict | None:
+                display = _team_name(name)
+                key = _team_key(display)
+                if not key:
+                    return None
+                return teams.setdefault(key, {
+                    "team": display,
+                    "rounds": set(),
+                    "matches": set(),
+                    "maps": set(),
+                    "labels": Counter(),
+                    "map_labels": defaultdict(Counter),
+                    "map_rounds": defaultdict(set),
+                    "sources": set(),
+                })
+
+            event_rows = connection.execute(
+                "SELECT node_id,map_name,match_id,round_number,properties "
+                "FROM nodes WHERE node_type='event'"
+            ).fetchall()
+            event_by_id = {}
+            for row in event_rows:
+                props = json.loads(row["properties"])
+                event_by_id[row["node_id"]] = (row, props)
+                round_key = (row["match_id"], row["map_name"], row["round_number"])
+                for field in (
+                    "killer_team", "victim_team", "assister_team", "thrower_team",
+                    "attacker_team", "planter_team",
+                ):
+                    bucket = team_bucket(props.get(field))
+                    if not bucket:
+                        continue
+                    bucket["rounds"].add(round_key)
+                    bucket["matches"].add(row["match_id"])
+                    bucket["maps"].add((row["match_id"], row["map_name"]))
+                    bucket["map_rounds"][row["map_name"]].add(round_key)
+
+            role_team_fields = {
+                "KILLER": "killer_team",
+                "VICTIM": "victim_team",
+                "ASSISTER": "assister_team",
+                "THROWER": "thrower_team",
+                "FLASHER": "attacker_team",
+                "BLINDED": "victim_team",
+                "PLANTER": "planter_team",
+            }
+            role_rows = connection.execute(
+                "SELECT e.source_id,e.relation,e.target_id FROM edges e "
+                "JOIN nodes n ON n.node_id=e.source_id "
+                "WHERE n.node_type='event' AND e.relation IN "
+                "('KILLER','VICTIM','ASSISTER','THROWER','FLASHER','BLINDED','PLANTER')"
+            ).fetchall()
+            for edge in role_rows:
+                player = players.get(edge["target_id"])
+                event_item = event_by_id.get(edge["source_id"])
+                if not player or not event_item:
+                    continue
+                row, props = event_item
+                relation = edge["relation"]
+                kind = props.get("kind")
+                round_key = (row["match_id"], row["map_name"], row["round_number"])
+                source = f"graph:{row['match_id']}:{row['map_name']}:{row['round_number']}"
+                player["observed_rounds"].add(round_key)
+                player["matches"].add(row["match_id"])
+                player["maps"].add((row["match_id"], row["map_name"]))
+                player["sources"].add(source)
+                team = _team_name(props.get(role_team_fields[relation]))
+                if team != "Unknown":
+                    player["team_events"][team] += 1
+                    player["team_maps"][(row["match_id"], row["map_name"])][team] += 1
+                metric = None
+                if kind == "kill" and relation == "KILLER":
+                    metric = "kills"
+                    player["combat"]["kills"] += 1
+                    if props.get("is_headshot"):
+                        player["combat"]["headshots"] += 1
+                    if props.get("is_first_kill"):
+                        player["combat"]["opening_kills"] += 1
+                elif kind == "kill" and relation == "VICTIM":
+                    metric = "deaths"
+                    player["combat"]["deaths"] += 1
+                    if props.get("is_first_kill"):
+                        player["combat"]["opening_deaths"] += 1
+                elif kind == "kill" and relation == "ASSISTER":
+                    metric = "assists"
+                    player["combat"]["assists"] += 1
+                elif kind == "grenade" and relation == "THROWER":
+                    metric = "utility_thrown"
+                    player["utility"]["thrown"] += 1
+                elif kind == "flash" and relation == "FLASHER":
+                    metric = "flash_blinds"
+                    player["utility"]["flash_blinds"] += 1
+                elif kind == "flash" and relation == "BLINDED":
+                    metric = "times_blinded"
+                    player["utility"]["times_blinded"] += 1
+                elif kind == "plant" and relation == "PLANTER":
+                    metric = "plants"
+                    player["utility"]["plants"] += 1
+                if metric:
+                    player["map_metrics"][row["map_name"]][metric] += 1
+
+            tactic_rows = connection.execute(
+                "SELECT node_id,label,map_name,match_id,round_number,properties "
+                "FROM nodes WHERE node_type='tactical_sequence'"
+            ).fetchall()
+            tactics_by_id = {}
+            for row in tactic_rows:
+                props = json.loads(row["properties"])
+                tactics_by_id[row["node_id"]] = (row, props)
+                bucket = team_bucket(props.get("team"))
+                if not bucket:
+                    continue
+                label = props.get("label_type") or row["label"]
+                bucket["labels"][label] += 1
+                bucket["map_labels"][row["map_name"]][label] += 1
+                bucket["sources"].add(
+                    f"graph:{row['match_id']}:{row['map_name']}:{row['round_number']}"
+                )
+
+            participant_rows = connection.execute(
+                "SELECT source_id,target_id FROM edges WHERE relation='INVOLVES_PLAYER'"
+            ).fetchall()
+            for edge in participant_rows:
+                player = players.get(edge["target_id"])
+                tactic_item = tactics_by_id.get(edge["source_id"])
+                if not player or not tactic_item:
+                    continue
+                row, props = tactic_item
+                label = props.get("label_type") or row["label"]
+                player["tactics"][label] += 1
+                player["map_metrics"][row["map_name"]]["tactical_sequences"] += 1
+                source = f"graph:{row['match_id']}:{row['map_name']}:{row['round_number']}"
+                player["sources"].add(source)
+                details = props.get("details") or {}
+                steamid = player["player_id"]
+                if label == "TRADE_KILL" and details.get("trader_steamid") == steamid:
+                    player["combat"]["trade_kills"] += 1
+                elif label == "TRADE_KILL" and details.get("traded_player_steamid") == steamid:
+                    player["combat"]["traded_deaths"] += 1
+
+            rendered_players = {}
+            for graph_id, raw in players.items():
+                ordered_teams = raw["team_events"].most_common()
+                primary_team = ordered_teams[0][0] if ordered_teams else "Unknown"
+                player_rounds = set()
+                map_rounds = defaultdict(set)
+                for (match_id, map_name), counts in raw["team_maps"].items():
+                    match_team = counts.most_common(1)[0][0]
+                    bucket = teams.get(_team_key(match_team))
+                    if not bucket:
+                        continue
+                    for round_key in bucket["rounds"]:
+                        if round_key[:2] == (match_id, map_name):
+                            player_rounds.add(round_key)
+                            map_rounds[round_key[1]].add(round_key)
+                player_rounds = player_rounds or raw["observed_rounds"]
+                combat = {key: raw["combat"][key] for key in (
+                    "kills", "deaths", "assists", "headshots", "opening_kills",
+                    "opening_deaths", "trade_kills", "traded_deaths",
+                )}
+                deaths = combat["deaths"]
+                opening_attempts = combat["opening_kills"] + combat["opening_deaths"]
+                combat["kd_ratio"] = round(combat["kills"] / deaths, 2) if deaths else None
+                combat["headshot_pct"] = round(100 * combat["headshots"] / combat["kills"], 1) if combat["kills"] else 0.0
+                combat["opening_duel_win_pct"] = round(100 * combat["opening_kills"] / opening_attempts, 1) if opening_attempts else None
+                utility = {key: raw["utility"][key] for key in (
+                    "thrown", "flash_blinds", "times_blinded", "plants",
+                )}
+                rounds = len(player_rounds)
+                rate_inputs = {
+                    "kills": combat["kills"], "deaths": combat["deaths"],
+                    "assists": combat["assists"], "opening_kills": combat["opening_kills"],
+                    "trade_kills": combat["trade_kills"], "utility_thrown": utility["thrown"],
+                    "flash_blinds": utility["flash_blinds"], "plants": utility["plants"],
+                }
+                rendered_players[graph_id] = {
+                    "player_id": raw["player_id"],
+                    "graph_id": graph_id,
+                    "name": raw["name"],
+                    "team": primary_team,
+                    "teams": [
+                        {"team": team, "event_appearances": count}
+                        for team, count in ordered_teams
+                    ],
+                    "sample_size": {
+                        "matches": len(raw["matches"]), "maps": len(raw["maps"]),
+                        "map_pool_size": len({item[1] for item in raw["maps"]}),
+                        "rounds": rounds,
+                    },
+                    "combat": combat,
+                    "utility": utility,
+                    "tactical_participation": {
+                        label: raw["tactics"][label] for label in TACTICAL_LABELS
+                    },
+                    "rates_per_100_rounds": {
+                        key: round(100 * count / rounds, 2) if rounds else 0.0
+                        for key, count in rate_inputs.items()
+                    },
+                    "map_breakdown": [
+                        {
+                            "map": map_name,
+                            "rounds": len(map_rounds.get(map_name, set())),
+                            **{key: value for key, value in metrics.items()},
+                        }
+                        for map_name, metrics in sorted(raw["map_metrics"].items())
+                    ],
+                    "source_round_ids": sorted(raw["sources"])[:12],
+                    "methodology": {
+                        "version": "graph-analytics-v1",
+                        "rounds": "team rounds on maps where the player was observed",
+                        "scope": "parsed events and deterministic silver tactical labels",
+                        "flash_metric_available": any(
+                            props.get("kind") == "flash" for _, props in event_by_id.values()
+                        ),
+                    },
+                }
+
+            rendered_teams = {}
+            for key, raw in teams.items():
+                rounds = len(raw["rounds"])
+                labels = {
+                    label: {
+                        "count": raw["labels"][label],
+                        "per_100_rounds": round(100 * raw["labels"][label] / rounds, 2) if rounds else 0.0,
+                    }
+                    for label in TACTICAL_LABELS
+                }
+                rendered_teams[key] = {
+                    "team": raw["team"],
+                    "sample_size": {
+                        "matches": len(raw["matches"]), "maps": len(raw["maps"]),
+                        "map_pool_size": len({item[1] for item in raw["maps"]}),
+                        "rounds": rounds,
+                    },
+                    "tactical_sequences": sum(raw["labels"].values()),
+                    "labels": labels,
+                    "map_breakdown": [
+                        {
+                            "map": map_name,
+                            "rounds": len(raw["map_rounds"].get(map_name, set())),
+                            "labels": {
+                                label: raw["map_labels"][map_name][label]
+                                for label in TACTICAL_LABELS
+                            },
+                        }
+                        for map_name in sorted(raw["map_rounds"])
+                    ],
+                    "source_round_ids": sorted(raw["sources"])[:12],
+                }
+            return rendered_players, rendered_teams
         finally:
             connection.close()
 
