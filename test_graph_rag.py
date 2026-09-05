@@ -389,6 +389,16 @@ def test_cross_match_player_profiles_and_team_comparison(tmp_path, monkeypatch):
     assert entry["rates_per_100_rounds"]["kills"] == 50.0
     assert entry["source_round_ids"]
     assert client.player_profile("444")["sample_size"]["rounds"] == 1
+    contextual_player = client.player_context(
+        "111", map_name="Mirage", side="T", opponent="Bravo",
+    )
+    assert contextual_player["sample_size"]["rounds"] == 2
+    assert contextual_player["combat"]["opening_duel_win_pct"] == 50.0
+    assert contextual_player["round_groups"][0]["examples"][0]["team"] == "Alpha"
+    player_comparison = client.compare_players(
+        ["111", "333"], map_name="Mirage", side="T", opponent="Bravo",
+    )
+    assert [profile["name"] for profile in player_comparison["players"]] == ["entry", "support"]
 
     comparison = client.compare_teams(["Alpha", "Bravo"])
     assert [team["team"] for team in comparison["teams"]] == ["Alpha", "Bravo"]
@@ -445,8 +455,10 @@ def test_cross_match_player_profiles_and_team_comparison(tmp_path, monkeypatch):
     contrast = client.round_comparison("graph:12345:Mirage:2", "Alpha")
     assert contrast["selected"]["outcome"] == "lost"
     assert contrast["selected"]["side"] == "T"
+    assert contrast["selected"]["signals"]["kills"] == 0
     assert contrast["contrasts"][0]["source_id"] == "graph:12345:Mirage:1"
     assert contrast["contrasts"][0]["outcome"] == "won"
+    assert contrast["contrasts"][0]["observed_differences"]
     assert client.round_comparison("invalid-source", "Alpha") is None
 
     comparison_evidence = asyncio.run(client.retrieve(
@@ -463,12 +475,30 @@ def test_cross_match_player_profiles_and_team_comparison(tmp_path, monkeypatch):
     assert comparison_brief["focus_metric"]["key"] == "trade_round"
     assert any(group["key"] == "trade_round" for group in comparison_brief["round_groups"])
 
+    player_evidence = asyncio.run(client.retrieve(
+        "对比 entry 和 support 在 Mirage T侧的表现", {}, global_search=True,
+    ))
+    assert player_evidence[0].metadata["context_level"] == "player_comparison"
+    player_brief = client.player_brief(
+        "对比 entry 和 support 在 Mirage T侧的表现", player_evidence,
+    )
+    assert player_brief["kind"] == "player_comparison"
+    assert player_brief["sources"]
+    assert {source["player"] for source in player_brief["sources"]} == {"entry", "support"}
+
     api = FastAPI()
     api.include_router(graph_router.router, prefix="/api")
     monkeypatch.setattr(graph_router, "get_graph_client", lambda: client)
     http = TestClient(api)
     assert http.get("/api/graph/players?team=Alpha").status_code == 200
     assert http.get("/api/graph/players/111").json()["profile"]["name"] == "entry"
+    response = http.get("/api/graph/players/compare?players=111,333&map_name=Mirage&side=T")
+    assert response.status_code == 200
+    assert len(response.json()["players"]) == 2
+    assert http.get("/api/graph/players/compare?players=111").status_code == 422
+    assert http.get("/api/graph/players/compare?players=111,111").status_code == 422
+    assert http.get("/api/graph/players/compare?players=111,entry").status_code == 422
+    assert http.get("/api/graph/players/compare?players=111,missing").status_code == 404
     response = http.get("/api/graph/teams/compare?teams=Alpha,Bravo")
     assert response.status_code == 200
     assert len(response.json()["teams"]) == 2
@@ -491,4 +521,11 @@ def test_cross_match_player_profiles_and_team_comparison(tmp_path, monkeypatch):
     response = http.get("/api/graph/round", params={"source_id": "graph:12345:Mirage:2", "team": "Alpha"})
     assert response.status_code == 200
     assert response.json()["comparison"]["contrasts"][0]["outcome"] == "won"
+    assert response.json()["comparison"]["contrasts"][0]["observed_differences"]
+    response = http.get(
+        "/api/graph/search", params={"q": "对比 entry 和 support 在 Mirage T侧的表现"},
+    )
+    assert response.status_code == 200
+    assert response.json()["answer"]["kind"] == "player_comparison"
+    assert response.json()["answer"]["sources"]
     assert http.get("/api/graph/round", params={"source_id": "invalid"}).status_code == 404

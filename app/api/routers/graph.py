@@ -32,10 +32,47 @@ async def graph_players(
     }
 
 
-@router.get("/players/{player_id}")
-async def graph_player_profile(player_id: str):
+@router.get("/players/compare")
+async def graph_player_comparison(
+    players: str = Query(min_length=1, max_length=300),
+    map_name: str | None = Query(default=None, max_length=64),
+    side: str | None = Query(default=None, pattern="^(T|CT|t|ct)$"),
+    opponent: str | None = Query(default=None, max_length=64),
+):
     client = get_graph_client()
-    profile = await asyncio.to_thread(client.player_profile, player_id)
+    requested = [item.strip() for item in players.split(",") if item.strip()]
+    if len(requested) != 2:
+        raise HTTPException(status_code=422, detail="Exactly two distinct players are required")
+    comparison = await asyncio.to_thread(
+        client.compare_players,
+        requested,
+        map_name=map_name,
+        side=side,
+        opponent=opponent,
+    )
+    profiles = comparison["players"]
+    if len(profiles) != 2:
+        raise HTTPException(status_code=404, detail="Both players must exist in the local graph")
+    if profiles[0]["player_id"] == profiles[1]["player_id"]:
+        raise HTTPException(status_code=422, detail="Exactly two distinct players are required")
+    return {"available": client.available(), **comparison}
+
+
+@router.get("/players/{player_id}")
+async def graph_player_profile(
+    player_id: str,
+    map_name: str | None = Query(default=None, max_length=64),
+    side: str | None = Query(default=None, pattern="^(T|CT|t|ct)$"),
+    opponent: str | None = Query(default=None, max_length=64),
+):
+    client = get_graph_client()
+    profile = await asyncio.to_thread(
+        client.player_context,
+        player_id,
+        map_name=map_name,
+        side=side,
+        opponent=opponent,
+    )
     if client.available() and profile is None:
         raise HTTPException(status_code=404, detail="Player not found in the local graph")
     return {"available": client.available(), "profile": profile}
@@ -87,7 +124,7 @@ async def graph_search(
     return {
         "available": client.available(),
         "query": q,
-        "answer": client.coach_brief(q, evidence),
+        "answer": client.player_brief(q, evidence) or client.coach_brief(q, evidence),
         "results": [item.as_dict() for item in evidence],
     }
 

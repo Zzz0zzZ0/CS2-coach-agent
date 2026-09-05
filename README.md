@@ -236,7 +236,7 @@ make graph-build
 
 `make graph-build` 会同时重算当前 silver 战术标签，并把它们写为 `tactical_sequence` 节点，通过 `SUPPORTED_BY` 与原始事件连接。分析请求会自动并行检索 Milvus 与图谱；命中的标签及其 `label_source`、置信度会以 `Graph ... Evidence` 和 `[E#]` 引用进入现有 Analyst、Coach、Verifier 链。`weak_rule` 只作为候选序列，不视为人工确认战术。没有 `data/graph/cs2_graph.sqlite` 时自动退回 Milvus。
 
-同一个 SQLite 图谱还提供跨比赛分析：选手画像聚合击杀、死亡、助攻、首杀/首死、补枪、道具、下包和六类战术序列参与；战队对比则把战术序列统一换算为每 100 个实际参赛回合，避免不同比赛数量造成总量偏差。战术切片可按地图、T/CT 和对手过滤，并计算首杀后胜率、丢首杀翻盘率、补枪回合胜率、Post-plant、Retake contact 和 Execute candidate 的回合转化，同时列出首杀、补枪和道具协同的选手责任分布。每个结果都保留 `graph:{match}:{map}:{round}` 来源。当前指标是描述性统计，不宣称战术因果；Flash 指标不可用时会在画像方法元数据中明确标记。
+同一个 SQLite 图谱还提供跨比赛分析：选手画像聚合击杀、死亡、助攻、首杀/首死、补枪、道具、下包和六类战术序列参与，并可按地图、T/CT、对手筛选或进行两名选手的同条件比较；战队对比则把战术序列统一换算为每 100 个实际参赛回合，避免不同比赛数量造成总量偏差。战术切片计算首杀后胜率、丢首杀翻盘率、补枪回合胜率、Post-plant、Retake contact 和 Execute candidate 的回合转化，同时列出首杀、补枪和道具协同的选手责任分布。自然语言搜索同时支持战队和选手中文教练简报，每个结果都保留 `graph:{match}:{map}:{round}` 来源。当前指标是描述性统计，不宣称战术因果；Flash 指标不可用时会在画像方法元数据中明确标记。
 
 Global Search 会先从自然语言中识别战队、地图、T/CT 和对手，再把对应战术切片作为最高优先级的结构化证据返回；包含“比较/对比”等意图且出现两支战队时，会生成同条件战术对照。示例：`猎鹰 Dust2 T侧首杀后胜率`、`猎鹰面对绿龙时的回防表现`、`对比 Spirit 和 Vitality 在 Nuke CT侧的补枪回合`。该步骤完全确定性执行，不新增 LLM 调用。
 
@@ -266,7 +266,8 @@ GET /api/graph/search?q=... # 返回 answer 中文简报与 results 原始证据
 GET /api/graph/round?source_id=graph:2396609:Dust2:1&team=Falcons # team 可选；提供相反结果的相似回合
 GET /api/graph/subgraph?map_name=Mirage
 GET /api/graph/players?team=Falcons
-GET /api/graph/players/{steamid_or_nickname}
+GET /api/graph/players/{steamid_or_nickname}?map_name=Dust2&side=T&opponent=Spirit
+GET /api/graph/players/compare?players={id1},{id2}&map_name=Dust2&side=T
 GET /api/graph/teams/compare?teams=Falcons,Spirit,Vitality,FURIA,MOUZ
 GET /api/graph/teams/Falcons/tactics?map_name=Dust2&side=T&opponent=Spirit
 ```
@@ -427,6 +428,8 @@ CS2-coach-agent/
 make test       # 单元与集成测试
 make eval-rag   # 固定查询的 Milvus RAG 评估
 make eval-tactics # 30 条 GraphRAG 战术查询契约评测
+make eval-players # 20 条上下文选手查询契约评测
+make eval-v1      # 统一 50 条评测及 community-only 消融对照
 make graph-build
 make silver-dataset # 生成带置信度与证据来源的战术银标数据集
 ```
@@ -435,9 +438,9 @@ GraphRAG 当前采用确定性抽取式社区摘要；摘要只概括解析到�
 
 `make silver-dataset` 会将本地 Demo 转换为 `datasets/silver/v0.2/` 下的回合级研究数据。v0.2 固定采用 `datasets/selections/five_teams_recent_20_v1.json` 的 20 场近期比赛，共 49 张地图、1,030 回合和 5,325 个战术银标；v0.1 作为单场初始基线保留。首杀和下包阶段来自直接事件事实；补枪、Utility Burst 与 Retake Contact 来自明确的时间窗规则；只有 T 方道具序列后成功下包才会追加弱监督的 Execute Candidate。所有标签都保存规则版本、置信度、审核状态和证据事件 ID。该数据集定位为可复现的 silver labels，不宣称是职业教练人工标注的 gold labels。
 
-### 战术查询评测
+### 统一 GraphRAG 评测
 
-`datasets/evaluation/tactical_queries_v1.json` 固定了 30 条无需人工标注的中英文查询，覆盖五支战队的整体画像、地图 × 阵营切片、交手过滤、双队对比和无关问题拒绝。`make eval-tactics` 会校验查询上下文、样本下限、GraphRAG 返回值与 SQLite 确定性聚合的一致性、中文教练简报、关键回合筛选、成功—失败回合对照及回合级来源下钻。当前报告 `datasets/evaluation/tactical_query_eval_v1_report.json` 为 30/30 通过，结构上下文准确率、数值一致性、中文简报覆盖率、来源覆盖率、关键回合筛选覆盖率、回合对照覆盖率和回合下钻覆盖率均为 100%。这是 silver-standard 的接口与数据契约评测，不等同于教练对战术结论的人工 gold evaluation，也不证明因果关系。
+`datasets/evaluation/tactical_queries_v1.json` 包含 30 条战队战术查询，`datasets/evaluation/player_queries_v1.json` 包含 20 条选手画像、地图/阵营/对手切片和双人对比查询，均无需人工标注。`make eval-v1` 统一验证查询解析、样本下限、SQLite 数值一致性、中文简报、关键回合筛选、成功—失败回合对照和来源下钻，并将完整图谱与只保留旧式社区摘要的 GraphRAG 做消融对照。当前结果为 50/50 通过；战术查询 p50/p95 为 231.09/479.71 ms，选手查询为 237.00/470.47 ms；完整图谱可生成 50/50 个结构化答案，仅 community summary 为 0/50。统一报告写入 `datasets/evaluation/cs2_coach_v1_report.json`，解释性总结见 [`docs/V1_EFFECT_REPORT.md`](docs/V1_EFFECT_REPORT.md)。这是 silver-standard 的接口与数据契约评测，不等同于教练对战术结论或选手水平的人工 gold evaluation，也不证明因果关系。
 
 ---
 

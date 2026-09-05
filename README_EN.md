@@ -236,7 +236,7 @@ make graph-build
 
 The sidecar uses SQLite for match, map, round, event, player, and tactical-sequence relationships. `make graph-build` recomputes the current silver labels and connects each sequence to its source events and participants. Local hits carry `label_source` and confidence into the existing Analyst, Coach, and Verifier `[E#]` contract; `weak_rule` remains a candidate rather than a human-confirmed tactic. If the graph database is absent, the workflow falls back to Milvus only.
 
-The same SQLite graph now powers cross-match analytics. Player profiles aggregate kills, deaths, assists, opening duels, trades, utility, plants, and participation in all six tactical sequence types. Team comparison normalizes every sequence to 100 observed team rounds so unequal match counts do not distort totals. Tactical slices filter by map, T/CT side, and opponent, then calculate round conversion after opening wins/losses, trade rounds, post-plants, retake contacts, and execute candidates. They also expose player responsibility shares for openings, trades, and utility bursts. Each result retains `graph:{match}:{map}:{round}` sources. These are descriptive metrics, not causal claims; profile methodology metadata explicitly flags unavailable flash-event coverage.
+The same SQLite graph now powers cross-match analytics. Player profiles aggregate kills, deaths, assists, opening duels, trades, utility, plants, and participation in all six tactical sequence types. Both player profiles and two-player comparisons can be restricted to the same map, T/CT side, and opponent. Team comparison normalizes every sequence to 100 observed team rounds so unequal match counts do not distort totals. Tactical slices use the same filters, then calculate round conversion after opening wins/losses, trade rounds, post-plants, retake contacts, and execute candidates. They also expose player responsibility shares for openings, trades, and utility bursts. Natural-language team and player queries return deterministic Chinese briefs with `graph:{match}:{map}:{round}` sources; opening a source shows its timeline and opposite-outcome comparisons. These are descriptive metrics, not causal claims; profile methodology metadata explicitly flags unavailable flash-event coverage.
 
 Global Search now extracts team, map, T/CT side, and opponent from natural-language questions and returns the matching tactical slice as its highest-priority structured evidence. When two teams and comparison intent are present, it generates a same-context tactical comparison. Examples include `Falcons Dust2 T-side opening conversion`, `Falcons versus Spirit retake performance`, and `compare Spirit and Vitality trade rounds on Nuke CT`. This path is deterministic and adds no LLM call.
 
@@ -266,7 +266,8 @@ GET /api/graph/search?q=... # answer brief plus raw evidence results
 GET /api/graph/round?source_id=graph:2396609:Dust2:1&team=Falcons # optional team adds opposite-outcome analogues
 GET /api/graph/subgraph?map_name=Mirage
 GET /api/graph/players?team=Falcons
-GET /api/graph/players/{steamid_or_nickname}
+GET /api/graph/players/{steamid_or_nickname}?map_name=Dust2&side=T&opponent=Spirit
+GET /api/graph/players/compare?players={id1},{id2}&map_name=Dust2&side=T
 GET /api/graph/teams/compare?teams=Falcons,Spirit,Vitality,FURIA,MOUZ
 GET /api/graph/teams/Falcons/tactics?map_name=Dust2&side=T&opponent=Spirit
 ```
@@ -427,6 +428,8 @@ The knowledge base defaults to Milvus native dense + BM25 hybrid retrieval and p
 make test       # Unit and integration tests
 make eval-rag   # Fixed-query Milvus RAG evaluation
 make eval-tactics # 30-case GraphRAG tactical query contract evaluation
+make eval-players # 20 contextual player-query contract cases
+make eval-v1      # unified 50-case evaluation plus community-only ablation
 make graph-build
 make silver-dataset # build evidence-linked tactical silver annotations
 ```
@@ -435,9 +438,9 @@ Community summaries are currently deterministic and extractive: they summarize p
 
 `make silver-dataset` writes round-level research data to `datasets/silver/v0.2/`. v0.2 uses the fixed 20-match selection in `datasets/selections/five_teams_recent_20_v1.json`, covering 49 maps, 1,030 rounds, and 5,325 tactical silver labels; v0.1 remains as the original single-match baseline. Opening duels and post-plant phases come directly from event facts; trade kills, Utility Bursts, and Retake Contacts use explicit temporal rules. A weakly supervised Execute Candidate is added only when a T-side utility sequence is followed by a plant. Every label retains its rule version, confidence, review status, and evidence event IDs. The result is explicitly a reproducible silver-label dataset, not expert-annotated gold data.
 
-### Tactical Query Evaluation
+### Unified GraphRAG Evaluation
 
-`datasets/evaluation/tactical_queries_v1.json` fixes 30 Chinese and English queries that require no manual annotation. They cover overall team profiles, map × side slices, opponent filters, two-team comparisons, and rejection of unrelated questions. `make eval-tactics` checks parsed context, minimum sample size, exact agreement with deterministic SQLite aggregation, Chinese coaching briefs, key-round filters, opposite-outcome round contrasts, and resolvable round-level provenance. The current `datasets/evaluation/tactical_query_eval_v1_report.json` passes 30/30 cases with 100% context accuracy, numeric consistency, coaching-brief coverage, source coverage, key-round-filter coverage, round-contrast coverage, and round-drilldown coverage. This is a silver-standard interface and data-contract evaluation, not expert gold evaluation of coaching quality, and it does not establish tactical causality.
+`datasets/evaluation/tactical_queries_v1.json` contains 30 team-tactical queries and `datasets/evaluation/player_queries_v1.json` contains 20 player-profile, map/side/opponent slice, and two-player comparison queries; neither requires manual annotation. `make eval-v1` jointly validates query parsing, sample thresholds, SQLite numeric consistency, Chinese briefs, key-round filters, opposite-outcome contrasts, and round-level provenance. The current result is 50/50 passed: tactical latency is 231.09/479.71 ms p50/p95 and player latency is 237.00/470.47 ms; the full graph produces 50/50 structured answers while the community-only ablation produces 0/50. The raw report is written to `datasets/evaluation/cs2_coach_v1_report.json`, with an interpretive summary in [`docs/V1_EFFECT_REPORT.md`](docs/V1_EFFECT_REPORT.md). This remains a silver-standard interface and data-contract evaluation, not expert gold evaluation of coaching quality or player skill, and it does not establish causality.
 
 ---
 

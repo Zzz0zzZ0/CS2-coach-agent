@@ -7,7 +7,7 @@ INFRA_SERVICES = redis etcd minio standalone
 CELERY = $(PYTHON) -m celery -A app.core.celery_app worker --loglevel=info
 UVICORN = $(PYTHON) -m uvicorn app.main:app --host 0.0.0.0 --port $(API_PORT)
 
-.PHONY: bootstrap infra status seed graph-build silver-dataset eval-rag eval-tactics frontend-install frontend frontend-build api worker dev analyze fetch-demos test clean
+.PHONY: bootstrap infra status seed graph-build silver-dataset eval-rag eval-tactics eval-players eval-v1 frontend-install frontend frontend-build api worker dev analyze fetch-demos test clean
 
 bootstrap:
 	@command -v $(PYTHON_BOOTSTRAP) >/dev/null || (echo "Missing $(PYTHON_BOOTSTRAP); override PYTHON_BOOTSTRAP=/path/to/python3.11" && exit 1)
@@ -46,6 +46,12 @@ eval-rag:
 
 eval-tactics:
 	@$(PYTHON) scripts/evaluate_tactical_queries.py $(ARGS)
+
+eval-players:
+	@$(PYTHON) scripts/evaluate_player_queries.py $(ARGS)
+
+eval-v1:
+	@PYTHONPATH=. $(PYTHON) scripts/evaluate_v1.py $(ARGS)
 
 api:
 	@$(UVICORN)

@@ -31,8 +31,21 @@ export function getGraphPlayers(team, limit = 10) {
   return request(`/api/graph/players?${params}`);
 }
 
-export function getPlayerProfile(playerId) {
-  return request(`/api/graph/players/${encodeURIComponent(playerId)}`);
+export function getPlayerProfile(playerId, filters = {}) {
+  const params = new URLSearchParams();
+  if (filters.mapName) params.set("map_name", filters.mapName);
+  if (filters.side) params.set("side", filters.side);
+  if (filters.opponent) params.set("opponent", filters.opponent);
+  const query = params.size ? `?${params}` : "";
+  return request(`/api/graph/players/${encodeURIComponent(playerId)}${query}`);
+}
+
+export function compareGraphPlayers(players, filters = {}) {
+  const params = new URLSearchParams({ players: players.join(",") });
+  if (filters.mapName) params.set("map_name", filters.mapName);
+  if (filters.side) params.set("side", filters.side);
+  if (filters.opponent) params.set("opponent", filters.opponent);
+  return request(`/api/graph/players/compare?${params}`);
 }
 
 export function compareGraphTeams(teams) {

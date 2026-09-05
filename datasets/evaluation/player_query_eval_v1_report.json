@@ -1,0 +1,422 @@
+{
+  "dataset_version": "player-query-v1",
+  "summary": {
+    "cases": 20,
+    "passed": 20,
+    "failed": 0,
+    "pass_rate_pct": 100.0,
+    "context_accuracy_pct": 100.0,
+    "numeric_consistency_pct": 100.0,
+    "source_coverage_pct": 100.0,
+    "round_drilldown_coverage_pct": 100.0,
+    "latency_ms": {
+      "p50": 230.84,
+      "p95": 452.88
+    }
+  },
+  "cases": [
+    {
+      "id": "m0nesy_overall",
+      "category": "profile",
+      "query": "分析 m0NESY 的个人表现",
+      "passed": true,
+      "checks": {
+        "context": true,
+        "players": true,
+        "map": true,
+        "side": true,
+        "opponent": true,
+        "minimum_sample": true,
+        "numeric_consistency": true,
+        "coach_brief": true,
+        "source_coverage": true,
+        "round_drilldown": true
+      },
+      "failures": [],
+      "latency_ms": 870.16
+    },
+    {
+      "id": "donk_overall",
+      "category": "profile",
+      "query": "donk 最近的选手画像",
+      "passed": true,
+      "checks": {
+        "context": true,
+        "players": true,
+        "map": true,
+        "side": true,
+        "opponent": true,
+        "minimum_sample": true,
+        "numeric_consistency": true,
+        "coach_brief": true,
+        "source_coverage": true,
+        "round_drilldown": true
+      },
+      "failures": [],
+      "latency_ms": 231.68
+    },
+    {
+      "id": "zywoo_overall",
+      "category": "profile",
+      "query": "ZywOo 的首杀和补枪表现",
+      "passed": true,
+      "checks": {
+        "context": true,
+        "players": true,
+        "map": true,
+        "side": true,
+        "opponent": true,
+        "minimum_sample": true,
+        "numeric_consistency": true,
+        "coach_brief": true,
+        "source_coverage": true,
+        "round_drilldown": true
+      },
+      "failures": [],
+      "latency_ms": 227.91
+    },
+    {
+      "id": "kscerato_overall",
+      "category": "profile",
+      "query": "KSCERATO 的个人战术参与",
+      "passed": true,
+      "checks": {
+        "context": true,
+        "players": true,
+        "map": true,
+        "side": true,
+        "opponent": true,
+        "minimum_sample": true,
+        "numeric_consistency": true,
+        "coach_brief": true,
+        "source_coverage": true,
+        "round_drilldown": true
+      },
+      "failures": [],
+      "latency_ms": 230.84
+    },
+    {
+      "id": "torzsi_overall",
+      "category": "profile",
+      "query": "torzsi 最近表现如何",
+      "passed": true,
+      "checks": {
+        "context": true,
+        "players": true,
+        "map": true,
+        "side": true,
+        "opponent": true,
+        "minimum_sample": true,
+        "numeric_consistency": true,
+        "coach_brief": true,
+        "source_coverage": true,
+        "round_drilldown": true
+      },
+      "failures": [],
+      "latency_ms": 234.08
+    },
+    {
+      "id": "m0nesy_dust2_t",
+      "category": "context",
+      "query": "m0NESY 在 Dust2 T侧的首杀表现",
+      "passed": true,
+      "checks": {
+        "context": true,
+        "players": true,
+        "map": true,
+        "side": true,
+        "opponent": true,
+        "minimum_sample": true,
+        "numeric_consistency": true,
+        "coach_brief": true,
+        "source_coverage": true,
+        "round_drilldown": true
+      },
+      "failures": [],
+      "latency_ms": 223.72
+    },
+    {
+      "id": "m0nesy_vs_spirit",
+      "category": "opponent",
+      "query": "m0NESY 对阵 Spirit 的表现",
+      "passed": true,
+      "checks": {
+        "context": true,
+        "players": true,
+        "map": true,
+        "side": true,
+        "opponent": true,
+        "minimum_sample": true,
+        "numeric_consistency": true,
+        "coach_brief": true,
+        "source_coverage": true,
+        "round_drilldown": true
+      },
+      "failures": [],
+      "latency_ms": 451.21
+    },
+    {
+      "id": "donk_ancient_t",
+      "category": "context",
+      "query": "donk Ancient 进攻侧击杀效率",
+      "passed": true,
+      "checks": {
+        "context": true,
+        "players": true,
+        "map": true,
+        "side": true,
+        "opponent": true,
+        "minimum_sample": true,
+        "numeric_consistency": true,
+        "coach_brief": true,
+        "source_coverage": true,
+        "round_drilldown": true
+      },
+      "failures": [],
+      "latency_ms": 229.34
+    },
+    {
+      "id": "sh1ro_nuke_ct",
+      "category": "context",
+      "query": "sh1ro 在 Nuke 防守侧的表现",
+      "passed": true,
+      "checks": {
+        "context": true,
+        "players": true,
+        "map": true,
+        "side": true,
+        "opponent": true,
+        "minimum_sample": true,
+        "numeric_consistency": true,
+        "coach_brief": true,
+        "source_coverage": true,
+        "round_drilldown": true
+      },
+      "failures": [],
+      "latency_ms": 226.41
+    },
+    {
+      "id": "zywoo_dust2_t",
+      "category": "context",
+      "query": "ZywOo Dust2 T侧首杀表现",
+      "passed": true,
+      "checks": {
+        "context": true,
+        "players": true,
+        "map": true,
+        "side": true,
+        "opponent": true,
+        "minimum_sample": true,
+        "numeric_consistency": true,
+        "coach_brief": true,
+        "source_coverage": true,
+        "round_drilldown": true
+      },
+      "failures": [],
+      "latency_ms": 226.18
+    },
+    {
+      "id": "zywoo_vs_furia_dust2_t",
+      "category": "opponent",
+      "query": "ZywOo 对阵 FURIA 时 Dust2 T侧的表现",
+      "passed": true,
+      "checks": {
+        "context": true,
+        "players": true,
+        "map": true,
+        "side": true,
+        "opponent": true,
+        "minimum_sample": true,
+        "numeric_consistency": true,
+        "coach_brief": true,
+        "source_coverage": true,
+        "round_drilldown": true
+      },
+      "failures": [],
+      "latency_ms": 450.28
+    },
+    {
+      "id": "kscerato_ancient_ct",
+      "category": "context",
+      "query": "KSCERATO Ancient 防守方表现",
+      "passed": true,
+      "checks": {
+        "context": true,
+        "players": true,
+        "map": true,
+        "side": true,
+        "opponent": true,
+        "minimum_sample": true,
+        "numeric_consistency": true,
+        "coach_brief": true,
+        "source_coverage": true,
+        "round_drilldown": true
+      },
+      "failures": [],
+      "latency_ms": 226.62
+    },
+    {
+      "id": "molodoy_cache_t",
+      "category": "context",
+      "query": "molodoy Cache T side 的表现",
+      "passed": true,
+      "checks": {
+        "context": true,
+        "players": true,
+        "map": true,
+        "side": true,
+        "opponent": true,
+        "minimum_sample": true,
+        "numeric_consistency": true,
+        "coach_brief": true,
+        "source_coverage": true,
+        "round_drilldown": true
+      },
+      "failures": [],
+      "latency_ms": 227.17
+    },
+    {
+      "id": "torzsi_dust2_ct",
+      "category": "context",
+      "query": "torzsi Dust2 CT侧表现",
+      "passed": true,
+      "checks": {
+        "context": true,
+        "players": true,
+        "map": true,
+        "side": true,
+        "opponent": true,
+        "minimum_sample": true,
+        "numeric_consistency": true,
+        "coach_brief": true,
+        "source_coverage": true,
+        "round_drilldown": true
+      },
+      "failures": [],
+      "latency_ms": 225.93
+    },
+    {
+      "id": "xertion_nuke_t",
+      "category": "context",
+      "query": "xertioN 在 Nuke 进攻侧表现",
+      "passed": true,
+      "checks": {
+        "context": true,
+        "players": true,
+        "map": true,
+        "side": true,
+        "opponent": true,
+        "minimum_sample": true,
+        "numeric_consistency": true,
+        "coach_brief": true,
+        "source_coverage": true,
+        "round_drilldown": true
+      },
+      "failures": [],
+      "latency_ms": 227.36
+    },
+    {
+      "id": "compare_m0nesy_niko",
+      "category": "comparison",
+      "query": "对比 m0NESY 和 NiKo 在 Dust2 T侧的表现",
+      "passed": true,
+      "checks": {
+        "context": true,
+        "players": true,
+        "map": true,
+        "side": true,
+        "opponent": true,
+        "minimum_sample": true,
+        "numeric_consistency": true,
+        "coach_brief": true,
+        "source_coverage": true,
+        "round_drilldown": true
+      },
+      "failures": [],
+      "latency_ms": 447.81
+    },
+    {
+      "id": "compare_donk_sh1ro",
+      "category": "comparison",
+      "query": "比较 donk 与 sh1ro 在 Ancient CT侧的数据",
+      "passed": true,
+      "checks": {
+        "context": true,
+        "players": true,
+        "map": true,
+        "side": true,
+        "opponent": true,
+        "minimum_sample": true,
+        "numeric_consistency": true,
+        "coach_brief": true,
+        "source_coverage": true,
+        "round_drilldown": true
+      },
+      "failures": [],
+      "latency_ms": 452.88
+    },
+    {
+      "id": "compare_zywoo_flamez",
+      "category": "comparison",
+      "query": "ZywOo 和 flameZ 在 Nuke CT侧有什么差异",
+      "passed": true,
+      "checks": {
+        "context": true,
+        "players": true,
+        "map": true,
+        "side": true,
+        "opponent": true,
+        "minimum_sample": true,
+        "numeric_consistency": true,
+        "coach_brief": true,
+        "source_coverage": true,
+        "round_drilldown": true
+      },
+      "failures": [],
+      "latency_ms": 444.87
+    },
+    {
+      "id": "compare_kscerato_yuurih",
+      "category": "comparison",
+      "query": "对比 KSCERATO 与 yuurih 在 Ancient T侧表现",
+      "passed": true,
+      "checks": {
+        "context": true,
+        "players": true,
+        "map": true,
+        "side": true,
+        "opponent": true,
+        "minimum_sample": true,
+        "numeric_consistency": true,
+        "coach_brief": true,
+        "source_coverage": true,
+        "round_drilldown": true
+      },
+      "failures": [],
+      "latency_ms": 448.42
+    },
+    {
+      "id": "compare_torzsi_xertion",
+      "category": "comparison",
+      "query": "比较 torzsi 和 xertioN 在 Dust2 CT侧表现",
+      "passed": true,
+      "checks": {
+        "context": true,
+        "players": true,
+        "map": true,
+        "side": true,
+        "opponent": true,
+        "minimum_sample": true,
+        "numeric_consistency": true,
+        "coach_brief": true,
+        "source_coverage": true,
+        "round_drilldown": true
+      },
+      "failures": [],
+      "latency_ms": 444.01
+    }
+  ],
+  "limitations": [
+    "Deterministic contract evaluation, not an expert rating of player decision quality."
+  ]
+}

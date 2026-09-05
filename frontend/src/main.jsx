@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
 import {
   compareGraphTeams,
+  compareGraphPlayers,
   getGraphMaps,
   getGraphPlayers,
   getGraphRound,
@@ -59,7 +60,9 @@ function App() {
   const [playerTeam, setPlayerTeam] = useState(FEATURED_TEAMS[0]);
   const [players, setPlayers] = useState([]);
   const [selectedPlayerId, setSelectedPlayerId] = useState("");
+  const [comparisonPlayerId, setComparisonPlayerId] = useState("");
   const [playerProfile, setPlayerProfile] = useState(null);
+  const [playerComparison, setPlayerComparison] = useState([]);
   const [tacticMap, setTacticMap] = useState("");
   const [tacticSide, setTacticSide] = useState("");
   const [tacticOpponent, setTacticOpponent] = useState("");
@@ -84,6 +87,7 @@ function App() {
         const nextPlayers = data.players || [];
         setPlayers(nextPlayers);
         setSelectedPlayerId(nextPlayers[0]?.player_id || "");
+        setComparisonPlayerId("");
       })
       .catch((reason) => setError(reason.message));
   }, [playerTeam]);
@@ -91,19 +95,32 @@ function App() {
   useEffect(() => {
     if (!selectedPlayerId) {
       setPlayerProfile(null);
-      return;
+      return undefined;
     }
-    getPlayerProfile(selectedPlayerId)
-      .then((data) => setPlayerProfile(data.profile || null))
-      .catch((reason) => setError(reason.message));
-  }, [selectedPlayerId]);
+    let cancelled = false;
+    getPlayerProfile(selectedPlayerId, { mapName: tacticMap, side: tacticSide, opponent: tacticOpponent })
+      .then((data) => { if (!cancelled) setPlayerProfile(data.profile || null); })
+      .catch((reason) => { if (!cancelled) setError(reason.message); });
+    return () => { cancelled = true; };
+  }, [selectedPlayerId, tacticMap, tacticSide, tacticOpponent]);
 
   useEffect(() => {
+    if (!selectedPlayerId || !comparisonPlayerId || selectedPlayerId === comparisonPlayerId) return setPlayerComparison([]);
+    let cancelled = false;
+    compareGraphPlayers([selectedPlayerId, comparisonPlayerId], { mapName: tacticMap, side: tacticSide, opponent: tacticOpponent })
+      .then((data) => { if (!cancelled) setPlayerComparison(data.players || []); })
+      .catch((reason) => { if (!cancelled) setError(reason.message); });
+    return () => { cancelled = true; };
+  }, [selectedPlayerId, comparisonPlayerId, tacticMap, tacticSide, tacticOpponent]);
+
+  useEffect(() => {
+    let cancelled = false;
     getTeamTactics(playerTeam, {
       mapName: tacticMap, side: tacticSide, opponent: tacticOpponent,
     })
-      .then((data) => setTacticProfile(data.profile || null))
-      .catch((reason) => setError(reason.message));
+      .then((data) => { if (!cancelled) setTacticProfile(data.profile || null); })
+      .catch((reason) => { if (!cancelled) setError(reason.message); });
+    return () => { cancelled = true; };
   }, [playerTeam, tacticMap, tacticSide, tacticOpponent]);
 
   useEffect(() => {
@@ -223,8 +240,11 @@ function App() {
               <div className="analytics-controls">
                 <label>战队<select value={playerTeam} onChange={(event) => { setPlayerTeam(event.target.value); setTacticMap(""); setTacticSide(""); setTacticOpponent(""); }}>{FEATURED_TEAMS.map((item) => <option key={item}>{item}</option>)}</select></label>
                 <label>选手<select value={selectedPlayerId} onChange={(event) => setSelectedPlayerId(event.target.value)}>{players.map((item) => <option key={item.player_id} value={item.player_id}>{item.name}</option>)}</select></label>
+                <label>对比选手<select value={comparisonPlayerId} onChange={(event) => setComparisonPlayerId(event.target.value)}><option value="">不对比</option>{players.map((item) => <option key={item.player_id} value={item.player_id}>{item.name}</option>)}</select></label>
               </div>
-              {playerProfile ? <PlayerProfile profile={playerProfile} /> : <div className="empty-search">等待本地图谱返回选手画像。</div>}
+              <div className="player-context-filters"><select aria-label="选手地图" value={tacticMap} onChange={(event) => setTacticMap(event.target.value)}><option value="">全部地图</option>{tacticProfile?.available_filters.maps.map((item) => <option key={item}>{item}</option>)}</select><select aria-label="选手阵营" value={tacticSide} onChange={(event) => setTacticSide(event.target.value)}><option value="">T + CT</option><option value="T">T</option><option value="CT">CT</option></select><select aria-label="选手对手" value={tacticOpponent} onChange={(event) => setTacticOpponent(event.target.value)}><option value="">全部对手</option>{tacticProfile?.available_filters.opponents.map((item) => <option key={item}>{item}</option>)}</select></div>
+              {playerProfile ? <PlayerProfile profile={playerProfile} onSource={handleRoundSource} loading={roundLoading} /> : <div className="empty-search">等待本地图谱返回选手画像。</div>}
+              {playerComparison.length === 2 && <PlayerComparison players={playerComparison} />}
             </div>
             <div className="team-pane">
               <div className="result-meta table-title">战术序列频率 / 每 100 回合</div>
@@ -246,7 +266,7 @@ function Metric({ label, value, suffix = "", accent = false, text = false }) { r
 
 function ReportBlock({ title, text, empty }) { return <article className="report-block"><div className="block-label">{title}</div><div className="report-text">{text || <span className="placeholder">{empty}</span>}</div></article>; }
 
-function CoachBrief({ brief, onSource, loading }) { return <article className="coach-brief"><div className="brief-head"><div><div className="result-meta">DETERMINISTIC COACH BRIEF</div><h3>{brief.title}</h3></div><span className="chip">样本可信度 · {brief.sample_confidence}</span></div><p className="brief-summary">{brief.summary}</p><div className="brief-section"><b>数据判读</b>{brief.findings.map((item) => <p key={item}>{item}</p>)}</div><div className="brief-section action"><b>训练重点</b>{brief.actions.map((item) => <p key={item}>{item}</p>)}</div><p className="brief-caveat">{brief.caveat}</p>{brief.sources.length > 0 && <div className="brief-sources">{brief.sources.map((item) => <button key={item.id} disabled={loading} onClick={() => onSource(item.round_id, item.team)}>[{item.id}] · {ROUND_OUTCOME_LABELS[item.outcome]} · {item.round_id}</button>)}</div>}<KeyRoundFilter key={`${brief.title}:${brief.focus_metric?.key || "all"}`} groups={brief.round_groups || []} focusKey={brief.focus_metric?.key} showTeam={brief.kind === "comparison"} onSource={onSource} loading={loading} /></article>; }
+function CoachBrief({ brief, onSource, loading }) { return <article className="coach-brief"><div className="brief-head"><div><div className="result-meta">DETERMINISTIC COACH BRIEF</div><h3>{brief.title}</h3></div><span className="chip">样本可信度 · {brief.sample_confidence}</span></div><p className="brief-summary">{brief.summary}</p><div className="brief-section"><b>数据判读</b>{brief.findings.map((item) => <p key={item}>{item}</p>)}</div><div className="brief-section action"><b>训练重点</b>{brief.actions.map((item) => <p key={item}>{item}</p>)}</div><p className="brief-caveat">{brief.caveat}</p>{brief.sources.length > 0 && <div className="brief-sources">{brief.sources.map((item) => <button key={item.id} disabled={loading} onClick={() => onSource(item.round_id, item.team)}>[{item.id}] · {item.player ? `${item.player} · ` : ""}{ROUND_OUTCOME_LABELS[item.outcome]} · {item.round_id}</button>)}</div>}<KeyRoundFilter key={`${brief.title}:${brief.focus_metric?.key || "all"}`} groups={brief.round_groups || []} focusKey={brief.focus_metric?.key} showTeam={brief.kind?.endsWith("comparison")} onSource={onSource} loading={loading} /></article>; }
 
 function KeyRoundFilter({ groups, focusKey, showTeam, onSource, loading }) {
   const initialMetric = groups.some((group) => group.key === focusKey) ? focusKey : "all";
@@ -255,21 +275,24 @@ function KeyRoundFilter({ groups, focusKey, showTeam, onSource, loading }) {
   const group = groups.find((item) => item.key === metric) || groups[0];
   const examples = (group?.examples || []).filter((item) => outcome === "all" || item.outcome === outcome);
   if (!group) return null;
-  return <div className="key-round-filter"><div className="result-meta">KEY ROUND SAMPLES</div><div className="key-round-controls"><select aria-label="战术类型" value={metric} onChange={(event) => setMetric(event.target.value)}>{groups.map((item) => <option key={item.key} value={item.key}>{item.label} · {item.total}</option>)}</select><select aria-label="回合结果" value={outcome} onChange={(event) => setOutcome(event.target.value)}><option value="all">全部结果</option><option value="lost">失利</option><option value="won">获胜</option><option value="unknown">未知</option></select></div><div className="key-round-list">{examples.map((item) => <button key={`${item.team}:${item.source_id}`} disabled={loading} onClick={() => onSource(item.source_id, item.team)}><b>{ROUND_OUTCOME_LABELS[item.outcome]}</b>{showTeam && <span>{item.team}</span>}<span>{item.map} · R{item.round_number}</span><small>{item.match_id}</small></button>)}{!examples.length && <p>当前筛选没有可展示的回合样本。</p>}</div><p className="brief-caveat">{showTeam ? "每队每类" : "每类"}最多展示 12 个胜负交错样本；统计值仍使用该条件下的全部回合。</p></div>;
+  return <div className="key-round-filter"><div className="result-meta">KEY ROUND SAMPLES</div><div className="key-round-controls"><select aria-label="战术类型" value={metric} onChange={(event) => setMetric(event.target.value)}>{groups.map((item) => <option key={item.key} value={item.key}>{item.label} · {item.total}</option>)}</select><select aria-label="回合结果" value={outcome} onChange={(event) => setOutcome(event.target.value)}><option value="all">全部结果</option><option value="lost">失利</option><option value="won">获胜</option><option value="unknown">未知</option></select></div><div className="key-round-list">{examples.map((item) => <button key={`${item.player || item.team}:${item.source_id}`} disabled={loading} onClick={() => onSource(item.source_id, item.team)}><b>{ROUND_OUTCOME_LABELS[item.outcome]}</b>{showTeam && <span>{item.player || item.team}</span>}<span>{item.map} · R{item.round_number}</span><small>{item.match_id}</small></button>)}{!examples.length && <p>当前筛选没有可展示的回合样本。</p>}</div><p className="brief-caveat">{showTeam ? "每位对象每类" : "每类"}最多展示 12 个胜负交错样本；统计值仍使用该条件下的全部回合。</p></div>;
 }
 
 function RoundEvidence({ detail, comparison, onSource, loading, onClose }) { return <article className="round-evidence"><div className="brief-head"><div><div className="result-meta">ROUND EVIDENCE</div><h3>{detail.map} · Round {detail.round_number}</h3></div><button className="round-close" onClick={onClose}>关闭</button></div><div className="round-outcome"><span>{detail.teams.join(" vs ")}</span><b>胜方 {detail.winner || "—"}</b><small>{ROUND_REASON_LABELS[detail.reason] || detail.reason || "未知结束原因"}</small></div><div className="round-counts">{Object.entries(detail.counts).map(([kind, count]) => <span key={kind}>{ROUND_KIND_LABELS[kind] || kind} · {count}</span>)}</div>{comparison && <RoundContrast comparison={comparison} onSource={onSource} loading={loading} />}<div className="round-timeline">{detail.timeline.map((item) => <div key={item.id} className={`timeline-${item.kind}`}><time>{item.tick == null ? "—" : item.tick}</time><i /><p>{item.label}</p></div>)}</div><div className="brief-caveat">来源：{detail.source_id} · 时间单位为 Demo tick；战术标签与原始事件并列展示。</div></article>; }
 
 function RoundContrast({ comparison, onSource, loading }) {
   const selected = comparison.selected;
-  return <div className="round-contrast"><div className="result-meta">SIMILAR ROUND CONTRAST · {comparison.team} · {selected.side}</div><div className="contrast-grid"><div className="contrast-selected"><b>当前 · {ROUND_OUTCOME_LABELS[selected.outcome]}</b><span>{selected.labels.map((item) => ROUND_TACTIC_LABELS[item] || item).join(" · ") || "无战术标签"}</span><small>{selected.sites.length ? `${selected.sites.join("/")} 点 · ` : ""}{selected.counts.kill || 0} 击杀 · {selected.counts.grenade || 0} 道具</small></div>{comparison.contrasts.map((item) => <button key={item.source_id} disabled={loading} onClick={() => onSource(item.source_id, comparison.team)} aria-label={`查看相似回合 ${item.map} 第 ${item.round_number} 回合`}><b>对照 · {ROUND_OUTCOME_LABELS[item.outcome]} · {item.similarity_pct}%</b><span>{item.shared_labels.map((label) => ROUND_TACTIC_LABELS[label] || label).join(" · ") || "同地图同阵营"}</span><small>{item.match_id} · R{item.round_number} · {item.counts.kill || 0} 击杀</small></button>)}</div>{!comparison.contrasts.length && <p className="brief-caveat">当前数据中没有同地图、同阵营且相反结果的可比回合。</p>}<p className="brief-caveat">相似度按战术标签与包点集合的 Jaccard 重合度计算；仅用于案例检索，不代表战术因果。</p></div>;
+  return <div className="round-contrast"><div className="result-meta">SIMILAR ROUND CONTRAST · {comparison.team} · {selected.side}</div><div className="contrast-grid"><div className="contrast-selected"><b>当前 · {ROUND_OUTCOME_LABELS[selected.outcome]}</b><span>{selected.labels.map((item) => ROUND_TACTIC_LABELS[item] || item).join(" · ") || "无战术标签"}</span><small>{selected.sites.length ? `${selected.sites.join("/")} 点 · ` : ""}{selected.signals.kills || 0} 击杀 · {selected.signals.utility || 0} 道具</small></div>{comparison.contrasts.map((item) => <button key={item.source_id} disabled={loading} onClick={() => onSource(item.source_id, comparison.team)} aria-label={`查看相似回合 ${item.map} 第 ${item.round_number} 回合`}><b>对照 · {ROUND_OUTCOME_LABELS[item.outcome]} · {item.similarity_pct}%</b><span>{item.shared_labels.map((label) => ROUND_TACTIC_LABELS[label] || label).join(" · ") || "同地图同阵营"}</span><small>{item.observed_differences.join(" · ") || "观测指标接近"}</small><small>{item.match_id} · R{item.round_number}</small></button>)}</div>{!comparison.contrasts.length && <p className="brief-caveat">当前数据中没有同地图、同阵营且相反结果的可比回合。</p>}<p className="brief-caveat">差异只描述击杀、死亡、道具、补枪响应和包点；相似度按战术标签与包点集合计算，不代表战术因果。</p></div>;
 }
 
-function PlayerProfile({ profile }) {
+function PlayerProfile({ profile, onSource, loading }) {
   const combat = profile.combat || {};
   const rates = profile.rates_per_100_rounds || {};
-  return <div className="player-profile"><div className="player-title"><div><strong>{profile.name}</strong><span>{profile.team}</span></div><small>{profile.sample_size.matches} matches · {profile.sample_size.maps} maps · {profile.sample_size.rounds} rounds</small></div><div className="profile-metrics"><ProfileMetric label="K/D" value={combat.kd_ratio ?? "—"} /><ProfileMetric label="OPENING WIN" value={combat.opening_duel_win_pct == null ? "—" : `${combat.opening_duel_win_pct}%`} /><ProfileMetric label="KILLS / 100R" value={rates.kills} /><ProfileMetric label="TRADES / 100R" value={rates.trade_kills} /></div><div className="tactic-chips">{TACTIC_COLUMNS.map(([key, label]) => <span key={key}>{label}<b>{profile.tactical_participation?.[key] || 0}</b></span>)}</div><div className="source-hint">SOURCE · {profile.source_round_ids?.[0] || "unavailable"}</div></div>;
+  const examples = profile.round_groups?.flatMap((group) => group.examples.slice(0, 2)) || [];
+  return <div className="player-profile"><div className="player-title"><div><strong>{profile.name}</strong><span>{profile.team}</span></div><small>{profile.sample_size.matches} matches · {profile.sample_size.maps} maps · {profile.sample_size.rounds} rounds</small></div><div className="profile-metrics"><ProfileMetric label="K/D" value={combat.kd_ratio ?? "—"} /><ProfileMetric label="OPENING WIN" value={combat.opening_duel_win_pct == null ? "—" : `${combat.opening_duel_win_pct}%`} /><ProfileMetric label="KILLS / 100R" value={rates.kills} /><ProfileMetric label="TRADES / 100R" value={rates.trade_kills} /></div><div className="tactic-chips">{TACTIC_COLUMNS.map(([key, label]) => <span key={key}>{label}<b>{profile.tactical_participation?.[key] || 0}</b></span>)}</div><div className="player-rounds">{examples.slice(0, 6).map((item, index) => <button key={`${item.source_id}:${index}`} disabled={loading} onClick={() => onSource(item.source_id, item.team)}>{item.map} · R{item.round_number}</button>)}</div><div className="source-hint">SOURCE · {profile.source_round_ids?.[0] || "unavailable"}</div></div>;
 }
+
+function PlayerComparison({ players }) { return <div className="player-comparison"><div className="result-meta">SAME-CONTEXT PLAYER COMPARISON</div><div>{players.map((player) => <section key={player.player_id}><b>{player.name}</b><span>K/D {player.combat.kd_ratio ?? "—"}</span><span>首杀 {formatPercent(player.combat.opening_duel_win_pct)}</span><span>K/100R {player.rates_per_100_rounds.kills}</span><span>补枪/100R {player.rates_per_100_rounds.trade_kills}</span></section>)}</div></div>; }
 
 function ProfileMetric({ label, value }) { return <div><span>{label}</span><strong>{value}</strong></div>; }
 

@@ -249,6 +249,7 @@ class GraphRAGClient:
 
     def __init__(self, db_path: str | Path):
         self.db_path = Path(db_path)
+        self._analytics_cache = None
 
     def available(self) -> bool:
         return self.db_path.exists()
@@ -396,6 +397,203 @@ class GraphRAGClient:
             (profile for profile in profiles.values() if profile["name"].lower() == lowered),
             None,
         )
+
+    def player_context(
+        self,
+        player_id: str,
+        *,
+        map_name: str | None = None,
+        side: str | None = None,
+        opponent: str | None = None,
+    ) -> dict | None:
+        """Return one player's metrics inside a map, side, and opponent round scope."""
+        base = self.player_profile(player_id)
+        if not base:
+            return None
+        graph_id = base["graph_id"]
+        team = base["team"]
+        team_key = _team_key(team)
+        requested_map = _map_name(map_name) if map_name else None
+        requested_side = _side_name(side) if side else None
+        opponent_key = _team_key(opponent) if opponent else ""
+        connection = self._connect()
+        try:
+            contexts = {}
+            for row in connection.execute(
+                "SELECT match_id,map_name,round_number,properties FROM nodes WHERE node_type='round'"
+            ):
+                key = (str(row["match_id"]), row["map_name"], str(row["round_number"]))
+                contexts[key] = {
+                    "winner": _side_name(json.loads(row["properties"]).get("winner")),
+                    "team_sides": defaultdict(Counter),
+                    "teams": Counter(),
+                }
+            for row in connection.execute(
+                "SELECT match_id,map_name,round_number,properties FROM nodes WHERE node_type='event'"
+            ):
+                key = (str(row["match_id"]), row["map_name"], str(row["round_number"]))
+                context = contexts.get(key)
+                if not context:
+                    continue
+                properties = json.loads(row["properties"])
+                for team_field, side_field in TEAM_SIDE_FIELDS:
+                    name = _team_name(properties.get(team_field))
+                    normalized = _team_key(name)
+                    if not normalized or name == "Unknown":
+                        continue
+                    context["teams"][name] += 1
+                    observed_side = _side_name(properties.get(side_field))
+                    if observed_side:
+                        context["team_sides"][normalized][observed_side] += 1
+
+            event_rows = connection.execute(
+                "SELECT n.node_id,n.match_id,n.map_name,n.round_number,n.properties,e.relation "
+                "FROM edges e JOIN nodes n ON n.node_id=e.source_id "
+                "WHERE e.target_id=? AND n.node_type='event'",
+                (graph_id,),
+            ).fetchall()
+            tactic_rows = connection.execute(
+                "SELECT n.node_id,n.match_id,n.map_name,n.round_number,n.properties "
+                "FROM edges e JOIN nodes n ON n.node_id=e.source_id "
+                "WHERE e.target_id=? AND e.relation='INVOLVES_PLAYER' "
+                "AND n.node_type='tactical_sequence'",
+                (graph_id,),
+            ).fetchall()
+            observed_maps = {
+                (str(row["match_id"]), row["map_name"])
+                for row in (*event_rows, *tactic_rows)
+            }
+
+            def scoped(key: tuple[str, str, str]) -> bool:
+                context = contexts.get(key)
+                if not context or key[:2] not in observed_maps or team_key not in context["team_sides"]:
+                    return False
+                round_side = context["team_sides"][team_key].most_common(1)[0][0]
+                opponents = {_team_key(name) for name in context["teams"] if _team_key(name) != team_key}
+                return (
+                    (not requested_map or key[1] == requested_map)
+                    and (not requested_side or round_side == requested_side)
+                    and (not opponent_key or opponent_key in opponents)
+                )
+
+            selected_rounds = {key for key in contexts if scoped(key)}
+            available_rounds = {
+                key for key, context in contexts.items()
+                if key[:2] in observed_maps and team_key in context["team_sides"]
+            }
+            combat = Counter()
+            utility = Counter()
+            tactics = Counter()
+            source_groups = defaultdict(set)
+            for row in event_rows:
+                key = (str(row["match_id"]), row["map_name"], str(row["round_number"]))
+                if key not in selected_rounds:
+                    continue
+                properties = json.loads(row["properties"])
+                relation = row["relation"]
+                kind = properties.get("kind")
+                source = f"graph:{key[0]}:{key[1]}:{key[2]}"
+                if kind == "kill" and relation == "KILLER":
+                    combat["kills"] += 1
+                    source_groups["kills"].add(source)
+                    combat["headshots"] += int(bool(properties.get("is_headshot")))
+                    if properties.get("is_first_kill"):
+                        combat["opening_kills"] += 1
+                        source_groups["opening_kills"].add(source)
+                elif kind == "kill" and relation == "VICTIM":
+                    combat["deaths"] += 1
+                    source_groups["deaths"].add(source)
+                    if properties.get("is_first_kill"):
+                        combat["opening_deaths"] += 1
+                        source_groups["opening_deaths"].add(source)
+                elif kind == "kill" and relation == "ASSISTER":
+                    combat["assists"] += 1
+                elif kind == "grenade" and relation == "THROWER":
+                    utility["thrown"] += 1
+                    source_groups["utility"].add(source)
+                elif kind == "flash" and relation == "FLASHER":
+                    utility["flash_blinds"] += 1
+                elif kind == "flash" and relation == "BLINDED":
+                    utility["times_blinded"] += 1
+                elif kind == "plant" and relation == "PLANTER":
+                    utility["plants"] += 1
+
+            for row in tactic_rows:
+                key = (str(row["match_id"]), row["map_name"], str(row["round_number"]))
+                if key not in selected_rounds:
+                    continue
+                properties = json.loads(row["properties"])
+                label = properties.get("label_type") or "Unknown"
+                tactics[label] += 1
+                source = f"graph:{key[0]}:{key[1]}:{key[2]}"
+                source_groups["tactics"].add(source)
+                details = properties.get("details") or {}
+                if label == "TRADE_KILL" and details.get("trader_steamid") == base["player_id"]:
+                    combat["trade_kills"] += 1
+                    source_groups["trade_kills"].add(source)
+                elif label == "TRADE_KILL" and details.get("traded_player_steamid") == base["player_id"]:
+                    combat["traded_deaths"] += 1
+
+            rounds = len(selected_rounds)
+            deaths = combat["deaths"]
+            opening_attempts = combat["opening_kills"] + combat["opening_deaths"]
+            combat_result = {key: combat[key] for key in (
+                "kills", "deaths", "assists", "headshots", "opening_kills",
+                "opening_deaths", "trade_kills", "traded_deaths",
+            )}
+            combat_result.update({
+                "kd_ratio": round(combat["kills"] / deaths, 2) if deaths else None,
+                "headshot_pct": _pct(combat["headshots"], combat["kills"]) or 0.0,
+                "opening_duel_win_pct": _pct(combat["opening_kills"], opening_attempts),
+            })
+            rate_inputs = {
+                "kills": combat["kills"], "deaths": deaths, "assists": combat["assists"],
+                "opening_kills": combat["opening_kills"], "trade_kills": combat["trade_kills"],
+                "utility_thrown": utility["thrown"], "flash_blinds": utility["flash_blinds"],
+                "plants": utility["plants"],
+            }
+
+            def samples(name: str) -> list[dict]:
+                result = []
+                for source in sorted(source_groups[name])[:12]:
+                    _, match_id, sample_map, number = source.split(":")
+                    context = contexts[(match_id, sample_map, number)]
+                    round_side = context["team_sides"][team_key].most_common(1)[0][0]
+                    outcome = "won" if context["winner"] == round_side else "lost" if context["winner"] else "unknown"
+                    result.append({"source_id": source, "match_id": match_id, "map": sample_map, "round_number": int(number), "team": team, "outcome": outcome})
+                return result
+
+            available_maps = sorted({key[1] for key in available_rounds})
+            available_opponents = sorted({
+                name for key in available_rounds for name in contexts[key]["teams"]
+                if _team_key(name) != team_key
+            })
+            return {
+                "player_id": base["player_id"], "graph_id": graph_id,
+                "name": base["name"], "team": team,
+                "filters": {"map": requested_map, "side": requested_side, "opponent": _team_name(opponent) if opponent else None},
+                "available_filters": {"maps": available_maps, "sides": ["T", "CT"], "opponents": available_opponents},
+                "sample_size": {"matches": len({key[0] for key in selected_rounds}), "maps": len({key[:2] for key in selected_rounds}), "rounds": rounds},
+                "combat": combat_result,
+                "utility": {key: utility[key] for key in ("thrown", "flash_blinds", "times_blinded", "plants")},
+                "tactical_participation": {label: tactics[label] for label in TACTICAL_LABELS},
+                "rates_per_100_rounds": {key: round(100 * value / rounds, 2) if rounds else 0.0 for key, value in rate_inputs.items()},
+                "round_groups": [
+                    {"key": key, "label": label, "total": len(source_groups[key]), "examples": samples(key)}
+                    for key, label in (
+                        ("opening_kills", "首杀成功"), ("opening_deaths", "首杀失利"),
+                        ("trade_kills", "完成补枪"), ("utility", "道具回合"), ("tactics", "战术参与"),
+                    )
+                ],
+                "source_round_ids": sorted(set().union(*source_groups.values()))[:12] if source_groups else [],
+                "methodology": {"version": "graph-player-context-v1", "rounds": "team rounds on observed match maps", "scope": "parsed events and deterministic silver labels"},
+            }
+        finally:
+            connection.close()
+
+    def compare_players(self, player_ids: list[str], **filters) -> dict:
+        profiles = [self.player_context(player_id, **filters) for player_id in player_ids[:2]]
+        return {"players": [profile for profile in profiles if profile], "methodology": "same-context-per-100-rounds-v1"}
 
     def compare_teams(self, team_names: list[str]) -> dict:
         """Compare tactical label frequencies using team-round denominators."""
@@ -899,6 +1097,8 @@ class GraphRAGClient:
                     "sites": set(),
                     "opposing_opening": False,
                     "counts": Counter(),
+                    "signals": Counter(),
+                    "trade_ticks": [],
                 }
 
             for row in connection.execute(
@@ -910,7 +1110,15 @@ class GraphRAGClient:
                 if not context:
                     continue
                 properties = json.loads(row["properties"])
-                context["counts"][properties.get("kind", "event")] += 1
+                kind = properties.get("kind", "event")
+                context["counts"][kind] += 1
+                if kind == "kill":
+                    context["signals"]["kills"] += int(_team_key(properties.get("killer_team")) == target_key)
+                    context["signals"]["deaths"] += int(_team_key(properties.get("victim_team")) == target_key)
+                elif kind == "grenade":
+                    context["signals"]["utility"] += int(_team_key(properties.get("thrower_team")) == target_key)
+                elif kind == "plant" and _team_key(properties.get("planter_team")) == target_key:
+                    context["signals"]["plants"] += 1
                 for team_field, side_field in TEAM_SIDE_FIELDS:
                     if _team_key(properties.get(team_field)) == target_key:
                         observed_side = _side_name(properties.get(side_field))
@@ -934,6 +1142,9 @@ class GraphRAGClient:
                         context["labels"].add(label_type)
                     if properties.get("site"):
                         context["sites"].add(str(properties["site"]))
+                    response_ticks = (properties.get("details") or {}).get("response_ticks")
+                    if label_type == "TRADE_KILL" and isinstance(response_ticks, (int, float)):
+                        context["trade_ticks"].append(response_ticks)
                 elif label_type == "OPENING_DUEL" and label_team:
                     context["opposing_opening"] = True
 
@@ -957,6 +1168,10 @@ class GraphRAGClient:
                     "labels": sorted(labels),
                     "sites": sorted(context["sites"]),
                     "counts": dict(context["counts"]),
+                    "signals": {
+                        **dict(context["signals"]),
+                        "avg_trade_response_ticks": round(sum(context["trade_ticks"]) / len(context["trade_ticks"]), 1) if context["trade_ticks"] else None,
+                    },
                 }
 
             selected = summarize(source_key, contexts.get(source_key, {})) if source_key in contexts else None
@@ -973,6 +1188,20 @@ class GraphRAGClient:
                 union = source_features | candidate_features
                 candidate["similarity_pct"] = round(100 * len(source_features & candidate_features) / len(union), 1) if union else 0.0
                 candidate["shared_labels"] = sorted(set(selected["labels"]) & set(candidate["labels"]))
+                differences = []
+                for key, label in (("kills", "击杀"), ("deaths", "死亡"), ("utility", "道具")):
+                    delta = candidate["signals"].get(key, 0) - selected["signals"].get(key, 0)
+                    if delta:
+                        differences.append(f"{label}{delta:+d}")
+                selected_trade = selected["signals"].get("avg_trade_response_ticks")
+                candidate_trade = candidate["signals"].get("avg_trade_response_ticks")
+                if selected_trade is not None and candidate_trade is not None:
+                    delta = round(candidate_trade - selected_trade)
+                    if delta:
+                        differences.append(f"平均补枪响应{'慢' if delta > 0 else '快'} {abs(delta)} tick")
+                if candidate["sites"] != selected["sites"]:
+                    differences.append(f"包点 {'/'.join(candidate['sites']) or '无'} vs {'/'.join(selected['sites']) or '无'}")
+                candidate["observed_differences"] = differences
                 candidates.append(candidate)
             candidates.sort(key=lambda item: (-item["similarity_pct"], item["match_id"] == match_id, item["match_id"], item["round_number"]))
             return {
@@ -987,6 +1216,9 @@ class GraphRAGClient:
 
     def _analytics_snapshot(self) -> tuple[dict[str, dict], dict[str, dict]]:
         """Aggregate event and tactical nodes without adding a second datastore."""
+        signature = (self.db_path.stat().st_mtime_ns, self.db_path.stat().st_size)
+        if self._analytics_cache and self._analytics_cache[0] == signature:
+            return self._analytics_cache[1]
         connection = self._connect()
         try:
             player_rows = connection.execute(
@@ -1262,7 +1494,9 @@ class GraphRAGClient:
                     ],
                     "source_round_ids": sorted(raw["sources"])[:12],
                 }
-            return rendered_players, rendered_teams
+            result = (rendered_players, rendered_teams)
+            self._analytics_cache = (signature, result)
+            return result
         finally:
             connection.close()
 
@@ -1815,11 +2049,148 @@ class GraphRAGClient:
             source_id=source_id,
         )]
 
+    def _player_query_evidence(self, query: str, fallback_map: str | None) -> list[Evidence]:
+        lowered = query.lower()
+        mentions = []
+        for summary in self.players(limit=100):
+            name = summary["name"]
+            match = re.search(rf"(?<![a-z0-9]){re.escape(name.lower())}(?![a-z0-9])", lowered)
+            if match:
+                mentions.append((match.start(), summary))
+        players = [item for _, item in sorted(mentions)][:2]
+        if not players:
+            return []
+        tactical_context = self._tactical_query_context(query, fallback_map)
+        comparison = len(players) > 1 and any(
+            word in lowered for word in ("compare", "comparison", "difference", "对比", "比较", "区别", "差异")
+        )
+        opponent = next(
+            (team for team in tactical_context["teams"] if _team_key(team) != _team_key(players[0]["team"])),
+            None,
+        )
+        profiles = [
+            self.player_context(
+                item["player_id"], map_name=tactical_context["map"],
+                side=tactical_context["side"], opponent=None if comparison else opponent,
+            )
+            for item in players if comparison or item is players[0]
+        ]
+        profiles = [profile for profile in profiles if profile]
+        if not profiles:
+            return []
+        level = "player_comparison" if comparison and len(profiles) == 2 else "player_profile"
+        source_id = "graph-player:" + ":".join(profile["player_id"] for profile in profiles)
+        lines = [
+            f"{profile['name']}: {profile['sample_size']['rounds']} rounds, "
+            f"K/D {profile['combat']['kd_ratio']}, opening win {_pct_text(profile['combat']['opening_duel_win_pct'])}, "
+            f"kills/100 {profile['rates_per_100_rounds']['kills']}, trades/100 {profile['rates_per_100_rounds']['trade_kills']}"
+            for profile in profiles
+        ]
+        sources = sorted({source for profile in profiles for source in profile["source_round_ids"]})
+        return [Evidence(
+            content=f"[Graph Player Analysis] {'; '.join(lines)}. Descriptive parsed-event evidence only. Graph source paths: {', '.join(sources)}.",
+            metadata={
+                "context_level": level,
+                "map": tactical_context["map"] or "All",
+                "side": tactical_context["side"] or "Both",
+                "opponent": opponent,
+                "profiles": profiles,
+                "tactic_type": "Graph Player Analysis",
+                "source_round_ids": sources,
+            },
+            score=1.0,
+            source_id=source_id,
+        )]
+
+    def player_brief(self, query: str, evidence: list[Evidence]) -> dict | None:
+        item = next((entry for entry in evidence if entry.metadata.get("context_level", "").startswith("player_")), None)
+        if not item:
+            return None
+        metadata = item.metadata
+        profiles = metadata.get("profiles", [])
+        if not profiles:
+            return None
+        lowered = query.lower()
+        focus = "opening_kills" if any(term in lowered for term in ("首杀", "opening", "first kill")) else "trade_kills" if any(term in lowered for term in ("补枪", "trade")) else "utility" if any(term in lowered for term in ("道具", "utility")) else "kills"
+        group_key = focus if focus in {"opening_kills", "trade_kills", "utility"} else "tactics"
+        round_groups = []
+        for profile in profiles:
+            for group in profile.get("round_groups", []):
+                existing = next((row for row in round_groups if row["key"] == group["key"]), None)
+                examples = [{**example, "player": profile["name"]} for example in group["examples"]]
+                if existing:
+                    existing["total"] += group["total"]
+                    existing["examples"].extend(examples)
+                else:
+                    round_groups.append({**group, "examples": examples})
+        selected_group = next((group for group in round_groups if group["key"] == group_key and group["examples"]), None)
+        selected_group = selected_group or next((group for group in round_groups if group["examples"]), None)
+        source_samples = (selected_group or {}).get("examples", [])
+        if len(profiles) == 2:
+            source_samples = [
+                sample
+                for profile in profiles
+                for sample in [item for item in source_samples if item.get("player") == profile["name"]][:3]
+            ]
+        else:
+            source_samples = source_samples[:6]
+        sources = [
+            {
+                "id": f"G{index}", "round_id": sample["source_id"],
+                "outcome": sample["outcome"], "team": sample["team"],
+                "player": sample.get("player"),
+            }
+            for index, sample in enumerate(source_samples, start=1)
+        ]
+        context = f"{metadata['map']} · {metadata['side']}"
+        if len(profiles) == 2:
+            findings = [
+                f"{profile['name']}：{profile['sample_size']['rounds']} 回合，K/D "
+                f"{profile['combat']['kd_ratio'] if profile['combat']['kd_ratio'] is not None else '暂无'}，"
+                f"首杀胜率 {_zh_pct(profile['combat']['opening_duel_win_pct'])}，每百回合击杀 {profile['rates_per_100_rounds']['kills']:.1f}。"
+                for profile in profiles
+            ]
+            actions = ["只在相同地图、阵营和对手条件下比较选手，并下钻引用回合检查其实际角色差异。"]
+            kind = "player_comparison"
+            title = f"{profiles[0]['name']} vs {profiles[1]['name']} · {context}"
+        else:
+            profile = profiles[0]
+            rates = profile["rates_per_100_rounds"]
+            findings = [
+                f"{profile['sample_size']['matches']} 场、{profile['sample_size']['rounds']} 回合；K/D "
+                f"{profile['combat']['kd_ratio'] if profile['combat']['kd_ratio'] is not None else '暂无'}，"
+                f"每百回合击杀 {rates['kills']:.1f}。",
+                f"首杀胜率 {_zh_pct(profile['combat']['opening_duel_win_pct'])}；每百回合补枪 {rates['trade_kills']:.1f}，道具 {rates['utility_thrown']:.1f}。",
+            ]
+            if focus == "opening_kills":
+                action = "优先复盘首杀失利回合，检查第一接触是否有撤退路线和补闪。"
+            elif focus == "trade_kills":
+                action = "优先复盘未形成补枪的死亡，检查队形距离与同步窗口。"
+            elif focus == "utility":
+                action = "优先复盘道具回合，检查投掷时机是否与队友接触同步。"
+            else:
+                action = "从引用回合抽样复盘首杀、补枪与道具协同，不把不同量纲的指标直接排成强弱。"
+            actions = [action]
+            kind = "player_profile"
+            title = f"{profile['name']} · {profile['team']} · {context}"
+        return {
+            "kind": kind, "title": title,
+            "summary": "选手结论使用同条件回合分母，并保留可下钻的事件证据。",
+            "focus_metric": {"key": group_key, "label": (selected_group or {}).get("label", "关键回合")},
+            "findings": findings, "actions": actions,
+            "sample_confidence": "中" if min(profile["sample_size"]["rounds"] for profile in profiles) >= 30 else "低",
+            "caveat": "指标来自解析事件与 silver labels，只描述当前样本，不评价不可观测的沟通、职责或战术意图。",
+            "sources": sources, "round_groups": round_groups,
+            "methodology": "deterministic-player-brief-v1",
+        }
+
     def _global_search_sync(self, query: str, metadata: dict, k: int) -> list[Evidence]:
         map_name = _query_map_name(query) or (
             _map_name(metadata["map"]) if metadata.get("map") else None
         )
+        player = self._player_query_evidence(query, map_name)
         tactical = self._tactical_query_evidence(query, map_name)
+        structured = [*player, *tactical]
         terms = set(re.findall(r"[a-z0-9_]+|[\u4e00-\u9fff]", query.lower()))
         topic = self._topic(None, terms, query)
         connection = self._connect()
@@ -1844,9 +2215,9 @@ class GraphRAGClient:
             ranked.sort(key=lambda item: item[0], reverse=True)
             communities = [
                 self._community_evidence(score, row)
-                for score, row in ranked[:max(0, k - len(tactical))]
+                for score, row in ranked[:max(0, k - len(structured))]
             ]
-            return [*tactical, *communities][:k]
+            return [*structured, *communities][:k]
         finally:
             connection.close()
 
