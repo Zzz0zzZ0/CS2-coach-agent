@@ -28,12 +28,12 @@ class TacticalDemoParser:
 
     def _safe_convert(self, val):
         """处理 NumPy 数据类型的 JSON 序列化兼容问题"""
+        if isinstance(val, (np.bool_, bool)):
+            return bool(val)
         if isinstance(val, (np.integer, int)):
             return int(val)
         if isinstance(val, (np.floating, float)):
             return float(val) if not np.isnan(val) else None
-        if isinstance(val, np.bool_):
-            return bool(val)
         return str(val) if val is not None else None
 
     def _parse_event(self, event_name: str, *, player=None, other=None) -> pd.DataFrame:
@@ -72,7 +72,10 @@ class TacticalDemoParser:
             df_bomb = self._parse_event("bomb_planted")
             
             df_smokes = self._parse_event("smokegrenade_detonate", player=["X", "Y", "Z"])
-            df_inferno = self._parse_event("inferno_startfire", player=["X", "Y", "Z"])
+            df_flashes = self._parse_event("flashbang_detonate", player=["X", "Y", "Z"])
+            df_inferno = self._parse_event("inferno_startburn", player=["X", "Y", "Z"])
+            if df_inferno.empty:
+                df_inferno = self._parse_event("inferno_startfire", player=["X", "Y", "Z"])
             df_he = self._parse_event("hegrenade_detonate", player=["X", "Y", "Z"])
 
             try:
@@ -111,7 +114,15 @@ class TacticalDemoParser:
                             round_detail["kills"].append({
                                 "tick": self._safe_convert(kill.get("tick")),
                                 "killer": str(kill.get("attacker_name", "Environment")),
+                                "killer_steamid": self._safe_convert(kill.get("attacker_steamid")),
                                 "victim": str(kill.get("user_name", "Unknown")),
+                                "victim_steamid": self._safe_convert(kill.get("user_steamid")),
+                                "assister": str(kill.get("assister_name", "Unknown")),
+                                "assister_steamid": self._safe_convert(kill.get("assister_steamid")),
+                                "assisted_flash": self._safe_convert(kill.get("assistedflash", False)),
+                                "distance": self._safe_convert(kill.get("distance")),
+                                "through_smoke": self._safe_convert(kill.get("thrusmoke", False)),
+                                "attacker_blind": self._safe_convert(kill.get("attackerblind", False)),
                                 "weapon": str(kill.get("weapon", "Unknown")),
                                 "is_headshot": self._safe_convert(kill.get("headshot")),
                                 "is_first_kill": self._safe_convert(kill.get("tick") == first_kill_tick),
@@ -121,7 +132,12 @@ class TacticalDemoParser:
                                 }
                             })
 
-                for nade_type, df_nade in [("Smoke", df_smokes), ("Molotov/Incendiary", df_inferno), ("HE", df_he)]:
+                for nade_type, df_nade in [
+                    ("Smoke", df_smokes),
+                    ("Flash", df_flashes),
+                    ("Molotov/Incendiary", df_inferno),
+                    ("HE", df_he),
+                ]:
                     if not df_nade.empty and 'tick' in df_nade.columns:
                         nades_in_round = df_nade[(df_nade['tick'] > prev_tick) & (df_nade['tick'] <= current_tick)]
                         for _, nade in nades_in_round.iterrows():
@@ -129,7 +145,9 @@ class TacticalDemoParser:
                                 "tick": self._safe_convert(nade.get("tick")),
                                 "type": nade_type,
                                 "thrower": str(nade.get("user_name", "Unknown")),
-                                "detonation_xyz": [self._safe_convert(nade.get("user_X")), self._safe_convert(nade.get("user_Y")), self._safe_convert(nade.get("user_Z"))]
+                                "thrower_steamid": self._safe_convert(nade.get("user_steamid")),
+                                "thrower_xyz": [self._safe_convert(nade.get("user_X")), self._safe_convert(nade.get("user_Y")), self._safe_convert(nade.get("user_Z"))],
+                                "detonation_xyz": [self._safe_convert(nade.get("x", nade.get("user_X"))), self._safe_convert(nade.get("y", nade.get("user_Y"))), self._safe_convert(nade.get("z", nade.get("user_Z")))]
                             })
 
                 if not df_blind.empty and 'tick' in df_blind.columns:
@@ -138,7 +156,9 @@ class TacticalDemoParser:
                         round_detail["flash_blinds"].append({
                             "tick": self._safe_convert(blind.get("tick")),
                             "victim": str(blind.get("user_name", "Unknown")),
+                            "victim_steamid": self._safe_convert(blind.get("user_steamid")),
                             "attacker": str(blind.get("attacker_name", "Unknown")),
+                            "attacker_steamid": self._safe_convert(blind.get("attacker_steamid")),
                             "blind_duration": self._safe_convert(blind.get("blind_duration", 0.0))
                         })
 
@@ -148,6 +168,7 @@ class TacticalDemoParser:
                         round_detail["plants"].append({
                             "tick": self._safe_convert(plant.get("tick")),
                             "planter": str(plant.get("user_name", "Unknown")),
+                            "planter_steamid": self._safe_convert(plant.get("user_steamid")),
                             "site": str(plant.get("site", "Unknown"))
                         })
 

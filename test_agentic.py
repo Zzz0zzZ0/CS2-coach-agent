@@ -1,11 +1,13 @@
 import asyncio
 
 from app.agentic.nodes.critique_node import create_critique_node
+from app.agentic.nodes.retrieve_node import create_retrieve_node
 from app.agentic.nodes.router_node import create_router_node
 from app.agentic.nodes.verify_node import create_verify_node
 from app.agentic.nodes.supervisor_node import create_supervisor_node
 from app.agentic.nodes.tool_node import create_tool_node
 from app.agentic.tools import select_analysis_plan
+from app.services.rag_service import Evidence
 from langchain_core.messages import AIMessage
 
 
@@ -114,3 +116,32 @@ def test_verifier_reports_unknown_and_uncited_claims():
     assert report["status"] == "needs_review"
     assert report["unknown_citations"] == ["E9"]
     assert report["uncited_claim_count"] == 1
+
+
+class _OffTopicGraph:
+    def available(self):
+        return True
+
+    async def retrieve(self, *args, **kwargs):
+        return [Evidence(
+            content="Generic map overview",
+            metadata={"context_level": "community_summary", "topic": "overview"},
+            score=0.8,
+            source_id="graph-overview",
+        )]
+
+
+def test_graph_evidence_only_covers_its_matching_task_topic():
+    result = asyncio.run(create_retrieve_node(None, _OffTopicGraph())({
+        "analysis_plan": [{
+            "id": "utility",
+            "query": "Mirage utility",
+            "query_variants": [],
+            "required_tactic_types": ["Round Event Evidence"],
+        }],
+        "retrieval_evidence": [],
+        "retrieval_task_results": [],
+        "agent_trace": [],
+    }))
+
+    assert result["retrieval_task_results"][0]["covered"] is False

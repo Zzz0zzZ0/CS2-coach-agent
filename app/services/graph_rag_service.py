@@ -48,6 +48,16 @@ def _json(value: dict) -> str:
     return json.dumps(value, ensure_ascii=False, separators=(",", ":"), default=str)
 
 
+def _player_identity(event: dict, name_key: str, steamid_key: str) -> tuple[str, str, str] | None:
+    name = _text(event.get(name_key), "").strip()
+    steamid = _text(event.get(steamid_key), "").strip()
+    if steamid and steamid not in {"0", "Unknown", "nan"}:
+        return f"player:{steamid}", name or steamid, steamid
+    if name and name not in {"Unknown", "nan", "None"}:
+        return f"player:{name}", name, ""
+    return None
+
+
 class GraphRAGClient:
     """Small graph interface: build once, retrieve traceable graph evidence."""
 
@@ -94,6 +104,8 @@ class GraphRAGClient:
                 demo_count += 1
             community_count = self._build_communities(connection)
             connection.commit()
+            node_count = connection.execute("SELECT COUNT(*) FROM nodes").fetchone()[0]
+            edge_count = connection.execute("SELECT COUNT(*) FROM edges").fetchone()[0]
         finally:
             connection.close()
         return {
@@ -159,25 +171,46 @@ class GraphRAGClient:
         connection = self._connect()
         try:
             columns = "node_id,node_type,label,map_name,match_id,round_number,properties"
-            anchors = connection.execute(
+            maps = connection.execute(
                 f"SELECT {columns} FROM nodes WHERE (? IS NULL OR map_name=?) "
-                "AND node_type IN ('match','map') ORDER BY node_type,node_id",
+                "AND node_type='map' ORDER BY node_id",
                 (map_name, map_name),
             ).fetchall()
+            matches = connection.execute(
+                f"SELECT DISTINCT n.{columns.replace(',', ',n.')} FROM nodes n "
+                "JOIN edges e ON e.source_id=n.node_id AND e.relation='HAS_MAP' "
+                "JOIN nodes m ON m.node_id=e.target_id "
+                "WHERE n.node_type='match' AND (? IS NULL OR m.map_name=?) ORDER BY n.node_id",
+                (map_name, map_name),
+            ).fetchall()
+            anchors = [*matches, *maps]
             remaining = max(0, limit_nodes - len(anchors))
-            round_limit = min(24, remaining // 2 or remaining)
+            round_limit = min(24, remaining // 3 or remaining)
             rounds = connection.execute(
                 f"SELECT {columns} FROM nodes WHERE (? IS NULL OR map_name=?) "
                 "AND node_type='round' ORDER BY match_id,round_number LIMIT ?",
                 (map_name, map_name, round_limit),
             ).fetchall()
             remaining -= len(rounds)
+            event_limit = max(0, remaining * 2 // 3)
             events = connection.execute(
                 f"SELECT {columns} FROM nodes WHERE (? IS NULL OR map_name=?) "
                 "AND node_type='event' ORDER BY match_id,round_number,node_id LIMIT ?",
-                (map_name, map_name, remaining),
+                (map_name, map_name, event_limit),
             ).fetchall()
-            rows = [*anchors, *rounds, *events]
+            remaining -= len(events)
+            event_ids = {row["node_id"] for row in events}
+            players = []
+            if event_ids and remaining:
+                event_placeholders = ",".join("?" for _ in event_ids)
+                players = connection.execute(
+                    f"SELECT DISTINCT n.{columns.replace(',', ',n.')} FROM edges e "
+                    "JOIN nodes n ON n.node_id=e.target_id "
+                    f"WHERE e.source_id IN ({event_placeholders}) AND n.node_type='player' "
+                    "ORDER BY n.label LIMIT ?",
+                    [*event_ids, remaining],
+                ).fetchall()
+            rows = [*anchors, *rounds, *events, *players]
             node_ids = {row["node_id"] for row in rows}
             if not node_ids:
                 return {"nodes": [], "edges": []}
@@ -262,7 +295,7 @@ class GraphRAGClient:
         match_node = f"match:{match_id}"
         map_node = f"map:{match_id}:{map_name}"
         nodes = [
-            (match_node, "match", match_id, map_name, match_id, "0", _json({"source_file": demo_path.name})),
+            (match_node, "match", match_id, None, match_id, None, _json({"source_file": demo_path.name})),
             (map_node, "map", map_name, map_name, match_id, "0", _json({"source_file": demo_path.name})),
         ]
         edges = [
@@ -291,24 +324,39 @@ class GraphRAGClient:
                     props["kind"] = kind
                     nodes.append((event_id, "event", kind, map_name, match_id, number, _json(props)))
                     edges.append((round_node, relation, event_id, "{}"))
-                    for role, key in (
-                        ("KILLER", "killer"),
-                        ("VICTIM", "victim"),
-                        ("THROWER", "thrower"),
-                        ("BLINDED", "victim"),
-                        ("PLANTER", "planter"),
-                    ):
-                        player = event.get(key)
-                        if player and str(player) != "Unknown":
-                            player_id = f"player:{player}"
-                            nodes.append((player_id, "player", str(player), map_name, match_id, number, "{}"))
+                    role_fields = {
+                        "kill": (
+                            ("KILLER", "killer", "killer_steamid"),
+                            ("VICTIM", "victim", "victim_steamid"),
+                            ("ASSISTER", "assister", "assister_steamid"),
+                        ),
+                        "grenade": (("THROWER", "thrower", "thrower_steamid"),),
+                        "flash": (
+                            ("FLASHER", "attacker", "attacker_steamid"),
+                            ("BLINDED", "victim", "victim_steamid"),
+                        ),
+                        "plant": (("PLANTER", "planter", "planter_steamid"),),
+                    }[kind]
+                    for role, name_key, steamid_key in role_fields:
+                        identity = _player_identity(event, name_key, steamid_key)
+                        if identity:
+                            player_id, player_name, steamid = identity
+                            nodes.append((
+                                player_id,
+                                "player",
+                                player_name,
+                                None,
+                                None,
+                                None,
+                                _json({"name": player_name, "steamid": steamid}),
+                            ))
                             edges.append((event_id, role, player_id, "{}"))
         return list({row[0]: row for row in nodes}.values()), list({(row[0], row[1], row[2]): row for row in edges}.values())
 
     def _retrieve_sync(self, query: str, metadata: dict, task_id: str | None, k: int) -> list[Evidence]:
         map_name = _map_name(metadata["map"]) if metadata.get("map") else None
         terms = set(re.findall(r"[a-z0-9_]+", query.lower()))
-        topic = self._topic(task_id, terms)
+        topic = self._topic(task_id, terms, query)
         connection = self._connect()
         try:
             rows = connection.execute(
@@ -398,41 +446,66 @@ class GraphRAGClient:
         grenades = [event for _, events in selected for event in events if event.get("kind") == "grenade"]
         flashes = [event for _, events in selected for event in events if event.get("kind") == "flash"]
         plants = [event for _, events in selected for event in events if event.get("kind") == "plant"]
+        first_kills = [event for event in kills if event.get("is_first_kill")]
         opening_players = Counter(
             event.get("killer", "Unknown")
-            for event in kills
-            if event.get("is_first_kill")
+            for event in first_kills
         )
+        opening_deaths = Counter(event.get("victim", "Unknown") for event in first_kills)
+        opening_weapons = Counter(event.get("weapon", "Unknown") for event in first_kills)
         utility_types = Counter(event.get("type", "Unknown") for event in grenades)
+        utility_throwers = Counter(event.get("thrower", "Unknown") for event in grenades)
         winners = Counter(row["properties"] and json.loads(row["properties"]).get("winner", "Unknown") for row, _ in selected)
+        end_reasons = Counter(row["properties"] and json.loads(row["properties"]).get("reason", "Unknown") for row, _ in selected)
         properties = {
             "topic": topic,
             "rounds": len(selected),
             "matches": len(matches),
             "kills": len(kills),
-            "first_kills": sum(1 for event in kills if event.get("is_first_kill")),
+            "first_kills": len(first_kills),
             "grenades": len(grenades),
             "flashes": len(flashes),
             "plants": len(plants),
         }
         winner_text = ", ".join(f"{name} {count}" for name, count in winners.most_common(4)) or "none"
         player_text = ", ".join(f"{name} {count}" for name, count in opening_players.most_common(5)) or "none"
+        death_text = ", ".join(f"{name} {count}" for name, count in opening_deaths.most_common(5)) or "none"
+        weapon_text = ", ".join(f"{name} {count}" for name, count in opening_weapons.most_common(5)) or "none"
         utility_text = ", ".join(f"{name} {count}" for name, count in utility_types.most_common(5)) or "none"
-        summary = (
+        thrower_text = ", ".join(f"{name} {count}" for name, count in utility_throwers.most_common(5)) or "none"
+        reason_text = ", ".join(f"{name} {count}" for name, count in end_reasons.most_common(5)) or "none"
+        prefix = (
             f"[Community Summary | {map_name} | {topic}] Based on {len(matches)} matches and "
-            f"{len(selected)} parsed rounds. Observed {len(kills)} kills, "
-            f"{properties['first_kills']} first kills, {len(grenades)} grenades, "
-            f"{len(flashes)} flash-blind events, and {len(plants)} bomb plants. "
-            f"Round winners: {winner_text}. First-kill players: {player_text}. "
-            f"Utility types: {utility_text}. This is an extractive factual summary; "
-            "it does not establish tactical causality."
+            f"{len(selected)} parsed rounds. "
         )
+        if topic == "opening":
+            body = (
+                f"Opening duels: {len(first_kills)}. First-kill players: {player_text}. "
+                f"First-death players: {death_text}. Opening weapons: {weapon_text}."
+            )
+        elif topic == "utility":
+            body = (
+                f"Utility usage: {len(grenades)} detonations and {len(flashes)} recorded blind events. "
+                f"Types: {utility_text}. Throwers: {thrower_text}."
+            )
+        elif topic == "round_flow":
+            body = (
+                f"Round flow: {len(kills)} kills and {len(plants)} bomb plants. "
+                f"Round winners: {winner_text}. End reasons: {reason_text}."
+            )
+        else:
+            body = (
+                f"Overview: {len(kills)} kills, {properties['first_kills']} first kills, "
+                f"{len(grenades)} utility detonations, {len(flashes)} recorded blind events, "
+                f"and {len(plants)} bomb plants. Round winners: {winner_text}."
+            )
+        summary = prefix + body + " This is an extractive factual summary; it does not establish tactical causality."
         return summary, source_ids, properties
 
     def _global_search_sync(self, query: str, metadata: dict, k: int) -> list[Evidence]:
         map_name = _map_name(metadata["map"]) if metadata.get("map") else None
         terms = set(re.findall(r"[a-z0-9_]+|[\u4e00-\u9fff]", query.lower()))
-        topic = self._topic(None, terms)
+        topic = self._topic(None, terms, query)
         connection = self._connect()
         try:
             rows = connection.execute(
@@ -443,8 +516,14 @@ class GraphRAGClient:
             for row in rows:
                 text = f"{row['label']} {row['summary']}".lower()
                 overlap = sum(1 for term in terms if term in text)
-                topic_bonus = 0.25 if row["community_id"].endswith(f":{topic}") else 0
-                score = 0.2 + min(0.7, overlap * 0.08) + topic_bonus
+                row_topic = json.loads(row["properties"]).get("topic")
+                topic_match = bool(topic and row_topic == topic)
+                if topic and not topic_match:
+                    continue
+                if not topic and overlap == 0:
+                    continue
+                topic_bonus = 0.25 if topic_match else 0
+                score = min(1.0, overlap * 0.08 + topic_bonus)
                 ranked.append((score, row))
             ranked.sort(key=lambda item: item[0], reverse=True)
             return [self._community_evidence(score, row) for score, row in ranked[:k]]
@@ -454,6 +533,7 @@ class GraphRAGClient:
     @staticmethod
     def _community_evidence(score: float, row: sqlite3.Row) -> Evidence:
         source_ids = json.loads(row["source_ids"])
+        topic = json.loads(row["properties"]).get("topic", "overview")
         source = f"community:{row['community_id']}"
         content = (
             f"{row['summary']} Graph source paths: "
@@ -468,6 +548,7 @@ class GraphRAGClient:
                 "tactic_type": "Graph Community Summary",
                 "source": source,
                 "community_id": row["community_id"],
+                "topic": topic,
                 "context_level": "community_summary",
                 "source_round_count": len(source_ids),
             },
@@ -476,33 +557,52 @@ class GraphRAGClient:
         )
 
     @staticmethod
-    def _topic(task_id: str | None, terms: set[str]) -> str:
-        if task_id == "opening_duel" or terms & {"opening", "first", "duel", "trade"}:
+    def _topic(task_id: str | None, terms: set[str], query: str = "") -> str | None:
+        task_topics = {
+            "opening_duel": "opening",
+            "utility": "utility",
+            "round_flow": "round_flow",
+            "map_context": "overview",
+        }
+        if task_id in task_topics:
+            return task_topics[task_id]
+        query = query.lower()
+        if any(value in query for value in ("首杀", "首死", "开局", "对枪", "补枪")):
             return "opening"
-        if task_id == "utility" or terms & {"utility", "smoke", "flash", "grenade", "molotov", "execute"}:
+        if any(value in query for value in ("道具", "烟雾", "闪光", "燃烧弹", "手雷", "投掷物")):
             return "utility"
-        if task_id == "round_flow" or terms & {"round", "plant", "retake", "kill", "bomb"}:
+        if any(value in query for value in ("回合", "下包", "拆包", "回防", "残局", "击杀链")):
             return "round_flow"
-        return "map_context"
+        if any(value in query for value in ("地图", "比赛", "职业", "概览", "总体", "战术")):
+            return "overview"
+        if terms & {"opening", "first", "duel", "trade"}:
+            return "opening"
+        if terms & {"utility", "smoke", "flash", "grenade", "molotov", "execute"}:
+            return "utility"
+        if terms & {"round", "plant", "retake", "kill", "bomb"}:
+            return "round_flow"
+        if terms & {"map", "match", "professional", "overview", "context", "control", "tactical"}:
+            return "overview"
+        return None
 
     @staticmethod
-    def _round_score(events: list[tuple[str, dict]], props: dict, topic: str, terms: set[str]) -> float:
+    def _round_score(events: list[tuple[str, dict]], props: dict, topic: str | None, terms: set[str]) -> float:
         kinds = Counter(kind for kind, _ in events)
-        score = 0.1
+        score = 0.0
         if topic == "opening":
             score += 1.0 if any(event.get("is_first_kill") for kind, event in events if kind == "kill") else 0
         elif topic == "utility":
             score += min(1.0, (kinds["grenade"] + kinds["flash"]) / 4)
         elif topic == "round_flow":
             score += min(1.0, (kinds["kill"] + kinds["plant"]) / 6)
-        else:
+        elif topic == "overview":
             score += min(1.0, len(events) / 8)
         text = " ".join([props.get("winner", ""), props.get("reason", "")] + [kind for kind, _ in events]).lower()
         score += min(0.5, sum(1 for term in terms if term in text) * 0.05)
-        return score
+        return min(1.0, score)
 
     @staticmethod
-    def _evidence(item: tuple, topic: str) -> Evidence:
+    def _evidence(item: tuple, topic: str | None) -> Evidence:
         score, row, props, events = item
         lines = [
             f"[Graph path] Match {row['match_id']} -> {row['map_name']} -> Round {row['round_number']}",
@@ -524,10 +624,11 @@ class GraphRAGClient:
             metadata={
                 "map": row["map_name"],
                 "side": "Both",
-                "tactic_type": f"Graph {topic.title()} Evidence",
+                "tactic_type": f"Graph {(topic or 'general').title()} Evidence",
                 "source": source,
                 "match_id": row["match_id"],
                 "round_number": row["round_number"],
+                "topic": topic or "general",
                 "context_level": "graph_path",
             },
             score=float(score),

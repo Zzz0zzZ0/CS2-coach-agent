@@ -20,6 +20,10 @@ def _evidence_dict(item: Any) -> dict:
     return item.as_dict() if hasattr(item, "as_dict") else item
 
 
+def _evidence_metadata(item: Any) -> dict:
+    return item.metadata if hasattr(item, "metadata") else item.get("metadata", {})
+
+
 def create_retrieve_node(kb_client, graph_client=None):
     async def node_retrieve(state: GraphState) -> dict:
         logger.info(">>> 执行图节点: [Retrieve] 并行执行分析任务检索...")
@@ -107,11 +111,16 @@ def create_retrieve_node(kb_client, graph_client=None):
             graph_count += len(graph_evidence)
             for item in combined_evidence:
                 evidence_by_key.setdefault(_evidence_key(item), item)
-            covered = any(
-                not task.get("required_tactic_types")
-                or item.metadata.get("tactic_type") in task["required_tactic_types"]
-                or item.metadata.get("context_level") in {"graph_path", "community_summary"}
-                for item in combined_evidence
+            required_types = set(task.get("required_tactic_types", []))
+            graph_topic = {
+                "opening_duel": "opening",
+                "utility": "utility",
+                "round_flow": "round_flow",
+                "map_context": "overview",
+            }.get(task["id"])
+            covered = bool(combined_evidence) if not required_types else (
+                any(_evidence_metadata(item).get("tactic_type") in required_types for item in milvus_evidence)
+                or any(_evidence_metadata(item).get("topic") == graph_topic for item in graph_evidence)
             )
             task_summary.append({
                 "task_id": task["id"],

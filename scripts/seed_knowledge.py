@@ -46,7 +46,7 @@ def _map_name(raw_name: str) -> str:
 
 
 def _match_id_from_path(path: Path) -> str:
-    match = re.search(r"-(\d{5,})-", path.stem)
+    match = re.search(r"[-_](\d{5,})[-_]", path.stem)
     return match.group(1) if match else path.stem
 
 
