@@ -218,6 +218,8 @@ CELERY_BROKER_URL="redis://localhost:6379/0"
 CELERY_RESULT_BACKEND="redis://localhost:6379/1"
 ```
 
+也可以启动前端后，在“提交比赛 Demo”区域直接输入 Key。前端调用 `PUT /api/settings/llm/key`，密钥只写入本机 `data/runtime/dashscope_api_key`（权限 `0600`），不会保存到浏览器、Git、API 响应或 Celery 任务载荷；API 与 Worker 会在下一次模型调用时动态读取，无需重启。该写入接口仅接受本机回环地址请求，`GET /api/settings/llm` 只返回是否已配置，不回传密钥。
+
 ### 3. 初始化战术知识向量库
 
 ```bash

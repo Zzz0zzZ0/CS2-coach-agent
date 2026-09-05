@@ -18,6 +18,18 @@ export function getTask(taskId) {
   return request(`/api/tasks/${encodeURIComponent(taskId)}`);
 }
 
+export function getLlmStatus() {
+  return request("/api/settings/llm");
+}
+
+export function saveLlmKey(apiKey) {
+  return request("/api/settings/llm/key", {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ api_key: apiKey }),
+  });
+}
+
 export function getGraphMaps() {
   return request("/api/graph/maps");
 }

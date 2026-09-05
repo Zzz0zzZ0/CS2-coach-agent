@@ -7,11 +7,13 @@ import {
   getGraphPlayers,
   getGraphRound,
   getGraphStats,
+  getLlmStatus,
   getPlayerProfile,
   getSubgraph,
   getTeamTactics,
   getTask,
   searchGraph,
+  saveLlmKey,
   uploadDemo,
 } from "./api";
 import "./styles.css";
@@ -46,6 +48,9 @@ function App() {
   const [task, setTask] = useState(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
+  const [llmConfigured, setLlmConfigured] = useState(false);
+  const [apiKey, setApiKey] = useState("");
+  const [keySaving, setKeySaving] = useState(false);
   const [maps, setMaps] = useState([]);
   const [map, setMap] = useState("");
   const [graphStats, setGraphStats] = useState({});
@@ -70,6 +75,12 @@ function App() {
 
   const analysis = task?.status === "SUCCESS" ? task.result?.analysis || task.result : null;
   const metrics = analysis?.metrics || {};
+
+  useEffect(() => {
+    getLlmStatus()
+      .then((data) => setLlmConfigured(Boolean(data.configured)))
+      .catch((reason) => setError(reason.message));
+  }, []);
 
   useEffect(() => {
     Promise.all([getGraphMaps(), getGraphStats(), compareGraphTeams(FEATURED_TEAMS)])
@@ -163,6 +174,22 @@ function App() {
     }
   }
 
+  async function handleSaveKey(event) {
+    event.preventDefault();
+    if (!apiKey.trim()) return;
+    setKeySaving(true);
+    setError("");
+    try {
+      const response = await saveLlmKey(apiKey.trim());
+      setLlmConfigured(Boolean(response.configured));
+      setApiKey("");
+    } catch (reason) {
+      setError(reason.message);
+    } finally {
+      setKeySaving(false);
+    }
+  }
+
   async function handleSearch(event) {
     event.preventDefault();
     if (!query.trim()) return;
@@ -215,6 +242,7 @@ function App() {
 
         <section className="control-card card">
           <div className="section-heading"><div><p className="eyebrow">01 / ANALYZE</p><h2>提交比赛 Demo</h2></div><span className="chip">ASYNC PIPELINE</span></div>
+          <div className="llm-key-panel"><div><b>QWEN-PLUS</b><span className={llmConfigured ? "key-ready" : "key-missing"}>{llmConfigured ? "密钥已保存（调用时验证）" : "需要 DashScope Key"}</span></div><form onSubmit={handleSaveKey}><label htmlFor="dashscope-key">DashScope API Key</label><input id="dashscope-key" type="password" autoComplete="off" value={apiKey} onChange={(event) => setApiKey(event.target.value)} placeholder="sk-…（仅保存到本机）" /><button disabled={keySaving || !apiKey.trim()}>{keySaving ? "保存中…" : "保存密钥"}</button></form><small>密钥不会回传到界面、浏览器存储或任务队列；API 与 Worker 在下一次调用时读取。</small></div>
           <form onSubmit={handleSubmit} className="upload-form">
             <label className={`dropzone ${file ? "has-file" : ""}`}>
               <input type="file" accept=".dem" onChange={(event) => setFile(event.target.files?.[0] || null)} />

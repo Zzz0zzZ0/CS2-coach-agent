@@ -7,6 +7,9 @@ load_dotenv()
 class Settings:
     # 阿里大模型相关配置
     DASHSCOPE_API_KEY: str = os.getenv("DASHSCOPE_API_KEY", "")
+    DASHSCOPE_KEY_FILE: str = os.getenv(
+        "DASHSCOPE_KEY_FILE", "data/runtime/dashscope_api_key"
+    )
     MODEL_NAME: str = os.getenv("MODEL_NAME", "qwen-plus")
     EMBEDDING_BACKEND: str = os.getenv("EMBEDDING_BACKEND", "fastembed")
     EMBEDDING_MODEL: str = os.getenv(

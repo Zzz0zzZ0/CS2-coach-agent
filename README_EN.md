@@ -218,6 +218,8 @@ CELERY_BROKER_URL="redis://localhost:6379/0"
 CELERY_RESULT_BACKEND="redis://localhost:6379/1"
 ```
 
+Alternatively, enter the key in the “Submit Match Demo” panel after starting the frontend. The UI calls `PUT /api/settings/llm/key`; the key is written only to the local `data/runtime/dashscope_api_key` file with `0600` permissions and is never stored in the browser, Git, API response, or Celery payload. Both API and worker processes read it on the next model call without a restart. Writes are loopback-only, and `GET /api/settings/llm` returns configuration status without exposing the key.
+
 ### 3. Initialize the Tactical Knowledge Vector Store
 
 ```bash
