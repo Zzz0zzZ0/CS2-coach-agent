@@ -256,6 +256,9 @@ def run(args):
     corpus_hash, query_hash = digest(args.corpus), digest(args.queries)
     packet = json.loads(args.qrels.read_text()) if args.qrels else None
     labels = reviewed_qrels(packet, docs, dataset, corpus_hash, query_hash)
+    reviewer_kind = (packet or {}).get("reviewer_kind", "unspecified")
+    if reviewer_kind == "ai_assisted" and not getattr(args, "allow_ai_reviewed", False):
+        raise ValueError("AI-reviewed labels require --allow-ai-reviewed; they are not independent human judgments")
     if labels is None and not args.allow_unreviewed:
         raise ValueError("Independent qrels review is incomplete; use --allow-unreviewed only for an explicitly unscored smoke run")
     start = time.perf_counter()
@@ -318,7 +321,8 @@ def run(args):
             summaries.append(summary)
     db.close()
     return {"version": "fair-retrieval-v1", "created_at": datetime.now(timezone.utc).isoformat(),
-            "status": "reviewed_labels_evaluation" if labels is not None else "engineering_smoke_unreviewed_labels",
+            "status": ("ai_assisted_labels_evaluation" if reviewer_kind == "ai_assisted" else "reviewed_labels_evaluation") if labels is not None else "engineering_smoke_unreviewed_labels",
+            "reviewer_kind": reviewer_kind,
             "corpus_sha256": corpus_hash, "queries_sha256": query_hash, "qrels_sha256": digest(args.qrels) if args.qrels else None,
             "source_sha256": digest(__file__), "dependency_constraints_sha256": digest(Path(__file__).resolve().parent.parent / "requirements-lock.txt"),
             "environment": {"python": platform.python_version(), "platform": platform.platform(), "sqlite": sqlite3.sqlite_version,
@@ -350,6 +354,7 @@ def main():
     evaluate.add_argument("--queries", type=Path, required=True)
     evaluate.add_argument("--qrels", type=Path)
     evaluate.add_argument("--allow-unreviewed", action="store_true", help="engineering smoke only; suppress all relevance quality metrics")
+    evaluate.add_argument("--allow-ai-reviewed", action="store_true", help="explicit AI-assisted evaluation; retain reviewer provenance")
     evaluate.add_argument("--model-dir", type=Path)
     evaluate.add_argument("--output", type=Path, required=True)
     evaluate.add_argument("--k", type=int, default=5)

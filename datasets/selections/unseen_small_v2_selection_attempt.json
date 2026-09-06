@@ -1,0 +1,12 @@
+{
+  "protocol_sha256": "c2b42ec22ff3822eb100b462536f4589255e0be0a26f517d556666da4cd8bde0",
+  "checked_at": "2026-09-06T17:10:07.026208+00:00",
+  "status": "no_eligible_series",
+  "visible_result_match_ids": [
+    "2396950",
+    "2396949",
+    "2396948",
+    "2396947"
+  ],
+  "reason": "All four displayed date-window results were already used. No demos downloaded; no retrieval scores examined for selection."
+}

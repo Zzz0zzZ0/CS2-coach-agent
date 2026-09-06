@@ -1,0 +1,3549 @@
+{
+  "version": "fair-ai-posthoc-v1",
+  "status": "ai_assisted_posthoc_evaluation",
+  "created_at": "2026-09-06T17:10:22.634215+00:00",
+  "corpus_sha256": "68cdc31d06c0e9526ebcd5bcf214f353722971fc8bc829bf07b46df1757a75d8",
+  "queries_sha256": "5b88deea2c796e92c1f02317ef24a8b1c9524e0004a70674d93071d2da4c81b0",
+  "qrels_sha256": "005f44d5edead0ad4da5277e52f7229d52b1c884b5608fe40ee48fa223d08815",
+  "ranking_sha256": "dda9fdb9ef6b76531f5c11da2b841a569d6e3846a632839511d45dda2faed8fc",
+  "scoring_source_sha256": "e2d806b6336446125d6a81bcaa415e8bf2fad4680a325b9cbc937c1d1c5951bf",
+  "metric_source_sha256": "941802a4cf3f3a2e9c340ae724dddd92d6bf8dcbb4645f1424a5539ebf432056",
+  "independent_human_review": false,
+  "fresh_retrieval_run": false,
+  "remote_model_calls": 0,
+  "k": 5,
+  "queries": 16,
+  "positive_queries": 11,
+  "negative_queries": 5,
+  "summary": [
+    {
+      "method": "bm25",
+      "entity_constraint": false,
+      "language": "all",
+      "quality": {
+        "recall_at_k": {
+          "mean": 0.07655122687008338,
+          "n": 11
+        },
+        "ndcg_at_k": {
+          "mean": 0.6117052463289278,
+          "n": 11
+        },
+        "false_retrieval": {
+          "mean": 0.6,
+          "n": 5
+        },
+        "false_abstention": {
+          "mean": 0,
+          "n": 11
+        }
+      }
+    },
+    {
+      "method": "bm25",
+      "entity_constraint": false,
+      "language": "en",
+      "quality": {
+        "recall_at_k": {
+          "mean": 0.0605922160198476,
+          "n": 6
+        },
+        "ndcg_at_k": {
+          "mean": 0.45087432613735057,
+          "n": 6
+        },
+        "false_retrieval": {
+          "mean": 0.5,
+          "n": 2
+        },
+        "false_abstention": {
+          "mean": 0,
+          "n": 6
+        }
+      }
+    },
+    {
+      "method": "bm25",
+      "entity_constraint": false,
+      "language": "zh",
+      "quality": {
+        "recall_at_k": {
+          "mean": 0.09570203989036631,
+          "n": 5
+        },
+        "ndcg_at_k": {
+          "mean": 0.8047023505588203,
+          "n": 5
+        },
+        "false_retrieval": {
+          "mean": 0.6666666666666666,
+          "n": 3
+        },
+        "false_abstention": {
+          "mean": 0,
+          "n": 5
+        }
+      }
+    },
+    {
+      "method": "bm25",
+      "entity_constraint": true,
+      "language": "all",
+      "quality": {
+        "recall_at_k": {
+          "mean": 0.07498382875096112,
+          "n": 11
+        },
+        "ndcg_at_k": {
+          "mean": 0.5962888733619451,
+          "n": 11
+        },
+        "false_retrieval": {
+          "mean": 0,
+          "n": 5
+        },
+        "false_abstention": {
+          "mean": 0,
+          "n": 11
+        }
+      }
+    },
+    {
+      "method": "bm25",
+      "entity_constraint": true,
+      "language": "en",
+      "quality": {
+        "recall_at_k": {
+          "mean": 0.0605922160198476,
+          "n": 6
+        },
+        "ndcg_at_k": {
+          "mean": 0.45087432613735057,
+          "n": 6
+        },
+        "false_retrieval": {
+          "mean": 0,
+          "n": 2
+        },
+        "false_abstention": {
+          "mean": 0,
+          "n": 6
+        }
+      }
+    },
+    {
+      "method": "bm25",
+      "entity_constraint": true,
+      "language": "zh",
+      "quality": {
+        "recall_at_k": {
+          "mean": 0.09225376402829734,
+          "n": 5
+        },
+        "ndcg_at_k": {
+          "mean": 0.7707863300314587,
+          "n": 5
+        },
+        "false_retrieval": {
+          "mean": 0,
+          "n": 3
+        },
+        "false_abstention": {
+          "mean": 0,
+          "n": 5
+        }
+      }
+    },
+    {
+      "method": "dense",
+      "entity_constraint": false,
+      "language": "all",
+      "quality": {
+        "recall_at_k": {
+          "mean": 0.12189932569348978,
+          "n": 11
+        },
+        "ndcg_at_k": {
+          "mean": 0.5635566356731057,
+          "n": 11
+        },
+        "false_retrieval": {
+          "mean": 0.6,
+          "n": 5
+        },
+        "false_abstention": {
+          "mean": 0,
+          "n": 11
+        }
+      }
+    },
+    {
+      "method": "dense",
+      "entity_constraint": false,
+      "language": "en",
+      "quality": {
+        "recall_at_k": {
+          "mean": 0.15754842440697703,
+          "n": 6
+        },
+        "ndcg_at_k": {
+          "mean": 0.5783942137976597,
+          "n": 6
+        },
+        "false_retrieval": {
+          "mean": 0.5,
+          "n": 2
+        },
+        "false_abstention": {
+          "mean": 0,
+          "n": 6
+        }
+      }
+    },
+    {
+      "method": "dense",
+      "entity_constraint": false,
+      "language": "zh",
+      "quality": {
+        "recall_at_k": {
+          "mean": 0.07912040723730508,
+          "n": 5
+        },
+        "ndcg_at_k": {
+          "mean": 0.545751541923641,
+          "n": 5
+        },
+        "false_retrieval": {
+          "mean": 0.6666666666666666,
+          "n": 3
+        },
+        "false_abstention": {
+          "mean": 0,
+          "n": 5
+        }
+      }
+    },
+    {
+      "method": "dense",
+      "entity_constraint": true,
+      "language": "all",
+      "quality": {
+        "recall_at_k": {
+          "mean": 0.1670884781094671,
+          "n": 11
+        },
+        "ndcg_at_k": {
+          "mean": 0.9098771345876124,
+          "n": 11
+        },
+        "false_retrieval": {
+          "mean": 0,
+          "n": 5
+        },
+        "false_abstention": {
+          "mean": 0,
+          "n": 11
+        }
+      }
+    },
+    {
+      "method": "dense",
+      "entity_constraint": true,
+      "language": "en",
+      "quality": {
+        "recall_at_k": {
+          "mean": 0.2208300501886028,
+          "n": 6
+        },
+        "ndcg_at_k": {
+          "mean": 0.9513105500524311,
+          "n": 6
+        },
+        "false_retrieval": {
+          "mean": 0,
+          "n": 2
+        },
+        "false_abstention": {
+          "mean": 0,
+          "n": 6
+        }
+      }
+    },
+    {
+      "method": "dense",
+      "entity_constraint": true,
+      "language": "zh",
+      "quality": {
+        "recall_at_k": {
+          "mean": 0.10259859161450424,
+          "n": 5
+        },
+        "ndcg_at_k": {
+          "mean": 0.86015703602983,
+          "n": 5
+        },
+        "false_retrieval": {
+          "mean": 0,
+          "n": 3
+        },
+        "false_abstention": {
+          "mean": 0,
+          "n": 5
+        }
+      }
+    },
+    {
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "language": "all",
+      "quality": {
+        "recall_at_k": {
+          "mean": 0.12872454319380805,
+          "n": 11
+        },
+        "ndcg_at_k": {
+          "mean": 0.830109552501122,
+          "n": 11
+        },
+        "false_retrieval": {
+          "mean": 0.6,
+          "n": 5
+        },
+        "false_abstention": {
+          "mean": 0,
+          "n": 11
+        }
+      }
+    },
+    {
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "language": "en",
+      "quality": {
+        "recall_at_k": {
+          "mean": 0.15336973272828536,
+          "n": 6
+        },
+        "ndcg_at_k": {
+          "mean": 0.8269374958125889,
+          "n": 6
+        },
+        "false_retrieval": {
+          "mean": 0.5,
+          "n": 2
+        },
+        "false_abstention": {
+          "mean": 0,
+          "n": 6
+        }
+      }
+    },
+    {
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "language": "zh",
+      "quality": {
+        "recall_at_k": {
+          "mean": 0.09915031575243527,
+          "n": 5
+        },
+        "ndcg_at_k": {
+          "mean": 0.8339160205273616,
+          "n": 5
+        },
+        "false_retrieval": {
+          "mean": 0.6666666666666666,
+          "n": 3
+        },
+        "false_abstention": {
+          "mean": 0,
+          "n": 5
+        }
+      }
+    },
+    {
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "language": "all",
+      "quality": {
+        "recall_at_k": {
+          "mean": 0.12872454319380805,
+          "n": 11
+        },
+        "ndcg_at_k": {
+          "mean": 0.8225839900263778,
+          "n": 11
+        },
+        "false_retrieval": {
+          "mean": 0,
+          "n": 5
+        },
+        "false_abstention": {
+          "mean": 0,
+          "n": 11
+        }
+      }
+    },
+    {
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "language": "en",
+      "quality": {
+        "recall_at_k": {
+          "mean": 0.15336973272828536,
+          "n": 6
+        },
+        "ndcg_at_k": {
+          "mean": 0.8195364687963024,
+          "n": 6
+        },
+        "false_retrieval": {
+          "mean": 0,
+          "n": 2
+        },
+        "false_abstention": {
+          "mean": 0,
+          "n": 6
+        }
+      }
+    },
+    {
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "language": "zh",
+      "quality": {
+        "recall_at_k": {
+          "mean": 0.09915031575243527,
+          "n": 5
+        },
+        "ndcg_at_k": {
+          "mean": 0.8262410155024683,
+          "n": 5
+        },
+        "false_retrieval": {
+          "mean": 0,
+          "n": 3
+        },
+        "false_abstention": {
+          "mean": 0,
+          "n": 5
+        }
+      }
+    },
+    {
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "language": "all",
+      "quality": {
+        "recall_at_k": {
+          "mean": 0.120130711911889,
+          "n": 11
+        },
+        "ndcg_at_k": {
+          "mean": 0.45454545454545453,
+          "n": 11
+        },
+        "false_retrieval": {
+          "mean": 0.6,
+          "n": 5
+        },
+        "false_abstention": {
+          "mean": 0,
+          "n": 11
+        }
+      }
+    },
+    {
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "language": "en",
+      "quality": {
+        "recall_at_k": {
+          "mean": 0.15350877192982457,
+          "n": 6
+        },
+        "ndcg_at_k": {
+          "mean": 0.3333333333333333,
+          "n": 6
+        },
+        "false_retrieval": {
+          "mean": 0.5,
+          "n": 2
+        },
+        "false_abstention": {
+          "mean": 0,
+          "n": 6
+        }
+      }
+    },
+    {
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "language": "zh",
+      "quality": {
+        "recall_at_k": {
+          "mean": 0.08007703989036631,
+          "n": 5
+        },
+        "ndcg_at_k": {
+          "mean": 0.6,
+          "n": 5
+        },
+        "false_retrieval": {
+          "mean": 0.6666666666666666,
+          "n": 3
+        },
+        "false_abstention": {
+          "mean": 0,
+          "n": 5
+        }
+      }
+    },
+    {
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "language": "all",
+      "quality": {
+        "recall_at_k": {
+          "mean": 0.19343569411185552,
+          "n": 11
+        },
+        "ndcg_at_k": {
+          "mean": 1.0,
+          "n": 11
+        },
+        "false_retrieval": {
+          "mean": 0,
+          "n": 5
+        },
+        "false_abstention": {
+          "mean": 0,
+          "n": 11
+        }
+      }
+    },
+    {
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "language": "en",
+      "quality": {
+        "recall_at_k": {
+          "mean": 0.2605125898711425,
+          "n": 6
+        },
+        "ndcg_at_k": {
+          "mean": 1.0,
+          "n": 6
+        },
+        "false_retrieval": {
+          "mean": 0,
+          "n": 2
+        },
+        "false_abstention": {
+          "mean": 0,
+          "n": 6
+        }
+      }
+    },
+    {
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "language": "zh",
+      "quality": {
+        "recall_at_k": {
+          "mean": 0.11294341920071113,
+          "n": 5
+        },
+        "ndcg_at_k": {
+          "mean": 1.0,
+          "n": 5
+        },
+        "false_retrieval": {
+          "mean": 0,
+          "n": 3
+        },
+        "false_abstention": {
+          "mean": 0,
+          "n": 5
+        }
+      }
+    },
+    {
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "language": "all",
+      "quality": {
+        "recall_at_k": {
+          "mean": 0.120130711911889,
+          "n": 11
+        },
+        "ndcg_at_k": {
+          "mean": 0.45454545454545453,
+          "n": 11
+        },
+        "false_retrieval": {
+          "mean": 0.6,
+          "n": 5
+        },
+        "false_abstention": {
+          "mean": 0,
+          "n": 11
+        }
+      }
+    },
+    {
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "language": "en",
+      "quality": {
+        "recall_at_k": {
+          "mean": 0.15350877192982457,
+          "n": 6
+        },
+        "ndcg_at_k": {
+          "mean": 0.3333333333333333,
+          "n": 6
+        },
+        "false_retrieval": {
+          "mean": 0.5,
+          "n": 2
+        },
+        "false_abstention": {
+          "mean": 0,
+          "n": 6
+        }
+      }
+    },
+    {
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "language": "zh",
+      "quality": {
+        "recall_at_k": {
+          "mean": 0.08007703989036631,
+          "n": 5
+        },
+        "ndcg_at_k": {
+          "mean": 0.6,
+          "n": 5
+        },
+        "false_retrieval": {
+          "mean": 0.6666666666666666,
+          "n": 3
+        },
+        "false_abstention": {
+          "mean": 0,
+          "n": 5
+        }
+      }
+    },
+    {
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "language": "all",
+      "quality": {
+        "recall_at_k": {
+          "mean": 0.19343569411185552,
+          "n": 11
+        },
+        "ndcg_at_k": {
+          "mean": 1.0,
+          "n": 11
+        },
+        "false_retrieval": {
+          "mean": 0,
+          "n": 5
+        },
+        "false_abstention": {
+          "mean": 0,
+          "n": 11
+        }
+      }
+    },
+    {
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "language": "en",
+      "quality": {
+        "recall_at_k": {
+          "mean": 0.2605125898711425,
+          "n": 6
+        },
+        "ndcg_at_k": {
+          "mean": 1.0,
+          "n": 6
+        },
+        "false_retrieval": {
+          "mean": 0,
+          "n": 2
+        },
+        "false_abstention": {
+          "mean": 0,
+          "n": 6
+        }
+      }
+    },
+    {
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "language": "zh",
+      "quality": {
+        "recall_at_k": {
+          "mean": 0.11294341920071113,
+          "n": 5
+        },
+        "ndcg_at_k": {
+          "mean": 1.0,
+          "n": 5
+        },
+        "false_retrieval": {
+          "mean": 0,
+          "n": 3
+        },
+        "false_abstention": {
+          "mean": 0,
+          "n": 5
+        }
+      }
+    }
+  ],
+  "cases": [
+    {
+      "query_id": "p01",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396945:Nuke:1",
+        "round:2396945:Nuke:2",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:21",
+        "round:2396945:Nuke:3"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p01",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396613:Nuke:15",
+        "round:2396610:Nuke:17",
+        "round:2396928:Nuke:4",
+        "round:2396949:Nuke:7",
+        "round:2396928:Nuke:9"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.07142857142857142,
+        "ndcg_at_k": 0.14606834984270645,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p01",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:13",
+        "round:2396945:Nuke:1",
+        "round:2396949:Nuke:7",
+        "round:2396949:Nuke:19"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.21428571428571427,
+        "ndcg_at_k": 0.49125969208957576,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p01",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396610:Nuke:15",
+        "round:2396610:Nuke:16",
+        "round:2396610:Nuke:17",
+        "round:2396610:Nuke:2",
+        "round:2396610:Nuke:21"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p01",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396610:Nuke:15",
+        "round:2396610:Nuke:16",
+        "round:2396610:Nuke:17",
+        "round:2396610:Nuke:2",
+        "round:2396610:Nuke:21"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p02",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396938:Dust2:14",
+        "round:2396938:Dust2:11",
+        "round:2396947:Dust2:18",
+        "round:2396947:Dust2:2",
+        "round:2396947:Dust2:3"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.078125,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p02",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396608:Dust2:13",
+        "round:2396947:Dust2:1",
+        "round:2396932:Dust2:16",
+        "round:2396932:Dust2:1",
+        "round:2396595:Dust2:1"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.015625,
+        "ndcg_at_k": 0.21398626473452756,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p02",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396947:Dust2:3",
+        "round:2396947:Dust2:2",
+        "round:2396947:Dust2:1",
+        "round:2396938:Dust2:14",
+        "round:2396947:Dust2:18"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.078125,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p02",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396595:Dust2:1",
+        "round:2396595:Dust2:10",
+        "round:2396595:Dust2:11",
+        "round:2396595:Dust2:12",
+        "round:2396595:Dust2:14"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p02",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396595:Dust2:1",
+        "round:2396595:Dust2:10",
+        "round:2396595:Dust2:11",
+        "round:2396595:Dust2:12",
+        "round:2396595:Dust2:14"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p03",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396612:Ancient:13",
+        "round:2396943:Ancient:16",
+        "round:2396943:Ancient:3",
+        "round:2396949:Ancient:2",
+        "round:2396612:Ancient:1"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.050505050505050504,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p03",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396607:Ancient:1",
+        "round:2396607:Ancient:13",
+        "round:2396938:Ancient:13",
+        "round:2396945:Ancient:13",
+        "round:2396612:Ancient:13"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.010101010101010102,
+        "ndcg_at_k": 0.13120507751234178,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p03",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396612:Ancient:13",
+        "round:2396943:Ancient:3",
+        "round:2396949:Ancient:14",
+        "round:2396612:Ancient:1",
+        "round:2396943:Ancient:16"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.050505050505050504,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p03",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396607:Ancient:1",
+        "round:2396607:Ancient:10",
+        "round:2396607:Ancient:11",
+        "round:2396607:Ancient:12",
+        "round:2396607:Ancient:13"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p03",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396607:Ancient:1",
+        "round:2396607:Ancient:10",
+        "round:2396607:Ancient:11",
+        "round:2396607:Ancient:12",
+        "round:2396607:Ancient:13"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p04",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396948:Nuke:13",
+        "round:2396935:Nuke:13",
+        "round:2396935:Nuke:14",
+        "round:2396935:Nuke:1",
+        "round:2396935:Nuke:7"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.05102040816326531,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p04",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396928:Nuke:14",
+        "round:2396948:Nuke:14",
+        "round:2396610:Nuke:10",
+        "round:2396928:Nuke:4",
+        "round:2396948:Nuke:13"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.030612244897959183,
+        "ndcg_at_k": 0.5147714448836774,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p04",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396948:Nuke:13",
+        "round:2396948:Nuke:14",
+        "round:2396948:Nuke:2",
+        "round:2396935:Nuke:1",
+        "round:2396941:Nuke:11"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.05102040816326531,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p04",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396610:Nuke:1",
+        "round:2396610:Nuke:10",
+        "round:2396610:Nuke:11",
+        "round:2396610:Nuke:12",
+        "round:2396610:Nuke:13"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.05102040816326531,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p04",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396610:Nuke:1",
+        "round:2396610:Nuke:10",
+        "round:2396610:Nuke:11",
+        "round:2396610:Nuke:12",
+        "round:2396610:Nuke:13"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.05102040816326531,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p05",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396948:Cache:7",
+        "round:2396948:Cache:13",
+        "round:2396926:Cache:1",
+        "round:2396943:Cache:13",
+        "round:2396943:Cache:14"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.03125,
+        "ndcg_at_k": 0.21398626473452756,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p05",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396926:Cache:16",
+        "round:2396928:Cache:1",
+        "round:2396932:Cache:4",
+        "round:2396932:Cache:3",
+        "round:2396932:Cache:8"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.03125,
+        "ndcg_at_k": 0.3391602052736161,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p05",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396926:Cache:16",
+        "round:2396948:Cache:3",
+        "round:2396948:Cache:21",
+        "round:2396948:Cache:13",
+        "round:2396926:Cache:2"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.15625,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p05",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396614:Cache:1",
+        "round:2396614:Cache:11",
+        "round:2396614:Cache:12",
+        "round:2396614:Cache:13",
+        "round:2396614:Cache:19"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p05",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396614:Cache:1",
+        "round:2396614:Cache:11",
+        "round:2396614:Cache:12",
+        "round:2396614:Cache:13",
+        "round:2396614:Cache:19"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p06",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396941:Mirage:6",
+        "round:2396926:Mirage:1",
+        "round:2396609:Mirage:1",
+        "round:2396938:Mirage:14",
+        "round:2396609:Mirage:13"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "p06",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396610:Mirage:2",
+        "round:2396938:Mirage:13",
+        "round:2396941:Mirage:14",
+        "round:2396609:Mirage:13",
+        "round:2396610:Mirage:1"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "p06",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396610:Mirage:2",
+        "round:2396941:Mirage:14",
+        "round:2396609:Mirage:13",
+        "round:2396926:Mirage:1",
+        "round:2396938:Mirage:13"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "p06",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396609:Mirage:1",
+        "round:2396609:Mirage:10",
+        "round:2396609:Mirage:11",
+        "round:2396609:Mirage:12",
+        "round:2396609:Mirage:13"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "p06",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396609:Mirage:1",
+        "round:2396609:Mirage:10",
+        "round:2396609:Mirage:11",
+        "round:2396609:Mirage:12",
+        "round:2396609:Mirage:13"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "p07",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:1",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:14"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.16666666666666666,
+        "ndcg_at_k": 0.21398626473452756,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p07",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396949:Nuke:7",
+        "round:2396949:Nuke:11",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:19"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.6666666666666666,
+        "ndcg_at_k": 0.8539316501572934,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p07",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:7"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.3333333333333333,
+        "ndcg_at_k": 0.4703652827859579,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p07",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396949:Nuke:11",
+        "round:2396949:Nuke:12",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:19",
+        "round:2396949:Nuke:20"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.8333333333333334,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p07",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396949:Nuke:11",
+        "round:2396949:Nuke:12",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:19",
+        "round:2396949:Nuke:20"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.8333333333333334,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p08",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396948:Nuke:2",
+        "round:2396948:Nuke:1",
+        "round:2396948:Nuke:13",
+        "round:2396948:Nuke:14",
+        "round:2396948:Nuke:4"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.2631578947368421,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p08",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396948:Nuke:2",
+        "round:2396948:Nuke:1",
+        "round:2396948:Nuke:9",
+        "round:2396948:Nuke:4",
+        "round:2396948:Nuke:15"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.2631578947368421,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p08",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396948:Nuke:2",
+        "round:2396948:Nuke:1",
+        "round:2396948:Nuke:4",
+        "round:2396948:Nuke:14",
+        "round:2396948:Nuke:13"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.2631578947368421,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p08",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396948:Nuke:1",
+        "round:2396948:Nuke:10",
+        "round:2396948:Nuke:11",
+        "round:2396948:Nuke:12",
+        "round:2396948:Nuke:13"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.2631578947368421,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p08",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396948:Nuke:1",
+        "round:2396948:Nuke:10",
+        "round:2396948:Nuke:11",
+        "round:2396948:Nuke:12",
+        "round:2396948:Nuke:13"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.2631578947368421,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p09",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396938:Dust2:1",
+        "round:2396938:Dust2:14",
+        "round:2396609:Dust2:13",
+        "round:2396947:Dust2:13",
+        "round:2396947:Dust2:15"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.0625,
+        "ndcg_at_k": 0.6608397947263838,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p09",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396938:Dust2:3",
+        "round:2396947:Dust2:15",
+        "round:2396938:Dust2:6",
+        "round:2396947:Dust2:8",
+        "round:2396947:Dust2:5"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.078125,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p09",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396947:Dust2:15",
+        "round:2396938:Dust2:6",
+        "round:2396947:Dust2:13",
+        "round:2396609:Dust2:13",
+        "round:2396938:Dust2:14"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.078125,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p09",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396595:Dust2:1",
+        "round:2396595:Dust2:10",
+        "round:2396595:Dust2:11",
+        "round:2396595:Dust2:12",
+        "round:2396595:Dust2:13"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p09",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396595:Dust2:1",
+        "round:2396595:Dust2:10",
+        "round:2396595:Dust2:11",
+        "round:2396595:Dust2:12",
+        "round:2396595:Dust2:13"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p10",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396612:Ancient:13",
+        "round:2396612:Ancient:1",
+        "round:2396614:Ancient:1",
+        "round:2396949:Ancient:2",
+        "round:2396949:Ancient:1"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.017241379310344827,
+        "ndcg_at_k": 0.16958010263680806,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p10",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396613:Ancient:3",
+        "round:2396612:Ancient:13",
+        "round:2396943:Ancient:6",
+        "round:2396943:Ancient:3",
+        "round:2396613:Ancient:13"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p10",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396612:Ancient:13",
+        "round:2396612:Ancient:1",
+        "round:2396614:Ancient:1",
+        "round:2396943:Ancient:15",
+        "round:2396943:Ancient:3"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.017241379310344827,
+        "ndcg_at_k": 0.16958010263680806,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p10",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396607:Ancient:10",
+        "round:2396607:Ancient:11",
+        "round:2396607:Ancient:13",
+        "round:2396607:Ancient:14",
+        "round:2396607:Ancient:15"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p10",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396607:Ancient:10",
+        "round:2396607:Ancient:11",
+        "round:2396607:Ancient:13",
+        "round:2396607:Ancient:14",
+        "round:2396607:Ancient:15"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p11",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396595:Inferno:3",
+        "round:2396945:Inferno:1",
+        "round:2396945:Inferno:3",
+        "round:2396595:Inferno:13",
+        "round:2396595:Inferno:1"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.05263157894736842,
+        "ndcg_at_k": 0.6164336326286644,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p11",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396595:Inferno:15",
+        "round:2396945:Inferno:14",
+        "round:2396947:Inferno:13",
+        "round:2396595:Inferno:20",
+        "round:2396945:Inferno:13"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.08771929824561403,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p11",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396945:Inferno:14",
+        "round:2396947:Inferno:13",
+        "round:2396595:Inferno:13",
+        "round:2396595:Inferno:15",
+        "round:2396595:Inferno:1"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.08771929824561403,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p11",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396595:Inferno:1",
+        "round:2396595:Inferno:10",
+        "round:2396595:Inferno:11",
+        "round:2396595:Inferno:12",
+        "round:2396595:Inferno:13"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.08771929824561403,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p11",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396595:Inferno:1",
+        "round:2396595:Inferno:10",
+        "round:2396595:Inferno:11",
+        "round:2396595:Inferno:12",
+        "round:2396595:Inferno:13"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.08771929824561403,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p12",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396946:Anubis:13",
+        "round:2396614:Anubis:1",
+        "round:2396607:Anubis:1",
+        "round:2396946:Anubis:15",
+        "round:2396946:Anubis:1"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.06896551724137931,
+        "ndcg_at_k": 0.8539316501572934,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p12",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396946:Anubis:13",
+        "round:2396607:Anubis:1",
+        "round:2396607:Anubis:2",
+        "round:2396607:Anubis:10",
+        "round:2396607:Anubis:11"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.08620689655172414,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p12",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396946:Anubis:13",
+        "round:2396607:Anubis:1",
+        "round:2396614:Anubis:1",
+        "round:2396607:Anubis:13",
+        "round:2396607:Anubis:2"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.08620689655172414,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p12",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396607:Anubis:1",
+        "round:2396607:Anubis:10",
+        "round:2396607:Anubis:11",
+        "round:2396607:Anubis:12",
+        "round:2396607:Anubis:13"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.08620689655172414,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p12",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396607:Anubis:1",
+        "round:2396607:Anubis:10",
+        "round:2396607:Anubis:11",
+        "round:2396607:Anubis:12",
+        "round:2396607:Anubis:13"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.08620689655172414,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "n01",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396613:Nuke:13",
+        "round:2396941:Nuke:2",
+        "round:2396948:Nuke:2",
+        "round:2396941:Nuke:1",
+        "round:2396948:Nuke:1"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n01",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396613:Nuke:13",
+        "round:2396613:Nuke:15",
+        "round:2396610:Nuke:17",
+        "round:2396928:Nuke:4",
+        "round:2396613:Nuke:5"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n01",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396613:Nuke:13",
+        "round:2396949:Nuke:13",
+        "round:2396613:Nuke:3",
+        "round:2396928:Nuke:14",
+        "round:2396610:Nuke:17"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n01",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396610:Nuke:15",
+        "round:2396610:Nuke:16",
+        "round:2396610:Nuke:17",
+        "round:2396610:Nuke:2",
+        "round:2396610:Nuke:21"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n01",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396610:Nuke:15",
+        "round:2396610:Nuke:16",
+        "round:2396610:Nuke:17",
+        "round:2396610:Nuke:2",
+        "round:2396610:Nuke:21"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n02",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396948:Dust2:1",
+        "round:2396941:Dust2:1",
+        "round:2396613:Dust2:1",
+        "round:2396595:Dust2:1",
+        "round:2396938:Dust2:1"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n02",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396613:Dust2:1",
+        "round:2396595:Dust2:1",
+        "round:2396941:Dust2:1",
+        "round:2396612:Dust2:1",
+        "round:2396948:Dust2:1"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n02",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396613:Dust2:1",
+        "round:2396941:Dust2:1",
+        "round:2396948:Dust2:1",
+        "round:2396595:Dust2:1",
+        "round:2396595:Dust2:13"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n02",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396595:Dust2:1",
+        "round:2396595:Dust2:10",
+        "round:2396595:Dust2:11",
+        "round:2396595:Dust2:12",
+        "round:2396595:Dust2:13"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n02",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396595:Dust2:1",
+        "round:2396595:Dust2:10",
+        "round:2396595:Dust2:11",
+        "round:2396595:Dust2:12",
+        "round:2396595:Dust2:13"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n03",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n03",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n03",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n03",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n03",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n04",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n04",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n04",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n04",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n04",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "p01",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396945:Nuke:1",
+        "round:2396945:Nuke:2",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:21",
+        "round:2396945:Nuke:3"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p01",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396949:Nuke:7",
+        "round:2396949:Nuke:19",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:11"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.2857142857142857,
+        "ndcg_at_k": 0.8539316501572934,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p01",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396949:Nuke:15",
+        "round:2396945:Nuke:1",
+        "round:2396949:Nuke:13",
+        "round:2396945:Nuke:13",
+        "round:2396945:Nuke:8"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.21428571428571427,
+        "ndcg_at_k": 0.44685352999185624,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p01",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396945:Nuke:10",
+        "round:2396945:Nuke:13",
+        "round:2396945:Nuke:17",
+        "round:2396945:Nuke:18",
+        "round:2396945:Nuke:19"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.35714285714285715,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p01",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396945:Nuke:10",
+        "round:2396945:Nuke:13",
+        "round:2396945:Nuke:17",
+        "round:2396945:Nuke:18",
+        "round:2396945:Nuke:19"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.35714285714285715,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p02",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396938:Dust2:14",
+        "round:2396938:Dust2:11",
+        "round:2396947:Dust2:18",
+        "round:2396947:Dust2:2",
+        "round:2396947:Dust2:3"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.078125,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p02",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396947:Dust2:1",
+        "round:2396947:Dust2:3",
+        "round:2396947:Dust2:2",
+        "round:2396947:Dust2:15",
+        "round:2396938:Dust2:14"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.078125,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p02",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396938:Dust2:14",
+        "round:2396947:Dust2:3",
+        "round:2396947:Dust2:2",
+        "round:2396947:Dust2:18",
+        "round:2396947:Dust2:1"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.078125,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p02",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396609:Dust2:1",
+        "round:2396609:Dust2:10",
+        "round:2396609:Dust2:11",
+        "round:2396609:Dust2:12",
+        "round:2396609:Dust2:13"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.078125,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p02",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396609:Dust2:1",
+        "round:2396609:Dust2:10",
+        "round:2396609:Dust2:11",
+        "round:2396609:Dust2:12",
+        "round:2396609:Dust2:13"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.078125,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p03",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396612:Ancient:13",
+        "round:2396943:Ancient:16",
+        "round:2396943:Ancient:3",
+        "round:2396949:Ancient:2",
+        "round:2396612:Ancient:1"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.050505050505050504,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p03",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396612:Ancient:13",
+        "round:2396943:Ancient:3",
+        "round:2396949:Ancient:14",
+        "round:2396614:Ancient:1",
+        "round:2396949:Ancient:16"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.050505050505050504,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p03",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396612:Ancient:13",
+        "round:2396943:Ancient:3",
+        "round:2396612:Ancient:1",
+        "round:2396949:Ancient:14",
+        "round:2396943:Ancient:16"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.050505050505050504,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p03",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396612:Ancient:1",
+        "round:2396612:Ancient:10",
+        "round:2396612:Ancient:11",
+        "round:2396612:Ancient:12",
+        "round:2396612:Ancient:13"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.050505050505050504,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p03",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396612:Ancient:1",
+        "round:2396612:Ancient:10",
+        "round:2396612:Ancient:11",
+        "round:2396612:Ancient:12",
+        "round:2396612:Ancient:13"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.050505050505050504,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p04",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396948:Nuke:13",
+        "round:2396935:Nuke:13",
+        "round:2396935:Nuke:14",
+        "round:2396935:Nuke:1",
+        "round:2396935:Nuke:7"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.05102040816326531,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p04",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396948:Nuke:14",
+        "round:2396610:Nuke:10",
+        "round:2396948:Nuke:13",
+        "round:2396941:Nuke:11",
+        "round:2396948:Nuke:4"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.05102040816326531,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p04",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396948:Nuke:13",
+        "round:2396948:Nuke:14",
+        "round:2396948:Nuke:2",
+        "round:2396935:Nuke:1",
+        "round:2396941:Nuke:2"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.05102040816326531,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p04",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396610:Nuke:1",
+        "round:2396610:Nuke:10",
+        "round:2396610:Nuke:11",
+        "round:2396610:Nuke:12",
+        "round:2396610:Nuke:13"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.05102040816326531,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p04",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396610:Nuke:1",
+        "round:2396610:Nuke:10",
+        "round:2396610:Nuke:11",
+        "round:2396610:Nuke:12",
+        "round:2396610:Nuke:13"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.05102040816326531,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p05",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396948:Cache:7",
+        "round:2396948:Cache:13",
+        "round:2396926:Cache:1",
+        "round:2396943:Cache:13",
+        "round:2396943:Cache:14"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.03125,
+        "ndcg_at_k": 0.21398626473452756,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p05",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396926:Cache:16",
+        "round:2396948:Cache:23",
+        "round:2396926:Cache:2",
+        "round:2396948:Cache:21",
+        "round:2396926:Cache:12"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.15625,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p05",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396926:Cache:16",
+        "round:2396948:Cache:13",
+        "round:2396948:Cache:3",
+        "round:2396948:Cache:21",
+        "round:2396926:Cache:2"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.15625,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p05",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396926:Cache:10",
+        "round:2396926:Cache:11",
+        "round:2396926:Cache:12",
+        "round:2396926:Cache:13",
+        "round:2396926:Cache:14"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.15625,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p05",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396926:Cache:10",
+        "round:2396926:Cache:11",
+        "round:2396926:Cache:12",
+        "round:2396926:Cache:13",
+        "round:2396926:Cache:14"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.15625,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p06",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "p06",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "p06",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "p06",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "p06",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "p07",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:1",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:14"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.16666666666666666,
+        "ndcg_at_k": 0.21398626473452756,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p07",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396949:Nuke:7",
+        "round:2396949:Nuke:11",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:19"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.6666666666666666,
+        "ndcg_at_k": 0.8539316501572934,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p07",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:7"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.3333333333333333,
+        "ndcg_at_k": 0.4703652827859579,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p07",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396949:Nuke:11",
+        "round:2396949:Nuke:12",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:19",
+        "round:2396949:Nuke:20"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.8333333333333334,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p07",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396949:Nuke:11",
+        "round:2396949:Nuke:12",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:19",
+        "round:2396949:Nuke:20"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.8333333333333334,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p08",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396948:Nuke:2",
+        "round:2396948:Nuke:1",
+        "round:2396948:Nuke:13",
+        "round:2396948:Nuke:14",
+        "round:2396948:Nuke:4"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.2631578947368421,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p08",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396948:Nuke:2",
+        "round:2396948:Nuke:1",
+        "round:2396948:Nuke:9",
+        "round:2396948:Nuke:4",
+        "round:2396948:Nuke:15"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.2631578947368421,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p08",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396948:Nuke:2",
+        "round:2396948:Nuke:1",
+        "round:2396948:Nuke:4",
+        "round:2396948:Nuke:14",
+        "round:2396948:Nuke:13"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.2631578947368421,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p08",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396948:Nuke:1",
+        "round:2396948:Nuke:10",
+        "round:2396948:Nuke:11",
+        "round:2396948:Nuke:12",
+        "round:2396948:Nuke:13"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.2631578947368421,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p08",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396948:Nuke:1",
+        "round:2396948:Nuke:10",
+        "round:2396948:Nuke:11",
+        "round:2396948:Nuke:12",
+        "round:2396948:Nuke:13"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.2631578947368421,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p09",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396938:Dust2:1",
+        "round:2396938:Dust2:14",
+        "round:2396947:Dust2:13",
+        "round:2396947:Dust2:15",
+        "round:2396947:Dust2:2"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.0625,
+        "ndcg_at_k": 0.6608397947263838,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p09",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396938:Dust2:3",
+        "round:2396947:Dust2:15",
+        "round:2396938:Dust2:6",
+        "round:2396947:Dust2:8",
+        "round:2396947:Dust2:5"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.078125,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p09",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396947:Dust2:15",
+        "round:2396938:Dust2:6",
+        "round:2396947:Dust2:13",
+        "round:2396938:Dust2:14",
+        "round:2396947:Dust2:2"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.078125,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p09",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396938:Dust2:10",
+        "round:2396938:Dust2:11",
+        "round:2396938:Dust2:12",
+        "round:2396938:Dust2:13",
+        "round:2396938:Dust2:14"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.078125,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p09",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396938:Dust2:10",
+        "round:2396938:Dust2:11",
+        "round:2396938:Dust2:12",
+        "round:2396938:Dust2:13",
+        "round:2396938:Dust2:14"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.078125,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p10",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396949:Ancient:2",
+        "round:2396949:Ancient:1",
+        "round:2396949:Ancient:14",
+        "round:2396943:Ancient:15",
+        "round:2396943:Ancient:16"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p10",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396943:Ancient:6",
+        "round:2396943:Ancient:3",
+        "round:2396943:Ancient:13",
+        "round:2396943:Ancient:15",
+        "round:2396943:Ancient:1"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.034482758620689655,
+        "ndcg_at_k": 0.30078518014914984,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p10",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396943:Ancient:15",
+        "round:2396949:Ancient:14",
+        "round:2396943:Ancient:6",
+        "round:2396943:Ancient:3",
+        "round:2396943:Ancient:13"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.017241379310344827,
+        "ndcg_at_k": 0.13120507751234178,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p10",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396943:Ancient:1",
+        "round:2396943:Ancient:13",
+        "round:2396943:Ancient:17",
+        "round:2396943:Ancient:18",
+        "round:2396943:Ancient:19"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.08620689655172414,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p10",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396943:Ancient:1",
+        "round:2396943:Ancient:13",
+        "round:2396943:Ancient:17",
+        "round:2396943:Ancient:18",
+        "round:2396943:Ancient:19"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.08620689655172414,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p11",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396595:Inferno:3",
+        "round:2396945:Inferno:1",
+        "round:2396945:Inferno:3",
+        "round:2396595:Inferno:13",
+        "round:2396595:Inferno:1"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.05263157894736842,
+        "ndcg_at_k": 0.6164336326286644,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p11",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396595:Inferno:15",
+        "round:2396945:Inferno:14",
+        "round:2396947:Inferno:13",
+        "round:2396595:Inferno:20",
+        "round:2396945:Inferno:13"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.08771929824561403,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p11",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396945:Inferno:14",
+        "round:2396947:Inferno:13",
+        "round:2396595:Inferno:13",
+        "round:2396595:Inferno:15",
+        "round:2396595:Inferno:1"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.08771929824561403,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p11",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396595:Inferno:1",
+        "round:2396595:Inferno:10",
+        "round:2396595:Inferno:11",
+        "round:2396595:Inferno:12",
+        "round:2396595:Inferno:13"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.08771929824561403,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p11",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396595:Inferno:1",
+        "round:2396595:Inferno:10",
+        "round:2396595:Inferno:11",
+        "round:2396595:Inferno:12",
+        "round:2396595:Inferno:13"
+      ],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": 0.08771929824561403,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p12",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396946:Anubis:13",
+        "round:2396614:Anubis:1",
+        "round:2396607:Anubis:1",
+        "round:2396946:Anubis:15",
+        "round:2396946:Anubis:1"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.06896551724137931,
+        "ndcg_at_k": 0.8539316501572934,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p12",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396946:Anubis:13",
+        "round:2396607:Anubis:1",
+        "round:2396607:Anubis:2",
+        "round:2396607:Anubis:10",
+        "round:2396607:Anubis:11"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.08620689655172414,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p12",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396946:Anubis:13",
+        "round:2396607:Anubis:1",
+        "round:2396614:Anubis:1",
+        "round:2396607:Anubis:13",
+        "round:2396607:Anubis:2"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.08620689655172414,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p12",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396607:Anubis:1",
+        "round:2396607:Anubis:10",
+        "round:2396607:Anubis:11",
+        "round:2396607:Anubis:12",
+        "round:2396607:Anubis:13"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.08620689655172414,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "p12",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396607:Anubis:1",
+        "round:2396607:Anubis:10",
+        "round:2396607:Anubis:11",
+        "round:2396607:Anubis:12",
+        "round:2396607:Anubis:13"
+      ],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": 0.08620689655172414,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      }
+    },
+    {
+      "query_id": "n01",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n01",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n01",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n01",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n01",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n02",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n02",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n02",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n02",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n02",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n03",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n03",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n03",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n03",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n03",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [],
+      "language": "en",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n04",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n04",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n04",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n04",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    },
+    {
+      "query_id": "n04",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [],
+      "language": "zh",
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      }
+    }
+  ],
+  "limitations": [
+    "Post-hoc AI review of already-used development queries; no blind or unseen generalization claim.",
+    "Same parsed events underpin labels and retrieval; video/parser truth not independently validated.",
+    "Team aliases count as relevant; frozen exact entity filtering can miss these rounds.",
+    "Chinese BM25 and chunk-averaged MiniLM are pilot baselines; no production GraphRAG superiority claim.",
+    "Timings remain in original frozen smoke report; no timing rerun or confidence intervals claimed."
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "version": "ai-source-review-criteria-v1",
+  "queries_sha256": "5b88deea2c796e92c1f02317ef24a8b1c9524e0004a70674d93071d2da4c81b0",
+  "reviewer_kind": "ai_assisted",
+  "reviewer": "Codex",
+  "independent_human_review": false,
+  "grading": "Binary exact satisfaction: 3 if all semantic constraints have source support, otherwise 0. No partial-credit grades used.",
+  "team_aliases": {
+    "spirit": [
+      "spirit",
+      "team spirit"
+    ],
+    "falcons": [
+      "falcons",
+      "team falcons"
+    ]
+  },
+  "cases": [
+    {
+      "query_id": "p01",
+      "filters": {
+        "map": "Nuke"
+      },
+      "entities": [
+        "NiKo"
+      ],
+      "event_kind": "plant",
+      "event_properties": {}
+    },
+    {
+      "query_id": "p02",
+      "filters": {
+        "map": "Dust2"
+      },
+      "entities": [
+        "m0NESY"
+      ],
+      "event_kind": "flash",
+      "event_properties": {}
+    },
+    {
+      "query_id": "p03",
+      "filters": {
+        "map": "Ancient"
+      },
+      "entities": [
+        "donk"
+      ],
+      "event_kind": "kill",
+      "event_properties": {
+        "is_first_kill": true
+      }
+    },
+    {
+      "query_id": "p04",
+      "filters": {
+        "map": "Nuke"
+      },
+      "entities": [
+        "ZywOo"
+      ],
+      "event_kind": "grenade",
+      "event_properties": {}
+    },
+    {
+      "query_id": "p05",
+      "filters": {
+        "map": "Cache"
+      },
+      "entities": [
+        "FURIA"
+      ],
+      "event_kind": "plant",
+      "event_properties": {}
+    },
+    {
+      "query_id": "p06",
+      "filters": {
+        "map": "Mirage"
+      },
+      "entities": [
+        "MOUZ"
+      ],
+      "event_kind": "flash",
+      "event_properties": {}
+    },
+    {
+      "query_id": "p07",
+      "filters": {
+        "map": "Nuke",
+        "match_id": "2396949"
+      },
+      "entities": [],
+      "event_kind": "plant",
+      "event_properties": {}
+    },
+    {
+      "query_id": "p08",
+      "filters": {
+        "map": "Nuke",
+        "match_id": "2396948"
+      },
+      "entities": [],
+      "event_kind": "kill",
+      "event_properties": {}
+    },
+    {
+      "query_id": "p09",
+      "filters": {
+        "map": "Dust2"
+      },
+      "entities": [
+        "Falcons"
+      ],
+      "event_kind": "grenade",
+      "event_properties": {}
+    },
+    {
+      "query_id": "p10",
+      "filters": {
+        "map": "Ancient"
+      },
+      "entities": [
+        "Spirit"
+      ],
+      "event_kind": "plant",
+      "event_properties": {}
+    },
+    {
+      "query_id": "p11",
+      "filters": {
+        "map": "Inferno"
+      },
+      "entities": [],
+      "event_kind": "flash",
+      "event_properties": {}
+    },
+    {
+      "query_id": "p12",
+      "filters": {
+        "map": "Anubis"
+      },
+      "entities": [],
+      "event_kind": "plant",
+      "event_properties": {}
+    },
+    {
+      "query_id": "n01",
+      "filters": {
+        "map": "Nuke"
+      },
+      "entities": [
+        "EvalAbsentPlayerA"
+      ],
+      "event_kind": "plant",
+      "event_properties": {}
+    },
+    {
+      "query_id": "n02",
+      "filters": {
+        "map": "Dust2"
+      },
+      "entities": [
+        "EvalAbsentTeamB"
+      ],
+      "event_kind": "grenade",
+      "event_properties": {}
+    },
+    {
+      "query_id": "n03",
+      "filters": {
+        "map": "Nuke",
+        "match_id": "0000000"
+      },
+      "entities": [],
+      "event_kind": "kill",
+      "event_properties": {}
+    },
+    {
+      "query_id": "n04",
+      "filters": {
+        "map": "EvalAbsentMapC"
+      },
+      "entities": [],
+      "event_kind": "flash",
+      "event_properties": {}
+    }
+  ]
+}

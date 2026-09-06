@@ -111,7 +111,7 @@ async def evaluate(args):
             "historical_match_ids": sorted(historical), "historical_graph_unchanged": unchanged,
             "complete_series": complete, "series_count": len(selected), "maps": rows,
             "passed": complete and unchanged and all(r["passed"] for r in rows),
-            "scope": "Single-series deterministic pipeline engineering check; not retrieval generalization, expert coaching validation or an estimate across independent matches.",
+            "scope": "Isolated-series deterministic pipeline engineering check; not retrieval generalization or expert coaching validation. Series count is reported explicitly.",
             "model_calls": 0, "historical_vector_store": "not connected or modified"}
 
 
