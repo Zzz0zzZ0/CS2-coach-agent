@@ -65,7 +65,21 @@ def _team_bucket(teams: Dict[str, Dict[str, int]], name: str) -> Dict[str, int]:
     return teams[name]
 
 
+def _roster_teams_by_side(round_data: Dict[str, Any]) -> Dict[str, str]:
+    participants = round_data.get("participants", [])
+    pairs = {(_side(p.get("side")), _text(p.get("team")))
+             for p in participants if isinstance(p, dict)} if isinstance(participants, list) else set()
+    if (round_data.get("participants_complete") is True and len(pairs) == 2
+            and {side for side, _ in pairs} == {"T", "CT"}
+            and len({team for _, team in pairs if team}) == 2):
+        return dict(sorted(pairs))
+    return {}
+
+
 def _teams_by_side(round_data: Dict[str, Any]) -> Dict[str, str]:
+    roster_teams = _roster_teams_by_side(round_data)
+    if roster_teams:
+        return roster_teams
     candidates: Dict[str, Counter] = {}
 
     def add(side: Any, team: Any) -> None:
@@ -93,6 +107,7 @@ def calculate_metrics(rounds: Any) -> Dict[str, Any]:
     rounds_won: Counter = Counter()
     rounds_won_by_team: Counter = Counter()
     rounds_won_by_team_and_side: Dict[str, Counter] = {}
+    side_performance: Dict[str, Dict[str, Dict[str, Any]]] = {}
     players: Dict[str, Dict[str, int]] = {}
     teams: Dict[str, Dict[str, int]] = {}
     evidence: List[Dict[str, Any]] = []
@@ -119,6 +134,18 @@ def calculate_metrics(rounds: Any) -> Dict[str, Any]:
         if winner_team:
             rounds_won_by_team[winner_team] += 1
             rounds_won_by_team_and_side.setdefault(winner_team, Counter())[winner_side] += 1
+
+        # Side denominators require the full round roster, not only winners or
+        # players who happened to emit events. Unknown outcomes are not losses.
+        for side, team in _roster_teams_by_side(round_data).items():
+            bucket = side_performance.setdefault(team, {}).setdefault(
+                side, {"rounds": 0, "known_outcomes": 0, "round_wins": 0, "win_rate_pct": None})
+            bucket["rounds"] += 1
+            if winner_side in {"CT", "T"}:
+                bucket["known_outcomes"] += 1
+                bucket["round_wins"] += int(winner_side == side)
+            if bucket["known_outcomes"]:
+                bucket["win_rate_pct"] = round(100 * bucket["round_wins"] / bucket["known_outcomes"], 1)
 
         kills = [kill for kill in _round_kills(round_data) if _valid_combat_kill(kill)]
         first_index = _first_kill_index(kills)
@@ -254,6 +281,8 @@ def calculate_metrics(rounds: Any) -> Dict[str, Any]:
     ]
     if grenades_total:
         available_metrics.append("grenades")
+    if side_performance:
+        available_metrics.append("side_performance_by_team")
     if plants_total:
         available_metrics.extend(["bomb_plants", "post_plant_conversion", "defuses"])
     if flash_blinds_total:
@@ -269,6 +298,7 @@ def calculate_metrics(rounds: Any) -> Dict[str, Any]:
             team: dict(sorted(side_counts.items()))
             for team, side_counts in sorted(rounds_won_by_team_and_side.items())
         },
+        "side_performance_by_team": side_performance,
         "kills_total": kills_total,
         "first_kills_total": first_kills_total,
         "players": players,
@@ -311,6 +341,7 @@ def build_current_match_evidence(match: Dict[str, Any], metrics: Dict[str, Any])
     summary = (
         f"Current demo summary: map={map_name}; rounds={metrics['rounds_total']}; "
         f"team score={team_scores}; team wins split by the side played={side_splits}; "
+        f"side outcomes from complete rosters (wins/known outcomes; rounds includes unknown outcomes)={metrics.get('side_performance_by_team', {})}; "
         f"valid combat kills={metrics['kills_total']}; "
         f"opening-to-round-win={openings}; grenades={metrics['grenades_total']} "
         f"{metrics['grenades_by_type']}; plants={metrics['plants_total']} "
@@ -318,7 +349,7 @@ def build_current_match_evidence(match: Dict[str, Any], metrics: Dict[str, Any])
         f"defuses by winner team={metrics['defuses_by_team']}; "
         f"flash-blind events={metrics['flash_blinds_total']} "
         f"by thrower team={metrics['flash_blinds_by_team']}; enemy blinds="
-        f"{metrics['enemy_flash_blinds_by_team']}; team blinds="
+        f"{metrics['enemy_flash_blinds_by_team']}; same-team blinds (including self)="
         f"{metrics['team_flash_blinds_by_team']}."
     )
     evidence = [{

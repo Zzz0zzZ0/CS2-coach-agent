@@ -35,7 +35,7 @@ def create_analyst_node(llm):
         if flash_total:
             flash_summary = (
                 f"共记录 {flash_total} 次受闪：对手受闪 "
-                f"{metrics.get('enemy_flash_blinds_by_team', {})}，队友受闪 "
+                f"{metrics.get('enemy_flash_blinds_by_team', {})}，己方受闪（含自己） "
                 f"{metrics.get('team_flash_blinds_by_team', {})}；该指标描述命中，不单独证明战术质量"
             )
         else:

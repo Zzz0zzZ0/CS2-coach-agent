@@ -1,0 +1,703 @@
+{
+  "status": "ai_assisted_fact_audit",
+  "passed": true,
+  "created_at": "2026-09-06T17:36:06.813652+00:00",
+  "reviewer_kind": "ai_assisted",
+  "independent_human_review": false,
+  "model_quality_gain": null,
+  "new_model_calls": 0,
+  "packet_sha256": "1d2233d94bbf13f6044091aa32a8619b93535c7ce248aa58e67ee0f8eb1fedc7",
+  "baseline_commit": "6e3826e",
+  "history_graph_sha256": "6128fa1036a19ad661a9277a338b65fe662c149d3e5c85a2f75ff1d2325b0aab",
+  "implementation_sha256": {
+    "scripts/audit_coach_facts.py": "e64c0a9647db81368e94e95abfab8f7ab091b8e68d33ac7618bbc3b6796fe5db",
+    "app/services/metrics_service.py": "740aaabddf5dc6a9abda4ed3f8fbabbb16f2683c5635ca285af8afb71f1d1c8d",
+    "app/agentic/nodes/coach_node.py": "bf0242f874c0ae0702192128c78147954d68ae14e444f801c75e280b35baa7a4"
+  },
+  "prior_demo_sha256": {
+    "MOUZ_vs_Vitality_2396950_map1.dem": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190",
+    "MOUZ_vs_Vitality_2396950_map2.dem": "1b8097794845b8994846d52d47db86faec78c838b345d3013c57e883ad230126"
+  },
+  "history_regression": [
+    {
+      "match_id": "2396595",
+      "map": "Dust2",
+      "rounds": 17,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 17
+    },
+    {
+      "match_id": "2396595",
+      "map": "Inferno",
+      "rounds": 23,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 23
+    },
+    {
+      "match_id": "2396607",
+      "map": "Ancient",
+      "rounds": 16,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 16
+    },
+    {
+      "match_id": "2396607",
+      "map": "Anubis",
+      "rounds": 16,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 16
+    },
+    {
+      "match_id": "2396607",
+      "map": "Dust2",
+      "rounds": 17,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 17
+    },
+    {
+      "match_id": "2396608",
+      "map": "Ancient",
+      "rounds": 18,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 18
+    },
+    {
+      "match_id": "2396608",
+      "map": "Dust2",
+      "rounds": 29,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 29
+    },
+    {
+      "match_id": "2396609",
+      "map": "Dust2",
+      "rounds": 23,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 23
+    },
+    {
+      "match_id": "2396609",
+      "map": "Mirage",
+      "rounds": 20,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 20
+    },
+    {
+      "match_id": "2396610",
+      "map": "Anubis",
+      "rounds": 24,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 24
+    },
+    {
+      "match_id": "2396610",
+      "map": "Mirage",
+      "rounds": 16,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 16
+    },
+    {
+      "match_id": "2396610",
+      "map": "Nuke",
+      "rounds": 30,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 30
+    },
+    {
+      "match_id": "2396612",
+      "map": "Ancient",
+      "rounds": 22,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 22
+    },
+    {
+      "match_id": "2396612",
+      "map": "Dust2",
+      "rounds": 20,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 20
+    },
+    {
+      "match_id": "2396613",
+      "map": "Ancient",
+      "rounds": 22,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 22
+    },
+    {
+      "match_id": "2396613",
+      "map": "Dust2",
+      "rounds": 22,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 22
+    },
+    {
+      "match_id": "2396613",
+      "map": "Nuke",
+      "rounds": 22,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 22
+    },
+    {
+      "match_id": "2396614",
+      "map": "Ancient",
+      "rounds": 30,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 30
+    },
+    {
+      "match_id": "2396614",
+      "map": "Anubis",
+      "rounds": 29,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 29
+    },
+    {
+      "match_id": "2396614",
+      "map": "Cache",
+      "rounds": 23,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 23
+    },
+    {
+      "match_id": "2396614",
+      "map": "Nuke",
+      "rounds": 18,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 18
+    },
+    {
+      "match_id": "2396926",
+      "map": "Cache",
+      "rounds": 19,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 19
+    },
+    {
+      "match_id": "2396926",
+      "map": "Mirage",
+      "rounds": 15,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 15
+    },
+    {
+      "match_id": "2396928",
+      "map": "Cache",
+      "rounds": 17,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 17
+    },
+    {
+      "match_id": "2396928",
+      "map": "Nuke",
+      "rounds": 20,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 20
+    },
+    {
+      "match_id": "2396932",
+      "map": "Cache",
+      "rounds": 22,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 22
+    },
+    {
+      "match_id": "2396932",
+      "map": "Dust2",
+      "rounds": 19,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 19
+    },
+    {
+      "match_id": "2396935",
+      "map": "Dust2",
+      "rounds": 15,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 15
+    },
+    {
+      "match_id": "2396935",
+      "map": "Nuke",
+      "rounds": 19,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 19
+    },
+    {
+      "match_id": "2396938",
+      "map": "Ancient",
+      "rounds": 23,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 23
+    },
+    {
+      "match_id": "2396938",
+      "map": "Dust2",
+      "rounds": 20,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 20
+    },
+    {
+      "match_id": "2396938",
+      "map": "Mirage",
+      "rounds": 19,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 19
+    },
+    {
+      "match_id": "2396941",
+      "map": "Dust2",
+      "rounds": 22,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 22
+    },
+    {
+      "match_id": "2396941",
+      "map": "Mirage",
+      "rounds": 22,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 22
+    },
+    {
+      "match_id": "2396941",
+      "map": "Nuke",
+      "rounds": 30,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 30
+    },
+    {
+      "match_id": "2396943",
+      "map": "Ancient",
+      "rounds": 23,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 23
+    },
+    {
+      "match_id": "2396943",
+      "map": "Cache",
+      "rounds": 18,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 18
+    },
+    {
+      "match_id": "2396945",
+      "map": "Ancient",
+      "rounds": 19,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 19
+    },
+    {
+      "match_id": "2396945",
+      "map": "Inferno",
+      "rounds": 17,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 17
+    },
+    {
+      "match_id": "2396945",
+      "map": "Nuke",
+      "rounds": 19,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 19
+    },
+    {
+      "match_id": "2396946",
+      "map": "Anubis",
+      "rounds": 20,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 20
+    },
+    {
+      "match_id": "2396946",
+      "map": "Dust2",
+      "rounds": 21,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 21
+    },
+    {
+      "match_id": "2396947",
+      "map": "Dust2",
+      "rounds": 22,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 22
+    },
+    {
+      "match_id": "2396947",
+      "map": "Inferno",
+      "rounds": 19,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 19
+    },
+    {
+      "match_id": "2396948",
+      "map": "Cache",
+      "rounds": 24,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 24
+    },
+    {
+      "match_id": "2396948",
+      "map": "Dust2",
+      "rounds": 18,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 18
+    },
+    {
+      "match_id": "2396948",
+      "map": "Nuke",
+      "rounds": 19,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 19
+    },
+    {
+      "match_id": "2396949",
+      "map": "Ancient",
+      "rounds": 24,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 24
+    },
+    {
+      "match_id": "2396949",
+      "map": "Nuke",
+      "rounds": 21,
+      "existing_metric_changes": [],
+      "side_roster_rounds": 21
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "case-01",
+      "match_id": "2396595",
+      "map": "Dust2",
+      "existing_metric_changes": [],
+      "side_performance_by_team": {
+        "MOUZ": {
+          "CT": {
+            "rounds": 12,
+            "known_outcomes": 12,
+            "round_wins": 9,
+            "win_rate_pct": 75.0
+          },
+          "T": {
+            "rounds": 5,
+            "known_outcomes": 5,
+            "round_wins": 4,
+            "win_rate_pct": 80.0
+          }
+        },
+        "PVISION": {
+          "T": {
+            "rounds": 12,
+            "known_outcomes": 12,
+            "round_wins": 3,
+            "win_rate_pct": 25.0
+          },
+          "CT": {
+            "rounds": 5,
+            "known_outcomes": 5,
+            "round_wins": 1,
+            "win_rate_pct": 20.0
+          }
+        }
+      },
+      "self_blind_events": 38,
+      "self_blind_witnesses": [
+        {
+          "round": 1,
+          "tick": 5729,
+          "player": "Spinx",
+          "team": "MOUZ"
+        },
+        {
+          "round": 2,
+          "tick": 8413,
+          "player": "torzsi",
+          "team": "MOUZ"
+        }
+      ],
+      "variants_with_low_win_count_advice": [
+        "B"
+      ],
+      "corrected_render_sha256": "9e34e339021f4312db808d82eaed264f222930eaff5164728832dc93e4e2df37"
+    },
+    {
+      "case_id": "case-02",
+      "match_id": "2396607",
+      "map": "Ancient",
+      "existing_metric_changes": [],
+      "side_performance_by_team": {
+        "FURIA": {
+          "CT": {
+            "rounds": 12,
+            "known_outcomes": 12,
+            "round_wins": 9,
+            "win_rate_pct": 75.0
+          },
+          "T": {
+            "rounds": 4,
+            "known_outcomes": 4,
+            "round_wins": 4,
+            "win_rate_pct": 100.0
+          }
+        },
+        "G2 Esports": {
+          "T": {
+            "rounds": 12,
+            "known_outcomes": 12,
+            "round_wins": 3,
+            "win_rate_pct": 25.0
+          },
+          "CT": {
+            "rounds": 4,
+            "known_outcomes": 4,
+            "round_wins": 0,
+            "win_rate_pct": 0.0
+          }
+        }
+      },
+      "self_blind_events": 44,
+      "self_blind_witnesses": [
+        {
+          "round": 2,
+          "tick": 8719,
+          "player": "MATYS",
+          "team": "G2 Esports"
+        },
+        {
+          "round": 2,
+          "tick": 8736,
+          "player": "FalleN",
+          "team": "FURIA"
+        }
+      ],
+      "variants_with_low_win_count_advice": [
+        "A"
+      ],
+      "corrected_render_sha256": "21d83dfbc51ad735588c9f73778ef8619346fca4d0bdcd29bcbe769afd289d07"
+    },
+    {
+      "case_id": "case-03",
+      "match_id": "2396608",
+      "map": "Ancient",
+      "existing_metric_changes": [],
+      "side_performance_by_team": {
+        "MOUZ": {
+          "CT": {
+            "rounds": 12,
+            "known_outcomes": 12,
+            "round_wins": 2,
+            "win_rate_pct": 16.7
+          },
+          "T": {
+            "rounds": 6,
+            "known_outcomes": 6,
+            "round_wins": 3,
+            "win_rate_pct": 50.0
+          }
+        },
+        "FUT Esports": {
+          "T": {
+            "rounds": 12,
+            "known_outcomes": 12,
+            "round_wins": 10,
+            "win_rate_pct": 83.3
+          },
+          "CT": {
+            "rounds": 6,
+            "known_outcomes": 6,
+            "round_wins": 3,
+            "win_rate_pct": 50.0
+          }
+        }
+      },
+      "self_blind_events": 40,
+      "self_blind_witnesses": [
+        {
+          "round": 2,
+          "tick": 10240,
+          "player": "Spinx",
+          "team": "MOUZ"
+        },
+        {
+          "round": 2,
+          "tick": 12045,
+          "player": "xelex",
+          "team": "MOUZ"
+        }
+      ],
+      "variants_with_low_win_count_advice": [
+        "B"
+      ],
+      "corrected_render_sha256": "d0dd149b59a32b8881408c767c094a40fb23ab4afba59cc1ab5c1a3b9cbbfb0b"
+    },
+    {
+      "case_id": "case-04",
+      "match_id": "2396609",
+      "map": "Dust2",
+      "existing_metric_changes": [],
+      "side_performance_by_team": {
+        "Legacy": {
+          "CT": {
+            "rounds": 12,
+            "known_outcomes": 12,
+            "round_wins": 7,
+            "win_rate_pct": 58.3
+          },
+          "T": {
+            "rounds": 11,
+            "known_outcomes": 11,
+            "round_wins": 6,
+            "win_rate_pct": 54.5
+          }
+        },
+        "Team Falcons": {
+          "T": {
+            "rounds": 12,
+            "known_outcomes": 12,
+            "round_wins": 5,
+            "win_rate_pct": 41.7
+          },
+          "CT": {
+            "rounds": 11,
+            "known_outcomes": 11,
+            "round_wins": 5,
+            "win_rate_pct": 45.5
+          }
+        }
+      },
+      "self_blind_events": 76,
+      "self_blind_witnesses": [
+        {
+          "round": 1,
+          "tick": 1789,
+          "player": "NiKo",
+          "team": "Team Falcons"
+        },
+        {
+          "round": 1,
+          "tick": 3198,
+          "player": "arT",
+          "team": "Legacy"
+        }
+      ],
+      "variants_with_low_win_count_advice": [
+        "A"
+      ],
+      "corrected_render_sha256": "f9647cf170f30f6ab55e18fd470f0583fbed4c07bf3d19729c7ab31bdc797dee"
+    },
+    {
+      "case_id": "case-05",
+      "match_id": "2396950",
+      "map": "Dust2",
+      "existing_metric_changes": [],
+      "side_performance_by_team": {
+        "MOUZ": {
+          "CT": {
+            "rounds": 12,
+            "known_outcomes": 12,
+            "round_wins": 8,
+            "win_rate_pct": 66.7
+          },
+          "T": {
+            "rounds": 12,
+            "known_outcomes": 12,
+            "round_wins": 5,
+            "win_rate_pct": 41.7
+          }
+        },
+        "Vitality": {
+          "T": {
+            "rounds": 12,
+            "known_outcomes": 12,
+            "round_wins": 4,
+            "win_rate_pct": 33.3
+          },
+          "CT": {
+            "rounds": 12,
+            "known_outcomes": 12,
+            "round_wins": 7,
+            "win_rate_pct": 58.3
+          }
+        }
+      },
+      "self_blind_events": 70,
+      "self_blind_witnesses": [
+        {
+          "round": 3,
+          "tick": 23370,
+          "player": "PR",
+          "team": "MOUZ"
+        },
+        {
+          "round": 3,
+          "tick": 23547,
+          "player": "ZywOo",
+          "team": "Vitality"
+        }
+      ],
+      "variants_with_low_win_count_advice": [
+        "A"
+      ],
+      "corrected_render_sha256": "16452f81098a221fe41e61bd4afef46742f90edc119d50fff2abc8b1266de410"
+    },
+    {
+      "case_id": "case-06",
+      "match_id": "2396950",
+      "map": "Mirage",
+      "existing_metric_changes": [],
+      "side_performance_by_team": {
+        "Vitality": {
+          "CT": {
+            "rounds": 12,
+            "known_outcomes": 12,
+            "round_wins": 5,
+            "win_rate_pct": 41.7
+          },
+          "T": {
+            "rounds": 8,
+            "known_outcomes": 8,
+            "round_wins": 2,
+            "win_rate_pct": 25.0
+          }
+        },
+        "MOUZ": {
+          "T": {
+            "rounds": 12,
+            "known_outcomes": 12,
+            "round_wins": 7,
+            "win_rate_pct": 58.3
+          },
+          "CT": {
+            "rounds": 8,
+            "known_outcomes": 8,
+            "round_wins": 6,
+            "win_rate_pct": 75.0
+          }
+        }
+      },
+      "self_blind_events": 30,
+      "self_blind_witnesses": [
+        {
+          "round": 1,
+          "tick": 12404,
+          "player": "jL",
+          "team": "Vitality"
+        },
+        {
+          "round": 1,
+          "tick": 12495,
+          "player": "jL",
+          "team": "Vitality"
+        }
+      ],
+      "variants_with_low_win_count_advice": [
+        "B"
+      ],
+      "corrected_render_sha256": "aa4d517188f9e7f2990bab248f81f2564b34873fe8784c1f1d647d3a69432442"
+    }
+  ],
+  "limitations": [
+    "Developer AI audit; no method key opened, but not an independent blinded reviewer.",
+    "Same parsed facts; fixes concern denominators and wording, not independent video truth.",
+    "Original candidate choices retained; corrected renders are not new model outputs or human scores."
+  ]
+}

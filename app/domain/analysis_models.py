@@ -10,6 +10,7 @@ class MatchMetrics(BaseModel):
     rounds_won: Dict[str, int] = Field(default_factory=dict)
     rounds_won_by_team: Dict[str, int] = Field(default_factory=dict)
     rounds_won_by_team_and_side: Dict[str, Dict[str, int]] = Field(default_factory=dict)
+    side_performance_by_team: Dict[str, Dict[str, Dict[str, Any]]] = Field(default_factory=dict)
     kills_total: int = 0
     first_kills_total: int = 0
     players: Dict[str, Dict[str, int]] = Field(default_factory=dict)

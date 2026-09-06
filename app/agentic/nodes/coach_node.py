@@ -50,6 +50,7 @@ async def _select_priorities(llm, metrics: dict) -> tuple[list[str], str, dict]:
         key: metrics.get(key, {})
         for key in (
             "rounds_won_by_team_and_side",
+            "side_performance_by_team",
             "opening_duels_by_team",
             "post_plant_by_team",
             "defuses_by_team",
@@ -61,7 +62,9 @@ async def _select_priorities(llm, metrics: dict) -> tuple[list[str], str, dict]:
     prompt = (
         "Select 2 or 3 coaching priorities for this CS2 match. Call "
         "select_coaching_priorities exactly once. Choose only from the tool's "
-        "allowed IDs. Do not write a report or add facts. Metrics: "
+        "allowed IDs. Side win totals alone cannot identify a weak side: use known-outcome "
+        "denominators and sample size when available. team_flash_blinds_by_team includes self-blinds. "
+        "Do not write a report or add facts. Metrics: "
         + json.dumps(bounded_metrics, ensure_ascii=False)
     )
     try:
@@ -88,6 +91,16 @@ def _conversion_text(values: dict) -> str:
 
 def _count_text(values: dict) -> str:
     return "；".join(f"{team} {count}" for team, count in values.items()) or "0"
+
+
+def _side_performance_text(metrics: dict) -> str:
+    values = metrics.get("side_performance_by_team", {})
+    return "；".join(
+        f"{team} {side} {item['round_wins']}/{item['known_outcomes']}"
+        + (f"（{item['win_rate_pct']}%）" if item['win_rate_pct'] is not None else "（胜率不可用）")
+        + f"，已识别 {item['rounds']} 回合"
+        for team, sides in sorted(values.items()) for side, item in sorted(sides.items())
+    ) or "完整阵容与各侧结果分母不可用"
 
 
 def _round_refs(rounds: list[dict]) -> str:
@@ -135,16 +148,16 @@ def _priority_advice(priority: str, metrics: dict) -> str:
             enemy = _count_text(metrics.get("enemy_flash_blinds_by_team", {}))
             team = _count_text(metrics.get("team_flash_blinds_by_team", {}))
             return (
-                f"**道具复核**：本场记录 {flash_total} 次受闪（对手受闪：{enemy}；队友受闪：{team}）；"
-                "优先复核队友受闪较多的回合，计数本身不证明闪光质量。[C1]"
+                f"**道具复核**：本场记录 {flash_total} 次受闪（对手受闪：{enemy}；己方受闪（含自己）：{team}）；"
+                "先区分自己与队友受闪，再复核相关回合；计数本身不证明闪光质量。[C1]"
             )
         return (
             "**道具复核**：按回合查看烟、火、雷的落点与队友接触时机；投掷次数不能衡量封锁或助攻效果，"
             "当前闪光致盲指标不可用。[C1]"
         )
     return (
-        "**攻守转换**：分别对照双方 T/CT 胜局拆分，优先检查低胜局一侧的开局计划与回合中期决策；"
-        "这是一项训练优先级，不是由胜局数直接推出的战术原因。[C1]"
+        "**攻守转换**：结合各侧已知结果的胜率、实际回合数和换边顺序，复核开局计划与回合中期决策；"
+        "缺少分母时不能按胜局数判断弱侧，单场小样本也不足以确定战术原因。[C1]"
     )
 
 
@@ -168,6 +181,7 @@ def _render_report(metrics: dict, priorities: list[str]) -> str:
     return (
         "**核心结论**\n"
         f"- 比分 {score}；按实际阵营拆分为 {sides}。[C1]\n"
+        f"- 各侧胜局/已知结果：{_side_performance_text(metrics)}。[C1]\n"
         f"- 首杀后胜局转化：{_conversion_text(metrics.get('opening_duels_by_team', {}))}。[C1]\n"
         f"- 下包后胜局转化：{_conversion_text(metrics.get('post_plant_by_team', {}))}；"
         f"拆包胜局 {_count_text(metrics.get('defuses_by_team', {}))}。[C1]\n\n"

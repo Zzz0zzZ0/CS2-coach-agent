@@ -1,0 +1,119 @@
+{
+  "version": "unseen-small-v3-corrected-replay",
+  "frozen_at": "2026-09-06T17:40:43.456508+00:00",
+  "status": "historical_audit_fix_frozen_before_new_demos_parsed",
+  "protocol_sha256": "7b87f0713fb686cd5082ada362a0e227e0fe6ede90fde8c878d5c21a673ee19e",
+  "results_url": "https://www.hltv.org/results?startDate=2026-08-01&endDate=2026-09-06&content=demo&stars=2&offset=0",
+  "results_subwindow_view": "https://www.hltv.org/results?startDate=2026-08-26&endDate=2026-09-06&content=demo&stars=2&offset=0",
+  "selection_evidence": "The recent subwindow avoids accessibility output truncation and preserves newest-first order within the full protocol window. First eligible IDs are 2396944, then 2396940. Both match pages show Demo download. No archive downloaded before this freeze.",
+  "ordered_result_ids_through_second_selection": [
+    "2396950",
+    "2396949",
+    "2396948",
+    "2396947",
+    "2396946",
+    "2396945",
+    "2396944",
+    "2396943",
+    "2396941",
+    "2396940"
+  ],
+  "historical_match_ids": [
+    "2396595",
+    "2396607",
+    "2396608",
+    "2396609",
+    "2396610",
+    "2396612",
+    "2396613",
+    "2396614",
+    "2396926",
+    "2396928",
+    "2396932",
+    "2396935",
+    "2396938",
+    "2396941",
+    "2396943",
+    "2396945",
+    "2396946",
+    "2396947",
+    "2396948",
+    "2396949"
+  ],
+  "historical_graph_sha256": "6128fa1036a19ad661a9277a338b65fe662c149d3e5c85a2f75ff1d2325b0aab",
+  "implementation_sha256": {
+    "app/agentic/nodes/coach_node.py": "bf0242f874c0ae0702192128c78147954d68ae14e444f801c75e280b35baa7a4",
+    "app/agentic/nodes/verify_node.py": "8c54d4840448e1120efca7805964f892798fd42b61368f8b2d93520203211103",
+    "app/agentic/workflow.py": "318be56c7da3533c198da966fbbde1d4d37c765116dfbb7e95b416f9b4ebdc62",
+    "app/services/analysis_pipeline.py": "e737fc99fd3ee5e663c5d6e312045d6302b8a2ac9f4c7082660a974a28231dfb",
+    "app/services/graph_rag_service.py": "97b4078be06a4168d44ad6131c64eb23032e8bd68f9f4a502fa9efd9eb2218e6",
+    "app/services/metrics_service.py": "740aaabddf5dc6a9abda4ed3f8fbabbb16f2683c5635ca285af8afb71f1d1c8d",
+    "app/services/parser_service.py": "0128821b4b82542f0927d744e6791b00db2371bede0ad3c8d68765946c5a3d87",
+    "app/services/tactical_annotation_service.py": "d1469f60e3eecc0f01418642f8f8bd316e9e7bbcf9cdfbddf7a723ebf5a9f231",
+    "scripts/evaluate_fair_retrieval.py": "941802a4cf3f3a2e9c340ae724dddd92d6bf8dcbb4645f1424a5539ebf432056",
+    "scripts/evaluate_unseen_match.py": "d73b5de651d86d8e9a3e5df4659f580dd99f7828c5b56391139b54e804e3e202",
+    "app/domain/analysis_models.py": "b0aeb327e501a390e8958256321adfcfbf65d7002b87a594dd08728d58998ddc",
+    "app/agentic/nodes/analyst_node.py": "b95a2c528afd8f549484f285b3a8a0446e1a36d8929781c60b132c1f6f62e891"
+  },
+  "matches": [
+    {
+      "match_id": "2396944",
+      "url": "https://www.hltv.org/matches/2396944/g2-vs-aurora-blast-open-porto-2026",
+      "date": "2026-08-31",
+      "teams": [
+        "G2",
+        "Aurora"
+      ],
+      "maps_played": [
+        "Anubis",
+        "Inferno",
+        "Mirage"
+      ],
+      "public_map_scores": {
+        "Anubis": {
+          "G2": 7,
+          "Aurora": 13
+        },
+        "Inferno": {
+          "G2": 19,
+          "Aurora": 16
+        },
+        "Mirage": {
+          "G2": 13,
+          "Aurora": 1
+        }
+      }
+    },
+    {
+      "match_id": "2396940",
+      "url": "https://www.hltv.org/matches/2396940/g2-vs-natus-vincere-blast-open-porto-2026",
+      "date": "2026-08-30",
+      "teams": [
+        "G2",
+        "Natus Vincere"
+      ],
+      "maps_played": [
+        "Ancient",
+        "Inferno"
+      ],
+      "public_map_scores": {
+        "Ancient": {
+          "G2": 13,
+          "Natus Vincere": 6
+        },
+        "Inferno": {
+          "G2": 13,
+          "Natus Vincere": 10
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Two series share G2 and one event; not independent teams or event-level OOD.",
+    "Earlier calendar dates than some historical matches; new means unseen by the repository, not a temporal forecast."
+  ],
+  "remote_llm_calls": 0,
+  "ingest_into_history": false,
+  "baseline_selection_sha256": "ec7d0c2caf9f7b6a2c170a4b93ef4c866fbcce325415dd65600121cff172a8be",
+  "replay_reason": "Fix side denominators and same-team flash wording using historical Coach audit only. Neither new archive has been parsed at this freeze. Preserve original baseline run separately."
+}
