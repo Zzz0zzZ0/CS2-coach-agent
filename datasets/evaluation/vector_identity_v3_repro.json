@@ -1,0 +1,94 @@
+{
+  "query": "绿龙 Ancient 的道具协同",
+  "collection": "cs2_tactical_knowledge_identity_v3",
+  "types": [
+    "Opening Duel Evidence",
+    "Professional Match Summary",
+    "Professional Match Summary",
+    "Opening Duel Evidence",
+    "Professional Match Summary"
+  ],
+  "passed": false,
+  "evidence": [
+    {
+      "content": "[Professional Demo Summary | Ancient] Match Spirit vs FURIA, event BLAST Open Porto 2026, HLTV match id 2396943. Source file: BLAST_Open_Porto_2026_Spirit_vs_FURIA_2396943_map1.dem. Opening-duel evidence: 23 first kills. Weapons: ak47 10, m4a1_silencer 4, awp 2, usp_silencer 1, deagle 1, mac10 1, elite 1, fiveseven 1, mp9 1, galilar 1. First-kill players: sh1ro 5, donk 5, YEKINDAR 4, zont1x 2, yuurih 2, KSCERATO 2, magixx 2, molodoy 1. Individual round evidence is stored separately.",
+      "metadata": {
+        "map": "Ancient",
+        "side": "Both",
+        "tactic_type": "Opening Duel Evidence",
+        "source": "hltv_demo:2396943",
+        "match_id": "2396943",
+        "round_number": "0",
+        "parent_id": "2396943:Ancient:summary",
+        "context_level": "evidence",
+        "parent_content": "[Professional Demo Summary | Ancient] Match Spirit vs FURIA, event BLAST Open Porto 2026, HLTV match id 2396943. Source file: BLAST_Open_Porto_2026_Spirit_vs_FURIA_2396943_map1.dem. Parsed 23 rounds, 142 kills, 23 first kills, 576 grenades, 397 flash-blind events, and 13 bomb plants. Round winners: CT 11, T 12. This is a factual event summary from a professional demo; tactical causality requires coach review."
+      },
+      "score": 0.3990909090909091,
+      "source_id": "hltv_demo:2396943|Ancient|0|Opening Duel Evidence|[Professional Demo Summary | Ancient] Match Spirit vs FURIA, event BLAST Open Porto 2026, HLTV match id 2396943. Source file: BLAST_Open_Porto_2026_Spirit_vs_FURIA_2396943_map1.dem. Opening-duel evidence: 23 first kills. Weapons: ak47 10, m4a1_silencer 4, awp 2, usp_silencer 1, deagle 1, mac10 1, elite 1, fiveseven 1, mp9 1, galilar 1. First-kill players: sh1ro 5, donk 5, YEKINDAR 4, zont1x 2, yuurih 2, KSCERATO 2, magixx 2, molodoy 1. Individual round evidence is stored separately."
+    },
+    {
+      "content": "[Professional Demo Summary | Ancient] Match Spirit vs FURIA, event BLAST Open Porto 2026, HLTV match id 2396943. Source file: BLAST_Open_Porto_2026_Spirit_vs_FURIA_2396943_map1.dem. Parsed 23 rounds, 142 kills, 23 first kills, 576 grenades, 397 flash-blind events, and 13 bomb plants. Round winners: CT 11, T 12. This is a factual event summary from a professional demo; tactical causality requires coach review.",
+      "metadata": {
+        "map": "Ancient",
+        "side": "Both",
+        "tactic_type": "Professional Match Summary",
+        "source": "hltv_demo:2396943",
+        "match_id": "2396943",
+        "round_number": "0",
+        "parent_id": "2396943:Ancient:summary",
+        "context_level": "parent",
+        "parent_content": "[Professional Demo Summary | Ancient] Match Spirit vs FURIA, event BLAST Open Porto 2026, HLTV match id 2396943. Source file: BLAST_Open_Porto_2026_Spirit_vs_FURIA_2396943_map1.dem. Parsed 23 rounds, 142 kills, 23 first kills, 576 grenades, 397 flash-blind events, and 13 bomb plants. Round winners: CT 11, T 12. This is a factual event summary from a professional demo; tactical causality requires coach review."
+      },
+      "score": 0.34909090909090906,
+      "source_id": "hltv_demo:2396943|Ancient|0|Professional Match Summary|[Professional Demo Summary | Ancient] Match Spirit vs FURIA, event BLAST Open Porto 2026, HLTV match id 2396943. Source file: BLAST_Open_Porto_2026_Spirit_vs_FURIA_2396943_map1.dem. Parsed 23 rounds, 142 kills, 23 first kills, 576 grenades, 397 flash-blind events, and 13 bomb plants. Round winners: CT 11, T 12. This is a factual event summary from a professional demo; tactical causality requires coach review."
+    },
+    {
+      "content": "[Professional Demo Summary | Ancient] Match Spirit vs Falcons, event BLAST Open Porto 2026, HLTV match id 2396949. Source file: BLAST_Open_Porto_2026_Spirit_vs_Falcons_2396949_map2.dem. Parsed 24 rounds, 159 kills, 24 first kills, 562 grenades, 317 flash-blind events, and 14 bomb plants. Round winners: CT 13, T 11. This is a factual event summary from a professional demo; tactical causality requires coach review.",
+      "metadata": {
+        "map": "Ancient",
+        "side": "Both",
+        "tactic_type": "Professional Match Summary",
+        "source": "hltv_demo:2396949",
+        "match_id": "2396949",
+        "round_number": "0",
+        "parent_id": "2396949:Ancient:summary",
+        "context_level": "parent",
+        "parent_content": "[Professional Demo Summary | Ancient] Match Spirit vs Falcons, event BLAST Open Porto 2026, HLTV match id 2396949. Source file: BLAST_Open_Porto_2026_Spirit_vs_Falcons_2396949_map2.dem. Parsed 24 rounds, 159 kills, 24 first kills, 562 grenades, 317 flash-blind events, and 14 bomb plants. Round winners: CT 13, T 11. This is a factual event summary from a professional demo; tactical causality requires coach review."
+      },
+      "score": 0.3240909090909091,
+      "source_id": "hltv_demo:2396949|Ancient|0|Professional Match Summary|[Professional Demo Summary | Ancient] Match Spirit vs Falcons, event BLAST Open Porto 2026, HLTV match id 2396949. Source file: BLAST_Open_Porto_2026_Spirit_vs_Falcons_2396949_map2.dem. Parsed 24 rounds, 159 kills, 24 first kills, 562 grenades, 317 flash-blind events, and 14 bomb plants. Round winners: CT 13, T 11. This is a factual event summary from a professional demo; tactical causality requires coach review."
+    },
+    {
+      "content": "[Professional Demo Summary | Ancient] Match Spirit vs Falcons, event BLAST Open Porto 2026, HLTV match id 2396949. Source file: BLAST_Open_Porto_2026_Spirit_vs_Falcons_2396949_map2.dem. Opening-duel evidence: 24 first kills. Weapons: ak47 6, mp9 4, m4a1 3, m4a1_silencer 3, usp_silencer 2, galilar 2, famas 1, awp 1, tec9 1, mac10 1. First-kill players: zont1x 6, donk 4, karrigan 3, TeSeS 2, kyousuke 2, magixx 2, tN1R 2, m0NESY 1, sh1ro 1, NiKo 1. Individual round evidence is stored separately.",
+      "metadata": {
+        "map": "Ancient",
+        "side": "Both",
+        "tactic_type": "Opening Duel Evidence",
+        "source": "hltv_demo:2396949",
+        "match_id": "2396949",
+        "round_number": "0",
+        "parent_id": "2396949:Ancient:summary",
+        "context_level": "evidence",
+        "parent_content": "[Professional Demo Summary | Ancient] Match Spirit vs Falcons, event BLAST Open Porto 2026, HLTV match id 2396949. Source file: BLAST_Open_Porto_2026_Spirit_vs_Falcons_2396949_map2.dem. Parsed 24 rounds, 159 kills, 24 first kills, 562 grenades, 317 flash-blind events, and 14 bomb plants. Round winners: CT 13, T 11. This is a factual event summary from a professional demo; tactical causality requires coach review."
+      },
+      "score": 0.3090909090909091,
+      "source_id": "hltv_demo:2396949|Ancient|0|Opening Duel Evidence|[Professional Demo Summary | Ancient] Match Spirit vs Falcons, event BLAST Open Porto 2026, HLTV match id 2396949. Source file: BLAST_Open_Porto_2026_Spirit_vs_Falcons_2396949_map2.dem. Opening-duel evidence: 24 first kills. Weapons: ak47 6, mp9 4, m4a1 3, m4a1_silencer 3, usp_silencer 2, galilar 2, famas 1, awp 1, tec9 1, mac10 1. First-kill players: zont1x 6, donk 4, karrigan 3, TeSeS 2, kyousuke 2, magixx 2, tN1R 2, m0NESY 1, sh1ro 1, NiKo 1. Individual round evidence is stored separately."
+    },
+    {
+      "content": "[Professional Demo Summary | Ancient] Match Legacy vs Spirit, event Esports World Cup 2026, HLTV match id 2396612. Source file: Esports_World_Cup_2026_Legacy_vs_Spirit_2396612_map2.dem. Parsed 22 rounds, 132 kills, 22 first kills, 549 grenades, 351 flash-blind events, and 13 bomb plants. Round winners: CT 9, T 13. This is a factual event summary from a professional demo; tactical causality requires coach review.",
+      "metadata": {
+        "map": "Ancient",
+        "side": "Both",
+        "tactic_type": "Professional Match Summary",
+        "source": "hltv_demo:2396612",
+        "match_id": "2396612",
+        "round_number": "0",
+        "parent_id": "2396612:Ancient:summary",
+        "context_level": "parent",
+        "parent_content": "[Professional Demo Summary | Ancient] Match Legacy vs Spirit, event Esports World Cup 2026, HLTV match id 2396612. Source file: Esports_World_Cup_2026_Legacy_vs_Spirit_2396612_map2.dem. Parsed 22 rounds, 132 kills, 22 first kills, 549 grenades, 351 flash-blind events, and 13 bomb plants. Round winners: CT 9, T 13. This is a factual event summary from a professional demo; tactical causality requires coach review."
+      },
+      "score": 0.2990909090909091,
+      "source_id": "hltv_demo:2396612|Ancient|0|Professional Match Summary|[Professional Demo Summary | Ancient] Match Legacy vs Spirit, event Esports World Cup 2026, HLTV match id 2396612. Source file: Esports_World_Cup_2026_Legacy_vs_Spirit_2396612_map2.dem. Parsed 22 rounds, 132 kills, 22 first kills, 549 grenades, 351 flash-blind events, and 13 bomb plants. Round winners: CT 9, T 13. This is a factual event summary from a professional demo; tactical causality requires coach review."
+    }
+  ]
+}

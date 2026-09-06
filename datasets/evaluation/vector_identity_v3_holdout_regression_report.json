@@ -1,0 +1,3129 @@
+{
+  "version": "cs2-coach-v1",
+  "summary": {
+    "cases": 50,
+    "passed": 50,
+    "failed": 0,
+    "pass_rate_pct": 100.0
+  },
+  "benchmark": {
+    "dataset": "datasets/evaluation/retrieval_queries_holdout_v1.json",
+    "formula": "(structured contract cases passed + retrieval checks passed) / (50 contract cases + 99 retrieval checks)",
+    "max_points": 149,
+    "modes": {
+      "no_rag": {
+        "available": true,
+        "contract": {
+          "passed": 5,
+          "total": 50,
+          "pass_rate_pct": 10.0
+        },
+        "retrieval": {
+          "queries": 30,
+          "queries_passed": 3,
+          "checks_passed": 3,
+          "checks_total": 99,
+          "quality_pct": 3.03,
+          "categories": {
+            "map_intent": {
+              "passed": 0,
+              "cases": 8
+            },
+            "match_filter": {
+              "passed": 0,
+              "cases": 5
+            },
+            "negative": {
+              "passed": 3,
+              "cases": 3
+            },
+            "paraphrase": {
+              "passed": 0,
+              "cases": 4
+            },
+            "player_entity": {
+              "passed": 0,
+              "cases": 5
+            },
+            "team_entity": {
+              "passed": 0,
+              "cases": 5
+            }
+          },
+          "cases": [
+            {
+              "id": "h_map_ancient_retake",
+              "category": "map_intent",
+              "query": "Ancient 防守方重新夺回包点的交火记录",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "h_map_anubis_opening",
+              "category": "map_intent",
+              "query": "Anubis 每回合第一次击杀情况",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "h_map_cache_summary",
+              "category": "map_intent",
+              "query": "Give me the professional Cache demo overview",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "h_map_dust2_flash",
+              "category": "map_intent",
+              "query": "Dust2 闪光弹和烟雾弹施放记录",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "h_map_inferno_plant",
+              "category": "map_intent",
+              "query": "Inferno 下包之后回合如何结束",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "h_map_mirage_pick",
+              "category": "map_intent",
+              "query": "Who secured the opening pick on Mirage",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "h_map_nuke_utility",
+              "category": "map_intent",
+              "query": "Nuke grenade timing and flash usage",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "h_map_ancient_summary",
+              "category": "map_intent",
+              "query": "职业 Ancient 录像里有哪些可观测事件",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "h_team_falcons_nuke",
+              "category": "team_entity",
+              "query": "Falcons Nuke retake contact rounds",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "h_team_spirit_cache",
+              "category": "team_entity",
+              "query": "Spirit Cache opening pick evidence",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "h_team_vitality_dust2",
+              "category": "team_entity",
+              "query": "Vitality 在 Dust2 的烟闪配合",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "h_team_furia_ancient",
+              "category": "team_entity",
+              "query": "FURIA Ancient bombsite retake evidence",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "h_team_mouz_nuke",
+              "category": "team_entity",
+              "query": "MOUZ Nuke 第一击和后续交换",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "h_player_niko_dust2",
+              "category": "player_entity",
+              "query": "NiKo 在 Dust2 的首杀回合",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "h_player_sh1ro_nuke",
+              "category": "player_entity",
+              "query": "sh1ro 在 Nuke 的交火记录",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "h_player_flamez_nuke",
+              "category": "player_entity",
+              "query": "flameZ 在 Nuke 使用道具的回合",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "h_player_molodoy_cache",
+              "category": "player_entity",
+              "query": "molodoy 在 Cache 的击杀链",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "h_player_xertion_dust2",
+              "category": "player_entity",
+              "query": "xertioN 在 Dust2 的闪光与投掷物",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "h_match_2396949_nuke",
+              "category": "match_filter",
+              "query": "Match 2396949 Nuke opening duel",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "h_match_2396948_cache",
+              "category": "match_filter",
+              "query": "Match 2396948 Cache utility usage",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "h_match_2396945_inferno",
+              "category": "match_filter",
+              "query": "Match 2396945 Inferno round outcome",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "h_match_2396610_anubis",
+              "category": "match_filter",
+              "query": "Match 2396610 Anubis overview",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "h_match_2396608_dust2",
+              "category": "match_filter",
+              "query": "Match 2396608 Dust2 first contact",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "h_para_nuke_round",
+              "category": "paraphrase",
+              "query": "核子危机里安包后防守方怎样重夺区域",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "h_para_inferno_opening",
+              "category": "paraphrase",
+              "query": "炼狱小镇谁先取得人数优势",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "h_para_mirage_utility",
+              "category": "paraphrase",
+              "query": "Mirage support grenades before contact",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "h_para_cache_overview",
+              "category": "paraphrase",
+              "query": "Cache 这批职业比赛的事实摘要",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "h_negative_player_english",
+              "category": "negative",
+              "query": "Show electroNic performance on Nuke",
+              "checks": {
+                "abstained": true
+              }
+            },
+            {
+              "id": "h_negative_team_existing_map",
+              "category": "negative",
+              "query": "NAVI Cache utility rounds",
+              "checks": {
+                "abstained": true
+              }
+            },
+            {
+              "id": "h_negative_cross_domain_match",
+              "category": "negative",
+              "query": "Premier League match possession statistics",
+              "checks": {
+                "abstained": true
+              }
+            }
+          ]
+        },
+        "score": {
+          "earned_points": 8,
+          "total_points": 149,
+          "pct": 5.37
+        }
+      },
+      "community_only": {
+        "available": true,
+        "contract": {
+          "passed": 5,
+          "total": 50,
+          "pass_rate_pct": 10.0
+        },
+        "retrieval": {
+          "queries": 30,
+          "queries_passed": 14,
+          "checks_passed": 64,
+          "checks_total": 99,
+          "quality_pct": 64.65,
+          "categories": {
+            "map_intent": {
+              "passed": 7,
+              "cases": 8
+            },
+            "match_filter": {
+              "passed": 0,
+              "cases": 5
+            },
+            "negative": {
+              "passed": 3,
+              "cases": 3
+            },
+            "paraphrase": {
+              "passed": 2,
+              "cases": 4
+            },
+            "player_entity": {
+              "passed": 2,
+              "cases": 5
+            },
+            "team_entity": {
+              "passed": 0,
+              "cases": 5
+            }
+          },
+          "cases": [
+            {
+              "id": "h_map_ancient_retake",
+              "category": "map_intent",
+              "query": "Ancient 防守方重新夺回包点的交火记录",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_map_anubis_opening",
+              "category": "map_intent",
+              "query": "Anubis 每回合第一次击杀情况",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "h_map_cache_summary",
+              "category": "map_intent",
+              "query": "Give me the professional Cache demo overview",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_map_dust2_flash",
+              "category": "map_intent",
+              "query": "Dust2 闪光弹和烟雾弹施放记录",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_map_inferno_plant",
+              "category": "map_intent",
+              "query": "Inferno 下包之后回合如何结束",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_map_mirage_pick",
+              "category": "map_intent",
+              "query": "Who secured the opening pick on Mirage",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_map_nuke_utility",
+              "category": "map_intent",
+              "query": "Nuke grenade timing and flash usage",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_map_ancient_summary",
+              "category": "map_intent",
+              "query": "职业 Ancient 录像里有哪些可观测事件",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_team_falcons_nuke",
+              "category": "team_entity",
+              "query": "Falcons Nuke retake contact rounds",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "h_team_spirit_cache",
+              "category": "team_entity",
+              "query": "Spirit Cache opening pick evidence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "h_team_vitality_dust2",
+              "category": "team_entity",
+              "query": "Vitality 在 Dust2 的烟闪配合",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "h_team_furia_ancient",
+              "category": "team_entity",
+              "query": "FURIA Ancient bombsite retake evidence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "h_team_mouz_nuke",
+              "category": "team_entity",
+              "query": "MOUZ Nuke 第一击和后续交换",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "h_player_niko_dust2",
+              "category": "player_entity",
+              "query": "NiKo 在 Dust2 的首杀回合",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "h_player_sh1ro_nuke",
+              "category": "player_entity",
+              "query": "sh1ro 在 Nuke 的交火记录",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_player_flamez_nuke",
+              "category": "player_entity",
+              "query": "flameZ 在 Nuke 使用道具的回合",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_player_molodoy_cache",
+              "category": "player_entity",
+              "query": "molodoy 在 Cache 的击杀链",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "h_player_xertion_dust2",
+              "category": "player_entity",
+              "query": "xertioN 在 Dust2 的闪光与投掷物",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "h_match_2396949_nuke",
+              "category": "match_filter",
+              "query": "Match 2396949 Nuke opening duel",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "h_match_2396948_cache",
+              "category": "match_filter",
+              "query": "Match 2396948 Cache utility usage",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "h_match_2396945_inferno",
+              "category": "match_filter",
+              "query": "Match 2396945 Inferno round outcome",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "h_match_2396610_anubis",
+              "category": "match_filter",
+              "query": "Match 2396610 Anubis overview",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "h_match_2396608_dust2",
+              "category": "match_filter",
+              "query": "Match 2396608 Dust2 first contact",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "h_para_nuke_round",
+              "category": "paraphrase",
+              "query": "核子危机里安包后防守方怎样重夺区域",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "h_para_inferno_opening",
+              "category": "paraphrase",
+              "query": "炼狱小镇谁先取得人数优势",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "h_para_mirage_utility",
+              "category": "paraphrase",
+              "query": "Mirage support grenades before contact",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_para_cache_overview",
+              "category": "paraphrase",
+              "query": "Cache 这批职业比赛的事实摘要",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_negative_player_english",
+              "category": "negative",
+              "query": "Show electroNic performance on Nuke",
+              "checks": {
+                "abstained": true
+              }
+            },
+            {
+              "id": "h_negative_team_existing_map",
+              "category": "negative",
+              "query": "NAVI Cache utility rounds",
+              "checks": {
+                "abstained": true
+              }
+            },
+            {
+              "id": "h_negative_cross_domain_match",
+              "category": "negative",
+              "query": "Premier League match possession statistics",
+              "checks": {
+                "abstained": true
+              }
+            }
+          ]
+        },
+        "score": {
+          "earned_points": 69,
+          "total_points": 149,
+          "pct": 46.31
+        }
+      },
+      "vector_only": {
+        "available": true,
+        "contract": {
+          "passed": 5,
+          "total": 50,
+          "pass_rate_pct": 10.0
+        },
+        "retrieval": {
+          "queries": 30,
+          "queries_passed": 28,
+          "checks_passed": 97,
+          "checks_total": 99,
+          "quality_pct": 97.98,
+          "categories": {
+            "map_intent": {
+              "passed": 8,
+              "cases": 8
+            },
+            "match_filter": {
+              "passed": 5,
+              "cases": 5
+            },
+            "negative": {
+              "passed": 3,
+              "cases": 3
+            },
+            "paraphrase": {
+              "passed": 3,
+              "cases": 4
+            },
+            "player_entity": {
+              "passed": 5,
+              "cases": 5
+            },
+            "team_entity": {
+              "passed": 4,
+              "cases": 5
+            }
+          },
+          "cases": [
+            {
+              "id": "h_map_ancient_retake",
+              "category": "map_intent",
+              "query": "Ancient 防守方重新夺回包点的交火记录",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_map_anubis_opening",
+              "category": "map_intent",
+              "query": "Anubis 每回合第一次击杀情况",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_map_cache_summary",
+              "category": "map_intent",
+              "query": "Give me the professional Cache demo overview",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_map_dust2_flash",
+              "category": "map_intent",
+              "query": "Dust2 闪光弹和烟雾弹施放记录",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_map_inferno_plant",
+              "category": "map_intent",
+              "query": "Inferno 下包之后回合如何结束",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_map_mirage_pick",
+              "category": "map_intent",
+              "query": "Who secured the opening pick on Mirage",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_map_nuke_utility",
+              "category": "map_intent",
+              "query": "Nuke grenade timing and flash usage",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_map_ancient_summary",
+              "category": "map_intent",
+              "query": "职业 Ancient 录像里有哪些可观测事件",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_team_falcons_nuke",
+              "category": "team_entity",
+              "query": "Falcons Nuke retake contact rounds",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_team_spirit_cache",
+              "category": "team_entity",
+              "query": "Spirit Cache opening pick evidence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_team_vitality_dust2",
+              "category": "team_entity",
+              "query": "Vitality 在 Dust2 的烟闪配合",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": false,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_team_furia_ancient",
+              "category": "team_entity",
+              "query": "FURIA Ancient bombsite retake evidence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_team_mouz_nuke",
+              "category": "team_entity",
+              "query": "MOUZ Nuke 第一击和后续交换",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_player_niko_dust2",
+              "category": "player_entity",
+              "query": "NiKo 在 Dust2 的首杀回合",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_player_sh1ro_nuke",
+              "category": "player_entity",
+              "query": "sh1ro 在 Nuke 的交火记录",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_player_flamez_nuke",
+              "category": "player_entity",
+              "query": "flameZ 在 Nuke 使用道具的回合",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_player_molodoy_cache",
+              "category": "player_entity",
+              "query": "molodoy 在 Cache 的击杀链",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_player_xertion_dust2",
+              "category": "player_entity",
+              "query": "xertioN 在 Dust2 的闪光与投掷物",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_match_2396949_nuke",
+              "category": "match_filter",
+              "query": "Match 2396949 Nuke opening duel",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_match_2396948_cache",
+              "category": "match_filter",
+              "query": "Match 2396948 Cache utility usage",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_match_2396945_inferno",
+              "category": "match_filter",
+              "query": "Match 2396945 Inferno round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_match_2396610_anubis",
+              "category": "match_filter",
+              "query": "Match 2396610 Anubis overview",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_match_2396608_dust2",
+              "category": "match_filter",
+              "query": "Match 2396608 Dust2 first contact",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_para_nuke_round",
+              "category": "paraphrase",
+              "query": "核子危机里安包后防守方怎样重夺区域",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "h_para_inferno_opening",
+              "category": "paraphrase",
+              "query": "炼狱小镇谁先取得人数优势",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_para_mirage_utility",
+              "category": "paraphrase",
+              "query": "Mirage support grenades before contact",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_para_cache_overview",
+              "category": "paraphrase",
+              "query": "Cache 这批职业比赛的事实摘要",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_negative_player_english",
+              "category": "negative",
+              "query": "Show electroNic performance on Nuke",
+              "checks": {
+                "abstained": true
+              }
+            },
+            {
+              "id": "h_negative_team_existing_map",
+              "category": "negative",
+              "query": "NAVI Cache utility rounds",
+              "checks": {
+                "abstained": true
+              }
+            },
+            {
+              "id": "h_negative_cross_domain_match",
+              "category": "negative",
+              "query": "Premier League match possession statistics",
+              "checks": {
+                "abstained": true
+              }
+            }
+          ]
+        },
+        "score": {
+          "earned_points": 102,
+          "total_points": 149,
+          "pct": 68.46
+        }
+      },
+      "graph_only": {
+        "available": true,
+        "contract": {
+          "passed": 50,
+          "total": 50,
+          "pass_rate_pct": 100.0
+        },
+        "retrieval": {
+          "queries": 30,
+          "queries_passed": 30,
+          "checks_passed": 99,
+          "checks_total": 99,
+          "quality_pct": 100.0,
+          "categories": {
+            "map_intent": {
+              "passed": 8,
+              "cases": 8
+            },
+            "match_filter": {
+              "passed": 5,
+              "cases": 5
+            },
+            "negative": {
+              "passed": 3,
+              "cases": 3
+            },
+            "paraphrase": {
+              "passed": 4,
+              "cases": 4
+            },
+            "player_entity": {
+              "passed": 5,
+              "cases": 5
+            },
+            "team_entity": {
+              "passed": 5,
+              "cases": 5
+            }
+          },
+          "cases": [
+            {
+              "id": "h_map_ancient_retake",
+              "category": "map_intent",
+              "query": "Ancient 防守方重新夺回包点的交火记录",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_map_anubis_opening",
+              "category": "map_intent",
+              "query": "Anubis 每回合第一次击杀情况",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_map_cache_summary",
+              "category": "map_intent",
+              "query": "Give me the professional Cache demo overview",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_map_dust2_flash",
+              "category": "map_intent",
+              "query": "Dust2 闪光弹和烟雾弹施放记录",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_map_inferno_plant",
+              "category": "map_intent",
+              "query": "Inferno 下包之后回合如何结束",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_map_mirage_pick",
+              "category": "map_intent",
+              "query": "Who secured the opening pick on Mirage",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_map_nuke_utility",
+              "category": "map_intent",
+              "query": "Nuke grenade timing and flash usage",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_map_ancient_summary",
+              "category": "map_intent",
+              "query": "职业 Ancient 录像里有哪些可观测事件",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_team_falcons_nuke",
+              "category": "team_entity",
+              "query": "Falcons Nuke retake contact rounds",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_team_spirit_cache",
+              "category": "team_entity",
+              "query": "Spirit Cache opening pick evidence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_team_vitality_dust2",
+              "category": "team_entity",
+              "query": "Vitality 在 Dust2 的烟闪配合",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_team_furia_ancient",
+              "category": "team_entity",
+              "query": "FURIA Ancient bombsite retake evidence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_team_mouz_nuke",
+              "category": "team_entity",
+              "query": "MOUZ Nuke 第一击和后续交换",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_player_niko_dust2",
+              "category": "player_entity",
+              "query": "NiKo 在 Dust2 的首杀回合",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_player_sh1ro_nuke",
+              "category": "player_entity",
+              "query": "sh1ro 在 Nuke 的交火记录",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_player_flamez_nuke",
+              "category": "player_entity",
+              "query": "flameZ 在 Nuke 使用道具的回合",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_player_molodoy_cache",
+              "category": "player_entity",
+              "query": "molodoy 在 Cache 的击杀链",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_player_xertion_dust2",
+              "category": "player_entity",
+              "query": "xertioN 在 Dust2 的闪光与投掷物",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_match_2396949_nuke",
+              "category": "match_filter",
+              "query": "Match 2396949 Nuke opening duel",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_match_2396948_cache",
+              "category": "match_filter",
+              "query": "Match 2396948 Cache utility usage",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_match_2396945_inferno",
+              "category": "match_filter",
+              "query": "Match 2396945 Inferno round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_match_2396610_anubis",
+              "category": "match_filter",
+              "query": "Match 2396610 Anubis overview",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_match_2396608_dust2",
+              "category": "match_filter",
+              "query": "Match 2396608 Dust2 first contact",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_para_nuke_round",
+              "category": "paraphrase",
+              "query": "核子危机里安包后防守方怎样重夺区域",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_para_inferno_opening",
+              "category": "paraphrase",
+              "query": "炼狱小镇谁先取得人数优势",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_para_mirage_utility",
+              "category": "paraphrase",
+              "query": "Mirage support grenades before contact",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_para_cache_overview",
+              "category": "paraphrase",
+              "query": "Cache 这批职业比赛的事实摘要",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_negative_player_english",
+              "category": "negative",
+              "query": "Show electroNic performance on Nuke",
+              "checks": {
+                "abstained": true
+              }
+            },
+            {
+              "id": "h_negative_team_existing_map",
+              "category": "negative",
+              "query": "NAVI Cache utility rounds",
+              "checks": {
+                "abstained": true
+              }
+            },
+            {
+              "id": "h_negative_cross_domain_match",
+              "category": "negative",
+              "query": "Premier League match possession statistics",
+              "checks": {
+                "abstained": true
+              }
+            }
+          ]
+        },
+        "score": {
+          "earned_points": 149,
+          "total_points": 149,
+          "pct": 100.0
+        }
+      },
+      "hybrid": {
+        "available": true,
+        "contract": {
+          "passed": 50,
+          "total": 50,
+          "pass_rate_pct": 100.0
+        },
+        "retrieval": {
+          "queries": 30,
+          "queries_passed": 30,
+          "checks_passed": 99,
+          "checks_total": 99,
+          "quality_pct": 100.0,
+          "categories": {
+            "map_intent": {
+              "passed": 8,
+              "cases": 8
+            },
+            "match_filter": {
+              "passed": 5,
+              "cases": 5
+            },
+            "negative": {
+              "passed": 3,
+              "cases": 3
+            },
+            "paraphrase": {
+              "passed": 4,
+              "cases": 4
+            },
+            "player_entity": {
+              "passed": 5,
+              "cases": 5
+            },
+            "team_entity": {
+              "passed": 5,
+              "cases": 5
+            }
+          },
+          "cases": [
+            {
+              "id": "h_map_ancient_retake",
+              "category": "map_intent",
+              "query": "Ancient 防守方重新夺回包点的交火记录",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_map_anubis_opening",
+              "category": "map_intent",
+              "query": "Anubis 每回合第一次击杀情况",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_map_cache_summary",
+              "category": "map_intent",
+              "query": "Give me the professional Cache demo overview",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_map_dust2_flash",
+              "category": "map_intent",
+              "query": "Dust2 闪光弹和烟雾弹施放记录",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_map_inferno_plant",
+              "category": "map_intent",
+              "query": "Inferno 下包之后回合如何结束",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_map_mirage_pick",
+              "category": "map_intent",
+              "query": "Who secured the opening pick on Mirage",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_map_nuke_utility",
+              "category": "map_intent",
+              "query": "Nuke grenade timing and flash usage",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_map_ancient_summary",
+              "category": "map_intent",
+              "query": "职业 Ancient 录像里有哪些可观测事件",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_team_falcons_nuke",
+              "category": "team_entity",
+              "query": "Falcons Nuke retake contact rounds",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_team_spirit_cache",
+              "category": "team_entity",
+              "query": "Spirit Cache opening pick evidence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_team_vitality_dust2",
+              "category": "team_entity",
+              "query": "Vitality 在 Dust2 的烟闪配合",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_team_furia_ancient",
+              "category": "team_entity",
+              "query": "FURIA Ancient bombsite retake evidence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_team_mouz_nuke",
+              "category": "team_entity",
+              "query": "MOUZ Nuke 第一击和后续交换",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_player_niko_dust2",
+              "category": "player_entity",
+              "query": "NiKo 在 Dust2 的首杀回合",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_player_sh1ro_nuke",
+              "category": "player_entity",
+              "query": "sh1ro 在 Nuke 的交火记录",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_player_flamez_nuke",
+              "category": "player_entity",
+              "query": "flameZ 在 Nuke 使用道具的回合",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_player_molodoy_cache",
+              "category": "player_entity",
+              "query": "molodoy 在 Cache 的击杀链",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_player_xertion_dust2",
+              "category": "player_entity",
+              "query": "xertioN 在 Dust2 的闪光与投掷物",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_match_2396949_nuke",
+              "category": "match_filter",
+              "query": "Match 2396949 Nuke opening duel",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_match_2396948_cache",
+              "category": "match_filter",
+              "query": "Match 2396948 Cache utility usage",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_match_2396945_inferno",
+              "category": "match_filter",
+              "query": "Match 2396945 Inferno round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_match_2396610_anubis",
+              "category": "match_filter",
+              "query": "Match 2396610 Anubis overview",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_match_2396608_dust2",
+              "category": "match_filter",
+              "query": "Match 2396608 Dust2 first contact",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "h_para_nuke_round",
+              "category": "paraphrase",
+              "query": "核子危机里安包后防守方怎样重夺区域",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_para_inferno_opening",
+              "category": "paraphrase",
+              "query": "炼狱小镇谁先取得人数优势",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_para_mirage_utility",
+              "category": "paraphrase",
+              "query": "Mirage support grenades before contact",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_para_cache_overview",
+              "category": "paraphrase",
+              "query": "Cache 这批职业比赛的事实摘要",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "h_negative_player_english",
+              "category": "negative",
+              "query": "Show electroNic performance on Nuke",
+              "checks": {
+                "abstained": true
+              }
+            },
+            {
+              "id": "h_negative_team_existing_map",
+              "category": "negative",
+              "query": "NAVI Cache utility rounds",
+              "checks": {
+                "abstained": true
+              }
+            },
+            {
+              "id": "h_negative_cross_domain_match",
+              "category": "negative",
+              "query": "Premier League match possession statistics",
+              "checks": {
+                "abstained": true
+              }
+            }
+          ]
+        },
+        "score": {
+          "earned_points": 149,
+          "total_points": 149,
+          "pct": 100.0
+        }
+      }
+    },
+    "interpretation": "The score measures reproducible engineering behavior. It is not an expert rating of tactical insight or player quality."
+  },
+  "ablation": {
+    "community_only_structured_answers": 0,
+    "community_only_structured_answer_pct": 0.0,
+    "full_graph_structured_answers": 50,
+    "full_graph_structured_answer_pct": 100.0,
+    "interpretation": "Community-only GraphRAG cannot produce contextual team/player contracts; the full graph adds deterministic profiles, citations, and round drilldown."
+  },
+  "tactical": {
+    "dataset_version": "tactical-query-v1",
+    "graph": {
+      "nodes": 48600,
+      "edges": 144098,
+      "matches": 20,
+      "tactical_sequences": 5308,
+      "communities": 28
+    },
+    "summary": {
+      "cases": 30,
+      "passed": 30,
+      "failed": 0,
+      "pass_rate_pct": 100.0,
+      "context_accuracy_pct": 100.0,
+      "numeric_consistency_pct": 100.0,
+      "source_coverage_pct": 100.0,
+      "coach_brief_coverage_pct": 100.0,
+      "round_drilldown_coverage_pct": 100.0,
+      "key_round_filter_coverage_pct": 100.0,
+      "round_contrast_coverage_pct": 100.0,
+      "latency_ms": {
+        "p50": 325.74,
+        "p95": 688.18
+      },
+      "categories": {
+        "comparison": {
+          "passed": 5,
+          "cases": 5
+        },
+        "map_side_slice": {
+          "passed": 10,
+          "cases": 10
+        },
+        "negative": {
+          "passed": 5,
+          "cases": 5
+        },
+        "opponent_slice": {
+          "passed": 5,
+          "cases": 5
+        },
+        "team_profile": {
+          "passed": 5,
+          "cases": 5
+        }
+      }
+    },
+    "cases": [
+      {
+        "id": "team_falcons_overall",
+        "category": "team_profile",
+        "query": "猎鹰最近的整体战术表现如何？",
+        "passed": true,
+        "checks": {
+          "structured_result": true,
+          "coach_brief": true,
+          "coach_sources": true,
+          "coach_caveat": true,
+          "round_drilldown": true,
+          "key_round_filters": true,
+          "round_contrast": true,
+          "context": true,
+          "map": true,
+          "side": true,
+          "team": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "source_coverage": true
+        },
+        "failures": [],
+        "latency_ms": 1246.39,
+        "result_type": "team_tactical_profile",
+        "source_id": "graph-profile:falcons",
+        "coach_brief_kind": "team_profile"
+      },
+      {
+        "id": "team_spirit_overall",
+        "category": "team_profile",
+        "query": "总结绿龙的战术转化表现",
+        "passed": true,
+        "checks": {
+          "structured_result": true,
+          "coach_brief": true,
+          "coach_sources": true,
+          "coach_caveat": true,
+          "round_drilldown": true,
+          "key_round_filters": true,
+          "round_contrast": true,
+          "context": true,
+          "map": true,
+          "side": true,
+          "team": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "source_coverage": true
+        },
+        "failures": [],
+        "latency_ms": 335.99,
+        "result_type": "team_tactical_profile",
+        "source_id": "graph-profile:spirit",
+        "coach_brief_kind": "team_profile"
+      },
+      {
+        "id": "team_vitality_overall",
+        "category": "team_profile",
+        "query": "蜜蜂的首杀、补枪和残局表现怎么样？",
+        "passed": true,
+        "checks": {
+          "structured_result": true,
+          "coach_brief": true,
+          "coach_sources": true,
+          "coach_caveat": true,
+          "round_drilldown": true,
+          "key_round_filters": true,
+          "round_contrast": true,
+          "context": true,
+          "map": true,
+          "side": true,
+          "team": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "source_coverage": true
+        },
+        "failures": [],
+        "latency_ms": 325.74,
+        "result_type": "team_tactical_profile",
+        "source_id": "graph-profile:vitality",
+        "coach_brief_kind": "team_profile"
+      },
+      {
+        "id": "team_furia_overall",
+        "category": "team_profile",
+        "query": "给我黑豹的总体战术画像",
+        "passed": true,
+        "checks": {
+          "structured_result": true,
+          "coach_brief": true,
+          "coach_sources": true,
+          "coach_caveat": true,
+          "round_drilldown": true,
+          "key_round_filters": true,
+          "round_contrast": true,
+          "context": true,
+          "map": true,
+          "side": true,
+          "team": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "source_coverage": true
+        },
+        "failures": [],
+        "latency_ms": 324.73,
+        "result_type": "team_tactical_profile",
+        "source_id": "graph-profile:furia",
+        "coach_brief_kind": "team_profile"
+      },
+      {
+        "id": "team_mouz_overall",
+        "category": "team_profile",
+        "query": "老鼠近期比赛的回合转化率",
+        "passed": true,
+        "checks": {
+          "structured_result": true,
+          "coach_brief": true,
+          "coach_sources": true,
+          "coach_caveat": true,
+          "round_drilldown": true,
+          "key_round_filters": true,
+          "round_contrast": true,
+          "context": true,
+          "map": true,
+          "side": true,
+          "team": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "source_coverage": true
+        },
+        "failures": [],
+        "latency_ms": 322.9,
+        "result_type": "team_tactical_profile",
+        "source_id": "graph-profile:mouz",
+        "coach_brief_kind": "team_profile"
+      },
+      {
+        "id": "falcons_dust2_t",
+        "category": "map_side_slice",
+        "query": "猎鹰 Dust2 T侧首杀后胜率",
+        "passed": true,
+        "checks": {
+          "structured_result": true,
+          "coach_brief": true,
+          "coach_sources": true,
+          "coach_caveat": true,
+          "round_drilldown": true,
+          "key_round_filters": true,
+          "round_contrast": true,
+          "context": true,
+          "map": true,
+          "side": true,
+          "team": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "source_coverage": true
+        },
+        "failures": [],
+        "latency_ms": 351.99,
+        "result_type": "team_tactical_profile",
+        "source_id": "graph-profile:falcons:Dust2:T",
+        "coach_brief_kind": "team_profile"
+      },
+      {
+        "id": "falcons_nuke_ct",
+        "category": "map_side_slice",
+        "query": "Falcons 在 Nuke CT侧的回防表现",
+        "passed": true,
+        "checks": {
+          "structured_result": true,
+          "coach_brief": true,
+          "coach_sources": true,
+          "coach_caveat": true,
+          "round_drilldown": true,
+          "key_round_filters": true,
+          "round_contrast": true,
+          "context": true,
+          "map": true,
+          "side": true,
+          "team": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "source_coverage": true
+        },
+        "failures": [],
+        "latency_ms": 331.54,
+        "result_type": "team_tactical_profile",
+        "source_id": "graph-profile:falcons:Nuke:CT",
+        "coach_brief_kind": "team_profile"
+      },
+      {
+        "id": "spirit_nuke_ct",
+        "category": "map_side_slice",
+        "query": "绿龙 Nuke 防守侧补枪回合胜率",
+        "passed": true,
+        "checks": {
+          "structured_result": true,
+          "coach_brief": true,
+          "coach_sources": true,
+          "coach_caveat": true,
+          "round_drilldown": true,
+          "key_round_filters": true,
+          "round_contrast": true,
+          "context": true,
+          "map": true,
+          "side": true,
+          "team": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "source_coverage": true
+        },
+        "failures": [],
+        "latency_ms": 322.84,
+        "result_type": "team_tactical_profile",
+        "source_id": "graph-profile:spirit:Nuke:CT",
+        "coach_brief_kind": "team_profile"
+      },
+      {
+        "id": "spirit_ancient_t",
+        "category": "map_side_slice",
+        "query": "Spirit Ancient 进攻侧的道具爆发转化",
+        "passed": true,
+        "checks": {
+          "structured_result": true,
+          "coach_brief": true,
+          "coach_sources": true,
+          "coach_caveat": true,
+          "round_drilldown": true,
+          "key_round_filters": true,
+          "round_contrast": true,
+          "context": true,
+          "map": true,
+          "side": true,
+          "team": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "source_coverage": true
+        },
+        "failures": [],
+        "latency_ms": 353.05,
+        "result_type": "team_tactical_profile",
+        "source_id": "graph-profile:spirit:Ancient:T",
+        "coach_brief_kind": "team_profile"
+      },
+      {
+        "id": "vitality_nuke_ct",
+        "category": "map_side_slice",
+        "query": "蜜蜂在 Nuke CT侧丢首杀后的翻盘率",
+        "passed": true,
+        "checks": {
+          "structured_result": true,
+          "coach_brief": true,
+          "coach_sources": true,
+          "coach_caveat": true,
+          "round_drilldown": true,
+          "key_round_filters": true,
+          "round_contrast": true,
+          "context": true,
+          "map": true,
+          "side": true,
+          "team": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "source_coverage": true
+        },
+        "failures": [],
+        "latency_ms": 323.56,
+        "result_type": "team_tactical_profile",
+        "source_id": "graph-profile:vitality:Nuke:CT",
+        "coach_brief_kind": "team_profile"
+      },
+      {
+        "id": "vitality_dust2_t",
+        "category": "map_side_slice",
+        "query": "Vitality Dust2 T side post plant win rate",
+        "passed": true,
+        "checks": {
+          "structured_result": true,
+          "coach_brief": true,
+          "coach_sources": true,
+          "coach_caveat": true,
+          "round_drilldown": true,
+          "key_round_filters": true,
+          "round_contrast": true,
+          "context": true,
+          "map": true,
+          "side": true,
+          "team": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "source_coverage": true
+        },
+        "failures": [],
+        "latency_ms": 325.17,
+        "result_type": "team_tactical_profile",
+        "source_id": "graph-profile:vitality:Dust2:T",
+        "coach_brief_kind": "team_profile"
+      },
+      {
+        "id": "furia_ancient_ct",
+        "category": "map_side_slice",
+        "query": "黑豹 Ancient 防守方的首杀转化",
+        "passed": true,
+        "checks": {
+          "structured_result": true,
+          "coach_brief": true,
+          "coach_sources": true,
+          "coach_caveat": true,
+          "round_drilldown": true,
+          "key_round_filters": true,
+          "round_contrast": true,
+          "context": true,
+          "map": true,
+          "side": true,
+          "team": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "source_coverage": true
+        },
+        "failures": [],
+        "latency_ms": 352.89,
+        "result_type": "team_tactical_profile",
+        "source_id": "graph-profile:furia:Ancient:CT",
+        "coach_brief_kind": "team_profile"
+      },
+      {
+        "id": "furia_cache_t",
+        "category": "map_side_slice",
+        "query": "FURIA Cache 进攻方 execute 回合表现",
+        "passed": true,
+        "checks": {
+          "structured_result": true,
+          "coach_brief": true,
+          "coach_sources": true,
+          "coach_caveat": true,
+          "round_drilldown": true,
+          "key_round_filters": true,
+          "round_contrast": true,
+          "context": true,
+          "map": true,
+          "side": true,
+          "team": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "source_coverage": true
+        },
+        "failures": [],
+        "latency_ms": 328.56,
+        "result_type": "team_tactical_profile",
+        "source_id": "graph-profile:furia:Cache:T",
+        "coach_brief_kind": "team_profile"
+      },
+      {
+        "id": "mouz_dust2_ct",
+        "category": "map_side_slice",
+        "query": "老鼠 Dust2 CT侧的补枪效率",
+        "passed": true,
+        "checks": {
+          "structured_result": true,
+          "coach_brief": true,
+          "coach_sources": true,
+          "coach_caveat": true,
+          "round_drilldown": true,
+          "key_round_filters": true,
+          "round_contrast": true,
+          "context": true,
+          "map": true,
+          "side": true,
+          "team": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "source_coverage": true
+        },
+        "failures": [],
+        "latency_ms": 323.12,
+        "result_type": "team_tactical_profile",
+        "source_id": "graph-profile:mouz:Dust2:CT",
+        "coach_brief_kind": "team_profile"
+      },
+      {
+        "id": "mouz_nuke_t",
+        "category": "map_side_slice",
+        "query": "MOUZ Nuke T侧下包后胜率",
+        "passed": true,
+        "checks": {
+          "structured_result": true,
+          "coach_brief": true,
+          "coach_sources": true,
+          "coach_caveat": true,
+          "round_drilldown": true,
+          "key_round_filters": true,
+          "round_contrast": true,
+          "context": true,
+          "map": true,
+          "side": true,
+          "team": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "source_coverage": true
+        },
+        "failures": [],
+        "latency_ms": 355.19,
+        "result_type": "team_tactical_profile",
+        "source_id": "graph-profile:mouz:Nuke:T",
+        "coach_brief_kind": "team_profile"
+      },
+      {
+        "id": "falcons_vs_spirit",
+        "category": "opponent_slice",
+        "query": "猎鹰面对绿龙时的回合转化表现",
+        "passed": true,
+        "checks": {
+          "structured_result": true,
+          "coach_brief": true,
+          "coach_sources": true,
+          "coach_caveat": true,
+          "round_drilldown": true,
+          "key_round_filters": true,
+          "round_contrast": true,
+          "context": true,
+          "map": true,
+          "side": true,
+          "team": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "source_coverage": true
+        },
+        "failures": [],
+        "latency_ms": 324.05,
+        "result_type": "team_tactical_profile",
+        "source_id": "graph-profile:falcons:spirit",
+        "coach_brief_kind": "team_profile"
+      },
+      {
+        "id": "spirit_vs_vitality",
+        "category": "opponent_slice",
+        "query": "Spirit 对阵 Vitality 的首杀后胜率",
+        "passed": true,
+        "checks": {
+          "structured_result": true,
+          "coach_brief": true,
+          "coach_sources": true,
+          "coach_caveat": true,
+          "round_drilldown": true,
+          "key_round_filters": true,
+          "round_contrast": true,
+          "context": true,
+          "map": true,
+          "side": true,
+          "team": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "source_coverage": true
+        },
+        "failures": [],
+        "latency_ms": 324.28,
+        "result_type": "team_tactical_profile",
+        "source_id": "graph-profile:spirit:vitality",
+        "coach_brief_kind": "team_profile"
+      },
+      {
+        "id": "vitality_vs_furia",
+        "category": "opponent_slice",
+        "query": "蜜蜂面对黑豹时的补枪回合表现",
+        "passed": true,
+        "checks": {
+          "structured_result": true,
+          "coach_brief": true,
+          "coach_sources": true,
+          "coach_caveat": true,
+          "round_drilldown": true,
+          "key_round_filters": true,
+          "round_contrast": true,
+          "context": true,
+          "map": true,
+          "side": true,
+          "team": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "source_coverage": true
+        },
+        "failures": [],
+        "latency_ms": 358.97,
+        "result_type": "team_tactical_profile",
+        "source_id": "graph-profile:vitality:furia",
+        "coach_brief_kind": "team_profile"
+      },
+      {
+        "id": "furia_vs_spirit",
+        "category": "opponent_slice",
+        "query": "FURIA 打 Spirit 时的回防接触胜率",
+        "passed": true,
+        "checks": {
+          "structured_result": true,
+          "coach_brief": true,
+          "coach_sources": true,
+          "coach_caveat": true,
+          "round_drilldown": true,
+          "key_round_filters": true,
+          "round_contrast": true,
+          "context": true,
+          "map": true,
+          "side": true,
+          "team": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "source_coverage": true
+        },
+        "failures": [],
+        "latency_ms": 325.08,
+        "result_type": "team_tactical_profile",
+        "source_id": "graph-profile:furia:spirit",
+        "coach_brief_kind": "team_profile"
+      },
+      {
+        "id": "mouz_vs_falcons",
+        "category": "opponent_slice",
+        "query": "老鼠对猎鹰的整体战术表现",
+        "passed": true,
+        "checks": {
+          "structured_result": true,
+          "coach_brief": true,
+          "coach_sources": true,
+          "coach_caveat": true,
+          "round_drilldown": true,
+          "key_round_filters": true,
+          "round_contrast": true,
+          "context": true,
+          "map": true,
+          "side": true,
+          "team": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "source_coverage": true
+        },
+        "failures": [],
+        "latency_ms": 323.68,
+        "result_type": "team_tactical_profile",
+        "source_id": "graph-profile:mouz:falcons",
+        "coach_brief_kind": "team_profile"
+      },
+      {
+        "id": "compare_spirit_vitality_nuke_ct",
+        "category": "comparison",
+        "query": "对比 Spirit 和 Vitality 在 Nuke CT侧的补枪回合",
+        "passed": true,
+        "checks": {
+          "structured_result": true,
+          "coach_brief": true,
+          "coach_sources": true,
+          "coach_caveat": true,
+          "round_drilldown": true,
+          "key_round_filters": true,
+          "round_contrast": true,
+          "context": true,
+          "map": true,
+          "side": true,
+          "teams": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "source_coverage": true
+        },
+        "failures": [],
+        "latency_ms": 688.18,
+        "result_type": "team_tactical_comparison",
+        "source_id": "graph-comparison:spirit:vitality",
+        "coach_brief_kind": "comparison"
+      },
+      {
+        "id": "compare_falcons_mouz_dust2_t",
+        "category": "comparison",
+        "query": "比较猎鹰与老鼠在 Dust2 T侧的首杀转化",
+        "passed": true,
+        "checks": {
+          "structured_result": true,
+          "coach_brief": true,
+          "coach_sources": true,
+          "coach_caveat": true,
+          "round_drilldown": true,
+          "key_round_filters": true,
+          "round_contrast": true,
+          "context": true,
+          "map": true,
+          "side": true,
+          "teams": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "source_coverage": true
+        },
+        "failures": [],
+        "latency_ms": 642.3,
+        "result_type": "team_tactical_comparison",
+        "source_id": "graph-comparison:falcons:mouz",
+        "coach_brief_kind": "comparison"
+      },
+      {
+        "id": "compare_furia_vitality_nuke_ct",
+        "category": "comparison",
+        "query": "FURIA 和 Vitality 在 Nuke CT side 的回防表现有什么差异？",
+        "passed": true,
+        "checks": {
+          "structured_result": true,
+          "coach_brief": true,
+          "coach_sources": true,
+          "coach_caveat": true,
+          "round_drilldown": true,
+          "key_round_filters": true,
+          "round_contrast": true,
+          "context": true,
+          "map": true,
+          "side": true,
+          "teams": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "source_coverage": true
+        },
+        "failures": [],
+        "latency_ms": 665.54,
+        "result_type": "team_tactical_comparison",
+        "source_id": "graph-comparison:furia:vitality",
+        "coach_brief_kind": "comparison"
+      },
+      {
+        "id": "compare_spirit_furia_ancient",
+        "category": "comparison",
+        "query": "对比绿龙和黑豹在 Ancient 的整体胜率",
+        "passed": true,
+        "checks": {
+          "structured_result": true,
+          "coach_brief": true,
+          "coach_sources": true,
+          "coach_caveat": true,
+          "round_drilldown": true,
+          "key_round_filters": true,
+          "round_contrast": true,
+          "context": true,
+          "map": true,
+          "side": true,
+          "teams": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "source_coverage": true
+        },
+        "failures": [],
+        "latency_ms": 671.36,
+        "result_type": "team_tactical_comparison",
+        "source_id": "graph-comparison:spirit:furia",
+        "coach_brief_kind": "comparison"
+      },
+      {
+        "id": "compare_falcons_vitality_all",
+        "category": "comparison",
+        "query": "比较 Falcons 与 Vitality 的战术转化区别",
+        "passed": true,
+        "checks": {
+          "structured_result": true,
+          "coach_brief": true,
+          "coach_sources": true,
+          "coach_caveat": true,
+          "round_drilldown": true,
+          "key_round_filters": true,
+          "round_contrast": true,
+          "context": true,
+          "map": true,
+          "side": true,
+          "teams": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "source_coverage": true
+        },
+        "failures": [],
+        "latency_ms": 639.36,
+        "result_type": "team_tactical_comparison",
+        "source_id": "graph-comparison:falcons:vitality",
+        "coach_brief_kind": "comparison"
+      },
+      {
+        "id": "negative_unrelated_invoice",
+        "category": "negative",
+        "query": "quantum banana payroll invoice",
+        "passed": true,
+        "checks": {
+          "structured_rejection": true,
+          "coach_rejection": true
+        },
+        "failures": [],
+        "latency_ms": 4.34,
+        "result_type": null,
+        "source_id": null,
+        "coach_brief_kind": null
+      },
+      {
+        "id": "negative_unknown_team",
+        "category": "negative",
+        "query": "Mars Rovers 在 Moonbase 的战术表现",
+        "passed": true,
+        "checks": {
+          "structured_rejection": true,
+          "coach_rejection": true
+        },
+        "failures": [],
+        "latency_ms": 4.09,
+        "result_type": null,
+        "source_id": null,
+        "coach_brief_kind": null
+      },
+      {
+        "id": "negative_map_only",
+        "category": "negative",
+        "query": "Nuke 这张地图有哪些常见区域？",
+        "passed": true,
+        "checks": {
+          "structured_rejection": true,
+          "coach_rejection": true
+        },
+        "failures": [],
+        "latency_ms": 8.1,
+        "result_type": null,
+        "source_id": null,
+        "coach_brief_kind": null
+      },
+      {
+        "id": "negative_player_only",
+        "category": "negative",
+        "query": "m0NESY 最近的个人表现",
+        "passed": true,
+        "checks": {
+          "structured_rejection": true,
+          "coach_rejection": true
+        },
+        "failures": [],
+        "latency_ms": 350.26,
+        "result_type": null,
+        "source_id": null,
+        "coach_brief_kind": null
+      },
+      {
+        "id": "negative_generic_cs2",
+        "category": "negative",
+        "query": "CS2 的经济系统是怎样的？",
+        "passed": true,
+        "checks": {
+          "structured_rejection": true,
+          "coach_rejection": true
+        },
+        "failures": [],
+        "latency_ms": 8.22,
+        "result_type": null,
+        "source_id": null,
+        "coach_brief_kind": null
+      }
+    ],
+    "limitations": [
+      "Silver-standard contract evaluation, not expert tactical ground truth.",
+      "Numeric checks validate query routing against deterministic graph aggregation; they do not prove tactical causality."
+    ]
+  },
+  "player": {
+    "dataset_version": "player-query-v1",
+    "artifact_hashes": {
+      "dataset": "40d33ff54cb3b8e33c3a3ab3207d0a62dea85e595c8da222bdd6c69436d0fb0a",
+      "evaluator": "a0c6b37ffd525b98d297bfebd4f615d949865c26e55fb846b24cb0817d3f560a",
+      "graph_service": "97b4078be06a4168d44ad6131c64eb23032e8bd68f9f4a502fa9efd9eb2218e6"
+    },
+    "summary": {
+      "cases": 20,
+      "passed": 20,
+      "failed": 0,
+      "pass_rate_pct": 100.0,
+      "context_accuracy_pct": 100.0,
+      "numeric_consistency_pct": 100.0,
+      "source_coverage_pct": 100.0,
+      "round_drilldown_coverage_pct": 100.0,
+      "latency_ms": {
+        "p50": 352.48,
+        "p95": 708.62
+      }
+    },
+    "cases": [
+      {
+        "id": "m0nesy_overall",
+        "category": "profile",
+        "query": "分析 m0NESY 的个人表现",
+        "passed": true,
+        "checks": {
+          "context": true,
+          "players": true,
+          "map": true,
+          "side": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "coach_brief": true,
+          "grounded_claims": true,
+          "citation_grounding": true,
+          "requested_behavior": true,
+          "source_coverage": true,
+          "round_drilldown": true
+        },
+        "failures": [],
+        "latency_ms": 1272.64
+      },
+      {
+        "id": "donk_overall",
+        "category": "profile",
+        "query": "donk 最近的选手画像",
+        "passed": true,
+        "checks": {
+          "context": true,
+          "players": true,
+          "map": true,
+          "side": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "coach_brief": true,
+          "grounded_claims": true,
+          "citation_grounding": true,
+          "requested_behavior": true,
+          "source_coverage": true,
+          "round_drilldown": true
+        },
+        "failures": [],
+        "latency_ms": 355.53
+      },
+      {
+        "id": "zywoo_overall",
+        "category": "profile",
+        "query": "ZywOo 的首杀和补枪表现",
+        "passed": true,
+        "checks": {
+          "context": true,
+          "players": true,
+          "map": true,
+          "side": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "coach_brief": true,
+          "grounded_claims": true,
+          "citation_grounding": true,
+          "requested_behavior": true,
+          "source_coverage": true,
+          "round_drilldown": true
+        },
+        "failures": [],
+        "latency_ms": 352.27
+      },
+      {
+        "id": "kscerato_overall",
+        "category": "profile",
+        "query": "KSCERATO 的个人战术参与",
+        "passed": true,
+        "checks": {
+          "context": true,
+          "players": true,
+          "map": true,
+          "side": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "coach_brief": true,
+          "grounded_claims": true,
+          "citation_grounding": true,
+          "requested_behavior": true,
+          "source_coverage": true,
+          "round_drilldown": true
+        },
+        "failures": [],
+        "latency_ms": 352.48
+      },
+      {
+        "id": "torzsi_overall",
+        "category": "profile",
+        "query": "torzsi 最近表现如何",
+        "passed": true,
+        "checks": {
+          "context": true,
+          "players": true,
+          "map": true,
+          "side": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "coach_brief": true,
+          "grounded_claims": true,
+          "citation_grounding": true,
+          "requested_behavior": true,
+          "source_coverage": true,
+          "round_drilldown": true
+        },
+        "failures": [],
+        "latency_ms": 348.75
+      },
+      {
+        "id": "m0nesy_dust2_t",
+        "category": "context",
+        "query": "m0NESY 在 Dust2 T侧的首杀表现",
+        "passed": true,
+        "checks": {
+          "context": true,
+          "players": true,
+          "map": true,
+          "side": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "coach_brief": true,
+          "grounded_claims": true,
+          "citation_grounding": true,
+          "requested_behavior": true,
+          "source_coverage": true,
+          "round_drilldown": true
+        },
+        "failures": [],
+        "latency_ms": 346.33
+      },
+      {
+        "id": "m0nesy_vs_spirit",
+        "category": "opponent",
+        "query": "m0NESY 对阵 Spirit 的表现",
+        "passed": true,
+        "checks": {
+          "context": true,
+          "players": true,
+          "map": true,
+          "side": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "coach_brief": true,
+          "grounded_claims": true,
+          "citation_grounding": true,
+          "requested_behavior": true,
+          "source_coverage": true,
+          "round_drilldown": true
+        },
+        "failures": [],
+        "latency_ms": 664.74
+      },
+      {
+        "id": "donk_ancient_t",
+        "category": "context",
+        "query": "donk Ancient 进攻侧击杀效率",
+        "passed": true,
+        "checks": {
+          "context": true,
+          "players": true,
+          "map": true,
+          "side": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "coach_brief": true,
+          "grounded_claims": true,
+          "citation_grounding": true,
+          "requested_behavior": true,
+          "source_coverage": true,
+          "round_drilldown": true
+        },
+        "failures": [],
+        "latency_ms": 348.86
+      },
+      {
+        "id": "sh1ro_nuke_ct",
+        "category": "context",
+        "query": "sh1ro 在 Nuke 防守侧的表现",
+        "passed": true,
+        "checks": {
+          "context": true,
+          "players": true,
+          "map": true,
+          "side": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "coach_brief": true,
+          "grounded_claims": true,
+          "citation_grounding": true,
+          "requested_behavior": true,
+          "source_coverage": true,
+          "round_drilldown": true
+        },
+        "failures": [],
+        "latency_ms": 351.47
+      },
+      {
+        "id": "zywoo_dust2_t",
+        "category": "context",
+        "query": "ZywOo Dust2 T侧首杀表现",
+        "passed": true,
+        "checks": {
+          "context": true,
+          "players": true,
+          "map": true,
+          "side": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "coach_brief": true,
+          "grounded_claims": true,
+          "citation_grounding": true,
+          "requested_behavior": true,
+          "source_coverage": true,
+          "round_drilldown": true
+        },
+        "failures": [],
+        "latency_ms": 347.38
+      },
+      {
+        "id": "zywoo_vs_furia_dust2_t",
+        "category": "opponent",
+        "query": "ZywOo 对阵 FURIA 时 Dust2 T侧的表现",
+        "passed": true,
+        "checks": {
+          "context": true,
+          "players": true,
+          "map": true,
+          "side": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "coach_brief": true,
+          "grounded_claims": true,
+          "citation_grounding": true,
+          "requested_behavior": true,
+          "source_coverage": true,
+          "round_drilldown": true
+        },
+        "failures": [],
+        "latency_ms": 663.12
+      },
+      {
+        "id": "kscerato_ancient_ct",
+        "category": "context",
+        "query": "KSCERATO Ancient 防守方表现",
+        "passed": true,
+        "checks": {
+          "context": true,
+          "players": true,
+          "map": true,
+          "side": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "coach_brief": true,
+          "grounded_claims": true,
+          "citation_grounding": true,
+          "requested_behavior": true,
+          "source_coverage": true,
+          "round_drilldown": true
+        },
+        "failures": [],
+        "latency_ms": 352.52
+      },
+      {
+        "id": "molodoy_cache_t",
+        "category": "context",
+        "query": "molodoy Cache T side 的表现",
+        "passed": true,
+        "checks": {
+          "context": true,
+          "players": true,
+          "map": true,
+          "side": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "coach_brief": true,
+          "grounded_claims": true,
+          "citation_grounding": true,
+          "requested_behavior": true,
+          "source_coverage": true,
+          "round_drilldown": true
+        },
+        "failures": [],
+        "latency_ms": 347.79
+      },
+      {
+        "id": "torzsi_dust2_ct",
+        "category": "context",
+        "query": "torzsi Dust2 CT侧表现",
+        "passed": true,
+        "checks": {
+          "context": true,
+          "players": true,
+          "map": true,
+          "side": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "coach_brief": true,
+          "grounded_claims": true,
+          "citation_grounding": true,
+          "requested_behavior": true,
+          "source_coverage": true,
+          "round_drilldown": true
+        },
+        "failures": [],
+        "latency_ms": 346.92
+      },
+      {
+        "id": "xertion_nuke_t",
+        "category": "context",
+        "query": "xertioN 在 Nuke 进攻侧表现",
+        "passed": true,
+        "checks": {
+          "context": true,
+          "players": true,
+          "map": true,
+          "side": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "coach_brief": true,
+          "grounded_claims": true,
+          "citation_grounding": true,
+          "requested_behavior": true,
+          "source_coverage": true,
+          "round_drilldown": true
+        },
+        "failures": [],
+        "latency_ms": 348.17
+      },
+      {
+        "id": "compare_m0nesy_niko",
+        "category": "comparison",
+        "query": "对比 m0NESY 和 NiKo 在 Dust2 T侧的表现",
+        "passed": true,
+        "checks": {
+          "context": true,
+          "players": true,
+          "map": true,
+          "side": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "coach_brief": true,
+          "grounded_claims": true,
+          "citation_grounding": true,
+          "requested_behavior": true,
+          "source_coverage": true,
+          "round_drilldown": true
+        },
+        "failures": [],
+        "latency_ms": 683.74
+      },
+      {
+        "id": "compare_donk_sh1ro",
+        "category": "comparison",
+        "query": "比较 donk 与 sh1ro 在 Ancient CT侧的数据",
+        "passed": true,
+        "checks": {
+          "context": true,
+          "players": true,
+          "map": true,
+          "side": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "coach_brief": true,
+          "grounded_claims": true,
+          "citation_grounding": true,
+          "requested_behavior": true,
+          "source_coverage": true,
+          "round_drilldown": true
+        },
+        "failures": [],
+        "latency_ms": 690.75
+      },
+      {
+        "id": "compare_zywoo_flamez",
+        "category": "comparison",
+        "query": "ZywOo 和 flameZ 在 Nuke CT侧有什么差异",
+        "passed": true,
+        "checks": {
+          "context": true,
+          "players": true,
+          "map": true,
+          "side": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "coach_brief": true,
+          "grounded_claims": true,
+          "citation_grounding": true,
+          "requested_behavior": true,
+          "source_coverage": true,
+          "round_drilldown": true
+        },
+        "failures": [],
+        "latency_ms": 682.8
+      },
+      {
+        "id": "compare_kscerato_yuurih",
+        "category": "comparison",
+        "query": "对比 KSCERATO 与 yuurih 在 Ancient T侧表现",
+        "passed": true,
+        "checks": {
+          "context": true,
+          "players": true,
+          "map": true,
+          "side": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "coach_brief": true,
+          "grounded_claims": true,
+          "citation_grounding": true,
+          "requested_behavior": true,
+          "source_coverage": true,
+          "round_drilldown": true
+        },
+        "failures": [],
+        "latency_ms": 684.72
+      },
+      {
+        "id": "compare_torzsi_xertion",
+        "category": "comparison",
+        "query": "比较 torzsi 和 xertioN 在 Dust2 CT侧表现",
+        "passed": true,
+        "checks": {
+          "context": true,
+          "players": true,
+          "map": true,
+          "side": true,
+          "opponent": true,
+          "minimum_sample": true,
+          "numeric_consistency": true,
+          "coach_brief": true,
+          "grounded_claims": true,
+          "citation_grounding": true,
+          "requested_behavior": true,
+          "source_coverage": true,
+          "round_drilldown": true
+        },
+        "failures": [],
+        "latency_ms": 708.62
+      }
+    ],
+    "limitations": [
+      "Deterministic contract evaluation, not an expert rating of player decision quality. Claim grounding checks structured metrics and cohort citations, not independent label correctness."
+    ]
+  },
+  "rebuild_provenance": {
+    "collection": "cs2_tactical_knowledge_identity_v3",
+    "graph_sha256": "28357be25a52d27b80e87a03ffcb2a545132c97d42632138ff60c47d67fc8c2d",
+    "seed_source_sha256": "b4186f4023e68a18fe7763f02f53266a97a8a6af5d66e5b79a3506e75e26392a",
+    "rag_source_sha256": "c2a03ea16614832a69a645c3e96bdf0d55522b749af12da70d14096ba77d64b3",
+    "remote_model_calls": 0,
+    "scope": "Previously observed development/holdout queries; engineering regression, not unseen generalization."
+  }
+}

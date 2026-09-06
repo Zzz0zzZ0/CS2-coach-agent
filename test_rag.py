@@ -141,3 +141,9 @@ def test_retrieval_dataset_has_fixed_coverage_and_unique_ids():
     holdout = load_cases(Path("datasets/evaluation/retrieval_queries_holdout_v1.json"))
     assert len(holdout) == 30
     assert {case["id"] for case in cases}.isdisjoint(case["id"] for case in holdout)
+
+
+def test_chinese_utility_query_matches_plural_round_document_vocabulary():
+    store = FakeVectorStore()
+    asyncio.run(KnowledgeBaseClient(store, llm=None).retrieve('Ancient 道具协同'))
+    assert any('grenade' in query.split() and 'grenades' in query.split() for query, _, _ in store.calls)

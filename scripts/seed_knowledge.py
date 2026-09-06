@@ -123,8 +123,10 @@ def _round_content(map_name: str, round_data: dict) -> str:
         f"{_text(plant.get('planter'))} at {_text(plant.get('site'))}" for plant in plants
     )
 
+    teams = sorted({p["team"] for p in round_data.get("participants", []) if p.get("team")})
+    team_context = f" Teams: {', '.join(teams)}." if teams else ""
     sections = [
-        f"[Professional Demo Evidence | {map_name} | Round {round_number}]",
+        f"[Professional Demo Evidence | {map_name} | Round {round_number}]{team_context}",
         f"Round winner: {winner}. End reason: {reason}.",
         f"Kills ({len(kills)}): " + ("; ".join(kill_lines) if kill_lines else "none recorded."),
         f"Grenades ({len(grenades)}): " + (grenade_text or "none recorded."),

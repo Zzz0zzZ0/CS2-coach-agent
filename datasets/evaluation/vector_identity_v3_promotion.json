@@ -1,0 +1,13 @@
+{
+  "created_at": "2026-09-06T18:36:42.330448+00:00",
+  "live_collection": "cs2_tactical_knowledge",
+  "backup_collection": "cs2_tactical_knowledge_before_identity_v3",
+  "original_knife_data_backup": "cs2_tactical_knowledge_before_rebuild_v2",
+  "content_sha256": "d76ed468f33ef065420f641373f4d8f99219fc0e13e1a271e0ee1100703a36ed",
+  "graph_sha256": "28357be25a52d27b80e87a03ffcb2a545132c97d42632138ff60c47d67fc8c2d",
+  "count": 1117,
+  "passed": true,
+  "remote_model_calls": 0,
+  "seed_source_sha256": "b4186f4023e68a18fe7763f02f53266a97a8a6af5d66e5b79a3506e75e26392a",
+  "rag_source_sha256": "c2a03ea16614832a69a645c3e96bdf0d55522b749af12da70d14096ba77d64b3"
+}

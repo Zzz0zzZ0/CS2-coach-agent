@@ -14,7 +14,7 @@
 
 </div>
 
-The historical data rebuild is live: 20 series, 49 maps and 1,019 regulation/overtime rounds, with four pre-match knife rounds removed. Graph and Milvus evidence, all 56 player profiles and 5,308 silver labels agree; 152 offline tests pass. Old snapshots remain available for rollback. The corrected 16-query retrieval experiment uses AI-assisted development labels, not independent human gold or unseen generalization evidence. See [rebuild and refreeze](docs/HISTORICAL_DATA_REBUILD_V2.md).
+The historical data rebuild is live: 20 series, 49 maps and 1,019 regulation/overtime rounds, with four pre-match knife rounds removed. Graph and Milvus evidence, all 56 player profiles and 5,308 silver labels agree; 154 offline tests pass. Production retrieval after the evidence-identity fix passes 50/50 development queries in Vector, Graph and Hybrid modes; the previously observed holdout scores are 28/30, 30/30 and 30/30. See [regression repair](docs/VECTOR_EVIDENCE_IDENTITY_V3.md). Old snapshots remain available for rollback. The corrected 16-query retrieval experiment uses AI-assisted development labels, not independent human gold or unseen generalization evidence. See [rebuild and refreeze](docs/HISTORICAL_DATA_REBUILD_V2.md).
 
 The evaluation tools now include 160 unscored same-corpus retrieval runs and a complete unseen-series pipeline pilot (2 maps, 44 rounds, all checks passed). The offline suite has 140 passing tests. Independent relevance labels and broader research validation remain pending. See [retrieval experiment](docs/FAIR_RETRIEVAL_RUN.md) and [unseen-series pilot](docs/UNSEEN_MATCH_PILOT.md).
 

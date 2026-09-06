@@ -1,5 +1,7 @@
 # 历史数据重建与重新冻结 v2
 
+后续更新：纯 Vector 的新增回归已完成 [正文实体与中文道具词形修复](VECTOR_EVIDENCE_IDENTITY_V3.md)，开发集恢复 50/50。下文 v2 数据修复与首次 49/50 的数字保留，便于复现。当前图谱仍为本轮 1,019 回合版本，Milvus 已进一步切换至补充战队正文的版本。
+
 2026-09-07。原有 20 场、49 图保持不变，修正四张地图中被误当作正式回合的赛前刀局。SQLite 图谱与 Milvus 检索集合已完成候选构建、验收和切换；原有 8001 / 5173 服务未被停止。新增比赛继续隔离，不进入历史库。
 
 | 项目 | 修正前 | 修正后 |
@@ -75,7 +77,7 @@ PYTHON_DOTENV_DISABLED=1 HF_HUB_OFFLINE=1 .venv/bin/python -m scripts.seed_knowl
   --output data/evaluation/reproduction/graph_audit.json
 PYTHON_DOTENV_DISABLED=1 .venv/bin/python -m scripts.audit_vector_rebuild \
   --graph data/evaluation/reproduction/graph.sqlite \
-  --documents data/evaluation/historical_rebuild_v2/vector_documents.jsonl \
+  --documents data/evaluation/historical_rebuild_v2/vector_identity_documents.jsonl \
   --collection cs2_tactical_knowledge_reproduction \
   --output data/evaluation/reproduction/vector_audit.json
 make silver-dataset ARGS="--output-dir data/evaluation/reproduction/silver"

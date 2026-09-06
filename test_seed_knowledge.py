@@ -25,3 +25,12 @@ def test_staging_collection_collision_never_drops_or_embeds(monkeypatch):
     monkeypatch.setattr(seed, 'get_embeddings', lambda: pytest.fail('Collision must fail before embedding'))
     with pytest.raises(ValueError, match='Staging collection already exists'):
         seed.seed_milvus_db([], collection_name='existing_staging')
+
+
+def test_round_document_contains_its_roster_teams_without_parent_context():
+    from scripts.seed_knowledge import _round_content
+    text = _round_content('Ancient', {'round_number':1,'winner':'T','participants':[
+        {'name':'a','team':'Alpha','side':'T'}, {'name':'b','team':'Bravo','side':'CT'},
+        {'name':'c','team':'Alpha','side':'T'}], 'grenades':[{'type':'SmokeGrenade'}]})
+    assert 'Teams: Alpha, Bravo.' in text
+    assert 'Grenades (1)' in text

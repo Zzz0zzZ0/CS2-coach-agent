@@ -1,0 +1,21 @@
+{
+  "before_documents_sha256": "a2abee62e0f726d47a70c6147cec80130316221965a71d134412dffbdda5b58a",
+  "after_documents_sha256": "55aac84e793cff2e1f30fd48bf29a51c0775c491c23754474846456d2140de59",
+  "changed_round_documents": 1019,
+  "total_documents": 1117,
+  "metadata_unchanged": true,
+  "event_text_unchanged": true,
+  "query_probe": {
+    "original": false,
+    "teams_only": false,
+    "plural_only": false,
+    "teams_and_plural": true
+  },
+  "source_sha256": {
+    "scripts/seed_knowledge.py": "b4186f4023e68a18fe7763f02f53266a97a8a6af5d66e5b79a3506e75e26392a",
+    "app/services/rag_service.py": "c2a03ea16614832a69a645c3e96bdf0d55522b749af12da70d14096ba77d64b3"
+  },
+  "remote_model_calls": 0,
+  "independent_human_review": false,
+  "scope": "Development regression; controlled query probes and exact document comparison"
+}

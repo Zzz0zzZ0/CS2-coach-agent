@@ -38,6 +38,7 @@ def audit(graph, documents, collection):
     exact=actual_lines==canonical(expected)
     return {'version':'vector-rebuild-v2','collection':collection,'graph_sha256':digest(graph),
             'documents_sha256':digest(documents),'audit_source_sha256':digest(__file__),
+            'document_renderer_sha256':digest(Path(__file__).with_name('seed_knowledge.py')),
             'content_sha256':hashlib.sha256('\n'.join(actual_lines).encode()).hexdigest(),
             'count':count,'types':dict(Counter(r['tactic_type'] for r in actual)),
             'exact_document_match':exact,'graph_round_keys_match':set(round_docs)==keys,
