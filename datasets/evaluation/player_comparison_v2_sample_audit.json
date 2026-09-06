@@ -1,0 +1,437 @@
+{
+  "created_at": "2026-09-06T12:07:41.456953+00:00",
+  "scope": "historical graph engineering regression; no remote LLM calls",
+  "implementation_sha256": "1ba1c1a4fc09bde7bc743c9a3809116a691a6496327a62b243fa467d3aeb5cc7",
+  "graph_sha256": "6128fa1036a19ad661a9277a338b65fe662c149d3e5c85a2f75ff1d2325b0aab",
+  "graph_unchanged": true,
+  "players": 56,
+  "passed": 56,
+  "checks": [
+    {
+      "player": "donk",
+      "rounds": 339,
+      "passed": true
+    },
+    {
+      "player": "tN1R",
+      "rounds": 339,
+      "passed": true
+    },
+    {
+      "player": "sh1ro",
+      "rounds": 339,
+      "passed": true
+    },
+    {
+      "player": "zont1x",
+      "rounds": 339,
+      "passed": true
+    },
+    {
+      "player": "magixx",
+      "rounds": 339,
+      "passed": true
+    },
+    {
+      "player": "try",
+      "rounds": 287,
+      "passed": true
+    },
+    {
+      "player": "dumau",
+      "rounds": 287,
+      "passed": true
+    },
+    {
+      "player": "latto",
+      "rounds": 287,
+      "passed": true
+    },
+    {
+      "player": "n1ssim",
+      "rounds": 287,
+      "passed": true
+    },
+    {
+      "player": "arT",
+      "rounds": 287,
+      "passed": true
+    },
+    {
+      "player": "ZywOo",
+      "rounds": 280,
+      "passed": true
+    },
+    {
+      "player": "flameZ",
+      "rounds": 280,
+      "passed": true
+    },
+    {
+      "player": "ropz",
+      "rounds": 280,
+      "passed": true
+    },
+    {
+      "player": "apEX",
+      "rounds": 280,
+      "passed": true
+    },
+    {
+      "player": "molodoy",
+      "rounds": 251,
+      "passed": true
+    },
+    {
+      "player": "YEKINDAR",
+      "rounds": 251,
+      "passed": true
+    },
+    {
+      "player": "KSCERATO",
+      "rounds": 251,
+      "passed": true
+    },
+    {
+      "player": "yuurih",
+      "rounds": 251,
+      "passed": true
+    },
+    {
+      "player": "FalleN",
+      "rounds": 251,
+      "passed": true
+    },
+    {
+      "player": "m0NESY",
+      "rounds": 246,
+      "passed": true
+    },
+    {
+      "player": "kyousuke",
+      "rounds": 246,
+      "passed": true
+    },
+    {
+      "player": "NiKo",
+      "rounds": 246,
+      "passed": true
+    },
+    {
+      "player": "TeSeS",
+      "rounds": 246,
+      "passed": true
+    },
+    {
+      "player": "karrigan",
+      "rounds": 246,
+      "passed": true
+    },
+    {
+      "player": "jL",
+      "rounds": 210,
+      "passed": true
+    },
+    {
+      "player": "torzsi",
+      "rounds": 179,
+      "passed": true
+    },
+    {
+      "player": "xelex",
+      "rounds": 179,
+      "passed": true
+    },
+    {
+      "player": "xertioN",
+      "rounds": 179,
+      "passed": true
+    },
+    {
+      "player": "Spinx",
+      "rounds": 179,
+      "passed": true
+    },
+    {
+      "player": "PR",
+      "rounds": 179,
+      "passed": true
+    },
+    {
+      "player": "dem0n",
+      "rounds": 188,
+      "passed": true
+    },
+    {
+      "player": "Krabeni",
+      "rounds": 188,
+      "passed": true
+    },
+    {
+      "player": "dziugss",
+      "rounds": 188,
+      "passed": true
+    },
+    {
+      "player": "xfl0ud",
+      "rounds": 188,
+      "passed": true
+    },
+    {
+      "player": "cmtry",
+      "rounds": 188,
+      "passed": true
+    },
+    {
+      "player": "MATYS",
+      "rounds": 131,
+      "passed": true
+    },
+    {
+      "player": "NertZ",
+      "rounds": 131,
+      "passed": true
+    },
+    {
+      "player": "r1nkle",
+      "rounds": 131,
+      "passed": true
+    },
+    {
+      "player": "HeavyGod",
+      "rounds": 131,
+      "passed": true
+    },
+    {
+      "player": "huNter-",
+      "rounds": 131,
+      "passed": true
+    },
+    {
+      "player": "dgt",
+      "rounds": 71,
+      "passed": true
+    },
+    {
+      "player": "luchov",
+      "rounds": 71,
+      "passed": true
+    },
+    {
+      "player": "HUASOPEEK",
+      "rounds": 71,
+      "passed": true
+    },
+    {
+      "player": "meyern",
+      "rounds": 71,
+      "passed": true
+    },
+    {
+      "player": "max",
+      "rounds": 71,
+      "passed": true
+    },
+    {
+      "player": "mezii",
+      "rounds": 70,
+      "passed": true
+    },
+    {
+      "player": "Jame",
+      "rounds": 40,
+      "passed": true
+    },
+    {
+      "player": "FL1T",
+      "rounds": 40,
+      "passed": true
+    },
+    {
+      "player": "zweih",
+      "rounds": 40,
+      "passed": true
+    },
+    {
+      "player": "slaxejezzz",
+      "rounds": 40,
+      "passed": true
+    },
+    {
+      "player": "xiELO",
+      "rounds": 40,
+      "passed": true
+    },
+    {
+      "player": "piriajr",
+      "rounds": 34,
+      "passed": true
+    },
+    {
+      "player": "snow",
+      "rounds": 34,
+      "passed": true
+    },
+    {
+      "player": "saffee",
+      "rounds": 34,
+      "passed": true
+    },
+    {
+      "player": "biguzera",
+      "rounds": 34,
+      "passed": true
+    },
+    {
+      "player": "V$M",
+      "rounds": 34,
+      "passed": true
+    }
+  ],
+  "scenarios": [
+    {
+      "players": [
+        "NiKo",
+        "donk"
+      ],
+      "sample_sizes": [
+        {
+          "matches": 5,
+          "maps": 12,
+          "rounds": 246
+        },
+        {
+          "matches": 6,
+          "maps": 15,
+          "rounds": 339
+        }
+      ],
+      "comparison": {
+        "status": "descriptive",
+        "filters": {
+          "map": null,
+          "side": null,
+          "opponent": null
+        },
+        "shared_match_ids": [
+          "2396949"
+        ],
+        "shared_participation_rounds": 45,
+        "shared_condition_count": 6,
+        "common_condition_coverage": [
+          {
+            "player_id": "76561198041683378",
+            "rounds": 88,
+            "pct": 35.77
+          },
+          {
+            "player_id": "76561198386265483",
+            "rounds": 61,
+            "pct": 17.99
+          }
+        ],
+        "warnings": [
+          "双方参赛回合数不同；每百回合归一化只调整样本量。",
+          "双方地图、阵营、对手的样本占比不同；指标尚未按共同条件重加权。",
+          "比赛日期尚未收录；这些描述性差异不能作为能力排名或统计显著性结论。"
+        ]
+      }
+    },
+    {
+      "players": [
+        "NiKo",
+        "m0NESY"
+      ],
+      "sample_sizes": [
+        {
+          "matches": 5,
+          "maps": 12,
+          "rounds": 246
+        },
+        {
+          "matches": 5,
+          "maps": 12,
+          "rounds": 246
+        }
+      ],
+      "comparison": {
+        "status": "descriptive",
+        "filters": {
+          "map": null,
+          "side": null,
+          "opponent": null
+        },
+        "shared_match_ids": [
+          "2396609",
+          "2396938",
+          "2396945",
+          "2396947",
+          "2396949"
+        ],
+        "shared_participation_rounds": 246,
+        "shared_condition_count": 20,
+        "common_condition_coverage": [
+          {
+            "player_id": "76561198041683378",
+            "rounds": 246,
+            "pct": 100.0
+          },
+          {
+            "player_id": "76561198074762801",
+            "rounds": 246,
+            "pct": 100.0
+          }
+        ],
+        "warnings": [
+          "比赛日期尚未收录；这些描述性差异不能作为能力排名或统计显著性结论。"
+        ]
+      }
+    },
+    {
+      "players": [
+        "NiKo",
+        "donk"
+      ],
+      "sample_sizes": [
+        {
+          "matches": 1,
+          "maps": 2,
+          "rounds": 45
+        },
+        {
+          "matches": 0,
+          "maps": 0,
+          "rounds": 0
+        }
+      ],
+      "comparison": {
+        "status": "no_sample",
+        "filters": {
+          "map": null,
+          "side": null,
+          "opponent": "Spirit"
+        },
+        "shared_match_ids": [],
+        "shared_participation_rounds": 0,
+        "shared_condition_count": 0,
+        "common_condition_coverage": [
+          {
+            "player_id": "76561198041683378",
+            "rounds": 0,
+            "pct": 0.0
+          },
+          {
+            "player_id": "76561198386265483",
+            "rounds": 0,
+            "pct": null
+          }
+        ],
+        "warnings": [
+          "至少一方没有符合筛选的参赛样本，不能解释为表现为零。",
+          "双方参赛回合数不同；每百回合归一化只调整样本量。",
+          "比赛日期尚未收录；这些描述性差异不能作为能力排名或统计显著性结论。"
+        ]
+      }
+    }
+  ]
+}

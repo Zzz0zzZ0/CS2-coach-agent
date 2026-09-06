@@ -645,13 +645,22 @@ class GraphRAGClient:
                 name for key in available_rounds for name in contexts[key]["teams"]
                 if _team_key(name) != _team_key(contexts[key]["player_team"])
             })
+            composition = Counter()
+            for key in selected_rounds:
+                context = contexts[key]
+                opponents = tuple(sorted({_team_name(name) for name in context["teams"]
+                                          if _team_key(name) != _team_key(context["player_team"])}))
+                composition[(key[1], context["player_side"] or "Unknown", opponents)] += 1
             return {
                 "player_id": base["player_id"], "graph_id": graph_id,
                 "name": base["name"], "team": next(iter(selected_teams)) if len(selected_teams) == 1 else "Multiple teams" if selected_teams else team,
                 "teams": [{"team": name, "rounds": count} for name, count in sorted(selected_teams.items())],
                 "data_quality": _player_data_quality(selected_rounds, roster_rounds),
                 "sample_scope": {"match_ids": sorted({key[0] for key in selected_rounds}),
-                                 "date_range": None, "date_status": "not_recorded"},
+                                 "date_range": None, "date_status": "not_recorded",
+                                 "participation_round_ids": sorted(f"graph:{m}:{mp}:{r}" for m, mp, r in selected_rounds),
+                                 "composition": [{"map": mp, "side": side, "opponents": list(opponents), "rounds": count}
+                                                 for (mp, side, opponents), count in sorted(composition.items())]},
                 "filters": {"map": requested_map, "side": requested_side, "opponent": _team_name(opponent) if opponent else None},
                 "available_filters": {"maps": available_maps, "sides": ["T", "CT"], "opponents": available_opponents},
                 "sample_size": {"matches": len({key[0] for key in selected_rounds}), "maps": len({key[:2] for key in selected_rounds}), "rounds": rounds},
@@ -667,14 +676,52 @@ class GraphRAGClient:
                     )
                 ],
                 "source_round_ids": sorted(set().union(*source_groups.values()))[:12] if source_groups else [],
-                "methodology": {"version": "graph-player-context-v2", "rounds": "freeze-end rosters; legacy estimates explicitly marked", "scope": "parsed events and deterministic silver labels"},
+                "methodology": {"version": "graph-player-context-v3", "rounds": "freeze-end rosters; legacy estimates explicitly marked", "scope": "parsed events and deterministic silver labels"},
             }
         finally:
             connection.close()
 
     def compare_players(self, player_ids: list[str], **filters) -> dict:
         profiles = [self.player_context(player_id, **filters) for player_id in player_ids[:2]]
-        return {"players": [profile for profile in profiles if profile], "methodology": "same-context-per-100-rounds-v1"}
+        profiles = [profile for profile in profiles if profile]
+        return {"players": profiles, "sample_comparison": self._compare_player_samples(profiles),
+                "methodology": "shared-filters-descriptive-v2"}
+
+    @staticmethod
+    def _compare_player_samples(profiles: list[dict]) -> dict | None:
+        if len(profiles) != 2:
+            return None
+        left, right = profiles
+        counts = [profile["sample_size"]["rounds"] for profile in profiles]
+        strata = [{(row["map"], row["side"], tuple(row["opponents"])): row["rounds"]
+                   for row in profile["sample_scope"]["composition"]} for profile in profiles]
+        shared = strata[0].keys() & strata[1].keys()
+        shared_counts = [sum(rows[key] for key in shared) for rows in strata]
+        warnings = []
+        if not all(counts):
+            warnings.append("至少一方没有符合筛选的参赛样本，不能解释为表现为零。")
+        if counts[0] != counts[1]:
+            warnings.append("双方参赛回合数不同；每百回合归一化只调整样本量。")
+        if not shared and all(counts):
+            warnings.append("双方没有共同的地图、阵营、对手组合，汇总指标不构成同条件比较。")
+        elif all(counts) and any(strata[0].get(key, 0) * counts[1] != strata[1].get(key, 0) * counts[0]
+                                 for key in strata[0].keys() | strata[1].keys()):
+            warnings.append("双方地图、阵营、对手的样本占比不同；指标尚未按共同条件重加权。")
+        if any(profile["data_quality"]["estimated_rounds"] for profile in profiles):
+            warnings.append("部分参赛回合使用旧数据估算，需先核实名单覆盖。")
+        warnings.append("比赛日期尚未收录；这些描述性差异不能作为能力排名或统计显著性结论。")
+        return {
+            "status": "no_sample" if not all(counts) else "descriptive",
+            "filters": left["filters"],
+            "shared_match_ids": sorted(set(left["sample_scope"]["match_ids"]) & set(right["sample_scope"]["match_ids"])),
+            "shared_participation_rounds": len(set(left["sample_scope"]["participation_round_ids"]) &
+                                               set(right["sample_scope"]["participation_round_ids"])),
+            "shared_condition_count": len(shared),
+            "common_condition_coverage": [{"player_id": profile["player_id"], "rounds": count,
+                                            "pct": _pct(count, total)}
+                                           for profile, count, total in zip(profiles, shared_counts, counts)],
+            "warnings": warnings,
+        }
 
     def compare_teams(self, team_names: list[str]) -> dict:
         """Compare tactical label frequencies using team-round denominators."""
@@ -2194,10 +2241,20 @@ class GraphRAGClient:
             (team for team in tactical_context["teams"] if _team_key(team) != _team_key(players[0]["team"])),
             None,
         )
+        if comparison:
+            opponent = None
+            qualified = re.search(r"(?:对阵|对手(?:为|是)?|\bagainst\b|\bversus\b|\bvs\b\.?)\s*[:：]?\s*(.+)", lowered)
+            if qualified:
+                target = qualified.group(1)
+                opponent = next(iter(self._tactical_query_context(target, None)["teams"]), None)
+                # "A vs B" may name the second player, but an unknown opponent must not broaden scope.
+                if not opponent and not any(re.search(rf"(?<![a-z0-9]){re.escape(item['name'].lower())}(?![a-z0-9])", target)
+                                            for item in players):
+                    return []
         profiles = [
             self.player_context(
                 item["player_id"], map_name=tactical_context["map"],
-                side=tactical_context["side"], opponent=None if comparison else opponent,
+                side=tactical_context["side"], opponent=opponent,
             )
             for item in players if comparison or item is players[0]
         ]
@@ -2212,15 +2269,18 @@ class GraphRAGClient:
             f"kills/100 {profile['rates_per_100_rounds']['kills']}, trades/100 {profile['rates_per_100_rounds']['trade_kills']}"
             for profile in profiles
         ]
+        sample_comparison = self._compare_player_samples(profiles) if comparison else None
+        sample_note = " ".join(sample_comparison["warnings"]) if sample_comparison else ""
         sources = sorted({source for profile in profiles for source in profile["source_round_ids"]})
         return [Evidence(
-            content=f"[Graph Player Analysis] {'; '.join(lines)}. Descriptive parsed-event evidence only. Graph source paths: {', '.join(sources)}.",
+            content=f"[Graph Player Analysis] {'; '.join(lines)}. Descriptive parsed-event evidence only. {sample_note} Graph source paths: {', '.join(sources)}.",
             metadata={
                 "context_level": level,
                 "map": tactical_context["map"] or "All",
                 "side": tactical_context["side"] or "Both",
                 "opponent": opponent,
                 "profiles": profiles,
+                "sample_comparison": sample_comparison,
                 "tactic_type": "Graph Player Analysis",
                 "source_round_ids": sources,
             },
@@ -2276,7 +2336,8 @@ class GraphRAGClient:
                 f"首杀胜率 {_zh_pct(profile['combat']['opening_duel_win_pct'])}，每百回合击杀 {profile['rates_per_100_rounds']['kills']:.1f}。"
                 for profile in profiles
             ]
-            actions = ["只在相同地图、阵营和对手条件下比较选手，并下钻引用回合检查其实际角色差异。"]
+            findings.extend((metadata.get("sample_comparison") or {}).get("warnings", []))
+            actions = ["检查双方样本组成，再限定地图、阵营与对手，并下钻引用回合检查实际角色差异。"]
             kind = "player_comparison"
             title = f"{profiles[0]['name']} vs {profiles[1]['name']} · {context}"
         else:
@@ -2301,13 +2362,13 @@ class GraphRAGClient:
             title = f"{profile['name']} · {profile['team']} · {context}"
         return {
             "kind": kind, "title": title,
-            "summary": "选手结论使用同条件回合分母，并保留可下钻的事件证据。",
+            "summary": "双方使用相同筛选，各自参赛回合为分母；筛选一致不代表样本组成一致。" if len(profiles) == 2 else "选手指标使用当前筛选范围内的参赛回合分母，并保留事件证据。",
             "focus_metric": {"key": group_key, "label": (selected_group or {}).get("label", "关键回合")},
             "findings": findings, "actions": actions,
-            "sample_confidence": "中" if min(profile["sample_size"]["rounds"] for profile in profiles) >= 30 else "低",
+            "sample_confidence": "未进行统计推断" if len(profiles) == 2 else "中" if profiles[0]["sample_size"]["rounds"] >= 30 else "低",
             "caveat": "指标来自解析事件与 silver labels，只描述当前样本，不评价不可观测的沟通、职责或战术意图。",
             "sources": sources, "round_groups": round_groups,
-            "methodology": "deterministic-player-brief-v1",
+            "methodology": "deterministic-player-brief-v2",
         }
 
     def _global_search_sync(self, query: str, metadata: dict, k: int) -> list[Evidence]:

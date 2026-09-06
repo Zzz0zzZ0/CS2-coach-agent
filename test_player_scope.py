@@ -84,3 +84,72 @@ def test_empty_player_search_does_not_generate_a_coaching_brief(player_graph):
     evidence=asyncio.run(player_graph.retrieve(query,global_search=True))
     assert not evidence
     assert player_graph.player_brief(query,evidence) is None
+
+
+def test_comparison_distinguishes_shared_rounds_from_shared_conditions(player_graph):
+    result = player_graph.compare_players(['111', '222'])
+    sample = result['sample_comparison']
+    assert sample['shared_match_ids'] == ['m1', 'm2']
+    assert sample['shared_participation_rounds'] == 3  # the substitute's round is excluded
+    assert sample['shared_condition_count'] == 0  # opposite sides and opponents
+    assert [row['pct'] for row in sample['common_condition_coverage']] == [0, 0]
+    assert any('没有共同' in warning for warning in sample['warnings'])
+    left = result['players'][0]['sample_scope']
+    assert left['composition'] == [
+        {'map': 'Mirage', 'side': 'T', 'opponents': ['Bravo'], 'rounds': 1},
+        {'map': 'Mirage', 'side': 'T', 'opponents': ['Gamma'], 'rounds': 2},
+    ]
+    assert len(left['participation_round_ids']) == 3
+
+
+def test_comparison_common_support_is_not_equal_composition(player_graph):
+    result = player_graph.compare_players(['111', '333'])
+    sample = result['sample_comparison']
+    assert sample['shared_participation_rounds'] == 0  # substitute and starter never coexist
+    assert sample['shared_condition_count'] == 1
+    assert [row['pct'] for row in sample['common_condition_coverage']] == [33.33, 100]
+    assert any('占比不同' in warning for warning in sample['warnings'])
+    filtered = player_graph.compare_players(['111', '333'], opponent='Bravo')['sample_comparison']
+    assert [row['pct'] for row in filtered['common_condition_coverage']] == [100, 100]
+    assert not any('占比不同' in warning for warning in filtered['warnings'])
+
+
+def test_comparison_empty_scope_and_legacy_denominators_are_explicit(player_graph):
+    empty = player_graph.compare_players(['111', '222'], side='T')
+    assert empty['sample_comparison']['status'] == 'no_sample'
+    assert empty['sample_comparison']['common_condition_coverage'][1]['pct'] is None
+    assert empty['players'][1]['combat']['kd_ratio'] is None
+    with sqlite3.connect(player_graph.db_path) as db:
+        db.execute("UPDATE nodes SET properties=json_set(properties, '$.participants_complete', json('false')) WHERE node_type='round'")
+    legacy = player_graph.compare_players(['111', '222'])
+    assert any('旧数据估算' in warning for warning in legacy['sample_comparison']['warnings'])
+
+
+@pytest.mark.parametrize('qualifier', ['对阵 Bravo', 'against Bravo', 'vs Bravo'])
+def test_natural_comparison_applies_opponent_to_both_players(player_graph, monkeypatch, qualifier):
+    # The fixture has no tactical sequences; expose its teams to the existing NL team resolver.
+    monkeypatch.setattr('app.services.graph_rag_service.TEAM_ALIASES', {'bravo': 'bravo'})
+    query = f'比较 entry 和 sub 在 Mirage T侧 {qualifier} 的首杀'
+    evidence = player_graph._player_query_evidence(query, None)
+    assert len(evidence) == 1
+    metadata = evidence[0].metadata
+    direct = player_graph.compare_players(['111', '333'], map_name='Mirage', side='T', opponent='Bravo')
+    assert metadata['profiles'] == direct['players']
+    assert metadata['sample_comparison'] == direct['sample_comparison']
+    assert metadata['opponent'] == 'Bravo'
+    brief = player_graph.player_brief(query, evidence)
+    assert brief['sample_confidence'] == '未进行统计推断'
+    assert '筛选一致不代表样本组成一致' in brief['summary']
+    assert not player_graph._player_query_evidence(f'比较 entry 和 defender {qualifier}', None)
+
+
+def test_comparison_team_mentions_are_not_implicit_opponents(player_graph, monkeypatch):
+    monkeypatch.setattr('app.services.graph_rag_service.TEAM_ALIASES', {'alpha': 'alpha', 'bravo': 'bravo'})
+    evidence = player_graph._player_query_evidence('Compare Alpha entry and Bravo defender', None)
+    assert evidence[0].metadata['opponent'] is None
+    assert [p['sample_size']['rounds'] for p in evidence[0].metadata['profiles']] == [3, 4]
+
+
+def test_unknown_comparison_opponent_never_broadens_to_all_matches(player_graph):
+    assert not player_graph._player_query_evidence('比较 entry 和 sub 对阵 NonexistentTeam', None)
+    assert player_graph._player_query_evidence('Compare entry vs sub', None)

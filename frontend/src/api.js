@@ -39,7 +39,8 @@ export function getGraphStats() {
 }
 
 export function getGraphPlayers(team, limit = 10) {
-  const params = new URLSearchParams({ team, limit: String(limit) });
+  const params = new URLSearchParams({ limit: String(limit) });
+  if (team) params.set("team", team);
   return request(`/api/graph/players?${params}`);
 }
 

@@ -65,10 +65,13 @@ function App() {
   const [teamComparison, setTeamComparison] = useState([]);
   const [playerTeam, setPlayerTeam] = useState(FEATURED_TEAMS[0]);
   const [players, setPlayers] = useState([]);
+  const [allPlayers, setAllPlayers] = useState([]);
   const [selectedPlayerId, setSelectedPlayerId] = useState("");
   const [comparisonPlayerId, setComparisonPlayerId] = useState("");
   const [playerProfile, setPlayerProfile] = useState(null);
-  const [playerComparison, setPlayerComparison] = useState([]);
+  const [playerComparison, setPlayerComparison] = useState(null);
+  const [comparisonLoading, setComparisonLoading] = useState(false);
+  const [comparisonError, setComparisonError] = useState("");
   const [tacticMap, setTacticMap] = useState("");
   const [tacticSide, setTacticSide] = useState("");
   const [tacticOpponent, setTacticOpponent] = useState("");
@@ -88,8 +91,9 @@ function App() {
   }, []);
 
   useEffect(() => {
-    Promise.all([getGraphMaps(), getGraphStats(), compareGraphTeams(FEATURED_TEAMS)])
-      .then(([mapData, stats, comparison]) => {
+    Promise.all([getGraphMaps(), getGraphStats(), compareGraphTeams(FEATURED_TEAMS), getGraphPlayers(null, 100)])
+      .then(([mapData, stats, comparison, playerData]) => {
+        setAllPlayers(playerData.players || []);
         setMaps(mapData.maps || []);
         setGraphStats(stats);
         setTeamComparison(comparison.teams || []);
@@ -98,14 +102,19 @@ function App() {
   }, []);
 
   useEffect(() => {
+    let cancelled = false;
+    setSelectedPlayerId("");
+    setPlayerProfile(null);
     getGraphPlayers(playerTeam)
       .then((data) => {
+        if (cancelled) return;
         const nextPlayers = data.players || [];
         setPlayers(nextPlayers);
         setSelectedPlayerId(nextPlayers[0]?.player_id || "");
         setComparisonPlayerId("");
       })
-      .catch((reason) => setError(reason.message));
+      .catch((reason) => { if (!cancelled) setError(reason.message); });
+    return () => { cancelled = true; };
   }, [playerTeam]);
 
   useEffect(() => {
@@ -114,6 +123,7 @@ function App() {
       return undefined;
     }
     let cancelled = false;
+    setPlayerProfile(null);
     getPlayerProfile(selectedPlayerId, { mapName: tacticMap, side: tacticSide, opponent: tacticOpponent })
       .then((data) => { if (!cancelled) setPlayerProfile(data.profile || null); })
       .catch((reason) => { if (!cancelled) setError(reason.message); });
@@ -121,11 +131,16 @@ function App() {
   }, [selectedPlayerId, tacticMap, tacticSide, tacticOpponent]);
 
   useEffect(() => {
-    if (!selectedPlayerId || !comparisonPlayerId || selectedPlayerId === comparisonPlayerId) return setPlayerComparison([]);
+    setPlayerComparison(null);
+    setComparisonError("");
+    setComparisonLoading(false);
+    if (!selectedPlayerId || !comparisonPlayerId || selectedPlayerId === comparisonPlayerId) return undefined;
     let cancelled = false;
+    setComparisonLoading(true);
     compareGraphPlayers([selectedPlayerId, comparisonPlayerId], { mapName: tacticMap, side: tacticSide, opponent: tacticOpponent })
-      .then((data) => { if (!cancelled) setPlayerComparison(data.players || []); })
-      .catch((reason) => { if (!cancelled) setError(reason.message); });
+      .then((data) => { if (!cancelled) setPlayerComparison(data); })
+      .catch((reason) => { if (!cancelled) setComparisonError(reason.message); })
+      .finally(() => { if (!cancelled) setComparisonLoading(false); });
     return () => { cancelled = true; };
   }, [selectedPlayerId, comparisonPlayerId, tacticMap, tacticSide, tacticOpponent]);
 
@@ -273,17 +288,19 @@ function App() {
               <div className="analytics-controls">
                 <label>战队<select value={playerTeam} onChange={(event) => { setPlayerTeam(event.target.value); setTacticMap(""); setTacticSide(""); setTacticOpponent(""); }}>{FEATURED_TEAMS.map((item) => <option key={item}>{item}</option>)}</select></label>
                 <label>选手<select value={selectedPlayerId} onChange={(event) => setSelectedPlayerId(event.target.value)}>{players.map((item) => <option key={item.player_id} value={item.player_id}>{item.name}</option>)}</select></label>
-                <label>对比选手<select value={comparisonPlayerId} onChange={(event) => setComparisonPlayerId(event.target.value)}><option value="">不对比</option>{players.map((item) => <option key={item.player_id} value={item.player_id}>{item.name}</option>)}</select></label>
+                <label>对比选手<select value={comparisonPlayerId} onChange={(event) => setComparisonPlayerId(event.target.value)}><option value="">不对比</option>{allPlayers.filter((item) => item.player_id !== selectedPlayerId).map((item) => <option key={item.player_id} value={item.player_id}>{item.name} · {item.team}</option>)}</select></label>
               </div>
               <div className="player-context-filters"><select aria-label="选手地图" value={tacticMap} onChange={(event) => setTacticMap(event.target.value)}><option value="">全部地图</option>{tacticProfile?.available_filters.maps.map((item) => <option key={item}>{item}</option>)}</select><select aria-label="选手阵营" value={tacticSide} onChange={(event) => setTacticSide(event.target.value)}><option value="">T + CT</option><option value="T">T</option><option value="CT">CT</option></select><select aria-label="选手对手" value={tacticOpponent} onChange={(event) => setTacticOpponent(event.target.value)}><option value="">全部对手</option>{tacticProfile?.available_filters.opponents.map((item) => <option key={item}>{item}</option>)}</select></div>
               {playerProfile ? <PlayerProfile profile={playerProfile} onSource={handleRoundSource} loading={roundLoading} /> : <div className="empty-search">等待本地图谱返回选手画像。</div>}
-              {playerComparison.length === 2 && <PlayerComparison players={playerComparison} />}
             </div>
             <div className="team-pane">
               <div className="result-meta table-title">战术序列频率 / 每 100 回合</div>
               <div className="comparison-scroll"><table className="comparison-table"><thead><tr><th>TEAM</th><th>SAMPLE</th>{TACTIC_COLUMNS.map(([key, label]) => <th key={key}>{label}</th>)}</tr></thead><tbody>{teamComparison.map((team) => <tr key={team.team}><td><strong>{team.team}</strong></td><td>{team.sample_size.matches}M · {team.sample_size.maps} maps<br /><small>{team.sample_size.rounds} rounds</small></td>{TACTIC_COLUMNS.map(([key]) => <td key={key}>{Number(team.labels[key]?.per_100_rounds || 0).toFixed(1)}</td>)}</tr>)}</tbody></table></div>
               <p className="method-note">基于事件事实和确定性 silver labels；爆弹候选为弱监督标签。用于描述样本，不直接推断战术因果。</p>
             </div>
+              {comparisonLoading && <p role="status">正在读取双方样本…</p>}
+              {comparisonError && <p role="alert">对比加载失败：{comparisonError}</p>}
+              {playerComparison?.players?.length === 2 && <PlayerComparison comparison={playerComparison} />}
             <TacticalDrilldown profile={tacticProfile} map={tacticMap} side={tacticSide} opponent={tacticOpponent} onMap={setTacticMap} onSide={setTacticSide} onOpponent={setTacticOpponent} />
           </div>
         </section>
@@ -331,7 +348,30 @@ function PlayerProfile({ profile, onSource, loading }) {
   return <div className="player-profile"><div className="player-title"><div><strong>{profile.name}</strong><span>{profile.team}</span></div><small>{profile.sample_size.matches} matches · {profile.sample_size.maps} maps · {profile.sample_size.rounds} rounds</small></div><PlayerSampleQuality profile={profile} /><div className="profile-metrics"><ProfileMetric label="K/D" value={combat.kd_ratio ?? "—"} /><ProfileMetric label="OPENING WIN" value={combat.opening_duel_win_pct == null ? "—" : `${combat.opening_duel_win_pct}%`} /><ProfileMetric label="KILLS / 100R" value={rates.kills} /><ProfileMetric label="TRADES / 100R" value={rates.trade_kills} /></div><div className="tactic-chips">{TACTIC_COLUMNS.map(([key, label]) => <span key={key}>{label}<b>{profile.tactical_participation?.[key] || 0}</b></span>)}</div><div className="player-rounds">{examples.slice(0, 6).map((item, index) => <button key={`${item.source_id}:${index}`} disabled={loading} onClick={() => onSource(item.source_id, item.team)}>{item.map} · R{item.round_number}</button>)}</div><div className="source-hint">SOURCE · {profile.source_round_ids?.[0] || "unavailable"}</div></div>;
 }
 
-function PlayerComparison({ players }) { return <div className="player-comparison"><div className="result-meta">SAME-CONTEXT PLAYER COMPARISON</div><div>{players.map((player) => <section key={player.player_id}><b>{player.name}</b><span>K/D {player.combat.kd_ratio ?? "—"}</span><span>首杀 {formatPercent(player.combat.opening_duel_win_pct)}</span><span>K/100R {player.rates_per_100_rounds.kills ?? "—"}</span><span>补枪/100R {player.rates_per_100_rounds.trade_kills ?? "—"}</span></section>)}</div></div>; }
+function PlayerComparison({ comparison }) {
+  const { players, sample_comparison: sample } = comparison;
+  const filters = sample?.filters || {};
+  return <div className="player-comparison">
+    <div className="result-meta">选手对比 · 样本说明</div>
+    <p className="comparison-note">共同筛选：{filters.map || "全部地图"} / {filters.side || "双方阵营"} / {filters.opponent || "全部对手"}</p>
+    <div className="player-comparison-grid">{players.map((player, index) => <section key={player.player_id}>
+      <b>{player.name}</b><span>{player.team}</span>
+      <span>{player.sample_size.matches} 场 · {player.sample_size.maps} 图 · {player.sample_size.rounds} 回合</span>
+      <span>K/D {player.combat.kd_ratio ?? "—"}（{player.combat.kills} 杀 / {player.combat.deaths} 死）</span>
+      <span>首杀 {formatPercent(player.combat.opening_duel_win_pct)}（{player.combat.opening_kills} / {player.combat.opening_kills + player.combat.opening_deaths} 次机会）</span>
+      <span>击杀/100R {player.rates_per_100_rounds.kills ?? "—"}</span>
+      <span>补枪/100R {player.rates_per_100_rounds.trade_kills ?? "—"}</span>
+      <span>共同条件覆盖 {formatPercent(sample?.common_condition_coverage?.[index]?.pct)}</span>
+      <PlayerSampleQuality profile={player} />
+      <details className="comparison-composition"><summary>地图 / 阵营 / 对手组成</summary>
+        {player.sample_scope.composition.length ? player.sample_scope.composition.map((row) => <p className="comparison-note" key={JSON.stringify([row.map, row.side, row.opponents])}>{row.map} · {row.side} · {row.opponents.join(" / ") || "对手未知"}：{row.rounds} 回合</p>) : <p>无参赛样本</p>}
+      </details>
+    </section>)}</div>
+    {sample && <><p className="comparison-note">共同比赛 {sample.shared_match_ids.length} 场 · 共同参赛 {sample.shared_participation_rounds} 回合 · 共同条件 {sample.shared_condition_count} 组</p>
+      <p className="comparison-note">共同条件指双方均有样本的地图、阵营、对手组合；覆盖率不表示已匹配或重加权。</p>
+      <ul className="comparison-notes">{sample.warnings.map((warning) => <li key={warning}>{warning}</li>)}</ul></>}
+  </div>;
+}
 
 function ProfileMetric({ label, value }) { return <div><span>{label}</span><strong>{value ?? "—"}</strong></div>; }
 
