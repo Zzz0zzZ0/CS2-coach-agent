@@ -27,4 +27,8 @@ make frontend-build
 
 ## CI
 
-`.github/ci-workflow.yml.example` 保存工作流配置（待启用），配置 Ubuntu 24.04、Python 3.11.15、Node 22.23.0，执行受约束安装、依赖检查、离线测试、npm ci 和前端构建。当前 GitHub OAuth 凭据只有 repo 权限，push 可执行工作流被 GitHub 拒绝（缺少 workflow scope）。因此先以示例配置纳入恢复分支，尚未启用 Actions。授权具备 workflow scope 后，将该文件移到 `.github/workflows/ci.yml` 即可启用。当前验证是本机全新虚拟环境和独立前端目录复现，不宣称远端 Linux 工作流已经运行。
+`.github/workflows/ci.yml` 已启用，配置 Ubuntu 24.04、Python 3.11.15、Node 22.23.0，执行受约束安装、依赖检查、离线测试、npm ci 和前端构建。
+
+2026-09-06 首次远端运行通过：96 项测试通过、1 条上游弃用警告（3.16 秒），pip check 无冲突，前端生产构建成功。[GitHub Actions 运行记录](https://github.com/Zzz0zzZ0/CS2-coach-agent/actions/runs/34031162026)；验证提交为 `1f7c77ca6d5fe5a11d24906c81918ee2545277fb`。
+
+此前 OAuth 凭据缺少 workflow scope，配置曾以示例文件保存；补充授权后已迁入正式工作流路径并成功执行。后续 push、pull request 和手动触发都会执行同一套离线验收。

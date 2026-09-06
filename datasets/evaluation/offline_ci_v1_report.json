@@ -1,0 +1,21 @@
+{
+  "version": "offline-ci-v1",
+  "observed_at": "2026-09-06T11:49:18.449288+00:00",
+  "provider": "GitHub Actions",
+  "run_id": 34031162026,
+  "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/actions/runs/34031162026",
+  "head_sha": "1f7c77ca6d5fe5a11d24906c81918ee2545277fb",
+  "conclusion": "success",
+  "runner": "ubuntu-24.04",
+  "python": "3.11.15",
+  "node": "22.23.0",
+  "pip_check": "No broken requirements found.",
+  "pytest": {
+    "passed": 96,
+    "warnings": 1,
+    "seconds": 3.16
+  },
+  "frontend_install": "success",
+  "frontend_build": "success",
+  "scope": "Hosted Linux offline test and build validation; no production corpus, remote model calls or knowledge ingestion."
+}
