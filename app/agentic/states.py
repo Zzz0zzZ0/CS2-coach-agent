@@ -5,6 +5,8 @@ class GraphState(TypedDict, total=False):
     match: Dict[str, Any]
     raw_data: str
     metrics: Dict[str, Any]
+    current_context: str
+    current_evidence: list
     rag_context: str
     retrieval_query: str
     retrieval_queries: list
@@ -18,10 +20,11 @@ class GraphState(TypedDict, total=False):
     retrieval_trace: Dict[str, Any]
     retrieval_available: bool
     graph_available: bool
-    graph_available: bool
     critique_feedback: str
     analyst_report: str
     coach_advice: str
+    coach_decision: Dict[str, Any]
+    model_usage: Dict[str, Any]
     critique_score: float
     retry_count: int
     verification_report: Dict[str, Any]

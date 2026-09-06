@@ -14,6 +14,8 @@
 
 </div>
 
+本阶段已完成画像参赛分母与归属修复、离线测试环境：49 张地图的 1,023 个有效回合名单完整，87 项离线测试通过，独立前端构建通过。远端 CI 尚未运行。详见 [执行进度与验收](docs/IMPLEMENTATION_PROGRESS.md)、[画像数据契约](docs/PLAYER_PROFILE_DATA_CONTRACT.md) 与 [离线复现](docs/OFFLINE_VALIDATION.md)。
+
 ---
 
 ## 📖 项目简介
@@ -25,7 +27,7 @@
 - 内置 **HLTV 数据爬虫与录像下载器**，支持自动化获取职业赛事高价值 Demo 数据集。
 - 驱动 **Supervisor（受控 Tool Calling）→ Tools → Router → 并行任务检索 → Critique → Analyst → Coach → Verifier** 构成一条带有反馈式 **Refine Loop** 的端到端战术推演流水线；知识摄取必须通过验证、人工批准和配置开关三重闸门。
 - Critique 节点在检索质量低于阈值时触发 **反馈式重试回路**；达到最大尝试次数后会保留低质量标记并继续分析，不伪装成达标。
-- 由代码先计算可验证的击杀、首杀和回合指标，再通过 **HLTV 首席数据师** 与 **B1ad3 风格教练** 完成报告和战术复盘；缺失数据不会被伪造为 ADR/KAST。
+- 由代码先计算并报告可验证的击杀、首杀、攻守分边和下包转化；`qwen3.8-flash` 只能从白名单中选择训练优先级，不能直接编造报告事实。
 - 同时支持 **FACEIT / 5E Webhook 数据流** 和 **实体 `.dem` 文件上传** 两种数据接入模式。
 - 全部耗时任务通过 **Celery + Redis** 异步消息队列处理，支持高并发与横向扩展。
 
@@ -75,7 +77,7 @@
 | **异步队列** | Celery + Redis | 企业级后台耗时任务队列，实现高并发与横向扩展 |
 | **智能体编排** | LangGraph (StateGraph) | 受控 Tool Calling → 确定性工具 → 并行检索 → 规则/LLM 评审 → 分析 → 教练 → 引用校验 |
 | **检索 (RAG)** | Milvus 2.6 + LangChain | dense + 原生 BM25 混合召回、RRF、父子上下文、纠错检索与证据追踪 |
-| **LLM** | 阿里云 DashScope / 通义千问 | `qwen-plus` 模型推理（通过 OpenAI 兼容接口接入） |
+| **LLM** | 阿里云 DashScope / 通义千问 | `qwen3.8-flash` 模型推理（通过 OpenAI 兼容接口接入） |
 | **Embedding** | FastEmbed + ONNX | 本地多语言 embedding，不消耗 DashScope embedding 额度 |
 | **数据采集** | DrissionPage | HLTV 赛事数据爬取与 `.dem` 自动化下载 |
 | **Demo 解析** | awpy + demoparser2 | CS2 录像帧事件精准提取（击杀链/道具/闪光/下包） |
@@ -106,12 +108,12 @@ Critique：任务覆盖、地图匹配、证据数量与相关性评分
         ▼
 Analyst：只陈述数据事实
         ▼
-Coach：基于数据和证据生成战术建议
+Coach：模型选择白名单训练优先级，代码生成证据化建议
         ▼
-Verifier：校验 [E#] 引用和无证据建议
+Verifier：校验当前 [C#]、历史 [E#] 引用和无证据建议
 ```
 
-Demo 解析层只保存可观测事件，不直接推断“某个道具导致了胜利”。因果判断留给 Analyst/Coach，并要求引用证据。这使原始事实、模型解释和教练建议在系统中可以区分。
+Demo 解析层只保存可观测事件，不直接推断“某个道具导致了胜利”。Analyst 与 Coach 的最终文字由确定性事实模板生成；模型只决定白名单训练主题的排序。这使原始事实、模型选择和教练建议在系统中可以区分。
 
 ### 2. LangGraph 状态机与受控 Agent
 
@@ -119,10 +121,11 @@ Demo 解析层只保存可观测事件，不直接推断“某个道具导致了
 
 | 字段 | 作用 |
 |------|------|
-| `metrics` | 代码计算的回合、击杀、首杀和玩家指标 |
+| `metrics` | 代码计算的战队比分、有效击杀、首杀转化、道具和下包指标 |
+| `current_evidence` | 当前上传 Demo 的确定性证据，映射为 `[C#]` |
 | `analysis_plan` | Router 生成的 opening / utility / round flow / map context 任务 |
 | `retrieval_task_results` | 每个检索任务的覆盖度、来源数量和告警 |
-| `retrieval_evidence` | 统一的可追溯证据，最终映射为 `[E#]` |
+| `retrieval_evidence` | Milvus/GraphRAG 历史对照证据，映射为 `[E#]` |
 | `agent_trace` / `tool_trace` | 前端展示 Supervisor、Tools 和检索执行过程 |
 | `verification_report` | 未知引用、缺失引用和审核状态 |
 
@@ -134,7 +137,7 @@ Supervisor 可以通过白名单 Tool Calling 选择分析模式，但不能创�
 
 一次检索包含以下步骤：
 
-1. LLM 将口语查询改写为 CS2 专业术语查询；LLM 不可用时退回原查询。
+1. 默认直接使用 Router 生成的专业术语查询；仅在 `LLM_AUXILIARY_CALLS_ENABLED=true` 时增加 LLM 查询改写。
 2. 使用本地 FastEmbed/ONNX 模型生成 384 维 dense embedding，避免调用付费 embedding API。
 3. Milvus 原生 BM25 对文本字段进行稀疏检索，dense 与 sparse 结果使用 RRF 合并。
 4. 查询原文、改写查询和任务变体共同召回，按 lexical overlap、rank 和 parent-context bonus 重新排序。
@@ -160,7 +163,7 @@ edges:
 
 - Local Search：以地图、任务和关键词筛选回合，沿事件路径及 `round → tactical_sequence → evidence/player` 路径返回证据。
 - Community Summary：按“地图 × 主题”聚合回合，当前主题包括 overview、opening、utility、round_flow。
-- Global Search：对多个社区摘要进行全局排序，返回社区摘要及其回合来源 ID；最终综合由 Analyst/Coach 完成。
+- Global Search：对多个社区摘要进行全局排序，返回社区摘要及其回合来源 ID；前端保留原始图证据与确定性教练简报供人工对照。
 
 社区摘要采用确定性抽取式统计，包含回合数、比赛数、击杀、首杀、道具、下包、战术银标、回合胜者和首杀玩家等事实。它不会把少量样本直接表达为“所有职业队都这样打”。
 
@@ -170,15 +173,15 @@ edges:
 
 - 上传页提交 `.dem` 和 `analysis_mode`，后端返回 Celery `task_id`。
 - 前端每两秒轮询 `GET /api/tasks/{task_id}`，在 SUCCESS 后展示 `analysis` 结果。
-- Dashboard 展示指标、Agent 执行链、Analyst/Coach 报告、Verifier 状态和 `[E#]` 证据。
+- Dashboard 分开展示当前 Demo `[C#]` 与历史对照 `[E#]`；验证未通过时任务显示“质量待审查”。
 - GraphRAG 面板通过只读接口加载地图、节点/边、Global Search、选手画像和战队对比结果。
 - 子图使用 SVG 绘制，避免引入大型图可视化依赖；移动端通过 CSS breakpoint 降级为单列布局。
 
 ### 6. 可靠性和审核边界
 
-- 指标计算先于 LLM，模型不能伪造缺失的 ADR/KAST。
+- 指标计算先于 LLM；环境/自杀/队伤不会计为有效击杀，战队比分、首杀转化、道具和下包均由代码计算。
 - Critique 只评价证据相关性和覆盖度，不让模型决定是否“战术正确”。
-- Verifier 不调用 LLM，检查未知 `[E#]`、未引用的关键建议和验证状态。
+- Verifier 不调用 LLM，检查未知 `[C#]/[E#]`、未引用建议，以及当前比赛结论是否误用历史证据。
 - 自动知识摄取默认关闭，同时要求高质量来源、显式人工批准和 Verifier 通过。
 - Demo、解析输出、SQLite 图谱、Milvus 卷和 `.env` 均属于本地运行数据，不进入 Git。
 
@@ -207,7 +210,11 @@ cp .env.example .env
 ```env
 # DashScope / OpenAI 兼容接口
 DASHSCOPE_API_KEY="sk-your-key-here"
-MODEL_NAME=qwen-plus
+MODEL_NAME=qwen3.8-flash
+LLM_TIMEOUT_SECONDS=120
+LLM_MAX_TOKENS=1400
+LLM_ENABLE_THINKING=false
+LLM_AUXILIARY_CALLS_ENABLED=false
 
 # Milvus 向量数据库
 MILVUS_URI="http://localhost:19530"
@@ -238,7 +245,7 @@ make graph-build
 
 `make graph-build` 会同时重算当前 silver 战术标签，并把它们写为 `tactical_sequence` 节点，通过 `SUPPORTED_BY` 与原始事件连接。分析请求会自动并行检索 Milvus 与图谱；命中的标签及其 `label_source`、置信度会以 `Graph ... Evidence` 和 `[E#]` 引用进入现有 Analyst、Coach、Verifier 链。`weak_rule` 只作为候选序列，不视为人工确认战术。没有 `data/graph/cs2_graph.sqlite` 时自动退回 Milvus。
 
-同一个 SQLite 图谱还提供跨比赛分析：选手画像聚合击杀、死亡、助攻、首杀/首死、补枪、道具、下包和六类战术序列参与，并可按地图、T/CT、对手筛选或进行两名选手的同条件比较；战队对比则把战术序列统一换算为每 100 个实际参赛回合，避免不同比赛数量造成总量偏差。战术切片计算首杀后胜率、丢首杀翻盘率、补枪回合胜率、Post-plant、Retake contact 和 Execute candidate 的回合转化，同时列出首杀、补枪和道具协同的选手责任分布。自然语言搜索同时支持战队和选手中文教练简报，每个结果都保留 `graph:{match}:{map}:{round}` 来源。当前指标是描述性统计，不宣称战术因果；Flash 指标不可用时会在画像方法元数据中明确标记。
+同一个 SQLite 图谱还提供跨比赛分析：选手画像聚合击杀、死亡、助攻、首杀/首死、补枪、道具、下包和六类战术序列参与，并可按地图、T/CT、对手筛选或进行两名选手的同条件比较；战队对比则把战术序列统一换算为每 100 个实际参赛回合，避免不同比赛数量造成总量偏差。战术切片计算首杀后胜率、丢首杀翻盘率、补枪回合胜率、Post-plant、Retake contact 和 Execute candidate 的回合转化，同时列出首杀、补枪和道具协同的选手责任分布。自然语言搜索同时支持战队和选手中文教练简报，每个结果都保留 `graph:{match}:{map}:{round}` 来源。当前指标是描述性统计，不宣称战术因果。没有胜方的 `round_end` 被视为技术暂停或回合恢复标记，不计入正式回合。若 GOTV Demo 缺少原生 `player_blind`，解析器会在每次 `flashbang_detonate` 的前后 tick 比较 `flash_duration`，恢复受闪者、投掷者、队伍、区域和持续时间，并以 `source=flash_duration_delta` 标记来源。同一 tick 只有一颗闪时投掷者可唯一归因；多颗闪同时爆炸时则保留全部 `attacker_candidates` 并标记 `attribution=simultaneous_flash_candidates`，不虚构唯一投掷者。
 
 Global Search 会先从自然语言中识别战队、地图、T/CT 和对手，再把对应战术切片作为最高优先级的结构化证据返回；包含“比较/对比”等意图且出现两支战队时，会生成同条件战术对照。示例：`猎鹰 Dust2 T侧首杀后胜率`、`猎鹰面对绿龙时的回防表现`、`对比 Spirit 和 Vitality 在 Nuke CT侧的补枪回合`。该步骤完全确定性执行，不新增 LLM 调用。
 
@@ -247,6 +254,8 @@ Global Search 会先从自然语言中识别战队、地图、T/CT 和对手，�
 ```bash
 make dev
 ```
+
+`qwen3.8-flash` 默认开启深度思考；本项目将其关闭，并默认只让 Coach 调用一次模型。Supervisor、查询路由、Critique 与 Analyst 使用确定性本地逻辑，单次生成上限为 1400 token，前端显示本次模型 token 用量。只有显式设置 `LLM_AUXILIARY_CALLS_ENABLED=true` 才启用查询改写、LLM Critique 等额外调用。额度耗尽或供应商拒绝请求时不重试模型调用，Coach 回退到本地优先级规则。本地开发默认使用 Celery `solo` pool，避免 macOS `fork` 与 FastEmbed/ONNX 原生运行库冲突。Linux 部署可显式使用 `CELERY_POOL=prefork CELERY_CONCURRENCY=4 make worker`。上传产生的临时 Demo 会在任务结束后自动删除。
 
 ### 5. 启动前端复盘工作台
 
@@ -347,7 +356,7 @@ CS2-coach-agent/
 │   │   ├── match_models.py        # Pydantic 数据验证 Schema
 │   │   └── analysis_models.py     # 指标与分析结果模型
 │   ├── services/                  # 应用服务层
-│   │   ├── rag_service.py         # RAG：查询重写 + MMR 检索
+│   │   ├── rag_service.py         # RAG：实体约束 + dense/BM25 混合检索
 │   │   ├── graph_rag_service.py    # GraphRAG：图谱、社区摘要与 Global Search
 │   │   ├── metrics_service.py     # 确定性比赛指标计算
 │   │   ├── analysis_pipeline.py   # 统一分析入口
@@ -358,7 +367,6 @@ CS2-coach-agent/
 │   │   └── demo_downloader.py     # 职业录像自动化下载器
 │   └── agentic/                   # 智能体编排层
 │       ├── states.py              # GraphState 全局状态定义
-│       ├── prompts.py             # Analyst / Coach 提示词模板
 │       ├── workflow.py            # LangGraph 状态机构建 (含 Refine Loop)
 │       └── nodes/                 # 受控 Agent 节点与确定性工具节点
 │           ├── supervisor_node.py # Supervisor：选择受控分析模式
@@ -366,8 +374,8 @@ CS2-coach-agent/
 │           ├── router_node.py     # Router：元数据抽取 & 过滤信号
 │           ├── retrieve_node.py   # Retrieve：向量检索调度
 │           ├── critique_node.py   # Critique：检索质量评审 (0.0-1.0)
-│           ├── analyst_node.py    # Analyst：HLTV 冷酷数据报告
-│           ├── coach_node.py      # Coach：B1ad3 高压战术复盘
+│           ├── analyst_node.py    # Analyst：确定性事实报告
+│           ├── coach_node.py      # Coach：白名单优先级 + 证据建议
 │           └── verify_node.py     # Verifier：引用和事实校验
 ├── scripts/                       # 工具脚本
 │   ├── seed_knowledge.py          # Milvus 知识库初始化种子脚本
@@ -401,25 +409,24 @@ CS2-coach-agent/
 > 使用规范化输入中的地图元数据生成过滤信号供下游 Retrieve 节点使用，避免让 LLM 重复抽取已有字段。
 
 ### 🧠 Supervisor / Tools（受控编排与工具层）
-> Supervisor 通过白名单 `select_analysis_plan` 工具自主选择四种模式及检索任务；工具调用失败时自动回退到确定性路由。Tools 节点先运行确定性指标计算，LLM 只能解释其结果。
+> 默认使用确定性 Supervisor 选择分析模式；开启辅助模型调用后，也只能通过白名单 `select_analysis_plan` 选择既有模式与检索任务。Tools 节点先运行确定性指标计算。
 
 ### 📚 Retrieve（战术知识检索器）
-> 调用 `KnowledgeBaseClient`：先用 LLM 做查询重写，再通过 Milvus 原生 dense + BM25 混合检索并保留父摘要与证据来源。
+> 调用 `KnowledgeBaseClient`：默认直接使用 Router 查询，经 Milvus 原生 dense + BM25 混合检索并保留父摘要与证据来源；查询改写是可选的额度开销。
 
 知识库默认使用 Milvus 原生 dense + BM25 混合检索，并在证据中保留比赛/地图父摘要；旧的 dense 集合仍可通过 `RAG_HYBRID_ENABLED=false` 走兼容 fallback。使用 `make eval-rag` 运行固定查询的离线 smoke evaluation。
 
 ### ⚖️ Critique（检索质量裁判）
-> 以苛刻的 CS2 战术法官身份，对检索结果进行结构化质量评审。**评分低于 0.7 时，评审反馈会加入下一轮查询，最多重试三次。**
+> 由代码评估任务覆盖、地图匹配、战队匹配和证据数量。**评分低于 0.7 时，评审反馈会加入下一轮查询，最多重试三次。**
 
 ### ✅ Verifier（事实与引用校验器）
 > 不调用 LLM，检查报告中的 `[E#]` 是否存在、是否有未知引用，以及关键建议是否缺少证据标记。
 
-### 🔬 Analyst（HLTV 首席数据师）
-> 冷酷客观，只陈述确定性指标和其证据；缺失 ADR、KAST 等原始数据时明确标记 unavailable。**绝对禁止给出主观建议。**
+### 🔬 Analyst（确定性事实报告）
+> 不调用 LLM，只报告比分、攻守分边、首杀转化、下包转化、拆包和道具计数；缺失指标会明确标记，不给出主观因果。
 
-### 🎯 Coach（B1ad3 风格战术执行官）
-> 一线职业队教练。根据数据师的报告，使用专业黑话（Exec、Retake、Trading、默认控制权）进行战术推演和复盘。
-> *不接受"没坐标、没血量、没语音日志"的汇报。*
+### 🎯 Coach（受控训练决策）
+> `qwen3.8-flash` 只通过 `select_coaching_priorities` 在首杀后续、下包后处理、道具复核和攻守转换中选 2–3 项；最终报告与 `[C#]` 引用由代码生成。模型不能添加角色、站位、道具效果或战术因果。
 
 ### 🔐 知识摄取审核闸门
 > 自学习入库默认关闭。只有 `AUTO_INGEST_ENABLED=true`、输入标记 `extra_data.knowledge_approved=true`、来源标记为高质量且 Verifier 通过时，分析任务才会提交入库；否则结果会返回 `knowledge_review.status=pending_review`，可由人工确认后调用手动 `/api/knowledge/ingest`。
@@ -431,7 +438,9 @@ make test       # 单元与集成测试
 make eval-rag   # 固定查询的 Milvus RAG 评估
 make eval-tactics # 30 条 GraphRAG 战术查询契约评测
 make eval-players # 20 条上下文选手查询契约评测
-make eval-v1      # 统一 50 条评测及 community-only 消融对照
+make eval-v1      # 50 条契约 + 50 条检索查询的五路消融评分
+make eval-negatives # 独立的 12 条 synthetic 开发负例
+make eval-holdout # 冻结的 30 条 held-out 回归验收（原始基线另存）
 make graph-build
 make silver-dataset # 生成带置信度与证据来源的战术银标数据集
 ```
@@ -442,7 +451,24 @@ GraphRAG 当前采用确定性抽取式社区摘要；摘要只概括解析到�
 
 ### 统一 GraphRAG 评测
 
-`datasets/evaluation/tactical_queries_v1.json` 包含 30 条战队战术查询，`datasets/evaluation/player_queries_v1.json` 包含 20 条选手画像、地图/阵营/对手切片和双人对比查询，均无需人工标注。`make eval-v1` 统一验证查询解析、样本下限、SQLite 数值一致性、中文简报、关键回合筛选、成功—失败回合对照和来源下钻，并将完整图谱与只保留旧式社区摘要的 GraphRAG 做消融对照。当前结果为 50/50 通过；战术查询 p50/p95 为 231.09/479.71 ms，选手查询为 237.00/470.47 ms；完整图谱可生成 50/50 个结构化答案，仅 community summary 为 0/50。统一报告写入 `datasets/evaluation/cs2_coach_v1_report.json`，解释性总结见 [`docs/V1_EFFECT_REPORT.md`](docs/V1_EFFECT_REPORT.md)。这是 silver-standard 的接口与数据契约评测，不等同于教练对战术结论或选手水平的人工 gold evaluation，也不证明因果关系。
+`datasets/evaluation/tactical_queries_v1.json` 包含 30 条战队战术查询，`datasets/evaluation/player_queries_v1.json` 包含 20 条选手画像、地图/阵营/对手切片和双人对比查询。`datasets/evaluation/retrieval_queries_v2.json` 另含 50 条检索查询，覆盖 7 张地图 × 4 种意图、5 支目标战队、5 名代表选手、8 条双语改写和 4 条无答案负例。标签只使用 Demo 中可观察的地图、实体和证据类型，不需要主观人工战术标注。
+
+`make eval-v1` 在 50 个结构化契约和 152 个检索检查点上统一比较 no-RAG、community-only、vector-only、graph-only 与 hybrid，全程禁用远程查询改写。当前结果：graph-only 与 hybrid 均为 100.00、vector-only 77.72、community-only 73.76、no-RAG 4.46。Vector 的 50 条检索查询本身为 50/50；较低综合分来自它无法生成 45 条结构化战队/选手契约，而不是召回失败。统一报告写入 `datasets/evaluation/cs2_coach_v1_report.json`，Vector 独立报告写入 `datasets/evaluation/retrieval_v2_report.json`，解释性总结见 [`docs/V1_EFFECT_REPORT.md`](docs/V1_EFFECT_REPORT.md)。这是 silver-standard 工程评分，不等同于教练对战术结论或选手水平的人工 gold evaluation，也不证明因果关系。
+
+冻结后首次运行的 `retrieval_queries_holdout_v1.json` 包含 30 条不同措辞、不同选手和更难负例。Graph-only 与 hybrid 的 held-out 综合分均为 97.99：27/27 正例通过，3 条开放式未知实体/跨领域负例均误召回。Vector-only 检索为 24/30、93/99 检查点，综合分 65.77。该原始基线保留在 `datasets/evaluation/cs2_coach_holdout_v1_report.json`。冻结查询不得修改；后续修复使用独立开发样例，并保留复测记录。
+
+
+### 负例边界修复复测（2026-09-06）
+
+独立 synthetic 开发负例 12/12 通过；原开发集 Vector、Graph、Hybrid 仍为 50/50，结构化契约仍为 50/50。最终 held-out Graph 与 Hybrid 为 **30/30、99/99 检查点、综合分 100.00**：原有 27 个正例全部保留，3 个负例全部正确拒答。Vector 为 **27/30、96/99、67.79**，原已通过用例无回退，仍有 3 个主题匹配检查失败。
+
+本轮实际复测 **两次**：首次发现普通描述词和显式地图上下文被误拒答，未通过验收；随后在独立正例上复现并恢复上下文语义，再完成最终验收。首次失败报告为 `datasets/evaluation/cs2_coach_holdout_v1_attempt1_report.json`，最终报告为 `datasets/evaluation/cs2_coach_holdout_v1_fixed_report.json`。原始基线和冻结查询保持不变；这属于冻结回归验证，不是新的完全盲测或未见比赛泛化证明。
+
+本轮 `make test` 为 80 项通过、3 个依赖告警，前端构建通过；所有检索评测均未调用远程模型。验证细节见 [修复验收记录](docs/NEGATIVE_RETRIEVAL_FIX.md)。
+
+实体约束覆盖英文画像、名称与地图、对手和比较句式，并保留中文别名。图查询先核对索引中的选手/战队；向量证据使用完整名称边界，不能用相似昵称代替。无上下文时，`match`、`professional` 等通用词不再足以触发检索；调用方显式提供的地图/比赛过滤仍作为上下文。该规则是有限查询语法，不是通用实体识别器。
+
+改进路线见 [工程展示与研究路线](docs/PROJECT_IMPROVEMENT_ROADMAP.md)：优先独立比赛验证、公平消融、人工审阅与无密钥 CI。当前工程满分不等于战术建议正确率或未见赛事泛化能力。
 
 ---
 

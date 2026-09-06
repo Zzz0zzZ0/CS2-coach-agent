@@ -10,6 +10,7 @@ from app.agentic.nodes.coach_node import create_coach_node
 from app.agentic.nodes.verify_node import create_verify_node
 from app.agentic.nodes.supervisor_node import create_supervisor_node
 from app.agentic.nodes.tool_node import create_tool_node
+from app.core.config import settings
 
 logger = logging.getLogger(__name__)
 
@@ -20,11 +21,12 @@ def create_workflow_app(llm, kb_client, graph_client=None):
     workflow = StateGraph(GraphState)
 
     # 初始化节点闭包
-    node_router = create_router_node(llm)
-    node_supervisor = create_supervisor_node(llm)
+    auxiliary_llm = llm if settings.LLM_AUXILIARY_CALLS_ENABLED else None
+    node_router = create_router_node(auxiliary_llm)
+    node_supervisor = create_supervisor_node(auxiliary_llm)
     node_tools = create_tool_node()
     node_retrieve = create_retrieve_node(kb_client, graph_client)
-    node_critique = create_critique_node(llm)
+    node_critique = create_critique_node(auxiliary_llm)
     node_analyst = create_analyst_node(llm)
     node_coach = create_coach_node(llm)
     node_verify = create_verify_node()

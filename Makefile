@@ -2,18 +2,20 @@ PYTHON_BOOTSTRAP ?= python3.11
 PYTHON ?= .venv/bin/python
 COMPOSE ?= docker compose
 API_PORT ?= 8001
+CELERY_POOL ?= solo
+CELERY_CONCURRENCY ?= 1
 
 INFRA_SERVICES = redis etcd minio standalone
-CELERY = $(PYTHON) -m celery -A app.core.celery_app worker --loglevel=info
+CELERY = $(PYTHON) -m celery -A app.core.celery_app worker --loglevel=info --pool=$(CELERY_POOL) --concurrency=$(CELERY_CONCURRENCY)
 UVICORN = $(PYTHON) -m uvicorn app.main:app --host 0.0.0.0 --port $(API_PORT)
 
-.PHONY: bootstrap infra status seed graph-build silver-dataset eval-rag eval-tactics eval-players eval-v1 frontend-install frontend frontend-build api worker dev analyze fetch-demos test clean
+.PHONY: bootstrap infra status seed graph-build silver-dataset eval-rag eval-tactics eval-players eval-v1 eval-holdout eval-negatives frontend-install frontend frontend-build api worker dev analyze fetch-demos test clean
 
 bootstrap:
 	@command -v $(PYTHON_BOOTSTRAP) >/dev/null || (echo "Missing $(PYTHON_BOOTSTRAP); override PYTHON_BOOTSTRAP=/path/to/python3.11" && exit 1)
 	@test -x $(PYTHON) || $(PYTHON_BOOTSTRAP) -m venv .venv
 	@$(PYTHON) -m pip install --upgrade pip
-	@$(PYTHON) -m pip install -r requirements-dev.txt
+	@$(PYTHON) -m pip install -r requirements-dev.txt -c requirements-lock.txt
 	@test -f .env || (cp .env.example .env && echo "Created .env; fill in DASHSCOPE_API_KEY before using LLM features.")
 	@$(MAKE) infra
 
@@ -52,6 +54,12 @@ eval-players:
 
 eval-v1:
 	@PYTHONPATH=. $(PYTHON) scripts/evaluate_v1.py $(ARGS)
+
+eval-negatives:
+	@PYTHONPATH=. $(PYTHON) scripts/evaluate_v1.py --retrieval-dataset datasets/evaluation/retrieval_negatives_dev_v1.json --output datasets/evaluation/retrieval_negatives_dev_v1_report.json
+
+eval-holdout:
+	@PYTHONPATH=. $(PYTHON) scripts/evaluate_v1.py --retrieval-dataset datasets/evaluation/retrieval_queries_holdout_v1.json --output datasets/evaluation/cs2_coach_holdout_v1_fixed_report.json
 
 api:
 	@$(UVICORN)

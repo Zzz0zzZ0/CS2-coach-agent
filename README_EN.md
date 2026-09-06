@@ -14,6 +14,8 @@
 
 </div>
 
+The latest local milestone adds roster-based player denominators and an offline test environment: complete rosters for 1,023 valid rounds across 49 maps, 87 passing offline tests, and a clean frontend build. Remote CI has not run. See [implementation status](docs/IMPLEMENTATION_PROGRESS.md), [player data contract](docs/PLAYER_PROFILE_DATA_CONTRACT.md), and [offline reproduction](docs/OFFLINE_VALIDATION.md).
+
 ---
 
 ## 📖 Overview
@@ -25,7 +27,7 @@ It can:
 - Built-in **HLTV data scraper and demo downloader**, supporting automated acquisition of high-value professional match Demo datasets.
 - Drive **Supervisor (bounded tool calling) → Tools → Router → parallel task retrieval → Critique → Analyst → Coach → Verifier** with a feedback-based **Refine Loop**; knowledge ingestion requires verification, explicit approval, and a configuration switch.
 - The Critique node triggers a **feedback-based retry loop** when retrieval quality falls below a threshold; after the maximum attempts it preserves the low-quality signal instead of pretending the context passed.
-- Compute verifiable kill, first-kill, and round metrics in code first, then use an **HLTV Chief Data Analyst** and **B1ad3-style Coach** for reporting and tactical review; unavailable data is never fabricated as ADR/KAST.
+- Compute and report verifiable kills, openings, side splits, and post-plant conversions in code; `qwen3.8-flash` can only choose training priorities from an allowlist and cannot author report facts.
 - Support both **FACEIT / 5E Webhook data streams** and **direct `.dem` file uploads** as data ingestion modes.
 - All heavy tasks are processed through a **Celery + Redis** async message queue, supporting high concurrency and horizontal scaling.
 
@@ -75,7 +77,7 @@ It can:
 | **Async Queue** | Celery + Redis | Enterprise background task queue for high concurrency & horizontal scaling |
 | **Agent Orchestration** | LangGraph (StateGraph) | Bounded tool calling → deterministic tools → parallel retrieval → rule/LLM review → analysis → coaching → citation verification |
 | **Retrieval (RAG)** | Milvus 2.6 + LangChain | Dense + native BM25 hybrid retrieval, RRF, parent context, corrective retrieval, and evidence tracing |
-| **LLM** | Alibaba Cloud DashScope / Qwen | `qwen-plus` model inference (via OpenAI-compatible API) |
+| **LLM** | Alibaba Cloud DashScope / Qwen | `qwen3.8-flash` model inference (via OpenAI-compatible API) |
 | **Embedding** | FastEmbed + ONNX | Local multilingual embeddings without DashScope embedding usage |
 | **Data Acquisition**| DrissionPage | HLTV match data scraping and automated `.dem` downloads |
 | **Demo Parsing** | awpy + demoparser2 | Precise CS2 demo frame event extraction (kills/grenades/flashes/plants) |
@@ -106,12 +108,12 @@ Critique: task coverage, map match, evidence count and relevance
         ▼
 Analyst: facts only
         ▼
-Coach: evidence-bound tactical advice
+Coach: model-selected allowlisted priorities, code-rendered evidence advice
         ▼
-Verifier: [E#] citation and unsupported-claim checks
+Verifier: current [C#], historical [E#], and unsupported-claim checks
 ```
 
-The parser stores observable events and does not directly infer that a utility caused a round win. Causal interpretation is left to Analyst/Coach and must remain tied to evidence, keeping raw facts, model interpretation, and coaching recommendations separate.
+The parser stores observable events and never infers that utility caused a round win. Analyst and Coach output is rendered from deterministic facts; the model only orders allowlisted training topics. This separates raw facts, model selection, and coaching recommendations.
 
 ### 2. LangGraph State Machine and Bounded Agents
 
@@ -119,10 +121,11 @@ All nodes communicate through `GraphState`. Important fields include:
 
 | Field | Purpose |
 |-------|---------|
-| `metrics` | Code-computed round, kill, first-kill, and player metrics |
+| `metrics` | Code-computed team scores, valid kills, opening conversions, utility, and plant metrics |
+| `current_evidence` | Deterministic evidence from the uploaded Demo, cited as `[C#]` |
 | `analysis_plan` | Router tasks for opening, utility, round flow, and map context |
 | `retrieval_task_results` | Per-task coverage, source counts, and warnings |
-| `retrieval_evidence` | Traceable evidence normalized into `[E#]` citations |
+| `retrieval_evidence` | Historical Milvus/GraphRAG comparison evidence cited as `[E#]` |
 | `agent_trace` / `tool_trace` | Execution trace shown by the frontend |
 | `verification_report` | Unknown citations, missing citations, and review status |
 
@@ -134,7 +137,7 @@ The vector collection is `cs2_tactical_knowledge`. Each document keeps `map`, `m
 
 Each retrieval follows this sequence:
 
-1. Rewrite the natural-language query into CS2 terminology; fall back to the original query when the LLM is unavailable.
+1. Use Router-generated CS2 terminology by default; add LLM query rewriting only when `LLM_AUXILIARY_CALLS_ENABLED=true`.
 2. Generate a 384-dimensional dense embedding locally with FastEmbed/ONNX, avoiding paid embedding API usage.
 3. Run native Milvus BM25 sparse retrieval and merge dense/sparse results with RRF.
 4. Retrieve original, rewritten, and task-variant queries, then rerank using lexical overlap, rank, and parent-context bonus.
@@ -170,15 +173,15 @@ Community summaries are deterministic and extractive. They report observed round
 
 - The upload form submits a `.dem` and `analysis_mode`; the backend returns a Celery `task_id`.
 - The console polls `GET /api/tasks/{task_id}` every two seconds and renders the `analysis` payload after SUCCESS.
-- The dashboard shows metrics, the Agent execution chain, Analyst/Coach reports, Verifier status, and `[E#]` evidence.
+- The dashboard separates current-Demo `[C#]` evidence from historical `[E#]` comparisons and marks completed tasks that still need quality review.
 - The GraphRAG panel loads maps, nodes/edges, Global Search, player profiles, and team comparisons through read-only endpoints.
 - The subgraph is drawn with SVG instead of a large visualization dependency; CSS breakpoints collapse the layout on mobile.
 
 ### 6. Reliability and Review Boundaries
 
-- Deterministic metrics run before any LLM call; missing ADR/KAST cannot be fabricated.
+- Deterministic metrics run before any LLM call; environment deaths, suicides, and team kills are excluded while team scores, opening conversion, utility, and plants are computed in code.
 - Critique evaluates evidence relevance and coverage, not whether the model agrees with a tactic.
-- Verifier is LLM-free and checks unknown `[E#]` citations, unsupported key recommendations, and verification status.
+- Verifier is LLM-free and checks unknown `[C#]/[E#]` citations, unsupported recommendations, and current-match claims backed only by historical evidence.
 - Automatic knowledge ingestion is disabled by default and requires a high-quality source, explicit human approval, and a passing Verifier.
 - Demos, parsed outputs, the SQLite graph, Milvus volumes, and `.env` are local runtime data and are excluded from Git.
 
@@ -207,7 +210,11 @@ Edit `.env` and fill in your Alibaba Cloud DashScope API Key and infrastructure 
 ```env
 # DashScope / OpenAI-compatible API
 DASHSCOPE_API_KEY="sk-your-key-here"
-MODEL_NAME=qwen-plus
+MODEL_NAME=qwen3.8-flash
+LLM_TIMEOUT_SECONDS=120
+LLM_MAX_TOKENS=1400
+LLM_ENABLE_THINKING=false
+LLM_AUXILIARY_CALLS_ENABLED=false
 
 # Milvus Vector Database
 MILVUS_URI="http://localhost:19530"
@@ -238,7 +245,7 @@ make graph-build
 
 The sidecar uses SQLite for match, map, round, event, player, and tactical-sequence relationships. `make graph-build` recomputes the current silver labels and connects each sequence to its source events and participants. Local hits carry `label_source` and confidence into the existing Analyst, Coach, and Verifier `[E#]` contract; `weak_rule` remains a candidate rather than a human-confirmed tactic. If the graph database is absent, the workflow falls back to Milvus only.
 
-The same SQLite graph now powers cross-match analytics. Player profiles aggregate kills, deaths, assists, opening duels, trades, utility, plants, and participation in all six tactical sequence types. Both player profiles and two-player comparisons can be restricted to the same map, T/CT side, and opponent. Team comparison normalizes every sequence to 100 observed team rounds so unequal match counts do not distort totals. Tactical slices use the same filters, then calculate round conversion after opening wins/losses, trade rounds, post-plants, retake contacts, and execute candidates. They also expose player responsibility shares for openings, trades, and utility bursts. Natural-language team and player queries return deterministic Chinese briefs with `graph:{match}:{map}:{round}` sources; opening a source shows its timeline and opposite-outcome comparisons. These are descriptive metrics, not causal claims; profile methodology metadata explicitly flags unavailable flash-event coverage.
+The same SQLite graph now powers cross-match analytics. Player profiles aggregate kills, deaths, assists, opening duels, trades, utility, plants, and participation in all six tactical sequence types. Both player profiles and two-player comparisons can be restricted to the same map, T/CT side, and opponent. Team comparison normalizes every sequence to 100 observed team rounds so unequal match counts do not distort totals. Tactical slices use the same filters, then calculate round conversion after opening wins/losses, trade rounds, post-plants, retake contacts, and execute candidates. They also expose player responsibility shares for openings, trades, and utility bursts. Natural-language team and player queries return deterministic Chinese briefs with `graph:{match}:{map}:{round}` sources; opening a source shows its timeline and opposite-outcome comparisons. These are descriptive metrics, not causal claims. A `round_end` without a winner is treated as a technical-pause or round-restore marker and excluded from official rounds. When a GOTV demo omits native `player_blind` events, the parser compares `flash_duration` immediately before and at each `flashbang_detonate` tick to recover victim, thrower, team, area, and duration fields, marking them with `source=flash_duration_delta`. A single detonation in a tick has an exact thrower; simultaneous detonations retain every `attacker_candidates` entry with `attribution=simultaneous_flash_candidates` instead of inventing a unique attribution.
 
 Global Search now extracts team, map, T/CT side, and opponent from natural-language questions and returns the matching tactical slice as its highest-priority structured evidence. When two teams and comparison intent are present, it generates a same-context tactical comparison. Examples include `Falcons Dust2 T-side opening conversion`, `Falcons versus Spirit retake performance`, and `compare Spirit and Vitality trade rounds on Nuke CT`. This path is deterministic and adds no LLM call.
 
@@ -247,6 +254,8 @@ Global Search now extracts team, map, T/CT side, and opponent from natural-langu
 ```bash
 make dev
 ```
+
+`qwen3.8-flash` enables deep thinking by default; this project disables it and uses one model call per match for Coach by default. Supervisor, routing, Critique, and Analyst stay deterministic and local, generation is capped at 1,400 tokens, and the UI displays token usage for the run. Set `LLM_AUXILIARY_CALLS_ENABLED=true` only when extra query-rewrite and LLM-Critique calls are worth the quota. Quota rejection is not retried; Coach falls back to local priority rules. Local development uses Celery's `solo` pool by default to avoid macOS `fork` conflicts with native FastEmbed/ONNX runtimes. Linux deployments can opt into prefork with `CELERY_POOL=prefork CELERY_CONCURRENCY=4 make worker`. Temporary uploaded Demos are deleted after task completion.
 
 ### 5. Start the Frontend Review Console
 
@@ -358,7 +367,6 @@ CS2-coach-agent/
 │   │   └── demo_downloader.py     # Professional demo automated downloader
 │   └── agentic/                   # Agent Orchestration Layer
 │       ├── states.py              # GraphState global state definition
-│       ├── prompts.py             # Analyst / Coach prompt templates
 │       ├── workflow.py            # LangGraph state machine builder (with Refine Loop)
 │       └── nodes/                 # Controlled agent and deterministic tool nodes
 │           ├── supervisor_node.py # Supervisor: bounded analysis modes
@@ -366,8 +374,8 @@ CS2-coach-agent/
 │           ├── router_node.py     # Router: metadata extraction & filter signal
 │           ├── retrieve_node.py   # Retrieve: vector search dispatch
 │           ├── critique_node.py   # Critique: retrieval quality review (0.0-1.0)
-│           ├── analyst_node.py    # Analyst: HLTV cold data report
-│           ├── coach_node.py      # Coach: B1ad3 tactical debrief
+│           ├── analyst_node.py    # Analyst: deterministic fact report
+│           ├── coach_node.py      # Coach: allowlisted priority + evidence advice
 │           └── verify_node.py     # Verifier: citation and fact checks
 ├── scripts/                       # Utility Scripts
 │   ├── seed_knowledge.py          # Milvus knowledge base seed script
@@ -401,25 +409,24 @@ CS2-coach-agent/
 > Uses normalized match metadata to generate retrieval filters, avoiding a redundant LLM extraction step.
 
 ### 🧠 Supervisor / Tools (Controlled Orchestration and Tool Layer)
-> Supervisor uses the allowlisted `select_analysis_plan` tool to autonomously choose an analysis mode and retrieval tasks. Failed or unsupported tool calls fall back to deterministic routing. Tools computes deterministic metrics before any LLM reasoning.
+> Supervisor is deterministic by default. When auxiliary model calls are enabled, it can only choose existing modes and retrieval tasks through the allowlisted `select_analysis_plan` tool. Tools computes deterministic metrics first.
 
 ### 📚 Retrieve (Tactical Knowledge Retriever)
-> Invokes `KnowledgeBaseClient` for LLM query rewriting followed by Milvus native dense + BM25 hybrid retrieval with parent context and evidence provenance.
+> Invokes `KnowledgeBaseClient` with Router queries and Milvus native dense + BM25 hybrid retrieval. LLM query rewriting is an optional quota expense.
 
 The knowledge base defaults to Milvus native dense + BM25 hybrid retrieval and preserves match/map parent summaries with each evidence hit. Set `RAG_HYBRID_ENABLED=false` for the legacy dense fallback. Run `make eval-rag` for the fixed-query retrieval smoke evaluation.
 
 ### ⚖️ Critique (Retrieval Quality Judge)
-> Acts as a demanding CS2 tactical judge and returns structured retrieval feedback. **When the score falls below 0.7, that feedback is added to the next query, with up to three attempts.**
+> Code scores task coverage, map match, team match, and evidence count. **When the score falls below 0.7, that feedback is added to the next query, with up to three attempts.**
 
 ### ✅ Verifier (Fact and Citation Checker)
 > Uses no LLM. It checks that `[E#]` citations exist, rejects unknown evidence IDs, and flags key recommendations without evidence markers.
 
-### 🔬 Analyst (HLTV Chief Data Analyst)
-> Cold and objective. Reports deterministic metrics and evidence; marks ADR, KAST, and other unavailable metrics as unavailable. **Subjective recommendations are strictly forbidden.**
+### 🔬 Analyst (Deterministic Fact Report)
+> Uses no LLM. It reports score, side splits, opening conversion, post-plant conversion, defuses, and utility counts; unavailable metrics are explicit and no subjective cause is added.
 
-### 🎯 Coach (B1ad3-Style Tactical Enforcer)
-> A frontline professional team coach. Uses professional jargon (Exec, Retake, Trading, Default Control) to conduct tactical deductions and debriefs based on the Analyst's report.
-> *Does not accept reports without coordinates, health values, or voice logs.*
+### 🎯 Coach (Bounded Training Decision)
+> `qwen3.8-flash` only calls `select_coaching_priorities` to choose 2–3 topics from opening follow-up, post-plant, utility review, and side transition. Code renders the final report and `[C#]` citations, so the model cannot add roles, positions, utility effects, or tactical causality.
 
 ### 🔐 Knowledge Ingestion Review Gate
 > Self-learning ingestion is disabled by default. It runs only when `AUTO_INGEST_ENABLED=true`, `extra_data.knowledge_approved=true`, the source is marked high quality, and Verifier passes. Otherwise the result is returned as `knowledge_review.status=pending_review`; an operator can review it and submit it through `/api/knowledge/ingest`.
@@ -431,7 +438,9 @@ make test       # Unit and integration tests
 make eval-rag   # Fixed-query Milvus RAG evaluation
 make eval-tactics # 30-case GraphRAG tactical query contract evaluation
 make eval-players # 20 contextual player-query contract cases
-make eval-v1      # unified 50-case evaluation plus community-only ablation
+make eval-v1      # 50 contract cases + 50 retrieval queries across five modes
+make eval-negatives # 12 independent synthetic development negatives
+make eval-holdout # frozen 30-query regression validation; original baseline retained
 make graph-build
 make silver-dataset # build evidence-linked tactical silver annotations
 ```
@@ -442,9 +451,24 @@ Community summaries are currently deterministic and extractive: they summarize p
 
 ### Unified GraphRAG Evaluation
 
-`datasets/evaluation/tactical_queries_v1.json` contains 30 team-tactical queries and `datasets/evaluation/player_queries_v1.json` contains 20 player-profile, map/side/opponent slice, and two-player comparison queries; neither requires manual annotation. `make eval-v1` jointly validates query parsing, sample thresholds, SQLite numeric consistency, Chinese briefs, key-round filters, opposite-outcome contrasts, and round-level provenance. The current result is 50/50 passed: tactical latency is 231.09/479.71 ms p50/p95 and player latency is 237.00/470.47 ms; the full graph produces 50/50 structured answers while the community-only ablation produces 0/50. The raw report is written to `datasets/evaluation/cs2_coach_v1_report.json`, with an interpretive summary in [`docs/V1_EFFECT_REPORT.md`](docs/V1_EFFECT_REPORT.md). This remains a silver-standard interface and data-contract evaluation, not expert gold evaluation of coaching quality or player skill, and it does not establish causality.
+`datasets/evaluation/tactical_queries_v1.json` and `player_queries_v1.json` contain 50 structured contract cases. `retrieval_queries_v2.json` adds 50 deterministic retrieval queries covering seven maps, four intents, five target teams, five representative players, bilingual paraphrases, and no-answer negatives. `make eval-v1` evaluates 50 contract cases plus 152 retrieval checks without remote query rewriting. Current scores are graph-only and hybrid 100.00, vector-only 77.72, community-only 73.76, and no-RAG 4.46. Vector retrieval itself passes 50/50 queries; its lower combined score reflects the absence of the graph's structured team/player contracts. Reports are written to `datasets/evaluation/cs2_coach_v1_report.json` and `retrieval_v2_report.json`. This remains a silver-standard engineering evaluation, not expert gold evaluation of coaching quality or player skill, and it does not establish causality.
+
+The first frozen run of `retrieval_queries_holdout_v1.json` uses 30 different phrasings, players, match filters, and harder negatives. Graph-only and hybrid score 97.99: all 27 positive queries pass, while all three open-ended unknown-entity/cross-domain negatives are falsely retrieved. Vector-only passes 24/30 queries and 93/99 retrieval checks, for a 65.77 combined score. The original baseline remains in `datasets/evaluation/cs2_coach_holdout_v1_report.json`. Frozen queries must not be rewritten; subsequent fixes use independent development examples and retain evaluation history.
 
 ---
+
+### Query-boundary repair validation (2026-09-06)
+
+All 12 independent synthetic negatives pass. The original development set remains 50/50 for Vector, Graph and Hybrid, with 50/50 structured contracts. Final held-out Graph and Hybrid results are **30/30 queries, 99/99 checks and a 100.00 combined score**: all 27 positive queries are retained and all three negatives abstain. Vector reaches **27/30, 96/99 and 67.79**, with no loss of previously passing queries; three intent checks remain unsuccessful.
+
+There were **two** held-out runs during this repair. The first exposed over-rejection of ordinary descriptions and explicit map context; independent positive regressions were added before the final run. The failed attempt is retained in `datasets/evaluation/cs2_coach_holdout_v1_attempt1_report.json`; the final result is `datasets/evaluation/cs2_coach_holdout_v1_fixed_report.json`. The original baseline and frozen queries are unchanged. This is regression validation, not a fresh blind test or evidence of unseen-match generalization.
+
+Validation: 80 tests passed with three dependency warnings, and the frontend production build passed. Retrieval benchmarks made no remote model calls. See the [repair validation record](docs/NEGATIVE_RETRIEVAL_FIX.md).
+
+Entity constraints cover English profile, subject/map, opponent and comparison syntax while retaining Chinese aliases. Graph search checks indexed identities; vector evidence uses complete name boundaries. Without explicit context, generic terms such as `match` and `professional` no longer establish the domain. Caller-provided map/match filters remain valid context. This is a bounded query grammar, not general-purpose named entity recognition.
+
+See the [engineering and research roadmap](docs/PROJECT_IMPROVEMENT_ROADMAP.md) for independent-match evaluation, fair ablations, human review and key-free CI. Engineering pass rates are not measures of coaching quality or unseen-match generalization.
+
 
 ## 📝 License
 

@@ -9,6 +9,12 @@ AnalysisMode = Literal[
     "data_quality_check",
 ]
 TaskId = Literal["opening_duel", "utility", "round_flow", "map_context"]
+CoachingPriority = Literal[
+    "opening_followup",
+    "post_plant",
+    "utility_review",
+    "side_transition",
+]
 
 
 @tool
@@ -23,3 +29,17 @@ def select_analysis_plan(
     ingest knowledge, or access the network.
     """
     return {"mode": mode, "task_ids": task_ids, "reason": reason}
+
+
+@tool
+def select_coaching_priorities(
+    priority_ids: list[CoachingPriority],
+    reason: str = "",
+) -> dict:
+    """Select two or three coaching priorities from a fixed allowlist.
+
+    The returned IDs only control ordering of deterministic, evidence-backed
+    advice. The model cannot author facts, citations, or final report text.
+    """
+    unique = list(dict.fromkeys(priority_ids))
+    return {"priority_ids": unique[:3], "reason": reason}

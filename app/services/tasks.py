@@ -27,6 +27,7 @@ def _run_match_analysis(payload: MatchWebhookPayload, task_id: str):
         f.write("=========================================\n")
 
     verification = result.verification_report or {}
+    quality_status = "success" if verification.get("status") == "pass" else "needs_review"
     approved = bool(payload.extra_data.get("knowledge_approved", False))
     review_reasons = []
     if not settings.AUTO_INGEST_ENABLED:
@@ -58,7 +59,7 @@ def _run_match_analysis(payload: MatchWebhookPayload, task_id: str):
 
     logger.info(f"====== [Celery Worker] 任务完成: {task_id} ======")
     return {
-        "status": "success",
+        "status": quality_status,
         "coach_advice": coach_advice,
         "analyst_report": result.analyst_report,
         "metrics": result.metrics.model_dump(),

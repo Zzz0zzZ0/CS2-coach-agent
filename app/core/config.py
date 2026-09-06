@@ -10,7 +10,13 @@ class Settings:
     DASHSCOPE_KEY_FILE: str = os.getenv(
         "DASHSCOPE_KEY_FILE", "data/runtime/dashscope_api_key"
     )
-    MODEL_NAME: str = os.getenv("MODEL_NAME", "qwen-plus")
+    MODEL_NAME: str = os.getenv("MODEL_NAME", "qwen3.8-flash")
+    LLM_TIMEOUT_SECONDS: int = int(os.getenv("LLM_TIMEOUT_SECONDS", "120"))
+    LLM_MAX_TOKENS: int = int(os.getenv("LLM_MAX_TOKENS", "1400"))
+    LLM_ENABLE_THINKING: bool = os.getenv("LLM_ENABLE_THINKING", "false").lower() == "true"
+    LLM_AUXILIARY_CALLS_ENABLED: bool = os.getenv(
+        "LLM_AUXILIARY_CALLS_ENABLED", "false"
+    ).lower() == "true"
     EMBEDDING_BACKEND: str = os.getenv("EMBEDDING_BACKEND", "fastembed")
     EMBEDDING_MODEL: str = os.getenv(
         "EMBEDDING_MODEL",
@@ -24,7 +30,7 @@ class Settings:
     # Self-learning is opt-in and still requires explicit per-match approval.
     AUTO_INGEST_ENABLED: bool = os.getenv("AUTO_INGEST_ENABLED", "false").lower() == "true"
     AUTONOMOUS_TOOL_SELECTION_ENABLED: bool = os.getenv(
-        "AUTONOMOUS_TOOL_SELECTION_ENABLED", "true"
+        "AUTONOMOUS_TOOL_SELECTION_ENABLED", "false"
     ).lower() == "true"
     
     # 消息队列配置 (Celery + Redis)

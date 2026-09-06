@@ -1,4 +1,3 @@
-import json
 from typing import Any
 
 from app.agentic.workflow import create_workflow_app
@@ -18,8 +17,9 @@ class AnalysisPipeline:
         serialized_match = payload.model_dump()
         initial_state = {
             "match": serialized_match,
-            "raw_data": json.dumps(serialized_match, ensure_ascii=False),
             "metrics": {},
+            "current_context": "",
+            "current_evidence": [],
             "rag_context": "",
             "retrieval_evidence": [],
             "retrieval_task_results": [],
@@ -33,6 +33,8 @@ class AnalysisPipeline:
             "tool_trace": [],
             "analyst_report": "",
             "coach_advice": "",
+            "coach_decision": {},
+            "model_usage": {},
             "retry_count": 0,
         }
 
@@ -45,7 +47,10 @@ class AnalysisPipeline:
             metrics=metrics,
             analyst_report=final_state.get("analyst_report", ""),
             coach_advice=final_state.get("coach_advice", ""),
+            coach_decision=final_state.get("coach_decision", {}),
+            model_usage=final_state.get("model_usage", {}),
             critique_score=final_state.get("critique_score"),
+            current_evidence=final_state.get("current_evidence", []),
             retrieval_evidence=final_state.get("retrieval_evidence", []),
             verification_report=final_state.get("verification_report", {}),
             analysis_mode=final_state.get("analysis_mode", "demo_forensic"),

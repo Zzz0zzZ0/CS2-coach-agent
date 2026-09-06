@@ -122,9 +122,22 @@ def _canonical_events(match_id: str, map_name: str, round_data: dict) -> list[Ca
             event_type="flash_blind",
             actor_steamid=_steamid(blind.get("attacker_steamid")),
             actor_name=_text(blind.get("attacker")),
+            actor_team=_text(blind.get("attacker_team")),
+            actor_side=_side(blind.get("attacker_side")),
+            actor_area=_text(blind.get("attacker_area")),
             target_steamid=_steamid(blind.get("victim_steamid")),
             target_name=_text(blind.get("victim")),
-            details={"blind_duration": blind.get("blind_duration")},
+            target_team=_text(blind.get("victim_team")),
+            target_side=_side(blind.get("victim_side")),
+            target_area=_text(blind.get("victim_area")),
+            position=_position(blind.get("victim_xyz")),
+            origin_position=_position(blind.get("flash_xyz")),
+            details={
+                "blind_duration": blind.get("blind_duration"),
+                "source": blind.get("source"),
+                "attribution": blind.get("attribution"),
+                "attacker_candidates": blind.get("attacker_candidates", []),
+            },
         ))
 
     return sorted(events, key=lambda event: (event.tick, event.event_id))

@@ -1,0 +1,525 @@
+{
+  "dataset_version": "retrieval-holdout-v1",
+  "queries": 30,
+  "queries_passed": 24,
+  "checks_passed": 93,
+  "checks_total": 99,
+  "quality_pct": 93.94,
+  "categories": {
+    "map_intent": {
+      "passed": 8,
+      "cases": 8
+    },
+    "match_filter": {
+      "passed": 5,
+      "cases": 5
+    },
+    "negative": {
+      "passed": 0,
+      "cases": 3
+    },
+    "paraphrase": {
+      "passed": 3,
+      "cases": 4
+    },
+    "player_entity": {
+      "passed": 5,
+      "cases": 5
+    },
+    "team_entity": {
+      "passed": 3,
+      "cases": 5
+    }
+  },
+  "cases": [
+    {
+      "id": "h_map_ancient_retake",
+      "category": "map_intent",
+      "query": "Ancient 防守方重新夺回包点的交火记录",
+      "passed": true,
+      "checks": {
+        "retrieved": true,
+        "map_match": true,
+        "intent_match": true
+      },
+      "evidence_count": 5,
+      "strategy": "hybrid_rrf",
+      "confidence": 0.271,
+      "corrected": false,
+      "warnings": []
+    },
+    {
+      "id": "h_map_anubis_opening",
+      "category": "map_intent",
+      "query": "Anubis 每回合第一次击杀情况",
+      "passed": true,
+      "checks": {
+        "retrieved": true,
+        "map_match": true,
+        "intent_match": true
+      },
+      "evidence_count": 5,
+      "strategy": "hybrid_rrf",
+      "confidence": 0.286,
+      "corrected": false,
+      "warnings": []
+    },
+    {
+      "id": "h_map_cache_summary",
+      "category": "map_intent",
+      "query": "Give me the professional Cache demo overview",
+      "passed": true,
+      "checks": {
+        "retrieved": true,
+        "map_match": true,
+        "intent_match": true
+      },
+      "evidence_count": 5,
+      "strategy": "hybrid_rrf",
+      "confidence": 0.496,
+      "corrected": false,
+      "warnings": []
+    },
+    {
+      "id": "h_map_dust2_flash",
+      "category": "map_intent",
+      "query": "Dust2 闪光弹和烟雾弹施放记录",
+      "passed": true,
+      "checks": {
+        "retrieved": true,
+        "map_match": true,
+        "intent_match": true
+      },
+      "evidence_count": 5,
+      "strategy": "hybrid_rrf",
+      "confidence": 0.373,
+      "corrected": false,
+      "warnings": []
+    },
+    {
+      "id": "h_map_inferno_plant",
+      "category": "map_intent",
+      "query": "Inferno 下包之后回合如何结束",
+      "passed": true,
+      "checks": {
+        "retrieved": true,
+        "map_match": true,
+        "intent_match": true
+      },
+      "evidence_count": 5,
+      "strategy": "hybrid_rrf",
+      "confidence": 0.373,
+      "corrected": false,
+      "warnings": []
+    },
+    {
+      "id": "h_map_mirage_pick",
+      "category": "map_intent",
+      "query": "Who secured the opening pick on Mirage",
+      "passed": true,
+      "checks": {
+        "retrieved": true,
+        "map_match": true,
+        "intent_match": true
+      },
+      "evidence_count": 5,
+      "strategy": "hybrid_rrf",
+      "confidence": 0.496,
+      "corrected": false,
+      "warnings": []
+    },
+    {
+      "id": "h_map_nuke_utility",
+      "category": "map_intent",
+      "query": "Nuke grenade timing and flash usage",
+      "passed": true,
+      "checks": {
+        "retrieved": true,
+        "map_match": true,
+        "intent_match": true
+      },
+      "evidence_count": 5,
+      "strategy": "hybrid_rrf",
+      "confidence": 0.643,
+      "corrected": false,
+      "warnings": []
+    },
+    {
+      "id": "h_map_ancient_summary",
+      "category": "map_intent",
+      "query": "职业 Ancient 录像里有哪些可观测事件",
+      "passed": true,
+      "checks": {
+        "retrieved": true,
+        "map_match": true,
+        "intent_match": true
+      },
+      "evidence_count": 5,
+      "strategy": "hybrid_rrf",
+      "confidence": 0.274,
+      "corrected": false,
+      "warnings": []
+    },
+    {
+      "id": "h_team_falcons_nuke",
+      "category": "team_entity",
+      "query": "Falcons Nuke retake contact rounds",
+      "passed": false,
+      "checks": {
+        "retrieved": true,
+        "map_match": true,
+        "intent_match": false,
+        "entity_match": true
+      },
+      "evidence_count": 5,
+      "strategy": "hybrid_rrf",
+      "confidence": 0.602,
+      "corrected": false,
+      "warnings": []
+    },
+    {
+      "id": "h_team_spirit_cache",
+      "category": "team_entity",
+      "query": "Spirit Cache opening pick evidence",
+      "passed": true,
+      "checks": {
+        "retrieved": true,
+        "map_match": true,
+        "intent_match": true,
+        "entity_match": true
+      },
+      "evidence_count": 5,
+      "strategy": "hybrid_rrf",
+      "confidence": 0.726,
+      "corrected": false,
+      "warnings": []
+    },
+    {
+      "id": "h_team_vitality_dust2",
+      "category": "team_entity",
+      "query": "Vitality 在 Dust2 的烟闪配合",
+      "passed": false,
+      "checks": {
+        "retrieved": true,
+        "map_match": true,
+        "intent_match": false,
+        "entity_match": true
+      },
+      "evidence_count": 5,
+      "strategy": "hybrid_rrf",
+      "confidence": 0.385,
+      "corrected": false,
+      "warnings": []
+    },
+    {
+      "id": "h_team_furia_ancient",
+      "category": "team_entity",
+      "query": "FURIA Ancient bombsite retake evidence",
+      "passed": true,
+      "checks": {
+        "retrieved": true,
+        "map_match": true,
+        "intent_match": true,
+        "entity_match": true
+      },
+      "evidence_count": 5,
+      "strategy": "hybrid_rrf",
+      "confidence": 0.619,
+      "corrected": false,
+      "warnings": []
+    },
+    {
+      "id": "h_team_mouz_nuke",
+      "category": "team_entity",
+      "query": "MOUZ Nuke 第一击和后续交换",
+      "passed": true,
+      "checks": {
+        "retrieved": true,
+        "map_match": true,
+        "intent_match": true,
+        "entity_match": true
+      },
+      "evidence_count": 5,
+      "strategy": "hybrid_rrf",
+      "confidence": 0.354,
+      "corrected": false,
+      "warnings": []
+    },
+    {
+      "id": "h_player_niko_dust2",
+      "category": "player_entity",
+      "query": "NiKo 在 Dust2 的首杀回合",
+      "passed": true,
+      "checks": {
+        "retrieved": true,
+        "map_match": true,
+        "intent_match": true,
+        "entity_match": true
+      },
+      "evidence_count": 5,
+      "strategy": "hybrid_rrf",
+      "confidence": 0.54,
+      "corrected": false,
+      "warnings": []
+    },
+    {
+      "id": "h_player_sh1ro_nuke",
+      "category": "player_entity",
+      "query": "sh1ro 在 Nuke 的交火记录",
+      "passed": true,
+      "checks": {
+        "retrieved": true,
+        "map_match": true,
+        "intent_match": true,
+        "entity_match": true
+      },
+      "evidence_count": 5,
+      "strategy": "hybrid_rrf",
+      "confidence": 0.385,
+      "corrected": false,
+      "warnings": []
+    },
+    {
+      "id": "h_player_flamez_nuke",
+      "category": "player_entity",
+      "query": "flameZ 在 Nuke 使用道具的回合",
+      "passed": true,
+      "checks": {
+        "retrieved": true,
+        "map_match": true,
+        "intent_match": true,
+        "entity_match": true
+      },
+      "evidence_count": 5,
+      "strategy": "hybrid_rrf",
+      "confidence": 0.385,
+      "corrected": false,
+      "warnings": []
+    },
+    {
+      "id": "h_player_molodoy_cache",
+      "category": "player_entity",
+      "query": "molodoy 在 Cache 的击杀链",
+      "passed": true,
+      "checks": {
+        "retrieved": true,
+        "map_match": true,
+        "intent_match": true,
+        "entity_match": true
+      },
+      "evidence_count": 5,
+      "strategy": "hybrid_rrf",
+      "confidence": 0.407,
+      "corrected": false,
+      "warnings": []
+    },
+    {
+      "id": "h_player_xertion_dust2",
+      "category": "player_entity",
+      "query": "xertioN 在 Dust2 的闪光与投掷物",
+      "passed": true,
+      "checks": {
+        "retrieved": true,
+        "map_match": true,
+        "intent_match": true,
+        "entity_match": true
+      },
+      "evidence_count": 5,
+      "strategy": "hybrid_rrf",
+      "confidence": 0.421,
+      "corrected": false,
+      "warnings": []
+    },
+    {
+      "id": "h_match_2396949_nuke",
+      "category": "match_filter",
+      "query": "Match 2396949 Nuke opening duel",
+      "passed": true,
+      "checks": {
+        "retrieved": true,
+        "map_match": true,
+        "intent_match": true,
+        "entity_match": true
+      },
+      "evidence_count": 5,
+      "strategy": "hybrid_rrf",
+      "confidence": 0.85,
+      "corrected": false,
+      "warnings": []
+    },
+    {
+      "id": "h_match_2396948_cache",
+      "category": "match_filter",
+      "query": "Match 2396948 Cache utility usage",
+      "passed": true,
+      "checks": {
+        "retrieved": true,
+        "map_match": true,
+        "intent_match": true,
+        "entity_match": true
+      },
+      "evidence_count": 5,
+      "strategy": "hybrid_rrf",
+      "confidence": 0.602,
+      "corrected": false,
+      "warnings": []
+    },
+    {
+      "id": "h_match_2396945_inferno",
+      "category": "match_filter",
+      "query": "Match 2396945 Inferno round outcome",
+      "passed": true,
+      "checks": {
+        "retrieved": true,
+        "map_match": true,
+        "intent_match": true,
+        "entity_match": true
+      },
+      "evidence_count": 5,
+      "strategy": "hybrid_rrf",
+      "confidence": 0.726,
+      "corrected": false,
+      "warnings": []
+    },
+    {
+      "id": "h_match_2396610_anubis",
+      "category": "match_filter",
+      "query": "Match 2396610 Anubis overview",
+      "passed": true,
+      "checks": {
+        "retrieved": true,
+        "map_match": true,
+        "intent_match": true,
+        "entity_match": true
+      },
+      "evidence_count": 5,
+      "strategy": "hybrid_rrf",
+      "confidence": 0.695,
+      "corrected": false,
+      "warnings": []
+    },
+    {
+      "id": "h_match_2396608_dust2",
+      "category": "match_filter",
+      "query": "Match 2396608 Dust2 first contact",
+      "passed": true,
+      "checks": {
+        "retrieved": true,
+        "map_match": true,
+        "intent_match": true,
+        "entity_match": true
+      },
+      "evidence_count": 5,
+      "strategy": "hybrid_rrf",
+      "confidence": 0.726,
+      "corrected": false,
+      "warnings": []
+    },
+    {
+      "id": "h_para_nuke_round",
+      "category": "paraphrase",
+      "query": "核子危机里安包后防守方怎样重夺区域",
+      "passed": false,
+      "checks": {
+        "retrieved": true,
+        "map_match": true,
+        "intent_match": false
+      },
+      "evidence_count": 5,
+      "strategy": "hybrid_rrf",
+      "confidence": 0.338,
+      "corrected": true,
+      "warnings": []
+    },
+    {
+      "id": "h_para_inferno_opening",
+      "category": "paraphrase",
+      "query": "炼狱小镇谁先取得人数优势",
+      "passed": true,
+      "checks": {
+        "retrieved": true,
+        "map_match": true,
+        "intent_match": true
+      },
+      "evidence_count": 5,
+      "strategy": "hybrid_rrf",
+      "confidence": 0.368,
+      "corrected": true,
+      "warnings": []
+    },
+    {
+      "id": "h_para_mirage_utility",
+      "category": "paraphrase",
+      "query": "Mirage support grenades before contact",
+      "passed": true,
+      "checks": {
+        "retrieved": true,
+        "map_match": true,
+        "intent_match": true
+      },
+      "evidence_count": 5,
+      "strategy": "hybrid_rrf",
+      "confidence": 0.478,
+      "corrected": false,
+      "warnings": []
+    },
+    {
+      "id": "h_para_cache_overview",
+      "category": "paraphrase",
+      "query": "Cache 这批职业比赛的事实摘要",
+      "passed": true,
+      "checks": {
+        "retrieved": true,
+        "map_match": true,
+        "intent_match": true
+      },
+      "evidence_count": 5,
+      "strategy": "hybrid_rrf",
+      "confidence": 0.282,
+      "corrected": false,
+      "warnings": []
+    },
+    {
+      "id": "h_negative_player_english",
+      "category": "negative",
+      "query": "Show electroNic performance on Nuke",
+      "passed": false,
+      "checks": {
+        "abstained": false
+      },
+      "evidence_count": 5,
+      "strategy": "hybrid_rrf",
+      "confidence": 0.478,
+      "corrected": false,
+      "warnings": []
+    },
+    {
+      "id": "h_negative_team_existing_map",
+      "category": "negative",
+      "query": "NAVI Cache utility rounds",
+      "passed": false,
+      "checks": {
+        "abstained": false
+      },
+      "evidence_count": 5,
+      "strategy": "hybrid_rrf",
+      "confidence": 0.54,
+      "corrected": false,
+      "warnings": []
+    },
+    {
+      "id": "h_negative_cross_domain_match",
+      "category": "negative",
+      "query": "Premier League match possession statistics",
+      "passed": false,
+      "checks": {
+        "abstained": false
+      },
+      "evidence_count": 5,
+      "strategy": "hybrid_rrf",
+      "confidence": 0.354,
+      "corrected": false,
+      "warnings": []
+    }
+  ]
+}

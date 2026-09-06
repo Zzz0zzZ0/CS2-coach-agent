@@ -37,7 +37,8 @@ function formatNumber(value) {
   return new Intl.NumberFormat("en-US").format(value || 0);
 }
 
-function statusLabel(status) {
+function statusLabel(status, resultStatus) {
+  if (status === "SUCCESS" && resultStatus === "needs_review") return "执行完成 · 质量待审查";
   return { PENDING: "排队中", STARTED: "解析中", SUCCESS: "已完成", FAILURE: "失败" }[status] || status || "待提交";
 }
 
@@ -75,6 +76,10 @@ function App() {
 
   const analysis = task?.status === "SUCCESS" ? task.result?.analysis || task.result : null;
   const metrics = analysis?.metrics || {};
+  const evidenceItems = [
+    ...(analysis?.current_evidence || []).map((item, index) => ({ ...item, citation: `C${index + 1}` })),
+    ...(analysis?.retrieval_evidence || []).map((item, index) => ({ ...item, citation: `E${index + 1}` })),
+  ];
 
   useEffect(() => {
     getLlmStatus()
@@ -242,7 +247,7 @@ function App() {
 
         <section className="control-card card">
           <div className="section-heading"><div><p className="eyebrow">01 / ANALYZE</p><h2>提交比赛 Demo</h2></div><span className="chip">ASYNC PIPELINE</span></div>
-          <div className="llm-key-panel"><div><b>QWEN-PLUS</b><span className={llmConfigured ? "key-ready" : "key-missing"}>{llmConfigured ? "密钥已保存（调用时验证）" : "需要 DashScope Key"}</span></div><form onSubmit={handleSaveKey}><label htmlFor="dashscope-key">DashScope API Key</label><input id="dashscope-key" type="password" autoComplete="off" value={apiKey} onChange={(event) => setApiKey(event.target.value)} placeholder="sk-…（仅保存到本机）" /><button disabled={keySaving || !apiKey.trim()}>{keySaving ? "保存中…" : "保存密钥"}</button></form><small>密钥不会回传到界面、浏览器存储或任务队列；API 与 Worker 在下一次调用时读取。</small></div>
+          <div className="llm-key-panel"><div><b>QWEN3.8-FLASH</b><span className={llmConfigured ? "key-ready" : "key-missing"}>{llmConfigured ? "密钥已保存（调用时验证）" : "需要 DashScope Key"}</span></div><form onSubmit={handleSaveKey}><label htmlFor="dashscope-key">DashScope API Key</label><input id="dashscope-key" type="password" autoComplete="off" value={apiKey} onChange={(event) => setApiKey(event.target.value)} placeholder="sk-…（仅保存到本机）" /><button disabled={keySaving || !apiKey.trim()}>{keySaving ? "保存中…" : "保存密钥"}</button></form><small>密钥不会回传到界面、浏览器存储或任务队列；API 与 Worker 在下一次调用时读取。</small></div>
           <form onSubmit={handleSubmit} className="upload-form">
             <label className={`dropzone ${file ? "has-file" : ""}`}>
               <input type="file" accept=".dem" onChange={(event) => setFile(event.target.files?.[0] || null)} />
@@ -250,14 +255,14 @@ function App() {
             </label>
             <div className="form-row"><label>分析模式<select value={mode} onChange={(event) => setMode(event.target.value)}><option value="demo_forensic">Demo Forensic · 完整复盘</option><option value="tactical_comparison">Tactical Comparison · 战术对照</option><option value="player_coaching">Player Coaching · 个人训练</option></select></label><button className="primary-button" disabled={busy || !file}>{busy ? "提交中…" : "开始分析  ↗"}</button></div>
           </form>
-          {task && <div className="task-line"><span className={`status-dot ${task.status === "SUCCESS" ? "success" : task.status === "FAILURE" ? "danger" : ""}`} />任务 {task.task_id} · {statusLabel(task.status)}</div>}
+          {task && <div className="task-line"><span className={`status-dot ${task.status === "SUCCESS" && task.result?.status !== "needs_review" ? "success" : task.status === "FAILURE" || task.result?.status === "needs_review" ? "danger" : ""}`} />任务 {task.task_id} · {statusLabel(task.status, task.result?.status)}</div>}
         </section>
 
         <section className="flow-card card"><div className="section-heading"><div><p className="eyebrow">02 / ORCHESTRATION</p><h2>Agent 执行链</h2></div><span className="mono">{task?.status || "IDLE"}</span></div><div className="flow-track">{FLOW.map((item, index) => <div className={`flow-step ${task?.status === "SUCCESS" || (task && index < 4) ? "active" : ""}`} key={item}><span>{String(index + 1).padStart(2, "0")}</span><b>{item}</b>{index < FLOW.length - 1 && <i />}</div>)}</div></section>
 
-        <section className="metrics-grid"><Metric label="TOTAL ROUNDS" value={metrics.rounds_total} suffix=" rounds" /><Metric label="KILLS" value={metrics.kills_total} /><Metric label="FIRST KILLS" value={metrics.first_kills_total} accent /><Metric label="VERIFIER" value={analysis ? analysis.verification_report?.status || "review" : "—"} text /></section>
+        <section className="metrics-grid"><Metric label="TOTAL ROUNDS" value={metrics.rounds_total} suffix=" rounds" /><Metric label="KILLS" value={metrics.kills_total} /><Metric label="FIRST KILLS" value={metrics.first_kills_total} accent /><Metric label="MODEL TOKENS" value={analysis?.model_usage?.total_tokens} /><Metric label="VERIFIER" value={analysis ? analysis.verification_report?.status || "review" : "—"} text /></section>
 
-        <section className="report-card card"><div className="section-heading"><div><p className="eyebrow">03 / COACHING REPORT</p><h2>Analyst × Coach</h2></div><span className="chip">EVIDENCE-BOUND</span></div><div className="report-columns"><ReportBlock title="ANALYST / 发生了什么" text={analysis?.analyst_report} empty="提交 Demo 后，这里显示确定性指标与数据报告。" /><ReportBlock title="COACH / 应该怎么做" text={analysis?.coach_advice} empty="Coach 会基于指标和 [E#] 证据生成训练建议。" /></div></section>
+        <section className="report-card card"><div className="section-heading"><div><p className="eyebrow">03 / COACHING REPORT</p><h2>Analyst × Coach</h2></div><span className="chip">EVIDENCE-BOUND</span></div><div className="report-columns"><ReportBlock title="ANALYST / 发生了什么" text={analysis?.analyst_report} empty="提交 Demo 后，这里显示确定性指标与数据报告。" /><ReportBlock title="COACH / 应该怎么做" text={analysis?.coach_advice} empty="Coach 会基于当前 [C#] 与历史 [E#] 证据生成训练建议。" /></div></section>
 
         <section className="graph-card card"><div className="section-heading"><div><p className="eyebrow">04 / GRAPH RAG</p><h2>战术关系图谱</h2></div><div className="stats-inline"><span>{formatNumber(graphStats.nodes)} nodes</span><span>{formatNumber(graphStats.edges)} edges</span><span>{formatNumber(graphStats.tactical_sequences)} sequences</span><span>{formatNumber(graphStats.communities)} communities</span></div></div><div className="graph-toolbar"><select value={map} onChange={(event) => setMap(event.target.value)}><option value="">All maps</option>{maps.map((item) => <option key={item}>{item}</option>)}</select><form onSubmit={handleSearch}><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="例如：猎鹰 Dust2 T侧首杀后胜率" /><button>Ask Graph</button></form></div><div className="graph-layout"><GraphCanvas positions={positions} edges={graph.edges || []} /><div className="search-results">{coachBrief && <CoachBrief brief={coachBrief} onSource={handleRoundSource} loading={roundLoading} />}{roundDetail && <RoundEvidence detail={roundDetail} comparison={roundComparison} onSource={handleRoundSource} loading={roundLoading} onClose={() => { setRoundDetail(null); setRoundComparison(null); }} />}{searchResults.length ? searchResults.map((item) => <article key={item.source_id} className="raw-evidence"><div className="result-meta">{item.metadata?.community_id || item.metadata?.tactic_type} · {Number(item.score || 0).toFixed(2)}</div><p>{item.content}</p></article>) : !coachBrief && <div className="empty-search">输入战队、地图、阵营或对手，检索结构化战术画像与社区摘要。<br /><small>点击简报中的 [G#] 可展开对应回合时间线。</small></div>}</div></div></section>
 
@@ -283,7 +288,7 @@ function App() {
           </div>
         </section>
 
-        <section className="evidence-card card"><div className="section-heading"><div><p className="eyebrow">06 / SOURCES</p><h2>证据引用</h2></div><span className="mono">{analysis?.retrieval_evidence?.length || 0} HITS</span></div><div className="evidence-list">{(analysis?.retrieval_evidence || []).slice(0, 8).map((item, index) => <article key={item.source_id || index}><span className="evidence-id">E{index + 1}</span><div><div className="result-meta">{item.metadata?.tactic_type} · {item.metadata?.map} · R{item.metadata?.round_number || "—"}</div><p>{item.content}</p></div></article>)}{!analysis?.retrieval_evidence?.length && <div className="empty-search">完成一次分析后，这里会列出 Milvus 与 GraphRAG 的可追溯证据。</div>}</div></section>
+        <section className="evidence-card card"><div className="section-heading"><div><p className="eyebrow">06 / SOURCES</p><h2>证据引用</h2></div><span className="mono">{evidenceItems.length} HITS</span></div><div className="evidence-list">{evidenceItems.map((item, index) => <article key={item.source_id || index}><span className="evidence-id">{item.citation}</span><div><div className="result-meta">{item.metadata?.evidence_scope === "current_match" ? "当前 Demo" : "历史对照"} · {item.metadata?.tactic_type} · {item.metadata?.map} · R{item.metadata?.round_number || "—"}</div><p>{item.content}</p></div></article>)}{!evidenceItems.length && <div className="empty-search">完成一次分析后，这里会分开列出当前 Demo 与历史 GraphRAG 证据。</div>}</div></section>
       </main>
       {error && <button className="error-toast" onClick={() => setError("")}>{error} ×</button>}
     </div>
@@ -313,16 +318,22 @@ function RoundContrast({ comparison, onSource, loading }) {
   return <div className="round-contrast"><div className="result-meta">SIMILAR ROUND CONTRAST · {comparison.team} · {selected.side}</div><div className="contrast-grid"><div className="contrast-selected"><b>当前 · {ROUND_OUTCOME_LABELS[selected.outcome]}</b><span>{selected.labels.map((item) => ROUND_TACTIC_LABELS[item] || item).join(" · ") || "无战术标签"}</span><small>{selected.sites.length ? `${selected.sites.join("/")} 点 · ` : ""}{selected.signals.kills || 0} 击杀 · {selected.signals.utility || 0} 道具</small></div>{comparison.contrasts.map((item) => <button key={item.source_id} disabled={loading} onClick={() => onSource(item.source_id, comparison.team)} aria-label={`查看相似回合 ${item.map} 第 ${item.round_number} 回合`}><b>对照 · {ROUND_OUTCOME_LABELS[item.outcome]} · {item.similarity_pct}%</b><span>{item.shared_labels.map((label) => ROUND_TACTIC_LABELS[label] || label).join(" · ") || "同地图同阵营"}</span><small>{item.observed_differences.join(" · ") || "观测指标接近"}</small><small>{item.match_id} · R{item.round_number}</small></button>)}</div>{!comparison.contrasts.length && <p className="brief-caveat">当前数据中没有同地图、同阵营且相反结果的可比回合。</p>}<p className="brief-caveat">差异只描述击杀、死亡、道具、补枪响应和包点；相似度按战术标签与包点集合计算，不代表战术因果。</p></div>;
 }
 
+function PlayerSampleQuality({ profile }) {
+  const quality = profile.data_quality;
+  if (!quality) return null;
+  return <div className="brief-caveat">{quality.status === "no_sample" ? "当前筛选没有参赛样本，— 表示不可计算。" : <>回合分母：{quality.confirmed_rounds} 个名单确认，{quality.estimated_rounds} 个估算。{quality.estimated_rounds > 0 && "估算部分不保证覆盖替补变化。"}</>}<br />所属队伍按各场记录识别；指标描述已收录比赛，不代表长期水平。{profile.sample_scope && <details><summary>样本比赛与统计口径</summary><p>比赛 ID：{profile.sample_scope.match_ids.join("、") || "无"}。比赛日期尚未收录。</p><p>K/D = 击杀 ÷ 死亡；首杀成功率 = 首杀 ÷（首杀 + 首死）；每百回合指标 = 次数 ÷ 参赛回合 × 100。分母为零时不可计算。</p></details>}</div>;
+}
+
 function PlayerProfile({ profile, onSource, loading }) {
   const combat = profile.combat || {};
   const rates = profile.rates_per_100_rounds || {};
   const examples = profile.round_groups?.flatMap((group) => group.examples.slice(0, 2)) || [];
-  return <div className="player-profile"><div className="player-title"><div><strong>{profile.name}</strong><span>{profile.team}</span></div><small>{profile.sample_size.matches} matches · {profile.sample_size.maps} maps · {profile.sample_size.rounds} rounds</small></div><div className="profile-metrics"><ProfileMetric label="K/D" value={combat.kd_ratio ?? "—"} /><ProfileMetric label="OPENING WIN" value={combat.opening_duel_win_pct == null ? "—" : `${combat.opening_duel_win_pct}%`} /><ProfileMetric label="KILLS / 100R" value={rates.kills} /><ProfileMetric label="TRADES / 100R" value={rates.trade_kills} /></div><div className="tactic-chips">{TACTIC_COLUMNS.map(([key, label]) => <span key={key}>{label}<b>{profile.tactical_participation?.[key] || 0}</b></span>)}</div><div className="player-rounds">{examples.slice(0, 6).map((item, index) => <button key={`${item.source_id}:${index}`} disabled={loading} onClick={() => onSource(item.source_id, item.team)}>{item.map} · R{item.round_number}</button>)}</div><div className="source-hint">SOURCE · {profile.source_round_ids?.[0] || "unavailable"}</div></div>;
+  return <div className="player-profile"><div className="player-title"><div><strong>{profile.name}</strong><span>{profile.team}</span></div><small>{profile.sample_size.matches} matches · {profile.sample_size.maps} maps · {profile.sample_size.rounds} rounds</small></div><PlayerSampleQuality profile={profile} /><div className="profile-metrics"><ProfileMetric label="K/D" value={combat.kd_ratio ?? "—"} /><ProfileMetric label="OPENING WIN" value={combat.opening_duel_win_pct == null ? "—" : `${combat.opening_duel_win_pct}%`} /><ProfileMetric label="KILLS / 100R" value={rates.kills} /><ProfileMetric label="TRADES / 100R" value={rates.trade_kills} /></div><div className="tactic-chips">{TACTIC_COLUMNS.map(([key, label]) => <span key={key}>{label}<b>{profile.tactical_participation?.[key] || 0}</b></span>)}</div><div className="player-rounds">{examples.slice(0, 6).map((item, index) => <button key={`${item.source_id}:${index}`} disabled={loading} onClick={() => onSource(item.source_id, item.team)}>{item.map} · R{item.round_number}</button>)}</div><div className="source-hint">SOURCE · {profile.source_round_ids?.[0] || "unavailable"}</div></div>;
 }
 
-function PlayerComparison({ players }) { return <div className="player-comparison"><div className="result-meta">SAME-CONTEXT PLAYER COMPARISON</div><div>{players.map((player) => <section key={player.player_id}><b>{player.name}</b><span>K/D {player.combat.kd_ratio ?? "—"}</span><span>首杀 {formatPercent(player.combat.opening_duel_win_pct)}</span><span>K/100R {player.rates_per_100_rounds.kills}</span><span>补枪/100R {player.rates_per_100_rounds.trade_kills}</span></section>)}</div></div>; }
+function PlayerComparison({ players }) { return <div className="player-comparison"><div className="result-meta">SAME-CONTEXT PLAYER COMPARISON</div><div>{players.map((player) => <section key={player.player_id}><b>{player.name}</b><span>K/D {player.combat.kd_ratio ?? "—"}</span><span>首杀 {formatPercent(player.combat.opening_duel_win_pct)}</span><span>K/100R {player.rates_per_100_rounds.kills ?? "—"}</span><span>补枪/100R {player.rates_per_100_rounds.trade_kills ?? "—"}</span></section>)}</div></div>; }
 
-function ProfileMetric({ label, value }) { return <div><span>{label}</span><strong>{value}</strong></div>; }
+function ProfileMetric({ label, value }) { return <div><span>{label}</span><strong>{value ?? "—"}</strong></div>; }
 
 function TacticalDrilldown({ profile, map, side, opponent, onMap, onSide, onOpponent }) {
   if (!profile) return <div className="tactic-drilldown empty-search">等待战术切片数据。</div>;

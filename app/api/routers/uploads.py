@@ -36,7 +36,7 @@ async def upload_and_analyze_demo(
         
     # 交给 MQ 独立解析
     task = parse_and_analyze_demo_task.delay(
-        str(file_path), safe_filename, analysis_mode=analysis_mode
+        str(file_path), safe_filename, auto_delete=True, analysis_mode=analysis_mode
     )
     
     return {

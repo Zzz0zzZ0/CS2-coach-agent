@@ -20,22 +20,32 @@ def _rule_review(state: GraphState) -> tuple[float, str, list[str], dict]:
     expected_map = _map_label(state.get("match", {}).get("map_name"))
     map_hits = sum(1 for item in evidence if item.get("metadata", {}).get("map") == expected_map)
     map_score = map_hits / len(evidence) if evidence else 0.0
+    expected_teams = set(state.get("metrics", {}).get("team_totals", {}))
+    evidence_text = " ".join(
+        f"{item.get('content', '')} {item.get('metadata', {}).get('parent_content', '')}".lower()
+        for item in evidence
+    )
+    matched_teams = {team for team in expected_teams if team.lower() in evidence_text}
+    team_score = len(matched_teams) / len(expected_teams) if expected_teams else 1.0
     coverage = [item for item in task_results if item.get("covered")]
     coverage_score = len(coverage) / len(task_results) if task_results else 0.0
     evidence_score = min(1.0, len(evidence) / 6.0)
-    score = 0.45 * evidence_score + 0.35 * coverage_score + 0.20 * map_score
+    score = 0.35 * evidence_score + 0.25 * coverage_score + 0.20 * map_score + 0.20 * team_score
     gaps = [item["task_id"] for item in task_results if not item.get("covered")]
     feedback = []
     if not evidence:
         feedback.append("没有召回可用证据")
     if expected_map and map_score < 1.0:
         feedback.append(f"地图证据不完整，应优先保证 {expected_map}")
+    if expected_teams and team_score < 1.0:
+        feedback.append("缺少战队历史证据: " + ", ".join(sorted(expected_teams - matched_teams)))
     if gaps:
         feedback.append("缺少任务: " + ", ".join(gaps))
     report = {
         "rule_score": round(score, 3),
         "evidence_count": len(evidence),
         "map_match_rate": round(map_score, 3),
+        "team_match_rate": round(team_score, 3),
         "task_coverage_rate": round(coverage_score, 3),
     }
     return score, "; ".join(feedback) or "规则检查通过", gaps, report

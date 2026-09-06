@@ -94,6 +94,10 @@ def get_llm():
                 api_key=api_key,
                 base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
                 model=settings.MODEL_NAME,
+                timeout=settings.LLM_TIMEOUT_SECONDS,
+                max_retries=0,
+                max_tokens=settings.LLM_MAX_TOKENS,
+                extra_body={"enable_thinking": settings.LLM_ENABLE_THINKING},
             )
             _llm_key_fingerprint = fingerprint
         except Exception as e:
@@ -105,7 +109,7 @@ def get_llm():
 
 def get_kb_client():
     global _kb_client_instance
-    llm = get_llm()
+    llm = get_llm() if settings.LLM_AUXILIARY_CALLS_ENABLED else None
     if _kb_client_instance is None:
         try:
             embeddings = get_embeddings()

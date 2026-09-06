@@ -11,6 +11,83 @@ from langchain_core.documents import Document
 
 logger = logging.getLogger(__name__)
 
+QUERY_EXPANSIONS = {
+    "猎鹰": "falcons",
+    "绿龙": "spirit",
+    "蜜蜂": "vitality",
+    "黑豹": "furia",
+    "老鼠": "mouz",
+    "荒漠迷城": "mirage",
+    "首杀": "opening duel first kill",
+    "道具": "utility grenade",
+    "烟闪火": "smoke flash molotov utility",
+    "闪光": "flash",
+    "烟雾": "smoke",
+    "投掷物": "utility grenade",
+    "下包": "bomb plant",
+    "回防": "retake",
+    "职业录像": "professional demo",
+}
+MAP_TERMS = {
+    "ancient", "anubis", "cache", "dust2", "inferno", "mirage", "nuke",
+    "overpass", "vertigo",
+}
+TEAM_TERMS = {"falcons", "spirit", "vitality", "furia", "mouz"}
+DOMAIN_TERMS = MAP_TERMS | TEAM_TERMS | {
+    "cs2", "counter-strike", "grenade", "molotov", "retake", "post-plant",
+}
+# Grammar words are not entity names, even next to a map or "performance".
+ENTITY_GRAMMAR = DOMAIN_TERMS | {
+    "show", "review", "analyze", "analyse", "compare", "comparison", "summarize",
+    "player", "players", "team", "teams", "performance", "profile", "stats",
+    "statistics", "on", "in", "at", "for", "of", "and", "versus", "vs", "against",
+    "the", "a", "an", "my", "their", "his", "her", "recent", "overall",
+    "professional", "match", "matches", "map", "round", "rounds", "demo",
+    "opening", "duel", "first", "kill", "kills", "utility", "smoke", "flash",
+    "bomb", "plant", "trade", "execute", "tactical", "evidence", "summary",
+    "t", "ct", "side", "win", "rate", "context", "control",
+}
+
+
+def contains_entity(text: str, entity: str) -> bool:
+    """Match a complete handle, not a substring inside another name or ID."""
+    return bool(re.search(rf"(?<![a-z0-9_$-]){re.escape(entity)}(?![a-z0-9_$-])", text.lower()))
+
+
+def explicit_entity_terms(query: str) -> list[str]:
+    """Extract ASCII subjects from map, profile, opponent and comparison syntax.
+
+    This is a bounded query grammar, not general-purpose named entity recognition.
+    Unknown subjects must remain constraints instead of becoming optional keywords.
+    """
+    lowered = query.lower()
+    handle = r"(?<![a-z0-9_$-])([a-z0-9_$-]{2,32})(?![a-z0-9_$-])"
+    maps = r"(?:de_)?(?:" + "|".join(sorted(MAP_TERMS)) + r")(?![a-z0-9_])"
+    patterns = [
+        r"^(?:(?:show|review|analyze|analyse|summarize)\s+)?"
+        + handle + r"\s+(?:(?:在|on|in)\s+)?" + maps,
+        handle + r"\s+在\s+" + maps,
+        handle + r"(?:['’]s)?\s+(?:(?:player|team)\s+)?(?:performance|profile|stats|statistics)\b",
+        r"\b(?:player|team|against|versus|vs|compare)\s+" + handle,
+        r"\b(?:and)\s+" + handle + r"(?=\s+(?:on|in)\s+" + maps + r")",
+    ]
+    if re.search(r"\bcompar(?:e|ison)\b", lowered):
+        patterns.append(r"\band\s+" + handle)
+    terms = []
+    for pattern in patterns:
+        for match in re.finditer(pattern, lowered):
+            term = match.group(1)
+            if term not in ENTITY_GRAMMAR and not term.isdigit() and term not in terms:
+                terms.append(term)
+    # Canonical team names are also valid subjects; only grammar words are excluded.
+    for name in sorted(TEAM_TERMS):
+        if contains_entity(lowered, name):
+            terms.append(name)
+    for alias, expansion in QUERY_EXPANSIONS.items():
+        if alias in query and expansion in TEAM_TERMS:
+            terms.append(expansion)
+    return list(dict.fromkeys(terms))
+
 
 class MilvusHybridSearcher:
     """Small adapter for Milvus native dense + BM25 retrieval."""
@@ -194,8 +271,19 @@ class KnowledgeBaseClient:
     ) -> RetrievalResult:
         """Retrieve ranked, deduplicated evidence while keeping provenance."""
         normalized_filters = self._normalize_filters(metadata_filter or {})
-        rewritten_query = await self._rewrite_query(query)
-        variants = self._unique_queries([rewritten_query, query, *(query_variants or [])])
+        expanded_query = self._expand_query(query)
+        required_entities = explicit_entity_terms(query)
+        has_context = normalized_filters.get("map") or normalized_filters.get("match_id")
+        if not has_context and not self._has_domain_signal(expanded_query) and not required_entities:
+            return RetrievalResult(
+                query=query,
+                rewritten_query=expanded_query,
+                filters=normalized_filters,
+                warnings=["query rejected: no CS2 domain signal"],
+                strategy="hybrid_rrf" if self.hybrid_searcher else "dense_lexical",
+            )
+        rewritten_query = await self._rewrite_query(expanded_query)
+        variants = self._unique_queries([rewritten_query, expanded_query, *(query_variants or [])])
         candidates: Dict[str, Dict[str, Any]] = {}
         errors = []
         strategy = "hybrid_rrf" if self.hybrid_searcher else "dense_lexical"
@@ -243,6 +331,16 @@ class KnowledgeBaseClient:
             key=lambda item: item["rank_score"],
             reverse=True,
         )
+        if required_entities:
+            ranked = [
+                item for item in ranked
+                if all(contains_entity(" ".join([
+                    item["document"].page_content,
+                    *map(str, item["document"].metadata.values()),
+                ]), entity) for entity in required_entities)
+            ]
+            if not ranked:
+                errors.append("explicit entities not found in evidence: " + ", ".join(required_entities))
         evidence = []
         for item in ranked[:k]:
             document = item["document"]
@@ -309,6 +407,21 @@ class KnowledgeBaseClient:
                 seen.add(value.lower())
                 result.append(value)
         return result or ["CS2 tactical review"]
+
+    @staticmethod
+    def _expand_query(query: str) -> str:
+        additions = [
+            expansion for alias, expansion in QUERY_EXPANSIONS.items()
+            if alias in query
+        ]
+        return " ".join([query, *additions]).strip()
+
+    @staticmethod
+    def _has_domain_signal(query: str) -> bool:
+        terms = set(re.findall(r"[a-z0-9_-]+", query.lower()))
+        return bool(terms & DOMAIN_TERMS) or bool(re.search(
+            r"\b(?:opening duel|first kill|trade kill|bomb plant|flash assist)\b", query.lower()
+        ))
 
     @staticmethod
     def _normalize_filters(metadata_filter: Dict[str, Any]) -> Dict[str, Any]:

@@ -1,0 +1,7 @@
+{
+  "maps": 49,
+  "rounds": 1023,
+  "complete_rosters": 1023,
+  "applied": true,
+  "backup": "data/graph/cs2_graph.before-rosters-20260906T073043647901.sqlite"
+}

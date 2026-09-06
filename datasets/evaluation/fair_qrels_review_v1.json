@@ -1,0 +1,152 @@
+{
+  "corpus_sha256": "68cdc31d06c0e9526ebcd5bcf214f353722971fc8bc829bf07b46df1757a75d8",
+  "queries_sha256": "5b88deea2c796e92c1f02317ef24a8b1c9524e0004a70674d93071d2da4c81b0",
+  "version": "fair-qrels-review-v1",
+  "instructions": "Review raw source events independently without looking at rankings. Judge all rounds satisfying explicit map/match/round filters. Entities mean roster participation. Record every relevant round, grade 0-3, source event IDs and basis. Set exhaustive only after completing the entire eligible scope. Blank labels are unjudged, not negatives. Approval is a review assertion; software cannot verify reviewer independence.",
+  "judgments": [
+    {
+      "query_id": "p01",
+      "status": "pending_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "exhaustive": false,
+      "scope_basis": null,
+      "relevance": []
+    },
+    {
+      "query_id": "p02",
+      "status": "pending_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "exhaustive": false,
+      "scope_basis": null,
+      "relevance": []
+    },
+    {
+      "query_id": "p03",
+      "status": "pending_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "exhaustive": false,
+      "scope_basis": null,
+      "relevance": []
+    },
+    {
+      "query_id": "p04",
+      "status": "pending_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "exhaustive": false,
+      "scope_basis": null,
+      "relevance": []
+    },
+    {
+      "query_id": "p05",
+      "status": "pending_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "exhaustive": false,
+      "scope_basis": null,
+      "relevance": []
+    },
+    {
+      "query_id": "p06",
+      "status": "pending_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "exhaustive": false,
+      "scope_basis": null,
+      "relevance": []
+    },
+    {
+      "query_id": "p07",
+      "status": "pending_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "exhaustive": false,
+      "scope_basis": null,
+      "relevance": []
+    },
+    {
+      "query_id": "p08",
+      "status": "pending_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "exhaustive": false,
+      "scope_basis": null,
+      "relevance": []
+    },
+    {
+      "query_id": "p09",
+      "status": "pending_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "exhaustive": false,
+      "scope_basis": null,
+      "relevance": []
+    },
+    {
+      "query_id": "p10",
+      "status": "pending_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "exhaustive": false,
+      "scope_basis": null,
+      "relevance": []
+    },
+    {
+      "query_id": "p11",
+      "status": "pending_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "exhaustive": false,
+      "scope_basis": null,
+      "relevance": []
+    },
+    {
+      "query_id": "p12",
+      "status": "pending_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "exhaustive": false,
+      "scope_basis": null,
+      "relevance": []
+    },
+    {
+      "query_id": "n01",
+      "status": "pending_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "exhaustive": false,
+      "scope_basis": null,
+      "relevance": []
+    },
+    {
+      "query_id": "n02",
+      "status": "pending_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "exhaustive": false,
+      "scope_basis": null,
+      "relevance": []
+    },
+    {
+      "query_id": "n03",
+      "status": "pending_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "exhaustive": false,
+      "scope_basis": null,
+      "relevance": []
+    },
+    {
+      "query_id": "n04",
+      "status": "pending_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "exhaustive": false,
+      "scope_basis": null,
+      "relevance": []
+    }
+  ]
+}

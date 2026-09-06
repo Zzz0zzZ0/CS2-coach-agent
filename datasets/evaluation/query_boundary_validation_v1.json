@@ -1,0 +1,75 @@
+{
+  "date": "2026-09-06",
+  "frozen_queries_sha256": "ab5991b913c26bf7dd44c071c271e258cd141bbf1c78a8c15c81b0d85756f435",
+  "frozen_queries_unchanged": true,
+  "original_baseline_preserved": true,
+  "heldout_runs_this_repair": 2,
+  "first_attempt_report": "cs2_coach_holdout_v1_attempt1_report.json",
+  "final_report": "cs2_coach_holdout_v1_fixed_report.json",
+  "remote_llm_calls_in_benchmarks": 0,
+  "remote_llm_tokens_in_benchmarks": 0,
+  "tests": {
+    "passed": 80,
+    "warnings": 3
+  },
+  "frontend_build": "passed",
+  "modes": {
+    "no_rag": {
+      "before_queries_passed": 3,
+      "after_queries_passed": 3,
+      "queries": 30,
+      "checks_passed": 3,
+      "score_pct": 5.37,
+      "positive_passed": 0,
+      "negative_passed": 3,
+      "regressed_ids": []
+    },
+    "community_only": {
+      "before_queries_passed": 11,
+      "after_queries_passed": 14,
+      "queries": 30,
+      "checks_passed": 64,
+      "score_pct": 46.31,
+      "positive_passed": 11,
+      "negative_passed": 3,
+      "regressed_ids": []
+    },
+    "vector_only": {
+      "before_queries_passed": 24,
+      "after_queries_passed": 27,
+      "queries": 30,
+      "checks_passed": 96,
+      "score_pct": 67.79,
+      "positive_passed": 24,
+      "negative_passed": 3,
+      "regressed_ids": []
+    },
+    "graph_only": {
+      "before_queries_passed": 27,
+      "after_queries_passed": 30,
+      "queries": 30,
+      "checks_passed": 99,
+      "score_pct": 100.0,
+      "positive_passed": 27,
+      "negative_passed": 3,
+      "regressed_ids": []
+    },
+    "hybrid": {
+      "before_queries_passed": 27,
+      "after_queries_passed": 30,
+      "queries": 30,
+      "checks_passed": 99,
+      "score_pct": 100.0,
+      "positive_passed": 27,
+      "negative_passed": 3,
+      "regressed_ids": []
+    }
+  },
+  "source_sha256": {
+    "app/services/rag_service.py": "947d92bb106ce9017193407ad58e8d978383dd452c4727facd3dd09c94de1cd9",
+    "app/services/graph_rag_service.py": "8a05d8302b066b980d8eb061baba97227bdf0c58d98a15c6769debc42b0e1fae",
+    "scripts/evaluate_v1.py": "a765e41f3a3940eb1ab0f016f7b37b31d102d20a802efa601a927c8f7669d111",
+    "scripts/evaluate_retrieval.py": "0b84a5b57d556fd9b60889035213f2c70c3b603ea6a5dde7550a275087ff9a3f",
+    "test_query_boundaries.py": "d347d0095a9c74228e66ce6b9158d4852d96de44981215a26c9980f4bbd7c41d"
+  }
+}

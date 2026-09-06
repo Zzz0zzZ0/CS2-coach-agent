@@ -1,0 +1,156 @@
+{
+  "version": "synthetic-negatives-dev-v1",
+  "purpose": "Independent synthetic development cases; no frozen held-out queries copied.",
+  "cases": [
+    {
+      "id": "sn_01",
+      "category": "player",
+      "query": "Review GhostAim performance on Mirage",
+      "metadata_filter": {
+        "map": "Mirage"
+      },
+      "task_id": "map_context",
+      "global_search": true,
+      "expected": {
+        "retrieve": false
+      }
+    },
+    {
+      "id": "sn_02",
+      "category": "player",
+      "query": "PhantomEntry player profile on Ancient",
+      "metadata_filter": {
+        "map": "Ancient"
+      },
+      "task_id": "map_context",
+      "global_search": true,
+      "expected": {
+        "retrieve": false
+      }
+    },
+    {
+      "id": "sn_03",
+      "category": "player",
+      "query": "Show player AbsentAWP on Dust2",
+      "metadata_filter": {
+        "map": "Dust2"
+      },
+      "task_id": "map_context",
+      "global_search": true,
+      "expected": {
+        "retrieve": false
+      }
+    },
+    {
+      "id": "sn_04",
+      "category": "player",
+      "query": "GhostAim 在 Ancient 的首杀",
+      "metadata_filter": {
+        "map": "Ancient"
+      },
+      "task_id": "map_context",
+      "global_search": true,
+      "expected": {
+        "retrieve": false
+      }
+    },
+    {
+      "id": "sn_05",
+      "category": "team",
+      "query": "NebulaFive Mirage utility rounds",
+      "metadata_filter": {
+        "map": "Mirage"
+      },
+      "task_id": "map_context",
+      "global_search": true,
+      "expected": {
+        "retrieve": false
+      }
+    },
+    {
+      "id": "sn_06",
+      "category": "team",
+      "query": "LunarSquad Ancient opening duel",
+      "metadata_filter": {
+        "map": "Ancient"
+      },
+      "task_id": "map_context",
+      "global_search": true,
+      "expected": {
+        "retrieve": false
+      }
+    },
+    {
+      "id": "sn_07",
+      "category": "team",
+      "query": "Review team VoidRoster on Dust2",
+      "metadata_filter": {
+        "map": "Dust2"
+      },
+      "task_id": "map_context",
+      "global_search": true,
+      "expected": {
+        "retrieve": false
+      }
+    },
+    {
+      "id": "sn_08",
+      "category": "mixed",
+      "query": "Compare donk and GhostAim on Ancient",
+      "metadata_filter": {
+        "map": "Ancient"
+      },
+      "task_id": "map_context",
+      "global_search": true,
+      "expected": {
+        "retrieve": false
+      }
+    },
+    {
+      "id": "sn_09",
+      "category": "mixed",
+      "query": "Falcons against VoidRoster on Dust2",
+      "metadata_filter": {
+        "map": "Dust2"
+      },
+      "task_id": "map_context",
+      "global_search": true,
+      "expected": {
+        "retrieve": false
+      }
+    },
+    {
+      "id": "sn_10",
+      "category": "domain",
+      "query": "Tennis match serve statistics",
+      "metadata_filter": {},
+      "task_id": "map_context",
+      "global_search": true,
+      "expected": {
+        "retrieve": false
+      }
+    },
+    {
+      "id": "sn_11",
+      "category": "domain",
+      "query": "Cricket professional match summary",
+      "metadata_filter": {},
+      "task_id": "map_context",
+      "global_search": true,
+      "expected": {
+        "retrieve": false
+      }
+    },
+    {
+      "id": "sn_12",
+      "category": "domain",
+      "query": "World chess round opening analysis",
+      "metadata_filter": {},
+      "task_id": "map_context",
+      "global_search": true,
+      "expected": {
+        "retrieve": false
+      }
+    }
+  ]
+}

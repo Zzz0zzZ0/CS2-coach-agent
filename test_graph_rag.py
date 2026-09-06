@@ -80,6 +80,15 @@ def test_graph_rag_returns_a_traceable_opening_path(tmp_path):
     assert evidence[0].metadata["context_level"] == "graph_path"
     assert "attacker killed defender" in evidence[0].content
 
+    missing_match = asyncio.run(
+        client.retrieve(
+            "Mirage opening duel first kill",
+            {"map": "de_mirage", "match_id": "missing"},
+            "opening_duel",
+        )
+    )
+    assert missing_match == []
+
     global_evidence = asyncio.run(
         client.retrieve(
             "Mirage professional opening patterns",
@@ -90,6 +99,15 @@ def test_graph_rag_returns_a_traceable_opening_path(tmp_path):
     assert global_evidence[0].metadata["tactic_type"] == "Graph Community Summary"
     assert "Community Summary" in global_evidence[0].content
     assert {item.metadata["topic"] for item in global_evidence} == {"opening"}
+
+    unknown_player = asyncio.run(
+        client.retrieve(
+            "s1mple 在 Mirage 的首杀",
+            {"map": "de_mirage"},
+            global_search=True,
+        )
+    )
+    assert unknown_player == []
 
     chinese_evidence = asyncio.run(
         client.retrieve("Mirage 首杀分析", {"map": "de_mirage"}, global_search=True)
@@ -146,6 +164,31 @@ def test_graph_roles_are_event_specific_and_players_use_steamids(tmp_path):
     player_nodes = {row[0]: row for row in nodes if row[1] == "player"}
     assert set(player_nodes) == {"player:111", "player:222", "player:333"}
     assert all(row[3:6] == (None, None, None) for row in player_nodes.values())
+
+
+def test_graph_does_not_create_a_fake_player_for_ambiguous_flashers(tmp_path):
+    client = GraphRAGClient(tmp_path / "graph.sqlite")
+    nodes, edges = client._graph_rows(
+        tmp_path / "demo-12345-map1.dem",
+        {
+            "map_name": "de_mirage",
+            "rounds": [{
+                "round_number": 1, "winner": "T", "reason": "target_bombed",
+                "kills": [], "grenades": [], "plants": [],
+                "flash_blinds": [{
+                    "attacker": "support / entry",
+                    "attacker_steamid": None,
+                    "attribution": "simultaneous_flash_candidates",
+                    "victim": "defender",
+                    "victim_steamid": "222",
+                }],
+            }],
+        },
+    )
+
+    assert not any(row[0] == "player:support / entry" for row in nodes)
+    assert not any(relation == "FLASHER" for _, relation, _, _ in edges)
+    assert any(relation == "BLINDED" and target == "player:222" for _, relation, target, _ in edges)
 
 
 def test_graph_global_search_rejects_irrelevant_queries(tmp_path):

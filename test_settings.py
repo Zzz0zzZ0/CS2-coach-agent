@@ -33,8 +33,14 @@ def test_runtime_llm_key_is_write_only_and_shared_by_file(tmp_path, monkeypatch)
     assert stat.S_IMODE(key_file.stat().st_mode) == 0o600
     assert client.get("/api/settings/llm").json()["configured"] is True
 
-    monkeypatch.setattr(providers, "ChatOpenAI", lambda **kwargs: object())
+    calls = []
+    monkeypatch.setattr(providers, "ChatOpenAI", lambda **kwargs: calls.append(kwargs) or object())
     first_llm = providers.get_llm()
+    assert calls[-1]["model"] == "qwen3.8-flash"
+    assert calls[-1]["timeout"] == 120
+    assert calls[-1]["max_tokens"] == 1400
+    assert calls[-1]["max_retries"] == 0
+    assert calls[-1]["extra_body"] == {"enable_thinking": False}
     providers.save_runtime_api_key("sk-test-0987654321ponmlkjihgfedcba")
     assert providers.get_llm() is not first_llm
 

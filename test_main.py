@@ -1,31 +1,37 @@
-import logging
+import asyncio
+from types import SimpleNamespace
 from fastapi.testclient import TestClient
-from app.core.celery_app import celery_app
-celery_app.conf.update(task_always_eager=True)
 from app.main import app
+from app.api.routers import webhooks
+from app.services.analysis_pipeline import AnalysisPipeline
+from app.services.rag_service import KnowledgeBaseClient
+from test_query_boundaries import graph, Store
 
-MOCK_PAYLOAD = {
-    "match_id": "test-match-123",
-    "map_name": "de_dust2",
-    "rounds": [
-        {"round": 1, "winner": "T"},
-        {"round": 2, "winner": "CT"}
-    ],
-    "some_unknown_field": "This should be caught by extra",
-    "extra_data": {
-        "source": "FACEIT"
-    }
+PAYLOAD = {
+    'match_id': 'offline-match', 'map_name': 'Ancient',
+    'rounds': [{'round_number':1, 'winner':'T', 'kills':[
+        {'killer':'donk','victim':'NiKo','killer_team':'Spirit','victim_team':'Falcons',
+         'killer_side':'T','victim_side':'CT','is_first_kill':True,'weapon':'ak47','tick':100}]}],
 }
 
-def test_webhook_match_end():
-    client = TestClient(app)
-    response = client.post("/api/webhook/match-end", json=MOCK_PAYLOAD)
-    
-    assert response.status_code == 200
-    resp_json = response.json()
-    assert resp_json.get("status") == "processing_in_mq"
-    assert "task_id" in resp_json
-    print(f"Test passed! Returned 200 processing with task_id: {resp_json['task_id']}")
 
-if __name__ == "__main__":
-    test_webhook_match_end()
+def test_webhook_dispatches_validated_payload(monkeypatch):
+    dispatched=[]
+    monkeypatch.setattr(webhooks.process_webhook_match_task, 'delay',
+        lambda payload: dispatched.append(payload) or SimpleNamespace(id='offline-task'))
+    with TestClient(app) as client:
+        response=client.post('/api/webhook/match-end',json=PAYLOAD)
+    assert response.status_code==200
+    assert response.json()['task_id']=='offline-task'
+    assert dispatched[0]['match_id']=='offline-match'
+
+
+def test_offline_analysis_runs_through_verifier(graph):
+    from app.domain.match_models import MatchWebhookPayload
+    result=asyncio.run(AnalysisPipeline(None,KnowledgeBaseClient(Store(),None),graph).analyze(
+        MatchWebhookPayload(**PAYLOAD)))
+    assert result.metrics.kills_total==1
+    assert result.verification_report['status']=='pass'
+    assert result.current_evidence and result.retrieval_evidence
+    assert '[C' in result.analyst_report and '[C' in result.coach_advice
+    assert result.model_usage=={}

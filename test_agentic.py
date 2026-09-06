@@ -1,6 +1,8 @@
 import asyncio
 
 from app.agentic.nodes.critique_node import create_critique_node
+from app.agentic.nodes.analyst_node import create_analyst_node
+from app.agentic.nodes.coach_node import create_coach_node
 from app.agentic.nodes.retrieve_node import create_retrieve_node
 from app.agentic.nodes.router_node import create_router_node
 from app.agentic.nodes.verify_node import create_verify_node
@@ -23,6 +25,22 @@ def test_router_creates_specialized_analysis_plan():
         "opening_duel", "utility", "round_flow", "map_context"
     }
     assert result["retrieval_metadata"] == {"map": "de_dust2"}
+
+
+def test_router_includes_current_teams_in_historical_search_queries():
+    result = asyncio.run(create_router_node()({
+        "match": {
+            "map_name": "de_nuke",
+            "rounds": [{"kills": [{
+                "killer_team": "Falcons", "victim_team": "Spirit",
+            }]}],
+        },
+        "metrics": {},
+    }))
+
+    assert "Falcons" in result["retrieval_query"]
+    assert "Spirit" in result["retrieval_query"]
+    assert all("Falcons" in task["query"] for task in result["analysis_plan"])
 
 
 def test_supervisor_selects_bounded_mode_and_router_filters_tasks():
@@ -49,7 +67,119 @@ def test_tools_node_calculates_metrics_before_agents():
     }))
 
     assert result["metrics"]["rounds_total"] == 1
+    assert result["current_evidence"][0]["metadata"]["evidence_scope"] == "current_match"
+    assert result["current_context"].startswith("[C1]")
     assert result["tool_trace"][0]["tool"] == "calculate_metrics"
+
+
+def test_analyst_report_is_deterministic_and_does_not_call_llm():
+    class _FailIfCalled:
+        async def ainvoke(self, _prompt):
+            raise AssertionError("deterministic analyst must not call the model")
+
+    result = asyncio.run(create_analyst_node(_FailIfCalled())({
+        "match": {"map_name": "de_nuke"},
+        "metrics": {
+            "rounds_total": 2,
+            "rounds_won_by_team": {"Spirit": 1, "Falcons": 1},
+            "rounds_won_by_team_and_side": {"Spirit": {"CT": 1}, "Falcons": {"T": 1}},
+            "kills_total": 10,
+            "opening_duels_by_team": {
+                "Spirit": {"round_wins": 1, "attempts": 1, "conversion_pct": 100.0},
+            },
+            "post_plant_by_team": {
+                "Falcons": {"round_wins": 1, "attempts": 1, "conversion_pct": 100.0},
+            },
+            "grenades_total": 2,
+            "grenades_by_type": {"Smoke": 2},
+            "plants_total": 1,
+            "plants_by_team": {"Falcons": 1},
+            "defuses_by_team": {},
+            "flash_blinds_total": 0,
+        },
+    }))
+
+    assert "Spirit（CT 1）" in result["analyst_report"]
+    assert "投掷次数只代表使用量" in result["analyst_report"]
+    assert result["analyst_report"].count("[C1]") == 7
+
+
+class _PriorityToolModel:
+    def bind_tools(self, tools):
+        assert tools[0].name == "select_coaching_priorities"
+        return self
+
+    async def ainvoke(self, _prompt):
+        return AIMessage(
+            content="",
+            tool_calls=[{
+                "name": "select_coaching_priorities",
+                "args": {"priority_ids": ["post_plant", "opening_followup"]},
+                "id": "coach-tool-1",
+                "type": "tool_call",
+            }],
+            usage_metadata={"input_tokens": 100, "output_tokens": 20, "total_tokens": 120},
+        )
+
+
+class _UtilityPriorityModel(_PriorityToolModel):
+    async def ainvoke(self, _prompt):
+        return AIMessage(
+            content="",
+            tool_calls=[{
+                "name": "select_coaching_priorities",
+                "args": {"priority_ids": ["utility_review", "side_transition"]},
+                "id": "coach-tool-utility",
+                "type": "tool_call",
+            }],
+        )
+
+
+def test_coach_model_only_selects_priorities_and_report_is_deterministic():
+    result = asyncio.run(create_coach_node(_PriorityToolModel())({
+        "metrics": {
+            "rounds_won_by_team": {"Spirit": 1},
+            "rounds_won_by_team_and_side": {"Spirit": {"CT": 1}},
+            "opening_duels_by_team": {
+                "Falcons": {"round_wins": 0, "attempts": 1, "conversion_pct": 0.0},
+            },
+            "post_plant_by_team": {
+                "Falcons": {"round_wins": 0, "attempts": 1, "conversion_pct": 0.0},
+            },
+            "defuses_by_team": {"Spirit": 1},
+            "round_summaries": [{
+                "round_number": 1,
+                "winner_team": "Spirit",
+                "opening_team": "Falcons",
+                "plants": 1,
+                "plant_teams": ["Falcons"],
+                "plant_outcome": "Falcons planted; Spirit defused",
+                "reason": "bomb_defused",
+            }],
+        },
+    }))
+
+    assert result["coach_decision"] == {
+        "priority_ids": ["post_plant", "opening_followup"],
+        "selection_source": "qwen_tool_call",
+    }
+    assert "R1：Falcons 下包，Spirit 拆包获胜" in result["coach_advice"]
+    assert "优秀" not in result["coach_advice"]
+    assert result["model_usage"]["total_tokens"] == 120
+
+
+def test_coach_utility_review_reports_available_flash_metrics():
+    result = asyncio.run(create_coach_node(_UtilityPriorityModel())({
+        "metrics": {
+            "rounds_won_by_team": {"Falcons": 13, "G2": 6},
+            "flash_blinds_total": 251,
+            "enemy_flash_blinds_by_team": {"Falcons": 55, "G2": 59},
+            "team_flash_blinds_by_team": {"Falcons": 69, "G2": 68},
+        },
+    }))
+
+    assert "251 次受闪" in result["coach_advice"]
+    assert "当前闪光致盲指标不可用" not in result["coach_advice"]
 
 
 class _ToolCallingModel:
@@ -73,7 +203,9 @@ class _ToolCallingModel:
         )
 
 
-def test_supervisor_uses_allowlisted_tool_call_when_available():
+def test_supervisor_uses_allowlisted_tool_call_when_available(monkeypatch):
+    from app.core.config import settings
+    monkeypatch.setattr(settings, "AUTONOMOUS_TOOL_SELECTION_ENABLED", True)
     result = asyncio.run(create_supervisor_node(_ToolCallingModel())({
         "match": {"map_name": "de_mirage"},
     }))
@@ -107,8 +239,9 @@ def test_critique_uses_rules_without_remote_llm():
 
 def test_verifier_reports_unknown_and_uncited_claims():
     result = asyncio.run(create_verify_node()({
+        "current_evidence": [{"source_id": "current"}],
         "retrieval_evidence": [{"source_id": "one"}],
-        "analyst_report": "观察到 [E1]。",
+        "analyst_report": "当前比赛观察到 [C1]。",
         "coach_advice": "建议加强默认控制。\n错误引用 [E9]。",
     }))
 
@@ -116,6 +249,31 @@ def test_verifier_reports_unknown_and_uncited_claims():
     assert report["status"] == "needs_review"
     assert report["unknown_citations"] == ["E9"]
     assert report["uncited_claim_count"] == 1
+
+
+def test_verifier_requires_current_evidence_for_current_match_claims():
+    result = asyncio.run(create_verify_node()({
+        "current_evidence": [{"source_id": "current"}],
+        "retrieval_evidence": [{"source_id": "history"}],
+        "analyst_report": "",
+        "coach_advice": "本场 Falcons 首杀转化偏低 [E1]。",
+    }))
+
+    report = result["verification_report"]
+    assert report["status"] == "needs_review"
+    assert report["current_claims_without_current_evidence"] == 1
+
+
+def test_verifier_rejects_empty_agent_outputs():
+    report = asyncio.run(create_verify_node()({
+        "current_evidence": [{"source_id": "current"}],
+        "retrieval_evidence": [],
+        "analyst_report": "",
+        "coach_advice": "",
+    }))["verification_report"]
+
+    assert report["status"] == "needs_review"
+    assert report["missing_outputs"] == ["analyst_report", "coach_advice"]
 
 
 class _OffTopicGraph:

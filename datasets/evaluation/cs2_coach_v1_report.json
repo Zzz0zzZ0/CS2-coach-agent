@@ -6,6 +6,2744 @@
     "failed": 0,
     "pass_rate_pct": 100.0
   },
+  "benchmark": {
+    "dataset": "datasets/evaluation/retrieval_queries_v2.json",
+    "formula": "(structured contract cases passed + retrieval checks passed) / (50 contract cases + 152 retrieval checks)",
+    "max_points": 202,
+    "modes": {
+      "no_rag": {
+        "available": true,
+        "contract": {
+          "passed": 5,
+          "total": 50,
+          "pass_rate_pct": 10.0
+        },
+        "retrieval": {
+          "queries": 50,
+          "queries_passed": 4,
+          "checks_passed": 4,
+          "checks_total": 152,
+          "quality_pct": 2.63,
+          "categories": {
+            "map_topic": {
+              "passed": 0,
+              "cases": 28
+            },
+            "negative": {
+              "passed": 4,
+              "cases": 4
+            },
+            "paraphrase": {
+              "passed": 0,
+              "cases": 8
+            },
+            "player_entity": {
+              "passed": 0,
+              "cases": 5
+            },
+            "team_entity": {
+              "passed": 0,
+              "cases": 5
+            }
+          },
+          "cases": [
+            {
+              "id": "ancient_overview",
+              "category": "map_topic",
+              "query": "Ancient professional match summary",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "ancient_opening",
+              "category": "map_topic",
+              "query": "Ancient opening duel first kill",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "ancient_utility",
+              "category": "map_topic",
+              "query": "Ancient smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "ancient_round_flow",
+              "category": "map_topic",
+              "query": "Ancient bomb plant retake round outcome",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "anubis_overview",
+              "category": "map_topic",
+              "query": "Anubis professional match summary",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "anubis_opening",
+              "category": "map_topic",
+              "query": "Anubis opening duel first kill",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "anubis_utility",
+              "category": "map_topic",
+              "query": "Anubis smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "anubis_round_flow",
+              "category": "map_topic",
+              "query": "Anubis bomb plant retake round outcome",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "cache_overview",
+              "category": "map_topic",
+              "query": "Cache professional match summary",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "cache_opening",
+              "category": "map_topic",
+              "query": "Cache opening duel first kill",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "cache_utility",
+              "category": "map_topic",
+              "query": "Cache smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "cache_round_flow",
+              "category": "map_topic",
+              "query": "Cache bomb plant retake round outcome",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "dust2_overview",
+              "category": "map_topic",
+              "query": "Dust2 professional match summary",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "dust2_opening",
+              "category": "map_topic",
+              "query": "Dust2 opening duel first kill",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "dust2_utility",
+              "category": "map_topic",
+              "query": "Dust2 smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "dust2_round_flow",
+              "category": "map_topic",
+              "query": "Dust2 bomb plant retake round outcome",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "inferno_overview",
+              "category": "map_topic",
+              "query": "Inferno professional match summary",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "inferno_opening",
+              "category": "map_topic",
+              "query": "Inferno opening duel first kill",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "inferno_utility",
+              "category": "map_topic",
+              "query": "Inferno smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "inferno_round_flow",
+              "category": "map_topic",
+              "query": "Inferno bomb plant retake round outcome",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "mirage_overview",
+              "category": "map_topic",
+              "query": "Mirage professional match summary",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "mirage_opening",
+              "category": "map_topic",
+              "query": "Mirage opening duel first kill",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "mirage_utility",
+              "category": "map_topic",
+              "query": "Mirage smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "mirage_round_flow",
+              "category": "map_topic",
+              "query": "Mirage bomb plant retake round outcome",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "nuke_overview",
+              "category": "map_topic",
+              "query": "Nuke professional match summary",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "nuke_opening",
+              "category": "map_topic",
+              "query": "Nuke opening duel first kill",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "nuke_utility",
+              "category": "map_topic",
+              "query": "Nuke smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "nuke_round_flow",
+              "category": "map_topic",
+              "query": "Nuke bomb plant retake round outcome",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "falcons_dust2_opening",
+              "category": "team_entity",
+              "query": "猎鹰在 Dust2 的首杀回合",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "spirit_ancient_utility",
+              "category": "team_entity",
+              "query": "绿龙 Ancient 的道具协同",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "vitality_nuke_round_flow",
+              "category": "team_entity",
+              "query": "蜜蜂 Nuke 下包后的回合结果",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "furia_cache_opening",
+              "category": "team_entity",
+              "query": "黑豹 Cache 首杀表现",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "mouz_dust2_utility",
+              "category": "team_entity",
+              "query": "老鼠 Dust2 的闪光与烟雾",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "m0nesy_dust2_opening",
+              "category": "player_entity",
+              "query": "m0NESY 在 Dust2 的首杀",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "donk_ancient_opening",
+              "category": "player_entity",
+              "query": "donk Ancient opening duel",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "zywoo_dust2_opening",
+              "category": "player_entity",
+              "query": "ZywOo Dust2 首杀回合",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "kscerato_cache_round_flow",
+              "category": "player_entity",
+              "query": "KSCERATO Cache 下包回合",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "torzsi_dust2_utility",
+              "category": "player_entity",
+              "query": "torzsi Dust2 flash utility",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "zh_mirage_utility",
+              "category": "paraphrase",
+              "query": "荒漠迷城的烟闪火道具组合",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "zh_nuke_overview",
+              "category": "paraphrase",
+              "query": "Nuke 职业比赛整体概览",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "zh_anubis_round_flow",
+              "category": "paraphrase",
+              "query": "Anubis 进攻方下包与回防结果",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "zh_cache_opening",
+              "category": "paraphrase",
+              "query": "Cache 第一波对枪是谁先拿人头",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "zh_inferno_utility",
+              "category": "paraphrase",
+              "query": "Inferno 的投掷物使用记录",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "zh_ancient_round_flow",
+              "category": "paraphrase",
+              "query": "Ancient 下包后双方接触与胜负",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "zh_dust2_overview",
+              "category": "paraphrase",
+              "query": "Dust2 职业录像数据总览",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "en_mirage_opening",
+              "category": "paraphrase",
+              "query": "Mirage first contact and opening pick",
+              "checks": {
+                "retrieved": false,
+                "map_match": false,
+                "intent_match": false
+              }
+            },
+            {
+              "id": "negative_missing_map",
+              "category": "negative",
+              "query": "Overpass professional demo round events",
+              "checks": {
+                "abstained": true
+              }
+            },
+            {
+              "id": "negative_missing_player",
+              "category": "negative",
+              "query": "s1mple 在 Ancient 的首杀",
+              "checks": {
+                "abstained": true
+              }
+            },
+            {
+              "id": "negative_unknown_match",
+              "category": "negative",
+              "query": "HLTV match 0000000 Dust2 round 99",
+              "checks": {
+                "abstained": true
+              }
+            },
+            {
+              "id": "negative_off_topic",
+              "category": "negative",
+              "query": "Mars rover battery telemetry",
+              "checks": {
+                "abstained": true
+              }
+            }
+          ]
+        },
+        "score": {
+          "earned_points": 9,
+          "total_points": 202,
+          "pct": 4.46
+        }
+      },
+      "community_only": {
+        "available": true,
+        "contract": {
+          "passed": 5,
+          "total": 50,
+          "pass_rate_pct": 10.0
+        },
+        "retrieval": {
+          "queries": 50,
+          "queries_passed": 42,
+          "checks_passed": 144,
+          "checks_total": 152,
+          "quality_pct": 94.74,
+          "categories": {
+            "map_topic": {
+              "passed": 28,
+              "cases": 28
+            },
+            "negative": {
+              "passed": 4,
+              "cases": 4
+            },
+            "paraphrase": {
+              "passed": 8,
+              "cases": 8
+            },
+            "player_entity": {
+              "passed": 2,
+              "cases": 5
+            },
+            "team_entity": {
+              "passed": 0,
+              "cases": 5
+            }
+          },
+          "cases": [
+            {
+              "id": "ancient_overview",
+              "category": "map_topic",
+              "query": "Ancient professional match summary",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "ancient_opening",
+              "category": "map_topic",
+              "query": "Ancient opening duel first kill",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "ancient_utility",
+              "category": "map_topic",
+              "query": "Ancient smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "ancient_round_flow",
+              "category": "map_topic",
+              "query": "Ancient bomb plant retake round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "anubis_overview",
+              "category": "map_topic",
+              "query": "Anubis professional match summary",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "anubis_opening",
+              "category": "map_topic",
+              "query": "Anubis opening duel first kill",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "anubis_utility",
+              "category": "map_topic",
+              "query": "Anubis smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "anubis_round_flow",
+              "category": "map_topic",
+              "query": "Anubis bomb plant retake round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "cache_overview",
+              "category": "map_topic",
+              "query": "Cache professional match summary",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "cache_opening",
+              "category": "map_topic",
+              "query": "Cache opening duel first kill",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "cache_utility",
+              "category": "map_topic",
+              "query": "Cache smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "cache_round_flow",
+              "category": "map_topic",
+              "query": "Cache bomb plant retake round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "dust2_overview",
+              "category": "map_topic",
+              "query": "Dust2 professional match summary",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "dust2_opening",
+              "category": "map_topic",
+              "query": "Dust2 opening duel first kill",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "dust2_utility",
+              "category": "map_topic",
+              "query": "Dust2 smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "dust2_round_flow",
+              "category": "map_topic",
+              "query": "Dust2 bomb plant retake round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "inferno_overview",
+              "category": "map_topic",
+              "query": "Inferno professional match summary",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "inferno_opening",
+              "category": "map_topic",
+              "query": "Inferno opening duel first kill",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "inferno_utility",
+              "category": "map_topic",
+              "query": "Inferno smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "inferno_round_flow",
+              "category": "map_topic",
+              "query": "Inferno bomb plant retake round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "mirage_overview",
+              "category": "map_topic",
+              "query": "Mirage professional match summary",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "mirage_opening",
+              "category": "map_topic",
+              "query": "Mirage opening duel first kill",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "mirage_utility",
+              "category": "map_topic",
+              "query": "Mirage smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "mirage_round_flow",
+              "category": "map_topic",
+              "query": "Mirage bomb plant retake round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "nuke_overview",
+              "category": "map_topic",
+              "query": "Nuke professional match summary",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "nuke_opening",
+              "category": "map_topic",
+              "query": "Nuke opening duel first kill",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "nuke_utility",
+              "category": "map_topic",
+              "query": "Nuke smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "nuke_round_flow",
+              "category": "map_topic",
+              "query": "Nuke bomb plant retake round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "falcons_dust2_opening",
+              "category": "team_entity",
+              "query": "猎鹰在 Dust2 的首杀回合",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "spirit_ancient_utility",
+              "category": "team_entity",
+              "query": "绿龙 Ancient 的道具协同",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "vitality_nuke_round_flow",
+              "category": "team_entity",
+              "query": "蜜蜂 Nuke 下包后的回合结果",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "furia_cache_opening",
+              "category": "team_entity",
+              "query": "黑豹 Cache 首杀表现",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "mouz_dust2_utility",
+              "category": "team_entity",
+              "query": "老鼠 Dust2 的闪光与烟雾",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "m0nesy_dust2_opening",
+              "category": "player_entity",
+              "query": "m0NESY 在 Dust2 的首杀",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "donk_ancient_opening",
+              "category": "player_entity",
+              "query": "donk Ancient opening duel",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "zywoo_dust2_opening",
+              "category": "player_entity",
+              "query": "ZywOo Dust2 首杀回合",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "kscerato_cache_round_flow",
+              "category": "player_entity",
+              "query": "KSCERATO Cache 下包回合",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "torzsi_dust2_utility",
+              "category": "player_entity",
+              "query": "torzsi Dust2 flash utility",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": false
+              }
+            },
+            {
+              "id": "zh_mirage_utility",
+              "category": "paraphrase",
+              "query": "荒漠迷城的烟闪火道具组合",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "zh_nuke_overview",
+              "category": "paraphrase",
+              "query": "Nuke 职业比赛整体概览",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "zh_anubis_round_flow",
+              "category": "paraphrase",
+              "query": "Anubis 进攻方下包与回防结果",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "zh_cache_opening",
+              "category": "paraphrase",
+              "query": "Cache 第一波对枪是谁先拿人头",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "zh_inferno_utility",
+              "category": "paraphrase",
+              "query": "Inferno 的投掷物使用记录",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "zh_ancient_round_flow",
+              "category": "paraphrase",
+              "query": "Ancient 下包后双方接触与胜负",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "zh_dust2_overview",
+              "category": "paraphrase",
+              "query": "Dust2 职业录像数据总览",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "en_mirage_opening",
+              "category": "paraphrase",
+              "query": "Mirage first contact and opening pick",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "negative_missing_map",
+              "category": "negative",
+              "query": "Overpass professional demo round events",
+              "checks": {
+                "abstained": true
+              }
+            },
+            {
+              "id": "negative_missing_player",
+              "category": "negative",
+              "query": "s1mple 在 Ancient 的首杀",
+              "checks": {
+                "abstained": true
+              }
+            },
+            {
+              "id": "negative_unknown_match",
+              "category": "negative",
+              "query": "HLTV match 0000000 Dust2 round 99",
+              "checks": {
+                "abstained": true
+              }
+            },
+            {
+              "id": "negative_off_topic",
+              "category": "negative",
+              "query": "Mars rover battery telemetry",
+              "checks": {
+                "abstained": true
+              }
+            }
+          ]
+        },
+        "score": {
+          "earned_points": 149,
+          "total_points": 202,
+          "pct": 73.76
+        }
+      },
+      "vector_only": {
+        "available": true,
+        "contract": {
+          "passed": 5,
+          "total": 50,
+          "pass_rate_pct": 10.0
+        },
+        "retrieval": {
+          "queries": 50,
+          "queries_passed": 50,
+          "checks_passed": 152,
+          "checks_total": 152,
+          "quality_pct": 100.0,
+          "categories": {
+            "map_topic": {
+              "passed": 28,
+              "cases": 28
+            },
+            "negative": {
+              "passed": 4,
+              "cases": 4
+            },
+            "paraphrase": {
+              "passed": 8,
+              "cases": 8
+            },
+            "player_entity": {
+              "passed": 5,
+              "cases": 5
+            },
+            "team_entity": {
+              "passed": 5,
+              "cases": 5
+            }
+          },
+          "cases": [
+            {
+              "id": "ancient_overview",
+              "category": "map_topic",
+              "query": "Ancient professional match summary",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "ancient_opening",
+              "category": "map_topic",
+              "query": "Ancient opening duel first kill",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "ancient_utility",
+              "category": "map_topic",
+              "query": "Ancient smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "ancient_round_flow",
+              "category": "map_topic",
+              "query": "Ancient bomb plant retake round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "anubis_overview",
+              "category": "map_topic",
+              "query": "Anubis professional match summary",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "anubis_opening",
+              "category": "map_topic",
+              "query": "Anubis opening duel first kill",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "anubis_utility",
+              "category": "map_topic",
+              "query": "Anubis smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "anubis_round_flow",
+              "category": "map_topic",
+              "query": "Anubis bomb plant retake round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "cache_overview",
+              "category": "map_topic",
+              "query": "Cache professional match summary",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "cache_opening",
+              "category": "map_topic",
+              "query": "Cache opening duel first kill",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "cache_utility",
+              "category": "map_topic",
+              "query": "Cache smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "cache_round_flow",
+              "category": "map_topic",
+              "query": "Cache bomb plant retake round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "dust2_overview",
+              "category": "map_topic",
+              "query": "Dust2 professional match summary",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "dust2_opening",
+              "category": "map_topic",
+              "query": "Dust2 opening duel first kill",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "dust2_utility",
+              "category": "map_topic",
+              "query": "Dust2 smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "dust2_round_flow",
+              "category": "map_topic",
+              "query": "Dust2 bomb plant retake round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "inferno_overview",
+              "category": "map_topic",
+              "query": "Inferno professional match summary",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "inferno_opening",
+              "category": "map_topic",
+              "query": "Inferno opening duel first kill",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "inferno_utility",
+              "category": "map_topic",
+              "query": "Inferno smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "inferno_round_flow",
+              "category": "map_topic",
+              "query": "Inferno bomb plant retake round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "mirage_overview",
+              "category": "map_topic",
+              "query": "Mirage professional match summary",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "mirage_opening",
+              "category": "map_topic",
+              "query": "Mirage opening duel first kill",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "mirage_utility",
+              "category": "map_topic",
+              "query": "Mirage smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "mirage_round_flow",
+              "category": "map_topic",
+              "query": "Mirage bomb plant retake round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "nuke_overview",
+              "category": "map_topic",
+              "query": "Nuke professional match summary",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "nuke_opening",
+              "category": "map_topic",
+              "query": "Nuke opening duel first kill",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "nuke_utility",
+              "category": "map_topic",
+              "query": "Nuke smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "nuke_round_flow",
+              "category": "map_topic",
+              "query": "Nuke bomb plant retake round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "falcons_dust2_opening",
+              "category": "team_entity",
+              "query": "猎鹰在 Dust2 的首杀回合",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "spirit_ancient_utility",
+              "category": "team_entity",
+              "query": "绿龙 Ancient 的道具协同",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "vitality_nuke_round_flow",
+              "category": "team_entity",
+              "query": "蜜蜂 Nuke 下包后的回合结果",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "furia_cache_opening",
+              "category": "team_entity",
+              "query": "黑豹 Cache 首杀表现",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "mouz_dust2_utility",
+              "category": "team_entity",
+              "query": "老鼠 Dust2 的闪光与烟雾",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "m0nesy_dust2_opening",
+              "category": "player_entity",
+              "query": "m0NESY 在 Dust2 的首杀",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "donk_ancient_opening",
+              "category": "player_entity",
+              "query": "donk Ancient opening duel",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "zywoo_dust2_opening",
+              "category": "player_entity",
+              "query": "ZywOo Dust2 首杀回合",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "kscerato_cache_round_flow",
+              "category": "player_entity",
+              "query": "KSCERATO Cache 下包回合",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "torzsi_dust2_utility",
+              "category": "player_entity",
+              "query": "torzsi Dust2 flash utility",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "zh_mirage_utility",
+              "category": "paraphrase",
+              "query": "荒漠迷城的烟闪火道具组合",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "zh_nuke_overview",
+              "category": "paraphrase",
+              "query": "Nuke 职业比赛整体概览",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "zh_anubis_round_flow",
+              "category": "paraphrase",
+              "query": "Anubis 进攻方下包与回防结果",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "zh_cache_opening",
+              "category": "paraphrase",
+              "query": "Cache 第一波对枪是谁先拿人头",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "zh_inferno_utility",
+              "category": "paraphrase",
+              "query": "Inferno 的投掷物使用记录",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "zh_ancient_round_flow",
+              "category": "paraphrase",
+              "query": "Ancient 下包后双方接触与胜负",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "zh_dust2_overview",
+              "category": "paraphrase",
+              "query": "Dust2 职业录像数据总览",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "en_mirage_opening",
+              "category": "paraphrase",
+              "query": "Mirage first contact and opening pick",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "negative_missing_map",
+              "category": "negative",
+              "query": "Overpass professional demo round events",
+              "checks": {
+                "abstained": true
+              }
+            },
+            {
+              "id": "negative_missing_player",
+              "category": "negative",
+              "query": "s1mple 在 Ancient 的首杀",
+              "checks": {
+                "abstained": true
+              }
+            },
+            {
+              "id": "negative_unknown_match",
+              "category": "negative",
+              "query": "HLTV match 0000000 Dust2 round 99",
+              "checks": {
+                "abstained": true
+              }
+            },
+            {
+              "id": "negative_off_topic",
+              "category": "negative",
+              "query": "Mars rover battery telemetry",
+              "checks": {
+                "abstained": true
+              }
+            }
+          ]
+        },
+        "score": {
+          "earned_points": 157,
+          "total_points": 202,
+          "pct": 77.72
+        }
+      },
+      "graph_only": {
+        "available": true,
+        "contract": {
+          "passed": 50,
+          "total": 50,
+          "pass_rate_pct": 100.0
+        },
+        "retrieval": {
+          "queries": 50,
+          "queries_passed": 50,
+          "checks_passed": 152,
+          "checks_total": 152,
+          "quality_pct": 100.0,
+          "categories": {
+            "map_topic": {
+              "passed": 28,
+              "cases": 28
+            },
+            "negative": {
+              "passed": 4,
+              "cases": 4
+            },
+            "paraphrase": {
+              "passed": 8,
+              "cases": 8
+            },
+            "player_entity": {
+              "passed": 5,
+              "cases": 5
+            },
+            "team_entity": {
+              "passed": 5,
+              "cases": 5
+            }
+          },
+          "cases": [
+            {
+              "id": "ancient_overview",
+              "category": "map_topic",
+              "query": "Ancient professional match summary",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "ancient_opening",
+              "category": "map_topic",
+              "query": "Ancient opening duel first kill",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "ancient_utility",
+              "category": "map_topic",
+              "query": "Ancient smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "ancient_round_flow",
+              "category": "map_topic",
+              "query": "Ancient bomb plant retake round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "anubis_overview",
+              "category": "map_topic",
+              "query": "Anubis professional match summary",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "anubis_opening",
+              "category": "map_topic",
+              "query": "Anubis opening duel first kill",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "anubis_utility",
+              "category": "map_topic",
+              "query": "Anubis smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "anubis_round_flow",
+              "category": "map_topic",
+              "query": "Anubis bomb plant retake round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "cache_overview",
+              "category": "map_topic",
+              "query": "Cache professional match summary",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "cache_opening",
+              "category": "map_topic",
+              "query": "Cache opening duel first kill",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "cache_utility",
+              "category": "map_topic",
+              "query": "Cache smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "cache_round_flow",
+              "category": "map_topic",
+              "query": "Cache bomb plant retake round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "dust2_overview",
+              "category": "map_topic",
+              "query": "Dust2 professional match summary",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "dust2_opening",
+              "category": "map_topic",
+              "query": "Dust2 opening duel first kill",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "dust2_utility",
+              "category": "map_topic",
+              "query": "Dust2 smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "dust2_round_flow",
+              "category": "map_topic",
+              "query": "Dust2 bomb plant retake round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "inferno_overview",
+              "category": "map_topic",
+              "query": "Inferno professional match summary",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "inferno_opening",
+              "category": "map_topic",
+              "query": "Inferno opening duel first kill",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "inferno_utility",
+              "category": "map_topic",
+              "query": "Inferno smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "inferno_round_flow",
+              "category": "map_topic",
+              "query": "Inferno bomb plant retake round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "mirage_overview",
+              "category": "map_topic",
+              "query": "Mirage professional match summary",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "mirage_opening",
+              "category": "map_topic",
+              "query": "Mirage opening duel first kill",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "mirage_utility",
+              "category": "map_topic",
+              "query": "Mirage smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "mirage_round_flow",
+              "category": "map_topic",
+              "query": "Mirage bomb plant retake round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "nuke_overview",
+              "category": "map_topic",
+              "query": "Nuke professional match summary",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "nuke_opening",
+              "category": "map_topic",
+              "query": "Nuke opening duel first kill",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "nuke_utility",
+              "category": "map_topic",
+              "query": "Nuke smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "nuke_round_flow",
+              "category": "map_topic",
+              "query": "Nuke bomb plant retake round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "falcons_dust2_opening",
+              "category": "team_entity",
+              "query": "猎鹰在 Dust2 的首杀回合",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "spirit_ancient_utility",
+              "category": "team_entity",
+              "query": "绿龙 Ancient 的道具协同",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "vitality_nuke_round_flow",
+              "category": "team_entity",
+              "query": "蜜蜂 Nuke 下包后的回合结果",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "furia_cache_opening",
+              "category": "team_entity",
+              "query": "黑豹 Cache 首杀表现",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "mouz_dust2_utility",
+              "category": "team_entity",
+              "query": "老鼠 Dust2 的闪光与烟雾",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "m0nesy_dust2_opening",
+              "category": "player_entity",
+              "query": "m0NESY 在 Dust2 的首杀",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "donk_ancient_opening",
+              "category": "player_entity",
+              "query": "donk Ancient opening duel",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "zywoo_dust2_opening",
+              "category": "player_entity",
+              "query": "ZywOo Dust2 首杀回合",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "kscerato_cache_round_flow",
+              "category": "player_entity",
+              "query": "KSCERATO Cache 下包回合",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "torzsi_dust2_utility",
+              "category": "player_entity",
+              "query": "torzsi Dust2 flash utility",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "zh_mirage_utility",
+              "category": "paraphrase",
+              "query": "荒漠迷城的烟闪火道具组合",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "zh_nuke_overview",
+              "category": "paraphrase",
+              "query": "Nuke 职业比赛整体概览",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "zh_anubis_round_flow",
+              "category": "paraphrase",
+              "query": "Anubis 进攻方下包与回防结果",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "zh_cache_opening",
+              "category": "paraphrase",
+              "query": "Cache 第一波对枪是谁先拿人头",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "zh_inferno_utility",
+              "category": "paraphrase",
+              "query": "Inferno 的投掷物使用记录",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "zh_ancient_round_flow",
+              "category": "paraphrase",
+              "query": "Ancient 下包后双方接触与胜负",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "zh_dust2_overview",
+              "category": "paraphrase",
+              "query": "Dust2 职业录像数据总览",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "en_mirage_opening",
+              "category": "paraphrase",
+              "query": "Mirage first contact and opening pick",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "negative_missing_map",
+              "category": "negative",
+              "query": "Overpass professional demo round events",
+              "checks": {
+                "abstained": true
+              }
+            },
+            {
+              "id": "negative_missing_player",
+              "category": "negative",
+              "query": "s1mple 在 Ancient 的首杀",
+              "checks": {
+                "abstained": true
+              }
+            },
+            {
+              "id": "negative_unknown_match",
+              "category": "negative",
+              "query": "HLTV match 0000000 Dust2 round 99",
+              "checks": {
+                "abstained": true
+              }
+            },
+            {
+              "id": "negative_off_topic",
+              "category": "negative",
+              "query": "Mars rover battery telemetry",
+              "checks": {
+                "abstained": true
+              }
+            }
+          ]
+        },
+        "score": {
+          "earned_points": 202,
+          "total_points": 202,
+          "pct": 100.0
+        }
+      },
+      "hybrid": {
+        "available": true,
+        "contract": {
+          "passed": 50,
+          "total": 50,
+          "pass_rate_pct": 100.0
+        },
+        "retrieval": {
+          "queries": 50,
+          "queries_passed": 50,
+          "checks_passed": 152,
+          "checks_total": 152,
+          "quality_pct": 100.0,
+          "categories": {
+            "map_topic": {
+              "passed": 28,
+              "cases": 28
+            },
+            "negative": {
+              "passed": 4,
+              "cases": 4
+            },
+            "paraphrase": {
+              "passed": 8,
+              "cases": 8
+            },
+            "player_entity": {
+              "passed": 5,
+              "cases": 5
+            },
+            "team_entity": {
+              "passed": 5,
+              "cases": 5
+            }
+          },
+          "cases": [
+            {
+              "id": "ancient_overview",
+              "category": "map_topic",
+              "query": "Ancient professional match summary",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "ancient_opening",
+              "category": "map_topic",
+              "query": "Ancient opening duel first kill",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "ancient_utility",
+              "category": "map_topic",
+              "query": "Ancient smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "ancient_round_flow",
+              "category": "map_topic",
+              "query": "Ancient bomb plant retake round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "anubis_overview",
+              "category": "map_topic",
+              "query": "Anubis professional match summary",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "anubis_opening",
+              "category": "map_topic",
+              "query": "Anubis opening duel first kill",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "anubis_utility",
+              "category": "map_topic",
+              "query": "Anubis smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "anubis_round_flow",
+              "category": "map_topic",
+              "query": "Anubis bomb plant retake round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "cache_overview",
+              "category": "map_topic",
+              "query": "Cache professional match summary",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "cache_opening",
+              "category": "map_topic",
+              "query": "Cache opening duel first kill",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "cache_utility",
+              "category": "map_topic",
+              "query": "Cache smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "cache_round_flow",
+              "category": "map_topic",
+              "query": "Cache bomb plant retake round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "dust2_overview",
+              "category": "map_topic",
+              "query": "Dust2 professional match summary",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "dust2_opening",
+              "category": "map_topic",
+              "query": "Dust2 opening duel first kill",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "dust2_utility",
+              "category": "map_topic",
+              "query": "Dust2 smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "dust2_round_flow",
+              "category": "map_topic",
+              "query": "Dust2 bomb plant retake round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "inferno_overview",
+              "category": "map_topic",
+              "query": "Inferno professional match summary",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "inferno_opening",
+              "category": "map_topic",
+              "query": "Inferno opening duel first kill",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "inferno_utility",
+              "category": "map_topic",
+              "query": "Inferno smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "inferno_round_flow",
+              "category": "map_topic",
+              "query": "Inferno bomb plant retake round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "mirage_overview",
+              "category": "map_topic",
+              "query": "Mirage professional match summary",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "mirage_opening",
+              "category": "map_topic",
+              "query": "Mirage opening duel first kill",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "mirage_utility",
+              "category": "map_topic",
+              "query": "Mirage smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "mirage_round_flow",
+              "category": "map_topic",
+              "query": "Mirage bomb plant retake round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "nuke_overview",
+              "category": "map_topic",
+              "query": "Nuke professional match summary",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "nuke_opening",
+              "category": "map_topic",
+              "query": "Nuke opening duel first kill",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "nuke_utility",
+              "category": "map_topic",
+              "query": "Nuke smoke flash molotov utility sequence",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "nuke_round_flow",
+              "category": "map_topic",
+              "query": "Nuke bomb plant retake round outcome",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "falcons_dust2_opening",
+              "category": "team_entity",
+              "query": "猎鹰在 Dust2 的首杀回合",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "spirit_ancient_utility",
+              "category": "team_entity",
+              "query": "绿龙 Ancient 的道具协同",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "vitality_nuke_round_flow",
+              "category": "team_entity",
+              "query": "蜜蜂 Nuke 下包后的回合结果",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "furia_cache_opening",
+              "category": "team_entity",
+              "query": "黑豹 Cache 首杀表现",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "mouz_dust2_utility",
+              "category": "team_entity",
+              "query": "老鼠 Dust2 的闪光与烟雾",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "m0nesy_dust2_opening",
+              "category": "player_entity",
+              "query": "m0NESY 在 Dust2 的首杀",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "donk_ancient_opening",
+              "category": "player_entity",
+              "query": "donk Ancient opening duel",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "zywoo_dust2_opening",
+              "category": "player_entity",
+              "query": "ZywOo Dust2 首杀回合",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "kscerato_cache_round_flow",
+              "category": "player_entity",
+              "query": "KSCERATO Cache 下包回合",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "torzsi_dust2_utility",
+              "category": "player_entity",
+              "query": "torzsi Dust2 flash utility",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true,
+                "entity_match": true
+              }
+            },
+            {
+              "id": "zh_mirage_utility",
+              "category": "paraphrase",
+              "query": "荒漠迷城的烟闪火道具组合",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "zh_nuke_overview",
+              "category": "paraphrase",
+              "query": "Nuke 职业比赛整体概览",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "zh_anubis_round_flow",
+              "category": "paraphrase",
+              "query": "Anubis 进攻方下包与回防结果",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "zh_cache_opening",
+              "category": "paraphrase",
+              "query": "Cache 第一波对枪是谁先拿人头",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "zh_inferno_utility",
+              "category": "paraphrase",
+              "query": "Inferno 的投掷物使用记录",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "zh_ancient_round_flow",
+              "category": "paraphrase",
+              "query": "Ancient 下包后双方接触与胜负",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "zh_dust2_overview",
+              "category": "paraphrase",
+              "query": "Dust2 职业录像数据总览",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "en_mirage_opening",
+              "category": "paraphrase",
+              "query": "Mirage first contact and opening pick",
+              "checks": {
+                "retrieved": true,
+                "map_match": true,
+                "intent_match": true
+              }
+            },
+            {
+              "id": "negative_missing_map",
+              "category": "negative",
+              "query": "Overpass professional demo round events",
+              "checks": {
+                "abstained": true
+              }
+            },
+            {
+              "id": "negative_missing_player",
+              "category": "negative",
+              "query": "s1mple 在 Ancient 的首杀",
+              "checks": {
+                "abstained": true
+              }
+            },
+            {
+              "id": "negative_unknown_match",
+              "category": "negative",
+              "query": "HLTV match 0000000 Dust2 round 99",
+              "checks": {
+                "abstained": true
+              }
+            },
+            {
+              "id": "negative_off_topic",
+              "category": "negative",
+              "query": "Mars rover battery telemetry",
+              "checks": {
+                "abstained": true
+              }
+            }
+          ]
+        },
+        "score": {
+          "earned_points": 202,
+          "total_points": 202,
+          "pct": 100.0
+        }
+      }
+    },
+    "interpretation": "The score measures reproducible engineering behavior. It is not an expert rating of tactical insight or player quality."
+  },
   "ablation": {
     "community_only_structured_answers": 0,
     "community_only_structured_answer_pct": 0.0,
@@ -16,10 +2754,10 @@
   "tactical": {
     "dataset_version": "tactical-query-v1",
     "graph": {
-      "nodes": 36360,
-      "edges": 107389,
+      "nodes": 48643,
+      "edges": 144281,
       "matches": 20,
-      "tactical_sequences": 5325,
+      "tactical_sequences": 5319,
       "communities": 28
     },
     "summary": {
@@ -35,8 +2773,8 @@
       "key_round_filter_coverage_pct": 100.0,
       "round_contrast_coverage_pct": 100.0,
       "latency_ms": {
-        "p50": 231.09,
-        "p95": 479.71
+        "p50": 332.02,
+        "p95": 684.07
       },
       "categories": {
         "comparison": {
@@ -85,7 +2823,7 @@
           "source_coverage": true
         },
         "failures": [],
-        "latency_ms": 1016.21,
+        "latency_ms": 1298.43,
         "result_type": "team_tactical_profile",
         "source_id": "graph-profile:falcons",
         "coach_brief_kind": "team_profile"
@@ -113,7 +2851,7 @@
           "source_coverage": true
         },
         "failures": [],
-        "latency_ms": 231.09,
+        "latency_ms": 331.35,
         "result_type": "team_tactical_profile",
         "source_id": "graph-profile:spirit",
         "coach_brief_kind": "team_profile"
@@ -141,7 +2879,7 @@
           "source_coverage": true
         },
         "failures": [],
-        "latency_ms": 230.34,
+        "latency_ms": 362.52,
         "result_type": "team_tactical_profile",
         "source_id": "graph-profile:vitality",
         "coach_brief_kind": "team_profile"
@@ -169,7 +2907,7 @@
           "source_coverage": true
         },
         "failures": [],
-        "latency_ms": 240.49,
+        "latency_ms": 330.47,
         "result_type": "team_tactical_profile",
         "source_id": "graph-profile:furia",
         "coach_brief_kind": "team_profile"
@@ -197,7 +2935,7 @@
           "source_coverage": true
         },
         "failures": [],
-        "latency_ms": 229.42,
+        "latency_ms": 333.08,
         "result_type": "team_tactical_profile",
         "source_id": "graph-profile:mouz",
         "coach_brief_kind": "team_profile"
@@ -225,7 +2963,7 @@
           "source_coverage": true
         },
         "failures": [],
-        "latency_ms": 230.15,
+        "latency_ms": 357.1,
         "result_type": "team_tactical_profile",
         "source_id": "graph-profile:falcons:Dust2:T",
         "coach_brief_kind": "team_profile"
@@ -253,7 +2991,7 @@
           "source_coverage": true
         },
         "failures": [],
-        "latency_ms": 239.36,
+        "latency_ms": 329.73,
         "result_type": "team_tactical_profile",
         "source_id": "graph-profile:falcons:Nuke:CT",
         "coach_brief_kind": "team_profile"
@@ -281,7 +3019,7 @@
           "source_coverage": true
         },
         "failures": [],
-        "latency_ms": 229.93,
+        "latency_ms": 332.02,
         "result_type": "team_tactical_profile",
         "source_id": "graph-profile:spirit:Nuke:CT",
         "coach_brief_kind": "team_profile"
@@ -309,7 +3047,7 @@
           "source_coverage": true
         },
         "failures": [],
-        "latency_ms": 235.0,
+        "latency_ms": 357.76,
         "result_type": "team_tactical_profile",
         "source_id": "graph-profile:spirit:Ancient:T",
         "coach_brief_kind": "team_profile"
@@ -337,7 +3075,7 @@
           "source_coverage": true
         },
         "failures": [],
-        "latency_ms": 239.48,
+        "latency_ms": 330.97,
         "result_type": "team_tactical_profile",
         "source_id": "graph-profile:vitality:Nuke:CT",
         "coach_brief_kind": "team_profile"
@@ -365,7 +3103,7 @@
           "source_coverage": true
         },
         "failures": [],
-        "latency_ms": 230.18,
+        "latency_ms": 330.61,
         "result_type": "team_tactical_profile",
         "source_id": "graph-profile:vitality:Dust2:T",
         "coach_brief_kind": "team_profile"
@@ -393,7 +3131,7 @@
           "source_coverage": true
         },
         "failures": [],
-        "latency_ms": 235.26,
+        "latency_ms": 358.24,
         "result_type": "team_tactical_profile",
         "source_id": "graph-profile:furia:Ancient:CT",
         "coach_brief_kind": "team_profile"
@@ -421,7 +3159,7 @@
           "source_coverage": true
         },
         "failures": [],
-        "latency_ms": 235.68,
+        "latency_ms": 330.89,
         "result_type": "team_tactical_profile",
         "source_id": "graph-profile:furia:Cache:T",
         "coach_brief_kind": "team_profile"
@@ -449,7 +3187,7 @@
           "source_coverage": true
         },
         "failures": [],
-        "latency_ms": 230.7,
+        "latency_ms": 329.62,
         "result_type": "team_tactical_profile",
         "source_id": "graph-profile:mouz:Dust2:CT",
         "coach_brief_kind": "team_profile"
@@ -477,7 +3215,7 @@
           "source_coverage": true
         },
         "failures": [],
-        "latency_ms": 229.92,
+        "latency_ms": 355.59,
         "result_type": "team_tactical_profile",
         "source_id": "graph-profile:mouz:Nuke:T",
         "coach_brief_kind": "team_profile"
@@ -505,7 +3243,7 @@
           "source_coverage": true
         },
         "failures": [],
-        "latency_ms": 244.24,
+        "latency_ms": 329.71,
         "result_type": "team_tactical_profile",
         "source_id": "graph-profile:falcons:spirit",
         "coach_brief_kind": "team_profile"
@@ -533,7 +3271,7 @@
           "source_coverage": true
         },
         "failures": [],
-        "latency_ms": 230.44,
+        "latency_ms": 327.08,
         "result_type": "team_tactical_profile",
         "source_id": "graph-profile:spirit:vitality",
         "coach_brief_kind": "team_profile"
@@ -561,7 +3299,7 @@
           "source_coverage": true
         },
         "failures": [],
-        "latency_ms": 230.22,
+        "latency_ms": 361.9,
         "result_type": "team_tactical_profile",
         "source_id": "graph-profile:vitality:furia",
         "coach_brief_kind": "team_profile"
@@ -589,7 +3327,7 @@
           "source_coverage": true
         },
         "failures": [],
-        "latency_ms": 237.98,
+        "latency_ms": 332.82,
         "result_type": "team_tactical_profile",
         "source_id": "graph-profile:furia:spirit",
         "coach_brief_kind": "team_profile"
@@ -617,7 +3355,7 @@
           "source_coverage": true
         },
         "failures": [],
-        "latency_ms": 229.79,
+        "latency_ms": 330.09,
         "result_type": "team_tactical_profile",
         "source_id": "graph-profile:mouz:falcons",
         "coach_brief_kind": "team_profile"
@@ -644,7 +3382,7 @@
           "source_coverage": true
         },
         "failures": [],
-        "latency_ms": 454.82,
+        "latency_ms": 684.07,
         "result_type": "team_tactical_comparison",
         "source_id": "graph-comparison:spirit:vitality",
         "coach_brief_kind": "comparison"
@@ -671,7 +3409,7 @@
           "source_coverage": true
         },
         "failures": [],
-        "latency_ms": 463.02,
+        "latency_ms": 655.63,
         "result_type": "team_tactical_comparison",
         "source_id": "graph-comparison:falcons:mouz",
         "coach_brief_kind": "comparison"
@@ -698,7 +3436,7 @@
           "source_coverage": true
         },
         "failures": [],
-        "latency_ms": 467.59,
+        "latency_ms": 677.71,
         "result_type": "team_tactical_comparison",
         "source_id": "graph-comparison:furia:vitality",
         "coach_brief_kind": "comparison"
@@ -725,7 +3463,7 @@
           "source_coverage": true
         },
         "failures": [],
-        "latency_ms": 457.17,
+        "latency_ms": 682.65,
         "result_type": "team_tactical_comparison",
         "source_id": "graph-comparison:spirit:furia",
         "coach_brief_kind": "comparison"
@@ -752,7 +3490,7 @@
           "source_coverage": true
         },
         "failures": [],
-        "latency_ms": 479.71,
+        "latency_ms": 667.98,
         "result_type": "team_tactical_comparison",
         "source_id": "graph-comparison:falcons:vitality",
         "coach_brief_kind": "comparison"
@@ -767,7 +3505,7 @@
           "coach_rejection": true
         },
         "failures": [],
-        "latency_ms": 4.45,
+        "latency_ms": 5.45,
         "result_type": null,
         "source_id": null,
         "coach_brief_kind": null
@@ -782,7 +3520,7 @@
           "coach_rejection": true
         },
         "failures": [],
-        "latency_ms": 4.31,
+        "latency_ms": 4.48,
         "result_type": null,
         "source_id": null,
         "coach_brief_kind": null
@@ -797,7 +3535,7 @@
           "coach_rejection": true
         },
         "failures": [],
-        "latency_ms": 3.93,
+        "latency_ms": 8.6,
         "result_type": null,
         "source_id": null,
         "coach_brief_kind": null
@@ -812,7 +3550,7 @@
           "coach_rejection": true
         },
         "failures": [],
-        "latency_ms": 241.52,
+        "latency_ms": 347.49,
         "result_type": null,
         "source_id": null,
         "coach_brief_kind": null
@@ -827,7 +3565,7 @@
           "coach_rejection": true
         },
         "failures": [],
-        "latency_ms": 4.28,
+        "latency_ms": 8.98,
         "result_type": null,
         "source_id": null,
         "coach_brief_kind": null
@@ -850,8 +3588,8 @@
       "source_coverage_pct": 100.0,
       "round_drilldown_coverage_pct": 100.0,
       "latency_ms": {
-        "p50": 237.0,
-        "p95": 470.47
+        "p50": 340.79,
+        "p95": 691.89
       }
     },
     "cases": [
@@ -873,7 +3611,7 @@
           "round_drilldown": true
         },
         "failures": [],
-        "latency_ms": 939.72
+        "latency_ms": 1265.46
       },
       {
         "id": "donk_overall",
@@ -893,7 +3631,7 @@
           "round_drilldown": true
         },
         "failures": [],
-        "latency_ms": 237.0
+        "latency_ms": 342.22
       },
       {
         "id": "zywoo_overall",
@@ -913,7 +3651,7 @@
           "round_drilldown": true
         },
         "failures": [],
-        "latency_ms": 234.56
+        "latency_ms": 341.2
       },
       {
         "id": "kscerato_overall",
@@ -933,7 +3671,7 @@
           "round_drilldown": true
         },
         "failures": [],
-        "latency_ms": 235.55
+        "latency_ms": 339.25
       },
       {
         "id": "torzsi_overall",
@@ -953,7 +3691,7 @@
           "round_drilldown": true
         },
         "failures": [],
-        "latency_ms": 238.5
+        "latency_ms": 337.94
       },
       {
         "id": "m0nesy_dust2_t",
@@ -973,7 +3711,7 @@
           "round_drilldown": true
         },
         "failures": [],
-        "latency_ms": 231.69
+        "latency_ms": 335.91
       },
       {
         "id": "m0nesy_vs_spirit",
@@ -993,7 +3731,7 @@
           "round_drilldown": true
         },
         "failures": [],
-        "latency_ms": 468.69
+        "latency_ms": 659.25
       },
       {
         "id": "donk_ancient_t",
@@ -1013,7 +3751,7 @@
           "round_drilldown": true
         },
         "failures": [],
-        "latency_ms": 232.77
+        "latency_ms": 338.01
       },
       {
         "id": "sh1ro_nuke_ct",
@@ -1033,7 +3771,7 @@
           "round_drilldown": true
         },
         "failures": [],
-        "latency_ms": 233.1
+        "latency_ms": 336.99
       },
       {
         "id": "zywoo_dust2_t",
@@ -1053,7 +3791,7 @@
           "round_drilldown": true
         },
         "failures": [],
-        "latency_ms": 233.23
+        "latency_ms": 340.79
       },
       {
         "id": "zywoo_vs_furia_dust2_t",
@@ -1073,7 +3811,7 @@
           "round_drilldown": true
         },
         "failures": [],
-        "latency_ms": 470.47
+        "latency_ms": 691.89
       },
       {
         "id": "kscerato_ancient_ct",
@@ -1093,7 +3831,7 @@
           "round_drilldown": true
         },
         "failures": [],
-        "latency_ms": 237.76
+        "latency_ms": 339.6
       },
       {
         "id": "molodoy_cache_t",
@@ -1113,7 +3851,7 @@
           "round_drilldown": true
         },
         "failures": [],
-        "latency_ms": 233.35
+        "latency_ms": 338.96
       },
       {
         "id": "torzsi_dust2_ct",
@@ -1133,7 +3871,7 @@
           "round_drilldown": true
         },
         "failures": [],
-        "latency_ms": 233.91
+        "latency_ms": 340.6
       },
       {
         "id": "xertion_nuke_t",
@@ -1153,7 +3891,7 @@
           "round_drilldown": true
         },
         "failures": [],
-        "latency_ms": 233.58
+        "latency_ms": 340.6
       },
       {
         "id": "compare_m0nesy_niko",
@@ -1173,7 +3911,7 @@
           "round_drilldown": true
         },
         "failures": [],
-        "latency_ms": 459.06
+        "latency_ms": 666.39
       },
       {
         "id": "compare_donk_sh1ro",
@@ -1193,7 +3931,7 @@
           "round_drilldown": true
         },
         "failures": [],
-        "latency_ms": 460.42
+        "latency_ms": 669.32
       },
       {
         "id": "compare_zywoo_flamez",
@@ -1213,7 +3951,7 @@
           "round_drilldown": true
         },
         "failures": [],
-        "latency_ms": 456.74
+        "latency_ms": 663.17
       },
       {
         "id": "compare_kscerato_yuurih",
@@ -1233,7 +3971,7 @@
           "round_drilldown": true
         },
         "failures": [],
-        "latency_ms": 456.83
+        "latency_ms": 665.18
       },
       {
         "id": "compare_torzsi_xertion",
@@ -1253,7 +3991,7 @@
           "round_drilldown": true
         },
         "failures": [],
-        "latency_ms": 458.35
+        "latency_ms": 666.5
       }
     ],
     "limitations": [

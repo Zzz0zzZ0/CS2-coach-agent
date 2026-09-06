@@ -1,0 +1,40 @@
+{
+  "corpus_sha256": "68cdc31d06c0e9526ebcd5bcf214f353722971fc8bc829bf07b46df1757a75d8",
+  "queries_sha256": "5b88deea2c796e92c1f02317ef24a8b1c9524e0004a70674d93071d2da4c81b0",
+  "version": "fair-corpus-v1",
+  "created_at": "2026-09-06T11:21:13.816170+00:00",
+  "corpus_path": "data/evaluation/fair_v1/corpus.jsonl",
+  "rounds": 1023,
+  "matches": [
+    "2396595",
+    "2396607",
+    "2396608",
+    "2396609",
+    "2396610",
+    "2396612",
+    "2396613",
+    "2396614",
+    "2396926",
+    "2396928",
+    "2396932",
+    "2396935",
+    "2396938",
+    "2396941",
+    "2396943",
+    "2396945",
+    "2396946",
+    "2396947",
+    "2396948",
+    "2396949"
+  ],
+  "source_graph_sha256": "6128fa1036a19ad661a9277a338b65fe662c149d3e5c85a2f75ff1d2325b0aab",
+  "source_files_sha256": {
+    "app/services/parser_service.py": "0128821b4b82542f0927d744e6791b00db2371bede0ad3c8d68765946c5a3d87",
+    "app/services/graph_rag_service.py": "c1a1951873bc6c758c645761b2bbf64806c1014783a663c489f37dfc55a57063",
+    "scripts/evaluate_fair_retrieval.py": "62f93514a2f6162977a791f63dc84bef8e72b44ac00ca2be1d701c7b522273c8",
+    "requirements-lock.txt": "0528f567555e79611a5014202b4de92185ad1f485bde4976f5ebeb3760c7baeb"
+  },
+  "judgments_frozen_before_first_run": true,
+  "label_status": "pending_review",
+  "scope": "existing 20 matches; not an unseen-match benchmark"
+}
