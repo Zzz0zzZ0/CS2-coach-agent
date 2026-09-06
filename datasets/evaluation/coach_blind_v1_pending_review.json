@@ -1,0 +1,10 @@
+{
+  "status": "pending_review",
+  "quality_metrics": null,
+  "complete_reviewers": 0,
+  "pending_reasons": [
+    "case rationale or preference missing",
+    "reviewer identity, date or independent/blind attestation missing",
+    "unrated case"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "status": "awaiting_human_review",
+  "model": "qwen3.8-flash",
+  "planned_cases": 6,
+  "completed_model_cases": 6,
+  "calls": 6,
+  "reserved_token_allowance": 23577,
+  "reported_tokens": 4939,
+  "accounting_complete": true,
+  "stop_reason": null,
+  "latency_p50_ms": 1431.635,
+  "identical_priority_lists": 0,
+  "quality_metrics": null,
+  "manifest_sha256": "4534757bc6ad0595f70942431b60c5477671654969ffab6200b6da81be8e7125",
+  "limitations": [
+    "reported usage is this run only; provider free-quota balance is unavailable",
+    "reserved allowance is a conservative estimate, not provider billing or a global quota ledger",
+    "selection differences are not quality gains; independent human ratings are pending"
+  ],
+  "packet_sha256": "1d2233d94bbf13f6044091aa32a8619b93535c7ce248aa58e67ee0f8eb1fedc7",
+  "method_key_sha256": "2c68fc6be1751c393064f9b7521e4629f5cc743e6356efed5dcfc27a0d1b06cf"
+}

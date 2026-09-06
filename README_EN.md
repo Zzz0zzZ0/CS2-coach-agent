@@ -14,7 +14,9 @@
 
 </div>
 
-The evaluation tools now include 160 unscored same-corpus retrieval runs and a complete unseen-series pipeline pilot (2 maps, 44 rounds, all checks passed). The offline suite has 96 passing tests. Independent relevance labels and broader research validation remain pending. See [retrieval experiment](docs/FAIR_RETRIEVAL_RUN.md) and [unseen-series pilot](docs/UNSEEN_MATCH_PILOT.md).
+The evaluation tools now include 160 unscored same-corpus retrieval runs and a complete unseen-series pipeline pilot (2 maps, 44 rounds, all checks passed). The offline suite has 125 passing tests. Independent relevance labels and broader research validation remain pending. See [retrieval experiment](docs/FAIR_RETRIEVAL_RUN.md) and [unseen-series pilot](docs/UNSEEN_MATCH_PILOT.md).
+
+A Coach priority-selection pilot has completed on 6 development maps from 5 series: 6 calls to the fixed `qwen3.8-flash` model, with 4,939 provider-reported tokens for this run. The anonymous review packet and blank rating forms are ready; quality gains remain unscored until at least two independent human reviewers complete their ratings. See the [blind-review protocol and run record](docs/COACH_BLIND_EVALUATION.md).
 
 The preceding player-profile milestone added roster-based denominators and an offline test environment: complete rosters for 1,023 valid rounds across 49 maps, 87 passing offline tests, and a clean frontend build. Remote CI now passes: [run record](https://github.com/Zzz0zzZ0/CS2-coach-agent/actions/runs/34031162026). See [implementation status](docs/IMPLEMENTATION_PROGRESS.md), [player data contract](docs/PLAYER_PROFILE_DATA_CONTRACT.md), and [offline reproduction](docs/OFFLINE_VALIDATION.md).
 
