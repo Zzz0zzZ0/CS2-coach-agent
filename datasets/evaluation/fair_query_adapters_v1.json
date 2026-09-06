@@ -1,0 +1,29 @@
+{
+  "version": "fair-query-adapters-v1",
+  "scope": "Fixed development adapters, not a general Chinese tokenizer or a full translator. Lexicon uses exported event/roster vocabulary and existing project terms; no query IDs, event_kind slots, labels, scores, or match IDs are read by expansion.",
+  "entity_aliases": {
+    "spirit": [
+      "spirit",
+      "team spirit"
+    ],
+    "falcons": [
+      "falcons",
+      "team falcons"
+    ]
+  },
+  "zh_glossary": {
+    "闪光致盲": "flash blinded",
+    "炸弹安放": "bomb plant",
+    "投掷物": "grenade",
+    "道具": "grenade utility",
+    "首杀": "opening first kill",
+    "击杀": "kills",
+    "下包": "bomb plant",
+    "参赛": "participant",
+    "回合": "round",
+    "比赛": "match",
+    "地图": "map",
+    "获胜": "winner",
+    "结束原因": "reason"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "version": "fair-calibration-v1",
+  "created_at": "2026-09-06T18:45:28.012926+00:00",
+  "inputs": {
+    "corpus": {
+      "path": "data/evaluation/fair_v2/corpus.jsonl",
+      "sha256": "e244773cb57984ae7fef101a803b9e8e868ccb2989a91c74c0842cee375e9a76"
+    },
+    "graph": {
+      "path": "data/graph/cs2_graph.sqlite",
+      "sha256": "28357be25a52d27b80e87a03ffcb2a545132c97d42632138ff60c47d67fc8c2d"
+    },
+    "queries": {
+      "path": "datasets/evaluation/fair_paired_queries_v1.json",
+      "sha256": "a05b04388db7917f26a4b3cb7b76b7ee9ea08a5f46ff62e923f6dd1527d7095d"
+    },
+    "qrels": {
+      "path": "datasets/evaluation/fair_paired_qrels_v1.json",
+      "sha256": "43d0f1e97f6b1acd72bef40b3757a6240bada028599f66927fe3e58e6356e757"
+    },
+    "adapters": {
+      "path": "datasets/evaluation/fair_query_adapters_v1.json",
+      "sha256": "95fe84e4bf7f2c62269cc75b1a5e7f11ccc5927b9525e0bc1b79818e43b4036f"
+    },
+    "criteria": {
+      "path": "datasets/evaluation/fair_paired_criteria_v1.json",
+      "sha256": "6869974312138f51247f6ef0a03632f0c9f70b0b4f51a14bed91931e6d2884e4"
+    },
+    "manifest": {
+      "path": "datasets/evaluation/fair_paired_manifest_v1.json",
+      "sha256": "95677d4c34b27bb48cc6d5592a8018e1d03856b0129021174784340f45645b54"
+    },
+    "original_queries": {
+      "path": "datasets/evaluation/fair_queries_v1.json",
+      "sha256": "5b88deea2c796e92c1f02317ef24a8b1c9524e0004a70674d93071d2da4c81b0"
+    },
+    "previous_rankings": {
+      "path": "datasets/evaluation/fair_ai_retrieval_v2_report.json",
+      "sha256": "3dedbbf216c235b9b8b8126b57093b88f3e1f4a2973f9810b63584c83fd6baee"
+    }
+  },
+  "implementation_sha256": {
+    "scripts/calibrate_fair_retrieval.py": "69b0aaeddbe48b3c914f7a9ef308cea8c76af983029a0a2e464e33b2aeb8633d",
+    "scripts/evaluate_fair_retrieval.py": "941802a4cf3f3a2e9c340ae724dddd92d6bf8dcbb4645f1424a5539ebf432056",
+    "scripts/audit_fair_labels.py": "e2d806b6336446125d6a81bcaa415e8bf2fad4680a325b9cbc937c1d1c5951bf",
+    "requirements-lock.txt": "0528f567555e79611a5014202b4de92185ad1f485bde4976f5ebeb3760c7baeb"
+  },
+  "model_files_sha256": {
+    "config.json": "c8ec081fdad2df991bf5abbf18418fec7a5cdaa421f60ffb060a30040b8c376f",
+    "model_optimized.onnx": "634d0f66c29dc934c8fa72b8a4fe91dd4d420a22f1d82a241058d4316e659a99",
+    "special_tokens_map.json": "8c785abebea9ae3257b61681b4e6fd8365ceafde980c21970d001e834cf10835",
+    "tokenizer.json": "fa685fc160bbdbab64058d4fc91b60e62d207e8dc60b9af5c002c5ab946ded00",
+    "tokenizer_config.json": "0666eebf692422757e1dddf3c9fb1ded73ba3dc726c5828671fc89e45bf3609f"
+  },
+  "configurations": [
+    {
+      "name": "raw_exact",
+      "glossary": false,
+      "aliases": false
+    },
+    {
+      "name": "glossary_exact",
+      "glossary": true,
+      "aliases": false
+    },
+    {
+      "name": "raw_alias",
+      "glossary": false,
+      "aliases": true
+    },
+    {
+      "name": "glossary_alias",
+      "glossary": true,
+      "aliases": true
+    }
+  ],
+  "k": 5,
+  "repeats": 4,
+  "frozen_before_first_calibration_run": true,
+  "acceptance": [
+    "Original 160 raw-exact rankings and corpus vectors match previous frozen run.",
+    "All four configurations and all 32 paired surface queries retained regardless of scores.",
+    "Same effective query given to BM25/dense/RRF; metadata and enabled entity prefilters shared across all methods.",
+    "Report candidate relevance coverage separately from top-k quality; aliases need not improve rank scores.",
+    "No remote model calls or production store mutations."
+  ],
+  "limitations": [
+    "Development calibration on 16 already observed semantic groups, not 32 independent samples.",
+    "Translations and relevance are AI-assisted; no independent human gold or blind-test claim.",
+    "Small fixed Chinese-to-English glossary, not a general Chinese tokenizer or translator.",
+    "Explicit entities and metadata are supplied experimental slots, not evaluated natural-language parsing.",
+    "Structured SQL/path references also receive event_kind and do not represent production GraphRAG.",
+    "Paired macro counts semantic groups once. No population confidence intervals or test-set parameter tuning.",
+    "Local MiniLM chunk-mean remains the only dense baseline; no general retrieval-superiority claim."
+  ]
+}

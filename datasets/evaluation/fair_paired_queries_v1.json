@@ -1,0 +1,441 @@
+{
+  "version": "fair-paired-queries-v1",
+  "source_queries_sha256": "5b88deea2c796e92c1f02317ef24a8b1c9524e0004a70674d93071d2da4c81b0",
+  "reviewer_kind": "ai_assisted",
+  "independent_human_review": false,
+  "semantic_groups": 16,
+  "review_basis": "AI semantic review: preserve roster participation (not action authorship), event condition, explicit scope, and nonexistent identifiers. Each translation shares its original relevance definition.",
+  "scope": "Previously observed development queries and AI translations; 32 surface forms, not 32 independent questions.",
+  "cases": [
+    {
+      "id": "p01",
+      "query": "Find Nuke rounds featuring NiKo with bomb plant events.",
+      "language": "en",
+      "filters": {
+        "map": "Nuke"
+      },
+      "entities": [
+        "NiKo"
+      ],
+      "event_kind": "plant",
+      "semantic_group": "p01",
+      "variant": "original"
+    },
+    {
+      "id": "p01__zh",
+      "query": "找出 NiKo 参赛且包含炸弹安放事件的 Nuke 回合。",
+      "language": "zh",
+      "filters": {
+        "map": "Nuke"
+      },
+      "entities": [
+        "NiKo"
+      ],
+      "event_kind": "plant",
+      "semantic_group": "p01",
+      "variant": "translation"
+    },
+    {
+      "id": "p02",
+      "query": "找出 m0NESY 参赛且包含闪光致盲事件的 Dust2 回合。",
+      "language": "zh",
+      "filters": {
+        "map": "Dust2"
+      },
+      "entities": [
+        "m0NESY"
+      ],
+      "event_kind": "flash",
+      "semantic_group": "p02",
+      "variant": "original"
+    },
+    {
+      "id": "p02__en",
+      "query": "Find Dust2 rounds featuring m0NESY with flash-blind events.",
+      "language": "en",
+      "filters": {
+        "map": "Dust2"
+      },
+      "entities": [
+        "m0NESY"
+      ],
+      "event_kind": "flash",
+      "semantic_group": "p02",
+      "variant": "translation"
+    },
+    {
+      "id": "p03",
+      "query": "Ancient rounds with donk participating and recorded opening kills.",
+      "language": "en",
+      "filters": {
+        "map": "Ancient"
+      },
+      "entities": [
+        "donk"
+      ],
+      "event_kind": "kill",
+      "semantic_group": "p03",
+      "variant": "original"
+    },
+    {
+      "id": "p03__zh",
+      "query": "查找 donk 参赛且记录了首杀的 Ancient 回合。",
+      "language": "zh",
+      "filters": {
+        "map": "Ancient"
+      },
+      "entities": [
+        "donk"
+      ],
+      "event_kind": "kill",
+      "semantic_group": "p03",
+      "variant": "translation"
+    },
+    {
+      "id": "p04",
+      "query": "查找 ZywOo 参赛且有投掷物使用记录的 Nuke 回合。",
+      "language": "zh",
+      "filters": {
+        "map": "Nuke"
+      },
+      "entities": [
+        "ZywOo"
+      ],
+      "event_kind": "grenade",
+      "semantic_group": "p04",
+      "variant": "original"
+    },
+    {
+      "id": "p04__en",
+      "query": "Find Nuke rounds featuring ZywOo with recorded grenade usage.",
+      "language": "en",
+      "filters": {
+        "map": "Nuke"
+      },
+      "entities": [
+        "ZywOo"
+      ],
+      "event_kind": "grenade",
+      "semantic_group": "p04",
+      "variant": "translation"
+    },
+    {
+      "id": "p05",
+      "query": "Find Cache rounds featuring FURIA with recorded bomb plants.",
+      "language": "en",
+      "filters": {
+        "map": "Cache"
+      },
+      "entities": [
+        "FURIA"
+      ],
+      "event_kind": "plant",
+      "semantic_group": "p05",
+      "variant": "original"
+    },
+    {
+      "id": "p05__zh",
+      "query": "找出 FURIA 参赛且记录了炸弹安放的 Cache 回合。",
+      "language": "zh",
+      "filters": {
+        "map": "Cache"
+      },
+      "entities": [
+        "FURIA"
+      ],
+      "event_kind": "plant",
+      "semantic_group": "p05",
+      "variant": "translation"
+    },
+    {
+      "id": "p06",
+      "query": "查找 MOUZ 参赛且出现闪光致盲的 Mirage 回合。",
+      "language": "zh",
+      "filters": {
+        "map": "Mirage"
+      },
+      "entities": [
+        "MOUZ"
+      ],
+      "event_kind": "flash",
+      "semantic_group": "p06",
+      "variant": "original"
+    },
+    {
+      "id": "p06__en",
+      "query": "Find Mirage rounds featuring MOUZ with flash-blind events.",
+      "language": "en",
+      "filters": {
+        "map": "Mirage"
+      },
+      "entities": [
+        "MOUZ"
+      ],
+      "event_kind": "flash",
+      "semantic_group": "p06",
+      "variant": "translation"
+    },
+    {
+      "id": "p07",
+      "query": "Find Nuke bomb plant rounds in match 2396949.",
+      "language": "en",
+      "filters": {
+        "map": "Nuke",
+        "match_id": "2396949"
+      },
+      "entities": [],
+      "event_kind": "plant",
+      "semantic_group": "p07",
+      "variant": "original"
+    },
+    {
+      "id": "p07__zh",
+      "query": "找出比赛 2396949 的 Nuke 地图中发生炸弹安放的回合。",
+      "language": "zh",
+      "filters": {
+        "map": "Nuke",
+        "match_id": "2396949"
+      },
+      "entities": [],
+      "event_kind": "plant",
+      "semantic_group": "p07",
+      "variant": "translation"
+    },
+    {
+      "id": "p08",
+      "query": "比赛 2396948 的 Nuke 地图有哪些回合出现击杀事件？",
+      "language": "zh",
+      "filters": {
+        "map": "Nuke",
+        "match_id": "2396948"
+      },
+      "entities": [],
+      "event_kind": "kill",
+      "semantic_group": "p08",
+      "variant": "original"
+    },
+    {
+      "id": "p08__en",
+      "query": "Which Nuke rounds in match 2396948 contain kill events?",
+      "language": "en",
+      "filters": {
+        "map": "Nuke",
+        "match_id": "2396948"
+      },
+      "entities": [],
+      "event_kind": "kill",
+      "semantic_group": "p08",
+      "variant": "translation"
+    },
+    {
+      "id": "p09",
+      "query": "Find Dust2 rounds featuring Falcons with grenade throws.",
+      "language": "en",
+      "filters": {
+        "map": "Dust2"
+      },
+      "entities": [
+        "Falcons"
+      ],
+      "event_kind": "grenade",
+      "semantic_group": "p09",
+      "variant": "original"
+    },
+    {
+      "id": "p09__zh",
+      "query": "找出 Falcons 参赛且记录了投掷物使用的 Dust2 回合。",
+      "language": "zh",
+      "filters": {
+        "map": "Dust2"
+      },
+      "entities": [
+        "Falcons"
+      ],
+      "event_kind": "grenade",
+      "semantic_group": "p09",
+      "variant": "translation"
+    },
+    {
+      "id": "p10",
+      "query": "查找 Spirit 参赛且发生炸弹安放的 Ancient 回合。",
+      "language": "zh",
+      "filters": {
+        "map": "Ancient"
+      },
+      "entities": [
+        "Spirit"
+      ],
+      "event_kind": "plant",
+      "semantic_group": "p10",
+      "variant": "original"
+    },
+    {
+      "id": "p10__en",
+      "query": "Find Ancient rounds featuring Spirit with bomb plant events.",
+      "language": "en",
+      "filters": {
+        "map": "Ancient"
+      },
+      "entities": [
+        "Spirit"
+      ],
+      "event_kind": "plant",
+      "semantic_group": "p10",
+      "variant": "translation"
+    },
+    {
+      "id": "p11",
+      "query": "Find Inferno rounds containing flash blind events.",
+      "language": "en",
+      "filters": {
+        "map": "Inferno"
+      },
+      "entities": [],
+      "event_kind": "flash",
+      "semantic_group": "p11",
+      "variant": "original"
+    },
+    {
+      "id": "p11__zh",
+      "query": "查找 Inferno 地图包含闪光致盲事件的回合。",
+      "language": "zh",
+      "filters": {
+        "map": "Inferno"
+      },
+      "entities": [],
+      "event_kind": "flash",
+      "semantic_group": "p11",
+      "variant": "translation"
+    },
+    {
+      "id": "p12",
+      "query": "Anubis 地图有哪些回合记录了炸弹安放事件？",
+      "language": "zh",
+      "filters": {
+        "map": "Anubis"
+      },
+      "entities": [],
+      "event_kind": "plant",
+      "semantic_group": "p12",
+      "variant": "original"
+    },
+    {
+      "id": "p12__en",
+      "query": "Which Anubis rounds contain recorded bomb plant events?",
+      "language": "en",
+      "filters": {
+        "map": "Anubis"
+      },
+      "entities": [],
+      "event_kind": "plant",
+      "semantic_group": "p12",
+      "variant": "translation"
+    },
+    {
+      "id": "n01",
+      "query": "Find Nuke bomb plant rounds featuring player EvalAbsentPlayerA.",
+      "language": "en",
+      "filters": {
+        "map": "Nuke"
+      },
+      "entities": [
+        "EvalAbsentPlayerA"
+      ],
+      "event_kind": "plant",
+      "semantic_group": "n01",
+      "variant": "original"
+    },
+    {
+      "id": "n01__zh",
+      "query": "找出选手 EvalAbsentPlayerA 参赛且发生炸弹安放的 Nuke 回合。",
+      "language": "zh",
+      "filters": {
+        "map": "Nuke"
+      },
+      "entities": [
+        "EvalAbsentPlayerA"
+      ],
+      "event_kind": "plant",
+      "semantic_group": "n01",
+      "variant": "translation"
+    },
+    {
+      "id": "n02",
+      "query": "查找不存在的战队 EvalAbsentTeamB 参赛且有投掷物使用记录的 Dust2 回合。",
+      "language": "zh",
+      "filters": {
+        "map": "Dust2"
+      },
+      "entities": [
+        "EvalAbsentTeamB"
+      ],
+      "event_kind": "grenade",
+      "semantic_group": "n02",
+      "variant": "original"
+    },
+    {
+      "id": "n02__en",
+      "query": "Find Dust2 rounds featuring the nonexistent team EvalAbsentTeamB with recorded grenade usage.",
+      "language": "en",
+      "filters": {
+        "map": "Dust2"
+      },
+      "entities": [
+        "EvalAbsentTeamB"
+      ],
+      "event_kind": "grenade",
+      "semantic_group": "n02",
+      "variant": "translation"
+    },
+    {
+      "id": "n03",
+      "query": "Find Nuke kill rounds in match 0000000.",
+      "language": "en",
+      "filters": {
+        "map": "Nuke",
+        "match_id": "0000000"
+      },
+      "entities": [],
+      "event_kind": "kill",
+      "semantic_group": "n03",
+      "variant": "original"
+    },
+    {
+      "id": "n03__zh",
+      "query": "找出比赛 0000000 的 Nuke 地图中发生击杀的回合。",
+      "language": "zh",
+      "filters": {
+        "map": "Nuke",
+        "match_id": "0000000"
+      },
+      "entities": [],
+      "event_kind": "kill",
+      "semantic_group": "n03",
+      "variant": "translation"
+    },
+    {
+      "id": "n04",
+      "query": "查找不存在的地图 EvalAbsentMapC 上发生闪光致盲的回合。",
+      "language": "zh",
+      "filters": {
+        "map": "EvalAbsentMapC"
+      },
+      "entities": [],
+      "event_kind": "flash",
+      "semantic_group": "n04",
+      "variant": "original"
+    },
+    {
+      "id": "n04__en",
+      "query": "Find flash-blind rounds on the nonexistent map EvalAbsentMapC.",
+      "language": "en",
+      "filters": {
+        "map": "EvalAbsentMapC"
+      },
+      "entities": [],
+      "event_kind": "flash",
+      "semantic_group": "n04",
+      "variant": "translation"
+    }
+  ]
+}
