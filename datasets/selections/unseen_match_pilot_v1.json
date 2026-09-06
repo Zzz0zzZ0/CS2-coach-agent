@@ -1,0 +1,76 @@
+{
+  "version": "unseen-match-pilot-v1",
+  "selected_at": "2026-09-06T11:29:52.871424+00:00",
+  "selection_rule": "First completed match in the date-descending HLTV results window 2026-08-01 through 2026-09-06 with demo available and match ID absent from frozen historical corpus. One complete BO series for the initial pipeline pilot. Selected before download and parsing.",
+  "historical_match_ids": [
+    "2396595",
+    "2396607",
+    "2396608",
+    "2396609",
+    "2396610",
+    "2396612",
+    "2396613",
+    "2396614",
+    "2396926",
+    "2396928",
+    "2396932",
+    "2396935",
+    "2396938",
+    "2396941",
+    "2396943",
+    "2396945",
+    "2396946",
+    "2396947",
+    "2396948",
+    "2396949"
+  ],
+  "historical_graph_sha256": "6128fa1036a19ad661a9277a338b65fe662c149d3e5c85a2f75ff1d2325b0aab",
+  "implementation_sha256": {
+    "app/services/parser_service.py": "0128821b4b82542f0927d744e6791b00db2371bede0ad3c8d68765946c5a3d87",
+    "app/services/analysis_pipeline.py": "e737fc99fd3ee5e663c5d6e312045d6302b8a2ac9f4c7082660a974a28231dfb",
+    "app/services/metrics_service.py": "20563d58762570c3a40fbfc72024f10a51fb74bbcf1d71ead476a3701093b909",
+    "app/services/graph_rag_service.py": "c1a1951873bc6c758c645761b2bbf64806c1014783a663c489f37dfc55a57063",
+    "app/services/tactical_annotation_service.py": "d1469f60e3eecc0f01418642f8f8bd316e9e7bbcf9cdfbddf7a723ebf5a9f231",
+    "app/agentic/workflow.py": "318be56c7da3533c198da966fbbde1d4d37c765116dfbb7e95b416f9b4ebdc62",
+    "app/agentic/nodes/verify_node.py": "8c54d4840448e1120efca7805964f892798fd42b61368f8b2d93520203211103",
+    "scripts/evaluate_fair_retrieval.py": "db7e478ad2a130e2e2ea0136c383892c320d24cfa239a4047ce46d9efd222b60"
+  },
+  "matches": [
+    {
+      "match_id": "2396950",
+      "match_url": "https://www.hltv.org/matches/2396950/mouz-vs-vitality-blast-open-porto-2026",
+      "demo_url": "https://www.hltv.org/download/demo/111032",
+      "team1": "MOUZ",
+      "team2": "Vitality",
+      "event": "BLAST Open Porto 2026",
+      "displayed_match_date": "2026-09-06",
+      "date_basis": "HLTV match page as displayed in browser; no timezone inference",
+      "maps_played": [
+        "Dust2",
+        "Mirage"
+      ],
+      "public_score": {
+        "MOUZ": 2,
+        "Vitality": 0
+      },
+      "public_map_scores": {
+        "Dust2": {
+          "MOUZ": 13,
+          "Vitality": 11
+        },
+        "Mirage": {
+          "MOUZ": 13,
+          "Vitality": 7
+        }
+      }
+    }
+  ],
+  "isolation": "Store under data/evaluation/unseen_v1; never add to historical graph or Milvus. Entire series remains isolated.",
+  "evaluation_plan": [
+    "Parse both maps using frozen implementation; retain failures rather than altering parser then relabeling the run.",
+    "Validate source match and maps, round totals and wins against public map scores; record complete roster coverage and event totals.",
+    "Run deterministic AnalysisPipeline with remote LLM disabled and only the historical graph as prior evidence; validate current citations and Verifier.",
+    "Do not claim retrieval generalization or coaching effectiveness from this single-series engineering pilot."
+  ],
+  "new_corpus_retrieval_status": "Independent queries and qrels not prepared; no retrieval quality evaluation authorized by this manifest alone."
+}

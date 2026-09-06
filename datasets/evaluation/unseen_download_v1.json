@@ -1,0 +1,18 @@
+{
+  "source_url": "https://www.hltv.org/download/demo/111032",
+  "archive": "blast-open-porto-2026-mouz-vs-vitality-bo3-V3i93ufoKzBC0MBPii8PGf.rar",
+  "archive_bytes": 471104697,
+  "archive_sha256": "954f50a5f8926b7b7da0ca364aa5efe31b3efdf3a6dd2734c1f33c9448eda3cd",
+  "files": [
+    {
+      "file": "data/evaluation/unseen_v1/demos/MOUZ_vs_Vitality_2396950_map1.dem",
+      "bytes": 392510692,
+      "sha256": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190"
+    },
+    {
+      "file": "data/evaluation/unseen_v1/demos/MOUZ_vs_Vitality_2396950_map2.dem",
+      "bytes": 312033245,
+      "sha256": "1b8097794845b8994846d52d47db86faec78c838b345d3013c57e883ad230126"
+    }
+  ]
+}

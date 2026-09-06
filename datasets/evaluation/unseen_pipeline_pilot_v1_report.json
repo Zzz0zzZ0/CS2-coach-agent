@@ -1,0 +1,97 @@
+{
+  "version": "unseen-pipeline-pilot-v1",
+  "created_at": "2026-09-06T11:35:13.275414+00:00",
+  "selection_sha256": "6e991c2b46f3eb656faa0258a44a68cd2a73b2fda0d0509d2ef11fee1571c896",
+  "evaluator_sha256": "7566974fbc153b4e5e10df134fac5350247b0437b52dd7b9dea93af1b7dbd409",
+  "historical_match_ids": [
+    "2396595",
+    "2396607",
+    "2396608",
+    "2396609",
+    "2396610",
+    "2396612",
+    "2396613",
+    "2396614",
+    "2396926",
+    "2396928",
+    "2396932",
+    "2396935",
+    "2396938",
+    "2396941",
+    "2396943",
+    "2396945",
+    "2396946",
+    "2396947",
+    "2396948",
+    "2396949"
+  ],
+  "historical_graph_unchanged": true,
+  "complete_series": true,
+  "series_count": 1,
+  "maps": [
+    {
+      "file": "MOUZ_vs_Vitality_2396950_map1.dem",
+      "sha256": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190",
+      "match_id": "2396950",
+      "map": "Dust2",
+      "rounds": 24,
+      "complete_rosters": 24,
+      "team_score": {
+        "MOUZ": 13,
+        "Vitality": 11
+      },
+      "kills": 150,
+      "grenades": 535,
+      "flash_blinds": 341,
+      "plants": 12,
+      "checks": {
+        "round_count": true,
+        "public_team_score": true,
+        "complete_rosters": true,
+        "metric_round_count": true,
+        "current_sources": true,
+        "verification": true,
+        "no_model_usage": true,
+        "historical_sources_disjoint": true,
+        "historical_evidence_present": true
+      },
+      "passed": true,
+      "latency_ms": 3953.2363330945373,
+      "result": "datasets/evaluation/unseen_pipeline_pilot_v1_report_2396950_Dust2.json"
+    },
+    {
+      "file": "MOUZ_vs_Vitality_2396950_map2.dem",
+      "sha256": "1b8097794845b8994846d52d47db86faec78c838b345d3013c57e883ad230126",
+      "match_id": "2396950",
+      "map": "Mirage",
+      "rounds": 20,
+      "complete_rosters": 20,
+      "team_score": {
+        "Vitality": 7,
+        "MOUZ": 13
+      },
+      "kills": 140,
+      "grenades": 366,
+      "flash_blinds": 201,
+      "plants": 11,
+      "checks": {
+        "round_count": true,
+        "public_team_score": true,
+        "complete_rosters": true,
+        "metric_round_count": true,
+        "current_sources": true,
+        "verification": true,
+        "no_model_usage": true,
+        "historical_sources_disjoint": true,
+        "historical_evidence_present": true
+      },
+      "passed": true,
+      "latency_ms": 2188.3481247350574,
+      "result": "datasets/evaluation/unseen_pipeline_pilot_v1_report_2396950_Mirage.json"
+    }
+  ],
+  "passed": true,
+  "scope": "Single-series deterministic pipeline engineering check; not retrieval generalization, expert coaching validation or an estimate across independent matches.",
+  "model_calls": 0,
+  "historical_vector_store": "not connected or modified"
+}

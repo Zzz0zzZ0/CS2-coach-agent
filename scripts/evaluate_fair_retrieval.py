@@ -33,6 +33,16 @@ def write_json(path, value):
         stream.write("\n")
 
 
+def review_packet(corpus, queries):
+    docs = [json.loads(line) for line in corpus.read_text().splitlines() if line.strip()]
+    dataset = json.loads(queries.read_text())
+    validate_inputs(docs, dataset)
+    return {"version": "fair-qrels-review-v1", "corpus_sha256": digest(corpus), "queries_sha256": digest(queries),
+            "instructions": "Independently review all metadata-eligible rounds using frozen source events, without viewing rankings. Entities mean roster participation. Record all relevant rounds and supporting event IDs; blank labels are unjudged, not negatives. Approval is a review assertion, not a software guarantee of independence.",
+            "judgments": [{"query_id": q["id"], "status": "pending_review", "reviewer": None, "reviewed_at": None,
+                           "exhaustive": False, "scope_basis": None, "relevance": []} for q in dataset["cases"]]}
+
+
 def export_corpus(graph_db, output):
     """Export raw observable facts, with no production retrieval/scoring imports."""
     with sqlite3.connect(Path(graph_db).resolve().as_uri() + "?mode=ro", uri=True) as db:
@@ -246,6 +256,8 @@ def run(args):
     corpus_hash, query_hash = digest(args.corpus), digest(args.queries)
     packet = json.loads(args.qrels.read_text()) if args.qrels else None
     labels = reviewed_qrels(packet, docs, dataset, corpus_hash, query_hash)
+    if labels is None and not args.allow_unreviewed:
+        raise ValueError("Independent qrels review is incomplete; use --allow-unreviewed only for an explicitly unscored smoke run")
     start = time.perf_counter()
     model = TextEmbedding(MODEL, local_files_only=True, threads=2, specific_model_path=str(args.model_dir) if args.model_dir else None)
     model_dir = Path(model.model._model_dir)
@@ -329,10 +341,15 @@ def main():
     prepare = sub.add_parser("prepare")
     prepare.add_argument("--graph-db", type=Path, default=Path("data/graph/cs2_graph.sqlite"))
     prepare.add_argument("--output", type=Path, required=True)
+    packet = sub.add_parser("packet")
+    packet.add_argument("--corpus", type=Path, required=True)
+    packet.add_argument("--queries", type=Path, required=True)
+    packet.add_argument("--output", type=Path, required=True)
     evaluate = sub.add_parser("run")
     evaluate.add_argument("--corpus", type=Path, required=True)
     evaluate.add_argument("--queries", type=Path, required=True)
     evaluate.add_argument("--qrels", type=Path)
+    evaluate.add_argument("--allow-unreviewed", action="store_true", help="engineering smoke only; suppress all relevance quality metrics")
     evaluate.add_argument("--model-dir", type=Path)
     evaluate.add_argument("--output", type=Path, required=True)
     evaluate.add_argument("--k", type=int, default=5)
@@ -343,6 +360,8 @@ def main():
     args.output.parent.mkdir(parents=True, exist_ok=True)
     if args.command == "prepare":
         print(json.dumps(export_corpus(args.graph_db, args.output), indent=2))
+    elif args.command == "packet":
+        write_json(args.output, review_packet(args.corpus, args.queries))
     else:
         if args.k < 1 or args.repeats < 2:
             parser.error("k must be positive and repeats at least 2")

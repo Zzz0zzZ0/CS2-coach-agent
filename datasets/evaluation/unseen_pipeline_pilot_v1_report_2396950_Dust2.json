@@ -1,0 +1,4340 @@
+{
+  "match_id": "2396950",
+  "map_name": "Dust2",
+  "metrics": {
+    "rounds_total": 24,
+    "rounds_won": {
+      "CT": 15,
+      "T": 9
+    },
+    "rounds_won_by_team": {
+      "MOUZ": 13,
+      "Vitality": 11
+    },
+    "rounds_won_by_team_and_side": {
+      "MOUZ": {
+        "CT": 8,
+        "T": 5
+      },
+      "Vitality": {
+        "CT": 7,
+        "T": 4
+      }
+    },
+    "kills_total": 150,
+    "first_kills_total": 24,
+    "players": {
+      "xertioN": {
+        "kills": 15,
+        "deaths": 18,
+        "first_kills": 5
+      },
+      "ZywOo": {
+        "kills": 20,
+        "deaths": 13,
+        "first_kills": 4
+      },
+      "jL": {
+        "kills": 10,
+        "deaths": 16,
+        "first_kills": 3
+      },
+      "apEX": {
+        "kills": 11,
+        "deaths": 17,
+        "first_kills": 1
+      },
+      "Spinx": {
+        "kills": 18,
+        "deaths": 13,
+        "first_kills": 1
+      },
+      "flameZ": {
+        "kills": 15,
+        "deaths": 19,
+        "first_kills": 2
+      },
+      "PR": {
+        "kills": 11,
+        "deaths": 11,
+        "first_kills": 1
+      },
+      "ropz": {
+        "kills": 16,
+        "deaths": 13,
+        "first_kills": 1
+      },
+      "xelex": {
+        "kills": 23,
+        "deaths": 16,
+        "first_kills": 3
+      },
+      "torzsi": {
+        "kills": 11,
+        "deaths": 14,
+        "first_kills": 3
+      }
+    },
+    "team_totals": {
+      "MOUZ": {
+        "kills": 78,
+        "deaths": 72,
+        "first_kills": 13
+      },
+      "Vitality": {
+        "kills": 72,
+        "deaths": 78,
+        "first_kills": 11
+      }
+    },
+    "grenades_total": 535,
+    "grenades_by_type": {
+      "Flash": 175,
+      "HE": 100,
+      "Molotov/Incendiary": 113,
+      "Smoke": 147
+    },
+    "grenades_by_team": {
+      "MOUZ": 259,
+      "Vitality": 276
+    },
+    "plants_total": 12,
+    "plants_by_team": {
+      "MOUZ": 7,
+      "Vitality": 5
+    },
+    "post_plant_by_team": {
+      "MOUZ": {
+        "attempts": 7,
+        "round_wins": 5,
+        "conversion_pct": 71.4
+      },
+      "Vitality": {
+        "attempts": 5,
+        "round_wins": 3,
+        "conversion_pct": 60.0
+      }
+    },
+    "defuses_by_team": {
+      "MOUZ": 2,
+      "Vitality": 2
+    },
+    "flash_blinds_total": 341,
+    "flash_blinds_by_team": {
+      "MOUZ": 177,
+      "Vitality": 164
+    },
+    "enemy_flash_blinds_by_team": {
+      "MOUZ": 78,
+      "Vitality": 82
+    },
+    "team_flash_blinds_by_team": {
+      "MOUZ": 99,
+      "Vitality": 82
+    },
+    "opening_duels_by_team": {
+      "MOUZ": {
+        "attempts": 13,
+        "round_wins": 10,
+        "conversion_pct": 76.9
+      },
+      "Vitality": {
+        "attempts": 11,
+        "round_wins": 8,
+        "conversion_pct": 72.7
+      }
+    },
+    "round_summaries": [
+      {
+        "round_number": 1,
+        "winner_side": "CT",
+        "winner_team": "MOUZ",
+        "reason": "t_killed",
+        "opening_team": "MOUZ",
+        "opening_killer": "xertioN",
+        "kills": 7,
+        "kill_sequence": [
+          {
+            "round_number": 1,
+            "tick": 14117,
+            "killer": "xertioN",
+            "victim": "ZywOo",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "elite",
+            "is_first_kill": true
+          },
+          {
+            "round_number": 1,
+            "tick": 14125,
+            "killer": "xertioN",
+            "victim": "jL",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "elite",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 1,
+            "tick": 14205,
+            "killer": "apEX",
+            "victim": "xertioN",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "glock",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 1,
+            "tick": 14241,
+            "killer": "Spinx",
+            "victim": "apEX",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "usp_silencer",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 1,
+            "tick": 15012,
+            "killer": "flameZ",
+            "victim": "Spinx",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "glock",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 1,
+            "tick": 15194,
+            "killer": "PR",
+            "victim": "flameZ",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "usp_silencer",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 1,
+            "tick": 15250,
+            "killer": "PR",
+            "victim": "ropz",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "usp_silencer",
+            "is_first_kill": false
+          }
+        ],
+        "grenades": 6,
+        "grenades_by_type": {
+          "Flash": 2,
+          "Molotov/Incendiary": 1,
+          "Smoke": 3
+        },
+        "plants": 0,
+        "plant_sites": [],
+        "plant_teams": [],
+        "plant_outcome": null,
+        "flash_blinds": 5,
+        "flash_blinds_by_team": {
+          "MOUZ": 4,
+          "Vitality": 1
+        }
+      },
+      {
+        "round_number": 2,
+        "winner_side": "CT",
+        "winner_team": "MOUZ",
+        "reason": "t_killed",
+        "opening_team": "MOUZ",
+        "opening_killer": "xelex",
+        "kills": 6,
+        "kill_sequence": [
+          {
+            "round_number": 2,
+            "tick": 18913,
+            "killer": "xelex",
+            "victim": "ZywOo",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "m4a1_silencer",
+            "is_first_kill": true
+          },
+          {
+            "round_number": 2,
+            "tick": 18961,
+            "killer": "xelex",
+            "victim": "flameZ",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "m4a1_silencer",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 2,
+            "tick": 19013,
+            "killer": "apEX",
+            "victim": "xelex",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "p250",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 2,
+            "tick": 20204,
+            "killer": "torzsi",
+            "victim": "jL",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "mp9",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 2,
+            "tick": 20425,
+            "killer": "xertioN",
+            "victim": "ropz",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "m4a1_silencer",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 2,
+            "tick": 20992,
+            "killer": "PR",
+            "victim": "apEX",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "m4a1_silencer",
+            "is_first_kill": false
+          }
+        ],
+        "grenades": 3,
+        "grenades_by_type": {
+          "HE": 2,
+          "Molotov/Incendiary": 1
+        },
+        "plants": 0,
+        "plant_sites": [],
+        "plant_teams": [],
+        "plant_outcome": null,
+        "flash_blinds": 0,
+        "flash_blinds_by_team": {}
+      },
+      {
+        "round_number": 3,
+        "winner_side": "CT",
+        "winner_team": "MOUZ",
+        "reason": "bomb_defused",
+        "opening_team": "MOUZ",
+        "opening_killer": "xertioN",
+        "kills": 8,
+        "kill_sequence": [
+          {
+            "round_number": 3,
+            "tick": 24079,
+            "killer": "xertioN",
+            "victim": "apEX",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "m4a1_silencer",
+            "is_first_kill": true
+          },
+          {
+            "round_number": 3,
+            "tick": 24323,
+            "killer": "ropz",
+            "victim": "xertioN",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 3,
+            "tick": 24357,
+            "killer": "Spinx",
+            "victim": "ropz",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "m4a1_silencer",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 3,
+            "tick": 25434,
+            "killer": "flameZ",
+            "victim": "Spinx",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 3,
+            "tick": 25809,
+            "killer": "xelex",
+            "victim": "flameZ",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 3,
+            "tick": 25993,
+            "killer": "jL",
+            "victim": "xelex",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 3,
+            "tick": 26216,
+            "killer": "PR",
+            "victim": "jL",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "m4a1_silencer",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 3,
+            "tick": 27565,
+            "killer": "torzsi",
+            "victim": "ZywOo",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "awp",
+            "is_first_kill": false
+          }
+        ],
+        "grenades": 28,
+        "grenades_by_type": {
+          "Flash": 10,
+          "HE": 6,
+          "Molotov/Incendiary": 6,
+          "Smoke": 6
+        },
+        "plants": 1,
+        "plant_sites": [
+          "BombsiteA"
+        ],
+        "plant_teams": [
+          "Vitality"
+        ],
+        "plant_outcome": "Vitality planted; MOUZ defused",
+        "flash_blinds": 22,
+        "flash_blinds_by_team": {
+          "MOUZ": 12,
+          "Vitality": 10
+        }
+      },
+      {
+        "round_number": 4,
+        "winner_side": "CT",
+        "winner_team": "MOUZ",
+        "reason": "t_killed",
+        "opening_team": "MOUZ",
+        "opening_killer": "torzsi",
+        "kills": 7,
+        "kill_sequence": [
+          {
+            "round_number": 4,
+            "tick": 32251,
+            "killer": "torzsi",
+            "victim": "apEX",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "awp",
+            "is_first_kill": true
+          },
+          {
+            "round_number": 4,
+            "tick": 33675,
+            "killer": "xelex",
+            "victim": "ZywOo",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "m4a1_silencer",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 4,
+            "tick": 36584,
+            "killer": "jL",
+            "victim": "Spinx",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 4,
+            "tick": 36658,
+            "killer": "xelex",
+            "victim": "flameZ",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "m4a1_silencer",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 4,
+            "tick": 36672,
+            "killer": "ropz",
+            "victim": "xelex",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "galilar",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 4,
+            "tick": 37046,
+            "killer": "PR",
+            "victim": "jL",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 4,
+            "tick": 37137,
+            "killer": "xertioN",
+            "victim": "ropz",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "m4a1_silencer",
+            "is_first_kill": false
+          }
+        ],
+        "grenades": 19,
+        "grenades_by_type": {
+          "Flash": 3,
+          "HE": 5,
+          "Molotov/Incendiary": 3,
+          "Smoke": 8
+        },
+        "plants": 0,
+        "plant_sites": [],
+        "plant_teams": [],
+        "plant_outcome": null,
+        "flash_blinds": 5,
+        "flash_blinds_by_team": {
+          "MOUZ": 1,
+          "Vitality": 4
+        }
+      },
+      {
+        "round_number": 5,
+        "winner_side": "T",
+        "winner_team": "Vitality",
+        "reason": "bomb_exploded",
+        "opening_team": "Vitality",
+        "opening_killer": "flameZ",
+        "kills": 3,
+        "kill_sequence": [
+          {
+            "round_number": 5,
+            "tick": 40882,
+            "killer": "flameZ",
+            "victim": "torzsi",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "ak47",
+            "is_first_kill": true
+          },
+          {
+            "round_number": 5,
+            "tick": 42385,
+            "killer": "flameZ",
+            "victim": "xertioN",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 5,
+            "tick": 43189,
+            "killer": "ropz",
+            "victim": "xelex",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "ak47",
+            "is_first_kill": false
+          }
+        ],
+        "grenades": 25,
+        "grenades_by_type": {
+          "Flash": 10,
+          "HE": 5,
+          "Molotov/Incendiary": 4,
+          "Smoke": 6
+        },
+        "plants": 1,
+        "plant_sites": [
+          "BombsiteA"
+        ],
+        "plant_teams": [
+          "Vitality"
+        ],
+        "plant_outcome": "Vitality planted; Vitality won",
+        "flash_blinds": 23,
+        "flash_blinds_by_team": {
+          "MOUZ": 8,
+          "Vitality": 15
+        }
+      },
+      {
+        "round_number": 6,
+        "winner_side": "T",
+        "winner_team": "Vitality",
+        "reason": "bomb_exploded",
+        "opening_team": "Vitality",
+        "opening_killer": "apEX",
+        "kills": 2,
+        "kill_sequence": [
+          {
+            "round_number": 6,
+            "tick": 50562,
+            "killer": "apEX",
+            "victim": "xertioN",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "ak47",
+            "is_first_kill": true
+          },
+          {
+            "round_number": 6,
+            "tick": 53211,
+            "killer": "flameZ",
+            "victim": "torzsi",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "ak47",
+            "is_first_kill": false
+          }
+        ],
+        "grenades": 36,
+        "grenades_by_type": {
+          "Flash": 12,
+          "HE": 5,
+          "Molotov/Incendiary": 10,
+          "Smoke": 9
+        },
+        "plants": 1,
+        "plant_sites": [
+          "BombsiteB"
+        ],
+        "plant_teams": [
+          "Vitality"
+        ],
+        "plant_outcome": "Vitality planted; Vitality won",
+        "flash_blinds": 21,
+        "flash_blinds_by_team": {
+          "MOUZ": 9,
+          "Vitality": 12
+        }
+      },
+      {
+        "round_number": 7,
+        "winner_side": "T",
+        "winner_team": "Vitality",
+        "reason": "ct_killed",
+        "opening_team": "Vitality",
+        "opening_killer": "flameZ",
+        "kills": 7,
+        "kill_sequence": [
+          {
+            "round_number": 7,
+            "tick": 59234,
+            "killer": "flameZ",
+            "victim": "xertioN",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "ak47",
+            "is_first_kill": true
+          },
+          {
+            "round_number": 7,
+            "tick": 59294,
+            "killer": "xelex",
+            "victim": "flameZ",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "m4a1_silencer",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 7,
+            "tick": 59678,
+            "killer": "jL",
+            "victim": "xelex",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 7,
+            "tick": 59934,
+            "killer": "ropz",
+            "victim": "PR",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 7,
+            "tick": 60166,
+            "killer": "Spinx",
+            "victim": "apEX",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "m4a1_silencer",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 7,
+            "tick": 60235,
+            "killer": "jL",
+            "victim": "torzsi",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 7,
+            "tick": 60408,
+            "killer": "ropz",
+            "victim": "Spinx",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "ak47",
+            "is_first_kill": false
+          }
+        ],
+        "grenades": 17,
+        "grenades_by_type": {
+          "Flash": 9,
+          "HE": 3,
+          "Molotov/Incendiary": 3,
+          "Smoke": 2
+        },
+        "plants": 0,
+        "plant_sites": [],
+        "plant_teams": [],
+        "plant_outcome": null,
+        "flash_blinds": 20,
+        "flash_blinds_by_team": {
+          "MOUZ": 12,
+          "Vitality": 8
+        }
+      },
+      {
+        "round_number": 8,
+        "winner_side": "T",
+        "winner_team": "Vitality",
+        "reason": "ct_killed",
+        "opening_team": "MOUZ",
+        "opening_killer": "xelex",
+        "kills": 8,
+        "kill_sequence": [
+          {
+            "round_number": 8,
+            "tick": 65961,
+            "killer": "xelex",
+            "victim": "apEX",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "deagle",
+            "is_first_kill": true
+          },
+          {
+            "round_number": 8,
+            "tick": 66625,
+            "killer": "xelex",
+            "victim": "flameZ",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "deagle",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 8,
+            "tick": 66679,
+            "killer": "ropz",
+            "victim": "xelex",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 8,
+            "tick": 66735,
+            "killer": "ZywOo",
+            "victim": "torzsi",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 8,
+            "tick": 66793,
+            "killer": "ZywOo",
+            "victim": "PR",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 8,
+            "tick": 66840,
+            "killer": "xertioN",
+            "victim": "ZywOo",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "usp_silencer",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 8,
+            "tick": 66859,
+            "killer": "ropz",
+            "victim": "xertioN",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 8,
+            "tick": 67758,
+            "killer": "ropz",
+            "victim": "Spinx",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "awp",
+            "is_first_kill": false
+          }
+        ],
+        "grenades": 20,
+        "grenades_by_type": {
+          "Flash": 3,
+          "HE": 6,
+          "Molotov/Incendiary": 6,
+          "Smoke": 5
+        },
+        "plants": 1,
+        "plant_sites": [
+          "BombsiteB"
+        ],
+        "plant_teams": [
+          "Vitality"
+        ],
+        "plant_outcome": "Vitality planted; Vitality won",
+        "flash_blinds": 4,
+        "flash_blinds_by_team": {
+          "Vitality": 4
+        }
+      },
+      {
+        "round_number": 9,
+        "winner_side": "CT",
+        "winner_team": "MOUZ",
+        "reason": "t_killed",
+        "opening_team": "MOUZ",
+        "opening_killer": "torzsi",
+        "kills": 5,
+        "kill_sequence": [
+          {
+            "round_number": 9,
+            "tick": 75874,
+            "killer": "torzsi",
+            "victim": "jL",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "awp",
+            "is_first_kill": true
+          },
+          {
+            "round_number": 9,
+            "tick": 76237,
+            "killer": "Spinx",
+            "victim": "ZywOo",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "m4a1_silencer",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 9,
+            "tick": 76817,
+            "killer": "xelex",
+            "victim": "apEX",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "m4a1_silencer",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 9,
+            "tick": 76876,
+            "killer": "xelex",
+            "victim": "flameZ",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "m4a1_silencer",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 9,
+            "tick": 77489,
+            "killer": "xelex",
+            "victim": "ropz",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "m4a1_silencer",
+            "is_first_kill": false
+          }
+        ],
+        "grenades": 29,
+        "grenades_by_type": {
+          "Flash": 8,
+          "HE": 6,
+          "Molotov/Incendiary": 6,
+          "Smoke": 9
+        },
+        "plants": 0,
+        "plant_sites": [],
+        "plant_teams": [],
+        "plant_outcome": null,
+        "flash_blinds": 11,
+        "flash_blinds_by_team": {
+          "Vitality": 11
+        }
+      },
+      {
+        "round_number": 10,
+        "winner_side": "CT",
+        "winner_team": "MOUZ",
+        "reason": "t_killed",
+        "opening_team": "MOUZ",
+        "opening_killer": "Spinx",
+        "kills": 5,
+        "kill_sequence": [
+          {
+            "round_number": 10,
+            "tick": 80964,
+            "killer": "Spinx",
+            "victim": "flameZ",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": true
+          },
+          {
+            "round_number": 10,
+            "tick": 82287,
+            "killer": "xertioN",
+            "victim": "ZywOo",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 10,
+            "tick": 82478,
+            "killer": "xelex",
+            "victim": "jL",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 10,
+            "tick": 82912,
+            "killer": "PR",
+            "victim": "ropz",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "m4a1_silencer",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 10,
+            "tick": 82999,
+            "killer": "xelex",
+            "victim": "apEX",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": false
+          }
+        ],
+        "grenades": 26,
+        "grenades_by_type": {
+          "Flash": 9,
+          "HE": 6,
+          "Molotov/Incendiary": 5,
+          "Smoke": 6
+        },
+        "plants": 0,
+        "plant_sites": [],
+        "plant_teams": [],
+        "plant_outcome": null,
+        "flash_blinds": 16,
+        "flash_blinds_by_team": {
+          "MOUZ": 9,
+          "Vitality": 7
+        }
+      },
+      {
+        "round_number": 11,
+        "winner_side": "CT",
+        "winner_team": "MOUZ",
+        "reason": "t_killed",
+        "opening_team": "MOUZ",
+        "opening_killer": "xertioN",
+        "kills": 7,
+        "kill_sequence": [
+          {
+            "round_number": 11,
+            "tick": 88691,
+            "killer": "xertioN",
+            "victim": "ropz",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": true
+          },
+          {
+            "round_number": 11,
+            "tick": 89716,
+            "killer": "xelex",
+            "victim": "jL",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 11,
+            "tick": 91708,
+            "killer": "ZywOo",
+            "victim": "torzsi",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "awp",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 11,
+            "tick": 92411,
+            "killer": "ZywOo",
+            "victim": "xelex",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "awp",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 11,
+            "tick": 92522,
+            "killer": "Spinx",
+            "victim": "apEX",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 11,
+            "tick": 92577,
+            "killer": "xertioN",
+            "victim": "flameZ",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 11,
+            "tick": 92745,
+            "killer": "xertioN",
+            "victim": "ZywOo",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": false
+          }
+        ],
+        "grenades": 25,
+        "grenades_by_type": {
+          "Flash": 10,
+          "HE": 4,
+          "Molotov/Incendiary": 4,
+          "Smoke": 7
+        },
+        "plants": 0,
+        "plant_sites": [],
+        "plant_teams": [],
+        "plant_outcome": null,
+        "flash_blinds": 20,
+        "flash_blinds_by_team": {
+          "MOUZ": 12,
+          "Vitality": 8
+        }
+      },
+      {
+        "round_number": 12,
+        "winner_side": "CT",
+        "winner_team": "MOUZ",
+        "reason": "bomb_defused",
+        "opening_team": "Vitality",
+        "opening_killer": "ZywOo",
+        "kills": 6,
+        "kill_sequence": [
+          {
+            "round_number": 12,
+            "tick": 94869,
+            "killer": "ZywOo",
+            "victim": "xertioN",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "ssg08",
+            "is_first_kill": true
+          },
+          {
+            "round_number": 12,
+            "tick": 96233,
+            "killer": "torzsi",
+            "victim": "apEX",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "awp",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 12,
+            "tick": 98132,
+            "killer": "PR",
+            "victim": "ropz",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 12,
+            "tick": 98877,
+            "killer": "Spinx",
+            "victim": "flameZ",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 12,
+            "tick": 98909,
+            "killer": "Spinx",
+            "victim": "jL",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 12,
+            "tick": 99357,
+            "killer": "torzsi",
+            "victim": "ZywOo",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "awp",
+            "is_first_kill": false
+          }
+        ],
+        "grenades": 24,
+        "grenades_by_type": {
+          "Flash": 9,
+          "HE": 4,
+          "Molotov/Incendiary": 6,
+          "Smoke": 5
+        },
+        "plants": 1,
+        "plant_sites": [
+          "BombsiteA"
+        ],
+        "plant_teams": [
+          "Vitality"
+        ],
+        "plant_outcome": "Vitality planted; MOUZ defused",
+        "flash_blinds": 13,
+        "flash_blinds_by_team": {
+          "MOUZ": 7,
+          "Vitality": 6
+        }
+      },
+      {
+        "round_number": 13,
+        "winner_side": "CT",
+        "winner_team": "Vitality",
+        "reason": "t_killed",
+        "opening_team": "Vitality",
+        "opening_killer": "jL",
+        "kills": 8,
+        "kill_sequence": [
+          {
+            "round_number": 13,
+            "tick": 115818,
+            "killer": "jL",
+            "victim": "PR",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "usp_silencer",
+            "is_first_kill": true
+          },
+          {
+            "round_number": 13,
+            "tick": 115879,
+            "killer": "xelex",
+            "victim": "jL",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "glock",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 13,
+            "tick": 117656,
+            "killer": "ropz",
+            "victim": "xertioN",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "usp_silencer",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 13,
+            "tick": 118639,
+            "killer": "xelex",
+            "victim": "flameZ",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "glock",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 13,
+            "tick": 118792,
+            "killer": "ropz",
+            "victim": "xelex",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "usp_silencer",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 13,
+            "tick": 119072,
+            "killer": "ZywOo",
+            "victim": "torzsi",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "usp_silencer",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 13,
+            "tick": 119799,
+            "killer": "Spinx",
+            "victim": "apEX",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "glock",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 13,
+            "tick": 120063,
+            "killer": "ZywOo",
+            "victim": "Spinx",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "hegrenade",
+            "is_first_kill": false
+          }
+        ],
+        "grenades": 4,
+        "grenades_by_type": {
+          "Flash": 2,
+          "HE": 1,
+          "Smoke": 1
+        },
+        "plants": 0,
+        "plant_sites": [],
+        "plant_teams": [],
+        "plant_outcome": null,
+        "flash_blinds": 7,
+        "flash_blinds_by_team": {
+          "MOUZ": 4,
+          "Vitality": 3
+        }
+      },
+      {
+        "round_number": 14,
+        "winner_side": "CT",
+        "winner_team": "Vitality",
+        "reason": "t_killed",
+        "opening_team": "Vitality",
+        "opening_killer": "ZywOo",
+        "kills": 5,
+        "kill_sequence": [
+          {
+            "round_number": 14,
+            "tick": 122332,
+            "killer": "ZywOo",
+            "victim": "xelex",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "m4a1_silencer",
+            "is_first_kill": true
+          },
+          {
+            "round_number": 14,
+            "tick": 122334,
+            "killer": "flameZ",
+            "victim": "Spinx",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "mp9",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 14,
+            "tick": 122396,
+            "killer": "ZywOo",
+            "victim": "xertioN",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "m4a1_silencer",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 14,
+            "tick": 122451,
+            "killer": "ZywOo",
+            "victim": "torzsi",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "m4a1_silencer",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 14,
+            "tick": 122630,
+            "killer": "flameZ",
+            "victim": "PR",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "hegrenade",
+            "is_first_kill": false
+          }
+        ],
+        "grenades": 4,
+        "grenades_by_type": {
+          "Flash": 2,
+          "HE": 2
+        },
+        "plants": 0,
+        "plant_sites": [],
+        "plant_teams": [],
+        "plant_outcome": null,
+        "flash_blinds": 4,
+        "flash_blinds_by_team": {
+          "MOUZ": 4
+        }
+      },
+      {
+        "round_number": 15,
+        "winner_side": "CT",
+        "winner_team": "Vitality",
+        "reason": "t_killed",
+        "opening_team": "Vitality",
+        "opening_killer": "ZywOo",
+        "kills": 5,
+        "kill_sequence": [
+          {
+            "round_number": 15,
+            "tick": 124936,
+            "killer": "ZywOo",
+            "victim": "xertioN",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "awp",
+            "is_first_kill": true
+          },
+          {
+            "round_number": 15,
+            "tick": 128002,
+            "killer": "flameZ",
+            "victim": "PR",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "mp9",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 15,
+            "tick": 128047,
+            "killer": "ZywOo",
+            "victim": "xelex",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "awp",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 15,
+            "tick": 128090,
+            "killer": "flameZ",
+            "victim": "Spinx",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "mp9",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 15,
+            "tick": 128152,
+            "killer": "ZywOo",
+            "victim": "torzsi",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "awp",
+            "is_first_kill": false
+          }
+        ],
+        "grenades": 18,
+        "grenades_by_type": {
+          "Flash": 7,
+          "HE": 1,
+          "Molotov/Incendiary": 4,
+          "Smoke": 6
+        },
+        "plants": 0,
+        "plant_sites": [],
+        "plant_teams": [],
+        "plant_outcome": null,
+        "flash_blinds": 11,
+        "flash_blinds_by_team": {
+          "MOUZ": 8,
+          "Vitality": 3
+        }
+      },
+      {
+        "round_number": 16,
+        "winner_side": "CT",
+        "winner_team": "Vitality",
+        "reason": "bomb_defused",
+        "opening_team": "Vitality",
+        "opening_killer": "ZywOo",
+        "kills": 8,
+        "kill_sequence": [
+          {
+            "round_number": 16,
+            "tick": 133879,
+            "killer": "ZywOo",
+            "victim": "PR",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "awp",
+            "is_first_kill": true
+          },
+          {
+            "round_number": 16,
+            "tick": 134140,
+            "killer": "xertioN",
+            "victim": "flameZ",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "tec9",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 16,
+            "tick": 134367,
+            "killer": "Spinx",
+            "victim": "ZywOo",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "tec9",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 16,
+            "tick": 135073,
+            "killer": "jL",
+            "victim": "xertioN",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "famas",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 16,
+            "tick": 135104,
+            "killer": "torzsi",
+            "victim": "jL",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "p250",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 16,
+            "tick": 135267,
+            "killer": "apEX",
+            "victim": "Spinx",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 16,
+            "tick": 135684,
+            "killer": "apEX",
+            "victim": "torzsi",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 16,
+            "tick": 135712,
+            "killer": "apEX",
+            "victim": "xelex",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "ak47",
+            "is_first_kill": false
+          }
+        ],
+        "grenades": 21,
+        "grenades_by_type": {
+          "Flash": 7,
+          "HE": 5,
+          "Molotov/Incendiary": 4,
+          "Smoke": 5
+        },
+        "plants": 1,
+        "plant_sites": [
+          "BombsiteA"
+        ],
+        "plant_teams": [
+          "MOUZ"
+        ],
+        "plant_outcome": "MOUZ planted; Vitality defused",
+        "flash_blinds": 22,
+        "flash_blinds_by_team": {
+          "MOUZ": 5,
+          "Vitality": 17
+        }
+      },
+      {
+        "round_number": 17,
+        "winner_side": "CT",
+        "winner_team": "Vitality",
+        "reason": "time_ran_out",
+        "opening_team": "Vitality",
+        "opening_killer": "jL",
+        "kills": 6,
+        "kill_sequence": [
+          {
+            "round_number": 17,
+            "tick": 143064,
+            "killer": "jL",
+            "victim": "Spinx",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "m4a1_silencer",
+            "is_first_kill": true
+          },
+          {
+            "round_number": 17,
+            "tick": 143203,
+            "killer": "jL",
+            "victim": "xelex",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "m4a1_silencer",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 17,
+            "tick": 143282,
+            "killer": "ropz",
+            "victim": "xertioN",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "awp",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 17,
+            "tick": 143403,
+            "killer": "jL",
+            "victim": "PR",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "m4a1_silencer",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 17,
+            "tick": 143885,
+            "killer": "torzsi",
+            "victim": "jL",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "awp",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 17,
+            "tick": 145778,
+            "killer": "torzsi",
+            "victim": "flameZ",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "awp",
+            "is_first_kill": false
+          }
+        ],
+        "grenades": 33,
+        "grenades_by_type": {
+          "Flash": 12,
+          "HE": 5,
+          "Molotov/Incendiary": 6,
+          "Smoke": 10
+        },
+        "plants": 0,
+        "plant_sites": [],
+        "plant_teams": [],
+        "plant_outcome": null,
+        "flash_blinds": 23,
+        "flash_blinds_by_team": {
+          "MOUZ": 14,
+          "Vitality": 9
+        }
+      },
+      {
+        "round_number": 18,
+        "winner_side": "CT",
+        "winner_team": "Vitality",
+        "reason": "t_killed",
+        "opening_team": "MOUZ",
+        "opening_killer": "torzsi",
+        "kills": 7,
+        "kill_sequence": [
+          {
+            "round_number": 18,
+            "tick": 145892,
+            "killer": "torzsi",
+            "victim": "apEX",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "awp",
+            "is_first_kill": true
+          },
+          {
+            "round_number": 18,
+            "tick": 152182,
+            "killer": "flameZ",
+            "victim": "xelex",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "m4a1",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 18,
+            "tick": 152196,
+            "killer": "PR",
+            "victim": "flameZ",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 18,
+            "tick": 154474,
+            "killer": "ZywOo",
+            "victim": "xertioN",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "awp",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 18,
+            "tick": 154815,
+            "killer": "ZywOo",
+            "victim": "PR",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "awp",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 18,
+            "tick": 154900,
+            "killer": "apEX",
+            "victim": "Spinx",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "m4a1_silencer",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 18,
+            "tick": 154928,
+            "killer": "ZywOo",
+            "victim": "torzsi",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "awp",
+            "is_first_kill": false
+          }
+        ],
+        "grenades": 22,
+        "grenades_by_type": {
+          "Flash": 5,
+          "HE": 5,
+          "Molotov/Incendiary": 4,
+          "Smoke": 8
+        },
+        "plants": 0,
+        "plant_sites": [],
+        "plant_teams": [],
+        "plant_outcome": null,
+        "flash_blinds": 8,
+        "flash_blinds_by_team": {
+          "MOUZ": 2,
+          "Vitality": 6
+        }
+      },
+      {
+        "round_number": 19,
+        "winner_side": "T",
+        "winner_team": "MOUZ",
+        "reason": "bomb_exploded",
+        "opening_team": "Vitality",
+        "opening_killer": "jL",
+        "kills": 6,
+        "kill_sequence": [
+          {
+            "round_number": 19,
+            "tick": 160966,
+            "killer": "jL",
+            "victim": "xertioN",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "ak47",
+            "is_first_kill": true
+          },
+          {
+            "round_number": 19,
+            "tick": 160975,
+            "killer": "PR",
+            "victim": "jL",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "deagle",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 19,
+            "tick": 161051,
+            "killer": "ropz",
+            "victim": "PR",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "awp",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 19,
+            "tick": 161072,
+            "killer": "xelex",
+            "victim": "ropz",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "galilar",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 19,
+            "tick": 162874,
+            "killer": "Spinx",
+            "victim": "apEX",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "galilar",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 19,
+            "tick": 162955,
+            "killer": "xelex",
+            "victim": "flameZ",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": false
+          }
+        ],
+        "grenades": 27,
+        "grenades_by_type": {
+          "Flash": 8,
+          "HE": 6,
+          "Molotov/Incendiary": 4,
+          "Smoke": 9
+        },
+        "plants": 1,
+        "plant_sites": [
+          "BombsiteB"
+        ],
+        "plant_teams": [
+          "MOUZ"
+        ],
+        "plant_outcome": "MOUZ planted; MOUZ won",
+        "flash_blinds": 17,
+        "flash_blinds_by_team": {
+          "MOUZ": 9,
+          "Vitality": 8
+        }
+      },
+      {
+        "round_number": 20,
+        "winner_side": "T",
+        "winner_team": "MOUZ",
+        "reason": "bomb_exploded",
+        "opening_team": "MOUZ",
+        "opening_killer": "xertioN",
+        "kills": 5,
+        "kill_sequence": [
+          {
+            "round_number": 20,
+            "tick": 170416,
+            "killer": "xertioN",
+            "victim": "jL",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": true
+          },
+          {
+            "round_number": 20,
+            "tick": 170445,
+            "killer": "ropz",
+            "victim": "xertioN",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "m4a1_silencer",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 20,
+            "tick": 170529,
+            "killer": "PR",
+            "victim": "ropz",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 20,
+            "tick": 170795,
+            "killer": "torzsi",
+            "victim": "flameZ",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "awp",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 20,
+            "tick": 171378,
+            "killer": "ZywOo",
+            "victim": "torzsi",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "awp",
+            "is_first_kill": false
+          }
+        ],
+        "grenades": 32,
+        "grenades_by_type": {
+          "Flash": 12,
+          "HE": 2,
+          "Molotov/Incendiary": 8,
+          "Smoke": 10
+        },
+        "plants": 1,
+        "plant_sites": [
+          "BombsiteB"
+        ],
+        "plant_teams": [
+          "MOUZ"
+        ],
+        "plant_outcome": "MOUZ planted; MOUZ won",
+        "flash_blinds": 19,
+        "flash_blinds_by_team": {
+          "MOUZ": 12,
+          "Vitality": 7
+        }
+      },
+      {
+        "round_number": 21,
+        "winner_side": "CT",
+        "winner_team": "Vitality",
+        "reason": "bomb_defused",
+        "opening_team": "MOUZ",
+        "opening_killer": "xertioN",
+        "kills": 8,
+        "kill_sequence": [
+          {
+            "round_number": 21,
+            "tick": 180915,
+            "killer": "xertioN",
+            "victim": "ZywOo",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": true
+          },
+          {
+            "round_number": 21,
+            "tick": 180995,
+            "killer": "apEX",
+            "victim": "xertioN",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "m4a1",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 21,
+            "tick": 182163,
+            "killer": "apEX",
+            "victim": "torzsi",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "m4a1",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 21,
+            "tick": 182446,
+            "killer": "apEX",
+            "victim": "PR",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "m4a1",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 21,
+            "tick": 182474,
+            "killer": "xelex",
+            "victim": "flameZ",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 21,
+            "tick": 182526,
+            "killer": "apEX",
+            "victim": "xelex",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "m4a1",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 21,
+            "tick": 182783,
+            "killer": "Spinx",
+            "victim": "apEX",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 21,
+            "tick": 182848,
+            "killer": "ropz",
+            "victim": "Spinx",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "awp",
+            "is_first_kill": false
+          }
+        ],
+        "grenades": 36,
+        "grenades_by_type": {
+          "Flash": 10,
+          "HE": 7,
+          "Molotov/Incendiary": 9,
+          "Smoke": 10
+        },
+        "plants": 1,
+        "plant_sites": [
+          "BombsiteA"
+        ],
+        "plant_teams": [
+          "MOUZ"
+        ],
+        "plant_outcome": "MOUZ planted; Vitality defused",
+        "flash_blinds": 17,
+        "flash_blinds_by_team": {
+          "MOUZ": 15,
+          "Vitality": 2
+        }
+      },
+      {
+        "round_number": 22,
+        "winner_side": "T",
+        "winner_team": "MOUZ",
+        "reason": "ct_killed",
+        "opening_team": "MOUZ",
+        "opening_killer": "PR",
+        "kills": 9,
+        "kill_sequence": [
+          {
+            "round_number": 22,
+            "tick": 191162,
+            "killer": "PR",
+            "victim": "apEX",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": true
+          },
+          {
+            "round_number": 22,
+            "tick": 192011,
+            "killer": "Spinx",
+            "victim": "jL",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 22,
+            "tick": 192217,
+            "killer": "flameZ",
+            "victim": "PR",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "m4a1",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 22,
+            "tick": 192803,
+            "killer": "ropz",
+            "victim": "torzsi",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 22,
+            "tick": 192817,
+            "killer": "xelex",
+            "victim": "ropz",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 22,
+            "tick": 193204,
+            "killer": "Spinx",
+            "victim": "ZywOo",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 22,
+            "tick": 194027,
+            "killer": "flameZ",
+            "victim": "xertioN",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 22,
+            "tick": 194332,
+            "killer": "flameZ",
+            "victim": "Spinx",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 22,
+            "tick": 195081,
+            "killer": "xelex",
+            "victim": "flameZ",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": false
+          }
+        ],
+        "grenades": 36,
+        "grenades_by_type": {
+          "Flash": 10,
+          "HE": 8,
+          "Molotov/Incendiary": 9,
+          "Smoke": 9
+        },
+        "plants": 1,
+        "plant_sites": [
+          "BombsiteB"
+        ],
+        "plant_teams": [
+          "MOUZ"
+        ],
+        "plant_outcome": "MOUZ planted; MOUZ won",
+        "flash_blinds": 18,
+        "flash_blinds_by_team": {
+          "MOUZ": 11,
+          "Vitality": 7
+        }
+      },
+      {
+        "round_number": 23,
+        "winner_side": "T",
+        "winner_team": "MOUZ",
+        "reason": "bomb_exploded",
+        "opening_team": "Vitality",
+        "opening_killer": "ropz",
+        "kills": 5,
+        "kill_sequence": [
+          {
+            "round_number": 23,
+            "tick": 200590,
+            "killer": "ropz",
+            "victim": "xertioN",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "m4a1_silencer",
+            "is_first_kill": true
+          },
+          {
+            "round_number": 23,
+            "tick": 200666,
+            "killer": "xelex",
+            "victim": "ropz",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 23,
+            "tick": 200715,
+            "killer": "ZywOo",
+            "victim": "xelex",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "hegrenade",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 23,
+            "tick": 200782,
+            "killer": "Spinx",
+            "victim": "jL",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 23,
+            "tick": 201649,
+            "killer": "Spinx",
+            "victim": "apEX",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": false
+          }
+        ],
+        "grenades": 26,
+        "grenades_by_type": {
+          "Flash": 7,
+          "HE": 4,
+          "Molotov/Incendiary": 7,
+          "Smoke": 8
+        },
+        "plants": 1,
+        "plant_sites": [
+          "BombsiteB"
+        ],
+        "plant_teams": [
+          "MOUZ"
+        ],
+        "plant_outcome": "MOUZ planted; MOUZ won",
+        "flash_blinds": 17,
+        "flash_blinds_by_team": {
+          "MOUZ": 12,
+          "Vitality": 5
+        }
+      },
+      {
+        "round_number": 24,
+        "winner_side": "T",
+        "winner_team": "MOUZ",
+        "reason": "ct_killed",
+        "opening_team": "MOUZ",
+        "opening_killer": "xelex",
+        "kills": 7,
+        "kill_sequence": [
+          {
+            "round_number": 24,
+            "tick": 209497,
+            "killer": "xelex",
+            "victim": "ropz",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": true
+          },
+          {
+            "round_number": 24,
+            "tick": 209630,
+            "killer": "flameZ",
+            "victim": "torzsi",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "m4a1",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 24,
+            "tick": 209837,
+            "killer": "Spinx",
+            "victim": "jL",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 24,
+            "tick": 209837,
+            "killer": "ZywOo",
+            "victim": "xelex",
+            "killer_team": "Vitality",
+            "victim_team": "MOUZ",
+            "weapon": "awp",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 24,
+            "tick": 210656,
+            "killer": "Spinx",
+            "victim": "apEX",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 24,
+            "tick": 210767,
+            "killer": "xertioN",
+            "victim": "flameZ",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": false
+          },
+          {
+            "round_number": 24,
+            "tick": 210966,
+            "killer": "xertioN",
+            "victim": "ZywOo",
+            "killer_team": "MOUZ",
+            "victim_team": "Vitality",
+            "weapon": "ak47",
+            "is_first_kill": false
+          }
+        ],
+        "grenades": 18,
+        "grenades_by_type": {
+          "Flash": 8,
+          "HE": 2,
+          "Molotov/Incendiary": 3,
+          "Smoke": 5
+        },
+        "plants": 1,
+        "plant_sites": [
+          "BombsiteB"
+        ],
+        "plant_teams": [
+          "MOUZ"
+        ],
+        "plant_outcome": "MOUZ planted; MOUZ won",
+        "flash_blinds": 18,
+        "flash_blinds_by_team": {
+          "MOUZ": 7,
+          "Vitality": 11
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "round_number": 1,
+        "tick": 14117,
+        "killer": "xertioN",
+        "victim": "ZywOo",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "elite",
+        "is_first_kill": true
+      },
+      {
+        "round_number": 1,
+        "tick": 14125,
+        "killer": "xertioN",
+        "victim": "jL",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "elite",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 1,
+        "tick": 14205,
+        "killer": "apEX",
+        "victim": "xertioN",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "glock",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 1,
+        "tick": 14241,
+        "killer": "Spinx",
+        "victim": "apEX",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "usp_silencer",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 1,
+        "tick": 15012,
+        "killer": "flameZ",
+        "victim": "Spinx",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "glock",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 1,
+        "tick": 15194,
+        "killer": "PR",
+        "victim": "flameZ",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "usp_silencer",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 1,
+        "tick": 15250,
+        "killer": "PR",
+        "victim": "ropz",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "usp_silencer",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 2,
+        "tick": 18913,
+        "killer": "xelex",
+        "victim": "ZywOo",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "m4a1_silencer",
+        "is_first_kill": true
+      },
+      {
+        "round_number": 2,
+        "tick": 18961,
+        "killer": "xelex",
+        "victim": "flameZ",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "m4a1_silencer",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 2,
+        "tick": 19013,
+        "killer": "apEX",
+        "victim": "xelex",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "p250",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 2,
+        "tick": 20204,
+        "killer": "torzsi",
+        "victim": "jL",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "mp9",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 2,
+        "tick": 20425,
+        "killer": "xertioN",
+        "victim": "ropz",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "m4a1_silencer",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 2,
+        "tick": 20992,
+        "killer": "PR",
+        "victim": "apEX",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "m4a1_silencer",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 3,
+        "tick": 24079,
+        "killer": "xertioN",
+        "victim": "apEX",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "m4a1_silencer",
+        "is_first_kill": true
+      },
+      {
+        "round_number": 3,
+        "tick": 24323,
+        "killer": "ropz",
+        "victim": "xertioN",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 3,
+        "tick": 24357,
+        "killer": "Spinx",
+        "victim": "ropz",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "m4a1_silencer",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 3,
+        "tick": 25434,
+        "killer": "flameZ",
+        "victim": "Spinx",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 3,
+        "tick": 25809,
+        "killer": "xelex",
+        "victim": "flameZ",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 3,
+        "tick": 25993,
+        "killer": "jL",
+        "victim": "xelex",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 3,
+        "tick": 26216,
+        "killer": "PR",
+        "victim": "jL",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "m4a1_silencer",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 3,
+        "tick": 27565,
+        "killer": "torzsi",
+        "victim": "ZywOo",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "awp",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 4,
+        "tick": 32251,
+        "killer": "torzsi",
+        "victim": "apEX",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "awp",
+        "is_first_kill": true
+      },
+      {
+        "round_number": 4,
+        "tick": 33675,
+        "killer": "xelex",
+        "victim": "ZywOo",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "m4a1_silencer",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 4,
+        "tick": 36584,
+        "killer": "jL",
+        "victim": "Spinx",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 4,
+        "tick": 36658,
+        "killer": "xelex",
+        "victim": "flameZ",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "m4a1_silencer",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 4,
+        "tick": 36672,
+        "killer": "ropz",
+        "victim": "xelex",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "galilar",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 4,
+        "tick": 37046,
+        "killer": "PR",
+        "victim": "jL",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 4,
+        "tick": 37137,
+        "killer": "xertioN",
+        "victim": "ropz",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "m4a1_silencer",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 5,
+        "tick": 40882,
+        "killer": "flameZ",
+        "victim": "torzsi",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "ak47",
+        "is_first_kill": true
+      },
+      {
+        "round_number": 5,
+        "tick": 42385,
+        "killer": "flameZ",
+        "victim": "xertioN",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 5,
+        "tick": 43189,
+        "killer": "ropz",
+        "victim": "xelex",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 6,
+        "tick": 50562,
+        "killer": "apEX",
+        "victim": "xertioN",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "ak47",
+        "is_first_kill": true
+      },
+      {
+        "round_number": 6,
+        "tick": 53211,
+        "killer": "flameZ",
+        "victim": "torzsi",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 7,
+        "tick": 59234,
+        "killer": "flameZ",
+        "victim": "xertioN",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "ak47",
+        "is_first_kill": true
+      },
+      {
+        "round_number": 7,
+        "tick": 59294,
+        "killer": "xelex",
+        "victim": "flameZ",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "m4a1_silencer",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 7,
+        "tick": 59678,
+        "killer": "jL",
+        "victim": "xelex",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 7,
+        "tick": 59934,
+        "killer": "ropz",
+        "victim": "PR",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 7,
+        "tick": 60166,
+        "killer": "Spinx",
+        "victim": "apEX",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "m4a1_silencer",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 7,
+        "tick": 60235,
+        "killer": "jL",
+        "victim": "torzsi",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 7,
+        "tick": 60408,
+        "killer": "ropz",
+        "victim": "Spinx",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 8,
+        "tick": 65961,
+        "killer": "xelex",
+        "victim": "apEX",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "deagle",
+        "is_first_kill": true
+      },
+      {
+        "round_number": 8,
+        "tick": 66625,
+        "killer": "xelex",
+        "victim": "flameZ",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "deagle",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 8,
+        "tick": 66679,
+        "killer": "ropz",
+        "victim": "xelex",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 8,
+        "tick": 66735,
+        "killer": "ZywOo",
+        "victim": "torzsi",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 8,
+        "tick": 66793,
+        "killer": "ZywOo",
+        "victim": "PR",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 8,
+        "tick": 66840,
+        "killer": "xertioN",
+        "victim": "ZywOo",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "usp_silencer",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 8,
+        "tick": 66859,
+        "killer": "ropz",
+        "victim": "xertioN",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 8,
+        "tick": 67758,
+        "killer": "ropz",
+        "victim": "Spinx",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "awp",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 9,
+        "tick": 75874,
+        "killer": "torzsi",
+        "victim": "jL",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "awp",
+        "is_first_kill": true
+      },
+      {
+        "round_number": 9,
+        "tick": 76237,
+        "killer": "Spinx",
+        "victim": "ZywOo",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "m4a1_silencer",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 9,
+        "tick": 76817,
+        "killer": "xelex",
+        "victim": "apEX",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "m4a1_silencer",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 9,
+        "tick": 76876,
+        "killer": "xelex",
+        "victim": "flameZ",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "m4a1_silencer",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 9,
+        "tick": 77489,
+        "killer": "xelex",
+        "victim": "ropz",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "m4a1_silencer",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 10,
+        "tick": 80964,
+        "killer": "Spinx",
+        "victim": "flameZ",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": true
+      },
+      {
+        "round_number": 10,
+        "tick": 82287,
+        "killer": "xertioN",
+        "victim": "ZywOo",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 10,
+        "tick": 82478,
+        "killer": "xelex",
+        "victim": "jL",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 10,
+        "tick": 82912,
+        "killer": "PR",
+        "victim": "ropz",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "m4a1_silencer",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 10,
+        "tick": 82999,
+        "killer": "xelex",
+        "victim": "apEX",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 11,
+        "tick": 88691,
+        "killer": "xertioN",
+        "victim": "ropz",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": true
+      },
+      {
+        "round_number": 11,
+        "tick": 89716,
+        "killer": "xelex",
+        "victim": "jL",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 11,
+        "tick": 91708,
+        "killer": "ZywOo",
+        "victim": "torzsi",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "awp",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 11,
+        "tick": 92411,
+        "killer": "ZywOo",
+        "victim": "xelex",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "awp",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 11,
+        "tick": 92522,
+        "killer": "Spinx",
+        "victim": "apEX",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 11,
+        "tick": 92577,
+        "killer": "xertioN",
+        "victim": "flameZ",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 11,
+        "tick": 92745,
+        "killer": "xertioN",
+        "victim": "ZywOo",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 12,
+        "tick": 94869,
+        "killer": "ZywOo",
+        "victim": "xertioN",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "ssg08",
+        "is_first_kill": true
+      },
+      {
+        "round_number": 12,
+        "tick": 96233,
+        "killer": "torzsi",
+        "victim": "apEX",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "awp",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 12,
+        "tick": 98132,
+        "killer": "PR",
+        "victim": "ropz",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 12,
+        "tick": 98877,
+        "killer": "Spinx",
+        "victim": "flameZ",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 12,
+        "tick": 98909,
+        "killer": "Spinx",
+        "victim": "jL",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 12,
+        "tick": 99357,
+        "killer": "torzsi",
+        "victim": "ZywOo",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "awp",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 13,
+        "tick": 115818,
+        "killer": "jL",
+        "victim": "PR",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "usp_silencer",
+        "is_first_kill": true
+      },
+      {
+        "round_number": 13,
+        "tick": 115879,
+        "killer": "xelex",
+        "victim": "jL",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "glock",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 13,
+        "tick": 117656,
+        "killer": "ropz",
+        "victim": "xertioN",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "usp_silencer",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 13,
+        "tick": 118639,
+        "killer": "xelex",
+        "victim": "flameZ",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "glock",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 13,
+        "tick": 118792,
+        "killer": "ropz",
+        "victim": "xelex",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "usp_silencer",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 13,
+        "tick": 119072,
+        "killer": "ZywOo",
+        "victim": "torzsi",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "usp_silencer",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 13,
+        "tick": 119799,
+        "killer": "Spinx",
+        "victim": "apEX",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "glock",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 13,
+        "tick": 120063,
+        "killer": "ZywOo",
+        "victim": "Spinx",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "hegrenade",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 14,
+        "tick": 122332,
+        "killer": "ZywOo",
+        "victim": "xelex",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "m4a1_silencer",
+        "is_first_kill": true
+      },
+      {
+        "round_number": 14,
+        "tick": 122334,
+        "killer": "flameZ",
+        "victim": "Spinx",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "mp9",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 14,
+        "tick": 122396,
+        "killer": "ZywOo",
+        "victim": "xertioN",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "m4a1_silencer",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 14,
+        "tick": 122451,
+        "killer": "ZywOo",
+        "victim": "torzsi",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "m4a1_silencer",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 14,
+        "tick": 122630,
+        "killer": "flameZ",
+        "victim": "PR",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "hegrenade",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 15,
+        "tick": 124936,
+        "killer": "ZywOo",
+        "victim": "xertioN",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "awp",
+        "is_first_kill": true
+      },
+      {
+        "round_number": 15,
+        "tick": 128002,
+        "killer": "flameZ",
+        "victim": "PR",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "mp9",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 15,
+        "tick": 128047,
+        "killer": "ZywOo",
+        "victim": "xelex",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "awp",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 15,
+        "tick": 128090,
+        "killer": "flameZ",
+        "victim": "Spinx",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "mp9",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 15,
+        "tick": 128152,
+        "killer": "ZywOo",
+        "victim": "torzsi",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "awp",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 16,
+        "tick": 133879,
+        "killer": "ZywOo",
+        "victim": "PR",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "awp",
+        "is_first_kill": true
+      },
+      {
+        "round_number": 16,
+        "tick": 134140,
+        "killer": "xertioN",
+        "victim": "flameZ",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "tec9",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 16,
+        "tick": 134367,
+        "killer": "Spinx",
+        "victim": "ZywOo",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "tec9",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 16,
+        "tick": 135073,
+        "killer": "jL",
+        "victim": "xertioN",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "famas",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 16,
+        "tick": 135104,
+        "killer": "torzsi",
+        "victim": "jL",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "p250",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 16,
+        "tick": 135267,
+        "killer": "apEX",
+        "victim": "Spinx",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 16,
+        "tick": 135684,
+        "killer": "apEX",
+        "victim": "torzsi",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 16,
+        "tick": 135712,
+        "killer": "apEX",
+        "victim": "xelex",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 17,
+        "tick": 143064,
+        "killer": "jL",
+        "victim": "Spinx",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "m4a1_silencer",
+        "is_first_kill": true
+      },
+      {
+        "round_number": 17,
+        "tick": 143203,
+        "killer": "jL",
+        "victim": "xelex",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "m4a1_silencer",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 17,
+        "tick": 143282,
+        "killer": "ropz",
+        "victim": "xertioN",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "awp",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 17,
+        "tick": 143403,
+        "killer": "jL",
+        "victim": "PR",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "m4a1_silencer",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 17,
+        "tick": 143885,
+        "killer": "torzsi",
+        "victim": "jL",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "awp",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 17,
+        "tick": 145778,
+        "killer": "torzsi",
+        "victim": "flameZ",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "awp",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 18,
+        "tick": 145892,
+        "killer": "torzsi",
+        "victim": "apEX",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "awp",
+        "is_first_kill": true
+      },
+      {
+        "round_number": 18,
+        "tick": 152182,
+        "killer": "flameZ",
+        "victim": "xelex",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "m4a1",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 18,
+        "tick": 152196,
+        "killer": "PR",
+        "victim": "flameZ",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 18,
+        "tick": 154474,
+        "killer": "ZywOo",
+        "victim": "xertioN",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "awp",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 18,
+        "tick": 154815,
+        "killer": "ZywOo",
+        "victim": "PR",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "awp",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 18,
+        "tick": 154900,
+        "killer": "apEX",
+        "victim": "Spinx",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "m4a1_silencer",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 18,
+        "tick": 154928,
+        "killer": "ZywOo",
+        "victim": "torzsi",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "awp",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 19,
+        "tick": 160966,
+        "killer": "jL",
+        "victim": "xertioN",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "ak47",
+        "is_first_kill": true
+      },
+      {
+        "round_number": 19,
+        "tick": 160975,
+        "killer": "PR",
+        "victim": "jL",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "deagle",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 19,
+        "tick": 161051,
+        "killer": "ropz",
+        "victim": "PR",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "awp",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 19,
+        "tick": 161072,
+        "killer": "xelex",
+        "victim": "ropz",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "galilar",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 19,
+        "tick": 162874,
+        "killer": "Spinx",
+        "victim": "apEX",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "galilar",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 19,
+        "tick": 162955,
+        "killer": "xelex",
+        "victim": "flameZ",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 20,
+        "tick": 170416,
+        "killer": "xertioN",
+        "victim": "jL",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": true
+      },
+      {
+        "round_number": 20,
+        "tick": 170445,
+        "killer": "ropz",
+        "victim": "xertioN",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "m4a1_silencer",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 20,
+        "tick": 170529,
+        "killer": "PR",
+        "victim": "ropz",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 20,
+        "tick": 170795,
+        "killer": "torzsi",
+        "victim": "flameZ",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "awp",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 20,
+        "tick": 171378,
+        "killer": "ZywOo",
+        "victim": "torzsi",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "awp",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 21,
+        "tick": 180915,
+        "killer": "xertioN",
+        "victim": "ZywOo",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": true
+      },
+      {
+        "round_number": 21,
+        "tick": 180995,
+        "killer": "apEX",
+        "victim": "xertioN",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "m4a1",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 21,
+        "tick": 182163,
+        "killer": "apEX",
+        "victim": "torzsi",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "m4a1",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 21,
+        "tick": 182446,
+        "killer": "apEX",
+        "victim": "PR",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "m4a1",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 21,
+        "tick": 182474,
+        "killer": "xelex",
+        "victim": "flameZ",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 21,
+        "tick": 182526,
+        "killer": "apEX",
+        "victim": "xelex",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "m4a1",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 21,
+        "tick": 182783,
+        "killer": "Spinx",
+        "victim": "apEX",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 21,
+        "tick": 182848,
+        "killer": "ropz",
+        "victim": "Spinx",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "awp",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 22,
+        "tick": 191162,
+        "killer": "PR",
+        "victim": "apEX",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": true
+      },
+      {
+        "round_number": 22,
+        "tick": 192011,
+        "killer": "Spinx",
+        "victim": "jL",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 22,
+        "tick": 192217,
+        "killer": "flameZ",
+        "victim": "PR",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "m4a1",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 22,
+        "tick": 192803,
+        "killer": "ropz",
+        "victim": "torzsi",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 22,
+        "tick": 192817,
+        "killer": "xelex",
+        "victim": "ropz",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 22,
+        "tick": 193204,
+        "killer": "Spinx",
+        "victim": "ZywOo",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 22,
+        "tick": 194027,
+        "killer": "flameZ",
+        "victim": "xertioN",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 22,
+        "tick": 194332,
+        "killer": "flameZ",
+        "victim": "Spinx",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 22,
+        "tick": 195081,
+        "killer": "xelex",
+        "victim": "flameZ",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 23,
+        "tick": 200590,
+        "killer": "ropz",
+        "victim": "xertioN",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "m4a1_silencer",
+        "is_first_kill": true
+      },
+      {
+        "round_number": 23,
+        "tick": 200666,
+        "killer": "xelex",
+        "victim": "ropz",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 23,
+        "tick": 200715,
+        "killer": "ZywOo",
+        "victim": "xelex",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "hegrenade",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 23,
+        "tick": 200782,
+        "killer": "Spinx",
+        "victim": "jL",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 23,
+        "tick": 201649,
+        "killer": "Spinx",
+        "victim": "apEX",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 24,
+        "tick": 209497,
+        "killer": "xelex",
+        "victim": "ropz",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": true
+      },
+      {
+        "round_number": 24,
+        "tick": 209630,
+        "killer": "flameZ",
+        "victim": "torzsi",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "m4a1",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 24,
+        "tick": 209837,
+        "killer": "Spinx",
+        "victim": "jL",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 24,
+        "tick": 209837,
+        "killer": "ZywOo",
+        "victim": "xelex",
+        "killer_team": "Vitality",
+        "victim_team": "MOUZ",
+        "weapon": "awp",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 24,
+        "tick": 210656,
+        "killer": "Spinx",
+        "victim": "apEX",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 24,
+        "tick": 210767,
+        "killer": "xertioN",
+        "victim": "flameZ",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": false
+      },
+      {
+        "round_number": 24,
+        "tick": 210966,
+        "killer": "xertioN",
+        "victim": "ZywOo",
+        "killer_team": "MOUZ",
+        "victim_team": "Vitality",
+        "weapon": "ak47",
+        "is_first_kill": false
+      }
+    ],
+    "available_metrics": [
+      "rounds_total",
+      "rounds_won",
+      "kills",
+      "deaths",
+      "first_kills",
+      "rounds_won_by_team",
+      "rounds_won_by_team_and_side",
+      "team_totals",
+      "opening_duel_conversion",
+      "grenades",
+      "bomb_plants",
+      "post_plant_conversion",
+      "defuses",
+      "flash_blinds",
+      "enemy_flash_blinds",
+      "team_flash_blinds"
+    ]
+  },
+  "analyst_report": "**比赛概况**\n- 地图 Dust2，共 24 回合；比分 MOUZ 13：Vitality 11。有效战斗击杀 150 次。[C1]\n- 各队按实际攻守方拆分的胜局为：MOUZ（CT 8，T 5）；Vitality（CT 7，T 4）。[C1]\n\n**关键转化**\n- 首杀后回合胜率：MOUZ 10/13（76.9%）；Vitality 8/11（72.7%）。[C1]\n- 下包后回合胜率：MOUZ 5/7（71.4%）；Vitality 3/5（60.0%）。[C1]\n\n**道具与下包**\n- 共记录 535 次投掷：Flash 175，HE 100，Molotov/Incendiary 113，Smoke 147；投掷次数只代表使用量，不代表效果。[C1]\n- 共记录 12 次下包（MOUZ 7；Vitality 5）；拆包胜局（MOUZ 2；Vitality 2）。[C1]\n\n**数据缺口**\n- 共记录 341 次受闪：对手受闪 {'MOUZ': 78, 'Vitality': 82}，队友受闪 {'MOUZ': 99, 'Vitality': 82}；该指标描述命中，不单独证明战术质量。站位、沟通和战术意图也不能仅由上述计数确定。[C1]",
+  "coach_advice": "**核心结论**\n- 比分 MOUZ 13，Vitality 11；按实际阵营拆分为 MOUZ（CT 8，T 5）；Vitality（CT 7，T 4）。[C1]\n- 首杀后胜局转化：MOUZ 10/13（76.9%）；Vitality 8/11（72.7%）。[C1]\n- 下包后胜局转化：MOUZ 5/7（71.4%）；Vitality 3/5（60.0%）；拆包胜局 MOUZ 2；Vitality 2。[C1]\n\n**关键下包回合**\n- R3：Vitality 下包，MOUZ 拆包获胜。[C4]\n- R5：Vitality 下包并赢得回合。[C6]\n- R6：Vitality 下包并赢得回合。[C7]\n- R8：Vitality 下包并赢得回合。[C9]\n- R12：Vitality 下包，MOUZ 拆包获胜。[C13]\n- R16：MOUZ 下包，Vitality 拆包获胜。[C17]\n- R19：MOUZ 下包并赢得回合。[C20]\n- R20：MOUZ 下包并赢得回合。[C21]\n- R21：MOUZ 下包，Vitality 拆包获胜。[C22]\n- R22：MOUZ 下包并赢得回合。[C23]\n- R23：MOUZ 下包并赢得回合。[C24]\n- R24：MOUZ 下包并赢得回合。[C25]\n\n**训练建议**\n1. **首杀后续**：复盘取得首杀却输掉的 R8、R12、R18、R19、R21、R23，逐段人工确认首杀后的存活、补枪和人数优势处理；事件序列只证明结果反转，不直接证明失误原因。[C9][C13][C19][C20][C22][C24]\n2. **攻守转换**：分别对照双方 T/CT 胜局拆分，优先检查低胜局一侧的开局计划与回合中期决策；这是一项训练优先级，不是由胜局数直接推出的战术原因。[C1]\n\n**限制**\n- 当前 Demo 可确定击杀、胜方、道具投掷、下包与拆包结果；站位、沟通、道具效果和战术意图需要人工录像复核。[C1]",
+  "coach_decision": {
+    "priority_ids": [
+      "opening_followup",
+      "side_transition"
+    ],
+    "selection_source": "deterministic_fallback"
+  },
+  "model_usage": {},
+  "critique_score": 0.579,
+  "ingested_tactics_count": 0,
+  "current_evidence": [
+    {
+      "source_id": "current:2396950:Dust2:summary",
+      "score": 1.0,
+      "metadata": {
+        "source": "current_demo",
+        "evidence_scope": "current_match",
+        "map": "Dust2",
+        "match_id": "2396950",
+        "tactic_type": "Current Match Summary"
+      },
+      "content": "Current demo summary: map=Dust2; rounds=24; team score=MOUZ 13, Vitality 11; team wins split by the side played=MOUZ {'CT': 8, 'T': 5}, Vitality {'CT': 7, 'T': 4}; valid combat kills=150; opening-to-round-win=MOUZ 10/13 (76.9%), Vitality 8/11 (72.7%); grenades=535 {'Flash': 175, 'HE': 100, 'Molotov/Incendiary': 113, 'Smoke': 147}; plants=12 {'MOUZ': 7, 'Vitality': 5}; post-plant round wins=MOUZ 5/7 (71.4%), Vitality 3/5 (60.0%); defuses by winner team={'MOUZ': 2, 'Vitality': 2}; flash-blind events=341 by thrower team={'MOUZ': 177, 'Vitality': 164}; enemy blinds={'MOUZ': 78, 'Vitality': 82}; team blinds={'MOUZ': 99, 'Vitality': 82}."
+    },
+    {
+      "source_id": "current:2396950:Dust2:1",
+      "score": 1.0,
+      "metadata": {
+        "source": "current_demo",
+        "evidence_scope": "current_match",
+        "map": "Dust2",
+        "match_id": "2396950",
+        "round_number": 1,
+        "tactic_type": "Current Round Evidence"
+      },
+      "content": "Current demo round 1: winner=MOUZ; reason=t_killed; opening=xertioN(MOUZ); kills=xertioN(MOUZ)>ZywOo(Vitality)@14117; xertioN(MOUZ)>jL(Vitality)@14125; apEX(Vitality)>xertioN(MOUZ)@14205; Spinx(MOUZ)>apEX(Vitality)@14241; flameZ(Vitality)>Spinx(MOUZ)@15012; PR(MOUZ)>flameZ(Vitality)@15194; PR(MOUZ)>ropz(Vitality)@15250; grenades=6 {'Flash': 2, 'Molotov/Incendiary': 1, 'Smoke': 3}; plants=0 teams=[] sites=[]; plant outcome=none; flash blinds=5 {'MOUZ': 4, 'Vitality': 1}."
+    },
+    {
+      "source_id": "current:2396950:Dust2:2",
+      "score": 1.0,
+      "metadata": {
+        "source": "current_demo",
+        "evidence_scope": "current_match",
+        "map": "Dust2",
+        "match_id": "2396950",
+        "round_number": 2,
+        "tactic_type": "Current Round Evidence"
+      },
+      "content": "Current demo round 2: winner=MOUZ; reason=t_killed; opening=xelex(MOUZ); kills=xelex(MOUZ)>ZywOo(Vitality)@18913; xelex(MOUZ)>flameZ(Vitality)@18961; apEX(Vitality)>xelex(MOUZ)@19013; torzsi(MOUZ)>jL(Vitality)@20204; xertioN(MOUZ)>ropz(Vitality)@20425; PR(MOUZ)>apEX(Vitality)@20992; grenades=3 {'HE': 2, 'Molotov/Incendiary': 1}; plants=0 teams=[] sites=[]; plant outcome=none; flash blinds=0 {}."
+    },
+    {
+      "source_id": "current:2396950:Dust2:3",
+      "score": 1.0,
+      "metadata": {
+        "source": "current_demo",
+        "evidence_scope": "current_match",
+        "map": "Dust2",
+        "match_id": "2396950",
+        "round_number": 3,
+        "tactic_type": "Current Round Evidence"
+      },
+      "content": "Current demo round 3: winner=MOUZ; reason=bomb_defused; opening=xertioN(MOUZ); kills=xertioN(MOUZ)>apEX(Vitality)@24079; ropz(Vitality)>xertioN(MOUZ)@24323; Spinx(MOUZ)>ropz(Vitality)@24357; flameZ(Vitality)>Spinx(MOUZ)@25434; xelex(MOUZ)>flameZ(Vitality)@25809; jL(Vitality)>xelex(MOUZ)@25993; PR(MOUZ)>jL(Vitality)@26216; torzsi(MOUZ)>ZywOo(Vitality)@27565; grenades=28 {'Flash': 10, 'HE': 6, 'Molotov/Incendiary': 6, 'Smoke': 6}; plants=1 teams=['Vitality'] sites=['BombsiteA']; plant outcome=Vitality planted; MOUZ defused; flash blinds=22 {'MOUZ': 12, 'Vitality': 10}."
+    },
+    {
+      "source_id": "current:2396950:Dust2:4",
+      "score": 1.0,
+      "metadata": {
+        "source": "current_demo",
+        "evidence_scope": "current_match",
+        "map": "Dust2",
+        "match_id": "2396950",
+        "round_number": 4,
+        "tactic_type": "Current Round Evidence"
+      },
+      "content": "Current demo round 4: winner=MOUZ; reason=t_killed; opening=torzsi(MOUZ); kills=torzsi(MOUZ)>apEX(Vitality)@32251; xelex(MOUZ)>ZywOo(Vitality)@33675; jL(Vitality)>Spinx(MOUZ)@36584; xelex(MOUZ)>flameZ(Vitality)@36658; ropz(Vitality)>xelex(MOUZ)@36672; PR(MOUZ)>jL(Vitality)@37046; xertioN(MOUZ)>ropz(Vitality)@37137; grenades=19 {'Flash': 3, 'HE': 5, 'Molotov/Incendiary': 3, 'Smoke': 8}; plants=0 teams=[] sites=[]; plant outcome=none; flash blinds=5 {'MOUZ': 1, 'Vitality': 4}."
+    },
+    {
+      "source_id": "current:2396950:Dust2:5",
+      "score": 1.0,
+      "metadata": {
+        "source": "current_demo",
+        "evidence_scope": "current_match",
+        "map": "Dust2",
+        "match_id": "2396950",
+        "round_number": 5,
+        "tactic_type": "Current Round Evidence"
+      },
+      "content": "Current demo round 5: winner=Vitality; reason=bomb_exploded; opening=flameZ(Vitality); kills=flameZ(Vitality)>torzsi(MOUZ)@40882; flameZ(Vitality)>xertioN(MOUZ)@42385; ropz(Vitality)>xelex(MOUZ)@43189; grenades=25 {'Flash': 10, 'HE': 5, 'Molotov/Incendiary': 4, 'Smoke': 6}; plants=1 teams=['Vitality'] sites=['BombsiteA']; plant outcome=Vitality planted; Vitality won; flash blinds=23 {'MOUZ': 8, 'Vitality': 15}."
+    },
+    {
+      "source_id": "current:2396950:Dust2:6",
+      "score": 1.0,
+      "metadata": {
+        "source": "current_demo",
+        "evidence_scope": "current_match",
+        "map": "Dust2",
+        "match_id": "2396950",
+        "round_number": 6,
+        "tactic_type": "Current Round Evidence"
+      },
+      "content": "Current demo round 6: winner=Vitality; reason=bomb_exploded; opening=apEX(Vitality); kills=apEX(Vitality)>xertioN(MOUZ)@50562; flameZ(Vitality)>torzsi(MOUZ)@53211; grenades=36 {'Flash': 12, 'HE': 5, 'Molotov/Incendiary': 10, 'Smoke': 9}; plants=1 teams=['Vitality'] sites=['BombsiteB']; plant outcome=Vitality planted; Vitality won; flash blinds=21 {'MOUZ': 9, 'Vitality': 12}."
+    },
+    {
+      "source_id": "current:2396950:Dust2:7",
+      "score": 1.0,
+      "metadata": {
+        "source": "current_demo",
+        "evidence_scope": "current_match",
+        "map": "Dust2",
+        "match_id": "2396950",
+        "round_number": 7,
+        "tactic_type": "Current Round Evidence"
+      },
+      "content": "Current demo round 7: winner=Vitality; reason=ct_killed; opening=flameZ(Vitality); kills=flameZ(Vitality)>xertioN(MOUZ)@59234; xelex(MOUZ)>flameZ(Vitality)@59294; jL(Vitality)>xelex(MOUZ)@59678; ropz(Vitality)>PR(MOUZ)@59934; Spinx(MOUZ)>apEX(Vitality)@60166; jL(Vitality)>torzsi(MOUZ)@60235; ropz(Vitality)>Spinx(MOUZ)@60408; grenades=17 {'Flash': 9, 'HE': 3, 'Molotov/Incendiary': 3, 'Smoke': 2}; plants=0 teams=[] sites=[]; plant outcome=none; flash blinds=20 {'MOUZ': 12, 'Vitality': 8}."
+    },
+    {
+      "source_id": "current:2396950:Dust2:8",
+      "score": 1.0,
+      "metadata": {
+        "source": "current_demo",
+        "evidence_scope": "current_match",
+        "map": "Dust2",
+        "match_id": "2396950",
+        "round_number": 8,
+        "tactic_type": "Current Round Evidence"
+      },
+      "content": "Current demo round 8: winner=Vitality; reason=ct_killed; opening=xelex(MOUZ); kills=xelex(MOUZ)>apEX(Vitality)@65961; xelex(MOUZ)>flameZ(Vitality)@66625; ropz(Vitality)>xelex(MOUZ)@66679; ZywOo(Vitality)>torzsi(MOUZ)@66735; ZywOo(Vitality)>PR(MOUZ)@66793; xertioN(MOUZ)>ZywOo(Vitality)@66840; ropz(Vitality)>xertioN(MOUZ)@66859; ropz(Vitality)>Spinx(MOUZ)@67758; grenades=20 {'Flash': 3, 'HE': 6, 'Molotov/Incendiary': 6, 'Smoke': 5}; plants=1 teams=['Vitality'] sites=['BombsiteB']; plant outcome=Vitality planted; Vitality won; flash blinds=4 {'Vitality': 4}."
+    },
+    {
+      "source_id": "current:2396950:Dust2:9",
+      "score": 1.0,
+      "metadata": {
+        "source": "current_demo",
+        "evidence_scope": "current_match",
+        "map": "Dust2",
+        "match_id": "2396950",
+        "round_number": 9,
+        "tactic_type": "Current Round Evidence"
+      },
+      "content": "Current demo round 9: winner=MOUZ; reason=t_killed; opening=torzsi(MOUZ); kills=torzsi(MOUZ)>jL(Vitality)@75874; Spinx(MOUZ)>ZywOo(Vitality)@76237; xelex(MOUZ)>apEX(Vitality)@76817; xelex(MOUZ)>flameZ(Vitality)@76876; xelex(MOUZ)>ropz(Vitality)@77489; grenades=29 {'Flash': 8, 'HE': 6, 'Molotov/Incendiary': 6, 'Smoke': 9}; plants=0 teams=[] sites=[]; plant outcome=none; flash blinds=11 {'Vitality': 11}."
+    },
+    {
+      "source_id": "current:2396950:Dust2:10",
+      "score": 1.0,
+      "metadata": {
+        "source": "current_demo",
+        "evidence_scope": "current_match",
+        "map": "Dust2",
+        "match_id": "2396950",
+        "round_number": 10,
+        "tactic_type": "Current Round Evidence"
+      },
+      "content": "Current demo round 10: winner=MOUZ; reason=t_killed; opening=Spinx(MOUZ); kills=Spinx(MOUZ)>flameZ(Vitality)@80964; xertioN(MOUZ)>ZywOo(Vitality)@82287; xelex(MOUZ)>jL(Vitality)@82478; PR(MOUZ)>ropz(Vitality)@82912; xelex(MOUZ)>apEX(Vitality)@82999; grenades=26 {'Flash': 9, 'HE': 6, 'Molotov/Incendiary': 5, 'Smoke': 6}; plants=0 teams=[] sites=[]; plant outcome=none; flash blinds=16 {'MOUZ': 9, 'Vitality': 7}."
+    },
+    {
+      "source_id": "current:2396950:Dust2:11",
+      "score": 1.0,
+      "metadata": {
+        "source": "current_demo",
+        "evidence_scope": "current_match",
+        "map": "Dust2",
+        "match_id": "2396950",
+        "round_number": 11,
+        "tactic_type": "Current Round Evidence"
+      },
+      "content": "Current demo round 11: winner=MOUZ; reason=t_killed; opening=xertioN(MOUZ); kills=xertioN(MOUZ)>ropz(Vitality)@88691; xelex(MOUZ)>jL(Vitality)@89716; ZywOo(Vitality)>torzsi(MOUZ)@91708; ZywOo(Vitality)>xelex(MOUZ)@92411; Spinx(MOUZ)>apEX(Vitality)@92522; xertioN(MOUZ)>flameZ(Vitality)@92577; xertioN(MOUZ)>ZywOo(Vitality)@92745; grenades=25 {'Flash': 10, 'HE': 4, 'Molotov/Incendiary': 4, 'Smoke': 7}; plants=0 teams=[] sites=[]; plant outcome=none; flash blinds=20 {'MOUZ': 12, 'Vitality': 8}."
+    },
+    {
+      "source_id": "current:2396950:Dust2:12",
+      "score": 1.0,
+      "metadata": {
+        "source": "current_demo",
+        "evidence_scope": "current_match",
+        "map": "Dust2",
+        "match_id": "2396950",
+        "round_number": 12,
+        "tactic_type": "Current Round Evidence"
+      },
+      "content": "Current demo round 12: winner=MOUZ; reason=bomb_defused; opening=ZywOo(Vitality); kills=ZywOo(Vitality)>xertioN(MOUZ)@94869; torzsi(MOUZ)>apEX(Vitality)@96233; PR(MOUZ)>ropz(Vitality)@98132; Spinx(MOUZ)>flameZ(Vitality)@98877; Spinx(MOUZ)>jL(Vitality)@98909; torzsi(MOUZ)>ZywOo(Vitality)@99357; grenades=24 {'Flash': 9, 'HE': 4, 'Molotov/Incendiary': 6, 'Smoke': 5}; plants=1 teams=['Vitality'] sites=['BombsiteA']; plant outcome=Vitality planted; MOUZ defused; flash blinds=13 {'MOUZ': 7, 'Vitality': 6}."
+    },
+    {
+      "source_id": "current:2396950:Dust2:13",
+      "score": 1.0,
+      "metadata": {
+        "source": "current_demo",
+        "evidence_scope": "current_match",
+        "map": "Dust2",
+        "match_id": "2396950",
+        "round_number": 13,
+        "tactic_type": "Current Round Evidence"
+      },
+      "content": "Current demo round 13: winner=Vitality; reason=t_killed; opening=jL(Vitality); kills=jL(Vitality)>PR(MOUZ)@115818; xelex(MOUZ)>jL(Vitality)@115879; ropz(Vitality)>xertioN(MOUZ)@117656; xelex(MOUZ)>flameZ(Vitality)@118639; ropz(Vitality)>xelex(MOUZ)@118792; ZywOo(Vitality)>torzsi(MOUZ)@119072; Spinx(MOUZ)>apEX(Vitality)@119799; ZywOo(Vitality)>Spinx(MOUZ)@120063; grenades=4 {'Flash': 2, 'HE': 1, 'Smoke': 1}; plants=0 teams=[] sites=[]; plant outcome=none; flash blinds=7 {'MOUZ': 4, 'Vitality': 3}."
+    },
+    {
+      "source_id": "current:2396950:Dust2:14",
+      "score": 1.0,
+      "metadata": {
+        "source": "current_demo",
+        "evidence_scope": "current_match",
+        "map": "Dust2",
+        "match_id": "2396950",
+        "round_number": 14,
+        "tactic_type": "Current Round Evidence"
+      },
+      "content": "Current demo round 14: winner=Vitality; reason=t_killed; opening=ZywOo(Vitality); kills=ZywOo(Vitality)>xelex(MOUZ)@122332; flameZ(Vitality)>Spinx(MOUZ)@122334; ZywOo(Vitality)>xertioN(MOUZ)@122396; ZywOo(Vitality)>torzsi(MOUZ)@122451; flameZ(Vitality)>PR(MOUZ)@122630; grenades=4 {'Flash': 2, 'HE': 2}; plants=0 teams=[] sites=[]; plant outcome=none; flash blinds=4 {'MOUZ': 4}."
+    },
+    {
+      "source_id": "current:2396950:Dust2:15",
+      "score": 1.0,
+      "metadata": {
+        "source": "current_demo",
+        "evidence_scope": "current_match",
+        "map": "Dust2",
+        "match_id": "2396950",
+        "round_number": 15,
+        "tactic_type": "Current Round Evidence"
+      },
+      "content": "Current demo round 15: winner=Vitality; reason=t_killed; opening=ZywOo(Vitality); kills=ZywOo(Vitality)>xertioN(MOUZ)@124936; flameZ(Vitality)>PR(MOUZ)@128002; ZywOo(Vitality)>xelex(MOUZ)@128047; flameZ(Vitality)>Spinx(MOUZ)@128090; ZywOo(Vitality)>torzsi(MOUZ)@128152; grenades=18 {'Flash': 7, 'HE': 1, 'Molotov/Incendiary': 4, 'Smoke': 6}; plants=0 teams=[] sites=[]; plant outcome=none; flash blinds=11 {'MOUZ': 8, 'Vitality': 3}."
+    },
+    {
+      "source_id": "current:2396950:Dust2:16",
+      "score": 1.0,
+      "metadata": {
+        "source": "current_demo",
+        "evidence_scope": "current_match",
+        "map": "Dust2",
+        "match_id": "2396950",
+        "round_number": 16,
+        "tactic_type": "Current Round Evidence"
+      },
+      "content": "Current demo round 16: winner=Vitality; reason=bomb_defused; opening=ZywOo(Vitality); kills=ZywOo(Vitality)>PR(MOUZ)@133879; xertioN(MOUZ)>flameZ(Vitality)@134140; Spinx(MOUZ)>ZywOo(Vitality)@134367; jL(Vitality)>xertioN(MOUZ)@135073; torzsi(MOUZ)>jL(Vitality)@135104; apEX(Vitality)>Spinx(MOUZ)@135267; apEX(Vitality)>torzsi(MOUZ)@135684; apEX(Vitality)>xelex(MOUZ)@135712; grenades=21 {'Flash': 7, 'HE': 5, 'Molotov/Incendiary': 4, 'Smoke': 5}; plants=1 teams=['MOUZ'] sites=['BombsiteA']; plant outcome=MOUZ planted; Vitality defused; flash blinds=22 {'MOUZ': 5, 'Vitality': 17}."
+    },
+    {
+      "source_id": "current:2396950:Dust2:17",
+      "score": 1.0,
+      "metadata": {
+        "source": "current_demo",
+        "evidence_scope": "current_match",
+        "map": "Dust2",
+        "match_id": "2396950",
+        "round_number": 17,
+        "tactic_type": "Current Round Evidence"
+      },
+      "content": "Current demo round 17: winner=Vitality; reason=time_ran_out; opening=jL(Vitality); kills=jL(Vitality)>Spinx(MOUZ)@143064; jL(Vitality)>xelex(MOUZ)@143203; ropz(Vitality)>xertioN(MOUZ)@143282; jL(Vitality)>PR(MOUZ)@143403; torzsi(MOUZ)>jL(Vitality)@143885; torzsi(MOUZ)>flameZ(Vitality)@145778; grenades=33 {'Flash': 12, 'HE': 5, 'Molotov/Incendiary': 6, 'Smoke': 10}; plants=0 teams=[] sites=[]; plant outcome=none; flash blinds=23 {'MOUZ': 14, 'Vitality': 9}."
+    },
+    {
+      "source_id": "current:2396950:Dust2:18",
+      "score": 1.0,
+      "metadata": {
+        "source": "current_demo",
+        "evidence_scope": "current_match",
+        "map": "Dust2",
+        "match_id": "2396950",
+        "round_number": 18,
+        "tactic_type": "Current Round Evidence"
+      },
+      "content": "Current demo round 18: winner=Vitality; reason=t_killed; opening=torzsi(MOUZ); kills=torzsi(MOUZ)>apEX(Vitality)@145892; flameZ(Vitality)>xelex(MOUZ)@152182; PR(MOUZ)>flameZ(Vitality)@152196; ZywOo(Vitality)>xertioN(MOUZ)@154474; ZywOo(Vitality)>PR(MOUZ)@154815; apEX(Vitality)>Spinx(MOUZ)@154900; ZywOo(Vitality)>torzsi(MOUZ)@154928; grenades=22 {'Flash': 5, 'HE': 5, 'Molotov/Incendiary': 4, 'Smoke': 8}; plants=0 teams=[] sites=[]; plant outcome=none; flash blinds=8 {'MOUZ': 2, 'Vitality': 6}."
+    },
+    {
+      "source_id": "current:2396950:Dust2:19",
+      "score": 1.0,
+      "metadata": {
+        "source": "current_demo",
+        "evidence_scope": "current_match",
+        "map": "Dust2",
+        "match_id": "2396950",
+        "round_number": 19,
+        "tactic_type": "Current Round Evidence"
+      },
+      "content": "Current demo round 19: winner=MOUZ; reason=bomb_exploded; opening=jL(Vitality); kills=jL(Vitality)>xertioN(MOUZ)@160966; PR(MOUZ)>jL(Vitality)@160975; ropz(Vitality)>PR(MOUZ)@161051; xelex(MOUZ)>ropz(Vitality)@161072; Spinx(MOUZ)>apEX(Vitality)@162874; xelex(MOUZ)>flameZ(Vitality)@162955; grenades=27 {'Flash': 8, 'HE': 6, 'Molotov/Incendiary': 4, 'Smoke': 9}; plants=1 teams=['MOUZ'] sites=['BombsiteB']; plant outcome=MOUZ planted; MOUZ won; flash blinds=17 {'MOUZ': 9, 'Vitality': 8}."
+    },
+    {
+      "source_id": "current:2396950:Dust2:20",
+      "score": 1.0,
+      "metadata": {
+        "source": "current_demo",
+        "evidence_scope": "current_match",
+        "map": "Dust2",
+        "match_id": "2396950",
+        "round_number": 20,
+        "tactic_type": "Current Round Evidence"
+      },
+      "content": "Current demo round 20: winner=MOUZ; reason=bomb_exploded; opening=xertioN(MOUZ); kills=xertioN(MOUZ)>jL(Vitality)@170416; ropz(Vitality)>xertioN(MOUZ)@170445; PR(MOUZ)>ropz(Vitality)@170529; torzsi(MOUZ)>flameZ(Vitality)@170795; ZywOo(Vitality)>torzsi(MOUZ)@171378; grenades=32 {'Flash': 12, 'HE': 2, 'Molotov/Incendiary': 8, 'Smoke': 10}; plants=1 teams=['MOUZ'] sites=['BombsiteB']; plant outcome=MOUZ planted; MOUZ won; flash blinds=19 {'MOUZ': 12, 'Vitality': 7}."
+    },
+    {
+      "source_id": "current:2396950:Dust2:21",
+      "score": 1.0,
+      "metadata": {
+        "source": "current_demo",
+        "evidence_scope": "current_match",
+        "map": "Dust2",
+        "match_id": "2396950",
+        "round_number": 21,
+        "tactic_type": "Current Round Evidence"
+      },
+      "content": "Current demo round 21: winner=Vitality; reason=bomb_defused; opening=xertioN(MOUZ); kills=xertioN(MOUZ)>ZywOo(Vitality)@180915; apEX(Vitality)>xertioN(MOUZ)@180995; apEX(Vitality)>torzsi(MOUZ)@182163; apEX(Vitality)>PR(MOUZ)@182446; xelex(MOUZ)>flameZ(Vitality)@182474; apEX(Vitality)>xelex(MOUZ)@182526; Spinx(MOUZ)>apEX(Vitality)@182783; ropz(Vitality)>Spinx(MOUZ)@182848; grenades=36 {'Flash': 10, 'HE': 7, 'Molotov/Incendiary': 9, 'Smoke': 10}; plants=1 teams=['MOUZ'] sites=['BombsiteA']; plant outcome=MOUZ planted; Vitality defused; flash blinds=17 {'MOUZ': 15, 'Vitality': 2}."
+    },
+    {
+      "source_id": "current:2396950:Dust2:22",
+      "score": 1.0,
+      "metadata": {
+        "source": "current_demo",
+        "evidence_scope": "current_match",
+        "map": "Dust2",
+        "match_id": "2396950",
+        "round_number": 22,
+        "tactic_type": "Current Round Evidence"
+      },
+      "content": "Current demo round 22: winner=MOUZ; reason=ct_killed; opening=PR(MOUZ); kills=PR(MOUZ)>apEX(Vitality)@191162; Spinx(MOUZ)>jL(Vitality)@192011; flameZ(Vitality)>PR(MOUZ)@192217; ropz(Vitality)>torzsi(MOUZ)@192803; xelex(MOUZ)>ropz(Vitality)@192817; Spinx(MOUZ)>ZywOo(Vitality)@193204; flameZ(Vitality)>xertioN(MOUZ)@194027; flameZ(Vitality)>Spinx(MOUZ)@194332; xelex(MOUZ)>flameZ(Vitality)@195081; grenades=36 {'Flash': 10, 'HE': 8, 'Molotov/Incendiary': 9, 'Smoke': 9}; plants=1 teams=['MOUZ'] sites=['BombsiteB']; plant outcome=MOUZ planted; MOUZ won; flash blinds=18 {'MOUZ': 11, 'Vitality': 7}."
+    },
+    {
+      "source_id": "current:2396950:Dust2:23",
+      "score": 1.0,
+      "metadata": {
+        "source": "current_demo",
+        "evidence_scope": "current_match",
+        "map": "Dust2",
+        "match_id": "2396950",
+        "round_number": 23,
+        "tactic_type": "Current Round Evidence"
+      },
+      "content": "Current demo round 23: winner=MOUZ; reason=bomb_exploded; opening=ropz(Vitality); kills=ropz(Vitality)>xertioN(MOUZ)@200590; xelex(MOUZ)>ropz(Vitality)@200666; ZywOo(Vitality)>xelex(MOUZ)@200715; Spinx(MOUZ)>jL(Vitality)@200782; Spinx(MOUZ)>apEX(Vitality)@201649; grenades=26 {'Flash': 7, 'HE': 4, 'Molotov/Incendiary': 7, 'Smoke': 8}; plants=1 teams=['MOUZ'] sites=['BombsiteB']; plant outcome=MOUZ planted; MOUZ won; flash blinds=17 {'MOUZ': 12, 'Vitality': 5}."
+    },
+    {
+      "source_id": "current:2396950:Dust2:24",
+      "score": 1.0,
+      "metadata": {
+        "source": "current_demo",
+        "evidence_scope": "current_match",
+        "map": "Dust2",
+        "match_id": "2396950",
+        "round_number": 24,
+        "tactic_type": "Current Round Evidence"
+      },
+      "content": "Current demo round 24: winner=MOUZ; reason=ct_killed; opening=xelex(MOUZ); kills=xelex(MOUZ)>ropz(Vitality)@209497; flameZ(Vitality)>torzsi(MOUZ)@209630; Spinx(MOUZ)>jL(Vitality)@209837; ZywOo(Vitality)>xelex(MOUZ)@209837; Spinx(MOUZ)>apEX(Vitality)@210656; xertioN(MOUZ)>flameZ(Vitality)@210767; xertioN(MOUZ)>ZywOo(Vitality)@210966; grenades=18 {'Flash': 8, 'HE': 2, 'Molotov/Incendiary': 3, 'Smoke': 5}; plants=1 teams=['MOUZ'] sites=['BombsiteB']; plant outcome=MOUZ planted; MOUZ won; flash blinds=18 {'MOUZ': 7, 'Vitality': 11}."
+    }
+  ],
+  "retrieval_evidence": [
+    {
+      "content": "[Graph Team Tactical Profile | MOUZ | Dust2 | Both sides | vs Vitality] Sample: 0 matches, 0 maps, 0 rounds. Round win: unavailable. Opening won: 0 rounds, then won unavailable; opening lost: 0 rounds, recovered unavailable. Trade-round win: unavailable; post-plant win: unavailable; retake-contact win: unavailable; execute-candidate win: unavailable. Role leaders: none. Descriptive silver-label evidence only; no causal claim. Graph source paths: .",
+      "metadata": {
+        "map": "Dust2",
+        "side": "Both",
+        "team": "MOUZ",
+        "opponent": "Vitality",
+        "tactic_type": "Graph Team Tactical Profile",
+        "source": "graph-profile:mouz:Dust2:vitality",
+        "topic": "overview",
+        "context_level": "team_tactical_profile",
+        "sample_size": {
+          "matches": 0,
+          "maps": 0,
+          "rounds": 0,
+          "decided_rounds": 0
+        },
+        "outcomes": {
+          "rounds_won": 0,
+          "round_win_pct": null
+        },
+        "conversions": {
+          "opening_won": {
+            "opportunities": 0,
+            "decided": 0,
+            "rounds_won": 0,
+            "round_win_pct": null
+          },
+          "opening_lost_recovery": {
+            "opportunities": 0,
+            "decided": 0,
+            "rounds_won": 0,
+            "round_win_pct": null
+          },
+          "trade_round": {
+            "opportunities": 0,
+            "decided": 0,
+            "rounds_won": 0,
+            "round_win_pct": null
+          },
+          "utility_burst_round": {
+            "opportunities": 0,
+            "decided": 0,
+            "rounds_won": 0,
+            "round_win_pct": null
+          },
+          "execute_candidate": {
+            "opportunities": 0,
+            "decided": 0,
+            "rounds_won": 0,
+            "round_win_pct": null
+          },
+          "post_plant": {
+            "opportunities": 0,
+            "decided": 0,
+            "rounds_won": 0,
+            "round_win_pct": null
+          },
+          "retake_contact": {
+            "opportunities": 0,
+            "decided": 0,
+            "rounds_won": 0,
+            "round_win_pct": null
+          }
+        },
+        "role_leaders": {
+          "opening_kills": [],
+          "trade_kills": [],
+          "utility_burst_participation": []
+        },
+        "round_examples": {
+          "all": [],
+          "opening_won": [],
+          "opening_lost_recovery": [],
+          "trade_round": [],
+          "utility_burst_round": [],
+          "execute_candidate": [],
+          "post_plant": [],
+          "retake_contact": []
+        },
+        "source_round_count": 0,
+        "source_round_ids": []
+      },
+      "score": 0.6,
+      "source_id": "graph-profile:mouz:Dust2:vitality"
+    },
+    {
+      "content": "[Community Summary | Dust2 | overview] Based on 13 matches and 265 parsed rounds. Overview: 1698 kills, 264 first kills, 5927 utility detonations, 4246 recorded blind events, and 153 bomb plants. Round winners: T 134, CT 131. Tactical labels: UTILITY_BURST 481, TRADE_KILL 382, OPENING_DUEL 264, POST_PLANT 153, RETAKE_CONTACT 85, EXECUTE_CANDIDATE 41. This is an extractive factual summary; it does not establish tactical causality. Graph source paths: round:2396948:Dust2:1, round:2396948:Dust2:2, round:2396948:Dust2:3, round:2396948:Dust2:4, round:2396948:Dust2:5, round:2396948:Dust2:6, round:2396948:Dust2:7, round:2396948:Dust2:8, round:2396948:Dust2:9, round:2396948:Dust2:10, round:2396948:Dust2:11, round:2396948:Dust2:12 ...",
+      "metadata": {
+        "map": "Dust2",
+        "side": "Both",
+        "tactic_type": "Graph Community Summary",
+        "source": "community:community:Dust2:overview",
+        "community_id": "community:Dust2:overview",
+        "topic": "overview",
+        "context_level": "community_summary",
+        "source_round_count": 265
+      },
+      "score": 0.49,
+      "source_id": "community:community:Dust2:overview"
+    }
+  ],
+  "verification_report": {
+    "status": "pass",
+    "evidence_count": 27,
+    "current_evidence_count": 25,
+    "historical_evidence_count": 2,
+    "cited_evidence_ids": [
+      "C1",
+      "C13",
+      "C17",
+      "C19",
+      "C20",
+      "C21",
+      "C22",
+      "C23",
+      "C24",
+      "C25",
+      "C4",
+      "C6",
+      "C7",
+      "C9"
+    ],
+    "cited_current_evidence_ids": [
+      "C1",
+      "C13",
+      "C17",
+      "C19",
+      "C20",
+      "C21",
+      "C22",
+      "C23",
+      "C24",
+      "C25",
+      "C4",
+      "C6",
+      "C7",
+      "C9"
+    ],
+    "cited_historical_evidence_ids": [],
+    "unknown_citations": [],
+    "uncited_claim_count": 0,
+    "current_claims_without_current_evidence": 0,
+    "missing_outputs": []
+  },
+  "analysis_mode": "demo_forensic",
+  "knowledge_review": {}
+}

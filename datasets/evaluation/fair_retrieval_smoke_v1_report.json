@@ -1,0 +1,3608 @@
+{
+  "version": "fair-retrieval-v1",
+  "created_at": "2026-09-06T11:23:13.186786+00:00",
+  "status": "engineering_smoke_unreviewed_labels",
+  "corpus_sha256": "68cdc31d06c0e9526ebcd5bcf214f353722971fc8bc829bf07b46df1757a75d8",
+  "queries_sha256": "5b88deea2c796e92c1f02317ef24a8b1c9524e0004a70674d93071d2da4c81b0",
+  "qrels_sha256": "06c8ba26db8140e4e9d2b0684163e0fa59eab8722e81ef07154a43a9e72ecb43",
+  "source_sha256": "62f93514a2f6162977a791f63dc84bef8e72b44ac00ca2be1d701c7b522273c8",
+  "dependency_constraints_sha256": "0528f567555e79611a5014202b4de92185ad1f485bde4976f5ebeb3760c7baeb",
+  "environment": {
+    "python": "3.11.15",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "sqlite": "3.53.1",
+    "fastembed": "0.8.0",
+    "numpy": "2.4.6",
+    "onnxruntime": "1.29.0",
+    "tokenizers": "0.23.2"
+  },
+  "model": {
+    "name": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "files_sha256": {
+      "config.json": "c8ec081fdad2df991bf5abbf18418fec7a5cdaa421f60ffb060a30040b8c376f",
+      "model_optimized.onnx": "634d0f66c29dc934c8fa72b8a4fe91dd4d420a22f1d82a241058d4316e659a99",
+      "special_tokens_map.json": "8c785abebea9ae3257b61681b4e6fd8365ceafde980c21970d001e834cf10835",
+      "tokenizer.json": "fa685fc160bbdbab64058d4fc91b60e62d207e8dc60b9af5c002c5ab946ded00",
+      "tokenizer_config.json": "0666eebf692422757e1dddf3c9fb1ded73ba3dc726c5828671fc89e45bf3609f"
+    },
+    "load_ms": 356.521749868989,
+    "threads": 2,
+    "document_chunks": {
+      "chunks": 4389,
+      "max_length": 128,
+      "chunk_tokens": 118,
+      "pooling": "equal mean of all chunk embeddings, then L2 normalize"
+    },
+    "query_chunks": [
+      {
+        "chunks": 1,
+        "max_length": 128,
+        "chunk_tokens": 118,
+        "pooling": "equal mean of all chunk embeddings, then L2 normalize"
+      },
+      {
+        "chunks": 1,
+        "max_length": 128,
+        "chunk_tokens": 118,
+        "pooling": "equal mean of all chunk embeddings, then L2 normalize"
+      },
+      {
+        "chunks": 1,
+        "max_length": 128,
+        "chunk_tokens": 118,
+        "pooling": "equal mean of all chunk embeddings, then L2 normalize"
+      },
+      {
+        "chunks": 1,
+        "max_length": 128,
+        "chunk_tokens": 118,
+        "pooling": "equal mean of all chunk embeddings, then L2 normalize"
+      },
+      {
+        "chunks": 1,
+        "max_length": 128,
+        "chunk_tokens": 118,
+        "pooling": "equal mean of all chunk embeddings, then L2 normalize"
+      },
+      {
+        "chunks": 1,
+        "max_length": 128,
+        "chunk_tokens": 118,
+        "pooling": "equal mean of all chunk embeddings, then L2 normalize"
+      },
+      {
+        "chunks": 1,
+        "max_length": 128,
+        "chunk_tokens": 118,
+        "pooling": "equal mean of all chunk embeddings, then L2 normalize"
+      },
+      {
+        "chunks": 1,
+        "max_length": 128,
+        "chunk_tokens": 118,
+        "pooling": "equal mean of all chunk embeddings, then L2 normalize"
+      },
+      {
+        "chunks": 1,
+        "max_length": 128,
+        "chunk_tokens": 118,
+        "pooling": "equal mean of all chunk embeddings, then L2 normalize"
+      },
+      {
+        "chunks": 1,
+        "max_length": 128,
+        "chunk_tokens": 118,
+        "pooling": "equal mean of all chunk embeddings, then L2 normalize"
+      },
+      {
+        "chunks": 1,
+        "max_length": 128,
+        "chunk_tokens": 118,
+        "pooling": "equal mean of all chunk embeddings, then L2 normalize"
+      },
+      {
+        "chunks": 1,
+        "max_length": 128,
+        "chunk_tokens": 118,
+        "pooling": "equal mean of all chunk embeddings, then L2 normalize"
+      },
+      {
+        "chunks": 1,
+        "max_length": 128,
+        "chunk_tokens": 118,
+        "pooling": "equal mean of all chunk embeddings, then L2 normalize"
+      },
+      {
+        "chunks": 1,
+        "max_length": 128,
+        "chunk_tokens": 118,
+        "pooling": "equal mean of all chunk embeddings, then L2 normalize"
+      },
+      {
+        "chunks": 1,
+        "max_length": 128,
+        "chunk_tokens": 118,
+        "pooling": "equal mean of all chunk embeddings, then L2 normalize"
+      },
+      {
+        "chunks": 1,
+        "max_length": 128,
+        "chunk_tokens": 118,
+        "pooling": "equal mean of all chunk embeddings, then L2 normalize"
+      }
+    ]
+  },
+  "index": {
+    "rounds": 1023,
+    "matches": [
+      "2396595",
+      "2396607",
+      "2396608",
+      "2396609",
+      "2396610",
+      "2396612",
+      "2396613",
+      "2396614",
+      "2396926",
+      "2396928",
+      "2396932",
+      "2396935",
+      "2396938",
+      "2396941",
+      "2396943",
+      "2396945",
+      "2396946",
+      "2396947",
+      "2396948",
+      "2396949"
+    ],
+    "embedding_ms": 60598.19283289835,
+    "sqlite_ms": 62.02241685241461,
+    "vector_bytes": 1571328,
+    "vector_sha256": "de631ef7b3f89900a2b4a8b3f7d7bf0a521eebacdc56b98494734eaafddbe603",
+    "sqlite_page_bytes": 10203136,
+    "corpus_bytes": 26859503,
+    "query_encoding_total_ms": 3715.9659159369767
+  },
+  "contract": {
+    "k": 5,
+    "repeats": 4,
+    "text_methods": [
+      "bm25",
+      "dense",
+      "dense_bm25_rrf"
+    ],
+    "structured_references": [
+      "sql_reference",
+      "graph_path_reference"
+    ],
+    "filters": "identical explicit map/match/round prefilters; exact roster entity prefilter toggled for every method",
+    "abstention": "no learned threshold; dense/RRF return top-k whenever eligible candidates exist",
+    "timing": "per-method search includes common prefilter cost; RRF includes both component searches; query encoding measured separately once per query; first search is not a controlled cold-start measurement",
+    "scope": "new experimental adapters, not measurements of production Milvus/GraphRAG endpoints"
+  },
+  "summary": [
+    {
+      "method": "bm25",
+      "entity_constraint": false,
+      "queries": 16,
+      "queries_with_results": 14,
+      "condition_precision_nonempty_macro": 0.7285714285714285,
+      "quality": null,
+      "warm_search_p50_ms": 2.3841033689677715,
+      "warm_search_p95_ms": 7.606793660670518,
+      "query_encoding_p50_ms": 0.0
+    },
+    {
+      "method": "bm25",
+      "entity_constraint": true,
+      "queries": 16,
+      "queries_with_results": 11,
+      "condition_precision_nonempty_macro": 1,
+      "quality": null,
+      "warm_search_p50_ms": 0.9265830740332603,
+      "warm_search_p95_ms": 3.270710213109847,
+      "query_encoding_p50_ms": 0.0
+    },
+    {
+      "method": "dense",
+      "entity_constraint": false,
+      "queries": 16,
+      "queries_with_results": 14,
+      "condition_precision_nonempty_macro": 0.4857142857142857,
+      "quality": null,
+      "warm_search_p50_ms": 0.2637500874698162,
+      "warm_search_p95_ms": 0.3595266491174698,
+      "query_encoding_p50_ms": 228.58745860867202
+    },
+    {
+      "method": "dense",
+      "entity_constraint": true,
+      "queries": 16,
+      "queries_with_results": 11,
+      "condition_precision_nonempty_macro": 1,
+      "quality": null,
+      "warm_search_p50_ms": 0.2531872596591711,
+      "warm_search_p95_ms": 0.2964272629469633,
+      "query_encoding_p50_ms": 228.58745860867202
+    },
+    {
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "queries": 16,
+      "queries_with_results": 14,
+      "condition_precision_nonempty_macro": 0.7285714285714285,
+      "quality": null,
+      "warm_search_p50_ms": 2.4610632099211216,
+      "warm_search_p95_ms": 7.700297608971595,
+      "query_encoding_p50_ms": 228.58745860867202
+    },
+    {
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "queries": 16,
+      "queries_with_results": 11,
+      "condition_precision_nonempty_macro": 1,
+      "quality": null,
+      "warm_search_p50_ms": 0.9499166626483202,
+      "warm_search_p95_ms": 3.3023688476532658,
+      "query_encoding_p50_ms": 228.58745860867202
+    },
+    {
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "queries": 16,
+      "queries_with_results": 14,
+      "condition_precision_nonempty_macro": 0.35714285714285715,
+      "quality": null,
+      "warm_search_p50_ms": 0.27370848692953587,
+      "warm_search_p95_ms": 0.49788914620876307,
+      "query_encoding_p50_ms": 0.0
+    },
+    {
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "queries": 16,
+      "queries_with_results": 11,
+      "condition_precision_nonempty_macro": 1,
+      "quality": null,
+      "warm_search_p50_ms": 0.252582598477602,
+      "warm_search_p95_ms": 0.3406452713534236,
+      "query_encoding_p50_ms": 0.0
+    },
+    {
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "queries": 16,
+      "queries_with_results": 14,
+      "condition_precision_nonempty_macro": 0.35714285714285715,
+      "quality": null,
+      "warm_search_p50_ms": 1.3230417389422655,
+      "warm_search_p95_ms": 2.6456368854269385,
+      "query_encoding_p50_ms": 0.0
+    },
+    {
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "queries": 16,
+      "queries_with_results": 11,
+      "condition_precision_nonempty_macro": 1,
+      "quality": null,
+      "warm_search_p50_ms": 0.5777084734290838,
+      "warm_search_p95_ms": 1.1113773565739389,
+      "query_encoding_p50_ms": 0.0
+    }
+  ],
+  "cases": [
+    {
+      "query_id": "p01",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396945:Nuke:1",
+        "round:2396945:Nuke:2",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:21",
+        "round:2396945:Nuke:3"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 5.715458188205957,
+      "warm_search_ms": [
+        5.583040416240692,
+        5.421500187367201,
+        5.466249771416187
+      ]
+    },
+    {
+      "query_id": "p01",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396613:Nuke:15",
+        "round:2396610:Nuke:17",
+        "round:2396928:Nuke:4",
+        "round:2396949:Nuke:7",
+        "round:2396928:Nuke:9"
+      ],
+      "returned": 5,
+      "condition_precision": 0.2,
+      "metrics": null,
+      "query_encoding_ms": 256.99566723778844,
+      "first_search_ms": 5.1271659322083,
+      "warm_search_ms": [
+        0.4120403900742531,
+        0.30404096469283104,
+        0.30783284455537796
+      ]
+    },
+    {
+      "query_id": "p01",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:13",
+        "round:2396945:Nuke:1",
+        "round:2396949:Nuke:7",
+        "round:2396949:Nuke:19"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 256.99566723778844,
+      "first_search_ms": 10.45345701277256,
+      "warm_search_ms": [
+        5.666040349751711,
+        5.521665792912245,
+        5.546082742512226
+      ]
+    },
+    {
+      "query_id": "p01",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396610:Nuke:15",
+        "round:2396610:Nuke:16",
+        "round:2396610:Nuke:17",
+        "round:2396610:Nuke:2",
+        "round:2396610:Nuke:21"
+      ],
+      "returned": 5,
+      "condition_precision": 0,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.5027079023420811,
+      "warm_search_ms": [
+        0.40391599759459496,
+        0.30349893495440483,
+        0.30512455850839615
+      ]
+    },
+    {
+      "query_id": "p01",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396610:Nuke:15",
+        "round:2396610:Nuke:16",
+        "round:2396610:Nuke:17",
+        "round:2396610:Nuke:2",
+        "round:2396610:Nuke:21"
+      ],
+      "returned": 5,
+      "condition_precision": 0,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 1.843916717916727,
+      "warm_search_ms": [
+        1.687831711024046,
+        1.5768739394843578,
+        1.5488751232624054
+      ]
+    },
+    {
+      "query_id": "p02",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396938:Dust2:14",
+        "round:2396938:Dust2:11",
+        "round:2396947:Dust2:18",
+        "round:2396947:Dust2:2",
+        "round:2396947:Dust2:3"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 3.134543541818857,
+      "warm_search_ms": [
+        3.1249159947037697,
+        3.1340839341282845,
+        3.101666923612356
+      ]
+    },
+    {
+      "query_id": "p02",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396608:Dust2:13",
+        "round:2396947:Dust2:1",
+        "round:2396932:Dust2:16",
+        "round:2396932:Dust2:1",
+        "round:2396595:Dust2:1"
+      ],
+      "returned": 5,
+      "condition_precision": 0.2,
+      "metrics": null,
+      "query_encoding_ms": 243.67654183879495,
+      "first_search_ms": 0.3140014596283436,
+      "warm_search_ms": [
+        0.3092489205300808,
+        0.3199167549610138,
+        0.3150422126054764
+      ]
+    },
+    {
+      "query_id": "p02",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396947:Dust2:3",
+        "round:2396947:Dust2:2",
+        "round:2396947:Dust2:1",
+        "round:2396938:Dust2:14",
+        "round:2396947:Dust2:18"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 243.67654183879495,
+      "first_search_ms": 3.22971073910594,
+      "warm_search_ms": [
+        3.224749118089676,
+        3.222875762730837,
+        3.2030842266976833
+      ]
+    },
+    {
+      "query_id": "p02",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396595:Dust2:1",
+        "round:2396595:Dust2:10",
+        "round:2396595:Dust2:11",
+        "round:2396595:Dust2:12",
+        "round:2396595:Dust2:14"
+      ],
+      "returned": 5,
+      "condition_precision": 0,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.46358397230505943,
+      "warm_search_ms": [
+        0.4207491874694824,
+        0.44404156506061554,
+        0.43620821088552475
+      ]
+    },
+    {
+      "query_id": "p02",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396595:Dust2:1",
+        "round:2396595:Dust2:10",
+        "round:2396595:Dust2:11",
+        "round:2396595:Dust2:12",
+        "round:2396595:Dust2:14"
+      ],
+      "returned": 5,
+      "condition_precision": 0,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 2.717334311455488,
+      "warm_search_ms": [
+        2.5114580057561398,
+        2.627125009894371,
+        2.581917215138674
+      ]
+    },
+    {
+      "query_id": "p03",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396612:Ancient:13",
+        "round:2396943:Ancient:16",
+        "round:2396943:Ancient:3",
+        "round:2396949:Ancient:2",
+        "round:2396612:Ancient:1"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 7.892957888543606,
+      "warm_search_ms": [
+        7.98520864918828,
+        7.9434579238295555,
+        7.885583210736513
+      ]
+    },
+    {
+      "query_id": "p03",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396607:Ancient:1",
+        "round:2396607:Ancient:13",
+        "round:2396938:Ancient:13",
+        "round:2396945:Ancient:13",
+        "round:2396612:Ancient:13"
+      ],
+      "returned": 5,
+      "condition_precision": 0.2,
+      "metrics": null,
+      "query_encoding_ms": 224.33258313685656,
+      "first_search_ms": 0.3019161522388458,
+      "warm_search_ms": [
+        0.3636246547102928,
+        0.325916800647974,
+        0.33395830541849136
+      ]
+    },
+    {
+      "query_id": "p03",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396612:Ancient:13",
+        "round:2396943:Ancient:3",
+        "round:2396949:Ancient:14",
+        "round:2396612:Ancient:1",
+        "round:2396943:Ancient:16"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 224.33258313685656,
+      "first_search_ms": 7.996749598532915,
+      "warm_search_ms": [
+        8.07033246383071,
+        8.028083015233278,
+        7.974916137754917
+      ]
+    },
+    {
+      "query_id": "p03",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396607:Ancient:1",
+        "round:2396607:Ancient:10",
+        "round:2396607:Ancient:11",
+        "round:2396607:Ancient:12",
+        "round:2396607:Ancient:13"
+      ],
+      "returned": 5,
+      "condition_precision": 0,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.3549158573150635,
+      "warm_search_ms": [
+        0.40633371099829674,
+        0.36966707557439804,
+        0.37575000897049904
+      ]
+    },
+    {
+      "query_id": "p03",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396607:Ancient:1",
+        "round:2396607:Ancient:10",
+        "round:2396607:Ancient:11",
+        "round:2396607:Ancient:12",
+        "round:2396607:Ancient:13"
+      ],
+      "returned": 5,
+      "condition_precision": 0,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 2.170249354094267,
+      "warm_search_ms": [
+        2.113958355039358,
+        2.0402916707098484,
+        2.09070835262537
+      ]
+    },
+    {
+      "query_id": "p04",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396948:Nuke:13",
+        "round:2396935:Nuke:13",
+        "round:2396935:Nuke:14",
+        "round:2396935:Nuke:1",
+        "round:2396935:Nuke:7"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 2.4311672896146774,
+      "warm_search_ms": [
+        2.356876153498888,
+        2.390874084085226,
+        2.377332653850317
+      ]
+    },
+    {
+      "query_id": "p04",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396928:Nuke:14",
+        "round:2396948:Nuke:14",
+        "round:2396610:Nuke:10",
+        "round:2396928:Nuke:4",
+        "round:2396948:Nuke:13"
+      ],
+      "returned": 5,
+      "condition_precision": 0.6,
+      "metrics": null,
+      "query_encoding_ms": 227.18025045469403,
+      "first_search_ms": 0.3260425291955471,
+      "warm_search_ms": [
+        0.3209589049220085,
+        0.28516724705696106,
+        0.32062502577900887
+      ]
+    },
+    {
+      "query_id": "p04",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396948:Nuke:13",
+        "round:2396948:Nuke:14",
+        "round:2396948:Nuke:2",
+        "round:2396935:Nuke:1",
+        "round:2396941:Nuke:11"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 227.18025045469403,
+      "first_search_ms": 2.5037508457899094,
+      "warm_search_ms": [
+        2.4345009587705135,
+        2.458791248500347,
+        2.454166766256094
+      ]
+    },
+    {
+      "query_id": "p04",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396610:Nuke:1",
+        "round:2396610:Nuke:10",
+        "round:2396610:Nuke:11",
+        "round:2396610:Nuke:12",
+        "round:2396610:Nuke:13"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.46066707000136375,
+      "warm_search_ms": [
+        0.4366673529148102,
+        0.3941664472222328,
+        0.4291669465601444
+      ]
+    },
+    {
+      "query_id": "p04",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396610:Nuke:1",
+        "round:2396610:Nuke:10",
+        "round:2396610:Nuke:11",
+        "round:2396610:Nuke:12",
+        "round:2396610:Nuke:13"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 1.7341249622404575,
+      "warm_search_ms": [
+        1.6354168765246868,
+        1.6136663034558296,
+        1.6505829989910126
+      ]
+    },
+    {
+      "query_id": "p05",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396948:Cache:7",
+        "round:2396948:Cache:13",
+        "round:2396926:Cache:1",
+        "round:2396943:Cache:13",
+        "round:2396943:Cache:14"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 2.523457631468773,
+      "warm_search_ms": [
+        2.5834166444838047,
+        2.5624576956033707,
+        2.598125021904707
+      ]
+    },
+    {
+      "query_id": "p05",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396926:Cache:16",
+        "round:2396928:Cache:1",
+        "round:2396932:Cache:4",
+        "round:2396932:Cache:3",
+        "round:2396932:Cache:8"
+      ],
+      "returned": 5,
+      "condition_precision": 0.2,
+      "metrics": null,
+      "query_encoding_ms": 226.4348748140037,
+      "first_search_ms": 0.2558748237788677,
+      "warm_search_ms": [
+        0.2537909895181656,
+        0.2554156817495823,
+        0.25791581720113754
+      ]
+    },
+    {
+      "query_id": "p05",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396926:Cache:16",
+        "round:2396948:Cache:3",
+        "round:2396948:Cache:21",
+        "round:2396948:Cache:13",
+        "round:2396926:Cache:2"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 226.4348748140037,
+      "first_search_ms": 2.5732903741300106,
+      "warm_search_ms": [
+        2.629498951137066,
+        2.616207581013441,
+        2.644249238073826
+      ]
+    },
+    {
+      "query_id": "p05",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396614:Cache:1",
+        "round:2396614:Cache:11",
+        "round:2396614:Cache:12",
+        "round:2396614:Cache:13",
+        "round:2396614:Cache:19"
+      ],
+      "returned": 5,
+      "condition_precision": 0,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.2566669136285782,
+      "warm_search_ms": [
+        0.2560000866651535,
+        0.2547907643020153,
+        0.25962479412555695
+      ]
+    },
+    {
+      "query_id": "p05",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396614:Cache:1",
+        "round:2396614:Cache:11",
+        "round:2396614:Cache:12",
+        "round:2396614:Cache:13",
+        "round:2396614:Cache:19"
+      ],
+      "returned": 5,
+      "condition_precision": 0,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 1.187166664749384,
+      "warm_search_ms": [
+        1.1099167168140411,
+        1.0753734968602657,
+        1.0987501591444016
+      ]
+    },
+    {
+      "query_id": "p06",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396941:Mirage:6",
+        "round:2396926:Mirage:1",
+        "round:2396609:Mirage:1",
+        "round:2396938:Mirage:14",
+        "round:2396609:Mirage:13"
+      ],
+      "returned": 5,
+      "condition_precision": 0,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.9936243295669556,
+      "warm_search_ms": [
+        0.9827921167016029,
+        0.9940420277416706,
+        0.9803753346204758
+      ]
+    },
+    {
+      "query_id": "p06",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396610:Mirage:2",
+        "round:2396938:Mirage:13",
+        "round:2396941:Mirage:14",
+        "round:2396609:Mirage:13",
+        "round:2396610:Mirage:1"
+      ],
+      "returned": 5,
+      "condition_precision": 0,
+      "metrics": null,
+      "query_encoding_ms": 236.32320808246732,
+      "first_search_ms": 0.24783331900835037,
+      "warm_search_ms": [
+        0.23970799520611763,
+        0.23670867085456848,
+        0.23808283731341362
+      ]
+    },
+    {
+      "query_id": "p06",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396610:Mirage:2",
+        "round:2396941:Mirage:14",
+        "round:2396609:Mirage:13",
+        "round:2396926:Mirage:1",
+        "round:2396938:Mirage:13"
+      ],
+      "returned": 5,
+      "condition_precision": 0,
+      "metrics": null,
+      "query_encoding_ms": 236.32320808246732,
+      "first_search_ms": 1.0309573262929916,
+      "warm_search_ms": [
+        1.0177502408623695,
+        1.0275417007505894,
+        1.01004121825099
+      ]
+    },
+    {
+      "query_id": "p06",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396609:Mirage:1",
+        "round:2396609:Mirage:10",
+        "round:2396609:Mirage:11",
+        "round:2396609:Mirage:12",
+        "round:2396609:Mirage:13"
+      ],
+      "returned": 5,
+      "condition_precision": 0,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.29241712763905525,
+      "warm_search_ms": [
+        0.2731671556830406,
+        0.27062511071562767,
+        0.2742498181760311
+      ]
+    },
+    {
+      "query_id": "p06",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396609:Mirage:1",
+        "round:2396609:Mirage:10",
+        "round:2396609:Mirage:11",
+        "round:2396609:Mirage:12",
+        "round:2396609:Mirage:13"
+      ],
+      "returned": 5,
+      "condition_precision": 0,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 1.0075001046061516,
+      "warm_search_ms": [
+        0.9178747422993183,
+        0.9131669066846371,
+        0.9255828335881233
+      ]
+    },
+    {
+      "query_id": "p07",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:1",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:14"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 1.1047502048313618,
+      "warm_search_ms": [
+        1.0822494514286518,
+        1.0913340374827385,
+        1.0726246982812881
+      ]
+    },
+    {
+      "query_id": "p07",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396949:Nuke:7",
+        "round:2396949:Nuke:11",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:19"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 244.33799972757697,
+      "first_search_ms": 0.23720832541584969,
+      "warm_search_ms": [
+        0.21904101595282555,
+        0.22733304649591446,
+        0.2148328348994255
+      ]
+    },
+    {
+      "query_id": "p07",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:7"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 244.33799972757697,
+      "first_search_ms": 1.1177081614732742,
+      "warm_search_ms": [
+        1.0934150777757168,
+        1.1025001294910908,
+        1.0833325795829296
+      ]
+    },
+    {
+      "query_id": "p07",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396949:Nuke:11",
+        "round:2396949:Nuke:12",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:19",
+        "round:2396949:Nuke:20"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.23562507703900337,
+      "warm_search_ms": [
+        0.22287433966994286,
+        0.22637518122792244,
+        0.21362490952014923
+      ]
+    },
+    {
+      "query_id": "p07",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396949:Nuke:11",
+        "round:2396949:Nuke:12",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:19",
+        "round:2396949:Nuke:20"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.3736661747097969,
+      "warm_search_ms": [
+        0.3536250442266464,
+        0.35741692408919334,
+        0.3525000065565109
+      ]
+    },
+    {
+      "query_id": "p08",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396948:Nuke:2",
+        "round:2396948:Nuke:1",
+        "round:2396948:Nuke:13",
+        "round:2396948:Nuke:14",
+        "round:2396948:Nuke:4"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.39787497371435165,
+      "warm_search_ms": [
+        0.37791626527905464,
+        0.3765840083360672,
+        0.37237629294395447
+      ]
+    },
+    {
+      "query_id": "p08",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396948:Nuke:2",
+        "round:2396948:Nuke:1",
+        "round:2396948:Nuke:9",
+        "round:2396948:Nuke:4",
+        "round:2396948:Nuke:15"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 235.10508378967643,
+      "first_search_ms": 0.22320915013551712,
+      "warm_search_ms": [
+        0.21800026297569275,
+        0.21666660904884338,
+        0.21404214203357697
+      ]
+    },
+    {
+      "query_id": "p08",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396948:Nuke:2",
+        "round:2396948:Nuke:1",
+        "round:2396948:Nuke:4",
+        "round:2396948:Nuke:14",
+        "round:2396948:Nuke:13"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 235.10508378967643,
+      "first_search_ms": 0.4092920571565628,
+      "warm_search_ms": [
+        0.3881254233419895,
+        0.3866259939968586,
+        0.3821263089776039
+      ]
+    },
+    {
+      "query_id": "p08",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396948:Nuke:1",
+        "round:2396948:Nuke:10",
+        "round:2396948:Nuke:11",
+        "round:2396948:Nuke:12",
+        "round:2396948:Nuke:13"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.23008417338132858,
+      "warm_search_ms": [
+        0.2232082188129425,
+        0.22170878946781158,
+        0.21900003775954247
+      ]
+    },
+    {
+      "query_id": "p08",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396948:Nuke:1",
+        "round:2396948:Nuke:10",
+        "round:2396948:Nuke:11",
+        "round:2396948:Nuke:12",
+        "round:2396948:Nuke:13"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.35475101321935654,
+      "warm_search_ms": [
+        0.343875028192997,
+        0.3377501852810383,
+        0.33466704189777374
+      ]
+    },
+    {
+      "query_id": "p09",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396938:Dust2:1",
+        "round:2396938:Dust2:14",
+        "round:2396609:Dust2:13",
+        "round:2396947:Dust2:13",
+        "round:2396947:Dust2:15"
+      ],
+      "returned": 5,
+      "condition_precision": 0.8,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 7.0092505775392056,
+      "warm_search_ms": [
+        7.089041639119387,
+        7.071415893733501,
+        6.987292319536209
+      ]
+    },
+    {
+      "query_id": "p09",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396938:Dust2:3",
+        "round:2396947:Dust2:15",
+        "round:2396938:Dust2:6",
+        "round:2396947:Dust2:8",
+        "round:2396947:Dust2:5"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 228.56362536549568,
+      "first_search_ms": 0.3165416419506073,
+      "warm_search_ms": [
+        0.3714580088853836,
+        0.351916067302227,
+        0.34629181027412415
+      ]
+    },
+    {
+      "query_id": "p09",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396947:Dust2:15",
+        "round:2396938:Dust2:6",
+        "round:2396947:Dust2:13",
+        "round:2396609:Dust2:13",
+        "round:2396938:Dust2:14"
+      ],
+      "returned": 5,
+      "condition_precision": 0.8,
+      "metrics": null,
+      "query_encoding_ms": 228.56362536549568,
+      "first_search_ms": 7.111749146133661,
+      "warm_search_ms": [
+        7.19029176980257,
+        7.175499107688665,
+        7.0844171568751335
+      ]
+    },
+    {
+      "query_id": "p09",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396595:Dust2:1",
+        "round:2396595:Dust2:10",
+        "round:2396595:Dust2:11",
+        "round:2396595:Dust2:12",
+        "round:2396595:Dust2:13"
+      ],
+      "returned": 5,
+      "condition_precision": 0,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.4993337206542492,
+      "warm_search_ms": [
+        0.5370830185711384,
+        0.510707963258028,
+        0.5112090148031712
+      ]
+    },
+    {
+      "query_id": "p09",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396595:Dust2:1",
+        "round:2396595:Dust2:10",
+        "round:2396595:Dust2:11",
+        "round:2396595:Dust2:12",
+        "round:2396595:Dust2:13"
+      ],
+      "returned": 5,
+      "condition_precision": 0,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 2.726791426539421,
+      "warm_search_ms": [
+        2.6933751069009304,
+        2.654999028891325,
+        2.6643332093954086
+      ]
+    },
+    {
+      "query_id": "p10",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396612:Ancient:13",
+        "round:2396612:Ancient:1",
+        "round:2396614:Ancient:1",
+        "round:2396949:Ancient:2",
+        "round:2396949:Ancient:1"
+      ],
+      "returned": 5,
+      "condition_precision": 0.4,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 2.528207842260599,
+      "warm_search_ms": [
+        2.5392924435436726,
+        2.5001242756843567,
+        2.5013326667249203
+      ]
+    },
+    {
+      "query_id": "p10",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396613:Ancient:3",
+        "round:2396612:Ancient:13",
+        "round:2396943:Ancient:6",
+        "round:2396943:Ancient:3",
+        "round:2396613:Ancient:13"
+      ],
+      "returned": 5,
+      "condition_precision": 0.4,
+      "metrics": null,
+      "query_encoding_ms": 227.35454188659787,
+      "first_search_ms": 0.3215000033378601,
+      "warm_search_ms": [
+        0.3408752381801605,
+        0.28125010430812836,
+        0.3092498518526554
+      ]
+    },
+    {
+      "query_id": "p10",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396612:Ancient:13",
+        "round:2396612:Ancient:1",
+        "round:2396614:Ancient:1",
+        "round:2396943:Ancient:15",
+        "round:2396943:Ancient:3"
+      ],
+      "returned": 5,
+      "condition_precision": 0.4,
+      "metrics": null,
+      "query_encoding_ms": 227.35454188659787,
+      "first_search_ms": 2.601207699626684,
+      "warm_search_ms": [
+        2.6126676239073277,
+        2.5663329288363457,
+        2.5719995610415936
+      ]
+    },
+    {
+      "query_id": "p10",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396607:Ancient:10",
+        "round:2396607:Ancient:11",
+        "round:2396607:Ancient:13",
+        "round:2396607:Ancient:14",
+        "round:2396607:Ancient:15"
+      ],
+      "returned": 5,
+      "condition_precision": 0,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.3298749215900898,
+      "warm_search_ms": [
+        0.344875268638134,
+        0.29516592621803284,
+        0.31566619873046875
+      ]
+    },
+    {
+      "query_id": "p10",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396607:Ancient:10",
+        "round:2396607:Ancient:11",
+        "round:2396607:Ancient:13",
+        "round:2396607:Ancient:14",
+        "round:2396607:Ancient:15"
+      ],
+      "returned": 5,
+      "condition_precision": 0,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 2.132291905581951,
+      "warm_search_ms": [
+        2.003875095397234,
+        1.9590831361711025,
+        1.9971239380538464
+      ]
+    },
+    {
+      "query_id": "p11",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396595:Inferno:3",
+        "round:2396945:Inferno:1",
+        "round:2396945:Inferno:3",
+        "round:2396595:Inferno:13",
+        "round:2396595:Inferno:1"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 1.3753753155469894,
+      "warm_search_ms": [
+        1.3767513446509838,
+        1.3330415822565556,
+        1.3455827720463276
+      ]
+    },
+    {
+      "query_id": "p11",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396595:Inferno:15",
+        "round:2396945:Inferno:14",
+        "round:2396947:Inferno:13",
+        "round:2396595:Inferno:20",
+        "round:2396945:Inferno:13"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 227.3252080194652,
+      "first_search_ms": 0.24645822122693062,
+      "warm_search_ms": [
+        0.23691728711128235,
+        0.24974951520562172,
+        0.22516632452607155
+      ]
+    },
+    {
+      "query_id": "p11",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396945:Inferno:14",
+        "round:2396947:Inferno:13",
+        "round:2396595:Inferno:13",
+        "round:2396595:Inferno:15",
+        "round:2396595:Inferno:1"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 227.3252080194652,
+      "first_search_ms": 1.4038742519915104,
+      "warm_search_ms": [
+        1.4055012725293636,
+        1.3614571653306484,
+        1.3712081126868725
+      ]
+    },
+    {
+      "query_id": "p11",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396595:Inferno:1",
+        "round:2396595:Inferno:10",
+        "round:2396595:Inferno:11",
+        "round:2396595:Inferno:12",
+        "round:2396595:Inferno:13"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.2727499231696129,
+      "warm_search_ms": [
+        0.25587528944015503,
+        0.27074990794062614,
+        0.24670828133821487
+      ]
+    },
+    {
+      "query_id": "p11",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396595:Inferno:1",
+        "round:2396595:Inferno:10",
+        "round:2396595:Inferno:11",
+        "round:2396595:Inferno:12",
+        "round:2396595:Inferno:13"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.77037513256073,
+      "warm_search_ms": [
+        0.7387921214103699,
+        0.7265005260705948,
+        0.6837490946054459
+      ]
+    },
+    {
+      "query_id": "p12",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396946:Anubis:13",
+        "round:2396614:Anubis:1",
+        "round:2396607:Anubis:1",
+        "round:2396946:Anubis:15",
+        "round:2396946:Anubis:1"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.5718329921364784,
+      "warm_search_ms": [
+        0.5537080578505993,
+        0.5637090653181076,
+        0.5504162982106209
+      ]
+    },
+    {
+      "query_id": "p12",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396946:Anubis:13",
+        "round:2396607:Anubis:1",
+        "round:2396607:Anubis:2",
+        "round:2396607:Anubis:10",
+        "round:2396607:Anubis:11"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 229.00379076600075,
+      "first_search_ms": 0.24616718292236328,
+      "warm_search_ms": [
+        0.2360413782298565,
+        0.2432079054415226,
+        0.23470818996429443
+      ]
+    },
+    {
+      "query_id": "p12",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396946:Anubis:13",
+        "round:2396607:Anubis:1",
+        "round:2396614:Anubis:1",
+        "round:2396607:Anubis:13",
+        "round:2396607:Anubis:2"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 229.00379076600075,
+      "first_search_ms": 0.6085000932216644,
+      "warm_search_ms": [
+        0.5881674587726593,
+        0.5989167839288712,
+        0.5827494896948338
+      ]
+    },
+    {
+      "query_id": "p12",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396607:Anubis:1",
+        "round:2396607:Anubis:10",
+        "round:2396607:Anubis:11",
+        "round:2396607:Anubis:12",
+        "round:2396607:Anubis:13"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.25195861235260963,
+      "warm_search_ms": [
+        0.24179089814424515,
+        0.24720793589949608,
+        0.24333316832780838
+      ]
+    },
+    {
+      "query_id": "p12",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396607:Anubis:1",
+        "round:2396607:Anubis:10",
+        "round:2396607:Anubis:11",
+        "round:2396607:Anubis:12",
+        "round:2396607:Anubis:13"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.9503341279923916,
+      "warm_search_ms": [
+        0.8862079121172428,
+        0.8901250548660755,
+        0.8782083168625832
+      ]
+    },
+    {
+      "query_id": "n01",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396613:Nuke:13",
+        "round:2396941:Nuke:2",
+        "round:2396948:Nuke:2",
+        "round:2396941:Nuke:1",
+        "round:2396948:Nuke:1"
+      ],
+      "returned": 5,
+      "condition_precision": 0,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 4.6237497590482235,
+      "warm_search_ms": [
+        4.756375215947628,
+        4.69700014218688,
+        4.724208731204271
+      ]
+    },
+    {
+      "query_id": "n01",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396613:Nuke:13",
+        "round:2396613:Nuke:15",
+        "round:2396610:Nuke:17",
+        "round:2396928:Nuke:4",
+        "round:2396613:Nuke:5"
+      ],
+      "returned": 5,
+      "condition_precision": 0,
+      "metrics": null,
+      "query_encoding_ms": 223.69275009259582,
+      "first_search_ms": 0.2693329006433487,
+      "warm_search_ms": [
+        0.3314996138215065,
+        0.2695843577384949,
+        0.2959165722131729
+      ]
+    },
+    {
+      "query_id": "n01",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396613:Nuke:13",
+        "round:2396949:Nuke:13",
+        "round:2396613:Nuke:3",
+        "round:2396928:Nuke:14",
+        "round:2396610:Nuke:17"
+      ],
+      "returned": 5,
+      "condition_precision": 0,
+      "metrics": null,
+      "query_encoding_ms": 223.69275009259582,
+      "first_search_ms": 4.6972488053143024,
+      "warm_search_ms": [
+        4.833541810512543,
+        4.7690425999462605,
+        4.799749236553907
+      ]
+    },
+    {
+      "query_id": "n01",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396610:Nuke:15",
+        "round:2396610:Nuke:16",
+        "round:2396610:Nuke:17",
+        "round:2396610:Nuke:2",
+        "round:2396610:Nuke:21"
+      ],
+      "returned": 5,
+      "condition_precision": 0,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.2717091701924801,
+      "warm_search_ms": [
+        0.3299578092992306,
+        0.2715000882744789,
+        0.29737455770373344
+      ]
+    },
+    {
+      "query_id": "n01",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396610:Nuke:15",
+        "round:2396610:Nuke:16",
+        "round:2396610:Nuke:17",
+        "round:2396610:Nuke:2",
+        "round:2396610:Nuke:21"
+      ],
+      "returned": 5,
+      "condition_precision": 0,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 1.6116667538881302,
+      "warm_search_ms": [
+        1.554498914629221,
+        1.5485421754419804,
+        1.5361667610704899
+      ]
+    },
+    {
+      "query_id": "n02",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396948:Dust2:1",
+        "round:2396941:Dust2:1",
+        "round:2396613:Dust2:1",
+        "round:2396595:Dust2:1",
+        "round:2396938:Dust2:1"
+      ],
+      "returned": 5,
+      "condition_precision": 0,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 2.4470831267535686,
+      "warm_search_ms": [
+        2.418207935988903,
+        2.421874552965164,
+        2.370583824813366
+      ]
+    },
+    {
+      "query_id": "n02",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396613:Dust2:1",
+        "round:2396595:Dust2:1",
+        "round:2396941:Dust2:1",
+        "round:2396612:Dust2:1",
+        "round:2396948:Dust2:1"
+      ],
+      "returned": 5,
+      "condition_precision": 0,
+      "metrics": null,
+      "query_encoding_ms": 228.61129185184836,
+      "first_search_ms": 0.31183380633592606,
+      "warm_search_ms": [
+        0.30404096469283104,
+        0.31187431886792183,
+        0.31366804614663124
+      ]
+    },
+    {
+      "query_id": "n02",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396613:Dust2:1",
+        "round:2396941:Dust2:1",
+        "round:2396948:Dust2:1",
+        "round:2396595:Dust2:1",
+        "round:2396595:Dust2:13"
+      ],
+      "returned": 5,
+      "condition_precision": 0,
+      "metrics": null,
+      "query_encoding_ms": 228.61129185184836,
+      "first_search_ms": 2.537459135055542,
+      "warm_search_ms": [
+        2.513124141842127,
+        2.5094570592045784,
+        2.463335171341896
+      ]
+    },
+    {
+      "query_id": "n02",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396595:Dust2:1",
+        "round:2396595:Dust2:10",
+        "round:2396595:Dust2:11",
+        "round:2396595:Dust2:12",
+        "round:2396595:Dust2:13"
+      ],
+      "returned": 5,
+      "condition_precision": 0,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.4925411194562912,
+      "warm_search_ms": [
+        0.46066613867878914,
+        0.4740827716886997,
+        0.4630838520824909
+      ]
+    },
+    {
+      "query_id": "n02",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [
+        "round:2396595:Dust2:1",
+        "round:2396595:Dust2:10",
+        "round:2396595:Dust2:11",
+        "round:2396595:Dust2:12",
+        "round:2396595:Dust2:13"
+      ],
+      "returned": 5,
+      "condition_precision": 0,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 2.686707768589258,
+      "warm_search_ms": [
+        2.5712079368531704,
+        2.6282500475645065,
+        2.5890422984957695
+      ]
+    },
+    {
+      "query_id": "n03",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.24108309298753738,
+      "warm_search_ms": [
+        0.2205418422818184,
+        0.21283328533172607,
+        0.20908331498503685
+      ]
+    },
+    {
+      "query_id": "n03",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 226.2310408987105,
+      "first_search_ms": 0.24137506261467934,
+      "warm_search_ms": [
+        0.22204173728823662,
+        0.21449988707900047,
+        0.2104584127664566
+      ]
+    },
+    {
+      "query_id": "n03",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 226.2310408987105,
+      "first_search_ms": 0.24712411686778069,
+      "warm_search_ms": [
+        0.22591697052121162,
+        0.21754158660769463,
+        0.21354155614972115
+      ]
+    },
+    {
+      "query_id": "n03",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.23729074746370316,
+      "warm_search_ms": [
+        0.21850084885954857,
+        0.2110418863594532,
+        0.2071252092719078
+      ]
+    },
+    {
+      "query_id": "n03",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.2370825968682766,
+      "warm_search_ms": [
+        0.21837465465068817,
+        0.2109999768435955,
+        0.20712567493319511
+      ]
+    },
+    {
+      "query_id": "n04",
+      "method": "bm25",
+      "entity_constraint": false,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.19958242774009705,
+      "warm_search_ms": [
+        0.2264999784529209,
+        0.19724946469068527,
+        0.20008301362395287
+      ]
+    },
+    {
+      "query_id": "n04",
+      "method": "dense",
+      "entity_constraint": false,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 230.7974579744041,
+      "first_search_ms": 0.20058359950780869,
+      "warm_search_ms": [
+        0.22837519645690918,
+        0.19916659221053123,
+        0.2021673135459423
+      ]
+    },
+    {
+      "query_id": "n04",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": false,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 230.7974579744041,
+      "first_search_ms": 0.20441599190235138,
+      "warm_search_ms": [
+        0.2309996634721756,
+        0.2015414647758007,
+        0.20437408238649368
+      ]
+    },
+    {
+      "query_id": "n04",
+      "method": "sql_reference",
+      "entity_constraint": false,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.19683269783854485,
+      "warm_search_ms": [
+        0.22500008344650269,
+        0.19583385437726974,
+        0.1988750882446766
+      ]
+    },
+    {
+      "query_id": "n04",
+      "method": "graph_path_reference",
+      "entity_constraint": false,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.19687460735440254,
+      "warm_search_ms": [
+        0.22504106163978577,
+        0.19591674208641052,
+        0.1989169977605343
+      ]
+    },
+    {
+      "query_id": "p01",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396945:Nuke:1",
+        "round:2396945:Nuke:2",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:21",
+        "round:2396945:Nuke:3"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 1.4836662448942661,
+      "warm_search_ms": [
+        1.4126249589025974,
+        1.431499607861042,
+        1.389333512634039
+      ]
+    },
+    {
+      "query_id": "p01",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396949:Nuke:7",
+        "round:2396949:Nuke:19",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:11"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 256.99566723778844,
+      "first_search_ms": 0.30850013718008995,
+      "warm_search_ms": [
+        0.2693329006433487,
+        0.2613742835819721,
+        0.26200059801340103
+      ]
+    },
+    {
+      "query_id": "p01",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396949:Nuke:15",
+        "round:2396945:Nuke:1",
+        "round:2396949:Nuke:13",
+        "round:2396945:Nuke:13",
+        "round:2396945:Nuke:8"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 256.99566723778844,
+      "first_search_ms": 1.5055001713335514,
+      "warm_search_ms": [
+        1.431499607861042,
+        1.4525824226439,
+        1.408000010997057
+      ]
+    },
+    {
+      "query_id": "p01",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396945:Nuke:10",
+        "round:2396945:Nuke:13",
+        "round:2396945:Nuke:17",
+        "round:2396945:Nuke:18",
+        "round:2396945:Nuke:19"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.3069993108510971,
+      "warm_search_ms": [
+        0.26899995282292366,
+        0.2608741633594036,
+        0.27075037360191345
+      ]
+    },
+    {
+      "query_id": "p01",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396945:Nuke:10",
+        "round:2396945:Nuke:13",
+        "round:2396945:Nuke:17",
+        "round:2396945:Nuke:18",
+        "round:2396945:Nuke:19"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.5654999986290932,
+      "warm_search_ms": [
+        0.5182502791285515,
+        0.4997910000383854,
+        0.5179997533559799
+      ]
+    },
+    {
+      "query_id": "p02",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396938:Dust2:14",
+        "round:2396938:Dust2:11",
+        "round:2396947:Dust2:18",
+        "round:2396947:Dust2:2",
+        "round:2396947:Dust2:3"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 1.0728747583925724,
+      "warm_search_ms": [
+        1.0075410827994347,
+        1.0069170966744423,
+        1.0081250220537186
+      ]
+    },
+    {
+      "query_id": "p02",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396947:Dust2:1",
+        "round:2396947:Dust2:3",
+        "round:2396947:Dust2:2",
+        "round:2396947:Dust2:15",
+        "round:2396938:Dust2:14"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 243.67654183879495,
+      "first_search_ms": 0.3604171797633171,
+      "warm_search_ms": [
+        0.29574986547231674,
+        0.29679201543331146,
+        0.2861670218408108
+      ]
+    },
+    {
+      "query_id": "p02",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396938:Dust2:14",
+        "round:2396947:Dust2:3",
+        "round:2396947:Dust2:2",
+        "round:2396947:Dust2:18",
+        "round:2396947:Dust2:1"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 243.67654183879495,
+      "first_search_ms": 1.101792324334383,
+      "warm_search_ms": [
+        1.0452503338456154,
+        1.0333340615034103,
+        1.0339594446122646
+      ]
+    },
+    {
+      "query_id": "p02",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396609:Dust2:1",
+        "round:2396609:Dust2:10",
+        "round:2396609:Dust2:11",
+        "round:2396609:Dust2:12",
+        "round:2396609:Dust2:13"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.3954996354877949,
+      "warm_search_ms": [
+        0.3225416876375675,
+        0.33016689121723175,
+        0.3160419873893261
+      ]
+    },
+    {
+      "query_id": "p02",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396609:Dust2:1",
+        "round:2396609:Dust2:10",
+        "round:2396609:Dust2:11",
+        "round:2396609:Dust2:12",
+        "round:2396609:Dust2:13"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.9467080235481262,
+      "warm_search_ms": [
+        0.859083142131567,
+        0.8635828271508217,
+        0.8488749153912067
+      ]
+    },
+    {
+      "query_id": "p03",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396612:Ancient:13",
+        "round:2396943:Ancient:16",
+        "round:2396943:Ancient:3",
+        "round:2396949:Ancient:2",
+        "round:2396612:Ancient:1"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 4.224292002618313,
+      "warm_search_ms": [
+        4.23816591501236,
+        4.240124952048063,
+        4.2314170859754086
+      ]
+    },
+    {
+      "query_id": "p03",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396612:Ancient:13",
+        "round:2396943:Ancient:3",
+        "round:2396949:Ancient:14",
+        "round:2396614:Ancient:1",
+        "round:2396949:Ancient:16"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 224.33258313685656,
+      "first_search_ms": 0.3292504698038101,
+      "warm_search_ms": [
+        0.3115409053862095,
+        0.32141711562871933,
+        0.2925833687186241
+      ]
+    },
+    {
+      "query_id": "p03",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396612:Ancient:13",
+        "round:2396943:Ancient:3",
+        "round:2396612:Ancient:1",
+        "round:2396949:Ancient:14",
+        "round:2396943:Ancient:16"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 224.33258313685656,
+      "first_search_ms": 4.266375210136175,
+      "warm_search_ms": [
+        4.275539889931679,
+        4.284001421183348,
+        4.26879245787859
+      ]
+    },
+    {
+      "query_id": "p03",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396612:Ancient:1",
+        "round:2396612:Ancient:10",
+        "round:2396612:Ancient:11",
+        "round:2396612:Ancient:12",
+        "round:2396612:Ancient:13"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.35641714930534363,
+      "warm_search_ms": [
+        0.33620791509747505,
+        0.3414577804505825,
+        0.3174999728798866
+      ]
+    },
+    {
+      "query_id": "p03",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396612:Ancient:1",
+        "round:2396612:Ancient:10",
+        "round:2396612:Ancient:11",
+        "round:2396612:Ancient:12",
+        "round:2396612:Ancient:13"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 1.2895422987639904,
+      "warm_search_ms": [
+        1.1944584548473358,
+        1.2146658264100552,
+        1.2015001848340034
+      ]
+    },
+    {
+      "query_id": "p04",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396948:Nuke:13",
+        "round:2396935:Nuke:13",
+        "round:2396935:Nuke:14",
+        "round:2396935:Nuke:1",
+        "round:2396935:Nuke:7"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 1.373874954879284,
+      "warm_search_ms": [
+        1.318375114351511,
+        1.322165597230196,
+        1.315416768193245
+      ]
+    },
+    {
+      "query_id": "p04",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396948:Nuke:14",
+        "round:2396610:Nuke:10",
+        "round:2396948:Nuke:13",
+        "round:2396941:Nuke:11",
+        "round:2396948:Nuke:4"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 227.18025045469403,
+      "first_search_ms": 0.33195875585079193,
+      "warm_search_ms": [
+        0.28624990954995155,
+        0.29562506824731827,
+        0.28133392333984375
+      ]
+    },
+    {
+      "query_id": "p04",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396948:Nuke:13",
+        "round:2396948:Nuke:14",
+        "round:2396948:Nuke:2",
+        "round:2396935:Nuke:1",
+        "round:2396941:Nuke:2"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 227.18025045469403,
+      "first_search_ms": 1.4140005223453045,
+      "warm_search_ms": [
+        1.3555423356592655,
+        1.3692495413124561,
+        1.3473746366798878
+      ]
+    },
+    {
+      "query_id": "p04",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396610:Nuke:1",
+        "round:2396610:Nuke:10",
+        "round:2396610:Nuke:11",
+        "round:2396610:Nuke:12",
+        "round:2396610:Nuke:13"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.39224978536367416,
+      "warm_search_ms": [
+        0.3413739614188671,
+        0.34287525340914726,
+        0.3392919898033142
+      ]
+    },
+    {
+      "query_id": "p04",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396610:Nuke:1",
+        "round:2396610:Nuke:10",
+        "round:2396610:Nuke:11",
+        "round:2396610:Nuke:12",
+        "round:2396610:Nuke:13"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 1.0185418650507927,
+      "warm_search_ms": [
+        0.941665843129158,
+        0.9492076933383942,
+        0.9570838883519173
+      ]
+    },
+    {
+      "query_id": "p05",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396948:Cache:7",
+        "round:2396948:Cache:13",
+        "round:2396926:Cache:1",
+        "round:2396943:Cache:13",
+        "round:2396943:Cache:14"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 1.5302482061088085,
+      "warm_search_ms": [
+        1.4500832185149193,
+        1.45716592669487,
+        1.4621252194046974
+      ]
+    },
+    {
+      "query_id": "p05",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396926:Cache:16",
+        "round:2396948:Cache:23",
+        "round:2396926:Cache:2",
+        "round:2396948:Cache:21",
+        "round:2396926:Cache:12"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 226.4348748140037,
+      "first_search_ms": 0.3097075968980789,
+      "warm_search_ms": [
+        0.2624993212521076,
+        0.2510827034711838,
+        0.2595423720777035
+      ]
+    },
+    {
+      "query_id": "p05",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396926:Cache:16",
+        "round:2396948:Cache:13",
+        "round:2396948:Cache:3",
+        "round:2396948:Cache:21",
+        "round:2396926:Cache:2"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 226.4348748140037,
+      "first_search_ms": 1.5619564801454544,
+      "warm_search_ms": [
+        1.4755823649466038,
+        1.4815418981015682,
+        1.4861668460071087
+      ]
+    },
+    {
+      "query_id": "p05",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396926:Cache:10",
+        "round:2396926:Cache:11",
+        "round:2396926:Cache:12",
+        "round:2396926:Cache:13",
+        "round:2396926:Cache:14"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.30574947595596313,
+      "warm_search_ms": [
+        0.26345811784267426,
+        0.252582598477602,
+        0.2617095597088337
+      ]
+    },
+    {
+      "query_id": "p05",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396926:Cache:10",
+        "round:2396926:Cache:11",
+        "round:2396926:Cache:12",
+        "round:2396926:Cache:13",
+        "round:2396926:Cache:14"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.7545826956629753,
+      "warm_search_ms": [
+        0.6775003857910633,
+        0.6756237708032131,
+        0.6862925365567207
+      ]
+    },
+    {
+      "query_id": "p06",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.2874992787837982,
+      "warm_search_ms": [
+        0.219833105802536,
+        0.2164999023079872,
+        0.2193744294345379
+      ]
+    },
+    {
+      "query_id": "p06",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 236.32320808246732,
+      "first_search_ms": 0.29066577553749084,
+      "warm_search_ms": [
+        0.2215420827269554,
+        0.21837512031197548,
+        0.22141681984066963
+      ]
+    },
+    {
+      "query_id": "p06",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 236.32320808246732,
+      "first_search_ms": 0.29608188197016716,
+      "warm_search_ms": [
+        0.2248329110443592,
+        0.2210419625043869,
+        0.22395839914679527
+      ]
+    },
+    {
+      "query_id": "p06",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.2837083302438259,
+      "warm_search_ms": [
+        0.2176249399781227,
+        0.2148328348994255,
+        0.21774927154183388
+      ]
+    },
+    {
+      "query_id": "p06",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.28341589495539665,
+      "warm_search_ms": [
+        0.21754205226898193,
+        0.21558254957199097,
+        0.21770736202597618
+      ]
+    },
+    {
+      "query_id": "p07",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:1",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:14"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 1.1140829883515835,
+      "warm_search_ms": [
+        1.1288323439657688,
+        1.083542127162218,
+        1.0999995283782482
+      ]
+    },
+    {
+      "query_id": "p07",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396949:Nuke:7",
+        "round:2396949:Nuke:11",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:19"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 244.33799972757697,
+      "first_search_ms": 0.2242075279355049,
+      "warm_search_ms": [
+        0.2215825952589512,
+        0.24450011551380157,
+        0.2203746698796749
+      ]
+    },
+    {
+      "query_id": "p07",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:7"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 244.33799972757697,
+      "first_search_ms": 1.129749696701765,
+      "warm_search_ms": [
+        1.1452073231339455,
+        1.0950835421681404,
+        1.111624762415886
+      ]
+    },
+    {
+      "query_id": "p07",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396949:Nuke:11",
+        "round:2396949:Nuke:12",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:19",
+        "round:2396949:Nuke:20"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.22120773792266846,
+      "warm_search_ms": [
+        0.21862424910068512,
+        0.24145795032382011,
+        0.21891668438911438
+      ]
+    },
+    {
+      "query_id": "p07",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396949:Nuke:11",
+        "round:2396949:Nuke:12",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:19",
+        "round:2396949:Nuke:20"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.3626239486038685,
+      "warm_search_ms": [
+        0.35187462344765663,
+        0.3742501139640808,
+        0.3521246835589409
+      ]
+    },
+    {
+      "query_id": "p08",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396948:Nuke:2",
+        "round:2396948:Nuke:1",
+        "round:2396948:Nuke:13",
+        "round:2396948:Nuke:14",
+        "round:2396948:Nuke:4"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.38279127329587936,
+      "warm_search_ms": [
+        0.3769579343497753,
+        0.3731660544872284,
+        0.37904223427176476
+      ]
+    },
+    {
+      "query_id": "p08",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396948:Nuke:2",
+        "round:2396948:Nuke:1",
+        "round:2396948:Nuke:9",
+        "round:2396948:Nuke:4",
+        "round:2396948:Nuke:15"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 235.10508378967643,
+      "first_search_ms": 0.22141588851809502,
+      "warm_search_ms": [
+        0.21783215925097466,
+        0.2136658877134323,
+        0.2139173448085785
+      ]
+    },
+    {
+      "query_id": "p08",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396948:Nuke:2",
+        "round:2396948:Nuke:1",
+        "round:2396948:Nuke:4",
+        "round:2396948:Nuke:14",
+        "round:2396948:Nuke:13"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 235.10508378967643,
+      "first_search_ms": 0.3946241922676563,
+      "warm_search_ms": [
+        0.38779107853770256,
+        0.3834147937595844,
+        0.3883754834532738
+      ]
+    },
+    {
+      "query_id": "p08",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396948:Nuke:1",
+        "round:2396948:Nuke:10",
+        "round:2396948:Nuke:11",
+        "round:2396948:Nuke:12",
+        "round:2396948:Nuke:13"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.2275817096233368,
+      "warm_search_ms": [
+        0.2225828357040882,
+        0.21833274513483047,
+        0.21654227748513222
+      ]
+    },
+    {
+      "query_id": "p08",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396948:Nuke:1",
+        "round:2396948:Nuke:10",
+        "round:2396948:Nuke:11",
+        "round:2396948:Nuke:12",
+        "round:2396948:Nuke:13"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.3507910296320915,
+      "warm_search_ms": [
+        0.3408752381801605,
+        0.3343340940773487,
+        0.3338749520480633
+      ]
+    },
+    {
+      "query_id": "p09",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396938:Dust2:1",
+        "round:2396938:Dust2:14",
+        "round:2396947:Dust2:13",
+        "round:2396947:Dust2:15",
+        "round:2396947:Dust2:2"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 1.537542324513197,
+      "warm_search_ms": [
+        1.4804578386247158,
+        1.4865403063595295,
+        1.4309165999293327
+      ]
+    },
+    {
+      "query_id": "p09",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396938:Dust2:3",
+        "round:2396947:Dust2:15",
+        "round:2396938:Dust2:6",
+        "round:2396947:Dust2:8",
+        "round:2396947:Dust2:5"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 228.56362536549568,
+      "first_search_ms": 0.3476249985396862,
+      "warm_search_ms": [
+        0.28241565451025963,
+        0.28079142794013023,
+        0.27870899066329
+      ]
+    },
+    {
+      "query_id": "p09",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396947:Dust2:15",
+        "round:2396938:Dust2:6",
+        "round:2396947:Dust2:13",
+        "round:2396938:Dust2:14",
+        "round:2396947:Dust2:2"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 228.56362536549568,
+      "first_search_ms": 1.561374869197607,
+      "warm_search_ms": [
+        1.5006237663328648,
+        1.5075821429491043,
+        1.4499169774353504
+      ]
+    },
+    {
+      "query_id": "p09",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396938:Dust2:10",
+        "round:2396938:Dust2:11",
+        "round:2396938:Dust2:12",
+        "round:2396938:Dust2:13",
+        "round:2396938:Dust2:14"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.3727921284735203,
+      "warm_search_ms": [
+        0.30737463384866714,
+        0.30841538682579994,
+        0.30408380553126335
+      ]
+    },
+    {
+      "query_id": "p09",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396938:Dust2:10",
+        "round:2396938:Dust2:11",
+        "round:2396938:Dust2:12",
+        "round:2396938:Dust2:13",
+        "round:2396938:Dust2:14"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.7384591735899448,
+      "warm_search_ms": [
+        0.6461250595748425,
+        0.6425823085010052,
+        0.6371666677296162
+      ]
+    },
+    {
+      "query_id": "p10",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396949:Ancient:2",
+        "round:2396949:Ancient:1",
+        "round:2396949:Ancient:14",
+        "round:2396943:Ancient:15",
+        "round:2396943:Ancient:16"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.8907490409910679,
+      "warm_search_ms": [
+        0.8462490513920784,
+        0.8389591239392757,
+        0.8348333649337292
+      ]
+    },
+    {
+      "query_id": "p10",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396943:Ancient:6",
+        "round:2396943:Ancient:3",
+        "round:2396943:Ancient:13",
+        "round:2396943:Ancient:15",
+        "round:2396943:Ancient:1"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 227.35454188659787,
+      "first_search_ms": 0.3041662275791168,
+      "warm_search_ms": [
+        0.26895804330706596,
+        0.2608746290206909,
+        0.2614581026136875
+      ]
+    },
+    {
+      "query_id": "p10",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396943:Ancient:15",
+        "round:2396949:Ancient:14",
+        "round:2396943:Ancient:6",
+        "round:2396943:Ancient:3",
+        "round:2396943:Ancient:13"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 227.35454188659787,
+      "first_search_ms": 0.9139571338891983,
+      "warm_search_ms": [
+        0.8664992637932301,
+        0.8586668409407139,
+        0.8540409617125988
+      ]
+    },
+    {
+      "query_id": "p10",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396943:Ancient:1",
+        "round:2396943:Ancient:13",
+        "round:2396943:Ancient:17",
+        "round:2396943:Ancient:18",
+        "round:2396943:Ancient:19"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.30462490394711494,
+      "warm_search_ms": [
+        0.26995735242962837,
+        0.2621668390929699,
+        0.2631666138768196
+      ]
+    },
+    {
+      "query_id": "p10",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396943:Ancient:1",
+        "round:2396943:Ancient:13",
+        "round:2396943:Ancient:17",
+        "round:2396943:Ancient:18",
+        "round:2396943:Ancient:19"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.7273750379681587,
+      "warm_search_ms": [
+        0.6745406426489353,
+        0.6692917086184025,
+        0.6539160385727882
+      ]
+    },
+    {
+      "query_id": "p11",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396595:Inferno:3",
+        "round:2396945:Inferno:1",
+        "round:2396945:Inferno:3",
+        "round:2396595:Inferno:13",
+        "round:2396595:Inferno:1"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 1.36141711845994,
+      "warm_search_ms": [
+        1.3769171200692654,
+        1.349917147308588,
+        1.3619167730212212
+      ]
+    },
+    {
+      "query_id": "p11",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396595:Inferno:15",
+        "round:2396945:Inferno:14",
+        "round:2396947:Inferno:13",
+        "round:2396595:Inferno:20",
+        "round:2396945:Inferno:13"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 227.3252080194652,
+      "first_search_ms": 0.23041758686304092,
+      "warm_search_ms": [
+        0.25579240173101425,
+        0.22129248827695847,
+        0.2289172261953354
+      ]
+    },
+    {
+      "query_id": "p11",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396945:Inferno:14",
+        "round:2396947:Inferno:13",
+        "round:2396595:Inferno:13",
+        "round:2396595:Inferno:15",
+        "round:2396595:Inferno:1"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 227.3252080194652,
+      "first_search_ms": 1.387292519211769,
+      "warm_search_ms": [
+        1.4050421305000782,
+        1.375583466142416,
+        1.386249903589487
+      ]
+    },
+    {
+      "query_id": "p11",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396595:Inferno:1",
+        "round:2396595:Inferno:10",
+        "round:2396595:Inferno:11",
+        "round:2396595:Inferno:12",
+        "round:2396595:Inferno:13"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.25475025177001953,
+      "warm_search_ms": [
+        0.2855835482478142,
+        0.24312501773238182,
+        0.2504996955394745
+      ]
+    },
+    {
+      "query_id": "p11",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396595:Inferno:1",
+        "round:2396595:Inferno:10",
+        "round:2396595:Inferno:11",
+        "round:2396595:Inferno:12",
+        "round:2396595:Inferno:13"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.7537095807492733,
+      "warm_search_ms": [
+        0.7498334161937237,
+        0.6910832598805428,
+        0.688500702381134
+      ]
+    },
+    {
+      "query_id": "p12",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396946:Anubis:13",
+        "round:2396614:Anubis:1",
+        "round:2396607:Anubis:1",
+        "round:2396946:Anubis:15",
+        "round:2396946:Anubis:1"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.5660406313836575,
+      "warm_search_ms": [
+        0.5734581500291824,
+        0.5580843426287174,
+        0.5883327685296535
+      ]
+    },
+    {
+      "query_id": "p12",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396946:Anubis:13",
+        "round:2396607:Anubis:1",
+        "round:2396607:Anubis:2",
+        "round:2396607:Anubis:10",
+        "round:2396607:Anubis:11"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 229.00379076600075,
+      "first_search_ms": 0.24720747023820877,
+      "warm_search_ms": [
+        0.24199951440095901,
+        0.2415841445326805,
+        0.24745799601078033
+      ]
+    },
+    {
+      "query_id": "p12",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396946:Anubis:13",
+        "round:2396607:Anubis:1",
+        "round:2396614:Anubis:1",
+        "round:2396607:Anubis:13",
+        "round:2396607:Anubis:2"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 229.00379076600075,
+      "first_search_ms": 0.6037061102688313,
+      "warm_search_ms": [
+        0.6072912365198135,
+        0.5909181199967861,
+        0.6247907876968384
+      ]
+    },
+    {
+      "query_id": "p12",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396607:Anubis:1",
+        "round:2396607:Anubis:10",
+        "round:2396607:Anubis:11",
+        "round:2396607:Anubis:12",
+        "round:2396607:Anubis:13"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.25237444788217545,
+      "warm_search_ms": [
+        0.2477085217833519,
+        0.24741748347878456,
+        0.252582598477602
+      ]
+    },
+    {
+      "query_id": "p12",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [
+        "round:2396607:Anubis:1",
+        "round:2396607:Anubis:10",
+        "round:2396607:Anubis:11",
+        "round:2396607:Anubis:12",
+        "round:2396607:Anubis:13"
+      ],
+      "returned": 5,
+      "condition_precision": 1,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.9194579906761646,
+      "warm_search_ms": [
+        0.8886661380529404,
+        0.8805841207504272,
+        0.8752918802201748
+      ]
+    },
+    {
+      "query_id": "n01",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.30625052750110626,
+      "warm_search_ms": [
+        0.24558277800679207,
+        0.2387501299381256,
+        0.23695919662714005
+      ]
+    },
+    {
+      "query_id": "n01",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 223.69275009259582,
+      "first_search_ms": 0.30679209157824516,
+      "warm_search_ms": [
+        0.24733319878578186,
+        0.2405000850558281,
+        0.23891683667898178
+      ]
+    },
+    {
+      "query_id": "n01",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 223.69275009259582,
+      "first_search_ms": 0.3120838664472103,
+      "warm_search_ms": [
+        0.2505001612007618,
+        0.24350034072995186,
+        0.2415836788713932
+      ]
+    },
+    {
+      "query_id": "n01",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.3028339706361294,
+      "warm_search_ms": [
+        0.2437080256640911,
+        0.23700110614299774,
+        0.23537501692771912
+      ]
+    },
+    {
+      "query_id": "n01",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.3025839105248451,
+      "warm_search_ms": [
+        0.2436237409710884,
+        0.23691682144999504,
+        0.23545930162072182
+      ]
+    },
+    {
+      "query_id": "n02",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.2894587814807892,
+      "warm_search_ms": [
+        0.25733327493071556,
+        0.25354092940688133,
+        0.26133283972740173
+      ]
+    },
+    {
+      "query_id": "n02",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 228.61129185184836,
+      "first_search_ms": 0.2898341044783592,
+      "warm_search_ms": [
+        0.258750282227993,
+        0.25529181584715843,
+        0.2631670795381069
+      ]
+    },
+    {
+      "query_id": "n02",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 228.61129185184836,
+      "first_search_ms": 0.29462622478604317,
+      "warm_search_ms": [
+        0.2619992010295391,
+        0.25804201140999794,
+        0.26574963703751564
+      ]
+    },
+    {
+      "query_id": "n02",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.2859588712453842,
+      "warm_search_ms": [
+        0.25512510910630226,
+        0.25179097428917885,
+        0.2597500570118427
+      ]
+    },
+    {
+      "query_id": "n02",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.2859579399228096,
+      "warm_search_ms": [
+        0.25516701862215996,
+        0.25187479332089424,
+        0.2597500570118427
+      ]
+    },
+    {
+      "query_id": "n03",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.20795827731490135,
+      "warm_search_ms": [
+        0.20812544971704483,
+        0.20533287897706032,
+        0.20354194566607475
+      ]
+    },
+    {
+      "query_id": "n03",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 226.2310408987105,
+      "first_search_ms": 0.20987493917346,
+      "warm_search_ms": [
+        0.21004211157560349,
+        0.20729238167405128,
+        0.20541716367006302
+      ]
+    },
+    {
+      "query_id": "n03",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 226.2310408987105,
+      "first_search_ms": 0.2127084881067276,
+      "warm_search_ms": [
+        0.2126665785908699,
+        0.21008308976888657,
+        0.20800018683075905
+      ]
+    },
+    {
+      "query_id": "n03",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.20679086446762085,
+      "warm_search_ms": [
+        0.206666998565197,
+        0.20370911806821823,
+        0.20200014114379883
+      ]
+    },
+    {
+      "query_id": "n03",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.20620878785848618,
+      "warm_search_ms": [
+        0.2066250890493393,
+        0.2038339152932167,
+        0.20254217088222504
+      ]
+    },
+    {
+      "query_id": "n04",
+      "method": "bm25",
+      "entity_constraint": true,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.19804248586297035,
+      "warm_search_ms": [
+        0.19700126722455025,
+        0.19516749307513237,
+        0.19691605120897293
+      ]
+    },
+    {
+      "query_id": "n04",
+      "method": "dense",
+      "entity_constraint": true,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 230.7974579744041,
+      "first_search_ms": 0.2000001259148121,
+      "warm_search_ms": [
+        0.19912468269467354,
+        0.19729183986783028,
+        0.19908277317881584
+      ]
+    },
+    {
+      "query_id": "n04",
+      "method": "dense_bm25_rrf",
+      "entity_constraint": true,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 230.7974579744041,
+      "first_search_ms": 0.20291749387979507,
+      "warm_search_ms": [
+        0.20129233598709106,
+        0.1995009370148182,
+        0.20124996080994606
+      ]
+    },
+    {
+      "query_id": "n04",
+      "method": "sql_reference",
+      "entity_constraint": true,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.1961253583431244,
+      "warm_search_ms": [
+        0.19583385437726974,
+        0.19395817071199417,
+        0.19575003534555435
+      ]
+    },
+    {
+      "query_id": "n04",
+      "method": "graph_path_reference",
+      "entity_constraint": true,
+      "source_ids": [],
+      "returned": 0,
+      "condition_precision": null,
+      "metrics": null,
+      "query_encoding_ms": 0,
+      "first_search_ms": 0.1961253583431244,
+      "warm_search_ms": [
+        0.19583432003855705,
+        0.19400054588913918,
+        0.19583338871598244
+      ]
+    }
+  ]
+}

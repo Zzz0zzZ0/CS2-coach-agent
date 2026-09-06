@@ -2,12 +2,13 @@ import copy
 import json
 import math
 import sqlite3
+from types import SimpleNamespace
 
 import numpy as np
 import pytest
 
 from scripts.evaluate_fair_retrieval import (
-    build_index, digest, export_corpus, metrics, ranks, reviewed_qrels, validate_inputs,
+    build_index, digest, encode, export_corpus, metrics, ranks, reviewed_qrels, run, validate_inputs,
 )
 
 
@@ -91,3 +92,36 @@ def test_corpus_export_preserves_sources_and_never_overwrites(tmp_path):
     assert doc["events"][0]["id"] == "e1" and doc["links"] == [["PLANTS_BOMB", "e1"]]
     with pytest.raises(FileExistsError):
         export_corpus(source, destination)
+
+
+def test_strict_evaluation_stops_before_loading_model_when_labels_missing(tmp_path, monkeypatch):
+    import fastembed
+    docs, dataset = sample()
+    corpus, queries = tmp_path / "corpus.jsonl", tmp_path / "queries.json"
+    corpus.write_text("\n".join(json.dumps(d) for d in docs))
+    queries.write_text(json.dumps(dataset))
+    def forbidden(*args, **kwargs):
+        pytest.fail("Model must not load before qrels approval")
+    monkeypatch.setattr(fastembed, "TextEmbedding", forbidden)
+    with pytest.raises(ValueError, match="review is incomplete"):
+        run(SimpleNamespace(corpus=corpus, queries=queries, qrels=None, allow_unreviewed=False))
+
+
+def test_embedding_chunks_cover_tail_without_silent_truncation():
+    from tokenizers import Tokenizer, models, pre_tokenizers
+    tokenizer = Tokenizer(models.WordLevel({"[UNK]": 0}, unk_token="[UNK]"))
+    tokenizer.pre_tokenizer = pre_tokenizers.Whitespace()
+    tokenizer.enable_truncation(max_length=16)
+    seen = []
+    class LocalModel:
+        model = SimpleNamespace(tokenizer=tokenizer)
+        def embed(self, texts, batch_size):
+            for text in texts:
+                seen.extend(text.split())
+                assert len(text.split()) <= 16
+                yield np.array([len(text), 1], dtype=np.float32)
+    words = [f"word{i}" for i in range(50)]
+    vectors, details = encode(LocalModel(), [" ".join(words)])
+    assert seen == words
+    assert details["chunks"] > 1 and vectors.shape == (1, 2)
+    assert np.linalg.norm(vectors[0]) == pytest.approx(1)
