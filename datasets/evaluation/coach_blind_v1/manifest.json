@@ -1,0 +1,53 @@
+{
+  "version": "coach-blind-v1",
+  "created_at": "2026-09-06T15:51:31.167442+00:00",
+  "selection": "first four historical match IDs ascending, first map alphabetically; both maps from prior 2396950 pilot",
+  "scope": "development pilot; all cases already seen; not OOD or independent generalization",
+  "model": "qwen3.8-flash",
+  "max_calls": 6,
+  "reserved_token_budget": 30000,
+  "max_output_tokens": 512,
+  "min_reviewers": 2,
+  "primary_dimension": "priority_relevance",
+  "analysis_unit": "mean map delta per match, then mean across matches",
+  "inputs_sha256": "60f9546abf9af09f94ab7845384dbcd8b5245fb9792707682a42f4b699bb9511",
+  "graph_sha256": "6128fa1036a19ad661a9277a338b65fe662c149d3e5c85a2f75ff1d2325b0aab",
+  "implementation_sha256": {
+    "app/agentic/nodes/coach_node.py": "8f9e02d42c034e85890aead54bcb4c52d00c36950615b9278fa9050c42583099",
+    "app/agentic/tools.py": "1c559154b2e9df93bcf5842ed2575fe8b7d4bf87c98c65206a6bfc7924e45944",
+    "app/services/metrics_service.py": "20563d58762570c3a40fbfc72024f10a51fb74bbcf1d71ead476a3701093b909"
+  },
+  "harness_sha256": "eb8a3ec230c4b06ece6f4d5d7f578b700c53f64e163f37ade7a21acecd8146f2",
+  "cases": [
+    {
+      "case_id": "case-01",
+      "match_id": "2396595",
+      "map_name": "Dust2"
+    },
+    {
+      "case_id": "case-02",
+      "match_id": "2396607",
+      "map_name": "Ancient"
+    },
+    {
+      "case_id": "case-03",
+      "match_id": "2396608",
+      "map_name": "Ancient"
+    },
+    {
+      "case_id": "case-04",
+      "match_id": "2396609",
+      "map_name": "Dust2"
+    },
+    {
+      "case_id": "case-05",
+      "match_id": "2396950",
+      "map_name": "Dust2"
+    },
+    {
+      "case_id": "case-06",
+      "match_id": "2396950",
+      "map_name": "Mirage"
+    }
+  ]
+}
