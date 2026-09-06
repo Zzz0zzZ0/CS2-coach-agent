@@ -27,4 +27,4 @@ make frontend-build
 
 ## CI
 
-`.github/workflows/ci.yml` 配置 Ubuntu 24.04、Python 3.11.15、Node 22.23.0，执行受约束安装、依赖检查、离线测试、npm ci 和前端构建。尚未推送并触发 GitHub Actions，因此当前验证是本机全新虚拟环境和独立前端目录复现，不宣称远端 Linux 工作流已经运行。
+`.github/ci-workflow.yml.example` 保存工作流配置（待启用），配置 Ubuntu 24.04、Python 3.11.15、Node 22.23.0，执行受约束安装、依赖检查、离线测试、npm ci 和前端构建。当前 GitHub OAuth 凭据只有 repo 权限，push 可执行工作流被 GitHub 拒绝（缺少 workflow scope）。因此先以示例配置纳入恢复分支，尚未启用 Actions。授权具备 workflow scope 后，将该文件移到 `.github/workflows/ci.yml` 即可启用。当前验证是本机全新虚拟环境和独立前端目录复现，不宣称远端 Linux 工作流已经运行。
