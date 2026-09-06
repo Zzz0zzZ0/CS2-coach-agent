@@ -16,7 +16,7 @@
 
 The evaluation tools now include 160 unscored same-corpus retrieval runs and a complete unseen-series pipeline pilot (2 maps, 44 rounds, all checks passed). The offline suite has 96 passing tests. Independent relevance labels and broader research validation remain pending. See [retrieval experiment](docs/FAIR_RETRIEVAL_RUN.md) and [unseen-series pilot](docs/UNSEEN_MATCH_PILOT.md).
 
-The latest local milestone adds roster-based player denominators and an offline test environment: complete rosters for 1,023 valid rounds across 49 maps, 87 passing offline tests, and a clean frontend build. Remote CI has not run. See [implementation status](docs/IMPLEMENTATION_PROGRESS.md), [player data contract](docs/PLAYER_PROFILE_DATA_CONTRACT.md), and [offline reproduction](docs/OFFLINE_VALIDATION.md).
+The preceding player-profile milestone added roster-based denominators and an offline test environment: complete rosters for 1,023 valid rounds across 49 maps, 87 passing offline tests, and a clean frontend build. Remote CI has not run. See [implementation status](docs/IMPLEMENTATION_PROGRESS.md), [player data contract](docs/PLAYER_PROFILE_DATA_CONTRACT.md), and [offline reproduction](docs/OFFLINE_VALIDATION.md).
 
 ---
 

@@ -16,7 +16,7 @@
 
 新增同语料检索实验工具（160 条无评分试跑）与首场未见比赛复盘验收（2 图、44 回合全部通过），当前 96 项离线测试通过。独立相关性标签仍待审核，研究效果尚未验证。见 [实验说明](docs/FAIR_RETRIEVAL_RUN.md) 和 [新比赛验收](docs/UNSEEN_MATCH_PILOT.md)。
 
-本阶段已完成画像参赛分母与归属修复、离线测试环境：49 张地图的 1,023 个有效回合名单完整，87 项离线测试通过，独立前端构建通过。远端 CI 尚未运行。详见 [执行进度与验收](docs/IMPLEMENTATION_PROGRESS.md)、[画像数据契约](docs/PLAYER_PROFILE_DATA_CONTRACT.md) 与 [离线复现](docs/OFFLINE_VALIDATION.md)。
+此前画像阶段已完成参赛分母与归属修复、离线测试环境：49 张地图的 1,023 个有效回合名单完整，87 项离线测试通过，独立前端构建通过。远端 CI 尚未运行。详见 [执行进度与验收](docs/IMPLEMENTATION_PROGRESS.md)、[画像数据契约](docs/PLAYER_PROFILE_DATA_CONTRACT.md) 与 [离线复现](docs/OFFLINE_VALIDATION.md)。
 
 ---
 
