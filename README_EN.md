@@ -14,7 +14,7 @@
 
 </div>
 
-The historical data rebuild is live: 20 series, 49 maps and 1,019 regulation/overtime rounds, with four pre-match knife rounds removed. Graph and Milvus evidence, all 56 player profiles and 5,308 silver labels agree; 154 offline tests pass. Production retrieval after the evidence-identity fix passes 50/50 development queries in Vector, Graph and Hybrid modes; the previously observed holdout scores are 28/30, 30/30 and 30/30. See [regression repair](docs/VECTOR_EVIDENCE_IDENTITY_V3.md). Old snapshots remain available for rollback. The corrected 16-query retrieval experiment uses AI-assisted development labels, not independent human gold or unseen generalization evidence. See [rebuild and refreeze](docs/HISTORICAL_DATA_REBUILD_V2.md).
+The historical data rebuild is live: 20 series, 49 maps and 1,019 regulation/overtime rounds, with four pre-match knife rounds removed. Graph and Milvus evidence, all 56 player profiles and 5,308 silver labels agree; 157 offline tests pass. Production retrieval after the evidence-identity fix passes 50/50 development queries in Vector, Graph and Hybrid modes; the previously observed holdout scores are 28/30, 30/30 and 30/30. See [regression repair](docs/VECTOR_EVIDENCE_IDENTITY_V3.md). Old snapshots remain available for rollback. The corrected 16-query retrieval experiment uses AI-assisted development labels, not independent human gold or unseen generalization evidence. See [rebuild and refreeze](docs/HISTORICAL_DATA_REBUILD_V2.md).
 
 The evaluation tools now include 160 unscored same-corpus retrieval runs and a complete unseen-series pipeline pilot (2 maps, 44 rounds, all checks passed). The offline suite has 140 passing tests. Independent relevance labels and broader research validation remain pending. See [retrieval experiment](docs/FAIR_RETRIEVAL_RUN.md) and [unseen-series pilot](docs/UNSEEN_MATCH_PILOT.md).
 
@@ -23,6 +23,9 @@ A Coach priority-selection pilot has completed on 6 development maps from 5 seri
 The shared model entry point now uses a persistent SQLite allowance across local processes, with defaults of 30,000 tokens and 100 attempts from ledger creation. Timeouts, provider rejections and missing usage stop subsequent calls while rule-based analysis remains available. The UI shows local accounting; provider free-quota balance remains unknown. See [budget and failure boundaries](docs/MODEL_BUDGET_BOUNDARIES.md).
 
 The preceding player-profile milestone added roster-based denominators and an offline test environment: complete rosters for 1,023 recorded rounds (four pre-match knife rounds have since been removed) across 49 maps, 87 passing offline tests, and a clean frontend build. Remote CI now passes: [run record](https://github.com/Zzz0zzZ0/CS2-coach-agent/actions/runs/34031162026). See [implementation status](docs/IMPLEMENTATION_PROGRESS.md), [player data contract](docs/PLAYER_PROFILE_DATA_CONTRACT.md), and [offline reproduction](docs/OFFLINE_VALIDATION.md).
+
+Paired-language and entity-alias calibration now covers 16 semantic groups (32 language forms) and 1,280 retrieval results. All 160 original rankings reproduce exactly. Alias handling recovers 55 relevant rounds, while glossary expansion does not improve BM25. Five positive questions have entirely relevant candidate pools, and all five negative questions have empty eligible scopes; stronger relation questions are needed before a formal benchmark claim. See [calibration evidence](docs/FAIR_LANGUAGE_CALIBRATION_V1.md).
+
 
 ---
 

@@ -1,0 +1,228 @@
+{
+  "version": "fair-calibration-audit-v1",
+  "report_sha256": "1f9c9a4f9289eafb3f160ebfebc2115b9c1f2490e7c11a1d165caecac246d65a",
+  "audit_source_sha256": "3b1d8cb3bf0cef5bbc07596b466347c3f4df74aab6191ed7434e18750ee30acd",
+  "passed": true,
+  "checks": {
+    "scope_and_candidate_counts": 1280,
+    "english_unchanged_by_zh_glossary": 320,
+    "structured_references_unchanged_by_glossary": 256,
+    "aliases_no_effect_when_disabled": 320
+  },
+  "alias_relevance_recovered": [
+    {
+      "semantic_group": "p09",
+      "before": 41,
+      "after": 64,
+      "total_relevant": 64
+    },
+    {
+      "semantic_group": "p10",
+      "before": 26,
+      "after": 58,
+      "total_relevant": 58
+    }
+  ],
+  "question_difficulty": [
+    {
+      "semantic_group": "p01",
+      "eligible_rounds": 40,
+      "relevant_rounds": 14,
+      "relevant_fraction": 0.35,
+      "recall_at_5_ceiling": 0.35714285714285715
+    },
+    {
+      "semantic_group": "p02",
+      "eligible_rounds": 64,
+      "relevant_rounds": 64,
+      "relevant_fraction": 1.0,
+      "recall_at_5_ceiling": 0.078125
+    },
+    {
+      "semantic_group": "p03",
+      "eligible_rounds": 99,
+      "relevant_rounds": 99,
+      "relevant_fraction": 1.0,
+      "recall_at_5_ceiling": 0.050505050505050504
+    },
+    {
+      "semantic_group": "p04",
+      "eligible_rounds": 98,
+      "relevant_rounds": 98,
+      "relevant_fraction": 1.0,
+      "recall_at_5_ceiling": 0.05102040816326531
+    },
+    {
+      "semantic_group": "p05",
+      "eligible_rounds": 61,
+      "relevant_rounds": 32,
+      "relevant_fraction": 0.5245901639344263,
+      "recall_at_5_ceiling": 0.15625
+    },
+    {
+      "semantic_group": "p06",
+      "eligible_rounds": 0,
+      "relevant_rounds": 0,
+      "relevant_fraction": null,
+      "recall_at_5_ceiling": null
+    },
+    {
+      "semantic_group": "p07",
+      "eligible_rounds": 21,
+      "relevant_rounds": 6,
+      "relevant_fraction": 0.2857142857142857,
+      "recall_at_5_ceiling": 0.8333333333333334
+    },
+    {
+      "semantic_group": "p08",
+      "eligible_rounds": 19,
+      "relevant_rounds": 19,
+      "relevant_fraction": 1.0,
+      "recall_at_5_ceiling": 0.2631578947368421
+    },
+    {
+      "semantic_group": "p09",
+      "eligible_rounds": 64,
+      "relevant_rounds": 64,
+      "relevant_fraction": 1.0,
+      "recall_at_5_ceiling": 0.078125
+    },
+    {
+      "semantic_group": "p10",
+      "eligible_rounds": 99,
+      "relevant_rounds": 58,
+      "relevant_fraction": 0.5858585858585859,
+      "recall_at_5_ceiling": 0.08620689655172414
+    },
+    {
+      "semantic_group": "p11",
+      "eligible_rounds": 58,
+      "relevant_rounds": 57,
+      "relevant_fraction": 0.9827586206896551,
+      "recall_at_5_ceiling": 0.08771929824561403
+    },
+    {
+      "semantic_group": "p12",
+      "eligible_rounds": 89,
+      "relevant_rounds": 58,
+      "relevant_fraction": 0.651685393258427,
+      "recall_at_5_ceiling": 0.08620689655172414
+    },
+    {
+      "semantic_group": "n01",
+      "eligible_rounds": 0,
+      "relevant_rounds": 0,
+      "relevant_fraction": null,
+      "recall_at_5_ceiling": null
+    },
+    {
+      "semantic_group": "n02",
+      "eligible_rounds": 0,
+      "relevant_rounds": 0,
+      "relevant_fraction": null,
+      "recall_at_5_ceiling": null
+    },
+    {
+      "semantic_group": "n03",
+      "eligible_rounds": 0,
+      "relevant_rounds": 0,
+      "relevant_fraction": null,
+      "recall_at_5_ceiling": null
+    },
+    {
+      "semantic_group": "n04",
+      "eligible_rounds": 0,
+      "relevant_rounds": 0,
+      "relevant_fraction": null,
+      "recall_at_5_ceiling": null
+    }
+  ],
+  "language_gaps": [
+    {
+      "configuration": "raw_exact",
+      "method": "bm25",
+      "positive_semantic_groups": 11,
+      "mean_zh_minus_en_ndcg": 0.0,
+      "mean_absolute_paired_gap": 0.0
+    },
+    {
+      "configuration": "raw_exact",
+      "method": "dense",
+      "positive_semantic_groups": 11,
+      "mean_zh_minus_en_ndcg": -0.06263475452652598,
+      "mean_absolute_paired_gap": 0.06263475452652598
+    },
+    {
+      "configuration": "raw_exact",
+      "method": "dense_bm25_rrf",
+      "positive_semantic_groups": 11,
+      "mean_zh_minus_en_ndcg": -0.05413992939318604,
+      "mean_absolute_paired_gap": 0.08069781118276904
+    },
+    {
+      "configuration": "glossary_exact",
+      "method": "bm25",
+      "positive_semantic_groups": 11,
+      "mean_zh_minus_en_ndcg": 0.0,
+      "mean_absolute_paired_gap": 0.0
+    },
+    {
+      "configuration": "glossary_exact",
+      "method": "dense",
+      "positive_semantic_groups": 11,
+      "mean_zh_minus_en_ndcg": -0.05547444006927605,
+      "mean_absolute_paired_gap": 0.05547444006927605
+    },
+    {
+      "configuration": "glossary_exact",
+      "method": "dense_bm25_rrf",
+      "positive_semantic_groups": 11,
+      "mean_zh_minus_en_ndcg": 0.0013512065754877117,
+      "mean_absolute_paired_gap": 0.05176455700367829
+    },
+    {
+      "configuration": "raw_alias",
+      "method": "bm25",
+      "positive_semantic_groups": 11,
+      "mean_zh_minus_en_ndcg": 0.0,
+      "mean_absolute_paired_gap": 0.0
+    },
+    {
+      "configuration": "raw_alias",
+      "method": "dense",
+      "positive_semantic_groups": 11,
+      "mean_zh_minus_en_ndcg": -0.10674644135528256,
+      "mean_absolute_paired_gap": 0.10674644135528256
+    },
+    {
+      "configuration": "raw_alias",
+      "method": "dense_bm25_rrf",
+      "positive_semantic_groups": 11,
+      "mean_zh_minus_en_ndcg": -0.044897912325459956,
+      "mean_absolute_paired_gap": 0.07145579411504296
+    },
+    {
+      "configuration": "glossary_alias",
+      "method": "bm25",
+      "positive_semantic_groups": 11,
+      "mean_zh_minus_en_ndcg": 0.0,
+      "mean_absolute_paired_gap": 0.0
+    },
+    {
+      "configuration": "glossary_alias",
+      "method": "dense",
+      "positive_semantic_groups": 11,
+      "mean_zh_minus_en_ndcg": -0.043546705749972256,
+      "mean_absolute_paired_gap": 0.043546705749972256
+    },
+    {
+      "configuration": "glossary_alias",
+      "method": "dense_bm25_rrf",
+      "positive_semantic_groups": 11,
+      "mean_zh_minus_en_ndcg": -0.0069605813959598166,
+      "mean_absolute_paired_gap": 0.06007634497512582
+    }
+  ],
+  "combined_vs_raw_per_query_drops": [],
+  "limitations": "Descriptive development audit; translations are grouped and no independent-sample or causal claim is made."
+}
