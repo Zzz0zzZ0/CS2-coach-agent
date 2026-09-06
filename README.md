@@ -14,13 +14,15 @@
 
 </div>
 
-新增同语料检索实验工具与首场未见比赛复盘验收（2 图、44 回合全部通过），当前 150 项离线测试通过。现已按 AI 辅助事实标签对冻结的 160 条排序完成事后评分：16 题中 11 题有答案、5 题无答案；独立人工评审与泛化效果仍待验证。新增 2 场、5 图已完成验收：首次运行发现赛前刀局和战队名称差异；修复后 111 回合全部通过。历史 4 图的刀局污染仍需单独重建，既有分数暂不用于最终展示结论。见 [新比赛失败与修复记录](docs/NEW_MATCH_VALIDATION_V3.md)。见 [AI 审核与少量新比赛](docs/AI_BENCHMARK_REVIEW.md)、[实验说明](docs/FAIR_RETRIEVAL_RUN.md) 和 [首场新比赛验收](docs/UNSEEN_MATCH_PILOT.md)。
+历史刀局污染已完成重建并切换：原有 20 场、49 图现在包含 1,019 个正式回合，图谱、Milvus、56 名选手画像和 5,308 条战术银标已核对一致。152 项离线测试通过。原始数据快照与失败结果均保留，详见 [历史修复与重新冻结](docs/HISTORICAL_DATA_REBUILD_V2.md)。
+
+新语料上的 16 题、160 条检索结果已按 AI 辅助事实标签重新运行，仍属于已观察开发集；独立审核与泛化效果待验证。新增 2 场、5 图在修复后以 111 个正式回合通过回归，首次失败记录见 [新比赛验收](docs/NEW_MATCH_VALIDATION_V3.md)。
 
 Coach 优先级对照已完成 6 图、5 场比赛的开发样本试跑：固定模型 `qwen3.8-flash` 调用 6 次，提供商报告本轮使用 4,939 token。匿名材料与空白评分表已生成，至少两位独立人工评审尚待完成，模型增益指标保持为空。见 [盲评协议与运行记录](docs/COACH_BLIND_EVALUATION.md)。后续 [AI 事实审核](docs/COACH_FACT_AUDIT.md) 已修复攻守分母与己方受闪口径，原始盲评包继续保留，人工评分需使用重新冻结的修正版。
 
 生产模型入口已加入跨进程 SQLite 用量账本，默认本地上限 30,000 token / 100 次尝试；超时、额度拒绝或用量缺失会暂停后续调用并保留规则分析，页面可查看状态。提供商剩余免费额度仍未知。见 [预算与故障边界](docs/MODEL_BUDGET_BOUNDARIES.md)。
 
-此前画像阶段已完成参赛分母与归属修复、离线测试环境：49 张地图的 1,023 个有效回合名单完整，87 项离线测试通过，独立前端构建通过。远端 CI 已通过，[查看运行记录](https://github.com/Zzz0zzZ0/CS2-coach-agent/actions/runs/34031162026)。详见 [执行进度与验收](docs/IMPLEMENTATION_PROGRESS.md)、[画像数据契约](docs/PLAYER_PROFILE_DATA_CONTRACT.md) 与 [离线复现](docs/OFFLINE_VALIDATION.md)。
+此前画像阶段已完成参赛分母与归属修复、离线测试环境：当时 49 张地图的 1,023 条回合记录名单完整（其中 4 个赛前刀局已在本轮修正），87 项离线测试通过，独立前端构建通过。远端 CI 已通过，[查看运行记录](https://github.com/Zzz0zzZ0/CS2-coach-agent/actions/runs/34031162026)。详见 [执行进度与验收](docs/IMPLEMENTATION_PROGRESS.md)、[画像数据契约](docs/PLAYER_PROFILE_DATA_CONTRACT.md) 与 [离线复现](docs/OFFLINE_VALIDATION.md)。
 
 ---
 
@@ -459,7 +461,7 @@ make silver-dataset # 生成带置信度与证据来源的战术银标数据集
 
 GraphRAG 当前采用确定性抽取式社区摘要；摘要只概括解析到的事实，并保留回合来源，不把小样本观察直接升级为职业战术定律。
 
-`make silver-dataset` 会将本地 Demo 转换为 `datasets/silver/v0.2/` 下的回合级研究数据。v0.2 固定采用 `datasets/selections/five_teams_recent_20_v1.json` 的 20 场近期比赛，共 49 张地图、1,030 回合和 5,325 个战术银标；v0.1 作为单场初始基线保留。首杀和下包阶段来自直接事件事实；补枪、Utility Burst 与 Retake Contact 来自明确的时间窗规则；只有 T 方道具序列后成功下包才会追加弱监督的 Execute Candidate。所有标签都保存规则版本、置信度、审核状态和证据事件 ID。该数据集定位为可复现的 silver labels，不宣称是职业教练人工标注的 gold labels。
+`make silver-dataset` 默认输出 `datasets/silver/v0.3/`，已有目录拒绝覆盖；复现请用 `ARGS="--output-dir 新目录"`。v0.3 沿用 `datasets/selections/five_teams_recent_20_v1.json` 的 20 场比赛，修正解析边界后为 49 张地图、1,019 个正式回合和 5,308 个战术银标；v0.1 / v0.2 作为历史快照保留。首杀和下包阶段来自直接事件事实；补枪、Utility Burst 与 Retake Contact 来自明确的时间窗规则；只有 T 方道具序列后成功下包才会追加弱监督的 Execute Candidate。所有标签都保存规则版本、置信度、审核状态和证据事件 ID。该数据集定位为可复现的 silver labels，不宣称是职业教练人工标注的 gold labels。
 
 ### 统一 GraphRAG 评测
 

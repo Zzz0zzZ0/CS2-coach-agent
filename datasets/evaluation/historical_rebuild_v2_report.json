@@ -1,0 +1,1442 @@
+{
+  "version": "historical-rebuild-v2",
+  "before_sha256": "6128fa1036a19ad661a9277a338b65fe662c149d3e5c85a2f75ff1d2325b0aab",
+  "after_sha256": "28357be25a52d27b80e87a03ffcb2a545132c97d42632138ff60c47d67fc8c2d",
+  "boundary_audit_sha256": "530418d12f4fa3d54a15afd5796270f70385b34f53dcddfcfc05724d2f842627",
+  "audit_source_sha256": "53026c3eb3206eae36ea3fa3784fadc9006949dee530c8f57b77546e0be40e0d",
+  "counts": {
+    "event": 42148,
+    "map": 49,
+    "match": 20,
+    "player": 56,
+    "round": 1019,
+    "tactical_sequence": 5308
+  },
+  "participant_rounds": 10190,
+  "maps": [
+    {
+      "match_id": "2396595",
+      "map": "Dust2",
+      "file": "Esports_World_Cup_2026_MOUZ_vs_PARIVISION_2396595_map1.dem",
+      "old_rounds": 17,
+      "rounds": 17,
+      "event_counts": {
+        "kill": 110,
+        "grenade": 369,
+        "flash": 197,
+        "plant": 11
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396595",
+      "map": "Inferno",
+      "file": "Esports_World_Cup_2026_MOUZ_vs_PARIVISION_2396595_map2.dem",
+      "old_rounds": 23,
+      "rounds": 23,
+      "event_counts": {
+        "kill": 142,
+        "grenade": 575,
+        "flash": 267,
+        "plant": 17
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396607",
+      "map": "Ancient",
+      "file": "Esports_World_Cup_2026_G2_vs_FURIA_2396607_map1.dem",
+      "old_rounds": 16,
+      "rounds": 16,
+      "event_counts": {
+        "kill": 119,
+        "grenade": 379,
+        "flash": 233,
+        "plant": 10
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396607",
+      "map": "Anubis",
+      "file": "Esports_World_Cup_2026_G2_vs_FURIA_2396607_map2.dem",
+      "old_rounds": 16,
+      "rounds": 16,
+      "event_counts": {
+        "kill": 99,
+        "grenade": 347,
+        "flash": 148,
+        "plant": 11
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396607",
+      "map": "Dust2",
+      "file": "Esports_World_Cup_2026_G2_vs_FURIA_2396607_map3.dem",
+      "old_rounds": 17,
+      "rounds": 17,
+      "event_counts": {
+        "kill": 93,
+        "grenade": 399,
+        "flash": 308,
+        "plant": 12
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396608",
+      "map": "Ancient",
+      "file": "Esports_World_Cup_2026_FUT_vs_MOUZ_2396608_map2.dem",
+      "old_rounds": 18,
+      "rounds": 18,
+      "event_counts": {
+        "kill": 126,
+        "grenade": 404,
+        "flash": 249,
+        "plant": 12
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396608",
+      "map": "Dust2",
+      "file": "Esports_World_Cup_2026_FUT_vs_MOUZ_2396608_map1.dem",
+      "old_rounds": 29,
+      "rounds": 29,
+      "event_counts": {
+        "kill": 189,
+        "grenade": 690,
+        "flash": 456,
+        "plant": 15
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396609",
+      "map": "Dust2",
+      "file": "Esports_World_Cup_2026_Legacy_vs_Falcons_2396609_map2.dem",
+      "old_rounds": 23,
+      "rounds": 23,
+      "event_counts": {
+        "kill": 141,
+        "grenade": 555,
+        "flash": 385,
+        "plant": 13
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396609",
+      "map": "Mirage",
+      "file": "Esports_World_Cup_2026_Legacy_vs_Falcons_2396609_map1.dem",
+      "old_rounds": 20,
+      "rounds": 20,
+      "event_counts": {
+        "kill": 127,
+        "grenade": 442,
+        "flash": 210,
+        "plant": 6
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396610",
+      "map": "Anubis",
+      "file": "Esports_World_Cup_2026_Vitality_vs_Spirit_2396610_map1.dem",
+      "old_rounds": 24,
+      "rounds": 24,
+      "event_counts": {
+        "kill": 172,
+        "grenade": 542,
+        "flash": 261,
+        "plant": 19
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396610",
+      "map": "Mirage",
+      "file": "Esports_World_Cup_2026_Vitality_vs_Spirit_2396610_map3.dem",
+      "old_rounds": 16,
+      "rounds": 16,
+      "event_counts": {
+        "kill": 100,
+        "grenade": 337,
+        "flash": 179,
+        "plant": 8
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396610",
+      "map": "Nuke",
+      "file": "Esports_World_Cup_2026_Vitality_vs_Spirit_2396610_map2.dem",
+      "old_rounds": 30,
+      "rounds": 30,
+      "event_counts": {
+        "kill": 205,
+        "grenade": 664,
+        "flash": 249,
+        "plant": 14
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396612",
+      "map": "Ancient",
+      "file": "Esports_World_Cup_2026_Legacy_vs_Spirit_2396612_map2.dem",
+      "old_rounds": 22,
+      "rounds": 22,
+      "event_counts": {
+        "kill": 132,
+        "grenade": 549,
+        "flash": 351,
+        "plant": 13
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396612",
+      "map": "Dust2",
+      "file": "Esports_World_Cup_2026_Legacy_vs_Spirit_2396612_map1.dem",
+      "old_rounds": 20,
+      "rounds": 20,
+      "event_counts": {
+        "kill": 141,
+        "grenade": 453,
+        "flash": 283,
+        "plant": 10
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396613",
+      "map": "Ancient",
+      "file": "Esports_World_Cup_2026_FURIA_vs_Legacy_2396613_map1.dem",
+      "old_rounds": 22,
+      "rounds": 22,
+      "event_counts": {
+        "kill": 156,
+        "grenade": 544,
+        "flash": 354,
+        "plant": 14
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396613",
+      "map": "Dust2",
+      "file": "Esports_World_Cup_2026_FURIA_vs_Legacy_2396613_map3.dem",
+      "old_rounds": 22,
+      "rounds": 22,
+      "event_counts": {
+        "kill": 140,
+        "grenade": 505,
+        "plant": 13,
+        "flash": 396
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396613",
+      "map": "Nuke",
+      "file": "Esports_World_Cup_2026_FURIA_vs_Legacy_2396613_map2.dem",
+      "old_rounds": 22,
+      "rounds": 22,
+      "event_counts": {
+        "kill": 140,
+        "grenade": 477,
+        "flash": 173,
+        "plant": 13
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396614",
+      "map": "Ancient",
+      "file": "Esports_World_Cup_2026_FUT_vs_Spirit_2396614_map3.dem",
+      "old_rounds": 30,
+      "rounds": 30,
+      "event_counts": {
+        "kill": 214,
+        "grenade": 787,
+        "flash": 483,
+        "plant": 19
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396614",
+      "map": "Anubis",
+      "file": "Esports_World_Cup_2026_FUT_vs_Spirit_2396614_map2.dem",
+      "old_rounds": 29,
+      "rounds": 29,
+      "event_counts": {
+        "kill": 202,
+        "grenade": 699,
+        "plant": 17,
+        "flash": 237
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396614",
+      "map": "Cache",
+      "file": "Esports_World_Cup_2026_FUT_vs_Spirit_2396614_map1.dem",
+      "old_rounds": 23,
+      "rounds": 23,
+      "event_counts": {
+        "kill": 154,
+        "grenade": 478,
+        "flash": 229,
+        "plant": 11
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396614",
+      "map": "Nuke",
+      "file": "Esports_World_Cup_2026_FUT_vs_Spirit_2396614_map4.dem",
+      "old_rounds": 18,
+      "rounds": 18,
+      "event_counts": {
+        "kill": 110,
+        "grenade": 378,
+        "flash": 123,
+        "plant": 14
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396926",
+      "map": "Cache",
+      "file": "BLAST_Open_Porto_2026_FURIA_vs_paiN_2396926_map2.dem",
+      "old_rounds": 19,
+      "rounds": 19,
+      "event_counts": {
+        "kill": 124,
+        "grenade": 393,
+        "flash": 219,
+        "plant": 12
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396926",
+      "map": "Mirage",
+      "file": "BLAST_Open_Porto_2026_FURIA_vs_paiN_2396926_map1.dem",
+      "old_rounds": 15,
+      "rounds": 15,
+      "event_counts": {
+        "kill": 103,
+        "grenade": 350,
+        "flash": 181,
+        "plant": 6
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396928",
+      "map": "Cache",
+      "file": "BLAST_Open_Porto_2026_MOUZ_vs_9z_2396928_map1.dem",
+      "old_rounds": 17,
+      "rounds": 17,
+      "event_counts": {
+        "kill": 109,
+        "grenade": 295,
+        "plant": 5,
+        "flash": 109
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396928",
+      "map": "Nuke",
+      "file": "BLAST_Open_Porto_2026_MOUZ_vs_9z_2396928_map2.dem",
+      "old_rounds": 20,
+      "rounds": 20,
+      "event_counts": {
+        "kill": 140,
+        "grenade": 362,
+        "flash": 130,
+        "plant": 11
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396932",
+      "map": "Cache",
+      "file": "BLAST_Open_Porto_2026_G2_vs_Spirit_2396932_map2.dem",
+      "old_rounds": 22,
+      "rounds": 22,
+      "event_counts": {
+        "kill": 128,
+        "grenade": 480,
+        "flash": 209,
+        "plant": 14
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396932",
+      "map": "Dust2",
+      "file": "BLAST_Open_Porto_2026_G2_vs_Spirit_2396932_map1.dem",
+      "old_rounds": 19,
+      "rounds": 19,
+      "event_counts": {
+        "kill": 107,
+        "grenade": 486,
+        "flash": 333,
+        "plant": 13
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396935",
+      "map": "Dust2",
+      "file": "BLAST_Open_Porto_2026_Vitality_vs_9z_2396935_map1.dem",
+      "old_rounds": 15,
+      "rounds": 15,
+      "event_counts": {
+        "kill": 107,
+        "grenade": 329,
+        "flash": 261,
+        "plant": 8
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396935",
+      "map": "Nuke",
+      "file": "BLAST_Open_Porto_2026_Vitality_vs_9z_2396935_map2.dem",
+      "old_rounds": 19,
+      "rounds": 19,
+      "event_counts": {
+        "kill": 123,
+        "grenade": 311,
+        "flash": 114,
+        "plant": 4
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396938",
+      "map": "Ancient",
+      "file": "BLAST_Open_Porto_2026_Legacy_vs_Falcons_2396938_map2.dem",
+      "old_rounds": 23,
+      "rounds": 23,
+      "event_counts": {
+        "kill": 145,
+        "grenade": 567,
+        "flash": 377,
+        "plant": 14
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396938",
+      "map": "Dust2",
+      "file": "BLAST_Open_Porto_2026_Legacy_vs_Falcons_2396938_map3.dem",
+      "old_rounds": 20,
+      "rounds": 19,
+      "event_counts": {
+        "kill": 129,
+        "grenade": 432,
+        "flash": 362,
+        "plant": 10
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396938",
+      "map": "Mirage",
+      "file": "BLAST_Open_Porto_2026_Legacy_vs_Falcons_2396938_map1.dem",
+      "old_rounds": 19,
+      "rounds": 19,
+      "event_counts": {
+        "kill": 125,
+        "grenade": 411,
+        "flash": 196,
+        "plant": 8
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396941",
+      "map": "Dust2",
+      "file": "BLAST_Open_Porto_2026_Vitality_vs_Legacy_2396941_map3.dem",
+      "old_rounds": 22,
+      "rounds": 21,
+      "event_counts": {
+        "kill": 134,
+        "grenade": 491,
+        "flash": 367,
+        "plant": 11
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396941",
+      "map": "Mirage",
+      "file": "BLAST_Open_Porto_2026_Vitality_vs_Legacy_2396941_map2.dem",
+      "old_rounds": 22,
+      "rounds": 22,
+      "event_counts": {
+        "kill": 148,
+        "grenade": 443,
+        "flash": 248,
+        "plant": 9
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396941",
+      "map": "Nuke",
+      "file": "BLAST_Open_Porto_2026_Vitality_vs_Legacy_2396941_map1.dem",
+      "old_rounds": 30,
+      "rounds": 30,
+      "event_counts": {
+        "kill": 193,
+        "grenade": 649,
+        "flash": 234,
+        "plant": 9
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396943",
+      "map": "Ancient",
+      "file": "BLAST_Open_Porto_2026_Spirit_vs_FURIA_2396943_map1.dem",
+      "old_rounds": 23,
+      "rounds": 23,
+      "event_counts": {
+        "kill": 142,
+        "grenade": 576,
+        "flash": 397,
+        "plant": 13
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396943",
+      "map": "Cache",
+      "file": "BLAST_Open_Porto_2026_Spirit_vs_FURIA_2396943_map2.dem",
+      "old_rounds": 18,
+      "rounds": 18,
+      "event_counts": {
+        "kill": 122,
+        "grenade": 343,
+        "flash": 172,
+        "plant": 9
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396945",
+      "map": "Ancient",
+      "file": "BLAST_Open_Porto_2026_MOUZ_vs_Falcons_2396945_map2.dem",
+      "old_rounds": 19,
+      "rounds": 19,
+      "event_counts": {
+        "kill": 116,
+        "grenade": 394,
+        "flash": 210,
+        "plant": 7
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396945",
+      "map": "Inferno",
+      "file": "BLAST_Open_Porto_2026_MOUZ_vs_Falcons_2396945_map3.dem",
+      "old_rounds": 17,
+      "rounds": 16,
+      "event_counts": {
+        "kill": 109,
+        "grenade": 352,
+        "flash": 204,
+        "plant": 8
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396945",
+      "map": "Nuke",
+      "file": "BLAST_Open_Porto_2026_MOUZ_vs_Falcons_2396945_map1.dem",
+      "old_rounds": 19,
+      "rounds": 19,
+      "event_counts": {
+        "kill": 124,
+        "grenade": 368,
+        "flash": 119,
+        "plant": 8
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396946",
+      "map": "Anubis",
+      "file": "BLAST_Open_Porto_2026_FUT_vs_Vitality_2396946_map1.dem",
+      "old_rounds": 20,
+      "rounds": 20,
+      "event_counts": {
+        "kill": 123,
+        "grenade": 405,
+        "flash": 179,
+        "plant": 14
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396946",
+      "map": "Dust2",
+      "file": "BLAST_Open_Porto_2026_FUT_vs_Vitality_2396946_map2.dem",
+      "old_rounds": 21,
+      "rounds": 21,
+      "event_counts": {
+        "kill": 130,
+        "grenade": 392,
+        "flash": 316,
+        "plant": 11
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396947",
+      "map": "Dust2",
+      "file": "BLAST_Open_Porto_2026_Falcons_vs_G2_2396947_map2.dem",
+      "old_rounds": 22,
+      "rounds": 22,
+      "event_counts": {
+        "kill": 146,
+        "grenade": 479,
+        "flash": 337,
+        "plant": 16
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396947",
+      "map": "Inferno",
+      "file": "BLAST_Open_Porto_2026_Falcons_vs_G2_2396947_map1.dem",
+      "old_rounds": 19,
+      "rounds": 19,
+      "event_counts": {
+        "kill": 124,
+        "grenade": 450,
+        "flash": 251,
+        "plant": 4
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396948",
+      "map": "Cache",
+      "file": "BLAST_Open_Porto_2026_FURIA_vs_Vitality_2396948_map2.dem",
+      "old_rounds": 24,
+      "rounds": 24,
+      "event_counts": {
+        "kill": 152,
+        "grenade": 474,
+        "flash": 250,
+        "plant": 11
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396948",
+      "map": "Dust2",
+      "file": "BLAST_Open_Porto_2026_FURIA_vs_Vitality_2396948_map3.dem",
+      "old_rounds": 18,
+      "rounds": 17,
+      "event_counts": {
+        "kill": 110,
+        "grenade": 347,
+        "flash": 245,
+        "plant": 10
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396948",
+      "map": "Nuke",
+      "file": "BLAST_Open_Porto_2026_FURIA_vs_Vitality_2396948_map1.dem",
+      "old_rounds": 19,
+      "rounds": 19,
+      "event_counts": {
+        "kill": 112,
+        "grenade": 393,
+        "flash": 149,
+        "plant": 5
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396949",
+      "map": "Ancient",
+      "file": "BLAST_Open_Porto_2026_Spirit_vs_Falcons_2396949_map2.dem",
+      "old_rounds": 24,
+      "rounds": 24,
+      "event_counts": {
+        "kill": 159,
+        "grenade": 562,
+        "flash": 317,
+        "plant": 14
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    },
+    {
+      "match_id": "2396949",
+      "map": "Nuke",
+      "file": "BLAST_Open_Porto_2026_Spirit_vs_Falcons_2396949_map1.dem",
+      "old_rounds": 21,
+      "rounds": 21,
+      "event_counts": {
+        "kill": 140,
+        "grenade": 442,
+        "flash": 164,
+        "plant": 6
+      },
+      "checks": {
+        "frozen_old_count": true,
+        "expected_live_count": true,
+        "sequential_rounds": true,
+        "complete_rosters": true,
+        "rosters_after_restart": true,
+        "events_after_restart": true
+      },
+      "passed": true
+    }
+  ],
+  "players": [
+    {
+      "player_id": "76561198386265483",
+      "name": "donk",
+      "rounds": 339,
+      "passed": true
+    },
+    {
+      "player_id": "76561198872013168",
+      "name": "tN1R",
+      "rounds": 339,
+      "passed": true
+    },
+    {
+      "player_id": "76561198081484775",
+      "name": "sh1ro",
+      "rounds": 339,
+      "passed": true
+    },
+    {
+      "player_id": "76561198995880877",
+      "name": "zont1x",
+      "rounds": 339,
+      "passed": true
+    },
+    {
+      "player_id": "76561199063238565",
+      "name": "magixx",
+      "rounds": 339,
+      "passed": true
+    },
+    {
+      "player_id": "76561198365118288",
+      "name": "try",
+      "rounds": 285,
+      "passed": true
+    },
+    {
+      "player_id": "76561198194325317",
+      "name": "dumau",
+      "rounds": 285,
+      "passed": true
+    },
+    {
+      "player_id": "76561198850020186",
+      "name": "latto",
+      "rounds": 285,
+      "passed": true
+    },
+    {
+      "player_id": "76561198061763596",
+      "name": "n1ssim",
+      "rounds": 285,
+      "passed": true
+    },
+    {
+      "player_id": "76561198043769572",
+      "name": "arT",
+      "rounds": 285,
+      "passed": true
+    },
+    {
+      "player_id": "76561198113666193",
+      "name": "ZywOo",
+      "rounds": 278,
+      "passed": true
+    },
+    {
+      "player_id": "76561197978835160",
+      "name": "flameZ",
+      "rounds": 278,
+      "passed": true
+    },
+    {
+      "player_id": "76561197991272318",
+      "name": "ropz",
+      "rounds": 278,
+      "passed": true
+    },
+    {
+      "player_id": "76561197989744167",
+      "name": "apEX",
+      "rounds": 278,
+      "passed": true
+    },
+    {
+      "player_id": "76561198200982290",
+      "name": "molodoy",
+      "rounds": 250,
+      "passed": true
+    },
+    {
+      "player_id": "76561198134401925",
+      "name": "YEKINDAR",
+      "rounds": 250,
+      "passed": true
+    },
+    {
+      "player_id": "76561198058500492",
+      "name": "KSCERATO",
+      "rounds": 250,
+      "passed": true
+    },
+    {
+      "player_id": "76561198164970560",
+      "name": "yuurih",
+      "rounds": 250,
+      "passed": true
+    },
+    {
+      "player_id": "76561197960690195",
+      "name": "FalleN",
+      "rounds": 250,
+      "passed": true
+    },
+    {
+      "player_id": "76561198074762801",
+      "name": "m0NESY",
+      "rounds": 244,
+      "passed": true
+    },
+    {
+      "player_id": "76561199032006224",
+      "name": "kyousuke",
+      "rounds": 244,
+      "passed": true
+    },
+    {
+      "player_id": "76561198041683378",
+      "name": "NiKo",
+      "rounds": 244,
+      "passed": true
+    },
+    {
+      "player_id": "76561197996678278",
+      "name": "TeSeS",
+      "rounds": 244,
+      "passed": true
+    },
+    {
+      "player_id": "76561197989430253",
+      "name": "karrigan",
+      "rounds": 244,
+      "passed": true
+    },
+    {
+      "player_id": "76561198176878303",
+      "name": "jL",
+      "rounds": 208,
+      "passed": true
+    },
+    {
+      "player_id": "76561198355739212",
+      "name": "torzsi",
+      "rounds": 178,
+      "passed": true
+    },
+    {
+      "player_id": "76561198998266210",
+      "name": "xelex",
+      "rounds": 178,
+      "passed": true
+    },
+    {
+      "player_id": "76561198063336407",
+      "name": "Spinx",
+      "rounds": 178,
+      "passed": true
+    },
+    {
+      "player_id": "76561198193174134",
+      "name": "xertioN",
+      "rounds": 178,
+      "passed": true
+    },
+    {
+      "player_id": "76561198310561479",
+      "name": "PR",
+      "rounds": 178,
+      "passed": true
+    },
+    {
+      "player_id": "76561198875633179",
+      "name": "dem0n",
+      "rounds": 188,
+      "passed": true
+    },
+    {
+      "player_id": "76561198991278425",
+      "name": "Krabeni",
+      "rounds": 188,
+      "passed": true
+    },
+    {
+      "player_id": "76561199100725838",
+      "name": "dziugss",
+      "rounds": 188,
+      "passed": true
+    },
+    {
+      "player_id": "76561198178209109",
+      "name": "xfl0ud",
+      "rounds": 188,
+      "passed": true
+    },
+    {
+      "player_id": "76561199313968259",
+      "name": "cmtry",
+      "rounds": 188,
+      "passed": true
+    },
+    {
+      "player_id": "76561199046478501",
+      "name": "MATYS",
+      "rounds": 131,
+      "passed": true
+    },
+    {
+      "player_id": "76561198053126645",
+      "name": "NertZ",
+      "rounds": 131,
+      "passed": true
+    },
+    {
+      "player_id": "76561198294381090",
+      "name": "r1nkle",
+      "rounds": 131,
+      "passed": true
+    },
+    {
+      "player_id": "76561198068002993",
+      "name": "HeavyGod",
+      "rounds": 131,
+      "passed": true
+    },
+    {
+      "player_id": "76561198012872053",
+      "name": "huNter-",
+      "rounds": 131,
+      "passed": true
+    },
+    {
+      "player_id": "76561198216891576",
+      "name": "dgt",
+      "rounds": 71,
+      "passed": true
+    },
+    {
+      "player_id": "76561198067722198",
+      "name": "luchov",
+      "rounds": 71,
+      "passed": true
+    },
+    {
+      "player_id": "76561198319723208",
+      "name": "HUASOPEEK",
+      "rounds": 71,
+      "passed": true
+    },
+    {
+      "player_id": "76561198195642865",
+      "name": "meyern",
+      "rounds": 71,
+      "passed": true
+    },
+    {
+      "player_id": "76561198242950384",
+      "name": "max",
+      "rounds": 71,
+      "passed": true
+    },
+    {
+      "player_id": "76561197973140692",
+      "name": "mezii",
+      "rounds": 70,
+      "passed": true
+    },
+    {
+      "player_id": "76561198036125584",
+      "name": "Jame",
+      "rounds": 40,
+      "passed": true
+    },
+    {
+      "player_id": "76561197995817501",
+      "name": "FL1T",
+      "rounds": 40,
+      "passed": true
+    },
+    {
+      "player_id": "76561198210626739",
+      "name": "zweih",
+      "rounds": 40,
+      "passed": true
+    },
+    {
+      "player_id": "76561198356252021",
+      "name": "slaxejezzz",
+      "rounds": 40,
+      "passed": true
+    },
+    {
+      "player_id": "76561198141272052",
+      "name": "xiELO",
+      "rounds": 40,
+      "passed": true
+    },
+    {
+      "player_id": "76561198396338183",
+      "name": "piriajr",
+      "rounds": 34,
+      "passed": true
+    },
+    {
+      "player_id": "76561198377335846",
+      "name": "snow",
+      "rounds": 34,
+      "passed": true
+    },
+    {
+      "player_id": "76561197985565685",
+      "name": "saffee",
+      "rounds": 34,
+      "passed": true
+    },
+    {
+      "player_id": "76561198015308884",
+      "name": "biguzera",
+      "rounds": 34,
+      "passed": true
+    },
+    {
+      "player_id": "76561198011732823",
+      "name": "V$M",
+      "rounds": 34,
+      "passed": true
+    }
+  ],
+  "dangling_edges": 0,
+  "event_path_errors": 0,
+  "integrity": "ok",
+  "passed": true,
+  "limitations": [
+    "AI-assisted engineering audit; the frozen boundary evidence is not human/video gold.",
+    "Old round IDs in affected maps require the old database snapshot; do not mix benchmark versions."
+  ]
+}

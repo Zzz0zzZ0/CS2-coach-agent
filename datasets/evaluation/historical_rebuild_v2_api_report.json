@@ -1,0 +1,15 @@
+{
+  "endpoint": "localhost:8001",
+  "stats": {
+    "available": true,
+    "nodes": 48600,
+    "edges": 144098,
+    "matches": 20,
+    "tactical_sequences": 5308,
+    "communities": 28
+  },
+  "players": 56,
+  "participant_rounds": 10190,
+  "player_denominators_match_candidate": true,
+  "passed": true
+}

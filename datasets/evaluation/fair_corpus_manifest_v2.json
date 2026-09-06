@@ -1,0 +1,42 @@
+{
+  "version": "fair-corpus-v2",
+  "created_at": "2026-09-06T18:17:22.505634+00:00",
+  "corpus_path": "data/evaluation/fair_v2/corpus.jsonl",
+  "corpus_sha256": "e244773cb57984ae7fef101a803b9e8e868ccb2989a91c74c0842cee375e9a76",
+  "queries_sha256": "5b88deea2c796e92c1f02317ef24a8b1c9524e0004a70674d93071d2da4c81b0",
+  "source_graph_sha256": "28357be25a52d27b80e87a03ffcb2a545132c97d42632138ff60c47d67fc8c2d",
+  "rounds": 1019,
+  "matches": [
+    "2396595",
+    "2396607",
+    "2396608",
+    "2396609",
+    "2396610",
+    "2396612",
+    "2396613",
+    "2396614",
+    "2396926",
+    "2396928",
+    "2396932",
+    "2396935",
+    "2396938",
+    "2396941",
+    "2396943",
+    "2396945",
+    "2396946",
+    "2396947",
+    "2396948",
+    "2396949"
+  ],
+  "source_files_sha256": {
+    "app/services/parser_service.py": "e404343066323d9eb22fa8c0edfa747def543872beb54cfc5a6a676c2345280f",
+    "app/services/graph_rag_service.py": "97b4078be06a4168d44ad6131c64eb23032e8bd68f9f4a502fa9efd9eb2218e6",
+    "scripts/evaluate_fair_retrieval.py": "941802a4cf3f3a2e9c340ae724dddd92d6bf8dcbb4645f1424a5539ebf432056",
+    "scripts/audit_fair_labels.py": "e2d806b6336446125d6a81bcaa415e8bf2fad4680a325b9cbc937c1d1c5951bf",
+    "requirements-lock.txt": "0528f567555e79611a5014202b4de92185ad1f485bde4976f5ebeb3760c7baeb"
+  },
+  "label_status": "ai_assisted_source_audit",
+  "judgments_frozen_before_first_run": true,
+  "scope": "Corrected existing 20-series development corpus; queries and criteria were already observed. Not blind or unseen evaluation.",
+  "supersedes": "datasets/evaluation/fair_corpus_manifest_v1.json"
+}

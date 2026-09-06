@@ -1,0 +1,11 @@
+{
+  "version": "historical-derived-consistency-v2",
+  "graph_sha256": "28357be25a52d27b80e87a03ffcb2a545132c97d42632138ff60c47d67fc8c2d",
+  "silver_sha256": "daa159dcfc794fbccccbdaf260fe337947d94bfb8699f217a3854b36b1283a06",
+  "rounds": 1019,
+  "labels": 5308,
+  "silver_matches_graph_labels": true,
+  "communities": 28,
+  "community_reference_errors": [],
+  "passed": true
+}

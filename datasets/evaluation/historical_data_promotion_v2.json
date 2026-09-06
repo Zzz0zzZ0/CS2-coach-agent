@@ -1,0 +1,23 @@
+{
+  "version": "historical-data-promotion-v2",
+  "created_at": "2026-09-06T18:20:20.451151+00:00",
+  "graph_path": "data/graph/cs2_graph.sqlite",
+  "graph_before_path": "data/evaluation/historical_rebuild_v2/graph_before.sqlite",
+  "graph_before_sha256": "6128fa1036a19ad661a9277a338b65fe662c149d3e5c85a2f75ff1d2325b0aab",
+  "graph_after_sha256": "28357be25a52d27b80e87a03ffcb2a545132c97d42632138ff60c47d67fc8c2d",
+  "milvus_live_collection": "cs2_tactical_knowledge",
+  "milvus_backup_collection": "cs2_tactical_knowledge_before_rebuild_v2",
+  "milvus_before_count": 1121,
+  "milvus_after_count": 1117,
+  "milvus_before_documents_sha256": "7f182ea43d79365e4eadbee3c90b7dde41780ab82dc296081aa09c32bd4c7584",
+  "milvus_after_documents_sha256": "ac35df4f77e9c6356f89d6762210ed4b80b84054d6e12592b6173a17f8f4ef3c",
+  "validation_reports_sha256": {
+    "datasets/evaluation/historical_rebuild_v2_report.json": "a77fbd4984c7cae570fdd258dbd171ef96c03813a4dc1dfcc0abba2247272010",
+    "datasets/evaluation/vector_rebuild_v2_report.json": "314c4ec1f4cc0c1d3f80fd101553a2b3539befa03e9839568ccec1a8ff6f9973",
+    "datasets/evaluation/player_behavior_v2_audit.json": "da3fb1e4900099286a40c0880657fc2eb560539cf7110a34a69bf71f7737f1d4"
+  },
+  "backup_retained": true,
+  "remote_model_calls": 0,
+  "passed": true,
+  "cutover": "Validated candidate; live Milvus renamed to retained backup, candidate renamed to live, SQLite replaced atomically. These two stores have no shared transaction; a brief transition window is possible."
+}

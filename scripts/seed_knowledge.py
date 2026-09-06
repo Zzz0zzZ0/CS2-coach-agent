@@ -234,25 +234,27 @@ def _build_documents(demo_dir: Path) -> list[Document]:
     return documents
 
 
-def seed_milvus_db(documents: list[Document], *, append: bool = False) -> None:
+def seed_milvus_db(documents: list[Document], *, append: bool = False, collection_name: str = COLLECTION_NAME) -> None:
     milvus_uri = os.getenv("MILVUS_URI", "http://localhost:19530")
     milvus_token = os.getenv("MILVUS_TOKEN", "")
-    embeddings = get_embeddings()
     print(
         f"=== [职业 Demo 战术知识库初始化] Milvus @ {milvus_uri} | "
         f"documents={len(documents)} | replace={not append} ==="
     )
     client = MilvusClient(uri=milvus_uri, token=milvus_token)
-    if append and client.has_collection(COLLECTION_NAME):
-        fields = client.describe_collection(COLLECTION_NAME).get("fields", [])
+    if collection_name != COLLECTION_NAME and client.has_collection(collection_name):
+        raise ValueError("Staging collection already exists; choose a fresh name")
+    embeddings = get_embeddings()
+    if append and client.has_collection(collection_name):
+        fields = client.describe_collection(collection_name).get("fields", [])
         field_names = {field.get("name") for field in fields}
         if "sparse" not in field_names:
             raise RuntimeError("现有集合不支持 BM25，请先用默认的 make seed 重建，不能对旧 dense 集合 append。")
-    elif client.has_collection(COLLECTION_NAME):
-        client.drop_collection(COLLECTION_NAME)
+    elif client.has_collection(collection_name):
+        client.drop_collection(collection_name)
 
     vectors = embeddings.embed_documents([document.page_content for document in documents])
-    if not append or not client.has_collection(COLLECTION_NAME):
+    if not append or not client.has_collection(collection_name):
         schema = client.create_schema(auto_id=True, enable_dynamic_field=False)
         schema.add_field(field_name="pk", datatype=DataType.INT64, is_primary=True, auto_id=True)
         schema.add_field(field_name="map", datatype=DataType.VARCHAR, max_length=65535)
@@ -289,7 +291,7 @@ def seed_milvus_db(documents: list[Document], *, append: bool = False) -> None:
             params={"inverted_index_algo": "DAAT_MAXSCORE", "bm25_k1": 1.2, "bm25_b": 0.75},
         )
         client.create_collection(
-            collection_name=COLLECTION_NAME,
+            collection_name=collection_name,
             schema=schema,
             index_params=index_params,
         )
@@ -303,10 +305,10 @@ def seed_milvus_db(documents: list[Document], *, append: bool = False) -> None:
                 "vector": vector,
             }
         )
-    client.insert(COLLECTION_NAME, rows)
-    client.flush(COLLECTION_NAME)
-    client.load_collection(COLLECTION_NAME)
-    print(f"✅ 已写入 {len(documents)} 条结构化 Demo 证据到 '{COLLECTION_NAME}'。")
+    client.insert(collection_name, rows)
+    client.flush(collection_name)
+    client.load_collection(collection_name)
+    print(f"✅ 已写入 {len(documents)} 条结构化 Demo 证据到 '{collection_name}'。")
 
 
 def main() -> None:
@@ -314,6 +316,7 @@ def main() -> None:
     parser.add_argument("--demo-dir", type=Path, default=Path(settings.DEMO_DOWNLOAD_DIR))
     parser.add_argument("--dry-run", action="store_true", help="parse and count documents without writing Milvus")
     parser.add_argument("--append", action="store_true", help="append instead of replacing the collection")
+    parser.add_argument("--collection-name", default=COLLECTION_NAME, help="A non-default name must be new; build a staging collection without changing live data")
     args = parser.parse_args()
 
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
@@ -322,7 +325,7 @@ def main() -> None:
     print(f"发现 {len(documents)} 条文档: {dict(counts)}")
     if args.dry_run:
         return
-    seed_milvus_db(documents, append=args.append)
+    seed_milvus_db(documents, append=args.append, collection_name=args.collection_name)
 
 
 if __name__ == "__main__":

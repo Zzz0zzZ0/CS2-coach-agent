@@ -74,10 +74,11 @@ This dataset contains AI-assisted silver labels generated from deterministic dem
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build CS2 silver tactical annotations")
     parser.add_argument("--demo-dir", type=Path, default=PROJECT_ROOT / "data" / "demos")
-    parser.add_argument("--output-dir", type=Path, default=PROJECT_ROOT / "datasets" / "silver" / "v0.2")
+    parser.add_argument("--output-dir", type=Path, default=PROJECT_ROOT / "datasets" / "silver" / "v0.3")
     parser.add_argument("--tick-rate", type=int, default=64)
     args = parser.parse_args()
 
+    args.output_dir.mkdir(parents=True, exist_ok=False)
     records = []
     for demo_path in sorted(args.demo_dir.glob("*.dem")):
         parsed = TacticalDemoParser(str(demo_path)).parse_to_dict()
@@ -96,7 +97,6 @@ def main() -> None:
     if not records:
         raise SystemExit(f"No parsed rounds found in {args.demo_dir}")
     report = summarize_annotations(records)
-    args.output_dir.mkdir(parents=True, exist_ok=True)
     (args.output_dir / "round_annotations.jsonl").write_text(
         "".join(json.dumps(record, ensure_ascii=False) + "\n" for record in records),
         encoding="utf-8",

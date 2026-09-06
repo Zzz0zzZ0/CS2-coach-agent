@@ -1,0 +1,19 @@
+{
+  "version": "vector-rebuild-v2",
+  "collection": "cs2_tactical_knowledge_rebuild_v2",
+  "graph_sha256": "28357be25a52d27b80e87a03ffcb2a545132c97d42632138ff60c47d67fc8c2d",
+  "documents_sha256": "a2abee62e0f726d47a70c6147cec80130316221965a71d134412dffbdda5b58a",
+  "audit_source_sha256": "5b6fe9ed7075ca155f95025a558fe301574849c9d94b230f9f649badb29dc51a",
+  "content_sha256": "ac35df4f77e9c6356f89d6762210ed4b80b84054d6e12592b6173a17f8f4ef3c",
+  "count": 1117,
+  "types": {
+    "Professional Match Summary": 49,
+    "Opening Duel Evidence": 49,
+    "Round Event Evidence": 1019
+  },
+  "exact_document_match": true,
+  "graph_round_keys_match": true,
+  "graph_round_content_errors": [],
+  "remote_model_calls": 0,
+  "passed": true
+}

@@ -1,5 +1,7 @@
 # 两场新增比赛：首次失败、修复与回归
 
+更新（2026-09-07）：历史图谱与 Milvus 已重建并切换至 1,019 个正式回合，语料和 AI 标签重新冻结，见 [v2 验收](HISTORICAL_DATA_REBUILD_V2.md)。下文原始数字和结果按其运行时版本保留；旧引用与旧实验必须配套旧数据库快照。
+
 2026-09-07，AI 辅助审核。新增此前未入历史库的 G2–Aurora（2396944）与 G2–Natus Vincere（2396940），共 5 张地图。选择、日期窗口扩展及下载前冻结见 [AI 审核记录](AI_BENCHMARK_REVIEW.md)。仅下载这两个完整系列，未建立定时任务。
 
 ## 实际结果
@@ -46,6 +48,7 @@ Demo 使用 `NaVi`，HLTV 使用 `Natus Vincere`。仅在公开比分比较中�
 .venv/bin/python -m scripts.evaluate_unseen_match \
   --selection datasets/selections/unseen_small_v3_postfix_regression.json \
   --demo-dir data/evaluation/unseen_small_v3/demos \
+  --graph-db data/evaluation/historical_rebuild_v2/graph_before.sqlite \
   --output data/evaluation/unseen_small_v3/reproduction/report.json
 ```
 

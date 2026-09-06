@@ -14,13 +14,15 @@
 
 </div>
 
+The historical data rebuild is live: 20 series, 49 maps and 1,019 regulation/overtime rounds, with four pre-match knife rounds removed. Graph and Milvus evidence, all 56 player profiles and 5,308 silver labels agree; 152 offline tests pass. Old snapshots remain available for rollback. The corrected 16-query retrieval experiment uses AI-assisted development labels, not independent human gold or unseen generalization evidence. See [rebuild and refreeze](docs/HISTORICAL_DATA_REBUILD_V2.md).
+
 The evaluation tools now include 160 unscored same-corpus retrieval runs and a complete unseen-series pipeline pilot (2 maps, 44 rounds, all checks passed). The offline suite has 140 passing tests. Independent relevance labels and broader research validation remain pending. See [retrieval experiment](docs/FAIR_RETRIEVAL_RUN.md) and [unseen-series pilot](docs/UNSEEN_MATCH_PILOT.md).
 
 A Coach priority-selection pilot has completed on 6 development maps from 5 series: 6 calls to the fixed `qwen3.8-flash` model, with 4,939 provider-reported tokens for this run. The anonymous review packet and blank rating forms are ready; quality gains remain unscored until at least two independent human reviewers complete their ratings. See the [blind-review protocol and run record](docs/COACH_BLIND_EVALUATION.md).
 
 The shared model entry point now uses a persistent SQLite allowance across local processes, with defaults of 30,000 tokens and 100 attempts from ledger creation. Timeouts, provider rejections and missing usage stop subsequent calls while rule-based analysis remains available. The UI shows local accounting; provider free-quota balance remains unknown. See [budget and failure boundaries](docs/MODEL_BUDGET_BOUNDARIES.md).
 
-The preceding player-profile milestone added roster-based denominators and an offline test environment: complete rosters for 1,023 valid rounds across 49 maps, 87 passing offline tests, and a clean frontend build. Remote CI now passes: [run record](https://github.com/Zzz0zzZ0/CS2-coach-agent/actions/runs/34031162026). See [implementation status](docs/IMPLEMENTATION_PROGRESS.md), [player data contract](docs/PLAYER_PROFILE_DATA_CONTRACT.md), and [offline reproduction](docs/OFFLINE_VALIDATION.md).
+The preceding player-profile milestone added roster-based denominators and an offline test environment: complete rosters for 1,023 recorded rounds (four pre-match knife rounds have since been removed) across 49 maps, 87 passing offline tests, and a clean frontend build. Remote CI now passes: [run record](https://github.com/Zzz0zzZ0/CS2-coach-agent/actions/runs/34031162026). See [implementation status](docs/IMPLEMENTATION_PROGRESS.md), [player data contract](docs/PLAYER_PROFILE_DATA_CONTRACT.md), and [offline reproduction](docs/OFFLINE_VALIDATION.md).
 
 ---
 
@@ -453,7 +455,7 @@ make silver-dataset # build evidence-linked tactical silver annotations
 
 Community summaries are currently deterministic and extractive: they summarize parsed facts, preserve round-level sources, and do not promote small-sample observations into universal professional tactics.
 
-`make silver-dataset` writes round-level research data to `datasets/silver/v0.2/`. v0.2 uses the fixed 20-match selection in `datasets/selections/five_teams_recent_20_v1.json`, covering 49 maps, 1,030 rounds, and 5,325 tactical silver labels; v0.1 remains as the original single-match baseline. Opening duels and post-plant phases come directly from event facts; trade kills, Utility Bursts, and Retake Contacts use explicit temporal rules. A weakly supervised Execute Candidate is added only when a T-side utility sequence is followed by a plant. Every label retains its rule version, confidence, review status, and evidence event IDs. The result is explicitly a reproducible silver-label dataset, not expert-annotated gold data.
+`make silver-dataset` defaults to `datasets/silver/v0.3/` and refuses existing directories; use `ARGS="--output-dir NEW_DIRECTORY"` to reproduce. v0.3 retains the fixed 20-match selection in `datasets/selections/five_teams_recent_20_v1.json`, with 49 maps, 1,019 live rounds and 5,308 tactical silver labels after parser corrections. v0.1 and v0.2 remain historical snapshots. Opening duels and post-plant phases come directly from event facts; trade kills, Utility Bursts, and Retake Contacts use explicit temporal rules. A weakly supervised Execute Candidate is added only when a T-side utility sequence is followed by a plant. Every label retains its rule version, confidence, review status, and evidence event IDs. The result is explicitly a reproducible silver-label dataset, not expert-annotated gold data.
 
 ### Unified GraphRAG Evaluation
 
