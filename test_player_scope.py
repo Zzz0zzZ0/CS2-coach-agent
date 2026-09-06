@@ -153,3 +153,100 @@ def test_comparison_team_mentions_are_not_implicit_opponents(player_graph, monke
 def test_unknown_comparison_opponent_never_broadens_to_all_matches(player_graph):
     assert not player_graph._player_query_evidence('比较 entry 和 sub 对阵 NonexistentTeam', None)
     assert player_graph._player_query_evidence('Compare entry vs sub', None)
+
+
+def test_behavior_outcomes_use_player_team_and_exclude_unknown_results(player_graph):
+    with sqlite3.connect(player_graph.db_path) as db:
+        db.execute("UPDATE nodes SET properties=json_set(properties, '$.winner', 'CT') WHERE node_type='round' AND match_id='m2' AND round_number=1")
+        db.execute("UPDATE nodes SET properties=json_set(properties, '$.winner', NULL) WHERE node_type='round' AND match_id='m2' AND round_number=2")
+    entry = player_graph.player_context('111')['behavior_outcomes']
+    assert {k: entry['baseline'][k] for k in ('rounds', 'wins', 'losses', 'unknown', 'decided_rounds', 'round_win_pct')} == {
+        'rounds': 3, 'wins': 1, 'losses': 1, 'unknown': 1, 'decided_rounds': 2, 'round_win_pct': 50,
+    }
+    opening = entry['groups'][0]
+    assert opening['observed']['rounds'] == 3
+    assert opening['not_observed']['round_win_pct'] is None
+    assert opening['win_rate_difference_pp'] is None
+    assert {x['outcome'] for x in opening['observed']['examples']} == {'won', 'lost', 'unknown'}
+    assert {x['team'] for x in opening['observed']['examples']} == {'Alpha', 'Beta'}
+    defender = player_graph.player_context('222')['behavior_outcomes']
+    assert [defender['baseline'][key] for key in ('wins', 'losses', 'unknown')] == [1, 2, 1]
+    assert defender['groups'][1]['observed']['rounds'] == 4
+    assert player_graph.player_context('111', opponent='Bravo')['behavior_outcomes']['baseline']['rounds'] == 1
+
+
+def test_behavior_deduplicates_events_and_uses_disjoint_complement(player_graph):
+    import json
+    with sqlite3.connect(player_graph.db_path) as db:
+        for kind, relation in [('grenade', 'THROWER'), ('flash', 'FLASHER'), ('plant', 'PLANTER')]:
+            for index in (1, 2):
+                node_id = f'test:{kind}:{index}'
+                db.execute('INSERT INTO nodes (node_id,node_type,match_id,map_name,round_number,label,properties) VALUES (?,?,?,?,?,?,?)',
+                           (node_id, 'event', 'm1', 'Mirage', 1, kind, json.dumps({'kind':kind})))
+                db.execute('INSERT INTO edges (source_id,target_id,relation,properties) VALUES (?,?,?,?)',
+                           (node_id, 'player:111', relation, '{}'))
+    profile = player_graph.player_context('111')
+    assert profile['utility']['thrown'] == 2
+    for group in profile['behavior_outcomes']['groups'][3:]:
+        assert group['observed']['rounds'] == 1
+        assert group['not_observed']['rounds'] == 2
+        assert group['win_rate_difference_pp'] == 0
+        observed = {row['source_id'] for row in group['observed']['examples']}
+        other = {row['source_id'] for row in group['not_observed']['examples']}
+        assert observed == {'graph:m1:Mirage:1'}
+        assert not observed & other
+        assert all(player_graph.round_detail(source) for source in observed | other)
+
+
+def test_behavior_empty_and_unknown_only_scopes_never_report_zero_win_rate(player_graph):
+    empty = player_graph.player_context('111', side='CT')['behavior_outcomes']
+    assert empty['baseline']['rounds'] == 0
+    assert empty['baseline']['round_win_pct'] is None
+    assert all(group['observed']['round_win_pct'] is None and group['not_observed']['round_win_pct'] is None
+               for group in empty['groups'])
+    with sqlite3.connect(player_graph.db_path) as db:
+        db.execute("UPDATE nodes SET properties=json_set(properties, '$.winner', NULL) WHERE node_type='round'")
+    unknown = player_graph.player_context('111')['behavior_outcomes']
+    assert unknown['baseline']['unknown'] == 3
+    assert unknown['baseline']['decided_rounds'] == 0
+    assert unknown['baseline']['round_win_pct'] is None
+
+
+def test_behavior_counts_are_not_limited_by_evidence_examples(tmp_path):
+    graph = GraphRAGClient(tmp_path / 'many-rounds.sqlite')
+    rounds = [{'round_number':i, 'winner':'T' if i <= 13 else 'CT', 'participants_complete':True,
+               'participants':[{'steamid':'111','name':'entry','team':'Alpha','side':'T'},
+                               {'steamid':'222','name':'defender','team':'Bravo','side':'CT'}],
+               'kills':[{'tick':i*100,'killer':'entry','killer_steamid':'111','killer_team':'Alpha','killer_side':'T',
+                         'victim':'defender','victim_steamid':'222','victim_team':'Bravo','victim_side':'CT','is_first_kill':True}]}
+              for i in range(1, 16)]
+    with sqlite3.connect(graph.db_path) as db:
+        graph._create_schema(db)
+        nodes, edges = graph._graph_rows(Path('m.dem'), {'match_id':'m','map_name':'Mirage','rounds':rounds})
+        db.executemany('INSERT INTO nodes VALUES (?,?,?,?,?,?,?)', nodes)
+        db.executemany('INSERT INTO edges VALUES (?,?,?,?)', edges)
+    profile = graph.player_context('111')
+    opening = profile['behavior_outcomes']['groups'][0]['observed']
+    assert opening['rounds'] == 15
+    assert opening['round_win_pct'] == 86.67
+    assert len(profile['source_round_ids']) == 12
+    assert len(opening['examples']) == 5  # three wins and both losses, not just early winning rounds
+    assert {x['outcome'] for x in opening['examples']} == {'won', 'lost'}
+
+
+def test_trade_outcomes_count_only_the_trader_and_deduplicate_labels(player_graph):
+    import json
+    with sqlite3.connect(player_graph.db_path) as db:
+        for index, trader, traded in [(1, '111', '333'), (2, '111', '333'), (3, '333', '111')]:
+            node_id = f'test:trade:{index}'
+            props = {'label_type':'TRADE_KILL', 'details':{'trader_steamid':trader, 'traded_player_steamid':traded}}
+            db.execute('INSERT INTO nodes (node_id,node_type,match_id,map_name,round_number,label,properties) VALUES (?,?,?,?,?,?,?)',
+                       (node_id, 'tactical_sequence', 'm1', 'Mirage', 1, 'TRADE_KILL', json.dumps(props)))
+            db.execute('INSERT INTO edges (source_id,target_id,relation,properties) VALUES (?,?,?,?)',
+                       (node_id, 'player:111', 'INVOLVES_PLAYER', '{}'))
+    result = player_graph.player_context('111')
+    assert result['combat']['trade_kills'] == 2
+    assert result['combat']['traded_deaths'] == 1
+    trade = next(group for group in result['behavior_outcomes']['groups'] if group['key'] == 'trade_kills')
+    assert trade['observed']['rounds'] == 1
+    assert trade['not_observed']['rounds'] == 2

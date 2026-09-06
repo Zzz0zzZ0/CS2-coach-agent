@@ -1,4 +1,4 @@
-# 选手画像数据口径 v3
+# 选手画像数据口径 v4
 
 ## 参赛分母
 
@@ -56,3 +56,7 @@
 - 浏览器核验 NiKo / donk 跨队对比、组成展开以及对手筛选下的无样本说明；新请求会清除旧对比，失败展示错误。
 
 报告：[样本审计](../datasets/evaluation/player_comparison_v2_sample_audit.json)、[查询回归](../datasets/evaluation/player_comparison_v2_query_report.json)。当前未实现日期校正、共同条件重加权、按比赛聚类的置信区间或能力排序。
+
+## 个体行为与结果
+
+画像新增 `behavior_outcomes`，包含基线和六种行为的互斥观测 / 未观测分组、胜负、未知结果、可下钻引用及描述性胜率差。详见 [行为与结果数据口径](PLAYER_BEHAVIOR_OUTCOMES.md)。原有每百回合事件次数指标保持原意；行为分组按唯一参赛回合计数。

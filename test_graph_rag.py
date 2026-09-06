@@ -538,6 +538,7 @@ def test_cross_match_player_profiles_and_team_comparison(tmp_path, monkeypatch):
     response = http.get("/api/graph/players/compare?players=111,333&map_name=Mirage&side=T")
     assert response.status_code == 200
     assert len(response.json()["players"]) == 2
+    assert len(response.json()["players"][0]["behavior_outcomes"]["groups"]) == 6
     assert http.get("/api/graph/players/compare?players=111").status_code == 422
     assert http.get("/api/graph/players/compare?players=111,111").status_code == 422
     assert http.get("/api/graph/players/compare?players=111,entry").status_code == 422

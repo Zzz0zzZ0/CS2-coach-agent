@@ -590,10 +590,12 @@ class GraphRAGClient:
                     source_groups["utility"].add(source)
                 elif kind == "flash" and relation == "FLASHER":
                     utility["flash_blinds"] += 1
+                    source_groups["flash_blinds"].add(source)
                 elif kind == "flash" and relation == "BLINDED":
                     utility["times_blinded"] += 1
                 elif kind == "plant" and relation == "PLANTER":
                     utility["plants"] += 1
+                    source_groups["plants"].add(source)
 
             for row in tactic_rows:
                 key = (str(row["match_id"]), row["map_name"], str(row["round_number"]))
@@ -630,15 +632,39 @@ class GraphRAGClient:
                 "plants": utility["plants"],
             }
 
+            def round_sample(key: tuple[str, str, str]) -> dict:
+                match_id, sample_map, number = key
+                context = contexts[key]
+                outcome = "won" if context["winner"] == context["player_side"] else "lost" if context["winner"] else "unknown"
+                return {"source_id": f"graph:{match_id}:{sample_map}:{number}", "match_id": match_id,
+                        "map": sample_map, "round_number": int(number), "team": context["player_team"], "outcome": outcome}
+
+            participation = {sample["source_id"]: sample for sample in map(round_sample, selected_rounds)}
+
             def samples(name: str) -> list[dict]:
-                result = []
-                for source in sorted(source_groups[name])[:12]:
-                    _, match_id, sample_map, number = source.split(":")
-                    context = contexts[(match_id, sample_map, number)]
-                    round_side = context["player_side"]
-                    outcome = "won" if context["winner"] == round_side else "lost" if context["winner"] else "unknown"
-                    result.append({"source_id": source, "match_id": match_id, "map": sample_map, "round_number": int(number), "team": context["player_team"], "outcome": outcome})
-                return result
+                return [participation[source] for source in sorted(source_groups[name])[:12]]
+
+            def outcome_bucket(sources: set[str]) -> dict:
+                by_outcome = {outcome: [participation[source] for source in sorted(sources)
+                                        if participation[source]["outcome"] == outcome]
+                              for outcome in ("won", "lost", "unknown")}
+                wins, losses, unknown = (len(by_outcome[key]) for key in ("won", "lost", "unknown"))
+                return {"rounds": len(sources), "decided_rounds": wins + losses,
+                        "wins": wins, "losses": losses, "unknown": unknown,
+                        "round_win_pct": _pct(wins, wins + losses),
+                        "examples": [sample for rows in by_outcome.values() for sample in rows[:3]]}
+
+            all_sources = set(participation)
+            behavior_groups = []
+            for name, label in (("opening_kills", "取得首杀"), ("opening_deaths", "成为首死"),
+                                ("trade_kills", "完成补枪"), ("utility", "投掷道具"),
+                                ("flash_blinds", "致盲记录"), ("plants", "完成下包")):
+                observed = outcome_bucket(source_groups[name])
+                not_observed = outcome_bucket(all_sources - source_groups[name])
+                rates = (observed["round_win_pct"], not_observed["round_win_pct"])
+                behavior_groups.append({"key": name, "label": label, "observed": observed,
+                                        "not_observed": not_observed,
+                                        "win_rate_difference_pp": round(rates[0] - rates[1], 2) if all(rate is not None for rate in rates) else None})
 
             available_maps = sorted({key[1] for key in available_rounds})
             available_opponents = sorted({
@@ -665,6 +691,11 @@ class GraphRAGClient:
                 "available_filters": {"maps": available_maps, "sides": ["T", "CT"], "opponents": available_opponents},
                 "sample_size": {"matches": len({key[0] for key in selected_rounds}), "maps": len({key[:2] for key in selected_rounds}), "rounds": rounds},
                 "combat": combat_result,
+                "behavior_outcomes": {
+                    "baseline": outcome_bucket(all_sources), "groups": behavior_groups,
+                    "methodology": "player-behavior-round-outcomes-v1",
+                    "caveat": "按参赛回合去重；胜率只使用结果已知的回合。未观测到不等于未发生；各组可重叠，样本未匹配经济、角色或地图组成，差异不代表因果或显著性。致盲记录可能包含队友、自闪与多闪归因歧义。",
+                },
                 "utility": {key: utility[key] for key in ("thrown", "flash_blinds", "times_blinded", "plants")},
                 "tactical_participation": {label: tactics[label] for label in TACTICAL_LABELS},
                 "rates_per_100_rounds": {key: round(100 * value / rounds, 2) if rounds else None for key, value in rate_inputs.items()},
@@ -676,7 +707,7 @@ class GraphRAGClient:
                     )
                 ],
                 "source_round_ids": sorted(set().union(*source_groups.values()))[:12] if source_groups else [],
-                "methodology": {"version": "graph-player-context-v3", "rounds": "freeze-end rosters; legacy estimates explicitly marked", "scope": "parsed events and deterministic silver labels"},
+                "methodology": {"version": "graph-player-context-v4", "rounds": "freeze-end rosters; legacy estimates explicitly marked", "scope": "parsed events and deterministic silver labels"},
             }
         finally:
             connection.close()

@@ -1,0 +1,1880 @@
+{
+  "created_at": "2026-09-06T15:19:13.844198+00:00",
+  "scope": "Audit descriptive player behavior buckets against stored event edges and rosters.\n\nRead-only historical engineering checks; not independent silver-label validation.\nNo model calls. Existing output files are never overwritten.",
+  "graph_sha256": "6128fa1036a19ad661a9277a338b65fe662c149d3e5c85a2f75ff1d2325b0aab",
+  "graph_unchanged": true,
+  "implementation_sha256": "574fc07db80f5b26ae84071f1d4cfaa01f5bd83bfddd4ce3ec894664a23396f6",
+  "players": 56,
+  "passed": 56,
+  "checks": [
+    {
+      "player": "donk",
+      "rounds": 339,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "tN1R",
+      "rounds": 339,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "sh1ro",
+      "rounds": 339,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "zont1x",
+      "rounds": 339,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "magixx",
+      "rounds": 339,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "try",
+      "rounds": 287,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "dumau",
+      "rounds": 287,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "latto",
+      "rounds": 287,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "n1ssim",
+      "rounds": 287,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "arT",
+      "rounds": 287,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "ZywOo",
+      "rounds": 280,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "flameZ",
+      "rounds": 280,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "ropz",
+      "rounds": 280,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "apEX",
+      "rounds": 280,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "molodoy",
+      "rounds": 251,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "YEKINDAR",
+      "rounds": 251,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "KSCERATO",
+      "rounds": 251,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "yuurih",
+      "rounds": 251,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "FalleN",
+      "rounds": 251,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "m0NESY",
+      "rounds": 246,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "kyousuke",
+      "rounds": 246,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "NiKo",
+      "rounds": 246,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "TeSeS",
+      "rounds": 246,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "karrigan",
+      "rounds": 246,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "jL",
+      "rounds": 210,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "torzsi",
+      "rounds": 179,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "xelex",
+      "rounds": 179,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "xertioN",
+      "rounds": 179,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "Spinx",
+      "rounds": 179,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "PR",
+      "rounds": 179,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "dem0n",
+      "rounds": 188,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "Krabeni",
+      "rounds": 188,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "dziugss",
+      "rounds": 188,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "xfl0ud",
+      "rounds": 188,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "cmtry",
+      "rounds": 188,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "MATYS",
+      "rounds": 131,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "NertZ",
+      "rounds": 131,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "r1nkle",
+      "rounds": 131,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "HeavyGod",
+      "rounds": 131,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "huNter-",
+      "rounds": 131,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "dgt",
+      "rounds": 71,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "luchov",
+      "rounds": 71,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "HUASOPEEK",
+      "rounds": 71,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "meyern",
+      "rounds": 71,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "max",
+      "rounds": 71,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "mezii",
+      "rounds": 70,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "Jame",
+      "rounds": 40,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "FL1T",
+      "rounds": 40,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "zweih",
+      "rounds": 40,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "slaxejezzz",
+      "rounds": 40,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "xiELO",
+      "rounds": 40,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "piriajr",
+      "rounds": 34,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "snow",
+      "rounds": 34,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "saffee",
+      "rounds": 34,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "biguzera",
+      "rounds": 34,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "player": "V$M",
+      "rounds": 34,
+      "passed": true,
+      "errors": []
+    }
+  ],
+  "scenarios": [
+    {
+      "player": "NiKo",
+      "filters": {
+        "map": null,
+        "side": null,
+        "opponent": null
+      },
+      "behavior_outcomes": {
+        "baseline": {
+          "rounds": 246,
+          "decided_rounds": 246,
+          "wins": 121,
+          "losses": 125,
+          "unknown": 0,
+          "round_win_pct": 49.19,
+          "examples": [
+            {
+              "source_id": "graph:2396609:Dust2:12",
+              "match_id": "2396609",
+              "map": "Dust2",
+              "round_number": 12,
+              "team": "Falcons",
+              "outcome": "won"
+            },
+            {
+              "source_id": "graph:2396609:Dust2:15",
+              "match_id": "2396609",
+              "map": "Dust2",
+              "round_number": 15,
+              "team": "Falcons",
+              "outcome": "won"
+            },
+            {
+              "source_id": "graph:2396609:Dust2:16",
+              "match_id": "2396609",
+              "map": "Dust2",
+              "round_number": 16,
+              "team": "Falcons",
+              "outcome": "won"
+            },
+            {
+              "source_id": "graph:2396609:Dust2:1",
+              "match_id": "2396609",
+              "map": "Dust2",
+              "round_number": 1,
+              "team": "Falcons",
+              "outcome": "lost"
+            },
+            {
+              "source_id": "graph:2396609:Dust2:10",
+              "match_id": "2396609",
+              "map": "Dust2",
+              "round_number": 10,
+              "team": "Falcons",
+              "outcome": "lost"
+            },
+            {
+              "source_id": "graph:2396609:Dust2:11",
+              "match_id": "2396609",
+              "map": "Dust2",
+              "round_number": 11,
+              "team": "Falcons",
+              "outcome": "lost"
+            }
+          ]
+        },
+        "groups": [
+          {
+            "key": "opening_kills",
+            "label": "取得首杀",
+            "observed": {
+              "rounds": 23,
+              "decided_rounds": 23,
+              "wins": 12,
+              "losses": 11,
+              "unknown": 0,
+              "round_win_pct": 52.17,
+              "examples": [
+                {
+                  "source_id": "graph:2396609:Dust2:12",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 12,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396938:Ancient:6",
+                  "match_id": "2396938",
+                  "map": "Ancient",
+                  "round_number": 6,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396938:Dust2:16",
+                  "match_id": "2396938",
+                  "map": "Dust2",
+                  "round_number": 16,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:14",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 14,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396609:Mirage:19",
+                  "match_id": "2396609",
+                  "map": "Mirage",
+                  "round_number": 19,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396938:Ancient:1",
+                  "match_id": "2396938",
+                  "map": "Ancient",
+                  "round_number": 1,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                }
+              ]
+            },
+            "not_observed": {
+              "rounds": 223,
+              "decided_rounds": 223,
+              "wins": 109,
+              "losses": 114,
+              "unknown": 0,
+              "round_win_pct": 48.88,
+              "examples": [
+                {
+                  "source_id": "graph:2396609:Dust2:15",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 15,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:16",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 16,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:17",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 17,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:1",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 1,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:10",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 10,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:11",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 11,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                }
+              ]
+            },
+            "win_rate_difference_pp": 3.29
+          },
+          {
+            "key": "opening_deaths",
+            "label": "成为首死",
+            "observed": {
+              "rounds": 24,
+              "decided_rounds": 24,
+              "wins": 5,
+              "losses": 19,
+              "unknown": 0,
+              "round_win_pct": 20.83,
+              "examples": [
+                {
+                  "source_id": "graph:2396609:Dust2:15",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 15,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396938:Ancient:10",
+                  "match_id": "2396938",
+                  "map": "Ancient",
+                  "round_number": 10,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396938:Dust2:10",
+                  "match_id": "2396938",
+                  "map": "Dust2",
+                  "round_number": 10,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:10",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 10,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:21",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 21,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:5",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 5,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                }
+              ]
+            },
+            "not_observed": {
+              "rounds": 222,
+              "decided_rounds": 222,
+              "wins": 116,
+              "losses": 106,
+              "unknown": 0,
+              "round_win_pct": 52.25,
+              "examples": [
+                {
+                  "source_id": "graph:2396609:Dust2:12",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 12,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:16",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 16,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:17",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 17,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:1",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 1,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:11",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 11,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:13",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 13,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                }
+              ]
+            },
+            "win_rate_difference_pp": -31.42
+          },
+          {
+            "key": "trade_kills",
+            "label": "完成补枪",
+            "observed": {
+              "rounds": 36,
+              "decided_rounds": 36,
+              "wins": 22,
+              "losses": 14,
+              "unknown": 0,
+              "round_win_pct": 61.11,
+              "examples": [
+                {
+                  "source_id": "graph:2396609:Dust2:17",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 17,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396609:Mirage:5",
+                  "match_id": "2396609",
+                  "map": "Mirage",
+                  "round_number": 5,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396938:Ancient:10",
+                  "match_id": "2396938",
+                  "map": "Ancient",
+                  "round_number": 10,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396609:Mirage:18",
+                  "match_id": "2396609",
+                  "map": "Mirage",
+                  "round_number": 18,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396938:Ancient:21",
+                  "match_id": "2396938",
+                  "map": "Ancient",
+                  "round_number": 21,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396938:Ancient:23",
+                  "match_id": "2396938",
+                  "map": "Ancient",
+                  "round_number": 23,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                }
+              ]
+            },
+            "not_observed": {
+              "rounds": 210,
+              "decided_rounds": 210,
+              "wins": 99,
+              "losses": 111,
+              "unknown": 0,
+              "round_win_pct": 47.14,
+              "examples": [
+                {
+                  "source_id": "graph:2396609:Dust2:12",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 12,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:15",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 15,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:16",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 16,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:1",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 1,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:10",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 10,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:11",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 11,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                }
+              ]
+            },
+            "win_rate_difference_pp": 13.97
+          },
+          {
+            "key": "utility",
+            "label": "投掷道具",
+            "observed": {
+              "rounds": 193,
+              "decided_rounds": 193,
+              "wins": 106,
+              "losses": 87,
+              "unknown": 0,
+              "round_win_pct": 54.92,
+              "examples": [
+                {
+                  "source_id": "graph:2396609:Dust2:12",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 12,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:15",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 15,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:16",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 16,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:1",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 1,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:10",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 10,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:11",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 11,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                }
+              ]
+            },
+            "not_observed": {
+              "rounds": 53,
+              "decided_rounds": 53,
+              "wins": 15,
+              "losses": 38,
+              "unknown": 0,
+              "round_win_pct": 28.3,
+              "examples": [
+                {
+                  "source_id": "graph:2396609:Dust2:2",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 2,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396938:Ancient:18",
+                  "match_id": "2396938",
+                  "map": "Ancient",
+                  "round_number": 18,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396938:Ancient:9",
+                  "match_id": "2396938",
+                  "map": "Ancient",
+                  "round_number": 9,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:13",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 13,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:14",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 14,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:7",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 7,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                }
+              ]
+            },
+            "win_rate_difference_pp": 26.62
+          },
+          {
+            "key": "flash_blinds",
+            "label": "致盲记录",
+            "observed": {
+              "rounds": 107,
+              "decided_rounds": 107,
+              "wins": 60,
+              "losses": 47,
+              "unknown": 0,
+              "round_win_pct": 56.07,
+              "examples": [
+                {
+                  "source_id": "graph:2396609:Dust2:18",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 18,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:19",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 19,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:3",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 3,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:1",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 1,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:11",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 11,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:20",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 20,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                }
+              ]
+            },
+            "not_observed": {
+              "rounds": 139,
+              "decided_rounds": 139,
+              "wins": 61,
+              "losses": 78,
+              "unknown": 0,
+              "round_win_pct": 43.88,
+              "examples": [
+                {
+                  "source_id": "graph:2396609:Dust2:12",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 12,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:15",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 15,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:16",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 16,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:10",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 10,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:13",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 13,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:14",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 14,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                }
+              ]
+            },
+            "win_rate_difference_pp": 12.19
+          },
+          {
+            "key": "plants",
+            "label": "完成下包",
+            "observed": {
+              "rounds": 8,
+              "decided_rounds": 8,
+              "wins": 7,
+              "losses": 1,
+              "unknown": 0,
+              "round_win_pct": 87.5,
+              "examples": [
+                {
+                  "source_id": "graph:2396938:Ancient:11",
+                  "match_id": "2396938",
+                  "map": "Ancient",
+                  "round_number": 11,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396938:Ancient:12",
+                  "match_id": "2396938",
+                  "map": "Ancient",
+                  "round_number": 12,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396938:Mirage:19",
+                  "match_id": "2396938",
+                  "map": "Mirage",
+                  "round_number": 19,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396945:Nuke:13",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 13,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                }
+              ]
+            },
+            "not_observed": {
+              "rounds": 238,
+              "decided_rounds": 238,
+              "wins": 114,
+              "losses": 124,
+              "unknown": 0,
+              "round_win_pct": 47.9,
+              "examples": [
+                {
+                  "source_id": "graph:2396609:Dust2:12",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 12,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:15",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 15,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:16",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 16,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:1",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 1,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:10",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 10,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396609:Dust2:11",
+                  "match_id": "2396609",
+                  "map": "Dust2",
+                  "round_number": 11,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                }
+              ]
+            },
+            "win_rate_difference_pp": 39.6
+          }
+        ],
+        "methodology": "player-behavior-round-outcomes-v1",
+        "caveat": "按参赛回合去重；胜率只使用结果已知的回合。未观测到不等于未发生；各组可重叠，样本未匹配经济、角色或地图组成，差异不代表因果或显著性。致盲记录可能包含队友、自闪与多闪归因歧义。"
+      }
+    },
+    {
+      "player": "NiKo",
+      "filters": {
+        "map": "Nuke",
+        "side": "CT",
+        "opponent": null
+      },
+      "behavior_outcomes": {
+        "baseline": {
+          "rounds": 21,
+          "decided_rounds": 21,
+          "wins": 17,
+          "losses": 4,
+          "unknown": 0,
+          "round_win_pct": 80.95,
+          "examples": [
+            {
+              "source_id": "graph:2396945:Nuke:1",
+              "match_id": "2396945",
+              "map": "Nuke",
+              "round_number": 1,
+              "team": "Falcons",
+              "outcome": "won"
+            },
+            {
+              "source_id": "graph:2396945:Nuke:11",
+              "match_id": "2396945",
+              "map": "Nuke",
+              "round_number": 11,
+              "team": "Falcons",
+              "outcome": "won"
+            },
+            {
+              "source_id": "graph:2396945:Nuke:12",
+              "match_id": "2396945",
+              "map": "Nuke",
+              "round_number": 12,
+              "team": "Falcons",
+              "outcome": "won"
+            },
+            {
+              "source_id": "graph:2396945:Nuke:10",
+              "match_id": "2396945",
+              "map": "Nuke",
+              "round_number": 10,
+              "team": "Falcons",
+              "outcome": "lost"
+            },
+            {
+              "source_id": "graph:2396945:Nuke:8",
+              "match_id": "2396945",
+              "map": "Nuke",
+              "round_number": 8,
+              "team": "Falcons",
+              "outcome": "lost"
+            },
+            {
+              "source_id": "graph:2396949:Nuke:20",
+              "match_id": "2396949",
+              "map": "Nuke",
+              "round_number": 20,
+              "team": "Falcons",
+              "outcome": "lost"
+            }
+          ]
+        },
+        "groups": [
+          {
+            "key": "opening_kills",
+            "label": "取得首杀",
+            "observed": {
+              "rounds": 2,
+              "decided_rounds": 2,
+              "wins": 2,
+              "losses": 0,
+              "unknown": 0,
+              "round_win_pct": 100.0,
+              "examples": [
+                {
+                  "source_id": "graph:2396945:Nuke:6",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 6,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396945:Nuke:9",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 9,
+                  "team": "Falcons",
+                  "outcome": "won"
+                }
+              ]
+            },
+            "not_observed": {
+              "rounds": 19,
+              "decided_rounds": 19,
+              "wins": 15,
+              "losses": 4,
+              "unknown": 0,
+              "round_win_pct": 78.95,
+              "examples": [
+                {
+                  "source_id": "graph:2396945:Nuke:1",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 1,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396945:Nuke:11",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 11,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396945:Nuke:12",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 12,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396945:Nuke:10",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 10,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396945:Nuke:8",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 8,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396949:Nuke:20",
+                  "match_id": "2396949",
+                  "map": "Nuke",
+                  "round_number": 20,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                }
+              ]
+            },
+            "win_rate_difference_pp": 21.05
+          },
+          {
+            "key": "opening_deaths",
+            "label": "成为首死",
+            "observed": {
+              "rounds": 2,
+              "decided_rounds": 2,
+              "wins": 1,
+              "losses": 1,
+              "unknown": 0,
+              "round_win_pct": 50.0,
+              "examples": [
+                {
+                  "source_id": "graph:2396949:Nuke:14",
+                  "match_id": "2396949",
+                  "map": "Nuke",
+                  "round_number": 14,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396945:Nuke:8",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 8,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                }
+              ]
+            },
+            "not_observed": {
+              "rounds": 19,
+              "decided_rounds": 19,
+              "wins": 16,
+              "losses": 3,
+              "unknown": 0,
+              "round_win_pct": 84.21,
+              "examples": [
+                {
+                  "source_id": "graph:2396945:Nuke:1",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 1,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396945:Nuke:11",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 11,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396945:Nuke:12",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 12,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396945:Nuke:10",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 10,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396949:Nuke:20",
+                  "match_id": "2396949",
+                  "map": "Nuke",
+                  "round_number": 20,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396949:Nuke:21",
+                  "match_id": "2396949",
+                  "map": "Nuke",
+                  "round_number": 21,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                }
+              ]
+            },
+            "win_rate_difference_pp": -34.21
+          },
+          {
+            "key": "trade_kills",
+            "label": "完成补枪",
+            "observed": {
+              "rounds": 0,
+              "decided_rounds": 0,
+              "wins": 0,
+              "losses": 0,
+              "unknown": 0,
+              "round_win_pct": null,
+              "examples": []
+            },
+            "not_observed": {
+              "rounds": 21,
+              "decided_rounds": 21,
+              "wins": 17,
+              "losses": 4,
+              "unknown": 0,
+              "round_win_pct": 80.95,
+              "examples": [
+                {
+                  "source_id": "graph:2396945:Nuke:1",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 1,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396945:Nuke:11",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 11,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396945:Nuke:12",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 12,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396945:Nuke:10",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 10,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396945:Nuke:8",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 8,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396949:Nuke:20",
+                  "match_id": "2396949",
+                  "map": "Nuke",
+                  "round_number": 20,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                }
+              ]
+            },
+            "win_rate_difference_pp": null
+          },
+          {
+            "key": "utility",
+            "label": "投掷道具",
+            "observed": {
+              "rounds": 19,
+              "decided_rounds": 19,
+              "wins": 15,
+              "losses": 4,
+              "unknown": 0,
+              "round_win_pct": 78.95,
+              "examples": [
+                {
+                  "source_id": "graph:2396945:Nuke:11",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 11,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396945:Nuke:12",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 12,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396945:Nuke:2",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 2,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396945:Nuke:10",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 10,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396945:Nuke:8",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 8,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396949:Nuke:20",
+                  "match_id": "2396949",
+                  "map": "Nuke",
+                  "round_number": 20,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                }
+              ]
+            },
+            "not_observed": {
+              "rounds": 2,
+              "decided_rounds": 2,
+              "wins": 2,
+              "losses": 0,
+              "unknown": 0,
+              "round_win_pct": 100.0,
+              "examples": [
+                {
+                  "source_id": "graph:2396945:Nuke:1",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 1,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396949:Nuke:13",
+                  "match_id": "2396949",
+                  "map": "Nuke",
+                  "round_number": 13,
+                  "team": "Falcons",
+                  "outcome": "won"
+                }
+              ]
+            },
+            "win_rate_difference_pp": -21.05
+          },
+          {
+            "key": "flash_blinds",
+            "label": "致盲记录",
+            "observed": {
+              "rounds": 11,
+              "decided_rounds": 11,
+              "wins": 10,
+              "losses": 1,
+              "unknown": 0,
+              "round_win_pct": 90.91,
+              "examples": [
+                {
+                  "source_id": "graph:2396945:Nuke:11",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 11,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396945:Nuke:12",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 12,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396945:Nuke:2",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 2,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396945:Nuke:8",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 8,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                }
+              ]
+            },
+            "not_observed": {
+              "rounds": 10,
+              "decided_rounds": 10,
+              "wins": 7,
+              "losses": 3,
+              "unknown": 0,
+              "round_win_pct": 70.0,
+              "examples": [
+                {
+                  "source_id": "graph:2396945:Nuke:1",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 1,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396945:Nuke:7",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 7,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396949:Nuke:13",
+                  "match_id": "2396949",
+                  "map": "Nuke",
+                  "round_number": 13,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396945:Nuke:10",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 10,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396949:Nuke:20",
+                  "match_id": "2396949",
+                  "map": "Nuke",
+                  "round_number": 20,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396949:Nuke:21",
+                  "match_id": "2396949",
+                  "map": "Nuke",
+                  "round_number": 21,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                }
+              ]
+            },
+            "win_rate_difference_pp": 20.91
+          },
+          {
+            "key": "plants",
+            "label": "完成下包",
+            "observed": {
+              "rounds": 0,
+              "decided_rounds": 0,
+              "wins": 0,
+              "losses": 0,
+              "unknown": 0,
+              "round_win_pct": null,
+              "examples": []
+            },
+            "not_observed": {
+              "rounds": 21,
+              "decided_rounds": 21,
+              "wins": 17,
+              "losses": 4,
+              "unknown": 0,
+              "round_win_pct": 80.95,
+              "examples": [
+                {
+                  "source_id": "graph:2396945:Nuke:1",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 1,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396945:Nuke:11",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 11,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396945:Nuke:12",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 12,
+                  "team": "Falcons",
+                  "outcome": "won"
+                },
+                {
+                  "source_id": "graph:2396945:Nuke:10",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 10,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396945:Nuke:8",
+                  "match_id": "2396945",
+                  "map": "Nuke",
+                  "round_number": 8,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                },
+                {
+                  "source_id": "graph:2396949:Nuke:20",
+                  "match_id": "2396949",
+                  "map": "Nuke",
+                  "round_number": 20,
+                  "team": "Falcons",
+                  "outcome": "lost"
+                }
+              ]
+            },
+            "win_rate_difference_pp": null
+          }
+        ],
+        "methodology": "player-behavior-round-outcomes-v1",
+        "caveat": "按参赛回合去重；胜率只使用结果已知的回合。未观测到不等于未发生；各组可重叠，样本未匹配经济、角色或地图组成，差异不代表因果或显著性。致盲记录可能包含队友、自闪与多闪归因歧义。"
+      }
+    },
+    {
+      "player": "donk",
+      "filters": {
+        "map": null,
+        "side": null,
+        "opponent": "Spirit"
+      },
+      "behavior_outcomes": {
+        "baseline": {
+          "rounds": 0,
+          "decided_rounds": 0,
+          "wins": 0,
+          "losses": 0,
+          "unknown": 0,
+          "round_win_pct": null,
+          "examples": []
+        },
+        "groups": [
+          {
+            "key": "opening_kills",
+            "label": "取得首杀",
+            "observed": {
+              "rounds": 0,
+              "decided_rounds": 0,
+              "wins": 0,
+              "losses": 0,
+              "unknown": 0,
+              "round_win_pct": null,
+              "examples": []
+            },
+            "not_observed": {
+              "rounds": 0,
+              "decided_rounds": 0,
+              "wins": 0,
+              "losses": 0,
+              "unknown": 0,
+              "round_win_pct": null,
+              "examples": []
+            },
+            "win_rate_difference_pp": null
+          },
+          {
+            "key": "opening_deaths",
+            "label": "成为首死",
+            "observed": {
+              "rounds": 0,
+              "decided_rounds": 0,
+              "wins": 0,
+              "losses": 0,
+              "unknown": 0,
+              "round_win_pct": null,
+              "examples": []
+            },
+            "not_observed": {
+              "rounds": 0,
+              "decided_rounds": 0,
+              "wins": 0,
+              "losses": 0,
+              "unknown": 0,
+              "round_win_pct": null,
+              "examples": []
+            },
+            "win_rate_difference_pp": null
+          },
+          {
+            "key": "trade_kills",
+            "label": "完成补枪",
+            "observed": {
+              "rounds": 0,
+              "decided_rounds": 0,
+              "wins": 0,
+              "losses": 0,
+              "unknown": 0,
+              "round_win_pct": null,
+              "examples": []
+            },
+            "not_observed": {
+              "rounds": 0,
+              "decided_rounds": 0,
+              "wins": 0,
+              "losses": 0,
+              "unknown": 0,
+              "round_win_pct": null,
+              "examples": []
+            },
+            "win_rate_difference_pp": null
+          },
+          {
+            "key": "utility",
+            "label": "投掷道具",
+            "observed": {
+              "rounds": 0,
+              "decided_rounds": 0,
+              "wins": 0,
+              "losses": 0,
+              "unknown": 0,
+              "round_win_pct": null,
+              "examples": []
+            },
+            "not_observed": {
+              "rounds": 0,
+              "decided_rounds": 0,
+              "wins": 0,
+              "losses": 0,
+              "unknown": 0,
+              "round_win_pct": null,
+              "examples": []
+            },
+            "win_rate_difference_pp": null
+          },
+          {
+            "key": "flash_blinds",
+            "label": "致盲记录",
+            "observed": {
+              "rounds": 0,
+              "decided_rounds": 0,
+              "wins": 0,
+              "losses": 0,
+              "unknown": 0,
+              "round_win_pct": null,
+              "examples": []
+            },
+            "not_observed": {
+              "rounds": 0,
+              "decided_rounds": 0,
+              "wins": 0,
+              "losses": 0,
+              "unknown": 0,
+              "round_win_pct": null,
+              "examples": []
+            },
+            "win_rate_difference_pp": null
+          },
+          {
+            "key": "plants",
+            "label": "完成下包",
+            "observed": {
+              "rounds": 0,
+              "decided_rounds": 0,
+              "wins": 0,
+              "losses": 0,
+              "unknown": 0,
+              "round_win_pct": null,
+              "examples": []
+            },
+            "not_observed": {
+              "rounds": 0,
+              "decided_rounds": 0,
+              "wins": 0,
+              "losses": 0,
+              "unknown": 0,
+              "round_win_pct": null,
+              "examples": []
+            },
+            "win_rate_difference_pp": null
+          }
+        ],
+        "methodology": "player-behavior-round-outcomes-v1",
+        "caveat": "按参赛回合去重；胜率只使用结果已知的回合。未观测到不等于未发生；各组可重叠，样本未匹配经济、角色或地图组成，差异不代表因果或显著性。致盲记录可能包含队友、自闪与多闪归因歧义。"
+      }
+    }
+  ]
+}

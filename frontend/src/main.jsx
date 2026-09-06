@@ -77,6 +77,14 @@ function App() {
   const [tacticOpponent, setTacticOpponent] = useState("");
   const [tacticProfile, setTacticProfile] = useState(null);
 
+  useEffect(() => {
+    if (roundDetail) {
+      const panel = document.getElementById("round-evidence");
+      panel?.scrollIntoView({ block: "start" });
+      panel?.focus({ preventScroll: true });
+    }
+  }, [roundDetail]);
+
   const analysis = task?.status === "SUCCESS" ? task.result?.analysis || task.result : null;
   const metrics = analysis?.metrics || {};
   const evidenceItems = [
@@ -301,6 +309,7 @@ function App() {
               {comparisonLoading && <p role="status">正在读取双方样本…</p>}
               {comparisonError && <p role="alert">对比加载失败：{comparisonError}</p>}
               {playerComparison?.players?.length === 2 && <PlayerComparison comparison={playerComparison} />}
+            {playerProfile && <PlayerBehavior key={selectedPlayerId} profile={playerProfile} onSource={handleRoundSource} loading={roundLoading} />}
             <TacticalDrilldown profile={tacticProfile} map={tacticMap} side={tacticSide} opponent={tacticOpponent} onMap={setTacticMap} onSide={setTacticSide} onOpponent={setTacticOpponent} />
           </div>
         </section>
@@ -328,7 +337,7 @@ function KeyRoundFilter({ groups, focusKey, showTeam, onSource, loading }) {
   return <div className="key-round-filter"><div className="result-meta">KEY ROUND SAMPLES</div><div className="key-round-controls"><select aria-label="战术类型" value={metric} onChange={(event) => setMetric(event.target.value)}>{groups.map((item) => <option key={item.key} value={item.key}>{item.label} · {item.total}</option>)}</select><select aria-label="回合结果" value={outcome} onChange={(event) => setOutcome(event.target.value)}><option value="all">全部结果</option><option value="lost">失利</option><option value="won">获胜</option><option value="unknown">未知</option></select></div><div className="key-round-list">{examples.map((item) => <button key={`${item.player || item.team}:${item.source_id}`} disabled={loading} onClick={() => onSource(item.source_id, item.team)}><b>{ROUND_OUTCOME_LABELS[item.outcome]}</b>{showTeam && <span>{item.player || item.team}</span>}<span>{item.map} · R{item.round_number}</span><small>{item.match_id}</small></button>)}{!examples.length && <p>当前筛选没有可展示的回合样本。</p>}</div><p className="brief-caveat">{showTeam ? "每位对象每类" : "每类"}最多展示 12 个胜负交错样本；统计值仍使用该条件下的全部回合。</p></div>;
 }
 
-function RoundEvidence({ detail, comparison, onSource, loading, onClose }) { return <article className="round-evidence"><div className="brief-head"><div><div className="result-meta">ROUND EVIDENCE</div><h3>{detail.map} · Round {detail.round_number}</h3></div><button className="round-close" onClick={onClose}>关闭</button></div><div className="round-outcome"><span>{detail.teams.join(" vs ")}</span><b>胜方 {detail.winner || "—"}</b><small>{ROUND_REASON_LABELS[detail.reason] || detail.reason || "未知结束原因"}</small></div><div className="round-counts">{Object.entries(detail.counts).map(([kind, count]) => <span key={kind}>{ROUND_KIND_LABELS[kind] || kind} · {count}</span>)}</div>{comparison && <RoundContrast comparison={comparison} onSource={onSource} loading={loading} />}<div className="round-timeline">{detail.timeline.map((item) => <div key={item.id} className={`timeline-${item.kind}`}><time>{item.tick == null ? "—" : item.tick}</time><i /><p>{item.label}</p></div>)}</div><div className="brief-caveat">来源：{detail.source_id} · 时间单位为 Demo tick；战术标签与原始事件并列展示。</div></article>; }
+function RoundEvidence({ detail, comparison, onSource, loading, onClose }) { return <article className="round-evidence" id="round-evidence" tabIndex={-1}><div className="brief-head"><div><div className="result-meta">ROUND EVIDENCE</div><h3>{detail.map} · Round {detail.round_number}</h3></div><button className="round-close" onClick={onClose}>关闭</button></div><div className="round-outcome"><span>{detail.teams.join(" vs ")}</span><b>胜方 {detail.winner || "—"}</b><small>{ROUND_REASON_LABELS[detail.reason] || detail.reason || "未知结束原因"}</small></div><div className="round-counts">{Object.entries(detail.counts).map(([kind, count]) => <span key={kind}>{ROUND_KIND_LABELS[kind] || kind} · {count}</span>)}</div>{comparison && <RoundContrast comparison={comparison} onSource={onSource} loading={loading} />}<div className="round-timeline">{detail.timeline.map((item) => <div key={item.id} className={`timeline-${item.kind}`}><time>{item.tick == null ? "—" : item.tick}</time><i /><p>{item.label}</p></div>)}</div><div className="brief-caveat">来源：{detail.source_id} · 时间单位为 Demo tick；战术标签与原始事件并列展示。</div></article>; }
 
 function RoundContrast({ comparison, onSource, loading }) {
   const selected = comparison.selected;
@@ -346,6 +355,34 @@ function PlayerProfile({ profile, onSource, loading }) {
   const rates = profile.rates_per_100_rounds || {};
   const examples = profile.round_groups?.flatMap((group) => group.examples.slice(0, 2)) || [];
   return <div className="player-profile"><div className="player-title"><div><strong>{profile.name}</strong><span>{profile.team}</span></div><small>{profile.sample_size.matches} matches · {profile.sample_size.maps} maps · {profile.sample_size.rounds} rounds</small></div><PlayerSampleQuality profile={profile} /><div className="profile-metrics"><ProfileMetric label="K/D" value={combat.kd_ratio ?? "—"} /><ProfileMetric label="OPENING WIN" value={combat.opening_duel_win_pct == null ? "—" : `${combat.opening_duel_win_pct}%`} /><ProfileMetric label="KILLS / 100R" value={rates.kills} /><ProfileMetric label="TRADES / 100R" value={rates.trade_kills} /></div><div className="tactic-chips">{TACTIC_COLUMNS.map(([key, label]) => <span key={key}>{label}<b>{profile.tactical_participation?.[key] || 0}</b></span>)}</div><div className="player-rounds">{examples.slice(0, 6).map((item, index) => <button key={`${item.source_id}:${index}`} disabled={loading} onClick={() => onSource(item.source_id, item.team)}>{item.map} · R{item.round_number}</button>)}</div><div className="source-hint">SOURCE · {profile.source_round_ids?.[0] || "unavailable"}</div></div>;
+}
+
+function PlayerBehavior({ profile, onSource, loading }) {
+  const [behaviorKey, setBehaviorKey] = useState("opening_kills");
+  const [outcome, setOutcome] = useState("all");
+  const behavior = profile.behavior_outcomes;
+  if (!behavior) return null;
+  const group = behavior.groups.find((item) => item.key === behaviorKey) || behavior.groups[0];
+  const baseline = behavior.baseline;
+  return <div className="player-behavior">
+    <div className="section-heading"><div><p className="eyebrow">PLAYER BEHAVIOR / ROUND OUTCOME</p><h3>{profile.name} · 个体行为与回合结果</h3></div>
+      <span className="chip">描述性关联</span></div>
+    <p className="comparison-note">当前范围：{profile.filters.map || "全部地图"} / {profile.filters.side || "T + CT"} / {profile.filters.opponent || "全部对手"}。基线 {baseline.rounds} 回合，{baseline.wins} 胜 / {baseline.losses} 负 / {baseline.unknown} 未知；回合胜率 {formatPercent(baseline.round_win_pct)}。</p>
+    <div className="behavior-controls"><label>个体行为<select value={behaviorKey} onChange={(event) => setBehaviorKey(event.target.value)}>{behavior.groups.map((item) => <option key={item.key} value={item.key}>{item.label}</option>)}</select></label>
+      <label>引用回合结果<select value={outcome} onChange={(event) => setOutcome(event.target.value)}><option value="all">全部结果</option><option value="won">胜</option><option value="lost">负</option><option value="unknown">未知</option></select></label></div>
+    <div className="behavior-grid">{[["observed", "观测到该行为"], ["not_observed", "未观测到该行为"]].map(([key, label]) => {
+      const bucket = group[key];
+      const examples = bucket.examples.filter((item) => outcome === "all" || item.outcome === outcome);
+      return <section key={key}><b>{label}</b><strong>{formatPercent(bucket.round_win_pct)} <small>回合胜率</small></strong>
+        <p>{bucket.rounds} 回合 · {bucket.wins} 胜 / {bucket.losses} 负 / {bucket.unknown} 未知</p>
+        <p>胜率分母：{bucket.decided_rounds} 个结果已知的回合</p>
+        <div className="player-rounds">{examples.map((item) => <button key={item.source_id} disabled={loading} onClick={() => onSource(item.source_id, item.team)} aria-label={`查看${label}的${ROUND_OUTCOME_LABELS[item.outcome]}回合 ${item.match_id} ${item.map} R${item.round_number}`}>{ROUND_OUTCOME_LABELS[item.outcome]} · {item.match_id} · {item.map} R{item.round_number}</button>)}</div>
+        {!examples.length && <p>此组没有符合所选结果的引用回合。</p>}
+      </section>;
+    })}</div>
+    <p className="comparison-note">两组胜率差：{group.win_rate_difference_pp == null ? "—（至少一组无法计算）" : `${group.win_rate_difference_pp > 0 ? "+" : ""}${group.win_rate_difference_pp.toFixed(2)} 个百分点`}。引用按固定顺序列出每种结果最多 3 回合，不是随机样本；点击后在上方回合时间线核查。</p>
+    <p className="brief-caveat">{behavior.caveat}</p>
+  </div>;
 }
 
 function PlayerComparison({ comparison }) {
