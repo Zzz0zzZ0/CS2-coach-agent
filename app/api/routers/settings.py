@@ -2,7 +2,8 @@ import ipaddress
 
 from fastapi import APIRouter, HTTPException, Request
 
-from app.core.providers import get_configured_api_key, save_runtime_api_key
+from app.core.providers import get_configured_api_key, save_runtime_api_key, get_model_budget
+from app.core.llm_budget import ModelCallStopped
 
 router = APIRouter(prefix="/settings", tags=["settings"])
 
@@ -20,6 +21,14 @@ def _local_request(request: Request) -> bool:
 @router.get("/llm")
 async def llm_status():
     return {"configured": bool(get_configured_api_key()), "provider": "DashScope"}
+
+
+@router.get("/llm/budget")
+def llm_budget_status():
+    try:
+        return get_model_budget().status()
+    except ModelCallStopped as error:
+        raise HTTPException(status_code=503, detail=str(error)) from None
 
 
 @router.put("/llm/key")

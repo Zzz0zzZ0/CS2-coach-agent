@@ -14,6 +14,9 @@ class Settings:
     LLM_TIMEOUT_SECONDS: int = int(os.getenv("LLM_TIMEOUT_SECONDS", "120"))
     LLM_MAX_TOKENS: int = int(os.getenv("LLM_MAX_TOKENS", "1400"))
     LLM_ENABLE_THINKING: bool = os.getenv("LLM_ENABLE_THINKING", "false").lower() == "true"
+    LLM_BUDGET_DB: str = os.getenv("LLM_BUDGET_DB", "data/runtime/llm_budget.sqlite")
+    LLM_BUDGET_TOKENS: int = int(os.getenv("LLM_BUDGET_TOKENS", "30000"))
+    LLM_BUDGET_MAX_CALLS: int = int(os.getenv("LLM_BUDGET_MAX_CALLS", "100"))
     LLM_AUXILIARY_CALLS_ENABLED: bool = os.getenv(
         "LLM_AUXILIARY_CALLS_ENABLED", "false"
     ).lower() == "true"

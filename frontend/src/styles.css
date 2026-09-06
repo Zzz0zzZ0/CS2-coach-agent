@@ -42,3 +42,5 @@ button { cursor: pointer; }
 #round-evidence { scroll-margin-top: 85px; }
 
 .player-summary { grid-column: 1 / -1; }.player-summary .coach-brief { border: 1px solid #2c6f68; border-radius: 8px; padding: 18px; }.player-summary .brief-section p { color: #bcd0de; font-size: 13px; line-height: 1.7; }.player-summary .brief-sources { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 6px; }.player-summary .brief-sources button { font-size: 11px; }
+
+.llm-budget { display: grid; gap: 7px; border-top: 1px solid #294760; padding-top: 10px; font-size: 11px; color: #90a9bd; line-height: 1.5; }.llm-budget b { color: #dce9f5; }.llm-budget button { justify-self: start; }

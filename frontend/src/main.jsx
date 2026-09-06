@@ -8,6 +8,7 @@ import {
   getGraphRound,
   getGraphStats,
   getLlmStatus,
+  getLlmBudget,
   getPlayerProfile,
   getSubgraph,
   getTeamTactics,
@@ -50,6 +51,7 @@ function App() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [llmConfigured, setLlmConfigured] = useState(false);
+  const [llmBudget, setLlmBudget] = useState(null);
   const [apiKey, setApiKey] = useState("");
   const [keySaving, setKeySaving] = useState(false);
   const [maps, setMaps] = useState([]);
@@ -97,6 +99,16 @@ function App() {
       .then((data) => setLlmConfigured(Boolean(data.configured)))
       .catch((reason) => setError(reason.message));
   }, []);
+
+  async function refreshBudget() {
+    try {
+      setLlmBudget(await getLlmBudget());
+    } catch {
+      setLlmBudget({ status: "unavailable" });
+    }
+  }
+
+  useEffect(() => { refreshBudget(); }, [task?.status]);
 
   useEffect(() => {
     Promise.all([getGraphMaps(), getGraphStats(), compareGraphTeams(FEATURED_TEAMS), getGraphPlayers(null, 100)])
@@ -270,7 +282,16 @@ function App() {
 
         <section className="control-card card">
           <div className="section-heading"><div><p className="eyebrow">01 / ANALYZE</p><h2>提交比赛 Demo</h2></div><span className="chip">ASYNC PIPELINE</span></div>
-          <div className="llm-key-panel"><div><b>QWEN3.8-FLASH</b><span className={llmConfigured ? "key-ready" : "key-missing"}>{llmConfigured ? "密钥已保存（调用时验证）" : "需要 DashScope Key"}</span></div><form onSubmit={handleSaveKey}><label htmlFor="dashscope-key">DashScope API Key</label><input id="dashscope-key" type="password" autoComplete="off" value={apiKey} onChange={(event) => setApiKey(event.target.value)} placeholder="sk-…（仅保存到本机）" /><button disabled={keySaving || !apiKey.trim()}>{keySaving ? "保存中…" : "保存密钥"}</button></form><small>密钥不会回传到界面、浏览器存储或任务队列；API 与 Worker 在下一次调用时读取。</small></div>
+          <div className="llm-key-panel"><div><b>QWEN3.8-FLASH</b><span className={llmConfigured ? "key-ready" : "key-missing"}>{llmConfigured ? "密钥已保存（调用时验证）" : "需要 DashScope Key"}</span></div><form onSubmit={handleSaveKey}><label htmlFor="dashscope-key">DashScope API Key</label><input id="dashscope-key" type="password" autoComplete="off" value={apiKey} onChange={(event) => setApiKey(event.target.value)} placeholder="sk-…（仅保存到本机）" /><button disabled={keySaving || !apiKey.trim()}>{keySaving ? "保存中…" : "保存密钥"}</button></form><small>密钥不会回传到界面、浏览器存储或任务队列；API 与 Worker 在下一次调用时读取。</small>
+            <section className="llm-budget" aria-label="模型调用预算">
+              <b>{!llmBudget ? "正在读取调用预算…" : llmBudget.status === "unavailable" ? "预算状态暂不可用，请刷新核验" : llmBudget.status === "stopped" ? "模型调用已暂停" : "本地调用预算"}</b>
+              {llmBudget?.remaining_local_allowance != null && <span>剩余预留额度 {formatNumber(llmBudget.remaining_local_allowance)} / {formatNumber(llmBudget.token_limit)} token · 已尝试 {llmBudget.calls} / {llmBudget.call_limit} 次</span>}
+              {llmBudget?.reported_tokens != null && <span>已报告 {formatNumber(llmBudget.reported_tokens)} token · 尚未结算的预留 {formatNumber(llmBudget.unsettled_allowance)} token</span>}
+              {llmBudget?.stop_reason && <span>{({pending: "有请求尚未结算；完成后可刷新，若已中断则需核对账单。", request_failed: "请求失败，用量待核对，后续调用已停止。", provider_rejected: "提供商拒绝请求，需核对密钥或额度。", cancelled: "请求已取消，用量待核对。", usage_missing: "提供商未返回用量，后续调用已停止。", estimate_exceeded: "实际用量超过预留，后续调用已停止。", budget_exhausted: "本地预算已用完，分析将采用规则结果。", configuration_mismatch: "预算配置与既有记录不一致，调用已停止。"})[llmBudget.stop_reason] || "调用边界检查未通过，需检查预算记录。"}</span>}
+              <small>额度从本地账本启用时累计；提供商剩余免费额度未知。暂停时保留规则分析。</small>
+              <button type="button" onClick={refreshBudget}>刷新预算</button>
+            </section>
+          </div>
           <form onSubmit={handleSubmit} className="upload-form">
             <label className={`dropzone ${file ? "has-file" : ""}`}>
               <input type="file" accept=".dem" onChange={(event) => setFile(event.target.files?.[0] || null)} />
@@ -283,7 +304,7 @@ function App() {
 
         <section className="flow-card card"><div className="section-heading"><div><p className="eyebrow">02 / ORCHESTRATION</p><h2>Agent 执行链</h2></div><span className="mono">{task?.status || "IDLE"}</span></div><div className="flow-track">{FLOW.map((item, index) => <div className={`flow-step ${task?.status === "SUCCESS" || (task && index < 4) ? "active" : ""}`} key={item}><span>{String(index + 1).padStart(2, "0")}</span><b>{item}</b>{index < FLOW.length - 1 && <i />}</div>)}</div></section>
 
-        <section className="metrics-grid"><Metric label="TOTAL ROUNDS" value={metrics.rounds_total} suffix=" rounds" /><Metric label="KILLS" value={metrics.kills_total} /><Metric label="FIRST KILLS" value={metrics.first_kills_total} accent /><Metric label="MODEL TOKENS" value={analysis?.model_usage?.total_tokens} /><Metric label="VERIFIER" value={analysis ? analysis.verification_report?.status || "review" : "—"} text /></section>
+        <section className="metrics-grid"><Metric label="TOTAL ROUNDS" value={metrics.rounds_total} suffix=" rounds" /><Metric label="KILLS" value={metrics.kills_total} /><Metric label="FIRST KILLS" value={metrics.first_kills_total} accent /><Metric label="COACH TOKENS" value={analysis?.model_usage?.total_tokens ?? "—"} text={analysis?.model_usage?.total_tokens == null} /><Metric label="VERIFIER" value={analysis ? analysis.verification_report?.status || "review" : "—"} text /></section>
 
         <section className="report-card card"><div className="section-heading"><div><p className="eyebrow">03 / COACHING REPORT</p><h2>Analyst × Coach</h2></div><span className="chip">EVIDENCE-BOUND</span></div><div className="report-columns"><ReportBlock title="ANALYST / 发生了什么" text={analysis?.analyst_report} empty="提交 Demo 后，这里显示确定性指标与数据报告。" /><ReportBlock title="COACH / 应该怎么做" text={analysis?.coach_advice} empty="Coach 会基于当前 [C#] 与历史 [E#] 证据生成训练建议。" /></div></section>
 

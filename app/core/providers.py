@@ -12,6 +12,7 @@ from langchain_community.vectorstores import Milvus
 from pymilvus import MilvusClient
 
 from app.core.config import settings
+from app.core.llm_budget import BudgetedChatModel, ModelBudget, ModelCallStopped
 from app.services.rag_service import KnowledgeBaseClient, MilvusHybridSearcher
 from app.services.graph_rag_service import GraphRAGClient
 
@@ -80,6 +81,10 @@ def get_embeddings():
     return _embeddings_instance
 
 
+def get_model_budget():
+    return ModelBudget(settings.LLM_BUDGET_DB, settings.LLM_BUDGET_TOKENS, settings.LLM_BUDGET_MAX_CALLS)
+
+
 def get_llm():
     global _llm_instance, _llm_key_fingerprint
     api_key = get_configured_api_key()
@@ -87,10 +92,16 @@ def get_llm():
         _llm_instance = None
         _llm_key_fingerprint = None
         return None
-    fingerprint = hashlib.sha256(api_key.encode("utf-8")).hexdigest()
+    configuration = (settings.MODEL_NAME, settings.LLM_TIMEOUT_SECONDS, settings.LLM_MAX_TOKENS,
+                     settings.LLM_ENABLE_THINKING, str(Path(settings.LLM_BUDGET_DB).resolve()),
+                     settings.LLM_BUDGET_TOKENS, settings.LLM_BUDGET_MAX_CALLS)
+    fingerprint = hashlib.sha256((api_key + repr(configuration)).encode("utf-8")).hexdigest()
     if _llm_instance is None or fingerprint != _llm_key_fingerprint:
         try:
-            _llm_instance = ChatOpenAI(
+            if settings.MODEL_NAME != "qwen3.8-flash" or settings.LLM_ENABLE_THINKING:
+                raise ModelCallStopped("unsupported_model_configuration")
+            budget = get_model_budget()
+            model = ChatOpenAI(
                 api_key=api_key,
                 base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
                 model=settings.MODEL_NAME,
@@ -99,9 +110,11 @@ def get_llm():
                 max_tokens=settings.LLM_MAX_TOKENS,
                 extra_body={"enable_thinking": settings.LLM_ENABLE_THINKING},
             )
+            _llm_instance = BudgetedChatModel(model, budget, settings.LLM_MAX_TOKENS,
+                                             settings.LLM_TIMEOUT_SECONDS)
             _llm_key_fingerprint = fingerprint
         except Exception as e:
-            logger.warning(f"底层模型引擎加载失败 (请检查 .env 配置): {e}")
+            logger.warning("Model initialization failed (%s); using deterministic fallback", type(e).__name__)
             _llm_instance = None
             _llm_key_fingerprint = None
     return _llm_instance

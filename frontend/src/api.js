@@ -22,6 +22,10 @@ export function getLlmStatus() {
   return request("/api/settings/llm");
 }
 
+export function getLlmBudget() {
+  return request("/api/settings/llm/budget");
+}
+
 export function saveLlmKey(apiKey) {
   return request("/api/settings/llm/key", {
     method: "PUT",
