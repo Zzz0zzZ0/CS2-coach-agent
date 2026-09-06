@@ -40,3 +40,5 @@ button { cursor: pointer; }
 @media (max-width: 600px) { .behavior-grid { grid-template-columns: 1fr; } }
 
 #round-evidence { scroll-margin-top: 85px; }
+
+.player-summary { grid-column: 1 / -1; }.player-summary .coach-brief { border: 1px solid #2c6f68; border-radius: 8px; padding: 18px; }.player-summary .brief-section p { color: #bcd0de; font-size: 13px; line-height: 1.7; }.player-summary .brief-sources { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 6px; }.player-summary .brief-sources button { font-size: 11px; }

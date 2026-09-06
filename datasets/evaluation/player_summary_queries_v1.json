@@ -1,0 +1,383 @@
+{
+  "version": "player-summary-v1",
+  "cases": [
+    {
+      "id": "m0nesy_overall",
+      "category": "profile",
+      "query": "分析 m0NESY 的个人表现",
+      "expected": {
+        "context_level": "player_profile",
+        "players": [
+          "m0NESY"
+        ],
+        "map": "All",
+        "side": "Both",
+        "min_rounds": 100
+      }
+    },
+    {
+      "id": "donk_overall",
+      "category": "profile",
+      "query": "donk 最近的选手画像",
+      "expected": {
+        "context_level": "player_profile",
+        "players": [
+          "donk"
+        ],
+        "map": "All",
+        "side": "Both",
+        "min_rounds": 100
+      }
+    },
+    {
+      "id": "zywoo_overall",
+      "category": "profile",
+      "query": "ZywOo 的首杀和补枪表现",
+      "expected": {
+        "context_level": "player_profile",
+        "players": [
+          "ZywOo"
+        ],
+        "map": "All",
+        "side": "Both",
+        "min_rounds": 100
+      }
+    },
+    {
+      "id": "kscerato_overall",
+      "category": "profile",
+      "query": "KSCERATO 的个人战术参与",
+      "expected": {
+        "context_level": "player_profile",
+        "players": [
+          "KSCERATO"
+        ],
+        "map": "All",
+        "side": "Both",
+        "min_rounds": 100
+      }
+    },
+    {
+      "id": "torzsi_overall",
+      "category": "profile",
+      "query": "torzsi 最近表现如何",
+      "expected": {
+        "context_level": "player_profile",
+        "players": [
+          "torzsi"
+        ],
+        "map": "All",
+        "side": "Both",
+        "min_rounds": 100
+      }
+    },
+    {
+      "id": "m0nesy_dust2_t",
+      "category": "context",
+      "query": "m0NESY 在 Dust2 T侧的首杀表现",
+      "expected": {
+        "context_level": "player_profile",
+        "players": [
+          "m0NESY"
+        ],
+        "map": "Dust2",
+        "side": "T",
+        "min_rounds": 10
+      }
+    },
+    {
+      "id": "m0nesy_vs_spirit",
+      "category": "opponent",
+      "query": "m0NESY 对阵 Spirit 的表现",
+      "expected": {
+        "context_level": "player_profile",
+        "players": [
+          "m0NESY"
+        ],
+        "map": "All",
+        "side": "Both",
+        "opponent": "Spirit",
+        "min_rounds": 40
+      }
+    },
+    {
+      "id": "donk_ancient_t",
+      "category": "context",
+      "query": "donk Ancient 进攻侧击杀效率",
+      "expected": {
+        "context_level": "player_profile",
+        "players": [
+          "donk"
+        ],
+        "map": "Ancient",
+        "side": "T",
+        "min_rounds": 10
+      }
+    },
+    {
+      "id": "sh1ro_nuke_ct",
+      "category": "context",
+      "query": "sh1ro 在 Nuke 防守侧的表现",
+      "expected": {
+        "context_level": "player_profile",
+        "players": [
+          "sh1ro"
+        ],
+        "map": "Nuke",
+        "side": "CT",
+        "min_rounds": 5
+      }
+    },
+    {
+      "id": "zywoo_dust2_t",
+      "category": "context",
+      "query": "ZywOo Dust2 T侧首杀表现",
+      "expected": {
+        "context_level": "player_profile",
+        "players": [
+          "ZywOo"
+        ],
+        "map": "Dust2",
+        "side": "T",
+        "min_rounds": 10
+      }
+    },
+    {
+      "id": "zywoo_vs_furia_dust2_t",
+      "category": "opponent",
+      "query": "ZywOo 对阵 FURIA 时 Dust2 T侧的表现",
+      "expected": {
+        "context_level": "player_profile",
+        "players": [
+          "ZywOo"
+        ],
+        "map": "Dust2",
+        "side": "T",
+        "opponent": "FURIA",
+        "min_rounds": 10
+      }
+    },
+    {
+      "id": "kscerato_ancient_ct",
+      "category": "context",
+      "query": "KSCERATO Ancient 防守方表现",
+      "expected": {
+        "context_level": "player_profile",
+        "players": [
+          "KSCERATO"
+        ],
+        "map": "Ancient",
+        "side": "CT",
+        "min_rounds": 5
+      }
+    },
+    {
+      "id": "molodoy_cache_t",
+      "category": "context",
+      "query": "molodoy Cache T side 的表现",
+      "expected": {
+        "context_level": "player_profile",
+        "players": [
+          "molodoy"
+        ],
+        "map": "Cache",
+        "side": "T",
+        "min_rounds": 5
+      }
+    },
+    {
+      "id": "torzsi_dust2_ct",
+      "category": "context",
+      "query": "torzsi Dust2 CT侧表现",
+      "expected": {
+        "context_level": "player_profile",
+        "players": [
+          "torzsi"
+        ],
+        "map": "Dust2",
+        "side": "CT",
+        "min_rounds": 5
+      }
+    },
+    {
+      "id": "xertion_nuke_t",
+      "category": "context",
+      "query": "xertioN 在 Nuke 进攻侧表现",
+      "expected": {
+        "context_level": "player_profile",
+        "players": [
+          "xertioN"
+        ],
+        "map": "Nuke",
+        "side": "T",
+        "min_rounds": 5
+      }
+    },
+    {
+      "id": "compare_m0nesy_niko",
+      "category": "comparison",
+      "query": "对比 m0NESY 和 NiKo 在 Dust2 T侧的表现",
+      "expected": {
+        "context_level": "player_comparison",
+        "players": [
+          "m0NESY",
+          "NiKo"
+        ],
+        "map": "Dust2",
+        "side": "T",
+        "min_rounds": 10
+      }
+    },
+    {
+      "id": "compare_donk_sh1ro",
+      "category": "comparison",
+      "query": "比较 donk 与 sh1ro 在 Ancient CT侧的数据",
+      "expected": {
+        "context_level": "player_comparison",
+        "players": [
+          "donk",
+          "sh1ro"
+        ],
+        "map": "Ancient",
+        "side": "CT",
+        "min_rounds": 10
+      }
+    },
+    {
+      "id": "compare_zywoo_flamez",
+      "category": "comparison",
+      "query": "ZywOo 和 flameZ 在 Nuke CT侧有什么差异",
+      "expected": {
+        "context_level": "player_comparison",
+        "players": [
+          "ZywOo",
+          "flameZ"
+        ],
+        "map": "Nuke",
+        "side": "CT",
+        "min_rounds": 5
+      }
+    },
+    {
+      "id": "compare_kscerato_yuurih",
+      "category": "comparison",
+      "query": "对比 KSCERATO 与 yuurih 在 Ancient T侧表现",
+      "expected": {
+        "context_level": "player_comparison",
+        "players": [
+          "KSCERATO",
+          "yuurih"
+        ],
+        "map": "Ancient",
+        "side": "T",
+        "min_rounds": 5
+      }
+    },
+    {
+      "id": "compare_torzsi_xertion",
+      "category": "comparison",
+      "query": "比较 torzsi 和 xertioN 在 Dust2 CT侧表现",
+      "expected": {
+        "context_level": "player_comparison",
+        "players": [
+          "torzsi",
+          "xertioN"
+        ],
+        "map": "Dust2",
+        "side": "CT",
+        "min_rounds": 5
+      }
+    },
+    {
+      "id": "summary_absent_plant",
+      "category": "grounded_summary",
+      "query": "NiKo 在 Nuke CT侧下包表现",
+      "expected": {
+        "context_level": "player_profile",
+        "players": [
+          "NiKo"
+        ],
+        "map": "Nuke",
+        "side": "CT",
+        "min_rounds": 5,
+        "focus": "plants"
+      }
+    },
+    {
+      "id": "summary_first_death",
+      "category": "grounded_summary",
+      "query": "NiKo 在 Dust2 T侧首死回合结果",
+      "expected": {
+        "context_level": "player_profile",
+        "players": [
+          "NiKo"
+        ],
+        "map": "Dust2",
+        "side": "T",
+        "min_rounds": 5,
+        "focus": "opening_deaths"
+      }
+    },
+    {
+      "id": "summary_flash",
+      "category": "grounded_summary",
+      "query": "m0NESY 在 Dust2 T侧闪光表现",
+      "expected": {
+        "context_level": "player_profile",
+        "players": [
+          "m0NESY"
+        ],
+        "map": "Dust2",
+        "side": "T",
+        "min_rounds": 5,
+        "focus": "flash_blinds"
+      }
+    },
+    {
+      "id": "summary_utility",
+      "category": "grounded_summary",
+      "query": "donk 在 Ancient CT侧道具表现",
+      "expected": {
+        "context_level": "player_profile",
+        "players": [
+          "donk"
+        ],
+        "map": "Ancient",
+        "side": "CT",
+        "min_rounds": 5,
+        "focus": "utility"
+      }
+    },
+    {
+      "id": "summary_trade",
+      "category": "grounded_summary",
+      "query": "NiKo 在 Nuke CT侧补枪表现",
+      "expected": {
+        "context_level": "player_profile",
+        "players": [
+          "NiKo"
+        ],
+        "map": "Nuke",
+        "side": "CT",
+        "min_rounds": 5,
+        "focus": "trade_kills"
+      }
+    },
+    {
+      "id": "summary_pair_opening",
+      "category": "grounded_summary",
+      "query": "比较 NiKo 和 donk 在 Nuke CT侧的首杀",
+      "expected": {
+        "context_level": "player_comparison",
+        "players": [
+          "NiKo",
+          "donk"
+        ],
+        "map": "Nuke",
+        "side": "CT",
+        "min_rounds": 5,
+        "focus": "opening_kills"
+      }
+    }
+  ]
+}

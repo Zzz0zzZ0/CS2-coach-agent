@@ -250,3 +250,80 @@ def test_trade_outcomes_count_only_the_trader_and_deduplicate_labels(player_grap
     trade = next(group for group in result['behavior_outcomes']['groups'] if group['key'] == 'trade_kills')
     assert trade['observed']['rounds'] == 1
     assert trade['not_observed']['rounds'] == 2
+
+
+@pytest.mark.parametrize('query,metric', [
+    ('entry 的首杀', 'opening_kills'), ('entry first death', 'opening_deaths'),
+    ('entry 的补枪', 'trade_kills'), ('entry utility', 'utility'),
+    ('entry 的闪光', 'flash_blinds'), ('entry plant', 'plants'),
+])
+def test_grounded_brief_stays_on_requested_behavior(player_graph, query, metric):
+    brief = player_graph.player_brief(query, player_graph._player_query_evidence(query, None))
+    assert [claim['metric'] for claim in brief['claims']] == [metric]
+    assert brief['sample_confidence'] == '未进行统计推断'
+    assert brief['sample_scopes'][0]['match_ids'] == ['m1', 'm2']
+    sources = {source['id']: source for source in brief['sources']}
+    claim = brief['claims'][0]
+    assert claim['observed']['rounds'] == (3 if metric == 'opening_kills' else 0)
+    assert all(f'[{citation}]' in brief['findings'][1] for citation in claim['citation_ids'])
+    for ref in claim['evidence_refs']:
+        assert ref['cohort'] == ('observed' if metric == 'opening_kills' else 'not_observed')
+        assert sources[ref['citation_id']]['player_id'] == '111'
+    if metric != 'opening_kills':
+        assert '先检查筛选范围和事件记录' in brief['actions'][0]
+        assert '不可计算' in claim['text']
+
+
+def test_profile_and_query_share_grounded_summary(player_graph):
+    profile = player_graph.player_context('111', map_name='Mirage', side='T')
+    query = 'entry 在 Mirage T侧的表现'
+    brief = player_graph.player_brief(query, player_graph._player_query_evidence(query, None))
+    assert brief == profile['brief']
+    assert 'K/D 不可计算（3 杀 / 0 死）' in brief['findings'][0]
+    assert brief['sample_scopes'][0]['combat'] == profile['combat']
+    assert {claim['metric'] for claim in brief['claims']} == {'opening_kills', 'opening_deaths', 'trade_kills'}
+    assert player_graph.player_context('111', side='CT')['brief'] is None
+
+
+def test_brief_unknown_results_and_legacy_samples_are_visible(player_graph):
+    with sqlite3.connect(player_graph.db_path) as db:
+        db.execute("UPDATE nodes SET properties=json_set(properties, '$.winner', NULL, '$.participants_complete', json('false')) WHERE node_type='round'")
+    brief = player_graph.player_context('111')['brief']
+    assert brief['sample_scopes'][0]['data_quality']['estimated_rounds'] > 0
+    assert '回合估算' in brief['findings'][0]
+    assert all(claim['observed']['round_win_pct'] is None and claim['not_observed']['round_win_pct'] is None for claim in brief['claims'])
+    assert '名单确认不代表行为标签已人工审核' in brief['caveat']
+    assert '比赛日期尚未收录' in brief['caveat']
+    assert all(source['outcome'] == 'unknown' for source in brief['sources'])
+
+
+def test_comparison_citations_keep_player_identity_on_shared_round(player_graph):
+    query = '比较 entry 和 defender 的首杀'
+    brief = player_graph.player_brief(query, player_graph._player_query_evidence(query, None))
+    sources = {row['id']:row for row in brief['sources']}
+    assert len(sources) == len(brief['sources'])
+    assert len(brief['sample_scopes']) == 2
+    assert any('没有共同' in finding for finding in brief['findings'])
+    for claim in brief['claims']:
+        assert all(sources[ref['citation_id']]['player_id'] == claim['player_id'] for ref in claim['evidence_refs'])
+    shared = [row for row in brief['sources'] if row['round_id'] == 'graph:m1:Mirage:1']
+    assert {row['player_id'] for row in shared} == {'111', '222'}
+    assert {row['outcome'] for row in shared} == {'won', 'lost'}
+
+
+def test_summary_evaluator_rejects_wrong_values_and_missing_or_wrong_cohort_references(player_graph):
+    from copy import deepcopy
+    from scripts.evaluate_player_queries import check_grounded_claims
+    profile = player_graph.player_context('111')
+    original = profile['brief']
+    assert check_grounded_claims(original, [profile]) == (True, True)
+    changed = deepcopy(original)
+    changed['claims'][0]['observed']['wins'] += 1
+    assert check_grounded_claims(changed, [profile])[0] is False
+    changed = deepcopy(original)
+    changed['claims'][0]['evidence_refs'][0]['cohort'] = 'not_observed'
+    assert check_grounded_claims(changed, [profile])[1] is False
+    changed = deepcopy(original)
+    changed['claims'][0]['citation_ids'] = []
+    changed['claims'][0]['evidence_refs'] = []
+    assert check_grounded_claims(changed, [profile])[1] is False

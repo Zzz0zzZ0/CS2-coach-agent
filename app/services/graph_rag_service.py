@@ -677,7 +677,7 @@ class GraphRAGClient:
                 opponents = tuple(sorted({_team_name(name) for name in context["teams"]
                                           if _team_key(name) != _team_key(context["player_team"])}))
                 composition[(key[1], context["player_side"] or "Unknown", opponents)] += 1
-            return {
+            profile = {
                 "player_id": base["player_id"], "graph_id": graph_id,
                 "name": base["name"], "team": next(iter(selected_teams)) if len(selected_teams) == 1 else "Multiple teams" if selected_teams else team,
                 "teams": [{"team": name, "rounds": count} for name, count in sorted(selected_teams.items())],
@@ -707,8 +707,10 @@ class GraphRAGClient:
                     )
                 ],
                 "source_round_ids": sorted(set().union(*source_groups.values()))[:12] if source_groups else [],
-                "methodology": {"version": "graph-player-context-v4", "rounds": "freeze-end rosters; legacy estimates explicitly marked", "scope": "parsed events and deterministic silver labels"},
+                "methodology": {"version": "graph-player-context-v5", "rounds": "freeze-end rosters; legacy estimates explicitly marked", "scope": "parsed events and deterministic silver labels"},
             }
+            profile["brief"] = self._build_player_brief([profile])
+            return profile
         finally:
             connection.close()
 
@@ -2323,83 +2325,102 @@ class GraphRAGClient:
         item = next((entry for entry in evidence if entry.metadata.get("context_level", "").startswith("player_")), None)
         if not item:
             return None
-        metadata = item.metadata
-        profiles = metadata.get("profiles", [])
-        if not profiles:
-            return None
         lowered = query.lower()
-        focus = "opening_kills" if any(term in lowered for term in ("首杀", "opening", "first kill")) else "trade_kills" if any(term in lowered for term in ("补枪", "trade")) else "utility" if any(term in lowered for term in ("道具", "utility")) else "kills"
-        group_key = focus if focus in {"opening_kills", "trade_kills", "utility"} else "tactics"
-        round_groups = []
+        focus = next((key for key, terms in (
+            ("opening_deaths", ("首死", "首杀失利", "首杀失败", "opening death", "first death")),
+            ("flash_blinds", ("致盲", "闪光", "闪白", "flash", "blind")),
+            ("plants", ("下包", "plant")),
+            ("opening_kills", ("首杀", "opening", "first kill")),
+            ("trade_kills", ("补枪", "trade")),
+            ("utility", ("道具", "utility", "grenade")),
+        ) if any(term in lowered for term in terms)), None)
+        return self._build_player_brief(item.metadata.get("profiles", []), focus,
+                                        item.metadata.get("sample_comparison"))
+
+    @staticmethod
+    def _build_player_brief(profiles: list[dict], focus: str | None = None,
+                            sample_comparison: dict | None = None) -> dict | None:
+        if not profiles or any(not profile["sample_size"]["rounds"] for profile in profiles):
+            return None
+        sources, claims, round_groups, findings, actions = [], [], [], [], []
+        source_keys = {}
+        rate_text = lambda value: "不可计算" if value is None else f"{value:.2f}%"
         for profile in profiles:
-            for group in profile.get("round_groups", []):
-                existing = next((row for row in round_groups if row["key"] == group["key"]), None)
-                examples = [{**example, "player": profile["name"]} for example in group["examples"]]
-                if existing:
-                    existing["total"] += group["total"]
-                    existing["examples"].extend(examples)
-                else:
-                    round_groups.append({**group, "examples": examples})
-        selected_group = next((group for group in round_groups if group["key"] == group_key and group["examples"]), None)
-        selected_group = selected_group or next((group for group in round_groups if group["examples"]), None)
-        source_samples = (selected_group or {}).get("examples", [])
-        if len(profiles) == 2:
-            source_samples = [
-                sample
-                for profile in profiles
-                for sample in [item for item in source_samples if item.get("player") == profile["name"]][:3]
-            ]
-        else:
-            source_samples = source_samples[:6]
-        sources = [
-            {
-                "id": f"G{index}", "round_id": sample["source_id"],
-                "outcome": sample["outcome"], "team": sample["team"],
-                "player": sample.get("player"),
-            }
-            for index, sample in enumerate(source_samples, start=1)
-        ]
-        context = f"{metadata['map']} · {metadata['side']}"
-        if len(profiles) == 2:
-            findings = [
-                f"{profile['name']}：{profile['sample_size']['rounds']} 回合，K/D "
-                f"{profile['combat']['kd_ratio'] if profile['combat']['kd_ratio'] is not None else '暂无'}，"
-                f"首杀胜率 {_zh_pct(profile['combat']['opening_duel_win_pct'])}，每百回合击杀 {profile['rates_per_100_rounds']['kills']:.1f}。"
-                for profile in profiles
-            ]
-            findings.extend((metadata.get("sample_comparison") or {}).get("warnings", []))
-            actions = ["检查双方样本组成，再限定地图、阵营与对手，并下钻引用回合检查实际角色差异。"]
-            kind = "player_comparison"
-            title = f"{profiles[0]['name']} vs {profiles[1]['name']} · {context}"
-        else:
-            profile = profiles[0]
-            rates = profile["rates_per_100_rounds"]
-            findings = [
-                f"{profile['sample_size']['matches']} 场、{profile['sample_size']['rounds']} 回合；K/D "
-                f"{profile['combat']['kd_ratio'] if profile['combat']['kd_ratio'] is not None else '暂无'}，"
-                f"每百回合击杀 {rates['kills']:.1f}。",
-                f"首杀胜率 {_zh_pct(profile['combat']['opening_duel_win_pct'])}；每百回合补枪 {rates['trade_kills']:.1f}，道具 {rates['utility_thrown']:.1f}。",
-            ]
-            if focus == "opening_kills":
-                action = "优先复盘首杀失利回合，检查第一接触是否有撤退路线和补闪。"
-            elif focus == "trade_kills":
-                action = "优先复盘未形成补枪的死亡，检查队形距离与同步窗口。"
-            elif focus == "utility":
-                action = "优先复盘道具回合，检查投掷时机是否与队友接触同步。"
+            sample = profile["sample_size"]
+            quality = profile["data_quality"]
+            combat = profile["combat"]
+            kd = "不可计算" if combat["kd_ratio"] is None else str(combat["kd_ratio"])
+            findings.append(f"{profile['name']}：{sample['matches']} 场、{sample['maps']} 图、{sample['rounds']} 回合；"
+                            f"{quality['confirmed_rounds']} 回合名单确认，{quality['estimated_rounds']} 回合估算。"
+                            f"K/D {kd}（{combat['kills']} 杀 / {combat['deaths']} 死），"
+                            f"每百回合击杀 {profile['rates_per_100_rounds']['kills']:.2f}（参赛分母 {sample['rounds']}）。")
+            selected = [group for group in profile["behavior_outcomes"]["groups"]
+                        if group["key"] == focus or (not focus and group["key"] in ("opening_kills", "opening_deaths", "trade_kills"))]
+            for group in selected:
+                citation_ids, evidence_refs = [], []
+                for bucket_key, label in (("observed", group["label"]), ("not_observed", f"未观测到{group['label']}")):
+                    bucket = group[bucket_key]
+                    group_key = group["key"] if bucket_key == "observed" else f"{group['key']}:not_observed"
+                    examples = [{**row, "player": profile["name"]} for row in bucket["examples"]]
+                    existing = next((row for row in round_groups if row["key"] == group_key), None)
+                    if existing:
+                        existing["total"] += bucket["rounds"]
+                        existing["examples"].extend(examples)
+                    else:
+                        round_groups.append({"key": group_key, "label": label, "total": bucket["rounds"], "examples": examples})
+                    # One example per outcome and cohort; full-scope counts do not use this subset.
+                    for outcome in ("won", "lost", "unknown"):
+                        example = next((row for row in examples if row["outcome"] == outcome), None)
+                        if not example:
+                            continue
+                        key = (profile["player_id"], example["source_id"])
+                        if key not in source_keys:
+                            source_keys[key] = f"G{len(sources) + 1}"
+                            sources.append({"id": source_keys[key], "round_id": example["source_id"],
+                                            "player_id": profile["player_id"], "player": profile["name"],
+                                            "team": example["team"], "outcome": outcome})
+                        citation_ids.append(source_keys[key])
+                        evidence_refs.append({"citation_id": source_keys[key], "cohort": bucket_key, "outcome": outcome})
+                observed, other = group["observed"], group["not_observed"]
+                text = (f"{profile['name']} · {group['label']}：观测到 {observed['rounds']} 回合，"
+                        f"{observed['wins']} 胜 / {observed['losses']} 负 / {observed['unknown']} 未知，"
+                        f"回合胜率 {rate_text(observed['round_win_pct'])}（分母 {observed['decided_rounds']}）；"
+                        f"未观测到 {other['rounds']} 回合，回合胜率 {rate_text(other['round_win_pct'])}（分母 {other['decided_rounds']}）。")
+                claim = {"player_id": profile["player_id"], "metric": group["key"], "text": text,
+                         "scope": profile["filters"], "sample_size": sample,
+                         "observed": {k:v for k,v in observed.items() if k != "examples"},
+                         "not_observed": {k:v for k,v in other.items() if k != "examples"},
+                         "citation_ids": list(dict.fromkeys(citation_ids)), "evidence_refs": evidence_refs}
+                claims.append(claim)
+                findings.append(text + " " + " ".join(f"[{citation}]" for citation in claim["citation_ids"]))
+            if any(group["observed"]["rounds"] for group in selected):
+                actions.append(f"{profile['name']}：核查所列行为的胜负回合引用，记录事件顺序和局势差异；当前统计不足以诊断站位或协同问题。")
             else:
-                action = "从引用回合抽样复盘首杀、补枪与道具协同，不把不同量纲的指标直接排成强弱。"
-            actions = [action]
-            kind = "player_profile"
-            title = f"{profile['name']} · {profile['team']} · {context}"
+                actions.append(f"{profile['name']}：当前范围未观测到所问行为，先检查筛选范围和事件记录，不据此评价能力。")
+        filters = profiles[0]["filters"]
+        context = f"{filters['map'] or 'All'} · {filters['side'] or 'Both'} · 对手 {filters['opponent'] or 'All'}"
+        comparison = len(profiles) == 2
+        if sample_comparison:
+            findings.extend(sample_comparison["warnings"])
+        focus_key = focus or "opening_kills"
+        selected_group = next((row for row in round_groups if row["key"] == focus_key), None)
+        if selected_group and not selected_group["total"]:
+            focus_key += ":not_observed"
         return {
-            "kind": kind, "title": title,
-            "summary": "双方使用相同筛选，各自参赛回合为分母；筛选一致不代表样本组成一致。" if len(profiles) == 2 else "选手指标使用当前筛选范围内的参赛回合分母，并保留事件证据。",
-            "focus_metric": {"key": group_key, "label": (selected_group or {}).get("label", "关键回合")},
-            "findings": findings, "actions": actions,
-            "sample_confidence": "未进行统计推断" if len(profiles) == 2 else "中" if profiles[0]["sample_size"]["rounds"] >= 30 else "低",
-            "caveat": "指标来自解析事件与 silver labels，只描述当前样本，不评价不可观测的沟通、职责或战术意图。",
+            "kind": "player_comparison" if comparison else "player_profile",
+            "title": " vs ".join(profile["name"] for profile in profiles) + f" · {context}",
+            "summary": "双方使用相同筛选，各自参赛回合为分母；筛选一致不代表样本组成一致。" if comparison else "以下结论只描述当前筛选样本；统计使用完整参赛集合，引用仅用于抽查。",
+            "focus_metric": {"key": focus_key, "label": next((row["label"] for row in round_groups if row["key"] == focus_key), "关键回合")},
+            "findings": findings, "claims": claims, "actions": actions,
+            "sample_scopes": [{"player_id": profile["player_id"], "filters": profile["filters"],
+                               "match_ids": profile["sample_scope"]["match_ids"], "sample_size": profile["sample_size"],
+                               "data_quality": profile["data_quality"], "date_status": profile["sample_scope"]["date_status"],
+                               "combat": profile["combat"], "rates_per_100_rounds": profile["rates_per_100_rounds"]}
+                              for profile in profiles],
+            "sample_confidence": "未进行统计推断",
+            "caveat": "指标来自解析事件与 silver labels，名单确认不代表行为标签已人工审核。比赛日期尚未收录，不能判断最近状态或长期风格。未知胜负不进入胜率分母；未观测到不等于未发生；两组未匹配局势，差异不代表因果。引用是固定排序的示例，不是完整统计证据或随机样本。致盲记录不等于有效助攻；不推断不可观测的沟通、职责或战术意图。",
             "sources": sources, "round_groups": round_groups,
-            "methodology": "deterministic-player-brief-v2",
+            "methodology": "deterministic-player-brief-v3",
         }
 
     def _global_search_sync(self, query: str, metadata: dict, k: int) -> list[Evidence]:

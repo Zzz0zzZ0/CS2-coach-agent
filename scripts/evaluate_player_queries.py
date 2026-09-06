@@ -2,6 +2,7 @@
 import argparse
 import asyncio
 import json
+import hashlib
 import math
 import sys
 import time
@@ -24,6 +25,38 @@ def _percentile(values: list[float], percentile: float) -> float:
         return 0.0
     ordered = sorted(values)
     return round(ordered[max(0, math.ceil(percentile * len(ordered)) - 1)], 2)
+
+
+def check_grounded_claims(brief: dict | None, profiles: list[dict]) -> tuple[bool, bool]:
+    if not brief or not brief.get("claims"):
+        return False, False
+    by_player = {profile["player_id"]: profile for profile in profiles}
+    by_source = {source["id"]: source for source in brief["sources"]}
+    metrics_ok = {scope["player_id"] for scope in brief.get("sample_scopes", [])} == set(by_player)
+    for scope in brief.get("sample_scopes", []):
+        profile = by_player.get(scope["player_id"], {})
+        metrics_ok &= all(scope.get(key) == profile.get(key) for key in ("filters", "sample_size", "data_quality", "combat", "rates_per_100_rounds"))
+        metrics_ok &= scope.get("match_ids") == profile.get("sample_scope", {}).get("match_ids")
+    citations_ok = len(by_source) == len(brief["sources"])
+    for claim in brief["claims"]:
+        profile = by_player.get(claim["player_id"])
+        group = next((row for row in (profile or {}).get("behavior_outcomes", {}).get("groups", [])
+                      if row["key"] == claim["metric"]), None)
+        if not group:
+            return False, False
+        metrics_ok &= claim["scope"] == profile["filters"] and claim["sample_size"] == profile["sample_size"]
+        metrics_ok &= all(claim[key] == {field:value for field,value in group[key].items() if field != "examples"}
+                          for key in ("observed", "not_observed"))
+        citations_ok &= set(claim["citation_ids"]) == {ref["citation_id"] for ref in claim["evidence_refs"]}
+        expected_outcomes = {(cohort, sample["outcome"]) for cohort in ("observed", "not_observed") for sample in group[cohort]["examples"]}
+        citations_ok &= {(ref["cohort"], ref["outcome"]) for ref in claim["evidence_refs"]} == expected_outcomes
+        for ref in claim["evidence_refs"]:
+            source = by_source.get(ref["citation_id"])
+            allowed = group.get(ref["cohort"], {}).get("examples", [])
+            citations_ok &= bool(source and source["player_id"] == claim["player_id"] and any(
+                sample["source_id"] == source["round_id"] and sample["team"] == source["team"]
+                and sample["outcome"] == ref["outcome"] == source["outcome"] for sample in allowed))
+    return bool(metrics_ok), bool(citations_ok)
 
 
 async def evaluate(dataset_path: Path, graph_db: Path) -> dict:
@@ -49,6 +82,7 @@ async def evaluate(dataset_path: Path, graph_db: Path) -> dict:
             for name in expected_names
         ]
         first_source = brief.get("sources", [{}])[0].get("round_id") if brief and brief.get("sources") else None
+        grounded, citations = check_grounded_claims(brief, profiles)
         checks = {
             "context": bool(player_evidence and player_evidence.metadata.get("context_level") == expected["context_level"]),
             "players": [profile.get("name") for profile in profiles] == expected_names,
@@ -64,6 +98,9 @@ async def evaluate(dataset_path: Path, graph_db: Path) -> dict:
                 for actual, expected_profile in zip(profiles, canonical)
             ),
             "coach_brief": bool(brief),
+            "grounded_claims": grounded,
+            "citation_grounding": citations,
+            "requested_behavior": "focus" not in expected or bool(brief and all(claim["metric"] == expected["focus"] for claim in brief["claims"])),
             "source_coverage": bool(brief and brief.get("sources")),
             "round_drilldown": bool(first_source and client.round_detail(first_source)),
         }
@@ -73,6 +110,9 @@ async def evaluate(dataset_path: Path, graph_db: Path) -> dict:
     latencies = [row["latency_ms"] for row in rows]
     return {
         "dataset_version": dataset["version"],
+        "artifact_hashes": {"dataset": hashlib.sha256(dataset_path.read_bytes()).hexdigest(),
+                            "evaluator": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+                            "graph_service": hashlib.sha256(Path(GraphRAGClient.__module__.replace(".", "/") + ".py").read_bytes()).hexdigest()},
         "summary": {
             "cases": len(rows),
             "passed": passed,
@@ -88,7 +128,7 @@ async def evaluate(dataset_path: Path, graph_db: Path) -> dict:
             },
         },
         "cases": rows,
-        "limitations": ["Deterministic contract evaluation, not an expert rating of player decision quality."],
+        "limitations": ["Deterministic contract evaluation, not an expert rating of player decision quality. Claim grounding checks structured metrics and cohort citations, not independent label correctness."],
     }
 
 

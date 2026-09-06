@@ -14,7 +14,7 @@
 
 </div>
 
-新增同语料检索实验工具（160 条无评分试跑）与首场未见比赛复盘验收（2 图、44 回合全部通过），当前 109 项离线测试通过。独立相关性标签仍待审核，研究效果尚未验证。见 [实验说明](docs/FAIR_RETRIEVAL_RUN.md) 和 [新比赛验收](docs/UNSEEN_MATCH_PILOT.md)。
+新增同语料检索实验工具（160 条无评分试跑）与首场未见比赛复盘验收（2 图、44 回合全部通过），当前 119 项离线测试通过。独立相关性标签仍待审核，研究效果尚未验证。见 [实验说明](docs/FAIR_RETRIEVAL_RUN.md) 和 [新比赛验收](docs/UNSEEN_MATCH_PILOT.md)。
 
 此前画像阶段已完成参赛分母与归属修复、离线测试环境：49 张地图的 1,023 个有效回合名单完整，87 项离线测试通过，独立前端构建通过。远端 CI 已通过，[查看运行记录](https://github.com/Zzz0zzZ0/CS2-coach-agent/actions/runs/34031162026)。详见 [执行进度与验收](docs/IMPLEMENTATION_PROGRESS.md)、[画像数据契约](docs/PLAYER_PROFILE_DATA_CONTRACT.md) 与 [离线复现](docs/OFFLINE_VALIDATION.md)。
 
@@ -248,6 +248,8 @@ make graph-build
 `make graph-build` 会同时重算当前 silver 战术标签，并把它们写为 `tactical_sequence` 节点，通过 `SUPPORTED_BY` 与原始事件连接。分析请求会自动并行检索 Milvus 与图谱；命中的标签及其 `label_source`、置信度会以 `Graph ... Evidence` 和 `[E#]` 引用进入现有 Analyst、Coach、Verifier 链。`weak_rule` 只作为候选序列，不视为人工确认战术。没有 `data/graph/cs2_graph.sqlite` 时自动退回 Milvus。
 
 同一个 SQLite 图谱还提供跨比赛分析：选手画像聚合击杀、死亡、助攻、首杀/首死、补枪、道具、下包和六类战术序列参与，并可按地图、T/CT、对手筛选或比较两名选手在相同筛选下的指标与样本组成；战队对比则把战术序列统一换算为每 100 个实际参赛回合，避免不同比赛数量造成总量偏差。战术切片计算首杀后胜率、丢首杀翻盘率、补枪回合胜率、Post-plant、Retake contact 和 Execute candidate 的回合转化，同时列出首杀、补枪和道具协同的选手责任分布。自然语言搜索同时支持战队和选手中文教练简报，每个结果都保留 `graph:{match}:{map}:{round}` 来源。当前指标是描述性统计，不宣称战术因果。没有胜方的 `round_end` 被视为技术暂停或回合恢复标记，不计入正式回合。若 GOTV Demo 缺少原生 `player_blind`，解析器会在每次 `flashbang_detonate` 的前后 tick 比较 `flash_duration`，恢复受闪者、投掷者、队伍、区域和持续时间，并以 `source=flash_duration_delta` 标记来源。同一 tick 只有一颗闪时投掷者可唯一归因；多颗闪同时爆炸时则保留全部 `attacker_candidates` 并标记 `attribution=simultaneous_flash_candidates`，不虚构唯一投掷者。
+
+画像页和自然语言选手查询共用确定性总结，包含基础表现、行为结论、样本范围、已知结果分母和分组引用。所问行为无记录时保持原主题，不生成站位、沟通或职责诊断；当前 26 条总结查询通过工程证据一致性检查，尚未代替人工盲评。见 [总结契约与验收](docs/PLAYER_GROUNDED_SUMMARY.md)。
 
 选手画像新增个体行为与回合结果面板：首杀、首死、补枪、道具、致盲、下包分别比较“观测到 / 未观测到”的回合胜率，并展示原始胜负数、未知结果及胜负回合引用。重复事件按回合去重，未知结果不进入胜率分母；两组未经条件匹配，差异只表示关联。56 名选手的六类行为通过原始记录审计，见 [口径与复现](docs/PLAYER_BEHAVIOR_OUTCOMES.md)。
 
