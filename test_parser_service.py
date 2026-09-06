@@ -200,3 +200,41 @@ def test_round_roster_uses_freeze_snapshot_and_rejects_partial_completeness():
     assert len(roster['participants']) == 10
     parser.parser = _DemoParserFixture()
     assert parser.parse_round_rosters()[1]['participants_complete'] is False
+
+
+def test_restart_discards_prior_scored_round_and_its_events_and_roster():
+    class RestartFixture(_DemoParserFixture):
+        def parse_event(self, event_name, **kwargs):
+            rows = {
+                "round_end": [{"round": 1, "tick": 100, "winner": "T"},
+                              {"round": 2, "tick": 350, "winner": "CT"},
+                              {"round": 3, "tick": 600, "winner": "T"}],
+                "round_start": [{"tick": 10}, {"tick": 200}, {"tick": 400}, {"tick": 950}],
+                "round_announce_match_start": [{"tick": 50}, {"tick": 250}, {"tick": 1000}],
+                "round_freeze_end": [{"tick": 50}, {"tick": 250}, {"tick": 450}],
+            }
+            if event_name in rows:
+                return pd.DataFrame(rows[event_name])
+            result = super().parse_event(event_name, **kwargs)
+            if event_name == "player_death":
+                prior = result.iloc[0].to_dict() | {"tick": 75, "attacker_name": "pre_restart"}
+                result = pd.concat([pd.DataFrame([prior]), result], ignore_index=True)
+            return result
+
+        def parse_ticks(self, wanted_props, **kwargs):
+            if wanted_props == ["team_name", "team_clan_name"]:
+                return pd.DataFrame([{"tick":t, "steamid":str(100+i), "name":f'p{i}',
+                    "team_name":"TERRORIST" if i < 5 else "CT", "team_clan_name":"Alpha" if i < 5 else "Bravo"}
+                    for t in kwargs['ticks'] for i in range(10)])
+            return super().parse_ticks(wanted_props, **kwargs)
+
+    parser = TacticalDemoParser.__new__(TacticalDemoParser)
+    parser.demo_path, parser.parser = "fixture.dem", RestartFixture()
+    result = parser.parse_to_dict()
+    assert len(result["rounds"]) == 2
+    first = result["rounds"][0]
+    assert first["start_tick"] == 200 and first["freeze_end_tick"] == 250
+    assert first["roster_tick"] == 250 and first["participants_complete"] is True
+    assert [k["killer"] for k in first["kills"]] == ["entry"]
+    assert first["grenades"] == first["flash_blinds"] == []
+    assert list(parser.parse_round_rosters()) == [1, 2]

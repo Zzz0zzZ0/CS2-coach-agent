@@ -1,0 +1,330 @@
+[
+  {
+    "file": "BLAST_Open_Porto_2026_FURIA_vs_Vitality_2396948_map1.dem",
+    "old_rounds": 19,
+    "live_rounds": 19,
+    "start_tick": 377
+  },
+  {
+    "file": "BLAST_Open_Porto_2026_FURIA_vs_Vitality_2396948_map2.dem",
+    "old_rounds": 24,
+    "live_rounds": 24,
+    "start_tick": 375
+  },
+  {
+    "file": "BLAST_Open_Porto_2026_FURIA_vs_Vitality_2396948_map3.dem",
+    "old_rounds": 18,
+    "live_rounds": 17,
+    "start_tick": 4490,
+    "map": "de_dust2",
+    "discarded_end_ticks": [
+      3256
+    ],
+    "pre_restart_weapons": [
+      "knife_butterfly",
+      "knife_karambit"
+    ]
+  },
+  {
+    "file": "BLAST_Open_Porto_2026_FURIA_vs_paiN_2396926_map1.dem",
+    "old_rounds": 15,
+    "live_rounds": 15,
+    "start_tick": 350
+  },
+  {
+    "file": "BLAST_Open_Porto_2026_FURIA_vs_paiN_2396926_map2.dem",
+    "old_rounds": 19,
+    "live_rounds": 19,
+    "start_tick": 387
+  },
+  {
+    "file": "BLAST_Open_Porto_2026_FUT_vs_Vitality_2396946_map1.dem",
+    "old_rounds": 20,
+    "live_rounds": 20,
+    "start_tick": 324
+  },
+  {
+    "file": "BLAST_Open_Porto_2026_FUT_vs_Vitality_2396946_map2.dem",
+    "old_rounds": 21,
+    "live_rounds": 21,
+    "start_tick": 331
+  },
+  {
+    "file": "BLAST_Open_Porto_2026_Falcons_vs_G2_2396947_map1.dem",
+    "old_rounds": 19,
+    "live_rounds": 19,
+    "start_tick": 373
+  },
+  {
+    "file": "BLAST_Open_Porto_2026_Falcons_vs_G2_2396947_map2.dem",
+    "old_rounds": 22,
+    "live_rounds": 22,
+    "start_tick": 355
+  },
+  {
+    "file": "BLAST_Open_Porto_2026_G2_vs_Spirit_2396932_map1.dem",
+    "old_rounds": 19,
+    "live_rounds": 19,
+    "start_tick": 660
+  },
+  {
+    "file": "BLAST_Open_Porto_2026_G2_vs_Spirit_2396932_map2.dem",
+    "old_rounds": 22,
+    "live_rounds": 22,
+    "start_tick": 367
+  },
+  {
+    "file": "BLAST_Open_Porto_2026_Legacy_vs_Falcons_2396938_map1.dem",
+    "old_rounds": 19,
+    "live_rounds": 19,
+    "start_tick": 362
+  },
+  {
+    "file": "BLAST_Open_Porto_2026_Legacy_vs_Falcons_2396938_map2.dem",
+    "old_rounds": 23,
+    "live_rounds": 23,
+    "start_tick": 373
+  },
+  {
+    "file": "BLAST_Open_Porto_2026_Legacy_vs_Falcons_2396938_map3.dem",
+    "old_rounds": 20,
+    "live_rounds": 19,
+    "start_tick": 4856,
+    "map": "de_dust2",
+    "discarded_end_ticks": [
+      4020
+    ],
+    "pre_restart_weapons": [
+      "knife_butterfly",
+      "knife_karambit",
+      "knife_skeleton"
+    ]
+  },
+  {
+    "file": "BLAST_Open_Porto_2026_MOUZ_vs_9z_2396928_map1.dem",
+    "old_rounds": 17,
+    "live_rounds": 17,
+    "start_tick": 346
+  },
+  {
+    "file": "BLAST_Open_Porto_2026_MOUZ_vs_9z_2396928_map2.dem",
+    "old_rounds": 20,
+    "live_rounds": 20,
+    "start_tick": 370
+  },
+  {
+    "file": "BLAST_Open_Porto_2026_MOUZ_vs_Falcons_2396945_map1.dem",
+    "old_rounds": 19,
+    "live_rounds": 19,
+    "start_tick": 385
+  },
+  {
+    "file": "BLAST_Open_Porto_2026_MOUZ_vs_Falcons_2396945_map2.dem",
+    "old_rounds": 19,
+    "live_rounds": 19,
+    "start_tick": 377
+  },
+  {
+    "file": "BLAST_Open_Porto_2026_MOUZ_vs_Falcons_2396945_map3.dem",
+    "old_rounds": 17,
+    "live_rounds": 16,
+    "start_tick": 5781,
+    "map": "de_inferno",
+    "discarded_end_ticks": [
+      4421
+    ],
+    "pre_restart_weapons": [
+      "knife_butterfly",
+      "knife_karambit"
+    ]
+  },
+  {
+    "file": "BLAST_Open_Porto_2026_Spirit_vs_FURIA_2396943_map1.dem",
+    "old_rounds": 23,
+    "live_rounds": 23,
+    "start_tick": 680
+  },
+  {
+    "file": "BLAST_Open_Porto_2026_Spirit_vs_FURIA_2396943_map2.dem",
+    "old_rounds": 18,
+    "live_rounds": 18,
+    "start_tick": 358
+  },
+  {
+    "file": "BLAST_Open_Porto_2026_Spirit_vs_Falcons_2396949_map1.dem",
+    "old_rounds": 21,
+    "live_rounds": 21,
+    "start_tick": 344
+  },
+  {
+    "file": "BLAST_Open_Porto_2026_Spirit_vs_Falcons_2396949_map2.dem",
+    "old_rounds": 24,
+    "live_rounds": 24,
+    "start_tick": 384
+  },
+  {
+    "file": "BLAST_Open_Porto_2026_Vitality_vs_9z_2396935_map1.dem",
+    "old_rounds": 15,
+    "live_rounds": 15,
+    "start_tick": 349
+  },
+  {
+    "file": "BLAST_Open_Porto_2026_Vitality_vs_9z_2396935_map2.dem",
+    "old_rounds": 19,
+    "live_rounds": 19,
+    "start_tick": 350
+  },
+  {
+    "file": "BLAST_Open_Porto_2026_Vitality_vs_Legacy_2396941_map1.dem",
+    "old_rounds": 30,
+    "live_rounds": 30,
+    "start_tick": 367
+  },
+  {
+    "file": "BLAST_Open_Porto_2026_Vitality_vs_Legacy_2396941_map2.dem",
+    "old_rounds": 22,
+    "live_rounds": 22,
+    "start_tick": 375
+  },
+  {
+    "file": "BLAST_Open_Porto_2026_Vitality_vs_Legacy_2396941_map3.dem",
+    "old_rounds": 22,
+    "live_rounds": 21,
+    "start_tick": 4814,
+    "map": "de_dust2",
+    "discarded_end_ticks": [
+      3958
+    ],
+    "pre_restart_weapons": [
+      "knife_butterfly",
+      "knife_falchion",
+      "knife_m9_bayonet"
+    ]
+  },
+  {
+    "file": "Esports_World_Cup_2026_FURIA_vs_Legacy_2396613_map1.dem",
+    "old_rounds": 22,
+    "live_rounds": 22,
+    "start_tick": 1
+  },
+  {
+    "file": "Esports_World_Cup_2026_FURIA_vs_Legacy_2396613_map2.dem",
+    "old_rounds": 22,
+    "live_rounds": 22,
+    "start_tick": 1
+  },
+  {
+    "file": "Esports_World_Cup_2026_FURIA_vs_Legacy_2396613_map3.dem",
+    "old_rounds": 22,
+    "live_rounds": 22,
+    "start_tick": 1
+  },
+  {
+    "file": "Esports_World_Cup_2026_FUT_vs_MOUZ_2396608_map1.dem",
+    "old_rounds": 29,
+    "live_rounds": 29,
+    "start_tick": 1
+  },
+  {
+    "file": "Esports_World_Cup_2026_FUT_vs_MOUZ_2396608_map2.dem",
+    "old_rounds": 18,
+    "live_rounds": 18,
+    "start_tick": 1
+  },
+  {
+    "file": "Esports_World_Cup_2026_FUT_vs_Spirit_2396614_map1.dem",
+    "old_rounds": 23,
+    "live_rounds": 23,
+    "start_tick": 1
+  },
+  {
+    "file": "Esports_World_Cup_2026_FUT_vs_Spirit_2396614_map2.dem",
+    "old_rounds": 29,
+    "live_rounds": 29,
+    "start_tick": 1
+  },
+  {
+    "file": "Esports_World_Cup_2026_FUT_vs_Spirit_2396614_map3.dem",
+    "old_rounds": 30,
+    "live_rounds": 30,
+    "start_tick": 1
+  },
+  {
+    "file": "Esports_World_Cup_2026_FUT_vs_Spirit_2396614_map4.dem",
+    "old_rounds": 18,
+    "live_rounds": 18,
+    "start_tick": 1
+  },
+  {
+    "file": "Esports_World_Cup_2026_G2_vs_FURIA_2396607_map1.dem",
+    "old_rounds": 16,
+    "live_rounds": 16,
+    "start_tick": 1
+  },
+  {
+    "file": "Esports_World_Cup_2026_G2_vs_FURIA_2396607_map2.dem",
+    "old_rounds": 16,
+    "live_rounds": 16,
+    "start_tick": 1
+  },
+  {
+    "file": "Esports_World_Cup_2026_G2_vs_FURIA_2396607_map3.dem",
+    "old_rounds": 17,
+    "live_rounds": 17,
+    "start_tick": 1
+  },
+  {
+    "file": "Esports_World_Cup_2026_Legacy_vs_Falcons_2396609_map1.dem",
+    "old_rounds": 20,
+    "live_rounds": 20,
+    "start_tick": 1
+  },
+  {
+    "file": "Esports_World_Cup_2026_Legacy_vs_Falcons_2396609_map2.dem",
+    "old_rounds": 23,
+    "live_rounds": 23,
+    "start_tick": 1
+  },
+  {
+    "file": "Esports_World_Cup_2026_Legacy_vs_Spirit_2396612_map1.dem",
+    "old_rounds": 20,
+    "live_rounds": 20,
+    "start_tick": 1
+  },
+  {
+    "file": "Esports_World_Cup_2026_Legacy_vs_Spirit_2396612_map2.dem",
+    "old_rounds": 22,
+    "live_rounds": 22,
+    "start_tick": 1
+  },
+  {
+    "file": "Esports_World_Cup_2026_MOUZ_vs_PARIVISION_2396595_map1.dem",
+    "old_rounds": 17,
+    "live_rounds": 17,
+    "start_tick": 1
+  },
+  {
+    "file": "Esports_World_Cup_2026_MOUZ_vs_PARIVISION_2396595_map2.dem",
+    "old_rounds": 23,
+    "live_rounds": 23,
+    "start_tick": 2
+  },
+  {
+    "file": "Esports_World_Cup_2026_Vitality_vs_Spirit_2396610_map1.dem",
+    "old_rounds": 24,
+    "live_rounds": 24,
+    "start_tick": 1
+  },
+  {
+    "file": "Esports_World_Cup_2026_Vitality_vs_Spirit_2396610_map2.dem",
+    "old_rounds": 30,
+    "live_rounds": 30,
+    "start_tick": 1
+  },
+  {
+    "file": "Esports_World_Cup_2026_Vitality_vs_Spirit_2396610_map3.dem",
+    "old_rounds": 16,
+    "live_rounds": 16,
+    "start_tick": 1
+  }
+]

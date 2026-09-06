@@ -1,0 +1,187 @@
+{
+  "version": "unseen-pipeline-pilot-v1",
+  "created_at": "2026-09-06T17:49:50.774312+00:00",
+  "selection_sha256": "ec7d0c2caf9f7b6a2c170a4b93ef4c866fbcce325415dd65600121cff172a8be",
+  "evaluator_sha256": "d73b5de651d86d8e9a3e5df4659f580dd99f7828c5b56391139b54e804e3e202",
+  "historical_match_ids": [
+    "2396595",
+    "2396607",
+    "2396608",
+    "2396609",
+    "2396610",
+    "2396612",
+    "2396613",
+    "2396614",
+    "2396926",
+    "2396928",
+    "2396932",
+    "2396935",
+    "2396938",
+    "2396941",
+    "2396943",
+    "2396945",
+    "2396946",
+    "2396947",
+    "2396948",
+    "2396949"
+  ],
+  "historical_graph_unchanged": true,
+  "complete_series": true,
+  "series_count": 2,
+  "maps": [
+    {
+      "file": "G2_vs_Aurora_2396944_map1.dem",
+      "sha256": "e6bdd552f9336cd03a42f758d3849277461095bd3d019cd22c6608af8f2e3dc1",
+      "match_id": "2396944",
+      "map": "Anubis",
+      "rounds": 20,
+      "complete_rosters": 20,
+      "team_score": {
+        "Aurora": 13,
+        "G2": 7
+      },
+      "kills": 130,
+      "grenades": 415,
+      "flash_blinds": 187,
+      "plants": 8,
+      "checks": {
+        "round_count": true,
+        "public_team_score": true,
+        "complete_rosters": true,
+        "metric_round_count": true,
+        "current_sources": true,
+        "verification": true,
+        "no_model_usage": true,
+        "historical_sources_disjoint": true,
+        "historical_evidence_present": true
+      },
+      "passed": true,
+      "latency_ms": 2946.631958708167,
+      "result": "data/evaluation/unseen_small_v3/baseline/report_2396944_Anubis.json"
+    },
+    {
+      "file": "G2_vs_Aurora_2396944_map2.dem",
+      "sha256": "e71bad7ed9d272f72806940dcd1e8f732c31f947865e49e5ccbbcf1f43bcdc83",
+      "match_id": "2396944",
+      "map": "Inferno",
+      "rounds": 35,
+      "complete_rosters": 35,
+      "team_score": {
+        "G2": 19,
+        "Aurora": 16
+      },
+      "kills": 224,
+      "grenades": 958,
+      "flash_blinds": 579,
+      "plants": 25,
+      "checks": {
+        "round_count": true,
+        "public_team_score": true,
+        "complete_rosters": true,
+        "metric_round_count": true,
+        "current_sources": true,
+        "verification": true,
+        "no_model_usage": true,
+        "historical_sources_disjoint": true,
+        "historical_evidence_present": true
+      },
+      "passed": true,
+      "latency_ms": 3283.1251667812467,
+      "result": "data/evaluation/unseen_small_v3/baseline/report_2396944_Inferno.json"
+    },
+    {
+      "file": "G2_vs_Aurora_2396944_map3.dem",
+      "sha256": "e348879717172add00b80285c20f884f4e180aa8cffa5a7ae9990d0d1d20b9fd",
+      "match_id": "2396944",
+      "map": "Mirage",
+      "rounds": 15,
+      "complete_rosters": 15,
+      "team_score": {
+        "Aurora": 2,
+        "G2": 13
+      },
+      "kills": 105,
+      "grenades": 239,
+      "flash_blinds": 156,
+      "plants": 9,
+      "checks": {
+        "round_count": false,
+        "public_team_score": false,
+        "complete_rosters": true,
+        "metric_round_count": true,
+        "current_sources": true,
+        "verification": true,
+        "no_model_usage": true,
+        "historical_sources_disjoint": true,
+        "historical_evidence_present": true
+      },
+      "passed": false,
+      "latency_ms": 1652.4254996329546,
+      "result": "data/evaluation/unseen_small_v3/baseline/report_2396944_Mirage.json"
+    },
+    {
+      "file": "G2_vs_Natus_Vincere_2396940_map1.dem",
+      "sha256": "addb04dbcffaa81c3bf05b47265744af3fca3206b0746cc0ab5c4d1b00010956",
+      "match_id": "2396940",
+      "map": "Ancient",
+      "rounds": 19,
+      "complete_rosters": 19,
+      "team_score": {
+        "G2": 13,
+        "NaVi": 6
+      },
+      "kills": 129,
+      "grenades": 425,
+      "flash_blinds": 255,
+      "plants": 9,
+      "checks": {
+        "round_count": true,
+        "public_team_score": false,
+        "complete_rosters": true,
+        "metric_round_count": true,
+        "current_sources": true,
+        "verification": true,
+        "no_model_usage": true,
+        "historical_sources_disjoint": true,
+        "historical_evidence_present": true
+      },
+      "passed": false,
+      "latency_ms": 2406.2688327394426,
+      "result": "data/evaluation/unseen_small_v3/baseline/report_2396940_Ancient.json"
+    },
+    {
+      "file": "G2_vs_Natus_Vincere_2396940_map2.dem",
+      "sha256": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352",
+      "match_id": "2396940",
+      "map": "Inferno",
+      "rounds": 23,
+      "complete_rosters": 23,
+      "team_score": {
+        "G2": 13,
+        "NaVi": 10
+      },
+      "kills": 123,
+      "grenades": 601,
+      "flash_blinds": 379,
+      "plants": 17,
+      "checks": {
+        "round_count": true,
+        "public_team_score": false,
+        "complete_rosters": true,
+        "metric_round_count": true,
+        "current_sources": true,
+        "verification": true,
+        "no_model_usage": true,
+        "historical_sources_disjoint": true,
+        "historical_evidence_present": true
+      },
+      "passed": false,
+      "latency_ms": 2589.3276669085026,
+      "result": "data/evaluation/unseen_small_v3/baseline/report_2396940_Inferno.json"
+    }
+  ],
+  "passed": false,
+  "scope": "Isolated-series deterministic pipeline engineering check; not retrieval generalization or expert coaching validation. Series count is reported explicitly.",
+  "model_calls": 0,
+  "historical_vector_store": "not connected or modified"
+}

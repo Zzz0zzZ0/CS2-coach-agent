@@ -1,0 +1,57 @@
+{
+  "version": "unseen-small-v3-downloads",
+  "completed_at": "2026-09-06T17:50:23.998545+00:00",
+  "selection_sha256": "ec7d0c2caf9f7b6a2c170a4b93ef4c866fbcce325415dd65600121cff172a8be",
+  "method": "Native Chrome official HLTV Demo download; existing system proxy, no proxy settings changed. Archives listed and extracted with macOS bsdtar; original Downloads copies retained.",
+  "archives": [
+    {
+      "match_id": "2396944",
+      "file": "blast-open-porto-2026-g2-vs-aurora-bo3-DovgIO15YfG7biwLEpeKgx.rar",
+      "bytes": 857294310,
+      "sha256": "aced3b1c2b361cd7120e93c985fe690df81077fbf3daa190fe7027803223056d",
+      "source_urls": [
+        "https://r2-demos.hltv.org/demos/129906/blast-open-porto-2026-g2-vs-aurora-bo3-DovgIO15YfG7biwLEpeKgx.rar",
+        "https://www.hltv.org/"
+      ]
+    },
+    {
+      "match_id": "2396940",
+      "file": "blast-open-porto-2026-g2-vs-natus-vincere-bo3-6_0lhpJZTLQg_BtP64SKB8.rar",
+      "bytes": 566862204,
+      "sha256": "e9b5af189f4e7d69de6a61606cffacc2cff456899f628bca16676f6a5274572d",
+      "source_urls": [
+        "https://r2-demos.hltv.org/demos/129832/blast-open-porto-2026-g2-vs-natus-vincere-bo3-6_0lhpJZTLQg_BtP64SKB8.rar",
+        "https://www.hltv.org/"
+      ]
+    }
+  ],
+  "demos": [
+    {
+      "file": "G2_vs_Aurora_2396944_map1.dem",
+      "bytes": 362299737,
+      "sha256": "e6bdd552f9336cd03a42f758d3849277461095bd3d019cd22c6608af8f2e3dc1"
+    },
+    {
+      "file": "G2_vs_Aurora_2396944_map2.dem",
+      "bytes": 680953565,
+      "sha256": "e71bad7ed9d272f72806940dcd1e8f732c31f947865e49e5ccbbcf1f43bcdc83"
+    },
+    {
+      "file": "G2_vs_Aurora_2396944_map3.dem",
+      "bytes": 236903403,
+      "sha256": "e348879717172add00b80285c20f884f4e180aa8cffa5a7ae9990d0d1d20b9fd"
+    },
+    {
+      "file": "G2_vs_Natus_Vincere_2396940_map1.dem",
+      "bytes": 370061861,
+      "sha256": "addb04dbcffaa81c3bf05b47265744af3fca3206b0746cc0ab5c4d1b00010956"
+    },
+    {
+      "file": "G2_vs_Natus_Vincere_2396940_map2.dem",
+      "bytes": 478618429,
+      "sha256": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352"
+    }
+  ],
+  "new_model_calls": 0,
+  "history_ingested": false
+}

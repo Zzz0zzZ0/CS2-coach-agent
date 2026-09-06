@@ -31,10 +31,12 @@ def preflight(selection, graph_db):
     return historical
 
 
-def score_checks(parsed, result, expected_scores):
+def score_checks(parsed, result, expected_scores, team_aliases=None):
     rounds = parsed["rounds"]
+    actual = result.metrics.rounds_won_by_team
+    compared = {(team_aliases or {}).get(team, team): wins for team, wins in actual.items()}
     return {"round_count": len(rounds) == sum(expected_scores.values()),
-            "public_team_score": result.metrics.rounds_won_by_team == expected_scores,
+            "public_team_score": len(compared) == len(actual) and compared == expected_scores,
             "complete_rosters": all(r.get("participants_complete") for r in rounds),
             "metric_round_count": result.metrics.rounds_total == len(rounds),
             "current_sources": len(result.current_evidence) == len(rounds) + 1,
@@ -90,7 +92,7 @@ async def evaluate(args):
             continue
         payload = MatchWebhookPayload(**{**parsed, "match_id": mid, "map_name": map_name})
         result = await AnalysisPipeline(None, None, graph).analyze(payload)
-        checks = score_checks(parsed, result, match["public_map_scores"][map_name])
+        checks = score_checks(parsed, result, match["public_map_scores"][map_name], match.get("public_team_aliases"))
         # Current match facts must stay in C sources; historical retrieval must
         # not quietly cite the held-out series as an indexed prior observation.
         checks["historical_sources_disjoint"] = all(str(e.get("metadata", {}).get("match_id", "")) != mid for e in result.retrieval_evidence)
@@ -100,6 +102,7 @@ async def evaluate(args):
         rows.append({"file": path.name, "sha256": checksum, "match_id": mid, "map": map_name,
                      "rounds": len(parsed["rounds"]), "complete_rosters": sum(bool(r.get("participants_complete")) for r in parsed["rounds"]),
                      "team_score": result.metrics.rounds_won_by_team, "kills": result.metrics.kills_total,
+                     "public_team_aliases": match.get("public_team_aliases", {}),
                      "grenades": result.metrics.grenades_total, "flash_blinds": result.metrics.flash_blinds_total,
                      "plants": result.metrics.plants_total, "checks": checks, "passed": all(checks.values()),
                      "latency_ms": (time.perf_counter() - start) * 1000, "result": str(artifact)})

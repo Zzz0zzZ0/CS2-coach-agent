@@ -203,9 +203,33 @@ class TacticalDemoParser:
             and not (attacker_team and victim_team and attacker_team == victim_team)
         )
 
-    def parse_round_rosters(self, round_ends=None, freeze_ends=None) -> dict:
+    def _completed_rounds(self):
+        """Keep the last announced match session, excluding pre-restart rounds."""
+        ends = self._parse_event("round_end")
+        if "round" in ends:
+            ends = ends[ends["round"] > 0]
+        if "winner" in ends:
+            ends = ends[ends["winner"].notna()]
+        boundary = 0
+        if not ends.empty and "tick" in ends:
+            announcements = self._parse_event("round_announce_match_start")
+            starts = self._parse_event("round_start")
+            if "tick" in announcements and "tick" in starts:
+                announced = announcements.loc[announcements["tick"] <= ends["tick"].max(), "tick"]
+                if not announced.empty:
+                    candidates = starts.loc[starts["tick"] <= announced.max(), "tick"]
+                    if not candidates.empty:
+                        boundary = int(candidates.max())
+                        ends = ends[ends["tick"] > boundary]
+            ends = ends.sort_values("tick")
+        return ends.reset_index(drop=True), boundary
+
+    def parse_round_rosters(self, round_ends=None, freeze_ends=None, start_tick=0) -> dict:
         """Capture the active roster at freeze end; incomplete snapshots stay explicit."""
-        ends = self._parse_event("round_end") if round_ends is None else round_ends.copy()
+        if round_ends is None:
+            ends, start_tick = self._completed_rounds()
+        else:
+            ends = round_ends.copy()
         freezes = self._parse_event("round_freeze_end") if freeze_ends is None else freeze_ends
         if "round" in ends:
             ends = ends[ends["round"] > 0]
@@ -214,7 +238,7 @@ class TacticalDemoParser:
         if ends.empty or "tick" not in ends:
             return {}
         round_ticks = {}
-        previous = 0
+        previous = start_tick
         for number, end_tick in enumerate(ends["tick"], 1):
             choices = freezes[(freezes["tick"] > previous) & (freezes["tick"] <= end_tick)]["tick"] if "tick" in freezes else []
             round_ticks[number] = int(min(choices)) if len(choices) else None
@@ -246,11 +270,7 @@ class TacticalDemoParser:
         logger.info(f"🚀 核心解析引擎已挂载！开始切入 Demo: {self.demo_path}")
         
         try:
-            df_rounds_end = self._parse_event("round_end")
-            if "round" in df_rounds_end.columns:
-                df_rounds_end = df_rounds_end[df_rounds_end["round"] > 0].reset_index(drop=True)
-            if "winner" in df_rounds_end.columns:
-                df_rounds_end = df_rounds_end[df_rounds_end["winner"].notna()].reset_index(drop=True)
+            df_rounds_end, match_start_tick = self._completed_rounds()
             if df_rounds_end.empty:
                 logger.warning("并未捕获到有效回合数据，文件可能已损坏。")
                 return {}
@@ -279,16 +299,17 @@ class TacticalDemoParser:
             match_data = {
                 "match_id": os.path.basename(self.demo_path).split('.')[0],
                 "map_name": map_name,
+                "match_start_tick": match_start_tick,
                 "rounds": []
             }
 
             logger.info(f"=== 地图识别完毕: [{map_name}], 共探测到 {len(df_rounds_end)} 个有效回合 ===")
 
-            rosters = self.parse_round_rosters(df_rounds_end, df_freeze_end)
+            rosters = self.parse_round_rosters(df_rounds_end, df_freeze_end, start_tick=match_start_tick)
             round_idx = 1
             for position, (_, round_row) in enumerate(df_rounds_end.iterrows()):
                 current_tick = round_row.get("tick", 0)
-                prev_tick = df_rounds_end.iloc[position - 1]["tick"] if position > 0 else 0
+                prev_tick = df_rounds_end.iloc[position - 1]["tick"] if position > 0 else match_start_tick
                 
                 round_detail = {
                     "round_number": round_idx,

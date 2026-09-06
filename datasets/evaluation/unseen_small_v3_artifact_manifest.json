@@ -1,0 +1,90 @@
+{
+  "selection_version": "unseen-small-v3",
+  "report_artifacts": {
+    "baseline": [
+      {
+        "file": "report.json",
+        "sha256": "6909f279f362285a8273be8b72bc9e0b81dcf38ac2e75b1ce6502191fc9a8819"
+      },
+      {
+        "file": "report_2396940_Ancient.json",
+        "sha256": "1b926febc6537b0c28b43caeb92d1c67c6234aeb0001799d377bc607f4edf7b5"
+      },
+      {
+        "file": "report_2396940_Inferno.json",
+        "sha256": "faa0be88492fba9a4457d376d55b65f4180aefd39f415401e3f6b1d4c5a5e207"
+      },
+      {
+        "file": "report_2396944_Anubis.json",
+        "sha256": "16024e83bf4c4d0ede15f0d87a4e2a01ed6d75e123058ecb91adeba21f9a6d64"
+      },
+      {
+        "file": "report_2396944_Inferno.json",
+        "sha256": "b4300e40df09814ee9c0f6e431cb80b25ba32054cc707954641dc00916df8e6b"
+      },
+      {
+        "file": "report_2396944_Mirage.json",
+        "sha256": "3d95ae7054b6f83a76020636e6c58ea9ad3417b5dd3833feea3b44365b160d9f"
+      }
+    ],
+    "corrected": [
+      {
+        "file": "report.json",
+        "sha256": "0e28250c2c5ea686b4eb41e17019873cbb97d5c9a32b071d446af12583589576"
+      },
+      {
+        "file": "report_2396940_Ancient.json",
+        "sha256": "bf086235d1c68db001a4a865c1a8ad473c96c903f767dc018112b9a7e2529261"
+      },
+      {
+        "file": "report_2396940_Inferno.json",
+        "sha256": "f6cc1a8ad9173d66deb7b533dc262f74f331362547b6cd70a3dd3d6d04cc7ec2"
+      },
+      {
+        "file": "report_2396944_Anubis.json",
+        "sha256": "1bf0ba19009508b47f35fcc01f5037de802f2c369f0209865da2b899e908e903"
+      },
+      {
+        "file": "report_2396944_Inferno.json",
+        "sha256": "7ccc0a4e8142efbcf415a546faa7578a8e723326d5791686a47923b64c60a9d0"
+      },
+      {
+        "file": "report_2396944_Mirage.json",
+        "sha256": "53a7a6379321cfb9e484b9ec922c186c0159271aa2dbb485c4dc0915234112ab"
+      }
+    ],
+    "postfix": [
+      {
+        "file": "report.json",
+        "sha256": "82e41c8f635c94e0bc919215bd525e7c8371e059248a302d28032d9002fd4386"
+      },
+      {
+        "file": "report_2396940_Ancient.json",
+        "sha256": "bf086235d1c68db001a4a865c1a8ad473c96c903f767dc018112b9a7e2529261"
+      },
+      {
+        "file": "report_2396940_Inferno.json",
+        "sha256": "f6cc1a8ad9173d66deb7b533dc262f74f331362547b6cd70a3dd3d6d04cc7ec2"
+      },
+      {
+        "file": "report_2396944_Anubis.json",
+        "sha256": "1bf0ba19009508b47f35fcc01f5037de802f2c369f0209865da2b899e908e903"
+      },
+      {
+        "file": "report_2396944_Inferno.json",
+        "sha256": "7ccc0a4e8142efbcf415a546faa7578a8e723326d5791686a47923b64c60a9d0"
+      },
+      {
+        "file": "report_2396944_Mirage.json",
+        "sha256": "7de4825e02b7601a8d91c0187acb4c2857a9da8b9f0f4e7034fba60392c327cc"
+      }
+    ]
+  },
+  "note": "Per-map full artifacts remain local; summary reports and hashes are tracked. Baseline failures retained; postfix is observed-data regression.",
+  "published_summaries_sha256": {
+    "unseen_small_v3_baseline_report.json": "9664638eae1627f61fca9e1da1c71399c20943d915cdccf49eca208e47b80fed",
+    "unseen_small_v3_coach_fix_report.json": "0e28250c2c5ea686b4eb41e17019873cbb97d5c9a32b071d446af12583589576",
+    "unseen_small_v3_postfix_report.json": "82e41c8f635c94e0bc919215bd525e7c8371e059248a302d28032d9002fd4386"
+  },
+  "summary_path_normalization": "Only result artifact paths are made repository-relative in published summaries; original local reports remain unchanged and their hashes are listed above."
+}
