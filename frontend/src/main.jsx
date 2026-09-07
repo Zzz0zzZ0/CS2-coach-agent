@@ -46,7 +46,7 @@ function statusLabel(status, resultStatus) {
 function App() {
   const [file, setFile] = useState(null);
   const [mode, setMode] = useState("demo_forensic");
-  const [taskId, setTaskId] = useState("");
+  const [taskId, setTaskId] = useState(() => new URLSearchParams(window.location.search).get("task_id") || "");
   const [task, setTask] = useState(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
@@ -207,6 +207,9 @@ function App() {
     try {
       const response = await uploadDemo(file, mode);
       setTaskId(response.task_id);
+      const url = new URL(window.location.href);
+      url.searchParams.set("task_id", response.task_id);
+      window.history.replaceState(null, "", url);
       setTask({ status: "PENDING", task_id: response.task_id });
     } catch (reason) {
       setError(reason.message);

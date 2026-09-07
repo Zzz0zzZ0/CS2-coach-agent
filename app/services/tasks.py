@@ -1,6 +1,7 @@
 import logging
+import asyncio
+from functools import lru_cache
 from pathlib import Path
-from asgiref.sync import async_to_sync
 from app.core.celery_app import celery_app
 from app.domain.match_models import MatchWebhookPayload
 from app.core.providers import get_graph_client, get_llm, get_kb_client
@@ -10,12 +11,19 @@ from app.services.parser_service import TacticalDemoParser
 
 logger = logging.getLogger(__name__)
 
+
+@lru_cache(maxsize=1)
+def _worker_runner():
+    # Celery's solo/prefork execution slot reuses clients and their owning loop.
+    return asyncio.Runner()
+
+
 def _run_match_analysis(payload: MatchWebhookPayload, task_id: str):
     logger.info(f"====== [Celery Worker] 开始处理 Webhook 任务: {task_id} ======")
     logger.info(f"比赛 ID: {payload.match_id} | 地图名称: {payload.map_name}")
 
     pipeline = AnalysisPipeline(get_llm(), get_kb_client(), get_graph_client())
-    result = async_to_sync(pipeline.analyze)(payload)
+    result = _worker_runner().run(pipeline.analyze(payload))
     coach_advice = result.coach_advice or "教练由于未知原因未给出战术建议。"
 
     output_dir = Path("output")
@@ -75,7 +83,7 @@ def process_webhook_match_task(self, payload_dict: dict):
     处理 Webhook 或爬虫推送的赛后数据任务。
     
     因底层 LangGraph 工作流（Workflow）采用异步调用，
-    在 Celery 的同步 worker 中使用 `async_to_sync` 包装并阻塞执行。
+    在 Celery 的同步 worker 执行槽内复用事件循环，保留异步客户端连接的生命周期。
     """
     try:
         payload = MatchWebhookPayload(**payload_dict)

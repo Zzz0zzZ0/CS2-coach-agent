@@ -1,0 +1,224 @@
+{
+  "date": "2026-09-07",
+  "initial_code_commit": "1c88d8fac93a8b77ab53c0d1e76f76713d3e5aaa",
+  "input": {
+    "file": "G2_vs_Aurora_2396944_map3.dem",
+    "sha256": "e348879717172add00b80285c20f884f4e180aa8cffa5a7ae9990d0d1d20b9fd",
+    "rounds": 14,
+    "score": {
+      "Aurora": 1,
+      "G2": 13
+    }
+  },
+  "first_live_task": {
+    "task_id": "9c50fde9-6b5e-4876-8bf1-011694550995",
+    "celery_status": "SUCCESS",
+    "result_status": "success",
+    "coach_decision": {
+      "priority_ids": [
+        "opening_followup",
+        "post_plant"
+      ],
+      "selection_source": "qwen_tool_call"
+    },
+    "model": "qwen3.8-flash",
+    "model_usage": {
+      "input_tokens": 852,
+      "output_tokens": 140,
+      "total_tokens": 992,
+      "input_token_details": {
+        "cache_read": 0
+      },
+      "output_token_details": {}
+    },
+    "verification": {
+      "status": "pass",
+      "evidence_count": 27,
+      "current_evidence_count": 15,
+      "historical_evidence_count": 12,
+      "cited_evidence_ids": [
+        "C1",
+        "C10",
+        "C12",
+        "C14",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9"
+      ],
+      "cited_current_evidence_ids": [
+        "C1",
+        "C10",
+        "C12",
+        "C14",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9"
+      ],
+      "cited_historical_evidence_ids": [],
+      "unknown_citations": [],
+      "uncited_claim_count": 0,
+      "current_claims_without_current_evidence": 0,
+      "missing_outputs": []
+    },
+    "selected_retrieval_sources": {
+      "milvus": 6,
+      "graph": 6
+    },
+    "initial_screenshot_check": "harness_selector_failed_after_success; original task preserved; real API readback later verified"
+  },
+  "second_live_task": {
+    "task_id": "80f54178-4f66-4266-92cc-e35baa25232f",
+    "celery_status": "SUCCESS",
+    "coach_decision": {
+      "priority_ids": [
+        "opening_followup",
+        "post_plant",
+        "side_transition"
+      ],
+      "selection_source": "deterministic_fallback"
+    },
+    "model_usage": {},
+    "verification_status": "pass",
+    "browser": {
+      "task_id": "80f54178-4f66-4266-92cc-e35baa25232f",
+      "elapsed_ms": 2929,
+      "page_errors": [],
+      "http": [
+        {
+          "path": "/api/settings/llm",
+          "status": 200
+        },
+        {
+          "path": "/api/graph/maps",
+          "status": 200
+        },
+        {
+          "path": "/api/graph/stats",
+          "status": 200
+        },
+        {
+          "path": "/api/graph/players",
+          "status": 200
+        },
+        {
+          "path": "/api/graph/teams/compare",
+          "status": 200
+        },
+        {
+          "path": "/api/graph/players",
+          "status": 200
+        },
+        {
+          "path": "/api/graph/subgraph",
+          "status": 200
+        },
+        {
+          "path": "/api/settings/llm/budget",
+          "status": 200
+        },
+        {
+          "path": "/api/graph/teams/Falcons/tactics",
+          "status": 200
+        },
+        {
+          "path": "/api/graph/players/76561198074762801",
+          "status": 200
+        },
+        {
+          "path": "/api/upload-demo",
+          "status": 200
+        },
+        {
+          "path": "/api/tasks/80f54178-4f66-4266-92cc-e35baa25232f",
+          "status": 200
+        },
+        {
+          "path": "/api/settings/llm/budget",
+          "status": 200
+        },
+        {
+          "path": "/api/tasks/80f54178-4f66-4266-92cc-e35baa25232f",
+          "status": 200
+        },
+        {
+          "path": "/api/settings/llm/budget",
+          "status": 200
+        },
+        {
+          "path": "/api/tasks/80f54178-4f66-4266-92cc-e35baa25232f",
+          "status": 200
+        },
+        {
+          "path": "/api/settings/llm/budget",
+          "status": 200
+        }
+      ]
+    },
+    "limitation": "request_failed; fail-closed budget preserved, no subsequent remote calls"
+  },
+  "readback": {
+    "task_id": "9c50fde9-6b5e-4876-8bf1-011694550995",
+    "report_text_exact_match": true,
+    "evidence_count": 27,
+    "reload_preserves_report": true,
+    "post_requests": [],
+    "page_errors": [],
+    "budget_unchanged": true
+  },
+  "budget_after": {
+    "status": "stopped",
+    "stop_reason": "request_failed",
+    "token_limit": 30000,
+    "call_limit": 100,
+    "calls": 2,
+    "reported_tokens": 992,
+    "unsettled_allowance": 5456,
+    "remaining_local_allowance": 23552,
+    "accounting_complete": false,
+    "provider_remaining_tokens": null
+  },
+  "data_integrity": {
+    "graph_before": "28357be25a52d27b80e87a03ffcb2a545132c97d42632138ff60c47d67fc8c2d",
+    "graph_after": "28357be25a52d27b80e87a03ffcb2a545132c97d42632138ff60c47d67fc8c2d",
+    "milvus_before": {
+      "row_count": 1117
+    },
+    "milvus_after": {
+      "row_count": 1117
+    },
+    "auto_ingest": false,
+    "knowledge_tasks": 0,
+    "temporary_uploads_deleted": true
+  },
+  "worker_fix": {
+    "diagnosis": "cached asynchronous TLS client outlives per-task event loop created by async_to_sync",
+    "local_https_before": "first succeeds; second APIConnectionError caused by RuntimeError: Event loop is closed",
+    "local_https_after": "two consecutive full AnalysisPipeline invocations complete using one cached asyncio.Runner",
+    "remote_after_fix": "not_run: production budget remains stopped after uncertain usage"
+  },
+  "limits": [
+    "One observed map, no throughput or coaching-quality claim",
+    "Remote model selects allowlisted priorities; report facts are deterministic",
+    "12 historical sources retrieved; neither Analyst nor Coach cited them in this report",
+    "Screenshot/readback verifies original real Redis task, not a fresh post-fix remote run"
+  ],
+  "artifacts": {
+    "attempt1/task.json": "acd7342a26bc033effe4e3a06874bce83c9add4c5482bf5e1a8423ddb26d7504",
+    "task.json": "69235f60fa3855691ad65147913f472204fcafe2ae96c489d8b8e093b26c0108",
+    "successful-report.png": "7c081c9e3bc855d261b2927ff860ceffdae3c3ee8840bcf827a8adb83337c008",
+    "readback.json": "f6c577b9bd93fda76b954a1beacc81f4a169b694ee35dacab7144166ee18bf92",
+    "browser.json": "010bc840ae077e4931a129bffba8a97dda7f512b1431f90e05c2cb45ace0718f",
+    "tls_before.log": "18f42189f38aa276999b3262361a36b1cc4d3bd122c5373e87f6440e700bba93",
+    "tls_after.log": "fcd75af03852db730524a4c9f9ba736104e179c5462c9f87d9f6ccb98dc9e951",
+    "tests.log": "8bf77ece7906313cb47b1452634d13522302ef43dbd1ea6864b35c7183acc795",
+    "build.log": "a630e68516691628eefcbd8749d57e7b3406acbd60854c0baa75a477f22bce0c"
+  }
+}
