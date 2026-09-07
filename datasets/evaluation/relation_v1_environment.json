@@ -1,0 +1,17 @@
+{
+  "recorded_after_run": true,
+  "frozen_commit": "f22a0bc107b6952af026b8aef184a63a716bc4d2",
+  "python": "3.11.15",
+  "platform": "Darwin",
+  "architecture": "arm64",
+  "sqlite": "3.53.1",
+  "packages": {
+    "fastembed": "0.8.0",
+    "numpy": "2.4.6",
+    "onnxruntime": "1.29.0",
+    "tokenizers": "0.23.2"
+  },
+  "requirements_lock_sha256": "0528f567555e79611a5014202b4de92185ad1f485bde4976f5ebeb3760c7baeb",
+  "run_report_sha256": "5894794814283e382a4ca4af58d727bba7df86d7fe6723fdbf22a20a1f12f648",
+  "note": "Descriptive environment record, not an extra benchmark configuration; model hashes are frozen in protocol."
+}

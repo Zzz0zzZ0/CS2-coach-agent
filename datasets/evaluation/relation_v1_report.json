@@ -1,0 +1,5271 @@
+{
+  "version": "relation_v1",
+  "protocol_sha256": "90f5bed4ee3cb1f7e3f62d75fafbc3ef1e43dd02ffd4ff216d7ade53835001e9",
+  "created_at": "2026-09-07T01:46:21.069881+00:00",
+  "remote_model_calls": 0,
+  "semantic_groups": 24,
+  "surface_queries": 48,
+  "corpus_embedding": {
+    "sha256": "cb3d9a0b30ebfd546d1a6a4329dbb022a22a698cf31993a085bbbbb42d6a7b0f",
+    "chunks": {
+      "chunks": 8197,
+      "max_length": 128,
+      "chunk_tokens": 118,
+      "pooling": "equal mean of all chunk embeddings, then L2 normalize"
+    },
+    "ms": 110177.46933409944
+  },
+  "summary": [
+    {
+      "method": "bm25",
+      "language": "en",
+      "metrics": {
+        "ndcg_at_k": {
+          "mean": 0.13299500312261153,
+          "semantic_groups": 12
+        },
+        "recall_at_k": {
+          "mean": 0.2361111111111111,
+          "semantic_groups": 12
+        },
+        "false_retrieval": {
+          "mean": 1,
+          "semantic_groups": 12
+        },
+        "false_abstention": {
+          "mean": 0,
+          "semantic_groups": 12
+        }
+      }
+    },
+    {
+      "method": "bm25",
+      "language": "zh",
+      "metrics": {
+        "ndcg_at_k": {
+          "mean": 0.16537192296530784,
+          "semantic_groups": 12
+        },
+        "recall_at_k": {
+          "mean": 0.2777777777777778,
+          "semantic_groups": 12
+        },
+        "false_retrieval": {
+          "mean": 1,
+          "semantic_groups": 12
+        },
+        "false_abstention": {
+          "mean": 0,
+          "semantic_groups": 12
+        }
+      }
+    },
+    {
+      "method": "bm25",
+      "language": "paired_macro",
+      "metrics": {
+        "ndcg_at_k": {
+          "mean": 0.14918346304395969,
+          "semantic_groups": 12
+        },
+        "recall_at_k": {
+          "mean": 0.2569444444444444,
+          "semantic_groups": 12
+        },
+        "false_retrieval": {
+          "mean": 1,
+          "semantic_groups": 12
+        },
+        "false_abstention": {
+          "mean": 0,
+          "semantic_groups": 12
+        }
+      }
+    },
+    {
+      "method": "dense",
+      "language": "en",
+      "metrics": {
+        "ndcg_at_k": {
+          "mean": 0.18270577548116002,
+          "semantic_groups": 12
+        },
+        "recall_at_k": {
+          "mean": 0.2847222222222222,
+          "semantic_groups": 12
+        },
+        "false_retrieval": {
+          "mean": 1,
+          "semantic_groups": 12
+        },
+        "false_abstention": {
+          "mean": 0,
+          "semantic_groups": 12
+        }
+      }
+    },
+    {
+      "method": "dense",
+      "language": "zh",
+      "metrics": {
+        "ndcg_at_k": {
+          "mean": 0.11242103259322697,
+          "semantic_groups": 12
+        },
+        "recall_at_k": {
+          "mean": 0.1527777777777778,
+          "semantic_groups": 12
+        },
+        "false_retrieval": {
+          "mean": 1,
+          "semantic_groups": 12
+        },
+        "false_abstention": {
+          "mean": 0,
+          "semantic_groups": 12
+        }
+      }
+    },
+    {
+      "method": "dense",
+      "language": "paired_macro",
+      "metrics": {
+        "ndcg_at_k": {
+          "mean": 0.1475634040371935,
+          "semantic_groups": 12
+        },
+        "recall_at_k": {
+          "mean": 0.21875,
+          "semantic_groups": 12
+        },
+        "false_retrieval": {
+          "mean": 1,
+          "semantic_groups": 12
+        },
+        "false_abstention": {
+          "mean": 0,
+          "semantic_groups": 12
+        }
+      }
+    },
+    {
+      "method": "dense_bm25_rrf",
+      "language": "en",
+      "metrics": {
+        "ndcg_at_k": {
+          "mean": 0.11178539688125266,
+          "semantic_groups": 12
+        },
+        "recall_at_k": {
+          "mean": 0.13194444444444445,
+          "semantic_groups": 12
+        },
+        "false_retrieval": {
+          "mean": 1,
+          "semantic_groups": 12
+        },
+        "false_abstention": {
+          "mean": 0,
+          "semantic_groups": 12
+        }
+      }
+    },
+    {
+      "method": "dense_bm25_rrf",
+      "language": "zh",
+      "metrics": {
+        "ndcg_at_k": {
+          "mean": 0.11178539688125266,
+          "semantic_groups": 12
+        },
+        "recall_at_k": {
+          "mean": 0.13194444444444445,
+          "semantic_groups": 12
+        },
+        "false_retrieval": {
+          "mean": 1,
+          "semantic_groups": 12
+        },
+        "false_abstention": {
+          "mean": 0,
+          "semantic_groups": 12
+        }
+      }
+    },
+    {
+      "method": "dense_bm25_rrf",
+      "language": "paired_macro",
+      "metrics": {
+        "ndcg_at_k": {
+          "mean": 0.11178539688125266,
+          "semantic_groups": 12
+        },
+        "recall_at_k": {
+          "mean": 0.13194444444444445,
+          "semantic_groups": 12
+        },
+        "false_retrieval": {
+          "mean": 1,
+          "semantic_groups": 12
+        },
+        "false_abstention": {
+          "mean": 0,
+          "semantic_groups": 12
+        }
+      }
+    },
+    {
+      "method": "relation_sql_oracle",
+      "language": "en",
+      "metrics": {
+        "ndcg_at_k": {
+          "mean": 1.0,
+          "semantic_groups": 12
+        },
+        "recall_at_k": {
+          "mean": 1.0,
+          "semantic_groups": 12
+        },
+        "false_retrieval": {
+          "mean": 0,
+          "semantic_groups": 12
+        },
+        "false_abstention": {
+          "mean": 0,
+          "semantic_groups": 12
+        }
+      }
+    },
+    {
+      "method": "relation_sql_oracle",
+      "language": "zh",
+      "metrics": {
+        "ndcg_at_k": {
+          "mean": 1.0,
+          "semantic_groups": 12
+        },
+        "recall_at_k": {
+          "mean": 1.0,
+          "semantic_groups": 12
+        },
+        "false_retrieval": {
+          "mean": 0,
+          "semantic_groups": 12
+        },
+        "false_abstention": {
+          "mean": 0,
+          "semantic_groups": 12
+        }
+      }
+    },
+    {
+      "method": "relation_sql_oracle",
+      "language": "paired_macro",
+      "metrics": {
+        "ndcg_at_k": {
+          "mean": 1.0,
+          "semantic_groups": 12
+        },
+        "recall_at_k": {
+          "mean": 1.0,
+          "semantic_groups": 12
+        },
+        "false_retrieval": {
+          "mean": 0,
+          "semantic_groups": 12
+        },
+        "false_abstention": {
+          "mean": 0,
+          "semantic_groups": 12
+        }
+      }
+    }
+  ],
+  "cases": [
+    {
+      "query_id": "opening_1_positive",
+      "family": "opening",
+      "language": "en",
+      "method": "bm25",
+      "input_query": "Match 2396949, map Nuke. Find rounds where kyousuke makes the opening first kill by killing tN1R.",
+      "source_ids": [
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:9"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 0.5,
+        "ndcg_at_k": 0.38685280723454163,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        3.568375948816538,
+        3.2757078297436237,
+        3.0712084844708443
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_1_positive",
+      "family": "opening",
+      "language": "en",
+      "method": "dense",
+      "input_query": "Match 2396949, map Nuke. Find rounds where kyousuke makes the opening first kill by killing tN1R.",
+      "source_ids": [
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:9",
+        "round:2396949:Nuke:7"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 0.5,
+        "ndcg_at_k": 0.6131471927654584,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        0.6107091903686523,
+        0.3927499055862427,
+        0.2608741633594036
+      ],
+      "query_encoding_ms": 265.17599960789084
+    },
+    {
+      "query_id": "opening_1_positive",
+      "family": "opening",
+      "language": "en",
+      "method": "dense_bm25_rrf",
+      "input_query": "Match 2396949, map Nuke. Find rounds where kyousuke makes the opening first kill by killing tN1R.",
+      "source_ids": [
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:9",
+        "round:2396949:Nuke:13"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 0.5,
+        "ndcg_at_k": 0.6131471927654584,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        3.7525841034948826,
+        3.3054575324058533,
+        3.087583463639021
+      ],
+      "query_encoding_ms": 265.17599960789084
+    },
+    {
+      "query_id": "opening_1_positive",
+      "family": "opening",
+      "language": "en",
+      "method": "relation_sql_oracle",
+      "input_query": "Match 2396949, map Nuke. Find rounds where kyousuke makes the opening first kill by killing tN1R.",
+      "source_ids": [
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:16"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_1_positive",
+      "family": "opening",
+      "language": "zh",
+      "method": "bm25",
+      "input_query": "比赛 2396949，地图 Nuke。查找 kyousuke 击杀 tN1R 并拿到本回合首杀的回合。",
+      "source_ids": [
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:9"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 0.5,
+        "ndcg_at_k": 0.38685280723454163,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        1.1874986812472343,
+        1.0170829482376575,
+        0.9654592722654343
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_1_positive",
+      "family": "opening",
+      "language": "zh",
+      "method": "dense",
+      "input_query": "比赛 2396949，地图 Nuke。查找 kyousuke 击杀 tN1R 并拿到本回合首杀的回合。",
+      "source_ids": [
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:9",
+        "round:2396949:Nuke:8",
+        "round:2396949:Nuke:14"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 0.5,
+        "ndcg_at_k": 0.6131471927654584,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        0.42179087176918983,
+        0.26241596788167953,
+        0.23237569257616997
+      ],
+      "query_encoding_ms": 264.8517908528447
+    },
+    {
+      "query_id": "opening_1_positive",
+      "family": "opening",
+      "language": "zh",
+      "method": "dense_bm25_rrf",
+      "input_query": "比赛 2396949，地图 Nuke。查找 kyousuke 击杀 tN1R 并拿到本回合首杀的回合。",
+      "source_ids": [
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:9",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:8"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 0.5,
+        "ndcg_at_k": 0.6131471927654584,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        1.2276237830519676,
+        1.032956875860691,
+        0.9775008074939251
+      ],
+      "query_encoding_ms": 264.8517908528447
+    },
+    {
+      "query_id": "opening_1_positive",
+      "family": "opening",
+      "language": "zh",
+      "method": "relation_sql_oracle",
+      "input_query": "比赛 2396949，地图 Nuke。查找 kyousuke 击杀 tN1R 并拿到本回合首杀的回合。",
+      "source_ids": [
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:16"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_1_negative",
+      "family": "opening",
+      "language": "en",
+      "method": "bm25",
+      "input_query": "Match 2396949, map Nuke. Find rounds where m0NESY makes the opening first kill by killing magixx.",
+      "source_ids": [
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:1",
+        "round:2396949:Nuke:14"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        3.344832453876734,
+        3.1081661581993103,
+        3.056915942579508
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_1_negative",
+      "family": "opening",
+      "language": "en",
+      "method": "dense",
+      "input_query": "Match 2396949, map Nuke. Find rounds where m0NESY makes the opening first kill by killing magixx.",
+      "source_ids": [
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:21",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:9",
+        "round:2396949:Nuke:7"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        0.42879069223999977,
+        0.30687497928738594,
+        0.25783292949199677
+      ],
+      "query_encoding_ms": 238.79391700029373
+    },
+    {
+      "query_id": "opening_1_negative",
+      "family": "opening",
+      "language": "en",
+      "method": "dense_bm25_rrf",
+      "input_query": "Match 2396949, map Nuke. Find rounds where m0NESY makes the opening first kill by killing magixx.",
+      "source_ids": [
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:21",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:13"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        3.3892900682985783,
+        3.129583317786455,
+        3.0696657486259937
+      ],
+      "query_encoding_ms": 238.79391700029373
+    },
+    {
+      "query_id": "opening_1_negative",
+      "family": "opening",
+      "language": "en",
+      "method": "relation_sql_oracle",
+      "input_query": "Match 2396949, map Nuke. Find rounds where m0NESY makes the opening first kill by killing magixx.",
+      "source_ids": [],
+      "eligible_rounds": 21,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_1_negative",
+      "family": "opening",
+      "language": "zh",
+      "method": "bm25",
+      "input_query": "比赛 2396949，地图 Nuke。查找 m0NESY 击杀 magixx 并拿到本回合首杀的回合。",
+      "source_ids": [
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:1",
+        "round:2396949:Nuke:14"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        1.1967089958488941,
+        1.0010828264057636,
+        1.0220841504633427
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_1_negative",
+      "family": "opening",
+      "language": "zh",
+      "method": "dense",
+      "input_query": "比赛 2396949，地图 Nuke。查找 m0NESY 击杀 magixx 并拿到本回合首杀的回合。",
+      "source_ids": [
+        "round:2396949:Nuke:21",
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:17",
+        "round:2396949:Nuke:8",
+        "round:2396949:Nuke:9"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        0.4287497140467167,
+        0.26558293029665947,
+        0.23591704666614532
+      ],
+      "query_encoding_ms": 242.42362473160028
+    },
+    {
+      "query_id": "opening_1_negative",
+      "family": "opening",
+      "language": "zh",
+      "method": "dense_bm25_rrf",
+      "input_query": "比赛 2396949，地图 Nuke。查找 m0NESY 击杀 magixx 并拿到本回合首杀的回合。",
+      "source_ids": [
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:21",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:16",
+        "round:2396949:Nuke:8"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        1.2413756921887398,
+        1.016540452837944,
+        1.0347506031394005
+      ],
+      "query_encoding_ms": 242.42362473160028
+    },
+    {
+      "query_id": "opening_1_negative",
+      "family": "opening",
+      "language": "zh",
+      "method": "relation_sql_oracle",
+      "input_query": "比赛 2396949，地图 Nuke。查找 m0NESY 击杀 magixx 并拿到本回合首杀的回合。",
+      "source_ids": [],
+      "eligible_rounds": 21,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_1_positive",
+      "family": "after_plant",
+      "language": "en",
+      "method": "bm25",
+      "input_query": "Match 2396949, map Nuke. Find rounds where NiKo kills zont1x strictly after a bomb plant in that round.",
+      "source_ids": [
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:21",
+        "round:2396949:Nuke:14"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 1,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        3.477498423308134,
+        3.3309985883533955,
+        3.2878322526812553
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_1_positive",
+      "family": "after_plant",
+      "language": "en",
+      "method": "dense",
+      "input_query": "Match 2396949, map Nuke. Find rounds where NiKo kills zont1x strictly after a bomb plant in that round.",
+      "source_ids": [
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:9",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:19",
+        "round:2396949:Nuke:6"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 1,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 0.43067655807339306,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        0.42062392458319664,
+        0.3198329359292984,
+        0.2587069757282734
+      ],
+      "query_encoding_ms": 247.64879187569022
+    },
+    {
+      "query_id": "after_plant_1_positive",
+      "family": "after_plant",
+      "language": "en",
+      "method": "dense_bm25_rrf",
+      "input_query": "Match 2396949, map Nuke. Find rounds where NiKo kills zont1x strictly after a bomb plant in that round.",
+      "source_ids": [
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:9",
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:21"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 1,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        3.523831721395254,
+        3.3568739891052246,
+        3.3075809478759766
+      ],
+      "query_encoding_ms": 247.64879187569022
+    },
+    {
+      "query_id": "after_plant_1_positive",
+      "family": "after_plant",
+      "language": "en",
+      "method": "relation_sql_oracle",
+      "input_query": "Match 2396949, map Nuke. Find rounds where NiKo kills zont1x strictly after a bomb plant in that round.",
+      "source_ids": [
+        "round:2396949:Nuke:19"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 1,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_1_positive",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "bm25",
+      "input_query": "比赛 2396949，地图 Nuke。查找 NiKo 击杀 zont1x，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:21",
+        "round:2396949:Nuke:14"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 1,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        1.2283744290471077,
+        1.2170406989753246,
+        1.0387487709522247
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_1_positive",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "dense",
+      "input_query": "比赛 2396949，地图 Nuke。查找 NiKo 击杀 zont1x，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [
+        "round:2396949:Nuke:9",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:21",
+        "round:2396949:Nuke:13"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 1,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        0.43954141438007355,
+        0.43791672214865685,
+        0.27779070660471916
+      ],
+      "query_encoding_ms": 253.66983329877257
+    },
+    {
+      "query_id": "after_plant_1_positive",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "dense_bm25_rrf",
+      "input_query": "比赛 2396949，地图 Nuke。查找 NiKo 击杀 zont1x，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:9",
+        "round:2396949:Nuke:15"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 1,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        1.269165426492691,
+        1.2443740852177143,
+        1.0539153590798378
+      ],
+      "query_encoding_ms": 253.66983329877257
+    },
+    {
+      "query_id": "after_plant_1_positive",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "relation_sql_oracle",
+      "input_query": "比赛 2396949，地图 Nuke。查找 NiKo 击杀 zont1x，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [
+        "round:2396949:Nuke:19"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 1,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_1_negative",
+      "family": "after_plant",
+      "language": "en",
+      "method": "bm25",
+      "input_query": "Match 2396949, map Nuke. Find rounds where TeSeS kills tN1R strictly after a bomb plant in that round.",
+      "source_ids": [
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:1",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:21"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        3.552583046257496,
+        3.357917070388794,
+        3.252415917813778
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_1_negative",
+      "family": "after_plant",
+      "language": "en",
+      "method": "dense",
+      "input_query": "Match 2396949, map Nuke. Find rounds where TeSeS kills tN1R strictly after a bomb plant in that round.",
+      "source_ids": [
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:7",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:9"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        0.4654997028410435,
+        0.3602919168770313,
+        0.2541658468544483
+      ],
+      "query_encoding_ms": 252.68999999389052
+    },
+    {
+      "query_id": "after_plant_1_negative",
+      "family": "after_plant",
+      "language": "en",
+      "method": "dense_bm25_rrf",
+      "input_query": "Match 2396949, map Nuke. Find rounds where TeSeS kills tN1R strictly after a bomb plant in that round.",
+      "source_ids": [
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:6",
+        "round:2396949:Nuke:1"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        3.602665849030018,
+        3.3827507868409157,
+        3.270332235842943
+      ],
+      "query_encoding_ms": 252.68999999389052
+    },
+    {
+      "query_id": "after_plant_1_negative",
+      "family": "after_plant",
+      "language": "en",
+      "method": "relation_sql_oracle",
+      "input_query": "Match 2396949, map Nuke. Find rounds where TeSeS kills tN1R strictly after a bomb plant in that round.",
+      "source_ids": [],
+      "eligible_rounds": 21,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_1_negative",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "bm25",
+      "input_query": "比赛 2396949，地图 Nuke。查找 TeSeS 击杀 tN1R，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:1",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:21"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        1.1957501992583275,
+        1.048500183969736,
+        1.0126251727342606
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_1_negative",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "dense",
+      "input_query": "比赛 2396949，地图 Nuke。查找 TeSeS 击杀 tN1R，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:7",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:9",
+        "round:2396949:Nuke:13"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        0.4321667365729809,
+        0.3010830841958523,
+        0.27404120191931725
+      ],
+      "query_encoding_ms": 245.93199975788593
+    },
+    {
+      "query_id": "after_plant_1_negative",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "dense_bm25_rrf",
+      "input_query": "比赛 2396949，地图 Nuke。查找 TeSeS 击杀 tN1R，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:21",
+        "round:2396949:Nuke:1"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        1.2325011193752289,
+        1.069291029125452,
+        1.0252082720398903
+      ],
+      "query_encoding_ms": 245.93199975788593
+    },
+    {
+      "query_id": "after_plant_1_negative",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "relation_sql_oracle",
+      "input_query": "比赛 2396949，地图 Nuke。查找 TeSeS 击杀 tN1R，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [],
+      "eligible_rounds": 21,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_1_positive",
+      "family": "trade",
+      "language": "en",
+      "method": "bm25",
+      "input_query": "Match 2396949, map Nuke. Find rounds where donk trades teammate zont1x: kills the enemy who killed zont1x, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:1",
+        "round:2396949:Nuke:21"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 1,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 0.43067655807339306,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        4.193501081317663,
+        4.114875569939613,
+        3.9054169319570065
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_1_positive",
+      "family": "trade",
+      "language": "en",
+      "method": "dense",
+      "input_query": "Match 2396949, map Nuke. Find rounds where donk trades teammate zont1x: kills the enemy who killed zont1x, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:6",
+        "round:2396949:Nuke:10",
+        "round:2396949:Nuke:15"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 1,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        0.5096262320876122,
+        0.36237481981515884,
+        0.32583344727754593
+      ],
+      "query_encoding_ms": 268.48770771175623
+    },
+    {
+      "query_id": "trade_1_positive",
+      "family": "trade",
+      "language": "en",
+      "method": "dense_bm25_rrf",
+      "input_query": "Match 2396949, map Nuke. Find rounds where donk trades teammate zont1x: kills the enemy who killed zont1x, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:10",
+        "round:2396949:Nuke:21",
+        "round:2396949:Nuke:6"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 1,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        4.242209251970053,
+        4.153917543590069,
+        3.9260834455490112
+      ],
+      "query_encoding_ms": 268.48770771175623
+    },
+    {
+      "query_id": "trade_1_positive",
+      "family": "trade",
+      "language": "en",
+      "method": "relation_sql_oracle",
+      "input_query": "Match 2396949, map Nuke. Find rounds where donk trades teammate zont1x: kills the enemy who killed zont1x, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [
+        "round:2396949:Nuke:1"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 1,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_1_positive",
+      "family": "trade",
+      "language": "zh",
+      "method": "bm25",
+      "input_query": "比赛 2396949，地图 Nuke。查找 donk 为队友 zont1x 补枪的回合：在同一回合中，zont1x 被敌人击杀后，donk 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:1",
+        "round:2396949:Nuke:10"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 1,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 0.43067655807339306,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        2.372332848608494,
+        2.122250385582447,
+        2.1063750609755516
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_1_positive",
+      "family": "trade",
+      "language": "zh",
+      "method": "dense",
+      "input_query": "比赛 2396949，地图 Nuke。查找 donk 为队友 zont1x 补枪的回合：在同一回合中，zont1x 被敌人击杀后，donk 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:5",
+        "round:2396949:Nuke:10",
+        "round:2396949:Nuke:6"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 1,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        0.5020406097173691,
+        0.29241619631648064,
+        0.23849960416555405
+      ],
+      "query_encoding_ms": 265.03566605970263
+    },
+    {
+      "query_id": "trade_1_positive",
+      "family": "trade",
+      "language": "zh",
+      "method": "dense_bm25_rrf",
+      "input_query": "比赛 2396949，地图 Nuke。查找 donk 为队友 zont1x 补枪的回合：在同一回合中，zont1x 被敌人击杀后，donk 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:10",
+        "round:2396949:Nuke:6",
+        "round:2396949:Nuke:21"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 1,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        2.417583018541336,
+        2.1399161778390408,
+        2.1193758584558964
+      ],
+      "query_encoding_ms": 265.03566605970263
+    },
+    {
+      "query_id": "trade_1_positive",
+      "family": "trade",
+      "language": "zh",
+      "method": "relation_sql_oracle",
+      "input_query": "比赛 2396949，地图 Nuke。查找 donk 为队友 zont1x 补枪的回合：在同一回合中，zont1x 被敌人击杀后，donk 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [
+        "round:2396949:Nuke:1"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 1,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_1_negative",
+      "family": "trade",
+      "language": "en",
+      "method": "bm25",
+      "input_query": "Match 2396949, map Nuke. Find rounds where karrigan trades teammate kyousuke: kills the enemy who killed kyousuke, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:16",
+        "round:2396949:Nuke:9"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        4.015458282083273,
+        3.910166211426258,
+        3.8463748060166836
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_1_negative",
+      "family": "trade",
+      "language": "en",
+      "method": "dense",
+      "input_query": "Match 2396949, map Nuke. Find rounds where karrigan trades teammate kyousuke: kills the enemy who killed kyousuke, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:10",
+        "round:2396949:Nuke:16"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        0.43950043618679047,
+        0.36124931648373604,
+        0.3453334793448448
+      ],
+      "query_encoding_ms": 247.63791682198644
+    },
+    {
+      "query_id": "trade_1_negative",
+      "family": "trade",
+      "language": "en",
+      "method": "dense_bm25_rrf",
+      "input_query": "Match 2396949, map Nuke. Find rounds where karrigan trades teammate kyousuke: kills the enemy who killed kyousuke, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:16",
+        "round:2396949:Nuke:9"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        4.061166197061539,
+        3.9501232095062733,
+        3.8713752292096615
+      ],
+      "query_encoding_ms": 247.63791682198644
+    },
+    {
+      "query_id": "trade_1_negative",
+      "family": "trade",
+      "language": "en",
+      "method": "relation_sql_oracle",
+      "input_query": "Match 2396949, map Nuke. Find rounds where karrigan trades teammate kyousuke: kills the enemy who killed kyousuke, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [],
+      "eligible_rounds": 21,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_1_negative",
+      "family": "trade",
+      "language": "zh",
+      "method": "bm25",
+      "input_query": "比赛 2396949，地图 Nuke。查找 karrigan 为队友 kyousuke 补枪的回合：在同一回合中，kyousuke 被敌人击杀后，karrigan 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:16",
+        "round:2396949:Nuke:9"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        2.155458088964224,
+        1.9628750160336494,
+        1.9797910936176777
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_1_negative",
+      "family": "trade",
+      "language": "zh",
+      "method": "dense",
+      "input_query": "比赛 2396949，地图 Nuke。查找 karrigan 为队友 kyousuke 补枪的回合：在同一回合中，kyousuke 被敌人击杀后，karrigan 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [
+        "round:2396949:Nuke:10",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:16",
+        "round:2396949:Nuke:5",
+        "round:2396949:Nuke:14"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        0.41724974289536476,
+        0.2660839818418026,
+        0.24012383073568344
+      ],
+      "query_encoding_ms": 254.73604165017605
+    },
+    {
+      "query_id": "trade_1_negative",
+      "family": "trade",
+      "language": "zh",
+      "method": "dense_bm25_rrf",
+      "input_query": "比赛 2396949，地图 Nuke。查找 karrigan 为队友 kyousuke 补枪的回合：在同一回合中，kyousuke 被敌人击杀后，karrigan 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:16",
+        "round:2396949:Nuke:10",
+        "round:2396949:Nuke:9"
+      ],
+      "eligible_rounds": 21,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        2.195832785218954,
+        1.9796257838606834,
+        1.9953739829361439
+      ],
+      "query_encoding_ms": 254.73604165017605
+    },
+    {
+      "query_id": "trade_1_negative",
+      "family": "trade",
+      "language": "zh",
+      "method": "relation_sql_oracle",
+      "input_query": "比赛 2396949，地图 Nuke。查找 karrigan 为队友 kyousuke 补枪的回合：在同一回合中，kyousuke 被敌人击杀后，karrigan 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [],
+      "eligible_rounds": 21,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_2_positive",
+      "family": "opening",
+      "language": "en",
+      "method": "bm25",
+      "input_query": "Match 2396948, map Dust2. Find rounds where molodoy makes the opening first kill by killing jL.",
+      "source_ids": [
+        "round:2396948:Dust2:10",
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:1",
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:8"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 0.5,
+        "ndcg_at_k": 0.3065735963827292,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        2.741625066846609,
+        2.5983755476772785,
+        2.4763750843703747
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_2_positive",
+      "family": "opening",
+      "language": "en",
+      "method": "dense",
+      "input_query": "Match 2396948, map Dust2. Find rounds where molodoy makes the opening first kill by killing jL.",
+      "source_ids": [
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:10",
+        "round:2396948:Dust2:1",
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:17"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 0.5,
+        "ndcg_at_k": 0.3065735963827292,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        0.4353332333266735,
+        0.3410005010664463,
+        0.27012545615434647
+      ],
+      "query_encoding_ms": 244.78633282706141
+    },
+    {
+      "query_id": "opening_2_positive",
+      "family": "opening",
+      "language": "en",
+      "method": "dense_bm25_rrf",
+      "input_query": "Match 2396948, map Dust2. Find rounds where molodoy makes the opening first kill by killing jL.",
+      "source_ids": [
+        "round:2396948:Dust2:10",
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:1",
+        "round:2396948:Dust2:8"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 0.5,
+        "ndcg_at_k": 0.2640681225725909,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        2.786665689200163,
+        2.6244171895086765,
+        2.488500438630581
+      ],
+      "query_encoding_ms": 244.78633282706141
+    },
+    {
+      "query_id": "opening_2_positive",
+      "family": "opening",
+      "language": "en",
+      "method": "relation_sql_oracle",
+      "input_query": "Match 2396948, map Dust2. Find rounds where molodoy makes the opening first kill by killing jL.",
+      "source_ids": [
+        "round:2396948:Dust2:1",
+        "round:2396948:Dust2:5"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_2_positive",
+      "family": "opening",
+      "language": "zh",
+      "method": "bm25",
+      "input_query": "比赛 2396948，地图 Dust2。查找 molodoy 击杀 jL 并拿到本回合首杀的回合。",
+      "source_ids": [
+        "round:2396948:Dust2:10",
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:1",
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:8"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 0.5,
+        "ndcg_at_k": 0.3065735963827292,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        1.0423753410577774,
+        0.9260838851332664,
+        0.9257495403289795
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_2_positive",
+      "family": "opening",
+      "language": "zh",
+      "method": "dense",
+      "input_query": "比赛 2396948，地图 Dust2。查找 molodoy 击杀 jL 并拿到本回合首杀的回合。",
+      "source_ids": [
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:10",
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:1",
+        "round:2396948:Dust2:17"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 0.5,
+        "ndcg_at_k": 0.2640681225725909,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        0.4302919842302799,
+        0.2960837446153164,
+        0.32783299684524536
+      ],
+      "query_encoding_ms": 263.37033277377486
+    },
+    {
+      "query_id": "opening_2_positive",
+      "family": "opening",
+      "language": "zh",
+      "method": "dense_bm25_rrf",
+      "input_query": "比赛 2396948，地图 Dust2。查找 molodoy 击杀 jL 并拿到本回合首杀的回合。",
+      "source_ids": [
+        "round:2396948:Dust2:10",
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:1",
+        "round:2396948:Dust2:8"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 0.5,
+        "ndcg_at_k": 0.2640681225725909,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        1.0808343067765236,
+        0.9474176913499832,
+        0.9401659481227398
+      ],
+      "query_encoding_ms": 263.37033277377486
+    },
+    {
+      "query_id": "opening_2_positive",
+      "family": "opening",
+      "language": "zh",
+      "method": "relation_sql_oracle",
+      "input_query": "比赛 2396948，地图 Dust2。查找 molodoy 击杀 jL 并拿到本回合首杀的回合。",
+      "source_ids": [
+        "round:2396948:Dust2:1",
+        "round:2396948:Dust2:5"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_2_negative",
+      "family": "opening",
+      "language": "en",
+      "method": "bm25",
+      "input_query": "Match 2396948, map Dust2. Find rounds where ropz makes the opening first kill by killing yuurih.",
+      "source_ids": [
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:13",
+        "round:2396948:Dust2:3",
+        "round:2396948:Dust2:11",
+        "round:2396948:Dust2:1"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        2.884374465793371,
+        2.57079117000103,
+        2.6062089018523693
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_2_negative",
+      "family": "opening",
+      "language": "en",
+      "method": "dense",
+      "input_query": "Match 2396948, map Dust2. Find rounds where ropz makes the opening first kill by killing yuurih.",
+      "source_ids": [
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:10",
+        "round:2396948:Dust2:1",
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:3"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        0.5022911354899406,
+        0.3260420635342598,
+        0.28345873579382896
+      ],
+      "query_encoding_ms": 257.1132080629468
+    },
+    {
+      "query_id": "opening_2_negative",
+      "family": "opening",
+      "language": "en",
+      "method": "dense_bm25_rrf",
+      "input_query": "Match 2396948, map Dust2. Find rounds where ropz makes the opening first kill by killing yuurih.",
+      "source_ids": [
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:10",
+        "round:2396948:Dust2:1",
+        "round:2396948:Dust2:3",
+        "round:2396948:Dust2:13"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        2.9290821403265,
+        2.5903750211000443,
+        2.6284181512892246
+      ],
+      "query_encoding_ms": 257.1132080629468
+    },
+    {
+      "query_id": "opening_2_negative",
+      "family": "opening",
+      "language": "en",
+      "method": "relation_sql_oracle",
+      "input_query": "Match 2396948, map Dust2. Find rounds where ropz makes the opening first kill by killing yuurih.",
+      "source_ids": [],
+      "eligible_rounds": 17,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_2_negative",
+      "family": "opening",
+      "language": "zh",
+      "method": "bm25",
+      "input_query": "比赛 2396948，地图 Dust2。查找 ropz 击杀 yuurih 并拿到本回合首杀的回合。",
+      "source_ids": [
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:13",
+        "round:2396948:Dust2:3",
+        "round:2396948:Dust2:11",
+        "round:2396948:Dust2:1"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        1.0964996181428432,
+        0.9262082166969776,
+        0.8445838466286659
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_2_negative",
+      "family": "opening",
+      "language": "zh",
+      "method": "dense",
+      "input_query": "比赛 2396948，地图 Dust2。查找 ropz 击杀 yuurih 并拿到本回合首杀的回合。",
+      "source_ids": [
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:10",
+        "round:2396948:Dust2:3",
+        "round:2396948:Dust2:17",
+        "round:2396948:Dust2:13"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        0.42945798486471176,
+        0.3066249191761017,
+        0.24800002574920654
+      ],
+      "query_encoding_ms": 251.88970798626542
+    },
+    {
+      "query_id": "opening_2_negative",
+      "family": "opening",
+      "language": "zh",
+      "method": "dense_bm25_rrf",
+      "input_query": "比赛 2396948，地图 Dust2。查找 ropz 击杀 yuurih 并拿到本回合首杀的回合。",
+      "source_ids": [
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:3",
+        "round:2396948:Dust2:13",
+        "round:2396948:Dust2:10",
+        "round:2396948:Dust2:1"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        1.1410824954509735,
+        0.9431666694581509,
+        0.8584577590227127
+      ],
+      "query_encoding_ms": 251.88970798626542
+    },
+    {
+      "query_id": "opening_2_negative",
+      "family": "opening",
+      "language": "zh",
+      "method": "relation_sql_oracle",
+      "input_query": "比赛 2396948，地图 Dust2。查找 ropz 击杀 yuurih 并拿到本回合首杀的回合。",
+      "source_ids": [],
+      "eligible_rounds": 17,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_2_positive",
+      "family": "after_plant",
+      "language": "en",
+      "method": "bm25",
+      "input_query": "Match 2396948, map Dust2. Find rounds where ropz kills yuurih strictly after a bomb plant in that round.",
+      "source_ids": [
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:13",
+        "round:2396948:Dust2:3",
+        "round:2396948:Dust2:11",
+        "round:2396948:Dust2:1"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 0.3333333333333333,
+        "ndcg_at_k": 0.23463936301137822,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        2.8499173931777477,
+        2.736791968345642,
+        2.6161246933043003
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_2_positive",
+      "family": "after_plant",
+      "language": "en",
+      "method": "dense",
+      "input_query": "Match 2396948, map Dust2. Find rounds where ropz kills yuurih strictly after a bomb plant in that round.",
+      "source_ids": [
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:10",
+        "round:2396948:Dust2:3",
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:1"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 0.6666666666666666,
+        "ndcg_at_k": 0.4367467095119258,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        0.43454160913825035,
+        0.3636251203715801,
+        0.2689170651137829
+      ],
+      "query_encoding_ms": 261.0044158063829
+    },
+    {
+      "query_id": "after_plant_2_positive",
+      "family": "after_plant",
+      "language": "en",
+      "method": "dense_bm25_rrf",
+      "input_query": "Match 2396948, map Dust2. Find rounds where ropz kills yuurih strictly after a bomb plant in that round.",
+      "source_ids": [
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:3",
+        "round:2396948:Dust2:10",
+        "round:2396948:Dust2:13",
+        "round:2396948:Dust2:1"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 0.3333333333333333,
+        "ndcg_at_k": 0.2960819109658652,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        2.8916257433593273,
+        2.7576247230172157,
+        2.6300838217139244
+      ],
+      "query_encoding_ms": 261.0044158063829
+    },
+    {
+      "query_id": "after_plant_2_positive",
+      "family": "after_plant",
+      "language": "en",
+      "method": "relation_sql_oracle",
+      "input_query": "Match 2396948, map Dust2. Find rounds where ropz kills yuurih strictly after a bomb plant in that round.",
+      "source_ids": [
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:3",
+        "round:2396948:Dust2:6"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_2_positive",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "bm25",
+      "input_query": "比赛 2396948，地图 Dust2。查找 ropz 击杀 yuurih，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:13",
+        "round:2396948:Dust2:3",
+        "round:2396948:Dust2:11",
+        "round:2396948:Dust2:1"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 0.3333333333333333,
+        "ndcg_at_k": 0.23463936301137822,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        1.1241668835282326,
+        1.0969988070428371,
+        0.8958340622484684
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_2_positive",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "dense",
+      "input_query": "比赛 2396948，地图 Dust2。查找 ropz 击杀 yuurih，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:1",
+        "round:2396948:Dust2:3",
+        "round:2396948:Dust2:10",
+        "round:2396948:Dust2:17"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 0.3333333333333333,
+        "ndcg_at_k": 0.23463936301137822,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        0.47845765948295593,
+        0.47904113307595253,
+        0.2971258945763111
+      ],
+      "query_encoding_ms": 269.9898751452565
+    },
+    {
+      "query_id": "after_plant_2_positive",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "dense_bm25_rrf",
+      "input_query": "比赛 2396948，地图 Dust2。查找 ropz 击杀 yuurih，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:3",
+        "round:2396948:Dust2:1",
+        "round:2396948:Dust2:13",
+        "round:2396948:Dust2:10"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 0.3333333333333333,
+        "ndcg_at_k": 0.2960819109658652,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        1.1703325435519218,
+        1.1269571259617805,
+        0.9107505902647972
+      ],
+      "query_encoding_ms": 269.9898751452565
+    },
+    {
+      "query_id": "after_plant_2_positive",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "relation_sql_oracle",
+      "input_query": "比赛 2396948，地图 Dust2。查找 ropz 击杀 yuurih，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:3",
+        "round:2396948:Dust2:6"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_2_negative",
+      "family": "after_plant",
+      "language": "en",
+      "method": "bm25",
+      "input_query": "Match 2396948, map Dust2. Find rounds where flameZ kills FalleN strictly after a bomb plant in that round.",
+      "source_ids": [
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:1",
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:17",
+        "round:2396948:Dust2:10"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        3.0290004797279835,
+        2.733916509896517,
+        2.8557907789945602
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_2_negative",
+      "family": "after_plant",
+      "language": "en",
+      "method": "dense",
+      "input_query": "Match 2396948, map Dust2. Find rounds where flameZ kills FalleN strictly after a bomb plant in that round.",
+      "source_ids": [
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:10",
+        "round:2396948:Dust2:17",
+        "round:2396948:Dust2:4"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        0.5595004186034203,
+        0.3539174795150757,
+        0.3066249191761017
+      ],
+      "query_encoding_ms": 268.5704999603331
+    },
+    {
+      "query_id": "after_plant_2_negative",
+      "family": "after_plant",
+      "language": "en",
+      "method": "dense_bm25_rrf",
+      "input_query": "Match 2396948, map Dust2. Find rounds where flameZ kills FalleN strictly after a bomb plant in that round.",
+      "source_ids": [
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:10",
+        "round:2396948:Dust2:17",
+        "round:2396948:Dust2:1"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        3.0770841985940933,
+        2.760916482657194,
+        2.890249714255333
+      ],
+      "query_encoding_ms": 268.5704999603331
+    },
+    {
+      "query_id": "after_plant_2_negative",
+      "family": "after_plant",
+      "language": "en",
+      "method": "relation_sql_oracle",
+      "input_query": "Match 2396948, map Dust2. Find rounds where flameZ kills FalleN strictly after a bomb plant in that round.",
+      "source_ids": [],
+      "eligible_rounds": 17,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_2_negative",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "bm25",
+      "input_query": "比赛 2396948，地图 Dust2。查找 flameZ 击杀 FalleN，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:1",
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:17",
+        "round:2396948:Dust2:10"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        1.051123719662428,
+        0.8572922088205814,
+        0.859375111758709
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_2_negative",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "dense",
+      "input_query": "比赛 2396948，地图 Dust2。查找 flameZ 击杀 FalleN，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:17",
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:10",
+        "round:2396948:Dust2:1"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        0.42729126289486885,
+        0.252042431384325,
+        0.24204188957810402
+      ],
+      "query_encoding_ms": 251.11004197970033
+    },
+    {
+      "query_id": "after_plant_2_negative",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "dense_bm25_rrf",
+      "input_query": "比赛 2396948，地图 Dust2。查找 flameZ 击杀 FalleN，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:17",
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:1",
+        "round:2396948:Dust2:10"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        1.0918332263827324,
+        0.8712923154234886,
+        0.8704592473804951
+      ],
+      "query_encoding_ms": 251.11004197970033
+    },
+    {
+      "query_id": "after_plant_2_negative",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "relation_sql_oracle",
+      "input_query": "比赛 2396948，地图 Dust2。查找 flameZ 击杀 FalleN，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [],
+      "eligible_rounds": 17,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_2_positive",
+      "family": "trade",
+      "language": "en",
+      "method": "bm25",
+      "input_query": "Match 2396948, map Dust2. Find rounds where jL trades teammate apEX: kills the enemy who killed apEX, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [
+        "round:2396948:Dust2:1",
+        "round:2396948:Dust2:11",
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:8",
+        "round:2396948:Dust2:16"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 0.5,
+        "ndcg_at_k": 0.23719771276929622,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        3.242459148168564,
+        3.14287468791008,
+        3.0213329009711742
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_2_positive",
+      "family": "trade",
+      "language": "en",
+      "method": "dense",
+      "input_query": "Match 2396948, map Dust2. Find rounds where jL trades teammate apEX: kills the enemy who killed apEX, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:10",
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:13",
+        "round:2396948:Dust2:1"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        0.4314589314162731,
+        0.30179228633642197,
+        0.25445781648159027
+      ],
+      "query_encoding_ms": 250.4794169217348
+    },
+    {
+      "query_id": "trade_2_positive",
+      "family": "trade",
+      "language": "en",
+      "method": "dense_bm25_rrf",
+      "input_query": "Match 2396948, map Dust2. Find rounds where jL trades teammate apEX: kills the enemy who killed apEX, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [
+        "round:2396948:Dust2:1",
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:11",
+        "round:2396948:Dust2:10",
+        "round:2396948:Dust2:13"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        3.2888338901102543,
+        3.1667076982557774,
+        3.035165835171938
+      ],
+      "query_encoding_ms": 250.4794169217348
+    },
+    {
+      "query_id": "trade_2_positive",
+      "family": "trade",
+      "language": "en",
+      "method": "relation_sql_oracle",
+      "input_query": "Match 2396948, map Dust2. Find rounds where jL trades teammate apEX: kills the enemy who killed apEX, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [
+        "round:2396948:Dust2:16",
+        "round:2396948:Dust2:6"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_2_positive",
+      "family": "trade",
+      "language": "zh",
+      "method": "bm25",
+      "input_query": "比赛 2396948，地图 Dust2。查找 jL 为队友 apEX 补枪的回合：在同一回合中，apEX 被敌人击杀后，jL 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [
+        "round:2396948:Dust2:11",
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:16",
+        "round:2396948:Dust2:13",
+        "round:2396948:Dust2:1"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 0.5,
+        "ndcg_at_k": 0.3065735963827292,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        1.8519172444939613,
+        1.6590007580816746,
+        1.6607921570539474
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_2_positive",
+      "family": "trade",
+      "language": "zh",
+      "method": "dense",
+      "input_query": "比赛 2396948，地图 Dust2。查找 jL 为队友 apEX 补枪的回合：在同一回合中，apEX 被敌人击杀后，jL 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:3",
+        "round:2396948:Dust2:10",
+        "round:2396948:Dust2:17"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        0.43425150215625763,
+        0.26204250752925873,
+        0.2544587478041649
+      ],
+      "query_encoding_ms": 248.87516722083092
+    },
+    {
+      "query_id": "trade_2_positive",
+      "family": "trade",
+      "language": "zh",
+      "method": "dense_bm25_rrf",
+      "input_query": "比赛 2396948，地图 Dust2。查找 jL 为队友 apEX 补枪的回合：在同一回合中，apEX 被敌人击杀后，jL 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:11",
+        "round:2396948:Dust2:10",
+        "round:2396948:Dust2:1",
+        "round:2396948:Dust2:3"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        1.8914598040282726,
+        1.6739172860980034,
+        1.6785841435194016
+      ],
+      "query_encoding_ms": 248.87516722083092
+    },
+    {
+      "query_id": "trade_2_positive",
+      "family": "trade",
+      "language": "zh",
+      "method": "relation_sql_oracle",
+      "input_query": "比赛 2396948，地图 Dust2。查找 jL 为队友 apEX 补枪的回合：在同一回合中，apEX 被敌人击杀后，jL 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [
+        "round:2396948:Dust2:16",
+        "round:2396948:Dust2:6"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_2_negative",
+      "family": "trade",
+      "language": "en",
+      "method": "bm25",
+      "input_query": "Match 2396948, map Dust2. Find rounds where KSCERATO trades teammate YEKINDAR: kills the enemy who killed YEKINDAR, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:1",
+        "round:2396948:Dust2:4",
+        "round:2396948:Dust2:14",
+        "round:2396948:Dust2:12"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        3.3187074586749077,
+        3.130499739199877,
+        3.038584254682064
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_2_negative",
+      "family": "trade",
+      "language": "en",
+      "method": "dense",
+      "input_query": "Match 2396948, map Dust2. Find rounds where KSCERATO trades teammate YEKINDAR: kills the enemy who killed YEKINDAR, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:3",
+        "round:2396948:Dust2:10",
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:13"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        0.42291684076189995,
+        0.3171246498823166,
+        0.25687506422400475
+      ],
+      "query_encoding_ms": 243.54741722345352
+    },
+    {
+      "query_id": "trade_2_negative",
+      "family": "trade",
+      "language": "en",
+      "method": "dense_bm25_rrf",
+      "input_query": "Match 2396948, map Dust2. Find rounds where KSCERATO trades teammate YEKINDAR: kills the enemy who killed YEKINDAR, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:1",
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:10",
+        "round:2396948:Dust2:13"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        3.364749252796173,
+        3.1539578922092915,
+        3.050293307751417
+      ],
+      "query_encoding_ms": 243.54741722345352
+    },
+    {
+      "query_id": "trade_2_negative",
+      "family": "trade",
+      "language": "en",
+      "method": "relation_sql_oracle",
+      "input_query": "Match 2396948, map Dust2. Find rounds where KSCERATO trades teammate YEKINDAR: kills the enemy who killed YEKINDAR, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [],
+      "eligible_rounds": 17,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_2_negative",
+      "family": "trade",
+      "language": "zh",
+      "method": "bm25",
+      "input_query": "比赛 2396948，地图 Dust2。查找 KSCERATO 为队友 YEKINDAR 补枪的回合：在同一回合中，YEKINDAR 被敌人击杀后，KSCERATO 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [
+        "round:2396948:Dust2:4",
+        "round:2396948:Dust2:1",
+        "round:2396948:Dust2:14",
+        "round:2396948:Dust2:5",
+        "round:2396948:Dust2:12"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        1.9060010090470314,
+        1.7089578323066235,
+        1.6568759456276894
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_2_negative",
+      "family": "trade",
+      "language": "zh",
+      "method": "dense",
+      "input_query": "比赛 2396948，地图 Dust2。查找 KSCERATO 为队友 YEKINDAR 补枪的回合：在同一回合中，YEKINDAR 被敌人击杀后，KSCERATO 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:3",
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:10",
+        "round:2396948:Dust2:8"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        0.43279165402054787,
+        0.3069578669965267,
+        0.26466697454452515
+      ],
+      "query_encoding_ms": 255.4031671024859
+    },
+    {
+      "query_id": "trade_2_negative",
+      "family": "trade",
+      "language": "zh",
+      "method": "dense_bm25_rrf",
+      "input_query": "比赛 2396948，地图 Dust2。查找 KSCERATO 为队友 YEKINDAR 补枪的回合：在同一回合中，YEKINDAR 被敌人击杀后，KSCERATO 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:1",
+        "round:2396948:Dust2:4",
+        "round:2396948:Dust2:3"
+      ],
+      "eligible_rounds": 17,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        1.9456259906291962,
+        1.7289165407419205,
+        1.6690432094037533
+      ],
+      "query_encoding_ms": 255.4031671024859
+    },
+    {
+      "query_id": "trade_2_negative",
+      "family": "trade",
+      "language": "zh",
+      "method": "relation_sql_oracle",
+      "input_query": "比赛 2396948，地图 Dust2。查找 KSCERATO 为队友 YEKINDAR 补枪的回合：在同一回合中，YEKINDAR 被敌人击杀后，KSCERATO 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [],
+      "eligible_rounds": 17,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_3_positive",
+      "family": "opening",
+      "language": "en",
+      "method": "bm25",
+      "input_query": "Match 2396614, map Ancient. Find rounds where donk makes the opening first kill by killing xfl0ud.",
+      "source_ids": [
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:20",
+        "round:2396614:Ancient:4",
+        "round:2396614:Ancient:13",
+        "round:2396614:Ancient:19"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        3.907041158527136,
+        3.6982488818466663,
+        3.7269587628543377
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_3_positive",
+      "family": "opening",
+      "language": "en",
+      "method": "dense",
+      "input_query": "Match 2396614, map Ancient. Find rounds where donk makes the opening first kill by killing xfl0ud.",
+      "source_ids": [
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:2",
+        "round:2396614:Ancient:13",
+        "round:2396614:Ancient:23"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        0.4305420443415642,
+        0.36395667120814323,
+        0.3044172190129757
+      ],
+      "query_encoding_ms": 253.4712078049779
+    },
+    {
+      "query_id": "opening_3_positive",
+      "family": "opening",
+      "language": "en",
+      "method": "dense_bm25_rrf",
+      "input_query": "Match 2396614, map Ancient. Find rounds where donk makes the opening first kill by killing xfl0ud.",
+      "source_ids": [
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:13",
+        "round:2396614:Ancient:20",
+        "round:2396614:Ancient:22",
+        "round:2396614:Ancient:19"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        3.9552906528115273,
+        3.72112262994051,
+        3.7555848248302937
+      ],
+      "query_encoding_ms": 253.4712078049779
+    },
+    {
+      "query_id": "opening_3_positive",
+      "family": "opening",
+      "language": "en",
+      "method": "relation_sql_oracle",
+      "input_query": "Match 2396614, map Ancient. Find rounds where donk makes the opening first kill by killing xfl0ud.",
+      "source_ids": [
+        "round:2396614:Ancient:18",
+        "round:2396614:Ancient:29",
+        "round:2396614:Ancient:7"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_3_positive",
+      "family": "opening",
+      "language": "zh",
+      "method": "bm25",
+      "input_query": "比赛 2396614，地图 Ancient。查找 donk 击杀 xfl0ud 并拿到本回合首杀的回合。",
+      "source_ids": [
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:20",
+        "round:2396614:Ancient:4",
+        "round:2396614:Ancient:13",
+        "round:2396614:Ancient:19"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        1.5196260064840317,
+        1.2836665846407413,
+        1.198458019644022
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_3_positive",
+      "family": "opening",
+      "language": "zh",
+      "method": "dense",
+      "input_query": "比赛 2396614，地图 Ancient。查找 donk 击杀 xfl0ud 并拿到本回合首杀的回合。",
+      "source_ids": [
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:22",
+        "round:2396614:Ancient:23",
+        "round:2396614:Ancient:2",
+        "round:2396614:Ancient:1"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        0.5266247317194939,
+        0.313708558678627,
+        0.2405000850558281
+      ],
+      "query_encoding_ms": 252.43195798248053
+    },
+    {
+      "query_id": "opening_3_positive",
+      "family": "opening",
+      "language": "zh",
+      "method": "dense_bm25_rrf",
+      "input_query": "比赛 2396614，地图 Ancient。查找 donk 击杀 xfl0ud 并拿到本回合首杀的回合。",
+      "source_ids": [
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:20",
+        "round:2396614:Ancient:22",
+        "round:2396614:Ancient:14",
+        "round:2396614:Ancient:13"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        1.5675006434321404,
+        1.3039992190897465,
+        1.2138327583670616
+      ],
+      "query_encoding_ms": 252.43195798248053
+    },
+    {
+      "query_id": "opening_3_positive",
+      "family": "opening",
+      "language": "zh",
+      "method": "relation_sql_oracle",
+      "input_query": "比赛 2396614，地图 Ancient。查找 donk 击杀 xfl0ud 并拿到本回合首杀的回合。",
+      "source_ids": [
+        "round:2396614:Ancient:18",
+        "round:2396614:Ancient:29",
+        "round:2396614:Ancient:7"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_3_negative",
+      "family": "opening",
+      "language": "en",
+      "method": "bm25",
+      "input_query": "Match 2396614, map Ancient. Find rounds where dem0n makes the opening first kill by killing donk.",
+      "source_ids": [
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:13",
+        "round:2396614:Ancient:19",
+        "round:2396614:Ancient:21"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        3.977708052843809,
+        3.790374379605055,
+        3.7507922388613224
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_3_negative",
+      "family": "opening",
+      "language": "en",
+      "method": "dense",
+      "input_query": "Match 2396614, map Ancient. Find rounds where dem0n makes the opening first kill by killing donk.",
+      "source_ids": [
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:2",
+        "round:2396614:Ancient:13",
+        "round:2396614:Ancient:22"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        0.44399918988347054,
+        0.38470886647701263,
+        0.3575831651687622
+      ],
+      "query_encoding_ms": 242.39479191601276
+    },
+    {
+      "query_id": "opening_3_negative",
+      "family": "opening",
+      "language": "en",
+      "method": "dense_bm25_rrf",
+      "input_query": "Match 2396614, map Ancient. Find rounds where dem0n makes the opening first kill by killing donk.",
+      "source_ids": [
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:13",
+        "round:2396614:Ancient:22",
+        "round:2396614:Ancient:2"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        4.021583124995232,
+        3.8182088173925877,
+        3.785083070397377
+      ],
+      "query_encoding_ms": 242.39479191601276
+    },
+    {
+      "query_id": "opening_3_negative",
+      "family": "opening",
+      "language": "en",
+      "method": "relation_sql_oracle",
+      "input_query": "Match 2396614, map Ancient. Find rounds where dem0n makes the opening first kill by killing donk.",
+      "source_ids": [],
+      "eligible_rounds": 30,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_3_negative",
+      "family": "opening",
+      "language": "zh",
+      "method": "bm25",
+      "input_query": "比赛 2396614，地图 Ancient。查找 dem0n 击杀 donk 并拿到本回合首杀的回合。",
+      "source_ids": [
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:13",
+        "round:2396614:Ancient:19",
+        "round:2396614:Ancient:21"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        1.6336250118911266,
+        1.3623754493892193,
+        1.2347078882157803
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_3_negative",
+      "family": "opening",
+      "language": "zh",
+      "method": "dense",
+      "input_query": "比赛 2396614，地图 Ancient。查找 dem0n 击杀 donk 并拿到本回合首杀的回合。",
+      "source_ids": [
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:22",
+        "round:2396614:Ancient:23",
+        "round:2396614:Ancient:2"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        0.4791668616235256,
+        0.37120841443538666,
+        0.2639587037265301
+      ],
+      "query_encoding_ms": 266.9187500141561
+    },
+    {
+      "query_id": "opening_3_negative",
+      "family": "opening",
+      "language": "zh",
+      "method": "dense_bm25_rrf",
+      "input_query": "比赛 2396614，地图 Ancient。查找 dem0n 击杀 donk 并拿到本回合首杀的回合。",
+      "source_ids": [
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:22",
+        "round:2396614:Ancient:19",
+        "round:2396614:Ancient:17"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        1.683584414422512,
+        1.383999828249216,
+        1.2500002048909664
+      ],
+      "query_encoding_ms": 266.9187500141561
+    },
+    {
+      "query_id": "opening_3_negative",
+      "family": "opening",
+      "language": "zh",
+      "method": "relation_sql_oracle",
+      "input_query": "比赛 2396614，地图 Ancient。查找 dem0n 击杀 donk 并拿到本回合首杀的回合。",
+      "source_ids": [],
+      "eligible_rounds": 30,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_3_positive",
+      "family": "after_plant",
+      "language": "en",
+      "method": "bm25",
+      "input_query": "Match 2396614, map Ancient. Find rounds where dem0n kills donk strictly after a bomb plant in that round.",
+      "source_ids": [
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:13",
+        "round:2396614:Ancient:19",
+        "round:2396614:Ancient:21"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        4.028959199786186,
+        3.830083180218935,
+        3.854749258607626
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_3_positive",
+      "family": "after_plant",
+      "language": "en",
+      "method": "dense",
+      "input_query": "Match 2396614, map Ancient. Find rounds where dem0n kills donk strictly after a bomb plant in that round.",
+      "source_ids": [
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:2",
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:22",
+        "round:2396614:Ancient:19"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        0.4625841975212097,
+        0.3116670995950699,
+        0.2543749287724495
+      ],
+      "query_encoding_ms": 243.62224992364645
+    },
+    {
+      "query_id": "after_plant_3_positive",
+      "family": "after_plant",
+      "language": "en",
+      "method": "dense_bm25_rrf",
+      "input_query": "Match 2396614, map Ancient. Find rounds where dem0n kills donk strictly after a bomb plant in that round.",
+      "source_ids": [
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:19",
+        "round:2396614:Ancient:13",
+        "round:2396614:Ancient:22"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        4.072210285812616,
+        3.8507506251335144,
+        3.885333426296711
+      ],
+      "query_encoding_ms": 243.62224992364645
+    },
+    {
+      "query_id": "after_plant_3_positive",
+      "family": "after_plant",
+      "language": "en",
+      "method": "relation_sql_oracle",
+      "input_query": "Match 2396614, map Ancient. Find rounds where dem0n kills donk strictly after a bomb plant in that round.",
+      "source_ids": [
+        "round:2396614:Ancient:25",
+        "round:2396614:Ancient:5",
+        "round:2396614:Ancient:6"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_3_positive",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "bm25",
+      "input_query": "比赛 2396614，地图 Ancient。查找 dem0n 击杀 donk，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:13",
+        "round:2396614:Ancient:19",
+        "round:2396614:Ancient:21"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        1.4380416832864285,
+        1.302665565162897,
+        1.2006661854684353
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_3_positive",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "dense",
+      "input_query": "比赛 2396614，地图 Ancient。查找 dem0n 击杀 donk，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:22",
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:2",
+        "round:2396614:Ancient:23"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        0.4303748719394207,
+        0.32779108732938766,
+        0.23591751232743263
+      ],
+      "query_encoding_ms": 244.375083129853
+    },
+    {
+      "query_id": "after_plant_3_positive",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "dense_bm25_rrf",
+      "input_query": "比赛 2396614，地图 Ancient。查找 dem0n 击杀 donk，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:22",
+        "round:2396614:Ancient:19",
+        "round:2396614:Ancient:13"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        1.4866669662296772,
+        1.3271658681333065,
+        1.2161661870777607
+      ],
+      "query_encoding_ms": 244.375083129853
+    },
+    {
+      "query_id": "after_plant_3_positive",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "relation_sql_oracle",
+      "input_query": "比赛 2396614，地图 Ancient。查找 dem0n 击杀 donk，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [
+        "round:2396614:Ancient:25",
+        "round:2396614:Ancient:5",
+        "round:2396614:Ancient:6"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_3_negative",
+      "family": "after_plant",
+      "language": "en",
+      "method": "bm25",
+      "input_query": "Match 2396614, map Ancient. Find rounds where dem0n kills zont1x strictly after a bomb plant in that round.",
+      "source_ids": [
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:13",
+        "round:2396614:Ancient:19",
+        "round:2396614:Ancient:21"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        4.182625096291304,
+        3.950665704905987,
+        3.907417878508568
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_3_negative",
+      "family": "after_plant",
+      "language": "en",
+      "method": "dense",
+      "input_query": "Match 2396614, map Ancient. Find rounds where dem0n kills zont1x strictly after a bomb plant in that round.",
+      "source_ids": [
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:2",
+        "round:2396614:Ancient:22",
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:14"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        0.44679222628474236,
+        0.37341611459851265,
+        0.2554589882493019
+      ],
+      "query_encoding_ms": 251.04216672480106
+    },
+    {
+      "query_id": "after_plant_3_negative",
+      "family": "after_plant",
+      "language": "en",
+      "method": "dense_bm25_rrf",
+      "input_query": "Match 2396614, map Ancient. Find rounds where dem0n kills zont1x strictly after a bomb plant in that round.",
+      "source_ids": [
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:19",
+        "round:2396614:Ancient:13",
+        "round:2396614:Ancient:22"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        4.2297085747122765,
+        3.972499631345272,
+        3.940001130104065
+      ],
+      "query_encoding_ms": 251.04216672480106
+    },
+    {
+      "query_id": "after_plant_3_negative",
+      "family": "after_plant",
+      "language": "en",
+      "method": "relation_sql_oracle",
+      "input_query": "Match 2396614, map Ancient. Find rounds where dem0n kills zont1x strictly after a bomb plant in that round.",
+      "source_ids": [],
+      "eligible_rounds": 30,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_3_negative",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "bm25",
+      "input_query": "比赛 2396614，地图 Ancient。查找 dem0n 击杀 zont1x，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:13",
+        "round:2396614:Ancient:19",
+        "round:2396614:Ancient:21"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        1.433167140930891,
+        1.289957668632269,
+        1.3042502105236053
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_3_negative",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "dense",
+      "input_query": "比赛 2396614，地图 Ancient。查找 dem0n 击杀 zont1x，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:22",
+        "round:2396614:Ancient:23",
+        "round:2396614:Ancient:2",
+        "round:2396614:Ancient:16"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        0.43587619438767433,
+        0.2808747813105583,
+        0.3094170242547989
+      ],
+      "query_encoding_ms": 256.98233395814896
+    },
+    {
+      "query_id": "after_plant_3_negative",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "dense_bm25_rrf",
+      "input_query": "比赛 2396614，地图 Ancient。查找 dem0n 击杀 zont1x，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:22",
+        "round:2396614:Ancient:13",
+        "round:2396614:Ancient:19"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        1.4785840176045895,
+        1.3087918050587177,
+        1.3315831311047077
+      ],
+      "query_encoding_ms": 256.98233395814896
+    },
+    {
+      "query_id": "after_plant_3_negative",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "relation_sql_oracle",
+      "input_query": "比赛 2396614，地图 Ancient。查找 dem0n 击杀 zont1x，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [],
+      "eligible_rounds": 30,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_3_positive",
+      "family": "trade",
+      "language": "en",
+      "method": "bm25",
+      "input_query": "Match 2396614, map Ancient. Find rounds where zont1x trades teammate donk: kills the enemy who killed donk, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [
+        "round:2396614:Ancient:10",
+        "round:2396614:Ancient:20",
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:6",
+        "round:2396614:Ancient:19"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 4,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        4.965000320225954,
+        4.845957737416029,
+        4.72970912232995
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_3_positive",
+      "family": "trade",
+      "language": "en",
+      "method": "dense",
+      "input_query": "Match 2396614, map Ancient. Find rounds where zont1x trades teammate donk: kills the enemy who killed donk, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:2",
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:14",
+        "round:2396614:Ancient:20"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 4,
+      "metrics": {
+        "recall_at_k": 0.25,
+        "ndcg_at_k": 0.16812753627111746,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        0.4270002245903015,
+        0.3947499208152294,
+        0.3014588728547096
+      ],
+      "query_encoding_ms": 247.30033287778497
+    },
+    {
+      "query_id": "trade_3_positive",
+      "family": "trade",
+      "language": "en",
+      "method": "dense_bm25_rrf",
+      "input_query": "Match 2396614, map Ancient. Find rounds where zont1x trades teammate donk: kills the enemy who killed donk, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:10",
+        "round:2396614:Ancient:20",
+        "round:2396614:Ancient:14",
+        "round:2396614:Ancient:6"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 4,
+      "metrics": {
+        "recall_at_k": 0.25,
+        "ndcg_at_k": 0.16812753627111746,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        5.012416280806065,
+        4.8802499659359455,
+        4.752876237034798
+      ],
+      "query_encoding_ms": 247.30033287778497
+    },
+    {
+      "query_id": "trade_3_positive",
+      "family": "trade",
+      "language": "en",
+      "method": "relation_sql_oracle",
+      "input_query": "Match 2396614, map Ancient. Find rounds where zont1x trades teammate donk: kills the enemy who killed donk, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [
+        "round:2396614:Ancient:14",
+        "round:2396614:Ancient:25",
+        "round:2396614:Ancient:26",
+        "round:2396614:Ancient:4"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 4,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_3_positive",
+      "family": "trade",
+      "language": "zh",
+      "method": "bm25",
+      "input_query": "比赛 2396614，地图 Ancient。查找 zont1x 为队友 donk 补枪的回合：在同一回合中，donk 被敌人击杀后，zont1x 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [
+        "round:2396614:Ancient:20",
+        "round:2396614:Ancient:10",
+        "round:2396614:Ancient:6",
+        "round:2396614:Ancient:14",
+        "round:2396614:Ancient:4"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 4,
+      "metrics": {
+        "recall_at_k": 0.5,
+        "ndcg_at_k": 0.3191471544989227,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        2.9623759910464287,
+        2.8797080740332603,
+        2.7275001630187035
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_3_positive",
+      "family": "trade",
+      "language": "zh",
+      "method": "dense",
+      "input_query": "比赛 2396614，地图 Ancient。查找 zont1x 为队友 donk 补枪的回合：在同一回合中，donk 被敌人击杀后，zont1x 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [
+        "round:2396614:Ancient:10",
+        "round:2396614:Ancient:2",
+        "round:2396614:Ancient:20",
+        "round:2396614:Ancient:6",
+        "round:2396614:Ancient:23"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 4,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        0.43629156425595284,
+        0.3880830481648445,
+        0.2654590643942356
+      ],
+      "query_encoding_ms": 248.027500230819
+    },
+    {
+      "query_id": "trade_3_positive",
+      "family": "trade",
+      "language": "zh",
+      "method": "dense_bm25_rrf",
+      "input_query": "比赛 2396614，地图 Ancient。查找 zont1x 为队友 donk 补枪的回合：在同一回合中，donk 被敌人击杀后，zont1x 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [
+        "round:2396614:Ancient:10",
+        "round:2396614:Ancient:20",
+        "round:2396614:Ancient:6",
+        "round:2396614:Ancient:14",
+        "round:2396614:Ancient:2"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 4,
+      "metrics": {
+        "recall_at_k": 0.25,
+        "ndcg_at_k": 0.16812753627111746,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        3.009958192706108,
+        2.9080831445753574,
+        2.750000450760126
+      ],
+      "query_encoding_ms": 248.027500230819
+    },
+    {
+      "query_id": "trade_3_positive",
+      "family": "trade",
+      "language": "zh",
+      "method": "relation_sql_oracle",
+      "input_query": "比赛 2396614，地图 Ancient。查找 zont1x 为队友 donk 补枪的回合：在同一回合中，donk 被敌人击杀后，zont1x 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [
+        "round:2396614:Ancient:14",
+        "round:2396614:Ancient:25",
+        "round:2396614:Ancient:26",
+        "round:2396614:Ancient:4"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 4,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_3_negative",
+      "family": "trade",
+      "language": "en",
+      "method": "bm25",
+      "input_query": "Match 2396614, map Ancient. Find rounds where cmtry trades teammate dziugss: kills the enemy who killed dziugss, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:19",
+        "round:2396614:Ancient:2",
+        "round:2396614:Ancient:17",
+        "round:2396614:Ancient:3"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        4.780750256031752,
+        4.7308760695159435,
+        4.511708859354258
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_3_negative",
+      "family": "trade",
+      "language": "en",
+      "method": "dense",
+      "input_query": "Match 2396614, map Ancient. Find rounds where cmtry trades teammate dziugss: kills the enemy who killed dziugss, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:2",
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:13",
+        "round:2396614:Ancient:3"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        0.4815421998500824,
+        0.32287510111927986,
+        0.28195884078741074
+      ],
+      "query_encoding_ms": 246.73891672864556
+    },
+    {
+      "query_id": "trade_3_negative",
+      "family": "trade",
+      "language": "en",
+      "method": "dense_bm25_rrf",
+      "input_query": "Match 2396614, map Ancient. Find rounds where cmtry trades teammate dziugss: kills the enemy who killed dziugss, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:2",
+        "round:2396614:Ancient:19",
+        "round:2396614:Ancient:3",
+        "round:2396614:Ancient:17"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        4.833750892430544,
+        4.761001095175743,
+        4.5293341390788555
+      ],
+      "query_encoding_ms": 246.73891672864556
+    },
+    {
+      "query_id": "trade_3_negative",
+      "family": "trade",
+      "language": "en",
+      "method": "relation_sql_oracle",
+      "input_query": "Match 2396614, map Ancient. Find rounds where cmtry trades teammate dziugss: kills the enemy who killed dziugss, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [],
+      "eligible_rounds": 30,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_3_negative",
+      "family": "trade",
+      "language": "zh",
+      "method": "bm25",
+      "input_query": "比赛 2396614，地图 Ancient。查找 cmtry 为队友 dziugss 补枪的回合：在同一回合中，dziugss 被敌人击杀后，cmtry 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:2",
+        "round:2396614:Ancient:3",
+        "round:2396614:Ancient:19",
+        "round:2396614:Ancient:15"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        2.737166825681925,
+        2.5948751717805862,
+        2.485583070665598
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_3_negative",
+      "family": "trade",
+      "language": "zh",
+      "method": "dense",
+      "input_query": "比赛 2396614，地图 Ancient。查找 cmtry 为队友 dziugss 补枪的回合：在同一回合中，dziugss 被敌人击杀后，cmtry 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [
+        "round:2396614:Ancient:2",
+        "round:2396614:Ancient:3",
+        "round:2396614:Ancient:23",
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:7"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        0.476290937513113,
+        0.3177495673298836,
+        0.2653333358466625
+      ],
+      "query_encoding_ms": 249.46524994447827
+    },
+    {
+      "query_id": "trade_3_negative",
+      "family": "trade",
+      "language": "zh",
+      "method": "dense_bm25_rrf",
+      "input_query": "比赛 2396614，地图 Ancient。查找 cmtry 为队友 dziugss 补枪的回合：在同一回合中，dziugss 被敌人击杀后，cmtry 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [
+        "round:2396614:Ancient:2",
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:3",
+        "round:2396614:Ancient:7",
+        "round:2396614:Ancient:15"
+      ],
+      "eligible_rounds": 30,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        2.78316717594862,
+        2.626165747642517,
+        2.5109988637268543
+      ],
+      "query_encoding_ms": 249.46524994447827
+    },
+    {
+      "query_id": "trade_3_negative",
+      "family": "trade",
+      "language": "zh",
+      "method": "relation_sql_oracle",
+      "input_query": "比赛 2396614，地图 Ancient。查找 cmtry 为队友 dziugss 补枪的回合：在同一回合中，dziugss 被敌人击杀后，cmtry 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [],
+      "eligible_rounds": 30,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_4_positive",
+      "family": "opening",
+      "language": "en",
+      "method": "bm25",
+      "input_query": "Match 2396609, map Mirage. Find rounds where m0NESY makes the opening first kill by killing dumau.",
+      "source_ids": [
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:3",
+        "round:2396609:Mirage:7",
+        "round:2396609:Mirage:15"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        2.6455423794686794,
+        2.377375029027462,
+        2.255542203783989
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_4_positive",
+      "family": "opening",
+      "language": "en",
+      "method": "dense",
+      "input_query": "Match 2396609, map Mirage. Find rounds where m0NESY makes the opening first kill by killing dumau.",
+      "source_ids": [
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:20",
+        "round:2396609:Mirage:3",
+        "round:2396609:Mirage:19"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        0.4741251468658447,
+        0.3285408020019531,
+        0.2311263233423233
+      ],
+      "query_encoding_ms": 240.03820773214102
+    },
+    {
+      "query_id": "opening_4_positive",
+      "family": "opening",
+      "language": "en",
+      "method": "dense_bm25_rrf",
+      "input_query": "Match 2396609, map Mirage. Find rounds where m0NESY makes the opening first kill by killing dumau.",
+      "source_ids": [
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:3",
+        "round:2396609:Mirage:20",
+        "round:2396609:Mirage:7"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        2.692666370421648,
+        2.3942487314343452,
+        2.267293632030487
+      ],
+      "query_encoding_ms": 240.03820773214102
+    },
+    {
+      "query_id": "opening_4_positive",
+      "family": "opening",
+      "language": "en",
+      "method": "relation_sql_oracle",
+      "input_query": "Match 2396609, map Mirage. Find rounds where m0NESY makes the opening first kill by killing dumau.",
+      "source_ids": [
+        "round:2396609:Mirage:10",
+        "round:2396609:Mirage:4",
+        "round:2396609:Mirage:5"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_4_positive",
+      "family": "opening",
+      "language": "zh",
+      "method": "bm25",
+      "input_query": "比赛 2396609，地图 Mirage。查找 m0NESY 击杀 dumau 并拿到本回合首杀的回合。",
+      "source_ids": [
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:3",
+        "round:2396609:Mirage:7",
+        "round:2396609:Mirage:15"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        1.030042301863432,
+        0.8462094701826572,
+        0.8594994433224201
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_4_positive",
+      "family": "opening",
+      "language": "zh",
+      "method": "dense",
+      "input_query": "比赛 2396609，地图 Mirage。查找 m0NESY 击杀 dumau 并拿到本回合首杀的回合。",
+      "source_ids": [
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:3",
+        "round:2396609:Mirage:20",
+        "round:2396609:Mirage:19"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        0.43125124648213387,
+        0.26016635820269585,
+        0.23508351296186447
+      ],
+      "query_encoding_ms": 240.1836672797799
+    },
+    {
+      "query_id": "opening_4_positive",
+      "family": "opening",
+      "language": "zh",
+      "method": "dense_bm25_rrf",
+      "input_query": "比赛 2396609，地图 Mirage。查找 m0NESY 击杀 dumau 并拿到本回合首杀的回合。",
+      "source_ids": [
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:3",
+        "round:2396609:Mirage:20",
+        "round:2396609:Mirage:7"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        1.0728761553764343,
+        0.8615003898739815,
+        0.8789165876805782
+      ],
+      "query_encoding_ms": 240.1836672797799
+    },
+    {
+      "query_id": "opening_4_positive",
+      "family": "opening",
+      "language": "zh",
+      "method": "relation_sql_oracle",
+      "input_query": "比赛 2396609，地图 Mirage。查找 m0NESY 击杀 dumau 并拿到本回合首杀的回合。",
+      "source_ids": [
+        "round:2396609:Mirage:10",
+        "round:2396609:Mirage:4",
+        "round:2396609:Mirage:5"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 3,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_4_negative",
+      "family": "opening",
+      "language": "en",
+      "method": "bm25",
+      "input_query": "Match 2396609, map Mirage. Find rounds where latto makes the opening first kill by killing m0NESY.",
+      "source_ids": [
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:1",
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:11",
+        "round:2396609:Mirage:3"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        2.5306669995188713,
+        2.334499731659889,
+        2.2662091068923473
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_4_negative",
+      "family": "opening",
+      "language": "en",
+      "method": "dense",
+      "input_query": "Match 2396609, map Mirage. Find rounds where latto makes the opening first kill by killing m0NESY.",
+      "source_ids": [
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:16",
+        "round:2396609:Mirage:7",
+        "round:2396609:Mirage:20"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        0.41629280894994736,
+        0.2980828285217285,
+        0.2355012111365795
+      ],
+      "query_encoding_ms": 241.1052081733942
+    },
+    {
+      "query_id": "opening_4_negative",
+      "family": "opening",
+      "language": "en",
+      "method": "dense_bm25_rrf",
+      "input_query": "Match 2396609, map Mirage. Find rounds where latto makes the opening first kill by killing m0NESY.",
+      "source_ids": [
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:16",
+        "round:2396609:Mirage:11",
+        "round:2396609:Mirage:7"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        2.5728754699230194,
+        2.3499997332692146,
+        2.2784601897001266
+      ],
+      "query_encoding_ms": 241.1052081733942
+    },
+    {
+      "query_id": "opening_4_negative",
+      "family": "opening",
+      "language": "en",
+      "method": "relation_sql_oracle",
+      "input_query": "Match 2396609, map Mirage. Find rounds where latto makes the opening first kill by killing m0NESY.",
+      "source_ids": [],
+      "eligible_rounds": 20,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_4_negative",
+      "family": "opening",
+      "language": "zh",
+      "method": "bm25",
+      "input_query": "比赛 2396609，地图 Mirage。查找 latto 击杀 m0NESY 并拿到本回合首杀的回合。",
+      "source_ids": [
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:1",
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:11",
+        "round:2396609:Mirage:3"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        1.0372507385909557,
+        0.9070830419659615,
+        0.8071232587099075
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "opening_4_negative",
+      "family": "opening",
+      "language": "zh",
+      "method": "dense",
+      "input_query": "比赛 2396609，地图 Mirage。查找 latto 击杀 m0NESY 并拿到本回合首杀的回合。",
+      "source_ids": [
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:16",
+        "round:2396609:Mirage:19",
+        "round:2396609:Mirage:7",
+        "round:2396609:Mirage:13"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        0.4215002991259098,
+        0.3427090123295784,
+        0.22991560399532318
+      ],
+      "query_encoding_ms": 243.3339999988675
+    },
+    {
+      "query_id": "opening_4_negative",
+      "family": "opening",
+      "language": "zh",
+      "method": "dense_bm25_rrf",
+      "input_query": "比赛 2396609，地图 Mirage。查找 latto 击杀 m0NESY 并拿到本回合首杀的回合。",
+      "source_ids": [
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:16",
+        "round:2396609:Mirage:11",
+        "round:2396609:Mirage:7"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        1.0816254653036594,
+        0.9307502768933773,
+        0.819748267531395
+      ],
+      "query_encoding_ms": 243.3339999988675
+    },
+    {
+      "query_id": "opening_4_negative",
+      "family": "opening",
+      "language": "zh",
+      "method": "relation_sql_oracle",
+      "input_query": "比赛 2396609，地图 Mirage。查找 latto 击杀 m0NESY 并拿到本回合首杀的回合。",
+      "source_ids": [],
+      "eligible_rounds": 20,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_4_positive",
+      "family": "after_plant",
+      "language": "en",
+      "method": "bm25",
+      "input_query": "Match 2396609, map Mirage. Find rounds where dumau kills NiKo strictly after a bomb plant in that round.",
+      "source_ids": [
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:7",
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:2",
+        "round:2396609:Mirage:20"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        2.635583747178316,
+        2.4861241690814495,
+        2.4769590236246586
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_4_positive",
+      "family": "after_plant",
+      "language": "en",
+      "method": "dense",
+      "input_query": "Match 2396609, map Mirage. Find rounds where dumau kills NiKo strictly after a bomb plant in that round.",
+      "source_ids": [
+        "round:2396609:Mirage:7",
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:20",
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:3"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 0.5,
+        "ndcg_at_k": 0.23719771276929622,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        0.43133413419127464,
+        0.28062518686056137,
+        0.25520846247673035
+      ],
+      "query_encoding_ms": 240.95104215666652
+    },
+    {
+      "query_id": "after_plant_4_positive",
+      "family": "after_plant",
+      "language": "en",
+      "method": "dense_bm25_rrf",
+      "input_query": "Match 2396609, map Mirage. Find rounds where dumau kills NiKo strictly after a bomb plant in that round.",
+      "source_ids": [
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:7",
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:20",
+        "round:2396609:Mirage:2"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        2.6784176006913185,
+        2.50829104334116,
+        2.493958454579115
+      ],
+      "query_encoding_ms": 240.95104215666652
+    },
+    {
+      "query_id": "after_plant_4_positive",
+      "family": "after_plant",
+      "language": "en",
+      "method": "relation_sql_oracle",
+      "input_query": "Match 2396609, map Mirage. Find rounds where dumau kills NiKo strictly after a bomb plant in that round.",
+      "source_ids": [
+        "round:2396609:Mirage:18",
+        "round:2396609:Mirage:3"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_4_positive",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "bm25",
+      "input_query": "比赛 2396609，地图 Mirage。查找 dumau 击杀 NiKo，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:7",
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:2",
+        "round:2396609:Mirage:20"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        1.0885829105973244,
+        0.9177909232676029,
+        0.8275830186903477
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_4_positive",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "dense",
+      "input_query": "比赛 2396609，地图 Mirage。查找 dumau 击杀 NiKo，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [
+        "round:2396609:Mirage:7",
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:20",
+        "round:2396609:Mirage:3"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 0.5,
+        "ndcg_at_k": 0.23719771276929622,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        0.4671243950724602,
+        0.31841592863202095,
+        0.2309577539563179
+      ],
+      "query_encoding_ms": 240.4939578846097
+    },
+    {
+      "query_id": "after_plant_4_positive",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "dense_bm25_rrf",
+      "input_query": "比赛 2396609，地图 Mirage。查找 dumau 击杀 NiKo，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:7",
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:20",
+        "round:2396609:Mirage:2"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        1.1342898942530155,
+        0.934832263737917,
+        0.8394988253712654
+      ],
+      "query_encoding_ms": 240.4939578846097
+    },
+    {
+      "query_id": "after_plant_4_positive",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "relation_sql_oracle",
+      "input_query": "比赛 2396609，地图 Mirage。查找 dumau 击杀 NiKo，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [
+        "round:2396609:Mirage:18",
+        "round:2396609:Mirage:3"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_4_negative",
+      "family": "after_plant",
+      "language": "en",
+      "method": "bm25",
+      "input_query": "Match 2396609, map Mirage. Find rounds where try kills kyousuke strictly after a bomb plant in that round.",
+      "source_ids": [
+        "round:2396609:Mirage:1",
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:20",
+        "round:2396609:Mirage:15"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        2.6357085444033146,
+        2.46095797047019,
+        2.5043743662536144
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_4_negative",
+      "family": "after_plant",
+      "language": "en",
+      "method": "dense",
+      "input_query": "Match 2396609, map Mirage. Find rounds where try kills kyousuke strictly after a bomb plant in that round.",
+      "source_ids": [
+        "round:2396609:Mirage:7",
+        "round:2396609:Mirage:16",
+        "round:2396609:Mirage:9",
+        "round:2396609:Mirage:20",
+        "round:2396609:Mirage:1"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        0.4236660897731781,
+        0.2854578197002411,
+        0.26008300483226776
+      ],
+      "query_encoding_ms": 241.11224990338087
+    },
+    {
+      "query_id": "after_plant_4_negative",
+      "family": "after_plant",
+      "language": "en",
+      "method": "dense_bm25_rrf",
+      "input_query": "Match 2396609, map Mirage. Find rounds where try kills kyousuke strictly after a bomb plant in that round.",
+      "source_ids": [
+        "round:2396609:Mirage:1",
+        "round:2396609:Mirage:20",
+        "round:2396609:Mirage:16",
+        "round:2396609:Mirage:7",
+        "round:2396609:Mirage:14"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        2.677333541214466,
+        2.4784160777926445,
+        2.525082789361477
+      ],
+      "query_encoding_ms": 241.11224990338087
+    },
+    {
+      "query_id": "after_plant_4_negative",
+      "family": "after_plant",
+      "language": "en",
+      "method": "relation_sql_oracle",
+      "input_query": "Match 2396609, map Mirage. Find rounds where try kills kyousuke strictly after a bomb plant in that round.",
+      "source_ids": [],
+      "eligible_rounds": 20,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_4_negative",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "bm25",
+      "input_query": "比赛 2396609，地图 Mirage。查找 try 击杀 kyousuke，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [
+        "round:2396609:Mirage:1",
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:20",
+        "round:2396609:Mirage:15"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        1.1007911525666714,
+        0.8992082439363003,
+        0.8422080427408218
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "after_plant_4_negative",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "dense",
+      "input_query": "比赛 2396609，地图 Mirage。查找 try 击杀 kyousuke，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [
+        "round:2396609:Mirage:7",
+        "round:2396609:Mirage:16",
+        "round:2396609:Mirage:9",
+        "round:2396609:Mirage:20",
+        "round:2396609:Mirage:14"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        0.4599164240062237,
+        0.2846657298505306,
+        0.2436661161482334
+      ],
+      "query_encoding_ms": 248.58583277091384
+    },
+    {
+      "query_id": "after_plant_4_negative",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "dense_bm25_rrf",
+      "input_query": "比赛 2396609，地图 Mirage。查找 try 击杀 kyousuke，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [
+        "round:2396609:Mirage:1",
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:20",
+        "round:2396609:Mirage:16",
+        "round:2396609:Mirage:7"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        1.1414573527872562,
+        0.915581826120615,
+        0.8543324656784534
+      ],
+      "query_encoding_ms": 248.58583277091384
+    },
+    {
+      "query_id": "after_plant_4_negative",
+      "family": "after_plant",
+      "language": "zh",
+      "method": "relation_sql_oracle",
+      "input_query": "比赛 2396609，地图 Mirage。查找 try 击杀 kyousuke，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "source_ids": [],
+      "eligible_rounds": 20,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_4_positive",
+      "family": "trade",
+      "language": "en",
+      "method": "bm25",
+      "input_query": "Match 2396609, map Mirage. Find rounds where arT trades teammate n1ssim: kills the enemy who killed n1ssim, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [
+        "round:2396609:Mirage:1",
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:15",
+        "round:2396609:Mirage:3"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        3.197666723281145,
+        3.049540799111128,
+        2.941625192761421
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_4_positive",
+      "family": "trade",
+      "language": "en",
+      "method": "dense",
+      "input_query": "Match 2396609, map Mirage. Find rounds where arT trades teammate n1ssim: kills the enemy who killed n1ssim, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:20",
+        "round:2396609:Mirage:5",
+        "round:2396609:Mirage:7"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        0.4414585418999195,
+        0.34345779567956924,
+        0.2633752301335335
+      ],
+      "query_encoding_ms": 255.6386669166386
+    },
+    {
+      "query_id": "trade_4_positive",
+      "family": "trade",
+      "language": "en",
+      "method": "dense_bm25_rrf",
+      "input_query": "Match 2396609, map Mirage. Find rounds where arT trades teammate n1ssim: kills the enemy who killed n1ssim, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:20",
+        "round:2396609:Mirage:1",
+        "round:2396609:Mirage:15"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        3.240791615098715,
+        3.072998486459255,
+        2.9540001414716244
+      ],
+      "query_encoding_ms": 255.6386669166386
+    },
+    {
+      "query_id": "trade_4_positive",
+      "family": "trade",
+      "language": "en",
+      "method": "relation_sql_oracle",
+      "input_query": "Match 2396609, map Mirage. Find rounds where arT trades teammate n1ssim: kills the enemy who killed n1ssim, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [
+        "round:2396609:Mirage:4",
+        "round:2396609:Mirage:8"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_4_positive",
+      "family": "trade",
+      "language": "zh",
+      "method": "bm25",
+      "input_query": "比赛 2396609，地图 Mirage。查找 arT 为队友 n1ssim 补枪的回合：在同一回合中，n1ssim 被敌人击杀后，arT 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [
+        "round:2396609:Mirage:1",
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:3",
+        "round:2396609:Mirage:15"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        2.1018744446337223,
+        1.8832082860171795,
+        1.7877076752483845
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_4_positive",
+      "family": "trade",
+      "language": "zh",
+      "method": "dense",
+      "input_query": "比赛 2396609，地图 Mirage。查找 arT 为队友 n1ssim 补枪的回合：在同一回合中，n1ssim 被敌人击杀后，arT 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:5",
+        "round:2396609:Mirage:3",
+        "round:2396609:Mirage:20"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        0.5025402642786503,
+        0.37287408486008644,
+        0.28412509709596634
+      ],
+      "query_encoding_ms": 265.39991702884436
+    },
+    {
+      "query_id": "trade_4_positive",
+      "family": "trade",
+      "language": "zh",
+      "method": "dense_bm25_rrf",
+      "input_query": "比赛 2396609，地图 Mirage。查找 arT 为队友 n1ssim 补枪的回合：在同一回合中，n1ssim 被敌人击杀后，arT 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:3",
+        "round:2396609:Mirage:5",
+        "round:2396609:Mirage:1"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": [
+        2.1474151872098446,
+        1.9101649522781372,
+        1.8080826848745346
+      ],
+      "query_encoding_ms": 265.39991702884436
+    },
+    {
+      "query_id": "trade_4_positive",
+      "family": "trade",
+      "language": "zh",
+      "method": "relation_sql_oracle",
+      "input_query": "比赛 2396609，地图 Mirage。查找 arT 为队友 n1ssim 补枪的回合：在同一回合中，n1ssim 被敌人击杀后，arT 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [
+        "round:2396609:Mirage:4",
+        "round:2396609:Mirage:8"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 2,
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_4_negative",
+      "family": "trade",
+      "language": "en",
+      "method": "bm25",
+      "input_query": "Match 2396609, map Mirage. Find rounds where NiKo trades teammate kyousuke: kills the enemy who killed kyousuke, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [
+        "round:2396609:Mirage:7",
+        "round:2396609:Mirage:1",
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:15",
+        "round:2396609:Mirage:11"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        3.294458147138357,
+        3.0751246958971024,
+        2.994291950017214
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_4_negative",
+      "family": "trade",
+      "language": "en",
+      "method": "dense",
+      "input_query": "Match 2396609, map Mirage. Find rounds where NiKo trades teammate kyousuke: kills the enemy who killed kyousuke, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [
+        "round:2396609:Mirage:7",
+        "round:2396609:Mirage:16",
+        "round:2396609:Mirage:9",
+        "round:2396609:Mirage:20",
+        "round:2396609:Mirage:14"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        0.44220779091119766,
+        0.3754165954887867,
+        0.27354201301932335
+      ],
+      "query_encoding_ms": 276.9255000166595
+    },
+    {
+      "query_id": "trade_4_negative",
+      "family": "trade",
+      "language": "en",
+      "method": "dense_bm25_rrf",
+      "input_query": "Match 2396609, map Mirage. Find rounds where NiKo trades teammate kyousuke: kills the enemy who killed kyousuke, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [
+        "round:2396609:Mirage:7",
+        "round:2396609:Mirage:16",
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:20"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        3.3384994603693485,
+        3.0949991196393967,
+        3.0195852741599083
+      ],
+      "query_encoding_ms": 276.9255000166595
+    },
+    {
+      "query_id": "trade_4_negative",
+      "family": "trade",
+      "language": "en",
+      "method": "relation_sql_oracle",
+      "input_query": "Match 2396609, map Mirage. Find rounds where NiKo trades teammate kyousuke: kills the enemy who killed kyousuke, more than 0 and at most 320 ticks later in the same round.",
+      "source_ids": [],
+      "eligible_rounds": 20,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_4_negative",
+      "family": "trade",
+      "language": "zh",
+      "method": "bm25",
+      "input_query": "比赛 2396609，地图 Mirage。查找 NiKo 为队友 kyousuke 补枪的回合：在同一回合中，kyousuke 被敌人击杀后，NiKo 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [
+        "round:2396609:Mirage:7",
+        "round:2396609:Mirage:11",
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:18",
+        "round:2396609:Mirage:10"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        2.0202905870974064,
+        1.882208976894617,
+        1.8674172461032867
+      ],
+      "query_encoding_ms": 0
+    },
+    {
+      "query_id": "trade_4_negative",
+      "family": "trade",
+      "language": "zh",
+      "method": "dense",
+      "input_query": "比赛 2396609，地图 Mirage。查找 NiKo 为队友 kyousuke 补枪的回合：在同一回合中，kyousuke 被敌人击杀后，NiKo 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [
+        "round:2396609:Mirage:7",
+        "round:2396609:Mirage:9",
+        "round:2396609:Mirage:16",
+        "round:2396609:Mirage:20",
+        "round:2396609:Mirage:5"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        0.4274160601198673,
+        0.3325841389596462,
+        0.3543328493833542
+      ],
+      "query_encoding_ms": 264.69966722652316
+    },
+    {
+      "query_id": "trade_4_negative",
+      "family": "trade",
+      "language": "zh",
+      "method": "dense_bm25_rrf",
+      "input_query": "比赛 2396609，地图 Mirage。查找 NiKo 为队友 kyousuke 补枪的回合：在同一回合中，kyousuke 被敌人击杀后，NiKo 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [
+        "round:2396609:Mirage:7",
+        "round:2396609:Mirage:9",
+        "round:2396609:Mirage:18",
+        "round:2396609:Mirage:5",
+        "round:2396609:Mirage:20"
+      ],
+      "eligible_rounds": 20,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": true,
+        "false_abstention": null
+      },
+      "search_ms": [
+        2.062956802546978,
+        1.9053341820836067,
+        1.8968749791383743
+      ],
+      "query_encoding_ms": 264.69966722652316
+    },
+    {
+      "query_id": "trade_4_negative",
+      "family": "trade",
+      "language": "zh",
+      "method": "relation_sql_oracle",
+      "input_query": "比赛 2396609，地图 Mirage。查找 NiKo 为队友 kyousuke 补枪的回合：在同一回合中，kyousuke 被敌人击杀后，NiKo 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "source_ids": [],
+      "eligible_rounds": 20,
+      "relevant_rounds": 0,
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "search_ms": null,
+      "query_encoding_ms": 0
+    }
+  ],
+  "limitations": [
+    "AI-assisted labels and translations, no independent human gold.",
+    "Same observed historical corpus; source-selected questions, no unseen/OOD or confidence interval claim.",
+    "Python and SQL share parser facts; agreement is not independent demo validation.",
+    "Explicit correct scope filters bypass natural-language entity resolution.",
+    "SQL oracle gets relation slots, is a label sanity reference, not production GraphRAG.",
+    "Text baselines return top-k without calibrated abstention; negative errors measure this pipeline, not inherent model inability.",
+    "Timestamp-enriched corpus differs from old fair v2 representation; no cross-dataset score delta claims."
+  ]
+}

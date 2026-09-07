@@ -1,0 +1,3698 @@
+{
+  "protocol_sha256": "90f5bed4ee3cb1f7e3f62d75fafbc3ef1e43dd02ffd4ff216d7ade53835001e9",
+  "raw_event_parity": 42148,
+  "source_queries_checked": 24,
+  "scope_round_evaluations": 528,
+  "distinct_scoped_rounds": 88,
+  "families": {
+    "opening": 8,
+    "after_plant": 8,
+    "trade": 8
+  },
+  "positive_groups": 12,
+  "negative_groups": 12,
+  "all_negative_scopes_nonempty": true,
+  "all_queries_have_near_misses": true,
+  "cases": [
+    {
+      "query_id": "opening_1_positive",
+      "eligible": 21,
+      "relevant": 2,
+      "near_miss_rounds": 3,
+      "relevant_fraction": 0.09523809523809523,
+      "source_examples": {
+        "positive": {
+          "round_id": "round:2396949:Nuke:15",
+          "events": [
+            {
+              "id": "event:2396949:Nuke:15:kill:1",
+              "tick": 134905,
+              "killer": "kyousuke",
+              "victim": "tN1R",
+              "killer_team": "Falcons",
+              "victim_team": "Spirit",
+              "is_first_kill": true
+            }
+          ]
+        },
+        "near_miss": {
+          "round_id": "round:2396949:Nuke:18",
+          "events": [
+            {
+              "id": "event:2396949:Nuke:18:kill:3",
+              "tick": 160359,
+              "killer": "kyousuke",
+              "victim": "tN1R",
+              "killer_team": "Falcons",
+              "victim_team": "Spirit",
+              "is_first_kill": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "opening_1_negative",
+      "eligible": 21,
+      "relevant": 0,
+      "near_miss_rounds": 6,
+      "relevant_fraction": 0.0,
+      "source_examples": {
+        "near_miss": {
+          "round_id": "round:2396949:Nuke:11",
+          "events": [
+            {
+              "id": "event:2396949:Nuke:11:kill:8",
+              "tick": 90694,
+              "killer": "m0NESY",
+              "victim": "magixx",
+              "killer_team": "Falcons",
+              "victim_team": "Spirit",
+              "is_first_kill": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "after_plant_1_positive",
+      "eligible": 21,
+      "relevant": 1,
+      "near_miss_rounds": 1,
+      "relevant_fraction": 0.047619047619047616,
+      "source_examples": {
+        "positive": {
+          "round_id": "round:2396949:Nuke:19",
+          "events": [
+            {
+              "id": "event:2396949:Nuke:19:plant:1",
+              "tick": 168892,
+              "planter": "zont1x"
+            },
+            {
+              "id": "event:2396949:Nuke:19:kill:7",
+              "tick": 169868,
+              "killer": "NiKo",
+              "victim": "zont1x",
+              "killer_team": "Falcons",
+              "victim_team": "Spirit",
+              "is_first_kill": false
+            }
+          ]
+        },
+        "near_miss": {
+          "round_id": "round:2396949:Nuke:7",
+          "events": [
+            {
+              "id": "event:2396949:Nuke:7:plant:1",
+              "tick": 63018,
+              "planter": "m0NESY"
+            },
+            {
+              "id": "event:2396949:Nuke:7:kill:4",
+              "tick": 60151,
+              "killer": "NiKo",
+              "victim": "zont1x",
+              "killer_team": "Falcons",
+              "victim_team": "Spirit",
+              "is_first_kill": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "after_plant_1_negative",
+      "eligible": 21,
+      "relevant": 0,
+      "near_miss_rounds": 2,
+      "relevant_fraction": 0.0,
+      "source_examples": {
+        "near_miss": {
+          "round_id": "round:2396949:Nuke:11",
+          "events": [
+            {
+              "id": "event:2396949:Nuke:11:plant:1",
+              "tick": 91310,
+              "planter": "m0NESY"
+            },
+            {
+              "id": "event:2396949:Nuke:11:kill:2",
+              "tick": 88733,
+              "killer": "TeSeS",
+              "victim": "tN1R",
+              "killer_team": "Falcons",
+              "victim_team": "Spirit",
+              "is_first_kill": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "trade_1_positive",
+      "eligible": 21,
+      "relevant": 1,
+      "near_miss_rounds": 3,
+      "relevant_fraction": 0.047619047619047616,
+      "source_examples": {
+        "positive": {
+          "round_id": "round:2396949:Nuke:1",
+          "events": [
+            {
+              "id": "event:2396949:Nuke:1:kill:1",
+              "tick": 11243,
+              "killer": "NiKo",
+              "victim": "zont1x",
+              "killer_team": "Falcons",
+              "victim_team": "Spirit",
+              "is_first_kill": true
+            },
+            {
+              "id": "event:2396949:Nuke:1:kill:3",
+              "tick": 11385,
+              "killer": "donk",
+              "victim": "NiKo",
+              "killer_team": "Spirit",
+              "victim_team": "Falcons",
+              "is_first_kill": false
+            }
+          ]
+        },
+        "near_miss": {
+          "round_id": "round:2396949:Nuke:11",
+          "events": [
+            {
+              "id": "event:2396949:Nuke:11:kill:3",
+              "tick": 89048,
+              "killer": "kyousuke",
+              "victim": "zont1x",
+              "killer_team": "Falcons",
+              "victim_team": "Spirit",
+              "is_first_kill": false
+            },
+            {
+              "id": "event:2396949:Nuke:11:kill:4",
+              "tick": 90389,
+              "killer": "donk",
+              "victim": "kyousuke",
+              "killer_team": "Spirit",
+              "victim_team": "Falcons",
+              "is_first_kill": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "trade_1_negative",
+      "eligible": 21,
+      "relevant": 0,
+      "near_miss_rounds": 2,
+      "relevant_fraction": 0.0,
+      "source_examples": {
+        "near_miss": {
+          "round_id": "round:2396949:Nuke:12",
+          "events": [
+            {
+              "id": "event:2396949:Nuke:12:kill:1",
+              "tick": 96649,
+              "killer": "sh1ro",
+              "victim": "kyousuke",
+              "killer_team": "Spirit",
+              "victim_team": "Falcons",
+              "is_first_kill": true
+            },
+            {
+              "id": "event:2396949:Nuke:12:kill:9",
+              "tick": 101737,
+              "killer": "karrigan",
+              "victim": "sh1ro",
+              "killer_team": "Falcons",
+              "victim_team": "Spirit",
+              "is_first_kill": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "opening_2_positive",
+      "eligible": 17,
+      "relevant": 2,
+      "near_miss_rounds": 3,
+      "relevant_fraction": 0.11764705882352941,
+      "source_examples": {
+        "positive": {
+          "round_id": "round:2396948:Dust2:1",
+          "events": [
+            {
+              "id": "event:2396948:Dust2:1:kill:1",
+              "tick": 20662,
+              "killer": "molodoy",
+              "victim": "jL",
+              "killer_team": "FURIA",
+              "victim_team": "Vitality",
+              "is_first_kill": true
+            }
+          ]
+        },
+        "near_miss": {
+          "round_id": "round:2396948:Dust2:14",
+          "events": [
+            {
+              "id": "event:2396948:Dust2:14:kill:3",
+              "tick": 133141,
+              "killer": "molodoy",
+              "victim": "jL",
+              "killer_team": "FURIA",
+              "victim_team": "Vitality",
+              "is_first_kill": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "opening_2_negative",
+      "eligible": 17,
+      "relevant": 0,
+      "near_miss_rounds": 7,
+      "relevant_fraction": 0.0,
+      "source_examples": {
+        "near_miss": {
+          "round_id": "round:2396948:Dust2:11",
+          "events": [
+            {
+              "id": "event:2396948:Dust2:11:kill:2",
+              "tick": 104888,
+              "killer": "ropz",
+              "victim": "yuurih",
+              "killer_team": "Vitality",
+              "victim_team": "FURIA",
+              "is_first_kill": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "after_plant_2_positive",
+      "eligible": 17,
+      "relevant": 3,
+      "near_miss_rounds": 3,
+      "relevant_fraction": 0.17647058823529413,
+      "source_examples": {
+        "positive": {
+          "round_id": "round:2396948:Dust2:12",
+          "events": [
+            {
+              "id": "event:2396948:Dust2:12:plant:1",
+              "tick": 106540,
+              "planter": "apEX"
+            },
+            {
+              "id": "event:2396948:Dust2:12:kill:3",
+              "tick": 109327,
+              "killer": "ropz",
+              "victim": "yuurih",
+              "killer_team": "Vitality",
+              "victim_team": "FURIA",
+              "is_first_kill": false
+            }
+          ]
+        },
+        "near_miss": {
+          "round_id": "round:2396948:Dust2:14",
+          "events": [
+            {
+              "id": "event:2396948:Dust2:14:plant:1",
+              "tick": 134085,
+              "planter": "YEKINDAR"
+            },
+            {
+              "id": "event:2396948:Dust2:14:kill:2",
+              "tick": 133099,
+              "killer": "ropz",
+              "victim": "yuurih",
+              "killer_team": "Vitality",
+              "victim_team": "FURIA",
+              "is_first_kill": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "after_plant_2_negative",
+      "eligible": 17,
+      "relevant": 0,
+      "near_miss_rounds": 3,
+      "relevant_fraction": 0.0,
+      "source_examples": {
+        "near_miss": {
+          "round_id": "round:2396948:Dust2:4",
+          "events": [
+            {
+              "id": "event:2396948:Dust2:4:plant:1",
+              "tick": 40833,
+              "planter": "ZywOo"
+            },
+            {
+              "id": "event:2396948:Dust2:4:kill:2",
+              "tick": 39186,
+              "killer": "flameZ",
+              "victim": "FalleN",
+              "killer_team": "Vitality",
+              "victim_team": "FURIA",
+              "is_first_kill": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "trade_2_positive",
+      "eligible": 17,
+      "relevant": 2,
+      "near_miss_rounds": 1,
+      "relevant_fraction": 0.11764705882352941,
+      "source_examples": {
+        "positive": {
+          "round_id": "round:2396948:Dust2:16",
+          "events": [
+            {
+              "id": "event:2396948:Dust2:16:kill:6",
+              "tick": 151793,
+              "killer": "yuurih",
+              "victim": "apEX",
+              "killer_team": "FURIA",
+              "victim_team": "Vitality",
+              "is_first_kill": false
+            },
+            {
+              "id": "event:2396948:Dust2:16:kill:7",
+              "tick": 151859,
+              "killer": "jL",
+              "victim": "yuurih",
+              "killer_team": "Vitality",
+              "victim_team": "FURIA",
+              "is_first_kill": false
+            }
+          ]
+        },
+        "near_miss": {
+          "round_id": "round:2396948:Dust2:10",
+          "events": [
+            {
+              "id": "event:2396948:Dust2:10:kill:1",
+              "tick": 97132,
+              "killer": "FalleN",
+              "victim": "apEX",
+              "killer_team": "FURIA",
+              "victim_team": "Vitality",
+              "is_first_kill": true
+            },
+            {
+              "id": "event:2396948:Dust2:10:kill:4",
+              "tick": 100203,
+              "killer": "jL",
+              "victim": "FalleN",
+              "killer_team": "Vitality",
+              "victim_team": "FURIA",
+              "is_first_kill": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "trade_2_negative",
+      "eligible": 17,
+      "relevant": 0,
+      "near_miss_rounds": 2,
+      "relevant_fraction": 0.0,
+      "source_examples": {
+        "near_miss": {
+          "round_id": "round:2396948:Dust2:11",
+          "events": [
+            {
+              "id": "event:2396948:Dust2:11:kill:1",
+              "tick": 104863,
+              "killer": "ropz",
+              "victim": "YEKINDAR",
+              "killer_team": "Vitality",
+              "victim_team": "FURIA",
+              "is_first_kill": true
+            },
+            {
+              "id": "event:2396948:Dust2:11:kill:5",
+              "tick": 106002,
+              "killer": "KSCERATO",
+              "victim": "ropz",
+              "killer_team": "FURIA",
+              "victim_team": "Vitality",
+              "is_first_kill": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "opening_3_positive",
+      "eligible": 30,
+      "relevant": 3,
+      "near_miss_rounds": 4,
+      "relevant_fraction": 0.1,
+      "source_examples": {
+        "positive": {
+          "round_id": "round:2396614:Ancient:18",
+          "events": [
+            {
+              "id": "event:2396614:Ancient:18:kill:1",
+              "tick": 140329,
+              "killer": "donk",
+              "victim": "xfl0ud",
+              "killer_team": "Team Spirit",
+              "victim_team": "FUT Esports",
+              "is_first_kill": true
+            }
+          ]
+        },
+        "near_miss": {
+          "round_id": "round:2396614:Ancient:19",
+          "events": [
+            {
+              "id": "event:2396614:Ancient:19:kill:2",
+              "tick": 148949,
+              "killer": "donk",
+              "victim": "xfl0ud",
+              "killer_team": "Team Spirit",
+              "victim_team": "FUT Esports",
+              "is_first_kill": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "opening_3_negative",
+      "eligible": 30,
+      "relevant": 0,
+      "near_miss_rounds": 7,
+      "relevant_fraction": 0.0,
+      "source_examples": {
+        "near_miss": {
+          "round_id": "round:2396614:Ancient:11",
+          "events": [
+            {
+              "id": "event:2396614:Ancient:11:kill:2",
+              "tick": 75764,
+              "killer": "dem0n",
+              "victim": "donk",
+              "killer_team": "FUT Esports",
+              "victim_team": "Team Spirit",
+              "is_first_kill": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "after_plant_3_positive",
+      "eligible": 30,
+      "relevant": 3,
+      "near_miss_rounds": 3,
+      "relevant_fraction": 0.1,
+      "source_examples": {
+        "positive": {
+          "round_id": "round:2396614:Ancient:25",
+          "events": [
+            {
+              "id": "event:2396614:Ancient:25:plant:1",
+              "tick": 207077,
+              "planter": "zont1x"
+            },
+            {
+              "id": "event:2396614:Ancient:25:kill:5",
+              "tick": 207381,
+              "killer": "dem0n",
+              "victim": "donk",
+              "killer_team": "FUT Esports",
+              "victim_team": "Team Spirit",
+              "is_first_kill": false
+            }
+          ]
+        },
+        "near_miss": {
+          "round_id": "round:2396614:Ancient:11",
+          "events": [
+            {
+              "id": "event:2396614:Ancient:11:plant:1",
+              "tick": 81305,
+              "planter": "dem0n"
+            },
+            {
+              "id": "event:2396614:Ancient:11:kill:2",
+              "tick": 75764,
+              "killer": "dem0n",
+              "victim": "donk",
+              "killer_team": "FUT Esports",
+              "victim_team": "Team Spirit",
+              "is_first_kill": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "after_plant_3_negative",
+      "eligible": 30,
+      "relevant": 0,
+      "near_miss_rounds": 4,
+      "relevant_fraction": 0.0,
+      "source_examples": {
+        "near_miss": {
+          "round_id": "round:2396614:Ancient:1",
+          "events": [
+            {
+              "id": "event:2396614:Ancient:1:plant:1",
+              "tick": 3456,
+              "planter": "dem0n"
+            },
+            {
+              "id": "event:2396614:Ancient:1:kill:2",
+              "tick": 3026,
+              "killer": "dem0n",
+              "victim": "zont1x",
+              "killer_team": "FUT Esports",
+              "victim_team": "Team Spirit",
+              "is_first_kill": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "trade_3_positive",
+      "eligible": 30,
+      "relevant": 4,
+      "near_miss_rounds": 2,
+      "relevant_fraction": 0.13333333333333333,
+      "source_examples": {
+        "positive": {
+          "round_id": "round:2396614:Ancient:14",
+          "events": [
+            {
+              "id": "event:2396614:Ancient:14:kill:4",
+              "tick": 106102,
+              "killer": "Krabeni",
+              "victim": "donk",
+              "killer_team": "FUT Esports",
+              "victim_team": "Team Spirit",
+              "is_first_kill": false
+            },
+            {
+              "id": "event:2396614:Ancient:14:kill:5",
+              "tick": 106228,
+              "killer": "zont1x",
+              "victim": "Krabeni",
+              "killer_team": "Team Spirit",
+              "victim_team": "FUT Esports",
+              "is_first_kill": false
+            }
+          ]
+        },
+        "near_miss": {
+          "round_id": "round:2396614:Ancient:18",
+          "events": [
+            {
+              "id": "event:2396614:Ancient:18:kill:2",
+              "tick": 140468,
+              "killer": "dziugss",
+              "victim": "donk",
+              "killer_team": "FUT Esports",
+              "victim_team": "Team Spirit",
+              "is_first_kill": false
+            },
+            {
+              "id": "event:2396614:Ancient:18:kill:4",
+              "tick": 142555,
+              "killer": "zont1x",
+              "victim": "dziugss",
+              "killer_team": "Team Spirit",
+              "victim_team": "FUT Esports",
+              "is_first_kill": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "trade_3_negative",
+      "eligible": 30,
+      "relevant": 0,
+      "near_miss_rounds": 3,
+      "relevant_fraction": 0.0,
+      "source_examples": {
+        "near_miss": {
+          "round_id": "round:2396614:Ancient:2",
+          "events": [
+            {
+              "id": "event:2396614:Ancient:2:kill:7",
+              "tick": 12317,
+              "killer": "magixx",
+              "victim": "dziugss",
+              "killer_team": "Team Spirit",
+              "victim_team": "FUT Esports",
+              "is_first_kill": false
+            },
+            {
+              "id": "event:2396614:Ancient:2:kill:9",
+              "tick": 12861,
+              "killer": "cmtry",
+              "victim": "magixx",
+              "killer_team": "FUT Esports",
+              "victim_team": "Team Spirit",
+              "is_first_kill": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "opening_4_positive",
+      "eligible": 20,
+      "relevant": 3,
+      "near_miss_rounds": 2,
+      "relevant_fraction": 0.15,
+      "source_examples": {
+        "positive": {
+          "round_id": "round:2396609:Mirage:10",
+          "events": [
+            {
+              "id": "event:2396609:Mirage:10:kill:1",
+              "tick": 65965,
+              "killer": "m0NESY",
+              "victim": "dumau",
+              "killer_team": "Team Falcons",
+              "victim_team": "Legacy",
+              "is_first_kill": true
+            }
+          ]
+        },
+        "near_miss": {
+          "round_id": "round:2396609:Mirage:12",
+          "events": [
+            {
+              "id": "event:2396609:Mirage:12:kill:5",
+              "tick": 90820,
+              "killer": "m0NESY",
+              "victim": "dumau",
+              "killer_team": "Team Falcons",
+              "victim_team": "Legacy",
+              "is_first_kill": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "opening_4_negative",
+      "eligible": 20,
+      "relevant": 0,
+      "near_miss_rounds": 6,
+      "relevant_fraction": 0.0,
+      "source_examples": {
+        "near_miss": {
+          "round_id": "round:2396609:Mirage:14",
+          "events": [
+            {
+              "id": "event:2396609:Mirage:14:kill:2",
+              "tick": 109333,
+              "killer": "latto",
+              "victim": "m0NESY",
+              "killer_team": "Legacy",
+              "victim_team": "Team Falcons",
+              "is_first_kill": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "after_plant_4_positive",
+      "eligible": 20,
+      "relevant": 2,
+      "near_miss_rounds": 1,
+      "relevant_fraction": 0.1,
+      "source_examples": {
+        "positive": {
+          "round_id": "round:2396609:Mirage:18",
+          "events": [
+            {
+              "id": "event:2396609:Mirage:18:plant:1",
+              "tick": 138278,
+              "planter": "karrigan"
+            },
+            {
+              "id": "event:2396609:Mirage:18:kill:5",
+              "tick": 139063,
+              "killer": "dumau",
+              "victim": "NiKo",
+              "killer_team": "Legacy",
+              "victim_team": "Team Falcons",
+              "is_first_kill": false
+            }
+          ]
+        },
+        "near_miss": {
+          "round_id": "round:2396609:Mirage:12",
+          "events": [
+            {
+              "id": "event:2396609:Mirage:12:plant:1",
+              "tick": 91079,
+              "planter": "arT"
+            },
+            {
+              "id": "event:2396609:Mirage:12:kill:4",
+              "tick": 90458,
+              "killer": "dumau",
+              "victim": "NiKo",
+              "killer_team": "Legacy",
+              "victim_team": "Team Falcons",
+              "is_first_kill": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "after_plant_4_negative",
+      "eligible": 20,
+      "relevant": 0,
+      "near_miss_rounds": 3,
+      "relevant_fraction": 0.0,
+      "source_examples": {
+        "near_miss": {
+          "round_id": "round:2396609:Mirage:1",
+          "events": [
+            {
+              "id": "event:2396609:Mirage:1:plant:1",
+              "tick": 2722,
+              "planter": "try"
+            },
+            {
+              "id": "event:2396609:Mirage:1:kill:1",
+              "tick": 2184,
+              "killer": "try",
+              "victim": "kyousuke",
+              "killer_team": "Legacy",
+              "victim_team": "Team Falcons",
+              "is_first_kill": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "trade_4_positive",
+      "eligible": 20,
+      "relevant": 2,
+      "near_miss_rounds": 2,
+      "relevant_fraction": 0.1,
+      "source_examples": {
+        "positive": {
+          "round_id": "round:2396609:Mirage:4",
+          "events": [
+            {
+              "id": "event:2396609:Mirage:4:kill:3",
+              "tick": 19373,
+              "killer": "m0NESY",
+              "victim": "n1ssim",
+              "killer_team": "Team Falcons",
+              "victim_team": "Legacy",
+              "is_first_kill": false
+            },
+            {
+              "id": "event:2396609:Mirage:4:kill:4",
+              "tick": 19471,
+              "killer": "arT",
+              "victim": "m0NESY",
+              "killer_team": "Legacy",
+              "victim_team": "Team Falcons",
+              "is_first_kill": false
+            }
+          ]
+        },
+        "near_miss": {
+          "round_id": "round:2396609:Mirage:12",
+          "events": [
+            {
+              "id": "event:2396609:Mirage:12:kill:6",
+              "tick": 92150,
+              "killer": "m0NESY",
+              "victim": "n1ssim",
+              "killer_team": "Team Falcons",
+              "victim_team": "Legacy",
+              "is_first_kill": false
+            },
+            {
+              "id": "event:2396609:Mirage:12:kill:9",
+              "tick": 92993,
+              "killer": "arT",
+              "victim": "m0NESY",
+              "killer_team": "Legacy",
+              "victim_team": "Team Falcons",
+              "is_first_kill": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "trade_4_negative",
+      "eligible": 20,
+      "relevant": 0,
+      "near_miss_rounds": 2,
+      "relevant_fraction": 0.0,
+      "source_examples": {
+        "near_miss": {
+          "round_id": "round:2396609:Mirage:6",
+          "events": [
+            {
+              "id": "event:2396609:Mirage:6:kill:5",
+              "tick": 28687,
+              "killer": "n1ssim",
+              "victim": "kyousuke",
+              "killer_team": "Legacy",
+              "victim_team": "Team Falcons",
+              "is_first_kill": false
+            },
+            {
+              "id": "event:2396609:Mirage:6:kill:6",
+              "tick": 31594,
+              "killer": "NiKo",
+              "victim": "n1ssim",
+              "killer_team": "Team Falcons",
+              "victim_team": "Legacy",
+              "is_first_kill": false
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "retrieval": {
+    "rows_checked": 192,
+    "report_sha256": "5894794814283e382a4ca4af58d727bba7df86d7fe6723fdbf22a20a1f12f648",
+    "failures": [
+      {
+        "query_id": "opening_1_positive",
+        "language": "en",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:15",
+          "round:2396949:Nuke:13",
+          "round:2396949:Nuke:14",
+          "round:2396949:Nuke:9"
+        ],
+        "metrics": {
+          "recall_at_k": 0.5,
+          "ndcg_at_k": 0.38685280723454163,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "opening_1_positive",
+        "language": "en",
+        "method": "dense",
+        "source_ids": [
+          "round:2396949:Nuke:15",
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:14",
+          "round:2396949:Nuke:9",
+          "round:2396949:Nuke:7"
+        ],
+        "metrics": {
+          "recall_at_k": 0.5,
+          "ndcg_at_k": 0.6131471927654584,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "opening_1_positive",
+        "language": "en",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396949:Nuke:15",
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:14",
+          "round:2396949:Nuke:9",
+          "round:2396949:Nuke:13"
+        ],
+        "metrics": {
+          "recall_at_k": 0.5,
+          "ndcg_at_k": 0.6131471927654584,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "opening_1_positive",
+        "language": "zh",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:15",
+          "round:2396949:Nuke:13",
+          "round:2396949:Nuke:14",
+          "round:2396949:Nuke:9"
+        ],
+        "metrics": {
+          "recall_at_k": 0.5,
+          "ndcg_at_k": 0.38685280723454163,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "opening_1_positive",
+        "language": "zh",
+        "method": "dense",
+        "source_ids": [
+          "round:2396949:Nuke:15",
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:9",
+          "round:2396949:Nuke:8",
+          "round:2396949:Nuke:14"
+        ],
+        "metrics": {
+          "recall_at_k": 0.5,
+          "ndcg_at_k": 0.6131471927654584,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "opening_1_positive",
+        "language": "zh",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396949:Nuke:15",
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:9",
+          "round:2396949:Nuke:14",
+          "round:2396949:Nuke:8"
+        ],
+        "metrics": {
+          "recall_at_k": 0.5,
+          "ndcg_at_k": 0.6131471927654584,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "opening_1_negative",
+        "language": "en",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:15",
+          "round:2396949:Nuke:13",
+          "round:2396949:Nuke:1",
+          "round:2396949:Nuke:14"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "opening_1_negative",
+        "language": "en",
+        "method": "dense",
+        "source_ids": [
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:21",
+          "round:2396949:Nuke:15",
+          "round:2396949:Nuke:9",
+          "round:2396949:Nuke:7"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "opening_1_negative",
+        "language": "en",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:15",
+          "round:2396949:Nuke:21",
+          "round:2396949:Nuke:14",
+          "round:2396949:Nuke:13"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "opening_1_negative",
+        "language": "zh",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:15",
+          "round:2396949:Nuke:13",
+          "round:2396949:Nuke:1",
+          "round:2396949:Nuke:14"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "opening_1_negative",
+        "language": "zh",
+        "method": "dense",
+        "source_ids": [
+          "round:2396949:Nuke:21",
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:17",
+          "round:2396949:Nuke:8",
+          "round:2396949:Nuke:9"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "opening_1_negative",
+        "language": "zh",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:21",
+          "round:2396949:Nuke:15",
+          "round:2396949:Nuke:16",
+          "round:2396949:Nuke:8"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "after_plant_1_positive",
+        "language": "en",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396949:Nuke:13",
+          "round:2396949:Nuke:15",
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:21",
+          "round:2396949:Nuke:14"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "after_plant_1_positive",
+        "language": "en",
+        "method": "dense",
+        "source_ids": [
+          "round:2396949:Nuke:14",
+          "round:2396949:Nuke:9",
+          "round:2396949:Nuke:15",
+          "round:2396949:Nuke:19",
+          "round:2396949:Nuke:6"
+        ],
+        "metrics": {
+          "recall_at_k": 1.0,
+          "ndcg_at_k": 0.43067655807339306,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "after_plant_1_positive",
+        "language": "en",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396949:Nuke:15",
+          "round:2396949:Nuke:14",
+          "round:2396949:Nuke:9",
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:21"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "after_plant_1_positive",
+        "language": "zh",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396949:Nuke:13",
+          "round:2396949:Nuke:15",
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:21",
+          "round:2396949:Nuke:14"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "after_plant_1_positive",
+        "language": "zh",
+        "method": "dense",
+        "source_ids": [
+          "round:2396949:Nuke:9",
+          "round:2396949:Nuke:14",
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:21",
+          "round:2396949:Nuke:13"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "after_plant_1_positive",
+        "language": "zh",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396949:Nuke:13",
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:14",
+          "round:2396949:Nuke:9",
+          "round:2396949:Nuke:15"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "after_plant_1_negative",
+        "language": "en",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:1",
+          "round:2396949:Nuke:15",
+          "round:2396949:Nuke:14",
+          "round:2396949:Nuke:21"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "after_plant_1_negative",
+        "language": "en",
+        "method": "dense",
+        "source_ids": [
+          "round:2396949:Nuke:14",
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:7",
+          "round:2396949:Nuke:15",
+          "round:2396949:Nuke:9"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "after_plant_1_negative",
+        "language": "en",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:14",
+          "round:2396949:Nuke:15",
+          "round:2396949:Nuke:6",
+          "round:2396949:Nuke:1"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "after_plant_1_negative",
+        "language": "zh",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:1",
+          "round:2396949:Nuke:15",
+          "round:2396949:Nuke:14",
+          "round:2396949:Nuke:21"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "after_plant_1_negative",
+        "language": "zh",
+        "method": "dense",
+        "source_ids": [
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:7",
+          "round:2396949:Nuke:14",
+          "round:2396949:Nuke:9",
+          "round:2396949:Nuke:13"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "after_plant_1_negative",
+        "language": "zh",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:14",
+          "round:2396949:Nuke:15",
+          "round:2396949:Nuke:21",
+          "round:2396949:Nuke:1"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "trade_1_positive",
+        "language": "en",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:13",
+          "round:2396949:Nuke:14",
+          "round:2396949:Nuke:1",
+          "round:2396949:Nuke:21"
+        ],
+        "metrics": {
+          "recall_at_k": 1.0,
+          "ndcg_at_k": 0.43067655807339306,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "trade_1_positive",
+        "language": "en",
+        "method": "dense",
+        "source_ids": [
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:14",
+          "round:2396949:Nuke:6",
+          "round:2396949:Nuke:10",
+          "round:2396949:Nuke:15"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "trade_1_positive",
+        "language": "en",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:14",
+          "round:2396949:Nuke:10",
+          "round:2396949:Nuke:21",
+          "round:2396949:Nuke:6"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "trade_1_positive",
+        "language": "zh",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:14",
+          "round:2396949:Nuke:13",
+          "round:2396949:Nuke:1",
+          "round:2396949:Nuke:10"
+        ],
+        "metrics": {
+          "recall_at_k": 1.0,
+          "ndcg_at_k": 0.43067655807339306,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "trade_1_positive",
+        "language": "zh",
+        "method": "dense",
+        "source_ids": [
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:14",
+          "round:2396949:Nuke:5",
+          "round:2396949:Nuke:10",
+          "round:2396949:Nuke:6"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "trade_1_positive",
+        "language": "zh",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:14",
+          "round:2396949:Nuke:10",
+          "round:2396949:Nuke:6",
+          "round:2396949:Nuke:21"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "trade_1_negative",
+        "language": "en",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396949:Nuke:15",
+          "round:2396949:Nuke:14",
+          "round:2396949:Nuke:13",
+          "round:2396949:Nuke:16",
+          "round:2396949:Nuke:9"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "trade_1_negative",
+        "language": "en",
+        "method": "dense",
+        "source_ids": [
+          "round:2396949:Nuke:15",
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:14",
+          "round:2396949:Nuke:10",
+          "round:2396949:Nuke:16"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "trade_1_negative",
+        "language": "en",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396949:Nuke:15",
+          "round:2396949:Nuke:14",
+          "round:2396949:Nuke:2",
+          "round:2396949:Nuke:16",
+          "round:2396949:Nuke:9"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "trade_1_negative",
+        "language": "zh",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396949:Nuke:15",
+          "round:2396949:Nuke:14",
+          "round:2396949:Nuke:13",
+          "round:2396949:Nuke:16",
+          "round:2396949:Nuke:9"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "trade_1_negative",
+        "language": "zh",
+        "method": "dense",
+        "source_ids": [
+          "round:2396949:Nuke:10",
+          "round:2396949:Nuke:15",
+          "round:2396949:Nuke:16",
+          "round:2396949:Nuke:5",
+          "round:2396949:Nuke:14"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "trade_1_negative",
+        "language": "zh",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396949:Nuke:15",
+          "round:2396949:Nuke:14",
+          "round:2396949:Nuke:16",
+          "round:2396949:Nuke:10",
+          "round:2396949:Nuke:9"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "opening_2_positive",
+        "language": "en",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396948:Dust2:10",
+          "round:2396948:Dust2:12",
+          "round:2396948:Dust2:1",
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:8"
+        ],
+        "metrics": {
+          "recall_at_k": 0.5,
+          "ndcg_at_k": 0.3065735963827292,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "opening_2_positive",
+        "language": "en",
+        "method": "dense",
+        "source_ids": [
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:10",
+          "round:2396948:Dust2:1",
+          "round:2396948:Dust2:12",
+          "round:2396948:Dust2:17"
+        ],
+        "metrics": {
+          "recall_at_k": 0.5,
+          "ndcg_at_k": 0.3065735963827292,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "opening_2_positive",
+        "language": "en",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396948:Dust2:10",
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:12",
+          "round:2396948:Dust2:1",
+          "round:2396948:Dust2:8"
+        ],
+        "metrics": {
+          "recall_at_k": 0.5,
+          "ndcg_at_k": 0.2640681225725909,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "opening_2_positive",
+        "language": "zh",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396948:Dust2:10",
+          "round:2396948:Dust2:12",
+          "round:2396948:Dust2:1",
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:8"
+        ],
+        "metrics": {
+          "recall_at_k": 0.5,
+          "ndcg_at_k": 0.3065735963827292,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "opening_2_positive",
+        "language": "zh",
+        "method": "dense",
+        "source_ids": [
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:10",
+          "round:2396948:Dust2:12",
+          "round:2396948:Dust2:1",
+          "round:2396948:Dust2:17"
+        ],
+        "metrics": {
+          "recall_at_k": 0.5,
+          "ndcg_at_k": 0.2640681225725909,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "opening_2_positive",
+        "language": "zh",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396948:Dust2:10",
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:12",
+          "round:2396948:Dust2:1",
+          "round:2396948:Dust2:8"
+        ],
+        "metrics": {
+          "recall_at_k": 0.5,
+          "ndcg_at_k": 0.2640681225725909,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "opening_2_negative",
+        "language": "en",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:13",
+          "round:2396948:Dust2:3",
+          "round:2396948:Dust2:11",
+          "round:2396948:Dust2:1"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "opening_2_negative",
+        "language": "en",
+        "method": "dense",
+        "source_ids": [
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:10",
+          "round:2396948:Dust2:1",
+          "round:2396948:Dust2:12",
+          "round:2396948:Dust2:3"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "opening_2_negative",
+        "language": "en",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:10",
+          "round:2396948:Dust2:1",
+          "round:2396948:Dust2:3",
+          "round:2396948:Dust2:13"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "opening_2_negative",
+        "language": "zh",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:13",
+          "round:2396948:Dust2:3",
+          "round:2396948:Dust2:11",
+          "round:2396948:Dust2:1"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "opening_2_negative",
+        "language": "zh",
+        "method": "dense",
+        "source_ids": [
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:10",
+          "round:2396948:Dust2:3",
+          "round:2396948:Dust2:17",
+          "round:2396948:Dust2:13"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "opening_2_negative",
+        "language": "zh",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:3",
+          "round:2396948:Dust2:13",
+          "round:2396948:Dust2:10",
+          "round:2396948:Dust2:1"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "after_plant_2_positive",
+        "language": "en",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:13",
+          "round:2396948:Dust2:3",
+          "round:2396948:Dust2:11",
+          "round:2396948:Dust2:1"
+        ],
+        "metrics": {
+          "recall_at_k": 0.3333333333333333,
+          "ndcg_at_k": 0.23463936301137822,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "after_plant_2_positive",
+        "language": "en",
+        "method": "dense",
+        "source_ids": [
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:10",
+          "round:2396948:Dust2:3",
+          "round:2396948:Dust2:12",
+          "round:2396948:Dust2:1"
+        ],
+        "metrics": {
+          "recall_at_k": 0.6666666666666666,
+          "ndcg_at_k": 0.4367467095119258,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "after_plant_2_positive",
+        "language": "en",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:3",
+          "round:2396948:Dust2:10",
+          "round:2396948:Dust2:13",
+          "round:2396948:Dust2:1"
+        ],
+        "metrics": {
+          "recall_at_k": 0.3333333333333333,
+          "ndcg_at_k": 0.2960819109658652,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "after_plant_2_positive",
+        "language": "zh",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:13",
+          "round:2396948:Dust2:3",
+          "round:2396948:Dust2:11",
+          "round:2396948:Dust2:1"
+        ],
+        "metrics": {
+          "recall_at_k": 0.3333333333333333,
+          "ndcg_at_k": 0.23463936301137822,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "after_plant_2_positive",
+        "language": "zh",
+        "method": "dense",
+        "source_ids": [
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:1",
+          "round:2396948:Dust2:3",
+          "round:2396948:Dust2:10",
+          "round:2396948:Dust2:17"
+        ],
+        "metrics": {
+          "recall_at_k": 0.3333333333333333,
+          "ndcg_at_k": 0.23463936301137822,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "after_plant_2_positive",
+        "language": "zh",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:3",
+          "round:2396948:Dust2:1",
+          "round:2396948:Dust2:13",
+          "round:2396948:Dust2:10"
+        ],
+        "metrics": {
+          "recall_at_k": 0.3333333333333333,
+          "ndcg_at_k": 0.2960819109658652,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "after_plant_2_negative",
+        "language": "en",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396948:Dust2:12",
+          "round:2396948:Dust2:1",
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:17",
+          "round:2396948:Dust2:10"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "after_plant_2_negative",
+        "language": "en",
+        "method": "dense",
+        "source_ids": [
+          "round:2396948:Dust2:12",
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:10",
+          "round:2396948:Dust2:17",
+          "round:2396948:Dust2:4"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "after_plant_2_negative",
+        "language": "en",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396948:Dust2:12",
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:10",
+          "round:2396948:Dust2:17",
+          "round:2396948:Dust2:1"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "after_plant_2_negative",
+        "language": "zh",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396948:Dust2:12",
+          "round:2396948:Dust2:1",
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:17",
+          "round:2396948:Dust2:10"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "after_plant_2_negative",
+        "language": "zh",
+        "method": "dense",
+        "source_ids": [
+          "round:2396948:Dust2:12",
+          "round:2396948:Dust2:17",
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:10",
+          "round:2396948:Dust2:1"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "after_plant_2_negative",
+        "language": "zh",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396948:Dust2:12",
+          "round:2396948:Dust2:17",
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:1",
+          "round:2396948:Dust2:10"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "trade_2_positive",
+        "language": "en",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396948:Dust2:1",
+          "round:2396948:Dust2:11",
+          "round:2396948:Dust2:12",
+          "round:2396948:Dust2:8",
+          "round:2396948:Dust2:16"
+        ],
+        "metrics": {
+          "recall_at_k": 0.5,
+          "ndcg_at_k": 0.23719771276929622,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "trade_2_positive",
+        "language": "en",
+        "method": "dense",
+        "source_ids": [
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:10",
+          "round:2396948:Dust2:12",
+          "round:2396948:Dust2:13",
+          "round:2396948:Dust2:1"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "trade_2_positive",
+        "language": "en",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396948:Dust2:1",
+          "round:2396948:Dust2:12",
+          "round:2396948:Dust2:11",
+          "round:2396948:Dust2:10",
+          "round:2396948:Dust2:13"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "trade_2_positive",
+        "language": "zh",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396948:Dust2:11",
+          "round:2396948:Dust2:12",
+          "round:2396948:Dust2:16",
+          "round:2396948:Dust2:13",
+          "round:2396948:Dust2:1"
+        ],
+        "metrics": {
+          "recall_at_k": 0.5,
+          "ndcg_at_k": 0.3065735963827292,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "trade_2_positive",
+        "language": "zh",
+        "method": "dense",
+        "source_ids": [
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:12",
+          "round:2396948:Dust2:3",
+          "round:2396948:Dust2:10",
+          "round:2396948:Dust2:17"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "trade_2_positive",
+        "language": "zh",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396948:Dust2:12",
+          "round:2396948:Dust2:11",
+          "round:2396948:Dust2:10",
+          "round:2396948:Dust2:1",
+          "round:2396948:Dust2:3"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "trade_2_negative",
+        "language": "en",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:1",
+          "round:2396948:Dust2:4",
+          "round:2396948:Dust2:14",
+          "round:2396948:Dust2:12"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "trade_2_negative",
+        "language": "en",
+        "method": "dense",
+        "source_ids": [
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:3",
+          "round:2396948:Dust2:10",
+          "round:2396948:Dust2:12",
+          "round:2396948:Dust2:13"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "trade_2_negative",
+        "language": "en",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:1",
+          "round:2396948:Dust2:12",
+          "round:2396948:Dust2:10",
+          "round:2396948:Dust2:13"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "trade_2_negative",
+        "language": "zh",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396948:Dust2:4",
+          "round:2396948:Dust2:1",
+          "round:2396948:Dust2:14",
+          "round:2396948:Dust2:5",
+          "round:2396948:Dust2:12"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "trade_2_negative",
+        "language": "zh",
+        "method": "dense",
+        "source_ids": [
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:3",
+          "round:2396948:Dust2:12",
+          "round:2396948:Dust2:10",
+          "round:2396948:Dust2:8"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "trade_2_negative",
+        "language": "zh",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396948:Dust2:2",
+          "round:2396948:Dust2:12",
+          "round:2396948:Dust2:1",
+          "round:2396948:Dust2:4",
+          "round:2396948:Dust2:3"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "opening_3_positive",
+        "language": "en",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396614:Ancient:1",
+          "round:2396614:Ancient:20",
+          "round:2396614:Ancient:4",
+          "round:2396614:Ancient:13",
+          "round:2396614:Ancient:19"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "opening_3_positive",
+        "language": "en",
+        "method": "dense",
+        "source_ids": [
+          "round:2396614:Ancient:1",
+          "round:2396614:Ancient:16",
+          "round:2396614:Ancient:2",
+          "round:2396614:Ancient:13",
+          "round:2396614:Ancient:23"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "opening_3_positive",
+        "language": "en",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396614:Ancient:1",
+          "round:2396614:Ancient:13",
+          "round:2396614:Ancient:20",
+          "round:2396614:Ancient:22",
+          "round:2396614:Ancient:19"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "opening_3_positive",
+        "language": "zh",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396614:Ancient:1",
+          "round:2396614:Ancient:20",
+          "round:2396614:Ancient:4",
+          "round:2396614:Ancient:13",
+          "round:2396614:Ancient:19"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "opening_3_positive",
+        "language": "zh",
+        "method": "dense",
+        "source_ids": [
+          "round:2396614:Ancient:16",
+          "round:2396614:Ancient:22",
+          "round:2396614:Ancient:23",
+          "round:2396614:Ancient:2",
+          "round:2396614:Ancient:1"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "opening_3_positive",
+        "language": "zh",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396614:Ancient:1",
+          "round:2396614:Ancient:20",
+          "round:2396614:Ancient:22",
+          "round:2396614:Ancient:14",
+          "round:2396614:Ancient:13"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "opening_3_negative",
+        "language": "en",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396614:Ancient:1",
+          "round:2396614:Ancient:16",
+          "round:2396614:Ancient:13",
+          "round:2396614:Ancient:19",
+          "round:2396614:Ancient:21"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "opening_3_negative",
+        "language": "en",
+        "method": "dense",
+        "source_ids": [
+          "round:2396614:Ancient:1",
+          "round:2396614:Ancient:16",
+          "round:2396614:Ancient:2",
+          "round:2396614:Ancient:13",
+          "round:2396614:Ancient:22"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "opening_3_negative",
+        "language": "en",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396614:Ancient:1",
+          "round:2396614:Ancient:16",
+          "round:2396614:Ancient:13",
+          "round:2396614:Ancient:22",
+          "round:2396614:Ancient:2"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "opening_3_negative",
+        "language": "zh",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396614:Ancient:1",
+          "round:2396614:Ancient:16",
+          "round:2396614:Ancient:13",
+          "round:2396614:Ancient:19",
+          "round:2396614:Ancient:21"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "opening_3_negative",
+        "language": "zh",
+        "method": "dense",
+        "source_ids": [
+          "round:2396614:Ancient:16",
+          "round:2396614:Ancient:1",
+          "round:2396614:Ancient:22",
+          "round:2396614:Ancient:23",
+          "round:2396614:Ancient:2"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "opening_3_negative",
+        "language": "zh",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396614:Ancient:1",
+          "round:2396614:Ancient:16",
+          "round:2396614:Ancient:22",
+          "round:2396614:Ancient:19",
+          "round:2396614:Ancient:17"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "after_plant_3_positive",
+        "language": "en",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396614:Ancient:1",
+          "round:2396614:Ancient:16",
+          "round:2396614:Ancient:13",
+          "round:2396614:Ancient:19",
+          "round:2396614:Ancient:21"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "after_plant_3_positive",
+        "language": "en",
+        "method": "dense",
+        "source_ids": [
+          "round:2396614:Ancient:1",
+          "round:2396614:Ancient:2",
+          "round:2396614:Ancient:16",
+          "round:2396614:Ancient:22",
+          "round:2396614:Ancient:19"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "after_plant_3_positive",
+        "language": "en",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396614:Ancient:1",
+          "round:2396614:Ancient:16",
+          "round:2396614:Ancient:19",
+          "round:2396614:Ancient:13",
+          "round:2396614:Ancient:22"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "after_plant_3_positive",
+        "language": "zh",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396614:Ancient:1",
+          "round:2396614:Ancient:16",
+          "round:2396614:Ancient:13",
+          "round:2396614:Ancient:19",
+          "round:2396614:Ancient:21"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "after_plant_3_positive",
+        "language": "zh",
+        "method": "dense",
+        "source_ids": [
+          "round:2396614:Ancient:1",
+          "round:2396614:Ancient:22",
+          "round:2396614:Ancient:16",
+          "round:2396614:Ancient:2",
+          "round:2396614:Ancient:23"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "after_plant_3_positive",
+        "language": "zh",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396614:Ancient:1",
+          "round:2396614:Ancient:16",
+          "round:2396614:Ancient:22",
+          "round:2396614:Ancient:19",
+          "round:2396614:Ancient:13"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "after_plant_3_negative",
+        "language": "en",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396614:Ancient:1",
+          "round:2396614:Ancient:16",
+          "round:2396614:Ancient:13",
+          "round:2396614:Ancient:19",
+          "round:2396614:Ancient:21"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "after_plant_3_negative",
+        "language": "en",
+        "method": "dense",
+        "source_ids": [
+          "round:2396614:Ancient:1",
+          "round:2396614:Ancient:2",
+          "round:2396614:Ancient:22",
+          "round:2396614:Ancient:16",
+          "round:2396614:Ancient:14"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "after_plant_3_negative",
+        "language": "en",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396614:Ancient:1",
+          "round:2396614:Ancient:16",
+          "round:2396614:Ancient:19",
+          "round:2396614:Ancient:13",
+          "round:2396614:Ancient:22"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "after_plant_3_negative",
+        "language": "zh",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396614:Ancient:1",
+          "round:2396614:Ancient:16",
+          "round:2396614:Ancient:13",
+          "round:2396614:Ancient:19",
+          "round:2396614:Ancient:21"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "after_plant_3_negative",
+        "language": "zh",
+        "method": "dense",
+        "source_ids": [
+          "round:2396614:Ancient:1",
+          "round:2396614:Ancient:22",
+          "round:2396614:Ancient:23",
+          "round:2396614:Ancient:2",
+          "round:2396614:Ancient:16"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "after_plant_3_negative",
+        "language": "zh",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396614:Ancient:1",
+          "round:2396614:Ancient:16",
+          "round:2396614:Ancient:22",
+          "round:2396614:Ancient:13",
+          "round:2396614:Ancient:19"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "trade_3_positive",
+        "language": "en",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396614:Ancient:10",
+          "round:2396614:Ancient:20",
+          "round:2396614:Ancient:1",
+          "round:2396614:Ancient:6",
+          "round:2396614:Ancient:19"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "trade_3_positive",
+        "language": "en",
+        "method": "dense",
+        "source_ids": [
+          "round:2396614:Ancient:1",
+          "round:2396614:Ancient:2",
+          "round:2396614:Ancient:16",
+          "round:2396614:Ancient:14",
+          "round:2396614:Ancient:20"
+        ],
+        "metrics": {
+          "recall_at_k": 0.25,
+          "ndcg_at_k": 0.16812753627111746,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "trade_3_positive",
+        "language": "en",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396614:Ancient:1",
+          "round:2396614:Ancient:10",
+          "round:2396614:Ancient:20",
+          "round:2396614:Ancient:14",
+          "round:2396614:Ancient:6"
+        ],
+        "metrics": {
+          "recall_at_k": 0.25,
+          "ndcg_at_k": 0.16812753627111746,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "trade_3_positive",
+        "language": "zh",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396614:Ancient:20",
+          "round:2396614:Ancient:10",
+          "round:2396614:Ancient:6",
+          "round:2396614:Ancient:14",
+          "round:2396614:Ancient:4"
+        ],
+        "metrics": {
+          "recall_at_k": 0.5,
+          "ndcg_at_k": 0.3191471544989227,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "trade_3_positive",
+        "language": "zh",
+        "method": "dense",
+        "source_ids": [
+          "round:2396614:Ancient:10",
+          "round:2396614:Ancient:2",
+          "round:2396614:Ancient:20",
+          "round:2396614:Ancient:6",
+          "round:2396614:Ancient:23"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "trade_3_positive",
+        "language": "zh",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396614:Ancient:10",
+          "round:2396614:Ancient:20",
+          "round:2396614:Ancient:6",
+          "round:2396614:Ancient:14",
+          "round:2396614:Ancient:2"
+        ],
+        "metrics": {
+          "recall_at_k": 0.25,
+          "ndcg_at_k": 0.16812753627111746,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "trade_3_negative",
+        "language": "en",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396614:Ancient:16",
+          "round:2396614:Ancient:19",
+          "round:2396614:Ancient:2",
+          "round:2396614:Ancient:17",
+          "round:2396614:Ancient:3"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "trade_3_negative",
+        "language": "en",
+        "method": "dense",
+        "source_ids": [
+          "round:2396614:Ancient:16",
+          "round:2396614:Ancient:2",
+          "round:2396614:Ancient:1",
+          "round:2396614:Ancient:13",
+          "round:2396614:Ancient:3"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "trade_3_negative",
+        "language": "en",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396614:Ancient:16",
+          "round:2396614:Ancient:2",
+          "round:2396614:Ancient:19",
+          "round:2396614:Ancient:3",
+          "round:2396614:Ancient:17"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "trade_3_negative",
+        "language": "zh",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396614:Ancient:16",
+          "round:2396614:Ancient:2",
+          "round:2396614:Ancient:3",
+          "round:2396614:Ancient:19",
+          "round:2396614:Ancient:15"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "trade_3_negative",
+        "language": "zh",
+        "method": "dense",
+        "source_ids": [
+          "round:2396614:Ancient:2",
+          "round:2396614:Ancient:3",
+          "round:2396614:Ancient:23",
+          "round:2396614:Ancient:16",
+          "round:2396614:Ancient:7"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "trade_3_negative",
+        "language": "zh",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396614:Ancient:2",
+          "round:2396614:Ancient:16",
+          "round:2396614:Ancient:3",
+          "round:2396614:Ancient:7",
+          "round:2396614:Ancient:15"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "opening_4_positive",
+        "language": "en",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396609:Mirage:13",
+          "round:2396609:Mirage:14",
+          "round:2396609:Mirage:3",
+          "round:2396609:Mirage:7",
+          "round:2396609:Mirage:15"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "opening_4_positive",
+        "language": "en",
+        "method": "dense",
+        "source_ids": [
+          "round:2396609:Mirage:13",
+          "round:2396609:Mirage:14",
+          "round:2396609:Mirage:20",
+          "round:2396609:Mirage:3",
+          "round:2396609:Mirage:19"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "opening_4_positive",
+        "language": "en",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396609:Mirage:13",
+          "round:2396609:Mirage:14",
+          "round:2396609:Mirage:3",
+          "round:2396609:Mirage:20",
+          "round:2396609:Mirage:7"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "opening_4_positive",
+        "language": "zh",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396609:Mirage:13",
+          "round:2396609:Mirage:14",
+          "round:2396609:Mirage:3",
+          "round:2396609:Mirage:7",
+          "round:2396609:Mirage:15"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "opening_4_positive",
+        "language": "zh",
+        "method": "dense",
+        "source_ids": [
+          "round:2396609:Mirage:13",
+          "round:2396609:Mirage:14",
+          "round:2396609:Mirage:3",
+          "round:2396609:Mirage:20",
+          "round:2396609:Mirage:19"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "opening_4_positive",
+        "language": "zh",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396609:Mirage:13",
+          "round:2396609:Mirage:14",
+          "round:2396609:Mirage:3",
+          "round:2396609:Mirage:20",
+          "round:2396609:Mirage:7"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "opening_4_negative",
+        "language": "en",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396609:Mirage:13",
+          "round:2396609:Mirage:1",
+          "round:2396609:Mirage:14",
+          "round:2396609:Mirage:11",
+          "round:2396609:Mirage:3"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "opening_4_negative",
+        "language": "en",
+        "method": "dense",
+        "source_ids": [
+          "round:2396609:Mirage:14",
+          "round:2396609:Mirage:13",
+          "round:2396609:Mirage:16",
+          "round:2396609:Mirage:7",
+          "round:2396609:Mirage:20"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "opening_4_negative",
+        "language": "en",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396609:Mirage:13",
+          "round:2396609:Mirage:14",
+          "round:2396609:Mirage:16",
+          "round:2396609:Mirage:11",
+          "round:2396609:Mirage:7"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "opening_4_negative",
+        "language": "zh",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396609:Mirage:13",
+          "round:2396609:Mirage:1",
+          "round:2396609:Mirage:14",
+          "round:2396609:Mirage:11",
+          "round:2396609:Mirage:3"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "opening_4_negative",
+        "language": "zh",
+        "method": "dense",
+        "source_ids": [
+          "round:2396609:Mirage:14",
+          "round:2396609:Mirage:16",
+          "round:2396609:Mirage:19",
+          "round:2396609:Mirage:7",
+          "round:2396609:Mirage:13"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "opening_4_negative",
+        "language": "zh",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396609:Mirage:14",
+          "round:2396609:Mirage:13",
+          "round:2396609:Mirage:16",
+          "round:2396609:Mirage:11",
+          "round:2396609:Mirage:7"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "after_plant_4_positive",
+        "language": "en",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396609:Mirage:13",
+          "round:2396609:Mirage:7",
+          "round:2396609:Mirage:14",
+          "round:2396609:Mirage:2",
+          "round:2396609:Mirage:20"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "after_plant_4_positive",
+        "language": "en",
+        "method": "dense",
+        "source_ids": [
+          "round:2396609:Mirage:7",
+          "round:2396609:Mirage:13",
+          "round:2396609:Mirage:20",
+          "round:2396609:Mirage:14",
+          "round:2396609:Mirage:3"
+        ],
+        "metrics": {
+          "recall_at_k": 0.5,
+          "ndcg_at_k": 0.23719771276929622,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "after_plant_4_positive",
+        "language": "en",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396609:Mirage:13",
+          "round:2396609:Mirage:7",
+          "round:2396609:Mirage:14",
+          "round:2396609:Mirage:20",
+          "round:2396609:Mirage:2"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "after_plant_4_positive",
+        "language": "zh",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396609:Mirage:13",
+          "round:2396609:Mirage:7",
+          "round:2396609:Mirage:14",
+          "round:2396609:Mirage:2",
+          "round:2396609:Mirage:20"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "after_plant_4_positive",
+        "language": "zh",
+        "method": "dense",
+        "source_ids": [
+          "round:2396609:Mirage:7",
+          "round:2396609:Mirage:13",
+          "round:2396609:Mirage:14",
+          "round:2396609:Mirage:20",
+          "round:2396609:Mirage:3"
+        ],
+        "metrics": {
+          "recall_at_k": 0.5,
+          "ndcg_at_k": 0.23719771276929622,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "after_plant_4_positive",
+        "language": "zh",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396609:Mirage:13",
+          "round:2396609:Mirage:7",
+          "round:2396609:Mirage:14",
+          "round:2396609:Mirage:20",
+          "round:2396609:Mirage:2"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "after_plant_4_negative",
+        "language": "en",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396609:Mirage:1",
+          "round:2396609:Mirage:13",
+          "round:2396609:Mirage:14",
+          "round:2396609:Mirage:20",
+          "round:2396609:Mirage:15"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "after_plant_4_negative",
+        "language": "en",
+        "method": "dense",
+        "source_ids": [
+          "round:2396609:Mirage:7",
+          "round:2396609:Mirage:16",
+          "round:2396609:Mirage:9",
+          "round:2396609:Mirage:20",
+          "round:2396609:Mirage:1"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "after_plant_4_negative",
+        "language": "en",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396609:Mirage:1",
+          "round:2396609:Mirage:20",
+          "round:2396609:Mirage:16",
+          "round:2396609:Mirage:7",
+          "round:2396609:Mirage:14"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "after_plant_4_negative",
+        "language": "zh",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396609:Mirage:1",
+          "round:2396609:Mirage:13",
+          "round:2396609:Mirage:14",
+          "round:2396609:Mirage:20",
+          "round:2396609:Mirage:15"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "after_plant_4_negative",
+        "language": "zh",
+        "method": "dense",
+        "source_ids": [
+          "round:2396609:Mirage:7",
+          "round:2396609:Mirage:16",
+          "round:2396609:Mirage:9",
+          "round:2396609:Mirage:20",
+          "round:2396609:Mirage:14"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "after_plant_4_negative",
+        "language": "zh",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396609:Mirage:1",
+          "round:2396609:Mirage:14",
+          "round:2396609:Mirage:20",
+          "round:2396609:Mirage:16",
+          "round:2396609:Mirage:7"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "trade_4_positive",
+        "language": "en",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396609:Mirage:1",
+          "round:2396609:Mirage:13",
+          "round:2396609:Mirage:14",
+          "round:2396609:Mirage:15",
+          "round:2396609:Mirage:3"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "trade_4_positive",
+        "language": "en",
+        "method": "dense",
+        "source_ids": [
+          "round:2396609:Mirage:13",
+          "round:2396609:Mirage:14",
+          "round:2396609:Mirage:20",
+          "round:2396609:Mirage:5",
+          "round:2396609:Mirage:7"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "trade_4_positive",
+        "language": "en",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396609:Mirage:13",
+          "round:2396609:Mirage:14",
+          "round:2396609:Mirage:20",
+          "round:2396609:Mirage:1",
+          "round:2396609:Mirage:15"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "trade_4_positive",
+        "language": "zh",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396609:Mirage:1",
+          "round:2396609:Mirage:14",
+          "round:2396609:Mirage:13",
+          "round:2396609:Mirage:3",
+          "round:2396609:Mirage:15"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "trade_4_positive",
+        "language": "zh",
+        "method": "dense",
+        "source_ids": [
+          "round:2396609:Mirage:14",
+          "round:2396609:Mirage:13",
+          "round:2396609:Mirage:5",
+          "round:2396609:Mirage:3",
+          "round:2396609:Mirage:20"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "trade_4_positive",
+        "language": "zh",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396609:Mirage:14",
+          "round:2396609:Mirage:13",
+          "round:2396609:Mirage:3",
+          "round:2396609:Mirage:5",
+          "round:2396609:Mirage:1"
+        ],
+        "metrics": {
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "false_retrieval": null,
+          "false_abstention": false
+        }
+      },
+      {
+        "query_id": "trade_4_negative",
+        "language": "en",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396609:Mirage:7",
+          "round:2396609:Mirage:1",
+          "round:2396609:Mirage:13",
+          "round:2396609:Mirage:15",
+          "round:2396609:Mirage:11"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "trade_4_negative",
+        "language": "en",
+        "method": "dense",
+        "source_ids": [
+          "round:2396609:Mirage:7",
+          "round:2396609:Mirage:16",
+          "round:2396609:Mirage:9",
+          "round:2396609:Mirage:20",
+          "round:2396609:Mirage:14"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "trade_4_negative",
+        "language": "en",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396609:Mirage:7",
+          "round:2396609:Mirage:16",
+          "round:2396609:Mirage:13",
+          "round:2396609:Mirage:14",
+          "round:2396609:Mirage:20"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "trade_4_negative",
+        "language": "zh",
+        "method": "bm25",
+        "source_ids": [
+          "round:2396609:Mirage:7",
+          "round:2396609:Mirage:11",
+          "round:2396609:Mirage:13",
+          "round:2396609:Mirage:18",
+          "round:2396609:Mirage:10"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "trade_4_negative",
+        "language": "zh",
+        "method": "dense",
+        "source_ids": [
+          "round:2396609:Mirage:7",
+          "round:2396609:Mirage:9",
+          "round:2396609:Mirage:16",
+          "round:2396609:Mirage:20",
+          "round:2396609:Mirage:5"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      },
+      {
+        "query_id": "trade_4_negative",
+        "language": "zh",
+        "method": "dense_bm25_rrf",
+        "source_ids": [
+          "round:2396609:Mirage:7",
+          "round:2396609:Mirage:9",
+          "round:2396609:Mirage:18",
+          "round:2396609:Mirage:5",
+          "round:2396609:Mirage:20"
+        ],
+        "metrics": {
+          "recall_at_k": null,
+          "ndcg_at_k": null,
+          "false_retrieval": true,
+          "false_abstention": null
+        }
+      }
+    ],
+    "family_summary": [
+      {
+        "method": "bm25",
+        "family": "opening",
+        "answerable": true,
+        "semantic_groups": 4,
+        "mean_ndcg_at_5": 0.1733566009043177,
+        "false_retrieval_rate": null
+      },
+      {
+        "method": "dense",
+        "family": "opening",
+        "answerable": true,
+        "semantic_groups": 4,
+        "mean_ndcg_at_5": 0.2246170130607796,
+        "false_retrieval_rate": null
+      },
+      {
+        "method": "dense_bm25_rrf",
+        "family": "opening",
+        "answerable": true,
+        "semantic_groups": 4,
+        "mean_ndcg_at_5": 0.21930382883451233,
+        "false_retrieval_rate": null
+      },
+      {
+        "method": "relation_sql_oracle",
+        "family": "opening",
+        "answerable": true,
+        "semantic_groups": 4,
+        "mean_ndcg_at_5": 1.0,
+        "false_retrieval_rate": null
+      },
+      {
+        "method": "bm25",
+        "family": "opening",
+        "answerable": false,
+        "semantic_groups": 4,
+        "mean_ndcg_at_5": null,
+        "false_retrieval_rate": 1
+      },
+      {
+        "method": "dense",
+        "family": "opening",
+        "answerable": false,
+        "semantic_groups": 4,
+        "mean_ndcg_at_5": null,
+        "false_retrieval_rate": 1
+      },
+      {
+        "method": "dense_bm25_rrf",
+        "family": "opening",
+        "answerable": false,
+        "semantic_groups": 4,
+        "mean_ndcg_at_5": null,
+        "false_retrieval_rate": 1
+      },
+      {
+        "method": "relation_sql_oracle",
+        "family": "opening",
+        "answerable": false,
+        "semantic_groups": 4,
+        "mean_ndcg_at_5": null,
+        "false_retrieval_rate": 0
+      },
+      {
+        "method": "bm25",
+        "family": "after_plant",
+        "answerable": true,
+        "semantic_groups": 4,
+        "mean_ndcg_at_5": 0.058659840752844555,
+        "false_retrieval_rate": null
+      },
+      {
+        "method": "dense",
+        "family": "after_plant",
+        "answerable": true,
+        "semantic_groups": 4,
+        "mean_ndcg_at_5": 0.19705725701691118,
+        "false_retrieval_rate": null
+      },
+      {
+        "method": "dense_bm25_rrf",
+        "family": "after_plant",
+        "answerable": true,
+        "semantic_groups": 4,
+        "mean_ndcg_at_5": 0.0740204777414663,
+        "false_retrieval_rate": null
+      },
+      {
+        "method": "relation_sql_oracle",
+        "family": "after_plant",
+        "answerable": true,
+        "semantic_groups": 4,
+        "mean_ndcg_at_5": 1.0,
+        "false_retrieval_rate": null
+      },
+      {
+        "method": "bm25",
+        "family": "after_plant",
+        "answerable": false,
+        "semantic_groups": 4,
+        "mean_ndcg_at_5": null,
+        "false_retrieval_rate": 1
+      },
+      {
+        "method": "dense",
+        "family": "after_plant",
+        "answerable": false,
+        "semantic_groups": 4,
+        "mean_ndcg_at_5": null,
+        "false_retrieval_rate": 1
+      },
+      {
+        "method": "dense_bm25_rrf",
+        "family": "after_plant",
+        "answerable": false,
+        "semantic_groups": 4,
+        "mean_ndcg_at_5": null,
+        "false_retrieval_rate": 1
+      },
+      {
+        "method": "relation_sql_oracle",
+        "family": "after_plant",
+        "answerable": false,
+        "semantic_groups": 4,
+        "mean_ndcg_at_5": null,
+        "false_retrieval_rate": 0
+      },
+      {
+        "method": "bm25",
+        "family": "trade",
+        "answerable": true,
+        "semantic_groups": 4,
+        "mean_ndcg_at_5": 0.21553394747471677,
+        "false_retrieval_rate": null
+      },
+      {
+        "method": "dense",
+        "family": "trade",
+        "answerable": true,
+        "semantic_groups": 4,
+        "mean_ndcg_at_5": 0.021015942033889682,
+        "false_retrieval_rate": null
+      },
+      {
+        "method": "dense_bm25_rrf",
+        "family": "trade",
+        "answerable": true,
+        "semantic_groups": 4,
+        "mean_ndcg_at_5": 0.042031884067779364,
+        "false_retrieval_rate": null
+      },
+      {
+        "method": "relation_sql_oracle",
+        "family": "trade",
+        "answerable": true,
+        "semantic_groups": 4,
+        "mean_ndcg_at_5": 1.0,
+        "false_retrieval_rate": null
+      },
+      {
+        "method": "bm25",
+        "family": "trade",
+        "answerable": false,
+        "semantic_groups": 4,
+        "mean_ndcg_at_5": null,
+        "false_retrieval_rate": 1
+      },
+      {
+        "method": "dense",
+        "family": "trade",
+        "answerable": false,
+        "semantic_groups": 4,
+        "mean_ndcg_at_5": null,
+        "false_retrieval_rate": 1
+      },
+      {
+        "method": "dense_bm25_rrf",
+        "family": "trade",
+        "answerable": false,
+        "semantic_groups": 4,
+        "mean_ndcg_at_5": null,
+        "false_retrieval_rate": 1
+      },
+      {
+        "method": "relation_sql_oracle",
+        "family": "trade",
+        "answerable": false,
+        "semantic_groups": 4,
+        "mean_ndcg_at_5": null,
+        "false_retrieval_rate": 0
+      }
+    ]
+  }
+}
