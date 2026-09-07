@@ -1,0 +1,78 @@
+{
+  "version": "isolated-relation-v1",
+  "demo_directory": "data/evaluation/unseen_small_v3/demos",
+  "output_directory": "data/evaluation/isolated_relations_v1",
+  "historical_graph": "data/graph/cs2_graph.sqlite",
+  "matches": [
+    {
+      "match_id": "2396944",
+      "url": "https://www.hltv.org/matches/2396944/g2-vs-aurora-blast-open-porto-2026",
+      "date": "2026-08-31",
+      "teams": [
+        "G2",
+        "Aurora"
+      ],
+      "maps_played": [
+        "Anubis",
+        "Inferno",
+        "Mirage"
+      ],
+      "public_map_scores": {
+        "Anubis": {
+          "G2": 7,
+          "Aurora": 13
+        },
+        "Inferno": {
+          "G2": 19,
+          "Aurora": 16
+        },
+        "Mirage": {
+          "G2": 13,
+          "Aurora": 1
+        }
+      }
+    },
+    {
+      "match_id": "2396940",
+      "url": "https://www.hltv.org/matches/2396940/g2-vs-natus-vincere-blast-open-porto-2026",
+      "date": "2026-08-30",
+      "teams": [
+        "G2",
+        "Natus Vincere"
+      ],
+      "maps_played": [
+        "Ancient",
+        "Inferno"
+      ],
+      "public_map_scores": {
+        "Ancient": {
+          "G2": 13,
+          "Natus Vincere": 6
+        },
+        "Inferno": {
+          "G2": 13,
+          "Natus Vincere": 10
+        }
+      }
+    }
+  ],
+  "inputs_sha256": {
+    "datasets/selections/unseen_small_v3_corrected_replay.json": "a9c5385540a9be1a4a0a631dc48600f3e2e7f349234a8df05f097778b4b0084a",
+    "data/graph/cs2_graph.sqlite": "28357be25a52d27b80e87a03ffcb2a545132c97d42632138ff60c47d67fc8c2d",
+    "data/evaluation/unseen_small_v3/demos/G2_vs_Aurora_2396944_map1.dem": "e6bdd552f9336cd03a42f758d3849277461095bd3d019cd22c6608af8f2e3dc1",
+    "data/evaluation/unseen_small_v3/demos/G2_vs_Aurora_2396944_map2.dem": "e71bad7ed9d272f72806940dcd1e8f732c31f947865e49e5ccbbcf1f43bcdc83",
+    "data/evaluation/unseen_small_v3/demos/G2_vs_Aurora_2396944_map3.dem": "e348879717172add00b80285c20f884f4e180aa8cffa5a7ae9990d0d1d20b9fd",
+    "data/evaluation/unseen_small_v3/demos/G2_vs_Natus_Vincere_2396940_map1.dem": "addb04dbcffaa81c3bf05b47265744af3fca3206b0746cc0ab5c4d1b00010956",
+    "data/evaluation/unseen_small_v3/demos/G2_vs_Natus_Vincere_2396940_map2.dem": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352"
+  },
+  "implementation_sha256": {
+    "app/services/parser_service.py": "e404343066323d9eb22fa8c0edfa747def543872beb54cfc5a6a676c2345280f",
+    "app/services/graph_rag_service.py": "59a2ca94f3fb62cd5c9e9bfdf7d695e709da4cf7dc675c159400452e44e77e59",
+    "app/services/tactical_annotation_service.py": "d1469f60e3eecc0f01418642f8f8bd316e9e7bbcf9cdfbddf7a723ebf5a9f231",
+    "scripts/prepare_isolated_relation_pilot.py": "0bade27657becac2b8636535f883036dff308c919da753f7b135bf31cbf45f7f",
+    "scripts/evaluate_fair_retrieval.py": "941802a4cf3f3a2e9c340ae724dddd92d6bf8dcbb4645f1424a5539ebf432056",
+    "scripts/benchmark_relations.py": "2a4a233fddfbc44bdd4dfd681d6a717ce3c34f770b452c3e631bdcb60582bd3d"
+  },
+  "selection_rule": "For each map/family choose one positive and one negative with at least one full-scope near miss; choose smallest SHA256 of fixed seed + scope + family + directed SteamID pair. Missing quotas recorded, never filled by ranking feedback. Roles use full roster; no relevance cap.",
+  "identity": "Observed two series, five maps, 111 rounds; isolated from historical graph, no production ingestion and no fresh download. AI source-selected labels, not blind evaluation."
+}
