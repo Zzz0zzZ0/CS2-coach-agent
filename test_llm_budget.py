@@ -209,3 +209,59 @@ def test_key_rotation_keeps_existing_budget(tmp_path,monkeypatch):
     assert second is not first
     assert second.budget.status()['calls'] == 1
     assert second.budget.status()['reported_tokens'] == 15
+
+
+def test_authorized_recovery_retains_failed_usage_and_limits_attempts(tmp_path):
+    budget = ModelBudget(tmp_path/'recovery.sqlite', 30000, 100)
+    failed = budget.reserve(5456, 'failed-prompt-hash')
+    budget.finish(failed, 'request_failed')
+    before = budget.status()
+    with sqlite3.connect(budget.path) as db:
+        original = db.execute('SELECT * FROM calls').fetchall()
+    recovered = budget.resume_failed_request(failed, 2, 'Explicit operator authorization; retain unknown usage')
+    assert recovered['status'] == 'ready'
+    for key in ('calls', 'reported_tokens', 'unsettled_allowance', 'remaining_local_allowance', 'accounting_complete'):
+        assert recovered[key] == before[key]
+    with pytest.raises(ModelCallStopped):
+        budget.resume_failed_request(failed, 2, 'Cannot extend the same authorization')
+    for _ in range(2):
+        request = budget.reserve(5000, 'new-prompt-hash')
+        budget.finish(request, 'completed', 992)
+    final = ModelBudget(budget.path, 30000, 100).status()
+    assert final['stop_reason'] == 'recovery_call_limit_reached'
+    assert final['calls'] == 3 and final['reported_tokens'] == 1984
+    assert final['unsettled_allowance'] == 5456 and not final['accounting_complete']
+    assert final['remaining_local_allowance'] == 22560
+    with pytest.raises(ModelCallStopped, match='recovery_call_limit_reached'):
+        budget.reserve(5000, 'no-third-call')
+    with sqlite3.connect(budget.path) as db:
+        assert db.execute('SELECT * FROM calls WHERE id=?', (failed,)).fetchall() == original
+
+
+@pytest.mark.parametrize('status', ['pending', 'provider_rejected', 'usage_missing', 'cancelled', 'completed'])
+def test_recovery_cannot_override_other_stop_reasons(tmp_path, status):
+    budget = ModelBudget(tmp_path/'recovery.sqlite', 30000, 100)
+    request = budget.reserve(5456, 'hash')
+    if status != 'pending':
+        budget.finish(request, status, 10 if status == 'completed' else None)
+    before = budget.status()
+    with pytest.raises(ModelCallStopped, match='recovery_not_eligible'):
+        budget.resume_failed_request(request, 2, 'Authorized recovery')
+    assert budget.status() == before
+
+
+def test_new_failure_after_recovery_stops_immediately(tmp_path):
+    budget = ModelBudget(tmp_path/'recovery.sqlite', 30000, 100)
+    first = budget.reserve(5456, 'hash')
+    budget.finish(first, 'request_failed')
+    with pytest.raises(ModelCallStopped, match='recovery_not_eligible'):
+        budget.resume_failed_request('different-id', 2, 'Authorization')
+    with pytest.raises(ModelCallStopped, match='recovery_exceeds_budget'):
+        budget.resume_failed_request(first, 100, 'Authorization')
+    budget.resume_failed_request(first, 2, 'Authorization')
+    second = budget.reserve(5456, 'hash')
+    budget.finish(second, 'request_failed')
+    with pytest.raises(ModelCallStopped, match='request_failed'):
+        budget.reserve(5456, 'no-retry')
+    assert budget.status()['unsettled_allowance'] == 10912
+    assert not budget.status()['accounting_complete']

@@ -37,17 +37,50 @@ class ModelBudget:
         limits = db.execute('SELECT token_limit, call_limit FROM budget WHERE id=1').fetchone()
         count, reported, reserved = db.execute('''SELECT count(*), coalesce(sum(total_tokens),0),
             coalesce(sum(CASE WHEN total_tokens IS NULL THEN allowance ELSE 0 END),0) FROM calls''').fetchone()
-        stopped = db.execute("SELECT status FROM calls WHERE status != 'completed' ORDER BY created_at LIMIT 1").fetchone()
+        recovery = None
+        if db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='recovery'").fetchone():
+            recovery = db.execute('SELECT call_id, call_ceiling FROM recovery WHERE id=1').fetchone()
+        stopped = db.execute("""SELECT status FROM calls WHERE status != 'completed'
+            AND NOT (id=? AND status='request_failed' AND finished_at IS NOT NULL)
+            ORDER BY created_at LIMIT 1""", (recovery[0] if recovery else '',)).fetchone()
         reason = stopped[0] if stopped else None
         if limits != (self.token_limit, self.call_limit):
             reason = 'configuration_mismatch'
         elif not reason and (count >= limits[1] or reported + reserved >= limits[0]):
             reason = 'budget_exhausted'
+        elif not reason and recovery and count >= recovery[1]:
+            reason = 'recovery_call_limit_reached'
         return {'status': 'stopped' if reason else 'ready', 'stop_reason': reason,
                 'token_limit': limits[0], 'call_limit': limits[1], 'calls': count,
                 'reported_tokens': reported, 'unsettled_allowance': reserved,
                 'remaining_local_allowance': max(0, limits[0] - reported - reserved),
                 'accounting_complete': reserved == 0, 'provider_remaining_tokens': None}
+
+    def resume_failed_request(self, request_id, additional_calls, authorization):
+        """Explicit, bounded operator recovery; retain the failed row and its allowance."""
+        if type(additional_calls) is not int or additional_calls <= 0 or not authorization.strip():
+            raise ModelCallStopped('invalid_recovery_authorization')
+        try:
+            with closing(sqlite3.connect(self.path.as_uri() + '?mode=rw', uri=True, timeout=2)) as db, db:
+                db.execute('BEGIN IMMEDIATE')
+                snapshot = self._snapshot(db)
+                failures = db.execute("SELECT id, status, finished_at FROM calls WHERE status != 'completed'").fetchall()
+                if snapshot['stop_reason'] != 'request_failed' or len(failures) != 1 or (
+                    failures[0][0] != request_id or failures[0][1] != 'request_failed' or failures[0][2] is None
+                ):
+                    raise ModelCallStopped('recovery_not_eligible')
+                ceiling = snapshot['calls'] + additional_calls
+                if ceiling > self.call_limit or snapshot['remaining_local_allowance'] <= 0:
+                    raise ModelCallStopped('recovery_exceeds_budget')
+                db.execute('''CREATE TABLE IF NOT EXISTS recovery (id INTEGER PRIMARY KEY CHECK(id=1),
+                    call_id TEXT, call_ceiling INTEGER, authorized_at REAL, authorization TEXT)''')
+                if db.execute('SELECT 1 FROM recovery').fetchone():
+                    raise ModelCallStopped('recovery_already_recorded')
+                db.execute('INSERT INTO recovery VALUES (1,?,?,?,?)',
+                           (request_id, ceiling, time.time(), authorization))
+                return self._snapshot(db)
+        except sqlite3.Error:
+            raise ModelCallStopped('ledger_unavailable') from None
 
     def status(self):
         if not self.path.exists():

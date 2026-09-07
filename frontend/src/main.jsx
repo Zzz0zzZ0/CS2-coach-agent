@@ -292,7 +292,7 @@ function App() {
               <b>{!llmBudget ? "正在读取调用预算…" : llmBudget.status === "unavailable" ? "预算状态暂不可用，请刷新核验" : llmBudget.status === "stopped" ? "模型调用已暂停" : "本地调用预算"}</b>
               {llmBudget?.remaining_local_allowance != null && <span>剩余预留额度 {formatNumber(llmBudget.remaining_local_allowance)} / {formatNumber(llmBudget.token_limit)} token · 已尝试 {llmBudget.calls} / {llmBudget.call_limit} 次</span>}
               {llmBudget?.reported_tokens != null && <span>已报告 {formatNumber(llmBudget.reported_tokens)} token · 尚未结算的预留 {formatNumber(llmBudget.unsettled_allowance)} token</span>}
-              {llmBudget?.stop_reason && <span>{({pending: "有请求尚未结算；完成后可刷新，若已中断则需核对账单。", request_failed: "请求失败，用量待核对，后续调用已停止。", provider_rejected: "提供商拒绝请求，需核对密钥或额度。", cancelled: "请求已取消，用量待核对。", usage_missing: "提供商未返回用量，后续调用已停止。", estimate_exceeded: "实际用量超过预留，后续调用已停止。", budget_exhausted: "本地预算已用完，分析将采用规则结果。", configuration_mismatch: "预算配置与既有记录不一致，调用已停止。"})[llmBudget.stop_reason] || "调用边界检查未通过，需检查预算记录。"}</span>}
+              {llmBudget?.stop_reason && <span>{({recovery_call_limit_reached: "本次授权复测次数已用完；原失败用量仍保留预留。", pending: "有请求尚未结算；完成后可刷新，若已中断则需核对账单。", request_failed: "请求失败，用量待核对，后续调用已停止。", provider_rejected: "提供商拒绝请求，需核对密钥或额度。", cancelled: "请求已取消，用量待核对。", usage_missing: "提供商未返回用量，后续调用已停止。", estimate_exceeded: "实际用量超过预留，后续调用已停止。", budget_exhausted: "本地预算已用完，分析将采用规则结果。", configuration_mismatch: "预算配置与既有记录不一致，调用已停止。"})[llmBudget.stop_reason] || "调用边界检查未通过，需检查预算记录。"}</span>}
               <small>额度从本地账本启用时累计；提供商剩余免费额度未知。暂停时保留规则分析。</small>
               <button type="button" onClick={refreshBudget}>刷新预算</button>
             </section>

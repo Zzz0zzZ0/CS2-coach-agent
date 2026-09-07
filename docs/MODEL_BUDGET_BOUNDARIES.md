@@ -46,3 +46,9 @@ curl -s http://127.0.0.1:8001/api/settings/llm/budget
 - 剩余限制：未验证提供商真实免费余额或真实断网计费；没有跨机器账本或自动对账恢复。未将这些范围写成已完成能力。第八项真实人工评分继续待补。
 
 验证命令：`.venv/bin/python -m pytest -q`、`npm --prefix frontend run build`。
+
+## 有次数上限的授权恢复
+
+`ModelBudget.resume_failed_request(request_id, additional_calls, authorization)` 供明确授权后的本地运维使用，不暴露 HTTP 解锁接口，也不会自动调用。仅允许唯一一个已结束的 `request_failed` 请求；拒绝 pending、提供商拒绝、用量缺失、取消、配置不一致和已用尽的预算。额外次数不能超过原调用上限。
+
+恢复将请求 ID、授权说明、时间和累计尝试次数上限写入独立 recovery 记录；原 calls 行、失败状态、未知用量和全部预留保持不变。后续成功 usage 正常累计，未结算金额仍扣减剩余本地额度，`accounting_complete` 保持 false。用完本次授权次数返回 `recovery_call_limit_reached`；发生新故障则再次立即停止。当前恢复记录不支持覆盖或重复授权以延长窗口。它不是提供商账单结算、预算清零或自动重试。
