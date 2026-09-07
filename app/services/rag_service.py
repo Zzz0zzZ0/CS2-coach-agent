@@ -9,6 +9,8 @@ from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_core.vectorstores import VectorStore
 from langchain_core.documents import Document
 
+from app.services.relation_query_service import relation_intent, MESSAGES
+
 logger = logging.getLogger(__name__)
 
 QUERY_EXPANSIONS = {
@@ -193,9 +195,12 @@ class RetrievalResult:
     strategy: str = "dense_lexical"
     confidence: float = 0.0
     corrected: bool = False
+    relation: Dict[str, Any] | None = None
 
     @property
     def context(self) -> str:
+        if self.relation and not self.evidence:
+            return MESSAGES.get(self.relation["status"], MESSAGES["unknown"])
         return KnowledgeBaseClient.format_evidence_context(self.evidence)
 
 
@@ -270,6 +275,10 @@ class KnowledgeBaseClient:
         fetch_k: int = 12,
     ) -> RetrievalResult:
         """Retrieve ranked, deduplicated evidence while keeping provenance."""
+        if relation_intent(query):
+            return RetrievalResult(query=query,rewritten_query=query,filters=metadata_filter or {},
+                strategy="relation_requires_source",warnings=[MESSAGES["unknown"]],
+                relation={"status":"unknown","reason":"vector_evidence_is_not_relation_proof","complete":False})
         normalized_filters = self._normalize_filters(metadata_filter or {})
         expanded_query = self._expand_query(query)
         required_entities = explicit_entity_terms(query)

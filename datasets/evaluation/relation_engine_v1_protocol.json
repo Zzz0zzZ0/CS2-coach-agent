@@ -1,0 +1,48 @@
+{
+  "created_at": "2026-09-07T02:01:39.209217+00:00",
+  "version": "relation-engine-v1",
+  "k": 5,
+  "inputs": {
+    "graph": {
+      "path": "data/graph/cs2_graph.sqlite",
+      "sha256": "28357be25a52d27b80e87a03ffcb2a545132c97d42632138ff60c47d67fc8c2d"
+    },
+    "queries": {
+      "path": "datasets/evaluation/relation_v1_queries.json",
+      "sha256": "6af28b7881b680fe296cc27dd67a3fa6a7b32a640ff7fb3fc5888b00b9b5a914"
+    },
+    "qrels": {
+      "path": "datasets/evaluation/relation_v1_qrels.json",
+      "sha256": "59e0eb1d94452b7f839e247b1efa473547a15ef734c81f142a94d2b11586b24a"
+    },
+    "original_protocol": {
+      "path": "datasets/evaluation/relation_v1_protocol.json",
+      "sha256": "90f5bed4ee3cb1f7e3f62d75fafbc3ef1e43dd02ffd4ff216d7ade53835001e9"
+    },
+    "requirements": {
+      "path": "requirements-lock.txt",
+      "sha256": "0528f567555e79611a5014202b4de92185ad1f485bde4976f5ebeb3760c7baeb"
+    }
+  },
+  "implementation_sha256": {
+    "app/services/relation_query_service.py": "34f31ecf7d259c083c3c8aa2410604cda37c48fb1e51fd39a573e5f62769e819",
+    "app/services/graph_rag_service.py": "59a2ca94f3fb62cd5c9e9bfdf7d695e709da4cf7dc675c159400452e44e77e59",
+    "app/services/rag_service.py": "a0d71a7e31e488b35fbb5bc2fc246f5415413f2ffe5cc308a392ef59d3ca4e8e",
+    "app/agentic/nodes/retrieve_node.py": "fd5fd580939c98d59decfa2a5f2cc4e36d19065908cc6d64b49210b86b5f43be",
+    "app/api/routers/graph.py": "cbdc57bd2522ce1a3595713ba0dd73a9d350bfecbe5bee88fdc8a00d885bb3f8",
+    "scripts/evaluate_relation_queries.py": "5fcc5b0655d9e11d77e155e2173b60c076a5108db4b2b8413f665d39738f32f3",
+    "scripts/evaluate_fair_retrieval.py": "941802a4cf3f3a2e9c340ae724dddd92d6bf8dcbb4645f1424a5539ebf432056",
+    "test_relation_queries.py": "5458175746ceac7552bd32847144489a0b604243a477d606adf2524e0247b847",
+    "frontend/src/main.jsx": "ef7bddd72d28793d02c42bfae419d2b2c046e7373a4a20449476414864185245"
+  },
+  "development": "Synthetic Alpha/Bravo/Cedar/Delta fixtures in test_relation_queries.py, separate from observed relation_v1 corpus/questions.",
+  "run_contract": "All 48 observed bilingual queries: text-only scope/role parsing; graph public retrieval/API/hybrid caller parity; gold relation slots used only for post-result checks. Hybrid k=4 and other routes k=5; positive qrels all <=4.",
+  "limitations": [
+    "Observed development/regression questions, not an unseen test or independent human gold.",
+    "Restricted English/Chinese grammar for 3 relation families, not general natural-language understanding.",
+    "Source event scan is a distinct retrieval strategy, not an improvement to BM25/dense/RRF ranking.",
+    "Graph and hybrid route to the same relation engine; their parity is integration coverage, not independent algorithm evidence.",
+    "Pure vector relation queries now return unknown without a source verifier; no inference of true absence.",
+    "Parser-derived facts remain shared with AI labels; production provider services are not restarted by the regression."
+  ]
+}

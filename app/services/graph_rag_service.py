@@ -16,6 +16,7 @@ from app.services.rag_service import (
     Evidence, KnowledgeBaseClient, contains_entity, explicit_entity_terms,
 )
 from app.services.tactical_annotation_service import annotate_match
+from app.services.relation_query_service import search_relations
 
 logger = logging.getLogger(__name__)
 
@@ -329,6 +330,9 @@ class GraphRAGClient:
             "communities": community_count,
         }
 
+    async def retrieve_relations(self, query: str, metadata_filter: dict | None = None, k: int = 5):
+        return await asyncio.to_thread(search_relations, self.db_path, query, metadata_filter, k)
+
     async def retrieve(
         self,
         query: str,
@@ -337,6 +341,9 @@ class GraphRAGClient:
         k: int = 4,
         global_search: bool = False,
     ) -> list[Evidence]:
+        relation = await self.retrieve_relations(query, metadata_filter, k)
+        if relation is not None:
+            return relation.evidence
         if not self.available():
             return []
         return await asyncio.to_thread(

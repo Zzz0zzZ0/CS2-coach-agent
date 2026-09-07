@@ -3,7 +3,8 @@ import logging
 from typing import Any
 
 from app.agentic.states import GraphState
-from app.services.rag_service import KnowledgeBaseClient
+from app.services.rag_service import KnowledgeBaseClient, RetrievalResult
+from app.services.relation_query_service import relation_intent, MESSAGES
 
 logger = logging.getLogger(__name__)
 
@@ -42,10 +43,27 @@ def create_retrieve_node(kb_client, graph_client=None):
                 "required_tactic_types": [],
             }]
 
+        relation_plan = any(relation_intent(task["query"]) for task in tasks)
+        if relation_plan:
+            tasks = plan or tasks  # Re-evaluate the plan; old unverified evidence must not survive a retry.
         feedback = state.get("critique_feedback", "")
 
         async def retrieve_task(task: dict):
             query = task["query"]
+            if relation_intent(query):
+                try:
+                    if graph_client and hasattr(graph_client, "retrieve_relations"):
+                        result = await graph_client.retrieve_relations(query, metadata, 4)
+                    else:
+                        result = None
+                    if result is None:
+                        result = RetrievalResult(query=query,rewritten_query=query,strategy="relation_requires_source",
+                            warnings=[MESSAGES["unknown"]],relation={"status":"unknown","reason":"graph_unavailable","complete":False})
+                except Exception as error:
+                    result = RetrievalResult(query=query,rewritten_query=query,strategy="relation_requires_source",
+                        warnings=[MESSAGES["unknown"]],relation={"status":"unknown","reason":"source_read_failed","complete":False})
+                    logger.warning("Relation source query failed: %s", type(error).__name__)
+                return task, result, "", []
             if feedback:
                 query = f"{query}. Address these retrieval gaps: {feedback}"
             async def retrieve_milvus():
@@ -93,11 +111,11 @@ def create_retrieve_node(kb_client, graph_client=None):
         task_results = await asyncio.gather(*(retrieve_task(task) for task in tasks))
         evidence_by_key = {
             _evidence_key(item): item
-            for item in state.get("retrieval_evidence", [])
+            for item in ([] if relation_plan else state.get("retrieval_evidence", []))
             if _evidence_key(item)
         }
         task_summary = [
-            item for item in state.get("retrieval_task_results", [])
+            item for item in ([] if relation_plan else state.get("retrieval_task_results", []))
             if item.get("task_id") not in {task["id"] for task in tasks}
         ]
         warnings = []
@@ -108,7 +126,8 @@ def create_retrieve_node(kb_client, graph_client=None):
                 warnings.append(f"{task['id']}: {error}")
             milvus_evidence = result.evidence if result else []
             combined_evidence = [*milvus_evidence, *graph_evidence]
-            graph_count += len(graph_evidence)
+            relation = getattr(result, "relation", None)
+            graph_count += len(combined_evidence) if relation else len(graph_evidence)
             for item in combined_evidence:
                 evidence_by_key.setdefault(_evidence_key(item), item)
             required_types = set(task.get("required_tactic_types", []))
@@ -122,11 +141,14 @@ def create_retrieve_node(kb_client, graph_client=None):
                 any(_evidence_metadata(item).get("tactic_type") in required_types for item in milvus_evidence)
                 or any(_evidence_metadata(item).get("topic") == graph_topic for item in graph_evidence)
             )
+            if relation:
+                covered = relation["status"] in ("found", "not_found")
             task_summary.append({
                 "task_id": task["id"],
                 "count": len(combined_evidence),
-                "milvus_count": len(milvus_evidence),
-                "graph_count": len(graph_evidence),
+                "milvus_count": 0 if relation else len(milvus_evidence),
+                "graph_count": len(combined_evidence) if relation else len(graph_evidence),
+                "relation": relation,
                 "covered": covered,
                 "confidence": result.confidence if result else 0.0,
                 "strategy": (result.strategy if result else "graph_only") + ("+graph" if graph_evidence else ""),
@@ -155,7 +177,11 @@ def create_retrieve_node(kb_client, graph_client=None):
 
         evidence = [_evidence_dict(item) for item in selected]
         return {
-            "rag_context": KnowledgeBaseClient.format_evidence_context(evidence),
+            "rag_context": "\n".join([
+                KnowledgeBaseClient.format_evidence_context(evidence),
+                *[f"{task['id']}: {result.context}" for task,result,_,_ in task_results
+                  if getattr(result,"relation",None) and not result.evidence],
+            ]),
             "retrieval_query": "; ".join(task["query"] for task in tasks),
             "retrieval_evidence": evidence,
             "retrieval_task_results": task_summary,

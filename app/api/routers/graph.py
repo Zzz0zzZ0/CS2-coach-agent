@@ -3,6 +3,7 @@ import asyncio
 from fastapi import APIRouter, HTTPException, Query
 
 from app.core.providers import get_graph_client
+from app.services.relation_query_service import MESSAGES
 
 router = APIRouter(prefix="/graph", tags=["graph"])
 
@@ -112,12 +113,19 @@ async def graph_team_tactics(
 async def graph_search(
     q: str = Query(min_length=1, max_length=500),
     map_name: str | None = Query(default=None, max_length=64),
+    match_id: str | None = Query(default=None, max_length=64),
     limit: int = Query(default=6, ge=1, le=20),
 ):
     client = get_graph_client()
+    metadata = {k:v for k,v in {"map":map_name,"match_id":match_id}.items() if v is not None}
+    relation = await client.retrieve_relations(q, metadata, limit)
+    if relation is not None:
+        return {"available":client.available(),"query":q,"answer":None,
+                "relation":relation.relation,"message":MESSAGES[relation.relation["status"]],
+                "results":[item.as_dict() for item in relation.evidence]}
     evidence = await client.retrieve(
         q,
-        metadata_filter={"map": map_name} if map_name else {},
+        metadata_filter=metadata,
         k=limit,
         global_search=True,
     ) if client.available() else []
