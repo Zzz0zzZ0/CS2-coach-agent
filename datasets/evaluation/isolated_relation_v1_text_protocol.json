@@ -1,0 +1,76 @@
+{
+  "version": "isolated-relation-text-v1",
+  "k": 5,
+  "inputs": {
+    "corpus": {
+      "path": "data/evaluation/isolated_relations_v1/corpus.jsonl",
+      "sha256": "e36e3b0362a35f7c82add789918d8e8d31a948ea767e5984347b5f7f4bb02177"
+    },
+    "queries": {
+      "path": "datasets/evaluation/isolated_relation_v1_queries.json",
+      "sha256": "63b3c788846cdf26aa412959229b88511dbf86ca0a81302afef159e0daead4d0"
+    },
+    "qrels": {
+      "path": "datasets/evaluation/isolated_relation_v1_qrels.json",
+      "sha256": "d6ffbe7157eafbfa182759fc57d64b7c36f7bbce15ab4551730b69f313bdeef2"
+    },
+    "adapters": {
+      "path": "datasets/evaluation/fair_query_adapters_v1.json",
+      "sha256": "95fe84e4bf7f2c62269cc75b1a5e7f11ccc5927b9525e0bc1b79818e43b4036f"
+    },
+    "requirements": {
+      "path": "requirements-lock.txt",
+      "sha256": "0528f567555e79611a5014202b4de92185ad1f485bde4976f5ebeb3760c7baeb"
+    }
+  },
+  "models": {
+    "minilm": {
+      "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "path": "/var/folders/kh/c85tp66126g2bkzf998_h6s80000gn/T/fastembed_cache/models--qdrant--paraphrase-multilingual-MiniLM-L12-v2-onnx-Q/snapshots/faf4aa4225822f3bc6376869cb1164e8e3feedd0",
+      "expected_max_length": 128,
+      "files_sha256": {
+        "config.json": "c8ec081fdad2df991bf5abbf18418fec7a5cdaa421f60ffb060a30040b8c376f",
+        "model_optimized.onnx": "634d0f66c29dc934c8fa72b8a4fe91dd4d420a22f1d82a241058d4316e659a99",
+        "special_tokens_map.json": "8c785abebea9ae3257b61681b4e6fd8365ceafde980c21970d001e834cf10835",
+        "tokenizer.json": "fa685fc160bbdbab64058d4fc91b60e62d207e8dc60b9af5c002c5ab946ded00",
+        "tokenizer_config.json": "0666eebf692422757e1dddf3c9fb1ded73ba3dc726c5828671fc89e45bf3609f"
+      }
+    },
+    "jina": {
+      "model": "jinaai/jina-embeddings-v2-base-zh",
+      "revision": "c1ff9086a89a1123d7b5eff58055a665db4fb4b9",
+      "path": "data/models/jina-embeddings-v2-base-zh/c1ff9086a89a1123d7b5eff58055a665db4fb4b9",
+      "expected_max_length": 512,
+      "files_sha256": {
+        "config.json": "85a9da5b54ecc2922656a8db6b9628c9123afe0a880062be891e0e4db60d10ff",
+        "tokenizer.json": "0046da43cc8c424b317f56b092b0512aaaa65c4f925d2f16af9d9eeb4d0ef902",
+        "tokenizer_config.json": "d291c6652d96d56ffdbcf1ea19d9bae5ed79003f7648c627e725a619227ce8fa",
+        "special_tokens_map.json": "06e405a36dfe4b9604f484f6a1e619af1a7f7d09e34a8555eb0b77b66318067f",
+        "vocab.json": "62a861857691f39b92935580e929a31e7869056e5de5119ef81f5c62ffa1a4b5",
+        "merges.txt": "34c90c55c32ada402c943c79555515b9eea2cbaf5bbcd970b012a2bc8e0ad331",
+        "README.md": "44e3057eb4a4fd3ddb80c9f64ab41479934fc285b109c8e669230b2ff4310d01",
+        "onnx/model.onnx": "4b0e9fa6e5c77cff56e0c9c673ba1aad61e793e592fdd4b05690b68826b7d3a2"
+      }
+    }
+  },
+  "implementation_sha256": {
+    "scripts/evaluate_language_baselines.py": "fa6605ba96721cf1b9eaddd9c8ec93076b3406f5f037a4868a575b1e215a94de",
+    "scripts/evaluate_fair_retrieval.py": "941802a4cf3f3a2e9c340ae724dddd92d6bf8dcbb4645f1424a5539ebf432056",
+    "scripts/calibrate_fair_retrieval.py": "69b0aaeddbe48b3c914f7a9ef308cea8c76af983029a0a2e464e33b2aeb8633d",
+    "test_language_baselines.py": "433ac48c5a9b6829a5db37ffcc3342c940c506555ad433b4846ae18de3d98b67"
+  },
+  "selection": "One extra bilingual model natively supported by installed FastEmbed; chosen for Chinese-English retrieval, no new dependencies, no remote model inference. Pretrained subword tokenizer compared with unicode61; fixed earlier glossary applied to all methods in a paired ablation.",
+  "common_contract": "Same frozen 111-round raw facts, complete corpus for both dense models and BM25 IDF; same explicit scope/entities/k=5; old fixed models/tokenization/glossary/RRF60 unchanged. No prior rankings exist for parity comparison. Both models encode all 111 documents; actual token capacities 128 vs 512 remain distinct.",
+  "references": [
+    "https://huggingface.co/jinaai/jina-embeddings-v2-base-zh/tree/c1ff9086a89a1123d7b5eff58055a665db4fb4b9",
+    "https://huggingface.co/jinaai/jina-embeddings-v2-base-zh"
+  ],
+  "limitations": [
+    "30 source-selected semantic questions / 60 expressions on two previously observed pipeline-test series, not unseen matches or independent human gold.",
+    "Correct explicit filters/entities are supplied equally to all methods; not an end-to-end natural-language scope test.",
+    "Model, tokenization and actual chunk capacities differ; any gain is a pipeline comparison, not causal attribution to architecture alone.",
+    "No calibrated abstention; all negative errors preserved; not inherent inability of a model.",
+    "Pretrained subword BM25 is a lexical control, not a claim to be a state-of-the-art Chinese lexical baseline.",
+    "No Jina model code executed from download; installed FastEmbed/ONNX runtime only. No provider inference calls."
+  ]
+}

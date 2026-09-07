@@ -1,0 +1,1649 @@
+{
+  "reviewer_kind": "ai_assisted",
+  "independent_human_review": false,
+  "corpus_sha256": "e36e3b0362a35f7c82add789918d8e8d31a948ea767e5984347b5f7f4bb02177",
+  "queries_sha256": "63b3c788846cdf26aa412959229b88511dbf86ca0a81302afef159e0daead4d0",
+  "judgments": [
+    {
+      "query_id": "2396940_Ancient_opening_positive",
+      "eligible_round_ids": [
+        "round:2396940:Ancient:1",
+        "round:2396940:Ancient:10",
+        "round:2396940:Ancient:11",
+        "round:2396940:Ancient:12",
+        "round:2396940:Ancient:13",
+        "round:2396940:Ancient:14",
+        "round:2396940:Ancient:15",
+        "round:2396940:Ancient:16",
+        "round:2396940:Ancient:17",
+        "round:2396940:Ancient:18",
+        "round:2396940:Ancient:19",
+        "round:2396940:Ancient:2",
+        "round:2396940:Ancient:3",
+        "round:2396940:Ancient:4",
+        "round:2396940:Ancient:5",
+        "round:2396940:Ancient:6",
+        "round:2396940:Ancient:7",
+        "round:2396940:Ancient:8",
+        "round:2396940:Ancient:9"
+      ],
+      "relevance": [
+        {
+          "source_round_id": "round:2396940:Ancient:15",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396940:Ancient:15:kill:1"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396940:Ancient:18",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396940:Ancient:18:kill:1"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396940:Ancient:5",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396940:Ancient:5:kill:1"
+            ]
+          ]
+        }
+      ],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396940:Ancient:13",
+          "witness_event_ids": [
+            [
+              "event:2396940:Ancient:13:kill:7"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396940:Ancient:4",
+          "witness_event_ids": [
+            [
+              "event:2396940:Ancient:4:kill:4"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "2396940_Ancient_opening_negative",
+      "eligible_round_ids": [
+        "round:2396940:Ancient:1",
+        "round:2396940:Ancient:10",
+        "round:2396940:Ancient:11",
+        "round:2396940:Ancient:12",
+        "round:2396940:Ancient:13",
+        "round:2396940:Ancient:14",
+        "round:2396940:Ancient:15",
+        "round:2396940:Ancient:16",
+        "round:2396940:Ancient:17",
+        "round:2396940:Ancient:18",
+        "round:2396940:Ancient:19",
+        "round:2396940:Ancient:2",
+        "round:2396940:Ancient:3",
+        "round:2396940:Ancient:4",
+        "round:2396940:Ancient:5",
+        "round:2396940:Ancient:6",
+        "round:2396940:Ancient:7",
+        "round:2396940:Ancient:8",
+        "round:2396940:Ancient:9"
+      ],
+      "relevance": [],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396940:Ancient:9",
+          "witness_event_ids": [
+            [
+              "event:2396940:Ancient:9:kill:5"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "2396940_Ancient_after_plant_positive",
+      "eligible_round_ids": [
+        "round:2396940:Ancient:1",
+        "round:2396940:Ancient:10",
+        "round:2396940:Ancient:11",
+        "round:2396940:Ancient:12",
+        "round:2396940:Ancient:13",
+        "round:2396940:Ancient:14",
+        "round:2396940:Ancient:15",
+        "round:2396940:Ancient:16",
+        "round:2396940:Ancient:17",
+        "round:2396940:Ancient:18",
+        "round:2396940:Ancient:19",
+        "round:2396940:Ancient:2",
+        "round:2396940:Ancient:3",
+        "round:2396940:Ancient:4",
+        "round:2396940:Ancient:5",
+        "round:2396940:Ancient:6",
+        "round:2396940:Ancient:7",
+        "round:2396940:Ancient:8",
+        "round:2396940:Ancient:9"
+      ],
+      "relevance": [
+        {
+          "source_round_id": "round:2396940:Ancient:18",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396940:Ancient:18:plant:1",
+              "event:2396940:Ancient:18:kill:5"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396940:Ancient:2",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396940:Ancient:2:plant:1",
+              "event:2396940:Ancient:2:kill:7"
+            ]
+          ]
+        }
+      ],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396940:Ancient:19",
+          "witness_event_ids": [
+            [
+              "event:2396940:Ancient:19:plant:1",
+              "event:2396940:Ancient:19:kill:3"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "2396940_Ancient_after_plant_negative",
+      "eligible_round_ids": [
+        "round:2396940:Ancient:1",
+        "round:2396940:Ancient:10",
+        "round:2396940:Ancient:11",
+        "round:2396940:Ancient:12",
+        "round:2396940:Ancient:13",
+        "round:2396940:Ancient:14",
+        "round:2396940:Ancient:15",
+        "round:2396940:Ancient:16",
+        "round:2396940:Ancient:17",
+        "round:2396940:Ancient:18",
+        "round:2396940:Ancient:19",
+        "round:2396940:Ancient:2",
+        "round:2396940:Ancient:3",
+        "round:2396940:Ancient:4",
+        "round:2396940:Ancient:5",
+        "round:2396940:Ancient:6",
+        "round:2396940:Ancient:7",
+        "round:2396940:Ancient:8",
+        "round:2396940:Ancient:9"
+      ],
+      "relevance": [],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396940:Ancient:19",
+          "witness_event_ids": [
+            [
+              "event:2396940:Ancient:19:plant:1",
+              "event:2396940:Ancient:19:kill:5"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "2396940_Ancient_trade_positive",
+      "eligible_round_ids": [
+        "round:2396940:Ancient:1",
+        "round:2396940:Ancient:10",
+        "round:2396940:Ancient:11",
+        "round:2396940:Ancient:12",
+        "round:2396940:Ancient:13",
+        "round:2396940:Ancient:14",
+        "round:2396940:Ancient:15",
+        "round:2396940:Ancient:16",
+        "round:2396940:Ancient:17",
+        "round:2396940:Ancient:18",
+        "round:2396940:Ancient:19",
+        "round:2396940:Ancient:2",
+        "round:2396940:Ancient:3",
+        "round:2396940:Ancient:4",
+        "round:2396940:Ancient:5",
+        "round:2396940:Ancient:6",
+        "round:2396940:Ancient:7",
+        "round:2396940:Ancient:8",
+        "round:2396940:Ancient:9"
+      ],
+      "relevance": [
+        {
+          "source_round_id": "round:2396940:Ancient:13",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396940:Ancient:13:kill:5",
+              "event:2396940:Ancient:13:kill:6"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396940:Ancient:3",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396940:Ancient:3:kill:5",
+              "event:2396940:Ancient:3:kill:7"
+            ]
+          ]
+        }
+      ],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396940:Ancient:12",
+          "witness_event_ids": [
+            [
+              "event:2396940:Ancient:12:kill:3",
+              "event:2396940:Ancient:12:kill:5"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396940:Ancient:17",
+          "witness_event_ids": [
+            [
+              "event:2396940:Ancient:17:kill:5",
+              "event:2396940:Ancient:17:kill:6"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "2396940_Ancient_trade_negative",
+      "eligible_round_ids": [
+        "round:2396940:Ancient:1",
+        "round:2396940:Ancient:10",
+        "round:2396940:Ancient:11",
+        "round:2396940:Ancient:12",
+        "round:2396940:Ancient:13",
+        "round:2396940:Ancient:14",
+        "round:2396940:Ancient:15",
+        "round:2396940:Ancient:16",
+        "round:2396940:Ancient:17",
+        "round:2396940:Ancient:18",
+        "round:2396940:Ancient:19",
+        "round:2396940:Ancient:2",
+        "round:2396940:Ancient:3",
+        "round:2396940:Ancient:4",
+        "round:2396940:Ancient:5",
+        "round:2396940:Ancient:6",
+        "round:2396940:Ancient:7",
+        "round:2396940:Ancient:8",
+        "round:2396940:Ancient:9"
+      ],
+      "relevance": [],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396940:Ancient:17",
+          "witness_event_ids": [
+            [
+              "event:2396940:Ancient:17:kill:1",
+              "event:2396940:Ancient:17:kill:3"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "2396940_Inferno_opening_positive",
+      "eligible_round_ids": [
+        "round:2396940:Inferno:1",
+        "round:2396940:Inferno:10",
+        "round:2396940:Inferno:11",
+        "round:2396940:Inferno:12",
+        "round:2396940:Inferno:13",
+        "round:2396940:Inferno:14",
+        "round:2396940:Inferno:15",
+        "round:2396940:Inferno:16",
+        "round:2396940:Inferno:17",
+        "round:2396940:Inferno:18",
+        "round:2396940:Inferno:19",
+        "round:2396940:Inferno:2",
+        "round:2396940:Inferno:20",
+        "round:2396940:Inferno:21",
+        "round:2396940:Inferno:22",
+        "round:2396940:Inferno:23",
+        "round:2396940:Inferno:3",
+        "round:2396940:Inferno:4",
+        "round:2396940:Inferno:5",
+        "round:2396940:Inferno:6",
+        "round:2396940:Inferno:7",
+        "round:2396940:Inferno:8",
+        "round:2396940:Inferno:9"
+      ],
+      "relevance": [
+        {
+          "source_round_id": "round:2396940:Inferno:14",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396940:Inferno:14:kill:1"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396940:Inferno:23",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396940:Inferno:23:kill:1"
+            ]
+          ]
+        }
+      ],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396940:Inferno:17",
+          "witness_event_ids": [
+            [
+              "event:2396940:Inferno:17:kill:3"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "2396940_Inferno_opening_negative",
+      "eligible_round_ids": [
+        "round:2396940:Inferno:1",
+        "round:2396940:Inferno:10",
+        "round:2396940:Inferno:11",
+        "round:2396940:Inferno:12",
+        "round:2396940:Inferno:13",
+        "round:2396940:Inferno:14",
+        "round:2396940:Inferno:15",
+        "round:2396940:Inferno:16",
+        "round:2396940:Inferno:17",
+        "round:2396940:Inferno:18",
+        "round:2396940:Inferno:19",
+        "round:2396940:Inferno:2",
+        "round:2396940:Inferno:20",
+        "round:2396940:Inferno:21",
+        "round:2396940:Inferno:22",
+        "round:2396940:Inferno:23",
+        "round:2396940:Inferno:3",
+        "round:2396940:Inferno:4",
+        "round:2396940:Inferno:5",
+        "round:2396940:Inferno:6",
+        "round:2396940:Inferno:7",
+        "round:2396940:Inferno:8",
+        "round:2396940:Inferno:9"
+      ],
+      "relevance": [],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396940:Inferno:3",
+          "witness_event_ids": [
+            [
+              "event:2396940:Inferno:3:kill:4"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "2396940_Inferno_after_plant_positive",
+      "eligible_round_ids": [
+        "round:2396940:Inferno:1",
+        "round:2396940:Inferno:10",
+        "round:2396940:Inferno:11",
+        "round:2396940:Inferno:12",
+        "round:2396940:Inferno:13",
+        "round:2396940:Inferno:14",
+        "round:2396940:Inferno:15",
+        "round:2396940:Inferno:16",
+        "round:2396940:Inferno:17",
+        "round:2396940:Inferno:18",
+        "round:2396940:Inferno:19",
+        "round:2396940:Inferno:2",
+        "round:2396940:Inferno:20",
+        "round:2396940:Inferno:21",
+        "round:2396940:Inferno:22",
+        "round:2396940:Inferno:23",
+        "round:2396940:Inferno:3",
+        "round:2396940:Inferno:4",
+        "round:2396940:Inferno:5",
+        "round:2396940:Inferno:6",
+        "round:2396940:Inferno:7",
+        "round:2396940:Inferno:8",
+        "round:2396940:Inferno:9"
+      ],
+      "relevance": [
+        {
+          "source_round_id": "round:2396940:Inferno:1",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396940:Inferno:1:plant:1",
+              "event:2396940:Inferno:1:kill:9"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396940:Inferno:11",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396940:Inferno:11:plant:1",
+              "event:2396940:Inferno:11:kill:7"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396940:Inferno:5",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396940:Inferno:5:plant:1",
+              "event:2396940:Inferno:5:kill:5"
+            ]
+          ]
+        }
+      ],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396940:Inferno:16",
+          "witness_event_ids": [
+            [
+              "event:2396940:Inferno:16:plant:1",
+              "event:2396940:Inferno:16:kill:2"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396940:Inferno:3",
+          "witness_event_ids": [
+            [
+              "event:2396940:Inferno:3:plant:1",
+              "event:2396940:Inferno:3:kill:3"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "2396940_Inferno_after_plant_negative",
+      "eligible_round_ids": [
+        "round:2396940:Inferno:1",
+        "round:2396940:Inferno:10",
+        "round:2396940:Inferno:11",
+        "round:2396940:Inferno:12",
+        "round:2396940:Inferno:13",
+        "round:2396940:Inferno:14",
+        "round:2396940:Inferno:15",
+        "round:2396940:Inferno:16",
+        "round:2396940:Inferno:17",
+        "round:2396940:Inferno:18",
+        "round:2396940:Inferno:19",
+        "round:2396940:Inferno:2",
+        "round:2396940:Inferno:20",
+        "round:2396940:Inferno:21",
+        "round:2396940:Inferno:22",
+        "round:2396940:Inferno:23",
+        "round:2396940:Inferno:3",
+        "round:2396940:Inferno:4",
+        "round:2396940:Inferno:5",
+        "round:2396940:Inferno:6",
+        "round:2396940:Inferno:7",
+        "round:2396940:Inferno:8",
+        "round:2396940:Inferno:9"
+      ],
+      "relevance": [],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396940:Inferno:3",
+          "witness_event_ids": [
+            [
+              "event:2396940:Inferno:3:plant:1",
+              "event:2396940:Inferno:3:kill:1"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "2396940_Inferno_trade_positive",
+      "eligible_round_ids": [
+        "round:2396940:Inferno:1",
+        "round:2396940:Inferno:10",
+        "round:2396940:Inferno:11",
+        "round:2396940:Inferno:12",
+        "round:2396940:Inferno:13",
+        "round:2396940:Inferno:14",
+        "round:2396940:Inferno:15",
+        "round:2396940:Inferno:16",
+        "round:2396940:Inferno:17",
+        "round:2396940:Inferno:18",
+        "round:2396940:Inferno:19",
+        "round:2396940:Inferno:2",
+        "round:2396940:Inferno:20",
+        "round:2396940:Inferno:21",
+        "round:2396940:Inferno:22",
+        "round:2396940:Inferno:23",
+        "round:2396940:Inferno:3",
+        "round:2396940:Inferno:4",
+        "round:2396940:Inferno:5",
+        "round:2396940:Inferno:6",
+        "round:2396940:Inferno:7",
+        "round:2396940:Inferno:8",
+        "round:2396940:Inferno:9"
+      ],
+      "relevance": [
+        {
+          "source_round_id": "round:2396940:Inferno:2",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396940:Inferno:2:kill:1",
+              "event:2396940:Inferno:2:kill:2"
+            ]
+          ]
+        }
+      ],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396940:Inferno:8",
+          "witness_event_ids": [
+            [
+              "event:2396940:Inferno:8:kill:1",
+              "event:2396940:Inferno:8:kill:5"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "2396940_Inferno_trade_negative",
+      "eligible_round_ids": [
+        "round:2396940:Inferno:1",
+        "round:2396940:Inferno:10",
+        "round:2396940:Inferno:11",
+        "round:2396940:Inferno:12",
+        "round:2396940:Inferno:13",
+        "round:2396940:Inferno:14",
+        "round:2396940:Inferno:15",
+        "round:2396940:Inferno:16",
+        "round:2396940:Inferno:17",
+        "round:2396940:Inferno:18",
+        "round:2396940:Inferno:19",
+        "round:2396940:Inferno:2",
+        "round:2396940:Inferno:20",
+        "round:2396940:Inferno:21",
+        "round:2396940:Inferno:22",
+        "round:2396940:Inferno:23",
+        "round:2396940:Inferno:3",
+        "round:2396940:Inferno:4",
+        "round:2396940:Inferno:5",
+        "round:2396940:Inferno:6",
+        "round:2396940:Inferno:7",
+        "round:2396940:Inferno:8",
+        "round:2396940:Inferno:9"
+      ],
+      "relevance": [],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396940:Inferno:1",
+          "witness_event_ids": [
+            [
+              "event:2396940:Inferno:1:kill:4",
+              "event:2396940:Inferno:1:kill:7"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "2396944_Anubis_opening_positive",
+      "eligible_round_ids": [
+        "round:2396944:Anubis:1",
+        "round:2396944:Anubis:10",
+        "round:2396944:Anubis:11",
+        "round:2396944:Anubis:12",
+        "round:2396944:Anubis:13",
+        "round:2396944:Anubis:14",
+        "round:2396944:Anubis:15",
+        "round:2396944:Anubis:16",
+        "round:2396944:Anubis:17",
+        "round:2396944:Anubis:18",
+        "round:2396944:Anubis:19",
+        "round:2396944:Anubis:2",
+        "round:2396944:Anubis:20",
+        "round:2396944:Anubis:3",
+        "round:2396944:Anubis:4",
+        "round:2396944:Anubis:5",
+        "round:2396944:Anubis:6",
+        "round:2396944:Anubis:7",
+        "round:2396944:Anubis:8",
+        "round:2396944:Anubis:9"
+      ],
+      "relevance": [
+        {
+          "source_round_id": "round:2396944:Anubis:10",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396944:Anubis:10:kill:1"
+            ]
+          ]
+        }
+      ],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396944:Anubis:14",
+          "witness_event_ids": [
+            [
+              "event:2396944:Anubis:14:kill:5"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396944:Anubis:9",
+          "witness_event_ids": [
+            [
+              "event:2396944:Anubis:9:kill:9"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "2396944_Anubis_opening_negative",
+      "eligible_round_ids": [
+        "round:2396944:Anubis:1",
+        "round:2396944:Anubis:10",
+        "round:2396944:Anubis:11",
+        "round:2396944:Anubis:12",
+        "round:2396944:Anubis:13",
+        "round:2396944:Anubis:14",
+        "round:2396944:Anubis:15",
+        "round:2396944:Anubis:16",
+        "round:2396944:Anubis:17",
+        "round:2396944:Anubis:18",
+        "round:2396944:Anubis:19",
+        "round:2396944:Anubis:2",
+        "round:2396944:Anubis:20",
+        "round:2396944:Anubis:3",
+        "round:2396944:Anubis:4",
+        "round:2396944:Anubis:5",
+        "round:2396944:Anubis:6",
+        "round:2396944:Anubis:7",
+        "round:2396944:Anubis:8",
+        "round:2396944:Anubis:9"
+      ],
+      "relevance": [],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396944:Anubis:4",
+          "witness_event_ids": [
+            [
+              "event:2396944:Anubis:4:kill:2"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "2396944_Anubis_after_plant_positive",
+      "eligible_round_ids": [
+        "round:2396944:Anubis:1",
+        "round:2396944:Anubis:10",
+        "round:2396944:Anubis:11",
+        "round:2396944:Anubis:12",
+        "round:2396944:Anubis:13",
+        "round:2396944:Anubis:14",
+        "round:2396944:Anubis:15",
+        "round:2396944:Anubis:16",
+        "round:2396944:Anubis:17",
+        "round:2396944:Anubis:18",
+        "round:2396944:Anubis:19",
+        "round:2396944:Anubis:2",
+        "round:2396944:Anubis:20",
+        "round:2396944:Anubis:3",
+        "round:2396944:Anubis:4",
+        "round:2396944:Anubis:5",
+        "round:2396944:Anubis:6",
+        "round:2396944:Anubis:7",
+        "round:2396944:Anubis:8",
+        "round:2396944:Anubis:9"
+      ],
+      "relevance": [
+        {
+          "source_round_id": "round:2396944:Anubis:12",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396944:Anubis:12:plant:1",
+              "event:2396944:Anubis:12:kill:8"
+            ]
+          ]
+        }
+      ],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396944:Anubis:9",
+          "witness_event_ids": [
+            [
+              "event:2396944:Anubis:9:plant:1",
+              "event:2396944:Anubis:9:kill:3"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "2396944_Anubis_after_plant_negative",
+      "eligible_round_ids": [
+        "round:2396944:Anubis:1",
+        "round:2396944:Anubis:10",
+        "round:2396944:Anubis:11",
+        "round:2396944:Anubis:12",
+        "round:2396944:Anubis:13",
+        "round:2396944:Anubis:14",
+        "round:2396944:Anubis:15",
+        "round:2396944:Anubis:16",
+        "round:2396944:Anubis:17",
+        "round:2396944:Anubis:18",
+        "round:2396944:Anubis:19",
+        "round:2396944:Anubis:2",
+        "round:2396944:Anubis:20",
+        "round:2396944:Anubis:3",
+        "round:2396944:Anubis:4",
+        "round:2396944:Anubis:5",
+        "round:2396944:Anubis:6",
+        "round:2396944:Anubis:7",
+        "round:2396944:Anubis:8",
+        "round:2396944:Anubis:9"
+      ],
+      "relevance": [],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396944:Anubis:12",
+          "witness_event_ids": [
+            [
+              "event:2396944:Anubis:12:plant:1",
+              "event:2396944:Anubis:12:kill:4"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396944:Anubis:20",
+          "witness_event_ids": [
+            [
+              "event:2396944:Anubis:20:plant:1",
+              "event:2396944:Anubis:20:kill:3"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "2396944_Anubis_trade_positive",
+      "eligible_round_ids": [
+        "round:2396944:Anubis:1",
+        "round:2396944:Anubis:10",
+        "round:2396944:Anubis:11",
+        "round:2396944:Anubis:12",
+        "round:2396944:Anubis:13",
+        "round:2396944:Anubis:14",
+        "round:2396944:Anubis:15",
+        "round:2396944:Anubis:16",
+        "round:2396944:Anubis:17",
+        "round:2396944:Anubis:18",
+        "round:2396944:Anubis:19",
+        "round:2396944:Anubis:2",
+        "round:2396944:Anubis:20",
+        "round:2396944:Anubis:3",
+        "round:2396944:Anubis:4",
+        "round:2396944:Anubis:5",
+        "round:2396944:Anubis:6",
+        "round:2396944:Anubis:7",
+        "round:2396944:Anubis:8",
+        "round:2396944:Anubis:9"
+      ],
+      "relevance": [
+        {
+          "source_round_id": "round:2396944:Anubis:3",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396944:Anubis:3:kill:5",
+              "event:2396944:Anubis:3:kill:6"
+            ]
+          ]
+        }
+      ],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396944:Anubis:15",
+          "witness_event_ids": [
+            [
+              "event:2396944:Anubis:15:kill:6",
+              "event:2396944:Anubis:15:kill:9"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "2396944_Anubis_trade_negative",
+      "eligible_round_ids": [
+        "round:2396944:Anubis:1",
+        "round:2396944:Anubis:10",
+        "round:2396944:Anubis:11",
+        "round:2396944:Anubis:12",
+        "round:2396944:Anubis:13",
+        "round:2396944:Anubis:14",
+        "round:2396944:Anubis:15",
+        "round:2396944:Anubis:16",
+        "round:2396944:Anubis:17",
+        "round:2396944:Anubis:18",
+        "round:2396944:Anubis:19",
+        "round:2396944:Anubis:2",
+        "round:2396944:Anubis:20",
+        "round:2396944:Anubis:3",
+        "round:2396944:Anubis:4",
+        "round:2396944:Anubis:5",
+        "round:2396944:Anubis:6",
+        "round:2396944:Anubis:7",
+        "round:2396944:Anubis:8",
+        "round:2396944:Anubis:9"
+      ],
+      "relevance": [],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396944:Anubis:15",
+          "witness_event_ids": [
+            [
+              "event:2396944:Anubis:15:kill:4",
+              "event:2396944:Anubis:15:kill:5"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396944:Anubis:3",
+          "witness_event_ids": [
+            [
+              "event:2396944:Anubis:3:kill:3",
+              "event:2396944:Anubis:3:kill:6"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396944:Anubis:8",
+          "witness_event_ids": [
+            [
+              "event:2396944:Anubis:8:kill:1",
+              "event:2396944:Anubis:8:kill:4"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "2396944_Inferno_opening_positive",
+      "eligible_round_ids": [
+        "round:2396944:Inferno:1",
+        "round:2396944:Inferno:10",
+        "round:2396944:Inferno:11",
+        "round:2396944:Inferno:12",
+        "round:2396944:Inferno:13",
+        "round:2396944:Inferno:14",
+        "round:2396944:Inferno:15",
+        "round:2396944:Inferno:16",
+        "round:2396944:Inferno:17",
+        "round:2396944:Inferno:18",
+        "round:2396944:Inferno:19",
+        "round:2396944:Inferno:2",
+        "round:2396944:Inferno:20",
+        "round:2396944:Inferno:21",
+        "round:2396944:Inferno:22",
+        "round:2396944:Inferno:23",
+        "round:2396944:Inferno:24",
+        "round:2396944:Inferno:25",
+        "round:2396944:Inferno:26",
+        "round:2396944:Inferno:27",
+        "round:2396944:Inferno:28",
+        "round:2396944:Inferno:29",
+        "round:2396944:Inferno:3",
+        "round:2396944:Inferno:30",
+        "round:2396944:Inferno:31",
+        "round:2396944:Inferno:32",
+        "round:2396944:Inferno:33",
+        "round:2396944:Inferno:34",
+        "round:2396944:Inferno:35",
+        "round:2396944:Inferno:4",
+        "round:2396944:Inferno:5",
+        "round:2396944:Inferno:6",
+        "round:2396944:Inferno:7",
+        "round:2396944:Inferno:8",
+        "round:2396944:Inferno:9"
+      ],
+      "relevance": [
+        {
+          "source_round_id": "round:2396944:Inferno:34",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396944:Inferno:34:kill:1"
+            ]
+          ]
+        }
+      ],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396944:Inferno:17",
+          "witness_event_ids": [
+            [
+              "event:2396944:Inferno:17:kill:4"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396944:Inferno:23",
+          "witness_event_ids": [
+            [
+              "event:2396944:Inferno:23:kill:6"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396944:Inferno:29",
+          "witness_event_ids": [
+            [
+              "event:2396944:Inferno:29:kill:3"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396944:Inferno:4",
+          "witness_event_ids": [
+            [
+              "event:2396944:Inferno:4:kill:8"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396944:Inferno:7",
+          "witness_event_ids": [
+            [
+              "event:2396944:Inferno:7:kill:7"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396944:Inferno:9",
+          "witness_event_ids": [
+            [
+              "event:2396944:Inferno:9:kill:5"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "2396944_Inferno_opening_negative",
+      "eligible_round_ids": [
+        "round:2396944:Inferno:1",
+        "round:2396944:Inferno:10",
+        "round:2396944:Inferno:11",
+        "round:2396944:Inferno:12",
+        "round:2396944:Inferno:13",
+        "round:2396944:Inferno:14",
+        "round:2396944:Inferno:15",
+        "round:2396944:Inferno:16",
+        "round:2396944:Inferno:17",
+        "round:2396944:Inferno:18",
+        "round:2396944:Inferno:19",
+        "round:2396944:Inferno:2",
+        "round:2396944:Inferno:20",
+        "round:2396944:Inferno:21",
+        "round:2396944:Inferno:22",
+        "round:2396944:Inferno:23",
+        "round:2396944:Inferno:24",
+        "round:2396944:Inferno:25",
+        "round:2396944:Inferno:26",
+        "round:2396944:Inferno:27",
+        "round:2396944:Inferno:28",
+        "round:2396944:Inferno:29",
+        "round:2396944:Inferno:3",
+        "round:2396944:Inferno:30",
+        "round:2396944:Inferno:31",
+        "round:2396944:Inferno:32",
+        "round:2396944:Inferno:33",
+        "round:2396944:Inferno:34",
+        "round:2396944:Inferno:35",
+        "round:2396944:Inferno:4",
+        "round:2396944:Inferno:5",
+        "round:2396944:Inferno:6",
+        "round:2396944:Inferno:7",
+        "round:2396944:Inferno:8",
+        "round:2396944:Inferno:9"
+      ],
+      "relevance": [],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396944:Inferno:4",
+          "witness_event_ids": [
+            [
+              "event:2396944:Inferno:4:kill:6"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396944:Inferno:5",
+          "witness_event_ids": [
+            [
+              "event:2396944:Inferno:5:kill:9"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396944:Inferno:8",
+          "witness_event_ids": [
+            [
+              "event:2396944:Inferno:8:kill:4"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "2396944_Inferno_after_plant_positive",
+      "eligible_round_ids": [
+        "round:2396944:Inferno:1",
+        "round:2396944:Inferno:10",
+        "round:2396944:Inferno:11",
+        "round:2396944:Inferno:12",
+        "round:2396944:Inferno:13",
+        "round:2396944:Inferno:14",
+        "round:2396944:Inferno:15",
+        "round:2396944:Inferno:16",
+        "round:2396944:Inferno:17",
+        "round:2396944:Inferno:18",
+        "round:2396944:Inferno:19",
+        "round:2396944:Inferno:2",
+        "round:2396944:Inferno:20",
+        "round:2396944:Inferno:21",
+        "round:2396944:Inferno:22",
+        "round:2396944:Inferno:23",
+        "round:2396944:Inferno:24",
+        "round:2396944:Inferno:25",
+        "round:2396944:Inferno:26",
+        "round:2396944:Inferno:27",
+        "round:2396944:Inferno:28",
+        "round:2396944:Inferno:29",
+        "round:2396944:Inferno:3",
+        "round:2396944:Inferno:30",
+        "round:2396944:Inferno:31",
+        "round:2396944:Inferno:32",
+        "round:2396944:Inferno:33",
+        "round:2396944:Inferno:34",
+        "round:2396944:Inferno:35",
+        "round:2396944:Inferno:4",
+        "round:2396944:Inferno:5",
+        "round:2396944:Inferno:6",
+        "round:2396944:Inferno:7",
+        "round:2396944:Inferno:8",
+        "round:2396944:Inferno:9"
+      ],
+      "relevance": [
+        {
+          "source_round_id": "round:2396944:Inferno:7",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396944:Inferno:7:plant:1",
+              "event:2396944:Inferno:7:kill:6"
+            ]
+          ]
+        }
+      ],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396944:Inferno:19",
+          "witness_event_ids": [
+            [
+              "event:2396944:Inferno:19:plant:1",
+              "event:2396944:Inferno:19:kill:2"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396944:Inferno:31",
+          "witness_event_ids": [
+            [
+              "event:2396944:Inferno:31:plant:1",
+              "event:2396944:Inferno:31:kill:4"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396944:Inferno:33",
+          "witness_event_ids": [
+            [
+              "event:2396944:Inferno:33:plant:1",
+              "event:2396944:Inferno:33:kill:4"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "2396944_Inferno_after_plant_negative",
+      "eligible_round_ids": [
+        "round:2396944:Inferno:1",
+        "round:2396944:Inferno:10",
+        "round:2396944:Inferno:11",
+        "round:2396944:Inferno:12",
+        "round:2396944:Inferno:13",
+        "round:2396944:Inferno:14",
+        "round:2396944:Inferno:15",
+        "round:2396944:Inferno:16",
+        "round:2396944:Inferno:17",
+        "round:2396944:Inferno:18",
+        "round:2396944:Inferno:19",
+        "round:2396944:Inferno:2",
+        "round:2396944:Inferno:20",
+        "round:2396944:Inferno:21",
+        "round:2396944:Inferno:22",
+        "round:2396944:Inferno:23",
+        "round:2396944:Inferno:24",
+        "round:2396944:Inferno:25",
+        "round:2396944:Inferno:26",
+        "round:2396944:Inferno:27",
+        "round:2396944:Inferno:28",
+        "round:2396944:Inferno:29",
+        "round:2396944:Inferno:3",
+        "round:2396944:Inferno:30",
+        "round:2396944:Inferno:31",
+        "round:2396944:Inferno:32",
+        "round:2396944:Inferno:33",
+        "round:2396944:Inferno:34",
+        "round:2396944:Inferno:35",
+        "round:2396944:Inferno:4",
+        "round:2396944:Inferno:5",
+        "round:2396944:Inferno:6",
+        "round:2396944:Inferno:7",
+        "round:2396944:Inferno:8",
+        "round:2396944:Inferno:9"
+      ],
+      "relevance": [],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396944:Inferno:16",
+          "witness_event_ids": [
+            [
+              "event:2396944:Inferno:16:plant:1",
+              "event:2396944:Inferno:16:kill:5"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396944:Inferno:17",
+          "witness_event_ids": [
+            [
+              "event:2396944:Inferno:17:plant:1",
+              "event:2396944:Inferno:17:kill:1"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396944:Inferno:22",
+          "witness_event_ids": [
+            [
+              "event:2396944:Inferno:22:plant:1",
+              "event:2396944:Inferno:22:kill:2"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396944:Inferno:35",
+          "witness_event_ids": [
+            [
+              "event:2396944:Inferno:35:plant:1",
+              "event:2396944:Inferno:35:kill:2"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396944:Inferno:6",
+          "witness_event_ids": [
+            [
+              "event:2396944:Inferno:6:plant:1",
+              "event:2396944:Inferno:6:kill:3"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "2396944_Inferno_trade_positive",
+      "eligible_round_ids": [
+        "round:2396944:Inferno:1",
+        "round:2396944:Inferno:10",
+        "round:2396944:Inferno:11",
+        "round:2396944:Inferno:12",
+        "round:2396944:Inferno:13",
+        "round:2396944:Inferno:14",
+        "round:2396944:Inferno:15",
+        "round:2396944:Inferno:16",
+        "round:2396944:Inferno:17",
+        "round:2396944:Inferno:18",
+        "round:2396944:Inferno:19",
+        "round:2396944:Inferno:2",
+        "round:2396944:Inferno:20",
+        "round:2396944:Inferno:21",
+        "round:2396944:Inferno:22",
+        "round:2396944:Inferno:23",
+        "round:2396944:Inferno:24",
+        "round:2396944:Inferno:25",
+        "round:2396944:Inferno:26",
+        "round:2396944:Inferno:27",
+        "round:2396944:Inferno:28",
+        "round:2396944:Inferno:29",
+        "round:2396944:Inferno:3",
+        "round:2396944:Inferno:30",
+        "round:2396944:Inferno:31",
+        "round:2396944:Inferno:32",
+        "round:2396944:Inferno:33",
+        "round:2396944:Inferno:34",
+        "round:2396944:Inferno:35",
+        "round:2396944:Inferno:4",
+        "round:2396944:Inferno:5",
+        "round:2396944:Inferno:6",
+        "round:2396944:Inferno:7",
+        "round:2396944:Inferno:8",
+        "round:2396944:Inferno:9"
+      ],
+      "relevance": [
+        {
+          "source_round_id": "round:2396944:Inferno:4",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396944:Inferno:4:kill:2",
+              "event:2396944:Inferno:4:kill:6"
+            ]
+          ]
+        }
+      ],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396944:Inferno:5",
+          "witness_event_ids": [
+            [
+              "event:2396944:Inferno:5:kill:7",
+              "event:2396944:Inferno:5:kill:9"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "2396944_Inferno_trade_negative",
+      "eligible_round_ids": [
+        "round:2396944:Inferno:1",
+        "round:2396944:Inferno:10",
+        "round:2396944:Inferno:11",
+        "round:2396944:Inferno:12",
+        "round:2396944:Inferno:13",
+        "round:2396944:Inferno:14",
+        "round:2396944:Inferno:15",
+        "round:2396944:Inferno:16",
+        "round:2396944:Inferno:17",
+        "round:2396944:Inferno:18",
+        "round:2396944:Inferno:19",
+        "round:2396944:Inferno:2",
+        "round:2396944:Inferno:20",
+        "round:2396944:Inferno:21",
+        "round:2396944:Inferno:22",
+        "round:2396944:Inferno:23",
+        "round:2396944:Inferno:24",
+        "round:2396944:Inferno:25",
+        "round:2396944:Inferno:26",
+        "round:2396944:Inferno:27",
+        "round:2396944:Inferno:28",
+        "round:2396944:Inferno:29",
+        "round:2396944:Inferno:3",
+        "round:2396944:Inferno:30",
+        "round:2396944:Inferno:31",
+        "round:2396944:Inferno:32",
+        "round:2396944:Inferno:33",
+        "round:2396944:Inferno:34",
+        "round:2396944:Inferno:35",
+        "round:2396944:Inferno:4",
+        "round:2396944:Inferno:5",
+        "round:2396944:Inferno:6",
+        "round:2396944:Inferno:7",
+        "round:2396944:Inferno:8",
+        "round:2396944:Inferno:9"
+      ],
+      "relevance": [],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396944:Inferno:33",
+          "witness_event_ids": [
+            [
+              "event:2396944:Inferno:33:kill:3",
+              "event:2396944:Inferno:33:kill:4"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "2396944_Mirage_opening_positive",
+      "eligible_round_ids": [
+        "round:2396944:Mirage:1",
+        "round:2396944:Mirage:10",
+        "round:2396944:Mirage:11",
+        "round:2396944:Mirage:12",
+        "round:2396944:Mirage:13",
+        "round:2396944:Mirage:14",
+        "round:2396944:Mirage:2",
+        "round:2396944:Mirage:3",
+        "round:2396944:Mirage:4",
+        "round:2396944:Mirage:5",
+        "round:2396944:Mirage:6",
+        "round:2396944:Mirage:7",
+        "round:2396944:Mirage:8",
+        "round:2396944:Mirage:9"
+      ],
+      "relevance": [
+        {
+          "source_round_id": "round:2396944:Mirage:10",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396944:Mirage:10:kill:1"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396944:Mirage:12",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396944:Mirage:12:kill:1"
+            ]
+          ]
+        }
+      ],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396944:Mirage:14",
+          "witness_event_ids": [
+            [
+              "event:2396944:Mirage:14:kill:2"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "2396944_Mirage_opening_negative",
+      "eligible_round_ids": [
+        "round:2396944:Mirage:1",
+        "round:2396944:Mirage:10",
+        "round:2396944:Mirage:11",
+        "round:2396944:Mirage:12",
+        "round:2396944:Mirage:13",
+        "round:2396944:Mirage:14",
+        "round:2396944:Mirage:2",
+        "round:2396944:Mirage:3",
+        "round:2396944:Mirage:4",
+        "round:2396944:Mirage:5",
+        "round:2396944:Mirage:6",
+        "round:2396944:Mirage:7",
+        "round:2396944:Mirage:8",
+        "round:2396944:Mirage:9"
+      ],
+      "relevance": [],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396944:Mirage:8",
+          "witness_event_ids": [
+            [
+              "event:2396944:Mirage:8:kill:3"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "2396944_Mirage_after_plant_positive",
+      "eligible_round_ids": [
+        "round:2396944:Mirage:1",
+        "round:2396944:Mirage:10",
+        "round:2396944:Mirage:11",
+        "round:2396944:Mirage:12",
+        "round:2396944:Mirage:13",
+        "round:2396944:Mirage:14",
+        "round:2396944:Mirage:2",
+        "round:2396944:Mirage:3",
+        "round:2396944:Mirage:4",
+        "round:2396944:Mirage:5",
+        "round:2396944:Mirage:6",
+        "round:2396944:Mirage:7",
+        "round:2396944:Mirage:8",
+        "round:2396944:Mirage:9"
+      ],
+      "relevance": [
+        {
+          "source_round_id": "round:2396944:Mirage:13",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396944:Mirage:13:plant:1",
+              "event:2396944:Mirage:13:kill:8"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396944:Mirage:2",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396944:Mirage:2:plant:1",
+              "event:2396944:Mirage:2:kill:8"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396944:Mirage:7",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396944:Mirage:7:plant:1",
+              "event:2396944:Mirage:7:kill:5"
+            ]
+          ]
+        }
+      ],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396944:Mirage:4",
+          "witness_event_ids": [
+            [
+              "event:2396944:Mirage:4:plant:1",
+              "event:2396944:Mirage:4:kill:3"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "2396944_Mirage_after_plant_negative",
+      "eligible_round_ids": [
+        "round:2396944:Mirage:1",
+        "round:2396944:Mirage:10",
+        "round:2396944:Mirage:11",
+        "round:2396944:Mirage:12",
+        "round:2396944:Mirage:13",
+        "round:2396944:Mirage:14",
+        "round:2396944:Mirage:2",
+        "round:2396944:Mirage:3",
+        "round:2396944:Mirage:4",
+        "round:2396944:Mirage:5",
+        "round:2396944:Mirage:6",
+        "round:2396944:Mirage:7",
+        "round:2396944:Mirage:8",
+        "round:2396944:Mirage:9"
+      ],
+      "relevance": [],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396944:Mirage:8",
+          "witness_event_ids": [
+            [
+              "event:2396944:Mirage:8:plant:1",
+              "event:2396944:Mirage:8:kill:2"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "2396944_Mirage_trade_positive",
+      "eligible_round_ids": [
+        "round:2396944:Mirage:1",
+        "round:2396944:Mirage:10",
+        "round:2396944:Mirage:11",
+        "round:2396944:Mirage:12",
+        "round:2396944:Mirage:13",
+        "round:2396944:Mirage:14",
+        "round:2396944:Mirage:2",
+        "round:2396944:Mirage:3",
+        "round:2396944:Mirage:4",
+        "round:2396944:Mirage:5",
+        "round:2396944:Mirage:6",
+        "round:2396944:Mirage:7",
+        "round:2396944:Mirage:8",
+        "round:2396944:Mirage:9"
+      ],
+      "relevance": [
+        {
+          "source_round_id": "round:2396944:Mirage:4",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396944:Mirage:4:kill:2",
+              "event:2396944:Mirage:4:kill:3"
+            ]
+          ]
+        }
+      ],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396944:Mirage:1",
+          "witness_event_ids": [
+            [
+              "event:2396944:Mirage:1:kill:1",
+              "event:2396944:Mirage:1:kill:3"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396944:Mirage:2",
+          "witness_event_ids": [
+            [
+              "event:2396944:Mirage:2:kill:3",
+              "event:2396944:Mirage:2:kill:8"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396944:Mirage:7",
+          "witness_event_ids": [
+            [
+              "event:2396944:Mirage:7:kill:3",
+              "event:2396944:Mirage:7:kill:4"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "2396944_Mirage_trade_negative",
+      "eligible_round_ids": [
+        "round:2396944:Mirage:1",
+        "round:2396944:Mirage:10",
+        "round:2396944:Mirage:11",
+        "round:2396944:Mirage:12",
+        "round:2396944:Mirage:13",
+        "round:2396944:Mirage:14",
+        "round:2396944:Mirage:2",
+        "round:2396944:Mirage:3",
+        "round:2396944:Mirage:4",
+        "round:2396944:Mirage:5",
+        "round:2396944:Mirage:6",
+        "round:2396944:Mirage:7",
+        "round:2396944:Mirage:8",
+        "round:2396944:Mirage:9"
+      ],
+      "relevance": [],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396944:Mirage:5",
+          "witness_event_ids": [
+            [
+              "event:2396944:Mirage:5:kill:2",
+              "event:2396944:Mirage:5:kill:6"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    }
+  ]
+}

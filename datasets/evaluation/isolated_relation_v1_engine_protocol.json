@@ -1,0 +1,61 @@
+{
+  "version": "isolated-relation-engine-v1",
+  "k": 5,
+  "inputs": {
+    "graph": {
+      "path": "data/evaluation/isolated_relations_v1/graph.sqlite",
+      "sha256": "057f839a8fad55f707feb529e79986c314bedf41f0d774713fbabae22d2afe95"
+    },
+    "queries": {
+      "path": "datasets/evaluation/isolated_relation_v1_queries.json",
+      "sha256": "63b3c788846cdf26aa412959229b88511dbf86ca0a81302afef159e0daead4d0"
+    },
+    "qrels": {
+      "path": "datasets/evaluation/isolated_relation_v1_qrels.json",
+      "sha256": "d6ffbe7157eafbfa182759fc57d64b7c36f7bbce15ab4551730b69f313bdeef2"
+    },
+    "original_protocol": {
+      "path": "datasets/evaluation/relation_v1_protocol.json",
+      "sha256": "90f5bed4ee3cb1f7e3f62d75fafbc3ef1e43dd02ffd4ff216d7ade53835001e9"
+    },
+    "requirements": {
+      "path": "requirements-lock.txt",
+      "sha256": "0528f567555e79611a5014202b4de92185ad1f485bde4976f5ebeb3760c7baeb"
+    },
+    "expressions_cases": {
+      "path": "datasets/evaluation/relation_expression_v2_cases.json",
+      "sha256": "01f7031c2ea1ef8a9fda2054802ace9f16b7a449a5261a59667b485fe9cb770c"
+    },
+    "expressions_design": {
+      "path": "datasets/evaluation/relation_expression_v2_design.json",
+      "sha256": "94c419756b8738ecd502d1965840a50725b7f500b16c11fcd76f653725dc702c"
+    },
+    "preparation": {
+      "path": "datasets/evaluation/isolated_relation_v1_preparation_protocol.json",
+      "sha256": "4ba08af3fb346739c4d3674d893cbb2847702a885020eff96d6f9cd9296f8a78"
+    }
+  },
+  "implementation_sha256": {
+    "app/services/relation_query_service.py": "d8975797b64e80c16cd1bd852b3269db9ef2654a4f4d416471e999a6fdd62305",
+    "app/services/graph_rag_service.py": "59a2ca94f3fb62cd5c9e9bfdf7d695e709da4cf7dc675c159400452e44e77e59",
+    "app/services/rag_service.py": "12e655db0651f256228638fac0a651ccf7515eb9c42011333a14078f5f4ca219",
+    "app/agentic/nodes/retrieve_node.py": "0525012b353107f01e06e84a925171800d7156db2eb376276d01be6cd383f4cf",
+    "app/api/routers/graph.py": "818405ca62b667409777de10c725e2e33d3f5117b2ddd8f2f072989d6b3e3604",
+    "scripts/evaluate_relation_queries.py": "5fcc5b0655d9e11d77e155e2173b60c076a5108db4b2b8413f665d39738f32f3",
+    "scripts/evaluate_fair_retrieval.py": "941802a4cf3f3a2e9c340ae724dddd92d6bf8dcbb4645f1424a5539ebf432056",
+    "test_relation_queries.py": "426547846544c1bb47617352f3e9f392b20f323624f827257f4abd0667f804c0",
+    "frontend/src/main.jsx": "ef7bddd72d28793d02c42bfae419d2b2c046e7373a4a20449476414864185245",
+    "test_relation_expression_v2.py": "ac77fb1cd7ac07c0b3697a3983fa722ba6f125b53bc9f066506242af7686f685",
+    "scripts/evaluate_relation_aggregates.py": "b65cd995e80acae8a7d0e8eea647b5a1f5c3c9ee667e02bda167d92ad14d27c1"
+  },
+  "development": "32 separately frozen synthetic expression cases at 48a3003, plus complete-scope numeric edge tests. Previously unsupported passive forms now supported.",
+  "run_contract": "60 source-selected bilingual development expressions on isolated graph; text-only scope/roles, public Graph/API/Hybrid parity. All source-selected positives happen to have <=3 relevant rounds; no cap used during selection. Gold slots only for scoring.",
+  "limitations": [
+    "Two previously observed pipeline-test series; source-selected development queries, no unseen or independent human gold claim.",
+    "Restricted English/Chinese grammar for 3 relation families, not general natural-language understanding.",
+    "Source event scan is a distinct retrieval strategy, not an improvement to BM25/dense/RRF ranking.",
+    "Graph and hybrid route to the same relation engine; their parity is integration coverage, not independent algorithm evidence.",
+    "Pure vector relation queries now return unknown without a source verifier; no inference of true absence.",
+    "Parser-derived facts remain shared with AI labels; production provider services are not restarted by the regression."
+  ]
+}

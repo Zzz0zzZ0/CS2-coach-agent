@@ -1,0 +1,21 @@
+{
+  "preparation_protocol_sha256": "4ba08af3fb346739c4d3674d893cbb2847702a885020eff96d6f9cd9296f8a78",
+  "graph_sha256": "057f839a8fad55f707feb529e79986c314bedf41f0d774713fbabae22d2afe95",
+  "rounds": 111,
+  "matches": [
+    "2396940",
+    "2396944"
+  ],
+  "maps": 5,
+  "semantic_queries": 30,
+  "missing_quotas": [],
+  "graph_build": {
+    "demos": 5,
+    "nodes": 5691,
+    "edges": 16729,
+    "communities": 16
+  },
+  "historical_unchanged": true,
+  "identity": "Previously observed pipeline-validation matches, AI source-selected development pilot; not unseen or independent human gold.",
+  "labels": "Full-scope Python and separate SQL joins agree for positives and near misses; shared parser source."
+}

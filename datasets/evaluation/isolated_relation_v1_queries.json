@@ -1,0 +1,646 @@
+{
+  "reviewer_kind": "ai_assisted",
+  "independent_human_review": false,
+  "cases": [
+    {
+      "id": "2396940_Ancient_opening_positive",
+      "filters": {
+        "match_id": "2396940",
+        "map": "Ancient"
+      },
+      "entities": [
+        "makazze",
+        "NertZ"
+      ],
+      "relation": {
+        "family": "opening",
+        "actor": "76561199076189612",
+        "target": "76561198053126645"
+      },
+      "construction_polarity": "positive",
+      "texts": {
+        "en": "Match 2396940, map Ancient. makazze gets the opening kill against NertZ",
+        "zh": "比赛 2396940，地图 Ancient。makazze 首杀 NertZ"
+      }
+    },
+    {
+      "id": "2396940_Ancient_opening_negative",
+      "filters": {
+        "match_id": "2396940",
+        "map": "Ancient"
+      },
+      "entities": [
+        "MATYS",
+        "w0nderful"
+      ],
+      "relation": {
+        "family": "opening",
+        "actor": "76561199046478501",
+        "target": "76561199063068840"
+      },
+      "construction_polarity": "negative",
+      "texts": {
+        "en": "Match 2396940, map Ancient. MATYS gets the opening kill against w0nderful",
+        "zh": "比赛 2396940，地图 Ancient。MATYS 首杀 w0nderful"
+      }
+    },
+    {
+      "id": "2396940_Ancient_after_plant_positive",
+      "filters": {
+        "match_id": "2396940",
+        "map": "Ancient"
+      },
+      "entities": [
+        "HeavyGod",
+        "makazze"
+      ],
+      "relation": {
+        "family": "after_plant",
+        "actor": "76561198068002993",
+        "target": "76561199076189612"
+      },
+      "construction_polarity": "positive",
+      "texts": {
+        "en": "Match 2396940, map Ancient. HeavyGod kills makazze after the bomb was planted",
+        "zh": "比赛 2396940，地图 Ancient。下包后 HeavyGod 击杀 makazze"
+      }
+    },
+    {
+      "id": "2396940_Ancient_after_plant_negative",
+      "filters": {
+        "match_id": "2396940",
+        "map": "Ancient"
+      },
+      "entities": [
+        "NertZ",
+        "b1t"
+      ],
+      "relation": {
+        "family": "after_plant",
+        "actor": "76561198053126645",
+        "target": "76561198246607476"
+      },
+      "construction_polarity": "negative",
+      "texts": {
+        "en": "Match 2396940, map Ancient. NertZ kills b1t after the bomb was planted",
+        "zh": "比赛 2396940，地图 Ancient。下包后 NertZ 击杀 b1t"
+      }
+    },
+    {
+      "id": "2396940_Ancient_trade_positive",
+      "filters": {
+        "match_id": "2396940",
+        "map": "Ancient"
+      },
+      "entities": [
+        "r1nkle",
+        "HeavyGod"
+      ],
+      "relation": {
+        "family": "trade",
+        "actor": "76561198294381090",
+        "target": "76561198068002993",
+        "window_ticks": 320
+      },
+      "construction_polarity": "positive",
+      "texts": {
+        "en": "Match 2396940, map Ancient. r1nkle trades teammate HeavyGod within 320 ticks",
+        "zh": "比赛 2396940，地图 Ancient。r1nkle 为队友 HeavyGod 补枪，在 320 tick 内"
+      }
+    },
+    {
+      "id": "2396940_Ancient_trade_negative",
+      "filters": {
+        "match_id": "2396940",
+        "map": "Ancient"
+      },
+      "entities": [
+        "iM",
+        "Aleksib"
+      ],
+      "relation": {
+        "family": "trade",
+        "actor": "76561198050250233",
+        "target": "76561198013243326",
+        "window_ticks": 320
+      },
+      "construction_polarity": "negative",
+      "texts": {
+        "en": "Match 2396940, map Ancient. iM trades teammate Aleksib within 320 ticks",
+        "zh": "比赛 2396940，地图 Ancient。iM 为队友 Aleksib 补枪，在 320 tick 内"
+      }
+    },
+    {
+      "id": "2396940_Inferno_opening_positive",
+      "filters": {
+        "match_id": "2396940",
+        "map": "Inferno"
+      },
+      "entities": [
+        "r1nkle",
+        "b1t"
+      ],
+      "relation": {
+        "family": "opening",
+        "actor": "76561198294381090",
+        "target": "76561198246607476"
+      },
+      "construction_polarity": "positive",
+      "texts": {
+        "en": "Match 2396940, map Inferno. r1nkle gets the opening kill against b1t",
+        "zh": "比赛 2396940，地图 Inferno。r1nkle 首杀 b1t"
+      }
+    },
+    {
+      "id": "2396940_Inferno_opening_negative",
+      "filters": {
+        "match_id": "2396940",
+        "map": "Inferno"
+      },
+      "entities": [
+        "HeavyGod",
+        "Aleksib"
+      ],
+      "relation": {
+        "family": "opening",
+        "actor": "76561198068002993",
+        "target": "76561198013243326"
+      },
+      "construction_polarity": "negative",
+      "texts": {
+        "en": "Match 2396940, map Inferno. HeavyGod gets the opening kill against Aleksib",
+        "zh": "比赛 2396940，地图 Inferno。HeavyGod 首杀 Aleksib"
+      }
+    },
+    {
+      "id": "2396940_Inferno_after_plant_positive",
+      "filters": {
+        "match_id": "2396940",
+        "map": "Inferno"
+      },
+      "entities": [
+        "r1nkle",
+        "makazze"
+      ],
+      "relation": {
+        "family": "after_plant",
+        "actor": "76561198294381090",
+        "target": "76561199076189612"
+      },
+      "construction_polarity": "positive",
+      "texts": {
+        "en": "Match 2396940, map Inferno. r1nkle kills makazze after the bomb was planted",
+        "zh": "比赛 2396940，地图 Inferno。下包后 r1nkle 击杀 makazze"
+      }
+    },
+    {
+      "id": "2396940_Inferno_after_plant_negative",
+      "filters": {
+        "match_id": "2396940",
+        "map": "Inferno"
+      },
+      "entities": [
+        "huNter",
+        "Aleksib"
+      ],
+      "relation": {
+        "family": "after_plant",
+        "actor": "76561198012872053",
+        "target": "76561198013243326"
+      },
+      "construction_polarity": "negative",
+      "texts": {
+        "en": "Match 2396940, map Inferno. huNter kills Aleksib after the bomb was planted",
+        "zh": "比赛 2396940，地图 Inferno。下包后 huNter 击杀 Aleksib"
+      }
+    },
+    {
+      "id": "2396940_Inferno_trade_positive",
+      "filters": {
+        "match_id": "2396940",
+        "map": "Inferno"
+      },
+      "entities": [
+        "HeavyGod",
+        "MATYS"
+      ],
+      "relation": {
+        "family": "trade",
+        "actor": "76561198068002993",
+        "target": "76561199046478501",
+        "window_ticks": 320
+      },
+      "construction_polarity": "positive",
+      "texts": {
+        "en": "Match 2396940, map Inferno. HeavyGod trades teammate MATYS within 320 ticks",
+        "zh": "比赛 2396940，地图 Inferno。HeavyGod 为队友 MATYS 补枪，在 320 tick 内"
+      }
+    },
+    {
+      "id": "2396940_Inferno_trade_negative",
+      "filters": {
+        "match_id": "2396940",
+        "map": "Inferno"
+      },
+      "entities": [
+        "makazze",
+        "iM"
+      ],
+      "relation": {
+        "family": "trade",
+        "actor": "76561199076189612",
+        "target": "76561198050250233",
+        "window_ticks": 320
+      },
+      "construction_polarity": "negative",
+      "texts": {
+        "en": "Match 2396940, map Inferno. makazze trades teammate iM within 320 ticks",
+        "zh": "比赛 2396940，地图 Inferno。makazze 为队友 iM 补枪，在 320 tick 内"
+      }
+    },
+    {
+      "id": "2396944_Anubis_opening_positive",
+      "filters": {
+        "match_id": "2396944",
+        "map": "Anubis"
+      },
+      "entities": [
+        "woxic",
+        "HeavyGod"
+      ],
+      "relation": {
+        "family": "opening",
+        "actor": "76561198083485506",
+        "target": "76561198068002993"
+      },
+      "construction_polarity": "positive",
+      "texts": {
+        "en": "Match 2396944, map Anubis. woxic gets the opening kill against HeavyGod",
+        "zh": "比赛 2396944，地图 Anubis。woxic 首杀 HeavyGod"
+      }
+    },
+    {
+      "id": "2396944_Anubis_opening_negative",
+      "filters": {
+        "match_id": "2396944",
+        "map": "Anubis"
+      },
+      "entities": [
+        "NertZ",
+        "kyxsan"
+      ],
+      "relation": {
+        "family": "opening",
+        "actor": "76561198053126645",
+        "target": "76561198057282432"
+      },
+      "construction_polarity": "negative",
+      "texts": {
+        "en": "Match 2396944, map Anubis. NertZ gets the opening kill against kyxsan",
+        "zh": "比赛 2396944，地图 Anubis。NertZ 首杀 kyxsan"
+      }
+    },
+    {
+      "id": "2396944_Anubis_after_plant_positive",
+      "filters": {
+        "match_id": "2396944",
+        "map": "Anubis"
+      },
+      "entities": [
+        "r1nkle",
+        "Wicadia"
+      ],
+      "relation": {
+        "family": "after_plant",
+        "actor": "76561198294381090",
+        "target": "76561198812513923"
+      },
+      "construction_polarity": "positive",
+      "texts": {
+        "en": "Match 2396944, map Anubis. r1nkle kills Wicadia after the bomb was planted",
+        "zh": "比赛 2396944，地图 Anubis。下包后 r1nkle 击杀 Wicadia"
+      }
+    },
+    {
+      "id": "2396944_Anubis_after_plant_negative",
+      "filters": {
+        "match_id": "2396944",
+        "map": "Anubis"
+      },
+      "entities": [
+        "Jimpphat",
+        "huNter"
+      ],
+      "relation": {
+        "family": "after_plant",
+        "actor": "76561198855375325",
+        "target": "76561198012872053"
+      },
+      "construction_polarity": "negative",
+      "texts": {
+        "en": "Match 2396944, map Anubis. Jimpphat kills huNter after the bomb was planted",
+        "zh": "比赛 2396944，地图 Anubis。下包后 Jimpphat 击杀 huNter"
+      }
+    },
+    {
+      "id": "2396944_Anubis_trade_positive",
+      "filters": {
+        "match_id": "2396944",
+        "map": "Anubis"
+      },
+      "entities": [
+        "HeavyGod",
+        "NertZ"
+      ],
+      "relation": {
+        "family": "trade",
+        "actor": "76561198068002993",
+        "target": "76561198053126645",
+        "window_ticks": 320
+      },
+      "construction_polarity": "positive",
+      "texts": {
+        "en": "Match 2396944, map Anubis. HeavyGod trades teammate NertZ within 320 ticks",
+        "zh": "比赛 2396944，地图 Anubis。HeavyGod 为队友 NertZ 补枪，在 320 tick 内"
+      }
+    },
+    {
+      "id": "2396944_Anubis_trade_negative",
+      "filters": {
+        "match_id": "2396944",
+        "map": "Anubis"
+      },
+      "entities": [
+        "HeavyGod",
+        "MATYS"
+      ],
+      "relation": {
+        "family": "trade",
+        "actor": "76561198068002993",
+        "target": "76561199046478501",
+        "window_ticks": 320
+      },
+      "construction_polarity": "negative",
+      "texts": {
+        "en": "Match 2396944, map Anubis. HeavyGod trades teammate MATYS within 320 ticks",
+        "zh": "比赛 2396944，地图 Anubis。HeavyGod 为队友 MATYS 补枪，在 320 tick 内"
+      }
+    },
+    {
+      "id": "2396944_Inferno_opening_positive",
+      "filters": {
+        "match_id": "2396944",
+        "map": "Inferno"
+      },
+      "entities": [
+        "r1nkle",
+        "kyxsan"
+      ],
+      "relation": {
+        "family": "opening",
+        "actor": "76561198294381090",
+        "target": "76561198057282432"
+      },
+      "construction_polarity": "positive",
+      "texts": {
+        "en": "Match 2396944, map Inferno. r1nkle gets the opening kill against kyxsan",
+        "zh": "比赛 2396944，地图 Inferno。r1nkle 首杀 kyxsan"
+      }
+    },
+    {
+      "id": "2396944_Inferno_opening_negative",
+      "filters": {
+        "match_id": "2396944",
+        "map": "Inferno"
+      },
+      "entities": [
+        "r1nkle",
+        "Jimpphat"
+      ],
+      "relation": {
+        "family": "opening",
+        "actor": "76561198294381090",
+        "target": "76561198855375325"
+      },
+      "construction_polarity": "negative",
+      "texts": {
+        "en": "Match 2396944, map Inferno. r1nkle gets the opening kill against Jimpphat",
+        "zh": "比赛 2396944，地图 Inferno。r1nkle 首杀 Jimpphat"
+      }
+    },
+    {
+      "id": "2396944_Inferno_after_plant_positive",
+      "filters": {
+        "match_id": "2396944",
+        "map": "Inferno"
+      },
+      "entities": [
+        "kyxsan",
+        "NertZ"
+      ],
+      "relation": {
+        "family": "after_plant",
+        "actor": "76561198057282432",
+        "target": "76561198053126645"
+      },
+      "construction_polarity": "positive",
+      "texts": {
+        "en": "Match 2396944, map Inferno. kyxsan kills NertZ after the bomb was planted",
+        "zh": "比赛 2396944，地图 Inferno。下包后 kyxsan 击杀 NertZ"
+      }
+    },
+    {
+      "id": "2396944_Inferno_after_plant_negative",
+      "filters": {
+        "match_id": "2396944",
+        "map": "Inferno"
+      },
+      "entities": [
+        "HeavyGod",
+        "Jimpphat"
+      ],
+      "relation": {
+        "family": "after_plant",
+        "actor": "76561198068002993",
+        "target": "76561198855375325"
+      },
+      "construction_polarity": "negative",
+      "texts": {
+        "en": "Match 2396944, map Inferno. HeavyGod kills Jimpphat after the bomb was planted",
+        "zh": "比赛 2396944，地图 Inferno。下包后 HeavyGod 击杀 Jimpphat"
+      }
+    },
+    {
+      "id": "2396944_Inferno_trade_positive",
+      "filters": {
+        "match_id": "2396944",
+        "map": "Inferno"
+      },
+      "entities": [
+        "r1nkle",
+        "MATYS"
+      ],
+      "relation": {
+        "family": "trade",
+        "actor": "76561198294381090",
+        "target": "76561199046478501",
+        "window_ticks": 320
+      },
+      "construction_polarity": "positive",
+      "texts": {
+        "en": "Match 2396944, map Inferno. r1nkle trades teammate MATYS within 320 ticks",
+        "zh": "比赛 2396944，地图 Inferno。r1nkle 为队友 MATYS 补枪，在 320 tick 内"
+      }
+    },
+    {
+      "id": "2396944_Inferno_trade_negative",
+      "filters": {
+        "match_id": "2396944",
+        "map": "Inferno"
+      },
+      "entities": [
+        "kyxsan",
+        "Wicadia"
+      ],
+      "relation": {
+        "family": "trade",
+        "actor": "76561198057282432",
+        "target": "76561198812513923",
+        "window_ticks": 320
+      },
+      "construction_polarity": "negative",
+      "texts": {
+        "en": "Match 2396944, map Inferno. kyxsan trades teammate Wicadia within 320 ticks",
+        "zh": "比赛 2396944，地图 Inferno。kyxsan 为队友 Wicadia 补枪，在 320 tick 内"
+      }
+    },
+    {
+      "id": "2396944_Mirage_opening_positive",
+      "filters": {
+        "match_id": "2396944",
+        "map": "Mirage"
+      },
+      "entities": [
+        "MATYS",
+        "Jimpphat"
+      ],
+      "relation": {
+        "family": "opening",
+        "actor": "76561199046478501",
+        "target": "76561198855375325"
+      },
+      "construction_polarity": "positive",
+      "texts": {
+        "en": "Match 2396944, map Mirage. MATYS gets the opening kill against Jimpphat",
+        "zh": "比赛 2396944，地图 Mirage。MATYS 首杀 Jimpphat"
+      }
+    },
+    {
+      "id": "2396944_Mirage_opening_negative",
+      "filters": {
+        "match_id": "2396944",
+        "map": "Mirage"
+      },
+      "entities": [
+        "Wicadia",
+        "MATYS"
+      ],
+      "relation": {
+        "family": "opening",
+        "actor": "76561198812513923",
+        "target": "76561199046478501"
+      },
+      "construction_polarity": "negative",
+      "texts": {
+        "en": "Match 2396944, map Mirage. Wicadia gets the opening kill against MATYS",
+        "zh": "比赛 2396944，地图 Mirage。Wicadia 首杀 MATYS"
+      }
+    },
+    {
+      "id": "2396944_Mirage_after_plant_positive",
+      "filters": {
+        "match_id": "2396944",
+        "map": "Mirage"
+      },
+      "entities": [
+        "HeavyGod",
+        "Jimpphat"
+      ],
+      "relation": {
+        "family": "after_plant",
+        "actor": "76561198068002993",
+        "target": "76561198855375325"
+      },
+      "construction_polarity": "positive",
+      "texts": {
+        "en": "Match 2396944, map Mirage. HeavyGod kills Jimpphat after the bomb was planted",
+        "zh": "比赛 2396944，地图 Mirage。下包后 HeavyGod 击杀 Jimpphat"
+      }
+    },
+    {
+      "id": "2396944_Mirage_after_plant_negative",
+      "filters": {
+        "match_id": "2396944",
+        "map": "Mirage"
+      },
+      "entities": [
+        "NertZ",
+        "woxic"
+      ],
+      "relation": {
+        "family": "after_plant",
+        "actor": "76561198053126645",
+        "target": "76561198083485506"
+      },
+      "construction_polarity": "negative",
+      "texts": {
+        "en": "Match 2396944, map Mirage. NertZ kills woxic after the bomb was planted",
+        "zh": "比赛 2396944，地图 Mirage。下包后 NertZ 击杀 woxic"
+      }
+    },
+    {
+      "id": "2396944_Mirage_trade_positive",
+      "filters": {
+        "match_id": "2396944",
+        "map": "Mirage"
+      },
+      "entities": [
+        "HeavyGod",
+        "NertZ"
+      ],
+      "relation": {
+        "family": "trade",
+        "actor": "76561198068002993",
+        "target": "76561198053126645",
+        "window_ticks": 320
+      },
+      "construction_polarity": "positive",
+      "texts": {
+        "en": "Match 2396944, map Mirage. HeavyGod trades teammate NertZ within 320 ticks",
+        "zh": "比赛 2396944，地图 Mirage。HeavyGod 为队友 NertZ 补枪，在 320 tick 内"
+      }
+    },
+    {
+      "id": "2396944_Mirage_trade_negative",
+      "filters": {
+        "match_id": "2396944",
+        "map": "Mirage"
+      },
+      "entities": [
+        "NertZ",
+        "huNter"
+      ],
+      "relation": {
+        "family": "trade",
+        "actor": "76561198053126645",
+        "target": "76561198012872053",
+        "window_ticks": 320
+      },
+      "construction_polarity": "negative",
+      "texts": {
+        "en": "Match 2396944, map Mirage. NertZ trades teammate huNter within 320 ticks",
+        "zh": "比赛 2396944，地图 Mirage。NertZ 为队友 huNter 补枪，在 320 tick 内"
+      }
+    }
+  ]
+}

@@ -138,14 +138,17 @@ def run(protocol_path):
                         'effective_query':text,'source_ids':ids,'eligible_rounds':len(scope),'relevant_rounds':len(labels),
                         'metrics':metrics(ids,labels,protocol['k']),'search_ms_excluding_encoding':durations[method]})
     for db in dbs.values():db.close()
-    old=json.loads(paths['previous_rankings'].read_text())['cases']
-    lookup={(r['query_id'],r['language'],r['method']):r['source_ids'] for r in old}
-    mapping={'bm25_unicode':'bm25','dense_minilm':'dense','rrf_unicode_minilm':'dense_bm25_rrf'}
-    baseline=[r for r in rows if r['configuration']=='raw' and r['method'] in mapping]
-    parity=sum(r['source_ids']==lookup[r['query_id'],r['language'],mapping[r['method']]] for r in baseline)
+    parity_report={'status':'not_applicable','reason':'First text retrieval run on this isolated corpus'}
+    if 'previous_rankings' in paths:
+        old=json.loads(paths['previous_rankings'].read_text())['cases']
+        lookup={(r['query_id'],r['language'],r['method']):r['source_ids'] for r in old}
+        mapping={'bm25_unicode':'bm25','dense_minilm':'dense','rrf_unicode_minilm':'dense_bm25_rrf'}
+        baseline=[r for r in rows if r['configuration']=='raw' and r['method'] in mapping]
+        parity=sum(r['source_ids']==lookup[r['query_id'],r['language'],mapping[r['method']]] for r in baseline)
+        parity_report={'status':'checked','passed':parity,'total':len(baseline)}
     verify()
     return {'protocol_sha256':digest(protocol_path),'rows':len(rows),'remote_model_calls':0,'encodings':encodings,
-            'baseline_parity':{'passed':parity,'total':len(baseline)},'summary':summarize(rows),'cases':rows,'limitations':protocol['limitations']}
+            'baseline_parity':parity_report,'summary':summarize(rows),'cases':rows,'limitations':protocol['limitations']}
 
 
 if __name__=='__main__':
@@ -157,4 +160,4 @@ if __name__=='__main__':
     if args.output.exists():p.error('Output exists')
     report=run(args.protocol);write_json(args.output,report)
     print(json.dumps({'rows':report['rows'],'baseline_parity':report['baseline_parity'],'paired':[r for r in report['summary'] if r['language']=='paired_macro']},indent=2))
-    raise SystemExit(0 if report['baseline_parity']['passed']==report['baseline_parity']['total'] else 1)
+    raise SystemExit(0 if report['baseline_parity']['status']=='not_applicable' or report['baseline_parity']['passed']==report['baseline_parity']['total'] else 1)
