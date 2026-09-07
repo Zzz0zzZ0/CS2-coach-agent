@@ -14,7 +14,7 @@
 
 </div>
 
-历史刀局污染已完成重建并切换：原有 20 场、49 图现在包含 1,019 个正式回合，图谱、Milvus、56 名选手画像和 5,308 条战术银标已核对一致。260 项离线测试通过。检索正文与中文道具词形修复后，开发集 Vector / Graph / Hybrid 均为 50/50；既有 holdout 为 28/30、30/30、30/30，均属于已观察样本的回归。见 [检索回归修复](docs/VECTOR_EVIDENCE_IDENTITY_V3.md)。原始数据快照与失败结果均保留，详见 [历史修复与重新冻结](docs/HISTORICAL_DATA_REBUILD_V2.md)。
+历史刀局污染已完成重建并切换：原有 20 场、49 图现在包含 1,019 个正式回合，图谱、Milvus、56 名选手画像和 5,308 条战术银标已核对一致。261 项离线测试通过。检索正文与中文道具词形修复后，开发集 Vector / Graph / Hybrid 均为 50/50；既有 holdout 为 28/30、30/30、30/30，均属于已观察样本的回归。见 [检索回归修复](docs/VECTOR_EVIDENCE_IDENTITY_V3.md)。原始数据快照与失败结果均保留，详见 [历史修复与重新冻结](docs/HISTORICAL_DATA_REBUILD_V2.md)。
 
 新语料上的 16 题、160 条检索结果已按 AI 辅助事实标签重新运行，仍属于已观察开发集；独立审核与泛化效果待验证。新增 2 场、5 图在修复后以 111 个正式回合通过回归，首次失败记录见 [新比赛验收](docs/NEW_MATCH_VALIDATION_V3.md)。
 
@@ -25,6 +25,9 @@
 受限关系查询已接入图检索、API 与混合调用层：先核查限定范围源事件，再取结果，区分“找到 / 范围内未找到 / 信息不足 / 不支持”。48 个已观察表述和 624 项检查通过，原有检索回归保持不变；这是受限自然语言到确定性事件查询的工程验证，不代表独立泛化或 RRF 提升。页面状态与证据跳转已在隔离新进程验收，常驻 API 与 worker 已在队列为空时正常重启加载，原前端保持运行。见 [实现与验证边界](docs/RELATION_QUERY_ENGINE_V1.md)。v2 已补齐受限被动语态、中英文表达与完整回合计数 / 条件胜率，48 条旧关系及 96 条统计核算通过，未知分母不显示为零；见 [统计契约](docs/RELATION_QUERY_ENGINE_V2.md)。
 
 第二条中英 dense 基线及词法分词对照已完成：768 条结果、144 条原排序复现。Jina 原始问法配对 nDCG@5 为 0.3148，MiniLM 为 0.1476；子词中文 BM25 下降，RRF 未超过 Jina dense，无答案拒答仍有缺口。均为同一批已观察开发题，模型和容量不同，未替换生产默认模型；见 [完整对照与边界](docs/LANGUAGE_BASELINES_V2.md)。
+
+求职与申请展示入口：[英文案例](docs/portfolio/CASE_STUDY.md) · [中文使用说明与文书草稿](docs/portfolio/APPLICATION_NOTES_ZH.md) · [三分钟演示](docs/portfolio/DEMO_SCRIPT.md) · [可导出 benchmark 图](docs/portfolio/benchmark-results.svg)。隔离 2 场 / 5 图试点另完成 960 条文本结果和 60 条关系表达验收，模型优势在两场比赛上方向不同；[完整结果](docs/ISOLATED_RELATION_PILOT_V1.md)保留局限与失败。画像优化通过 224 组完整输出等价检查，本机函数中位耗时由 335 ms 降至 104 ms，见 [性能证据](docs/PLAYER_PERFORMANCE_V1.md)。
+
 
 Coach 优先级对照已完成 6 图、5 场比赛的开发样本试跑：固定模型 `qwen3.8-flash` 调用 6 次，提供商报告本轮使用 4,939 token。匿名材料与空白评分表已生成，至少两位独立人工评审尚待完成，模型增益指标保持为空。见 [盲评协议与运行记录](docs/COACH_BLIND_EVALUATION.md)。后续 [AI 事实审核](docs/COACH_FACT_AUDIT.md) 已修复攻守分母与己方受闪口径，原始盲评包继续保留，人工评分需使用重新冻结的修正版。
 

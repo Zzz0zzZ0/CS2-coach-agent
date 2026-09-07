@@ -1,0 +1,3261 @@
+{
+  "protocol_sha256": "e14dded9f74faaa004cff92e7579187b73a15502bdb88ff86bb8b25cd2360d56",
+  "passed": 224,
+  "total": 224,
+  "median_ms": {
+    "before": 335.3107920847833,
+    "after": 104.0813336148858
+  },
+  "median_paired_speedup": 3.294341801966411,
+  "interpretation": "One interleaved read-only run, both analytics caches warm; exact full JSON parity. Hardware/load dependent; not an API concurrency or cold-start claim.",
+  "cases": [
+    {
+      "player_id": "76561198386265483",
+      "scope": {},
+      "ms": {
+        "before": 345.52512504160404,
+        "after": 152.54991594702005
+      },
+      "sha256": {
+        "before": "3c14000675100f5e48fa87dd7eaeeaca0017ec9c9b4481e97153c7cfc0dfa20e",
+        "after": "3c14000675100f5e48fa87dd7eaeeaca0017ec9c9b4481e97153c7cfc0dfa20e"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198386265483",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 147.62683399021626,
+        "before": 336.4019594155252
+      },
+      "sha256": {
+        "after": "49f4c035a2b1d823bf7b4bffa84bdaab4fb435a663712062ef8afb855192e61d",
+        "before": "49f4c035a2b1d823bf7b4bffa84bdaab4fb435a663712062ef8afb855192e61d"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198386265483",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 330.31729189679027,
+        "after": 147.02295931056142
+      },
+      "sha256": {
+        "before": "0c8487e8ece1541d378415f66d6f6dbcad6152e20d6c123a4113b42e906589a0",
+        "after": "0c8487e8ece1541d378415f66d6f6dbcad6152e20d6c123a4113b42e906589a0"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198386265483",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 145.38829121738672,
+        "before": 336.1577498726547
+      },
+      "sha256": {
+        "after": "afbec4eafa66b16d4f66eb0e263738143da9b3ce66638665175f830397226928",
+        "before": "afbec4eafa66b16d4f66eb0e263738143da9b3ce66638665175f830397226928"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198872013168",
+      "scope": {},
+      "ms": {
+        "before": 351.81650007143617,
+        "after": 149.7495830990374
+      },
+      "sha256": {
+        "before": "ce7fefd20f7d708f6dc3236bb08bb3917496b6a16e79e962bd3d3e3d7a2dc91b",
+        "after": "ce7fefd20f7d708f6dc3236bb08bb3917496b6a16e79e962bd3d3e3d7a2dc91b"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198872013168",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 144.7732080705464,
+        "before": 330.44574968516827
+      },
+      "sha256": {
+        "after": "34a1286c2ddcfc01831cca63ab8102c3d6528ff06dd2eee0bc9bae0b40f7b949",
+        "before": "34a1286c2ddcfc01831cca63ab8102c3d6528ff06dd2eee0bc9bae0b40f7b949"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198872013168",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 330.790292005986,
+        "after": 146.68037509545684
+      },
+      "sha256": {
+        "before": "29a5cb693418fe6684dbb691d8143c981146a9f9dfbf20b25530573056b768b4",
+        "after": "29a5cb693418fe6684dbb691d8143c981146a9f9dfbf20b25530573056b768b4"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198872013168",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 143.5307082720101,
+        "before": 327.18441681936383
+      },
+      "sha256": {
+        "after": "5c9a9fac9fa3fb10b780b70338bc569d0be355007221408e59b5ce42aaa50fb6",
+        "before": "5c9a9fac9fa3fb10b780b70338bc569d0be355007221408e59b5ce42aaa50fb6"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198081484775",
+      "scope": {},
+      "ms": {
+        "before": 342.72037493065,
+        "after": 151.77087485790253
+      },
+      "sha256": {
+        "before": "11528eacc5059c8d382273aaeb481efb9c6cd7e4f634c0b0db6405c66171f175",
+        "after": "11528eacc5059c8d382273aaeb481efb9c6cd7e4f634c0b0db6405c66171f175"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198081484775",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 147.00266625732183,
+        "before": 337.3693753965199
+      },
+      "sha256": {
+        "after": "41ec768d4b59abfbfe940914f868705e5af20e650b58ba8f3e9407e998fbc428",
+        "before": "41ec768d4b59abfbfe940914f868705e5af20e650b58ba8f3e9407e998fbc428"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198081484775",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 331.8432499654591,
+        "after": 147.24791701883078
+      },
+      "sha256": {
+        "before": "ff11fa136a492a2b1ffe08573b1fe0793f6c946a736b636693ba1fb195f1a02b",
+        "after": "ff11fa136a492a2b1ffe08573b1fe0793f6c946a736b636693ba1fb195f1a02b"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198081484775",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 144.06783366575837,
+        "before": 337.88545802235603
+      },
+      "sha256": {
+        "after": "0e905eed186908eb8553c84662fbe3320834f1e823f84a29b1fbd0914f42a0b4",
+        "before": "0e905eed186908eb8553c84662fbe3320834f1e823f84a29b1fbd0914f42a0b4"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198995880877",
+      "scope": {},
+      "ms": {
+        "before": 333.08216696605086,
+        "after": 150.80854203552008
+      },
+      "sha256": {
+        "before": "af201f9b310971de1ce494870f41f7e066b97eea279c30625e1de018edb76a5d",
+        "after": "af201f9b310971de1ce494870f41f7e066b97eea279c30625e1de018edb76a5d"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198995880877",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 144.79629090055823,
+        "before": 332.66333397477865
+      },
+      "sha256": {
+        "after": "001c300a7075439fc4450fe465e32accfc8bce12e553394890732bd5cd0682eb",
+        "before": "001c300a7075439fc4450fe465e32accfc8bce12e553394890732bd5cd0682eb"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198995880877",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 330.76100004836917,
+        "after": 148.029750213027
+      },
+      "sha256": {
+        "before": "906a2b5d07e6d4556d8c107a380fdcc1ffdf4b5fb07d95e004e4d7d12034d920",
+        "after": "906a2b5d07e6d4556d8c107a380fdcc1ffdf4b5fb07d95e004e4d7d12034d920"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198995880877",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 152.51616574823856,
+        "before": 328.9338336326182
+      },
+      "sha256": {
+        "after": "aafcf5e2aeb4cad8bb9508955e1f0fcb3b6dd741d3018743183690e6a02d06c0",
+        "before": "aafcf5e2aeb4cad8bb9508955e1f0fcb3b6dd741d3018743183690e6a02d06c0"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561199063238565",
+      "scope": {},
+      "ms": {
+        "before": 336.5019578486681,
+        "after": 152.79429173097014
+      },
+      "sha256": {
+        "before": "c56f3ec6906ac7186e681cddd62e36d67cf3e22357b8b79fb993551620877277",
+        "after": "c56f3ec6906ac7186e681cddd62e36d67cf3e22357b8b79fb993551620877277"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561199063238565",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 146.3897917419672,
+        "before": 330.33995889127254
+      },
+      "sha256": {
+        "after": "2f269da2d5d3b53b29616485e86e878656ccfd735575310340e98a88f18df31a",
+        "before": "2f269da2d5d3b53b29616485e86e878656ccfd735575310340e98a88f18df31a"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561199063238565",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 341.302374843508,
+        "after": 149.7879158705473
+      },
+      "sha256": {
+        "before": "2d2f362753c7097d39be2a2fcb12a226dc81a58b02b27a3e3cdd27f25a907ca0",
+        "after": "2d2f362753c7097d39be2a2fcb12a226dc81a58b02b27a3e3cdd27f25a907ca0"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561199063238565",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 146.7733751051128,
+        "before": 330.5681669153273
+      },
+      "sha256": {
+        "after": "550d23d42f345644c68dad811aa2c1379d3776afbdcdf1edfe0f04e9659e75e0",
+        "before": "550d23d42f345644c68dad811aa2c1379d3776afbdcdf1edfe0f04e9659e75e0"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198365118288",
+      "scope": {},
+      "ms": {
+        "before": 334.1764169745147,
+        "after": 138.47516616806388
+      },
+      "sha256": {
+        "before": "ec06c58506eca7b0629674e379441e3b01c7679dfcc1bdac1afa7d608c32c4b3",
+        "after": "ec06c58506eca7b0629674e379441e3b01c7679dfcc1bdac1afa7d608c32c4b3"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198365118288",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 132.47283408418298,
+        "before": 336.5495838224888
+      },
+      "sha256": {
+        "after": "cfe7b36dcdb5906ec48703dfe64d2ab766f2ccab4d8a9238af3ef604c33449e7",
+        "before": "cfe7b36dcdb5906ec48703dfe64d2ab766f2ccab4d8a9238af3ef604c33449e7"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198365118288",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 332.2232090868056,
+        "after": 138.01187509670854
+      },
+      "sha256": {
+        "before": "8d78d02e9cfd35e94cdaa9d1c4bd0fe65d8e722b4611338f64f09a8e1e391051",
+        "after": "8d78d02e9cfd35e94cdaa9d1c4bd0fe65d8e722b4611338f64f09a8e1e391051"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198365118288",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 134.33829182758927,
+        "before": 330.9311671182513
+      },
+      "sha256": {
+        "after": "38a273618a1f18090a7f62fa196002cb35d0b7fece886167b3ebba69f226e565",
+        "before": "38a273618a1f18090a7f62fa196002cb35d0b7fece886167b3ebba69f226e565"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198194325317",
+      "scope": {},
+      "ms": {
+        "before": 335.016000084579,
+        "after": 146.2378753349185
+      },
+      "sha256": {
+        "before": "9203669063fec89e3831d9465577c459eec961c70cf3fa0c7681fcd073a9d002",
+        "after": "9203669063fec89e3831d9465577c459eec961c70cf3fa0c7681fcd073a9d002"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198194325317",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 132.65008386224508,
+        "before": 330.80479176715016
+      },
+      "sha256": {
+        "after": "6c38b87db0eff5cc2b2c0c21e7f255073231d88440559970daa81e95c5024138",
+        "before": "6c38b87db0eff5cc2b2c0c21e7f255073231d88440559970daa81e95c5024138"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198194325317",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 331.34474977850914,
+        "after": 134.38733341172338
+      },
+      "sha256": {
+        "before": "38fe70b9ebec743437890c74342b0f4252473d1af0e03f72eaf384e1c59e7a96",
+        "after": "38fe70b9ebec743437890c74342b0f4252473d1af0e03f72eaf384e1c59e7a96"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198194325317",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 133.21075029671192,
+        "before": 330.6891671381891
+      },
+      "sha256": {
+        "after": "4313cb1fb629191925074f0185bdc78766d8931ad525e22ac3405d01266c669d",
+        "before": "4313cb1fb629191925074f0185bdc78766d8931ad525e22ac3405d01266c669d"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198850020186",
+      "scope": {},
+      "ms": {
+        "before": 341.49708319455385,
+        "after": 136.92991714924574
+      },
+      "sha256": {
+        "before": "6a22c12a01cb18c94cfd894fb82c5d11a76f8dc3facb81b30049ab68d5529ee7",
+        "after": "6a22c12a01cb18c94cfd894fb82c5d11a76f8dc3facb81b30049ab68d5529ee7"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198850020186",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 131.50358386337757,
+        "before": 328.80333298817277
+      },
+      "sha256": {
+        "after": "02cb6a15f13cd7ac25dc5926bdaa96b381f5180833e96867b4d45e119437aafa",
+        "before": "02cb6a15f13cd7ac25dc5926bdaa96b381f5180833e96867b4d45e119437aafa"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198850020186",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 337.5025410205126,
+        "after": 134.12241684272885
+      },
+      "sha256": {
+        "before": "5be456f1d06bd23877604c572f152b0e679c1e7fbf8bd64d315a398ae8e72e75",
+        "after": "5be456f1d06bd23877604c572f152b0e679c1e7fbf8bd64d315a398ae8e72e75"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198850020186",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 133.53370828554034,
+        "before": 330.64179215580225
+      },
+      "sha256": {
+        "after": "61ae2c4828fcb4cbc1e81bbb92afe2ce0d2efe79a7e495d1579f6869f335279c",
+        "before": "61ae2c4828fcb4cbc1e81bbb92afe2ce0d2efe79a7e495d1579f6869f335279c"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198061763596",
+      "scope": {},
+      "ms": {
+        "before": 333.6392091587186,
+        "after": 135.58479165658355
+      },
+      "sha256": {
+        "before": "f6edc15a402e6d484949bf71e5304c3e4dff9c763459509893b2fb8697fbd173",
+        "after": "f6edc15a402e6d484949bf71e5304c3e4dff9c763459509893b2fb8697fbd173"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198061763596",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 130.9149581938982,
+        "before": 328.5483340732753
+      },
+      "sha256": {
+        "after": "504bfd435c6230cc748dd93ab93fbf9632f204ba6669dfb69c45704c3c2fbb84",
+        "before": "504bfd435c6230cc748dd93ab93fbf9632f204ba6669dfb69c45704c3c2fbb84"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198061763596",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 339.63175024837255,
+        "after": 139.2427501268685
+      },
+      "sha256": {
+        "before": "79d3cbee8a0939c6e218e06a4182f3158f0589e2564997631962cfef455aed85",
+        "after": "79d3cbee8a0939c6e218e06a4182f3158f0589e2564997631962cfef455aed85"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198061763596",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 133.54133302345872,
+        "before": 328.3697501756251
+      },
+      "sha256": {
+        "after": "026b4f86f4b97adccc83eec38d49ab7240dab0a9dda293c1003efd2d782de9ec",
+        "before": "026b4f86f4b97adccc83eec38d49ab7240dab0a9dda293c1003efd2d782de9ec"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198043769572",
+      "scope": {},
+      "ms": {
+        "before": 339.3445829860866,
+        "after": 138.71104223653674
+      },
+      "sha256": {
+        "before": "d84c6514cdcf8c06e16d295add4ff7f11e1436ab84b6e534f4faba044c71d625",
+        "after": "d84c6514cdcf8c06e16d295add4ff7f11e1436ab84b6e534f4faba044c71d625"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198043769572",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 132.97066697850823,
+        "before": 338.709041941911
+      },
+      "sha256": {
+        "after": "63d8c83edff640c9c0b3ca976154241f3692590f5bd229fa8818f897de95b838",
+        "before": "63d8c83edff640c9c0b3ca976154241f3692590f5bd229fa8818f897de95b838"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198043769572",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 332.69595913589,
+        "after": 135.8751249499619
+      },
+      "sha256": {
+        "before": "7221eea382140706debc215fe1fb1b66345ce8ce644111086bb33988e2694b07",
+        "after": "7221eea382140706debc215fe1fb1b66345ce8ce644111086bb33988e2694b07"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198043769572",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 133.95858323201537,
+        "before": 329.0461669676006
+      },
+      "sha256": {
+        "after": "ce234c9033d2c51f361c4ddf68219ad8fb4b4dffd276dd1350852f8021c2eafa",
+        "before": "ce234c9033d2c51f361c4ddf68219ad8fb4b4dffd276dd1350852f8021c2eafa"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198113666193",
+      "scope": {},
+      "ms": {
+        "before": 330.8408330194652,
+        "after": 127.56841583177447
+      },
+      "sha256": {
+        "before": "53d3bfe80f312db250204f68e361769c56e6107c6de4962333a118eb701e4215",
+        "after": "53d3bfe80f312db250204f68e361769c56e6107c6de4962333a118eb701e4215"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198113666193",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 135.19725017249584,
+        "before": 342.2969579696655
+      },
+      "sha256": {
+        "after": "1f368dadfb1fd372089095264feb1f2a7b90bde0c51a67fdd03b8f9439d24523",
+        "before": "1f368dadfb1fd372089095264feb1f2a7b90bde0c51a67fdd03b8f9439d24523"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198113666193",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 332.57204107940197,
+        "after": 123.32624988630414
+      },
+      "sha256": {
+        "before": "fe3d3782bd9613f64c09ab009c3d43f4d5cd6cc3690565cbf16b424168844837",
+        "after": "fe3d3782bd9613f64c09ab009c3d43f4d5cd6cc3690565cbf16b424168844837"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198113666193",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 120.36729231476784,
+        "before": 329.1033753193915
+      },
+      "sha256": {
+        "after": "42b57cff82e73f554bc68fb1e78f88947d605b29188c06cfb9dc68c124aa40c2",
+        "before": "42b57cff82e73f554bc68fb1e78f88947d605b29188c06cfb9dc68c124aa40c2"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197978835160",
+      "scope": {},
+      "ms": {
+        "before": 334.54691618680954,
+        "after": 133.01529176533222
+      },
+      "sha256": {
+        "before": "c4a6a381f192dc07eb74bf14831247e31170906ee3fb130273910c7719bb5387",
+        "after": "c4a6a381f192dc07eb74bf14831247e31170906ee3fb130273910c7719bb5387"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197978835160",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 122.60850006714463,
+        "before": 329.97966604307294
+      },
+      "sha256": {
+        "after": "f917e6fe6db9108530c46efabab872b4d6ab3972fc01b16a865ed0eb1797479c",
+        "before": "f917e6fe6db9108530c46efabab872b4d6ab3972fc01b16a865ed0eb1797479c"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197978835160",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 332.35579123720527,
+        "after": 123.04579094052315
+      },
+      "sha256": {
+        "before": "3b0d38ef47521304e9c56341de878ab4fd8ca1022c466eee223f945201f395d7",
+        "after": "3b0d38ef47521304e9c56341de878ab4fd8ca1022c466eee223f945201f395d7"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197978835160",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 119.91179175674915,
+        "before": 327.9712498188019
+      },
+      "sha256": {
+        "after": "fc2df71520c64cbfc2a7430ac8e89b4ad44f3aa554b9bf966b6cec14a7a517b3",
+        "before": "fc2df71520c64cbfc2a7430ac8e89b4ad44f3aa554b9bf966b6cec14a7a517b3"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197991272318",
+      "scope": {},
+      "ms": {
+        "before": 341.5868328884244,
+        "after": 122.96920781955123
+      },
+      "sha256": {
+        "before": "568dce33692dbc9cef7a722c7b8c67daea28effc12cef294cd89ee86d2220062",
+        "after": "568dce33692dbc9cef7a722c7b8c67daea28effc12cef294cd89ee86d2220062"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197991272318",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 119.91745885461569,
+        "before": 328.8463340140879
+      },
+      "sha256": {
+        "after": "3c71ed009668386119ee037a1bedf49fd71232414933cbe0bd7543cf0170f011",
+        "before": "3c71ed009668386119ee037a1bedf49fd71232414933cbe0bd7543cf0170f011"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197991272318",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 329.71049984917045,
+        "after": 120.50287518650293
+      },
+      "sha256": {
+        "before": "7870a5f08c77b50bfc1a478ce0873235415256bdbeb7a37ffd5f99f09ca863ce",
+        "after": "7870a5f08c77b50bfc1a478ce0873235415256bdbeb7a37ffd5f99f09ca863ce"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197991272318",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 118.36516670882702,
+        "before": 347.3602496087551
+      },
+      "sha256": {
+        "after": "c533c60e9a0aed4b42a22c3d82c2c2c2361a40f81bfbe0ee00a28e6c003fe5be",
+        "before": "c533c60e9a0aed4b42a22c3d82c2c2c2361a40f81bfbe0ee00a28e6c003fe5be"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197989744167",
+      "scope": {},
+      "ms": {
+        "before": 344.3970000371337,
+        "after": 125.70179114118218
+      },
+      "sha256": {
+        "before": "617023f87eeb30497a6cf1bc15a8237ed0d2dc9114b4f074ac4e8c4d20392c46",
+        "after": "617023f87eeb30497a6cf1bc15a8237ed0d2dc9114b4f074ac4e8c4d20392c46"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197989744167",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 121.22170813381672,
+        "before": 330.635417252779
+      },
+      "sha256": {
+        "after": "0c6c1f7c6afca30eb00fee26943a95015d58d027a9516be93acb970f50718aa6",
+        "before": "0c6c1f7c6afca30eb00fee26943a95015d58d027a9516be93acb970f50718aa6"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197989744167",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 335.97479201853275,
+        "after": 128.81887517869473
+      },
+      "sha256": {
+        "before": "1d46866109da6451225b8d47efe6d7f49de8260dc287517fb1f3c837d1b177f3",
+        "after": "1d46866109da6451225b8d47efe6d7f49de8260dc287517fb1f3c837d1b177f3"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197989744167",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 126.35716702789068,
+        "before": 343.09266693890095
+      },
+      "sha256": {
+        "after": "c89a01e75c3f352608dbbd5f8e064773d87d1533aa7b42f1db75b126cfc9ff02",
+        "before": "c89a01e75c3f352608dbbd5f8e064773d87d1533aa7b42f1db75b126cfc9ff02"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198200982290",
+      "scope": {},
+      "ms": {
+        "before": 359.6415831707418,
+        "after": 127.02133366838098
+      },
+      "sha256": {
+        "before": "8223bd8409906ece4cc3582b923b5f3811b96f609c7f6e5e64ce7a42fd6ec590",
+        "after": "8223bd8409906ece4cc3582b923b5f3811b96f609c7f6e5e64ce7a42fd6ec590"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198200982290",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 118.1672909297049,
+        "before": 330.16075007617474
+      },
+      "sha256": {
+        "after": "dd5bb286a51fbdcb3054c75b3c77513e70a4ad2e0ed06cc391e6a8cb16da5ce4",
+        "before": "dd5bb286a51fbdcb3054c75b3c77513e70a4ad2e0ed06cc391e6a8cb16da5ce4"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198200982290",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 330.2544169127941,
+        "after": 120.29466684907675
+      },
+      "sha256": {
+        "before": "3406463dcefee47d46b9bf78c145bf19b38bcd2947b2e14d52679af34e2f8465",
+        "after": "3406463dcefee47d46b9bf78c145bf19b38bcd2947b2e14d52679af34e2f8465"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198200982290",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 119.28395880386233,
+        "before": 329.40162532031536
+      },
+      "sha256": {
+        "after": "cba63e17138a553e21b04f66fdf40e06cb42cf8fb5411f945b8c1eb7cafdf94b",
+        "before": "cba63e17138a553e21b04f66fdf40e06cb42cf8fb5411f945b8c1eb7cafdf94b"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198134401925",
+      "scope": {},
+      "ms": {
+        "before": 357.33929090201855,
+        "after": 129.0310830809176
+      },
+      "sha256": {
+        "before": "19cb6916aca67852ed65ef42a0e08f9a36da931a792bcf5fec1d5315faf628fb",
+        "after": "19cb6916aca67852ed65ef42a0e08f9a36da931a792bcf5fec1d5315faf628fb"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198134401925",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 120.91795820742846,
+        "before": 336.67362527921796
+      },
+      "sha256": {
+        "after": "67d31ec5e66a9df9c22127fbb696c71d8ed0da3ec0ad98164c0da7b286b25701",
+        "before": "67d31ec5e66a9df9c22127fbb696c71d8ed0da3ec0ad98164c0da7b286b25701"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198134401925",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 350.18954100087285,
+        "after": 124.57683309912682
+      },
+      "sha256": {
+        "before": "be6ae5ae9c4c69effb066b7bb8e17be707f646cff1350c362cae551ef1dd2c93",
+        "after": "be6ae5ae9c4c69effb066b7bb8e17be707f646cff1350c362cae551ef1dd2c93"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198134401925",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 121.07120919972658,
+        "before": 356.16987524554133
+      },
+      "sha256": {
+        "after": "68d73c796d78350ce14e76f5373f59dd9463bac5d9f3b5d9034ecc24442c4ede",
+        "before": "68d73c796d78350ce14e76f5373f59dd9463bac5d9f3b5d9034ecc24442c4ede"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198058500492",
+      "scope": {},
+      "ms": {
+        "before": 348.8672920502722,
+        "after": 126.60500034689903
+      },
+      "sha256": {
+        "before": "b92fcf923b6c0e33b7bbd7f82e413525660a61429cab581cdd2d0d9a7611bce4",
+        "after": "b92fcf923b6c0e33b7bbd7f82e413525660a61429cab581cdd2d0d9a7611bce4"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198058500492",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 118.74616704881191,
+        "before": 338.4580840356648
+      },
+      "sha256": {
+        "after": "0c8a05e8b435673c700673c9b188e47d6259a030d86f03407c54c2ea66b60bf0",
+        "before": "0c8a05e8b435673c700673c9b188e47d6259a030d86f03407c54c2ea66b60bf0"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198058500492",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 335.76858416199684,
+        "after": 120.71195803582668
+      },
+      "sha256": {
+        "before": "652a7f99f2ee3f3baeb3e5c422370bf9e044ac1fe822909d142b7d54ff799321",
+        "after": "652a7f99f2ee3f3baeb3e5c422370bf9e044ac1fe822909d142b7d54ff799321"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198058500492",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 117.29691689833999,
+        "before": 337.8575830720365
+      },
+      "sha256": {
+        "after": "19664aceefb054018241583e54def688bbdf9e161ec6cca4545db0991952297e",
+        "before": "19664aceefb054018241583e54def688bbdf9e161ec6cca4545db0991952297e"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198164970560",
+      "scope": {},
+      "ms": {
+        "before": 334.89520801231265,
+        "after": 122.67450010403991
+      },
+      "sha256": {
+        "before": "4bd70a4119578ba98ba9e888468161fad4788f3eb15c486136b36fd0524fdc8b",
+        "after": "4bd70a4119578ba98ba9e888468161fad4788f3eb15c486136b36fd0524fdc8b"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198164970560",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 123.35116602480412,
+        "before": 333.12295796349645
+      },
+      "sha256": {
+        "after": "fd0c93a33a9c58dba926323ceb85edf4428410da5da02a82252900d1b05873cd",
+        "before": "fd0c93a33a9c58dba926323ceb85edf4428410da5da02a82252900d1b05873cd"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198164970560",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 340.6307501718402,
+        "after": 121.46620824933052
+      },
+      "sha256": {
+        "before": "0f18931dda2f09842c4447a02f1024b5888f54efa53bda4bfcb34963ab63b513",
+        "after": "0f18931dda2f09842c4447a02f1024b5888f54efa53bda4bfcb34963ab63b513"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198164970560",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 122.46408313512802,
+        "before": 351.688832975924
+      },
+      "sha256": {
+        "after": "7617dabf3d51cbec0079cb261f6e9b286fccd19913f39e4d0ac22eba40733240",
+        "before": "7617dabf3d51cbec0079cb261f6e9b286fccd19913f39e4d0ac22eba40733240"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197960690195",
+      "scope": {},
+      "ms": {
+        "before": 352.40804171189666,
+        "after": 129.96366620063782
+      },
+      "sha256": {
+        "before": "996565738b80589a75dabd819f2cb7a060886bd9fee8f54f56c60736b7656f23",
+        "after": "996565738b80589a75dabd819f2cb7a060886bd9fee8f54f56c60736b7656f23"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197960690195",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 122.68808297812939,
+        "before": 339.23662500455976
+      },
+      "sha256": {
+        "after": "76b01b5d6c8679a45a807bf5bcb20512aeacd516d25e5a3ef13518b3d70bd473",
+        "before": "76b01b5d6c8679a45a807bf5bcb20512aeacd516d25e5a3ef13518b3d70bd473"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197960690195",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 333.24041590094566,
+        "after": 121.58441729843616
+      },
+      "sha256": {
+        "before": "920dafa7f55478ad928216c2f3e025b5303b54fcc3dce2c1be374b8e39ce0124",
+        "after": "920dafa7f55478ad928216c2f3e025b5303b54fcc3dce2c1be374b8e39ce0124"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197960690195",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 117.82412510365248,
+        "before": 350.10379226878285
+      },
+      "sha256": {
+        "after": "ac28f91e0bb870572d72a626a20589d6c124a3a487680ec9cc7fb8f6f1970196",
+        "before": "ac28f91e0bb870572d72a626a20589d6c124a3a487680ec9cc7fb8f6f1970196"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198074762801",
+      "scope": {},
+      "ms": {
+        "before": 334.2899577692151,
+        "after": 121.91958306357265
+      },
+      "sha256": {
+        "before": "1486d195c51d93e8be1b0efc3cf9e8ae31d86649e648bc672e2dd2b17a11a2dc",
+        "after": "1486d195c51d93e8be1b0efc3cf9e8ae31d86649e648bc672e2dd2b17a11a2dc"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198074762801",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 118.37320774793625,
+        "before": 334.23500042408705
+      },
+      "sha256": {
+        "after": "b2caeb0d2e27c0fbc0f3eb7f62ad83f05f6af6dda45087363cae141664b2919e",
+        "before": "b2caeb0d2e27c0fbc0f3eb7f62ad83f05f6af6dda45087363cae141664b2919e"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198074762801",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 337.9283328540623,
+        "after": 118.39104210957885
+      },
+      "sha256": {
+        "before": "d64b498aac5614dc2e047a23c1bcfb6d1fe650eefc86e57cb51ac9189424f388",
+        "after": "d64b498aac5614dc2e047a23c1bcfb6d1fe650eefc86e57cb51ac9189424f388"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198074762801",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 125.75066601857543,
+        "before": 344.3764173425734
+      },
+      "sha256": {
+        "after": "69164ac5c50a6b8193e48f5447bb2064f6f8d01ecfa266003ab75e2686d0a63a",
+        "before": "69164ac5c50a6b8193e48f5447bb2064f6f8d01ecfa266003ab75e2686d0a63a"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561199032006224",
+      "scope": {},
+      "ms": {
+        "before": 335.55349987000227,
+        "after": 122.99858313053846
+      },
+      "sha256": {
+        "before": "89c6c8cec0e57aa2d9a15957a9ed24cd98940cf9ef25dfd5a24679643a838f7d",
+        "after": "89c6c8cec0e57aa2d9a15957a9ed24cd98940cf9ef25dfd5a24679643a838f7d"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561199032006224",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 117.12437495589256,
+        "before": 341.94920817390084
+      },
+      "sha256": {
+        "after": "2b21cdd8876f5156e378133bdc20d61ae598bca12883ace464c974d2e4097e4e",
+        "before": "2b21cdd8876f5156e378133bdc20d61ae598bca12883ace464c974d2e4097e4e"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561199032006224",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 342.4133751541376,
+        "after": 127.44929175823927
+      },
+      "sha256": {
+        "before": "d8ff84e2d11537c09fc95c937166f395d198dd7ab0ae9cd0cb2e48cb67a9c240",
+        "after": "d8ff84e2d11537c09fc95c937166f395d198dd7ab0ae9cd0cb2e48cb67a9c240"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561199032006224",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 117.70362500101328,
+        "before": 339.93662474676967
+      },
+      "sha256": {
+        "after": "5317a0523fbdda54513b49ff0e4302f23c3cc542240da2be2113b3cefcd77061",
+        "before": "5317a0523fbdda54513b49ff0e4302f23c3cc542240da2be2113b3cefcd77061"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198041683378",
+      "scope": {},
+      "ms": {
+        "before": 350.44287517666817,
+        "after": 127.26133270189166
+      },
+      "sha256": {
+        "before": "42b0d9039878590b425aa22ceb64d828c666194728209e68907123727a1211d8",
+        "after": "42b0d9039878590b425aa22ceb64d828c666194728209e68907123727a1211d8"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198041683378",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 120.26291619986296,
+        "before": 333.8300413452089
+      },
+      "sha256": {
+        "after": "d1b03a8f7c493f23f4e7cd094de772e500c6010c086a52edebb7f617252de3c8",
+        "before": "d1b03a8f7c493f23f4e7cd094de772e500c6010c086a52edebb7f617252de3c8"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198041683378",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 355.0376249477267,
+        "after": 122.53695819526911
+      },
+      "sha256": {
+        "before": "80c6a9e320254d8f6bba5fa05d62e64883f2abd8aafc9c3cba8d883f9baee9a7",
+        "after": "80c6a9e320254d8f6bba5fa05d62e64883f2abd8aafc9c3cba8d883f9baee9a7"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198041683378",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 116.22179206460714,
+        "before": 343.73487485572696
+      },
+      "sha256": {
+        "after": "a856fe651534a4a2bfcd3d613aea9bc1342c67317dbc2e2cac1333d16acc51da",
+        "before": "a856fe651534a4a2bfcd3d613aea9bc1342c67317dbc2e2cac1333d16acc51da"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197996678278",
+      "scope": {},
+      "ms": {
+        "before": 345.4317497089505,
+        "after": 123.991375323385
+      },
+      "sha256": {
+        "before": "33a653638c54ac6e8ded83debe91babfb5843e31729193f7070958c82e4870b9",
+        "after": "33a653638c54ac6e8ded83debe91babfb5843e31729193f7070958c82e4870b9"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197996678278",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 118.08525025844574,
+        "before": 335.3349594399333
+      },
+      "sha256": {
+        "after": "8f2c1eca1bc324e4c1c63539b88cd0087de9591457cff941598460f8dcfd3ac9",
+        "before": "8f2c1eca1bc324e4c1c63539b88cd0087de9591457cff941598460f8dcfd3ac9"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197996678278",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 350.1413748599589,
+        "after": 117.8567917086184
+      },
+      "sha256": {
+        "before": "5b9bc072921170c8784999bc798bf2ef8e9e58deceb027b6bff485022c1eb3d4",
+        "after": "5b9bc072921170c8784999bc798bf2ef8e9e58deceb027b6bff485022c1eb3d4"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197996678278",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 119.1533338278532,
+        "before": 339.5309168845415
+      },
+      "sha256": {
+        "after": "27b7e3f9bb89a0e4a5c05e2f1a692c1c72b057ea7c29e679f64e947e6f16b48f",
+        "before": "27b7e3f9bb89a0e4a5c05e2f1a692c1c72b057ea7c29e679f64e947e6f16b48f"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197989430253",
+      "scope": {},
+      "ms": {
+        "before": 346.20841685682535,
+        "after": 122.3551663570106
+      },
+      "sha256": {
+        "before": "48bd0ce80d550c66d1a79849242ccd00711888bc6f62429ff034f8896bac072c",
+        "after": "48bd0ce80d550c66d1a79849242ccd00711888bc6f62429ff034f8896bac072c"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197989430253",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 118.03408293053508,
+        "before": 333.2983748987317
+      },
+      "sha256": {
+        "after": "86f27d5c58f0d64cbf65e2e658093bde2e754a07ba9d5e6e73b3c2c893459ddf",
+        "before": "86f27d5c58f0d64cbf65e2e658093bde2e754a07ba9d5e6e73b3c2c893459ddf"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197989430253",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 339.4254157319665,
+        "after": 118.66129236295819
+      },
+      "sha256": {
+        "before": "7fd58ccae6464197249cd203e76d25af6c2805f4c0ec48dd15e017c1cbe722a1",
+        "after": "7fd58ccae6464197249cd203e76d25af6c2805f4c0ec48dd15e017c1cbe722a1"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197989430253",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 122.17158311977983,
+        "before": 326.69891603291035
+      },
+      "sha256": {
+        "after": "226c5e3034dc3b59a908613e9d8d2b8722748056fcf0b2f72407e439d837d26a",
+        "before": "226c5e3034dc3b59a908613e9d8d2b8722748056fcf0b2f72407e439d837d26a"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198176878303",
+      "scope": {},
+      "ms": {
+        "before": 329.84279189258814,
+        "after": 102.6187501847744
+      },
+      "sha256": {
+        "before": "ba29680a1f9aa662452d8f1ce4c621786c01d16acd0df75f8b912908488193ec",
+        "after": "ba29680a1f9aa662452d8f1ce4c621786c01d16acd0df75f8b912908488193ec"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198176878303",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 100.35337507724762,
+        "before": 336.38758305460215
+      },
+      "sha256": {
+        "after": "88b779653098a297e1ac43a77b8f33bd8eca5313e95e335d280d0c1662b9d6bb",
+        "before": "88b779653098a297e1ac43a77b8f33bd8eca5313e95e335d280d0c1662b9d6bb"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198176878303",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 341.5589998476207,
+        "after": 102.23537497222424
+      },
+      "sha256": {
+        "before": "01605f0019dbaa50e7fd5a470ba17c9f61d233802a9ec9d59f47c67cb02f9058",
+        "after": "01605f0019dbaa50e7fd5a470ba17c9f61d233802a9ec9d59f47c67cb02f9058"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198176878303",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 99.45895802229643,
+        "before": 336.9064168073237
+      },
+      "sha256": {
+        "after": "378d06e1b85a34deb38d6d414aae12eb57ee4926ef6ce30ec8b757aefa6f718e",
+        "before": "378d06e1b85a34deb38d6d414aae12eb57ee4926ef6ce30ec8b757aefa6f718e"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198355739212",
+      "scope": {},
+      "ms": {
+        "before": 335.061542224139,
+        "after": 98.26808283105493
+      },
+      "sha256": {
+        "before": "e8a1ed150ce679720f9449c327a9df7c87e4e61a09eff729e61569c066e5a2dd",
+        "after": "e8a1ed150ce679720f9449c327a9df7c87e4e61a09eff729e61569c066e5a2dd"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198355739212",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 97.32908429577947,
+        "before": 338.93479174003005
+      },
+      "sha256": {
+        "after": "023152a1ec3d768ff9bc01652ae51b06366488002cf94abccb609e31923070b5",
+        "before": "023152a1ec3d768ff9bc01652ae51b06366488002cf94abccb609e31923070b5"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198355739212",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 340.0196246802807,
+        "after": 94.80354096740484
+      },
+      "sha256": {
+        "before": "afac455ef2713e0e2362dcdd2af8ab218adefe041f665358266d0d93046b4618",
+        "after": "afac455ef2713e0e2362dcdd2af8ab218adefe041f665358266d0d93046b4618"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198355739212",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 93.71570823714137,
+        "before": 328.1840831041336
+      },
+      "sha256": {
+        "after": "3263b14b7f64ffe2e438699ea1ddc0f46983a85adfa2cb7eb57b141286029db0",
+        "before": "3263b14b7f64ffe2e438699ea1ddc0f46983a85adfa2cb7eb57b141286029db0"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198998266210",
+      "scope": {},
+      "ms": {
+        "before": 338.24787521734834,
+        "after": 99.99149991199374
+      },
+      "sha256": {
+        "before": "4dfa0efcb3cf61cc79c5de2b1b1c533f33643596711d4c241140265ef3d57d1b",
+        "after": "4dfa0efcb3cf61cc79c5de2b1b1c533f33643596711d4c241140265ef3d57d1b"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198998266210",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 95.88741697371006,
+        "before": 331.8603332154453
+      },
+      "sha256": {
+        "after": "ed3fe061c8620b83c5394135a4f0c479eb987280150acf3487448415c4659d43",
+        "before": "ed3fe061c8620b83c5394135a4f0c479eb987280150acf3487448415c4659d43"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198998266210",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 343.6809591948986,
+        "after": 97.9187497869134
+      },
+      "sha256": {
+        "before": "934e55274928ed7d635d8d9e7a9d58d1762fab019d28adb0fed34102360898b5",
+        "after": "934e55274928ed7d635d8d9e7a9d58d1762fab019d28adb0fed34102360898b5"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198998266210",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 100.31533287838101,
+        "before": 338.13216676935554
+      },
+      "sha256": {
+        "after": "b28d9ac6aeaa1760b9480e6503bc84bbd200035c1c6549ea63d0eeb3af3935d3",
+        "before": "b28d9ac6aeaa1760b9480e6503bc84bbd200035c1c6549ea63d0eeb3af3935d3"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198063336407",
+      "scope": {},
+      "ms": {
+        "before": 333.8518333621323,
+        "after": 101.15337511524558
+      },
+      "sha256": {
+        "before": "91c55400e9206244f72a16f2f18b0f1744219d913bc09345e9114c765f8fa870",
+        "after": "91c55400e9206244f72a16f2f18b0f1744219d913bc09345e9114c765f8fa870"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198063336407",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 95.85662512108684,
+        "before": 330.6200415827334
+      },
+      "sha256": {
+        "after": "a6579ed20ad9e5f485a3ded28581f95eb5862ecc6e027173e3ec0c10b0e5fbcf",
+        "before": "a6579ed20ad9e5f485a3ded28581f95eb5862ecc6e027173e3ec0c10b0e5fbcf"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198063336407",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 348.06366730481386,
+        "after": 97.1105839125812
+      },
+      "sha256": {
+        "before": "01f4690f956ab262f03e0bd966a68dfe17369e7d3d5274b935a2c7b1ff86fa1d",
+        "after": "01f4690f956ab262f03e0bd966a68dfe17369e7d3d5274b935a2c7b1ff86fa1d"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198063336407",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 94.47516594082117,
+        "before": 334.11458414047956
+      },
+      "sha256": {
+        "after": "3fa004617d71b48fb2d5c45a050f1e560beb4744c4f888e993756aaa50282225",
+        "before": "3fa004617d71b48fb2d5c45a050f1e560beb4744c4f888e993756aaa50282225"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198193174134",
+      "scope": {},
+      "ms": {
+        "before": 338.49708270281553,
+        "after": 98.03637489676476
+      },
+      "sha256": {
+        "before": "8587c241a13283d49ef1fab8a7a9e0657c174339959230d869d55248db979b3c",
+        "after": "8587c241a13283d49ef1fab8a7a9e0657c174339959230d869d55248db979b3c"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198193174134",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 93.76954194158316,
+        "before": 330.3100420162082
+      },
+      "sha256": {
+        "after": "e650656c2bf4b4fa7b02e897a3480f28f8484e95f8d18ddf794790a7170aea14",
+        "before": "e650656c2bf4b4fa7b02e897a3480f28f8484e95f8d18ddf794790a7170aea14"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198193174134",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 331.4202921465039,
+        "after": 95.56387504562736
+      },
+      "sha256": {
+        "before": "95b7c74c9deddfe188705c55fcc224f84c954d535a0e91d86f55ea3a8b6b8e62",
+        "after": "95b7c74c9deddfe188705c55fcc224f84c954d535a0e91d86f55ea3a8b6b8e62"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198193174134",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 102.03558299690485,
+        "before": 344.030374661088
+      },
+      "sha256": {
+        "after": "69cea72d53c5c8ac100dc85e4ab6993580925ebd7668d640c8d73ec5e9435ce6",
+        "before": "69cea72d53c5c8ac100dc85e4ab6993580925ebd7668d640c8d73ec5e9435ce6"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198310561479",
+      "scope": {},
+      "ms": {
+        "before": 348.60312519595027,
+        "after": 100.55341571569443
+      },
+      "sha256": {
+        "before": "c07bd58a961278817e040618d31c9391d56847171917fac2800cb4c6d127a912",
+        "after": "c07bd58a961278817e040618d31c9391d56847171917fac2800cb4c6d127a912"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198310561479",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 97.22679201513529,
+        "before": 338.95233320072293
+      },
+      "sha256": {
+        "after": "4a831a4f70f2e15167fac4543bfaccd2f26b582bae0c3e481921c7e2071083bc",
+        "before": "4a831a4f70f2e15167fac4543bfaccd2f26b582bae0c3e481921c7e2071083bc"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198310561479",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 341.6524170897901,
+        "after": 95.88199993595481
+      },
+      "sha256": {
+        "before": "70a6aa139d27288dc21eb2482e1a779de2023d7f22e4e8a0f3da5b76ebeaefab",
+        "after": "70a6aa139d27288dc21eb2482e1a779de2023d7f22e4e8a0f3da5b76ebeaefab"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198310561479",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 95.43020790442824,
+        "before": 354.9627917818725
+      },
+      "sha256": {
+        "after": "db419dda194d4842ee8e76c566618d0b1b3247ad28f2bf6ef1a813683d541537",
+        "before": "db419dda194d4842ee8e76c566618d0b1b3247ad28f2bf6ef1a813683d541537"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198875633179",
+      "scope": {},
+      "ms": {
+        "before": 344.2829172126949,
+        "after": 107.92629094794393
+      },
+      "sha256": {
+        "before": "123680d9e42df76cc7b4e9060f8e791fbeb4e8703052b914c992b6b8ea8f2f89",
+        "after": "123680d9e42df76cc7b4e9060f8e791fbeb4e8703052b914c992b6b8ea8f2f89"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198875633179",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 103.17100025713444,
+        "before": 331.67108288034797
+      },
+      "sha256": {
+        "after": "8efa859350558386484ce52e464119788a1fe528106e531778834733e9fdf0a4",
+        "before": "8efa859350558386484ce52e464119788a1fe528106e531778834733e9fdf0a4"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198875633179",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 345.57241713628173,
+        "after": 104.87791709601879
+      },
+      "sha256": {
+        "before": "0fc0b265563d3d74cfba211417539d4961a68cacdf56ed9fb840692e8650320d",
+        "after": "0fc0b265563d3d74cfba211417539d4961a68cacdf56ed9fb840692e8650320d"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198875633179",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 104.5187502168119,
+        "before": 343.40441692620516
+      },
+      "sha256": {
+        "after": "df138112c263b1ee72657d285a64fecf5d6b14f336670f0c30f6397f7871f724",
+        "before": "df138112c263b1ee72657d285a64fecf5d6b14f336670f0c30f6397f7871f724"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198991278425",
+      "scope": {},
+      "ms": {
+        "before": 383.4797088056803,
+        "after": 113.02912514656782
+      },
+      "sha256": {
+        "before": "20303d5bef1d227a7738f21a6f316d529f2232cea86f881c5239d29d0681fe58",
+        "after": "20303d5bef1d227a7738f21a6f316d529f2232cea86f881c5239d29d0681fe58"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198991278425",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 106.07516672462225,
+        "before": 347.05154225230217
+      },
+      "sha256": {
+        "after": "3cfdfcf2ce381771fda6e033fe97ae6748acf501fb86a6f4a28218a4df3a9d9e",
+        "before": "3cfdfcf2ce381771fda6e033fe97ae6748acf501fb86a6f4a28218a4df3a9d9e"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198991278425",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 344.7000002488494,
+        "after": 104.80891726911068
+      },
+      "sha256": {
+        "before": "c57730c9d54b75da879b22b52cc8f19645316dbb5443b946a6952b5bb6b91a39",
+        "after": "c57730c9d54b75da879b22b52cc8f19645316dbb5443b946a6952b5bb6b91a39"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198991278425",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 102.00379090383649,
+        "before": 334.37500009313226
+      },
+      "sha256": {
+        "after": "4e5aeaa26e84fd651a382eebc432d2bbdd6c27b51aa0b847408122612e447310",
+        "before": "4e5aeaa26e84fd651a382eebc432d2bbdd6c27b51aa0b847408122612e447310"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561199100725838",
+      "scope": {},
+      "ms": {
+        "before": 344.15174974128604,
+        "after": 104.59179105237126
+      },
+      "sha256": {
+        "before": "c8e594201332382138e30df1529dab2564993d5de085fbdcd6b746cfaf5c7ef1",
+        "after": "c8e594201332382138e30df1529dab2564993d5de085fbdcd6b746cfaf5c7ef1"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561199100725838",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 104.40695798024535,
+        "before": 336.9546248577535
+      },
+      "sha256": {
+        "after": "2d4877af8998cb3442ce72cbc764fdf250746b8702b8706a8148f30d9ce6a6e1",
+        "before": "2d4877af8998cb3442ce72cbc764fdf250746b8702b8706a8148f30d9ce6a6e1"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561199100725838",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 336.09470818191767,
+        "after": 104.48804125189781
+      },
+      "sha256": {
+        "before": "11d9c63344b8ca37dbb4dfdf11ab130d005b5f8eca3009a7c940fc0b3c894e79",
+        "after": "11d9c63344b8ca37dbb4dfdf11ab130d005b5f8eca3009a7c940fc0b3c894e79"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561199100725838",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 103.75570924952626,
+        "before": 345.0787919573486
+      },
+      "sha256": {
+        "after": "b5c4637865b44c6f952f684f2137be4ca01b45b2d44b101bf19054ec7b588403",
+        "before": "b5c4637865b44c6f952f684f2137be4ca01b45b2d44b101bf19054ec7b588403"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198178209109",
+      "scope": {},
+      "ms": {
+        "before": 356.864333152771,
+        "after": 120.47324981540442
+      },
+      "sha256": {
+        "before": "4338b6384141018a6a4d09822725582e328e054f3445d164c10084cfcb34a281",
+        "after": "4338b6384141018a6a4d09822725582e328e054f3445d164c10084cfcb34a281"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198178209109",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 104.8217504285276,
+        "before": 345.25000024586916
+      },
+      "sha256": {
+        "after": "b28d1ea77f60ecf7050ec16b2e61abfb6aa7ef3c2b6590efef8b574c253b86b8",
+        "before": "b28d1ea77f60ecf7050ec16b2e61abfb6aa7ef3c2b6590efef8b574c253b86b8"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198178209109",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 344.99604208394885,
+        "after": 106.99670808389783
+      },
+      "sha256": {
+        "before": "f0dced40e53256c444ffe1d70e01db6f428e8fbfd4fe25d8e35d40fece345f09",
+        "after": "f0dced40e53256c444ffe1d70e01db6f428e8fbfd4fe25d8e35d40fece345f09"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198178209109",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 104.68958364799619,
+        "before": 333.27108388766646
+      },
+      "sha256": {
+        "after": "fc92e2e019581dc11358956798cd28ad8d6b5fc7fc20180ef4de68ce97edf0a2",
+        "before": "fc92e2e019581dc11358956798cd28ad8d6b5fc7fc20180ef4de68ce97edf0a2"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561199313968259",
+      "scope": {},
+      "ms": {
+        "before": 342.59354090318084,
+        "after": 105.55174993351102
+      },
+      "sha256": {
+        "before": "f79ca572474705bb52424b2117eeb01a12b98bcf6fa98d385b15a75a30b7f93f",
+        "after": "f79ca572474705bb52424b2117eeb01a12b98bcf6fa98d385b15a75a30b7f93f"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561199313968259",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 113.35095902904868,
+        "before": 337.7758329734206
+      },
+      "sha256": {
+        "after": "68f959048a464d59ab729b09972da03116435c9b082223ba67822306062f1913",
+        "before": "68f959048a464d59ab729b09972da03116435c9b082223ba67822306062f1913"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561199313968259",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 350.6920407526195,
+        "after": 106.38154111802578
+      },
+      "sha256": {
+        "before": "48004ec9a4d7991e8869343437f4f193512e24a519573c00e1d2f91a79b3bcb6",
+        "after": "48004ec9a4d7991e8869343437f4f193512e24a519573c00e1d2f91a79b3bcb6"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561199313968259",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 102.44645830243826,
+        "before": 362.9425000399351
+      },
+      "sha256": {
+        "after": "510d7f9bec773e88a2a9565e41e010cd3cfd687e661d6a844a571af1dbe4a435",
+        "before": "510d7f9bec773e88a2a9565e41e010cd3cfd687e661d6a844a571af1dbe4a435"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561199046478501",
+      "scope": {},
+      "ms": {
+        "before": 393.9126660116017,
+        "after": 95.31083283945918
+      },
+      "sha256": {
+        "before": "6d4bc2dfc13be021728924c7f6355032c95e8c8192dc0d972d9b8de5201611d8",
+        "after": "6d4bc2dfc13be021728924c7f6355032c95e8c8192dc0d972d9b8de5201611d8"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561199046478501",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 90.84537485614419,
+        "before": 381.04424998164177
+      },
+      "sha256": {
+        "after": "b6cf7ea75adbc7f50b8df577c02723fbe147c2b3f0020348c012e55347b55429",
+        "before": "b6cf7ea75adbc7f50b8df577c02723fbe147c2b3f0020348c012e55347b55429"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561199046478501",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 332.69154094159603,
+        "after": 85.3136251680553
+      },
+      "sha256": {
+        "before": "c59ed0efb22a5ac1f35cad1bc9b7ff6763c4c943e812e125e4a6a4a0bb120ec7",
+        "after": "c59ed0efb22a5ac1f35cad1bc9b7ff6763c4c943e812e125e4a6a4a0bb120ec7"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561199046478501",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 83.83887493982911,
+        "before": 334.4551660120487
+      },
+      "sha256": {
+        "after": "339bec0f60a3e23017a67d5c11ea01539e3602f946a228ce98212f959e01e6c1",
+        "before": "339bec0f60a3e23017a67d5c11ea01539e3602f946a228ce98212f959e01e6c1"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198053126645",
+      "scope": {},
+      "ms": {
+        "before": 342.84141613170505,
+        "after": 89.54216679558158
+      },
+      "sha256": {
+        "before": "b110d3384385fb654c8b88d362ff9adb28b54abf5f804be078bd6eb454222970",
+        "after": "b110d3384385fb654c8b88d362ff9adb28b54abf5f804be078bd6eb454222970"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198053126645",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 84.7420422360301,
+        "before": 338.67487497627735
+      },
+      "sha256": {
+        "after": "e479531bb456495dae3a359b173f78b5b771a1c7661e6dbb603a3baef7210e44",
+        "before": "e479531bb456495dae3a359b173f78b5b771a1c7661e6dbb603a3baef7210e44"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198053126645",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 346.9051253050566,
+        "after": 84.95833305642009
+      },
+      "sha256": {
+        "before": "4127fea37b4cfa12b2b7e2f9a20caa2f9fbb4faa8fbd4d8b9d7e64359ee88d5c",
+        "after": "4127fea37b4cfa12b2b7e2f9a20caa2f9fbb4faa8fbd4d8b9d7e64359ee88d5c"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198053126645",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 84.89145897328854,
+        "before": 330.4907497949898
+      },
+      "sha256": {
+        "after": "717654af0c1a7da0dcc264fc22586d8f6eb424298e367a62e2599b9289a5c6a6",
+        "before": "717654af0c1a7da0dcc264fc22586d8f6eb424298e367a62e2599b9289a5c6a6"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198294381090",
+      "scope": {},
+      "ms": {
+        "before": 333.0556252039969,
+        "after": 86.7647910490632
+      },
+      "sha256": {
+        "before": "3166d05ad32e51634df91a4cd1cb75dd9f159a7e43261039175c0a3c2ec1dd99",
+        "after": "3166d05ad32e51634df91a4cd1cb75dd9f159a7e43261039175c0a3c2ec1dd99"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198294381090",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 83.78658257424831,
+        "before": 333.0458328127861
+      },
+      "sha256": {
+        "after": "ad8cbaeeb100e004bdc7a2cd46eedabf98886cf8db3ae790151addcc65a1f436",
+        "before": "ad8cbaeeb100e004bdc7a2cd46eedabf98886cf8db3ae790151addcc65a1f436"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198294381090",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 331.7231656983495,
+        "after": 93.13674969598651
+      },
+      "sha256": {
+        "before": "5b4649a7e7701403cd5675bc6485795fc35cbf47823ac60d6e6ecc7c81391d07",
+        "after": "5b4649a7e7701403cd5675bc6485795fc35cbf47823ac60d6e6ecc7c81391d07"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198294381090",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 83.9549582451582,
+        "before": 328.1708750873804
+      },
+      "sha256": {
+        "after": "498bf8908515fa235e7c901a727d2eb48b77a4d4fb220b637999c038dc54b3cc",
+        "before": "498bf8908515fa235e7c901a727d2eb48b77a4d4fb220b637999c038dc54b3cc"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198068002993",
+      "scope": {},
+      "ms": {
+        "before": 329.52112471684813,
+        "after": 85.03145771101117
+      },
+      "sha256": {
+        "before": "e3db64d8b9f482be91bfb5109a866d0554f8dbcf60672d051d2aeb1863082fb7",
+        "after": "e3db64d8b9f482be91bfb5109a866d0554f8dbcf60672d051d2aeb1863082fb7"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198068002993",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 82.62616582214832,
+        "before": 326.51204243302345
+      },
+      "sha256": {
+        "after": "788e57ac03246540b1482f2b64d514773962d846f34f56872d11bbdf75048f6b",
+        "before": "788e57ac03246540b1482f2b64d514773962d846f34f56872d11bbdf75048f6b"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198068002993",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 328.8547503761947,
+        "after": 84.37183266505599
+      },
+      "sha256": {
+        "before": "718273cf07e67688630b65fea7eeb129b8be2581df17433cf66eefd57a6a0bd8",
+        "after": "718273cf07e67688630b65fea7eeb129b8be2581df17433cf66eefd57a6a0bd8"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198068002993",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 83.50820792838931,
+        "before": 336.62154199555516
+      },
+      "sha256": {
+        "after": "9b4a3554fad3155d49f26b34c3d2225aa4368103be6301bf90b484e98f190ec3",
+        "before": "9b4a3554fad3155d49f26b34c3d2225aa4368103be6301bf90b484e98f190ec3"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198012872053",
+      "scope": {},
+      "ms": {
+        "before": 332.55537459626794,
+        "after": 86.84029197320342
+      },
+      "sha256": {
+        "before": "60f0169158eace88d23eaeaea8ca4f32c0a9a703a442f193d0fdf501e37a5940",
+        "after": "60f0169158eace88d23eaeaea8ca4f32c0a9a703a442f193d0fdf501e37a5940"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198012872053",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 84.456832613796,
+        "before": 330.3499589674175
+      },
+      "sha256": {
+        "after": "defd0ef058c7cb566f96d6edf631da07efd3816ff41d18a230b84c26e6991c6a",
+        "before": "defd0ef058c7cb566f96d6edf631da07efd3816ff41d18a230b84c26e6991c6a"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198012872053",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 330.52216563373804,
+        "after": 85.00941609963775
+      },
+      "sha256": {
+        "before": "717419aa20b30d12cc2b82c07e1ee674f88577b3ac8fc8a8ebc7a6ce5b5599b1",
+        "after": "717419aa20b30d12cc2b82c07e1ee674f88577b3ac8fc8a8ebc7a6ce5b5599b1"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198012872053",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 84.88537510856986,
+        "before": 329.6847501769662
+      },
+      "sha256": {
+        "after": "65861475e5def8e6c81ec7a98431ef4e8913ca7fb37e9210266d1cf7d90ac0eb",
+        "before": "65861475e5def8e6c81ec7a98431ef4e8913ca7fb37e9210266d1cf7d90ac0eb"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198216891576",
+      "scope": {},
+      "ms": {
+        "before": 336.09541738405824,
+        "after": 59.85754216089845
+      },
+      "sha256": {
+        "before": "bd42540b9e4c9931c09b8587663e26a768d1bcd985495dcd2b958066f36b4ed2",
+        "after": "bd42540b9e4c9931c09b8587663e26a768d1bcd985495dcd2b958066f36b4ed2"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198216891576",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 59.24150021746755,
+        "before": 328.04962480440736
+      },
+      "sha256": {
+        "after": "9f5ab02a40b7426c1cda9a91c021882969eb7034cf56c606891d513dd6ad51d8",
+        "before": "9f5ab02a40b7426c1cda9a91c021882969eb7034cf56c606891d513dd6ad51d8"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198216891576",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 326.9259580411017,
+        "after": 59.636250138282776
+      },
+      "sha256": {
+        "before": "e7c9c6965a89612522464360ce34e2479d259c1ce12d03cc62d882bac330fc51",
+        "after": "e7c9c6965a89612522464360ce34e2479d259c1ce12d03cc62d882bac330fc51"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198216891576",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 58.771457988768816,
+        "before": 328.5880000330508
+      },
+      "sha256": {
+        "after": "a03d35d1c3e852b1eaef0da0221e59302885b3a452d9684c6c295fd39f9d042e",
+        "before": "a03d35d1c3e852b1eaef0da0221e59302885b3a452d9684c6c295fd39f9d042e"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198067722198",
+      "scope": {},
+      "ms": {
+        "before": 338.17545883357525,
+        "after": 60.09079096838832
+      },
+      "sha256": {
+        "before": "6ee3400b84aad956d4506f4c9724ea46086d7e9625ca6c4600c5c6ddb805ad8c",
+        "after": "6ee3400b84aad956d4506f4c9724ea46086d7e9625ca6c4600c5c6ddb805ad8c"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198067722198",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 59.79266716167331,
+        "before": 336.11375000327826
+      },
+      "sha256": {
+        "after": "d76d9a1ae34d5753a2b13d5b6c55383322db8c4f6e6ea17e68480bf2836ab3f8",
+        "before": "d76d9a1ae34d5753a2b13d5b6c55383322db8c4f6e6ea17e68480bf2836ab3f8"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198067722198",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 327.6308332569897,
+        "after": 60.4291670024395
+      },
+      "sha256": {
+        "before": "b00dd450e889ba42f882ac4094efe0b4f615478d30470c5cebc894238c28f0bc",
+        "after": "b00dd450e889ba42f882ac4094efe0b4f615478d30470c5cebc894238c28f0bc"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198067722198",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 59.24170883372426,
+        "before": 327.9840829782188
+      },
+      "sha256": {
+        "after": "445638f650d62b294cb786a8793aeacc3384fd1b4f4243850f921e2e8cc8df0f",
+        "before": "445638f650d62b294cb786a8793aeacc3384fd1b4f4243850f921e2e8cc8df0f"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198319723208",
+      "scope": {},
+      "ms": {
+        "before": 329.6761247329414,
+        "after": 60.08174968883395
+      },
+      "sha256": {
+        "before": "f62d91b5904f91d8f70db2d34d7ef875e621da2ed3aa247454faa745f60b6bcb",
+        "after": "f62d91b5904f91d8f70db2d34d7ef875e621da2ed3aa247454faa745f60b6bcb"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198319723208",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 59.6413747407496,
+        "before": 339.8635000921786
+      },
+      "sha256": {
+        "after": "9abc3c26d46c77879a08ce77f8808c5b00124d7e1937587164b2a626f2184d49",
+        "before": "9abc3c26d46c77879a08ce77f8808c5b00124d7e1937587164b2a626f2184d49"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198319723208",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 338.0449996329844,
+        "after": 60.10208372026682
+      },
+      "sha256": {
+        "before": "bcc10306309341a813313083ee152ad9c8f6cdc6a74096bdd95f30db0b140063",
+        "after": "bcc10306309341a813313083ee152ad9c8f6cdc6a74096bdd95f30db0b140063"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198319723208",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 59.26975002512336,
+        "before": 329.99666687101126
+      },
+      "sha256": {
+        "after": "e1ec092dd4c3a6db97ac98d21daa343354fae14ee59620dad31ecf527a680e49",
+        "before": "e1ec092dd4c3a6db97ac98d21daa343354fae14ee59620dad31ecf527a680e49"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198195642865",
+      "scope": {},
+      "ms": {
+        "before": 329.197334125638,
+        "after": 60.31387485563755
+      },
+      "sha256": {
+        "before": "a3a52c76ea04efaf28605ab44a7bae3d8504a8107066520352f988dba3f6ebc4",
+        "after": "a3a52c76ea04efaf28605ab44a7bae3d8504a8107066520352f988dba3f6ebc4"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198195642865",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 59.496582951396704,
+        "before": 327.8848328627646
+      },
+      "sha256": {
+        "after": "0c865d23b132297290aaa6287d133b56c81585599c72ffd7489fa0f260aa60a0",
+        "before": "0c865d23b132297290aaa6287d133b56c81585599c72ffd7489fa0f260aa60a0"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198195642865",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 328.20091722533107,
+        "after": 59.71987498924136
+      },
+      "sha256": {
+        "before": "4c29f92879983765747ee7e041392be73c1451cf8e34b5fca695c50be6bb1559",
+        "after": "4c29f92879983765747ee7e041392be73c1451cf8e34b5fca695c50be6bb1559"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198195642865",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 58.71883314102888,
+        "before": 326.41774974763393
+      },
+      "sha256": {
+        "after": "2ad68547ed0a4e9b0aacf6796be376d473b45b2a791665fbfe3c4abaadf6cdba",
+        "before": "2ad68547ed0a4e9b0aacf6796be376d473b45b2a791665fbfe3c4abaadf6cdba"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198242950384",
+      "scope": {},
+      "ms": {
+        "before": 339.7484589368105,
+        "after": 62.84466618672013
+      },
+      "sha256": {
+        "before": "c05a995718ce06de564b68d3a72ffe12b5707c042b986b124eaeb21d7b6fcaea",
+        "after": "c05a995718ce06de564b68d3a72ffe12b5707c042b986b124eaeb21d7b6fcaea"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198242950384",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 62.39241687580943,
+        "before": 334.2166249640286
+      },
+      "sha256": {
+        "after": "e647a7bdfee953647f7cd9b06af872a4f05867deb34ab6ace45b773c912824dd",
+        "before": "e647a7bdfee953647f7cd9b06af872a4f05867deb34ab6ace45b773c912824dd"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198242950384",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 329.26374999806285,
+        "after": 60.26020785793662
+      },
+      "sha256": {
+        "before": "469231e789d9083ffc65b332eb5e01253cf109eab7cd2645e177318c9d53b0c9",
+        "after": "469231e789d9083ffc65b332eb5e01253cf109eab7cd2645e177318c9d53b0c9"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198242950384",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 58.998375199735165,
+        "before": 327.3977502249181
+      },
+      "sha256": {
+        "after": "e79ae7e7d3e196c13416f9a57cac311185d6b0c0fd31e7ff21470f49d1461fa7",
+        "before": "e79ae7e7d3e196c13416f9a57cac311185d6b0c0fd31e7ff21470f49d1461fa7"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197973140692",
+      "scope": {},
+      "ms": {
+        "before": 328.8769172504544,
+        "after": 65.3624590486288
+      },
+      "sha256": {
+        "before": "09113b38d910bc7ce4d3b92be32245daded57e886f24c5f85162f97e0575db40",
+        "after": "09113b38d910bc7ce4d3b92be32245daded57e886f24c5f85162f97e0575db40"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197973140692",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 65.75479218736291,
+        "before": 346.37504210695624
+      },
+      "sha256": {
+        "after": "d0f33db81e1802a5d401549ddc79ebbdef1cd7b163c2b2458c914f09102c3857",
+        "before": "d0f33db81e1802a5d401549ddc79ebbdef1cd7b163c2b2458c914f09102c3857"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197973140692",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 337.4315002001822,
+        "after": 63.80033306777477
+      },
+      "sha256": {
+        "before": "1df3e1be891a5f3a155f9404df7768f57b1c2a00df501de2281a7e615f7753ad",
+        "after": "1df3e1be891a5f3a155f9404df7768f57b1c2a00df501de2281a7e615f7753ad"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197973140692",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 63.10070911422372,
+        "before": 339.0086670406163
+      },
+      "sha256": {
+        "after": "898aae2669144d41d986aabf891eef0f99a7a47cdf3b764e3873b21041d78d97",
+        "before": "898aae2669144d41d986aabf891eef0f99a7a47cdf3b764e3873b21041d78d97"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198036125584",
+      "scope": {},
+      "ms": {
+        "before": 335.2175001055002,
+        "after": 54.5758749358356
+      },
+      "sha256": {
+        "before": "c156897686e86285b3848bdbc280c6de6cd521b14deeff6cea283a8c4ff48a65",
+        "after": "c156897686e86285b3848bdbc280c6de6cd521b14deeff6cea283a8c4ff48a65"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198036125584",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 53.5886250436306,
+        "before": 330.72262490168214
+      },
+      "sha256": {
+        "after": "ec346062b71d236bb152a67fc4fdd6a48c638c872b06e490e9372886151d6f18",
+        "before": "ec346062b71d236bb152a67fc4fdd6a48c638c872b06e490e9372886151d6f18"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198036125584",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 340.15008294954896,
+        "after": 54.800332989543676
+      },
+      "sha256": {
+        "before": "6c1a00429f9dd4a56452ac611a66da60c4b5881d6b8e6b2f7b07cb1b4d68adc9",
+        "after": "6c1a00429f9dd4a56452ac611a66da60c4b5881d6b8e6b2f7b07cb1b4d68adc9"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198036125584",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 53.74016705900431,
+        "before": 326.93604100495577
+      },
+      "sha256": {
+        "after": "192511c80e01d2e3f55b23b77863653948b5bc98359a5c0aafbbf71f76ce2bec",
+        "before": "192511c80e01d2e3f55b23b77863653948b5bc98359a5c0aafbbf71f76ce2bec"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197995817501",
+      "scope": {},
+      "ms": {
+        "before": 330.1026248373091,
+        "after": 54.558999836444855
+      },
+      "sha256": {
+        "before": "de70f701e0a928ffcf5974b55b229cbd1d75afeb036de6232b8dabf8cbadc255",
+        "after": "de70f701e0a928ffcf5974b55b229cbd1d75afeb036de6232b8dabf8cbadc255"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197995817501",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 53.43800038099289,
+        "before": 331.20949985459447
+      },
+      "sha256": {
+        "after": "7e90659f759ab7802b55fe22363fd172ae72dc9244afa60f68479b6135e9211b",
+        "before": "7e90659f759ab7802b55fe22363fd172ae72dc9244afa60f68479b6135e9211b"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197995817501",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 325.1879159361124,
+        "after": 54.28212508559227
+      },
+      "sha256": {
+        "before": "abbfc4cb7c65038534a7ad2bd7e1316f6f8817bdcc8e0086fb23b2bcce6765f5",
+        "after": "abbfc4cb7c65038534a7ad2bd7e1316f6f8817bdcc8e0086fb23b2bcce6765f5"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197995817501",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 53.66000020876527,
+        "before": 329.65337485074997
+      },
+      "sha256": {
+        "after": "6e875a4b1e8723d09e6a030778c17f2948cb45e701331bab86554a6ffd1bb515",
+        "before": "6e875a4b1e8723d09e6a030778c17f2948cb45e701331bab86554a6ffd1bb515"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198210626739",
+      "scope": {},
+      "ms": {
+        "before": 346.0009158588946,
+        "after": 57.158750016242266
+      },
+      "sha256": {
+        "before": "9b9c1c18f7f4202cbf420b9b2e9709865f65f5fac0cb5594e83a122367550e2b",
+        "after": "9b9c1c18f7f4202cbf420b9b2e9709865f65f5fac0cb5594e83a122367550e2b"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198210626739",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 56.96762492880225,
+        "before": 344.2183746956289
+      },
+      "sha256": {
+        "after": "f7ad29984d6f70e8400c982b7d9d5baf1eb81f1e8b21b54b1c277006a58016ae",
+        "before": "f7ad29984d6f70e8400c982b7d9d5baf1eb81f1e8b21b54b1c277006a58016ae"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198210626739",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 344.7015001438558,
+        "after": 55.03391707316041
+      },
+      "sha256": {
+        "before": "f8ae0335e0fb5f4351430dc23a1b0c5d06cac76e76395b79691e9e2ae81d163c",
+        "after": "f8ae0335e0fb5f4351430dc23a1b0c5d06cac76e76395b79691e9e2ae81d163c"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198210626739",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 53.75037482008338,
+        "before": 326.8220419995487
+      },
+      "sha256": {
+        "after": "3e1d20c9f3b1b321a5f1040836851ba24c3cb93970be732d21d9e15c524f79d6",
+        "before": "3e1d20c9f3b1b321a5f1040836851ba24c3cb93970be732d21d9e15c524f79d6"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198356252021",
+      "scope": {},
+      "ms": {
+        "before": 330.0901250913739,
+        "after": 57.30437487363815
+      },
+      "sha256": {
+        "before": "23b75ebf527e169fb18179085c8075f59eeb016df456b9864862173757c416df",
+        "after": "23b75ebf527e169fb18179085c8075f59eeb016df456b9864862173757c416df"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198356252021",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 56.786749977618456,
+        "before": 345.1081248931587
+      },
+      "sha256": {
+        "after": "7b6c824d43db45f95f16cdb78a7cb4d1026e2cf0b3fe98bfb10cac90a24597f6",
+        "before": "7b6c824d43db45f95f16cdb78a7cb4d1026e2cf0b3fe98bfb10cac90a24597f6"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198356252021",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 333.0589169636369,
+        "after": 55.35466689616442
+      },
+      "sha256": {
+        "before": "91a804780ecc4b3d86591712a23aa6da36a5854a935dc4e81af14e562df0b393",
+        "after": "91a804780ecc4b3d86591712a23aa6da36a5854a935dc4e81af14e562df0b393"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198356252021",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 53.61000029370189,
+        "before": 330.7550838217139
+      },
+      "sha256": {
+        "after": "17549126d4e7f1dfba56fc192db04157954bfc5eb55fa35d7227f141dd6630db",
+        "before": "17549126d4e7f1dfba56fc192db04157954bfc5eb55fa35d7227f141dd6630db"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198141272052",
+      "scope": {},
+      "ms": {
+        "before": 354.0081246756017,
+        "after": 55.919041857123375
+      },
+      "sha256": {
+        "before": "66eb3148db7f8bbb0ea9129435121354f33323c235fbfd26bb1871ab230b0008",
+        "after": "66eb3148db7f8bbb0ea9129435121354f33323c235fbfd26bb1871ab230b0008"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198141272052",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 55.83399999886751,
+        "before": 329.07737512141466
+      },
+      "sha256": {
+        "after": "26b3f86c5a4ed83915381e646fec07d4446759b306c09c3153b757e9b478999a",
+        "before": "26b3f86c5a4ed83915381e646fec07d4446759b306c09c3153b757e9b478999a"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198141272052",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 328.05104088038206,
+        "after": 54.25554187968373
+      },
+      "sha256": {
+        "before": "563c62e71a5a1d569e3148087cf71ec1c59dfdac0691c861853d13e4ffba512e",
+        "after": "563c62e71a5a1d569e3148087cf71ec1c59dfdac0691c861853d13e4ffba512e"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198141272052",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 53.05462470278144,
+        "before": 336.87645802274346
+      },
+      "sha256": {
+        "after": "ec08f711da5e4e6045790d3569a9c9239e7f8d5e70a4f994ad3724aa86db81d2",
+        "before": "ec08f711da5e4e6045790d3569a9c9239e7f8d5e70a4f994ad3724aa86db81d2"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198396338183",
+      "scope": {},
+      "ms": {
+        "before": 334.2832080088556,
+        "after": 52.600167226046324
+      },
+      "sha256": {
+        "before": "546dcd95c57f367ab9a4d4967741fddb363072fc249150d95f10a69a7951aef9",
+        "after": "546dcd95c57f367ab9a4d4967741fddb363072fc249150d95f10a69a7951aef9"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198396338183",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 51.04929069057107,
+        "before": 325.47516701743007
+      },
+      "sha256": {
+        "after": "1a0055e8aeb0c8200e4c6426f973bfdf3c3dcbffcdc087476188d41b3b91fe7b",
+        "before": "1a0055e8aeb0c8200e4c6426f973bfdf3c3dcbffcdc087476188d41b3b91fe7b"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198396338183",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 325.7631668820977,
+        "after": 51.2190000154078
+      },
+      "sha256": {
+        "before": "4180ac880a9356b1dc651dda7a8a84d00b121d50dc2ce52265ebc0da562357c9",
+        "after": "4180ac880a9356b1dc651dda7a8a84d00b121d50dc2ce52265ebc0da562357c9"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198396338183",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 51.32291605696082,
+        "before": 324.5635419152677
+      },
+      "sha256": {
+        "after": "4394bf7f70c0b433d305da84c5508d562580c0640aa283ef4136bb7e47f2c969",
+        "before": "4394bf7f70c0b433d305da84c5508d562580c0640aa283ef4136bb7e47f2c969"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198377335846",
+      "scope": {},
+      "ms": {
+        "before": 327.8495422564447,
+        "after": 51.48258386179805
+      },
+      "sha256": {
+        "before": "b4c87252ddc2ea85611fc00fe079e7ddc1ce88781950205840e8f63dd5b5e673",
+        "after": "b4c87252ddc2ea85611fc00fe079e7ddc1ce88781950205840e8f63dd5b5e673"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198377335846",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 50.8735841140151,
+        "before": 333.9366251602769
+      },
+      "sha256": {
+        "after": "058589428782cb4b6a68cf6af13f6dcd2470c12b8be022115e0ad65ee3cc5bdd",
+        "before": "058589428782cb4b6a68cf6af13f6dcd2470c12b8be022115e0ad65ee3cc5bdd"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198377335846",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 332.1042498573661,
+        "after": 55.4835838265717
+      },
+      "sha256": {
+        "before": "36aa70caa498d83206e538dad8aed5d08e773a670b5039abcac52e7d77915e94",
+        "after": "36aa70caa498d83206e538dad8aed5d08e773a670b5039abcac52e7d77915e94"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198377335846",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 54.613708052784204,
+        "before": 339.0001249499619
+      },
+      "sha256": {
+        "after": "affc7fe45c5c7f989c53cb3e7a79e9035d7f37fcb3eded31e0a0f51bec6c7111",
+        "before": "affc7fe45c5c7f989c53cb3e7a79e9035d7f37fcb3eded31e0a0f51bec6c7111"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197985565685",
+      "scope": {},
+      "ms": {
+        "before": 343.2152499444783,
+        "after": 53.979416843503714
+      },
+      "sha256": {
+        "before": "43a0ed358cb866db60630b096a96c7d9ce9d6b8ac2314660d733696293a1b86a",
+        "after": "43a0ed358cb866db60630b096a96c7d9ce9d6b8ac2314660d733696293a1b86a"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197985565685",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 53.82995866239071,
+        "before": 342.9677081294358
+      },
+      "sha256": {
+        "after": "b0ab55ffaacf35376d72e49f8aea5653eb6a5bc62f0f86b0c5c7f8009a474f4c",
+        "before": "b0ab55ffaacf35376d72e49f8aea5653eb6a5bc62f0f86b0c5c7f8009a474f4c"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197985565685",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 330.4012091830373,
+        "after": 52.02612513676286
+      },
+      "sha256": {
+        "before": "aa3438c2ddddd1a51e7016a87704526c0b2ab1c3f26d541f0512b1389895c515",
+        "after": "aa3438c2ddddd1a51e7016a87704526c0b2ab1c3f26d541f0512b1389895c515"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561197985565685",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 51.6656250692904,
+        "before": 342.0527917332947
+      },
+      "sha256": {
+        "after": "99626cb307f1a13a59056ec76a9ef085c4f02601301589288efb974dcb70b573",
+        "before": "99626cb307f1a13a59056ec76a9ef085c4f02601301589288efb974dcb70b573"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198015308884",
+      "scope": {},
+      "ms": {
+        "before": 326.99870876967907,
+        "after": 53.978083189576864
+      },
+      "sha256": {
+        "before": "3ebb5905f83c1ba88afae48a0ebce63de03ed058b4ad81c1f369f30f0c3e5536",
+        "after": "3ebb5905f83c1ba88afae48a0ebce63de03ed058b4ad81c1f369f30f0c3e5536"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198015308884",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 55.23241590708494,
+        "before": 338.9670830219984
+      },
+      "sha256": {
+        "after": "ea0404dd497d00b465cacd1363ffb79b50b729c788028199a705c434cdbe4a95",
+        "before": "ea0404dd497d00b465cacd1363ffb79b50b729c788028199a705c434cdbe4a95"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198015308884",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 335.28662472963333,
+        "after": 52.27237520739436
+      },
+      "sha256": {
+        "before": "9fafbcc2dac12eda174d3d3321acb3fa1e0c22ee43752711716403cb3fa3c056",
+        "after": "9fafbcc2dac12eda174d3d3321acb3fa1e0c22ee43752711716403cb3fa3c056"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198015308884",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 52.27774986997247,
+        "before": 329.1524169035256
+      },
+      "sha256": {
+        "after": "3115c66d47e100e791add11e08733904fd05d1dedf77ce3dcb428c734b290ba5",
+        "before": "3115c66d47e100e791add11e08733904fd05d1dedf77ce3dcb428c734b290ba5"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198011732823",
+      "scope": {},
+      "ms": {
+        "before": 339.2575830221176,
+        "after": 52.66812536865473
+      },
+      "sha256": {
+        "before": "308f979650e458ad290d880fa07fe4acd39dbc2cccfb25084dacd149c73d2d5a",
+        "after": "308f979650e458ad290d880fa07fe4acd39dbc2cccfb25084dacd149c73d2d5a"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198011732823",
+      "scope": {
+        "map_name": "Nuke"
+      },
+      "ms": {
+        "after": 51.35716637596488,
+        "before": 336.2861657515168
+      },
+      "sha256": {
+        "after": "582ffcd93adb4ac06b5f8833c4edc9dc057d42bfcfb4328bb03a8dec4686cf97",
+        "before": "582ffcd93adb4ac06b5f8833c4edc9dc057d42bfcfb4328bb03a8dec4686cf97"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198011732823",
+      "scope": {
+        "side": "T"
+      },
+      "ms": {
+        "before": 327.85229198634624,
+        "after": 51.02729192003608
+      },
+      "sha256": {
+        "before": "42393443746a341bd75541c3ba2d2c910de9cdc182ac2eb9b4a370da86d97127",
+        "after": "42393443746a341bd75541c3ba2d2c910de9cdc182ac2eb9b4a370da86d97127"
+      },
+      "equal": true
+    },
+    {
+      "player_id": "76561198011732823",
+      "scope": {
+        "opponent": "Falcons"
+      },
+      "ms": {
+        "after": 51.14770866930485,
+        "before": 343.5508329421282
+      },
+      "sha256": {
+        "after": "d738ad34473ad733bcfa82a7a572640ac9745416b01614f7b56a13c29c461f44",
+        "before": "d738ad34473ad733bcfa82a7a572640ac9745416b01614f7b56a13c29c461f44"
+      },
+      "equal": true
+    }
+  ]
+}

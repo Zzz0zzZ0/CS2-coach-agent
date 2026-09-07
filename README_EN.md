@@ -14,7 +14,7 @@
 
 </div>
 
-The historical data rebuild is live: 20 series, 49 maps and 1,019 regulation/overtime rounds, with four pre-match knife rounds removed. Graph and Milvus evidence, all 56 player profiles and 5,308 silver labels agree; 218 offline tests pass. Production retrieval after the evidence-identity fix passes 50/50 development queries in Vector, Graph and Hybrid modes; the previously observed holdout scores are 28/30, 30/30 and 30/30. See [regression repair](docs/VECTOR_EVIDENCE_IDENTITY_V3.md). Old snapshots remain available for rollback. The corrected 16-query retrieval experiment uses AI-assisted development labels, not independent human gold or unseen generalization evidence. See [rebuild and refreeze](docs/HISTORICAL_DATA_REBUILD_V2.md).
+The historical data rebuild is live: 20 series, 49 maps and 1,019 regulation/overtime rounds, with four pre-match knife rounds removed. Graph and Milvus evidence, all 56 player profiles and 5,308 silver labels agree; 261 offline tests pass. Production retrieval after the evidence-identity fix passes 50/50 development queries in Vector, Graph and Hybrid modes; the previously observed holdout scores are 28/30, 30/30 and 30/30. See [regression repair](docs/VECTOR_EVIDENCE_IDENTITY_V3.md). Old snapshots remain available for rollback. The corrected 16-query retrieval experiment uses AI-assisted development labels, not independent human gold or unseen generalization evidence. See [rebuild and refreeze](docs/HISTORICAL_DATA_REBUILD_V2.md).
 
 The corrected corpus has 160 retrieval results scored against AI-assisted development labels. Two additional series (5 maps, 111 live rounds) pass regression after parser fixes; initial failures remain preserved. Independent human review and generalization evidence are still pending. See [historical rebuild](docs/HISTORICAL_DATA_REBUILD_V2.md) and [new-match validation](docs/NEW_MATCH_VALIDATION_V3.md).
 
@@ -29,13 +29,16 @@ Paired-language and entity-alias calibration now covers 16 semantic groups (32 l
 
 The new relation benchmark has 24 semantic questions, 48 bilingual forms and 192 results, with valid candidate scopes for every negative. BM25 / dense / RRF reach nDCG@5 of 0.1492 / 0.1476 / 0.1118; all three top-k pipelines retrieve on every unanswerable question. These failures motivate relation verification and abstention. Perfect SQL-oracle scores use supplied relation slots and are not production GraphRAG results. This remains an AI-audited development set. See [protocol, failures and next priorities](docs/RELATION_BENCHMARK_V1.md).
 
-A bounded natural-language relation engine now validates scoped source events before top-k, returning found / not found / unknown / unsupported states. All 48 observed language forms and 624 integration checks pass; ordinary retrieval regressions remain unchanged. This is deterministic event-query engineering evidence, not independent generalization or improved RRF ranking. UI status and round drilldown were checked in an isolated fresh process; the persistent backend will load the code on its next normal restart. See [implementation and verification limits](docs/RELATION_QUERY_ENGINE_V1.md).
+A bounded natural-language relation engine now validates scoped source events before top-k, returning found / not found / unknown / unsupported states. All 48 observed language forms and 624 integration checks pass; ordinary retrieval regressions remain unchanged. This is deterministic event-query engineering evidence, not independent generalization or improved RRF ranking. UI status and round drilldown were checked in an isolated fresh process; the persistent API and worker have since loaded the verified update after an empty-queue check. See [implementation and verification limits](docs/RELATION_QUERY_ENGINE_V1.md).
+
+
+Start with the [English project case study](docs/portfolio/CASE_STUDY.md), [three-minute demonstration](docs/portfolio/DEMO_SCRIPT.md), and [exportable benchmark figure](docs/portfolio/benchmark-results.svg). The second bilingual dense control produced 768 audited historical-development results; an isolated pilot on two previously observed series added 960 text results and 60 verified relation expressions. Model advantages differed by series and fusion did not consistently help. See [baseline limits](docs/LANGUAGE_BASELINES_V2.md) and [isolated first-run results](docs/ISOLATED_RELATION_PILOT_V1.md). Full-scope relation counts and conditional win rates are now supported; unknown outcomes are explicit. A player-context optimization preserved 224 complete outputs while reducing local median function latency from 335 ms to 104 ms ([measurement scope](docs/PLAYER_PERFORMANCE_V1.md)).
 
 ---
 
 ## 📖 Overview
 
-**CS2 Coach Agent** is an intelligent CS2 professional match analysis system built on a **multi-agent state machine** core with **advanced RAG tactical retrieval** capabilities.
+**CS2 Coach Agent** is an evidence-grounded analysis prototype: deterministic parsing and statistics, scoped retrieval, a state-machine workflow and a bounded LLM coaching step. It analyzes professional match recordings; professional coaching quality has not been independently established.
 
 It can:
 - Ingest `.dem` demo files directly, leveraging `demoparser2` to automatically parse kill chains, grenade landing positions, flash-blind sequences, and bomb plant events for every round.
@@ -44,7 +47,7 @@ It can:
 - The Critique node triggers a **feedback-based retry loop** when retrieval quality falls below a threshold; after the maximum attempts it preserves the low-quality signal instead of pretending the context passed.
 - Compute and report verifiable kills, openings, side splits, and post-plant conversions in code; `qwen3.8-flash` can only choose training priorities from an allowlist and cannot author report facts.
 - Support both **FACEIT / 5E Webhook data streams** and **direct `.dem` file uploads** as data ingestion modes.
-- All heavy tasks are processed through a **Celery + Redis** async message queue, supporting high concurrency and horizontal scaling.
+- Demo analysis runs through a **Celery + Redis** queue. The current local worker uses one execution slot; distributed throughput has not been benchmarked.
 
 ---
 

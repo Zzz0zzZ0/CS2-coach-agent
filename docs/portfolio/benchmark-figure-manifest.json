@@ -1,0 +1,9 @@
+{
+  "inputs_sha256": {
+    "datasets/evaluation/language_baselines_v2_report.json": "4d7b7f432765b3b44a378f1ef20d42e439f03971b86249e406ac081fd7e13459",
+    "datasets/evaluation/isolated_relation_v1_text_report.json": "165abbde3ff5a89038e6246e9a46818db6ea7f2d933070afc267d38e65103bda"
+  },
+  "plot_script_sha256": "0468964d285c9d80ba088475fb5f0f2e69b7b2e698f6b5d34a233e3726118cdd",
+  "matplotlib": "3.10.6",
+  "interpretation": "Development pipeline comparison; model and actual chunk capacity differ. Not independent generalization or expert coaching quality."
+}

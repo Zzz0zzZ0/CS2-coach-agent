@@ -1,0 +1,31 @@
+{
+  "created_at": "2026-09-07T02:36:34.556059+00:00",
+  "remote_model_calls": 0,
+  "structured_contracts": {
+    "cases": 50,
+    "passed": 50,
+    "failed": 0,
+    "pass_rate_pct": 100.0
+  },
+  "development": {
+    "vector_only": 50,
+    "graph_only": 50,
+    "hybrid": 50
+  },
+  "holdout": {
+    "vector_only": 28,
+    "graph_only": 30,
+    "hybrid": 30
+  },
+  "graph_unchanged": true,
+  "graph_sha256": "28357be25a52d27b80e87a03ffcb2a545132c97d42632138ff60c47d67fc8c2d",
+  "model_files_sha256": {
+    "config.json": "c8ec081fdad2df991bf5abbf18418fec7a5cdaa421f60ffb060a30040b8c376f",
+    "model_optimized.onnx": "634d0f66c29dc934c8fa72b8a4fe91dd4d420a22f1d82a241058d4316e659a99",
+    "special_tokens_map.json": "8c785abebea9ae3257b61681b4e6fd8365ceafde980c21970d001e834cf10835",
+    "tokenizer.json": "fa685fc160bbdbab64058d4fc91b60e62d207e8dc60b9af5c002c5ab946ded00",
+    "tokenizer_config.json": "0666eebf692422757e1dddf3c9fb1ded73ba3dc726c5828671fc89e45bf3609f"
+  },
+  "implementation_sha256": "8f2c3fe335e636ceb8e639f41a6c472d8cd6c5ea1678ec922f3dd7b287d0d88c",
+  "interpretation": "Unchanged 50-query development and previously observed 30-query holdout. Existing vector failures remain regression limitations."
+}

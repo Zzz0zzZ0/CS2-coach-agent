@@ -1,0 +1,11 @@
+dataset,method,ndcg_at_5,recall_at_5,unanswerable_false_retrieval
+Historical development,Unicode BM25,0.14918346304395969,0.2569444444444444,1
+Historical development,Subword BM25,0.166047135936325,0.20833333333333334,1
+Historical development,MiniLM dense,0.1475634040371935,0.21875,1
+Historical development,Jina bilingual dense,0.31482403027934003,0.3819444444444444,1
+Historical development,Subword + Jina RRF,0.26531011174506763,0.3020833333333333,1
+Isolated observed-series pilot,Unicode BM25,0.15837432735494567,0.2222222222222222,1
+Isolated observed-series pilot,Subword BM25,0.2036108914789746,0.3,1
+Isolated observed-series pilot,MiniLM dense,0.202773046689361,0.25,1
+Isolated observed-series pilot,Jina bilingual dense,0.22127707486370973,0.37777777777777777,1
+Isolated observed-series pilot,Subword + Jina RRF,0.1559740008239862,0.23333333333333334,1
