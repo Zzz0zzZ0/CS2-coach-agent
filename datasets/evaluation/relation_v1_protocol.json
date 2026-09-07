@@ -1,0 +1,57 @@
+{
+  "version": "relation_v1",
+  "created_at": "2026-09-07T01:40:46.166665+00:00",
+  "inputs": {
+    "corpus": {
+      "path": "data/evaluation/relations_v1/corpus.jsonl",
+      "sha256": "2575aa44310ee6276f77904dd5ff83420f3179b6c9fa300fdc50576dbf99065a"
+    },
+    "queries": {
+      "path": "datasets/evaluation/relation_v1_queries.json",
+      "sha256": "6af28b7881b680fe296cc27dd67a3fa6a7b32a640ff7fb3fc5888b00b9b5a914"
+    },
+    "qrels": {
+      "path": "datasets/evaluation/relation_v1_qrels.json",
+      "sha256": "59e0eb1d94452b7f839e247b1efa473547a15ef734c81f142a94d2b11586b24a"
+    },
+    "base_corpus": {
+      "path": "data/evaluation/fair_v2/corpus.jsonl",
+      "sha256": "e244773cb57984ae7fef101a803b9e8e868ccb2989a91c74c0842cee375e9a76"
+    },
+    "graph": {
+      "path": "data/graph/cs2_graph.sqlite",
+      "sha256": "28357be25a52d27b80e87a03ffcb2a545132c97d42632138ff60c47d67fc8c2d"
+    }
+  },
+  "implementation_sha256": {
+    "scripts/benchmark_relations.py": "2a4a233fddfbc44bdd4dfd681d6a717ce3c34f770b452c3e631bdcb60582bd3d",
+    "scripts/audit_relation_benchmark.py": "66719dad3cfb649b01aca26913ec97bb67d23b4d538a4e2973baa507cf79e1dd",
+    "scripts/evaluate_fair_retrieval.py": "941802a4cf3f3a2e9c340ae724dddd92d6bf8dcbb4645f1424a5539ebf432056",
+    "test_relation_benchmark.py": "eed7b89f134d63203d4574bd8755f035b0ceb640d0bc91ecfce2f0b523d87cb3"
+  },
+  "model_files_sha256": {
+    "config.json": "c8ec081fdad2df991bf5abbf18418fec7a5cdaa421f60ffb060a30040b8c376f",
+    "model_optimized.onnx": "634d0f66c29dc934c8fa72b8a4fe91dd4d420a22f1d82a241058d4316e659a99",
+    "special_tokens_map.json": "8c785abebea9ae3257b61681b4e6fd8365ceafde980c21970d001e834cf10835",
+    "tokenizer.json": "fa685fc160bbdbab64058d4fc91b60e62d207e8dc60b9af5c002c5ab946ded00",
+    "tokenizer_config.json": "0666eebf692422757e1dddf3c9fb1ded73ba3dc726c5828671fc89e45bf3609f"
+  },
+  "k": 5,
+  "repeats": 3,
+  "configuration": "Raw bilingual queries; shared exact roster and match/map scope; no glossary or relation slots in text ranking",
+  "selection": "AI selected 4 matches / 4 maps using raw event counts before retrieval; 4 positive and 4 negative per family, each with near-miss rounds; intentionally source-selected development set.",
+  "semantics": {
+    "opening": "Exact named killer/victim and source is_first_kill=true.",
+    "after_plant": "Named killer/victim kill tick strictly greater than any bomb plant tick in same round.",
+    "trade": "Three distinct players: named teammate dies to enemy, named trader on teammate team kills same enemy; 0 < delay <= 320 ticks. Teams must match and differ from enemy team."
+  },
+  "limitations": [
+    "AI-assisted labels and translations, no independent human gold.",
+    "Same observed historical corpus; source-selected questions, no unseen/OOD or confidence interval claim.",
+    "Python and SQL share parser facts; agreement is not independent demo validation.",
+    "Explicit correct scope filters bypass natural-language entity resolution.",
+    "SQL oracle gets relation slots, is a label sanity reference, not production GraphRAG.",
+    "Text baselines return top-k without calibrated abstention; negative errors measure this pipeline, not inherent model inability.",
+    "Timestamp-enriched corpus differs from old fair v2 representation; no cross-dataset score delta claims."
+  ]
+}

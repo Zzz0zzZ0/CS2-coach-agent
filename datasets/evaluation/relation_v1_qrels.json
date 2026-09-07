@@ -1,0 +1,1676 @@
+{
+  "reviewer_kind": "ai_assisted",
+  "independent_human_review": false,
+  "corpus_sha256": "2575aa44310ee6276f77904dd5ff83420f3179b6c9fa300fdc50576dbf99065a",
+  "queries_sha256": "6af28b7881b680fe296cc27dd67a3fa6a7b32a640ff7fb3fc5888b00b9b5a914",
+  "judgments": [
+    {
+      "query_id": "opening_1_positive",
+      "eligible_round_ids": [
+        "round:2396949:Nuke:1",
+        "round:2396949:Nuke:10",
+        "round:2396949:Nuke:11",
+        "round:2396949:Nuke:12",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:16",
+        "round:2396949:Nuke:17",
+        "round:2396949:Nuke:18",
+        "round:2396949:Nuke:19",
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:20",
+        "round:2396949:Nuke:21",
+        "round:2396949:Nuke:3",
+        "round:2396949:Nuke:4",
+        "round:2396949:Nuke:5",
+        "round:2396949:Nuke:6",
+        "round:2396949:Nuke:7",
+        "round:2396949:Nuke:8",
+        "round:2396949:Nuke:9"
+      ],
+      "relevance": [
+        {
+          "source_round_id": "round:2396949:Nuke:15",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396949:Nuke:15:kill:1"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396949:Nuke:16",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396949:Nuke:16:kill:1"
+            ]
+          ]
+        }
+      ],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396949:Nuke:18",
+          "witness_event_ids": [
+            [
+              "event:2396949:Nuke:18:kill:3"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396949:Nuke:21",
+          "witness_event_ids": [
+            [
+              "event:2396949:Nuke:21:kill:3"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396949:Nuke:4",
+          "witness_event_ids": [
+            [
+              "event:2396949:Nuke:4:kill:6"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "opening_1_negative",
+      "eligible_round_ids": [
+        "round:2396949:Nuke:1",
+        "round:2396949:Nuke:10",
+        "round:2396949:Nuke:11",
+        "round:2396949:Nuke:12",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:16",
+        "round:2396949:Nuke:17",
+        "round:2396949:Nuke:18",
+        "round:2396949:Nuke:19",
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:20",
+        "round:2396949:Nuke:21",
+        "round:2396949:Nuke:3",
+        "round:2396949:Nuke:4",
+        "round:2396949:Nuke:5",
+        "round:2396949:Nuke:6",
+        "round:2396949:Nuke:7",
+        "round:2396949:Nuke:8",
+        "round:2396949:Nuke:9"
+      ],
+      "relevance": [],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396949:Nuke:11",
+          "witness_event_ids": [
+            [
+              "event:2396949:Nuke:11:kill:8"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396949:Nuke:12",
+          "witness_event_ids": [
+            [
+              "event:2396949:Nuke:12:kill:4"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396949:Nuke:13",
+          "witness_event_ids": [
+            [
+              "event:2396949:Nuke:13:kill:4"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396949:Nuke:18",
+          "witness_event_ids": [
+            [
+              "event:2396949:Nuke:18:kill:2"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396949:Nuke:20",
+          "witness_event_ids": [
+            [
+              "event:2396949:Nuke:20:kill:2"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396949:Nuke:7",
+          "witness_event_ids": [
+            [
+              "event:2396949:Nuke:7:kill:5"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "after_plant_1_positive",
+      "eligible_round_ids": [
+        "round:2396949:Nuke:1",
+        "round:2396949:Nuke:10",
+        "round:2396949:Nuke:11",
+        "round:2396949:Nuke:12",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:16",
+        "round:2396949:Nuke:17",
+        "round:2396949:Nuke:18",
+        "round:2396949:Nuke:19",
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:20",
+        "round:2396949:Nuke:21",
+        "round:2396949:Nuke:3",
+        "round:2396949:Nuke:4",
+        "round:2396949:Nuke:5",
+        "round:2396949:Nuke:6",
+        "round:2396949:Nuke:7",
+        "round:2396949:Nuke:8",
+        "round:2396949:Nuke:9"
+      ],
+      "relevance": [
+        {
+          "source_round_id": "round:2396949:Nuke:19",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396949:Nuke:19:plant:1",
+              "event:2396949:Nuke:19:kill:7"
+            ]
+          ]
+        }
+      ],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396949:Nuke:7",
+          "witness_event_ids": [
+            [
+              "event:2396949:Nuke:7:plant:1",
+              "event:2396949:Nuke:7:kill:4"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "after_plant_1_negative",
+      "eligible_round_ids": [
+        "round:2396949:Nuke:1",
+        "round:2396949:Nuke:10",
+        "round:2396949:Nuke:11",
+        "round:2396949:Nuke:12",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:16",
+        "round:2396949:Nuke:17",
+        "round:2396949:Nuke:18",
+        "round:2396949:Nuke:19",
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:20",
+        "round:2396949:Nuke:21",
+        "round:2396949:Nuke:3",
+        "round:2396949:Nuke:4",
+        "round:2396949:Nuke:5",
+        "round:2396949:Nuke:6",
+        "round:2396949:Nuke:7",
+        "round:2396949:Nuke:8",
+        "round:2396949:Nuke:9"
+      ],
+      "relevance": [],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396949:Nuke:11",
+          "witness_event_ids": [
+            [
+              "event:2396949:Nuke:11:plant:1",
+              "event:2396949:Nuke:11:kill:2"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396949:Nuke:19",
+          "witness_event_ids": [
+            [
+              "event:2396949:Nuke:19:plant:1",
+              "event:2396949:Nuke:19:kill:5"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "trade_1_positive",
+      "eligible_round_ids": [
+        "round:2396949:Nuke:1",
+        "round:2396949:Nuke:10",
+        "round:2396949:Nuke:11",
+        "round:2396949:Nuke:12",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:16",
+        "round:2396949:Nuke:17",
+        "round:2396949:Nuke:18",
+        "round:2396949:Nuke:19",
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:20",
+        "round:2396949:Nuke:21",
+        "round:2396949:Nuke:3",
+        "round:2396949:Nuke:4",
+        "round:2396949:Nuke:5",
+        "round:2396949:Nuke:6",
+        "round:2396949:Nuke:7",
+        "round:2396949:Nuke:8",
+        "round:2396949:Nuke:9"
+      ],
+      "relevance": [
+        {
+          "source_round_id": "round:2396949:Nuke:1",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396949:Nuke:1:kill:1",
+              "event:2396949:Nuke:1:kill:3"
+            ]
+          ]
+        }
+      ],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396949:Nuke:11",
+          "witness_event_ids": [
+            [
+              "event:2396949:Nuke:11:kill:3",
+              "event:2396949:Nuke:11:kill:4"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396949:Nuke:3",
+          "witness_event_ids": [
+            [
+              "event:2396949:Nuke:3:kill:1",
+              "event:2396949:Nuke:3:kill:3"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396949:Nuke:7",
+          "witness_event_ids": [
+            [
+              "event:2396949:Nuke:7:kill:4",
+              "event:2396949:Nuke:7:kill:6"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "trade_1_negative",
+      "eligible_round_ids": [
+        "round:2396949:Nuke:1",
+        "round:2396949:Nuke:10",
+        "round:2396949:Nuke:11",
+        "round:2396949:Nuke:12",
+        "round:2396949:Nuke:13",
+        "round:2396949:Nuke:14",
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:16",
+        "round:2396949:Nuke:17",
+        "round:2396949:Nuke:18",
+        "round:2396949:Nuke:19",
+        "round:2396949:Nuke:2",
+        "round:2396949:Nuke:20",
+        "round:2396949:Nuke:21",
+        "round:2396949:Nuke:3",
+        "round:2396949:Nuke:4",
+        "round:2396949:Nuke:5",
+        "round:2396949:Nuke:6",
+        "round:2396949:Nuke:7",
+        "round:2396949:Nuke:8",
+        "round:2396949:Nuke:9"
+      ],
+      "relevance": [],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396949:Nuke:12",
+          "witness_event_ids": [
+            [
+              "event:2396949:Nuke:12:kill:1",
+              "event:2396949:Nuke:12:kill:9"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396949:Nuke:3",
+          "witness_event_ids": [
+            [
+              "event:2396949:Nuke:3:kill:3",
+              "event:2396949:Nuke:3:kill:6"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "opening_2_positive",
+      "eligible_round_ids": [
+        "round:2396948:Dust2:1",
+        "round:2396948:Dust2:10",
+        "round:2396948:Dust2:11",
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:13",
+        "round:2396948:Dust2:14",
+        "round:2396948:Dust2:15",
+        "round:2396948:Dust2:16",
+        "round:2396948:Dust2:17",
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:3",
+        "round:2396948:Dust2:4",
+        "round:2396948:Dust2:5",
+        "round:2396948:Dust2:6",
+        "round:2396948:Dust2:7",
+        "round:2396948:Dust2:8",
+        "round:2396948:Dust2:9"
+      ],
+      "relevance": [
+        {
+          "source_round_id": "round:2396948:Dust2:1",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396948:Dust2:1:kill:1"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396948:Dust2:5",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396948:Dust2:5:kill:1"
+            ]
+          ]
+        }
+      ],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396948:Dust2:14",
+          "witness_event_ids": [
+            [
+              "event:2396948:Dust2:14:kill:3"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396948:Dust2:15",
+          "witness_event_ids": [
+            [
+              "event:2396948:Dust2:15:kill:5"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396948:Dust2:7",
+          "witness_event_ids": [
+            [
+              "event:2396948:Dust2:7:kill:8"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "opening_2_negative",
+      "eligible_round_ids": [
+        "round:2396948:Dust2:1",
+        "round:2396948:Dust2:10",
+        "round:2396948:Dust2:11",
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:13",
+        "round:2396948:Dust2:14",
+        "round:2396948:Dust2:15",
+        "round:2396948:Dust2:16",
+        "round:2396948:Dust2:17",
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:3",
+        "round:2396948:Dust2:4",
+        "round:2396948:Dust2:5",
+        "round:2396948:Dust2:6",
+        "round:2396948:Dust2:7",
+        "round:2396948:Dust2:8",
+        "round:2396948:Dust2:9"
+      ],
+      "relevance": [],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396948:Dust2:11",
+          "witness_event_ids": [
+            [
+              "event:2396948:Dust2:11:kill:2"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396948:Dust2:12",
+          "witness_event_ids": [
+            [
+              "event:2396948:Dust2:12:kill:3"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396948:Dust2:14",
+          "witness_event_ids": [
+            [
+              "event:2396948:Dust2:14:kill:2"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396948:Dust2:3",
+          "witness_event_ids": [
+            [
+              "event:2396948:Dust2:3:kill:6"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396948:Dust2:6",
+          "witness_event_ids": [
+            [
+              "event:2396948:Dust2:6:kill:6"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396948:Dust2:8",
+          "witness_event_ids": [
+            [
+              "event:2396948:Dust2:8:kill:3"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396948:Dust2:9",
+          "witness_event_ids": [
+            [
+              "event:2396948:Dust2:9:kill:4"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "after_plant_2_positive",
+      "eligible_round_ids": [
+        "round:2396948:Dust2:1",
+        "round:2396948:Dust2:10",
+        "round:2396948:Dust2:11",
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:13",
+        "round:2396948:Dust2:14",
+        "round:2396948:Dust2:15",
+        "round:2396948:Dust2:16",
+        "round:2396948:Dust2:17",
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:3",
+        "round:2396948:Dust2:4",
+        "round:2396948:Dust2:5",
+        "round:2396948:Dust2:6",
+        "round:2396948:Dust2:7",
+        "round:2396948:Dust2:8",
+        "round:2396948:Dust2:9"
+      ],
+      "relevance": [
+        {
+          "source_round_id": "round:2396948:Dust2:12",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396948:Dust2:12:plant:1",
+              "event:2396948:Dust2:12:kill:3"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396948:Dust2:3",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396948:Dust2:3:plant:1",
+              "event:2396948:Dust2:3:kill:6"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396948:Dust2:6",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396948:Dust2:6:plant:1",
+              "event:2396948:Dust2:6:kill:6"
+            ]
+          ]
+        }
+      ],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396948:Dust2:14",
+          "witness_event_ids": [
+            [
+              "event:2396948:Dust2:14:plant:1",
+              "event:2396948:Dust2:14:kill:2"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396948:Dust2:8",
+          "witness_event_ids": [
+            [
+              "event:2396948:Dust2:8:plant:1",
+              "event:2396948:Dust2:8:kill:3"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396948:Dust2:9",
+          "witness_event_ids": [
+            [
+              "event:2396948:Dust2:9:plant:1",
+              "event:2396948:Dust2:9:kill:4"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "after_plant_2_negative",
+      "eligible_round_ids": [
+        "round:2396948:Dust2:1",
+        "round:2396948:Dust2:10",
+        "round:2396948:Dust2:11",
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:13",
+        "round:2396948:Dust2:14",
+        "round:2396948:Dust2:15",
+        "round:2396948:Dust2:16",
+        "round:2396948:Dust2:17",
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:3",
+        "round:2396948:Dust2:4",
+        "round:2396948:Dust2:5",
+        "round:2396948:Dust2:6",
+        "round:2396948:Dust2:7",
+        "round:2396948:Dust2:8",
+        "round:2396948:Dust2:9"
+      ],
+      "relevance": [],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396948:Dust2:4",
+          "witness_event_ids": [
+            [
+              "event:2396948:Dust2:4:plant:1",
+              "event:2396948:Dust2:4:kill:2"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396948:Dust2:8",
+          "witness_event_ids": [
+            [
+              "event:2396948:Dust2:8:plant:1",
+              "event:2396948:Dust2:8:kill:1"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396948:Dust2:9",
+          "witness_event_ids": [
+            [
+              "event:2396948:Dust2:9:plant:1",
+              "event:2396948:Dust2:9:kill:2"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "trade_2_positive",
+      "eligible_round_ids": [
+        "round:2396948:Dust2:1",
+        "round:2396948:Dust2:10",
+        "round:2396948:Dust2:11",
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:13",
+        "round:2396948:Dust2:14",
+        "round:2396948:Dust2:15",
+        "round:2396948:Dust2:16",
+        "round:2396948:Dust2:17",
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:3",
+        "round:2396948:Dust2:4",
+        "round:2396948:Dust2:5",
+        "round:2396948:Dust2:6",
+        "round:2396948:Dust2:7",
+        "round:2396948:Dust2:8",
+        "round:2396948:Dust2:9"
+      ],
+      "relevance": [
+        {
+          "source_round_id": "round:2396948:Dust2:16",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396948:Dust2:16:kill:6",
+              "event:2396948:Dust2:16:kill:7"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396948:Dust2:6",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396948:Dust2:6:kill:3",
+              "event:2396948:Dust2:6:kill:5"
+            ]
+          ]
+        }
+      ],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396948:Dust2:10",
+          "witness_event_ids": [
+            [
+              "event:2396948:Dust2:10:kill:1",
+              "event:2396948:Dust2:10:kill:4"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "trade_2_negative",
+      "eligible_round_ids": [
+        "round:2396948:Dust2:1",
+        "round:2396948:Dust2:10",
+        "round:2396948:Dust2:11",
+        "round:2396948:Dust2:12",
+        "round:2396948:Dust2:13",
+        "round:2396948:Dust2:14",
+        "round:2396948:Dust2:15",
+        "round:2396948:Dust2:16",
+        "round:2396948:Dust2:17",
+        "round:2396948:Dust2:2",
+        "round:2396948:Dust2:3",
+        "round:2396948:Dust2:4",
+        "round:2396948:Dust2:5",
+        "round:2396948:Dust2:6",
+        "round:2396948:Dust2:7",
+        "round:2396948:Dust2:8",
+        "round:2396948:Dust2:9"
+      ],
+      "relevance": [],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396948:Dust2:11",
+          "witness_event_ids": [
+            [
+              "event:2396948:Dust2:11:kill:1",
+              "event:2396948:Dust2:11:kill:5"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396948:Dust2:6",
+          "witness_event_ids": [
+            [
+              "event:2396948:Dust2:6:kill:1",
+              "event:2396948:Dust2:6:kill:3"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "opening_3_positive",
+      "eligible_round_ids": [
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:10",
+        "round:2396614:Ancient:11",
+        "round:2396614:Ancient:12",
+        "round:2396614:Ancient:13",
+        "round:2396614:Ancient:14",
+        "round:2396614:Ancient:15",
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:17",
+        "round:2396614:Ancient:18",
+        "round:2396614:Ancient:19",
+        "round:2396614:Ancient:2",
+        "round:2396614:Ancient:20",
+        "round:2396614:Ancient:21",
+        "round:2396614:Ancient:22",
+        "round:2396614:Ancient:23",
+        "round:2396614:Ancient:24",
+        "round:2396614:Ancient:25",
+        "round:2396614:Ancient:26",
+        "round:2396614:Ancient:27",
+        "round:2396614:Ancient:28",
+        "round:2396614:Ancient:29",
+        "round:2396614:Ancient:3",
+        "round:2396614:Ancient:30",
+        "round:2396614:Ancient:4",
+        "round:2396614:Ancient:5",
+        "round:2396614:Ancient:6",
+        "round:2396614:Ancient:7",
+        "round:2396614:Ancient:8",
+        "round:2396614:Ancient:9"
+      ],
+      "relevance": [
+        {
+          "source_round_id": "round:2396614:Ancient:18",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:18:kill:1"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396614:Ancient:29",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:29:kill:1"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396614:Ancient:7",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:7:kill:1"
+            ]
+          ]
+        }
+      ],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396614:Ancient:19",
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:19:kill:2"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396614:Ancient:4",
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:4:kill:2"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396614:Ancient:6",
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:6:kill:4"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396614:Ancient:8",
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:8:kill:3"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "opening_3_negative",
+      "eligible_round_ids": [
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:10",
+        "round:2396614:Ancient:11",
+        "round:2396614:Ancient:12",
+        "round:2396614:Ancient:13",
+        "round:2396614:Ancient:14",
+        "round:2396614:Ancient:15",
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:17",
+        "round:2396614:Ancient:18",
+        "round:2396614:Ancient:19",
+        "round:2396614:Ancient:2",
+        "round:2396614:Ancient:20",
+        "round:2396614:Ancient:21",
+        "round:2396614:Ancient:22",
+        "round:2396614:Ancient:23",
+        "round:2396614:Ancient:24",
+        "round:2396614:Ancient:25",
+        "round:2396614:Ancient:26",
+        "round:2396614:Ancient:27",
+        "round:2396614:Ancient:28",
+        "round:2396614:Ancient:29",
+        "round:2396614:Ancient:3",
+        "round:2396614:Ancient:30",
+        "round:2396614:Ancient:4",
+        "round:2396614:Ancient:5",
+        "round:2396614:Ancient:6",
+        "round:2396614:Ancient:7",
+        "round:2396614:Ancient:8",
+        "round:2396614:Ancient:9"
+      ],
+      "relevance": [],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396614:Ancient:11",
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:11:kill:2"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396614:Ancient:20",
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:20:kill:5"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396614:Ancient:21",
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:21:kill:2"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396614:Ancient:24",
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:24:kill:8"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396614:Ancient:25",
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:25:kill:5"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396614:Ancient:5",
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:5:kill:7"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396614:Ancient:6",
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:6:kill:5"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "after_plant_3_positive",
+      "eligible_round_ids": [
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:10",
+        "round:2396614:Ancient:11",
+        "round:2396614:Ancient:12",
+        "round:2396614:Ancient:13",
+        "round:2396614:Ancient:14",
+        "round:2396614:Ancient:15",
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:17",
+        "round:2396614:Ancient:18",
+        "round:2396614:Ancient:19",
+        "round:2396614:Ancient:2",
+        "round:2396614:Ancient:20",
+        "round:2396614:Ancient:21",
+        "round:2396614:Ancient:22",
+        "round:2396614:Ancient:23",
+        "round:2396614:Ancient:24",
+        "round:2396614:Ancient:25",
+        "round:2396614:Ancient:26",
+        "round:2396614:Ancient:27",
+        "round:2396614:Ancient:28",
+        "round:2396614:Ancient:29",
+        "round:2396614:Ancient:3",
+        "round:2396614:Ancient:30",
+        "round:2396614:Ancient:4",
+        "round:2396614:Ancient:5",
+        "round:2396614:Ancient:6",
+        "round:2396614:Ancient:7",
+        "round:2396614:Ancient:8",
+        "round:2396614:Ancient:9"
+      ],
+      "relevance": [
+        {
+          "source_round_id": "round:2396614:Ancient:25",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:25:plant:1",
+              "event:2396614:Ancient:25:kill:5"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396614:Ancient:5",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:5:plant:1",
+              "event:2396614:Ancient:5:kill:7"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396614:Ancient:6",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:6:plant:1",
+              "event:2396614:Ancient:6:kill:5"
+            ]
+          ]
+        }
+      ],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396614:Ancient:11",
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:11:plant:1",
+              "event:2396614:Ancient:11:kill:2"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396614:Ancient:21",
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:21:plant:1",
+              "event:2396614:Ancient:21:kill:2"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396614:Ancient:24",
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:24:plant:1",
+              "event:2396614:Ancient:24:kill:8"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "after_plant_3_negative",
+      "eligible_round_ids": [
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:10",
+        "round:2396614:Ancient:11",
+        "round:2396614:Ancient:12",
+        "round:2396614:Ancient:13",
+        "round:2396614:Ancient:14",
+        "round:2396614:Ancient:15",
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:17",
+        "round:2396614:Ancient:18",
+        "round:2396614:Ancient:19",
+        "round:2396614:Ancient:2",
+        "round:2396614:Ancient:20",
+        "round:2396614:Ancient:21",
+        "round:2396614:Ancient:22",
+        "round:2396614:Ancient:23",
+        "round:2396614:Ancient:24",
+        "round:2396614:Ancient:25",
+        "round:2396614:Ancient:26",
+        "round:2396614:Ancient:27",
+        "round:2396614:Ancient:28",
+        "round:2396614:Ancient:29",
+        "round:2396614:Ancient:3",
+        "round:2396614:Ancient:30",
+        "round:2396614:Ancient:4",
+        "round:2396614:Ancient:5",
+        "round:2396614:Ancient:6",
+        "round:2396614:Ancient:7",
+        "round:2396614:Ancient:8",
+        "round:2396614:Ancient:9"
+      ],
+      "relevance": [],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396614:Ancient:1",
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:1:plant:1",
+              "event:2396614:Ancient:1:kill:2"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396614:Ancient:11",
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:11:plant:1",
+              "event:2396614:Ancient:11:kill:7"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396614:Ancient:21",
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:21:plant:1",
+              "event:2396614:Ancient:21:kill:5"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396614:Ancient:7",
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:7:plant:1",
+              "event:2396614:Ancient:7:kill:6"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "trade_3_positive",
+      "eligible_round_ids": [
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:10",
+        "round:2396614:Ancient:11",
+        "round:2396614:Ancient:12",
+        "round:2396614:Ancient:13",
+        "round:2396614:Ancient:14",
+        "round:2396614:Ancient:15",
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:17",
+        "round:2396614:Ancient:18",
+        "round:2396614:Ancient:19",
+        "round:2396614:Ancient:2",
+        "round:2396614:Ancient:20",
+        "round:2396614:Ancient:21",
+        "round:2396614:Ancient:22",
+        "round:2396614:Ancient:23",
+        "round:2396614:Ancient:24",
+        "round:2396614:Ancient:25",
+        "round:2396614:Ancient:26",
+        "round:2396614:Ancient:27",
+        "round:2396614:Ancient:28",
+        "round:2396614:Ancient:29",
+        "round:2396614:Ancient:3",
+        "round:2396614:Ancient:30",
+        "round:2396614:Ancient:4",
+        "round:2396614:Ancient:5",
+        "round:2396614:Ancient:6",
+        "round:2396614:Ancient:7",
+        "round:2396614:Ancient:8",
+        "round:2396614:Ancient:9"
+      ],
+      "relevance": [
+        {
+          "source_round_id": "round:2396614:Ancient:14",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:14:kill:4",
+              "event:2396614:Ancient:14:kill:5"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396614:Ancient:25",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:25:kill:5",
+              "event:2396614:Ancient:25:kill:7"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396614:Ancient:26",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:26:kill:2",
+              "event:2396614:Ancient:26:kill:3"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396614:Ancient:4",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:4:kill:4",
+              "event:2396614:Ancient:4:kill:5"
+            ]
+          ]
+        }
+      ],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396614:Ancient:18",
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:18:kill:2",
+              "event:2396614:Ancient:18:kill:4"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396614:Ancient:9",
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:9:kill:5",
+              "event:2396614:Ancient:9:kill:8"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "trade_3_negative",
+      "eligible_round_ids": [
+        "round:2396614:Ancient:1",
+        "round:2396614:Ancient:10",
+        "round:2396614:Ancient:11",
+        "round:2396614:Ancient:12",
+        "round:2396614:Ancient:13",
+        "round:2396614:Ancient:14",
+        "round:2396614:Ancient:15",
+        "round:2396614:Ancient:16",
+        "round:2396614:Ancient:17",
+        "round:2396614:Ancient:18",
+        "round:2396614:Ancient:19",
+        "round:2396614:Ancient:2",
+        "round:2396614:Ancient:20",
+        "round:2396614:Ancient:21",
+        "round:2396614:Ancient:22",
+        "round:2396614:Ancient:23",
+        "round:2396614:Ancient:24",
+        "round:2396614:Ancient:25",
+        "round:2396614:Ancient:26",
+        "round:2396614:Ancient:27",
+        "round:2396614:Ancient:28",
+        "round:2396614:Ancient:29",
+        "round:2396614:Ancient:3",
+        "round:2396614:Ancient:30",
+        "round:2396614:Ancient:4",
+        "round:2396614:Ancient:5",
+        "round:2396614:Ancient:6",
+        "round:2396614:Ancient:7",
+        "round:2396614:Ancient:8",
+        "round:2396614:Ancient:9"
+      ],
+      "relevance": [],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396614:Ancient:2",
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:2:kill:7",
+              "event:2396614:Ancient:2:kill:9"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396614:Ancient:25",
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:25:kill:6",
+              "event:2396614:Ancient:25:kill:8"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396614:Ancient:4",
+          "witness_event_ids": [
+            [
+              "event:2396614:Ancient:4:kill:1",
+              "event:2396614:Ancient:4:kill:4"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "opening_4_positive",
+      "eligible_round_ids": [
+        "round:2396609:Mirage:1",
+        "round:2396609:Mirage:10",
+        "round:2396609:Mirage:11",
+        "round:2396609:Mirage:12",
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:15",
+        "round:2396609:Mirage:16",
+        "round:2396609:Mirage:17",
+        "round:2396609:Mirage:18",
+        "round:2396609:Mirage:19",
+        "round:2396609:Mirage:2",
+        "round:2396609:Mirage:20",
+        "round:2396609:Mirage:3",
+        "round:2396609:Mirage:4",
+        "round:2396609:Mirage:5",
+        "round:2396609:Mirage:6",
+        "round:2396609:Mirage:7",
+        "round:2396609:Mirage:8",
+        "round:2396609:Mirage:9"
+      ],
+      "relevance": [
+        {
+          "source_round_id": "round:2396609:Mirage:10",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396609:Mirage:10:kill:1"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396609:Mirage:4",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396609:Mirage:4:kill:1"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396609:Mirage:5",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396609:Mirage:5:kill:1"
+            ]
+          ]
+        }
+      ],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396609:Mirage:12",
+          "witness_event_ids": [
+            [
+              "event:2396609:Mirage:12:kill:5"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396609:Mirage:13",
+          "witness_event_ids": [
+            [
+              "event:2396609:Mirage:13:kill:4"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "opening_4_negative",
+      "eligible_round_ids": [
+        "round:2396609:Mirage:1",
+        "round:2396609:Mirage:10",
+        "round:2396609:Mirage:11",
+        "round:2396609:Mirage:12",
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:15",
+        "round:2396609:Mirage:16",
+        "round:2396609:Mirage:17",
+        "round:2396609:Mirage:18",
+        "round:2396609:Mirage:19",
+        "round:2396609:Mirage:2",
+        "round:2396609:Mirage:20",
+        "round:2396609:Mirage:3",
+        "round:2396609:Mirage:4",
+        "round:2396609:Mirage:5",
+        "round:2396609:Mirage:6",
+        "round:2396609:Mirage:7",
+        "round:2396609:Mirage:8",
+        "round:2396609:Mirage:9"
+      ],
+      "relevance": [],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396609:Mirage:14",
+          "witness_event_ids": [
+            [
+              "event:2396609:Mirage:14:kill:2"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396609:Mirage:16",
+          "witness_event_ids": [
+            [
+              "event:2396609:Mirage:16:kill:3"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396609:Mirage:18",
+          "witness_event_ids": [
+            [
+              "event:2396609:Mirage:18:kill:3"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396609:Mirage:20",
+          "witness_event_ids": [
+            [
+              "event:2396609:Mirage:20:kill:3"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396609:Mirage:5",
+          "witness_event_ids": [
+            [
+              "event:2396609:Mirage:5:kill:3"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396609:Mirage:7",
+          "witness_event_ids": [
+            [
+              "event:2396609:Mirage:7:kill:3"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "after_plant_4_positive",
+      "eligible_round_ids": [
+        "round:2396609:Mirage:1",
+        "round:2396609:Mirage:10",
+        "round:2396609:Mirage:11",
+        "round:2396609:Mirage:12",
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:15",
+        "round:2396609:Mirage:16",
+        "round:2396609:Mirage:17",
+        "round:2396609:Mirage:18",
+        "round:2396609:Mirage:19",
+        "round:2396609:Mirage:2",
+        "round:2396609:Mirage:20",
+        "round:2396609:Mirage:3",
+        "round:2396609:Mirage:4",
+        "round:2396609:Mirage:5",
+        "round:2396609:Mirage:6",
+        "round:2396609:Mirage:7",
+        "round:2396609:Mirage:8",
+        "round:2396609:Mirage:9"
+      ],
+      "relevance": [
+        {
+          "source_round_id": "round:2396609:Mirage:18",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396609:Mirage:18:plant:1",
+              "event:2396609:Mirage:18:kill:5"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396609:Mirage:3",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396609:Mirage:3:plant:1",
+              "event:2396609:Mirage:3:kill:2"
+            ]
+          ]
+        }
+      ],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396609:Mirage:12",
+          "witness_event_ids": [
+            [
+              "event:2396609:Mirage:12:plant:1",
+              "event:2396609:Mirage:12:kill:4"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "after_plant_4_negative",
+      "eligible_round_ids": [
+        "round:2396609:Mirage:1",
+        "round:2396609:Mirage:10",
+        "round:2396609:Mirage:11",
+        "round:2396609:Mirage:12",
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:15",
+        "round:2396609:Mirage:16",
+        "round:2396609:Mirage:17",
+        "round:2396609:Mirage:18",
+        "round:2396609:Mirage:19",
+        "round:2396609:Mirage:2",
+        "round:2396609:Mirage:20",
+        "round:2396609:Mirage:3",
+        "round:2396609:Mirage:4",
+        "round:2396609:Mirage:5",
+        "round:2396609:Mirage:6",
+        "round:2396609:Mirage:7",
+        "round:2396609:Mirage:8",
+        "round:2396609:Mirage:9"
+      ],
+      "relevance": [],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396609:Mirage:1",
+          "witness_event_ids": [
+            [
+              "event:2396609:Mirage:1:plant:1",
+              "event:2396609:Mirage:1:kill:1"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396609:Mirage:12",
+          "witness_event_ids": [
+            [
+              "event:2396609:Mirage:12:plant:1",
+              "event:2396609:Mirage:12:kill:2"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396609:Mirage:9",
+          "witness_event_ids": [
+            [
+              "event:2396609:Mirage:9:plant:1",
+              "event:2396609:Mirage:9:kill:5"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "trade_4_positive",
+      "eligible_round_ids": [
+        "round:2396609:Mirage:1",
+        "round:2396609:Mirage:10",
+        "round:2396609:Mirage:11",
+        "round:2396609:Mirage:12",
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:15",
+        "round:2396609:Mirage:16",
+        "round:2396609:Mirage:17",
+        "round:2396609:Mirage:18",
+        "round:2396609:Mirage:19",
+        "round:2396609:Mirage:2",
+        "round:2396609:Mirage:20",
+        "round:2396609:Mirage:3",
+        "round:2396609:Mirage:4",
+        "round:2396609:Mirage:5",
+        "round:2396609:Mirage:6",
+        "round:2396609:Mirage:7",
+        "round:2396609:Mirage:8",
+        "round:2396609:Mirage:9"
+      ],
+      "relevance": [
+        {
+          "source_round_id": "round:2396609:Mirage:4",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396609:Mirage:4:kill:3",
+              "event:2396609:Mirage:4:kill:4"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396609:Mirage:8",
+          "grade": 1,
+          "witness_event_ids": [
+            [
+              "event:2396609:Mirage:8:kill:3",
+              "event:2396609:Mirage:8:kill:4"
+            ]
+          ]
+        }
+      ],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396609:Mirage:12",
+          "witness_event_ids": [
+            [
+              "event:2396609:Mirage:12:kill:6",
+              "event:2396609:Mirage:12:kill:9"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396609:Mirage:9",
+          "witness_event_ids": [
+            [
+              "event:2396609:Mirage:9:kill:2",
+              "event:2396609:Mirage:9:kill:6"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    },
+    {
+      "query_id": "trade_4_negative",
+      "eligible_round_ids": [
+        "round:2396609:Mirage:1",
+        "round:2396609:Mirage:10",
+        "round:2396609:Mirage:11",
+        "round:2396609:Mirage:12",
+        "round:2396609:Mirage:13",
+        "round:2396609:Mirage:14",
+        "round:2396609:Mirage:15",
+        "round:2396609:Mirage:16",
+        "round:2396609:Mirage:17",
+        "round:2396609:Mirage:18",
+        "round:2396609:Mirage:19",
+        "round:2396609:Mirage:2",
+        "round:2396609:Mirage:20",
+        "round:2396609:Mirage:3",
+        "round:2396609:Mirage:4",
+        "round:2396609:Mirage:5",
+        "round:2396609:Mirage:6",
+        "round:2396609:Mirage:7",
+        "round:2396609:Mirage:8",
+        "round:2396609:Mirage:9"
+      ],
+      "relevance": [],
+      "near_misses": [
+        {
+          "source_round_id": "round:2396609:Mirage:6",
+          "witness_event_ids": [
+            [
+              "event:2396609:Mirage:6:kill:5",
+              "event:2396609:Mirage:6:kill:6"
+            ]
+          ]
+        },
+        {
+          "source_round_id": "round:2396609:Mirage:7",
+          "witness_event_ids": [
+            [
+              "event:2396609:Mirage:7:kill:5",
+              "event:2396609:Mirage:7:kill:7"
+            ]
+          ]
+        }
+      ],
+      "exhaustive": true
+    }
+  ],
+  "source_audit": {
+    "all_raw_events_equal_graph": 42148,
+    "python_sql_agreement": true,
+    "unknown_kill_identity_team_tick_or_opening": 0
+  }
+}

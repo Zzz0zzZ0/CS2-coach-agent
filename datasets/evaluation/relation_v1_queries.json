@@ -1,0 +1,519 @@
+{
+  "version": "relation_v1",
+  "reviewer_kind": "ai_assisted",
+  "independent_human_review": false,
+  "cases": [
+    {
+      "id": "opening_1_positive",
+      "filters": {
+        "match_id": "2396949",
+        "map": "Nuke"
+      },
+      "entities": [
+        "kyousuke",
+        "tN1R"
+      ],
+      "relation": {
+        "family": "opening",
+        "actor": "76561199032006224",
+        "target": "76561198872013168"
+      },
+      "construction_polarity": "positive",
+      "texts": {
+        "en": "Match 2396949, map Nuke. Find rounds where kyousuke makes the opening first kill by killing tN1R.",
+        "zh": "比赛 2396949，地图 Nuke。查找 kyousuke 击杀 tN1R 并拿到本回合首杀的回合。"
+      }
+    },
+    {
+      "id": "opening_1_negative",
+      "filters": {
+        "match_id": "2396949",
+        "map": "Nuke"
+      },
+      "entities": [
+        "m0NESY",
+        "magixx"
+      ],
+      "relation": {
+        "family": "opening",
+        "actor": "76561198074762801",
+        "target": "76561199063238565"
+      },
+      "construction_polarity": "negative",
+      "texts": {
+        "en": "Match 2396949, map Nuke. Find rounds where m0NESY makes the opening first kill by killing magixx.",
+        "zh": "比赛 2396949，地图 Nuke。查找 m0NESY 击杀 magixx 并拿到本回合首杀的回合。"
+      }
+    },
+    {
+      "id": "after_plant_1_positive",
+      "filters": {
+        "match_id": "2396949",
+        "map": "Nuke"
+      },
+      "entities": [
+        "NiKo",
+        "zont1x"
+      ],
+      "relation": {
+        "family": "after_plant",
+        "actor": "76561198041683378",
+        "target": "76561198995880877"
+      },
+      "construction_polarity": "positive",
+      "texts": {
+        "en": "Match 2396949, map Nuke. Find rounds where NiKo kills zont1x strictly after a bomb plant in that round.",
+        "zh": "比赛 2396949，地图 Nuke。查找 NiKo 击杀 zont1x，且这次击杀严格发生在该回合炸弹安放之后的回合。"
+      }
+    },
+    {
+      "id": "after_plant_1_negative",
+      "filters": {
+        "match_id": "2396949",
+        "map": "Nuke"
+      },
+      "entities": [
+        "TeSeS",
+        "tN1R"
+      ],
+      "relation": {
+        "family": "after_plant",
+        "actor": "76561197996678278",
+        "target": "76561198872013168"
+      },
+      "construction_polarity": "negative",
+      "texts": {
+        "en": "Match 2396949, map Nuke. Find rounds where TeSeS kills tN1R strictly after a bomb plant in that round.",
+        "zh": "比赛 2396949，地图 Nuke。查找 TeSeS 击杀 tN1R，且这次击杀严格发生在该回合炸弹安放之后的回合。"
+      }
+    },
+    {
+      "id": "trade_1_positive",
+      "filters": {
+        "match_id": "2396949",
+        "map": "Nuke"
+      },
+      "entities": [
+        "donk",
+        "zont1x"
+      ],
+      "relation": {
+        "family": "trade",
+        "actor": "76561198386265483",
+        "target": "76561198995880877",
+        "window_ticks": 320
+      },
+      "construction_polarity": "positive",
+      "texts": {
+        "en": "Match 2396949, map Nuke. Find rounds where donk trades teammate zont1x: kills the enemy who killed zont1x, more than 0 and at most 320 ticks later in the same round.",
+        "zh": "比赛 2396949，地图 Nuke。查找 donk 为队友 zont1x 补枪的回合：在同一回合中，zont1x 被敌人击杀后，donk 在大于 0 且不超过 320 tick 内击杀该敌人。"
+      }
+    },
+    {
+      "id": "trade_1_negative",
+      "filters": {
+        "match_id": "2396949",
+        "map": "Nuke"
+      },
+      "entities": [
+        "karrigan",
+        "kyousuke"
+      ],
+      "relation": {
+        "family": "trade",
+        "actor": "76561197989430253",
+        "target": "76561199032006224",
+        "window_ticks": 320
+      },
+      "construction_polarity": "negative",
+      "texts": {
+        "en": "Match 2396949, map Nuke. Find rounds where karrigan trades teammate kyousuke: kills the enemy who killed kyousuke, more than 0 and at most 320 ticks later in the same round.",
+        "zh": "比赛 2396949，地图 Nuke。查找 karrigan 为队友 kyousuke 补枪的回合：在同一回合中，kyousuke 被敌人击杀后，karrigan 在大于 0 且不超过 320 tick 内击杀该敌人。"
+      }
+    },
+    {
+      "id": "opening_2_positive",
+      "filters": {
+        "match_id": "2396948",
+        "map": "Dust2"
+      },
+      "entities": [
+        "molodoy",
+        "jL"
+      ],
+      "relation": {
+        "family": "opening",
+        "actor": "76561198200982290",
+        "target": "76561198176878303"
+      },
+      "construction_polarity": "positive",
+      "texts": {
+        "en": "Match 2396948, map Dust2. Find rounds where molodoy makes the opening first kill by killing jL.",
+        "zh": "比赛 2396948，地图 Dust2。查找 molodoy 击杀 jL 并拿到本回合首杀的回合。"
+      }
+    },
+    {
+      "id": "opening_2_negative",
+      "filters": {
+        "match_id": "2396948",
+        "map": "Dust2"
+      },
+      "entities": [
+        "ropz",
+        "yuurih"
+      ],
+      "relation": {
+        "family": "opening",
+        "actor": "76561197991272318",
+        "target": "76561198164970560"
+      },
+      "construction_polarity": "negative",
+      "texts": {
+        "en": "Match 2396948, map Dust2. Find rounds where ropz makes the opening first kill by killing yuurih.",
+        "zh": "比赛 2396948，地图 Dust2。查找 ropz 击杀 yuurih 并拿到本回合首杀的回合。"
+      }
+    },
+    {
+      "id": "after_plant_2_positive",
+      "filters": {
+        "match_id": "2396948",
+        "map": "Dust2"
+      },
+      "entities": [
+        "ropz",
+        "yuurih"
+      ],
+      "relation": {
+        "family": "after_plant",
+        "actor": "76561197991272318",
+        "target": "76561198164970560"
+      },
+      "construction_polarity": "positive",
+      "texts": {
+        "en": "Match 2396948, map Dust2. Find rounds where ropz kills yuurih strictly after a bomb plant in that round.",
+        "zh": "比赛 2396948，地图 Dust2。查找 ropz 击杀 yuurih，且这次击杀严格发生在该回合炸弹安放之后的回合。"
+      }
+    },
+    {
+      "id": "after_plant_2_negative",
+      "filters": {
+        "match_id": "2396948",
+        "map": "Dust2"
+      },
+      "entities": [
+        "flameZ",
+        "FalleN"
+      ],
+      "relation": {
+        "family": "after_plant",
+        "actor": "76561197978835160",
+        "target": "76561197960690195"
+      },
+      "construction_polarity": "negative",
+      "texts": {
+        "en": "Match 2396948, map Dust2. Find rounds where flameZ kills FalleN strictly after a bomb plant in that round.",
+        "zh": "比赛 2396948，地图 Dust2。查找 flameZ 击杀 FalleN，且这次击杀严格发生在该回合炸弹安放之后的回合。"
+      }
+    },
+    {
+      "id": "trade_2_positive",
+      "filters": {
+        "match_id": "2396948",
+        "map": "Dust2"
+      },
+      "entities": [
+        "jL",
+        "apEX"
+      ],
+      "relation": {
+        "family": "trade",
+        "actor": "76561198176878303",
+        "target": "76561197989744167",
+        "window_ticks": 320
+      },
+      "construction_polarity": "positive",
+      "texts": {
+        "en": "Match 2396948, map Dust2. Find rounds where jL trades teammate apEX: kills the enemy who killed apEX, more than 0 and at most 320 ticks later in the same round.",
+        "zh": "比赛 2396948，地图 Dust2。查找 jL 为队友 apEX 补枪的回合：在同一回合中，apEX 被敌人击杀后，jL 在大于 0 且不超过 320 tick 内击杀该敌人。"
+      }
+    },
+    {
+      "id": "trade_2_negative",
+      "filters": {
+        "match_id": "2396948",
+        "map": "Dust2"
+      },
+      "entities": [
+        "KSCERATO",
+        "YEKINDAR"
+      ],
+      "relation": {
+        "family": "trade",
+        "actor": "76561198058500492",
+        "target": "76561198134401925",
+        "window_ticks": 320
+      },
+      "construction_polarity": "negative",
+      "texts": {
+        "en": "Match 2396948, map Dust2. Find rounds where KSCERATO trades teammate YEKINDAR: kills the enemy who killed YEKINDAR, more than 0 and at most 320 ticks later in the same round.",
+        "zh": "比赛 2396948，地图 Dust2。查找 KSCERATO 为队友 YEKINDAR 补枪的回合：在同一回合中，YEKINDAR 被敌人击杀后，KSCERATO 在大于 0 且不超过 320 tick 内击杀该敌人。"
+      }
+    },
+    {
+      "id": "opening_3_positive",
+      "filters": {
+        "match_id": "2396614",
+        "map": "Ancient"
+      },
+      "entities": [
+        "donk",
+        "xfl0ud"
+      ],
+      "relation": {
+        "family": "opening",
+        "actor": "76561198386265483",
+        "target": "76561198178209109"
+      },
+      "construction_polarity": "positive",
+      "texts": {
+        "en": "Match 2396614, map Ancient. Find rounds where donk makes the opening first kill by killing xfl0ud.",
+        "zh": "比赛 2396614，地图 Ancient。查找 donk 击杀 xfl0ud 并拿到本回合首杀的回合。"
+      }
+    },
+    {
+      "id": "opening_3_negative",
+      "filters": {
+        "match_id": "2396614",
+        "map": "Ancient"
+      },
+      "entities": [
+        "dem0n",
+        "donk"
+      ],
+      "relation": {
+        "family": "opening",
+        "actor": "76561198875633179",
+        "target": "76561198386265483"
+      },
+      "construction_polarity": "negative",
+      "texts": {
+        "en": "Match 2396614, map Ancient. Find rounds where dem0n makes the opening first kill by killing donk.",
+        "zh": "比赛 2396614，地图 Ancient。查找 dem0n 击杀 donk 并拿到本回合首杀的回合。"
+      }
+    },
+    {
+      "id": "after_plant_3_positive",
+      "filters": {
+        "match_id": "2396614",
+        "map": "Ancient"
+      },
+      "entities": [
+        "dem0n",
+        "donk"
+      ],
+      "relation": {
+        "family": "after_plant",
+        "actor": "76561198875633179",
+        "target": "76561198386265483"
+      },
+      "construction_polarity": "positive",
+      "texts": {
+        "en": "Match 2396614, map Ancient. Find rounds where dem0n kills donk strictly after a bomb plant in that round.",
+        "zh": "比赛 2396614，地图 Ancient。查找 dem0n 击杀 donk，且这次击杀严格发生在该回合炸弹安放之后的回合。"
+      }
+    },
+    {
+      "id": "after_plant_3_negative",
+      "filters": {
+        "match_id": "2396614",
+        "map": "Ancient"
+      },
+      "entities": [
+        "dem0n",
+        "zont1x"
+      ],
+      "relation": {
+        "family": "after_plant",
+        "actor": "76561198875633179",
+        "target": "76561198995880877"
+      },
+      "construction_polarity": "negative",
+      "texts": {
+        "en": "Match 2396614, map Ancient. Find rounds where dem0n kills zont1x strictly after a bomb plant in that round.",
+        "zh": "比赛 2396614，地图 Ancient。查找 dem0n 击杀 zont1x，且这次击杀严格发生在该回合炸弹安放之后的回合。"
+      }
+    },
+    {
+      "id": "trade_3_positive",
+      "filters": {
+        "match_id": "2396614",
+        "map": "Ancient"
+      },
+      "entities": [
+        "zont1x",
+        "donk"
+      ],
+      "relation": {
+        "family": "trade",
+        "actor": "76561198995880877",
+        "target": "76561198386265483",
+        "window_ticks": 320
+      },
+      "construction_polarity": "positive",
+      "texts": {
+        "en": "Match 2396614, map Ancient. Find rounds where zont1x trades teammate donk: kills the enemy who killed donk, more than 0 and at most 320 ticks later in the same round.",
+        "zh": "比赛 2396614，地图 Ancient。查找 zont1x 为队友 donk 补枪的回合：在同一回合中，donk 被敌人击杀后，zont1x 在大于 0 且不超过 320 tick 内击杀该敌人。"
+      }
+    },
+    {
+      "id": "trade_3_negative",
+      "filters": {
+        "match_id": "2396614",
+        "map": "Ancient"
+      },
+      "entities": [
+        "cmtry",
+        "dziugss"
+      ],
+      "relation": {
+        "family": "trade",
+        "actor": "76561199313968259",
+        "target": "76561199100725838",
+        "window_ticks": 320
+      },
+      "construction_polarity": "negative",
+      "texts": {
+        "en": "Match 2396614, map Ancient. Find rounds where cmtry trades teammate dziugss: kills the enemy who killed dziugss, more than 0 and at most 320 ticks later in the same round.",
+        "zh": "比赛 2396614，地图 Ancient。查找 cmtry 为队友 dziugss 补枪的回合：在同一回合中，dziugss 被敌人击杀后，cmtry 在大于 0 且不超过 320 tick 内击杀该敌人。"
+      }
+    },
+    {
+      "id": "opening_4_positive",
+      "filters": {
+        "match_id": "2396609",
+        "map": "Mirage"
+      },
+      "entities": [
+        "m0NESY",
+        "dumau"
+      ],
+      "relation": {
+        "family": "opening",
+        "actor": "76561198074762801",
+        "target": "76561198194325317"
+      },
+      "construction_polarity": "positive",
+      "texts": {
+        "en": "Match 2396609, map Mirage. Find rounds where m0NESY makes the opening first kill by killing dumau.",
+        "zh": "比赛 2396609，地图 Mirage。查找 m0NESY 击杀 dumau 并拿到本回合首杀的回合。"
+      }
+    },
+    {
+      "id": "opening_4_negative",
+      "filters": {
+        "match_id": "2396609",
+        "map": "Mirage"
+      },
+      "entities": [
+        "latto",
+        "m0NESY"
+      ],
+      "relation": {
+        "family": "opening",
+        "actor": "76561198850020186",
+        "target": "76561198074762801"
+      },
+      "construction_polarity": "negative",
+      "texts": {
+        "en": "Match 2396609, map Mirage. Find rounds where latto makes the opening first kill by killing m0NESY.",
+        "zh": "比赛 2396609，地图 Mirage。查找 latto 击杀 m0NESY 并拿到本回合首杀的回合。"
+      }
+    },
+    {
+      "id": "after_plant_4_positive",
+      "filters": {
+        "match_id": "2396609",
+        "map": "Mirage"
+      },
+      "entities": [
+        "dumau",
+        "NiKo"
+      ],
+      "relation": {
+        "family": "after_plant",
+        "actor": "76561198194325317",
+        "target": "76561198041683378"
+      },
+      "construction_polarity": "positive",
+      "texts": {
+        "en": "Match 2396609, map Mirage. Find rounds where dumau kills NiKo strictly after a bomb plant in that round.",
+        "zh": "比赛 2396609，地图 Mirage。查找 dumau 击杀 NiKo，且这次击杀严格发生在该回合炸弹安放之后的回合。"
+      }
+    },
+    {
+      "id": "after_plant_4_negative",
+      "filters": {
+        "match_id": "2396609",
+        "map": "Mirage"
+      },
+      "entities": [
+        "try",
+        "kyousuke"
+      ],
+      "relation": {
+        "family": "after_plant",
+        "actor": "76561198365118288",
+        "target": "76561199032006224"
+      },
+      "construction_polarity": "negative",
+      "texts": {
+        "en": "Match 2396609, map Mirage. Find rounds where try kills kyousuke strictly after a bomb plant in that round.",
+        "zh": "比赛 2396609，地图 Mirage。查找 try 击杀 kyousuke，且这次击杀严格发生在该回合炸弹安放之后的回合。"
+      }
+    },
+    {
+      "id": "trade_4_positive",
+      "filters": {
+        "match_id": "2396609",
+        "map": "Mirage"
+      },
+      "entities": [
+        "arT",
+        "n1ssim"
+      ],
+      "relation": {
+        "family": "trade",
+        "actor": "76561198043769572",
+        "target": "76561198061763596",
+        "window_ticks": 320
+      },
+      "construction_polarity": "positive",
+      "texts": {
+        "en": "Match 2396609, map Mirage. Find rounds where arT trades teammate n1ssim: kills the enemy who killed n1ssim, more than 0 and at most 320 ticks later in the same round.",
+        "zh": "比赛 2396609，地图 Mirage。查找 arT 为队友 n1ssim 补枪的回合：在同一回合中，n1ssim 被敌人击杀后，arT 在大于 0 且不超过 320 tick 内击杀该敌人。"
+      }
+    },
+    {
+      "id": "trade_4_negative",
+      "filters": {
+        "match_id": "2396609",
+        "map": "Mirage"
+      },
+      "entities": [
+        "NiKo",
+        "kyousuke"
+      ],
+      "relation": {
+        "family": "trade",
+        "actor": "76561198041683378",
+        "target": "76561199032006224",
+        "window_ticks": 320
+      },
+      "construction_polarity": "negative",
+      "texts": {
+        "en": "Match 2396609, map Mirage. Find rounds where NiKo trades teammate kyousuke: kills the enemy who killed kyousuke, more than 0 and at most 320 ticks later in the same round.",
+        "zh": "比赛 2396609，地图 Mirage。查找 NiKo 为队友 kyousuke 补枪的回合：在同一回合中，kyousuke 被敌人击杀后，NiKo 在大于 0 且不超过 320 tick 内击杀该敌人。"
+      }
+    }
+  ]
+}
