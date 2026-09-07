@@ -1,0 +1,35 @@
+{
+  "method": "Manual browser DOM and visual checks against an isolated local ASGI server and built frontend.",
+  "source_commit": "3147950df7139ec5f2516887ff15b23bf92ca57a",
+  "checks": [
+    {
+      "query": "Match 2396949, map Nuke. donk trades teammate zont1x within 320 ticks",
+      "status": "found",
+      "checked_rounds": 21,
+      "matched_rounds": 1,
+      "round_link_opened": "graph:2396949:Nuke:1",
+      "visible_witness_ticks": [
+        11243,
+        11385
+      ]
+    },
+    {
+      "query": "Match 2396949, map Nuke. TeSeS kills tN1R after a bomb plant",
+      "status": "not_found",
+      "checked_rounds": 21,
+      "matched_rounds": 0,
+      "stale_evidence_buttons": 0
+    },
+    {
+      "query": "Match 2396949, map Nuke. donk trades teammate zont1x within 5 seconds",
+      "status": "unsupported",
+      "checked_rounds": 0,
+      "matched_rounds": 0,
+      "explicit_uncertainty_message": true
+    }
+  ],
+  "console_errors": [],
+  "production_services_restarted": false,
+  "temporary_preview_closed": true,
+  "remote_model_calls": 0
+}

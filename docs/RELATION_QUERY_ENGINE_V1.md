@@ -43,15 +43,44 @@ PYTHON_DOTENV_DISABLED=1 HF_HUB_OFFLINE=1 .venv/bin/python -m scripts.evaluate_r
 
 ## Verdict
 
-独立开发验证通过，218 项离线测试和前端构建通过。已完成冻结前检查；此时尚未运行 48 个已观察表述的生产回归。
+通过本轮工程验收。实现与协议先在 `3147950` 冻结并推送，再运行已观察的关系题；48/48 个表述、624/624 项核对通过。218 项离线测试及前端构建通过，冻结提交 [CI](https://github.com/Zzz0zzZ0/CS2-coach-agent/actions/runs/34074910972) 通过。完整 [关系回归结果](../datasets/evaluation/relation_engine_v1_report.json) 保留所有查询、解析结果、事件证明与检查项。
+
+## 实际结果
+
+| 检查 | 结果 |
+| --- | --- |
+| 自然语言关系回归 | 24 题意 / 48 中英文表述，全部通过 |
+| 正例 nDCG@5 / Recall@5 | 1.0000 / 1.0000（12 个题意，语言先按题平均） |
+| 无答案误召回 / 正例误拒答 | 0 / 0（各 12 个题意） |
+| 角色、窗口、范围、事件证明与入口一致性 | 624/624 项通过 |
+| 既有画像 / 战术结构契约 | 50/50 |
+| 既有检索开发集 Vector / Graph / Hybrid | 50/50、50/50、50/50 |
+| 既有已观察 holdout Vector / Graph / Hybrid | 28/30、30/30、30/30，原有两个 Vector 失败保留 |
+
+关系路径只从自然语言读取条件；SQL oracle 的结构槽没有传给生产实现。Graph 与 Hybrid 在这里共享一个确定性关系引擎，入口一致性不算两种独立方法的成功，也不说明 RRF 算法改善。上述满分只证明已观察题组与受限句式下的工程行为，不能推断新表达或新比赛性能。
+
+[普通路径回归摘要](../datasets/evaluation/relation_engine_v1_legacy/summary.json)、[开发集完整结果](../datasets/evaluation/relation_engine_v1_legacy/development.json) 与 [旧 holdout 完整结果](../datasets/evaluation/relation_engine_v1_legacy/holdout.json) 均保留，模型文件哈希与此前冻结本地模型相同。图谱 SHA 未变化，所有验证远程模型调用均为 0。
+
+复现普通路径回归：
+
+```bash
+PYTHON_DOTENV_DISABLED=1 HF_HUB_OFFLINE=1 LLM_AUXILIARY_CALLS_ENABLED=false \
+  .venv/bin/python -m scripts.check_relation_legacy_regression \
+  --model-dir /absolute/path/to/frozen/local/model \
+  --output-dir data/evaluation/new-legacy-reproduction
+```
+
+此命令只接受本地 Milvus 和匹配哈希的 FastEmbed 模型；模型发现不访问远端，查询采用原生产 embedding 适配器。关系查询单次状态接口的本机中位耗时约 3.67 ms，仅针对本轮 17–30 候选回合范围，不含前端 / API 往返，不能作为大库吞吐结论。
 
 ## Findings
 
-已补齐单纯 top-k 排序无法表达的主体和时序核验。没有高置信度阻断项。复核时修正了地图元数据合并、前端来源参数及缺失范围 / 非法 k 的边界，防止冲突范围扩大或把没有返回位置误当成关系不存在。
+已补齐单纯 top-k 排序无法表达的主体和时序核验。没有高置信度阻断项。纯向量关系请求明确返回“信息不足”，因此不能把它的空列表当成正确识别了无答案；有答案时应使用源事件关系路径。复核时修正了地图元数据合并、前端来源参数及缺失范围 / 非法 k 的边界，防止冲突范围扩大或把没有返回位置误当成关系不存在。
 
 ## Verified
 
 新增 46 项测试覆盖双语角色、作用域冲突、未知身份、严格时序、0 / 1 / 320 / 321 ticks、错误队伍、跨回合、不支持的限制、源信息缺失、部分证据、无图谱、API 状态、混合入口和重试旧证据清理。使用合成数据，没有从 frozen qrels 生成实现结果。无新增依赖、模型调用或生产数据写入。
+
+另在临时 `127.0.0.1:18101` 新进程与构建后的前端完成 [浏览器验收](../datasets/evaluation/relation_engine_v1_ui_audit.json)：donk 为 zont1x 的补枪命中第 1 回合，按钮打开实际 Nuke 回合时间线，显示 tick 11243 / 11385；TeSeS 对 tN1R 的下包后击杀问题显示核查 21 回合、匹配 0，并清除旧结果；5 seconds 限制显示不支持与不完整提示。浏览器控制台无错误。临时预览页面与服务已关闭，原服务未动。
 
 ## Risks
 
@@ -61,4 +90,4 @@ PYTHON_DOTENV_DISABLED=1 HF_HUB_OFFLINE=1 .venv/bin/python -m scripts.evaluate_r
 
 ## Next actions
 
-冻结并推送实现后，执行关系回归、既有检索开发 / holdout 回归，保留所有首次结果。随后拓展独立句式与跨回合画像统计测试，并对同一输入下的事件表示、词法 / dense 基线另做冻结实验。
+优先建立新的独立表达开发集：主动 / 被动、角色交换、阵营条件、不同时间单位、复合限制和不支持句式，明确识别率与误拒答。实现前冻结问题，不在这 48 个已通过表述上继续调分。随后扩展跨回合画像的统计分子 / 分母任务，并对同一输入下的事件表示、词法 / dense 基线另做冻结实验。常驻后端的代码加载留到下一次正常服务重启，不把隔离预览验收当成已上线。

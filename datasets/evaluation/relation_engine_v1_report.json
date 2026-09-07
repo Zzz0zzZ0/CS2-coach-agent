@@ -1,0 +1,4241 @@
+{
+  "created_at": "2026-09-07T02:02:00.571030+00:00",
+  "protocol_sha256": "32042d8f7e3d4f3ceccbfa2115b9df5e1099adefbe437b11dbca37b0fbdacd53",
+  "method": "production_bounded_nl_relation_engine",
+  "semantic_groups": 24,
+  "surface_queries": 48,
+  "passed": 48,
+  "remote_model_calls": 0,
+  "summary": {
+    "ndcg_at_k": {
+      "mean": 1.0,
+      "semantic_groups": 12
+    },
+    "recall_at_k": {
+      "mean": 1.0,
+      "semantic_groups": 12
+    },
+    "false_retrieval": {
+      "mean": 0,
+      "semantic_groups": 12
+    },
+    "false_abstention": {
+      "mean": 0,
+      "semantic_groups": 12
+    }
+  },
+  "cases": [
+    {
+      "query_id": "opening_1_positive",
+      "language": "en",
+      "query": "Match 2396949, map Nuke. Find rounds where kyousuke makes the opening first kill by killing tN1R.",
+      "relation": {
+        "status": "found",
+        "family": "opening",
+        "actor": "kyousuke",
+        "target": "tn1r",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396949",
+          "map": "Nuke"
+        },
+        "query": "Match 2396949, map Nuke. Find rounds where kyousuke makes the opening first kill by killing tN1R.",
+        "checked_rounds": 21,
+        "matched_rounds": 2,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561199032006224",
+        "target_id": "76561198872013168",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:16"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] opening kyousuke -> tn1r. graph:2396949:Nuke:15\nevent:2396949:Nuke:15:kill:1 tick 134905: kyousuke killed tN1R.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Nuke",
+            "match_id": "2396949",
+            "round_number": "15",
+            "relation": "opening",
+            "actor_id": "76561199032006224",
+            "target_id": "76561198872013168",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396949:Nuke:15:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396949:Nuke:15:kill:1",
+                  "tick": 134905
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396949:Nuke:15"
+        },
+        {
+          "content": "[Verified relation] opening kyousuke -> tn1r. graph:2396949:Nuke:16\nevent:2396949:Nuke:16:kill:1 tick 141777: kyousuke killed tN1R.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Nuke",
+            "match_id": "2396949",
+            "round_number": "16",
+            "relation": "opening",
+            "actor_id": "76561199032006224",
+            "target_id": "76561198872013168",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396949:Nuke:16:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396949:Nuke:16:kill:1",
+                  "tick": 141777
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396949:Nuke:16"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 4.590499680489302
+    },
+    {
+      "query_id": "opening_1_positive",
+      "language": "zh",
+      "query": "比赛 2396949，地图 Nuke。查找 kyousuke 击杀 tN1R 并拿到本回合首杀的回合。",
+      "relation": {
+        "status": "found",
+        "family": "opening",
+        "actor": "kyousuke",
+        "target": "tn1r",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396949",
+          "map": "Nuke"
+        },
+        "query": "比赛 2396949，地图 Nuke。查找 kyousuke 击杀 tN1R 并拿到本回合首杀的回合。",
+        "checked_rounds": 21,
+        "matched_rounds": 2,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561199032006224",
+        "target_id": "76561198872013168",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396949:Nuke:15",
+        "round:2396949:Nuke:16"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] opening kyousuke -> tn1r. graph:2396949:Nuke:15\nevent:2396949:Nuke:15:kill:1 tick 134905: kyousuke killed tN1R.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Nuke",
+            "match_id": "2396949",
+            "round_number": "15",
+            "relation": "opening",
+            "actor_id": "76561199032006224",
+            "target_id": "76561198872013168",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396949:Nuke:15:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396949:Nuke:15:kill:1",
+                  "tick": 134905
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396949:Nuke:15"
+        },
+        {
+          "content": "[Verified relation] opening kyousuke -> tn1r. graph:2396949:Nuke:16\nevent:2396949:Nuke:16:kill:1 tick 141777: kyousuke killed tN1R.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Nuke",
+            "match_id": "2396949",
+            "round_number": "16",
+            "relation": "opening",
+            "actor_id": "76561199032006224",
+            "target_id": "76561198872013168",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396949:Nuke:16:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396949:Nuke:16:kill:1",
+                  "tick": 141777
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396949:Nuke:16"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.427041694521904
+    },
+    {
+      "query_id": "opening_1_negative",
+      "language": "en",
+      "query": "Match 2396949, map Nuke. Find rounds where m0NESY makes the opening first kill by killing magixx.",
+      "relation": {
+        "status": "not_found",
+        "family": "opening",
+        "actor": "m0nesy",
+        "target": "magixx",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396949",
+          "map": "Nuke"
+        },
+        "query": "Match 2396949, map Nuke. Find rounds where m0NESY makes the opening first kill by killing magixx.",
+        "checked_rounds": 21,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198074762801",
+        "target_id": "76561199063238565",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.5489159636199474
+    },
+    {
+      "query_id": "opening_1_negative",
+      "language": "zh",
+      "query": "比赛 2396949，地图 Nuke。查找 m0NESY 击杀 magixx 并拿到本回合首杀的回合。",
+      "relation": {
+        "status": "not_found",
+        "family": "opening",
+        "actor": "m0nesy",
+        "target": "magixx",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396949",
+          "map": "Nuke"
+        },
+        "query": "比赛 2396949，地图 Nuke。查找 m0NESY 击杀 magixx 并拿到本回合首杀的回合。",
+        "checked_rounds": 21,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198074762801",
+        "target_id": "76561199063238565",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.5304161719977856
+    },
+    {
+      "query_id": "after_plant_1_positive",
+      "language": "en",
+      "query": "Match 2396949, map Nuke. Find rounds where NiKo kills zont1x strictly after a bomb plant in that round.",
+      "relation": {
+        "status": "found",
+        "family": "after_plant",
+        "actor": "niko",
+        "target": "zont1x",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396949",
+          "map": "Nuke"
+        },
+        "query": "Match 2396949, map Nuke. Find rounds where NiKo kills zont1x strictly after a bomb plant in that round.",
+        "checked_rounds": 21,
+        "matched_rounds": 1,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198041683378",
+        "target_id": "76561198995880877",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396949:Nuke:19"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] after_plant niko -> zont1x. graph:2396949:Nuke:19\nevent:2396949:Nuke:19:plant:1 tick 168892: zont1x planted the bomb.\nevent:2396949:Nuke:19:kill:7 tick 169868: NiKo killed zont1x.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Nuke",
+            "match_id": "2396949",
+            "round_number": "19",
+            "relation": "after_plant",
+            "actor_id": "76561198041683378",
+            "target_id": "76561198995880877",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396949:Nuke:19:plant:1",
+              "event:2396949:Nuke:19:kill:7"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396949:Nuke:19:plant:1",
+                  "tick": 168892
+                },
+                {
+                  "event_id": "event:2396949:Nuke:19:kill:7",
+                  "tick": 169868
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396949:Nuke:19"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.671458922326565
+    },
+    {
+      "query_id": "after_plant_1_positive",
+      "language": "zh",
+      "query": "比赛 2396949，地图 Nuke。查找 NiKo 击杀 zont1x，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "relation": {
+        "status": "found",
+        "family": "after_plant",
+        "actor": "niko",
+        "target": "zont1x",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396949",
+          "map": "Nuke"
+        },
+        "query": "比赛 2396949，地图 Nuke。查找 NiKo 击杀 zont1x，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+        "checked_rounds": 21,
+        "matched_rounds": 1,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198041683378",
+        "target_id": "76561198995880877",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396949:Nuke:19"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] after_plant niko -> zont1x. graph:2396949:Nuke:19\nevent:2396949:Nuke:19:plant:1 tick 168892: zont1x planted the bomb.\nevent:2396949:Nuke:19:kill:7 tick 169868: NiKo killed zont1x.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Nuke",
+            "match_id": "2396949",
+            "round_number": "19",
+            "relation": "after_plant",
+            "actor_id": "76561198041683378",
+            "target_id": "76561198995880877",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396949:Nuke:19:plant:1",
+              "event:2396949:Nuke:19:kill:7"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396949:Nuke:19:plant:1",
+                  "tick": 168892
+                },
+                {
+                  "event_id": "event:2396949:Nuke:19:kill:7",
+                  "tick": 169868
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396949:Nuke:19"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.9884578436613083
+    },
+    {
+      "query_id": "after_plant_1_negative",
+      "language": "en",
+      "query": "Match 2396949, map Nuke. Find rounds where TeSeS kills tN1R strictly after a bomb plant in that round.",
+      "relation": {
+        "status": "not_found",
+        "family": "after_plant",
+        "actor": "teses",
+        "target": "tn1r",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396949",
+          "map": "Nuke"
+        },
+        "query": "Match 2396949, map Nuke. Find rounds where TeSeS kills tN1R strictly after a bomb plant in that round.",
+        "checked_rounds": 21,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561197996678278",
+        "target_id": "76561198872013168",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.6716251634061337
+    },
+    {
+      "query_id": "after_plant_1_negative",
+      "language": "zh",
+      "query": "比赛 2396949，地图 Nuke。查找 TeSeS 击杀 tN1R，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "relation": {
+        "status": "not_found",
+        "family": "after_plant",
+        "actor": "teses",
+        "target": "tn1r",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396949",
+          "map": "Nuke"
+        },
+        "query": "比赛 2396949，地图 Nuke。查找 TeSeS 击杀 tN1R，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+        "checked_rounds": 21,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561197996678278",
+        "target_id": "76561198872013168",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.262625075876713
+    },
+    {
+      "query_id": "trade_1_positive",
+      "language": "en",
+      "query": "Match 2396949, map Nuke. Find rounds where donk trades teammate zont1x: kills the enemy who killed zont1x, more than 0 and at most 320 ticks later in the same round.",
+      "relation": {
+        "status": "found",
+        "family": "trade",
+        "actor": "donk",
+        "target": "zont1x",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396949",
+          "map": "Nuke"
+        },
+        "query": "Match 2396949, map Nuke. Find rounds where donk trades teammate zont1x: kills the enemy who killed zont1x, more than 0 and at most 320 ticks later in the same round.",
+        "checked_rounds": 21,
+        "matched_rounds": 1,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198386265483",
+        "target_id": "76561198995880877",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396949:Nuke:1"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] trade donk -> zont1x. graph:2396949:Nuke:1\nevent:2396949:Nuke:1:kill:1 tick 11243: NiKo killed zont1x.\nevent:2396949:Nuke:1:kill:3 tick 11385: donk killed NiKo.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "trade",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Nuke",
+            "match_id": "2396949",
+            "round_number": "1",
+            "relation": "trade",
+            "actor_id": "76561198386265483",
+            "target_id": "76561198995880877",
+            "window_ticks": 320,
+            "witness_event_ids": [
+              "event:2396949:Nuke:1:kill:1",
+              "event:2396949:Nuke:1:kill:3"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396949:Nuke:1:kill:1",
+                  "tick": 11243
+                },
+                {
+                  "event_id": "event:2396949:Nuke:1:kill:3",
+                  "tick": 11385
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396949:Nuke:1"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.850208595395088
+    },
+    {
+      "query_id": "trade_1_positive",
+      "language": "zh",
+      "query": "比赛 2396949，地图 Nuke。查找 donk 为队友 zont1x 补枪的回合：在同一回合中，zont1x 被敌人击杀后，donk 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "relation": {
+        "status": "found",
+        "family": "trade",
+        "actor": "donk",
+        "target": "zont1x",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396949",
+          "map": "Nuke"
+        },
+        "query": "比赛 2396949，地图 Nuke。查找 donk 为队友 zont1x 补枪的回合：在同一回合中，zont1x 被敌人击杀后，donk 在大于 0 且不超过 320 tick 内击杀该敌人。",
+        "checked_rounds": 21,
+        "matched_rounds": 1,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198386265483",
+        "target_id": "76561198995880877",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396949:Nuke:1"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] trade donk -> zont1x. graph:2396949:Nuke:1\nevent:2396949:Nuke:1:kill:1 tick 11243: NiKo killed zont1x.\nevent:2396949:Nuke:1:kill:3 tick 11385: donk killed NiKo.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "trade",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Nuke",
+            "match_id": "2396949",
+            "round_number": "1",
+            "relation": "trade",
+            "actor_id": "76561198386265483",
+            "target_id": "76561198995880877",
+            "window_ticks": 320,
+            "witness_event_ids": [
+              "event:2396949:Nuke:1:kill:1",
+              "event:2396949:Nuke:1:kill:3"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396949:Nuke:1:kill:1",
+                  "tick": 11243
+                },
+                {
+                  "event_id": "event:2396949:Nuke:1:kill:3",
+                  "tick": 11385
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396949:Nuke:1"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 4.169165622442961
+    },
+    {
+      "query_id": "trade_1_negative",
+      "language": "en",
+      "query": "Match 2396949, map Nuke. Find rounds where karrigan trades teammate kyousuke: kills the enemy who killed kyousuke, more than 0 and at most 320 ticks later in the same round.",
+      "relation": {
+        "status": "not_found",
+        "family": "trade",
+        "actor": "karrigan",
+        "target": "kyousuke",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396949",
+          "map": "Nuke"
+        },
+        "query": "Match 2396949, map Nuke. Find rounds where karrigan trades teammate kyousuke: kills the enemy who killed kyousuke, more than 0 and at most 320 ticks later in the same round.",
+        "checked_rounds": 21,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561197989430253",
+        "target_id": "76561199032006224",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.523583058267832
+    },
+    {
+      "query_id": "trade_1_negative",
+      "language": "zh",
+      "query": "比赛 2396949，地图 Nuke。查找 karrigan 为队友 kyousuke 补枪的回合：在同一回合中，kyousuke 被敌人击杀后，karrigan 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "relation": {
+        "status": "not_found",
+        "family": "trade",
+        "actor": "karrigan",
+        "target": "kyousuke",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396949",
+          "map": "Nuke"
+        },
+        "query": "比赛 2396949，地图 Nuke。查找 karrigan 为队友 kyousuke 补枪的回合：在同一回合中，kyousuke 被敌人击杀后，karrigan 在大于 0 且不超过 320 tick 内击杀该敌人。",
+        "checked_rounds": 21,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561197989430253",
+        "target_id": "76561199032006224",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.5666250623762608
+    },
+    {
+      "query_id": "opening_2_positive",
+      "language": "en",
+      "query": "Match 2396948, map Dust2. Find rounds where molodoy makes the opening first kill by killing jL.",
+      "relation": {
+        "status": "found",
+        "family": "opening",
+        "actor": "molodoy",
+        "target": "jl",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396948",
+          "map": "Dust2"
+        },
+        "query": "Match 2396948, map Dust2. Find rounds where molodoy makes the opening first kill by killing jL.",
+        "checked_rounds": 17,
+        "matched_rounds": 2,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198200982290",
+        "target_id": "76561198176878303",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396948:Dust2:1",
+        "round:2396948:Dust2:5"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] opening molodoy -> jl. graph:2396948:Dust2:1\nevent:2396948:Dust2:1:kill:1 tick 20662: molodoy killed jL.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Dust2",
+            "match_id": "2396948",
+            "round_number": "1",
+            "relation": "opening",
+            "actor_id": "76561198200982290",
+            "target_id": "76561198176878303",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396948:Dust2:1:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396948:Dust2:1:kill:1",
+                  "tick": 20662
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396948:Dust2:1"
+        },
+        {
+          "content": "[Verified relation] opening molodoy -> jl. graph:2396948:Dust2:5\nevent:2396948:Dust2:5:kill:1 tick 47319: molodoy killed jL.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Dust2",
+            "match_id": "2396948",
+            "round_number": "5",
+            "relation": "opening",
+            "actor_id": "76561198200982290",
+            "target_id": "76561198176878303",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396948:Dust2:5:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396948:Dust2:5:kill:1",
+                  "tick": 47319
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396948:Dust2:5"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.600291907787323
+    },
+    {
+      "query_id": "opening_2_positive",
+      "language": "zh",
+      "query": "比赛 2396948，地图 Dust2。查找 molodoy 击杀 jL 并拿到本回合首杀的回合。",
+      "relation": {
+        "status": "found",
+        "family": "opening",
+        "actor": "molodoy",
+        "target": "jl",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396948",
+          "map": "Dust2"
+        },
+        "query": "比赛 2396948，地图 Dust2。查找 molodoy 击杀 jL 并拿到本回合首杀的回合。",
+        "checked_rounds": 17,
+        "matched_rounds": 2,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198200982290",
+        "target_id": "76561198176878303",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396948:Dust2:1",
+        "round:2396948:Dust2:5"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] opening molodoy -> jl. graph:2396948:Dust2:1\nevent:2396948:Dust2:1:kill:1 tick 20662: molodoy killed jL.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Dust2",
+            "match_id": "2396948",
+            "round_number": "1",
+            "relation": "opening",
+            "actor_id": "76561198200982290",
+            "target_id": "76561198176878303",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396948:Dust2:1:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396948:Dust2:1:kill:1",
+                  "tick": 20662
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396948:Dust2:1"
+        },
+        {
+          "content": "[Verified relation] opening molodoy -> jl. graph:2396948:Dust2:5\nevent:2396948:Dust2:5:kill:1 tick 47319: molodoy killed jL.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Dust2",
+            "match_id": "2396948",
+            "round_number": "5",
+            "relation": "opening",
+            "actor_id": "76561198200982290",
+            "target_id": "76561198176878303",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396948:Dust2:5:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396948:Dust2:5:kill:1",
+                  "tick": 47319
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396948:Dust2:5"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.8437913171947002
+    },
+    {
+      "query_id": "opening_2_negative",
+      "language": "en",
+      "query": "Match 2396948, map Dust2. Find rounds where ropz makes the opening first kill by killing yuurih.",
+      "relation": {
+        "status": "not_found",
+        "family": "opening",
+        "actor": "ropz",
+        "target": "yuurih",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396948",
+          "map": "Dust2"
+        },
+        "query": "Match 2396948, map Dust2. Find rounds where ropz makes the opening first kill by killing yuurih.",
+        "checked_rounds": 17,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561197991272318",
+        "target_id": "76561198164970560",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.4540421329438686
+    },
+    {
+      "query_id": "opening_2_negative",
+      "language": "zh",
+      "query": "比赛 2396948，地图 Dust2。查找 ropz 击杀 yuurih 并拿到本回合首杀的回合。",
+      "relation": {
+        "status": "not_found",
+        "family": "opening",
+        "actor": "ropz",
+        "target": "yuurih",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396948",
+          "map": "Dust2"
+        },
+        "query": "比赛 2396948，地图 Dust2。查找 ropz 击杀 yuurih 并拿到本回合首杀的回合。",
+        "checked_rounds": 17,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561197991272318",
+        "target_id": "76561198164970560",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.611916210502386
+    },
+    {
+      "query_id": "after_plant_2_positive",
+      "language": "en",
+      "query": "Match 2396948, map Dust2. Find rounds where ropz kills yuurih strictly after a bomb plant in that round.",
+      "relation": {
+        "status": "found",
+        "family": "after_plant",
+        "actor": "ropz",
+        "target": "yuurih",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396948",
+          "map": "Dust2"
+        },
+        "query": "Match 2396948, map Dust2. Find rounds where ropz kills yuurih strictly after a bomb plant in that round.",
+        "checked_rounds": 17,
+        "matched_rounds": 3,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561197991272318",
+        "target_id": "76561198164970560",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396948:Dust2:3",
+        "round:2396948:Dust2:6",
+        "round:2396948:Dust2:12"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] after_plant ropz -> yuurih. graph:2396948:Dust2:3\nevent:2396948:Dust2:3:plant:1 tick 34942: ZywOo planted the bomb.\nevent:2396948:Dust2:3:kill:6 tick 36193: ropz killed yuurih.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Dust2",
+            "match_id": "2396948",
+            "round_number": "3",
+            "relation": "after_plant",
+            "actor_id": "76561197991272318",
+            "target_id": "76561198164970560",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396948:Dust2:3:plant:1",
+              "event:2396948:Dust2:3:kill:6"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396948:Dust2:3:plant:1",
+                  "tick": 34942
+                },
+                {
+                  "event_id": "event:2396948:Dust2:3:kill:6",
+                  "tick": 36193
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396948:Dust2:3"
+        },
+        {
+          "content": "[Verified relation] after_plant ropz -> yuurih. graph:2396948:Dust2:6\nevent:2396948:Dust2:6:plant:1 tick 60164: jL planted the bomb.\nevent:2396948:Dust2:6:kill:6 tick 60202: ropz killed yuurih.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Dust2",
+            "match_id": "2396948",
+            "round_number": "6",
+            "relation": "after_plant",
+            "actor_id": "76561197991272318",
+            "target_id": "76561198164970560",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396948:Dust2:6:plant:1",
+              "event:2396948:Dust2:6:kill:6"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396948:Dust2:6:plant:1",
+                  "tick": 60164
+                },
+                {
+                  "event_id": "event:2396948:Dust2:6:kill:6",
+                  "tick": 60202
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396948:Dust2:6"
+        },
+        {
+          "content": "[Verified relation] after_plant ropz -> yuurih. graph:2396948:Dust2:12\nevent:2396948:Dust2:12:plant:1 tick 106540: apEX planted the bomb.\nevent:2396948:Dust2:12:kill:3 tick 109327: ropz killed yuurih.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Dust2",
+            "match_id": "2396948",
+            "round_number": "12",
+            "relation": "after_plant",
+            "actor_id": "76561197991272318",
+            "target_id": "76561198164970560",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396948:Dust2:12:plant:1",
+              "event:2396948:Dust2:12:kill:3"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396948:Dust2:12:plant:1",
+                  "tick": 106540
+                },
+                {
+                  "event_id": "event:2396948:Dust2:12:kill:3",
+                  "tick": 109327
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396948:Dust2:12"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.7929592654109
+    },
+    {
+      "query_id": "after_plant_2_positive",
+      "language": "zh",
+      "query": "比赛 2396948，地图 Dust2。查找 ropz 击杀 yuurih，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "relation": {
+        "status": "found",
+        "family": "after_plant",
+        "actor": "ropz",
+        "target": "yuurih",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396948",
+          "map": "Dust2"
+        },
+        "query": "比赛 2396948，地图 Dust2。查找 ropz 击杀 yuurih，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+        "checked_rounds": 17,
+        "matched_rounds": 3,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561197991272318",
+        "target_id": "76561198164970560",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396948:Dust2:3",
+        "round:2396948:Dust2:6",
+        "round:2396948:Dust2:12"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] after_plant ropz -> yuurih. graph:2396948:Dust2:3\nevent:2396948:Dust2:3:plant:1 tick 34942: ZywOo planted the bomb.\nevent:2396948:Dust2:3:kill:6 tick 36193: ropz killed yuurih.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Dust2",
+            "match_id": "2396948",
+            "round_number": "3",
+            "relation": "after_plant",
+            "actor_id": "76561197991272318",
+            "target_id": "76561198164970560",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396948:Dust2:3:plant:1",
+              "event:2396948:Dust2:3:kill:6"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396948:Dust2:3:plant:1",
+                  "tick": 34942
+                },
+                {
+                  "event_id": "event:2396948:Dust2:3:kill:6",
+                  "tick": 36193
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396948:Dust2:3"
+        },
+        {
+          "content": "[Verified relation] after_plant ropz -> yuurih. graph:2396948:Dust2:6\nevent:2396948:Dust2:6:plant:1 tick 60164: jL planted the bomb.\nevent:2396948:Dust2:6:kill:6 tick 60202: ropz killed yuurih.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Dust2",
+            "match_id": "2396948",
+            "round_number": "6",
+            "relation": "after_plant",
+            "actor_id": "76561197991272318",
+            "target_id": "76561198164970560",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396948:Dust2:6:plant:1",
+              "event:2396948:Dust2:6:kill:6"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396948:Dust2:6:plant:1",
+                  "tick": 60164
+                },
+                {
+                  "event_id": "event:2396948:Dust2:6:kill:6",
+                  "tick": 60202
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396948:Dust2:6"
+        },
+        {
+          "content": "[Verified relation] after_plant ropz -> yuurih. graph:2396948:Dust2:12\nevent:2396948:Dust2:12:plant:1 tick 106540: apEX planted the bomb.\nevent:2396948:Dust2:12:kill:3 tick 109327: ropz killed yuurih.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Dust2",
+            "match_id": "2396948",
+            "round_number": "12",
+            "relation": "after_plant",
+            "actor_id": "76561197991272318",
+            "target_id": "76561198164970560",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396948:Dust2:12:plant:1",
+              "event:2396948:Dust2:12:kill:3"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396948:Dust2:12:plant:1",
+                  "tick": 106540
+                },
+                {
+                  "event_id": "event:2396948:Dust2:12:kill:3",
+                  "tick": 109327
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396948:Dust2:12"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.719375003129244
+    },
+    {
+      "query_id": "after_plant_2_negative",
+      "language": "en",
+      "query": "Match 2396948, map Dust2. Find rounds where flameZ kills FalleN strictly after a bomb plant in that round.",
+      "relation": {
+        "status": "not_found",
+        "family": "after_plant",
+        "actor": "flamez",
+        "target": "fallen",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396948",
+          "map": "Dust2"
+        },
+        "query": "Match 2396948, map Dust2. Find rounds where flameZ kills FalleN strictly after a bomb plant in that round.",
+        "checked_rounds": 17,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561197978835160",
+        "target_id": "76561197960690195",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.4745000302791595
+    },
+    {
+      "query_id": "after_plant_2_negative",
+      "language": "zh",
+      "query": "比赛 2396948，地图 Dust2。查找 flameZ 击杀 FalleN，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "relation": {
+        "status": "not_found",
+        "family": "after_plant",
+        "actor": "flamez",
+        "target": "fallen",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396948",
+          "map": "Dust2"
+        },
+        "query": "比赛 2396948，地图 Dust2。查找 flameZ 击杀 FalleN，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+        "checked_rounds": 17,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561197978835160",
+        "target_id": "76561197960690195",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.80062498152256
+    },
+    {
+      "query_id": "trade_2_positive",
+      "language": "en",
+      "query": "Match 2396948, map Dust2. Find rounds where jL trades teammate apEX: kills the enemy who killed apEX, more than 0 and at most 320 ticks later in the same round.",
+      "relation": {
+        "status": "found",
+        "family": "trade",
+        "actor": "jl",
+        "target": "apex",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396948",
+          "map": "Dust2"
+        },
+        "query": "Match 2396948, map Dust2. Find rounds where jL trades teammate apEX: kills the enemy who killed apEX, more than 0 and at most 320 ticks later in the same round.",
+        "checked_rounds": 17,
+        "matched_rounds": 2,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198176878303",
+        "target_id": "76561197989744167",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396948:Dust2:6",
+        "round:2396948:Dust2:16"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] trade jl -> apex. graph:2396948:Dust2:6\nevent:2396948:Dust2:6:kill:3 tick 59675: KSCERATO killed apEX.\nevent:2396948:Dust2:6:kill:5 tick 59790: jL killed KSCERATO.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "trade",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Dust2",
+            "match_id": "2396948",
+            "round_number": "6",
+            "relation": "trade",
+            "actor_id": "76561198176878303",
+            "target_id": "76561197989744167",
+            "window_ticks": 320,
+            "witness_event_ids": [
+              "event:2396948:Dust2:6:kill:3",
+              "event:2396948:Dust2:6:kill:5"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396948:Dust2:6:kill:3",
+                  "tick": 59675
+                },
+                {
+                  "event_id": "event:2396948:Dust2:6:kill:5",
+                  "tick": 59790
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396948:Dust2:6"
+        },
+        {
+          "content": "[Verified relation] trade jl -> apex. graph:2396948:Dust2:16\nevent:2396948:Dust2:16:kill:6 tick 151793: yuurih killed apEX.\nevent:2396948:Dust2:16:kill:7 tick 151859: jL killed yuurih.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "trade",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Dust2",
+            "match_id": "2396948",
+            "round_number": "16",
+            "relation": "trade",
+            "actor_id": "76561198176878303",
+            "target_id": "76561197989744167",
+            "window_ticks": 320,
+            "witness_event_ids": [
+              "event:2396948:Dust2:16:kill:6",
+              "event:2396948:Dust2:16:kill:7"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396948:Dust2:16:kill:6",
+                  "tick": 151793
+                },
+                {
+                  "event_id": "event:2396948:Dust2:16:kill:7",
+                  "tick": 151859
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396948:Dust2:16"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.7019173614680767
+    },
+    {
+      "query_id": "trade_2_positive",
+      "language": "zh",
+      "query": "比赛 2396948，地图 Dust2。查找 jL 为队友 apEX 补枪的回合：在同一回合中，apEX 被敌人击杀后，jL 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "relation": {
+        "status": "found",
+        "family": "trade",
+        "actor": "jl",
+        "target": "apex",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396948",
+          "map": "Dust2"
+        },
+        "query": "比赛 2396948，地图 Dust2。查找 jL 为队友 apEX 补枪的回合：在同一回合中，apEX 被敌人击杀后，jL 在大于 0 且不超过 320 tick 内击杀该敌人。",
+        "checked_rounds": 17,
+        "matched_rounds": 2,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198176878303",
+        "target_id": "76561197989744167",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396948:Dust2:6",
+        "round:2396948:Dust2:16"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] trade jl -> apex. graph:2396948:Dust2:6\nevent:2396948:Dust2:6:kill:3 tick 59675: KSCERATO killed apEX.\nevent:2396948:Dust2:6:kill:5 tick 59790: jL killed KSCERATO.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "trade",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Dust2",
+            "match_id": "2396948",
+            "round_number": "6",
+            "relation": "trade",
+            "actor_id": "76561198176878303",
+            "target_id": "76561197989744167",
+            "window_ticks": 320,
+            "witness_event_ids": [
+              "event:2396948:Dust2:6:kill:3",
+              "event:2396948:Dust2:6:kill:5"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396948:Dust2:6:kill:3",
+                  "tick": 59675
+                },
+                {
+                  "event_id": "event:2396948:Dust2:6:kill:5",
+                  "tick": 59790
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396948:Dust2:6"
+        },
+        {
+          "content": "[Verified relation] trade jl -> apex. graph:2396948:Dust2:16\nevent:2396948:Dust2:16:kill:6 tick 151793: yuurih killed apEX.\nevent:2396948:Dust2:16:kill:7 tick 151859: jL killed yuurih.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "trade",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Dust2",
+            "match_id": "2396948",
+            "round_number": "16",
+            "relation": "trade",
+            "actor_id": "76561198176878303",
+            "target_id": "76561197989744167",
+            "window_ticks": 320,
+            "witness_event_ids": [
+              "event:2396948:Dust2:16:kill:6",
+              "event:2396948:Dust2:16:kill:7"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396948:Dust2:16:kill:6",
+                  "tick": 151793
+                },
+                {
+                  "event_id": "event:2396948:Dust2:16:kill:7",
+                  "tick": 151859
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396948:Dust2:16"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.927541896700859
+    },
+    {
+      "query_id": "trade_2_negative",
+      "language": "en",
+      "query": "Match 2396948, map Dust2. Find rounds where KSCERATO trades teammate YEKINDAR: kills the enemy who killed YEKINDAR, more than 0 and at most 320 ticks later in the same round.",
+      "relation": {
+        "status": "not_found",
+        "family": "trade",
+        "actor": "kscerato",
+        "target": "yekindar",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396948",
+          "map": "Dust2"
+        },
+        "query": "Match 2396948, map Dust2. Find rounds where KSCERATO trades teammate YEKINDAR: kills the enemy who killed YEKINDAR, more than 0 and at most 320 ticks later in the same round.",
+        "checked_rounds": 17,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198058500492",
+        "target_id": "76561198134401925",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.4318752586841583
+    },
+    {
+      "query_id": "trade_2_negative",
+      "language": "zh",
+      "query": "比赛 2396948，地图 Dust2。查找 KSCERATO 为队友 YEKINDAR 补枪的回合：在同一回合中，YEKINDAR 被敌人击杀后，KSCERATO 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "relation": {
+        "status": "not_found",
+        "family": "trade",
+        "actor": "kscerato",
+        "target": "yekindar",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396948",
+          "map": "Dust2"
+        },
+        "query": "比赛 2396948，地图 Dust2。查找 KSCERATO 为队友 YEKINDAR 补枪的回合：在同一回合中，YEKINDAR 被敌人击杀后，KSCERATO 在大于 0 且不超过 320 tick 内击杀该敌人。",
+        "checked_rounds": 17,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198058500492",
+        "target_id": "76561198134401925",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.5873749293386936
+    },
+    {
+      "query_id": "opening_3_positive",
+      "language": "en",
+      "query": "Match 2396614, map Ancient. Find rounds where donk makes the opening first kill by killing xfl0ud.",
+      "relation": {
+        "status": "found",
+        "family": "opening",
+        "actor": "donk",
+        "target": "xfl0ud",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396614",
+          "map": "Ancient"
+        },
+        "query": "Match 2396614, map Ancient. Find rounds where donk makes the opening first kill by killing xfl0ud.",
+        "checked_rounds": 30,
+        "matched_rounds": 3,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198386265483",
+        "target_id": "76561198178209109",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396614:Ancient:7",
+        "round:2396614:Ancient:18",
+        "round:2396614:Ancient:29"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] opening donk -> xfl0ud. graph:2396614:Ancient:7\nevent:2396614:Ancient:7:kill:1 tick 45525: donk killed xfl0ud.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396614",
+            "round_number": "7",
+            "relation": "opening",
+            "actor_id": "76561198386265483",
+            "target_id": "76561198178209109",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396614:Ancient:7:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396614:Ancient:7:kill:1",
+                  "tick": 45525
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396614:Ancient:7"
+        },
+        {
+          "content": "[Verified relation] opening donk -> xfl0ud. graph:2396614:Ancient:18\nevent:2396614:Ancient:18:kill:1 tick 140329: donk killed xfl0ud.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396614",
+            "round_number": "18",
+            "relation": "opening",
+            "actor_id": "76561198386265483",
+            "target_id": "76561198178209109",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396614:Ancient:18:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396614:Ancient:18:kill:1",
+                  "tick": 140329
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396614:Ancient:18"
+        },
+        {
+          "content": "[Verified relation] opening donk -> xfl0ud. graph:2396614:Ancient:29\nevent:2396614:Ancient:29:kill:1 tick 233027: donk killed xfl0ud.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396614",
+            "round_number": "29",
+            "relation": "opening",
+            "actor_id": "76561198386265483",
+            "target_id": "76561198178209109",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396614:Ancient:29:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396614:Ancient:29:kill:1",
+                  "tick": 233027
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396614:Ancient:29"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 6.052583921700716
+    },
+    {
+      "query_id": "opening_3_positive",
+      "language": "zh",
+      "query": "比赛 2396614，地图 Ancient。查找 donk 击杀 xfl0ud 并拿到本回合首杀的回合。",
+      "relation": {
+        "status": "found",
+        "family": "opening",
+        "actor": "donk",
+        "target": "xfl0ud",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396614",
+          "map": "Ancient"
+        },
+        "query": "比赛 2396614，地图 Ancient。查找 donk 击杀 xfl0ud 并拿到本回合首杀的回合。",
+        "checked_rounds": 30,
+        "matched_rounds": 3,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198386265483",
+        "target_id": "76561198178209109",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396614:Ancient:7",
+        "round:2396614:Ancient:18",
+        "round:2396614:Ancient:29"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] opening donk -> xfl0ud. graph:2396614:Ancient:7\nevent:2396614:Ancient:7:kill:1 tick 45525: donk killed xfl0ud.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396614",
+            "round_number": "7",
+            "relation": "opening",
+            "actor_id": "76561198386265483",
+            "target_id": "76561198178209109",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396614:Ancient:7:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396614:Ancient:7:kill:1",
+                  "tick": 45525
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396614:Ancient:7"
+        },
+        {
+          "content": "[Verified relation] opening donk -> xfl0ud. graph:2396614:Ancient:18\nevent:2396614:Ancient:18:kill:1 tick 140329: donk killed xfl0ud.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396614",
+            "round_number": "18",
+            "relation": "opening",
+            "actor_id": "76561198386265483",
+            "target_id": "76561198178209109",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396614:Ancient:18:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396614:Ancient:18:kill:1",
+                  "tick": 140329
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396614:Ancient:18"
+        },
+        {
+          "content": "[Verified relation] opening donk -> xfl0ud. graph:2396614:Ancient:29\nevent:2396614:Ancient:29:kill:1 tick 233027: donk killed xfl0ud.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396614",
+            "round_number": "29",
+            "relation": "opening",
+            "actor_id": "76561198386265483",
+            "target_id": "76561198178209109",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396614:Ancient:29:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396614:Ancient:29:kill:1",
+                  "tick": 233027
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396614:Ancient:29"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 5.781166721135378
+    },
+    {
+      "query_id": "opening_3_negative",
+      "language": "en",
+      "query": "Match 2396614, map Ancient. Find rounds where dem0n makes the opening first kill by killing donk.",
+      "relation": {
+        "status": "not_found",
+        "family": "opening",
+        "actor": "dem0n",
+        "target": "donk",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396614",
+          "map": "Ancient"
+        },
+        "query": "Match 2396614, map Ancient. Find rounds where dem0n makes the opening first kill by killing donk.",
+        "checked_rounds": 30,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198875633179",
+        "target_id": "76561198386265483",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 5.61337498947978
+    },
+    {
+      "query_id": "opening_3_negative",
+      "language": "zh",
+      "query": "比赛 2396614，地图 Ancient。查找 dem0n 击杀 donk 并拿到本回合首杀的回合。",
+      "relation": {
+        "status": "not_found",
+        "family": "opening",
+        "actor": "dem0n",
+        "target": "donk",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396614",
+          "map": "Ancient"
+        },
+        "query": "比赛 2396614，地图 Ancient。查找 dem0n 击杀 donk 并拿到本回合首杀的回合。",
+        "checked_rounds": 30,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198875633179",
+        "target_id": "76561198386265483",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 5.794082768261433
+    },
+    {
+      "query_id": "after_plant_3_positive",
+      "language": "en",
+      "query": "Match 2396614, map Ancient. Find rounds where dem0n kills donk strictly after a bomb plant in that round.",
+      "relation": {
+        "status": "found",
+        "family": "after_plant",
+        "actor": "dem0n",
+        "target": "donk",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396614",
+          "map": "Ancient"
+        },
+        "query": "Match 2396614, map Ancient. Find rounds where dem0n kills donk strictly after a bomb plant in that round.",
+        "checked_rounds": 30,
+        "matched_rounds": 3,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198875633179",
+        "target_id": "76561198386265483",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396614:Ancient:5",
+        "round:2396614:Ancient:6",
+        "round:2396614:Ancient:25"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] after_plant dem0n -> donk. graph:2396614:Ancient:5\nevent:2396614:Ancient:5:plant:1 tick 29801: cmtry planted the bomb.\nevent:2396614:Ancient:5:kill:7 tick 31642: dem0n killed donk.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396614",
+            "round_number": "5",
+            "relation": "after_plant",
+            "actor_id": "76561198875633179",
+            "target_id": "76561198386265483",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396614:Ancient:5:plant:1",
+              "event:2396614:Ancient:5:kill:7"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396614:Ancient:5:plant:1",
+                  "tick": 29801
+                },
+                {
+                  "event_id": "event:2396614:Ancient:5:kill:7",
+                  "tick": 31642
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396614:Ancient:5"
+        },
+        {
+          "content": "[Verified relation] after_plant dem0n -> donk. graph:2396614:Ancient:6\nevent:2396614:Ancient:6:plant:1 tick 38455: cmtry planted the bomb.\nevent:2396614:Ancient:6:kill:5 tick 39231: dem0n killed donk.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396614",
+            "round_number": "6",
+            "relation": "after_plant",
+            "actor_id": "76561198875633179",
+            "target_id": "76561198386265483",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396614:Ancient:6:plant:1",
+              "event:2396614:Ancient:6:kill:5"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396614:Ancient:6:plant:1",
+                  "tick": 38455
+                },
+                {
+                  "event_id": "event:2396614:Ancient:6:kill:5",
+                  "tick": 39231
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396614:Ancient:6"
+        },
+        {
+          "content": "[Verified relation] after_plant dem0n -> donk. graph:2396614:Ancient:25\nevent:2396614:Ancient:25:plant:1 tick 207077: zont1x planted the bomb.\nevent:2396614:Ancient:25:kill:5 tick 207381: dem0n killed donk.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396614",
+            "round_number": "25",
+            "relation": "after_plant",
+            "actor_id": "76561198875633179",
+            "target_id": "76561198386265483",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396614:Ancient:25:plant:1",
+              "event:2396614:Ancient:25:kill:5"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396614:Ancient:25:plant:1",
+                  "tick": 207077
+                },
+                {
+                  "event_id": "event:2396614:Ancient:25:kill:5",
+                  "tick": 207381
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396614:Ancient:25"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 5.100582726299763
+    },
+    {
+      "query_id": "after_plant_3_positive",
+      "language": "zh",
+      "query": "比赛 2396614，地图 Ancient。查找 dem0n 击杀 donk，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "relation": {
+        "status": "found",
+        "family": "after_plant",
+        "actor": "dem0n",
+        "target": "donk",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396614",
+          "map": "Ancient"
+        },
+        "query": "比赛 2396614，地图 Ancient。查找 dem0n 击杀 donk，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+        "checked_rounds": 30,
+        "matched_rounds": 3,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198875633179",
+        "target_id": "76561198386265483",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396614:Ancient:5",
+        "round:2396614:Ancient:6",
+        "round:2396614:Ancient:25"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] after_plant dem0n -> donk. graph:2396614:Ancient:5\nevent:2396614:Ancient:5:plant:1 tick 29801: cmtry planted the bomb.\nevent:2396614:Ancient:5:kill:7 tick 31642: dem0n killed donk.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396614",
+            "round_number": "5",
+            "relation": "after_plant",
+            "actor_id": "76561198875633179",
+            "target_id": "76561198386265483",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396614:Ancient:5:plant:1",
+              "event:2396614:Ancient:5:kill:7"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396614:Ancient:5:plant:1",
+                  "tick": 29801
+                },
+                {
+                  "event_id": "event:2396614:Ancient:5:kill:7",
+                  "tick": 31642
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396614:Ancient:5"
+        },
+        {
+          "content": "[Verified relation] after_plant dem0n -> donk. graph:2396614:Ancient:6\nevent:2396614:Ancient:6:plant:1 tick 38455: cmtry planted the bomb.\nevent:2396614:Ancient:6:kill:5 tick 39231: dem0n killed donk.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396614",
+            "round_number": "6",
+            "relation": "after_plant",
+            "actor_id": "76561198875633179",
+            "target_id": "76561198386265483",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396614:Ancient:6:plant:1",
+              "event:2396614:Ancient:6:kill:5"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396614:Ancient:6:plant:1",
+                  "tick": 38455
+                },
+                {
+                  "event_id": "event:2396614:Ancient:6:kill:5",
+                  "tick": 39231
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396614:Ancient:6"
+        },
+        {
+          "content": "[Verified relation] after_plant dem0n -> donk. graph:2396614:Ancient:25\nevent:2396614:Ancient:25:plant:1 tick 207077: zont1x planted the bomb.\nevent:2396614:Ancient:25:kill:5 tick 207381: dem0n killed donk.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396614",
+            "round_number": "25",
+            "relation": "after_plant",
+            "actor_id": "76561198875633179",
+            "target_id": "76561198386265483",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396614:Ancient:25:plant:1",
+              "event:2396614:Ancient:25:kill:5"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396614:Ancient:25:plant:1",
+                  "tick": 207077
+                },
+                {
+                  "event_id": "event:2396614:Ancient:25:kill:5",
+                  "tick": 207381
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396614:Ancient:25"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 5.527250003069639
+    },
+    {
+      "query_id": "after_plant_3_negative",
+      "language": "en",
+      "query": "Match 2396614, map Ancient. Find rounds where dem0n kills zont1x strictly after a bomb plant in that round.",
+      "relation": {
+        "status": "not_found",
+        "family": "after_plant",
+        "actor": "dem0n",
+        "target": "zont1x",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396614",
+          "map": "Ancient"
+        },
+        "query": "Match 2396614, map Ancient. Find rounds where dem0n kills zont1x strictly after a bomb plant in that round.",
+        "checked_rounds": 30,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198875633179",
+        "target_id": "76561198995880877",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 5.1910001784563065
+    },
+    {
+      "query_id": "after_plant_3_negative",
+      "language": "zh",
+      "query": "比赛 2396614，地图 Ancient。查找 dem0n 击杀 zont1x，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "relation": {
+        "status": "not_found",
+        "family": "after_plant",
+        "actor": "dem0n",
+        "target": "zont1x",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396614",
+          "map": "Ancient"
+        },
+        "query": "比赛 2396614，地图 Ancient。查找 dem0n 击杀 zont1x，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+        "checked_rounds": 30,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198875633179",
+        "target_id": "76561198995880877",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 5.098207853734493
+    },
+    {
+      "query_id": "trade_3_positive",
+      "language": "en",
+      "query": "Match 2396614, map Ancient. Find rounds where zont1x trades teammate donk: kills the enemy who killed donk, more than 0 and at most 320 ticks later in the same round.",
+      "relation": {
+        "status": "found",
+        "family": "trade",
+        "actor": "zont1x",
+        "target": "donk",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396614",
+          "map": "Ancient"
+        },
+        "query": "Match 2396614, map Ancient. Find rounds where zont1x trades teammate donk: kills the enemy who killed donk, more than 0 and at most 320 ticks later in the same round.",
+        "checked_rounds": 30,
+        "matched_rounds": 4,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198995880877",
+        "target_id": "76561198386265483",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396614:Ancient:4",
+        "round:2396614:Ancient:14",
+        "round:2396614:Ancient:25",
+        "round:2396614:Ancient:26"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] trade zont1x -> donk. graph:2396614:Ancient:4\nevent:2396614:Ancient:4:kill:4 tick 22787: cmtry killed donk.\nevent:2396614:Ancient:4:kill:5 tick 22796: zont1x killed cmtry.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "trade",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396614",
+            "round_number": "4",
+            "relation": "trade",
+            "actor_id": "76561198995880877",
+            "target_id": "76561198386265483",
+            "window_ticks": 320,
+            "witness_event_ids": [
+              "event:2396614:Ancient:4:kill:4",
+              "event:2396614:Ancient:4:kill:5"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396614:Ancient:4:kill:4",
+                  "tick": 22787
+                },
+                {
+                  "event_id": "event:2396614:Ancient:4:kill:5",
+                  "tick": 22796
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396614:Ancient:4"
+        },
+        {
+          "content": "[Verified relation] trade zont1x -> donk. graph:2396614:Ancient:14\nevent:2396614:Ancient:14:kill:4 tick 106102: Krabeni killed donk.\nevent:2396614:Ancient:14:kill:5 tick 106228: zont1x killed Krabeni.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "trade",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396614",
+            "round_number": "14",
+            "relation": "trade",
+            "actor_id": "76561198995880877",
+            "target_id": "76561198386265483",
+            "window_ticks": 320,
+            "witness_event_ids": [
+              "event:2396614:Ancient:14:kill:4",
+              "event:2396614:Ancient:14:kill:5"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396614:Ancient:14:kill:4",
+                  "tick": 106102
+                },
+                {
+                  "event_id": "event:2396614:Ancient:14:kill:5",
+                  "tick": 106228
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396614:Ancient:14"
+        },
+        {
+          "content": "[Verified relation] trade zont1x -> donk. graph:2396614:Ancient:25\nevent:2396614:Ancient:25:kill:5 tick 207381: dem0n killed donk.\nevent:2396614:Ancient:25:kill:7 tick 207599: zont1x killed dem0n.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "trade",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396614",
+            "round_number": "25",
+            "relation": "trade",
+            "actor_id": "76561198995880877",
+            "target_id": "76561198386265483",
+            "window_ticks": 320,
+            "witness_event_ids": [
+              "event:2396614:Ancient:25:kill:5",
+              "event:2396614:Ancient:25:kill:7"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396614:Ancient:25:kill:5",
+                  "tick": 207381
+                },
+                {
+                  "event_id": "event:2396614:Ancient:25:kill:7",
+                  "tick": 207599
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396614:Ancient:25"
+        },
+        {
+          "content": "[Verified relation] trade zont1x -> donk. graph:2396614:Ancient:26\nevent:2396614:Ancient:26:kill:2 tick 215289: Krabeni killed donk.\nevent:2396614:Ancient:26:kill:3 tick 215565: zont1x killed Krabeni.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "trade",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396614",
+            "round_number": "26",
+            "relation": "trade",
+            "actor_id": "76561198995880877",
+            "target_id": "76561198386265483",
+            "window_ticks": 320,
+            "witness_event_ids": [
+              "event:2396614:Ancient:26:kill:2",
+              "event:2396614:Ancient:26:kill:3"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396614:Ancient:26:kill:2",
+                  "tick": 215289
+                },
+                {
+                  "event_id": "event:2396614:Ancient:26:kill:3",
+                  "tick": 215565
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396614:Ancient:26"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 5.378874950110912
+    },
+    {
+      "query_id": "trade_3_positive",
+      "language": "zh",
+      "query": "比赛 2396614，地图 Ancient。查找 zont1x 为队友 donk 补枪的回合：在同一回合中，donk 被敌人击杀后，zont1x 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "relation": {
+        "status": "found",
+        "family": "trade",
+        "actor": "zont1x",
+        "target": "donk",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396614",
+          "map": "Ancient"
+        },
+        "query": "比赛 2396614，地图 Ancient。查找 zont1x 为队友 donk 补枪的回合：在同一回合中，donk 被敌人击杀后，zont1x 在大于 0 且不超过 320 tick 内击杀该敌人。",
+        "checked_rounds": 30,
+        "matched_rounds": 4,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198995880877",
+        "target_id": "76561198386265483",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396614:Ancient:4",
+        "round:2396614:Ancient:14",
+        "round:2396614:Ancient:25",
+        "round:2396614:Ancient:26"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] trade zont1x -> donk. graph:2396614:Ancient:4\nevent:2396614:Ancient:4:kill:4 tick 22787: cmtry killed donk.\nevent:2396614:Ancient:4:kill:5 tick 22796: zont1x killed cmtry.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "trade",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396614",
+            "round_number": "4",
+            "relation": "trade",
+            "actor_id": "76561198995880877",
+            "target_id": "76561198386265483",
+            "window_ticks": 320,
+            "witness_event_ids": [
+              "event:2396614:Ancient:4:kill:4",
+              "event:2396614:Ancient:4:kill:5"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396614:Ancient:4:kill:4",
+                  "tick": 22787
+                },
+                {
+                  "event_id": "event:2396614:Ancient:4:kill:5",
+                  "tick": 22796
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396614:Ancient:4"
+        },
+        {
+          "content": "[Verified relation] trade zont1x -> donk. graph:2396614:Ancient:14\nevent:2396614:Ancient:14:kill:4 tick 106102: Krabeni killed donk.\nevent:2396614:Ancient:14:kill:5 tick 106228: zont1x killed Krabeni.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "trade",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396614",
+            "round_number": "14",
+            "relation": "trade",
+            "actor_id": "76561198995880877",
+            "target_id": "76561198386265483",
+            "window_ticks": 320,
+            "witness_event_ids": [
+              "event:2396614:Ancient:14:kill:4",
+              "event:2396614:Ancient:14:kill:5"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396614:Ancient:14:kill:4",
+                  "tick": 106102
+                },
+                {
+                  "event_id": "event:2396614:Ancient:14:kill:5",
+                  "tick": 106228
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396614:Ancient:14"
+        },
+        {
+          "content": "[Verified relation] trade zont1x -> donk. graph:2396614:Ancient:25\nevent:2396614:Ancient:25:kill:5 tick 207381: dem0n killed donk.\nevent:2396614:Ancient:25:kill:7 tick 207599: zont1x killed dem0n.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "trade",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396614",
+            "round_number": "25",
+            "relation": "trade",
+            "actor_id": "76561198995880877",
+            "target_id": "76561198386265483",
+            "window_ticks": 320,
+            "witness_event_ids": [
+              "event:2396614:Ancient:25:kill:5",
+              "event:2396614:Ancient:25:kill:7"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396614:Ancient:25:kill:5",
+                  "tick": 207381
+                },
+                {
+                  "event_id": "event:2396614:Ancient:25:kill:7",
+                  "tick": 207599
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396614:Ancient:25"
+        },
+        {
+          "content": "[Verified relation] trade zont1x -> donk. graph:2396614:Ancient:26\nevent:2396614:Ancient:26:kill:2 tick 215289: Krabeni killed donk.\nevent:2396614:Ancient:26:kill:3 tick 215565: zont1x killed Krabeni.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "trade",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396614",
+            "round_number": "26",
+            "relation": "trade",
+            "actor_id": "76561198995880877",
+            "target_id": "76561198386265483",
+            "window_ticks": 320,
+            "witness_event_ids": [
+              "event:2396614:Ancient:26:kill:2",
+              "event:2396614:Ancient:26:kill:3"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396614:Ancient:26:kill:2",
+                  "tick": 215289
+                },
+                {
+                  "event_id": "event:2396614:Ancient:26:kill:3",
+                  "tick": 215565
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396614:Ancient:26"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 5.269416142255068
+    },
+    {
+      "query_id": "trade_3_negative",
+      "language": "en",
+      "query": "Match 2396614, map Ancient. Find rounds where cmtry trades teammate dziugss: kills the enemy who killed dziugss, more than 0 and at most 320 ticks later in the same round.",
+      "relation": {
+        "status": "not_found",
+        "family": "trade",
+        "actor": "cmtry",
+        "target": "dziugss",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396614",
+          "map": "Ancient"
+        },
+        "query": "Match 2396614, map Ancient. Find rounds where cmtry trades teammate dziugss: kills the enemy who killed dziugss, more than 0 and at most 320 ticks later in the same round.",
+        "checked_rounds": 30,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561199313968259",
+        "target_id": "76561199100725838",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 5.226833280175924
+    },
+    {
+      "query_id": "trade_3_negative",
+      "language": "zh",
+      "query": "比赛 2396614，地图 Ancient。查找 cmtry 为队友 dziugss 补枪的回合：在同一回合中，dziugss 被敌人击杀后，cmtry 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "relation": {
+        "status": "not_found",
+        "family": "trade",
+        "actor": "cmtry",
+        "target": "dziugss",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396614",
+          "map": "Ancient"
+        },
+        "query": "比赛 2396614，地图 Ancient。查找 cmtry 为队友 dziugss 补枪的回合：在同一回合中，dziugss 被敌人击杀后，cmtry 在大于 0 且不超过 320 tick 内击杀该敌人。",
+        "checked_rounds": 30,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561199313968259",
+        "target_id": "76561199100725838",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 5.260750185698271
+    },
+    {
+      "query_id": "opening_4_positive",
+      "language": "en",
+      "query": "Match 2396609, map Mirage. Find rounds where m0NESY makes the opening first kill by killing dumau.",
+      "relation": {
+        "status": "found",
+        "family": "opening",
+        "actor": "m0nesy",
+        "target": "dumau",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396609",
+          "map": "Mirage"
+        },
+        "query": "Match 2396609, map Mirage. Find rounds where m0NESY makes the opening first kill by killing dumau.",
+        "checked_rounds": 20,
+        "matched_rounds": 3,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198074762801",
+        "target_id": "76561198194325317",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396609:Mirage:4",
+        "round:2396609:Mirage:5",
+        "round:2396609:Mirage:10"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] opening m0nesy -> dumau. graph:2396609:Mirage:4\nevent:2396609:Mirage:4:kill:1 tick 18668: m0NESY killed dumau.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Mirage",
+            "match_id": "2396609",
+            "round_number": "4",
+            "relation": "opening",
+            "actor_id": "76561198074762801",
+            "target_id": "76561198194325317",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396609:Mirage:4:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396609:Mirage:4:kill:1",
+                  "tick": 18668
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396609:Mirage:4"
+        },
+        {
+          "content": "[Verified relation] opening m0nesy -> dumau. graph:2396609:Mirage:5\nevent:2396609:Mirage:5:kill:1 tick 22982: m0NESY killed dumau.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Mirage",
+            "match_id": "2396609",
+            "round_number": "5",
+            "relation": "opening",
+            "actor_id": "76561198074762801",
+            "target_id": "76561198194325317",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396609:Mirage:5:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396609:Mirage:5:kill:1",
+                  "tick": 22982
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396609:Mirage:5"
+        },
+        {
+          "content": "[Verified relation] opening m0nesy -> dumau. graph:2396609:Mirage:10\nevent:2396609:Mirage:10:kill:1 tick 65965: m0NESY killed dumau.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Mirage",
+            "match_id": "2396609",
+            "round_number": "10",
+            "relation": "opening",
+            "actor_id": "76561198074762801",
+            "target_id": "76561198194325317",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396609:Mirage:10:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396609:Mirage:10:kill:1",
+                  "tick": 65965
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396609:Mirage:10"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.272042144089937
+    },
+    {
+      "query_id": "opening_4_positive",
+      "language": "zh",
+      "query": "比赛 2396609，地图 Mirage。查找 m0NESY 击杀 dumau 并拿到本回合首杀的回合。",
+      "relation": {
+        "status": "found",
+        "family": "opening",
+        "actor": "m0nesy",
+        "target": "dumau",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396609",
+          "map": "Mirage"
+        },
+        "query": "比赛 2396609，地图 Mirage。查找 m0NESY 击杀 dumau 并拿到本回合首杀的回合。",
+        "checked_rounds": 20,
+        "matched_rounds": 3,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198074762801",
+        "target_id": "76561198194325317",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396609:Mirage:4",
+        "round:2396609:Mirage:5",
+        "round:2396609:Mirage:10"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] opening m0nesy -> dumau. graph:2396609:Mirage:4\nevent:2396609:Mirage:4:kill:1 tick 18668: m0NESY killed dumau.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Mirage",
+            "match_id": "2396609",
+            "round_number": "4",
+            "relation": "opening",
+            "actor_id": "76561198074762801",
+            "target_id": "76561198194325317",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396609:Mirage:4:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396609:Mirage:4:kill:1",
+                  "tick": 18668
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396609:Mirage:4"
+        },
+        {
+          "content": "[Verified relation] opening m0nesy -> dumau. graph:2396609:Mirage:5\nevent:2396609:Mirage:5:kill:1 tick 22982: m0NESY killed dumau.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Mirage",
+            "match_id": "2396609",
+            "round_number": "5",
+            "relation": "opening",
+            "actor_id": "76561198074762801",
+            "target_id": "76561198194325317",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396609:Mirage:5:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396609:Mirage:5:kill:1",
+                  "tick": 22982
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396609:Mirage:5"
+        },
+        {
+          "content": "[Verified relation] opening m0nesy -> dumau. graph:2396609:Mirage:10\nevent:2396609:Mirage:10:kill:1 tick 65965: m0NESY killed dumau.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Mirage",
+            "match_id": "2396609",
+            "round_number": "10",
+            "relation": "opening",
+            "actor_id": "76561198074762801",
+            "target_id": "76561198194325317",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396609:Mirage:10:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396609:Mirage:10:kill:1",
+                  "tick": 65965
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396609:Mirage:10"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.6589158698916435
+    },
+    {
+      "query_id": "opening_4_negative",
+      "language": "en",
+      "query": "Match 2396609, map Mirage. Find rounds where latto makes the opening first kill by killing m0NESY.",
+      "relation": {
+        "status": "not_found",
+        "family": "opening",
+        "actor": "latto",
+        "target": "m0nesy",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396609",
+          "map": "Mirage"
+        },
+        "query": "Match 2396609, map Mirage. Find rounds where latto makes the opening first kill by killing m0NESY.",
+        "checked_rounds": 20,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198850020186",
+        "target_id": "76561198074762801",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.192082978785038
+    },
+    {
+      "query_id": "opening_4_negative",
+      "language": "zh",
+      "query": "比赛 2396609，地图 Mirage。查找 latto 击杀 m0NESY 并拿到本回合首杀的回合。",
+      "relation": {
+        "status": "not_found",
+        "family": "opening",
+        "actor": "latto",
+        "target": "m0nesy",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396609",
+          "map": "Mirage"
+        },
+        "query": "比赛 2396609，地图 Mirage。查找 latto 击杀 m0NESY 并拿到本回合首杀的回合。",
+        "checked_rounds": 20,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198850020186",
+        "target_id": "76561198074762801",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.256708849221468
+    },
+    {
+      "query_id": "after_plant_4_positive",
+      "language": "en",
+      "query": "Match 2396609, map Mirage. Find rounds where dumau kills NiKo strictly after a bomb plant in that round.",
+      "relation": {
+        "status": "found",
+        "family": "after_plant",
+        "actor": "dumau",
+        "target": "niko",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396609",
+          "map": "Mirage"
+        },
+        "query": "Match 2396609, map Mirage. Find rounds where dumau kills NiKo strictly after a bomb plant in that round.",
+        "checked_rounds": 20,
+        "matched_rounds": 2,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198194325317",
+        "target_id": "76561198041683378",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396609:Mirage:3",
+        "round:2396609:Mirage:18"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] after_plant dumau -> niko. graph:2396609:Mirage:3\nevent:2396609:Mirage:3:plant:1 tick 13354: dumau planted the bomb.\nevent:2396609:Mirage:3:kill:2 tick 13629: dumau killed NiKo.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Mirage",
+            "match_id": "2396609",
+            "round_number": "3",
+            "relation": "after_plant",
+            "actor_id": "76561198194325317",
+            "target_id": "76561198041683378",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396609:Mirage:3:plant:1",
+              "event:2396609:Mirage:3:kill:2"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396609:Mirage:3:plant:1",
+                  "tick": 13354
+                },
+                {
+                  "event_id": "event:2396609:Mirage:3:kill:2",
+                  "tick": 13629
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396609:Mirage:3"
+        },
+        {
+          "content": "[Verified relation] after_plant dumau -> niko. graph:2396609:Mirage:18\nevent:2396609:Mirage:18:plant:1 tick 138278: karrigan planted the bomb.\nevent:2396609:Mirage:18:kill:5 tick 139063: dumau killed NiKo.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Mirage",
+            "match_id": "2396609",
+            "round_number": "18",
+            "relation": "after_plant",
+            "actor_id": "76561198194325317",
+            "target_id": "76561198041683378",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396609:Mirage:18:plant:1",
+              "event:2396609:Mirage:18:kill:5"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396609:Mirage:18:plant:1",
+                  "tick": 138278
+                },
+                {
+                  "event_id": "event:2396609:Mirage:18:kill:5",
+                  "tick": 139063
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396609:Mirage:18"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.391958773136139
+    },
+    {
+      "query_id": "after_plant_4_positive",
+      "language": "zh",
+      "query": "比赛 2396609，地图 Mirage。查找 dumau 击杀 NiKo，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "relation": {
+        "status": "found",
+        "family": "after_plant",
+        "actor": "dumau",
+        "target": "niko",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396609",
+          "map": "Mirage"
+        },
+        "query": "比赛 2396609，地图 Mirage。查找 dumau 击杀 NiKo，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+        "checked_rounds": 20,
+        "matched_rounds": 2,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198194325317",
+        "target_id": "76561198041683378",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396609:Mirage:3",
+        "round:2396609:Mirage:18"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] after_plant dumau -> niko. graph:2396609:Mirage:3\nevent:2396609:Mirage:3:plant:1 tick 13354: dumau planted the bomb.\nevent:2396609:Mirage:3:kill:2 tick 13629: dumau killed NiKo.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Mirage",
+            "match_id": "2396609",
+            "round_number": "3",
+            "relation": "after_plant",
+            "actor_id": "76561198194325317",
+            "target_id": "76561198041683378",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396609:Mirage:3:plant:1",
+              "event:2396609:Mirage:3:kill:2"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396609:Mirage:3:plant:1",
+                  "tick": 13354
+                },
+                {
+                  "event_id": "event:2396609:Mirage:3:kill:2",
+                  "tick": 13629
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396609:Mirage:3"
+        },
+        {
+          "content": "[Verified relation] after_plant dumau -> niko. graph:2396609:Mirage:18\nevent:2396609:Mirage:18:plant:1 tick 138278: karrigan planted the bomb.\nevent:2396609:Mirage:18:kill:5 tick 139063: dumau killed NiKo.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Mirage",
+            "match_id": "2396609",
+            "round_number": "18",
+            "relation": "after_plant",
+            "actor_id": "76561198194325317",
+            "target_id": "76561198041683378",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396609:Mirage:18:plant:1",
+              "event:2396609:Mirage:18:kill:5"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396609:Mirage:18:plant:1",
+                  "tick": 138278
+                },
+                {
+                  "event_id": "event:2396609:Mirage:18:kill:5",
+                  "tick": 139063
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396609:Mirage:18"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.3462089486420155
+    },
+    {
+      "query_id": "after_plant_4_negative",
+      "language": "en",
+      "query": "Match 2396609, map Mirage. Find rounds where try kills kyousuke strictly after a bomb plant in that round.",
+      "relation": {
+        "status": "not_found",
+        "family": "after_plant",
+        "actor": "try",
+        "target": "kyousuke",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396609",
+          "map": "Mirage"
+        },
+        "query": "Match 2396609, map Mirage. Find rounds where try kills kyousuke strictly after a bomb plant in that round.",
+        "checked_rounds": 20,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198365118288",
+        "target_id": "76561199032006224",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.3896248787641525
+    },
+    {
+      "query_id": "after_plant_4_negative",
+      "language": "zh",
+      "query": "比赛 2396609，地图 Mirage。查找 try 击杀 kyousuke，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "relation": {
+        "status": "not_found",
+        "family": "after_plant",
+        "actor": "try",
+        "target": "kyousuke",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396609",
+          "map": "Mirage"
+        },
+        "query": "比赛 2396609，地图 Mirage。查找 try 击杀 kyousuke，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+        "checked_rounds": 20,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198365118288",
+        "target_id": "76561199032006224",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.5313330590724945
+    },
+    {
+      "query_id": "trade_4_positive",
+      "language": "en",
+      "query": "Match 2396609, map Mirage. Find rounds where arT trades teammate n1ssim: kills the enemy who killed n1ssim, more than 0 and at most 320 ticks later in the same round.",
+      "relation": {
+        "status": "found",
+        "family": "trade",
+        "actor": "art",
+        "target": "n1ssim",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396609",
+          "map": "Mirage"
+        },
+        "query": "Match 2396609, map Mirage. Find rounds where arT trades teammate n1ssim: kills the enemy who killed n1ssim, more than 0 and at most 320 ticks later in the same round.",
+        "checked_rounds": 20,
+        "matched_rounds": 2,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198043769572",
+        "target_id": "76561198061763596",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396609:Mirage:4",
+        "round:2396609:Mirage:8"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] trade art -> n1ssim. graph:2396609:Mirage:4\nevent:2396609:Mirage:4:kill:3 tick 19373: m0NESY killed n1ssim.\nevent:2396609:Mirage:4:kill:4 tick 19471: arT killed m0NESY.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "trade",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Mirage",
+            "match_id": "2396609",
+            "round_number": "4",
+            "relation": "trade",
+            "actor_id": "76561198043769572",
+            "target_id": "76561198061763596",
+            "window_ticks": 320,
+            "witness_event_ids": [
+              "event:2396609:Mirage:4:kill:3",
+              "event:2396609:Mirage:4:kill:4"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396609:Mirage:4:kill:3",
+                  "tick": 19373
+                },
+                {
+                  "event_id": "event:2396609:Mirage:4:kill:4",
+                  "tick": 19471
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396609:Mirage:4"
+        },
+        {
+          "content": "[Verified relation] trade art -> n1ssim. graph:2396609:Mirage:8\nevent:2396609:Mirage:8:kill:3 tick 46868: karrigan killed n1ssim.\nevent:2396609:Mirage:8:kill:4 tick 47026: arT killed karrigan.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "trade",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Mirage",
+            "match_id": "2396609",
+            "round_number": "8",
+            "relation": "trade",
+            "actor_id": "76561198043769572",
+            "target_id": "76561198061763596",
+            "window_ticks": 320,
+            "witness_event_ids": [
+              "event:2396609:Mirage:8:kill:3",
+              "event:2396609:Mirage:8:kill:4"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396609:Mirage:8:kill:3",
+                  "tick": 46868
+                },
+                {
+                  "event_id": "event:2396609:Mirage:8:kill:4",
+                  "tick": 47026
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396609:Mirage:8"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.521209117025137
+    },
+    {
+      "query_id": "trade_4_positive",
+      "language": "zh",
+      "query": "比赛 2396609，地图 Mirage。查找 arT 为队友 n1ssim 补枪的回合：在同一回合中，n1ssim 被敌人击杀后，arT 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "relation": {
+        "status": "found",
+        "family": "trade",
+        "actor": "art",
+        "target": "n1ssim",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396609",
+          "map": "Mirage"
+        },
+        "query": "比赛 2396609，地图 Mirage。查找 arT 为队友 n1ssim 补枪的回合：在同一回合中，n1ssim 被敌人击杀后，arT 在大于 0 且不超过 320 tick 内击杀该敌人。",
+        "checked_rounds": 20,
+        "matched_rounds": 2,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198043769572",
+        "target_id": "76561198061763596",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396609:Mirage:4",
+        "round:2396609:Mirage:8"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] trade art -> n1ssim. graph:2396609:Mirage:4\nevent:2396609:Mirage:4:kill:3 tick 19373: m0NESY killed n1ssim.\nevent:2396609:Mirage:4:kill:4 tick 19471: arT killed m0NESY.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "trade",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Mirage",
+            "match_id": "2396609",
+            "round_number": "4",
+            "relation": "trade",
+            "actor_id": "76561198043769572",
+            "target_id": "76561198061763596",
+            "window_ticks": 320,
+            "witness_event_ids": [
+              "event:2396609:Mirage:4:kill:3",
+              "event:2396609:Mirage:4:kill:4"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396609:Mirage:4:kill:3",
+                  "tick": 19373
+                },
+                {
+                  "event_id": "event:2396609:Mirage:4:kill:4",
+                  "tick": 19471
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396609:Mirage:4"
+        },
+        {
+          "content": "[Verified relation] trade art -> n1ssim. graph:2396609:Mirage:8\nevent:2396609:Mirage:8:kill:3 tick 46868: karrigan killed n1ssim.\nevent:2396609:Mirage:8:kill:4 tick 47026: arT killed karrigan.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "trade",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Mirage",
+            "match_id": "2396609",
+            "round_number": "8",
+            "relation": "trade",
+            "actor_id": "76561198043769572",
+            "target_id": "76561198061763596",
+            "window_ticks": 320,
+            "witness_event_ids": [
+              "event:2396609:Mirage:8:kill:3",
+              "event:2396609:Mirage:8:kill:4"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396609:Mirage:8:kill:3",
+                  "tick": 46868
+                },
+                {
+                  "event_id": "event:2396609:Mirage:8:kill:4",
+                  "tick": 47026
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396609:Mirage:8"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.4662079997360706
+    },
+    {
+      "query_id": "trade_4_negative",
+      "language": "en",
+      "query": "Match 2396609, map Mirage. Find rounds where NiKo trades teammate kyousuke: kills the enemy who killed kyousuke, more than 0 and at most 320 ticks later in the same round.",
+      "relation": {
+        "status": "not_found",
+        "family": "trade",
+        "actor": "niko",
+        "target": "kyousuke",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396609",
+          "map": "Mirage"
+        },
+        "query": "Match 2396609, map Mirage. Find rounds where NiKo trades teammate kyousuke: kills the enemy who killed kyousuke, more than 0 and at most 320 ticks later in the same round.",
+        "checked_rounds": 20,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198041683378",
+        "target_id": "76561199032006224",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.335832618176937
+    },
+    {
+      "query_id": "trade_4_negative",
+      "language": "zh",
+      "query": "比赛 2396609，地图 Mirage。查找 NiKo 为队友 kyousuke 补枪的回合：在同一回合中，kyousuke 被敌人击杀后，NiKo 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "relation": {
+        "status": "not_found",
+        "family": "trade",
+        "actor": "niko",
+        "target": "kyousuke",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396609",
+          "map": "Mirage"
+        },
+        "query": "比赛 2396609，地图 Mirage。查找 NiKo 为队友 kyousuke 补枪的回合：在同一回合中，kyousuke 被敌人击杀后，NiKo 在大于 0 且不超过 320 tick 内击杀该敌人。",
+        "checked_rounds": 20,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198041683378",
+        "target_id": "76561199032006224",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.2614581286907196
+    }
+  ],
+  "limitations": [
+    "Observed development/regression questions, not an unseen test or independent human gold.",
+    "Restricted English/Chinese grammar for 3 relation families, not general natural-language understanding.",
+    "Source event scan is a distinct retrieval strategy, not an improvement to BM25/dense/RRF ranking.",
+    "Graph and hybrid route to the same relation engine; their parity is integration coverage, not independent algorithm evidence.",
+    "Pure vector relation queries now return unknown without a source verifier; no inference of true absence.",
+    "Parser-derived facts remain shared with AI labels; production provider services are not restarted by the regression."
+  ]
+}
