@@ -3,7 +3,7 @@ import asyncio
 from fastapi import APIRouter, HTTPException, Query
 
 from app.core.providers import get_graph_client
-from app.services.relation_query_service import MESSAGES
+from app.services.relation_query_service import relation_message
 
 router = APIRouter(prefix="/graph", tags=["graph"])
 
@@ -121,7 +121,7 @@ async def graph_search(
     relation = await client.retrieve_relations(q, metadata, limit)
     if relation is not None:
         return {"available":client.available(),"query":q,"answer":None,
-                "relation":relation.relation,"message":MESSAGES[relation.relation["status"]],
+                "relation":relation.relation,"message":relation_message(relation.relation),
                 "results":[item.as_dict() for item in relation.evidence]}
     evidence = await client.retrieve(
         q,

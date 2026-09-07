@@ -23,7 +23,9 @@ def relation_intent(query):
     directed=re.search(rf'({HANDLE})\s+(?:(?:did|does|not|never)\s+)*kill(?:s|ed|ing)?\s+({HANDLE})',text)
     if directed and directed[1] not in {'opening','first','trade','total'} and directed[2] not in {'on','in','per','by'}:
         return True
-    return bool(re.search(rf'{HANDLE}\s+(?:was|is)\s+killed\s+by\s+{HANDLE}|{HANDLE}\s+(?:makes|gets|wins)\s+(?:the\s+)?(?:opening first|opening|first)\s+kill.*(?:killing|against)\s+{HANDLE}|{HANDLE}\s*(?:没有|并未|未|不)?击杀\s*{HANDLE}|{HANDLE}\s*为\s*(?:队友)?\s*{HANDLE}.*补枪|{HANDLE}\s+trad(?:es|ed)\s+(?:teammate\s+)?{HANDLE}',text))
+    if re.search(rf'{HANDLE}\s*(?:被\s*{HANDLE}\s*)?(?:(?:没有|并未|未|不)\s*)?首杀\s*{HANDLE}|{HANDLE}\s*被\s*{HANDLE}\s*(?:击杀|首杀)|{HANDLE}\s+(?:was|is)\s+(?:not\s+)?(?:first\s+)?(?:killed|traded)\s+by\s+{HANDLE}|{HANDLE}\s+avenged\s+{HANDLE}',text):
+        return True
+    return bool(re.search(rf'{HANDLE}\s+(?:was|is)\s+killed\s+by\s+{HANDLE}|{HANDLE}\s+(?:makes|gets|got|wins)\s+(?:the\s+)?(?:opening first|opening|first)\s+kill.*(?:killing|against)\s+{HANDLE}|{HANDLE}\s*(?:没有|并未|未|不)?击杀\s*{HANDLE}|{HANDLE}\s*为\s*(?:队友)?\s*{HANDLE}.*补枪|{HANDLE}\s+trad(?:es|ed)\s+(?:teammate\s+)?{HANDLE}',text))
 
 
 def parse_relation(query, metadata=None):
@@ -56,21 +58,33 @@ def parse_relation(query, metadata=None):
     if 'round' in scope:
         if not scope['round'].isdigit() or int(scope['round'])<1: return {**result,'reason':'invalid_round'}
         scope['round']=int(scope['round'])
+    mode='rounds'
+    for name,prefix in [('count',r'^(?:(?:count|how many) rounds where\s+|统计回合数[：:]\s*)'),
+                        ('win_rate',r'^(?:round win rate when\s+|回合胜率[：:]\s*)')]:
+        text,n=re.subn(prefix,'',text)
+        if n: mode=name; break
     a=rf'(?P<actor>{HANDLE})'; b=rf'(?P<target>{HANDLE})'
     patterns={
         'opening':[
-            rf'{a}\s+(?:makes|gets|wins)\s+(?:the\s+)?(?:opening first|opening|first)\s+kill\s+(?:by\s+)?(?:killing|against)\s+{b}',
+            rf'{b}\s+(?:was|is)\s+first killed by\s+{a}',
+            rf'{a}\s*首杀\s*{b}',
+            rf'{b}\s*被\s*{a}\s*首杀',
+            rf'{a}\s+(?:makes|gets|got|wins)\s+(?:the\s+)?(?:opening first|opening|first)\s+kill\s+(?:by\s+)?(?:killing|against)\s+{b}',
             rf'{a}\s*击杀\s*{b}\s*(?:并|且)(?:拿到|取得)(?:本回合)?首杀(?:的回合)?',
         ],
         'after_plant':[
-            rf'{a}\s+kill(?:s|ed)\s+{b}\s+(?:strictly\s+)?after\s+(?:a |the )?bomb plant(?: in (?:that|the same) round)?',
+            rf'{b}\s+(?:was|is)\s+killed by\s+{a}\s+after (?:the |a )?bomb (?:plant|was planted)',
+            rf'{b}\s*被\s*{a}\s*击杀[，,]?\s*发生在下包之后',
+            rf'下包后\s*{a}\s*击杀\s*{b}',
+            rf'{a}\s+kill(?:s|ed)\s+{b}\s+(?:strictly\s+)?after\s+(?:a |the )?bomb (?:plant|was planted)(?: in (?:that|the same) round)?',
             rf'{a}\s*击杀\s*{b}\s*[，,]?\s*(?:且这次击杀)?(?:严格)?发生在(?:该回合)?(?:炸弹安放|下包)之后(?:的回合)?',
         ],
         'trade':[
-            rf'{a}\s+trad(?:es|ed)\s+teammate\s+{b}\s+within\s+(?P<window>\d+)\s+ticks(?: in the same round)?',
-            rf'{a}\s+trad(?:es|ed)\s+teammate\s+{b}:\s*kills the enemy who killed (?P=target), more than 0 and at most (?P<window>\d+) ticks later in the same round',
-            rf'{a}\s*为队友\s*{b}\s*补枪[，,：:]?\s*在\s*(?P<window>\d+)\s*ticks?\s*内',
-            rf'{a}\s*为队友\s*{b}\s*补枪的回合：\s*在同一回合中，\s*(?P=target)\s*被敌人击杀后，\s*(?P=actor)\s*在大于\s*0\s*且不超过\s*(?P<window>\d+)\s*ticks?\s*内击杀该敌人',
+            rf'{b}\s+(?:was|is)\s+traded by\s+{a}\s+within\s+(?P<window>\d+)\s+ticks',
+            rf'{a}\s+trad(?:es|ed)\s+(?:teammate\s+)?{b}\s+within\s+(?P<window>\d+)\s+ticks(?: in the same round)?',
+            rf'{a}\s+trad(?:es|ed)\s+(?:teammate\s+)?{b}:\s*kills the enemy who killed (?P=target), more than 0 and at most (?P<window>\d+) ticks later in the same round',
+            rf'{a}\s*为(?:队友)?\s*{b}\s*补枪[，,：:]?\s*在\s*(?P<window>\d+)\s*ticks?\s*内',
+            rf'{a}\s*为(?:队友)?\s*{b}\s*补枪的回合：\s*在同一回合中，\s*(?P=target)\s*被敌人击杀后，\s*(?P=actor)\s*在大于\s*0\s*且不超过\s*(?P<window>\d+)\s*ticks?\s*内击杀该敌人',
         ],
     }
     for family,options in patterns.items():
@@ -82,7 +96,7 @@ def parse_relation(query, metadata=None):
             if window is not None and not 0 < window <= 6400: return {**result,'reason':'invalid_tick_window'}
             if not (scope.get('map') or scope.get('match_id')): return {**result,'reason':'explicit_scope_required'}
             return {'status':'parsed','family':family,'actor':data['actor'],'target':data['target'],
-                    'window_ticks':window,'scope':scope,'query':query}
+                    'window_ticks':window,'scope':scope,'query':query,'mode':mode}
     return result
 
 
@@ -127,6 +141,7 @@ def search_relations(db_path, query, metadata=None, k=5):
     if rule is None: return None
     if type(k) is not int or not 1 <= k <= 100: raise ValueError('k must be between 1 and 100')
     result=RetrievalResult(query=query,rewritten_query=query,filters=rule.get('scope',{}),strategy='graph_relation_exact')
+    matched_sources=[]; outcomes={'won':[], 'lost':[], 'unknown':[]}
     state={**rule,'checked_rounds':0,'matched_rounds':0,'unknown_rounds':0,'complete':False}
     result.relation=state
     if rule['status']!='parsed':
@@ -170,6 +185,14 @@ def search_relations(db_path, query, metadata=None, k=5):
                         if not complete: state['unknown_rounds']+=1
                         if not proofs: continue
                         state['matched_rounds']+=1
+                        source=f"graph:{row['match_id']}:{row['map_name']}:{row['round_number']}"
+                        matched_sources.append(source)
+                        from app.services.graph_rag_service import _side_name
+                        sides={_side_name(p.get('side')) for p in roster if str(p.get('steamid'))==rule['actor_id']}
+                        winner=_side_name(props.get('winner'))
+                        side=next(iter(sides)) if len(sides)==1 else None
+                        outcome=('won' if side==winner else 'lost') if side and winner else 'unknown'
+                        outcomes[outcome].append(source)
                         if len(result.evidence)>=k: continue
                         # ponytail: exhaustive scan capped at 5000 rounds; add indexed event joins if scope grows.
                         witnesses={e['event_id']:e for proof in proofs for e in proof}
@@ -191,8 +214,37 @@ def search_relations(db_path, query, metadata=None, k=5):
                     state['reason']='verified_source_events' if state['complete'] else 'incomplete_source_scope'
     except (sqlite3.Error,ValueError,TypeError,KeyError):
         # A partial failed scan must not be reported as exhaustive or complete.
-        result.evidence=[]; state.update(status='unknown',reason='source_read_failed',complete=False)
+        result.evidence=[]; matched_sources=[]; outcomes={'won':[], 'lost':[], 'unknown':[]}
+        state.update(status='unknown',reason='source_read_failed',complete=False,matched_rounds=0)
+    if rule.get('mode','rounds') != 'rounds':
+        known=len(outcomes['won'])+len(outcomes['lost'])
+        state['aggregation']={
+            'mode':rule['mode'],'observed_matched_rounds':len(matched_sources),
+            'exact_matched_rounds':len(matched_sources) if state['complete'] else None,
+            'co_present_rounds':state['checked_rounds'],
+            'match_rate':len(matched_sources)/state['checked_rounds'] if state['complete'] else None,
+            'matched_source_ids':matched_sources,'outcome_source_ids':outcomes,
+            'known_outcome_rounds':known,'won_rounds':len(outcomes['won']),
+            'unknown_outcome_rounds':len(outcomes['unknown']),
+            'observed_win_rate':len(outcomes['won'])/known if known else None,
+            'outcome_complete':state['complete'] and not outcomes['unknown'],
+        }
     result.confidence=1.0 if result.evidence else 0.0
     if state['status']!='found' or not state['complete']:
         result.warnings=[MESSAGES['unknown' if not state['complete'] and state['status']=='found' else state['status']]]
     return result
+
+
+def relation_message(state):
+    """One numeric contract for API, UI and agent context; evidence is only a sample."""
+    message=MESSAGES.get(state['status'],MESSAGES['unknown'])
+    stats=state.get('aggregation')
+    if not stats: return message
+    count=stats['exact_matched_rounds']
+    message += f" 匹配回合数：{count}。" if count is not None else f" 已证实至少 {stats['observed_matched_rounds']} 个匹配回合；完整计数未知。"
+    if stats['mode']=='win_rate':
+        rate=stats['observed_win_rate']
+        message += (f" {state['actor']} 在结果已知的 {stats['known_outcome_rounds']} 个匹配回合中获胜 {stats['won_rounds']} 次，观测胜率 {rate:.1%}。"
+                    if rate is not None else ' 没有结果已知的匹配回合，胜率未知。')
+        if not stats['outcome_complete']: message += ' 范围或结果不完整；该胜率仅描述已知样本。'
+    return message+' 下方事件仅为证据样本，统计使用完整扫描。'

@@ -75,7 +75,6 @@ def test_bilingual_roles_parse_and_search_before_top_k(relation_graph,query,fami
     'Alpha kills Cedar after a bomb plant with an awp',
     'Alpha kills Cedar before a bomb plant',
     'Alpha did not kill Cedar after a bomb plant',
-    'Alpha was killed by Cedar after a bomb plant',
     'Alpha 未击杀 Cedar，发生在下包之后',
     'Alpha trades teammate Bravo within 5 seconds',
     'Alpha trades teammate Bravo within 0 ticks',

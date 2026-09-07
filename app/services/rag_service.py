@@ -9,7 +9,7 @@ from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_core.vectorstores import VectorStore
 from langchain_core.documents import Document
 
-from app.services.relation_query_service import relation_intent, MESSAGES
+from app.services.relation_query_service import relation_intent, MESSAGES, relation_message
 
 logger = logging.getLogger(__name__)
 
@@ -199,8 +199,8 @@ class RetrievalResult:
 
     @property
     def context(self) -> str:
-        if self.relation and not self.evidence:
-            return MESSAGES.get(self.relation["status"], MESSAGES["unknown"])
+        if self.relation:
+            return relation_message(self.relation) + ("\n" + KnowledgeBaseClient.format_evidence_context(self.evidence) if self.evidence else "")
         return KnowledgeBaseClient.format_evidence_context(self.evidence)
 
 

@@ -4,7 +4,7 @@ from typing import Any
 
 from app.agentic.states import GraphState
 from app.services.rag_service import KnowledgeBaseClient, RetrievalResult
-from app.services.relation_query_service import relation_intent, MESSAGES
+from app.services.relation_query_service import relation_intent, MESSAGES, relation_message
 
 logger = logging.getLogger(__name__)
 
@@ -179,8 +179,8 @@ def create_retrieve_node(kb_client, graph_client=None):
         return {
             "rag_context": "\n".join([
                 KnowledgeBaseClient.format_evidence_context(evidence),
-                *[f"{task['id']}: {result.context}" for task,result,_,_ in task_results
-                  if getattr(result,"relation",None) and not result.evidence],
+                *[f"{task['id']}: {relation_message(result.relation)}" for task,result,_,_ in task_results
+                  if getattr(result,"relation",None)],
             ]),
             "retrieval_query": "; ".join(task["query"] for task in tasks),
             "retrieval_evidence": evidence,
