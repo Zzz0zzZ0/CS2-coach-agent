@@ -32,7 +32,7 @@ This motivated a separate deterministic relation verifier. On the isolated sourc
 | 960 text results + 60 relation expressions | Two isolated, previously observed series | Corpus-isolated development pilot |
 | 6 Coach model calls, 4,939 reported tokens | Six development maps | Feasibility and per-run usage; quality gain unscored |
 
-Labels and translations are AI-assisted. Python and SQL audits share parser facts. The two isolated series are not newly unseen data, and independent expert coaching ratings remain incomplete. The dense models also have different actual chunk capacities (128 vs 512 tokens), so the comparison concerns whole configurations.
+Labels and translations are AI-assisted. Python and SQL audits share parser facts. The two isolated series are not newly unseen data, and independent expert coaching ratings are deferred as optional future research, outside the current engineering and portfolio delivery scope. The dense models also have different actual chunk capacities (128 vs 512 tokens), so the comparison concerns whole configurations.
 
 ## A useful research question
 

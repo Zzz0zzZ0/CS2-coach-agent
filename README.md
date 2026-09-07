@@ -26,6 +26,8 @@
 
 第二条中英 dense 基线及词法分词对照已完成：768 条结果、144 条原排序复现。Jina 原始问法配对 nDCG@5 为 0.3148，MiniLM 为 0.1476；子词中文 BM25 下降，RRF 未超过 Jina dense，无答案拒答仍有缺口。均为同一批已观察开发题，模型和容量不同，未替换生产默认模型；见 [完整对照与边界](docs/LANGUAGE_BASELINES_V2.md)。
 
+独立人工 Coach 质量盲评已延期为后续可选研究，不阻塞近期开发和材料交付；现阶段依据工程测试、AI 事实审核与检索 benchmark 展示成果，主观教练质量和模型质量增益保持未验证。
+
 求职与申请展示入口：[英文案例](docs/portfolio/CASE_STUDY.md) · [中文使用说明与文书草稿](docs/portfolio/APPLICATION_NOTES_ZH.md) · [三分钟演示](docs/portfolio/DEMO_SCRIPT.md) · [可导出 benchmark 图](docs/portfolio/benchmark-results.svg)。隔离 2 场 / 5 图试点另完成 960 条文本结果和 60 条关系表达验收，模型优势在两场比赛上方向不同；[完整结果](docs/ISOLATED_RELATION_PILOT_V1.md)保留局限与失败。画像优化通过 224 组完整输出等价检查，本机函数中位耗时由 335 ms 降至 104 ms，见 [性能证据](docs/PLAYER_PERFORMANCE_V1.md)。
 
 
