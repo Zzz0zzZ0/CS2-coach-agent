@@ -1,0 +1,71 @@
+{
+  "text_rows_checked": 960,
+  "failures": [],
+  "passed": true,
+  "engine_surface_queries_passed": 60,
+  "engine_checks_passed": 780,
+  "text_report_sha256": "165abbde3ff5a89038e6246e9a46818db6ea7f2d933070afc267d38e65103bda",
+  "per_match_raw": [
+    {
+      "match_id": "2396940",
+      "method": "bm25_unicode",
+      "positive_semantic_groups": 6,
+      "ndcg_at_k": 0.04401135376209848
+    },
+    {
+      "match_id": "2396940",
+      "method": "bm25_subword",
+      "positive_semantic_groups": 6,
+      "ndcg_at_k": 0.1045252846078827
+    },
+    {
+      "match_id": "2396940",
+      "method": "dense_minilm",
+      "positive_semantic_groups": 6,
+      "ndcg_at_k": 0.32356453679103353
+    },
+    {
+      "match_id": "2396940",
+      "method": "dense_jina",
+      "positive_semantic_groups": 6,
+      "ndcg_at_k": 0.24102545601276607
+    },
+    {
+      "match_id": "2396940",
+      "method": "rrf_subword_jina",
+      "positive_semantic_groups": 6,
+      "ndcg_at_k": 0.10533064261046396
+    },
+    {
+      "match_id": "2396944",
+      "method": "bm25_unicode",
+      "positive_semantic_groups": 9,
+      "ndcg_at_k": 0.2346163097501771
+    },
+    {
+      "match_id": "2396944",
+      "method": "bm25_subword",
+      "positive_semantic_groups": 9,
+      "ndcg_at_k": 0.26966796272636917
+    },
+    {
+      "match_id": "2396944",
+      "method": "dense_minilm",
+      "positive_semantic_groups": 9,
+      "ndcg_at_k": 0.12224538662157933
+    },
+    {
+      "match_id": "2396944",
+      "method": "dense_jina",
+      "positive_semantic_groups": 9,
+      "ndcg_at_k": 0.20811148743100552
+    },
+    {
+      "match_id": "2396944",
+      "method": "rrf_subword_jina",
+      "positive_semantic_groups": 9,
+      "ndcg_at_k": 0.189736239633001
+    }
+  ],
+  "scope": "Independent binary metric arithmetic and full qrel scope check; two observed series, no confidence interval or independent human claim."
+}

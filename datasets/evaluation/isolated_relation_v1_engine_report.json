@@ -1,0 +1,4707 @@
+{
+  "created_at": "2026-09-07T02:29:28.768854+00:00",
+  "protocol_sha256": "6763f40404e565493e0d824575fb07ddc4fd773d4bd6d2637ce182c837fd5aa7",
+  "method": "production_bounded_nl_relation_engine",
+  "semantic_groups": 30,
+  "surface_queries": 60,
+  "passed": 60,
+  "remote_model_calls": 0,
+  "summary": {
+    "ndcg_at_k": {
+      "mean": 1.0,
+      "semantic_groups": 15
+    },
+    "recall_at_k": {
+      "mean": 1.0,
+      "semantic_groups": 15
+    },
+    "false_retrieval": {
+      "mean": 0,
+      "semantic_groups": 15
+    },
+    "false_abstention": {
+      "mean": 0,
+      "semantic_groups": 15
+    }
+  },
+  "cases": [
+    {
+      "query_id": "2396940_Ancient_opening_positive",
+      "language": "en",
+      "query": "Match 2396940, map Ancient. makazze gets the opening kill against NertZ",
+      "relation": {
+        "status": "found",
+        "family": "opening",
+        "actor": "makazze",
+        "target": "nertz",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396940",
+          "map": "Ancient"
+        },
+        "query": "Match 2396940, map Ancient. makazze gets the opening kill against NertZ",
+        "mode": "rounds",
+        "checked_rounds": 19,
+        "matched_rounds": 3,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561199076189612",
+        "target_id": "76561198053126645",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396940:Ancient:5",
+        "round:2396940:Ancient:15",
+        "round:2396940:Ancient:18"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] opening makazze -> nertz. graph:2396940:Ancient:5\nevent:2396940:Ancient:5:kill:1 tick 58083: makazze killed NertZ.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396940",
+            "round_number": "5",
+            "relation": "opening",
+            "actor_id": "76561199076189612",
+            "target_id": "76561198053126645",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396940:Ancient:5:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396940:Ancient:5:kill:1",
+                  "tick": 58083
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396940:Ancient:5"
+        },
+        {
+          "content": "[Verified relation] opening makazze -> nertz. graph:2396940:Ancient:15\nevent:2396940:Ancient:15:kill:1 tick 148255: makazze killed NertZ.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396940",
+            "round_number": "15",
+            "relation": "opening",
+            "actor_id": "76561199076189612",
+            "target_id": "76561198053126645",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396940:Ancient:15:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396940:Ancient:15:kill:1",
+                  "tick": 148255
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396940:Ancient:15"
+        },
+        {
+          "content": "[Verified relation] opening makazze -> nertz. graph:2396940:Ancient:18\nevent:2396940:Ancient:18:kill:1 tick 169132: makazze killed NertZ.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396940",
+            "round_number": "18",
+            "relation": "opening",
+            "actor_id": "76561199076189612",
+            "target_id": "76561198053126645",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396940:Ancient:18:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396940:Ancient:18:kill:1",
+                  "tick": 169132
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396940:Ancient:18"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 4.209958948194981
+    },
+    {
+      "query_id": "2396940_Ancient_opening_positive",
+      "language": "zh",
+      "query": "比赛 2396940，地图 Ancient。makazze 首杀 NertZ",
+      "relation": {
+        "status": "found",
+        "family": "opening",
+        "actor": "makazze",
+        "target": "nertz",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396940",
+          "map": "Ancient"
+        },
+        "query": "比赛 2396940，地图 Ancient。makazze 首杀 NertZ",
+        "mode": "rounds",
+        "checked_rounds": 19,
+        "matched_rounds": 3,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561199076189612",
+        "target_id": "76561198053126645",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396940:Ancient:5",
+        "round:2396940:Ancient:15",
+        "round:2396940:Ancient:18"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] opening makazze -> nertz. graph:2396940:Ancient:5\nevent:2396940:Ancient:5:kill:1 tick 58083: makazze killed NertZ.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396940",
+            "round_number": "5",
+            "relation": "opening",
+            "actor_id": "76561199076189612",
+            "target_id": "76561198053126645",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396940:Ancient:5:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396940:Ancient:5:kill:1",
+                  "tick": 58083
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396940:Ancient:5"
+        },
+        {
+          "content": "[Verified relation] opening makazze -> nertz. graph:2396940:Ancient:15\nevent:2396940:Ancient:15:kill:1 tick 148255: makazze killed NertZ.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396940",
+            "round_number": "15",
+            "relation": "opening",
+            "actor_id": "76561199076189612",
+            "target_id": "76561198053126645",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396940:Ancient:15:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396940:Ancient:15:kill:1",
+                  "tick": 148255
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396940:Ancient:15"
+        },
+        {
+          "content": "[Verified relation] opening makazze -> nertz. graph:2396940:Ancient:18\nevent:2396940:Ancient:18:kill:1 tick 169132: makazze killed NertZ.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396940",
+            "round_number": "18",
+            "relation": "opening",
+            "actor_id": "76561199076189612",
+            "target_id": "76561198053126645",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396940:Ancient:18:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396940:Ancient:18:kill:1",
+                  "tick": 169132
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396940:Ancient:18"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 2.8706248849630356
+    },
+    {
+      "query_id": "2396940_Ancient_opening_negative",
+      "language": "en",
+      "query": "Match 2396940, map Ancient. MATYS gets the opening kill against w0nderful",
+      "relation": {
+        "status": "not_found",
+        "family": "opening",
+        "actor": "matys",
+        "target": "w0nderful",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396940",
+          "map": "Ancient"
+        },
+        "query": "Match 2396940, map Ancient. MATYS gets the opening kill against w0nderful",
+        "mode": "rounds",
+        "checked_rounds": 19,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561199046478501",
+        "target_id": "76561199063068840",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 2.8137080371379852
+    },
+    {
+      "query_id": "2396940_Ancient_opening_negative",
+      "language": "zh",
+      "query": "比赛 2396940，地图 Ancient。MATYS 首杀 w0nderful",
+      "relation": {
+        "status": "not_found",
+        "family": "opening",
+        "actor": "matys",
+        "target": "w0nderful",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396940",
+          "map": "Ancient"
+        },
+        "query": "比赛 2396940，地图 Ancient。MATYS 首杀 w0nderful",
+        "mode": "rounds",
+        "checked_rounds": 19,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561199046478501",
+        "target_id": "76561199063068840",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 2.7144160121679306
+    },
+    {
+      "query_id": "2396940_Ancient_after_plant_positive",
+      "language": "en",
+      "query": "Match 2396940, map Ancient. HeavyGod kills makazze after the bomb was planted",
+      "relation": {
+        "status": "found",
+        "family": "after_plant",
+        "actor": "heavygod",
+        "target": "makazze",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396940",
+          "map": "Ancient"
+        },
+        "query": "Match 2396940, map Ancient. HeavyGod kills makazze after the bomb was planted",
+        "mode": "rounds",
+        "checked_rounds": 19,
+        "matched_rounds": 2,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198068002993",
+        "target_id": "76561199076189612",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396940:Ancient:2",
+        "round:2396940:Ancient:18"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] after_plant heavygod -> makazze. graph:2396940:Ancient:2\nevent:2396940:Ancient:2:plant:1 tick 16203: w0nderful planted the bomb.\nevent:2396940:Ancient:2:kill:7 tick 16388: HeavyGod killed makazze.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396940",
+            "round_number": "2",
+            "relation": "after_plant",
+            "actor_id": "76561198068002993",
+            "target_id": "76561199076189612",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396940:Ancient:2:plant:1",
+              "event:2396940:Ancient:2:kill:7"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396940:Ancient:2:plant:1",
+                  "tick": 16203
+                },
+                {
+                  "event_id": "event:2396940:Ancient:2:kill:7",
+                  "tick": 16388
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396940:Ancient:2"
+        },
+        {
+          "content": "[Verified relation] after_plant heavygod -> makazze. graph:2396940:Ancient:18\nevent:2396940:Ancient:18:plant:1 tick 162858: NertZ planted the bomb.\nevent:2396940:Ancient:18:kill:5 tick 170931: HeavyGod killed makazze.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396940",
+            "round_number": "18",
+            "relation": "after_plant",
+            "actor_id": "76561198068002993",
+            "target_id": "76561199076189612",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396940:Ancient:18:plant:1",
+              "event:2396940:Ancient:18:kill:5"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396940:Ancient:18:plant:1",
+                  "tick": 162858
+                },
+                {
+                  "event_id": "event:2396940:Ancient:18:kill:5",
+                  "tick": 170931
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396940:Ancient:18"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.1455419957637787
+    },
+    {
+      "query_id": "2396940_Ancient_after_plant_positive",
+      "language": "zh",
+      "query": "比赛 2396940，地图 Ancient。下包后 HeavyGod 击杀 makazze",
+      "relation": {
+        "status": "found",
+        "family": "after_plant",
+        "actor": "heavygod",
+        "target": "makazze",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396940",
+          "map": "Ancient"
+        },
+        "query": "比赛 2396940，地图 Ancient。下包后 HeavyGod 击杀 makazze",
+        "mode": "rounds",
+        "checked_rounds": 19,
+        "matched_rounds": 2,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198068002993",
+        "target_id": "76561199076189612",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396940:Ancient:2",
+        "round:2396940:Ancient:18"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] after_plant heavygod -> makazze. graph:2396940:Ancient:2\nevent:2396940:Ancient:2:plant:1 tick 16203: w0nderful planted the bomb.\nevent:2396940:Ancient:2:kill:7 tick 16388: HeavyGod killed makazze.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396940",
+            "round_number": "2",
+            "relation": "after_plant",
+            "actor_id": "76561198068002993",
+            "target_id": "76561199076189612",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396940:Ancient:2:plant:1",
+              "event:2396940:Ancient:2:kill:7"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396940:Ancient:2:plant:1",
+                  "tick": 16203
+                },
+                {
+                  "event_id": "event:2396940:Ancient:2:kill:7",
+                  "tick": 16388
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396940:Ancient:2"
+        },
+        {
+          "content": "[Verified relation] after_plant heavygod -> makazze. graph:2396940:Ancient:18\nevent:2396940:Ancient:18:plant:1 tick 162858: NertZ planted the bomb.\nevent:2396940:Ancient:18:kill:5 tick 170931: HeavyGod killed makazze.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396940",
+            "round_number": "18",
+            "relation": "after_plant",
+            "actor_id": "76561198068002993",
+            "target_id": "76561199076189612",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396940:Ancient:18:plant:1",
+              "event:2396940:Ancient:18:kill:5"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396940:Ancient:18:plant:1",
+                  "tick": 162858
+                },
+                {
+                  "event_id": "event:2396940:Ancient:18:kill:5",
+                  "tick": 170931
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396940:Ancient:18"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.021624870598316
+    },
+    {
+      "query_id": "2396940_Ancient_after_plant_negative",
+      "language": "en",
+      "query": "Match 2396940, map Ancient. NertZ kills b1t after the bomb was planted",
+      "relation": {
+        "status": "not_found",
+        "family": "after_plant",
+        "actor": "nertz",
+        "target": "b1t",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396940",
+          "map": "Ancient"
+        },
+        "query": "Match 2396940, map Ancient. NertZ kills b1t after the bomb was planted",
+        "mode": "rounds",
+        "checked_rounds": 19,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198053126645",
+        "target_id": "76561198246607476",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 2.6393751613795757
+    },
+    {
+      "query_id": "2396940_Ancient_after_plant_negative",
+      "language": "zh",
+      "query": "比赛 2396940，地图 Ancient。下包后 NertZ 击杀 b1t",
+      "relation": {
+        "status": "not_found",
+        "family": "after_plant",
+        "actor": "nertz",
+        "target": "b1t",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396940",
+          "map": "Ancient"
+        },
+        "query": "比赛 2396940，地图 Ancient。下包后 NertZ 击杀 b1t",
+        "mode": "rounds",
+        "checked_rounds": 19,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198053126645",
+        "target_id": "76561198246607476",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 2.7804169803857803
+    },
+    {
+      "query_id": "2396940_Ancient_trade_positive",
+      "language": "en",
+      "query": "Match 2396940, map Ancient. r1nkle trades teammate HeavyGod within 320 ticks",
+      "relation": {
+        "status": "found",
+        "family": "trade",
+        "actor": "r1nkle",
+        "target": "heavygod",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396940",
+          "map": "Ancient"
+        },
+        "query": "Match 2396940, map Ancient. r1nkle trades teammate HeavyGod within 320 ticks",
+        "mode": "rounds",
+        "checked_rounds": 19,
+        "matched_rounds": 2,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198294381090",
+        "target_id": "76561198068002993",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396940:Ancient:3",
+        "round:2396940:Ancient:13"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] trade r1nkle -> heavygod. graph:2396940:Ancient:3\nevent:2396940:Ancient:3:kill:5 tick 24804: makazze killed HeavyGod.\nevent:2396940:Ancient:3:kill:7 tick 24903: r1nkle killed makazze.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "trade",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396940",
+            "round_number": "3",
+            "relation": "trade",
+            "actor_id": "76561198294381090",
+            "target_id": "76561198068002993",
+            "window_ticks": 320,
+            "witness_event_ids": [
+              "event:2396940:Ancient:3:kill:5",
+              "event:2396940:Ancient:3:kill:7"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396940:Ancient:3:kill:5",
+                  "tick": 24804
+                },
+                {
+                  "event_id": "event:2396940:Ancient:3:kill:7",
+                  "tick": 24903
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396940:Ancient:3"
+        },
+        {
+          "content": "[Verified relation] trade r1nkle -> heavygod. graph:2396940:Ancient:13\nevent:2396940:Ancient:13:kill:5 tick 135082: Aleksib killed HeavyGod.\nevent:2396940:Ancient:13:kill:6 tick 135218: r1nkle killed Aleksib.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "trade",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396940",
+            "round_number": "13",
+            "relation": "trade",
+            "actor_id": "76561198294381090",
+            "target_id": "76561198068002993",
+            "window_ticks": 320,
+            "witness_event_ids": [
+              "event:2396940:Ancient:13:kill:5",
+              "event:2396940:Ancient:13:kill:6"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396940:Ancient:13:kill:5",
+                  "tick": 135082
+                },
+                {
+                  "event_id": "event:2396940:Ancient:13:kill:6",
+                  "tick": 135218
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396940:Ancient:13"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 2.9608746990561485
+    },
+    {
+      "query_id": "2396940_Ancient_trade_positive",
+      "language": "zh",
+      "query": "比赛 2396940，地图 Ancient。r1nkle 为队友 HeavyGod 补枪，在 320 tick 内",
+      "relation": {
+        "status": "found",
+        "family": "trade",
+        "actor": "r1nkle",
+        "target": "heavygod",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396940",
+          "map": "Ancient"
+        },
+        "query": "比赛 2396940，地图 Ancient。r1nkle 为队友 HeavyGod 补枪，在 320 tick 内",
+        "mode": "rounds",
+        "checked_rounds": 19,
+        "matched_rounds": 2,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198294381090",
+        "target_id": "76561198068002993",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396940:Ancient:3",
+        "round:2396940:Ancient:13"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] trade r1nkle -> heavygod. graph:2396940:Ancient:3\nevent:2396940:Ancient:3:kill:5 tick 24804: makazze killed HeavyGod.\nevent:2396940:Ancient:3:kill:7 tick 24903: r1nkle killed makazze.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "trade",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396940",
+            "round_number": "3",
+            "relation": "trade",
+            "actor_id": "76561198294381090",
+            "target_id": "76561198068002993",
+            "window_ticks": 320,
+            "witness_event_ids": [
+              "event:2396940:Ancient:3:kill:5",
+              "event:2396940:Ancient:3:kill:7"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396940:Ancient:3:kill:5",
+                  "tick": 24804
+                },
+                {
+                  "event_id": "event:2396940:Ancient:3:kill:7",
+                  "tick": 24903
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396940:Ancient:3"
+        },
+        {
+          "content": "[Verified relation] trade r1nkle -> heavygod. graph:2396940:Ancient:13\nevent:2396940:Ancient:13:kill:5 tick 135082: Aleksib killed HeavyGod.\nevent:2396940:Ancient:13:kill:6 tick 135218: r1nkle killed Aleksib.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "trade",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Ancient",
+            "match_id": "2396940",
+            "round_number": "13",
+            "relation": "trade",
+            "actor_id": "76561198294381090",
+            "target_id": "76561198068002993",
+            "window_ticks": 320,
+            "witness_event_ids": [
+              "event:2396940:Ancient:13:kill:5",
+              "event:2396940:Ancient:13:kill:6"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396940:Ancient:13:kill:5",
+                  "tick": 135082
+                },
+                {
+                  "event_id": "event:2396940:Ancient:13:kill:6",
+                  "tick": 135218
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396940:Ancient:13"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.0964589677751064
+    },
+    {
+      "query_id": "2396940_Ancient_trade_negative",
+      "language": "en",
+      "query": "Match 2396940, map Ancient. iM trades teammate Aleksib within 320 ticks",
+      "relation": {
+        "status": "not_found",
+        "family": "trade",
+        "actor": "im",
+        "target": "aleksib",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396940",
+          "map": "Ancient"
+        },
+        "query": "Match 2396940, map Ancient. iM trades teammate Aleksib within 320 ticks",
+        "mode": "rounds",
+        "checked_rounds": 19,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198050250233",
+        "target_id": "76561198013243326",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 2.7752500027418137
+    },
+    {
+      "query_id": "2396940_Ancient_trade_negative",
+      "language": "zh",
+      "query": "比赛 2396940，地图 Ancient。iM 为队友 Aleksib 补枪，在 320 tick 内",
+      "relation": {
+        "status": "not_found",
+        "family": "trade",
+        "actor": "im",
+        "target": "aleksib",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396940",
+          "map": "Ancient"
+        },
+        "query": "比赛 2396940，地图 Ancient。iM 为队友 Aleksib 补枪，在 320 tick 内",
+        "mode": "rounds",
+        "checked_rounds": 19,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198050250233",
+        "target_id": "76561198013243326",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 2.780499868094921
+    },
+    {
+      "query_id": "2396940_Inferno_opening_positive",
+      "language": "en",
+      "query": "Match 2396940, map Inferno. r1nkle gets the opening kill against b1t",
+      "relation": {
+        "status": "found",
+        "family": "opening",
+        "actor": "r1nkle",
+        "target": "b1t",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396940",
+          "map": "Inferno"
+        },
+        "query": "Match 2396940, map Inferno. r1nkle gets the opening kill against b1t",
+        "mode": "rounds",
+        "checked_rounds": 23,
+        "matched_rounds": 2,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198294381090",
+        "target_id": "76561198246607476",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396940:Inferno:14",
+        "round:2396940:Inferno:23"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] opening r1nkle -> b1t. graph:2396940:Inferno:14\nevent:2396940:Inferno:14:kill:1 tick 144586: r1nkle killed b1t.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Inferno",
+            "match_id": "2396940",
+            "round_number": "14",
+            "relation": "opening",
+            "actor_id": "76561198294381090",
+            "target_id": "76561198246607476",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396940:Inferno:14:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396940:Inferno:14:kill:1",
+                  "tick": 144586
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396940:Inferno:14"
+        },
+        {
+          "content": "[Verified relation] opening r1nkle -> b1t. graph:2396940:Inferno:23\nevent:2396940:Inferno:23:kill:1 tick 231647: r1nkle killed b1t.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Inferno",
+            "match_id": "2396940",
+            "round_number": "23",
+            "relation": "opening",
+            "actor_id": "76561198294381090",
+            "target_id": "76561198246607476",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396940:Inferno:23:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396940:Inferno:23:kill:1",
+                  "tick": 231647
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396940:Inferno:23"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.54262487962842
+    },
+    {
+      "query_id": "2396940_Inferno_opening_positive",
+      "language": "zh",
+      "query": "比赛 2396940，地图 Inferno。r1nkle 首杀 b1t",
+      "relation": {
+        "status": "found",
+        "family": "opening",
+        "actor": "r1nkle",
+        "target": "b1t",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396940",
+          "map": "Inferno"
+        },
+        "query": "比赛 2396940，地图 Inferno。r1nkle 首杀 b1t",
+        "mode": "rounds",
+        "checked_rounds": 23,
+        "matched_rounds": 2,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198294381090",
+        "target_id": "76561198246607476",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396940:Inferno:14",
+        "round:2396940:Inferno:23"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] opening r1nkle -> b1t. graph:2396940:Inferno:14\nevent:2396940:Inferno:14:kill:1 tick 144586: r1nkle killed b1t.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Inferno",
+            "match_id": "2396940",
+            "round_number": "14",
+            "relation": "opening",
+            "actor_id": "76561198294381090",
+            "target_id": "76561198246607476",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396940:Inferno:14:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396940:Inferno:14:kill:1",
+                  "tick": 144586
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396940:Inferno:14"
+        },
+        {
+          "content": "[Verified relation] opening r1nkle -> b1t. graph:2396940:Inferno:23\nevent:2396940:Inferno:23:kill:1 tick 231647: r1nkle killed b1t.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Inferno",
+            "match_id": "2396940",
+            "round_number": "23",
+            "relation": "opening",
+            "actor_id": "76561198294381090",
+            "target_id": "76561198246607476",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396940:Inferno:23:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396940:Inferno:23:kill:1",
+                  "tick": 231647
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396940:Inferno:23"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.658667206764221
+    },
+    {
+      "query_id": "2396940_Inferno_opening_negative",
+      "language": "en",
+      "query": "Match 2396940, map Inferno. HeavyGod gets the opening kill against Aleksib",
+      "relation": {
+        "status": "not_found",
+        "family": "opening",
+        "actor": "heavygod",
+        "target": "aleksib",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396940",
+          "map": "Inferno"
+        },
+        "query": "Match 2396940, map Inferno. HeavyGod gets the opening kill against Aleksib",
+        "mode": "rounds",
+        "checked_rounds": 23,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198068002993",
+        "target_id": "76561198013243326",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.6253752186894417
+    },
+    {
+      "query_id": "2396940_Inferno_opening_negative",
+      "language": "zh",
+      "query": "比赛 2396940，地图 Inferno。HeavyGod 首杀 Aleksib",
+      "relation": {
+        "status": "not_found",
+        "family": "opening",
+        "actor": "heavygod",
+        "target": "aleksib",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396940",
+          "map": "Inferno"
+        },
+        "query": "比赛 2396940，地图 Inferno。HeavyGod 首杀 Aleksib",
+        "mode": "rounds",
+        "checked_rounds": 23,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198068002993",
+        "target_id": "76561198013243326",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.6697080358862877
+    },
+    {
+      "query_id": "2396940_Inferno_after_plant_positive",
+      "language": "en",
+      "query": "Match 2396940, map Inferno. r1nkle kills makazze after the bomb was planted",
+      "relation": {
+        "status": "found",
+        "family": "after_plant",
+        "actor": "r1nkle",
+        "target": "makazze",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396940",
+          "map": "Inferno"
+        },
+        "query": "Match 2396940, map Inferno. r1nkle kills makazze after the bomb was planted",
+        "mode": "rounds",
+        "checked_rounds": 23,
+        "matched_rounds": 3,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198294381090",
+        "target_id": "76561199076189612",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396940:Inferno:1",
+        "round:2396940:Inferno:5",
+        "round:2396940:Inferno:11"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] after_plant r1nkle -> makazze. graph:2396940:Inferno:1\nevent:2396940:Inferno:1:plant:1 tick 8460: MATYS planted the bomb.\nevent:2396940:Inferno:1:kill:9 tick 10449: r1nkle killed makazze.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Inferno",
+            "match_id": "2396940",
+            "round_number": "1",
+            "relation": "after_plant",
+            "actor_id": "76561198294381090",
+            "target_id": "76561199076189612",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396940:Inferno:1:plant:1",
+              "event:2396940:Inferno:1:kill:9"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396940:Inferno:1:plant:1",
+                  "tick": 8460
+                },
+                {
+                  "event_id": "event:2396940:Inferno:1:kill:9",
+                  "tick": 10449
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396940:Inferno:1"
+        },
+        {
+          "content": "[Verified relation] after_plant r1nkle -> makazze. graph:2396940:Inferno:5\nevent:2396940:Inferno:5:plant:1 tick 46799: HeavyGod planted the bomb.\nevent:2396940:Inferno:5:kill:5 tick 48661: r1nkle killed makazze.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Inferno",
+            "match_id": "2396940",
+            "round_number": "5",
+            "relation": "after_plant",
+            "actor_id": "76561198294381090",
+            "target_id": "76561199076189612",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396940:Inferno:5:plant:1",
+              "event:2396940:Inferno:5:kill:5"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396940:Inferno:5:plant:1",
+                  "tick": 46799
+                },
+                {
+                  "event_id": "event:2396940:Inferno:5:kill:5",
+                  "tick": 48661
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396940:Inferno:5"
+        },
+        {
+          "content": "[Verified relation] after_plant r1nkle -> makazze. graph:2396940:Inferno:11\nevent:2396940:Inferno:11:plant:1 tick 107334: r1nkle planted the bomb.\nevent:2396940:Inferno:11:kill:7 tick 109603: r1nkle killed makazze.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Inferno",
+            "match_id": "2396940",
+            "round_number": "11",
+            "relation": "after_plant",
+            "actor_id": "76561198294381090",
+            "target_id": "76561199076189612",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396940:Inferno:11:plant:1",
+              "event:2396940:Inferno:11:kill:7"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396940:Inferno:11:plant:1",
+                  "tick": 107334
+                },
+                {
+                  "event_id": "event:2396940:Inferno:11:kill:7",
+                  "tick": 109603
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396940:Inferno:11"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 4.02945838868618
+    },
+    {
+      "query_id": "2396940_Inferno_after_plant_positive",
+      "language": "zh",
+      "query": "比赛 2396940，地图 Inferno。下包后 r1nkle 击杀 makazze",
+      "relation": {
+        "status": "found",
+        "family": "after_plant",
+        "actor": "r1nkle",
+        "target": "makazze",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396940",
+          "map": "Inferno"
+        },
+        "query": "比赛 2396940，地图 Inferno。下包后 r1nkle 击杀 makazze",
+        "mode": "rounds",
+        "checked_rounds": 23,
+        "matched_rounds": 3,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198294381090",
+        "target_id": "76561199076189612",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396940:Inferno:1",
+        "round:2396940:Inferno:5",
+        "round:2396940:Inferno:11"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] after_plant r1nkle -> makazze. graph:2396940:Inferno:1\nevent:2396940:Inferno:1:plant:1 tick 8460: MATYS planted the bomb.\nevent:2396940:Inferno:1:kill:9 tick 10449: r1nkle killed makazze.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Inferno",
+            "match_id": "2396940",
+            "round_number": "1",
+            "relation": "after_plant",
+            "actor_id": "76561198294381090",
+            "target_id": "76561199076189612",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396940:Inferno:1:plant:1",
+              "event:2396940:Inferno:1:kill:9"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396940:Inferno:1:plant:1",
+                  "tick": 8460
+                },
+                {
+                  "event_id": "event:2396940:Inferno:1:kill:9",
+                  "tick": 10449
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396940:Inferno:1"
+        },
+        {
+          "content": "[Verified relation] after_plant r1nkle -> makazze. graph:2396940:Inferno:5\nevent:2396940:Inferno:5:plant:1 tick 46799: HeavyGod planted the bomb.\nevent:2396940:Inferno:5:kill:5 tick 48661: r1nkle killed makazze.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Inferno",
+            "match_id": "2396940",
+            "round_number": "5",
+            "relation": "after_plant",
+            "actor_id": "76561198294381090",
+            "target_id": "76561199076189612",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396940:Inferno:5:plant:1",
+              "event:2396940:Inferno:5:kill:5"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396940:Inferno:5:plant:1",
+                  "tick": 46799
+                },
+                {
+                  "event_id": "event:2396940:Inferno:5:kill:5",
+                  "tick": 48661
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396940:Inferno:5"
+        },
+        {
+          "content": "[Verified relation] after_plant r1nkle -> makazze. graph:2396940:Inferno:11\nevent:2396940:Inferno:11:plant:1 tick 107334: r1nkle planted the bomb.\nevent:2396940:Inferno:11:kill:7 tick 109603: r1nkle killed makazze.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Inferno",
+            "match_id": "2396940",
+            "round_number": "11",
+            "relation": "after_plant",
+            "actor_id": "76561198294381090",
+            "target_id": "76561199076189612",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396940:Inferno:11:plant:1",
+              "event:2396940:Inferno:11:kill:7"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396940:Inferno:11:plant:1",
+                  "tick": 107334
+                },
+                {
+                  "event_id": "event:2396940:Inferno:11:kill:7",
+                  "tick": 109603
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396940:Inferno:11"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.8908328860998154
+    },
+    {
+      "query_id": "2396940_Inferno_after_plant_negative",
+      "language": "en",
+      "query": "Match 2396940, map Inferno. huNter kills Aleksib after the bomb was planted",
+      "relation": {
+        "status": "not_found",
+        "family": "after_plant",
+        "actor": "hunter",
+        "target": "aleksib",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396940",
+          "map": "Inferno"
+        },
+        "query": "Match 2396940, map Inferno. huNter kills Aleksib after the bomb was planted",
+        "mode": "rounds",
+        "checked_rounds": 23,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198012872053",
+        "target_id": "76561198013243326",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.922165837138891
+    },
+    {
+      "query_id": "2396940_Inferno_after_plant_negative",
+      "language": "zh",
+      "query": "比赛 2396940，地图 Inferno。下包后 huNter 击杀 Aleksib",
+      "relation": {
+        "status": "not_found",
+        "family": "after_plant",
+        "actor": "hunter",
+        "target": "aleksib",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396940",
+          "map": "Inferno"
+        },
+        "query": "比赛 2396940，地图 Inferno。下包后 huNter 击杀 Aleksib",
+        "mode": "rounds",
+        "checked_rounds": 23,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198012872053",
+        "target_id": "76561198013243326",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.6639999598264694
+    },
+    {
+      "query_id": "2396940_Inferno_trade_positive",
+      "language": "en",
+      "query": "Match 2396940, map Inferno. HeavyGod trades teammate MATYS within 320 ticks",
+      "relation": {
+        "status": "found",
+        "family": "trade",
+        "actor": "heavygod",
+        "target": "matys",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396940",
+          "map": "Inferno"
+        },
+        "query": "Match 2396940, map Inferno. HeavyGod trades teammate MATYS within 320 ticks",
+        "mode": "rounds",
+        "checked_rounds": 23,
+        "matched_rounds": 1,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198068002993",
+        "target_id": "76561199046478501",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396940:Inferno:2"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] trade heavygod -> matys. graph:2396940:Inferno:2\nevent:2396940:Inferno:2:kill:1 tick 14358: w0nderful killed MATYS.\nevent:2396940:Inferno:2:kill:2 tick 14415: HeavyGod killed w0nderful.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "trade",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Inferno",
+            "match_id": "2396940",
+            "round_number": "2",
+            "relation": "trade",
+            "actor_id": "76561198068002993",
+            "target_id": "76561199046478501",
+            "window_ticks": 320,
+            "witness_event_ids": [
+              "event:2396940:Inferno:2:kill:1",
+              "event:2396940:Inferno:2:kill:2"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396940:Inferno:2:kill:1",
+                  "tick": 14358
+                },
+                {
+                  "event_id": "event:2396940:Inferno:2:kill:2",
+                  "tick": 14415
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396940:Inferno:2"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 4.108083434402943
+    },
+    {
+      "query_id": "2396940_Inferno_trade_positive",
+      "language": "zh",
+      "query": "比赛 2396940，地图 Inferno。HeavyGod 为队友 MATYS 补枪，在 320 tick 内",
+      "relation": {
+        "status": "found",
+        "family": "trade",
+        "actor": "heavygod",
+        "target": "matys",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396940",
+          "map": "Inferno"
+        },
+        "query": "比赛 2396940，地图 Inferno。HeavyGod 为队友 MATYS 补枪，在 320 tick 内",
+        "mode": "rounds",
+        "checked_rounds": 23,
+        "matched_rounds": 1,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198068002993",
+        "target_id": "76561199046478501",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396940:Inferno:2"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] trade heavygod -> matys. graph:2396940:Inferno:2\nevent:2396940:Inferno:2:kill:1 tick 14358: w0nderful killed MATYS.\nevent:2396940:Inferno:2:kill:2 tick 14415: HeavyGod killed w0nderful.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "trade",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Inferno",
+            "match_id": "2396940",
+            "round_number": "2",
+            "relation": "trade",
+            "actor_id": "76561198068002993",
+            "target_id": "76561199046478501",
+            "window_ticks": 320,
+            "witness_event_ids": [
+              "event:2396940:Inferno:2:kill:1",
+              "event:2396940:Inferno:2:kill:2"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396940:Inferno:2:kill:1",
+                  "tick": 14358
+                },
+                {
+                  "event_id": "event:2396940:Inferno:2:kill:2",
+                  "tick": 14415
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396940:Inferno:2"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.5602091811597347
+    },
+    {
+      "query_id": "2396940_Inferno_trade_negative",
+      "language": "en",
+      "query": "Match 2396940, map Inferno. makazze trades teammate iM within 320 ticks",
+      "relation": {
+        "status": "not_found",
+        "family": "trade",
+        "actor": "makazze",
+        "target": "im",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396940",
+          "map": "Inferno"
+        },
+        "query": "Match 2396940, map Inferno. makazze trades teammate iM within 320 ticks",
+        "mode": "rounds",
+        "checked_rounds": 23,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561199076189612",
+        "target_id": "76561198050250233",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.6890837363898754
+    },
+    {
+      "query_id": "2396940_Inferno_trade_negative",
+      "language": "zh",
+      "query": "比赛 2396940，地图 Inferno。makazze 为队友 iM 补枪，在 320 tick 内",
+      "relation": {
+        "status": "not_found",
+        "family": "trade",
+        "actor": "makazze",
+        "target": "im",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396940",
+          "map": "Inferno"
+        },
+        "query": "比赛 2396940，地图 Inferno。makazze 为队友 iM 补枪，在 320 tick 内",
+        "mode": "rounds",
+        "checked_rounds": 23,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561199076189612",
+        "target_id": "76561198050250233",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.643124829977751
+    },
+    {
+      "query_id": "2396944_Anubis_opening_positive",
+      "language": "en",
+      "query": "Match 2396944, map Anubis. woxic gets the opening kill against HeavyGod",
+      "relation": {
+        "status": "found",
+        "family": "opening",
+        "actor": "woxic",
+        "target": "heavygod",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Anubis"
+        },
+        "query": "Match 2396944, map Anubis. woxic gets the opening kill against HeavyGod",
+        "mode": "rounds",
+        "checked_rounds": 20,
+        "matched_rounds": 1,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198083485506",
+        "target_id": "76561198068002993",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396944:Anubis:10"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] opening woxic -> heavygod. graph:2396944:Anubis:10\nevent:2396944:Anubis:10:kill:1 tick 100557: woxic killed HeavyGod.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Anubis",
+            "match_id": "2396944",
+            "round_number": "10",
+            "relation": "opening",
+            "actor_id": "76561198083485506",
+            "target_id": "76561198068002993",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396944:Anubis:10:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396944:Anubis:10:kill:1",
+                  "tick": 100557
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396944:Anubis:10"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 2.7474998496472836
+    },
+    {
+      "query_id": "2396944_Anubis_opening_positive",
+      "language": "zh",
+      "query": "比赛 2396944，地图 Anubis。woxic 首杀 HeavyGod",
+      "relation": {
+        "status": "found",
+        "family": "opening",
+        "actor": "woxic",
+        "target": "heavygod",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Anubis"
+        },
+        "query": "比赛 2396944，地图 Anubis。woxic 首杀 HeavyGod",
+        "mode": "rounds",
+        "checked_rounds": 20,
+        "matched_rounds": 1,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198083485506",
+        "target_id": "76561198068002993",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396944:Anubis:10"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] opening woxic -> heavygod. graph:2396944:Anubis:10\nevent:2396944:Anubis:10:kill:1 tick 100557: woxic killed HeavyGod.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Anubis",
+            "match_id": "2396944",
+            "round_number": "10",
+            "relation": "opening",
+            "actor_id": "76561198083485506",
+            "target_id": "76561198068002993",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396944:Anubis:10:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396944:Anubis:10:kill:1",
+                  "tick": 100557
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396944:Anubis:10"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 2.515499945729971
+    },
+    {
+      "query_id": "2396944_Anubis_opening_negative",
+      "language": "en",
+      "query": "Match 2396944, map Anubis. NertZ gets the opening kill against kyxsan",
+      "relation": {
+        "status": "not_found",
+        "family": "opening",
+        "actor": "nertz",
+        "target": "kyxsan",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Anubis"
+        },
+        "query": "Match 2396944, map Anubis. NertZ gets the opening kill against kyxsan",
+        "mode": "rounds",
+        "checked_rounds": 20,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198053126645",
+        "target_id": "76561198057282432",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 2.580834086984396
+    },
+    {
+      "query_id": "2396944_Anubis_opening_negative",
+      "language": "zh",
+      "query": "比赛 2396944，地图 Anubis。NertZ 首杀 kyxsan",
+      "relation": {
+        "status": "not_found",
+        "family": "opening",
+        "actor": "nertz",
+        "target": "kyxsan",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Anubis"
+        },
+        "query": "比赛 2396944，地图 Anubis。NertZ 首杀 kyxsan",
+        "mode": "rounds",
+        "checked_rounds": 20,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198053126645",
+        "target_id": "76561198057282432",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 2.4645421653985977
+    },
+    {
+      "query_id": "2396944_Anubis_after_plant_positive",
+      "language": "en",
+      "query": "Match 2396944, map Anubis. r1nkle kills Wicadia after the bomb was planted",
+      "relation": {
+        "status": "found",
+        "family": "after_plant",
+        "actor": "r1nkle",
+        "target": "wicadia",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Anubis"
+        },
+        "query": "Match 2396944, map Anubis. r1nkle kills Wicadia after the bomb was planted",
+        "mode": "rounds",
+        "checked_rounds": 20,
+        "matched_rounds": 1,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198294381090",
+        "target_id": "76561198812513923",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396944:Anubis:12"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] after_plant r1nkle -> wicadia. graph:2396944:Anubis:12\nevent:2396944:Anubis:12:plant:1 tick 119867: NertZ planted the bomb.\nevent:2396944:Anubis:12:kill:8 tick 121823: r1nkle killed Wicadia.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Anubis",
+            "match_id": "2396944",
+            "round_number": "12",
+            "relation": "after_plant",
+            "actor_id": "76561198294381090",
+            "target_id": "76561198812513923",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396944:Anubis:12:plant:1",
+              "event:2396944:Anubis:12:kill:8"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396944:Anubis:12:plant:1",
+                  "tick": 119867
+                },
+                {
+                  "event_id": "event:2396944:Anubis:12:kill:8",
+                  "tick": 121823
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396944:Anubis:12"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 2.5883750058710575
+    },
+    {
+      "query_id": "2396944_Anubis_after_plant_positive",
+      "language": "zh",
+      "query": "比赛 2396944，地图 Anubis。下包后 r1nkle 击杀 Wicadia",
+      "relation": {
+        "status": "found",
+        "family": "after_plant",
+        "actor": "r1nkle",
+        "target": "wicadia",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Anubis"
+        },
+        "query": "比赛 2396944，地图 Anubis。下包后 r1nkle 击杀 Wicadia",
+        "mode": "rounds",
+        "checked_rounds": 20,
+        "matched_rounds": 1,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198294381090",
+        "target_id": "76561198812513923",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396944:Anubis:12"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] after_plant r1nkle -> wicadia. graph:2396944:Anubis:12\nevent:2396944:Anubis:12:plant:1 tick 119867: NertZ planted the bomb.\nevent:2396944:Anubis:12:kill:8 tick 121823: r1nkle killed Wicadia.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Anubis",
+            "match_id": "2396944",
+            "round_number": "12",
+            "relation": "after_plant",
+            "actor_id": "76561198294381090",
+            "target_id": "76561198812513923",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396944:Anubis:12:plant:1",
+              "event:2396944:Anubis:12:kill:8"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396944:Anubis:12:plant:1",
+                  "tick": 119867
+                },
+                {
+                  "event_id": "event:2396944:Anubis:12:kill:8",
+                  "tick": 121823
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396944:Anubis:12"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 2.744500059634447
+    },
+    {
+      "query_id": "2396944_Anubis_after_plant_negative",
+      "language": "en",
+      "query": "Match 2396944, map Anubis. Jimpphat kills huNter after the bomb was planted",
+      "relation": {
+        "status": "not_found",
+        "family": "after_plant",
+        "actor": "jimpphat",
+        "target": "hunter",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Anubis"
+        },
+        "query": "Match 2396944, map Anubis. Jimpphat kills huNter after the bomb was planted",
+        "mode": "rounds",
+        "checked_rounds": 20,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198855375325",
+        "target_id": "76561198012872053",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 2.866417169570923
+    },
+    {
+      "query_id": "2396944_Anubis_after_plant_negative",
+      "language": "zh",
+      "query": "比赛 2396944，地图 Anubis。下包后 Jimpphat 击杀 huNter",
+      "relation": {
+        "status": "not_found",
+        "family": "after_plant",
+        "actor": "jimpphat",
+        "target": "hunter",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Anubis"
+        },
+        "query": "比赛 2396944，地图 Anubis。下包后 Jimpphat 击杀 huNter",
+        "mode": "rounds",
+        "checked_rounds": 20,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198855375325",
+        "target_id": "76561198012872053",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 2.724999561905861
+    },
+    {
+      "query_id": "2396944_Anubis_trade_positive",
+      "language": "en",
+      "query": "Match 2396944, map Anubis. HeavyGod trades teammate NertZ within 320 ticks",
+      "relation": {
+        "status": "found",
+        "family": "trade",
+        "actor": "heavygod",
+        "target": "nertz",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Anubis"
+        },
+        "query": "Match 2396944, map Anubis. HeavyGod trades teammate NertZ within 320 ticks",
+        "mode": "rounds",
+        "checked_rounds": 20,
+        "matched_rounds": 1,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198068002993",
+        "target_id": "76561198053126645",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396944:Anubis:3"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] trade heavygod -> nertz. graph:2396944:Anubis:3\nevent:2396944:Anubis:3:kill:5 tick 34775: Wicadia killed NertZ.\nevent:2396944:Anubis:3:kill:6 tick 34863: HeavyGod killed Wicadia.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "trade",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Anubis",
+            "match_id": "2396944",
+            "round_number": "3",
+            "relation": "trade",
+            "actor_id": "76561198068002993",
+            "target_id": "76561198053126645",
+            "window_ticks": 320,
+            "witness_event_ids": [
+              "event:2396944:Anubis:3:kill:5",
+              "event:2396944:Anubis:3:kill:6"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396944:Anubis:3:kill:5",
+                  "tick": 34775
+                },
+                {
+                  "event_id": "event:2396944:Anubis:3:kill:6",
+                  "tick": 34863
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396944:Anubis:3"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.032791893929243
+    },
+    {
+      "query_id": "2396944_Anubis_trade_positive",
+      "language": "zh",
+      "query": "比赛 2396944，地图 Anubis。HeavyGod 为队友 NertZ 补枪，在 320 tick 内",
+      "relation": {
+        "status": "found",
+        "family": "trade",
+        "actor": "heavygod",
+        "target": "nertz",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Anubis"
+        },
+        "query": "比赛 2396944，地图 Anubis。HeavyGod 为队友 NertZ 补枪，在 320 tick 内",
+        "mode": "rounds",
+        "checked_rounds": 20,
+        "matched_rounds": 1,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198068002993",
+        "target_id": "76561198053126645",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396944:Anubis:3"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] trade heavygod -> nertz. graph:2396944:Anubis:3\nevent:2396944:Anubis:3:kill:5 tick 34775: Wicadia killed NertZ.\nevent:2396944:Anubis:3:kill:6 tick 34863: HeavyGod killed Wicadia.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "trade",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Anubis",
+            "match_id": "2396944",
+            "round_number": "3",
+            "relation": "trade",
+            "actor_id": "76561198068002993",
+            "target_id": "76561198053126645",
+            "window_ticks": 320,
+            "witness_event_ids": [
+              "event:2396944:Anubis:3:kill:5",
+              "event:2396944:Anubis:3:kill:6"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396944:Anubis:3:kill:5",
+                  "tick": 34775
+                },
+                {
+                  "event_id": "event:2396944:Anubis:3:kill:6",
+                  "tick": 34863
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396944:Anubis:3"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 2.6428750716149807
+    },
+    {
+      "query_id": "2396944_Anubis_trade_negative",
+      "language": "en",
+      "query": "Match 2396944, map Anubis. HeavyGod trades teammate MATYS within 320 ticks",
+      "relation": {
+        "status": "not_found",
+        "family": "trade",
+        "actor": "heavygod",
+        "target": "matys",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Anubis"
+        },
+        "query": "Match 2396944, map Anubis. HeavyGod trades teammate MATYS within 320 ticks",
+        "mode": "rounds",
+        "checked_rounds": 20,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198068002993",
+        "target_id": "76561199046478501",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 2.5593750178813934
+    },
+    {
+      "query_id": "2396944_Anubis_trade_negative",
+      "language": "zh",
+      "query": "比赛 2396944，地图 Anubis。HeavyGod 为队友 MATYS 补枪，在 320 tick 内",
+      "relation": {
+        "status": "not_found",
+        "family": "trade",
+        "actor": "heavygod",
+        "target": "matys",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Anubis"
+        },
+        "query": "比赛 2396944，地图 Anubis。HeavyGod 为队友 MATYS 补枪，在 320 tick 内",
+        "mode": "rounds",
+        "checked_rounds": 20,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198068002993",
+        "target_id": "76561199046478501",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 3.0209170654416084
+    },
+    {
+      "query_id": "2396944_Inferno_opening_positive",
+      "language": "en",
+      "query": "Match 2396944, map Inferno. r1nkle gets the opening kill against kyxsan",
+      "relation": {
+        "status": "found",
+        "family": "opening",
+        "actor": "r1nkle",
+        "target": "kyxsan",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Inferno"
+        },
+        "query": "Match 2396944, map Inferno. r1nkle gets the opening kill against kyxsan",
+        "mode": "rounds",
+        "checked_rounds": 35,
+        "matched_rounds": 1,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198294381090",
+        "target_id": "76561198057282432",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396944:Inferno:34"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] opening r1nkle -> kyxsan. graph:2396944:Inferno:34\nevent:2396944:Inferno:34:kill:1 tick 332149: r1nkle killed kyxsan.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Inferno",
+            "match_id": "2396944",
+            "round_number": "34",
+            "relation": "opening",
+            "actor_id": "76561198294381090",
+            "target_id": "76561198057282432",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396944:Inferno:34:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396944:Inferno:34:kill:1",
+                  "tick": 332149
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396944:Inferno:34"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 5.942666903138161
+    },
+    {
+      "query_id": "2396944_Inferno_opening_positive",
+      "language": "zh",
+      "query": "比赛 2396944，地图 Inferno。r1nkle 首杀 kyxsan",
+      "relation": {
+        "status": "found",
+        "family": "opening",
+        "actor": "r1nkle",
+        "target": "kyxsan",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Inferno"
+        },
+        "query": "比赛 2396944，地图 Inferno。r1nkle 首杀 kyxsan",
+        "mode": "rounds",
+        "checked_rounds": 35,
+        "matched_rounds": 1,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198294381090",
+        "target_id": "76561198057282432",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396944:Inferno:34"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] opening r1nkle -> kyxsan. graph:2396944:Inferno:34\nevent:2396944:Inferno:34:kill:1 tick 332149: r1nkle killed kyxsan.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Inferno",
+            "match_id": "2396944",
+            "round_number": "34",
+            "relation": "opening",
+            "actor_id": "76561198294381090",
+            "target_id": "76561198057282432",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396944:Inferno:34:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396944:Inferno:34:kill:1",
+                  "tick": 332149
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396944:Inferno:34"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 5.472332704812288
+    },
+    {
+      "query_id": "2396944_Inferno_opening_negative",
+      "language": "en",
+      "query": "Match 2396944, map Inferno. r1nkle gets the opening kill against Jimpphat",
+      "relation": {
+        "status": "not_found",
+        "family": "opening",
+        "actor": "r1nkle",
+        "target": "jimpphat",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Inferno"
+        },
+        "query": "Match 2396944, map Inferno. r1nkle gets the opening kill against Jimpphat",
+        "mode": "rounds",
+        "checked_rounds": 35,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198294381090",
+        "target_id": "76561198855375325",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 6.40129204839468
+    },
+    {
+      "query_id": "2396944_Inferno_opening_negative",
+      "language": "zh",
+      "query": "比赛 2396944，地图 Inferno。r1nkle 首杀 Jimpphat",
+      "relation": {
+        "status": "not_found",
+        "family": "opening",
+        "actor": "r1nkle",
+        "target": "jimpphat",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Inferno"
+        },
+        "query": "比赛 2396944，地图 Inferno。r1nkle 首杀 Jimpphat",
+        "mode": "rounds",
+        "checked_rounds": 35,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198294381090",
+        "target_id": "76561198855375325",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 5.740708205848932
+    },
+    {
+      "query_id": "2396944_Inferno_after_plant_positive",
+      "language": "en",
+      "query": "Match 2396944, map Inferno. kyxsan kills NertZ after the bomb was planted",
+      "relation": {
+        "status": "found",
+        "family": "after_plant",
+        "actor": "kyxsan",
+        "target": "nertz",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Inferno"
+        },
+        "query": "Match 2396944, map Inferno. kyxsan kills NertZ after the bomb was planted",
+        "mode": "rounds",
+        "checked_rounds": 35,
+        "matched_rounds": 1,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198057282432",
+        "target_id": "76561198053126645",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396944:Inferno:7"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] after_plant kyxsan -> nertz. graph:2396944:Inferno:7\nevent:2396944:Inferno:7:plant:1 tick 67246: r1nkle planted the bomb.\nevent:2396944:Inferno:7:kill:6 tick 68087: kyxsan killed NertZ.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Inferno",
+            "match_id": "2396944",
+            "round_number": "7",
+            "relation": "after_plant",
+            "actor_id": "76561198057282432",
+            "target_id": "76561198053126645",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396944:Inferno:7:plant:1",
+              "event:2396944:Inferno:7:kill:6"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396944:Inferno:7:plant:1",
+                  "tick": 67246
+                },
+                {
+                  "event_id": "event:2396944:Inferno:7:kill:6",
+                  "tick": 68087
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396944:Inferno:7"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 5.542541854083538
+    },
+    {
+      "query_id": "2396944_Inferno_after_plant_positive",
+      "language": "zh",
+      "query": "比赛 2396944，地图 Inferno。下包后 kyxsan 击杀 NertZ",
+      "relation": {
+        "status": "found",
+        "family": "after_plant",
+        "actor": "kyxsan",
+        "target": "nertz",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Inferno"
+        },
+        "query": "比赛 2396944，地图 Inferno。下包后 kyxsan 击杀 NertZ",
+        "mode": "rounds",
+        "checked_rounds": 35,
+        "matched_rounds": 1,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198057282432",
+        "target_id": "76561198053126645",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396944:Inferno:7"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] after_plant kyxsan -> nertz. graph:2396944:Inferno:7\nevent:2396944:Inferno:7:plant:1 tick 67246: r1nkle planted the bomb.\nevent:2396944:Inferno:7:kill:6 tick 68087: kyxsan killed NertZ.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Inferno",
+            "match_id": "2396944",
+            "round_number": "7",
+            "relation": "after_plant",
+            "actor_id": "76561198057282432",
+            "target_id": "76561198053126645",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396944:Inferno:7:plant:1",
+              "event:2396944:Inferno:7:kill:6"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396944:Inferno:7:plant:1",
+                  "tick": 67246
+                },
+                {
+                  "event_id": "event:2396944:Inferno:7:kill:6",
+                  "tick": 68087
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396944:Inferno:7"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 5.9755840338766575
+    },
+    {
+      "query_id": "2396944_Inferno_after_plant_negative",
+      "language": "en",
+      "query": "Match 2396944, map Inferno. HeavyGod kills Jimpphat after the bomb was planted",
+      "relation": {
+        "status": "not_found",
+        "family": "after_plant",
+        "actor": "heavygod",
+        "target": "jimpphat",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Inferno"
+        },
+        "query": "Match 2396944, map Inferno. HeavyGod kills Jimpphat after the bomb was planted",
+        "mode": "rounds",
+        "checked_rounds": 35,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198068002993",
+        "target_id": "76561198855375325",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 5.664459429681301
+    },
+    {
+      "query_id": "2396944_Inferno_after_plant_negative",
+      "language": "zh",
+      "query": "比赛 2396944，地图 Inferno。下包后 HeavyGod 击杀 Jimpphat",
+      "relation": {
+        "status": "not_found",
+        "family": "after_plant",
+        "actor": "heavygod",
+        "target": "jimpphat",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Inferno"
+        },
+        "query": "比赛 2396944，地图 Inferno。下包后 HeavyGod 击杀 Jimpphat",
+        "mode": "rounds",
+        "checked_rounds": 35,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198068002993",
+        "target_id": "76561198855375325",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 5.637458059936762
+    },
+    {
+      "query_id": "2396944_Inferno_trade_positive",
+      "language": "en",
+      "query": "Match 2396944, map Inferno. r1nkle trades teammate MATYS within 320 ticks",
+      "relation": {
+        "status": "found",
+        "family": "trade",
+        "actor": "r1nkle",
+        "target": "matys",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Inferno"
+        },
+        "query": "Match 2396944, map Inferno. r1nkle trades teammate MATYS within 320 ticks",
+        "mode": "rounds",
+        "checked_rounds": 35,
+        "matched_rounds": 1,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198294381090",
+        "target_id": "76561199046478501",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396944:Inferno:4"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] trade r1nkle -> matys. graph:2396944:Inferno:4\nevent:2396944:Inferno:4:kill:2 tick 37176: Jimpphat killed MATYS.\nevent:2396944:Inferno:4:kill:6 tick 37453: r1nkle killed Jimpphat.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "trade",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Inferno",
+            "match_id": "2396944",
+            "round_number": "4",
+            "relation": "trade",
+            "actor_id": "76561198294381090",
+            "target_id": "76561199046478501",
+            "window_ticks": 320,
+            "witness_event_ids": [
+              "event:2396944:Inferno:4:kill:2",
+              "event:2396944:Inferno:4:kill:6"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396944:Inferno:4:kill:2",
+                  "tick": 37176
+                },
+                {
+                  "event_id": "event:2396944:Inferno:4:kill:6",
+                  "tick": 37453
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396944:Inferno:4"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 6.095082964748144
+    },
+    {
+      "query_id": "2396944_Inferno_trade_positive",
+      "language": "zh",
+      "query": "比赛 2396944，地图 Inferno。r1nkle 为队友 MATYS 补枪，在 320 tick 内",
+      "relation": {
+        "status": "found",
+        "family": "trade",
+        "actor": "r1nkle",
+        "target": "matys",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Inferno"
+        },
+        "query": "比赛 2396944，地图 Inferno。r1nkle 为队友 MATYS 补枪，在 320 tick 内",
+        "mode": "rounds",
+        "checked_rounds": 35,
+        "matched_rounds": 1,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198294381090",
+        "target_id": "76561199046478501",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396944:Inferno:4"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] trade r1nkle -> matys. graph:2396944:Inferno:4\nevent:2396944:Inferno:4:kill:2 tick 37176: Jimpphat killed MATYS.\nevent:2396944:Inferno:4:kill:6 tick 37453: r1nkle killed Jimpphat.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "trade",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Inferno",
+            "match_id": "2396944",
+            "round_number": "4",
+            "relation": "trade",
+            "actor_id": "76561198294381090",
+            "target_id": "76561199046478501",
+            "window_ticks": 320,
+            "witness_event_ids": [
+              "event:2396944:Inferno:4:kill:2",
+              "event:2396944:Inferno:4:kill:6"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396944:Inferno:4:kill:2",
+                  "tick": 37176
+                },
+                {
+                  "event_id": "event:2396944:Inferno:4:kill:6",
+                  "tick": 37453
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396944:Inferno:4"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 5.978084169328213
+    },
+    {
+      "query_id": "2396944_Inferno_trade_negative",
+      "language": "en",
+      "query": "Match 2396944, map Inferno. kyxsan trades teammate Wicadia within 320 ticks",
+      "relation": {
+        "status": "not_found",
+        "family": "trade",
+        "actor": "kyxsan",
+        "target": "wicadia",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Inferno"
+        },
+        "query": "Match 2396944, map Inferno. kyxsan trades teammate Wicadia within 320 ticks",
+        "mode": "rounds",
+        "checked_rounds": 35,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198057282432",
+        "target_id": "76561198812513923",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 5.806624889373779
+    },
+    {
+      "query_id": "2396944_Inferno_trade_negative",
+      "language": "zh",
+      "query": "比赛 2396944，地图 Inferno。kyxsan 为队友 Wicadia 补枪，在 320 tick 内",
+      "relation": {
+        "status": "not_found",
+        "family": "trade",
+        "actor": "kyxsan",
+        "target": "wicadia",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Inferno"
+        },
+        "query": "比赛 2396944，地图 Inferno。kyxsan 为队友 Wicadia 补枪，在 320 tick 内",
+        "mode": "rounds",
+        "checked_rounds": 35,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198057282432",
+        "target_id": "76561198812513923",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 5.564791150391102
+    },
+    {
+      "query_id": "2396944_Mirage_opening_positive",
+      "language": "en",
+      "query": "Match 2396944, map Mirage. MATYS gets the opening kill against Jimpphat",
+      "relation": {
+        "status": "found",
+        "family": "opening",
+        "actor": "matys",
+        "target": "jimpphat",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Mirage"
+        },
+        "query": "Match 2396944, map Mirage. MATYS gets the opening kill against Jimpphat",
+        "mode": "rounds",
+        "checked_rounds": 14,
+        "matched_rounds": 2,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561199046478501",
+        "target_id": "76561198855375325",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396944:Mirage:10",
+        "round:2396944:Mirage:12"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] opening matys -> jimpphat. graph:2396944:Mirage:10\nevent:2396944:Mirage:10:kill:1 tick 96128: MATYS killed Jimpphat.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Mirage",
+            "match_id": "2396944",
+            "round_number": "10",
+            "relation": "opening",
+            "actor_id": "76561199046478501",
+            "target_id": "76561198855375325",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396944:Mirage:10:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396944:Mirage:10:kill:1",
+                  "tick": 96128
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396944:Mirage:10"
+        },
+        {
+          "content": "[Verified relation] opening matys -> jimpphat. graph:2396944:Mirage:12\nevent:2396944:Mirage:12:kill:1 tick 105758: MATYS killed Jimpphat.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Mirage",
+            "match_id": "2396944",
+            "round_number": "12",
+            "relation": "opening",
+            "actor_id": "76561199046478501",
+            "target_id": "76561198855375325",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396944:Mirage:12:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396944:Mirage:12:kill:1",
+                  "tick": 105758
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396944:Mirage:12"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 2.2026249207556248
+    },
+    {
+      "query_id": "2396944_Mirage_opening_positive",
+      "language": "zh",
+      "query": "比赛 2396944，地图 Mirage。MATYS 首杀 Jimpphat",
+      "relation": {
+        "status": "found",
+        "family": "opening",
+        "actor": "matys",
+        "target": "jimpphat",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Mirage"
+        },
+        "query": "比赛 2396944，地图 Mirage。MATYS 首杀 Jimpphat",
+        "mode": "rounds",
+        "checked_rounds": 14,
+        "matched_rounds": 2,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561199046478501",
+        "target_id": "76561198855375325",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396944:Mirage:10",
+        "round:2396944:Mirage:12"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] opening matys -> jimpphat. graph:2396944:Mirage:10\nevent:2396944:Mirage:10:kill:1 tick 96128: MATYS killed Jimpphat.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Mirage",
+            "match_id": "2396944",
+            "round_number": "10",
+            "relation": "opening",
+            "actor_id": "76561199046478501",
+            "target_id": "76561198855375325",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396944:Mirage:10:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396944:Mirage:10:kill:1",
+                  "tick": 96128
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396944:Mirage:10"
+        },
+        {
+          "content": "[Verified relation] opening matys -> jimpphat. graph:2396944:Mirage:12\nevent:2396944:Mirage:12:kill:1 tick 105758: MATYS killed Jimpphat.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "opening",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Mirage",
+            "match_id": "2396944",
+            "round_number": "12",
+            "relation": "opening",
+            "actor_id": "76561199046478501",
+            "target_id": "76561198855375325",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396944:Mirage:12:kill:1"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396944:Mirage:12:kill:1",
+                  "tick": 105758
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396944:Mirage:12"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 2.1707089617848396
+    },
+    {
+      "query_id": "2396944_Mirage_opening_negative",
+      "language": "en",
+      "query": "Match 2396944, map Mirage. Wicadia gets the opening kill against MATYS",
+      "relation": {
+        "status": "not_found",
+        "family": "opening",
+        "actor": "wicadia",
+        "target": "matys",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Mirage"
+        },
+        "query": "Match 2396944, map Mirage. Wicadia gets the opening kill against MATYS",
+        "mode": "rounds",
+        "checked_rounds": 14,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198812513923",
+        "target_id": "76561199046478501",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 1.8454170785844326
+    },
+    {
+      "query_id": "2396944_Mirage_opening_negative",
+      "language": "zh",
+      "query": "比赛 2396944，地图 Mirage。Wicadia 首杀 MATYS",
+      "relation": {
+        "status": "not_found",
+        "family": "opening",
+        "actor": "wicadia",
+        "target": "matys",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Mirage"
+        },
+        "query": "比赛 2396944，地图 Mirage。Wicadia 首杀 MATYS",
+        "mode": "rounds",
+        "checked_rounds": 14,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198812513923",
+        "target_id": "76561199046478501",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 2.2227922454476357
+    },
+    {
+      "query_id": "2396944_Mirage_after_plant_positive",
+      "language": "en",
+      "query": "Match 2396944, map Mirage. HeavyGod kills Jimpphat after the bomb was planted",
+      "relation": {
+        "status": "found",
+        "family": "after_plant",
+        "actor": "heavygod",
+        "target": "jimpphat",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Mirage"
+        },
+        "query": "Match 2396944, map Mirage. HeavyGod kills Jimpphat after the bomb was planted",
+        "mode": "rounds",
+        "checked_rounds": 14,
+        "matched_rounds": 3,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198068002993",
+        "target_id": "76561198855375325",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396944:Mirage:2",
+        "round:2396944:Mirage:7",
+        "round:2396944:Mirage:13"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] after_plant heavygod -> jimpphat. graph:2396944:Mirage:2\nevent:2396944:Mirage:2:plant:1 tick 22799: r1nkle planted the bomb.\nevent:2396944:Mirage:2:kill:8 tick 22808: HeavyGod killed Jimpphat.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Mirage",
+            "match_id": "2396944",
+            "round_number": "2",
+            "relation": "after_plant",
+            "actor_id": "76561198068002993",
+            "target_id": "76561198855375325",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396944:Mirage:2:plant:1",
+              "event:2396944:Mirage:2:kill:8"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396944:Mirage:2:plant:1",
+                  "tick": 22799
+                },
+                {
+                  "event_id": "event:2396944:Mirage:2:kill:8",
+                  "tick": 22808
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396944:Mirage:2"
+        },
+        {
+          "content": "[Verified relation] after_plant heavygod -> jimpphat. graph:2396944:Mirage:7\nevent:2396944:Mirage:7:plant:1 tick 70518: huNter planted the bomb.\nevent:2396944:Mirage:7:kill:5 tick 70562: HeavyGod killed Jimpphat.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Mirage",
+            "match_id": "2396944",
+            "round_number": "7",
+            "relation": "after_plant",
+            "actor_id": "76561198068002993",
+            "target_id": "76561198855375325",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396944:Mirage:7:plant:1",
+              "event:2396944:Mirage:7:kill:5"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396944:Mirage:7:plant:1",
+                  "tick": 70518
+                },
+                {
+                  "event_id": "event:2396944:Mirage:7:kill:5",
+                  "tick": 70562
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396944:Mirage:7"
+        },
+        {
+          "content": "[Verified relation] after_plant heavygod -> jimpphat. graph:2396944:Mirage:13\nevent:2396944:Mirage:13:plant:1 tick 128463: woxic planted the bomb.\nevent:2396944:Mirage:13:kill:8 tick 129821: HeavyGod killed Jimpphat.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Mirage",
+            "match_id": "2396944",
+            "round_number": "13",
+            "relation": "after_plant",
+            "actor_id": "76561198068002993",
+            "target_id": "76561198855375325",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396944:Mirage:13:plant:1",
+              "event:2396944:Mirage:13:kill:8"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396944:Mirage:13:plant:1",
+                  "tick": 128463
+                },
+                {
+                  "event_id": "event:2396944:Mirage:13:kill:8",
+                  "tick": 129821
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396944:Mirage:13"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 2.1015829406678677
+    },
+    {
+      "query_id": "2396944_Mirage_after_plant_positive",
+      "language": "zh",
+      "query": "比赛 2396944，地图 Mirage。下包后 HeavyGod 击杀 Jimpphat",
+      "relation": {
+        "status": "found",
+        "family": "after_plant",
+        "actor": "heavygod",
+        "target": "jimpphat",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Mirage"
+        },
+        "query": "比赛 2396944，地图 Mirage。下包后 HeavyGod 击杀 Jimpphat",
+        "mode": "rounds",
+        "checked_rounds": 14,
+        "matched_rounds": 3,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198068002993",
+        "target_id": "76561198855375325",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396944:Mirage:2",
+        "round:2396944:Mirage:7",
+        "round:2396944:Mirage:13"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] after_plant heavygod -> jimpphat. graph:2396944:Mirage:2\nevent:2396944:Mirage:2:plant:1 tick 22799: r1nkle planted the bomb.\nevent:2396944:Mirage:2:kill:8 tick 22808: HeavyGod killed Jimpphat.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Mirage",
+            "match_id": "2396944",
+            "round_number": "2",
+            "relation": "after_plant",
+            "actor_id": "76561198068002993",
+            "target_id": "76561198855375325",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396944:Mirage:2:plant:1",
+              "event:2396944:Mirage:2:kill:8"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396944:Mirage:2:plant:1",
+                  "tick": 22799
+                },
+                {
+                  "event_id": "event:2396944:Mirage:2:kill:8",
+                  "tick": 22808
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396944:Mirage:2"
+        },
+        {
+          "content": "[Verified relation] after_plant heavygod -> jimpphat. graph:2396944:Mirage:7\nevent:2396944:Mirage:7:plant:1 tick 70518: huNter planted the bomb.\nevent:2396944:Mirage:7:kill:5 tick 70562: HeavyGod killed Jimpphat.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Mirage",
+            "match_id": "2396944",
+            "round_number": "7",
+            "relation": "after_plant",
+            "actor_id": "76561198068002993",
+            "target_id": "76561198855375325",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396944:Mirage:7:plant:1",
+              "event:2396944:Mirage:7:kill:5"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396944:Mirage:7:plant:1",
+                  "tick": 70518
+                },
+                {
+                  "event_id": "event:2396944:Mirage:7:kill:5",
+                  "tick": 70562
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396944:Mirage:7"
+        },
+        {
+          "content": "[Verified relation] after_plant heavygod -> jimpphat. graph:2396944:Mirage:13\nevent:2396944:Mirage:13:plant:1 tick 128463: woxic planted the bomb.\nevent:2396944:Mirage:13:kill:8 tick 129821: HeavyGod killed Jimpphat.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "after_plant",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Mirage",
+            "match_id": "2396944",
+            "round_number": "13",
+            "relation": "after_plant",
+            "actor_id": "76561198068002993",
+            "target_id": "76561198855375325",
+            "window_ticks": null,
+            "witness_event_ids": [
+              "event:2396944:Mirage:13:plant:1",
+              "event:2396944:Mirage:13:kill:8"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396944:Mirage:13:plant:1",
+                  "tick": 128463
+                },
+                {
+                  "event_id": "event:2396944:Mirage:13:kill:8",
+                  "tick": 129821
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396944:Mirage:13"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 2.2488748654723167
+    },
+    {
+      "query_id": "2396944_Mirage_after_plant_negative",
+      "language": "en",
+      "query": "Match 2396944, map Mirage. NertZ kills woxic after the bomb was planted",
+      "relation": {
+        "status": "not_found",
+        "family": "after_plant",
+        "actor": "nertz",
+        "target": "woxic",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Mirage"
+        },
+        "query": "Match 2396944, map Mirage. NertZ kills woxic after the bomb was planted",
+        "mode": "rounds",
+        "checked_rounds": 14,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198053126645",
+        "target_id": "76561198083485506",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 2.030957955867052
+    },
+    {
+      "query_id": "2396944_Mirage_after_plant_negative",
+      "language": "zh",
+      "query": "比赛 2396944，地图 Mirage。下包后 NertZ 击杀 woxic",
+      "relation": {
+        "status": "not_found",
+        "family": "after_plant",
+        "actor": "nertz",
+        "target": "woxic",
+        "window_ticks": null,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Mirage"
+        },
+        "query": "比赛 2396944，地图 Mirage。下包后 NertZ 击杀 woxic",
+        "mode": "rounds",
+        "checked_rounds": 14,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198053126645",
+        "target_id": "76561198083485506",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 2.25245812907815
+    },
+    {
+      "query_id": "2396944_Mirage_trade_positive",
+      "language": "en",
+      "query": "Match 2396944, map Mirage. HeavyGod trades teammate NertZ within 320 ticks",
+      "relation": {
+        "status": "found",
+        "family": "trade",
+        "actor": "heavygod",
+        "target": "nertz",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Mirage"
+        },
+        "query": "Match 2396944, map Mirage. HeavyGod trades teammate NertZ within 320 ticks",
+        "mode": "rounds",
+        "checked_rounds": 14,
+        "matched_rounds": 1,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198068002993",
+        "target_id": "76561198053126645",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396944:Mirage:4"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] trade heavygod -> nertz. graph:2396944:Mirage:4\nevent:2396944:Mirage:4:kill:2 tick 42702: Jimpphat killed NertZ.\nevent:2396944:Mirage:4:kill:3 tick 42724: HeavyGod killed Jimpphat.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "trade",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Mirage",
+            "match_id": "2396944",
+            "round_number": "4",
+            "relation": "trade",
+            "actor_id": "76561198068002993",
+            "target_id": "76561198053126645",
+            "window_ticks": 320,
+            "witness_event_ids": [
+              "event:2396944:Mirage:4:kill:2",
+              "event:2396944:Mirage:4:kill:3"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396944:Mirage:4:kill:2",
+                  "tick": 42702
+                },
+                {
+                  "event_id": "event:2396944:Mirage:4:kill:3",
+                  "tick": 42724
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396944:Mirage:4"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 1.9598747603595257
+    },
+    {
+      "query_id": "2396944_Mirage_trade_positive",
+      "language": "zh",
+      "query": "比赛 2396944，地图 Mirage。HeavyGod 为队友 NertZ 补枪，在 320 tick 内",
+      "relation": {
+        "status": "found",
+        "family": "trade",
+        "actor": "heavygod",
+        "target": "nertz",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Mirage"
+        },
+        "query": "比赛 2396944，地图 Mirage。HeavyGod 为队友 NertZ 补枪，在 320 tick 内",
+        "mode": "rounds",
+        "checked_rounds": 14,
+        "matched_rounds": 1,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198068002993",
+        "target_id": "76561198053126645",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [
+        "round:2396944:Mirage:4"
+      ],
+      "evidence": [
+        {
+          "content": "[Verified relation] trade heavygod -> nertz. graph:2396944:Mirage:4\nevent:2396944:Mirage:4:kill:2 tick 42702: Jimpphat killed NertZ.\nevent:2396944:Mirage:4:kill:3 tick 42724: HeavyGod killed Jimpphat.",
+          "metadata": {
+            "context_level": "verified_relation",
+            "topic": "trade",
+            "tactic_type": "Verified Relation Evidence",
+            "map": "Mirage",
+            "match_id": "2396944",
+            "round_number": "4",
+            "relation": "trade",
+            "actor_id": "76561198068002993",
+            "target_id": "76561198053126645",
+            "window_ticks": 320,
+            "witness_event_ids": [
+              "event:2396944:Mirage:4:kill:2",
+              "event:2396944:Mirage:4:kill:3"
+            ],
+            "witnesses": [
+              [
+                {
+                  "event_id": "event:2396944:Mirage:4:kill:2",
+                  "tick": 42702
+                },
+                {
+                  "event_id": "event:2396944:Mirage:4:kill:3",
+                  "tick": 42724
+                }
+              ]
+            ]
+          },
+          "score": 1.0,
+          "source_id": "graph:2396944:Mirage:4"
+        }
+      ],
+      "metrics": {
+        "recall_at_k": 1.0,
+        "ndcg_at_k": 1.0,
+        "false_retrieval": null,
+        "false_abstention": false
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 2.122167032212019
+    },
+    {
+      "query_id": "2396944_Mirage_trade_negative",
+      "language": "en",
+      "query": "Match 2396944, map Mirage. NertZ trades teammate huNter within 320 ticks",
+      "relation": {
+        "status": "not_found",
+        "family": "trade",
+        "actor": "nertz",
+        "target": "hunter",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Mirage"
+        },
+        "query": "Match 2396944, map Mirage. NertZ trades teammate huNter within 320 ticks",
+        "mode": "rounds",
+        "checked_rounds": 14,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198053126645",
+        "target_id": "76561198012872053",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 1.9427919760346413
+    },
+    {
+      "query_id": "2396944_Mirage_trade_negative",
+      "language": "zh",
+      "query": "比赛 2396944，地图 Mirage。NertZ 为队友 huNter 补枪，在 320 tick 内",
+      "relation": {
+        "status": "not_found",
+        "family": "trade",
+        "actor": "nertz",
+        "target": "hunter",
+        "window_ticks": 320,
+        "scope": {
+          "match_id": "2396944",
+          "map": "Mirage"
+        },
+        "query": "比赛 2396944，地图 Mirage。NertZ 为队友 huNter 补枪，在 320 tick 内",
+        "mode": "rounds",
+        "checked_rounds": 14,
+        "matched_rounds": 0,
+        "unknown_rounds": 0,
+        "complete": true,
+        "actor_id": "76561198053126645",
+        "target_id": "76561198012872053",
+        "reason": "verified_source_events"
+      },
+      "source_ids": [],
+      "evidence": [],
+      "metrics": {
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "false_retrieval": false,
+        "false_abstention": null
+      },
+      "checks": {
+        "status": true,
+        "complete": true,
+        "scope": true,
+        "scope_count": true,
+        "roles": true,
+        "family": true,
+        "window": true,
+        "total_matches": true,
+        "proofs": true,
+        "public_graph_parity": true,
+        "api_parity": true,
+        "hybrid_status": true,
+        "hybrid_evidence": true
+      },
+      "passed": true,
+      "search_ms": 2.0439159125089645
+    }
+  ],
+  "limitations": [
+    "Two previously observed pipeline-test series; source-selected development queries, no unseen or independent human gold claim.",
+    "Restricted English/Chinese grammar for 3 relation families, not general natural-language understanding.",
+    "Source event scan is a distinct retrieval strategy, not an improvement to BM25/dense/RRF ranking.",
+    "Graph and hybrid route to the same relation engine; their parity is integration coverage, not independent algorithm evidence.",
+    "Pure vector relation queries now return unknown without a source verifier; no inference of true absence.",
+    "Parser-derived facts remain shared with AI labels; production provider services are not restarted by the regression."
+  ]
+}
