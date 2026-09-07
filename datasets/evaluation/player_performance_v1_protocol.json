@@ -1,0 +1,25 @@
+{
+  "baseline_commit": "8160af069b83a100e490b20ace00914d15b87ffc",
+  "baseline_source": "data/evaluation/player_performance_v1/baseline_graph.py",
+  "graph": "data/graph/cs2_graph.sqlite",
+  "expected_players": 56,
+  "scopes": [
+    {},
+    {
+      "map_name": "Nuke"
+    },
+    {
+      "side": "T"
+    },
+    {
+      "opponent": "Falcons"
+    }
+  ],
+  "input_sha256": {
+    "data/evaluation/player_performance_v1/baseline_graph.py": "59a2ca94f3fb62cd5c9e9bfdf7d695e709da4cf7dc675c159400452e44e77e59",
+    "data/graph/cs2_graph.sqlite": "28357be25a52d27b80e87a03ffcb2a545132c97d42632138ff60c47d67fc8c2d",
+    "app/services/graph_rag_service.py": "3cde393e14ddb4b6eae6743eb10d53f2fcea3003a06bd5b4457e1dcdf4751196",
+    "scripts/check_player_performance.py": "1965c892063a31a0021e1b17646ad19d6736c3ff48764a2a7a19ad35f3c05657"
+  },
+  "rationale": "Profiler shows repeated normalization of all 42148 events for each player context. Skip only rounds whose complete roster confirms absence; retain all incomplete roster fallback behavior. Alternate before/after timing order for all 56 players across four scopes; exact full JSON equality required."
+}

@@ -484,6 +484,12 @@ class GraphRAGClient:
             ):
                 key = (str(row["match_id"]), row["map_name"], str(row["round_number"]))
                 round_props = json.loads(row["properties"])
+                # Confirmed non-participation cannot enter this player's scope. Keep
+                # incomplete rosters for the existing event-based fallback below.
+                if round_props.get("participants_complete") and not any(
+                    str(p.get("steamid")) == base["player_id"] for p in round_props.get("participants", [])
+                ):
+                    continue
                 contexts[key] = {
                     "participants": round_props.get("participants", []),
                     "participants_complete": round_props.get("participants_complete", False),
