@@ -1,0 +1,38 @@
+{
+  "repo": "jinaai/jina-embeddings-v2-base-zh",
+  "revision": "c1ff9086a89a1123d7b5eff58055a665db4fb4b9",
+  "files": {
+    "config.json": {
+      "bytes": 1441,
+      "sha256": "85a9da5b54ecc2922656a8db6b9628c9123afe0a880062be891e0e4db60d10ff"
+    },
+    "tokenizer.json": {
+      "bytes": 2030772,
+      "sha256": "0046da43cc8c424b317f56b092b0512aaaa65c4f925d2f16af9d9eeb4d0ef902"
+    },
+    "tokenizer_config.json": {
+      "bytes": 1215,
+      "sha256": "d291c6652d96d56ffdbcf1ea19d9bae5ed79003f7648c627e725a619227ce8fa"
+    },
+    "special_tokens_map.json": {
+      "bytes": 280,
+      "sha256": "06e405a36dfe4b9604f484f6a1e619af1a7f7d09e34a8555eb0b77b66318067f"
+    },
+    "vocab.json": {
+      "bytes": 854399,
+      "sha256": "62a861857691f39b92935580e929a31e7869056e5de5119ef81f5c62ffa1a4b5"
+    },
+    "merges.txt": {
+      "bytes": 336141,
+      "sha256": "34c90c55c32ada402c943c79555515b9eea2cbaf5bbcd970b012a2bc8e0ad331"
+    },
+    "README.md": {
+      "bytes": 34014,
+      "sha256": "44e3057eb4a4fd3ddb80c9f64ab41479934fc285b109c8e669230b2ff4310d01"
+    },
+    "onnx/model.onnx": {
+      "bytes": 641212851,
+      "sha256": "4b0e9fa6e5c77cff56e0c9c673ba1aad61e793e592fdd4b05690b68826b7d3a2"
+    }
+  }
+}
