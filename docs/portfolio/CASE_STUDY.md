@@ -26,11 +26,11 @@ This motivated a separate deterministic relation verifier. On the isolated sourc
 
 | Evidence | Scope | Supported interpretation |
 | --- | --- | --- |
-| 262 offline tests | Synthetic and engineering regressions | Tested implementation behavior |
+| 269 offline tests | Synthetic and engineering regressions | Tested implementation behavior |
 | 48 relation expressions + 96 aggregate checks | Observed historical questions | Relation / numeric contract consistency |
 | 768 text retrieval results | Historical development controls | Model, tokenizer and fusion tradeoffs |
 | 960 text results + 60 relation expressions | Two isolated, previously observed series | Corpus-isolated development pilot |
-| Real browser upload and one live Coach call, 992 tokens | One observed 14-round map | Full task integration; a second-call TLS lifecycle defect was fixed locally, with post-fix remote verification pending |
+| Two consecutive live browser uploads, 2,325 model tokens | One observed 14-round map, one persistent worker | Complete application integration and post-fix TLS lifecycle regression; no coaching-quality claim |
 | 6 Coach model calls, 4,939 reported tokens | Six development maps | Feasibility and per-run usage; quality gain unscored |
 
 Labels and translations are AI-assisted. Python and SQL audits share parser facts. The two isolated series are not newly unseen data, and independent expert coaching ratings are deferred as optional future research, outside the current engineering and portfolio delivery scope. The dense models also have different actual chunk capacities (128 vs 512 tokens), so the comparison concerns whole configurations.
@@ -48,6 +48,6 @@ The current project is an engineering prototype with credible development eviden
 - [Bilingual baseline experiment](../LANGUAGE_BASELINES_V2.md)
 - [Isolated pilot and first-run failures](../ISOLATED_RELATION_PILOT_V1.md)
 - [Player performance equivalence](../PLAYER_PERFORMANCE_V1.md)
-- [Live upload acceptance and failure record](../LIVE_E2E_V1.md)
+- [Live upload acceptance and failure record](../LIVE_E2E_V2.md)
 - [Main implementation and execution status](../IMPLEMENTATION_PROGRESS.md)
 - [Exportable figure](benchmark-results.svg) · [PNG](benchmark-results.png) · [plotted data](benchmark-results.csv)

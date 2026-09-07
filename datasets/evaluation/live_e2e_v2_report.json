@@ -1,0 +1,417 @@
+{
+  "date": "2026-09-07",
+  "status": "pass",
+  "code_commit": "e48e570bb84f31ca27dc3a0695a57c4f2cf11db8",
+  "scope": "two consecutive real browser uploads on one persistent Celery worker, after TLS loop fix",
+  "input": "G2_vs_Aurora_2396944_map3.dem",
+  "input_sha256": "e348879717172add00b80285c20f884f4e180aa8cffa5a7ae9990d0d1d20b9fd",
+  "runs": [
+    {
+      "task_id": "1e5668e3-e219-4e1e-beb0-511b4c9c8e1e",
+      "celery_status": "SUCCESS",
+      "result_status": "success",
+      "metrics": {
+        "rounds_total": 14,
+        "rounds_won_by_team": {
+          "Aurora": 1,
+          "G2": 13
+        },
+        "kills_total": 97,
+        "first_kills_total": 14
+      },
+      "coach_decision": {
+        "priority_ids": [
+          "opening_followup",
+          "post_plant",
+          "utility_review"
+        ],
+        "selection_source": "qwen_tool_call"
+      },
+      "model_usage": {
+        "input_tokens": 852,
+        "output_tokens": 430,
+        "total_tokens": 1282,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {}
+      },
+      "verification": {
+        "status": "pass",
+        "evidence_count": 27,
+        "current_evidence_count": 15,
+        "historical_evidence_count": 12,
+        "cited_evidence_ids": [
+          "C1",
+          "C10",
+          "C12",
+          "C14",
+          "C3",
+          "C4",
+          "C5",
+          "C6",
+          "C7",
+          "C8",
+          "C9"
+        ],
+        "cited_current_evidence_ids": [
+          "C1",
+          "C10",
+          "C12",
+          "C14",
+          "C3",
+          "C4",
+          "C5",
+          "C6",
+          "C7",
+          "C8",
+          "C9"
+        ],
+        "cited_historical_evidence_ids": [],
+        "unknown_citations": [],
+        "uncited_claim_count": 0,
+        "current_claims_without_current_evidence": 0,
+        "missing_outputs": []
+      },
+      "selected_retrieval_sources": {
+        "milvus": 6,
+        "graph": 6
+      },
+      "browser_checks": {
+        "reload_preserves_report": true,
+        "page_report_exact_match": true,
+        "evidence_count": 27,
+        "budget_unchanged_on_reload": true
+      },
+      "browser": {
+        "task_id": "1e5668e3-e219-4e1e-beb0-511b4c9c8e1e",
+        "elapsed_ms": 14201,
+        "page_errors": [],
+        "http": [
+          {
+            "path": "/api/settings/llm",
+            "status": 200
+          },
+          {
+            "path": "/api/graph/maps",
+            "status": 200
+          },
+          {
+            "path": "/api/graph/stats",
+            "status": 200
+          },
+          {
+            "path": "/api/graph/subgraph",
+            "status": 200
+          },
+          {
+            "path": "/api/settings/llm/budget",
+            "status": 200
+          },
+          {
+            "path": "/api/upload-demo",
+            "status": 200
+          },
+          {
+            "path": "/api/graph/teams/Falcons/tactics",
+            "status": 200
+          },
+          {
+            "path": "/api/tasks/1e5668e3-e219-4e1e-beb0-511b4c9c8e1e",
+            "status": 200
+          },
+          {
+            "path": "/api/settings/llm/budget",
+            "status": 200
+          },
+          {
+            "path": "/api/tasks/1e5668e3-e219-4e1e-beb0-511b4c9c8e1e",
+            "status": 200
+          },
+          {
+            "path": "/api/settings/llm/budget",
+            "status": 200
+          },
+          {
+            "path": "/api/tasks/1e5668e3-e219-4e1e-beb0-511b4c9c8e1e",
+            "status": 200
+          },
+          {
+            "path": "/api/graph/teams/compare",
+            "status": 200
+          },
+          {
+            "path": "/api/graph/players",
+            "status": 200
+          },
+          {
+            "path": "/api/graph/players",
+            "status": 200
+          },
+          {
+            "path": "/api/graph/players/76561198074762801",
+            "status": 200
+          },
+          {
+            "path": "/api/tasks/1e5668e3-e219-4e1e-beb0-511b4c9c8e1e",
+            "status": 200
+          },
+          {
+            "path": "/api/tasks/1e5668e3-e219-4e1e-beb0-511b4c9c8e1e",
+            "status": 200
+          },
+          {
+            "path": "/api/tasks/1e5668e3-e219-4e1e-beb0-511b4c9c8e1e",
+            "status": 200
+          },
+          {
+            "path": "/api/tasks/1e5668e3-e219-4e1e-beb0-511b4c9c8e1e",
+            "status": 200
+          },
+          {
+            "path": "/api/tasks/1e5668e3-e219-4e1e-beb0-511b4c9c8e1e",
+            "status": 200
+          },
+          {
+            "path": "/api/settings/llm/budget",
+            "status": 200
+          }
+        ]
+      },
+      "temporary_upload_deleted": true,
+      "knowledge_task_id": null
+    },
+    {
+      "task_id": "2c13f49b-3395-4ef1-998e-f2f731268280",
+      "celery_status": "SUCCESS",
+      "result_status": "success",
+      "metrics": {
+        "rounds_total": 14,
+        "rounds_won_by_team": {
+          "Aurora": 1,
+          "G2": 13
+        },
+        "kills_total": 97,
+        "first_kills_total": 14
+      },
+      "coach_decision": {
+        "priority_ids": [
+          "opening_followup",
+          "post_plant"
+        ],
+        "selection_source": "qwen_tool_call"
+      },
+      "model_usage": {
+        "input_tokens": 852,
+        "output_tokens": 191,
+        "total_tokens": 1043,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {}
+      },
+      "verification": {
+        "status": "pass",
+        "evidence_count": 27,
+        "current_evidence_count": 15,
+        "historical_evidence_count": 12,
+        "cited_evidence_ids": [
+          "C1",
+          "C10",
+          "C12",
+          "C14",
+          "C3",
+          "C4",
+          "C5",
+          "C6",
+          "C7",
+          "C8",
+          "C9"
+        ],
+        "cited_current_evidence_ids": [
+          "C1",
+          "C10",
+          "C12",
+          "C14",
+          "C3",
+          "C4",
+          "C5",
+          "C6",
+          "C7",
+          "C8",
+          "C9"
+        ],
+        "cited_historical_evidence_ids": [],
+        "unknown_citations": [],
+        "uncited_claim_count": 0,
+        "current_claims_without_current_evidence": 0,
+        "missing_outputs": []
+      },
+      "selected_retrieval_sources": {
+        "milvus": 6,
+        "graph": 6
+      },
+      "browser_checks": {
+        "reload_preserves_report": true,
+        "page_report_exact_match": true,
+        "evidence_count": 27,
+        "budget_unchanged_on_reload": true
+      },
+      "browser": {
+        "task_id": "2c13f49b-3395-4ef1-998e-f2f731268280",
+        "elapsed_ms": 7346,
+        "page_errors": [],
+        "http": [
+          {
+            "path": "/api/settings/llm",
+            "status": 200
+          },
+          {
+            "path": "/api/graph/maps",
+            "status": 200
+          },
+          {
+            "path": "/api/graph/stats",
+            "status": 200
+          },
+          {
+            "path": "/api/graph/players",
+            "status": 200
+          },
+          {
+            "path": "/api/graph/teams/compare",
+            "status": 200
+          },
+          {
+            "path": "/api/graph/subgraph",
+            "status": 200
+          },
+          {
+            "path": "/api/graph/players",
+            "status": 200
+          },
+          {
+            "path": "/api/settings/llm/budget",
+            "status": 200
+          },
+          {
+            "path": "/api/graph/teams/Falcons/tactics",
+            "status": 200
+          },
+          {
+            "path": "/api/graph/players/76561198074762801",
+            "status": 200
+          },
+          {
+            "path": "/api/upload-demo",
+            "status": 200
+          },
+          {
+            "path": "/api/tasks/2c13f49b-3395-4ef1-998e-f2f731268280",
+            "status": 200
+          },
+          {
+            "path": "/api/settings/llm/budget",
+            "status": 200
+          },
+          {
+            "path": "/api/tasks/2c13f49b-3395-4ef1-998e-f2f731268280",
+            "status": 200
+          },
+          {
+            "path": "/api/settings/llm/budget",
+            "status": 200
+          },
+          {
+            "path": "/api/tasks/2c13f49b-3395-4ef1-998e-f2f731268280",
+            "status": 200
+          },
+          {
+            "path": "/api/tasks/2c13f49b-3395-4ef1-998e-f2f731268280",
+            "status": 200
+          },
+          {
+            "path": "/api/tasks/2c13f49b-3395-4ef1-998e-f2f731268280",
+            "status": 200
+          },
+          {
+            "path": "/api/settings/llm/budget",
+            "status": 200
+          }
+        ]
+      },
+      "temporary_upload_deleted": true,
+      "knowledge_task_id": null
+    }
+  ],
+  "postflight": {
+    "budget": {
+      "status": "stopped",
+      "stop_reason": "recovery_call_limit_reached",
+      "token_limit": 30000,
+      "call_limit": 100,
+      "calls": 4,
+      "reported_tokens": 3317,
+      "unsettled_allowance": 5456,
+      "remaining_local_allowance": 21227,
+      "accounting_complete": false,
+      "provider_remaining_tokens": null
+    },
+    "graph_sha256": "28357be25a52d27b80e87a03ffcb2a545132c97d42632138ff60c47d67fc8c2d",
+    "milvus": {
+      "row_count": 1117
+    },
+    "worker_pids": {
+      "celery@AcelerShendeMacBook-Pro.local": 11924
+    },
+    "original_ledger_rows_unchanged": true
+  },
+  "remote_calls_this_run": 2,
+  "reported_tokens_this_run": 2325,
+  "deleted_branches": [
+    {
+      "ref": "codex/graphrag-player-analysis",
+      "tip": "95a4b32bcc31656e6a62d16eb1969c8a1b1944e0",
+      "contained_in_main": true
+    },
+    {
+      "ref": "origin/codex/graphrag-player-analysis",
+      "tip": "95a4b32bcc31656e6a62d16eb1969c8a1b1944e0",
+      "contained_in_main": true
+    },
+    {
+      "ref": "codex/recovery-20260906",
+      "tip": "76e8cddedab0bea582023f5a2e1932a0a925a84e",
+      "contained_in_main": true
+    },
+    {
+      "ref": "origin/codex/recovery-20260906",
+      "tip": "1c88d8fac93a8b77ab53c0d1e76f76713d3e5aaa",
+      "contained_in_main": true
+    }
+  ],
+  "tests": {
+    "offline_passed": 269,
+    "frontend_build": "pass"
+  },
+  "limits": [
+    "Same previously observed map; no generalization, expert coaching quality or throughput claim",
+    "Coach selects allowlisted priorities; report facts remain deterministic",
+    "Historical retrieval ran; this report cites current-match evidence only",
+    "Unknown usage from the earlier failed request remains reserved, not reported as zero",
+    "Recovery authorization is exhausted; no further remote calls allowed by this recovery window"
+  ],
+  "one_worker_start_two_http_200_responses": true,
+  "artifacts": {
+    "preflight.json": "431a90cf2da94028716d23c5a97b539c866f474783ce4d1c5270d4adc5fbd497",
+    "postflight.json": "d42958f377f1dcf2a5fd0f696b5bdb5d1da064e8cf83ea09cbcb440cf17fabf7",
+    "deleted_branches.json": "e36804f7b1f369704742b1654c1b193d5cc5876986459e1cbd630c54f67ac034",
+    "attempt1/task.json": "ba08d1db74f397e282ee7f78a2c955101b789a33ff20746a4aa4b621c1aea624",
+    "attempt2/task.json": "0ec8cc5c51ddb8aee086aab035df373632080d5ffddd750fc9434fb9451e2804",
+    "attempt1/report.png": "6aaa4044beef7df8538c97584101cd1c20aae3bf61262a5421c7affaa12ca088",
+    "attempt2/report.png": "13bf561f259b3ae868b3079c9db8ab0d7eabf8226f995cd6b0878b9cf1c42023",
+    "attempt1/checks.json": "e95d3148af3409833668f373d4fea3f335144b1508eaf4ece2747fb0d27bca7c",
+    "attempt2/checks.json": "e95d3148af3409833668f373d4fea3f335144b1508eaf4ece2747fb0d27bca7c",
+    "service-evidence.log": "0a7ced88bc6dc9058c4ef294d6e7eed5420d44bcf556470b1b01b3459fefe5bb"
+  }
+}
