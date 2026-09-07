@@ -1,0 +1,18 @@
+{
+  "environment": "isolated 127.0.0.1:18101, production graph read only, no API keys, isolated budget DB",
+  "checks": [
+    {
+      "query": "Match 2396949, map Nuke. Round win rate when donk trades teammate zont1x within 320 ticks",
+      "observed": "21 checked, 1 matching round, 1 win / 1 known outcome, 100.0%; source link opens Nuke R1 with ticks 11243 and 11385",
+      "passed": true
+    },
+    {
+      "query": "比赛 2396949，地图 Nuke。回合胜率：TeSeS 击杀 tN1R，发生在下包之后",
+      "observed": "21 checked, zero matches, null/unknown win rate; old evidence cleared",
+      "passed": true
+    }
+  ],
+  "remote_model_calls": 0,
+  "temporary_server_and_tab_closed": true,
+  "production_services_restarted": false
+}

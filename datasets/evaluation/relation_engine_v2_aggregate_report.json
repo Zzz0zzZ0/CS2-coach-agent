@@ -1,0 +1,3705 @@
+{
+  "protocol_sha256": "78f7b6afaa664298aca703ec7147c1d2b99fafef60f70bea9b45a8ab99920066",
+  "interpretation": "Observed-query aggregate regression, AI source facts; no independent gold or generalization claim.",
+  "remote_model_calls": 0,
+  "passed": 96,
+  "total": 96,
+  "cases": [
+    {
+      "query_id": "opening_1_positive",
+      "language": "en",
+      "query": "Match 2396949, map Nuke. Count rounds where kyousuke makes the opening first kill by killing tN1R.",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 2,
+        "exact_matched_rounds": 2,
+        "co_present_rounds": 21,
+        "match_rate": 0.09523809523809523,
+        "matched_source_ids": [
+          "graph:2396949:Nuke:15",
+          "graph:2396949:Nuke:16"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396949:Nuke:15",
+            "graph:2396949:Nuke:16"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 2,
+        "won_rounds": 2,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_1_positive",
+      "language": "en",
+      "query": "Match 2396949, map Nuke. Round win rate when kyousuke makes the opening first kill by killing tN1R.",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 2,
+        "exact_matched_rounds": 2,
+        "co_present_rounds": 21,
+        "match_rate": 0.09523809523809523,
+        "matched_source_ids": [
+          "graph:2396949:Nuke:15",
+          "graph:2396949:Nuke:16"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396949:Nuke:15",
+            "graph:2396949:Nuke:16"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 2,
+        "won_rounds": 2,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_1_positive",
+      "language": "zh",
+      "query": "比赛 2396949，地图 Nuke。统计回合数： kyousuke 击杀 tN1R 并拿到本回合首杀的回合。",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 2,
+        "exact_matched_rounds": 2,
+        "co_present_rounds": 21,
+        "match_rate": 0.09523809523809523,
+        "matched_source_ids": [
+          "graph:2396949:Nuke:15",
+          "graph:2396949:Nuke:16"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396949:Nuke:15",
+            "graph:2396949:Nuke:16"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 2,
+        "won_rounds": 2,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_1_positive",
+      "language": "zh",
+      "query": "比赛 2396949，地图 Nuke。回合胜率： kyousuke 击杀 tN1R 并拿到本回合首杀的回合。",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 2,
+        "exact_matched_rounds": 2,
+        "co_present_rounds": 21,
+        "match_rate": 0.09523809523809523,
+        "matched_source_ids": [
+          "graph:2396949:Nuke:15",
+          "graph:2396949:Nuke:16"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396949:Nuke:15",
+            "graph:2396949:Nuke:16"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 2,
+        "won_rounds": 2,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_1_negative",
+      "language": "en",
+      "query": "Match 2396949, map Nuke. Count rounds where m0NESY makes the opening first kill by killing magixx.",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 21,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_1_negative",
+      "language": "en",
+      "query": "Match 2396949, map Nuke. Round win rate when m0NESY makes the opening first kill by killing magixx.",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 21,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_1_negative",
+      "language": "zh",
+      "query": "比赛 2396949，地图 Nuke。统计回合数： m0NESY 击杀 magixx 并拿到本回合首杀的回合。",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 21,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_1_negative",
+      "language": "zh",
+      "query": "比赛 2396949，地图 Nuke。回合胜率： m0NESY 击杀 magixx 并拿到本回合首杀的回合。",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 21,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_1_positive",
+      "language": "en",
+      "query": "Match 2396949, map Nuke. Count rounds where NiKo kills zont1x strictly after a bomb plant in that round.",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 1,
+        "exact_matched_rounds": 1,
+        "co_present_rounds": 21,
+        "match_rate": 0.047619047619047616,
+        "matched_source_ids": [
+          "graph:2396949:Nuke:19"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396949:Nuke:19"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 1,
+        "won_rounds": 1,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_1_positive",
+      "language": "en",
+      "query": "Match 2396949, map Nuke. Round win rate when NiKo kills zont1x strictly after a bomb plant in that round.",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 1,
+        "exact_matched_rounds": 1,
+        "co_present_rounds": 21,
+        "match_rate": 0.047619047619047616,
+        "matched_source_ids": [
+          "graph:2396949:Nuke:19"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396949:Nuke:19"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 1,
+        "won_rounds": 1,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_1_positive",
+      "language": "zh",
+      "query": "比赛 2396949，地图 Nuke。统计回合数： NiKo 击杀 zont1x，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 1,
+        "exact_matched_rounds": 1,
+        "co_present_rounds": 21,
+        "match_rate": 0.047619047619047616,
+        "matched_source_ids": [
+          "graph:2396949:Nuke:19"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396949:Nuke:19"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 1,
+        "won_rounds": 1,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_1_positive",
+      "language": "zh",
+      "query": "比赛 2396949，地图 Nuke。回合胜率： NiKo 击杀 zont1x，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 1,
+        "exact_matched_rounds": 1,
+        "co_present_rounds": 21,
+        "match_rate": 0.047619047619047616,
+        "matched_source_ids": [
+          "graph:2396949:Nuke:19"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396949:Nuke:19"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 1,
+        "won_rounds": 1,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_1_negative",
+      "language": "en",
+      "query": "Match 2396949, map Nuke. Count rounds where TeSeS kills tN1R strictly after a bomb plant in that round.",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 21,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_1_negative",
+      "language": "en",
+      "query": "Match 2396949, map Nuke. Round win rate when TeSeS kills tN1R strictly after a bomb plant in that round.",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 21,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_1_negative",
+      "language": "zh",
+      "query": "比赛 2396949，地图 Nuke。统计回合数： TeSeS 击杀 tN1R，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 21,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_1_negative",
+      "language": "zh",
+      "query": "比赛 2396949，地图 Nuke。回合胜率： TeSeS 击杀 tN1R，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 21,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_1_positive",
+      "language": "en",
+      "query": "Match 2396949, map Nuke. Count rounds where donk trades teammate zont1x: kills the enemy who killed zont1x, more than 0 and at most 320 ticks later in the same round.",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 1,
+        "exact_matched_rounds": 1,
+        "co_present_rounds": 21,
+        "match_rate": 0.047619047619047616,
+        "matched_source_ids": [
+          "graph:2396949:Nuke:1"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396949:Nuke:1"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 1,
+        "won_rounds": 1,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_1_positive",
+      "language": "en",
+      "query": "Match 2396949, map Nuke. Round win rate when donk trades teammate zont1x: kills the enemy who killed zont1x, more than 0 and at most 320 ticks later in the same round.",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 1,
+        "exact_matched_rounds": 1,
+        "co_present_rounds": 21,
+        "match_rate": 0.047619047619047616,
+        "matched_source_ids": [
+          "graph:2396949:Nuke:1"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396949:Nuke:1"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 1,
+        "won_rounds": 1,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_1_positive",
+      "language": "zh",
+      "query": "比赛 2396949，地图 Nuke。统计回合数： donk 为队友 zont1x 补枪的回合：在同一回合中，zont1x 被敌人击杀后，donk 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 1,
+        "exact_matched_rounds": 1,
+        "co_present_rounds": 21,
+        "match_rate": 0.047619047619047616,
+        "matched_source_ids": [
+          "graph:2396949:Nuke:1"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396949:Nuke:1"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 1,
+        "won_rounds": 1,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_1_positive",
+      "language": "zh",
+      "query": "比赛 2396949，地图 Nuke。回合胜率： donk 为队友 zont1x 补枪的回合：在同一回合中，zont1x 被敌人击杀后，donk 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 1,
+        "exact_matched_rounds": 1,
+        "co_present_rounds": 21,
+        "match_rate": 0.047619047619047616,
+        "matched_source_ids": [
+          "graph:2396949:Nuke:1"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396949:Nuke:1"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 1,
+        "won_rounds": 1,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_1_negative",
+      "language": "en",
+      "query": "Match 2396949, map Nuke. Count rounds where karrigan trades teammate kyousuke: kills the enemy who killed kyousuke, more than 0 and at most 320 ticks later in the same round.",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 21,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_1_negative",
+      "language": "en",
+      "query": "Match 2396949, map Nuke. Round win rate when karrigan trades teammate kyousuke: kills the enemy who killed kyousuke, more than 0 and at most 320 ticks later in the same round.",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 21,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_1_negative",
+      "language": "zh",
+      "query": "比赛 2396949，地图 Nuke。统计回合数： karrigan 为队友 kyousuke 补枪的回合：在同一回合中，kyousuke 被敌人击杀后，karrigan 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 21,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_1_negative",
+      "language": "zh",
+      "query": "比赛 2396949，地图 Nuke。回合胜率： karrigan 为队友 kyousuke 补枪的回合：在同一回合中，kyousuke 被敌人击杀后，karrigan 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 21,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_2_positive",
+      "language": "en",
+      "query": "Match 2396948, map Dust2. Count rounds where molodoy makes the opening first kill by killing jL.",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 2,
+        "exact_matched_rounds": 2,
+        "co_present_rounds": 17,
+        "match_rate": 0.11764705882352941,
+        "matched_source_ids": [
+          "graph:2396948:Dust2:1",
+          "graph:2396948:Dust2:5"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396948:Dust2:1",
+            "graph:2396948:Dust2:5"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 2,
+        "won_rounds": 2,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_2_positive",
+      "language": "en",
+      "query": "Match 2396948, map Dust2. Round win rate when molodoy makes the opening first kill by killing jL.",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 2,
+        "exact_matched_rounds": 2,
+        "co_present_rounds": 17,
+        "match_rate": 0.11764705882352941,
+        "matched_source_ids": [
+          "graph:2396948:Dust2:1",
+          "graph:2396948:Dust2:5"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396948:Dust2:1",
+            "graph:2396948:Dust2:5"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 2,
+        "won_rounds": 2,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_2_positive",
+      "language": "zh",
+      "query": "比赛 2396948，地图 Dust2。统计回合数： molodoy 击杀 jL 并拿到本回合首杀的回合。",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 2,
+        "exact_matched_rounds": 2,
+        "co_present_rounds": 17,
+        "match_rate": 0.11764705882352941,
+        "matched_source_ids": [
+          "graph:2396948:Dust2:1",
+          "graph:2396948:Dust2:5"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396948:Dust2:1",
+            "graph:2396948:Dust2:5"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 2,
+        "won_rounds": 2,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_2_positive",
+      "language": "zh",
+      "query": "比赛 2396948，地图 Dust2。回合胜率： molodoy 击杀 jL 并拿到本回合首杀的回合。",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 2,
+        "exact_matched_rounds": 2,
+        "co_present_rounds": 17,
+        "match_rate": 0.11764705882352941,
+        "matched_source_ids": [
+          "graph:2396948:Dust2:1",
+          "graph:2396948:Dust2:5"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396948:Dust2:1",
+            "graph:2396948:Dust2:5"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 2,
+        "won_rounds": 2,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_2_negative",
+      "language": "en",
+      "query": "Match 2396948, map Dust2. Count rounds where ropz makes the opening first kill by killing yuurih.",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 17,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_2_negative",
+      "language": "en",
+      "query": "Match 2396948, map Dust2. Round win rate when ropz makes the opening first kill by killing yuurih.",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 17,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_2_negative",
+      "language": "zh",
+      "query": "比赛 2396948，地图 Dust2。统计回合数： ropz 击杀 yuurih 并拿到本回合首杀的回合。",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 17,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_2_negative",
+      "language": "zh",
+      "query": "比赛 2396948，地图 Dust2。回合胜率： ropz 击杀 yuurih 并拿到本回合首杀的回合。",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 17,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_2_positive",
+      "language": "en",
+      "query": "Match 2396948, map Dust2. Count rounds where ropz kills yuurih strictly after a bomb plant in that round.",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 3,
+        "exact_matched_rounds": 3,
+        "co_present_rounds": 17,
+        "match_rate": 0.17647058823529413,
+        "matched_source_ids": [
+          "graph:2396948:Dust2:3",
+          "graph:2396948:Dust2:6",
+          "graph:2396948:Dust2:12"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396948:Dust2:3",
+            "graph:2396948:Dust2:6",
+            "graph:2396948:Dust2:12"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 3,
+        "won_rounds": 3,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_2_positive",
+      "language": "en",
+      "query": "Match 2396948, map Dust2. Round win rate when ropz kills yuurih strictly after a bomb plant in that round.",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 3,
+        "exact_matched_rounds": 3,
+        "co_present_rounds": 17,
+        "match_rate": 0.17647058823529413,
+        "matched_source_ids": [
+          "graph:2396948:Dust2:3",
+          "graph:2396948:Dust2:6",
+          "graph:2396948:Dust2:12"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396948:Dust2:3",
+            "graph:2396948:Dust2:6",
+            "graph:2396948:Dust2:12"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 3,
+        "won_rounds": 3,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_2_positive",
+      "language": "zh",
+      "query": "比赛 2396948，地图 Dust2。统计回合数： ropz 击杀 yuurih，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 3,
+        "exact_matched_rounds": 3,
+        "co_present_rounds": 17,
+        "match_rate": 0.17647058823529413,
+        "matched_source_ids": [
+          "graph:2396948:Dust2:3",
+          "graph:2396948:Dust2:6",
+          "graph:2396948:Dust2:12"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396948:Dust2:3",
+            "graph:2396948:Dust2:6",
+            "graph:2396948:Dust2:12"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 3,
+        "won_rounds": 3,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_2_positive",
+      "language": "zh",
+      "query": "比赛 2396948，地图 Dust2。回合胜率： ropz 击杀 yuurih，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 3,
+        "exact_matched_rounds": 3,
+        "co_present_rounds": 17,
+        "match_rate": 0.17647058823529413,
+        "matched_source_ids": [
+          "graph:2396948:Dust2:3",
+          "graph:2396948:Dust2:6",
+          "graph:2396948:Dust2:12"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396948:Dust2:3",
+            "graph:2396948:Dust2:6",
+            "graph:2396948:Dust2:12"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 3,
+        "won_rounds": 3,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_2_negative",
+      "language": "en",
+      "query": "Match 2396948, map Dust2. Count rounds where flameZ kills FalleN strictly after a bomb plant in that round.",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 17,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_2_negative",
+      "language": "en",
+      "query": "Match 2396948, map Dust2. Round win rate when flameZ kills FalleN strictly after a bomb plant in that round.",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 17,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_2_negative",
+      "language": "zh",
+      "query": "比赛 2396948，地图 Dust2。统计回合数： flameZ 击杀 FalleN，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 17,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_2_negative",
+      "language": "zh",
+      "query": "比赛 2396948，地图 Dust2。回合胜率： flameZ 击杀 FalleN，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 17,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_2_positive",
+      "language": "en",
+      "query": "Match 2396948, map Dust2. Count rounds where jL trades teammate apEX: kills the enemy who killed apEX, more than 0 and at most 320 ticks later in the same round.",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 2,
+        "exact_matched_rounds": 2,
+        "co_present_rounds": 17,
+        "match_rate": 0.11764705882352941,
+        "matched_source_ids": [
+          "graph:2396948:Dust2:6",
+          "graph:2396948:Dust2:16"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396948:Dust2:6",
+            "graph:2396948:Dust2:16"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 2,
+        "won_rounds": 2,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_2_positive",
+      "language": "en",
+      "query": "Match 2396948, map Dust2. Round win rate when jL trades teammate apEX: kills the enemy who killed apEX, more than 0 and at most 320 ticks later in the same round.",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 2,
+        "exact_matched_rounds": 2,
+        "co_present_rounds": 17,
+        "match_rate": 0.11764705882352941,
+        "matched_source_ids": [
+          "graph:2396948:Dust2:6",
+          "graph:2396948:Dust2:16"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396948:Dust2:6",
+            "graph:2396948:Dust2:16"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 2,
+        "won_rounds": 2,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_2_positive",
+      "language": "zh",
+      "query": "比赛 2396948，地图 Dust2。统计回合数： jL 为队友 apEX 补枪的回合：在同一回合中，apEX 被敌人击杀后，jL 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 2,
+        "exact_matched_rounds": 2,
+        "co_present_rounds": 17,
+        "match_rate": 0.11764705882352941,
+        "matched_source_ids": [
+          "graph:2396948:Dust2:6",
+          "graph:2396948:Dust2:16"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396948:Dust2:6",
+            "graph:2396948:Dust2:16"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 2,
+        "won_rounds": 2,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_2_positive",
+      "language": "zh",
+      "query": "比赛 2396948，地图 Dust2。回合胜率： jL 为队友 apEX 补枪的回合：在同一回合中，apEX 被敌人击杀后，jL 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 2,
+        "exact_matched_rounds": 2,
+        "co_present_rounds": 17,
+        "match_rate": 0.11764705882352941,
+        "matched_source_ids": [
+          "graph:2396948:Dust2:6",
+          "graph:2396948:Dust2:16"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396948:Dust2:6",
+            "graph:2396948:Dust2:16"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 2,
+        "won_rounds": 2,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_2_negative",
+      "language": "en",
+      "query": "Match 2396948, map Dust2. Count rounds where KSCERATO trades teammate YEKINDAR: kills the enemy who killed YEKINDAR, more than 0 and at most 320 ticks later in the same round.",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 17,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_2_negative",
+      "language": "en",
+      "query": "Match 2396948, map Dust2. Round win rate when KSCERATO trades teammate YEKINDAR: kills the enemy who killed YEKINDAR, more than 0 and at most 320 ticks later in the same round.",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 17,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_2_negative",
+      "language": "zh",
+      "query": "比赛 2396948，地图 Dust2。统计回合数： KSCERATO 为队友 YEKINDAR 补枪的回合：在同一回合中，YEKINDAR 被敌人击杀后，KSCERATO 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 17,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_2_negative",
+      "language": "zh",
+      "query": "比赛 2396948，地图 Dust2。回合胜率： KSCERATO 为队友 YEKINDAR 补枪的回合：在同一回合中，YEKINDAR 被敌人击杀后，KSCERATO 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 17,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_3_positive",
+      "language": "en",
+      "query": "Match 2396614, map Ancient. Count rounds where donk makes the opening first kill by killing xfl0ud.",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 3,
+        "exact_matched_rounds": 3,
+        "co_present_rounds": 30,
+        "match_rate": 0.1,
+        "matched_source_ids": [
+          "graph:2396614:Ancient:7",
+          "graph:2396614:Ancient:18",
+          "graph:2396614:Ancient:29"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396614:Ancient:29"
+          ],
+          "lost": [
+            "graph:2396614:Ancient:7",
+            "graph:2396614:Ancient:18"
+          ],
+          "unknown": []
+        },
+        "known_outcome_rounds": 3,
+        "won_rounds": 1,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 0.3333333333333333,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_3_positive",
+      "language": "en",
+      "query": "Match 2396614, map Ancient. Round win rate when donk makes the opening first kill by killing xfl0ud.",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 3,
+        "exact_matched_rounds": 3,
+        "co_present_rounds": 30,
+        "match_rate": 0.1,
+        "matched_source_ids": [
+          "graph:2396614:Ancient:7",
+          "graph:2396614:Ancient:18",
+          "graph:2396614:Ancient:29"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396614:Ancient:29"
+          ],
+          "lost": [
+            "graph:2396614:Ancient:7",
+            "graph:2396614:Ancient:18"
+          ],
+          "unknown": []
+        },
+        "known_outcome_rounds": 3,
+        "won_rounds": 1,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 0.3333333333333333,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_3_positive",
+      "language": "zh",
+      "query": "比赛 2396614，地图 Ancient。统计回合数： donk 击杀 xfl0ud 并拿到本回合首杀的回合。",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 3,
+        "exact_matched_rounds": 3,
+        "co_present_rounds": 30,
+        "match_rate": 0.1,
+        "matched_source_ids": [
+          "graph:2396614:Ancient:7",
+          "graph:2396614:Ancient:18",
+          "graph:2396614:Ancient:29"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396614:Ancient:29"
+          ],
+          "lost": [
+            "graph:2396614:Ancient:7",
+            "graph:2396614:Ancient:18"
+          ],
+          "unknown": []
+        },
+        "known_outcome_rounds": 3,
+        "won_rounds": 1,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 0.3333333333333333,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_3_positive",
+      "language": "zh",
+      "query": "比赛 2396614，地图 Ancient。回合胜率： donk 击杀 xfl0ud 并拿到本回合首杀的回合。",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 3,
+        "exact_matched_rounds": 3,
+        "co_present_rounds": 30,
+        "match_rate": 0.1,
+        "matched_source_ids": [
+          "graph:2396614:Ancient:7",
+          "graph:2396614:Ancient:18",
+          "graph:2396614:Ancient:29"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396614:Ancient:29"
+          ],
+          "lost": [
+            "graph:2396614:Ancient:7",
+            "graph:2396614:Ancient:18"
+          ],
+          "unknown": []
+        },
+        "known_outcome_rounds": 3,
+        "won_rounds": 1,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 0.3333333333333333,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_3_negative",
+      "language": "en",
+      "query": "Match 2396614, map Ancient. Count rounds where dem0n makes the opening first kill by killing donk.",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 30,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_3_negative",
+      "language": "en",
+      "query": "Match 2396614, map Ancient. Round win rate when dem0n makes the opening first kill by killing donk.",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 30,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_3_negative",
+      "language": "zh",
+      "query": "比赛 2396614，地图 Ancient。统计回合数： dem0n 击杀 donk 并拿到本回合首杀的回合。",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 30,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_3_negative",
+      "language": "zh",
+      "query": "比赛 2396614，地图 Ancient。回合胜率： dem0n 击杀 donk 并拿到本回合首杀的回合。",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 30,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_3_positive",
+      "language": "en",
+      "query": "Match 2396614, map Ancient. Count rounds where dem0n kills donk strictly after a bomb plant in that round.",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 3,
+        "exact_matched_rounds": 3,
+        "co_present_rounds": 30,
+        "match_rate": 0.1,
+        "matched_source_ids": [
+          "graph:2396614:Ancient:5",
+          "graph:2396614:Ancient:6",
+          "graph:2396614:Ancient:25"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396614:Ancient:6"
+          ],
+          "lost": [
+            "graph:2396614:Ancient:5",
+            "graph:2396614:Ancient:25"
+          ],
+          "unknown": []
+        },
+        "known_outcome_rounds": 3,
+        "won_rounds": 1,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 0.3333333333333333,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_3_positive",
+      "language": "en",
+      "query": "Match 2396614, map Ancient. Round win rate when dem0n kills donk strictly after a bomb plant in that round.",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 3,
+        "exact_matched_rounds": 3,
+        "co_present_rounds": 30,
+        "match_rate": 0.1,
+        "matched_source_ids": [
+          "graph:2396614:Ancient:5",
+          "graph:2396614:Ancient:6",
+          "graph:2396614:Ancient:25"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396614:Ancient:6"
+          ],
+          "lost": [
+            "graph:2396614:Ancient:5",
+            "graph:2396614:Ancient:25"
+          ],
+          "unknown": []
+        },
+        "known_outcome_rounds": 3,
+        "won_rounds": 1,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 0.3333333333333333,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_3_positive",
+      "language": "zh",
+      "query": "比赛 2396614，地图 Ancient。统计回合数： dem0n 击杀 donk，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 3,
+        "exact_matched_rounds": 3,
+        "co_present_rounds": 30,
+        "match_rate": 0.1,
+        "matched_source_ids": [
+          "graph:2396614:Ancient:5",
+          "graph:2396614:Ancient:6",
+          "graph:2396614:Ancient:25"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396614:Ancient:6"
+          ],
+          "lost": [
+            "graph:2396614:Ancient:5",
+            "graph:2396614:Ancient:25"
+          ],
+          "unknown": []
+        },
+        "known_outcome_rounds": 3,
+        "won_rounds": 1,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 0.3333333333333333,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_3_positive",
+      "language": "zh",
+      "query": "比赛 2396614，地图 Ancient。回合胜率： dem0n 击杀 donk，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 3,
+        "exact_matched_rounds": 3,
+        "co_present_rounds": 30,
+        "match_rate": 0.1,
+        "matched_source_ids": [
+          "graph:2396614:Ancient:5",
+          "graph:2396614:Ancient:6",
+          "graph:2396614:Ancient:25"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396614:Ancient:6"
+          ],
+          "lost": [
+            "graph:2396614:Ancient:5",
+            "graph:2396614:Ancient:25"
+          ],
+          "unknown": []
+        },
+        "known_outcome_rounds": 3,
+        "won_rounds": 1,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 0.3333333333333333,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_3_negative",
+      "language": "en",
+      "query": "Match 2396614, map Ancient. Count rounds where dem0n kills zont1x strictly after a bomb plant in that round.",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 30,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_3_negative",
+      "language": "en",
+      "query": "Match 2396614, map Ancient. Round win rate when dem0n kills zont1x strictly after a bomb plant in that round.",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 30,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_3_negative",
+      "language": "zh",
+      "query": "比赛 2396614，地图 Ancient。统计回合数： dem0n 击杀 zont1x，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 30,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_3_negative",
+      "language": "zh",
+      "query": "比赛 2396614，地图 Ancient。回合胜率： dem0n 击杀 zont1x，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 30,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_3_positive",
+      "language": "en",
+      "query": "Match 2396614, map Ancient. Count rounds where zont1x trades teammate donk: kills the enemy who killed donk, more than 0 and at most 320 ticks later in the same round.",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 4,
+        "exact_matched_rounds": 4,
+        "co_present_rounds": 30,
+        "match_rate": 0.13333333333333333,
+        "matched_source_ids": [
+          "graph:2396614:Ancient:4",
+          "graph:2396614:Ancient:14",
+          "graph:2396614:Ancient:25",
+          "graph:2396614:Ancient:26"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396614:Ancient:4",
+            "graph:2396614:Ancient:25"
+          ],
+          "lost": [
+            "graph:2396614:Ancient:14",
+            "graph:2396614:Ancient:26"
+          ],
+          "unknown": []
+        },
+        "known_outcome_rounds": 4,
+        "won_rounds": 2,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 0.5,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_3_positive",
+      "language": "en",
+      "query": "Match 2396614, map Ancient. Round win rate when zont1x trades teammate donk: kills the enemy who killed donk, more than 0 and at most 320 ticks later in the same round.",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 4,
+        "exact_matched_rounds": 4,
+        "co_present_rounds": 30,
+        "match_rate": 0.13333333333333333,
+        "matched_source_ids": [
+          "graph:2396614:Ancient:4",
+          "graph:2396614:Ancient:14",
+          "graph:2396614:Ancient:25",
+          "graph:2396614:Ancient:26"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396614:Ancient:4",
+            "graph:2396614:Ancient:25"
+          ],
+          "lost": [
+            "graph:2396614:Ancient:14",
+            "graph:2396614:Ancient:26"
+          ],
+          "unknown": []
+        },
+        "known_outcome_rounds": 4,
+        "won_rounds": 2,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 0.5,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_3_positive",
+      "language": "zh",
+      "query": "比赛 2396614，地图 Ancient。统计回合数： zont1x 为队友 donk 补枪的回合：在同一回合中，donk 被敌人击杀后，zont1x 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 4,
+        "exact_matched_rounds": 4,
+        "co_present_rounds": 30,
+        "match_rate": 0.13333333333333333,
+        "matched_source_ids": [
+          "graph:2396614:Ancient:4",
+          "graph:2396614:Ancient:14",
+          "graph:2396614:Ancient:25",
+          "graph:2396614:Ancient:26"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396614:Ancient:4",
+            "graph:2396614:Ancient:25"
+          ],
+          "lost": [
+            "graph:2396614:Ancient:14",
+            "graph:2396614:Ancient:26"
+          ],
+          "unknown": []
+        },
+        "known_outcome_rounds": 4,
+        "won_rounds": 2,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 0.5,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_3_positive",
+      "language": "zh",
+      "query": "比赛 2396614，地图 Ancient。回合胜率： zont1x 为队友 donk 补枪的回合：在同一回合中，donk 被敌人击杀后，zont1x 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 4,
+        "exact_matched_rounds": 4,
+        "co_present_rounds": 30,
+        "match_rate": 0.13333333333333333,
+        "matched_source_ids": [
+          "graph:2396614:Ancient:4",
+          "graph:2396614:Ancient:14",
+          "graph:2396614:Ancient:25",
+          "graph:2396614:Ancient:26"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396614:Ancient:4",
+            "graph:2396614:Ancient:25"
+          ],
+          "lost": [
+            "graph:2396614:Ancient:14",
+            "graph:2396614:Ancient:26"
+          ],
+          "unknown": []
+        },
+        "known_outcome_rounds": 4,
+        "won_rounds": 2,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 0.5,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_3_negative",
+      "language": "en",
+      "query": "Match 2396614, map Ancient. Count rounds where cmtry trades teammate dziugss: kills the enemy who killed dziugss, more than 0 and at most 320 ticks later in the same round.",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 30,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_3_negative",
+      "language": "en",
+      "query": "Match 2396614, map Ancient. Round win rate when cmtry trades teammate dziugss: kills the enemy who killed dziugss, more than 0 and at most 320 ticks later in the same round.",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 30,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_3_negative",
+      "language": "zh",
+      "query": "比赛 2396614，地图 Ancient。统计回合数： cmtry 为队友 dziugss 补枪的回合：在同一回合中，dziugss 被敌人击杀后，cmtry 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 30,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_3_negative",
+      "language": "zh",
+      "query": "比赛 2396614，地图 Ancient。回合胜率： cmtry 为队友 dziugss 补枪的回合：在同一回合中，dziugss 被敌人击杀后，cmtry 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 30,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_4_positive",
+      "language": "en",
+      "query": "Match 2396609, map Mirage. Count rounds where m0NESY makes the opening first kill by killing dumau.",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 3,
+        "exact_matched_rounds": 3,
+        "co_present_rounds": 20,
+        "match_rate": 0.15,
+        "matched_source_ids": [
+          "graph:2396609:Mirage:4",
+          "graph:2396609:Mirage:5",
+          "graph:2396609:Mirage:10"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396609:Mirage:4",
+            "graph:2396609:Mirage:5",
+            "graph:2396609:Mirage:10"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 3,
+        "won_rounds": 3,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_4_positive",
+      "language": "en",
+      "query": "Match 2396609, map Mirage. Round win rate when m0NESY makes the opening first kill by killing dumau.",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 3,
+        "exact_matched_rounds": 3,
+        "co_present_rounds": 20,
+        "match_rate": 0.15,
+        "matched_source_ids": [
+          "graph:2396609:Mirage:4",
+          "graph:2396609:Mirage:5",
+          "graph:2396609:Mirage:10"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396609:Mirage:4",
+            "graph:2396609:Mirage:5",
+            "graph:2396609:Mirage:10"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 3,
+        "won_rounds": 3,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_4_positive",
+      "language": "zh",
+      "query": "比赛 2396609，地图 Mirage。统计回合数： m0NESY 击杀 dumau 并拿到本回合首杀的回合。",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 3,
+        "exact_matched_rounds": 3,
+        "co_present_rounds": 20,
+        "match_rate": 0.15,
+        "matched_source_ids": [
+          "graph:2396609:Mirage:4",
+          "graph:2396609:Mirage:5",
+          "graph:2396609:Mirage:10"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396609:Mirage:4",
+            "graph:2396609:Mirage:5",
+            "graph:2396609:Mirage:10"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 3,
+        "won_rounds": 3,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_4_positive",
+      "language": "zh",
+      "query": "比赛 2396609，地图 Mirage。回合胜率： m0NESY 击杀 dumau 并拿到本回合首杀的回合。",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 3,
+        "exact_matched_rounds": 3,
+        "co_present_rounds": 20,
+        "match_rate": 0.15,
+        "matched_source_ids": [
+          "graph:2396609:Mirage:4",
+          "graph:2396609:Mirage:5",
+          "graph:2396609:Mirage:10"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396609:Mirage:4",
+            "graph:2396609:Mirage:5",
+            "graph:2396609:Mirage:10"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 3,
+        "won_rounds": 3,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_4_negative",
+      "language": "en",
+      "query": "Match 2396609, map Mirage. Count rounds where latto makes the opening first kill by killing m0NESY.",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 20,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_4_negative",
+      "language": "en",
+      "query": "Match 2396609, map Mirage. Round win rate when latto makes the opening first kill by killing m0NESY.",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 20,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_4_negative",
+      "language": "zh",
+      "query": "比赛 2396609，地图 Mirage。统计回合数： latto 击杀 m0NESY 并拿到本回合首杀的回合。",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 20,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "opening_4_negative",
+      "language": "zh",
+      "query": "比赛 2396609，地图 Mirage。回合胜率： latto 击杀 m0NESY 并拿到本回合首杀的回合。",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 20,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_4_positive",
+      "language": "en",
+      "query": "Match 2396609, map Mirage. Count rounds where dumau kills NiKo strictly after a bomb plant in that round.",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 2,
+        "exact_matched_rounds": 2,
+        "co_present_rounds": 20,
+        "match_rate": 0.1,
+        "matched_source_ids": [
+          "graph:2396609:Mirage:3",
+          "graph:2396609:Mirage:18"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396609:Mirage:3",
+            "graph:2396609:Mirage:18"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 2,
+        "won_rounds": 2,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_4_positive",
+      "language": "en",
+      "query": "Match 2396609, map Mirage. Round win rate when dumau kills NiKo strictly after a bomb plant in that round.",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 2,
+        "exact_matched_rounds": 2,
+        "co_present_rounds": 20,
+        "match_rate": 0.1,
+        "matched_source_ids": [
+          "graph:2396609:Mirage:3",
+          "graph:2396609:Mirage:18"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396609:Mirage:3",
+            "graph:2396609:Mirage:18"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 2,
+        "won_rounds": 2,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_4_positive",
+      "language": "zh",
+      "query": "比赛 2396609，地图 Mirage。统计回合数： dumau 击杀 NiKo，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 2,
+        "exact_matched_rounds": 2,
+        "co_present_rounds": 20,
+        "match_rate": 0.1,
+        "matched_source_ids": [
+          "graph:2396609:Mirage:3",
+          "graph:2396609:Mirage:18"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396609:Mirage:3",
+            "graph:2396609:Mirage:18"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 2,
+        "won_rounds": 2,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_4_positive",
+      "language": "zh",
+      "query": "比赛 2396609，地图 Mirage。回合胜率： dumau 击杀 NiKo，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 2,
+        "exact_matched_rounds": 2,
+        "co_present_rounds": 20,
+        "match_rate": 0.1,
+        "matched_source_ids": [
+          "graph:2396609:Mirage:3",
+          "graph:2396609:Mirage:18"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396609:Mirage:3",
+            "graph:2396609:Mirage:18"
+          ],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 2,
+        "won_rounds": 2,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 1.0,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_4_negative",
+      "language": "en",
+      "query": "Match 2396609, map Mirage. Count rounds where try kills kyousuke strictly after a bomb plant in that round.",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 20,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_4_negative",
+      "language": "en",
+      "query": "Match 2396609, map Mirage. Round win rate when try kills kyousuke strictly after a bomb plant in that round.",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 20,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_4_negative",
+      "language": "zh",
+      "query": "比赛 2396609，地图 Mirage。统计回合数： try 击杀 kyousuke，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 20,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "after_plant_4_negative",
+      "language": "zh",
+      "query": "比赛 2396609，地图 Mirage。回合胜率： try 击杀 kyousuke，且这次击杀严格发生在该回合炸弹安放之后的回合。",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 20,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_4_positive",
+      "language": "en",
+      "query": "Match 2396609, map Mirage. Count rounds where arT trades teammate n1ssim: kills the enemy who killed n1ssim, more than 0 and at most 320 ticks later in the same round.",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 2,
+        "exact_matched_rounds": 2,
+        "co_present_rounds": 20,
+        "match_rate": 0.1,
+        "matched_source_ids": [
+          "graph:2396609:Mirage:4",
+          "graph:2396609:Mirage:8"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396609:Mirage:8"
+          ],
+          "lost": [
+            "graph:2396609:Mirage:4"
+          ],
+          "unknown": []
+        },
+        "known_outcome_rounds": 2,
+        "won_rounds": 1,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 0.5,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_4_positive",
+      "language": "en",
+      "query": "Match 2396609, map Mirage. Round win rate when arT trades teammate n1ssim: kills the enemy who killed n1ssim, more than 0 and at most 320 ticks later in the same round.",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 2,
+        "exact_matched_rounds": 2,
+        "co_present_rounds": 20,
+        "match_rate": 0.1,
+        "matched_source_ids": [
+          "graph:2396609:Mirage:4",
+          "graph:2396609:Mirage:8"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396609:Mirage:8"
+          ],
+          "lost": [
+            "graph:2396609:Mirage:4"
+          ],
+          "unknown": []
+        },
+        "known_outcome_rounds": 2,
+        "won_rounds": 1,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 0.5,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_4_positive",
+      "language": "zh",
+      "query": "比赛 2396609，地图 Mirage。统计回合数： arT 为队友 n1ssim 补枪的回合：在同一回合中，n1ssim 被敌人击杀后，arT 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 2,
+        "exact_matched_rounds": 2,
+        "co_present_rounds": 20,
+        "match_rate": 0.1,
+        "matched_source_ids": [
+          "graph:2396609:Mirage:4",
+          "graph:2396609:Mirage:8"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396609:Mirage:8"
+          ],
+          "lost": [
+            "graph:2396609:Mirage:4"
+          ],
+          "unknown": []
+        },
+        "known_outcome_rounds": 2,
+        "won_rounds": 1,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 0.5,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_4_positive",
+      "language": "zh",
+      "query": "比赛 2396609，地图 Mirage。回合胜率： arT 为队友 n1ssim 补枪的回合：在同一回合中，n1ssim 被敌人击杀后，arT 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 2,
+        "exact_matched_rounds": 2,
+        "co_present_rounds": 20,
+        "match_rate": 0.1,
+        "matched_source_ids": [
+          "graph:2396609:Mirage:4",
+          "graph:2396609:Mirage:8"
+        ],
+        "outcome_source_ids": {
+          "won": [
+            "graph:2396609:Mirage:8"
+          ],
+          "lost": [
+            "graph:2396609:Mirage:4"
+          ],
+          "unknown": []
+        },
+        "known_outcome_rounds": 2,
+        "won_rounds": 1,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": 0.5,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_4_negative",
+      "language": "en",
+      "query": "Match 2396609, map Mirage. Count rounds where NiKo trades teammate kyousuke: kills the enemy who killed kyousuke, more than 0 and at most 320 ticks later in the same round.",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 20,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_4_negative",
+      "language": "en",
+      "query": "Match 2396609, map Mirage. Round win rate when NiKo trades teammate kyousuke: kills the enemy who killed kyousuke, more than 0 and at most 320 ticks later in the same round.",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 20,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_4_negative",
+      "language": "zh",
+      "query": "比赛 2396609，地图 Mirage。统计回合数： NiKo 为队友 kyousuke 补枪的回合：在同一回合中，kyousuke 被敌人击杀后，NiKo 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "mode": "count",
+      "aggregation": {
+        "mode": "count",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 20,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    },
+    {
+      "query_id": "trade_4_negative",
+      "language": "zh",
+      "query": "比赛 2396609，地图 Mirage。回合胜率： NiKo 为队友 kyousuke 补枪的回合：在同一回合中，kyousuke 被敌人击杀后，NiKo 在大于 0 且不超过 320 tick 内击杀该敌人。",
+      "mode": "win_rate",
+      "aggregation": {
+        "mode": "win_rate",
+        "observed_matched_rounds": 0,
+        "exact_matched_rounds": 0,
+        "co_present_rounds": 20,
+        "match_rate": 0.0,
+        "matched_source_ids": [],
+        "outcome_source_ids": {
+          "won": [],
+          "lost": [],
+          "unknown": []
+        },
+        "known_outcome_rounds": 0,
+        "won_rounds": 0,
+        "unknown_outcome_rounds": 0,
+        "observed_win_rate": null,
+        "outcome_complete": true
+      },
+      "checks": {
+        "exact_count": true,
+        "sources": true,
+        "denominator": true,
+        "wins": true,
+        "known_outcomes": true,
+        "win_rate": true,
+        "sample_limit": true,
+        "mode": true
+      },
+      "passed": true
+    }
+  ]
+}
