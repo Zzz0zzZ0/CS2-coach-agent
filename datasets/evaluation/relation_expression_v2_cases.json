@@ -1,0 +1,425 @@
+{
+  "identity": "synthetic development, authored before implementation; not independent human or held-out benchmark",
+  "cases": [
+    {
+      "id": "expression_01",
+      "query": "Cedar was killed by Alpha after the bomb was planted",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "parsed",
+        "family": "after_plant",
+        "actor": "alpha",
+        "target": "cedar",
+        "mode": "rounds"
+      }
+    },
+    {
+      "id": "expression_02",
+      "query": "Cedar 被 Alpha 击杀，发生在下包之后",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "parsed",
+        "family": "after_plant",
+        "actor": "alpha",
+        "target": "cedar",
+        "mode": "rounds"
+      }
+    },
+    {
+      "id": "expression_03",
+      "query": "Alpha killed Cedar after the bomb was planted",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "parsed",
+        "family": "after_plant",
+        "actor": "alpha",
+        "target": "cedar",
+        "mode": "rounds"
+      }
+    },
+    {
+      "id": "expression_04",
+      "query": "下包后 Alpha 击杀 Cedar",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "parsed",
+        "family": "after_plant",
+        "actor": "alpha",
+        "target": "cedar",
+        "mode": "rounds"
+      }
+    },
+    {
+      "id": "expression_05",
+      "query": "Alpha got the opening kill against Cedar",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "parsed",
+        "family": "opening",
+        "actor": "alpha",
+        "target": "cedar",
+        "mode": "rounds"
+      }
+    },
+    {
+      "id": "expression_06",
+      "query": "Cedar was first killed by Alpha",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "parsed",
+        "family": "opening",
+        "actor": "alpha",
+        "target": "cedar",
+        "mode": "rounds"
+      }
+    },
+    {
+      "id": "expression_07",
+      "query": "Alpha 首杀 Cedar",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "parsed",
+        "family": "opening",
+        "actor": "alpha",
+        "target": "cedar",
+        "mode": "rounds"
+      }
+    },
+    {
+      "id": "expression_08",
+      "query": "Cedar 被 Alpha 首杀",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "parsed",
+        "family": "opening",
+        "actor": "alpha",
+        "target": "cedar",
+        "mode": "rounds"
+      }
+    },
+    {
+      "id": "expression_09",
+      "query": "Alpha traded Bravo within 320 ticks",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "parsed",
+        "family": "trade",
+        "actor": "alpha",
+        "target": "bravo",
+        "mode": "rounds"
+      }
+    },
+    {
+      "id": "expression_10",
+      "query": "Bravo was traded by Alpha within 320 ticks",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "parsed",
+        "family": "trade",
+        "actor": "alpha",
+        "target": "bravo",
+        "mode": "rounds"
+      }
+    },
+    {
+      "id": "expression_11",
+      "query": "Alpha 为 Bravo 补枪，在 320 ticks 内",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "parsed",
+        "family": "trade",
+        "actor": "alpha",
+        "target": "bravo",
+        "mode": "rounds"
+      }
+    },
+    {
+      "id": "expression_12",
+      "query": "Count rounds where Cedar was killed by Alpha after the bomb was planted",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "parsed",
+        "family": "after_plant",
+        "actor": "alpha",
+        "target": "cedar",
+        "mode": "count"
+      }
+    },
+    {
+      "id": "expression_13",
+      "query": "How many rounds where Alpha got the opening kill against Cedar",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "parsed",
+        "family": "opening",
+        "actor": "alpha",
+        "target": "cedar",
+        "mode": "count"
+      }
+    },
+    {
+      "id": "expression_14",
+      "query": "统计回合数：Alpha 为 Bravo 补枪，在 320 tick 内",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "parsed",
+        "family": "trade",
+        "actor": "alpha",
+        "target": "bravo",
+        "mode": "count"
+      }
+    },
+    {
+      "id": "expression_15",
+      "query": "Round win rate when Alpha traded Bravo within 320 ticks",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "parsed",
+        "family": "trade",
+        "actor": "alpha",
+        "target": "bravo",
+        "mode": "win_rate"
+      }
+    },
+    {
+      "id": "expression_16",
+      "query": "回合胜率：下包后 Alpha 击杀 Cedar",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "parsed",
+        "family": "after_plant",
+        "actor": "alpha",
+        "target": "cedar",
+        "mode": "win_rate"
+      }
+    },
+    {
+      "id": "expression_17",
+      "query": "Cedar killed Alpha after the bomb was planted",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "parsed",
+        "family": "after_plant",
+        "actor": "cedar",
+        "target": "alpha",
+        "mode": "rounds"
+      }
+    },
+    {
+      "id": "expression_18",
+      "query": "Cedar was not killed by Alpha after the bomb was planted",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "unsupported"
+      }
+    },
+    {
+      "id": "expression_19",
+      "query": "Alpha 没有首杀 Cedar",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "unsupported"
+      }
+    },
+    {
+      "id": "expression_20",
+      "query": "Alpha trades Bravo within 5 seconds",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "unsupported"
+      }
+    },
+    {
+      "id": "expression_21",
+      "query": "Alpha traded Bravo within 320 ticks on CT side",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "unsupported"
+      }
+    },
+    {
+      "id": "expression_22",
+      "query": "Cedar 被 Alpha 首杀且使用 AWP",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "unsupported"
+      }
+    },
+    {
+      "id": "expression_23",
+      "query": "Alpha kills Cedar after the bomb was planted or Bravo gets the opening kill against Cedar",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "unsupported"
+      }
+    },
+    {
+      "id": "expression_24",
+      "query": "Alpha avenged Bravo within 320 ticks",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "unsupported"
+      }
+    },
+    {
+      "id": "expression_25",
+      "query": "Alpha 为 Bravo 补枪，在 320 tick 内且回合获胜",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "unsupported"
+      }
+    },
+    {
+      "id": "expression_26",
+      "query": "Alpha killed Cedar after the bomb was defused",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "unsupported"
+      }
+    },
+    {
+      "id": "expression_27",
+      "query": "Cedar was killed by Alpha before the bomb was planted",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "unsupported"
+      }
+    },
+    {
+      "id": "expression_28",
+      "query": "Alpha 首杀 Cedar 的概率超过 50%",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "unsupported"
+      }
+    },
+    {
+      "id": "expression_29",
+      "query": "Count kills where Alpha killed Cedar after the bomb was planted",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "unsupported"
+      }
+    },
+    {
+      "id": "expression_30",
+      "query": "Compare Alpha and Cedar on Mirage",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "ordinary"
+      }
+    },
+    {
+      "id": "expression_31",
+      "query": "Alpha opening kill rate on Mirage",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "ordinary"
+      }
+    },
+    {
+      "id": "expression_32",
+      "query": "Mirage post-plant defense tactics",
+      "metadata": {
+        "match_id": "dev",
+        "map": "Mirage"
+      },
+      "expected": {
+        "status": "ordinary"
+      }
+    }
+  ]
+}

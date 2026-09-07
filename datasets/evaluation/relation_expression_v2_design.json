@@ -1,0 +1,12 @@
+{
+  "cases_sha256": "01f7031c2ea1ef8a9fda2054802ace9f16b7a449a5261a59667b485fe9cb770c",
+  "base_commit": "ab1384752bed193e7b040214f7327ae4be3493c5",
+  "contract": {
+    "roles": "passive reverses grammatical subject, never event actor",
+    "units": "tick only; seconds and unparsed qualifiers unsupported",
+    "aggregation": "full scope before top-k; count matched rounds once; unknown scope gives lower bound and null exact count",
+    "win_rate": "actor roster side vs winner; known outcomes only; no samples returns null; label partial samples explicitly",
+    "provenance": "all matching round source IDs retained in aggregation; UI shows sample evidence separately"
+  },
+  "validation": "new synthetic fixtures; old frozen 48 queries and original tests remain observed regression; no production graph writes or model calls"
+}
