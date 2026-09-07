@@ -24,3 +24,5 @@ Profiler 显示，每次 `player_context` 都在读取某个选手的指标前�
 - Next actions：保留基线及结果，常驻进程加载后继续使用原有接口。
 
 普通检索回归通过：结构化契约 50/50，三模式开发查询 50/50；旧 holdout 为 Vector 28/30、Graph 30/30、Hybrid 30/30，与优化前相同。报告保存在 `datasets/evaluation/player_performance_v1_legacy/`。
+
+常驻服务已在空队列时加载优化。选手接口、关系完整计数和原 localhost:5173 前端实测正常，历史图谱 SHA256 未变，记录见 `player_performance_v1_live_audit.json`。
