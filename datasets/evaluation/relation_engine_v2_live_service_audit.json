@@ -1,0 +1,54 @@
+{
+  "search_parameters": [
+    "q",
+    "map_name",
+    "match_id",
+    "limit"
+  ],
+  "relation": {
+    "status": "found",
+    "family": "trade",
+    "actor": "donk",
+    "target": "zont1x",
+    "window_ticks": 320,
+    "scope": {
+      "match_id": "2396949",
+      "map": "Nuke"
+    },
+    "query": "Match 2396949, map Nuke. Round win rate when donk trades teammate zont1x within 320 ticks",
+    "mode": "win_rate",
+    "checked_rounds": 21,
+    "matched_rounds": 1,
+    "unknown_rounds": 0,
+    "complete": true,
+    "actor_id": "76561198386265483",
+    "target_id": "76561198995880877",
+    "reason": "verified_source_events",
+    "aggregation": {
+      "mode": "win_rate",
+      "observed_matched_rounds": 1,
+      "exact_matched_rounds": 1,
+      "co_present_rounds": 21,
+      "match_rate": 0.047619047619047616,
+      "matched_source_ids": [
+        "graph:2396949:Nuke:1"
+      ],
+      "outcome_source_ids": {
+        "won": [
+          "graph:2396949:Nuke:1"
+        ],
+        "lost": [],
+        "unknown": []
+      },
+      "known_outcome_rounds": 1,
+      "won_rounds": 1,
+      "unknown_outcome_rounds": 0,
+      "observed_win_rate": 1.0,
+      "outcome_complete": true
+    }
+  },
+  "message": "已找到满足关系条件的源事件。 匹配回合数：1。 donk 在结果已知的 1 个匹配回合中获胜 1 次，观测胜率 100.0%。 下方事件仅为证据样本，统计使用完整扫描。",
+  "budget_endpoint_status": 200,
+  "frontend_status": 200,
+  "frontend_note": "Existing Vite PID 2997 listens on IPv6 localhost; unchanged."
+}

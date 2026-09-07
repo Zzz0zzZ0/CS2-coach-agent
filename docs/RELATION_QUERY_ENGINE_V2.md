@@ -32,3 +32,5 @@ Alpha / Bravo / Cedar 是合成测试身份；实际查询须用范围内选手�
 - Verified：257 项离线测试、48 条原关系、96 条聚合核算、旧检索与页面消息 / 来源跳转；生产图谱未变。
 - Risks：表达仍受限，AI 标签与源解析共享事实；不作独立泛化或质量增益声明。
 - Next actions：完善公平基线，随后做隔离比赛检索评测；服务加载状态另行验收。
+
+常驻服务验收：在 Celery active / reserved / scheduled 与 Redis 队列均为 0 后正常重启 API 和 worker，新 `/api/graph/search` 已实测提供 match_id 与跨回合统计，预算端点返回 200，worker 响应且无任务。原 Vite 仍监听 IPv6 localhost:5173。见 `relation_engine_v2_live_service_audit.json`；此次检查未提交分析任务或触发模型调用。

@@ -1,0 +1,11 @@
+{
+  "rows_checked": 768,
+  "failures": [],
+  "passed": true,
+  "baseline_parity": {
+    "passed": 144,
+    "total": 144
+  },
+  "audit": "Independent binary-qrel Recall/nDCG arithmetic, scope/uniqueness/top-k and frozen input/code hashes; not independent human review.",
+  "report_sha256": "4d7b7f432765b3b44a378f1ef20d42e439f03971b86249e406ac081fd7e13459"
+}
