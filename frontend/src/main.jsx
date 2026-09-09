@@ -20,7 +20,7 @@ import {
 } from "./api";
 import "./styles.css";
 
-const FLOW = ["Parse", "Initialize", "Supervisor", "Tools", "Router", "RAG + Graph", "Critique", "Analyst", "Coach", "Verifier"];
+const FLOW = ["Parse", "Initialize", "Supervisor", "Tools", "Router", "Retrieve", "Critique", "Analyst", "Coach", "Verifier"];
 const FEATURED_TEAMS = ["Falcons", "Spirit", "Vitality", "FURIA", "MOUZ"];
 const ROUND_KIND_LABELS = { kill: "击杀", grenade: "道具", flash: "闪白", plant: "下包", tactical_sequence: "战术标签" };
 const ROUND_REASON_LABELS = { bomb_defused: "拆包结束", bomb_exploded: "炸弹爆炸", ct_killed: "CT 被淘汰", t_killed: "T 被淘汰", time_ran_out: "时间耗尽" };

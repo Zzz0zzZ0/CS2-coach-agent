@@ -1,0 +1,234 @@
+{
+  "date": "2026-09-09",
+  "status": "pass",
+  "backend_code_commit": "ccaa4ed1f504cdb1f2f32767145c912f587115f7",
+  "task_id": "c47e2e3d-b137-40e6-9585-8cd7f4d36f2f",
+  "rounds": 14,
+  "score": {
+    "Aurora": 1,
+    "G2": 13
+  },
+  "verification": {
+    "status": "pass",
+    "evidence_count": 27,
+    "current_evidence_count": 15,
+    "historical_evidence_count": 12,
+    "cited_evidence_ids": [
+      "C1",
+      "C10",
+      "C12",
+      "C14",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7",
+      "C8",
+      "C9"
+    ],
+    "cited_current_evidence_ids": [
+      "C1",
+      "C10",
+      "C12",
+      "C14",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7",
+      "C8",
+      "C9"
+    ],
+    "cited_historical_evidence_ids": [],
+    "unknown_citations": [],
+    "uncited_claim_count": 0,
+    "current_claims_without_current_evidence": 0,
+    "missing_outputs": []
+  },
+  "event_count": 20,
+  "completed_nodes": [
+    "Parse",
+    "Initialize",
+    "Supervisor",
+    "Tools",
+    "Router",
+    "Retrieve",
+    "Critique",
+    "Analyst",
+    "Coach",
+    "Verifier"
+  ],
+  "node_attempts": [
+    {
+      "node": "Parse",
+      "attempt": 1,
+      "status": "started"
+    },
+    {
+      "node": "Parse",
+      "attempt": 1,
+      "status": "completed",
+      "duration_ms": 1588.8
+    },
+    {
+      "node": "Initialize",
+      "attempt": 1,
+      "status": "started"
+    },
+    {
+      "node": "Initialize",
+      "attempt": 1,
+      "status": "completed",
+      "duration_ms": 844.37
+    },
+    {
+      "node": "Supervisor",
+      "attempt": 1,
+      "status": "started"
+    },
+    {
+      "node": "Supervisor",
+      "attempt": 1,
+      "status": "completed",
+      "duration_ms": 0.62
+    },
+    {
+      "node": "Tools",
+      "attempt": 1,
+      "status": "started"
+    },
+    {
+      "node": "Tools",
+      "attempt": 1,
+      "status": "completed",
+      "duration_ms": 1.6
+    },
+    {
+      "node": "Router",
+      "attempt": 1,
+      "status": "started"
+    },
+    {
+      "node": "Router",
+      "attempt": 1,
+      "status": "completed",
+      "duration_ms": 0.84
+    },
+    {
+      "node": "Retrieve",
+      "attempt": 1,
+      "status": "started"
+    },
+    {
+      "node": "Retrieve",
+      "attempt": 1,
+      "status": "completed",
+      "duration_ms": 1630.64
+    },
+    {
+      "node": "Critique",
+      "attempt": 1,
+      "status": "started"
+    },
+    {
+      "node": "Critique",
+      "attempt": 1,
+      "status": "completed",
+      "duration_ms": 0.71
+    },
+    {
+      "node": "Analyst",
+      "attempt": 1,
+      "status": "started"
+    },
+    {
+      "node": "Analyst",
+      "attempt": 1,
+      "status": "completed",
+      "duration_ms": 0.43
+    },
+    {
+      "node": "Coach",
+      "attempt": 1,
+      "status": "started"
+    },
+    {
+      "node": "Coach",
+      "attempt": 1,
+      "status": "completed",
+      "duration_ms": 1.92
+    },
+    {
+      "node": "Verifier",
+      "attempt": 1,
+      "status": "started"
+    },
+    {
+      "node": "Verifier",
+      "attempt": 1,
+      "status": "completed",
+      "duration_ms": 0.65
+    }
+  ],
+  "readback": {
+    "all_ten_node_states_correct": true,
+    "twenty_events_visible": true,
+    "report_exact_match": true,
+    "refresh_and_history_selection": true,
+    "remote_calls": 0,
+    "page_errors": [],
+    "post_requests": []
+  },
+  "recovery": {
+    "task_id": "c47e2e3d-b137-40e6-9585-8cd7f4d36f2f",
+    "redis_cache_removed_for_this_task_only": true,
+    "api_readback_equal_without_cache": true,
+    "duplicate_delivery_with_deleted_upload_returned_saved_result": true,
+    "persistent_run_unchanged": true,
+    "model_budget_unchanged": true,
+    "graph_sha256": "28357be25a52d27b80e87a03ffcb2a545132c97d42632138ff60c47d67fc8c2d"
+  },
+  "model_selection_source": "deterministic_fallback",
+  "remote_model_calls": 0,
+  "budget_before": {
+    "status": "stopped",
+    "stop_reason": "recovery_call_limit_reached",
+    "token_limit": 30000,
+    "call_limit": 100,
+    "calls": 4,
+    "reported_tokens": 3317,
+    "unsettled_allowance": 5456,
+    "remaining_local_allowance": 21227,
+    "accounting_complete": false,
+    "provider_remaining_tokens": null
+  },
+  "budget_after": {
+    "status": "stopped",
+    "stop_reason": "recovery_call_limit_reached",
+    "token_limit": 30000,
+    "call_limit": 100,
+    "calls": 4,
+    "reported_tokens": 3317,
+    "unsettled_allowance": 5456,
+    "remaining_local_allowance": 21227,
+    "accounting_complete": false,
+    "provider_remaining_tokens": null
+  },
+  "tests_passed": 276,
+  "frontend_build": "pass",
+  "initial_ui_finding": "Retrieve event key differed from FLOW label RAG + Graph; corrected and verified using the original saved report",
+  "limits": [
+    "Observed real Demo with deterministic Coach; no new remote model validation",
+    "STARTED is a durable last-known state, not a worker heartbeat",
+    "Completed-result replay is supported; interrupted-stage resume is not",
+    "Original Demo and full environment snapshots are not automatically archived"
+  ],
+  "artifacts": {
+    "real_demo/task.json": "a9ee696f39d0f9f365de8c6cfe0e04e2aa9e553021e8a645e07b80cd450a8a21",
+    "real_demo/readback.json": "e590992501781deb4b7fce5388c060a0293e16ef0d1a3df122481a8b002b5b55",
+    "real_demo/recovery_checks.json": "951e9deeafeee0e0b4c9e264f7239a03a8665b8c27ab223fcc12808914f570ab",
+    "real_demo/timeline.png": "7d030404dec324a79deb4188dd5a54973fa7704e03f35d760a490636ccd88667",
+    "real_demo/events.png": "3f7d28289b914596cd0c65048967c9793bf02b955b1284dab9b119d9bb8c090f",
+    "real_demo/browser.json": "b958a94fcca82316abf3e03a582a8d3dec476b064be5d386de60b36c7dd5dd56"
+  }
+}
