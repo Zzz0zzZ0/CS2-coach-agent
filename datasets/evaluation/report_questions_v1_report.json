@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-09",
+  "kind": "engineering_development_validation",
+  "implementation_commit": "6a894a3c4d1f856df36378b5b152e70b0bdd7bb0",
+  "task_id": "b0171fbf-18c5-4aa1-ad0b-a052ab52169e",
+  "test_results": {
+    "offline_passed": 325,
+    "new_development_cases": 49,
+    "frontend_build": "pass",
+    "pip_check": "pass"
+  },
+  "live_demo": {
+    "file": "G2_vs_Aurora_2396944_map3.dem",
+    "demo_sha256": "e348879717172add00b80285c20f884f4e180aa8cffa5a7ae9990d0d1d20b9fd",
+    "payload_sha256": "918aaf1426f2c9776abb07a4c8f2f6365aa1407c5d6b6bf7bda87acad5660133",
+    "rounds": 14,
+    "kills": 97,
+    "rounds_won_by_team": {
+      "Aurora": 1,
+      "G2": 13
+    },
+    "events": 20,
+    "current_sources": 15,
+    "historical_sources": 12,
+    "browser_upload_to_report_ms": 6165,
+    "selection_source": "deterministic_fallback",
+    "verification": {
+      "status": "pass",
+      "scope": "deterministic_report_contract",
+      "checks": [
+        {
+          "id": "source_metrics",
+          "status": "pass",
+          "checked_count": 24,
+          "mismatch_count": 0,
+          "mismatches": []
+        },
+        {
+          "id": "source_evidence",
+          "status": "pass",
+          "checked_count": 15,
+          "mismatch_count": 0,
+          "mismatches": []
+        },
+        {
+          "id": "analyst_report",
+          "status": "pass",
+          "checked_count": 14,
+          "mismatch_count": 0,
+          "mismatches": []
+        },
+        {
+          "id": "coach_report",
+          "status": "pass",
+          "checked_count": 24,
+          "mismatch_count": 0,
+          "mismatches": []
+        }
+      ],
+      "limitations": [
+        "核验范围为规范化输入、派生指标、当前来源与固定报告模板的一致性。",
+        "复用指标计算与报告模板，不是独立解析器或通用自然语言事实核验。",
+        "不核验历史证据正文、战术因果或训练建议质量。"
+      ],
+      "evidence_count": 27,
+      "current_evidence_count": 15,
+      "historical_evidence_count": 12,
+      "cited_evidence_ids": [
+        "C1",
+        "C10",
+        "C12",
+        "C14",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9"
+      ],
+      "cited_current_evidence_ids": [
+        "C1",
+        "C10",
+        "C12",
+        "C14",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9"
+      ],
+      "cited_historical_evidence_ids": [],
+      "unknown_citations": [],
+      "uncited_claim_count": 0,
+      "current_claims_without_current_evidence": 0,
+      "missing_outputs": []
+    }
+  },
+  "questions": {
+    "task_id": "b0171fbf-18c5-4aa1-ad0b-a052ab52169e",
+    "four_verification_groups_pass": true,
+    "opening_loss_rounds": [
+      2,
+      4,
+      6,
+      7
+    ],
+    "post_plant_loss_rounds": [
+      13
+    ],
+    "source_mapping_correct": true,
+    "round_detail_pass": true,
+    "player_counts_match": true,
+    "unknown_player_refuses": true,
+    "absent_round_not_found": true,
+    "one_step_budget_stops": true,
+    "unsupported_kind_rejected": true,
+    "mobile_panel_fits": true,
+    "old_report_unchanged": true,
+    "old_verification_label": true,
+    "task_switch_clears_answer": true,
+    "model_budget_unchanged": true,
+    "new_remote_calls": 0,
+    "page_errors": []
+  },
+  "historical_graph_sha256": "28357be25a52d27b80e87a03ffcb2a545132c97d42632138ff60c47d67fc8c2d",
+  "historical_graph_unchanged": true,
+  "model_budget_unchanged": true,
+  "remote_model_calls": 0,
+  "independent_human_quality_score": null,
+  "limitations": [
+    "Observed real match and independent development faults, not an unseen-match benchmark.",
+    "Shared metric/rendering contract check, not an independent parser or general natural-language truth checker.",
+    "Four guided current-match query kinds; no open-ended model planning.",
+    "No new cloud-model validation; the two earlier cloud runs are documented separately."
+  ],
+  "local_artifacts": "data/evaluation/report_questions_v1/"
+}

@@ -14,6 +14,7 @@ The project addresses these failure modes through an auditable data pipeline, so
 - **Traceable retrieval:** map, match and player scopes lead to round timelines and original event IDs. A bounded bilingual relation query path verifies directed opening kills, kills after a plant and same-enemy trade kills before truncating results. It distinguishes verified absence from incomplete information and unsupported conditions.
 - **Reliable aggregation:** conditional counts use the full scanned scope, not the displayed top-k. Unknown outcomes are excluded from win-rate denominators and shown explicitly. Descriptive associations are not presented as individual contribution or causal effects.
 - **Operational safeguards:** offline CI, locked dependencies, durable model-call reservations, failure states and recoverable Git checkpoints. The fixed `qwen3.8-flash` step selects priorities from an allowlist; deterministic code owns report facts. Automated knowledge ingestion remains disabled by default.
+- **Inspectable execution:** durable local analysis records retain actual node events. Report checks compare source-derived metrics, current citations and deterministic text. Four guided questions query saved current-match events within two local steps, with no model calls and explicit insufficient-data results.
 - **Measured optimization:** a small player-scope filter preserved all 224 full outputs in a 56-player / four-filter comparison while reducing local median function latency from 335 ms to 104 ms. This is a single interleaved warm-cache measurement, not a throughput claim.
 
 ## Evaluation that changed the design
@@ -26,7 +27,7 @@ This motivated a separate deterministic relation verifier. On the isolated sourc
 
 | Evidence | Scope | Supported interpretation |
 | --- | --- | --- |
-| 269 offline tests | Synthetic and engineering regressions | Tested implementation behavior |
+| 325 offline tests | Synthetic and engineering regressions | Tested implementation behavior |
 | 48 relation expressions + 96 aggregate checks | Observed historical questions | Relation / numeric contract consistency |
 | 768 text retrieval results | Historical development controls | Model, tokenizer and fusion tradeoffs |
 | 960 text results + 60 relation expressions | Two isolated, previously observed series | Corpus-isolated development pilot |
@@ -48,6 +49,7 @@ The current project is an engineering prototype with credible development eviden
 - [Bilingual baseline experiment](../LANGUAGE_BASELINES_V2.md)
 - [Isolated pilot and first-run failures](../ISOLATED_RELATION_PILOT_V1.md)
 - [Player performance equivalence](../PLAYER_PERFORMANCE_V1.md)
+- [Report consistency and saved-match questions](../REPORT_QUESTIONS_V1.md)
 - [Live upload acceptance and failure record](../LIVE_E2E_V2.md)
 - [Main implementation and execution status](../IMPLEMENTATION_PROGRESS.md)
 - [Exportable figure](benchmark-results.svg) · [PNG](benchmark-results.png) · [plotted data](benchmark-results.csv)

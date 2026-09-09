@@ -377,13 +377,13 @@ function App() {
 function ReportVerification({ verification }) {
   const labels = { source_metrics: "输入事件与指标", source_evidence: "当前引用与来源", analyst_report: "Analyst 报告", coach_report: "Coach 报告", source_input: "输入完整性", coach_priorities: "训练主题范围" };
   return <section className="verification-card card" aria-label="报告核验详情">
-    <div className="section-heading"><div><p className="eyebrow">REPORT / VERIFICATION</p><h2>报告核验详情</h2></div><span className="chip">{verification?.checks ? "事实与引用合同" : "旧版引用检查"}</span></div>
+    <div className="section-heading"><div><p className="eyebrow">REPORT / VERIFICATION</p><h2>报告核验详情</h2></div><span className="chip">{verification?.checks ? "来源一致性" : "旧版引用检查"}</span></div>
     {verification?.checks ? <>
       <div className="verification-checks">{verification.checks.map(check => <details key={check.id} data-check={check.id} data-status={check.status}>
         <summary>{check.status === "pass" ? "✓" : "!"} {labels[check.id] || check.id} · {check.status === "pass" ? "通过" : "需复核"}{check.checked_count != null && ` · ${check.checked_count} 项`}</summary>
         {check.reason && <p>{check.reason}</p>}{check.mismatch_count > 0 && <p>{check.mismatch_count} 处不一致</p>}
         {check.mismatches?.map((item, index) => <p key={index}>{item.path}：{item.reason}</p>)}
-      </details>)}</div><p className="question-note">核验范围：从解析事件重算指标，检查来源和固定模板报告是否一致。{verification.limitations?.join(" ")}</p>
+      </details>)}</div><p className="question-note">{verification.limitations?.join(" ")}</p>
     </> : <p className="question-note">此历史报告使用旧版核验，仅检查引用格式与部分缺失情况；尚未接受新版事实一致性核验。</p>}
   </section>;
 }

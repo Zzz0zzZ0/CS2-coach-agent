@@ -14,7 +14,7 @@
 
 </div>
 
-新增报告事实/引用合同核验与四类当前比赛只读追问：验证数字、来源及固定模板的一致性；未知结果不计为失利，回合引用按来源顺序关联。追问最多两步、无模型调用，325 项离线测试与前端构建通过。见 [实现与验证边界](docs/REPORT_QUESTIONS_V1.md)。
+新增报告事实/引用合同核验与四类当前比赛只读追问：验证数字、来源及固定模板的一致性；未知结果不计为失利，回合引用按来源顺序关联。追问最多两步、无模型调用，325 项离线测试、前端构建、真实 Demo 全流程及追问页面验收通过，新增模型调用 0。见 [实现与验证边界](docs/REPORT_QUESTIONS_V1.md)。
 
 新增真实执行时间线与本地持久化分析记录：节点开始、完成、失败、耗时及重复检索分别记录，页面支持历史报告选择与刷新恢复。真实 Demo 保存 20 条事件；移除该测试任务的 Redis 缓存后仍可读回，重复投递不再执行模型。276 项测试通过，本轮新增远程模型调用 0。见 [实现、故障验证与限制](docs/ANALYSIS_HISTORY_V1.md)。
 
@@ -137,7 +137,7 @@ Analyst：只陈述数据事实
         ▼
 Coach：模型选择白名单训练优先级，代码生成证据化建议
         ▼
-Verifier：校验当前 [C#]、历史 [E#] 引用和无证据建议
+Verifier：检查引用范围，并核对源事件、指标、当前来源与固定报告文本的一致性
 ```
 
 Demo 解析层只保存可观测事件，不直接推断“某个道具导致了胜利”。Analyst 与 Coach 的最终文字由确定性事实模板生成；模型只决定白名单训练主题的排序。这使原始事实、模型选择和教练建议在系统中可以区分。
@@ -154,7 +154,7 @@ Demo 解析层只保存可观测事件，不直接推断“某个道具导致了
 | `retrieval_task_results` | 每个检索任务的覆盖度、来源数量和告警 |
 | `retrieval_evidence` | Milvus/GraphRAG 历史对照证据，映射为 `[E#]` |
 | `agent_trace` / `tool_trace` | 前端展示 Supervisor、Tools 和检索执行过程 |
-| `verification_report` | 未知引用、缺失引用和审核状态 |
+| `verification_report` | 引用检查、四组来源/报告一致性 checks、限制与审核状态 |
 
 Supervisor 可以通过白名单 Tool Calling 选择分析模式，但不能创建新节点、执行代码、访问网络或直接写入知识库。Tool Calling 失败时使用确定性 fallback，因此模型输出不会改变工作流拓扑。
 
@@ -393,6 +393,9 @@ CS2-coach-agent/
 │   │   ├── graph_rag_service.py    # GraphRAG：图谱、社区摘要与 Global Search
 │   │   ├── metrics_service.py     # 确定性比赛指标计算
 │   │   ├── analysis_pipeline.py   # 统一分析入口
+│   │   ├── analysis_runs.py       # 持久化输入、执行事件与结果
+│   │   ├── report_verification.py # 确定性报告合同核验
+│   │   ├── followup_service.py    # 当前比赛两步只读追问
 │   │   ├── parser_service.py      # Demo 解析器：demoparser2 封装
 │   │   └── tasks.py               # Celery 异步任务定义
 │   ├── scrapers/                  # 数据采集层
@@ -453,6 +456,8 @@ CS2-coach-agent/
 > 由代码评估任务覆盖、地图匹配、战队匹配和证据数量。**评分低于 0.7 时，评审反馈会加入下一轮查询，最多重试三次。**
 
 ### ✅ Verifier（事实与引用校验器）
+
+从规范化输入重算指标，检查当前来源与固定报告文本的一致性，并保留引用范围检查；共享计算逻辑不构成独立事实真值系统。
 > 不调用 LLM，检查报告中的 `[E#]` 是否存在、是否有未知引用，以及关键建议是否缺少证据标记。
 
 ### 🔬 Analyst（确定性事实报告）

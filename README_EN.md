@@ -14,7 +14,7 @@
 
 </div>
 
-Added deterministic report-contract verification and four guided questions over saved matches. Checks cover metrics, current-source identity/content and rendered reports; unknown outcomes are excluded from conversion-rate denominators. Questions are read-only, limited to two steps and make no model calls. All 325 offline tests and the frontend build pass. See [scope and validation](docs/REPORT_QUESTIONS_V1.md).
+Added deterministic report-contract verification and four guided questions over saved matches. Checks cover metrics, current-source identity/content and rendered reports; unknown outcomes are excluded from conversion-rate denominators. Questions are read-only, limited to two steps and make no model calls. All 325 offline tests, the frontend build, a real-demo end-to-end run and question UI checks pass, with zero new model calls. See [scope and validation](docs/REPORT_QUESTIONS_V1.md).
 
 Actual node events and local SQLite analysis history are now available. The UI shows recorded starts, completions, failures, durations and retrieval attempts, with saved-report selection and refresh recovery. A real Demo produced 20 events; its result survived removal of its Redis cache, and duplicate delivery reused the saved result without model execution. All 276 offline tests pass; this milestone made zero remote model calls. See [implementation and recovery limits](docs/ANALYSIS_HISTORY_V1.md).
 
@@ -134,7 +134,7 @@ Analyst: facts only
         ▼
 Coach: model-selected allowlisted priorities, code-rendered evidence advice
         ▼
-Verifier: current [C#], historical [E#], and unsupported-claim checks
+Verifier: citation boundaries plus source-metric, current-evidence and deterministic-report consistency
 ```
 
 The parser stores observable events and never infers that utility caused a round win. Analyst and Coach output is rendered from deterministic facts; the model only orders allowlisted training topics. This separates raw facts, model selection, and coaching recommendations.
@@ -151,7 +151,7 @@ All nodes communicate through `GraphState`. Important fields include:
 | `retrieval_task_results` | Per-task coverage, source counts, and warnings |
 | `retrieval_evidence` | Historical Milvus/GraphRAG comparison evidence cited as `[E#]` |
 | `agent_trace` / `tool_trace` | Execution trace shown by the frontend |
-| `verification_report` | Unknown citations, missing citations, and review status |
+| `verification_report` | Citation checks, source/report consistency checks, limitations and review status |
 
 The Supervisor may choose an analysis mode through an allowlisted tool, but cannot create graph nodes, execute code, access the network, or write to the knowledge base. Unsupported or failed tool calls use a deterministic fallback, so model output cannot change the workflow topology.
 
@@ -444,7 +444,7 @@ The knowledge base defaults to Milvus native dense + BM25 hybrid retrieval and p
 > Code scores task coverage, map match, team match, and evidence count. **When the score falls below 0.7, that feedback is added to the next query, with up to three attempts.**
 
 ### ✅ Verifier (Fact and Citation Checker)
-> Uses no LLM. It checks that `[E#]` citations exist, rejects unknown evidence IDs, and flags key recommendations without evidence markers.
+> Uses no LLM. It recomputes metrics from normalized input, checks current-source identity/content and compares deterministic reports with their source-derived templates. Citation checks are retained. Shared computation is not an independent truth checker; historical-source semantics and coaching quality remain unverified.
 
 ### 🔬 Analyst (Deterministic Fact Report)
 > Uses no LLM. It reports score, side splits, opening conversion, post-plant conversion, defuses, and utility counts; unavailable metrics are explicit and no subjective cause is added.
