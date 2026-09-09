@@ -1,525 +1,233 @@
 <div align="center">
 
-# 🎯 CS2 Coach Agent
-### *由多智能体驱动的 CS2 职业赛事战术复盘系统*
+# CS2 Coach Agent
 
-[English](README_EN.md)
+**从比赛录像到可追溯的事件分析、选手画像与训练建议**
 
-[![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
-[![LangGraph](https://img.shields.io/badge/LangGraph-StateGraph-FF6B35?style=flat-square)](https://github.com/langchain-ai/langgraph)
-[![Milvus](https://img.shields.io/badge/Milvus-VectorDB-00A1EA?style=flat-square)](https://milvus.io/)
-[![Celery](https://img.shields.io/badge/Celery-Redis-37814A?style=flat-square&logo=celery&logoColor=white)](https://docs.celeryq.dev/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
+[English](README_EN.md) · [项目案例](docs/portfolio/CASE_STUDY.md) · [三分钟演示](docs/portfolio/DEMO_SCRIPT.md) · [全流程验收](docs/FULL_FLOW_VALIDATION_V3.md)
+
+[![CI](https://github.com/Zzz0zzZ0/CS2-coach-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/Zzz0zzZ0/CS2-coach-agent/actions/workflows/ci.yml)
+[![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)](requirements-dev.txt)
+[![React](https://img.shields.io/badge/React-Vite-61DAFB?logo=react&logoColor=white)](frontend/package.json)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 </div>
 
-2026-09-09 全流程复验：5 张现有真实 Demo / 111 回合、三种模式、Webhook、来源追问和历史恢复通过；修复内部回合主题被误识别为关系问句，以及图谱节点裁切。354 项测试通过；模型维持暂停，本轮调用为 0。冻结 Graph/Hybrid 30/30，Vector 保留既有 28/30。见 [完整验收与边界](docs/FULL_FLOW_VALIDATION_V3.md)。
+CS2 Coach Agent 是一个面向 CS2 赛事复盘的工程项目：解析真实 `.dem` 录像，将回合事件与历史检索证据连接起来，生成可核对的比赛报告，并支持选手比较、来源下钻和保存后的只读追问。
 
-当前比赛追问已支持来源正文按需读取，并绑定任务与输入版本；关闭或切换上下文会取消详情请求。真实样本的三类列表首次响应减少 55%–67%，直接回合查询保持一次返回；全部展开会增加总传输量。352 项测试、构建及浏览器延迟/重试/隔离检查通过，本轮模型调用 0。见 [P2 实测与限制](docs/SOURCE_LOADING_V1.md)。
+系统采用 LangGraph 编排分析节点。指标、报告事实和引用由代码生成；模型在白名单内选择训练主题。项目重点是完整的数据链路、可解释的检索边界、故障处理与可复现评测。
 
-新增报告事实/引用合同核验与四类当前比赛只读追问：验证数字、来源及固定模板的一致性；未知结果不计为失利，回合引用按来源顺序关联。追问最多两步、无模型调用，325 项离线测试、前端构建、真实 Demo 全流程及追问页面验收通过，新增模型调用 0。见 [实现与验证边界](docs/REPORT_QUESTIONS_V1.md)。
+## 能做什么
 
-新增真实执行时间线与本地持久化分析记录：节点开始、完成、失败、耗时及重复检索分别记录，页面支持历史报告选择与刷新恢复。真实 Demo 保存 20 条事件；移除该测试任务的 Redis 缓存后仍可读回，重复投递不再执行模型。276 项测试通过，本轮新增远程模型调用 0。见 [实现、故障验证与限制](docs/ANALYSIS_HISTORY_V1.md)。
+| 功能 | 实际行为 |
+| --- | --- |
+| 比赛复盘 | 上传 Demo 或接收规范化 Webhook JSON；支持完整复盘、战术对照、个人训练三种模式 |
+| 事实报告 | 提取击杀、道具、闪白、下包和参赛名单，计算比分、攻守表现与回合转化；保留缺失值与未知结果 |
+| 历史检索 | Milvus dense + BM25 / RRF 与 SQLite 图谱协同检索；当前比赛用 `[C#]`，历史对照用 `[E#]` |
+| 选手画像与对比 | 按地图、T/CT 和对手筛选；展示参赛分母、样本组成、行为与胜负关联，并跳转原始回合 |
+| 关系查询 | 对支持的实体、事件及时间条件核查源记录，返回找到、范围内未找到、信息不足或不支持；支持受限计数与条件胜率 |
+| 只读追问 | 查询首杀后失利、下包后失利、指定回合和指定选手；每次最多两步、20 条来源，无模型调用 |
+| 执行与恢复 | 显示真实节点事件和耗时；保存输入哈希、提交版本与完整报告，支持刷新恢复和已完成任务重复投递去重 |
 
-修复后的真实上传全链路连续两次通过：浏览器 → Celery → Milvus / Graph → Qwen → Verifier → 页面报告，同一 Worker 不重启；14 回合真实 Demo 的两次模型用量为 1,282 / 1,043 tokens，Verifier 均 pass，刷新恢复通过。旧失败及 5,456 tokens 未结算预留保留，授权两次窗口已用完，当前模型暂停。旧分支已从本地和远端删除，后续在 main 继续。见 [连续真实验收与限制](docs/LIVE_E2E_V2.md)。
+来源列表先加载摘要，展开时才读取正文；详情绑定任务和输入版本，切换上下文会取消未完成请求。图谱使用可滚动 SVG 展示，无额外图可视化框架。
 
-历史刀局污染已完成重建并切换：原有 20 场、49 图现在包含 1,019 个正式回合，图谱、Milvus、56 名选手画像和 5,308 条战术银标已核对一致。276 项离线测试通过。检索正文与中文道具词形修复后，开发集 Vector / Graph / Hybrid 均为 50/50；既有 holdout 为 28/30、30/30、30/30，均属于已观察样本的回归。见 [检索回归修复](docs/VECTOR_EVIDENCE_IDENTITY_V3.md)。原始数据快照与失败结果均保留，详见 [历史修复与重新冻结](docs/HISTORICAL_DATA_REBUILD_V2.md)。
+## 当前验证结果
 
-新语料上的 16 题、160 条检索结果已按 AI 辅助事实标签重新运行，仍属于已观察开发集；独立审核与泛化效果待验证。新增 2 场、5 图在修复后以 111 个正式回合通过回归，首次失败记录见 [新比赛验收](docs/NEW_MATCH_VALIDATION_V3.md)。
+以下为 **2026-09-09** 的验收快照，完整记录与失败历史保留在 [验收报告](docs/FULL_FLOW_VALIDATION_V3.md) 和 [结构化结果](datasets/evaluation/full_flow_v3_report.json)。
 
-中英文与实体别名的首轮校准已完成：16 个语义问题配成 32 个表述，四组设置共 1,280 条结果，原 160 条排序完全复现。别名补回 55 个相关回合，但中文术语补充未改善 BM25；5 个正例的候选全相关、5 个无答案题均为空范围，因此另建关系题组。详见 [校准结果与证据边界](docs/FAIR_LANGUAGE_CALIBRATION_V1.md)。
+| 验证范围 | 结果 |
+| --- | --- |
+| 离线测试、依赖检查、前端构建 | **354 项测试通过**；[对应 CI 成功](https://github.com/Zzz0zzZ0/CS2-coach-agent/actions/runs/34324785193) |
+| 真实 Demo 全流程 | **5 张地图、111 个不同回合、三种分析模式**通过；覆盖加时赛 |
+| 输入与报告来源 | 111 个回合来源 HTTP 核对通过；指标和固定报告一致性核验通过 |
+| 入口与恢复 | Webhook、无效文件处理、刷新恢复、单任务 Redis 缓存失效及已完成任务重复投递通过 |
+| 开发检索回归 | Vector / Graph / Hybrid 均 **50/50** |
+| 原冻结查询回归 | Vector **28/30**，Graph / Hybrid 均 **30/30** |
+| 结构化与关系契约 | 战术 / 选手 **30/30、20/20**；关系表达 **48/48**；聚合 **96/96** |
+| 画像与页面 | 56 位选手源事件审计通过；画像比较、关系来源和桌面 / 手机图谱可达性通过 |
 
-新增关系评测已完成：24 个语义问题、48 个中英文表述、192 条结果，所有负例都有真实候选回合。BM25 / dense / RRF 的 nDCG@5 为 0.1492 / 0.1476 / 0.1118，无答案误召回均为 100%，明确暴露范围内关系选择与拒答缺口。SQL 满分仅是结构条件参考，不代表生产 GraphRAG；本轮仍为 AI 审核开发集。详见 [关系题组、失败与后续优先级](docs/RELATION_BENCHMARK_V1.md)。
+本轮发现并修复了内部回合主题查询误入严格关系解析的问题，五张地图的检索计划覆盖由 **12/17 恢复至 17/17**；同时修复图谱节点裁切。修复前的报告和失败证据均保留。
 
-受限关系查询已接入图检索、API 与混合调用层：先核查限定范围源事件，再取结果，区分“找到 / 范围内未找到 / 信息不足 / 不支持”。48 个已观察表述和 624 项检查通过，原有检索回归保持不变；这是受限自然语言到确定性事件查询的工程验证，不代表独立泛化或 RRF 提升。页面状态与证据跳转已在隔离新进程验收，常驻 API 与 worker 已在队列为空时正常重启加载，原前端保持运行。见 [实现与验证边界](docs/RELATION_QUERY_ENGINE_V1.md)。v2 已补齐受限被动语态、中英文表达与完整回合计数 / 条件胜率，48 条旧关系及 96 条统计核算通过，未知分母不显示为零；见 [统计契约](docs/RELATION_QUERY_ENGINE_V2.md)。
+这一轮模型保持暂停，新增远程调用 **0**。此前另有两次连续真实云模型全链路验收，共报告 **2,325 tokens**，详情见 [模型链路与故障记录](docs/LIVE_E2E_V2.md)。两类结果分开记录。
 
-第二条中英 dense 基线及词法分词对照已完成：768 条结果、144 条原排序复现。Jina 原始问法配对 nDCG@5 为 0.3148，MiniLM 为 0.1476；子词中文 BM25 下降，RRF 未超过 Jina dense，无答案拒答仍有缺口。均为同一批已观察开发题，模型和容量不同，未替换生产默认模型；见 [完整对照与边界](docs/LANGUAGE_BASELINES_V2.md)。
+本机历史语料快照包含 **20 场系列赛、49 张地图、1,019 个正式回合、56 位选手**，派生 **1,117 条 Milvus 文档、5,308 条战术银标和 28 个社区摘要**。这些是已验证的本地数据规模；原始录像、模型缓存与运行数据库不随仓库分发。[数据口径与重建记录](docs/HISTORICAL_DATA_REBUILD_V2.md)
 
-独立人工 Coach 质量盲评已延期为后续可选研究，不阻塞近期开发和材料交付；现阶段依据工程测试、AI 事实审核与检索 benchmark 展示成果，主观教练质量和模型质量增益保持未验证。
+## 架构与设计取舍
 
-求职与申请展示入口：[英文案例](docs/portfolio/CASE_STUDY.md) · [中文使用说明与文书草稿](docs/portfolio/APPLICATION_NOTES_ZH.md) · [三分钟演示](docs/portfolio/DEMO_SCRIPT.md) · [可导出 benchmark 图](docs/portfolio/benchmark-results.svg)。隔离 2 场 / 5 图试点另完成 960 条文本结果和 60 条关系表达验收，模型优势在两场比赛上方向不同；[完整结果](docs/ISOLATED_RELATION_PILOT_V1.md)保留局限与失败。画像优化通过 224 组完整输出等价检查，本机函数中位耗时由 335 ms 降至 104 ms，见 [性能证据](docs/PLAYER_PERFORMANCE_V1.md)。
-
-
-Coach 优先级对照已完成 6 图、5 场比赛的开发样本试跑：固定模型 `qwen3.8-flash` 调用 6 次，提供商报告本轮使用 4,939 token。匿名材料与空白评分表已生成，至少两位独立人工评审尚待完成，模型增益指标保持为空。见 [盲评协议与运行记录](docs/COACH_BLIND_EVALUATION.md)。后续 [AI 事实审核](docs/COACH_FACT_AUDIT.md) 已修复攻守分母与己方受闪口径，原始盲评包继续保留，人工评分需使用重新冻结的修正版。
-
-生产模型入口已加入跨进程 SQLite 用量账本，默认本地上限 30,000 token / 100 次尝试；超时、额度拒绝或用量缺失会暂停后续调用并保留规则分析，页面可查看状态。提供商剩余免费额度仍未知。见 [预算与故障边界](docs/MODEL_BUDGET_BOUNDARIES.md)。
-
-此前画像阶段已完成参赛分母与归属修复、离线测试环境：当时 49 张地图的 1,023 条回合记录名单完整（其中 4 个赛前刀局已在本轮修正），87 项离线测试通过，独立前端构建通过。远端 CI 已通过，[查看运行记录](https://github.com/Zzz0zzZ0/CS2-coach-agent/actions/runs/34031162026)。详见 [执行进度与验收](docs/IMPLEMENTATION_PROGRESS.md)、[画像数据契约](docs/PLAYER_PROFILE_DATA_CONTRACT.md) 与 [离线复现](docs/OFFLINE_VALIDATION.md)。
-
----
-
-## 📖 项目简介
-
-**CS2 Coach Agent** 是一个以 **多智能体状态机** 为核心、具备 **高级 RAG 战术检索能力** 的 CS2 职业赛事智能分析系统。
-
-它能够：
-- 直接吃入 `.dem` 录像文件，通过 `demoparser2` 自动解析每一回合的击杀链、道具落点、闪光致盲序列和下包行为。
-- 内置 **HLTV 数据爬虫与录像下载器**，支持自动化获取职业赛事高价值 Demo 数据集。
-- 驱动 **Supervisor（受控 Tool Calling）→ Tools → Router → 并行任务检索 → Critique → Analyst → Coach → Verifier** 构成一条带有反馈式 **Refine Loop** 的端到端战术推演流水线；知识摄取必须通过验证、人工批准和配置开关三重闸门。
-- Critique 节点在检索质量低于阈值时触发 **反馈式重试回路**；达到最大尝试次数后会保留低质量标记并继续分析，不伪装成达标。
-- 由代码先计算并报告可验证的击杀、首杀、攻守分边和下包转化；`qwen3.8-flash` 只能从白名单中选择训练优先级，不能直接编造报告事实。
-- 同时支持 **FACEIT / 5E Webhook 数据流** 和 **实体 `.dem` 文件上传** 两种数据接入模式。
-- 全部耗时任务通过 **Celery + Redis** 异步消息队列处理，支持高并发与横向扩展。
-
----
-
-## 🏗️ 系统架构
-
-```
-          ┌─────────────────────────────────────────────────────┐
-          │              FastAPI Web Service (app/main.py)      │
-          │                                                     │
-          │   POST /api/webhook/match-end  (JSON Payload)       │
-          │   POST /api/upload-demo        (.dem 实体文件上传)  │
-          │   GET  /api/tasks/{task_id}    (查询异步任务状态)   │
-          └──────────────────────┬──────────────────────────────┘
-                                 │ Celery task.delay() 推送
-                                 ▼
-                          ┌────────────┐
-                          │  Redis MQ  │
-                          └──────┬─────┘
-                                 │ 分发给 Celery Worker
-                                 ▼
-          ┌──────────────────────────────────────────────────────┐
-          │        LangGraph 多智能体状态机 (Agentic Workflow)   │
-          │                                                      │
-          │   [Supervisor] ──► [Tools] ──► [Router] ──► [Task Retrieval] ──► [Critique] ──► [Analyst] ──► [Coach] ──► [Verifier]
-          │                    │                    │                  │
-          │                    │       缺失任务?     │                  │
-          │                    ◄──── Refine only failed tasks             │
-          │               首杀/道具/回合/地图任务                  引用与事实校验
-          └──────────────────────────────────────────────────────┘
-                 │                       ▲
-                 ▼                       │
-          ┌──────────┐          ┌───────────────┐
-          │  Milvus  │          │ DashScope LLM │
-          │ 向量知识库│          │ (通义千问)    │
-          └──────────┘          └───────────────┘
+```mermaid
+flowchart LR
+    Input[Demo / 规范化 JSON] --> API[FastAPI]
+    API --> Queue[Redis / Celery]
+    Queue --> Pipeline[解析与 LangGraph 分析]
+    Pipeline <--> Retrieval[Milvus + SQLite Graph]
+    Pipeline --> Report[报告与一致性核验]
+    Pipeline --> History[SQLite 分析历史]
+    History --> API
+    Report --> UI[React 工作台]
+    API --> UI
 ```
 
----
+分析链为 `Supervisor → Tools → Router → Retrieve → Critique → Analyst → Coach → Verifier`；Demo 解析与初始化也记录到时间线。三种模式选择现有任务，不生成任意工具或执行代码。
 
-## ⚡ 技术栈
+- **先算事实，再选主题。** `demoparser2` 提取事件；Tools 计算指标。默认仅 Coach 在密钥和预算允许时调用一次 `qwen3.8-flash`，最终报告仍由确定性模板生成。辅助模型调用默认关闭。
+- **文本检索与关系核验分工。** Milvus 负责历史文本召回；SQLite 保存比赛、回合、事件、选手和银标关系。严格关系问句核对源事件，不把相似文本当成关系成立的证据。社区摘要采用确定性统计。
+- **有边界的检索重试。** Critique 综合证据量、任务覆盖、地图和队伍匹配评分；低于阈值且存在缺失任务时重试缺失部分，最多三轮检索。综合分通过不保证每个任务均覆盖，因此保留逐任务轨迹。
+- **保存完成结果。** SQLite 记录输入哈希、源码提交、执行事件和报告。已完成任务可脱离 Redis 结果缓存读回；中断阶段自动续跑不在当前范围。
+- **限制成本和写入。** 跨进程预算账本默认上限为 30,000 tokens / 100 次尝试；超时、拒绝或用量不明会暂停调用。自动知识摄取默认关闭，还要求高质量来源、逐场批准和 Verifier 通过。
 
-| 层级 | 技术 | 说明 |
-|------|------|------|
-| **Web 层** | FastAPI + Uvicorn | 异步 Webhook 服务，支持 `.dem` 文件上传及任务状态查询 |
-| **异步队列** | Celery + Redis | 企业级后台耗时任务队列，实现高并发与横向扩展 |
-| **智能体编排** | LangGraph (StateGraph) | 受控 Tool Calling → 确定性工具 → 并行检索 → 规则/LLM 评审 → 分析 → 教练 → 引用校验 |
-| **检索 (RAG)** | Milvus 2.6 + LangChain | dense + 原生 BM25 混合召回、RRF、父子上下文、纠错检索与证据追踪 |
-| **LLM** | 阿里云 DashScope / 通义千问 | `qwen3.8-flash` 模型推理（通过 OpenAI 兼容接口接入） |
-| **Embedding** | FastEmbed + ONNX | 本地多语言 embedding，不消耗 DashScope embedding 额度 |
-| **数据采集** | DrissionPage | HLTV 赛事数据爬取与 `.dem` 自动化下载 |
-| **Demo 解析** | awpy + demoparser2 | CS2 录像帧事件精准提取（击杀链/道具/闪光/下包） |
-| **架构规范** | DDD (领域驱动设计) | 高内聚低耦合的 Clean Architecture 目录规范 |
+技术栈：Python 3.11、FastAPI、Celery / Redis、LangGraph、Milvus 2.6、SQLite、FastEmbed / ONNX、demoparser2、React / Vite。HLTV 采集工具使用 DrissionPage。当前本地 Worker 使用 `solo` 池；这里不声明已验证多 Worker 吞吐能力。
 
----
+## 快速开始
 
-## 🔬 技术实现详解
+### 1. 安装与启动
 
-### 1. 从 Demo 到教练建议的数据流
-
-```text
-.dem / Webhook JSON
-        │
-        ▼
-TacticalDemoParser
-        │  round_end / player_death / grenade / flash / bomb events
-        ▼
-结构化 MatchWebhookPayload
-        │
-        ├── Tools：计算确定性指标
-        ├── Milvus：混合文本检索
-        ├── GraphRAG：关系路径与社区摘要检索
-        │
-        ▼
-Critique：任务覆盖、地图匹配、证据数量与相关性评分
-        │  只重试缺失任务，最多三次
-        ▼
-Analyst：只陈述数据事实
-        ▼
-Coach：模型选择白名单训练优先级，代码生成证据化建议
-        ▼
-Verifier：检查引用范围，并核对源事件、指标、当前来源与固定报告文本的一致性
-```
-
-Demo 解析层只保存可观测事件，不直接推断“某个道具导致了胜利”。Analyst 与 Coach 的最终文字由确定性事实模板生成；模型只决定白名单训练主题的排序。这使原始事实、模型选择和教练建议在系统中可以区分。
-
-### 2. LangGraph 状态机与受控 Agent
-
-所有节点通过 `GraphState` 传递状态，关键字段包括：
-
-| 字段 | 作用 |
-|------|------|
-| `metrics` | 代码计算的战队比分、有效击杀、首杀转化、道具和下包指标 |
-| `current_evidence` | 当前上传 Demo 的确定性证据，映射为 `[C#]` |
-| `analysis_plan` | Router 生成的 opening / utility / round flow / map context 任务 |
-| `retrieval_task_results` | 每个检索任务的覆盖度、来源数量和告警 |
-| `retrieval_evidence` | Milvus/GraphRAG 历史对照证据，映射为 `[E#]` |
-| `agent_trace` / `tool_trace` | 前端展示 Supervisor、Tools 和检索执行过程 |
-| `verification_report` | 引用检查、四组来源/报告一致性 checks、限制与审核状态 |
-
-Supervisor 可以通过白名单 Tool Calling 选择分析模式，但不能创建新节点、执行代码、访问网络或直接写入知识库。Tool Calling 失败时使用确定性 fallback，因此模型输出不会改变工作流拓扑。
-
-### 3. Milvus Hybrid RAG
-
-当前向量检索集合为 `cs2_tactical_knowledge`，每条文档保留 `map`、`match_id`、`round_number`、`tactic_type`、`parent_id` 和 `parent_content` 等元数据。
-
-一次检索包含以下步骤：
-
-1. 默认直接使用 Router 生成的专业术语查询；仅在 `LLM_AUXILIARY_CALLS_ENABLED=true` 时增加 LLM 查询改写。
-2. 使用本地 FastEmbed/ONNX 模型生成 384 维 dense embedding，避免调用付费 embedding API。
-3. Milvus 原生 BM25 对文本字段进行稀疏检索，dense 与 sparse 结果使用 RRF 合并。
-4. 查询原文、改写查询和任务变体共同召回，按 lexical overlap、rank 和 parent-context bonus 重新排序。
-5. 使用稳定的 evidence key 去重，并为每个任务优先保留少量证据，避免某一个主题占满上下文。
-6. Critique 只把未覆盖的任务加入下一次检索，不重复执行已经通过的任务。
-
-当 Milvus 不可用时，系统仍可用 GraphRAG 事实路径继续工作；当 GraphRAG 数据库不存在时，则自动退回 Milvus。
-
-### 4. GraphRAG 两级检索
-
-GraphRAG 使用标准库 SQLite 作为本地图谱侧车，不改变 Milvus 的职责。
-
-```text
-nodes:
-  match → map → round ┬→ event → player
-                      └→ tactical_sequence → event/player
-
-edges:
-  HAS_MAP / HAS_ROUND / KILL / USES_UTILITY /
-  FLASH_BLIND / PLANTS_BOMB / KILLER / VICTIM /
-  HAS_TACTICAL_SEQUENCE / SUPPORTED_BY / INVOLVES_PLAYER
-```
-
-- Local Search：以地图、任务和关键词筛选回合，沿事件路径及 `round → tactical_sequence → evidence/player` 路径返回证据。
-- Community Summary：按“地图 × 主题”聚合回合，当前主题包括 overview、opening、utility、round_flow。
-- Global Search：对多个社区摘要进行全局排序，返回社区摘要及其回合来源 ID；前端保留原始图证据与确定性教练简报供人工对照。
-
-社区摘要采用确定性抽取式统计，包含回合数、比赛数、击杀、首杀、道具、下包、战术银标、回合胜者和首杀玩家等事实。它不会把少量样本直接表达为“所有职业队都这样打”。
-
-### 5. 前端复盘工作台
-
-`frontend/` 是独立的 React + Vite 应用，采用 `/api` proxy 连接 FastAPI，不复制后端业务逻辑：
-
-- 上传页提交 `.dem` 和 `analysis_mode`，后端返回 Celery `task_id`。
-- 前端每两秒轮询 `GET /api/tasks/{task_id}`，在 SUCCESS 后展示 `analysis` 结果。
-- Dashboard 分开展示当前 Demo `[C#]` 与历史对照 `[E#]`；验证未通过时任务显示“质量待审查”。
-- GraphRAG 面板通过只读接口加载地图、节点/边、Global Search、选手画像和战队对比结果。
-- 子图使用 SVG 绘制，避免引入大型图可视化依赖；移动端通过 CSS breakpoint 降级为单列布局。
-
-### 6. 可靠性和审核边界
-
-- 指标计算先于 LLM；环境/自杀/队伤不会计为有效击杀，战队比分、首杀转化、道具和下包均由代码计算。
-- Critique 只评价证据相关性和覆盖度，不让模型决定是否“战术正确”。
-- Verifier 不调用 LLM，检查未知 `[C#]/[E#]`、未引用建议，以及当前比赛结论是否误用历史证据。
-- 自动知识摄取默认关闭，同时要求高质量来源、显式人工批准和 Verifier 通过。
-- Demo、解析输出、SQLite 图谱、Milvus 卷和 `.env` 均属于本地运行数据，不进入 Git。
-
----
-
-## 🚀 快速开始
-
-### 1. 克隆并初始化环境
+准备 Python 3.11、Node.js 22、Docker Compose；运行真实复盘还需要你自己的 `.dem` 文件。
 
 ```bash
 git clone https://github.com/Zzz0zzZ0/CS2-coach-agent.git
 cd CS2-coach-agent
 make bootstrap
+npm --prefix frontend ci
 ```
 
-`make bootstrap` 会创建 Python 3.11 虚拟环境、安装运行/开发依赖并启动 Redis/Milvus 基础设施。
+`make bootstrap` 创建 `.venv`，按依赖约束安装 Python 包，仅在 `.env` 不存在时复制模板，并启动 Redis、Milvus、etcd 和 MinIO。完整配置见 [.env.example](.env.example)。
 
-### 2. 配置环境变量
+首次体验可以不填 `DASHSCOPE_API_KEY`，使用规则 Coach。需要云模型时在 `.env` 或本机页面配置有效 Key；运行时密钥文件优先于环境配置，页面不回传密钥。当前模型入口固定支持 `qwen3.8-flash` 且关闭 thinking；密钥存在不代表预算已允许调用。账本状态见页面，不通过更换密钥或重启清零。[预算说明](docs/MODEL_BUDGET_BOUNDARIES.md)
 
-```bash
-cp .env.example .env
-```
+默认 `EMBEDDING_BACKEND=fastembed` 使用本地 embedding，首次下载模型需要网络；`LLM_AUXILIARY_CALLS_ENABLED=false`、`AUTONOMOUS_TOOL_SELECTION_ENABLED=false`、`AUTO_INGEST_ENABLED=false` 保持辅助调用与自动入库关闭。
 
-编辑 `.env`，填入你的阿里云 DashScope API Key 和基础设施配置：
-
-```env
-# DashScope / OpenAI 兼容接口
-DASHSCOPE_API_KEY="sk-your-key-here"
-MODEL_NAME=qwen3.8-flash
-LLM_TIMEOUT_SECONDS=120
-LLM_MAX_TOKENS=1400
-LLM_ENABLE_THINKING=false
-LLM_AUXILIARY_CALLS_ENABLED=false
-
-# Milvus 向量数据库
-MILVUS_URI="http://localhost:19530"
-MILVUS_TOKEN=""
-
-# Celery 消息队列（需要本地运行 Redis）
-CELERY_BROKER_URL="redis://localhost:6379/0"
-CELERY_RESULT_BACKEND="redis://localhost:6379/1"
-```
-
-也可以启动前端后，在“提交比赛 Demo”区域直接输入 Key。前端调用 `PUT /api/settings/llm/key`，密钥只写入本机 `data/runtime/dashscope_api_key`（权限 `0600`），不会保存到浏览器、Git、API 响应或 Celery 任务载荷；API 与 Worker 会在下一次模型调用时动态读取，无需重启。该写入接口仅接受本机回环地址请求，`GET /api/settings/llm` 只返回是否已配置，不回传密钥。
-
-### 3. 初始化战术知识向量库
-
-```bash
-python scripts/seed_knowledge.py
-```
-
-> 这一步会读取 `data/demos/*.dem`，按比赛摘要、首杀证据和回合事件生成结构化文档，并替换 `cs2_tactical_knowledge` 集合中的旧种子。可先执行 `python scripts/seed_knowledge.py --dry-run` 查看文档数量。
-
-### GraphRAG 图谱侧车
-
-GraphRAG 使用本地 SQLite 保存由 Demo 解析出的比赛、地图、回合、事件、玩家和战术序列关系，不依赖付费 embedding，也不让 LLM 臆造图谱关系：
-
-```bash
-make graph-build
-```
-
-`make graph-build` 会同时重算当前 silver 战术标签，并把它们写为 `tactical_sequence` 节点，通过 `SUPPORTED_BY` 与原始事件连接。分析请求会自动并行检索 Milvus 与图谱；命中的标签及其 `label_source`、置信度会以 `Graph ... Evidence` 和 `[E#]` 引用进入现有 Analyst、Coach、Verifier 链。`weak_rule` 只作为候选序列，不视为人工确认战术。没有 `data/graph/cs2_graph.sqlite` 时自动退回 Milvus。
-
-同一个 SQLite 图谱还提供跨比赛分析：选手画像聚合击杀、死亡、助攻、首杀/首死、补枪、道具、下包和六类战术序列参与，并可按地图、T/CT、对手筛选或比较两名选手在相同筛选下的指标与样本组成；战队对比则把战术序列统一换算为每 100 个实际参赛回合，避免不同比赛数量造成总量偏差。战术切片计算首杀后胜率、丢首杀翻盘率、补枪回合胜率、Post-plant、Retake contact 和 Execute candidate 的回合转化，同时列出首杀、补枪和道具协同的选手责任分布。自然语言搜索同时支持战队和选手中文教练简报，每个结果都保留 `graph:{match}:{map}:{round}` 来源。当前指标是描述性统计，不宣称战术因果。没有胜方的 `round_end` 被视为技术暂停或回合恢复标记，不计入正式回合。若 GOTV Demo 缺少原生 `player_blind`，解析器会在每次 `flashbang_detonate` 的前后 tick 比较 `flash_duration`，恢复受闪者、投掷者、队伍、区域和持续时间，并以 `source=flash_duration_delta` 标记来源。同一 tick 只有一颗闪时投掷者可唯一归因；多颗闪同时爆炸时则保留全部 `attacker_candidates` 并标记 `attribution=simultaneous_flash_candidates`，不虚构唯一投掷者。
-
-画像页和自然语言选手查询共用确定性总结，包含基础表现、行为结论、样本范围、已知结果分母和分组引用。所问行为无记录时保持原主题，不生成站位、沟通或职责诊断；当前 26 条总结查询通过工程证据一致性检查，尚未代替人工盲评。见 [总结契约与验收](docs/PLAYER_GROUNDED_SUMMARY.md)。
-
-选手画像新增个体行为与回合结果面板：首杀、首死、补枪、道具、致盲、下包分别比较“观测到 / 未观测到”的回合胜率，并展示原始胜负数、未知结果及胜负回合引用。重复事件按回合去重，未知结果不进入胜率分母；两组未经条件匹配，差异只表示关联。56 名选手的六类行为通过原始记录审计，见 [口径与复现](docs/PLAYER_BEHAVIOR_OUTCOMES.md)。
-
-选手对比支持跨队选择，同时展示双方比赛 / 地图 / 回合数、首杀机会数、地图 × 阵营 × 对手组成、共同参赛回合与共同条件覆盖率。归一化只调整样本量，样本占比不同会明确提示；不把描述性差异直接解释为能力排序或统计显著性。名单估算、无样本和比赛日期缺失保持可见，完整参赛覆盖与抽样事件引用分开计算。详见 [画像与对比数据口径](docs/PLAYER_PROFILE_DATA_CONTRACT.md)。
-
-Global Search 会先从自然语言中识别战队、地图、T/CT 和对手，再把对应战术切片作为最高优先级的结构化证据返回；包含“比较/对比”等意图且出现两支战队时，会生成同条件战术对照。示例：`猎鹰 Dust2 T侧首杀后胜率`、`猎鹰面对绿龙时的回防表现`、`对比 Spirit 和 Vitality 在 Nuke CT侧的补枪回合`。该步骤完全确定性执行，不新增 LLM 调用。
-
-### 4. 启动 API 与 Worker
+终端一：
 
 ```bash
 make dev
 ```
 
-`qwen3.8-flash` 默认开启深度思考；本项目将其关闭，并默认只让 Coach 调用一次模型。Supervisor、查询路由、Critique 与 Analyst 使用确定性本地逻辑，单次生成上限为 1400 token，前端显示本次模型 token 用量。只有显式设置 `LLM_AUXILIARY_CALLS_ENABLED=true` 才启用查询改写、LLM Critique 等额外调用。额度耗尽或供应商拒绝请求时不重试模型调用，Coach 回退到本地优先级规则。本地开发默认使用 Celery `solo` pool，避免 macOS `fork` 与 FastEmbed/ONNX 原生运行库冲突。Linux 部署可显式使用 `CELERY_POOL=prefork CELERY_CONCURRENCY=4 make worker`。上传产生的临时 Demo 会在任务结束后自动删除。
-
-### 5. 启动前端复盘工作台
-
-另开一个终端执行：
+终端二：
 
 ```bash
-make frontend-install
 make frontend
 ```
 
-浏览器打开 `http://localhost:5173`。前端提供 Demo 上传、异步进度、指标卡片、Analyst/Coach 报告、证据引用、GraphRAG 子图、Global Search、跨比赛选手画像、五队战术对比和上下文战术切片；战队查询会先展示确定性中文教练简报，再保留原始图证据。`[G#]` 优先引用查询指标对应的回合；还可按首杀、补枪、道具、爆弹、下包后、回防和胜负结果筛选关键回合样本。点击样本会展开事件与战术标签时间线，并按同地图、同阵营、相反胜负结果以及战术标签/包点重合度推荐成功—失败对照回合。Vite 会把 `/api` 请求代理到 `8001`。
+打开 [工作台](http://localhost:5173) 或 [API 文档](http://127.0.0.1:8001/docs)。Vite 将 `/api` 代理到 `8001`；若修改后端端口，应同步修改 [代理配置](frontend/vite.config.js)。`make dev` 启动 API 与 Worker，终止该命令会结束两者。
 
-新增只读 GraphRAG 展示接口：
+### 2. 提交一场比赛
 
-```text
-GET /api/graph/stats
-GET /api/graph/maps
-GET /api/graph/search?q=... # 返回 answer 中文简报与 results 原始证据
-GET /api/graph/round?source_id=graph:2396609:Dust2:1&team=Falcons # team 可选；提供相反结果的相似回合
-GET /api/graph/subgraph?map_name=Mirage
-GET /api/graph/players?team=Falcons
-GET /api/graph/players/{steamid_or_nickname}?map_name=Dust2&side=T&opponent=Spirit
-GET /api/graph/players/compare?players={id1},{id2}&map_name=Dust2&side=T
-GET /api/graph/teams/compare?teams=Falcons,Spirit,Vitality,FURIA,MOUZ
-GET /api/graph/teams/Falcons/tactics?map_name=Dust2&side=T&opponent=Spirit
-```
+在工作台选择 Demo 与分析模式，或使用 API：
 
-### 6. 使用方式
-
-**方式 A：直接分析本地 Demo（推荐开发使用）**
-```bash
-make analyze DEMO=data/your_match.dem
-```
-
-**方式 B：获取较新的职业比赛 Demo**
-
-默认查询最近 7 天、HLTV 至少 2 星且明确提供 Demo 的已结束比赛；如果窗口内没有可用 Demo，会自动扩大到最近 30 天，并把比赛元数据写入 `data/demos/manifests/`。
-
-```bash
-# 只抓取比赛目录，不下载大文件
-make fetch-demos ARGS="--days 7 --min-rating 2 --max-matches 10"
-
-# 下载并解压 .dem 文件（需要本机有 unar、7z、unrar 或 bsdtar 之一）
-make fetch-demos ARGS="--days 30 --min-rating 2 --max-matches 10 --download"
-
-# 按已审核的固定比赛清单下载，便于复现实验数据集
-make fetch-demos ARGS="--selection-file datasets/selections/five_teams_recent_20_v1.json --download"
-```
-
-下载器只接受 HLTV 比赛页明确暴露的官方 Demo 链接，不会把普通比赛页面误当作录像源；下载完成后会保留按比赛命名的 manifest，重复执行默认跳过已有 manifest，使用 `--force` 才会重新下载。
-
-**方式 C：启动 Web 服务，接收第三方 Webhook**
-```bash
-make dev
-```
-
-随后发送 POST 请求到 `http://127.0.0.1:8001/api/webhook/match-end`：
-
-```json
-{
-  "match_id": "match-001",
-  "map_name": "Mirage",
-  "rounds": [...]
-}
-```
-
-或者上传实体录像文件：
 ```bash
 curl -X POST http://127.0.0.1:8001/api/upload-demo \
-  -F "file=@data/sample.dem"
-```
+  -F "file=@data/sample.dem" \
+  -F "analysis_mode=demo_forensic"
 
-查询异步任务状态：
-```bash
+# 用返回的 task_id 替换占位符
 curl http://127.0.0.1:8001/api/tasks/{task_id}
 ```
 
----
+工作台提供的三种模式为 `demo_forensic`、`tactical_comparison`、`player_coaching`。上传副本在任务结束后清理，原文件不变。简化命令行分析可用 `make analyze DEMO=data/sample.dem`；该入口不经过 Celery、未接入历史 Graph 客户端，也不保存页面任务历史，完整体验请使用上传入口。
 
-## 📁 项目结构
+`POST /api/webhook/match-end` 为通用规范化 JSON 接口，字段契约见 [MatchWebhookPayload](app/domain/match_models.py)；第三方平台的数据需先映射到该格式，当前没有原生 FACEIT / 5E 适配器。
 
-```
-CS2-coach-agent/
-├── app/                           # DDD 架构主应用
-│   ├── main.py                    # FastAPI 服务入口点
-│   ├── api/                       # 接入层：FastAPI 路由与依赖注入
-│   │   ├── dependencies.py        # FastAPI 兼容依赖导出
-│   │   └── routers/
-│   │       ├── webhooks.py        # POST /api/webhook/match-end
-│   │       ├── uploads.py         # POST /api/upload-demo
-│   │       ├── graph.py           # GET  /api/graph/*
-│   │       └── tasks.py           # GET  /api/tasks/{task_id}
-│   ├── core/                      # 核心配置
-│   │   ├── config.py              # 环境变量统一管理 (Settings)
-│   │   ├── providers.py           # LLM / Milvus provider
-│   │   └── celery_app.py          # Celery 应用实例
-│   ├── domain/                    # 领域模型
-│   │   ├── match_models.py        # Pydantic 数据验证 Schema
-│   │   └── analysis_models.py     # 指标与分析结果模型
-│   ├── services/                  # 应用服务层
-│   │   ├── rag_service.py         # RAG：实体约束 + dense/BM25 混合检索
-│   │   ├── graph_rag_service.py    # GraphRAG：图谱、社区摘要与 Global Search
-│   │   ├── metrics_service.py     # 确定性比赛指标计算
-│   │   ├── analysis_pipeline.py   # 统一分析入口
-│   │   ├── analysis_runs.py       # 持久化输入、执行事件与结果
-│   │   ├── report_verification.py # 确定性报告合同核验
-│   │   ├── followup_service.py    # 当前比赛两步只读追问
-│   │   ├── parser_service.py      # Demo 解析器：demoparser2 封装
-│   │   └── tasks.py               # Celery 异步任务定义
-│   ├── scrapers/                  # 数据采集层
-│   │   ├── hltv_scraper.py        # HLTV 赛事元数据爬虫
-│   │   └── demo_downloader.py     # 职业录像自动化下载器
-│   └── agentic/                   # 智能体编排层
-│       ├── states.py              # GraphState 全局状态定义
-│       ├── workflow.py            # LangGraph 状态机构建 (含 Refine Loop)
-│       └── nodes/                 # 受控 Agent 节点与确定性工具节点
-│           ├── supervisor_node.py # Supervisor：选择受控分析模式
-│           ├── tool_node.py       # Tools：先执行确定性指标计算
-│           ├── router_node.py     # Router：元数据抽取 & 过滤信号
-│           ├── retrieve_node.py   # Retrieve：向量检索调度
-│           ├── critique_node.py   # Critique：检索质量评审 (0.0-1.0)
-│           ├── analyst_node.py    # Analyst：确定性事实报告
-│           ├── coach_node.py      # Coach：白名单优先级 + 证据建议
-│           └── verify_node.py     # Verifier：引用和事实校验
-├── scripts/                       # 工具脚本
-│   ├── seed_knowledge.py          # Milvus 知识库初始化种子脚本
-│   ├── build_graph.py             # GraphRAG 图谱与社区摘要构建
-│   ├── evaluate_retrieval.py      # RAG 离线 smoke evaluation
-│   ├── evaluate_tactical_queries.py # 战术自然语言查询契约评测
-│   ├── fetch_recent_demos.py      # HLTV 职业 Demo 获取入口
-│   ├── analyze_local.py           # 本地 Demo 直接分析入口
-│   └── test_webhook.py            # Webhook 接口测试脚本
-├── datasets/evaluation/           # 固定查询集与可复现评测报告
-├── test_main.py                   # 端到端集成测试
-├── test_agentic.py                # Agent 编排与工具测试
-├── test_graph_rag.py              # GraphRAG 路径与 Global Search 测试
-├── .env.example                   # 环境变量模板
-├── Makefile                        # 简化开发入口
-├── requirements.txt               # Python 依赖
-├── requirements-dev.txt            # 开发与测试依赖
-├── frontend/                       # React + Vite 复盘工作台
-│   ├── src/main.jsx                # Dashboard 与 GraphRAG 展示
-│   ├── src/api.js                  # 后端请求封装
-│   └── src/styles.css              # 深色战术控制台样式
-├── data/                          # .dem 录像文件存放（本地，不入库）
-└── output/                        # 分析结果输出（日志/JSON，不入库）
-```
+### 3. 可选：建立历史语料
 
----
+新克隆不会自动带上上述历史数据。当前比赛的确定性分析可在历史检索不可用时继续，历史画像与对照则需要准备 Demo 和索引。
 
-## 🎭 智能体角色设计
-
-### 🧭 Router（元数据抽取器）
-> 使用规范化输入中的地图元数据生成过滤信号供下游 Retrieve 节点使用，避免让 LLM 重复抽取已有字段。
-
-### 🧠 Supervisor / Tools（受控编排与工具层）
-> 默认使用确定性 Supervisor 选择分析模式；开启辅助模型调用后，也只能通过白名单 `select_analysis_plan` 选择既有模式与检索任务。Tools 节点先运行确定性指标计算。
-
-### 📚 Retrieve（战术知识检索器）
-> 调用 `KnowledgeBaseClient`：默认直接使用 Router 查询，经 Milvus 原生 dense + BM25 混合检索并保留父摘要与证据来源；查询改写是可选的额度开销。
-
-知识库默认使用 Milvus 原生 dense + BM25 混合检索，并在证据中保留比赛/地图父摘要；旧的 dense 集合仍可通过 `RAG_HYBRID_ENABLED=false` 走兼容 fallback。使用 `make eval-rag` 运行固定查询的离线 smoke evaluation。
-
-### ⚖️ Critique（检索质量裁判）
-> 由代码评估任务覆盖、地图匹配、战队匹配和证据数量。**评分低于 0.7 时，评审反馈会加入下一轮查询，最多重试三次。**
-
-### ✅ Verifier（事实与引用校验器）
-
-从规范化输入重算指标，检查当前来源与固定报告文本的一致性，并保留引用范围检查；共享计算逻辑不构成独立事实真值系统。
-> 不调用 LLM，检查报告中的 `[E#]` 是否存在、是否有未知引用，以及关键建议是否缺少证据标记。
-
-### 🔬 Analyst（确定性事实报告）
-> 不调用 LLM，只报告比分、攻守分边、首杀转化、下包转化、拆包和道具计数；缺失指标会明确标记，不给出主观因果。
-
-### 🎯 Coach（受控训练决策）
-> `qwen3.8-flash` 只通过 `select_coaching_priorities` 在首杀后续、下包后处理、道具复核和攻守转换中选 2–3 项；最终报告与 `[C#]` 引用由代码生成。模型不能添加角色、站位、道具效果或战术因果。
-
-### 🔐 知识摄取审核闸门
-> 自学习入库默认关闭。只有 `AUTO_INGEST_ENABLED=true`、输入标记 `extra_data.knowledge_approved=true`、来源标记为高质量且 Verifier 通过时，分析任务才会提交入库；否则结果会返回 `knowledge_review.status=pending_review`，可由人工确认后调用手动 `/api/knowledge/ingest`。
-
-### ✅ 本地验证
+将历史录像放到 `data/demos/`，先检查文档数量，再建库：
 
 ```bash
-make test       # 单元与集成测试
-make eval-rag   # 固定查询的 Milvus RAG 评估
-make eval-tactics # 30 条 GraphRAG 战术查询契约评测
-make eval-players # 20 条上下文选手查询契约评测
-make eval-v1      # 50 条契约 + 50 条检索查询的五路消融评分
-make eval-negatives # 独立的 12 条 synthetic 开发负例
-make eval-holdout # 冻结的 30 条 held-out 回归验收（原始基线另存）
+.venv/bin/python scripts/seed_knowledge.py --dry-run
 make graph-build
-make silver-dataset # 生成带置信度与证据来源的战术银标数据集
+make seed
 ```
 
-GraphRAG 当前采用确定性抽取式社区摘要；摘要只概括解析到的事实，并保留回合来源，不把小样本观察直接升级为职业战术定律。
+这些是数据构建命令，**会重建配置的图谱，`make seed` 默认替换 `cs2_tactical_knowledge` 集合**；已有数据需先备份，实验应使用独立图谱路径或新集合，详见 [历史重建流程](docs/HISTORICAL_DATA_REBUILD_V2.md)。已有服务进程可能缓存图谱 / 检索客户端，切换数据后应在任务队列空闲时重启 API 与 Worker。
 
-`make silver-dataset` 默认输出 `datasets/silver/v0.3/`，已有目录拒绝覆盖；复现请用 `ARGS="--output-dir 新目录"`。v0.3 沿用 `datasets/selections/five_teams_recent_20_v1.json` 的 20 场比赛，修正解析边界后为 49 张地图、1,019 个正式回合和 5,308 个战术银标；v0.1 / v0.2 作为历史快照保留。首杀和下包阶段来自直接事件事实；补枪、Utility Burst 与 Retake Contact 来自明确的时间窗规则；只有 T 方道具序列后成功下包才会追加弱监督的 Execute Candidate。所有标签都保存规则版本、置信度、审核状态和证据事件 ID。该数据集定位为可复现的 silver labels，不宣称是职业教练人工标注的 gold labels。
+采集工具可先发现比赛，显式加 `--download` 才下载录像：
 
-### 统一 GraphRAG 评测
+```bash
+make fetch-demos ARGS="--days 7 --min-rating 2 --max-matches 10"
+```
 
-`datasets/evaluation/tactical_queries_v1.json` 包含 30 条战队战术查询，`datasets/evaluation/player_queries_v1.json` 包含 20 条选手画像、地图/阵营/对手切片和双人对比查询。`datasets/evaluation/retrieval_queries_v2.json` 另含 50 条检索查询，覆盖 7 张地图 × 4 种意图、5 支目标战队、5 名代表选手、8 条双语改写和 4 条无答案负例。标签只使用 Demo 中可观察的地图、实体和证据类型，不需要主观人工战术标注。
+下载依赖本机 Chromium / Chrome、HLTV 页面实际提供的 Demo 链接及本地解压工具；已有录像可直接使用。[下载入口与参数](scripts/fetch_recent_demos.py)
 
-`make eval-v1` 在 50 个结构化契约和 152 个检索检查点上统一比较 no-RAG、community-only、vector-only、graph-only 与 hybrid，全程禁用远程查询改写。当前结果：graph-only 与 hybrid 均为 100.00、vector-only 77.72、community-only 73.76、no-RAG 4.46。Vector 的 50 条检索查询本身为 50/50；较低综合分来自它无法生成 45 条结构化战队/选手契约，而不是召回失败。统一报告写入 `datasets/evaluation/cs2_coach_v1_report.json`，Vector 独立报告写入 `datasets/evaluation/retrieval_v2_report.json`，解释性总结见 [`docs/V1_EFFECT_REPORT.md`](docs/V1_EFFECT_REPORT.md)。这是 silver-standard 工程评分，不等同于教练对战术结论或选手水平的人工 gold evaluation，也不证明因果关系。
+## 测试与 benchmark
 
-冻结后首次运行的 `retrieval_queries_holdout_v1.json` 包含 30 条不同措辞、不同选手和更难负例。Graph-only 与 hybrid 的 held-out 综合分均为 97.99：27/27 正例通过，3 条开放式未知实体/跨领域负例均误召回。Vector-only 检索为 24/30、93/99 检查点，综合分 65.77。该原始基线保留在 `datasets/evaluation/cs2_coach_holdout_v1_report.json`。冻结查询不得修改；后续修复使用独立开发样例，并保留复测记录。
+### 无密钥离线验证
 
+若只验证代码，无需 Docker 或比赛数据。在仓库根目录安装依赖后运行：
 
-### 负例边界修复复测（2026-09-06）
+```bash
+python3.11 -m venv .venv
+.venv/bin/python -m pip install -r requirements-dev.txt -c requirements-lock.txt
+.venv/bin/python -m pip check
+make test
+npm --prefix frontend ci
+make frontend-build
+```
 
-独立 synthetic 开发负例 12/12 通过；原开发集 Vector、Graph、Hybrid 仍为 50/50，结构化契约仍为 50/50。最终 held-out Graph 与 Hybrid 为 **30/30、99/99 检查点、综合分 100.00**：原有 27 个正例全部保留，3 个负例全部正确拒答。Vector 为 **27/30、96/99、67.79**，原已通过用例无回退，仍有 3 个主题匹配检查失败。
+安装需要网络，测试执行不需要模型、Redis、Milvus 或 embedding 下载。测试隔离 `.env`、使用临时 SQLite，并拦截 Python socket 联网；CI 使用相同依赖约束和前端锁文件。[离线验证说明](docs/OFFLINE_VALIDATION.md)
 
-本轮实际复测 **两次**：首次发现普通描述词和显式地图上下文被误拒答，未通过验收；随后在独立正例上复现并恢复上下文语义，再完成最终验收。首次失败报告为 `datasets/evaluation/cs2_coach_holdout_v1_attempt1_report.json`，最终报告为 `datasets/evaluation/cs2_coach_holdout_v1_fixed_report.json`。原始基线和冻结查询保持不变；这属于冻结回归验证，不是新的完全盲测或未见比赛泛化证明。
+### 真实语料回归
 
-本轮 `make test` 为 80 项通过、3 个依赖告警，前端构建通过；所有检索评测均未调用远程模型。验证细节见 [修复验收记录](docs/NEGATIVE_RETRIEVAL_FIX.md)。
+准备匹配的历史图谱、Milvus 和本地 embedding 后，将结果写入新的本地目录：
 
-实体约束覆盖英文画像、名称与地图、对手和比较句式，并保留中文别名。图查询先核对索引中的选手/战队；向量证据使用完整名称边界，不能用相似昵称代替。无上下文时，`match`、`professional` 等通用词不再足以触发检索；调用方显式提供的地图/比赛过滤仍作为上下文。该规则是有限查询语法，不是通用实体识别器。
+```bash
+make eval-v1 ARGS="--output data/evaluation/readme-run/development.json"
+make eval-v1 ARGS="--retrieval-dataset datasets/evaluation/retrieval_queries_holdout_v1.json --output data/evaluation/readme-run/holdout.json"
+```
 
-改进路线见 [工程展示与研究路线](docs/PROJECT_IMPROVEMENT_ROADMAP.md)：优先独立比赛验证、公平消融、人工审阅与无密钥 CI。当前工程满分不等于战术建议正确率或未见赛事泛化能力。
+再次运行时更换输出目录，保留原报告；冻结输入不要改写。退出码主要检查生产 Graph / Hybrid 与结构化契约，Vector 的两项既有 `intent_match` 失败仍需读取报告。这里的查询通过率是工程检查，不等于标准 Recall@k；综合分也不能用于比较各方法并不相同的结构化能力。
 
----
+### 同语料检索对照
 
-## 📝 License
+[中英文基线实验](docs/LANGUAGE_BASELINES_V2.md)包含 768 条历史开发结果；[隔离比赛试点](docs/ISOLATED_RELATION_PILOT_V1.md)包含两场已观察系列上的 960 条文本结果和 60 条关系表达验证。
 
-MIT © 2026
+![开发集与隔离试点的检索对照](docs/portfolio/benchmark-results.svg)
 
----
+图中为开发评测，使用 AI 辅助标签；不同 dense 模型的实际分块容量也不同。Jina 的历史开发 nDCG@5 高于 MiniLM，但隔离试点中的优势随系列变化，RRF 并未稳定改善结果；未经拒答校准的文本 top-k 方法仍对无答案题返回结果。[图表数据与生成依据](docs/portfolio/benchmark-figure-manifest.json)
 
-<div align="center">
-<sub>Built with ❤️ for the CS2 competitive scene.</sub>
-</div>
+## 已知边界
+
+- Verifier 检查规范化输入、派生指标、当前来源与固定报告模板的一致性；共享同一解析与计算链，不能充当独立事实裁判，也未验证历史证据的完整语义支持。
+- 选手统计使用实际参赛分母，并显示样本组成与未知值；观测关联不证明因果、能力排名或训练效果。比赛日期和可比长期样本不足，暂不输出趋势结论。
+- 回归集和五图试点已经被观察；AI 标签与规则银标不等于独立人工金标。真人 Coach 质量盲评延期，模型质量增益仍未评分。
+- 当前以本地工作台为部署目标；外网部署的身份认证、多租户隔离和负载能力不属于本轮验收。模型账本只统计本项目入口，不代表提供商账户剩余额度。
+
+## 项目结构与进一步阅读
+
+```text
+app/
+├── api/routers/           # 上传、Webhook、任务、追问、图谱与配置接口
+├── agentic/              # LangGraph 状态、节点与执行事件
+├── core/                 # 配置、服务提供者、Celery、模型预算
+├── domain/               # 比赛与分析结果的数据契约
+├── services/
+│   ├── parser_service.py       # Demo 事件与名单解析
+│   ├── metrics_service.py      # 确定性指标与当前来源
+│   ├── rag_service.py          # Milvus 文本召回与证据筛选
+│   ├── graph_rag_service.py    # 历史图谱、画像与社区检索
+│   ├── relation_query_service.py # 受限关系解析与源事件核验
+│   ├── report_verification.py  # 报告一致性检查
+│   ├── analysis_runs.py        # SQLite 任务历史与输入哈希
+│   ├── followup_service.py     # 保存比赛的只读追问
+│   └── tasks.py                # Celery 入口、持久化与清理
+└── scrapers/             # HLTV 发现与下载
+frontend/                 # React / Vite 工作台
+scripts/                  # 数据构建、审核与评测脚本
+datasets/                 # 选择清单、冻结查询、银标与可分享结果
+docs/                     # 实现契约、实验记录和展示材料
+test_*.py                 # 离线回归测试
+data/、output/            # 本地运行数据，不进入 Git
+```
+
+| 阅读目的 | 文档 |
+| --- | --- |
+| 项目展示 / 求职与申请 | [英文案例](docs/portfolio/CASE_STUDY.md) · [中文材料说明](docs/portfolio/APPLICATION_NOTES_ZH.md) · [演示脚本](docs/portfolio/DEMO_SCRIPT.md) |
+| 画像与数据口径 | [分母与对比](docs/PLAYER_PROFILE_DATA_CONTRACT.md) · [行为与结果](docs/PLAYER_BEHAVIOR_OUTCOMES.md) |
+| 关系查询 | [关系与聚合契约](docs/RELATION_QUERY_ENGINE_V2.md) |
+| 运行可靠性 | [历史与幂等](docs/ANALYSIS_HISTORY_V1.md) · [报告核验与追问](docs/REPORT_QUESTIONS_V1.md) · [来源按需加载](docs/SOURCE_LOADING_V1.md) |
+| 性能测量 | [画像输出等价与耗时](docs/PLAYER_PERFORMANCE_V1.md) · [来源传输量与代价](docs/SOURCE_LOADING_V1.md) |
+| 版本与研究规划 | [执行进度](docs/IMPLEMENTATION_PROGRESS.md) · [后续路线](docs/PROJECT_IMPROVEMENT_ROADMAP.md) · [正式 benchmark 方案](docs/BENCHMARK_PLAN.md) |
+
+## 许可证
+
+[MIT](LICENSE)

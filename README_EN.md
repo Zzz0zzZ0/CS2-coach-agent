@@ -1,509 +1,233 @@
 <div align="center">
 
-# 🎯 CS2 Coach Agent
-### *A Multi-Agent Driven CS2 Professional Match Tactical Analysis System*
+# CS2 Coach Agent
 
-[中文文档](README.md)
+**From match demos to traceable event analysis, player profiles and training suggestions**
 
-[![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
-[![LangGraph](https://img.shields.io/badge/LangGraph-StateGraph-FF6B35?style=flat-square)](https://github.com/langchain-ai/langgraph)
-[![Milvus](https://img.shields.io/badge/Milvus-VectorDB-00A1EA?style=flat-square)](https://milvus.io/)
-[![Celery](https://img.shields.io/badge/Celery-Redis-37814A?style=flat-square&logo=celery&logoColor=white)](https://docs.celeryq.dev/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
+[中文](README.md) · [Case study](docs/portfolio/CASE_STUDY.md) · [Three-minute demo](docs/portfolio/DEMO_SCRIPT.md) · [End-to-end validation](docs/FULL_FLOW_VALIDATION_V3.md)
+
+[![CI](https://github.com/Zzz0zzZ0/CS2-coach-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/Zzz0zzZ0/CS2-coach-agent/actions/workflows/ci.yml)
+[![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)](requirements-dev.txt)
+[![React](https://img.shields.io/badge/React-Vite-61DAFB?logo=react&logoColor=white)](frontend/package.json)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 </div>
 
-End-to-end acceptance, 2026-09-09: five observed real Demo maps / 111 rounds, three modes, webhook, source questions and history recovery passed. Fixed internal round topics being misread as a directed relation and clipped graph nodes. All 354 offline tests pass; the cloud model remained paused with zero new calls. Frozen Graph/Hybrid regressions pass 30/30; Vector retains its known 28/30 result. See [evidence and limits](docs/FULL_FLOW_VALIDATION_V3.md).
+CS2 Coach Agent is an engineering project for reviewing CS2 matches. It parses real `.dem` recordings, connects round events with evidence retrieved from historical matches, and produces reports whose claims can be checked. It also supports player comparisons, source inspection and read-only questions over saved analyses.
 
-Saved-match questions now defer list-source text until expansion and pin reads to the task and input version. Closing or changing context cancels pending detail reads. On one observed match, initial list responses were 55–67% smaller; direct round queries still return full detail once. Expanding every list source increases total traffic. All 352 offline tests, the build and live UI delay/retry/isolation checks pass, with zero model calls. See [measurements and limits](docs/SOURCE_LOADING_V1.md).
+LangGraph orchestrates the analysis nodes. Code generates the metrics, factual reports and citations; the model selects training topics from an allowlist. The project focuses on the complete data pipeline, explainable retrieval boundaries, failure handling and reproducible evaluation.
 
-Added deterministic report-contract verification and four guided questions over saved matches. Checks cover metrics, current-source identity/content and rendered reports; unknown outcomes are excluded from conversion-rate denominators. Questions are read-only, limited to two steps and make no model calls. All 325 offline tests, the frontend build, a real-demo end-to-end run and question UI checks pass, with zero new model calls. See [scope and validation](docs/REPORT_QUESTIONS_V1.md).
+## Capabilities
 
-Actual node events and local SQLite analysis history are now available. The UI shows recorded starts, completions, failures, durations and retrieval attempts, with saved-report selection and refresh recovery. A real Demo produced 20 events; its result survived removal of its Redis cache, and duplicate delivery reused the saved result without model execution. All 276 offline tests pass; this milestone made zero remote model calls. See [implementation and recovery limits](docs/ANALYSIS_HISTORY_V1.md).
+| Feature | Actual behavior |
+| --- | --- |
+| Match review | Upload a Demo or submit normalized Webhook JSON; choose full review, tactical comparison or player coaching |
+| Factual reports | Extract kills, utility, flashes, plants and rosters; calculate scores, side performance and round conversion while preserving missing values and unknown outcomes |
+| Historical retrieval | Combine Milvus dense + BM25 / RRF retrieval with a SQLite graph; cite the current match as `[C#]` and historical comparisons as `[E#]` |
+| Player profiles and comparisons | Filter by map, T/CT side and opponent; show participation denominators, sample composition and associations between behavior and outcomes, with links to source rounds |
+| Relation queries | Check source records for supported entities, events and temporal conditions; return found, not found within scope, insufficient information or unsupported; support bounded counts and conditional win rates |
+| Read-only follow-ups | Query losses after an opening kill, post-plant losses, a specific round or a specific player; at most two steps and 20 sources per question, with no model calls |
+| Execution and recovery | Show actual node events and durations; save the input hash, source commit and complete report; restore reports after refresh and deduplicate redelivery of completed tasks |
 
-Two consecutive real browser uploads now pass the complete pipeline on one persistent Celery worker: parsing, Milvus / Graph retrieval, live Qwen selection, Verifier and rendered reports. The observed 14-round Demo used 1,282 and 1,043 tokens; both reports passed verification and survived refresh. The old failure and its 5,456-token unresolved reservation remain intact. The authorized two-call recovery window is exhausted, so model calls are paused. Old local and remote branches were deleted; development continues on main. See [live acceptance and limits](docs/LIVE_E2E_V2.md).
+Source lists load summaries first and fetch the body on expansion. Details are pinned to the task and input version; changing context cancels pending requests. The graph uses a scrollable SVG without an additional graph visualization framework.
 
-The historical data rebuild is live: 20 series, 49 maps and 1,019 regulation/overtime rounds, with four pre-match knife rounds removed. Graph and Milvus evidence, all 56 player profiles and 5,308 silver labels agree; 276 offline tests pass. Production retrieval after the evidence-identity fix passes 50/50 development queries in Vector, Graph and Hybrid modes; the previously observed holdout scores are 28/30, 30/30 and 30/30. See [regression repair](docs/VECTOR_EVIDENCE_IDENTITY_V3.md). Old snapshots remain available for rollback. The corrected 16-query retrieval experiment uses AI-assisted development labels, not independent human gold or unseen generalization evidence. See [rebuild and refreeze](docs/HISTORICAL_DATA_REBUILD_V2.md).
+## Current validation results
 
-The corrected corpus has 160 retrieval results scored against AI-assisted development labels. Two additional series (5 maps, 111 live rounds) pass regression after parser fixes; initial failures remain preserved. Independent human review and generalization evidence are still pending. See [historical rebuild](docs/HISTORICAL_DATA_REBUILD_V2.md) and [new-match validation](docs/NEW_MATCH_VALIDATION_V3.md).
+This is the acceptance snapshot from **2026-09-09**. Full records and failure history are retained in the [validation report](docs/FULL_FLOW_VALIDATION_V3.md) and [structured results](datasets/evaluation/full_flow_v3_report.json).
 
-A Coach priority-selection pilot has completed on 6 development maps from 5 series: 6 calls to the fixed `qwen3.8-flash` model, with 4,939 provider-reported tokens for this run. Independent human quality review is deferred as optional future research and does not block current engineering or portfolio delivery; quality gains remain unscored. The old anonymous packet and blank forms are archived, but known factual corrections require a newly frozen packet before any future review. See the [blind-review protocol and run record](docs/COACH_BLIND_EVALUATION.md).
+| Validation scope | Result |
+| --- | --- |
+| Offline tests, dependency checks and frontend build | **354 tests passed**; [corresponding CI passed](https://github.com/Zzz0zzZ0/CS2-coach-agent/actions/runs/34324785193) |
+| Real Demo end-to-end flows | **5 maps, 111 distinct rounds and three analysis modes** passed, including overtime |
+| Input and report sources | HTTP checks passed for all 111 round sources; metrics and fixed-report consistency checks passed |
+| Entry points and recovery | Webhook, invalid-file handling, refresh recovery, loss of one task's Redis cache and redelivery of a completed task passed |
+| Development retrieval regression | Vector / Graph / Hybrid each **50/50** |
+| Original frozen-query regression | Vector **28/30**; Graph / Hybrid each **30/30** |
+| Structured and relation contracts | Tactical / player queries **30/30, 20/20**; relation expressions **48/48**; aggregation **96/96** |
+| Profiles and UI | Source-event audits passed for 56 players; profile comparison, relation sources and graph reachability on desktop / mobile passed |
 
-The shared model entry point now uses a persistent SQLite allowance across local processes, with defaults of 30,000 tokens and 100 attempts from ledger creation. Timeouts, provider rejections and missing usage stop subsequent calls while rule-based analysis remains available. The UI shows local accounting; provider free-quota balance remains unknown. See [budget and failure boundaries](docs/MODEL_BUDGET_BOUNDARIES.md).
+This run found and fixed internal round-topic queries being routed into the strict relation parser, restoring retrieval-plan coverage across the five maps from **12/17 to 17/17**. Clipped graph nodes were also fixed. Reports and failure evidence from before the fixes remain available.
 
-The preceding player-profile milestone added roster-based denominators and an offline test environment: complete rosters for 1,023 recorded rounds (four pre-match knife rounds have since been removed) across 49 maps, 87 passing offline tests, and a clean frontend build. Remote CI now passes: [run record](https://github.com/Zzz0zzZ0/CS2-coach-agent/actions/runs/34031162026). See [implementation status](docs/IMPLEMENTATION_PROGRESS.md), [player data contract](docs/PLAYER_PROFILE_DATA_CONTRACT.md), and [offline reproduction](docs/OFFLINE_VALIDATION.md).
+The model stayed paused during this run, with **0** new remote calls. Two earlier consecutive end-to-end runs used the real cloud model and reported **2,325 tokens** in total; see the [model-path and failure record](docs/LIVE_E2E_V2.md). The two sets of results are recorded separately.
 
-Paired-language and entity-alias calibration now covers 16 semantic groups (32 language forms) and 1,280 retrieval results. All 160 original rankings reproduce exactly. Alias handling recovers 55 relevant rounds, while glossary expansion does not improve BM25. Five positive questions have entirely relevant candidate pools, and all five negative questions have empty eligible scopes; a separate relation question set addresses these difficulty gaps. See [calibration evidence](docs/FAIR_LANGUAGE_CALIBRATION_V1.md).
+The local historical corpus snapshot contains **20 series, 49 maps, 1,019 official rounds and 56 players**, yielding **1,117 Milvus documents, 5,308 tactical silver labels and 28 community summaries**. These are verified local data volumes; raw demos, model caches and runtime databases are not distributed with the repository. [Data definitions and rebuild record](docs/HISTORICAL_DATA_REBUILD_V2.md)
 
+## Architecture and tradeoffs
 
-The new relation benchmark has 24 semantic questions, 48 bilingual forms and 192 results, with valid candidate scopes for every negative. BM25 / dense / RRF reach nDCG@5 of 0.1492 / 0.1476 / 0.1118; all three top-k pipelines retrieve on every unanswerable question. These failures motivate relation verification and abstention. Perfect SQL-oracle scores use supplied relation slots and are not production GraphRAG results. This remains an AI-audited development set. See [protocol, failures and next priorities](docs/RELATION_BENCHMARK_V1.md).
-
-A bounded natural-language relation engine now validates scoped source events before top-k, returning found / not found / unknown / unsupported states. All 48 observed language forms and 624 integration checks pass; ordinary retrieval regressions remain unchanged. This is deterministic event-query engineering evidence, not independent generalization or improved RRF ranking. UI status and round drilldown were checked in an isolated fresh process; the persistent API and worker have since loaded the verified update after an empty-queue check. See [implementation and verification limits](docs/RELATION_QUERY_ENGINE_V1.md).
-
-
-Start with the [English project case study](docs/portfolio/CASE_STUDY.md), [three-minute demonstration](docs/portfolio/DEMO_SCRIPT.md), and [exportable benchmark figure](docs/portfolio/benchmark-results.svg). The second bilingual dense control produced 768 audited historical-development results; an isolated pilot on two previously observed series added 960 text results and 60 verified relation expressions. Model advantages differed by series and fusion did not consistently help. See [baseline limits](docs/LANGUAGE_BASELINES_V2.md) and [isolated first-run results](docs/ISOLATED_RELATION_PILOT_V1.md). Full-scope relation counts and conditional win rates are now supported; unknown outcomes are explicit. A player-context optimization preserved 224 complete outputs while reducing local median function latency from 335 ms to 104 ms ([measurement scope](docs/PLAYER_PERFORMANCE_V1.md)).
-
----
-
-## 📖 Overview
-
-**CS2 Coach Agent** is an evidence-grounded analysis prototype: deterministic parsing and statistics, scoped retrieval, a state-machine workflow and a bounded LLM coaching step. It analyzes professional match recordings; professional coaching quality has not been independently established.
-
-It can:
-- Ingest `.dem` demo files directly, leveraging `demoparser2` to automatically parse kill chains, grenade landing positions, flash-blind sequences, and bomb plant events for every round.
-- Built-in **HLTV data scraper and demo downloader**, supporting automated acquisition of high-value professional match Demo datasets.
-- Drive **Supervisor (bounded tool calling) → Tools → Router → parallel task retrieval → Critique → Analyst → Coach → Verifier** with a feedback-based **Refine Loop**; knowledge ingestion requires verification, explicit approval, and a configuration switch.
-- The Critique node triggers a **feedback-based retry loop** when retrieval quality falls below a threshold; after the maximum attempts it preserves the low-quality signal instead of pretending the context passed.
-- Compute and report verifiable kills, openings, side splits, and post-plant conversions in code; `qwen3.8-flash` can only choose training priorities from an allowlist and cannot author report facts.
-- Support both **FACEIT / 5E Webhook data streams** and **direct `.dem` file uploads** as data ingestion modes.
-- Demo analysis runs through a **Celery + Redis** queue. The current local worker uses one execution slot; distributed throughput has not been benchmarked.
-
----
-
-## 🏗️ System Architecture
-
-```
-          ┌─────────────────────────────────────────────────────┐
-          │              FastAPI Web Service (app/main.py)      │
-          │                                                     │
-          │   POST /api/webhook/match-end  (JSON Payload)       │
-          │   POST /api/upload-demo        (.dem file upload)   │
-          │   GET  /api/tasks/{task_id}    (Task status query)  │
-          └──────────────────────┬──────────────────────────────┘
-                                 │ Celery task.delay() Push
-                                 ▼
-                          ┌────────────┐
-                          │  Redis MQ  │
-                          └──────┬─────┘
-                                 │ Dispatch to Celery Worker
-                                 ▼
-          ┌──────────────────────────────────────────────────────┐
-          │        LangGraph Multi-Agent State Machine           │
-          │                                                      │
-          │   [Supervisor] ──► [Tools] ──► [Router] ──► [Task Retrieval] ──► [Critique] ──► [Analyst] ──► [Coach] ──► [Verifier]
-          │                    │                    │                  │
-          │                    │       missing task? │                  │
-          │                    ◄──── Refine only failed tasks             │
-          │               opening/utility/round/map tasks          citation and fact checks
-          └──────────────────────────────────────────────────────┘
-                 │                       ▲
-                 ▼                       │
-          ┌──────────┐          ┌───────────────┐
-          │  Milvus  │          │ DashScope LLM │
-          │ Vector DB│          │ (Qwen)        │
-          └──────────┘          └───────────────┘
+```mermaid
+flowchart LR
+    Input[Demo / Normalized JSON] --> API[FastAPI]
+    API --> Queue[Redis / Celery]
+    Queue --> Pipeline[Parsing and LangGraph analysis]
+    Pipeline <--> Retrieval[Milvus + SQLite Graph]
+    Pipeline --> Report[Reports and consistency checks]
+    Pipeline --> History[SQLite analysis history]
+    History --> API
+    Report --> UI[React workbench]
+    API --> UI
 ```
 
----
+The analysis chain is `Supervisor → Tools → Router → Retrieve → Critique → Analyst → Coach → Verifier`; Demo parsing and initialization are also recorded in the timeline. The three modes select existing tasks without generating arbitrary tools or executing code.
 
-## ⚡ Tech Stack
+- **Compute facts, then select topics.** `demoparser2` extracts events and Tools calculates metrics. By default, only Coach makes one `qwen3.8-flash` call when the key and budget allow it; deterministic templates still generate the final report. Auxiliary model calls are disabled by default.
+- **Separate text retrieval from relation verification.** Milvus retrieves historical text; SQLite stores matches, rounds, events, players and silver-label relationships. Strict relation questions check source events instead of treating similar text as proof of a relationship. Community summaries use deterministic statistics.
+- **Bound retrieval retries.** Critique combines evidence quantity, task coverage, map matching and team matching. If the score is below the threshold and tasks are missing, it retries the missing portion, with at most three retrieval rounds. A passing combined score does not guarantee coverage of every task, so per-task traces are retained.
+- **Persist completed results.** SQLite records the input hash, source commit, execution events and reports. Completed tasks remain readable without the Redis result cache; automatic resumption from an interrupted stage is outside the current scope.
+- **Bound cost and writes.** A cross-process budget ledger defaults to a cap of 30,000 tokens / 100 attempts. Timeouts, rejections or unknown usage pause calls. Automatic knowledge ingestion is disabled by default and also requires a high-quality source, per-match approval and a passing Verifier result.
 
-| Layer | Technology | Description |
-|-------|-----------|-------------|
-| **Web Layer** | FastAPI + Uvicorn | Async Webhook service, supporting `.dem` uploads and task status queries |
-| **Async Queue** | Celery + Redis | Enterprise background task queue for high concurrency & horizontal scaling |
-| **Agent Orchestration** | LangGraph (StateGraph) | Bounded tool calling → deterministic tools → parallel retrieval → rule/LLM review → analysis → coaching → citation verification |
-| **Retrieval (RAG)** | Milvus 2.6 + LangChain | Dense + native BM25 hybrid retrieval, RRF, parent context, corrective retrieval, and evidence tracing |
-| **LLM** | Alibaba Cloud DashScope / Qwen | `qwen3.8-flash` model inference (via OpenAI-compatible API) |
-| **Embedding** | FastEmbed + ONNX | Local multilingual embeddings without DashScope embedding usage |
-| **Data Acquisition**| DrissionPage | HLTV match data scraping and automated `.dem` downloads |
-| **Demo Parsing** | awpy + demoparser2 | Precise CS2 demo frame event extraction (kills/grenades/flashes/plants) |
-| **Architecture** | DDD (Domain-Driven Design) | High cohesion, low coupling Clean Architecture pattern |
+Stack: Python 3.11, FastAPI, Celery / Redis, LangGraph, Milvus 2.6, SQLite, FastEmbed / ONNX, demoparser2 and React / Vite. HLTV collection tools use DrissionPage. The current local worker uses the `solo` pool; multi-worker throughput has not been validated here.
 
----
+## Quick start
 
-## 🔬 Technical Implementation Details
+### 1. Install and start
 
-### 1. Data Flow: Demo to Coaching Advice
-
-```text
-.dem / Webhook JSON
-        │
-        ▼
-TacticalDemoParser
-        │  round_end / player_death / grenade / flash / bomb events
-        ▼
-Structured MatchWebhookPayload
-        │
-        ├── Tools: deterministic metrics
-        ├── Milvus: hybrid text retrieval
-        ├── GraphRAG: relationship paths and community summaries
-        │
-        ▼
-Critique: task coverage, map match, evidence count and relevance
-        │  retry only missing tasks, up to three attempts
-        ▼
-Analyst: facts only
-        ▼
-Coach: model-selected allowlisted priorities, code-rendered evidence advice
-        ▼
-Verifier: citation boundaries plus source-metric, current-evidence and deterministic-report consistency
-```
-
-The parser stores observable events and never infers that utility caused a round win. Analyst and Coach output is rendered from deterministic facts; the model only orders allowlisted training topics. This separates raw facts, model selection, and coaching recommendations.
-
-### 2. LangGraph State Machine and Bounded Agents
-
-All nodes communicate through `GraphState`. Important fields include:
-
-| Field | Purpose |
-|-------|---------|
-| `metrics` | Code-computed team scores, valid kills, opening conversions, utility, and plant metrics |
-| `current_evidence` | Deterministic evidence from the uploaded Demo, cited as `[C#]` |
-| `analysis_plan` | Router tasks for opening, utility, round flow, and map context |
-| `retrieval_task_results` | Per-task coverage, source counts, and warnings |
-| `retrieval_evidence` | Historical Milvus/GraphRAG comparison evidence cited as `[E#]` |
-| `agent_trace` / `tool_trace` | Execution trace shown by the frontend |
-| `verification_report` | Citation checks, source/report consistency checks, limitations and review status |
-
-The Supervisor may choose an analysis mode through an allowlisted tool, but cannot create graph nodes, execute code, access the network, or write to the knowledge base. Unsupported or failed tool calls use a deterministic fallback, so model output cannot change the workflow topology.
-
-### 3. Milvus Hybrid RAG
-
-The vector collection is `cs2_tactical_knowledge`. Each document keeps `map`, `match_id`, `round_number`, `tactic_type`, `parent_id`, and `parent_content` metadata.
-
-Each retrieval follows this sequence:
-
-1. Use Router-generated CS2 terminology by default; add LLM query rewriting only when `LLM_AUXILIARY_CALLS_ENABLED=true`.
-2. Generate a 384-dimensional dense embedding locally with FastEmbed/ONNX, avoiding paid embedding API usage.
-3. Run native Milvus BM25 sparse retrieval and merge dense/sparse results with RRF.
-4. Retrieve original, rewritten, and task-variant queries, then rerank using lexical overlap, rank, and parent-context bonus.
-5. Deduplicate with stable evidence keys and reserve a small slice for every task so one topic cannot consume the whole context window.
-6. Let Critique retry only uncovered tasks instead of repeating successful retrieval work.
-
-If Milvus is unavailable, the workflow can continue with GraphRAG factual paths; if the GraphRAG database is absent, it falls back to Milvus.
-
-### 4. Two-Level GraphRAG Retrieval
-
-GraphRAG uses a standard-library SQLite sidecar and does not replace Milvus:
-
-```text
-nodes:
-  match → map → round ┬→ event → player
-                      └→ tactical_sequence → event/player
-
-edges:
-  HAS_MAP / HAS_ROUND / KILL / USES_UTILITY /
-  FLASH_BLIND / PLANTS_BOMB / KILLER / VICTIM /
-  HAS_TACTICAL_SEQUENCE / SUPPORTED_BY / INVOLVES_PLAYER
-```
-
-- Local Search filters rounds by map, task, and keywords, then returns event paths plus `round → tactical_sequence → evidence/player` paths.
-- Community Summary aggregates rounds by “map × topic”; topics currently include overview, opening, utility, and round_flow.
-- Global Search ranks multiple community summaries and returns their round source IDs; Analyst/Coach performs the final cross-community synthesis.
-
-Community summaries are deterministic and extractive. They report observed rounds, matches, kills, first kills, utilities, plants, tactical silver labels, winners, and opening players; they do not promote a small sample into a universal professional tactic.
-
-### 5. Frontend Review Console
-
-`frontend/` is an independent React + Vite application that uses the `/api` proxy and does not duplicate backend business logic:
-
-- The upload form submits a `.dem` and `analysis_mode`; the backend returns a Celery `task_id`.
-- The console polls `GET /api/tasks/{task_id}` every two seconds and renders the `analysis` payload after SUCCESS.
-- The dashboard separates current-Demo `[C#]` evidence from historical `[E#]` comparisons and marks completed tasks that still need quality review.
-- The GraphRAG panel loads maps, nodes/edges, Global Search, player profiles, and team comparisons through read-only endpoints.
-- The subgraph is drawn with SVG instead of a large visualization dependency; CSS breakpoints collapse the layout on mobile.
-
-### 6. Reliability and Review Boundaries
-
-- Deterministic metrics run before any LLM call; environment deaths, suicides, and team kills are excluded while team scores, opening conversion, utility, and plants are computed in code.
-- Critique evaluates evidence relevance and coverage, not whether the model agrees with a tactic.
-- Verifier is LLM-free and checks unknown `[C#]/[E#]` citations, unsupported recommendations, and current-match claims backed only by historical evidence.
-- Automatic knowledge ingestion is disabled by default and requires a high-quality source, explicit human approval, and a passing Verifier.
-- Demos, parsed outputs, the SQLite graph, Milvus volumes, and `.env` are local runtime data and are excluded from Git.
-
----
-
-## 🚀 Quick Start
-
-### 1. Clone and Initialize Environment
+Prepare Python 3.11, Node.js 22 and Docker Compose. You also need your own `.dem` file for a real match review.
 
 ```bash
 git clone https://github.com/Zzz0zzZ0/CS2-coach-agent.git
 cd CS2-coach-agent
 make bootstrap
+npm --prefix frontend ci
 ```
 
-`make bootstrap` creates the Python 3.11 virtual environment, installs runtime/development dependencies, and starts the Redis/Milvus infrastructure.
+`make bootstrap` creates `.venv`, installs Python packages with the dependency constraints, copies the environment template only if `.env` does not exist, and starts Redis, Milvus, etcd and MinIO. See [.env.example](.env.example) for the full configuration.
 
-### 2. Configure Environment Variables
+For a first run, leave `DASHSCOPE_API_KEY` unset to use the rule-based Coach. To use the cloud model, configure a valid key in `.env` or through the local UI. The runtime key file takes precedence over environment configuration, and the UI never returns the key. The model entry point currently supports only `qwen3.8-flash`, with thinking disabled; a configured key does not mean the budget permits calls. View the ledger status in the UI; changing the key or restarting does not reset it. [Budget boundaries](docs/MODEL_BUDGET_BOUNDARIES.md)
 
-```bash
-cp .env.example .env
-```
+The default `EMBEDDING_BACKEND=fastembed` uses local embeddings; downloading the model for the first time requires network access. `LLM_AUXILIARY_CALLS_ENABLED=false`, `AUTONOMOUS_TOOL_SELECTION_ENABLED=false` and `AUTO_INGEST_ENABLED=false` keep auxiliary calls and automatic ingestion disabled.
 
-Edit `.env` and fill in your Alibaba Cloud DashScope API Key and infrastructure config:
-
-```env
-# DashScope / OpenAI-compatible API
-DASHSCOPE_API_KEY="sk-your-key-here"
-MODEL_NAME=qwen3.8-flash
-LLM_TIMEOUT_SECONDS=120
-LLM_MAX_TOKENS=1400
-LLM_ENABLE_THINKING=false
-LLM_AUXILIARY_CALLS_ENABLED=false
-
-# Milvus Vector Database
-MILVUS_URI="http://localhost:19530"
-MILVUS_TOKEN=""
-
-# Celery Message Queue (requires local Redis)
-CELERY_BROKER_URL="redis://localhost:6379/0"
-CELERY_RESULT_BACKEND="redis://localhost:6379/1"
-```
-
-Alternatively, enter the key in the “Submit Match Demo” panel after starting the frontend. The UI calls `PUT /api/settings/llm/key`; the key is written only to the local `data/runtime/dashscope_api_key` file with `0600` permissions and is never stored in the browser, Git, API response, or Celery payload. Both API and worker processes read it on the next model call without a restart. Writes are loopback-only, and `GET /api/settings/llm` returns configuration status without exposing the key.
-
-### 3. Initialize the Tactical Knowledge Vector Store
-
-```bash
-python scripts/seed_knowledge.py
-```
-
-> This reads `data/demos/*.dem`, builds structured documents for match summaries, opening-duel evidence, and round events, then replaces the old seed documents in `cs2_tactical_knowledge`. Run `python scripts/seed_knowledge.py --dry-run` first to inspect the document count.
-
-### GraphRAG sidecar
-
-Build the deterministic local graph from parsed Demo events:
-
-```bash
-make graph-build
-```
-
-The sidecar uses SQLite for match, map, round, event, player, and tactical-sequence relationships. `make graph-build` recomputes the current silver labels and connects each sequence to its source events and participants. Local hits carry `label_source` and confidence into the existing Analyst, Coach, and Verifier `[E#]` contract; `weak_rule` remains a candidate rather than a human-confirmed tactic. If the graph database is absent, the workflow falls back to Milvus only.
-
-The same SQLite graph now powers cross-match analytics. Player profiles aggregate kills, deaths, assists, opening duels, trades, utility, plants, and participation in all six tactical sequence types. Both player profiles and two-player comparisons can be restricted to the same map, T/CT side, and opponent. Team comparison normalizes every sequence to 100 observed team rounds so unequal match counts do not distort totals. Tactical slices use the same filters, then calculate round conversion after opening wins/losses, trade rounds, post-plants, retake contacts, and execute candidates. They also expose player responsibility shares for openings, trades, and utility bursts. Natural-language team and player queries return deterministic Chinese briefs with `graph:{match}:{map}:{round}` sources; opening a source shows its timeline and opposite-outcome comparisons. These are descriptive metrics, not causal claims. A `round_end` without a winner is treated as a technical-pause or round-restore marker and excluded from official rounds. When a GOTV demo omits native `player_blind` events, the parser compares `flash_duration` immediately before and at each `flashbang_detonate` tick to recover victim, thrower, team, area, and duration fields, marking them with `source=flash_duration_delta`. A single detonation in a tick has an exact thrower; simultaneous detonations retain every `attacker_candidates` entry with `attribution=simultaneous_flash_candidates` instead of inventing a unique attribution.
-
-Global Search now extracts team, map, T/CT side, and opponent from natural-language questions and returns the matching tactical slice as its highest-priority structured evidence. When two teams and comparison intent are present, it generates a same-context tactical comparison. Examples include `Falcons Dust2 T-side opening conversion`, `Falcons versus Spirit retake performance`, and `compare Spirit and Vitality trade rounds on Nuke CT`. This path is deterministic and adds no LLM call.
-
-### 4. Start the API and Worker
+Terminal one:
 
 ```bash
 make dev
 ```
 
-`qwen3.8-flash` enables deep thinking by default; this project disables it and uses one model call per match for Coach by default. Supervisor, routing, Critique, and Analyst stay deterministic and local, generation is capped at 1,400 tokens, and the UI displays token usage for the run. Set `LLM_AUXILIARY_CALLS_ENABLED=true` only when extra query-rewrite and LLM-Critique calls are worth the quota. Quota rejection is not retried; Coach falls back to local priority rules. Local development uses Celery's `solo` pool by default to avoid macOS `fork` conflicts with native FastEmbed/ONNX runtimes. Linux deployments can opt into prefork with `CELERY_POOL=prefork CELERY_CONCURRENCY=4 make worker`. Temporary uploaded Demos are deleted after task completion.
-
-### 5. Start the Frontend Review Console
-
-In a second terminal:
+Terminal two:
 
 ```bash
-make frontend-install
 make frontend
 ```
 
-Open `http://localhost:5173`. The console provides Demo upload, async progress, metric cards, Analyst/Coach reports, evidence citations, a GraphRAG subgraph, Global Search, cross-match player profiles, five-team tactical comparison, and contextual tactical slices. Team queries show a deterministic Chinese coaching brief before the raw graph evidence. `[G#]` citations prioritize rounds for the requested metric; key-round samples can also be filtered by opening, trade, utility, execute, post-plant, retake, and outcome. Opening a sample shows its raw timeline and recommends opposite-outcome rounds with the same map and side, ranked by tactical-label and site overlap. Vite proxies `/api` requests to port `8001`.
+Open the [workbench](http://localhost:5173) or [API documentation](http://127.0.0.1:8001/docs). Vite proxies `/api` to `8001`; if you change the backend port, update the [proxy configuration](frontend/vite.config.js) as well. `make dev` starts the API and worker; terminating that command stops both.
 
-Read-only GraphRAG display endpoints:
+### 2. Submit a match
 
-```text
-GET /api/graph/stats
-GET /api/graph/maps
-GET /api/graph/search?q=... # answer brief plus raw evidence results
-GET /api/graph/round?source_id=graph:2396609:Dust2:1&team=Falcons # optional team adds opposite-outcome analogues
-GET /api/graph/subgraph?map_name=Mirage
-GET /api/graph/players?team=Falcons
-GET /api/graph/players/{steamid_or_nickname}?map_name=Dust2&side=T&opponent=Spirit
-GET /api/graph/players/compare?players={id1},{id2}&map_name=Dust2&side=T
-GET /api/graph/teams/compare?teams=Falcons,Spirit,Vitality,FURIA,MOUZ
-GET /api/graph/teams/Falcons/tactics?map_name=Dust2&side=T&opponent=Spirit
-```
+Select a Demo and analysis mode in the workbench, or use the API:
 
-### 6. Usage
-
-**Option A: Analyze a local Demo directly (recommended for development)**
-```bash
-make analyze DEMO=data/your_match.dem
-```
-
-**Option B: Fetch recent professional match Demos**
-
-By default, the scraper queries completed matches from the last 7 days with at least 2 HLTV stars and an explicitly available Demo. If that window has no usable Demos, it widens to the last 30 days and writes match manifests to `data/demos/manifests/`.
-
-```bash
-# Discover matches only; do not download large archives
-make fetch-demos ARGS="--days 7 --min-rating 2 --max-matches 10"
-
-# Download and extract .dem files (requires unar, 7z, unrar, or bsdtar)
-make fetch-demos ARGS="--days 30 --min-rating 2 --max-matches 10 --download"
-
-# Download a reviewed fixed selection for reproducible experiments
-make fetch-demos ARGS="--selection-file datasets/selections/five_teams_recent_20_v1.json --download"
-```
-
-The downloader only follows an official Demo link exposed on the HLTV match page. It stores a per-match manifest, skips an existing manifest by default, and requires `--force` to download that match again.
-
-**Option C: Start the Web service to receive third-party Webhooks**
-```bash
-make dev
-```
-
-Then send a POST request to `http://127.0.0.1:8001/api/webhook/match-end`:
-
-```json
-{
-  "match_id": "match-001",
-  "map_name": "Mirage",
-  "rounds": [...]
-}
-```
-
-Or upload a demo file directly:
 ```bash
 curl -X POST http://127.0.0.1:8001/api/upload-demo \
-  -F "file=@data/sample.dem"
-```
+  -F "file=@data/sample.dem" \
+  -F "analysis_mode=demo_forensic"
 
-Query async task status:
-```bash
+# Replace the placeholder with the returned task_id
 curl http://127.0.0.1:8001/api/tasks/{task_id}
 ```
 
----
+The console offers three modes: `demo_forensic`, `tactical_comparison` and `player_coaching`. The uploaded copy is cleaned up when the task ends; the original file is unchanged. For a simplified command-line analysis, use `make analyze DEMO=data/sample.dem`. That entry point bypasses Celery, does not connect to the historical Graph client and does not save task history for the UI. Use the upload entry point for the complete experience.
 
-## 📁 Project Structure
+`POST /api/webhook/match-end` accepts generic normalized JSON; see [MatchWebhookPayload](app/domain/match_models.py) for its field contract. Data from third-party platforms must first be mapped to that format. There is currently no native FACEIT / 5E adapter.
 
-```
-CS2-coach-agent/
-├── app/                           # DDD Architecture Main Application
-│   ├── main.py                    # FastAPI service entry point
-│   ├── api/                       # API Layer: FastAPI routers & dependency injection
-│   │   ├── dependencies.py        # FastAPI compatibility exports
-│   │   └── routers/
-│   │       ├── webhooks.py        # POST /api/webhook/match-end
-│   │       ├── uploads.py         # POST /api/upload-demo
-│   │       ├── graph.py           # GET  /api/graph/*
-│   │       └── tasks.py           # GET  /api/tasks/{task_id}
-│   ├── core/                      # Core Configuration
-│   │   ├── config.py              # Centralized env variable management (Settings)
-│   │   ├── providers.py           # LLM / Milvus providers
-│   │   └── celery_app.py          # Celery application instance
-│   ├── domain/                    # Domain Models
-│   │   ├── match_models.py        # Pydantic validation schemas
-│   │   └── analysis_models.py     # Metrics and analysis result models
-│   ├── services/                  # Application Services
-│   │   ├── rag_service.py         # RAG: query rewrite + MMR retrieval
-│   │   ├── graph_rag_service.py    # GraphRAG: graph, communities, Global Search
-│   │   ├── metrics_service.py     # Deterministic match metrics
-│   │   ├── analysis_pipeline.py   # Unified analysis entry point
-│   │   ├── parser_service.py      # Demo parser: demoparser2 wrapper
-│   │   └── tasks.py               # Celery async task definitions
-│   ├── scrapers/                  # Data Acquisition Layer
-│   │   ├── hltv_scraper.py        # HLTV match metadata scraper
-│   │   └── demo_downloader.py     # Professional demo automated downloader
-│   └── agentic/                   # Agent Orchestration Layer
-│       ├── states.py              # GraphState global state definition
-│       ├── workflow.py            # LangGraph state machine builder (with Refine Loop)
-│       └── nodes/                 # Controlled agent and deterministic tool nodes
-│           ├── supervisor_node.py # Supervisor: bounded analysis modes
-│           ├── tool_node.py       # Tools: deterministic metrics first
-│           ├── router_node.py     # Router: metadata extraction & filter signal
-│           ├── retrieve_node.py   # Retrieve: vector search dispatch
-│           ├── critique_node.py   # Critique: retrieval quality review (0.0-1.0)
-│           ├── analyst_node.py    # Analyst: deterministic fact report
-│           ├── coach_node.py      # Coach: allowlisted priority + evidence advice
-│           └── verify_node.py     # Verifier: citation and fact checks
-├── scripts/                       # Utility Scripts
-│   ├── seed_knowledge.py          # Milvus knowledge base seed script
-│   ├── build_graph.py             # Build GraphRAG graph and communities
-│   ├── evaluate_retrieval.py      # Offline RAG smoke evaluation
-│   ├── evaluate_tactical_queries.py # Tactical natural-language contract evaluation
-│   ├── fetch_recent_demos.py      # HLTV professional Demo fetch entrypoint
-│   ├── analyze_local.py           # Local demo direct analysis entry
-│   └── test_webhook.py            # Webhook API test script
-├── datasets/evaluation/           # Fixed query set and reproducible report
-├── test_main.py                   # End-to-end integration test
-├── test_agentic.py                # Agent orchestration and tool tests
-├── test_graph_rag.py              # GraphRAG path and Global Search tests
-├── .env.example                   # Environment variable template
-├── Makefile                        # Simplified development entry points
-├── requirements.txt               # Python dependencies
-├── requirements-dev.txt            # Development and test dependencies
-├── frontend/                       # React + Vite review console
-│   ├── src/main.jsx                # Dashboard and GraphRAG UI
-│   ├── src/api.js                  # Backend request helpers
-│   └── src/styles.css              # Dark tactical console styling
-├── data/                          # .dem demo files (local only, not committed)
-└── output/                        # Analysis results output (logs/JSON, not committed)
-```
+### 3. Optional: build a historical corpus
 
----
+A fresh clone does not include the historical data described above. Deterministic analysis of the current match can continue when historical retrieval is unavailable; historical profiles and comparisons require demos and indexes.
 
-## 🎭 Agent Role Design
-
-### 🧭 Router (Metadata Extractor)
-> Uses normalized match metadata to generate retrieval filters, avoiding a redundant LLM extraction step.
-
-### 🧠 Supervisor / Tools (Controlled Orchestration and Tool Layer)
-> Supervisor is deterministic by default. When auxiliary model calls are enabled, it can only choose existing modes and retrieval tasks through the allowlisted `select_analysis_plan` tool. Tools computes deterministic metrics first.
-
-### 📚 Retrieve (Tactical Knowledge Retriever)
-> Invokes `KnowledgeBaseClient` with Router queries and Milvus native dense + BM25 hybrid retrieval. LLM query rewriting is an optional quota expense.
-
-The knowledge base defaults to Milvus native dense + BM25 hybrid retrieval and preserves match/map parent summaries with each evidence hit. Set `RAG_HYBRID_ENABLED=false` for the legacy dense fallback. Run `make eval-rag` for the fixed-query retrieval smoke evaluation.
-
-### ⚖️ Critique (Retrieval Quality Judge)
-> Code scores task coverage, map match, team match, and evidence count. **When the score falls below 0.7, that feedback is added to the next query, with up to three attempts.**
-
-### ✅ Verifier (Fact and Citation Checker)
-> Uses no LLM. It recomputes metrics from normalized input, checks current-source identity/content and compares deterministic reports with their source-derived templates. Citation checks are retained. Shared computation is not an independent truth checker; historical-source semantics and coaching quality remain unverified.
-
-### 🔬 Analyst (Deterministic Fact Report)
-> Uses no LLM. It reports score, side splits, opening conversion, post-plant conversion, defuses, and utility counts; unavailable metrics are explicit and no subjective cause is added.
-
-### 🎯 Coach (Bounded Training Decision)
-> `qwen3.8-flash` only calls `select_coaching_priorities` to choose 2–3 topics from opening follow-up, post-plant, utility review, and side transition. Code renders the final report and `[C#]` citations, so the model cannot add roles, positions, utility effects, or tactical causality.
-
-### 🔐 Knowledge Ingestion Review Gate
-> Self-learning ingestion is disabled by default. It runs only when `AUTO_INGEST_ENABLED=true`, `extra_data.knowledge_approved=true`, the source is marked high quality, and Verifier passes. Otherwise the result is returned as `knowledge_review.status=pending_review`; an operator can review it and submit it through `/api/knowledge/ingest`.
-
-### ✅ Local Validation
+Place historical demos in `data/demos/`, inspect the document count, then build the stores:
 
 ```bash
-make test       # Unit and integration tests
-make eval-rag   # Fixed-query Milvus RAG evaluation
-make eval-tactics # 30-case GraphRAG tactical query contract evaluation
-make eval-players # 20 contextual player-query contract cases
-make eval-v1      # 50 contract cases + 50 retrieval queries across five modes
-make eval-negatives # 12 independent synthetic development negatives
-make eval-holdout # frozen 30-query regression validation; original baseline retained
+.venv/bin/python scripts/seed_knowledge.py --dry-run
 make graph-build
-make silver-dataset # build evidence-linked tactical silver annotations
+make seed
 ```
 
-Community summaries are currently deterministic and extractive: they summarize parsed facts, preserve round-level sources, and do not promote small-sample observations into universal professional tactics.
+These data-building commands **rebuild the configured graph, and `make seed` replaces the `cs2_tactical_knowledge` collection by default**. Back up existing data first and use a separate graph path or new collection for experiments; see the [historical rebuild procedure](docs/HISTORICAL_DATA_REBUILD_V2.md). Running service processes may cache graph / retrieval clients. After switching data, restart the API and worker while the task queue is idle.
 
-`make silver-dataset` defaults to `datasets/silver/v0.3/` and refuses existing directories; use `ARGS="--output-dir NEW_DIRECTORY"` to reproduce. v0.3 retains the fixed 20-match selection in `datasets/selections/five_teams_recent_20_v1.json`, with 49 maps, 1,019 live rounds and 5,308 tactical silver labels after parser corrections. v0.1 and v0.2 remain historical snapshots. Opening duels and post-plant phases come directly from event facts; trade kills, Utility Bursts, and Retake Contacts use explicit temporal rules. A weakly supervised Execute Candidate is added only when a T-side utility sequence is followed by a plant. Every label retains its rule version, confidence, review status, and evidence event IDs. The result is explicitly a reproducible silver-label dataset, not expert-annotated gold data.
+The collection tool can first discover matches; it downloads demos only when `--download` is explicitly added:
 
-### Unified GraphRAG Evaluation
+```bash
+make fetch-demos ARGS="--days 7 --min-rating 2 --max-matches 10"
+```
 
-`datasets/evaluation/tactical_queries_v1.json` and `player_queries_v1.json` contain 50 structured contract cases. `retrieval_queries_v2.json` adds 50 deterministic retrieval queries covering seven maps, four intents, five target teams, five representative players, bilingual paraphrases, and no-answer negatives. `make eval-v1` evaluates 50 contract cases plus 152 retrieval checks without remote query rewriting. Current scores are graph-only and hybrid 100.00, vector-only 77.72, community-only 73.76, and no-RAG 4.46. Vector retrieval itself passes 50/50 queries; its lower combined score reflects the absence of the graph's structured team/player contracts. Reports are written to `datasets/evaluation/cs2_coach_v1_report.json` and `retrieval_v2_report.json`. This remains a silver-standard engineering evaluation, not expert gold evaluation of coaching quality or player skill, and it does not establish causality.
+Downloads require a local Chromium / Chrome installation, an actual Demo link exposed on the HLTV page and a local extraction tool. Existing demos can be used directly. [Download entry point and options](scripts/fetch_recent_demos.py)
 
-The first frozen run of `retrieval_queries_holdout_v1.json` uses 30 different phrasings, players, match filters, and harder negatives. Graph-only and hybrid score 97.99: all 27 positive queries pass, while all three open-ended unknown-entity/cross-domain negatives are falsely retrieved. Vector-only passes 24/30 queries and 93/99 retrieval checks, for a 65.77 combined score. The original baseline remains in `datasets/evaluation/cs2_coach_holdout_v1_report.json`. Frozen queries must not be rewritten; subsequent fixes use independent development examples and retain evaluation history.
+## Tests and benchmarks
 
----
+### Offline validation without a key
 
-### Query-boundary repair validation (2026-09-06)
+Code-only validation requires neither Docker nor match data. Install the dependencies and run these commands from the repository root:
 
-All 12 independent synthetic negatives pass. The original development set remains 50/50 for Vector, Graph and Hybrid, with 50/50 structured contracts. Final held-out Graph and Hybrid results are **30/30 queries, 99/99 checks and a 100.00 combined score**: all 27 positive queries are retained and all three negatives abstain. Vector reaches **27/30, 96/99 and 67.79**, with no loss of previously passing queries; three intent checks remain unsuccessful.
+```bash
+python3.11 -m venv .venv
+.venv/bin/python -m pip install -r requirements-dev.txt -c requirements-lock.txt
+.venv/bin/python -m pip check
+make test
+npm --prefix frontend ci
+make frontend-build
+```
 
-There were **two** held-out runs during this repair. The first exposed over-rejection of ordinary descriptions and explicit map context; independent positive regressions were added before the final run. The failed attempt is retained in `datasets/evaluation/cs2_coach_holdout_v1_attempt1_report.json`; the final result is `datasets/evaluation/cs2_coach_holdout_v1_fixed_report.json`. The original baseline and frozen queries are unchanged. This is regression validation, not a fresh blind test or evidence of unseen-match generalization.
+Installation requires network access. Test execution requires no model, Redis, Milvus or embedding download. Tests isolate `.env`, use temporary SQLite databases and block Python socket networking. CI uses the same dependency constraints and frontend lockfile. [Offline validation guide](docs/OFFLINE_VALIDATION.md)
 
-Validation: 80 tests passed with three dependency warnings, and the frontend production build passed. Retrieval benchmarks made no remote model calls. See the [repair validation record](docs/NEGATIVE_RETRIEVAL_FIX.md).
+### Regression on the real corpus
 
-Entity constraints cover English profile, subject/map, opponent and comparison syntax while retaining Chinese aliases. Graph search checks indexed identities; vector evidence uses complete name boundaries. Without explicit context, generic terms such as `match` and `professional` no longer establish the domain. Caller-provided map/match filters remain valid context. This is a bounded query grammar, not general-purpose named entity recognition.
+With the matching historical graph, Milvus collection and local embeddings ready, write results to a new local directory:
 
-See the [engineering and research roadmap](docs/PROJECT_IMPROVEMENT_ROADMAP.md) for independent-match evaluation, fair ablations, human review and key-free CI. Engineering pass rates are not measures of coaching quality or unseen-match generalization.
+```bash
+make eval-v1 ARGS="--output data/evaluation/readme-run/development.json"
+make eval-v1 ARGS="--retrieval-dataset datasets/evaluation/retrieval_queries_holdout_v1.json --output data/evaluation/readme-run/holdout.json"
+```
 
+Use a different output directory for subsequent runs to preserve earlier reports; do not rewrite frozen inputs. The exit code primarily checks production Graph / Hybrid retrieval and structured contracts. Inspect the report for Vector's two existing `intent_match` failures. Query pass rates here are engineering checks, not standard Recall@k. Combined scores also cannot fairly compare methods whose structured capabilities differ.
 
-## 📝 License
+### Retrieval comparisons on the same corpus
 
-MIT © 2026
+The [Chinese and English baseline experiment](docs/LANGUAGE_BASELINES_V2.md) contains 768 historical development results. The [isolated-match pilot](docs/ISOLATED_RELATION_PILOT_V1.md) contains 960 text-retrieval results and 60 relation-expression checks across two previously observed series.
 
----
+![Retrieval comparisons on the development set and isolated pilot](docs/portfolio/benchmark-results.svg)
 
-<div align="center">
-<sub>Built with ❤️ for the CS2 competitive scene.</sub>
-</div>
+The chart shows development evaluation using AI-assisted labels. The dense models also differ in their effective chunk capacity. Jina achieved higher historical development nDCG@5 than MiniLM, but its advantage in the isolated pilot varied by series, and RRF did not consistently improve results. Text top-k methods without calibrated abstention still returned results for unanswerable queries. [Chart data and generation record](docs/portfolio/benchmark-figure-manifest.json)
+
+## Known boundaries
+
+- Verifier checks consistency among normalized input, derived metrics, current sources and fixed report templates. It shares the parsing and calculation chain, so it is not an independent factual judge; it also does not verify full semantic support from historical evidence.
+- Player statistics use actual participation denominators and show sample composition and unknown values. Observed associations do not establish causality, skill rankings or training effectiveness. Match dates and comparable longitudinal samples are insufficient, so the system does not report trends.
+- The regression sets and five-map pilot have already been observed. AI labels and rule-derived silver labels are not independent human gold labels. Blind quality review by human coaches is deferred, and the model's quality improvement remains unscored.
+- The current deployment target is a local workbench. Authentication for public deployment, tenant isolation and load capacity are outside this acceptance scope. The model ledger accounts only for calls through this project, not the provider account's remaining quota.
+
+## Project structure and further reading
+
+```text
+app/
+├── api/routers/           # Upload, Webhook, tasks, follow-ups, graph and settings APIs
+├── agentic/              # LangGraph state, nodes and execution events
+├── core/                 # Configuration, providers, Celery and model budget
+├── domain/               # Match and analysis-result contracts
+├── services/
+│   ├── parser_service.py       # Demo event and roster parsing
+│   ├── metrics_service.py      # Deterministic metrics and current sources
+│   ├── rag_service.py          # Milvus text retrieval and evidence filtering
+│   ├── graph_rag_service.py    # Historical graph, profiles and community retrieval
+│   ├── relation_query_service.py # Bounded relation parsing and source-event checks
+│   ├── report_verification.py  # Report consistency checks
+│   ├── analysis_runs.py        # SQLite task history and input hashes
+│   ├── followup_service.py     # Read-only questions over saved matches
+│   └── tasks.py                # Celery entry points, persistence and cleanup
+└── scrapers/             # HLTV discovery and downloads
+frontend/                 # React / Vite workbench
+scripts/                  # Data-building, audit and evaluation scripts
+datasets/                 # Selections, frozen queries, silver labels and shareable results
+docs/                     # Implementation contracts, experiments and presentation materials
+test_*.py                 # Offline regression tests
+data/, output/            # Local runtime data, excluded from Git
+```
+
+| Reading goal | Documentation |
+| --- | --- |
+| Project presentation / job and university applications | [English case study](docs/portfolio/CASE_STUDY.md) · [Chinese application notes](docs/portfolio/APPLICATION_NOTES_ZH.md) · [Demo script](docs/portfolio/DEMO_SCRIPT.md) |
+| Profiles and data definitions | [Denominators and comparisons](docs/PLAYER_PROFILE_DATA_CONTRACT.md) · [Behavior and outcomes](docs/PLAYER_BEHAVIOR_OUTCOMES.md) |
+| Relation queries | [Relation and aggregation contracts](docs/RELATION_QUERY_ENGINE_V2.md) |
+| Runtime reliability | [History and idempotency](docs/ANALYSIS_HISTORY_V1.md) · [Report verification and follow-ups](docs/REPORT_QUESTIONS_V1.md) · [On-demand source loading](docs/SOURCE_LOADING_V1.md) |
+| Performance measurements | [Profile output equivalence and timing](docs/PLAYER_PERFORMANCE_V1.md) · [Source payload sizes and tradeoffs](docs/SOURCE_LOADING_V1.md) |
+| Versions and research plans | [Implementation progress](docs/IMPLEMENTATION_PROGRESS.md) · [Roadmap](docs/PROJECT_IMPROVEMENT_ROADMAP.md) · [Formal benchmark plan](docs/BENCHMARK_PLAN.md) |
+
+## License
+
+[MIT](LICENSE)
