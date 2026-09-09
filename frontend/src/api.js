@@ -22,11 +22,12 @@ export function getTask(taskId) {
   return request(`/api/tasks/${encodeURIComponent(taskId)}`);
 }
 
-export function askAnalysis(taskId, kind, value) {
-  const params = new URLSearchParams({ kind });
+export function askAnalysis(taskId, kind, value, { detail = kind === 'round' ? 'full' : 'compact', expectedPayloadSha256, signal } = {}) {
+  const params = new URLSearchParams({ kind, detail });
   if (kind === 'round') params.set('round_number', value);
   if (kind === 'player') params.set('player', value);
-  return request(`/api/tasks/${encodeURIComponent(taskId)}/questions?${params}`);
+  if (expectedPayloadSha256) params.set('expected_payload_sha256', expectedPayloadSha256);
+  return request(`/api/tasks/${encodeURIComponent(taskId)}/questions?${params}`, { signal });
 }
 
 export function getLlmStatus() {

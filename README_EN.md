@@ -14,6 +14,8 @@
 
 </div>
 
+Saved-match questions now defer list-source text until expansion and pin reads to the task and input version. Closing or changing context cancels pending detail reads. On one observed match, initial list responses were 55–67% smaller; direct round queries still return full detail once. Expanding every list source increases total traffic. All 352 offline tests, the build and live UI delay/retry/isolation checks pass, with zero model calls. See [measurements and limits](docs/SOURCE_LOADING_V1.md).
+
 Added deterministic report-contract verification and four guided questions over saved matches. Checks cover metrics, current-source identity/content and rendered reports; unknown outcomes are excluded from conversion-rate denominators. Questions are read-only, limited to two steps and make no model calls. All 325 offline tests, the frontend build, a real-demo end-to-end run and question UI checks pass, with zero new model calls. See [scope and validation](docs/REPORT_QUESTIONS_V1.md).
 
 Actual node events and local SQLite analysis history are now available. The UI shows recorded starts, completions, failures, durations and retrieval attempts, with saved-report selection and refresh recovery. A real Demo produced 20 events; its result survived removal of its Redis cache, and duplicate delivery reused the saved result without model execution. All 276 offline tests pass; this milestone made zero remote model calls. See [implementation and recovery limits](docs/ANALYSIS_HISTORY_V1.md).

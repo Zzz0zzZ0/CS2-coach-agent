@@ -27,7 +27,7 @@ This motivated a separate deterministic relation verifier. On the isolated sourc
 
 | Evidence | Scope | Supported interpretation |
 | --- | --- | --- |
-| 325 offline tests | Synthetic and engineering regressions | Tested implementation behavior |
+| 352 offline tests | Synthetic and engineering regressions | Tested implementation behavior |
 | 48 relation expressions + 96 aggregate checks | Observed historical questions | Relation / numeric contract consistency |
 | 768 text retrieval results | Historical development controls | Model, tokenizer and fusion tradeoffs |
 | 960 text results + 60 relation expressions | Two isolated, previously observed series | Corpus-isolated development pilot |
@@ -49,6 +49,7 @@ The current project is an engineering prototype with credible development eviden
 - [Bilingual baseline experiment](../LANGUAGE_BASELINES_V2.md)
 - [Isolated pilot and first-run failures](../ISOLATED_RELATION_PILOT_V1.md)
 - [Player performance equivalence](../PLAYER_PERFORMANCE_V1.md)
+- [Deferred source loading and context isolation](../SOURCE_LOADING_V1.md)
 - [Report consistency and saved-match questions](../REPORT_QUESTIONS_V1.md)
 - [Live upload acceptance and failure record](../LIVE_E2E_V2.md)
 - [Main implementation and execution status](../IMPLEMENTATION_PROGRESS.md)

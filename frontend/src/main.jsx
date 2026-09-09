@@ -337,7 +337,7 @@ function App() {
         <section className="report-card card"><div className="section-heading"><div><p className="eyebrow">03 / COACHING REPORT</p><h2>Analyst × Coach</h2></div><span className="chip">EVIDENCE-BOUND</span></div><div className="report-columns"><ReportBlock title="ANALYST / 发生了什么" text={analysis?.analyst_report} empty="提交 Demo 后，这里显示确定性指标与数据报告。" /><ReportBlock title="COACH / 应该怎么做" text={analysis?.coach_advice} empty="Coach 会基于当前 [C#] 与历史 [E#] 证据生成训练建议。" /></div></section>
 
         {analysis && <ReportVerification verification={analysis.verification_report} />}
-        {analysis && task?.storage === "local" && <AnalysisQuestions key={task.task_id} taskId={task.task_id} analysis={analysis} />}
+        {analysis && task?.storage === "local" && <AnalysisQuestions key={task.task_id} taskId={task.task_id} analysis={analysis} payloadSha256={task.metadata?.payload_sha256} />}
 
         <section className="graph-card card"><div className="section-heading"><div><p className="eyebrow">04 / GRAPH RAG</p><h2>战术关系图谱</h2></div><div className="stats-inline"><span>{formatNumber(graphStats.nodes)} nodes</span><span>{formatNumber(graphStats.edges)} edges</span><span>{formatNumber(graphStats.tactical_sequences)} sequences</span><span>{formatNumber(graphStats.communities)} communities</span></div></div><div className="graph-toolbar"><select value={map} onChange={(event) => setMap(event.target.value)}><option value="">All maps</option>{maps.map((item) => <option key={item}>{item}</option>)}</select><form onSubmit={handleSearch}><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="例如：猎鹰 Dust2 T侧首杀后胜率" /><button>Ask Graph</button></form></div><div className="graph-layout"><GraphCanvas positions={positions} edges={graph.edges || []} /><div className="search-results">{relationStatus && <div className="empty-search" role="status">{relationStatus.message}<br /><small>已核查 {relationStatus.checked_rounds || 0} 个回合，匹配 {relationStatus.matched_rounds || 0} 个。{!relationStatus.complete && " 范围或信息尚不完整，不能据此断言关系不存在。"}</small></div>}{coachBrief && <CoachBrief brief={coachBrief} onSource={handleRoundSource} loading={roundLoading} />}{roundDetail && <RoundEvidence detail={roundDetail} comparison={roundComparison} onSource={handleRoundSource} loading={roundLoading} onClose={() => { setRoundDetail(null); setRoundComparison(null); }} />}{searchResults.length ? searchResults.map((item) => <article key={item.source_id} className="raw-evidence"><div className="result-meta">{item.metadata?.community_id || item.metadata?.tactic_type} · {Number(item.score || 0).toFixed(2)}</div><p>{item.content}</p>{item.metadata?.context_level === "verified_relation" && <button onClick={() => handleRoundSource(item.source_id)}>查看回合证据</button>}</article>) : !coachBrief && !relationStatus && <div className="empty-search">输入战队、地图、阵营或对手，检索结构化战术画像与社区摘要。<br /><small>点击简报中的 [G#] 可展开对应回合时间线。</small></div>}</div></div></section>
 
@@ -388,7 +388,7 @@ function ReportVerification({ verification }) {
   </section>;
 }
 
-function AnalysisQuestions({ taskId, analysis }) {
+function AnalysisQuestions({ taskId, analysis, payloadSha256 }) {
   const [kind, setKind] = useState("opening_losses");
   const [roundNumber, setRoundNumber] = useState(String(analysis.metrics?.round_summaries?.[0]?.round_number || 1));
   const [player, setPlayer] = useState("");
@@ -399,7 +399,7 @@ function AnalysisQuestions({ taskId, analysis }) {
   async function submit(event) {
     event.preventDefault();
     setBusy(true); setError(""); setAnswer(null);
-    try { setAnswer(await askAnalysis(taskId, kind, kind === "round" ? roundNumber : player)); }
+    try { setAnswer(await askAnalysis(taskId, kind, kind === "round" ? roundNumber : player, { expectedPayloadSha256: payloadSha256 })); }
     catch (reason) { setError(reason.message); }
     finally { setBusy(false); }
   }
@@ -420,10 +420,9 @@ function AnalysisQuestions({ taskId, analysis }) {
       <b>{ { found: "已找到证据", not_found: "记录范围内未找到", unknown: "信息不足", budget_exhausted: "达到步骤上限" }[answer.status] }</b>
       <p>{answer.answer}</p>
       {answer.kind === "player" && answer.facts.map(fact => <p key={fact.player}>来源覆盖 {answer.matched_rounds} 个包含该选手交战事件的回合。</p>)}
-      <div className="question-sources">{answer.sources.map(source => <details key={source.source_id}>
-        <summary>[{source.citation}] · R{source.metadata.round_number} · 查看回合证据</summary>
-        <p>{source.content}</p><small>{source.source_id}</small>
-      </details>)}</div>
+      <div className="question-sources">{answer.sources.map(source => <QuestionSource
+        key={`${taskId}:${answer.provenance.payload_sha256}:${source.source_id}`} taskId={taskId}
+        source={source} payloadSha256={answer.provenance.payload_sha256} />)}</div>
       <details className="question-provenance"><summary>查询范围与记录版本</summary>
         <p>{answer.provenance.map_name} · {answer.provenance.match_id}</p>
         <p>步骤 {answer.budget.steps_used}/{answer.budget.max_steps} · 模型调用 {answer.budget.model_calls}</p>
@@ -431,6 +430,35 @@ function AnalysisQuestions({ taskId, analysis }) {
       </details>
     </div>}
   </section>;
+}
+
+function QuestionSource({ taskId, source, payloadSha256 }) {
+  const [open, setOpen] = useState(false);
+  const [content, setContent] = useState(source.content ?? null);
+  const [error, setError] = useState("");
+  const [attempt, setAttempt] = useState(0);
+  useEffect(() => {
+    if (!open || content !== null) return;
+    const controller = new AbortController();
+    setError("");
+    askAnalysis(taskId, "round", source.metadata.round_number, {
+      detail: "full", expectedPayloadSha256: payloadSha256, signal: controller.signal,
+    }).then(result => {
+      if (controller.signal.aborted) return;
+      const detail = result.sources?.[0];
+      if (result.task_id !== taskId || result.provenance?.payload_sha256 !== payloadSha256
+          || result.status !== "found" || result.sources.length !== 1
+          || detail?.source_id !== source.source_id || detail?.citation !== source.citation
+          || typeof detail?.content !== "string") throw new Error("来源与当前回答不一致，请重新查询。");
+      setContent(detail.content);
+    }).catch(reason => { if (!controller.signal.aborted) setError(reason.message); });
+    return () => controller.abort();
+  }, [open, content, attempt, taskId, payloadSha256, source.source_id, source.citation, source.metadata.round_number]);
+  return <details onToggle={event => setOpen(event.currentTarget.open)}>
+    <summary>[{source.citation}] · R{source.metadata.round_number} · 查看回合证据</summary>
+    {open && (content !== null ? <p>{content}</p> : error ? <div className="question-error" role="alert"><p>{error}</p><button type="button" onClick={() => setAttempt(value => value + 1)}>重试读取</button></div> : <p role="status">正在读取本回合证据…</p>)}
+    <small>{source.source_id}</small>
+  </details>;
 }
 
 function ExecutionTimeline({ task }) {

@@ -3,7 +3,7 @@ from fastapi import APIRouter, HTTPException, Query, Request
 from celery.result import AsyncResult
 from app.core.celery_app import celery_app
 from app.services.analysis_runs import AnalysisRunStore
-from app.services.followup_service import answer_question, QuestionKind, QuestionUnavailable
+from app.services.followup_service import answer_question, QuestionKind, QuestionUnavailable, SourceDetail
 
 router = APIRouter()
 
@@ -11,11 +11,13 @@ router = APIRouter()
 @router.get("/{task_id}/questions")
 def ask_saved_analysis(request: Request, task_id: str, kind: QuestionKind, round_number: int | None = Query(default=None, ge=1),
                        player: str | None = Query(default=None, min_length=1, max_length=100),
-                       max_steps: int = Query(default=2, ge=1, le=2)):
-    if set(request.query_params) - {'kind', 'round_number', 'player', 'max_steps'}:
+                       max_steps: int = Query(default=2, ge=1, le=2), detail: SourceDetail = 'full',
+                       expected_payload_sha256: str | None = Query(default=None, pattern=r'^[a-f0-9]{64}$')):
+    if set(request.query_params) - {'kind', 'round_number', 'player', 'max_steps', 'detail', 'expected_payload_sha256'}:
         raise HTTPException(status_code=422, detail="Unsupported question parameter")
     try:
-        return answer_question(AnalysisRunStore(), task_id, kind, round_number, player, max_steps)
+        return answer_question(AnalysisRunStore(), task_id, kind, round_number, player, max_steps,
+                               detail, expected_payload_sha256)
     except QuestionUnavailable as error:
         raise HTTPException(status_code=error.status_code, detail=str(error)) from None
     except sqlite3.Error:

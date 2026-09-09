@@ -63,3 +63,5 @@ npm --prefix frontend run build
 [可分享结果摘要](../datasets/evaluation/report_questions_v1_report.json)包含版本、Demo/输入哈希和检查范围。完整本地记录及截图在 `data/evaluation/report_questions_v1/`，未将原始 Demo、完整比赛输入或密钥提交仓库。[实现提交 CI](https://github.com/Zzz0zzZ0/CS2-coach-agent/actions/runs/34319730869)通过。
 
 这是一份已观察比赛的工程验收与独立开发故障用例，不是新的盲测 benchmark，也不是独立教练质量评价。
+
+后续 [P2 来源按需加载](SOURCE_LOADING_V1.md) 已上线：页面列表使用可选 compact 响应，完整默认接口与本页 V1 合同保持兼容，源码与浏览器版本另有记录。

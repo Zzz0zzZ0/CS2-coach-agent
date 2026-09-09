@@ -16,3 +16,5 @@ The samples above were checked against the current graph. If a future graph chan
 ## Optional engineering walkthrough
 
 Open the saved local task `http://localhost:5173/?task_id=b0171fbf-18c5-4aa1-ad0b-a052ab52169e` without uploading another file. Show its actual 20 execution events, expand the four report-consistency checks, then select the opening-loss question and inspect C3/R2. Ask for R999 to demonstrate a scoped absence. This path is read-only and makes no model calls. Explain that verification reuses normalized event computation and fixed report templates; it does not establish independent factual truth or coaching quality. See [acceptance and limits](../REPORT_QUESTIONS_V1.md).
+
+When showing the saved-match question list, inspect the network requests: source text is fetched only on expansion, cached within that answer, and bound to the same task/input digest. Switching question or task cancels pending detail reads. Direct round questions return detail immediately. This demonstrates context isolation, not lower total traffic when all sources are expanded; [full measurements](../SOURCE_LOADING_V1.md).

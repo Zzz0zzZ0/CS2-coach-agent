@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-09",
+  "kind": "observed_match_engineering_validation",
+  "baseline_commit": "dab9ec1974d1163916075e9f2c2529e7a63cd9c8",
+  "tests": {
+    "offline_passed": 352,
+    "new_development_cases": 27,
+    "frontend_build": "pass"
+  },
+  "comparison": {
+    "task_id": "b0171fbf-18c5-4aa1-ad0b-a052ab52169e",
+    "payload_sha256": "918aaf1426f2c9776abb07a4c8f2f6365aa1407c5d6b6bf7bda87acad5660133",
+    "baseline_source_sha256": "2bb0660a63e1d94ca9692c82801580d38ef3d628f9f5b6a46cc50647949fd483",
+    "saved_history_unchanged": true,
+    "remote_model_calls": 0,
+    "cases": [
+      {
+        "kind": "opening_losses",
+        "params": {},
+        "sources": 4,
+        "default_full_equal_to_baseline": true,
+        "expanded_sources_equal": true,
+        "full_bytes": 10357,
+        "compact_bytes": 3463,
+        "ui_initial_bytes": 3463,
+        "ui_initial_reduction_pct": 66.56,
+        "ui_all_expanded_bytes": 15779,
+        "ui_extra_requests_if_all_expanded": 4
+      },
+      {
+        "kind": "post_plant_losses",
+        "params": {},
+        "sources": 1,
+        "default_full_equal_to_baseline": true,
+        "expanded_sources_equal": true,
+        "full_bytes": 3292,
+        "compact_bytes": 1476,
+        "ui_initial_bytes": 1476,
+        "ui_initial_reduction_pct": 55.16,
+        "ui_all_expanded_bytes": 4673,
+        "ui_extra_requests_if_all_expanded": 1
+      },
+      {
+        "kind": "round",
+        "params": {
+          "round_number": 1
+        },
+        "sources": 1,
+        "default_full_equal_to_baseline": true,
+        "expanded_sources_equal": true,
+        "full_bytes": 2848,
+        "compact_bytes": 1304,
+        "ui_initial_bytes": 2848,
+        "ui_initial_reduction_pct": 0.0,
+        "ui_all_expanded_bytes": 2848,
+        "ui_extra_requests_if_all_expanded": 0
+      },
+      {
+        "kind": "player",
+        "params": {
+          "player": "Wicadia"
+        },
+        "sources": 13,
+        "default_full_equal_to_baseline": true,
+        "expanded_sources_equal": true,
+        "full_bytes": 11150,
+        "compact_bytes": 4646,
+        "ui_initial_bytes": 4646,
+        "ui_initial_reduction_pct": 58.33,
+        "ui_all_expanded_bytes": 42802,
+        "ui_extra_requests_if_all_expanded": 13
+      }
+    ],
+    "interpretation": "Uncompressed JSON body bytes on one observed match; not total page traffic, latency, memory, token savings or a generalization benchmark. Expanding every list source increases total requests and body bytes."
+  },
+  "browser": {
+    "task_id": "b0171fbf-18c5-4aa1-ad0b-a052ab52169e",
+    "zero_detail_fetches_before_expansion": true,
+    "one_fetch_for_first_expansion": true,
+    "reopen_reuses_current_source": true,
+    "direct_round_needs_no_extra_fetch": true,
+    "all_four_question_types": true,
+    "mismatched_source_rejected": true,
+    "explicit_retry_recovers": true,
+    "late_question_response_isolated": true,
+    "late_task_response_isolated": true,
+    "requests_cancelled": 2,
+    "mobile_panel_fits": true,
+    "server_version_conflict_409": true,
+    "page_errors": [],
+    "write_requests": [],
+    "model_budget_unchanged": true,
+    "remote_model_calls": 0
+  },
+  "unchanged_storage": {
+    "history": "1c9adce99a60e97163b15aa2d413b54b9bacc6d68d29ce37feb3c04594d3a513",
+    "graph": "28357be25a52d27b80e87a03ffcb2a545132c97d42632138ff60c47d67fc8c2d",
+    "budget": "a683e9e4f54cb319b082b5a6f5f67869607b61824b329ec47e369fa1161edd1c"
+  },
+  "source_sha256": {
+    "app/services/followup_service.py": "fb2f72587b21ffeb7a70ed3bcff671ce2325501b98f91ea572c9ee21ba7dcc34",
+    "app/services/metrics_service.py": "42c59409faccbf032603f1a848e5cdbb7f41946e64e82e8c7db0b9a84ae80d09",
+    "app/api/routers/tasks.py": "e820926d2e67b7bebfb163e61acc81039c063fcbac972504bc22e77a99433d18",
+    "frontend/src/main.jsx": "b781b5cac729c63d76063bdca6ddb99494f1ad77f3d8d9b51a3e79c99007e393",
+    "frontend/src/api.js": "b336155ba5863cc0519877c8fce5f2840d07c92f8092e706499b5d901d334aaa"
+  },
+  "local_artifacts": "data/evaluation/source_loading_v1",
+  "independent_coaching_quality_score": null
+}

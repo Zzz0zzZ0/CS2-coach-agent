@@ -377,12 +377,29 @@ def build_current_match_evidence(match: Dict[str, Any], metrics: Dict[str, Any])
         },
         "content": summary,
     }]
-    for round_data in metrics["round_summaries"]:
+    evidence.extend(build_current_round_evidence(match, row) for row in metrics["round_summaries"])
+    return evidence
+
+
+def build_current_round_evidence(match: Dict[str, Any], round_data: Dict[str, Any], *, include_content=True) -> Dict[str, Any]:
+    """Build one source, optionally deferring its event narrative until opened."""
+    match_id = _text(match.get("match_id")) or "current-demo"
+    map_name = _text(match.get("map_name")) or "Unknown"
+    evidence = {
+        "source_id": f"current:{match_id}:{map_name}:{round_data['round_number']}",
+        "score": 1.0,
+        "metadata": {
+            "source": "current_demo", "evidence_scope": "current_match",
+            "map": map_name, "match_id": match_id,
+            "round_number": round_data["round_number"], "tactic_type": "Current Round Evidence",
+        },
+    }
+    if include_content:
         kills = "; ".join(
             f"{item['killer']}({item['killer_team']})>{item['victim']}({item['victim_team']})@{item['tick']}"
             for item in round_data["kill_sequence"]
         ) or "none"
-        content = (
+        evidence["content"] = (
             f"Current demo round {round_data['round_number']}: winner={round_data['winner_team'] or round_data['winner_side']}; "
             f"reason={round_data['reason']}; opening={round_data['opening_killer'] or 'none'}"
             f"({round_data['opening_team'] or 'unknown'}); kills={kills}; "
@@ -391,14 +408,4 @@ def build_current_match_evidence(match: Dict[str, Any], metrics: Dict[str, Any])
             f"sites={round_data['plant_sites']}; plant outcome={round_data['plant_outcome'] or 'none'}; "
             f"flash blinds={round_data['flash_blinds']} {round_data['flash_blinds_by_team']}."
         )
-        evidence.append({
-            "source_id": f"current:{match_id}:{map_name}:{round_data['round_number']}",
-            "score": 1.0,
-            "metadata": {
-                "source": "current_demo", "evidence_scope": "current_match",
-                "map": map_name, "match_id": match_id,
-                "round_number": round_data["round_number"], "tactic_type": "Current Round Evidence",
-            },
-            "content": content,
-        })
     return evidence

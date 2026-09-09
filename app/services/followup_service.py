@@ -1,11 +1,13 @@
 """Guided, read-only questions over one saved input; no model or external tools."""
 import hashlib
 import json
+import re
 from typing import Literal
 
-from app.services.metrics_service import build_current_match_evidence, calculate_metrics
+from app.services.metrics_service import build_current_round_evidence, calculate_metrics
 
 QuestionKind = Literal['opening_losses', 'post_plant_losses', 'round', 'player']
+SourceDetail = Literal['full', 'compact']
 MAX_ROUNDS = 1000
 MAX_SOURCES = 20
 
@@ -16,9 +18,13 @@ class QuestionUnavailable(ValueError):
         super().__init__(message)
 
 
-def answer_question(store, task_id, kind: QuestionKind, round_number=None, player=None, max_steps=2):
+def answer_question(store, task_id, kind: QuestionKind, round_number=None, player=None, max_steps=2,
+                    detail: SourceDetail = 'full', expected_payload_sha256=None):
     if kind not in {'opening_losses', 'post_plant_losses', 'round', 'player'} or max_steps not in (1, 2):
         raise QuestionUnavailable(422, 'Unsupported question or step limit')
+    if detail not in {'full', 'compact'} or (expected_payload_sha256 is not None
+            and not re.fullmatch(r'[a-f0-9]{64}', expected_payload_sha256)):
+        raise QuestionUnavailable(422, 'Invalid source detail or input version')
     if ((kind == 'round') != (round_number is not None)
             or (kind == 'player') != (player is not None)
             or (kind == 'player' and not player.strip())):
@@ -47,6 +53,8 @@ def answer_question(store, task_id, kind: QuestionKind, round_number=None, playe
         metadata = json.loads(saved['metadata'])
         if not encoded or hashlib.sha256(encoded.encode()).hexdigest() != metadata.get('payload_sha256'):
             raise QuestionUnavailable(409, 'Saved input is missing or failed its integrity check')
+        if expected_payload_sha256 is not None and expected_payload_sha256 != metadata['payload_sha256']:
+            raise QuestionUnavailable(409, '比赛输入版本已变化，请重新打开报告后查询。')
         match = json.loads(encoded)
         rounds = match['rounds']
         if not isinstance(rounds, list) or not all(isinstance(r, dict) for r in rounds):
@@ -72,7 +80,6 @@ def answer_question(store, task_id, kind: QuestionKind, round_number=None, playe
         return response
     try:
         metrics = calculate_metrics(rounds)
-        evidence = build_current_match_evidence(match, metrics)
     except (TypeError, ValueError, KeyError, AttributeError):
         raise QuestionUnavailable(409, 'Saved input has invalid event structure') from None
     summaries = metrics['round_summaries']
@@ -106,11 +113,14 @@ def answer_question(store, task_id, kind: QuestionKind, round_number=None, playe
                     matched_rounds=len(selected), unknown_rounds=unknown, complete=not unknown,
                     truncated=len(selected) > MAX_SOURCES)
     for i in selected[:MAX_SOURCES]:
-        source = evidence[i + 1]
+        source = build_current_round_evidence(match, summaries[i], include_content=detail == 'full')
         citation = f'C{i + 2}'
         response['sources'].append({'citation': citation, **source})
         if kind != 'player':
-            response['facts'].append({**summaries[i], 'citation': citation})
+            fact = {**summaries[i], 'citation': citation}
+            if detail == 'compact':
+                fact.pop('kill_sequence', None)
+            response['facts'].append(fact)
     if response['truncated']:
         response['answer'] += f' 来源仅展示前 {MAX_SOURCES} 个回合，计数覆盖全部输入回合。'
     return response
