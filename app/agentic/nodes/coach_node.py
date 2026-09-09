@@ -32,7 +32,7 @@ def _fallback_priorities(metrics: dict) -> list[str]:
     if len(metrics.get("opening_duels_by_team", {})) > 1:
         choices.append("opening_followup")
     if any(
-        item.get("conversion_pct", 100) < 50
+        item.get("conversion_pct") is not None and item["conversion_pct"] < 50
         for item in metrics.get("post_plant_by_team", {}).values()
     ):
         choices.append("post_plant")
@@ -63,7 +63,9 @@ async def _select_priorities(llm, metrics: dict) -> tuple[list[str], str, dict]:
         "Select 2 or 3 coaching priorities for this CS2 match. Call "
         "select_coaching_priorities exactly once. Choose only from the tool's "
         "allowed IDs. Side win totals alone cannot identify a weak side: use known-outcome "
-        "denominators and sample size when available. team_flash_blinds_by_team includes self-blinds. "
+        "denominators and sample size when available. Opening and post-plant conversion rates "
+        "also exclude unknown outcomes; unknown outcomes are not losses. "
+        "team_flash_blinds_by_team includes self-blinds. "
         "Do not write a report or add facts. Metrics: "
         + json.dumps(bounded_metrics, ensure_ascii=False)
     )
@@ -84,7 +86,10 @@ async def _select_priorities(llm, metrics: dict) -> tuple[list[str], str, dict]:
 
 def _conversion_text(values: dict) -> str:
     return "；".join(
-        f"{team} {item['round_wins']}/{item['attempts']}（{item['conversion_pct']}%）"
+        f"{team} {item['round_wins']}/{item.get('known_outcomes', item['attempts'])}"
+        + (f"（{item['conversion_pct']}%）" if item['conversion_pct'] is not None else "（胜率不可用）")
+        + (f"，共 {item['attempts']} 次机会、{item['unknown_outcomes']} 次结果未知"
+           if item.get('unknown_outcomes') else "")
         for team, item in values.items()
     ) or "不可用"
 
@@ -103,8 +108,10 @@ def _side_performance_text(metrics: dict) -> str:
     ) or "完整阵容与各侧结果分母不可用"
 
 
-def _round_refs(rounds: list[dict]) -> str:
-    return "".join(f"[C{item['round_number'] + 1}]" for item in rounds)
+def _round_refs(rounds: list[dict], all_rounds: list[dict]) -> str:
+    # C1 is the summary; round citations follow source order, not round number.
+    citations = {id(item): f"[C{index}]" for index, item in enumerate(all_rounds, start=2)}
+    return "".join(citations[id(item)] for item in rounds)
 
 
 def _round_numbers(rounds: list[dict]) -> str:
@@ -114,6 +121,10 @@ def _round_numbers(rounds: list[dict]) -> str:
 def _plant_outcome_text(round_data: dict) -> str:
     planters = "、".join(round_data.get("plant_teams", [])) or "未知队伍"
     winner = round_data.get("winner_team") or round_data.get("winner_side") or "未知队伍"
+    if not round_data.get("winner_team"):
+        if round_data.get("winner_side") in {"T", "CT"}:
+            return f"{planters} 下包，{winner} 方获胜（队名不可用）"
+        return f"{planters} 下包，胜负结果不可用"
     if str(round_data.get("reason", "")).lower() == "bomb_defused":
         return f"{planters} 下包，{winner} 拆包获胜"
     if winner in round_data.get("plant_teams", []):
@@ -131,16 +142,17 @@ def _priority_advice(priority: str, metrics: dict) -> str:
         ]
         return (
             f"**首杀后续**：复盘取得首杀却输掉的 {_round_numbers(lost)}，逐段人工确认首杀后的存活、补枪和人数优势处理；"
-            f"事件序列只证明结果反转，不直接证明失误原因。{_round_refs(lost) or '[C1]'}"
+            f"事件序列只证明结果反转，不直接证明失误原因。{_round_refs(lost, rounds) or '[C1]'}"
         )
     if priority == "post_plant":
         lost = [
             item for item in rounds
-            if item.get("plant_teams") and item.get("winner_team") not in item["plant_teams"]
+            if item.get("plant_teams") and item.get("winner_team")
+            and item["winner_team"] not in item["plant_teams"]
         ]
         return (
             f"**下包后处理**：重点复盘下包方失利的 {_round_numbers(lost)}，人工标记站位、交叉火力与延时道具；"
-            f"当前数据只确认下包方和胜方。{_round_refs(lost) or '[C1]'}"
+            f"当前数据只确认下包方和胜方。{_round_refs(lost, rounds) or '[C1]'}"
         )
     if priority == "utility_review":
         flash_total = metrics.get("flash_blinds_total", 0)
@@ -169,10 +181,10 @@ def _render_report(metrics: dict, priorities: list[str]) -> str:
         f"{team}（" + "，".join(f"{side} {wins}" for side, wins in values.items()) + "）"
         for team, values in metrics.get("rounds_won_by_team_and_side", {}).items()
     ) or "不可用"
-    plant_rounds = [item for item in metrics.get("round_summaries", []) if item.get("plants")]
     plant_lines = [
-        f"- R{item['round_number']}：{_plant_outcome_text(item)}。[C{item['round_number'] + 1}]"
-        for item in plant_rounds
+        f"- R{item['round_number']}：{_plant_outcome_text(item)}。[C{index}]"
+        for index, item in enumerate(metrics.get("round_summaries", []), start=2)
+        if item.get("plants")
     ]
     advice = [
         f"{index}. {_priority_advice(priority, metrics)}"

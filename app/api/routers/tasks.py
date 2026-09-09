@@ -1,10 +1,25 @@
 import sqlite3
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import APIRouter, HTTPException, Query, Request
 from celery.result import AsyncResult
 from app.core.celery_app import celery_app
 from app.services.analysis_runs import AnalysisRunStore
+from app.services.followup_service import answer_question, QuestionKind, QuestionUnavailable
 
 router = APIRouter()
+
+
+@router.get("/{task_id}/questions")
+def ask_saved_analysis(request: Request, task_id: str, kind: QuestionKind, round_number: int | None = Query(default=None, ge=1),
+                       player: str | None = Query(default=None, min_length=1, max_length=100),
+                       max_steps: int = Query(default=2, ge=1, le=2)):
+    if set(request.query_params) - {'kind', 'round_number', 'player', 'max_steps'}:
+        raise HTTPException(status_code=422, detail="Unsupported question parameter")
+    try:
+        return answer_question(AnalysisRunStore(), task_id, kind, round_number, player, max_steps)
+    except QuestionUnavailable as error:
+        raise HTTPException(status_code=error.status_code, detail=str(error)) from None
+    except sqlite3.Error:
+        raise HTTPException(status_code=503, detail="Analysis history unavailable") from None
 
 @router.get("")
 def list_analysis_runs(limit: int = Query(default=20, ge=1, le=100)):

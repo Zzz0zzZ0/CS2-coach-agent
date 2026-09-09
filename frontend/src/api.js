@@ -22,6 +22,13 @@ export function getTask(taskId) {
   return request(`/api/tasks/${encodeURIComponent(taskId)}`);
 }
 
+export function askAnalysis(taskId, kind, value) {
+  const params = new URLSearchParams({ kind });
+  if (kind === 'round') params.set('round_number', value);
+  if (kind === 'player') params.set('player', value);
+  return request(`/api/tasks/${encodeURIComponent(taskId)}/questions?${params}`);
+}
+
 export function getLlmStatus() {
   return request("/api/settings/llm");
 }

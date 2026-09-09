@@ -116,12 +116,14 @@ def calculate_metrics(rounds: Any) -> Dict[str, Any]:
     grenades_by_team: Counter = Counter()
     plants_by_team: Counter = Counter()
     post_plant_attempts: Counter = Counter()
+    post_plant_known: Counter = Counter()
     post_plant_wins: Counter = Counter()
     defuses_by_team: Counter = Counter()
     flash_blinds_by_team: Counter = Counter()
     enemy_flash_blinds_by_team: Counter = Counter()
     team_flash_blinds_by_team: Counter = Counter()
     opening_attempts: Counter = Counter()
+    opening_known: Counter = Counter()
     opening_wins: Counter = Counter()
     kills_total = first_kills_total = grenades_total = plants_total = flash_blinds_total = 0
 
@@ -170,6 +172,7 @@ def calculate_metrics(rounds: Any) -> Dict[str, Any]:
                     _team_bucket(teams, killer_team)["first_kills"] += 1
                     opening_team = killer_team
                     opening_attempts[killer_team] += 1
+                    opening_known[killer_team] += int(bool(winner_team))
                     opening_wins[killer_team] += int(killer_team == winner_team)
 
             event = {
@@ -210,6 +213,7 @@ def calculate_metrics(rounds: Any) -> Dict[str, Any]:
         reason = _text(round_data.get("reason"))
         for team in sorted(set(plant_teams)):
             post_plant_attempts[team] += 1
+            post_plant_known[team] += int(bool(winner_team))
             post_plant_wins[team] += int(team == winner_team)
         if reason.lower() == "bomb_defused" and winner_team:
             defuses_by_team[winner_team] += 1
@@ -261,16 +265,22 @@ def calculate_metrics(rounds: Any) -> Dict[str, Any]:
     opening_duels = {
         team: {
             "attempts": attempts,
+            "known_outcomes": opening_known[team],
+            "unknown_outcomes": attempts - opening_known[team],
             "round_wins": opening_wins[team],
-            "conversion_pct": round(100 * opening_wins[team] / attempts, 1),
+            "conversion_pct": round(100 * opening_wins[team] / opening_known[team], 1)
+            if opening_known[team] else None,
         }
         for team, attempts in sorted(opening_attempts.items())
     }
     post_plant = {
         team: {
             "attempts": attempts,
+            "known_outcomes": post_plant_known[team],
+            "unknown_outcomes": attempts - post_plant_known[team],
             "round_wins": post_plant_wins[team],
-            "conversion_pct": round(100 * post_plant_wins[team] / attempts, 1),
+            "conversion_pct": round(100 * post_plant_wins[team] / post_plant_known[team], 1)
+            if post_plant_known[team] else None,
         }
         for team, attempts in sorted(post_plant_attempts.items())
     }
@@ -327,7 +337,10 @@ def build_current_match_evidence(match: Dict[str, Any], metrics: Dict[str, Any])
     map_name = _text(match.get("map_name")) or "Unknown"
     team_scores = ", ".join(f"{team} {wins}" for team, wins in metrics["rounds_won_by_team"].items()) or "unavailable"
     openings = ", ".join(
-        f"{team} {value['round_wins']}/{value['attempts']} ({value['conversion_pct']}%)"
+        f"{team} {value['round_wins']}/{value.get('known_outcomes', value['attempts'])} "
+        + (f"({value['conversion_pct']}%)" if value['conversion_pct'] is not None else "(unavailable)")
+        + (f"; attempts={value['attempts']}, unknown outcomes={value['unknown_outcomes']}"
+           if value.get('unknown_outcomes') else "")
         for team, value in metrics["opening_duels_by_team"].items()
     ) or "unavailable"
     side_splits = ", ".join(
@@ -335,7 +348,10 @@ def build_current_match_evidence(match: Dict[str, Any], metrics: Dict[str, Any])
         for team, side_counts in metrics["rounds_won_by_team_and_side"].items()
     ) or "unavailable"
     post_plants = ", ".join(
-        f"{team} {value['round_wins']}/{value['attempts']} ({value['conversion_pct']}%)"
+        f"{team} {value['round_wins']}/{value.get('known_outcomes', value['attempts'])} "
+        + (f"({value['conversion_pct']}%)" if value['conversion_pct'] is not None else "(unavailable)")
+        + (f"; attempts={value['attempts']}, unknown outcomes={value['unknown_outcomes']}"
+           if value.get('unknown_outcomes') else "")
         for team, value in metrics["post_plant_by_team"].items()
     ) or "unavailable"
     summary = (

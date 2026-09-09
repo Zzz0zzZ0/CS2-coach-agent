@@ -68,6 +68,7 @@ class MetricsServiceTest(unittest.TestCase):
         self.assertEqual(metrics["plants_total"], 1)
         self.assertEqual(metrics["post_plant_by_team"]["Falcons"], {
             "attempts": 1, "round_wins": 0, "conversion_pct": 0.0,
+            "known_outcomes": 1, "unknown_outcomes": 0,
         })
         self.assertEqual(metrics["defuses_by_team"], {"Spirit": 1})
         self.assertEqual(
@@ -80,6 +81,7 @@ class MetricsServiceTest(unittest.TestCase):
         self.assertEqual(metrics["team_flash_blinds_by_team"], {})
         self.assertEqual(metrics["opening_duels_by_team"]["Falcons"], {
             "attempts": 1, "round_wins": 0, "conversion_pct": 0.0,
+            "known_outcomes": 1, "unknown_outcomes": 0,
         })
 
 

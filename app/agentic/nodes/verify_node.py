@@ -1,6 +1,7 @@
 import re
 
 from app.agentic.states import GraphState
+from app.services.report_verification import verify_report_facts
 
 
 def create_verify_node():
@@ -41,12 +42,15 @@ def create_verify_node():
             name for name in ("analyst_report", "coach_advice")
             if not str(state.get(name, "")).strip()
         ]
+        facts = verify_report_facts(state)
         return {
             "verification_report": {
                 "status": "needs_review" if (
                     unknown_citations or uncited_claims or current_claims_without_current_evidence
                     or missing_outputs
+                    or any(check["status"] != "pass" for check in facts["checks"])
                 ) else "pass",
+                **facts,
                 "evidence_count": len(evidence_ids),
                 "current_evidence_count": len(current_ids),
                 "historical_evidence_count": len(historical_ids),

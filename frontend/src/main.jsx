@@ -14,6 +14,7 @@ import {
   getTeamTactics,
   getTask,
   getAnalysisRuns,
+  askAnalysis,
   searchGraph,
   saveLlmKey,
   uploadDemo,
@@ -335,6 +336,9 @@ function App() {
 
         <section className="report-card card"><div className="section-heading"><div><p className="eyebrow">03 / COACHING REPORT</p><h2>Analyst × Coach</h2></div><span className="chip">EVIDENCE-BOUND</span></div><div className="report-columns"><ReportBlock title="ANALYST / 发生了什么" text={analysis?.analyst_report} empty="提交 Demo 后，这里显示确定性指标与数据报告。" /><ReportBlock title="COACH / 应该怎么做" text={analysis?.coach_advice} empty="Coach 会基于当前 [C#] 与历史 [E#] 证据生成训练建议。" /></div></section>
 
+        {analysis && <ReportVerification verification={analysis.verification_report} />}
+        {analysis && task?.storage === "local" && <AnalysisQuestions key={task.task_id} taskId={task.task_id} analysis={analysis} />}
+
         <section className="graph-card card"><div className="section-heading"><div><p className="eyebrow">04 / GRAPH RAG</p><h2>战术关系图谱</h2></div><div className="stats-inline"><span>{formatNumber(graphStats.nodes)} nodes</span><span>{formatNumber(graphStats.edges)} edges</span><span>{formatNumber(graphStats.tactical_sequences)} sequences</span><span>{formatNumber(graphStats.communities)} communities</span></div></div><div className="graph-toolbar"><select value={map} onChange={(event) => setMap(event.target.value)}><option value="">All maps</option>{maps.map((item) => <option key={item}>{item}</option>)}</select><form onSubmit={handleSearch}><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="例如：猎鹰 Dust2 T侧首杀后胜率" /><button>Ask Graph</button></form></div><div className="graph-layout"><GraphCanvas positions={positions} edges={graph.edges || []} /><div className="search-results">{relationStatus && <div className="empty-search" role="status">{relationStatus.message}<br /><small>已核查 {relationStatus.checked_rounds || 0} 个回合，匹配 {relationStatus.matched_rounds || 0} 个。{!relationStatus.complete && " 范围或信息尚不完整，不能据此断言关系不存在。"}</small></div>}{coachBrief && <CoachBrief brief={coachBrief} onSource={handleRoundSource} loading={roundLoading} />}{roundDetail && <RoundEvidence detail={roundDetail} comparison={roundComparison} onSource={handleRoundSource} loading={roundLoading} onClose={() => { setRoundDetail(null); setRoundComparison(null); }} />}{searchResults.length ? searchResults.map((item) => <article key={item.source_id} className="raw-evidence"><div className="result-meta">{item.metadata?.community_id || item.metadata?.tactic_type} · {Number(item.score || 0).toFixed(2)}</div><p>{item.content}</p>{item.metadata?.context_level === "verified_relation" && <button onClick={() => handleRoundSource(item.source_id)}>查看回合证据</button>}</article>) : !coachBrief && !relationStatus && <div className="empty-search">输入战队、地图、阵营或对手，检索结构化战术画像与社区摘要。<br /><small>点击简报中的 [G#] 可展开对应回合时间线。</small></div>}</div></div></section>
 
         <section className="analytics-card card">
@@ -368,6 +372,65 @@ function App() {
       {error && <button className="error-toast" onClick={() => setError("")}>{error} ×</button>}
     </div>
   );
+}
+
+function ReportVerification({ verification }) {
+  const labels = { source_metrics: "输入事件与指标", source_evidence: "当前引用与来源", analyst_report: "Analyst 报告", coach_report: "Coach 报告", source_input: "输入完整性", coach_priorities: "训练主题范围" };
+  return <section className="verification-card card" aria-label="报告核验详情">
+    <div className="section-heading"><div><p className="eyebrow">REPORT / VERIFICATION</p><h2>报告核验详情</h2></div><span className="chip">{verification?.checks ? "事实与引用合同" : "旧版引用检查"}</span></div>
+    {verification?.checks ? <>
+      <div className="verification-checks">{verification.checks.map(check => <details key={check.id} data-check={check.id} data-status={check.status}>
+        <summary>{check.status === "pass" ? "✓" : "!"} {labels[check.id] || check.id} · {check.status === "pass" ? "通过" : "需复核"}{check.checked_count != null && ` · ${check.checked_count} 项`}</summary>
+        {check.reason && <p>{check.reason}</p>}{check.mismatch_count > 0 && <p>{check.mismatch_count} 处不一致</p>}
+        {check.mismatches?.map((item, index) => <p key={index}>{item.path}：{item.reason}</p>)}
+      </details>)}</div><p className="question-note">核验范围：从解析事件重算指标，检查来源和固定模板报告是否一致。{verification.limitations?.join(" ")}</p>
+    </> : <p className="question-note">此历史报告使用旧版核验，仅检查引用格式与部分缺失情况；尚未接受新版事实一致性核验。</p>}
+  </section>;
+}
+
+function AnalysisQuestions({ taskId, analysis }) {
+  const [kind, setKind] = useState("opening_losses");
+  const [roundNumber, setRoundNumber] = useState(String(analysis.metrics?.round_summaries?.[0]?.round_number || 1));
+  const [player, setPlayer] = useState("");
+  const [answer, setAnswer] = useState(null);
+  const [error, setError] = useState("");
+  const [busy, setBusy] = useState(false);
+  useEffect(() => { setAnswer(null); setError(""); }, [kind, roundNumber, player]);
+  async function submit(event) {
+    event.preventDefault();
+    setBusy(true); setError(""); setAnswer(null);
+    try { setAnswer(await askAnalysis(taskId, kind, kind === "round" ? roundNumber : player)); }
+    catch (reason) { setError(reason.message); }
+    finally { setBusy(false); }
+  }
+  return <section className="questions-card card" aria-label="当前比赛追问">
+    <div className="section-heading"><div><p className="eyebrow">SAVED MATCH / FOLLOW-UP</p><h2>当前比赛追问</h2></div><span className="chip">只读 · 无模型调用</span></div>
+    <p className="question-note">从已保存的比赛事件回答以下问题，附带回合来源。每次最多两步查询；不覆盖历史画像或战术因果推断。</p>
+    <form className="question-form" onSubmit={submit}>
+      <label>问题<select aria-label="追问类型" disabled={busy} value={kind} onChange={event => setKind(event.target.value)}>
+        <option value="opening_losses">哪些回合拿到首杀后仍失利？</option><option value="post_plant_losses">哪些回合下包后仍失利？</option>
+        <option value="round">指定回合发生了什么？</option><option value="player">选手本场交战数据如何？</option>
+      </select></label>
+      {kind === "round" && <label>回合编号<input aria-label="追问回合" required type="number" min="1" disabled={busy} value={roundNumber} onChange={event => setRoundNumber(event.target.value)} /></label>}
+      {kind === "player" && <label>选手名称<input aria-label="追问选手" required maxLength="100" list="current-match-players" disabled={busy} value={player} onChange={event => setPlayer(event.target.value)} /><datalist id="current-match-players">{Object.keys(analysis.metrics?.players || {}).map(name => <option key={name} value={name} />)}</datalist></label>}
+      <button className="primary-button" disabled={busy}>{busy ? "核查中…" : "查看证据"}</button>
+    </form>
+    {error && <p role="alert" className="question-error">{error}</p>}
+    {answer && <div className="question-answer" role="status" data-status={answer.status}>
+      <b>{ { found: "已找到证据", not_found: "记录范围内未找到", unknown: "信息不足", budget_exhausted: "达到步骤上限" }[answer.status] }</b>
+      <p>{answer.answer}</p>
+      {answer.kind === "player" && answer.facts.map(fact => <p key={fact.player}>来源覆盖 {answer.matched_rounds} 个包含该选手交战事件的回合。</p>)}
+      <div className="question-sources">{answer.sources.map(source => <details key={source.source_id}>
+        <summary>[{source.citation}] · R{source.metadata.round_number} · 查看回合证据</summary>
+        <p>{source.content}</p><small>{source.source_id}</small>
+      </details>)}</div>
+      <details className="question-provenance"><summary>查询范围与记录版本</summary>
+        <p>{answer.provenance.map_name} · {answer.provenance.match_id}</p>
+        <p>步骤 {answer.budget.steps_used}/{answer.budget.max_steps} · 模型调用 {answer.budget.model_calls}</p>
+        <p>输入 SHA256：{answer.provenance.payload_sha256}</p><p>原分析版本：{answer.provenance.code_commit}</p>
+      </details>
+    </div>}
+  </section>;
 }
 
 function ExecutionTimeline({ task }) {

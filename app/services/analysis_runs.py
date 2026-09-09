@@ -89,3 +89,12 @@ class AnalysisRunStore:
             rows = db.execute('SELECT id,status,created_at,updated_at,metadata FROM runs ORDER BY created_at DESC LIMIT ?',
                               (limit,)).fetchall()
         return [dict(task_id=r[0], status=r[1], created_at=r[2], updated_at=r[3], metadata=json.loads(r[4])) for r in rows]
+
+    def read_input(self, task_id):
+        """Internal snapshot read for bounded questions; never exposed as raw HTTP JSON."""
+        if not self.path.exists():
+            return None
+        with closing(sqlite3.connect(self.path.as_uri() + '?mode=ro', uri=True, timeout=5)) as db:
+            row = db.execute('SELECT status,code_commit,metadata,input_json FROM runs WHERE id=?',
+                             (task_id,)).fetchone()
+        return dict(zip(('status', 'code_commit', 'metadata', 'input_json'), row)) if row else None

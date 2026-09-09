@@ -14,6 +14,8 @@
 
 </div>
 
+Added deterministic report-contract verification and four guided questions over saved matches. Checks cover metrics, current-source identity/content and rendered reports; unknown outcomes are excluded from conversion-rate denominators. Questions are read-only, limited to two steps and make no model calls. All 325 offline tests and the frontend build pass. See [scope and validation](docs/REPORT_QUESTIONS_V1.md).
+
 Actual node events and local SQLite analysis history are now available. The UI shows recorded starts, completions, failures, durations and retrieval attempts, with saved-report selection and refresh recovery. A real Demo produced 20 events; its result survived removal of its Redis cache, and duplicate delivery reused the saved result without model execution. All 276 offline tests pass; this milestone made zero remote model calls. See [implementation and recovery limits](docs/ANALYSIS_HISTORY_V1.md).
 
 Two consecutive real browser uploads now pass the complete pipeline on one persistent Celery worker: parsing, Milvus / Graph retrieval, live Qwen selection, Verifier and rendered reports. The observed 14-round Demo used 1,282 and 1,043 tokens; both reports passed verification and survived refresh. The old failure and its 5,456-token unresolved reservation remain intact. The authorized two-call recovery window is exhausted, so model calls are paused. Old local and remote branches were deleted; development continues on main. See [live acceptance and limits](docs/LIVE_E2E_V2.md).
