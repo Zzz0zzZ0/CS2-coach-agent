@@ -12,6 +12,7 @@ from app.services.graph_rag_service import GraphRAGClient
 from app.services.rag_service import Evidence,KnowledgeBaseClient
 from app.services.relation_query_service import parse_relation,event_witnesses,search_relations
 from app.agentic.nodes.retrieve_node import create_retrieve_node
+from app.agentic.nodes.router_node import create_router_node
 from app.api.routers import graph as graph_router
 
 
@@ -149,6 +150,39 @@ def test_vector_alone_cannot_call_a_relation_absent_or_rewrite_it():
     result=asyncio.run(KnowledgeBaseClient(ForbiddenStore(),object()).retrieve('Alpha kills Cedar after a bomb plant',{'map':'Mirage'}))
     assert not result.evidence and result.relation['status']=='unknown'
     assert result.strategy=='relation_requires_source'
+
+
+def test_router_topics_reach_both_retrievers_through_relation_gates(relation_graph):
+    from langchain_core.documents import Document
+
+    class TopicStore:
+        def similarity_search_with_score(self, query, **kwargs):
+            return [(Document(
+                page_content='Red Blue Mirage round outcome kill chain bomb plant retake',
+                metadata={'map':'Mirage','tactic_type':'Round Event Evidence','source':'dev-round'},
+            ), 0.1)]
+
+    state=asyncio.run(create_router_node()({'match':{'map_name':'de_mirage','rounds':[{
+        'kills':[{'killer_team':'Red','victim_team':'Blue'}],
+    }]}}))
+    for task in state['analysis_plan']:
+        for query in [task['query'], *task['query_variants']]:
+            assert parse_relation(query,state['retrieval_metadata']) is None
+    result=asyncio.run(create_retrieve_node(KnowledgeBaseClient(TopicStore(),None),relation_graph)(state))
+    summary=next(item for item in result['retrieval_task_results'] if item['task_id']=='round_flow')
+    assert summary['covered'] and summary['relation'] is None
+    assert summary['milvus_count'] > 0 and summary['graph_count'] > 0
+    assert any(item['metadata'].get('topic')=='round_flow' for item in result['retrieval_evidence'])
+
+
+def test_round_flow_task_id_cannot_bypass_unsupported_relation_gate(relation_graph):
+    result=asyncio.run(create_retrieve_node(KnowledgeBaseClient(ForbiddenStore(),None),relation_graph)({
+        'retrieval_metadata':{'map':'Mirage'},
+        'analysis_plan':[{'id':'round_flow','query':'Alpha kills Cedar after a bomb plant with an awp'}],
+    }))
+    summary=result['retrieval_task_results'][0]
+    assert summary['relation']['status']=='unsupported' and not summary['covered']
+    assert not result['retrieval_evidence']
 
 
 def test_hybrid_uses_proofs_and_removes_stale_evidence_on_retry(relation_graph):

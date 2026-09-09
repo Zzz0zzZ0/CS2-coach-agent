@@ -50,7 +50,7 @@ def create_router_node(llm=None):
             {
                 "id": "round_flow",
                 "goal": "击杀链、下包、回合结果和残局",
-                "query": f"{subject} round outcome kill chain bomb plant retake",
+                "query": f"{subject} round outcome; kill chain; bomb plant; retake",
                 "query_variants": [f"{map_label} bomb plant retake round evidence"],
                 "required_tactic_types": ["Round Event Evidence"],
             },
