@@ -35,6 +35,9 @@ class MatchMetrics(BaseModel):
 class AnalysisResult(BaseModel):
     """Stable result returned by every analysis entry point."""
 
+    execution_trace: List[Dict[str, Any]] = Field(default_factory=list)
+    retrieval_trace: Dict[str, Any] = Field(default_factory=dict)
+    tool_trace: List[Dict[str, Any]] = Field(default_factory=list)
     match_id: str
     map_name: str
     metrics: MatchMetrics

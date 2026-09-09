@@ -44,3 +44,16 @@ button { cursor: pointer; }
 .player-summary { grid-column: 1 / -1; }.player-summary .coach-brief { border: 1px solid #2c6f68; border-radius: 8px; padding: 18px; }.player-summary .brief-section p { color: #bcd0de; font-size: 13px; line-height: 1.7; }.player-summary .brief-sources { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 6px; }.player-summary .brief-sources button { font-size: 11px; }
 
 .llm-budget { display: grid; gap: 7px; border-top: 1px solid #294760; padding-top: 10px; font-size: 11px; color: #90a9bd; line-height: 1.5; }.llm-budget b { color: #dce9f5; }.llm-budget button { justify-self: start; }
+
+/* Events, rather than the overall task status, drive these states. */
+.flow-step { grid-template-columns: 25px minmax(70px, 1fr) minmax(100px, auto); }
+.flow-step small { text-align: right; font-size: 10px; }
+.flow-step.completed { color: #a5dccb; }
+.flow-step.started { color: #f3d596; }
+.flow-step.failed { color: #ff9c9c; }
+.run-note { color: #9cb4c8; font-size: 11px; line-height: 1.6; }
+.run-events { font-size: 11px; color: #aec4d8; margin-top: 16px; }
+.run-events summary { cursor: pointer; }
+.run-events > div { display: grid; gap: 4px; padding: 8px 0; border-bottom: 1px solid #234158; }
+.run-history { display: grid; gap: 8px; margin-top: 16px; font-size: 12px; color: #aec4d8; }
+.run-history select { width: 100%; min-width: 0; }

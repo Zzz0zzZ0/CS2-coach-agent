@@ -40,6 +40,7 @@ class Settings:
     CELERY_BROKER_URL: str = os.getenv("CELERY_BROKER_URL", "redis://localhost:6379/0")
     CELERY_RESULT_BACKEND: str = os.getenv("CELERY_RESULT_BACKEND", "redis://localhost:6379/1")
     DEMO_DOWNLOAD_DIR: str = os.getenv("DEMO_DOWNLOAD_DIR", "data/demos")
+    ANALYSIS_RUN_DB: str = os.getenv("ANALYSIS_RUN_DB", "data/runtime/analysis_runs.sqlite")
     GRAPH_DB_PATH: str = os.getenv("GRAPH_DB_PATH", "data/graph/cs2_graph.sqlite")
     
     # 应用配置

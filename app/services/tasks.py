@@ -1,5 +1,7 @@
 import logging
 import asyncio
+import hashlib
+import time
 from functools import lru_cache
 from pathlib import Path
 from app.core.celery_app import celery_app
@@ -8,6 +10,7 @@ from app.core.providers import get_graph_client, get_llm, get_kb_client
 from app.core.config import settings
 from app.services.analysis_pipeline import AnalysisPipeline
 from app.services.parser_service import TacticalDemoParser
+from app.services.analysis_runs import AnalysisRunStore, RunAlreadyStarted
 
 logger = logging.getLogger(__name__)
 
@@ -18,12 +21,44 @@ def _worker_runner():
     return asyncio.Runner()
 
 
+def _claim(store, task_id, metadata):
+    if store.start(task_id, metadata):
+        return None
+    existing = store.get(task_id)
+    if existing["status"] == "SUCCESS":
+        return existing["result"]
+    # A duplicate delivery must not replay a paid or interrupted operation.
+    raise RunAlreadyStarted("Analysis already started; inspect the saved run before any new execution")
+
+
 def _run_match_analysis(payload: MatchWebhookPayload, task_id: str):
+    store = AnalysisRunStore()
+    cached = _claim(store, task_id, {"source": "payload", "match_id": payload.match_id, "map": payload.map_name})
+    if cached is not None:
+        return cached
+    try:
+        return _analyze_owned_match(payload, task_id, store)
+    except BaseException as error:
+        store.finish(task_id, error=type(error).__name__)
+        raise
+
+
+def _analyze_owned_match(payload: MatchWebhookPayload, task_id: str, store):
     logger.info(f"====== [Celery Worker] 开始处理 Webhook 任务: {task_id} ======")
     logger.info(f"比赛 ID: {payload.match_id} | 地图名称: {payload.map_name}")
 
-    pipeline = AnalysisPipeline(get_llm(), get_kb_client(), get_graph_client())
-    result = _worker_runner().run(pipeline.analyze(payload))
+    store.save_input(task_id, payload.model_dump())
+    start = time.monotonic()
+    store.event(task_id, {"node": "Initialize", "status": "started", "attempt": 1, "at": time.time()})
+    try:
+        pipeline = AnalysisPipeline(get_llm(), get_kb_client(), get_graph_client())
+    except BaseException as error:
+        store.event(task_id, {"node": "Initialize", "status": "failed", "attempt": 1,
+                             "at": time.time(), "error_type": type(error).__name__})
+        raise
+    store.event(task_id, {"node": "Initialize", "status": "completed", "attempt": 1,
+                         "at": time.time(), "duration_ms": round((time.monotonic()-start)*1000, 2)})
+    result = _worker_runner().run(pipeline.analyze(payload, lambda event: store.event(task_id, event)))
     coach_advice = result.coach_advice or "教练由于未知原因未给出战术建议。"
 
     output_dir = Path("output")
@@ -66,7 +101,7 @@ def _run_match_analysis(payload: MatchWebhookPayload, task_id: str):
     result.knowledge_review = knowledge_review
 
     logger.info(f"====== [Celery Worker] 任务完成: {task_id} ======")
-    return {
+    output = {
         "status": quality_status,
         "coach_advice": coach_advice,
         "analyst_report": result.analyst_report,
@@ -75,6 +110,8 @@ def _run_match_analysis(payload: MatchWebhookPayload, task_id: str):
         "knowledge_task_id": knowledge_task_id,
         "knowledge_review": knowledge_review,
     }
+    store.finish(task_id, result=output)
+    return output
 
 
 @celery_app.task(bind=True, name="process_webhook_match_task")
@@ -106,19 +143,35 @@ def parse_and_analyze_demo_task(
     """
     独立任务：解析物理 Demo，然后生成 payload，再进行后续分析
     """
+    store = AnalysisRunStore()
+    cached = _claim(store, self.request.id, {"source": "demo", "filename": Path(original_filename or file_path_str).name,
+                                          "analysis_mode": analysis_mode})
+    if cached is not None:
+        return cached
     logger.info(f"====== [Celery Worker] 开始解析实网 Demo: {file_path_str} ======")
+    parsing = True
+    started = time.monotonic()
+    store.event(self.request.id, {"node": "Parse", "status": "started", "attempt": 1, "at": time.time()})
     try:
+        with open(file_path_str, "rb") as source:
+            demo_sha256 = hashlib.file_digest(source, "sha256").hexdigest()
+        store.set_metadata(self.request.id, {"demo_sha256": demo_sha256})
         parser = TacticalDemoParser(file_path_str)
         dem_dict = parser.parse_to_dict()
         
         if not dem_dict or not dem_dict.get("rounds"):
             raise ValueError("解析上传的 Demo 失败或其为空！")
             
+        store.event(self.request.id, {"node": "Parse", "status": "completed", "attempt": 1,
+            "at": time.time(), "duration_ms": round((time.monotonic()-started)*1000, 2),
+            "details": {"rounds": len(dem_dict["rounds"]), "demo_sha256": demo_sha256}})
+        parsing = False
         payload = MatchWebhookPayload(
             match_id=dem_dict.get("match_id", "upload_demo"),
             map_name=dem_dict.get("map_name", "unknown"),
             rounds=dem_dict.get("rounds", []),
             extra_data={
+                "demo_sha256": demo_sha256,
                 "source": "direct_upload", 
                 "filename": original_filename or Path(file_path_str).name,
                 "is_high_quality": is_high_quality,
@@ -127,10 +180,14 @@ def parse_and_analyze_demo_task(
         )
         
         # 解析完成后，复用统一的核心分析接口
-        result = _run_match_analysis(payload, self.request.id)
+        result = _analyze_owned_match(payload, self.request.id, store)
         return result
         
     except Exception as e:
+        if parsing:
+            store.event(self.request.id, {"node": "Parse", "status": "failed", "attempt": 1,
+                "at": time.time(), "duration_ms": round((time.monotonic()-started)*1000, 2), "error_type": type(e).__name__})
+        store.finish(self.request.id, error=type(e).__name__)
         logger.error(f"Celery 解析 Demo 异常: {e}", exc_info=True)
         self.update_state(state="FAILURE", meta={"exc_type": type(e).__name__, "exc_message": str(e)})
         raise e

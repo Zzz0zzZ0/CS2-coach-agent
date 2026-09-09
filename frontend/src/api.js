@@ -14,6 +14,10 @@ export function uploadDemo(file, analysisMode) {
   return request("/api/upload-demo", { method: "POST", body });
 }
 
+export function getAnalysisRuns() {
+  return request("/api/tasks");
+}
+
 export function getTask(taskId) {
   return request(`/api/tasks/${encodeURIComponent(taskId)}`);
 }

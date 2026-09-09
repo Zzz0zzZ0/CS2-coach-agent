@@ -13,7 +13,7 @@ class AnalysisPipeline:
         self.kb_client = kb_client
         self.graph_client = graph_client
 
-    async def analyze(self, payload: MatchWebhookPayload) -> AnalysisResult:
+    async def analyze(self, payload: MatchWebhookPayload, on_event=None) -> AnalysisResult:
         serialized_match = payload.model_dump()
         initial_state = {
             "match": serialized_match,
@@ -38,10 +38,19 @@ class AnalysisPipeline:
             "retry_count": 0,
         }
 
-        workflow = create_workflow_app(self.llm, self.kb_client, self.graph_client)
+        execution_trace = []
+        def record(event):
+            execution_trace.append(event)
+            if on_event:
+                on_event(event)
+
+        workflow = create_workflow_app(self.llm, self.kb_client, self.graph_client, record)
         final_state = await workflow.ainvoke(initial_state)
         metrics = MatchMetrics(**final_state.get("metrics", {}))
         return AnalysisResult(
+            execution_trace=execution_trace,
+            retrieval_trace=final_state.get("retrieval_trace", {}),
+            tool_trace=final_state.get("tool_trace", []),
             match_id=payload.match_id,
             map_name=payload.map_name,
             metrics=metrics,

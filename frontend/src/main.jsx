@@ -13,13 +13,14 @@ import {
   getSubgraph,
   getTeamTactics,
   getTask,
+  getAnalysisRuns,
   searchGraph,
   saveLlmKey,
   uploadDemo,
 } from "./api";
 import "./styles.css";
 
-const FLOW = ["Supervisor", "Tools", "Router", "RAG + Graph", "Critique", "Analyst", "Coach", "Verifier"];
+const FLOW = ["Parse", "Initialize", "Supervisor", "Tools", "Router", "RAG + Graph", "Critique", "Analyst", "Coach", "Verifier"];
 const FEATURED_TEAMS = ["Falcons", "Spirit", "Vitality", "FURIA", "MOUZ"];
 const ROUND_KIND_LABELS = { kill: "击杀", grenade: "道具", flash: "闪白", plant: "下包", tactical_sequence: "战术标签" };
 const ROUND_REASON_LABELS = { bomb_defused: "拆包结束", bomb_exploded: "炸弹爆炸", ct_killed: "CT 被淘汰", t_killed: "T 被淘汰", time_ran_out: "时间耗尽" };
@@ -40,7 +41,7 @@ function formatNumber(value) {
 
 function statusLabel(status, resultStatus) {
   if (status === "SUCCESS" && resultStatus === "needs_review") return "执行完成 · 质量待审查";
-  return { PENDING: "排队中", STARTED: "解析中", SUCCESS: "已完成", FAILURE: "失败" }[status] || status || "待提交";
+  return { PENDING: "排队中", STARTED: "已开始", SUCCESS: "已完成", FAILURE: "失败" }[status] || status || "待提交";
 }
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
   const [mode, setMode] = useState("demo_forensic");
   const [taskId, setTaskId] = useState(() => new URLSearchParams(window.location.search).get("task_id") || "");
   const [task, setTask] = useState(null);
+  const [recentRuns, setRecentRuns] = useState([]);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [llmConfigured, setLlmConfigured] = useState(false);
@@ -198,6 +200,19 @@ function App() {
     };
   }, [taskId, task?.status]);
 
+  useEffect(() => {
+    getAnalysisRuns().then(data => setRecentRuns(data.runs || [])).catch(reason => setError(reason.message));
+  }, [task?.status]);
+
+  function openRun(id) {
+    setTask(null);
+    setError("");
+    setTaskId(id);
+    const url = new URL(window.location.href);
+    url.searchParams.set("task_id", id);
+    window.history.replaceState(null, "", url);
+  }
+
   async function handleSubmit(event) {
     event.preventDefault();
     if (!file) return setError("请选择一个 .dem 文件");
@@ -304,10 +319,17 @@ function App() {
             </label>
             <div className="form-row"><label>分析模式<select value={mode} onChange={(event) => setMode(event.target.value)}><option value="demo_forensic">Demo Forensic · 完整复盘</option><option value="tactical_comparison">Tactical Comparison · 战术对照</option><option value="player_coaching">Player Coaching · 个人训练</option></select></label><button className="primary-button" disabled={busy || !file}>{busy ? "提交中…" : "开始分析  ↗"}</button></div>
           </form>
+          {recentRuns.length > 0 && <label className="run-history">已保存分析
+            <select aria-label="已保存分析" value={taskId} onChange={event => { if (event.target.value) openRun(event.target.value); }}>
+              <option value="">选择已有报告</option>
+              {!recentRuns.some(run => run.task_id === taskId) && taskId && <option value={taskId}>{taskId}</option>}
+              {recentRuns.map(run => <option key={run.task_id} value={run.task_id}>{new Date(run.created_at * 1000).toLocaleString()} · {run.metadata.map || run.metadata.filename || run.metadata.match_id} · {statusLabel(run.status)}</option>)}
+            </select>
+          </label>}
           {task && <div className="task-line"><span className={`status-dot ${task.status === "SUCCESS" && task.result?.status !== "needs_review" ? "success" : task.status === "FAILURE" || task.result?.status === "needs_review" ? "danger" : ""}`} />任务 {task.task_id} · {statusLabel(task.status, task.result?.status)}</div>}
         </section>
 
-        <section className="flow-card card"><div className="section-heading"><div><p className="eyebrow">02 / ORCHESTRATION</p><h2>Agent 执行链</h2></div><span className="mono">{task?.status || "IDLE"}</span></div><div className="flow-track">{FLOW.map((item, index) => <div className={`flow-step ${task?.status === "SUCCESS" || (task && index < 4) ? "active" : ""}`} key={item}><span>{String(index + 1).padStart(2, "0")}</span><b>{item}</b>{index < FLOW.length - 1 && <i />}</div>)}</div></section>
+        <ExecutionTimeline task={task} />
 
         <section className="metrics-grid"><Metric label="TOTAL ROUNDS" value={metrics.rounds_total} suffix=" rounds" /><Metric label="KILLS" value={metrics.kills_total} /><Metric label="FIRST KILLS" value={metrics.first_kills_total} accent /><Metric label="COACH TOKENS" value={analysis?.model_usage?.total_tokens ?? "—"} text={analysis?.model_usage?.total_tokens == null} /><Metric label="VERIFIER" value={analysis ? analysis.verification_report?.status || "review" : "—"} text /></section>
 
@@ -346,6 +368,34 @@ function App() {
       {error && <button className="error-toast" onClick={() => setError("")}>{error} ×</button>}
     </div>
   );
+}
+
+function ExecutionTimeline({ task }) {
+  const events = task?.events || task?.result?.analysis?.execution_trace || [];
+  const latest = Object.fromEntries(events.map(event => [event.node, event]));
+  const labels = { started: "执行中", completed: "已完成", failed: "失败" };
+  return <section className="flow-card card">
+    <div className="section-heading"><div><p className="eyebrow">02 / ORCHESTRATION</p><h2>真实执行时间线</h2></div><span className="mono">{task?.status || "IDLE"}</span></div>
+    <div className="flow-track">{FLOW.map((name, index) => {
+      const event = latest[name];
+      return <div className={`flow-step ${event?.status || ""}`} key={name} data-node={name} data-status={event?.status || "unrecorded"}>
+        <span>{String(index + 1).padStart(2, "0")}</span><b>{name === "Retrieve" ? "Milvus + Graph" : name}</b>
+        <small>{event ? labels[event.status] : "暂无事件"}{event?.duration_ms != null && ` · ${event.duration_ms} ms`}{event?.attempt > 1 && ` · 第 ${event.attempt} 次`}</small>
+      </div>;
+    })}</div>
+    {task && !events.length && <p className="run-note">尚无节点记录；旧任务不会补造执行进度。</p>}
+    {task?.status === "STARTED" && <p className="run-note">显示最近一次已保存事件，不代表 Worker 仍在线。中断后保留记录，不自动重跑模型。</p>}
+    {task?.error && <p className="run-note">任务错误：{task.error}</p>}
+    {task?.storage === "local" && <p className="run-note">本地持久记录 · 更新于 {new Date(task.updated_at * 1000).toLocaleString()} · 代码 {task.code_commit?.slice(0, 7)}</p>}
+    {events.length > 0 && <details className="run-events"><summary>查看全部 {events.length} 条事件</summary>{events.map((event, index) => <div key={index}>
+      <b>{event.node} · {labels[event.status]} · 第 {event.attempt} 次</b>
+      <span>{new Date(event.at * 1000).toLocaleTimeString()}{event.duration_ms != null && ` · ${event.duration_ms} ms`}</span>
+      {event.error_type && <span>{event.error_type}</span>}
+      {event.details?.evidence_count != null && <span>检索证据 {event.details.evidence_count} 条</span>}
+      {event.details?.selection_source && <span>{event.details.selection_source === "qwen_tool_call" ? "模型选择" : "规则建议"} · tokens {event.details.usage?.total_tokens ?? "—"}</span>}
+      {event.details?.verification_status && <span>引用校验：{event.details.verification_status}</span>}
+    </div>)}</details>}
+  </section>;
 }
 
 function Metric({ label, value, suffix = "", accent = false, text = false }) { return <article className={`metric ${accent ? "accent" : ""}`}><span>{label}</span><strong className={text ? "metric-text" : ""}>{text ? value : formatNumber(value)}<small>{text ? "" : suffix}</small></strong></article>; }

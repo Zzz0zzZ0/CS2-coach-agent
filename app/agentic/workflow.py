@@ -1,4 +1,5 @@
 import logging
+import time
 from langgraph.graph import StateGraph, START, END
 
 from app.agentic.states import GraphState
@@ -14,7 +15,7 @@ from app.core.config import settings
 
 logger = logging.getLogger(__name__)
 
-def create_workflow_app(llm, kb_client, graph_client=None):
+def create_workflow_app(llm, kb_client, graph_client=None, on_event=None):
     """
     基于依赖注入创建的纯粹无副作用状态机流水线。
     """
@@ -31,15 +32,44 @@ def create_workflow_app(llm, kb_client, graph_client=None):
     node_coach = create_coach_node(llm)
     node_verify = create_verify_node()
 
-    # 注入节点
-    workflow.add_node("Supervisor", node_supervisor)
-    workflow.add_node("Tools", node_tools)
-    workflow.add_node("Router", node_router)
-    workflow.add_node("Retrieve", node_retrieve)
-    workflow.add_node("Critique", node_critique)
-    workflow.add_node("Analyst", node_analyst)
-    workflow.add_node("Coach", node_coach)
-    workflow.add_node("Verifier", node_verify)
+    attempts = {}
+
+    def observed(name, node):
+        async def run(state):
+            attempts[name] = attempts.get(name, 0) + 1
+            base = {"node": name, "attempt": attempts[name]}
+            started = time.monotonic()
+            if on_event:
+                on_event({**base, "status": "started", "at": time.time()})
+            try:
+                output = await node(state)
+            except BaseException as error:
+                if on_event:
+                    on_event({**base, "status": "failed", "at": time.time(),
+                              "duration_ms": round((time.monotonic()-started)*1000, 2),
+                              "error_type": type(error).__name__})
+                raise
+            if on_event:
+                details = {}
+                if name == "Tools":
+                    details["rounds"] = output.get("metrics", {}).get("rounds_total")
+                if name == "Retrieve":
+                    trace = output.get("retrieval_trace", {})
+                    details = {k: trace[k] for k in ("evidence_count", "graph_available", "task_results") if k in trace}
+                if name == "Coach":
+                    details = {"selection_source": output.get("coach_decision", {}).get("selection_source"),
+                               "usage": output.get("model_usage", {})}
+                if name == "Verifier":
+                    details["verification_status"] = output.get("verification_report", {}).get("status")
+                on_event({**base, "status": "completed", "at": time.time(),
+                          "duration_ms": round((time.monotonic()-started)*1000, 2), "details": details})
+            return output
+        return run
+
+    for name, node in (("Supervisor", node_supervisor), ("Tools", node_tools), ("Router", node_router),
+                       ("Retrieve", node_retrieve), ("Critique", node_critique), ("Analyst", node_analyst),
+                       ("Coach", node_coach), ("Verifier", node_verify)):
+        workflow.add_node(name, observed(name, node))
 
     # 构建边
     workflow.add_edge(START, "Supervisor")
