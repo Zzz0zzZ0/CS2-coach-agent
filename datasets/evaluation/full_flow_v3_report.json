@@ -1,0 +1,888 @@
+{
+  "date": "2026-09-09",
+  "verdict": "passed_with_known_vector_regression_limits",
+  "baseline_commit": "5629852cca7664bf68b4562cf7443379f8d6faed",
+  "analysis_code_commit": "8804322ff8c2e4f7a6ea1889ffa192c8e88a7cf3",
+  "scope": "Engineering end-to-end acceptance on five previously observed real Demo maps, paused cloud model, local FastEmbed/Milvus/Graph, plus webhook and UI recovery. Not unseen or human-coach quality evaluation.",
+  "offline": {
+    "tests": {
+      "tests": 354,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "junit_seconds": 3.271,
+      "reported_result": "354 passed, 1 warning in 3.32s"
+    },
+    "dependency_check": "passed",
+    "frontend_build": "passed",
+    "review": "passed",
+    "additional_router_combinations_checked": 45
+  },
+  "verified_analysis_ci": {
+    "run_id": 34323799325,
+    "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/actions/runs/34323799325",
+    "conclusion": "success"
+  },
+  "fixes": [
+    {
+      "file": "app/agentic/nodes/router_node.py",
+      "problem": "Internal round outcome kill chain words parsed as unsupported directed relation",
+      "change": "Separate internal topics with semicolons; public relation gate unchanged",
+      "regression_tests_added": 2,
+      "real_round_flow_before": 0,
+      "real_round_flow_after": 5,
+      "planned_retrieval_tasks_before": 12,
+      "planned_retrieval_tasks_after": 17,
+      "planned_retrieval_tasks_total": 17,
+      "all_five_metrics_and_rendered_reports_unchanged": true
+    },
+    {
+      "file": "frontend/src/main.jsx + frontend/src/styles.css",
+      "problem": "Fixed viewBox clipped nodes below the SVG viewport",
+      "change": "Content-derived height with a bounded scroll region and readable width; 69/64 nodes reachable at desktop/mobile sizes",
+      "validation": "four real geometry/scroll scenarios and nine historical UI checks"
+    },
+    {
+      "file": "frontend/index.html",
+      "problem": "Browser requested missing favicon.ico",
+      "change": "Explicit empty favicon avoids the missing-asset request",
+      "validation": "production build and nine real historical UI checks; zero console errors"
+    }
+  ],
+  "browser_demo": {
+    "commit": "8804322ff8c2e4f7a6ea1889ffa192c8e88a7cf3",
+    "invalid_suffix_400": true,
+    "parse_failure_task_id": "85d56b08-ff2a-4abc-936f-addae50a3050",
+    "parse_failure_durable": true,
+    "valid_tasks_after_failure": true,
+    "runs": [
+      {
+        "task_id": "dc50629d-d812-4dfe-b8a4-9ae49bb23879",
+        "file": "G2_vs_Aurora_2396944_map3.dem",
+        "mode": "demo_forensic",
+        "rounds": 14,
+        "kills": 97,
+        "score": {
+          "Aurora": 1,
+          "G2": 13
+        },
+        "current_sources": 15,
+        "historical_sources": 14,
+        "verification": "pass",
+        "events": 20,
+        "elapsed_ms": 5494,
+        "report_exact": true,
+        "reload_pass": true,
+        "source_expansion_pass": true,
+        "temp_upload_deleted": true,
+        "payload_sha256": "643f3e525c6bcfff809cdeadbb239385d65ec2c3bfe27209fd3fa0393f678017",
+        "demo_sha256": "e348879717172add00b80285c20f884f4e180aa8cffa5a7ae9990d0d1d20b9fd",
+        "round_flow": {
+          "task_id": "round_flow",
+          "count": 8,
+          "milvus_count": 4,
+          "graph_count": 4,
+          "relation": null,
+          "covered": true,
+          "confidence": 0.7466666666666667,
+          "strategy": "hybrid_rrf+graph",
+          "warnings": []
+        },
+        "task_coverage": {
+          "opening_duel": true,
+          "utility": true,
+          "round_flow": true,
+          "map_context": true
+        }
+      },
+      {
+        "task_id": "ae47e72d-49d9-4a16-b80e-9c76b17cb6d6",
+        "file": "G2_vs_Natus_Vincere_2396940_map1.dem",
+        "mode": "player_coaching",
+        "rounds": 19,
+        "kills": 129,
+        "score": {
+          "G2": 13,
+          "NaVi": 6
+        },
+        "current_sources": 20,
+        "historical_sources": 12,
+        "verification": "pass",
+        "events": 20,
+        "elapsed_ms": 5144,
+        "report_exact": true,
+        "reload_pass": true,
+        "source_expansion_pass": true,
+        "temp_upload_deleted": true,
+        "payload_sha256": "8fa93e464d65e185ae1608914ce44c91ce1384014c972e998b245c09eae2cce2",
+        "demo_sha256": "addb04dbcffaa81c3bf05b47265744af3fca3206b0746cc0ab5c4d1b00010956",
+        "round_flow": {
+          "task_id": "round_flow",
+          "count": 8,
+          "milvus_count": 4,
+          "graph_count": 4,
+          "relation": null,
+          "covered": true,
+          "confidence": 0.7466666666666667,
+          "strategy": "hybrid_rrf+graph",
+          "warnings": []
+        },
+        "task_coverage": {
+          "opening_duel": true,
+          "utility": true,
+          "round_flow": true
+        }
+      },
+      {
+        "task_id": "daaf2518-70ae-4d1d-967a-e7c1a888b36f",
+        "file": "G2_vs_Aurora_2396944_map2.dem",
+        "mode": "tactical_comparison",
+        "rounds": 35,
+        "kills": 224,
+        "score": {
+          "G2": 19,
+          "Aurora": 16
+        },
+        "current_sources": 36,
+        "historical_sources": 12,
+        "verification": "pass",
+        "events": 20,
+        "elapsed_ms": 7414,
+        "report_exact": true,
+        "reload_pass": true,
+        "source_expansion_pass": true,
+        "temp_upload_deleted": true,
+        "payload_sha256": "dec20a5a18cca8e950119da01908fc8463abad286fdc91e95e33cf9bbc7d32fa",
+        "demo_sha256": "e71bad7ed9d272f72806940dcd1e8f732c31f947865e49e5ccbbcf1f43bcdc83",
+        "round_flow": {
+          "task_id": "round_flow",
+          "count": 8,
+          "milvus_count": 4,
+          "graph_count": 4,
+          "relation": null,
+          "covered": true,
+          "confidence": 0.7466666666666667,
+          "strategy": "hybrid_rrf+graph",
+          "warnings": []
+        },
+        "task_coverage": {
+          "utility": true,
+          "round_flow": true,
+          "map_context": true
+        }
+      },
+      {
+        "task_id": "727e6436-8e77-479b-83af-4c8ef2563b38",
+        "file": "G2_vs_Aurora_2396944_map1.dem",
+        "mode": "demo_forensic",
+        "rounds": 20,
+        "kills": 130,
+        "score": {
+          "Aurora": 13,
+          "G2": 7
+        },
+        "current_sources": 21,
+        "historical_sources": 14,
+        "verification": "pass",
+        "events": 20,
+        "elapsed_ms": 4961,
+        "report_exact": true,
+        "reload_pass": true,
+        "source_expansion_pass": true,
+        "temp_upload_deleted": true,
+        "payload_sha256": "b96dfcc62b45338503dfc927e7d827e276a4b1fb3d9b4c2c20617fcd6f205200",
+        "demo_sha256": "e6bdd552f9336cd03a42f758d3849277461095bd3d019cd22c6608af8f2e3dc1",
+        "round_flow": {
+          "task_id": "round_flow",
+          "count": 8,
+          "milvus_count": 4,
+          "graph_count": 4,
+          "relation": null,
+          "covered": true,
+          "confidence": 0.7466666666666667,
+          "strategy": "hybrid_rrf+graph",
+          "warnings": []
+        },
+        "task_coverage": {
+          "opening_duel": true,
+          "utility": true,
+          "round_flow": true,
+          "map_context": true
+        }
+      },
+      {
+        "task_id": "faa32da0-4a23-4c05-b7ce-879dc8176f2b",
+        "file": "G2_vs_Natus_Vincere_2396940_map2.dem",
+        "mode": "player_coaching",
+        "rounds": 23,
+        "kills": 123,
+        "score": {
+          "G2": 13,
+          "NaVi": 10
+        },
+        "current_sources": 24,
+        "historical_sources": 12,
+        "verification": "pass",
+        "events": 20,
+        "elapsed_ms": 5121,
+        "report_exact": true,
+        "reload_pass": true,
+        "source_expansion_pass": true,
+        "temp_upload_deleted": true,
+        "payload_sha256": "fccfe9becc8324e50251c8e000ee7c010451c47a9de1810ccb78b540c6231371",
+        "demo_sha256": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352",
+        "round_flow": {
+          "task_id": "round_flow",
+          "count": 8,
+          "milvus_count": 4,
+          "graph_count": 4,
+          "relation": null,
+          "covered": true,
+          "confidence": 0.7466666666666667,
+          "strategy": "hybrid_rrf+graph",
+          "warnings": []
+        },
+        "task_coverage": {
+          "opening_duel": true,
+          "utility": true,
+          "round_flow": true
+        }
+      }
+    ],
+    "total_rounds": 111,
+    "page_errors": [],
+    "remote_model_calls": 0,
+    "model_budget_unchanged": true
+  },
+  "baseline_demo_tasks": [
+    {
+      "task_id": "175228db-7eec-48cc-91b9-9f5b502929d8",
+      "file": "G2_vs_Aurora_2396944_map3.dem",
+      "mode": "demo_forensic",
+      "rounds": 14
+    },
+    {
+      "task_id": "059e0d3f-cec9-4120-999b-57c5260ee5a8",
+      "file": "G2_vs_Natus_Vincere_2396940_map1.dem",
+      "mode": "player_coaching",
+      "rounds": 19
+    },
+    {
+      "task_id": "bcbb434e-3169-4bfb-86ba-07a1d974c8d1",
+      "file": "G2_vs_Aurora_2396944_map2.dem",
+      "mode": "tactical_comparison",
+      "rounds": 35
+    },
+    {
+      "task_id": "d5e6ba7d-a1b4-448c-8aa2-2fc0de82b0c2",
+      "file": "G2_vs_Aurora_2396944_map1.dem",
+      "mode": "demo_forensic",
+      "rounds": 20
+    },
+    {
+      "task_id": "ede2aba7-338f-4e8d-bd28-1f98cd7512d4",
+      "file": "G2_vs_Natus_Vincere_2396940_map2.dem",
+      "mode": "player_coaching",
+      "rounds": 23
+    }
+  ],
+  "saved_input_audit": {
+    "round_source_http_checks": 111,
+    "independent_loss_list_checks": 10,
+    "existing_saved_runs_unchanged": true,
+    "historical_graph_sha256_unchanged": true,
+    "budget_file_and_status_unchanged": true,
+    "remote_model_calls": 0,
+    "limits": "Independent counting uses the saved parser output; not a second Demo parser or an independent coaching-quality benchmark."
+  },
+  "zero_kill_round_behavior": {
+    "file": "G2_vs_Natus_Vincere_2396940_map2.dem",
+    "opening_unknown_rounds": 1,
+    "result": "Kept unknown rather than treated as an opening loss; totals independently checked."
+  },
+  "webhook_and_durability": {
+    "status": "pass",
+    "code_commit": "8804322ff8c2e4f7a6ea1889ffa192c8e88a7cf3",
+    "source_task_id": "dc50629d-d812-4dfe-b8a4-9ae49bb23879",
+    "source_artifact": "data/evaluation/full_flow_v3/browser_postfix/dc50629d-d812-4dfe-b8a4-9ae49bb23879/task.json",
+    "webhook_task_id": "69ca7f3f-0727-41a0-bcbb-43f6e1b8a3b4",
+    "webhook_match_id": "full-flow-v3-webhook-596b58751fec4a86a0e73e65ffaefcb8",
+    "webhook_seconds": 1.107,
+    "duplicate_seconds": 0.447,
+    "webhook_complete": true,
+    "verification_checks_passed": 4,
+    "event_count": 18,
+    "all_nine_nodes_once": true,
+    "metrics_equal_source_demo": true,
+    "retrieval_task_coverage": {
+      "opening_duel": true,
+      "utility": true,
+      "round_flow": true,
+      "map_context": true
+    },
+    "coach_selection_source": "deterministic_fallback",
+    "no_knowledge_ingestion": true,
+    "remote_model_call_delta": 0,
+    "protected_state_identical": true,
+    "removed_redis_key_count": 1,
+    "own_result_cache_backed_up_before_delete": true,
+    "http_full_record_equal_with_cache_missing": true,
+    "http_read_did_not_repopulate_cache": true,
+    "duplicate_celery_returned_cached_result": true,
+    "duplicate_completion_has_new_redis_date_done": true,
+    "all_sqlite_task_fields_events_timestamps_and_input_unchanged": true
+  },
+  "historical_regression": {
+    "development": {
+      "vector_only": 50,
+      "graph_only": 50,
+      "hybrid": 50
+    },
+    "observed_holdout": {
+      "vector_only": 28,
+      "graph_only": 30,
+      "hybrid": 30
+    },
+    "structured_contracts": {
+      "cases": 50,
+      "passed": 50,
+      "failed": 0,
+      "pass_rate_pct": 100.0
+    },
+    "known_vector_failures": [
+      {
+        "id": "h_team_vitality_dust2",
+        "query": "Vitality 在 Dust2 的烟闪配合",
+        "failed_checks": [
+          "intent_match"
+        ]
+      },
+      {
+        "id": "h_para_nuke_round",
+        "query": "核子危机里安包后防守方怎样重夺区域",
+        "failed_checks": [
+          "intent_match"
+        ]
+      }
+    ],
+    "relation_queries": {
+      "passed": 48,
+      "total": 48,
+      "checks_passed": 624,
+      "checks_total": 624
+    },
+    "relation_aggregates": {
+      "passed": 96,
+      "total": 96,
+      "checks_passed": 768,
+      "checks_total": 768
+    },
+    "validation_inputs": {
+      "datasets/evaluation/retrieval_queries_v2.json": {
+        "sha256": "86e01a5120e27bbef58fdefc479d010ec4da7bc93ff65d23cc26077e2399d9f7",
+        "matches_committed_head": true
+      },
+      "datasets/evaluation/retrieval_queries_holdout_v1.json": {
+        "sha256": "ab5991b913c26bf7dd44c071c271e258cd141bbf1c78a8c15c81b0d85756f435",
+        "matches_committed_head": true
+      },
+      "datasets/evaluation/relation_v1_queries.json": {
+        "sha256": "6af28b7881b680fe296cc27dd67a3fa6a7b32a640ff7fb3fc5888b00b9b5a914",
+        "matches_committed_head": true
+      },
+      "datasets/evaluation/relation_v1_qrels.json": {
+        "sha256": "59e0eb1d94452b7f839e247b1efa473547a15ef734c81f142a94d2b11586b24a",
+        "matches_committed_head": true
+      },
+      "datasets/evaluation/relation_engine_v2_protocol.json": {
+        "sha256": "78f7b6afaa664298aca703ec7147c1d2b99fafef60f70bea9b45a8ab99920066",
+        "matches_committed_head": true
+      }
+    },
+    "implementation_sha256": {
+      "app/services/rag_service.py": "12e655db0651f256228638fac0a651ccf7515eb9c42011333a14078f5f4ca219",
+      "app/services/graph_rag_service.py": "3cde393e14ddb4b6eae6743eb10d53f2fcea3003a06bd5b4457e1dcdf4751196",
+      "app/services/relation_query_service.py": "d8975797b64e80c16cd1bd852b3269db9ef2654a4f4d416471e999a6fdd62305",
+      "app/agentic/nodes/router_node.py": "55525d92aee9243ea186f084b2fd8fb73c4fa2788d0d4fb2e9baa166f580010b",
+      "app/agentic/nodes/retrieve_node.py": "0525012b353107f01e06e84a925171800d7156db2eb376276d01be6cd383f4cf"
+    }
+  },
+  "historical_live_api": {
+    "groups_passed": 31,
+    "checks_passed": 62,
+    "player_source_audit": {
+      "players_passed": 56,
+      "players_total": 56
+    },
+    "milvus_documents_before": 1117,
+    "milvus_documents_after": 1117
+  },
+  "frontend_validation": {
+    "files_sha256": {
+      "frontend/index.html": "21e8d2ae5f7d7824583ebf4bff923a7b7b5bc6df900a3b72a8da37cdeb9a854a",
+      "frontend/src/main.jsx": "1c247c81bbd9fb067d4b714c7c452dd7b38bb578d5232b739eaa8059292b7d8e",
+      "frontend/src/styles.css": "c258383744925514e2ce2b534beae2cca5397432f51860b0ed5eb54fa3c75cdb"
+    },
+    "geometry": {
+      "started_at": "2026-09-09T07:34:58.745Z",
+      "scenarios": [
+        {
+          "width": 1440,
+          "map": "all",
+          "status": "passed",
+          "node_count": 69,
+          "canvas": {
+            "width": 900,
+            "height": 960
+          },
+          "viewport": {
+            "width": 657,
+            "height": 330
+          },
+          "scroll": {
+            "width": 900,
+            "height": 960
+          },
+          "page_width": 1440,
+          "document_width": 1440,
+          "rendered_label_font_px": 10,
+          "all_node_labels_inside_canvas": true,
+          "reached": [
+            {
+              "label": "first",
+              "id": "match:2396595",
+              "left": 37,
+              "top": 21,
+              "right": 121,
+              "bottom": 55,
+              "width": 657,
+              "height": 330,
+              "scroll_top": 0,
+              "scroll_left": 0
+            },
+            {
+              "label": "rightmost",
+              "id": "match:2396609",
+              "left": 448,
+              "top": 21,
+              "right": 532,
+              "bottom": 55,
+              "width": 657,
+              "height": 330,
+              "scroll_top": 0,
+              "scroll_left": 243
+            },
+            {
+              "label": "last",
+              "id": "map:2396949:Nuke",
+              "left": 37,
+              "top": 275,
+              "right": 103,
+              "bottom": 309,
+              "width": 657,
+              "height": 330,
+              "scroll_top": 630,
+              "scroll_left": 0
+            }
+          ]
+        },
+        {
+          "width": 1440,
+          "map": "Dust2",
+          "status": "passed",
+          "node_count": 64,
+          "canvas": {
+            "width": 900,
+            "height": 856
+          },
+          "viewport": {
+            "width": 657,
+            "height": 330
+          },
+          "scroll": {
+            "width": 900,
+            "height": 856
+          },
+          "page_width": 1440,
+          "document_width": 1440,
+          "rendered_label_font_px": 10,
+          "all_node_labels_inside_canvas": true,
+          "reached": [
+            {
+              "label": "first",
+              "id": "match:2396595",
+              "left": 37,
+              "top": 21,
+              "right": 121,
+              "bottom": 55,
+              "width": 657,
+              "height": 330,
+              "scroll_top": 0,
+              "scroll_left": 0
+            },
+            {
+              "label": "rightmost",
+              "id": "match:2396609",
+              "left": 448,
+              "top": 21,
+              "right": 532,
+              "bottom": 55,
+              "width": 657,
+              "height": 330,
+              "scroll_top": 0,
+              "scroll_left": 243
+            },
+            {
+              "label": "last",
+              "id": "player:76561198355739212",
+              "left": 448,
+              "top": 275,
+              "right": 526,
+              "bottom": 309,
+              "width": 657,
+              "height": 330,
+              "scroll_top": 526,
+              "scroll_left": 243
+            }
+          ]
+        },
+        {
+          "width": 390,
+          "map": "all",
+          "status": "passed",
+          "node_count": 69,
+          "canvas": {
+            "width": 900,
+            "height": 960
+          },
+          "viewport": {
+            "width": 313,
+            "height": 330
+          },
+          "scroll": {
+            "width": 900,
+            "height": 960
+          },
+          "page_width": 390,
+          "document_width": 390,
+          "rendered_label_font_px": 10,
+          "all_node_labels_inside_canvas": true,
+          "reached": [
+            {
+              "label": "first",
+              "id": "match:2396595",
+              "left": 37,
+              "top": 21,
+              "right": 121,
+              "bottom": 55,
+              "width": 313,
+              "height": 330,
+              "scroll_top": 0,
+              "scroll_left": 0
+            },
+            {
+              "label": "rightmost",
+              "id": "match:2396609",
+              "left": 115,
+              "top": 21,
+              "right": 199,
+              "bottom": 55,
+              "width": 313,
+              "height": 330,
+              "scroll_top": 0,
+              "scroll_left": 576
+            },
+            {
+              "label": "last",
+              "id": "map:2396949:Nuke",
+              "left": 37,
+              "top": 275,
+              "right": 103,
+              "bottom": 309,
+              "width": 313,
+              "height": 330,
+              "scroll_top": 630,
+              "scroll_left": 0
+            }
+          ]
+        },
+        {
+          "width": 390,
+          "map": "Dust2",
+          "status": "passed",
+          "node_count": 64,
+          "canvas": {
+            "width": 900,
+            "height": 856
+          },
+          "viewport": {
+            "width": 313,
+            "height": 330
+          },
+          "scroll": {
+            "width": 900,
+            "height": 856
+          },
+          "page_width": 390,
+          "document_width": 390,
+          "rendered_label_font_px": 10,
+          "all_node_labels_inside_canvas": true,
+          "reached": [
+            {
+              "label": "first",
+              "id": "match:2396595",
+              "left": 37,
+              "top": 21,
+              "right": 121,
+              "bottom": 55,
+              "width": 313,
+              "height": 330,
+              "scroll_top": 0,
+              "scroll_left": 0
+            },
+            {
+              "label": "rightmost",
+              "id": "match:2396609",
+              "left": 115,
+              "top": 21,
+              "right": 199,
+              "bottom": 55,
+              "width": 313,
+              "height": 330,
+              "scroll_top": 0,
+              "scroll_left": 576
+            },
+            {
+              "label": "last",
+              "id": "player:76561198355739212",
+              "left": 115,
+              "top": 275,
+              "right": 193,
+              "bottom": 309,
+              "width": 313,
+              "height": 330,
+              "scroll_top": 526,
+              "scroll_left": 576
+            }
+          ]
+        }
+      ],
+      "page_errors": [],
+      "console_errors": [],
+      "write_requests": [],
+      "status": "passed",
+      "finished_at": "2026-09-09T07:35:03.250Z"
+    },
+    "build": "passed"
+  },
+  "historical_browser": {
+    "checks": [
+      {
+        "name": "initial_graph_profile_and_five_team_table",
+        "passed": true,
+        "player": "m0NESY",
+        "graph_nodes_shown": 69
+      },
+      {
+        "name": "profile_source_opens_actual_complete_timeline",
+        "passed": true,
+        "clicked_label": "Dust2 · R16",
+        "source_id": "graph:2396609:Dust2:16",
+        "event_count": 78,
+        "contrasts": 4
+      },
+      {
+        "name": "cross_team_player_comparison_uses_real_samples",
+        "passed": true,
+        "players": [
+          {
+            "name": "m0NESY",
+            "rounds": 244
+          },
+          {
+            "name": "donk",
+            "rounds": 339
+          }
+        ]
+      },
+      {
+        "name": "map_side_filters_apply_to_both_players_and_behavior",
+        "passed": true,
+        "filters": {
+          "map": "Dust2",
+          "side": "CT",
+          "opponent": null
+        },
+        "players": [
+          {
+            "name": "m0NESY",
+            "rounds": 33
+          },
+          {
+            "name": "donk",
+            "rounds": 15
+          }
+        ]
+      },
+      {
+        "name": "opponent_filter_preserves_matching_actual_samples",
+        "passed": true,
+        "opponent": "Legacy",
+        "rounds": [
+          23,
+          8
+        ]
+      },
+      {
+        "name": "opponent_filter_exposes_zero_sample_without_fake_rates",
+        "passed": true,
+        "opponent": "Spirit",
+        "rounds": [
+          0,
+          0
+        ]
+      },
+      {
+        "name": "strict_relation_query_from_observed_event_returns_matching_source",
+        "passed": true,
+        "query": "Match 2396609, map Dust2. m0NESY gets the first kill by killing dumau",
+        "status": "found",
+        "checked_rounds": 23,
+        "matched_rounds": 1,
+        "source_id": "graph:2396609:Dust2:16"
+      },
+      {
+        "name": "unsupported_relation_clears_old_evidence_and_refuses",
+        "passed": true,
+        "status": "unsupported",
+        "reason": "unsupported_syntax"
+      },
+      {
+        "name": "no_page_errors_or_api_writes",
+        "passed": true,
+        "api_requests": 29,
+        "write_requests": 0,
+        "console_errors": 0
+      }
+    ],
+    "page_errors": [],
+    "console_errors": [],
+    "failed_requests": [],
+    "status": "passed"
+  },
+  "followup_source_browser": {
+    "task_id": "dc50629d-d812-4dfe-b8a4-9ae49bb23879",
+    "zero_detail_fetches_before_expansion": true,
+    "one_fetch_for_first_expansion": true,
+    "reopen_reuses_current_source": true,
+    "direct_round_needs_no_extra_fetch": true,
+    "all_four_question_types": true,
+    "mismatched_source_rejected": true,
+    "explicit_retry_recovers": true,
+    "late_question_response_isolated": true,
+    "late_task_response_isolated": true,
+    "requests_cancelled": 2,
+    "mobile_panel_fits": true,
+    "server_version_conflict_409": true,
+    "page_errors": [],
+    "console_errors": [],
+    "write_requests": [],
+    "model_budget_unchanged": true,
+    "remote_model_calls": 0
+  },
+  "protected_state": {
+    "graph_sha256": "28357be25a52d27b80e87a03ffcb2a545132c97d42632138ff60c47d67fc8c2d",
+    "graph_unchanged": true,
+    "existing_saved_tasks_unchanged": true,
+    "new_saved_tasks": 13,
+    "expected_invalid_demo_failures": 2,
+    "successful_demo_analyses": 10,
+    "successful_webhook_analyses": 1,
+    "new_model_calls": 0,
+    "budget_file_and_status_unchanged": true,
+    "auto_ingest": false,
+    "new_knowledge_documents": 0,
+    "final_queue": {
+      "active": {
+        "celery@AcelerShendeMacBook-Pro.local": []
+      },
+      "reserved": {
+        "celery@AcelerShendeMacBook-Pro.local": []
+      },
+      "scheduled": {
+        "celery@AcelerShendeMacBook-Pro.local": []
+      },
+      "queued": 0
+    }
+  },
+  "limits": [
+    "Five maps are already observed development examples, not new independent matches.",
+    "Live cloud-model calls remained paused; previous two cloud successes are separately documented in LIVE_E2E_V2.md.",
+    "Saved-input counting is independent of calculate_metrics but uses the same parser output; no second independent Demo parser or human coach review.",
+    "Verifier pass means deterministic contracts, not historical semantic entailment or coaching effectiveness.",
+    "Durability covers completed cached results, not automatic mid-task resume.",
+    "Upload durations are single local observations, not a latency benchmark.",
+    "The original holdout remains an observed regression set; two Vector intent failures remain unchanged."
+  ],
+  "harness_notes": [
+    "Early hidden-file-input/exact-label automation assumptions were corrected; these failed before valid task submission.",
+    "An audit initially assumed every round had an opening kill; the 0-kill round correctly produced unknown, and the independent expected count was corrected.",
+    "Historical UI favicon 404 fixed; previous attempt logs retained.",
+    "Webhook harness shutdown warnings retained in its local harness_notes.json; process exit 0 and independent HTTP reread passed.",
+    "Negative lazy-source identity/delay cases intentionally inject browser responses; positive Demo, source, graph, webhook and recovery paths use real services."
+  ],
+  "local_evidence": [
+    {
+      "path": "data/evaluation/full_flow_v3/graph_ui/geometry_checks.json",
+      "sha256": "32e8f811bc42a5ae086edcbe4dc2804c4d7f447c6c7daec8e8d31ce0132f40a7"
+    },
+    {
+      "path": "data/evaluation/full_flow_v3/graph_ui/visual_findings.json",
+      "sha256": "a09afcb2319e7342854f9a4944fad2f984464bfbd17abe01ed99c40dbb382acd"
+    },
+    {
+      "path": "data/evaluation/full_flow_v3/browser/checks.json",
+      "sha256": "5dc732dd9165c2499a0e466a2866af02e2248c5ed8c78f1a828c2655696d8964"
+    },
+    {
+      "path": "data/evaluation/full_flow_v3/browser_postfix/checks.json",
+      "sha256": "22d2316a85473e060ba802b8444fe6cca1d1ad7676463d016615e677ef534cdc"
+    },
+    {
+      "path": "data/evaluation/full_flow_v3/saved_audit.json",
+      "sha256": "82cf41e8c0adaa34f0cb3ebb0d20f8fca65c57cc92cc3a13863358555efed4f9"
+    },
+    {
+      "path": "data/evaluation/full_flow_v3/graph/summary.json",
+      "sha256": "fa968e54c1b02b518f999e2e049a793f975be01da99697e3d0f684b2f1af618b"
+    },
+    {
+      "path": "data/evaluation/full_flow_v3/graph/postfix/summary.json",
+      "sha256": "6b452716cee471ffc02671d235fde32acfb75b6fe9053fd187381941f209d101"
+    },
+    {
+      "path": "data/evaluation/full_flow_v3/graph/live_api_summary.json",
+      "sha256": "e594e08a03f3d738bd2547a597199aebe5ce7d547b64d6ad13260fc99d2a9402"
+    },
+    {
+      "path": "data/evaluation/full_flow_v3/graph_ui/checks.json",
+      "sha256": "a4e6996d7b979f85a147f7c5bd010a2b8011a12f1092a138b614d3b40ca87890"
+    },
+    {
+      "path": "data/evaluation/full_flow_v3/source_ui_final/browser_checks.json",
+      "sha256": "4417934b30c2af22bcc5cfc825af31776b02a2eb715fddcd3e3ef0e1e81419e2"
+    },
+    {
+      "path": "data/evaluation/full_flow_v3/offline/postfix/20260909T072425Z/verified_summary.json",
+      "sha256": "9bc525dd1e3858d06e4e970187cdbedd7ca4f6f82415d947bcb865bba1ea3641"
+    },
+    {
+      "path": "data/evaluation/full_flow_v3/offline/postfix/20260909T072425Z/review.json",
+      "sha256": "1eb2279341ff2f2359f3f4f4789fb305281c44bc31c55c3e9f8aea5958012617"
+    },
+    {
+      "path": "data/evaluation/full_flow_v3/durability/20260909T072845Z/checks.json",
+      "sha256": "ac6f3ed1a87ae5051d96c1c7fbbdf1c98543c1ff439cb954264bf056e0701de9"
+    }
+  ]
+}

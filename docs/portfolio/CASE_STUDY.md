@@ -27,11 +27,12 @@ This motivated a separate deterministic relation verifier. On the isolated sourc
 
 | Evidence | Scope | Supported interpretation |
 | --- | --- | --- |
-| 352 offline tests | Synthetic and engineering regressions | Tested implementation behavior |
+| 354 offline tests | Synthetic and engineering regressions | Tested implementation behavior |
 | 48 relation expressions + 96 aggregate checks | Observed historical questions | Relation / numeric contract consistency |
 | 768 text retrieval results | Historical development controls | Model, tokenizer and fusion tradeoffs |
 | 960 text results + 60 relation expressions | Two isolated, previously observed series | Corpus-isolated development pilot |
 | Two consecutive live browser uploads, 2,325 model tokens | One observed 14-round map, one persistent worker | Complete application integration and post-fix TLS lifecycle regression; no coaching-quality claim |
+| Five real maps / 111 rounds, three modes, webhook and history recovery | Observed samples with the cloud model paused | Current product integration, source consistency and completed-task idempotency |
 | 6 Coach model calls, 4,939 reported tokens | Six development maps | Feasibility and per-run usage; quality gain unscored |
 
 Labels and translations are AI-assisted. Python and SQL audits share parser facts. The two isolated series are not newly unseen data, and independent expert coaching ratings are deferred as optional future research, outside the current engineering and portfolio delivery scope. The dense models also have different actual chunk capacities (128 vs 512 tokens), so the comparison concerns whole configurations.
@@ -44,6 +45,7 @@ The current project is an engineering prototype with credible development eviden
 
 ## Review the evidence
 
+- [Full engineering acceptance and integration fixes](../FULL_FLOW_VALIDATION_V3.md)
 - [Data correction and rollback](../HISTORICAL_DATA_REBUILD_V2.md)
 - [Relation and aggregate contracts](../RELATION_QUERY_ENGINE_V2.md)
 - [Bilingual baseline experiment](../LANGUAGE_BASELINES_V2.md)

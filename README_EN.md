@@ -14,6 +14,8 @@
 
 </div>
 
+End-to-end acceptance, 2026-09-09: five observed real Demo maps / 111 rounds, three modes, webhook, source questions and history recovery passed. Fixed internal round topics being misread as a directed relation and clipped graph nodes. All 354 offline tests pass; the cloud model remained paused with zero new calls. Frozen Graph/Hybrid regressions pass 30/30; Vector retains its known 28/30 result. See [evidence and limits](docs/FULL_FLOW_VALIDATION_V3.md).
+
 Saved-match questions now defer list-source text until expansion and pin reads to the task and input version. Closing or changing context cancels pending detail reads. On one observed match, initial list responses were 55–67% smaller; direct round queries still return full detail once. Expanding every list source increases total traffic. All 352 offline tests, the build and live UI delay/retry/isolation checks pass, with zero model calls. See [measurements and limits](docs/SOURCE_LOADING_V1.md).
 
 Added deterministic report-contract verification and four guided questions over saved matches. Checks cover metrics, current-source identity/content and rendered reports; unknown outcomes are excluded from conversion-rate denominators. Questions are read-only, limited to two steps and make no model calls. All 325 offline tests, the frontend build, a real-demo end-to-end run and question UI checks pass, with zero new model calls. See [scope and validation](docs/REPORT_QUESTIONS_V1.md).
