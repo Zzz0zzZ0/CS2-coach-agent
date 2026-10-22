@@ -1,0 +1,44 @@
+{
+  "status": "full_offline_suite_passed",
+  "scope": "Windows local offline regression with isolated supplemental dependencies; not a fresh hermetic lockfile or live Milvus/LLM validation",
+  "python": "3.13.9",
+  "passed": 406,
+  "failed": 0,
+  "collection_errors": 0,
+  "warnings": 3,
+  "command": "output/tagnet/.venv-regression/Scripts/python.exe -m pytest -q",
+  "environment": "output/tagnet/.venv-regression; system-site-packages overlay on existing base interpreter; GPU environment unchanged",
+  "versions": {
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "demoparser2": "0.41.3",
+    "langchain-community": "0.4.2",
+    "langchain-milvus": "0.3.3",
+    "fastapi": "0.136.3",
+    "langgraph": "1.2.2",
+    "fastembed": "0.8.0",
+    "tokenizers": "0.23.2",
+    "onnxruntime": "1.31.0"
+  },
+  "source_sha256": {
+    "app/core/providers.py": "b870b9265cbd02c49d00fb1312d7e84dc342084e25ed241a59c1c9ea8bc9887c",
+    "test_settings.py": "213db4821f77f9b7b196ddd06eab9d8b715875950121d827f899457711cc534b",
+    "conftest.py": "836534fa5faa0cd677dc3171a63b0bb6bd62bd2ec8835e510114327fe3c77912",
+    ".gitattributes": "143e5222608249e4f9ea3244aad12bb7933eae4c4750e2ba6dc952642b58361a"
+  },
+  "log_sha256": "f175c26e7b4c20d2492ee00fba380f508946e65e5118a5b82e4324241cb3a2c8",
+  "base_commit": "8c186210382d5384fcaa2a6276fb203e0b905710",
+  "changes": [
+    "Use existing langchain-milvus integration instead of unavailable legacy community Milvus import",
+    "Restore original LF expression fixture and pin its checkout line endings; recorded hash and cases unchanged",
+    "On Windows restrict empty temporary key file to current user SID, then atomically replace; retain POSIX 0600 path",
+    "Verify actual Windows protected DACL and fail closed on identity/permission/timeout errors"
+  ],
+  "not_tested": [
+    "live Milvus connection or collection migration",
+    "external embedding model downloads or paid LLM calls",
+    "Linux/macOS execution of POSIX branch",
+    "independent tactical relevance or coaching quality"
+  ],
+  "source_hash_policy": "LF-canonical source hashes; historical CT exact-byte freeze unchanged"
+}

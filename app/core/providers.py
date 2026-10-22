@@ -3,12 +3,14 @@ import hashlib
 import os
 import re
 import tempfile
+import csv
+import subprocess
 from pathlib import Path
 
 from langchain_openai import ChatOpenAI
 from langchain_community.embeddings import DashScopeEmbeddings
 from langchain_community.embeddings import FastEmbedEmbeddings
-from langchain_community.vectorstores import Milvus
+from langchain_milvus import Milvus
 from pymilvus import MilvusClient
 
 from app.core.config import settings
@@ -50,7 +52,7 @@ def save_runtime_api_key(value: str) -> None:
     key_file.parent.mkdir(parents=True, exist_ok=True, mode=0o700)
     descriptor, temporary_name = tempfile.mkstemp(dir=key_file.parent)
     try:
-        os.fchmod(descriptor, 0o600)
+        _restrict_runtime_key_file(descriptor, temporary_name)
         os.write(descriptor, key.encode("utf-8"))
         os.close(descriptor)
         descriptor = -1
@@ -60,6 +62,24 @@ def save_runtime_api_key(value: str) -> None:
             os.close(descriptor)
         if os.path.exists(temporary_name):
             os.unlink(temporary_name)
+
+
+def _restrict_runtime_key_file(descriptor: int, path: str) -> None:
+    if os.name != "nt":
+        os.fchmod(descriptor, 0o600)
+        return
+    # Windows chmod cannot enforce owner-only access; restrict the empty temporary file first.
+    options = {"capture_output": True, "check": True, "timeout": 10,
+               "creationflags": subprocess.CREATE_NO_WINDOW}
+    try:
+        identity = subprocess.run(["whoami.exe", "/user", "/fo", "csv", "/nh"], **options)
+        rows = list(csv.reader(identity.stdout.decode("utf-8", errors="replace").splitlines()))
+        if len(rows) != 1 or len(rows[0]) != 2 or not re.fullmatch(r"S-1-\d+(?:-\d+)+", rows[0][1]):
+            raise ValueError("Invalid current-user SID")
+        subprocess.run(["icacls.exe", str(Path(path).resolve()), "/inheritance:r",
+                        "/grant:r", f"*{rows[0][1]}:(F)"], **options)
+    except (subprocess.SubprocessError, ValueError) as error:
+        raise OSError("Unable to restrict runtime key permissions") from error
 
 
 def get_embeddings():

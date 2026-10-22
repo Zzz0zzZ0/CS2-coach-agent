@@ -459,6 +459,7 @@ data/、output/            # 本地运行数据，不进入 Git
 | TAGNet 泛化与接入计划 | [多地图、CT/T 开局模型、评测与产品接入](docs/TAGNET_GENERALIZATION_PLAN.md)（研究与接入仍在实施，文档列明局部验证边界） |
 | CT 泛化优化进展 | [线性预测对照、CPU 入口与验证边界](docs/CT_OPTIMIZATION_V2.md)（实验性状态预测，尚未接入教练建议） |
 | CT 扩展实验 | [5 系列、6 地图、时间核查与相似回合检索](docs/CT_EXPANSION_V3.md)（保留负结果和未完成验收项） |
+| CT 实验回归验证 | [全量 406 项离线检查与 Windows 兼容修复](docs/CT_VALIDATION_V4.md)（真实后端与战术相关性仍需单独验收） |
 
 ## 许可证
 

@@ -19,3 +19,5 @@ datasets/evaluation/ct_*.json -text whitespace=cr-at-eol
 datasets/evaluation/tagnet_*.json -text whitespace=cr-at-eol
 datasets/models/ct_*.json -text whitespace=cr-at-eol
 datasets/selections/ct_*.json -text whitespace=cr-at-eol
+# Preserve this pre-existing LF-based frozen expression checksum on Windows.
+datasets/evaluation/relation_expression_v2_cases.json text eol=lf

@@ -99,6 +99,8 @@ python scripts/retrieve_ct_opening.py --snapshots output/tagnet/ct_expansion_v3_
 
 ## 7. 回归与资源
 
+后续更新：依赖及 Windows 兼容问题已处理，[v4 全量离线验证](CT_VALIDATION_V4.md) 达到 406 项通过。以下数字保留本轮 v3 当时的状态，便于追踪修复过程。
+
 本轮 CT、解析、下载入口及离线网络约束相关 **59 项检查通过**。修复了 Windows 的测试隔离误拦：仅允许标准库 `socketpair` 内部构造所需的回环连接，普通回环和外部 `connect/connect_ex` 仍被测试禁止。
 
 全量回归也已实际尝试，不能标为通过。修改前失败集合与原始 `HEAD` 逐项相同，均为 78 个失败、14 个收集错误；修复 socketpair 后变为 **196 通过、7 失败、14 个收集错误**。剩余错误对应本机缺少 `fastembed/tokenizers`、已安装 `langchain-community 0.4.2` 的旧 Milvus 导入不可用；仓库锁文件记录的是 Python 3.11/0.4.1 环境，当前基础解释器为 Python 3.13。没有升级后台依赖或更改生产检索后端来掩盖验证阻塞。[回归记录](../datasets/evaluation/ct_regression_v3_report.json)。

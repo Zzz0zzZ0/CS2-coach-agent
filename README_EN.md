@@ -459,6 +459,7 @@ data/, output/            # Local runtime data, excluded from Git
 | TAGNet generalization and integration | [Multi-map and CT/T opening models, evaluation, and product integration](docs/TAGNET_GENERALIZATION_PLAN.md) (Chinese; planned capabilities and initial validation are listed separately) |
 | CT generalization progress | [Linear forecast control, CPU entry point, and validation limits](docs/CT_OPTIMIZATION_V2.md) (Chinese; experimental state prediction, not enabled in coaching) |
 | Expanded CT experiments | [Five series, six maps, timing checks, and observation retrieval](docs/CT_EXPANSION_V3.md) (Chinese; includes negative findings and remaining acceptance limits) |
+| CT experiment regression | [406 offline checks and Windows compatibility fixes](docs/CT_VALIDATION_V4.md) (Chinese; live backends and tactical relevance remain separate acceptance items) |
 
 ## License
 
