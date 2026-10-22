@@ -1,0 +1,32 @@
+{
+  "status": "experimental CT candidate, not a verified tactical recognizer",
+  "feature_version": "ct-common-v0.1",
+  "model": "static_snapshot",
+  "seed": 42,
+  "training_map": "de_dust2",
+  "checkpoint": "output/tagnet/ct_generalization_residual_v1/static_snapshot_42.pt",
+  "checkpoint_sha256": "45331687f577dede4d22dff0126fc9a4de74de30b5004bd1cdea3122dc265ae3",
+  "precision": {
+    "matmul": "ieee",
+    "rnn": "tf32"
+  },
+  "inputs": "five CT-only snapshots at freeze end + 10/12/15/18/20 seconds",
+  "representation_dim": 64,
+  "prediction": "next common occupancy/death fractions and live pair distance summaries",
+  "tested_target_maps": [
+    "de_mirage",
+    "de_anubis",
+    "de_inferno",
+    "de_ancient"
+  ],
+  "untested": [
+    "de_nuke and other maps",
+    "navigation connectivity",
+    "tactical intent",
+    "retrieval relevance",
+    "coach recommendations"
+  ],
+  "selection": "static architecture chosen after development diagnostics; fixed seed42 before prospective acquisition; no tuning on series2396949",
+  "frozen_series_report": "datasets/evaluation/ct_frozen_series_2396949_v1_report.json",
+  "integration": "not enabled in AnalysisPipeline or Coach; use version-matched experimental representation candidates only"
+}

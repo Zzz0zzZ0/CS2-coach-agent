@@ -1,0 +1,239 @@
+{
+  "date": "2026-10-23",
+  "status": "completed development CT transfer probe; formal generalization not established",
+  "feature_version": "ct-common-v0.1",
+  "training": "Dust2 only, 486 rounds; 95 Dust2 validation; fixed 40 epoch budget, validation prediction MSE selection",
+  "source_test_rounds": 116,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    42
+  ],
+  "target_usage": "Known target data; absolute predictor results observed before residual redesign. No target training gradients, but this is not blind evaluation.",
+  "absolute_runner_sha256": "ff9d8be464d3ab617c4154787b0ac7a29078db91d39eea8d4d409c52d864e6c4",
+  "residual_runner_sha256": "259f26d423149c2a04cf734b96cceb8253ef3b71012b7bd72242063d502beb46",
+  "input_hashes": {
+    "output\\tagnet\\mirage_opening_full_v1\\snapshots.json": "640280a7ec5a77c3be3e3a776bddd86d89ef6c9c8abc784478edb24395db1839",
+    "output\\tagnet\\anubis_opening_full_v1\\snapshots.json": "34bfc3368440d6c8f60745df1eaea4a10d9632764191f9dbc10f872fb25952a4",
+    "output\\tagnet\\inferno_opening_full_v1\\snapshots.json": "120a5e2639ed9b06d42d50fea1966798594f84c7dc0c8a8f8b844ad2cab4ad28",
+    "output\\tagnet\\2396940_map1_opening_v1\\snapshots.json": "2f756575767e1d57b9d3949983406668383fa7798cce02d1553af2e020751de9",
+    "output\\tagnet\\2396940_map2_opening_v1\\snapshots.json": "f2a2dee01285c061fe643768b531eeaf90f23362b93de09e157f75c28dcf739b"
+  },
+  "groups": {
+    "train": {
+      "rounds": 486,
+      "series": [
+        "astralis-vs-spirit_dust2",
+        "falcons-vs-furia_dust2",
+        "falcons-vs-parivision_dust2",
+        "faze-vs-aurora_dust2",
+        "heroic-vs-furia_dust2",
+        "inner-circle-vs-spirit_dust2",
+        "liquid-vs-falcons_dust2",
+        "monte-vs-natus-vincere_dust2",
+        "mouz-vs-9z_dust2",
+        "mouz-vs-fut_dust2",
+        "mouz-vs-heroic_dust2",
+        "natus-vincere-vs-3dmax_dust2",
+        "natus-vincere-vs-aurora_dust2",
+        "natus-vincere-vs-b8_dust2",
+        "natus-vincere-vs-g2_dust2",
+        "natus-vincere-vs-legacy_dust2",
+        "navi-vs-aurora_dust2",
+        "parivision-vs-astralis_dust2",
+        "parivision-vs-heroic_dust2",
+        "parivision-vs-legacy_dust2",
+        "parivision-vs-monte_dust2",
+        "parivision-vs-semperfi_dust2",
+        "the-mongolz-vs-aurora_dust2"
+      ]
+    },
+    "val": {
+      "rounds": 95,
+      "series": [
+        "falcons-vs-natus-vincere_dust2",
+        "falcons-vs-nrg_dust2",
+        "natus-vincere-vs-monte_dust2",
+        "parivision-vs-pain_dust2",
+        "the-mongolz-vs-3dmax_dust2"
+      ]
+    },
+    "test": {
+      "rounds": 116,
+      "series": [
+        "aurora-vs-furia_dust2",
+        "fut-vs-furia_dust2",
+        "gamerlegion-vs-vitality_dust2",
+        "nrg-vs-furia_dust2",
+        "virtus-pro-vs-vitality_dust2"
+      ]
+    },
+    "de_mirage": {
+      "rounds": 21,
+      "series": [
+        "furia_falcons_existing_local"
+      ]
+    },
+    "de_anubis": {
+      "rounds": 21,
+      "series": [
+        "furia_falcons_existing_local"
+      ]
+    },
+    "de_inferno": {
+      "rounds": 44,
+      "series": [
+        "2396940",
+        "furia_falcons_existing_local"
+      ]
+    },
+    "de_ancient": {
+      "rounds": 19,
+      "series": [
+        "2396940"
+      ]
+    }
+  },
+  "rows": [
+    {
+      "group": "test",
+      "rounds": 116,
+      "persistence": 0.003992850426584482,
+      "absolute_static_snapshot": {
+        "mean": 0.005492749344557524,
+        "seed_std": 1.9950698625641943e-05,
+        "improvement_vs_persistence_pct": -37.56461569375811
+      },
+      "absolute_prefix_gru": {
+        "mean": 0.005422753933817148,
+        "seed_std": 4.748490495650739e-05,
+        "improvement_vs_persistence_pct": -35.81159709144972
+      },
+      "residual_static_snapshot": {
+        "mean": 0.0033846918027848004,
+        "seed_std": 1.319999236519568e-05,
+        "improvement_vs_persistence_pct": 15.231189722273308
+      },
+      "residual_prefix_gru": {
+        "mean": 0.0032805665396153927,
+        "seed_std": 1.463070820822858e-05,
+        "improvement_vs_persistence_pct": 17.83898245290353
+      }
+    },
+    {
+      "group": "de_mirage",
+      "rounds": 21,
+      "persistence": 0.01363135501742363,
+      "absolute_static_snapshot": {
+        "mean": 0.02187039852142334,
+        "seed_std": 0.0005123683598500695,
+        "improvement_vs_persistence_pct": -60.44185257788788
+      },
+      "absolute_prefix_gru": {
+        "mean": 0.02193043939769268,
+        "seed_std": 0.00047856728136313245,
+        "improvement_vs_persistence_pct": -60.882314118157296
+      },
+      "residual_static_snapshot": {
+        "mean": 0.011461056396365165,
+        "seed_std": 0.00018500224100800923,
+        "improvement_vs_persistence_pct": 15.921371120364658
+      },
+      "residual_prefix_gru": {
+        "mean": 0.011708202585577965,
+        "seed_std": 9.943214351518306e-05,
+        "improvement_vs_persistence_pct": 14.108299794022583
+      }
+    },
+    {
+      "group": "de_anubis",
+      "rounds": 21,
+      "persistence": 0.007630711421370506,
+      "absolute_static_snapshot": {
+        "mean": 0.009603815898299218,
+        "seed_std": 0.00026018324622438413,
+        "improvement_vs_persistence_pct": -25.857411818809606
+      },
+      "absolute_prefix_gru": {
+        "mean": 0.009988279454410076,
+        "seed_std": 0.0001386730874530797,
+        "improvement_vs_persistence_pct": -30.895782881226317
+      },
+      "residual_static_snapshot": {
+        "mean": 0.006817297171801328,
+        "seed_std": 9.651308697384553e-05,
+        "improvement_vs_persistence_pct": 10.659743301144065
+      },
+      "residual_prefix_gru": {
+        "mean": 0.006786724086850882,
+        "seed_std": 7.829054319547989e-05,
+        "improvement_vs_persistence_pct": 11.060401683596123
+      }
+    },
+    {
+      "group": "de_inferno",
+      "rounds": 44,
+      "persistence": 0.009888295084238052,
+      "absolute_static_snapshot": {
+        "mean": 0.012273924611508846,
+        "seed_std": 0.00017390771535907121,
+        "improvement_vs_persistence_pct": -24.12579223160005
+      },
+      "absolute_prefix_gru": {
+        "mean": 0.012314064428210258,
+        "seed_std": 0.0001933558894921875,
+        "improvement_vs_persistence_pct": -24.531724865683714
+      },
+      "residual_static_snapshot": {
+        "mean": 0.00841781049966812,
+        "seed_std": 8.605952981418707e-05,
+        "improvement_vs_persistence_pct": 14.870961799207272
+      },
+      "residual_prefix_gru": {
+        "mean": 0.008445796929299832,
+        "seed_std": 4.633629415606286e-05,
+        "improvement_vs_persistence_pct": 14.587935965195486
+      }
+    },
+    {
+      "group": "de_ancient",
+      "rounds": 19,
+      "persistence": 0.009201724082231522,
+      "absolute_static_snapshot": {
+        "mean": 0.01365765891969204,
+        "seed_std": 0.0001874895501809066,
+        "improvement_vs_persistence_pct": -48.42499946357775
+      },
+      "absolute_prefix_gru": {
+        "mean": 0.013665675930678845,
+        "seed_std": 0.0001599131951959756,
+        "improvement_vs_persistence_pct": -48.51212456008314
+      },
+      "residual_static_snapshot": {
+        "mean": 0.008004667237401009,
+        "seed_std": 7.733997306444807e-05,
+        "improvement_vs_persistence_pct": 13.009049544769802
+      },
+      "residual_prefix_gru": {
+        "mean": 0.008469251729547978,
+        "seed_std": 7.48520359397674e-05,
+        "improvement_vs_persistence_pct": 7.960164270714698
+      }
+    }
+  ],
+  "limitations": [
+    "no audited retrieval labels",
+    "only one Ancient series",
+    "source series identity beyond match IDs unknown",
+    "tick/pause calibration pending",
+    "coarse regions, no navigation geometry"
+  ],
+  "recommendation": "Keep static predictor as a strong control; GRU benefit is not consistent across maps. Independent series and retrieval qrels still required.",
+  "resource_peaks": {
+    "allocated_VRAM_MiB": 50.43505859375,
+    "process_RAM_MiB": 1665.95703125
+  },
+  "skipped": {}
+}

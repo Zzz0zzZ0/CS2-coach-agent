@@ -1,0 +1,52 @@
+{
+  "status": "experimental CT replay controls; not a validated tactical recognizer",
+  "evaluation_version": "ct-expansion-v3",
+  "feature_version": "ct-common-v0.1",
+  "forecast_control": {
+    "model_version": "ct-linear-v0.1",
+    "checkpoint": "datasets/models/ct_linear_v1.json",
+    "checkpoint_sha256": "65040624816e12e086c6f9b94d3bf74bcef836b27bc8a08ece0d3dd75d44b541",
+    "new_series_equal_weight_MSE_reduction_vs_persistence_pct": 19.980199683791035,
+    "new_series_count": 2,
+    "tradeoff": "Nuke single-series results favor the graph controls slightly; no map-based model routing enabled",
+    "entrypoint": "scripts/predict_ct_opening.py"
+  },
+  "retrieval_control": {
+    "version": "ct-common-masked-v0.1",
+    "entrypoint": "scripts/retrieve_ct_opening.py",
+    "library": "Dust2 train only, conservatively exclude query team pair",
+    "scope": "shared valid common-state observations over all five snapshots",
+    "expert_relevance_status": "unreviewed",
+    "graph_embeddings": "retained as experimental controls; geometry diagnostics do not support replacing the common-state control"
+  },
+  "target_evaluation": {
+    "series": 5,
+    "map_instances": 12,
+    "map_types": ["de_dust2", "de_mirage", "de_anubis", "de_inferno", "de_ancient", "de_nuke"],
+    "completed_rounds": 263,
+    "eligible_CT_rounds": 262,
+    "engine_clock_audit_passed": 262,
+    "newly_acquired_series_eligible_CT_rounds": 112,
+    "new_series_public_score_audit": "all five map scores matched"
+  },
+  "robustness": "remove possible source pair alias from train/val: 465/78 rounds, new-series MSE reduction 19.84%; retrospective sensitivity only",
+  "validation": {
+    "focused_checks_passed": 59,
+    "full_suite": "196 passed, 7 failed, 14 collection errors; remaining backend dependency/import issues documented",
+    "review_packet_cases": 13,
+    "review_packet_candidates": 148,
+    "completed_independent_judgments": 0
+  },
+  "limitations": [
+    "two new series are known in old project material; not project-wide blind evaluation",
+    "few independent series, shared event and teams; bootstrap intervals descriptive only",
+    "possible source series alias remains unresolved",
+    "clock checks apply to these eligible target windows; no generic pause correction or raw source clock audit",
+    "Euclidean distance does not encode navigation connectivity or multilevel tactical semantics",
+    "no independent tactical relevance or coaching outcome validation",
+    "T not trained"
+  ],
+  "integration": "offline services and CLI only; no Analyst/Coach/frontend changes and no knowledge ingestion",
+  "report": "datasets/evaluation/ct_expansion_v3_report.json",
+  "documentation": "docs/CT_EXPANSION_V3.md"
+}

@@ -1,0 +1,53 @@
+{
+  "series_id": "2396940",
+  "scope": "previously observed repository series, new local acquisition; no blind evaluation claim",
+  "demos": [
+    {
+      "file": "BLAST_Open_Porto_2026_G2_vs_Natus_Vincere_2396940_map1.dem",
+      "map": "de_ancient",
+      "bytes": 370061861,
+      "sha256": "addb04dbcffaa81c3bf05b47265744af3fca3206b0746cc0ab5c4d1b00010956",
+      "sides": {
+        "CT": {
+          "eligible": 19,
+          "used": 19,
+          "skipped": {}
+        },
+        "T": {
+          "eligible": 19,
+          "used": 19,
+          "skipped": {}
+        }
+      },
+      "tick_rate_status": "assumed_not_measured",
+      "time_alignment": "tick_offsets_not_pause_corrected"
+    },
+    {
+      "file": "BLAST_Open_Porto_2026_G2_vs_Natus_Vincere_2396940_map2.dem",
+      "map": "de_inferno",
+      "bytes": 478618429,
+      "sha256": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352",
+      "sides": {
+        "CT": {
+          "eligible": 23,
+          "used": 23,
+          "skipped": {}
+        },
+        "T": {
+          "eligible": 23,
+          "used": 23,
+          "skipped": {}
+        }
+      },
+      "tick_rate_status": "assumed_not_measured",
+      "time_alignment": "tick_offsets_not_pause_corrected"
+    }
+  ],
+  "expected_hashes_match_archived_repository_manifest": true,
+  "download_limit": {
+    "series": 1,
+    "demos": 2,
+    "more_downloads_started": false
+  },
+  "network_note": "Browser retries caused duplicate partial transfers; completed archive retained once and partials cleaned by existing downloader. Automatic navigation retries now disabled and regression checked."
+}

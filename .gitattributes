@@ -1,0 +1,11 @@
+# Frozen CT receipts hash exact bytes; avoid platform newline conversion of their inputs.
+app/services/ct_*.py -text
+app/services/opening_snapshot_service.py -text
+app/services/opening_timing_service.py -text
+app/services/parser_service.py -text
+scripts/*ct*.py -text
+scripts/*tagnet*.py -text
+datasets/evaluation/ct_*.json -text
+datasets/evaluation/tagnet_*.json -text
+datasets/models/ct_*.json -text
+datasets/selections/ct_*.json -text

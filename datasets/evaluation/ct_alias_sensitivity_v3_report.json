@@ -1,0 +1,469 @@
+{
+  "scope": "retrospective sensitivity control, not a new blind experiment or replacement model",
+  "excluded_pairs": [
+    [
+      "monte",
+      "natus-vincere"
+    ]
+  ],
+  "rounds_before": {
+    "train": 486,
+    "val": 95,
+    "test": 116
+  },
+  "rounds_after": {
+    "train": 465,
+    "val": 78,
+    "test": 116
+  },
+  "penalty": 0.0001,
+  "validation_mse": 0.0041152284416346805,
+  "selection": "same seven penalties on filtered source validation only",
+  "script_sha256": "1873401b33d9fed901b5e546e7c4aa49a8e125f846f71a3eb1ee2e84c2a961f6",
+  "groups": {
+    "furia_falcons_existing_local__de_mirage": {
+      "sensitivity_model": {
+        "sse": 7.149011042742734,
+        "count": 672,
+        "occupancy_sse": 6.951453870282235,
+        "occupancy_count": 504,
+        "distance_sse": 0.1975571724604986,
+        "distance_count": 168,
+        "mse": 0.010638409289795734,
+        "occupancy_mse": 0.013792567202940942,
+        "distance_mse": 0.0011759355503601107
+      },
+      "persistence": {
+        "sse": 9.160271166827988,
+        "count": 672,
+        "occupancy_sse": 8.960000380277648,
+        "occupancy_count": 504,
+        "distance_sse": 0.20027078655033825,
+        "distance_count": 168,
+        "mse": 0.013631355903017839,
+        "occupancy_mse": 0.017777778532296923,
+        "distance_mse": 0.0011920880151805849
+      },
+      "original_model": {
+        "sse": 7.132001002133083,
+        "count": 672,
+        "occupancy_sse": 6.935960065558279,
+        "occupancy_count": 504,
+        "distance_sse": 0.1960409365748033,
+        "distance_count": 168,
+        "mse": 0.010613096729364706,
+        "occupancy_mse": 0.013761825526901347,
+        "distance_mse": 0.0011669103367547816
+      }
+    },
+    "furia_falcons_existing_local__de_anubis": {
+      "sensitivity_model": {
+        "sse": 4.301230933446577,
+        "count": 672,
+        "occupancy_sse": 4.143415459176996,
+        "occupancy_count": 504,
+        "distance_sse": 0.15781547426958192,
+        "distance_count": 168,
+        "mse": 0.006400641270009787,
+        "occupancy_mse": 0.008221062419001977,
+        "distance_mse": 0.0009393778230332257
+      },
+      "persistence": {
+        "sse": 5.127838874256412,
+        "count": 672,
+        "occupancy_sse": 4.9600001895427805,
+        "occupancy_count": 504,
+        "distance_sse": 0.16783868471363078,
+        "distance_count": 168,
+        "mse": 0.007630712610500613,
+        "occupancy_mse": 0.009841270217346787,
+        "distance_mse": 0.0009990397899620879
+      },
+      "original_model": {
+        "sse": 4.262520962257631,
+        "count": 672,
+        "occupancy_sse": 4.104580830985101,
+        "occupancy_count": 504,
+        "distance_sse": 0.15794013127253115,
+        "distance_count": 168,
+        "mse": 0.006343037146216713,
+        "occupancy_mse": 0.008144009585287899,
+        "distance_mse": 0.0009401198290031616
+      }
+    },
+    "furia_falcons_existing_local__de_inferno": {
+      "sensitivity_model": {
+        "sse": 5.6705862038971455,
+        "count": 672,
+        "occupancy_sse": 5.463971983536526,
+        "occupancy_count": 504,
+        "distance_sse": 0.20661422036061947,
+        "distance_count": 168,
+        "mse": 0.008438372327227895,
+        "occupancy_mse": 0.010841214253048662,
+        "distance_mse": 0.0012298465497655921
+      },
+      "persistence": {
+        "sse": 7.500852970360541,
+        "count": 672,
+        "occupancy_sse": 7.28000025868417,
+        "occupancy_count": 504,
+        "distance_sse": 0.22085271167637135,
+        "distance_count": 168,
+        "mse": 0.011161983586846044,
+        "occupancy_mse": 0.014444444957706687,
+        "distance_mse": 0.0013145994742641152
+      },
+      "original_model": {
+        "sse": 5.596453663884287,
+        "count": 672,
+        "occupancy_sse": 5.389375376390447,
+        "occupancy_count": 504,
+        "distance_sse": 0.2070782874938398,
+        "distance_count": 168,
+        "mse": 0.008328056047446856,
+        "occupancy_mse": 0.010693205111885807,
+        "distance_mse": 0.0012326088541299988
+      }
+    },
+    "2396940__de_ancient": {
+      "sensitivity_model": {
+        "sse": 4.793905455749716,
+        "count": 608,
+        "occupancy_sse": 4.586688134826752,
+        "occupancy_count": 456,
+        "distance_sse": 0.20721732092296352,
+        "distance_count": 152,
+        "mse": 0.00788471292064098,
+        "occupancy_mse": 0.010058526611462176,
+        "distance_mse": 0.0013632718481773915
+      },
+      "persistence": {
+        "sse": 5.594648740220384,
+        "count": 608,
+        "occupancy_sse": 5.3599999344349,
+        "occupancy_count": 456,
+        "distance_sse": 0.23464880578548306,
+        "distance_count": 152,
+        "mse": 0.009201724901678263,
+        "occupancy_mse": 0.011754385821129167,
+        "distance_mse": 0.0015437421433255464
+      },
+      "original_model": {
+        "sse": 4.803207282161047,
+        "count": 608,
+        "occupancy_sse": 4.596606784995716,
+        "occupancy_count": 456,
+        "distance_sse": 0.20660049716533116,
+        "distance_count": 152,
+        "mse": 0.007900011977238565,
+        "occupancy_mse": 0.010080278037271307,
+        "distance_mse": 0.0013592137971403366
+      }
+    },
+    "2396940__de_inferno": {
+      "sensitivity_model": {
+        "sse": 5.379018023039754,
+        "count": 736,
+        "occupancy_sse": 5.211769172453307,
+        "occupancy_count": 552,
+        "distance_sse": 0.16724885058644717,
+        "distance_count": 184,
+        "mse": 0.007308448400869231,
+        "occupancy_mse": 0.009441610819661788,
+        "distance_mse": 0.0009089611444915608
+      },
+      "persistence": {
+        "sse": 6.421872761307769,
+        "count": 736,
+        "occupancy_sse": 6.240000185966503,
+        "occupancy_count": 552,
+        "distance_sse": 0.1818725753412664,
+        "distance_count": 184,
+        "mse": 0.008725370599602947,
+        "occupancy_mse": 0.011304348162982794,
+        "distance_mse": 0.0009884379094634043
+      },
+      "original_model": {
+        "sse": 5.400421092807478,
+        "count": 736,
+        "occupancy_sse": 5.232977107615031,
+        "occupancy_count": 552,
+        "distance_sse": 0.16744398519244763,
+        "distance_count": 184,
+        "mse": 0.007337528658705812,
+        "occupancy_mse": 0.009480030992056215,
+        "distance_mse": 0.0009100216586546067
+      }
+    },
+    "2396949__de_nuke": {
+      "sensitivity_model": {
+        "sse": 3.756636018105846,
+        "count": 670,
+        "occupancy_sse": 3.465574235608689,
+        "occupancy_count": 504,
+        "distance_sse": 0.29106178249715675,
+        "distance_count": 166,
+        "mse": 0.005606919430008726,
+        "occupancy_mse": 0.006876139356366447,
+        "distance_mse": 0.001753384231910583
+      },
+      "persistence": {
+        "sse": 4.209960979338884,
+        "count": 670,
+        "occupancy_sse": 3.919999961853036,
+        "occupancy_count": 504,
+        "distance_sse": 0.2899610174858484,
+        "distance_count": 166,
+        "mse": 0.006283523849759529,
+        "occupancy_mse": 0.007777777702089358,
+        "distance_mse": 0.001746753117384629
+      },
+      "original_model": {
+        "sse": 3.7960558916764953,
+        "count": 670,
+        "occupancy_sse": 3.502995217871841,
+        "occupancy_count": 504,
+        "distance_sse": 0.29306067380465406,
+        "distance_count": 166,
+        "mse": 0.0056657550622037246,
+        "occupancy_mse": 0.006950387337047303,
+        "distance_mse": 0.001765425745811169
+      }
+    },
+    "2396949__de_ancient": {
+      "sensitivity_model": {
+        "sse": 4.207803040509138,
+        "count": 768,
+        "occupancy_sse": 3.9790999674250416,
+        "occupancy_count": 576,
+        "distance_sse": 0.22870307308409604,
+        "distance_count": 192,
+        "mse": 0.005478910208996273,
+        "occupancy_mse": 0.006908159665668475,
+        "distance_mse": 0.0011911618389796668
+      },
+      "persistence": {
+        "sse": 4.521328900391191,
+        "count": 768,
+        "occupancy_sse": 4.240000050067912,
+        "occupancy_count": 576,
+        "distance_sse": 0.2813288503232797,
+        "distance_count": 192,
+        "mse": 0.005887147005717697,
+        "occupancy_mse": 0.007361111198034569,
+        "distance_mse": 0.0014652544287670818
+      },
+      "original_model": {
+        "sse": 4.20616510723086,
+        "count": 768,
+        "occupancy_sse": 3.978784325804472,
+        "occupancy_count": 576,
+        "distance_sse": 0.22738078142638815,
+        "distance_count": 192,
+        "mse": 0.005476777483373516,
+        "occupancy_mse": 0.006907611676743875,
+        "distance_mse": 0.0011842749032624383
+      }
+    },
+    "2396944__de_anubis": {
+      "sensitivity_model": {
+        "sse": 4.208462807925669,
+        "count": 640,
+        "occupancy_sse": 4.09905953137836,
+        "occupancy_count": 480,
+        "distance_sse": 0.10940327654730904,
+        "distance_count": 160,
+        "mse": 0.006575723137383858,
+        "occupancy_mse": 0.00853970735703825,
+        "distance_mse": 0.0006837704784206815
+      },
+      "persistence": {
+        "sse": 5.395663163988619,
+        "count": 640,
+        "occupancy_sse": 5.280000211000453,
+        "occupancy_count": 480,
+        "distance_sse": 0.11566295298816637,
+        "distance_count": 160,
+        "mse": 0.008430723693732217,
+        "occupancy_mse": 0.011000000439584276,
+        "distance_mse": 0.0007228934561760398
+      },
+      "original_model": {
+        "sse": 4.142146327994191,
+        "count": 640,
+        "occupancy_sse": 4.032851868779178,
+        "occupancy_count": 480,
+        "distance_sse": 0.1092944592150124,
+        "distance_count": 160,
+        "mse": 0.006472103637490924,
+        "occupancy_mse": 0.008401774726623288,
+        "distance_mse": 0.0006830903700938275
+      }
+    },
+    "2396944__de_inferno": {
+      "sensitivity_model": {
+        "sse": 8.823665844858347,
+        "count": 1120,
+        "occupancy_sse": 8.463684112486607,
+        "occupancy_count": 840,
+        "distance_sse": 0.35998173237174025,
+        "distance_count": 280,
+        "mse": 0.007878273075766381,
+        "occupancy_mse": 0.010075814419626914,
+        "distance_mse": 0.0012856490441847865
+      },
+      "persistence": {
+        "sse": 11.651342118541704,
+        "count": 1120,
+        "occupancy_sse": 11.28000036716463,
+        "occupancy_count": 840,
+        "distance_sse": 0.37134175137707254,
+        "distance_count": 280,
+        "mse": 0.010402984034412236,
+        "occupancy_mse": 0.01342857186567218,
+        "distance_mse": 0.0013262205406324018
+      },
+      "original_model": {
+        "sse": 8.770728969057947,
+        "count": 1120,
+        "occupancy_sse": 8.41277364451472,
+        "occupancy_count": 840,
+        "distance_sse": 0.3579553245432261,
+        "distance_count": 280,
+        "mse": 0.007831008008087453,
+        "occupancy_mse": 0.010015206719660382,
+        "distance_mse": 0.0012784118733686646
+      }
+    },
+    "2396944__de_mirage": {
+      "sensitivity_model": {
+        "sse": 3.2904363333712974,
+        "count": 444,
+        "occupancy_sse": 3.196019029042448,
+        "occupancy_count": 336,
+        "distance_sse": 0.09441730432884914,
+        "distance_count": 108,
+        "mse": 0.007410892642728147,
+        "occupancy_mse": 0.009511961395959667,
+        "distance_mse": 0.0008742342993411957
+      },
+      "persistence": {
+        "sse": 3.773175539692269,
+        "count": 444,
+        "occupancy_sse": 3.6800001573562686,
+        "occupancy_count": 336,
+        "distance_sse": 0.09317538233600003,
+        "distance_count": 108,
+        "mse": 0.00849814310741502,
+        "occupancy_mse": 0.010952381420703181,
+        "distance_mse": 0.0008627350216296299
+      },
+      "original_model": {
+        "sse": 3.3161302474490113,
+        "count": 444,
+        "occupancy_sse": 3.2218272090875253,
+        "occupancy_count": 336,
+        "distance_sse": 0.09430303836148586,
+        "distance_count": 108,
+        "mse": 0.007468761818578854,
+        "occupancy_mse": 0.009588771455617635,
+        "distance_mse": 0.0008731762811248691
+      }
+    },
+    "2396950__de_dust2": {
+      "sensitivity_model": {
+        "sse": 2.2645910010526187,
+        "count": 736,
+        "occupancy_sse": 2.001273134076468,
+        "occupancy_count": 552,
+        "distance_sse": 0.2633178669761506,
+        "distance_count": 184,
+        "mse": 0.0030768899470823624,
+        "occupancy_mse": 0.0036254948081095436,
+        "distance_mse": 0.0014310753640008186
+      },
+      "persistence": {
+        "sse": 2.6958895297459953,
+        "count": 736,
+        "occupancy_sse": 2.3999999582767533,
+        "occupancy_count": 552,
+        "distance_sse": 0.29588957146924233,
+        "distance_count": 184,
+        "mse": 0.0036628933828070586,
+        "occupancy_mse": 0.00434782601137093,
+        "distance_mse": 0.0016080954971154475
+      },
+      "original_model": {
+        "sse": 2.2559667586529777,
+        "count": 736,
+        "occupancy_sse": 1.9926204801013512,
+        "occupancy_count": 552,
+        "distance_sse": 0.26334627855162646,
+        "distance_count": 184,
+        "mse": 0.0030651722264306764,
+        "occupancy_mse": 0.003609819710328535,
+        "distance_mse": 0.0014312297747371002
+      }
+    },
+    "2396950__de_mirage": {
+      "sensitivity_model": {
+        "sse": 5.649604507187795,
+        "count": 640,
+        "occupancy_sse": 5.401537221182539,
+        "occupancy_count": 480,
+        "distance_sse": 0.2480672860052562,
+        "distance_count": 160,
+        "mse": 0.00882750704248093,
+        "occupancy_mse": 0.01125320254413029,
+        "distance_mse": 0.0015504205375328514
+      },
+      "persistence": {
+        "sse": 6.891767091539581,
+        "count": 640,
+        "occupancy_sse": 6.640000221729291,
+        "occupancy_count": 480,
+        "distance_sse": 0.25176686981028995,
+        "distance_count": 160,
+        "mse": 0.010768386080530596,
+        "occupancy_mse": 0.013833333795269355,
+        "distance_mse": 0.0015735429363143121
+      },
+      "original_model": {
+        "sse": 5.6853018953218095,
+        "count": 640,
+        "occupancy_sse": 5.437502667779317,
+        "occupancy_count": 480,
+        "distance_sse": 0.24779922754249273,
+        "distance_count": 160,
+        "mse": 0.008883284211440327,
+        "occupancy_mse": 0.011328130557873576,
+        "distance_mse": 0.0015487451721405796
+      }
+    }
+  },
+  "paired_series": {
+    "all_targets": {
+      "series_count": 5,
+      "weighting": "equal series, never independent rounds",
+      "improvement_pct": 17.704220702061413,
+      "descriptive_95pct_interval": [
+        13.586780648346474,
+        20.912457458415023
+      ],
+      "resamples": 2000,
+      "seed": 20261023
+    },
+    "new_series": {
+      "series_count": 2,
+      "weighting": "equal series, never independent rounds",
+      "improvement_pct": 19.84145140312279,
+      "descriptive_95pct_interval": [
+        17.454328822435173,
+        21.602193921710377
+      ],
+      "resamples": 2000,
+      "seed": 20261023
+    }
+  }
+}

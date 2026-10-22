@@ -457,6 +457,8 @@ data/, output/            # Local runtime data, excluded from Git
 | Performance measurements | [Profile output equivalence and timing](docs/PLAYER_PERFORMANCE_V1.md) · [Source payload sizes and tradeoffs](docs/SOURCE_LOADING_V1.md) |
 | Versions and research plans | [Implementation progress](docs/IMPLEMENTATION_PROGRESS.md) · [Roadmap](docs/PROJECT_IMPROVEMENT_ROADMAP.md) · [Formal benchmark plan](docs/BENCHMARK_PLAN.md) |
 | TAGNet generalization and integration | [Multi-map and CT/T opening models, evaluation, and product integration](docs/TAGNET_GENERALIZATION_PLAN.md) (Chinese; planned capabilities and initial validation are listed separately) |
+| CT generalization progress | [Linear forecast control, CPU entry point, and validation limits](docs/CT_OPTIMIZATION_V2.md) (Chinese; experimental state prediction, not enabled in coaching) |
+| Expanded CT experiments | [Five series, six maps, timing checks, and observation retrieval](docs/CT_EXPANSION_V3.md) (Chinese; includes negative findings and remaining acceptance limits) |
 
 ## License
 

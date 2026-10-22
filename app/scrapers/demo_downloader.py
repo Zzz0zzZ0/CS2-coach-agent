@@ -65,7 +65,8 @@ async def download_and_extract_demo(demo_url: str, match_name: str) -> list[str]
         page = ChromiumPage(co)
         page.set.download_path(str(DOWNLOAD_DIR.absolute()))
         try:
-            page.get(demo_url)
+            # Downloads do not finish as navigations; browser retries duplicate the archive request.
+            page.get(demo_url, retry=0)
             deadline = time.time() + 300
             last_size = -1
             stable_checks = 0

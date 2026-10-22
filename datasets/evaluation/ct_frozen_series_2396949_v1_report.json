@@ -1,0 +1,59 @@
+{
+  "status": "frozen_single_series_evaluated",
+  "scope": "frozen-model prospective acquisition check; known repository series, not project-wide blind evaluation",
+  "series": "2396949",
+  "map": "de_ancient",
+  "rounds": 24,
+  "protocol_sha256": "4dc89506d9361b6f5eaae3386e8c2c4c7e105b75bbd0a9600e892effbc6f14f5",
+  "frozen_sha256": {
+    "scripts\\run_ct_generalization.py": "259f26d423149c2a04cf734b96cceb8253ef3b71012b7bd72242063d502beb46",
+    "app\\services\\ct_feature_service.py": "7d2476cc88c6f3ad62e8a1ca71668c14ee71758f5904162763ac49a63e5bed0b",
+    "output\\tagnet\\ct_generalization_residual_v1\\static_snapshot_42.pt": "45331687f577dede4d22dff0126fc9a4de74de30b5004bd1cdea3122dc265ae3",
+    "output\\tagnet\\ct_generalization_residual_v1\\prefix_gru_42.pt": "30ae9a3f52a555e749c60dc00b84e14b0ca8ead64997decd47e74fcbf36fe336"
+  },
+  "source_files": [
+    {
+      "file": "BLAST_Open_Porto_2026_Spirit_vs_Falcons_2396949_map1.dem",
+      "map": "de_nuke",
+      "sha256": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7",
+      "bytes": 343276894
+    },
+    {
+      "file": "BLAST_Open_Porto_2026_Spirit_vs_Falcons_2396949_map2.dem",
+      "map": "de_ancient",
+      "sha256": "9c2d5c33124f0e685aebc5f2acf9ceca49247a36fb5100da3f8e166945a18bf2",
+      "bytes": 398791123
+    }
+  ],
+  "skipped": [],
+  "persistence": {
+    "mse": 0.005887147039175034,
+    "occupancy_mse": 0.00736111169680953,
+    "distance_mse": 0.0014652544632554054
+  },
+  "models": {
+    "static_snapshot_42": {
+      "mse": 0.005638768430799246,
+      "occupancy_mse": 0.007068673148751259,
+      "distance_mse": 0.001349052763544023,
+      "improvement_vs_persistence_pct": 4.218997873214203
+    },
+    "prefix_gru_42": {
+      "mse": 0.005827265325933695,
+      "occupancy_mse": 0.007246264256536961,
+      "distance_mse": 0.0015702717937529087,
+      "improvement_vs_persistence_pct": 1.0171601429837862
+    }
+  },
+  "limitations": [
+    "one series only",
+    "known repository series, not project-wide blind evaluation",
+    "no tactical or retrieval quality labels",
+    "64 Hz and pause alignment not independently verified"
+  ],
+  "precision": {
+    "matmul": "ieee",
+    "rnn": "tf32"
+  },
+  "evaluation_code_sha256": "799bd643d8ae3fb999cc7ce61b3ba7a49e1bac4289a256abbec280a2d85748cb"
+}

@@ -1,0 +1,13 @@
+{
+  "model_sha256": "65040624816e12e086c6f9b94d3bf74bcef836b27bc8a08ece0d3dd75d44b541",
+  "input_sha256": "2f756575767e1d57b9d3949983406668383fa7798cce02d1553af2e020751de9",
+  "python": "3.13.9",
+  "numpy": "2.3.5",
+  "rounds": 19,
+  "repetitions": 10,
+  "mean_ms_per_round": 0.48236526318329487,
+  "max_repetition_ms_per_round": 0.5711894735117982,
+  "process_RSS_MiB": 37.36328125,
+  "torch_loaded": false,
+  "scope": "CPU state inference only; excludes demo extraction, file loading, and retrieval"
+}

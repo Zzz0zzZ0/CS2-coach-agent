@@ -1,0 +1,154 @@
+{
+  "date": "2026-10-23",
+  "status": "Verified development training pilot only",
+  "scope": "Released Dust2 CT data; 486 train / 95 validation / 116 published test rounds",
+  "protocol": {
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      42
+    ],
+    "epochs_per_variant": 40,
+    "batch_size": 64,
+    "seed42_observed_before_followup_seeds": true,
+    "hyperparameter_tuning_after_seed42": false,
+    "selection": "minimum validation objective; one final diagnostic evaluation per selected checkpoint",
+    "series_disjointness": "Unknown beyond published match IDs",
+    "area_target": "source A/B/Mid/CT proportions, including retained dead players; not the future eight-region alive-only model"
+  },
+  "source_sha256": "12d95d001e28e7e1251d733935c9c1a831d757b68b37d60392305c085daf86c1",
+  "upstream_commit": "1a7ac7cf817ba5ba476e94b3bee36046f4fef56c",
+  "data_hashes": {
+    "ct_round_context.parquet": "d2490281b533aeff4861a0e70a125d7629041683c37533efe6101f80a088ac75",
+    "ct_round_place_vectors.parquet": "95b3e3845974fd1a6ecf44eff15a19ce2de17ac5194a4162137ac223f2dab00e",
+    "ct_round_samples.parquet": "5dd5beed48864abc934f3b962fc17a02bbf1edc9681c184a6f4ba9d854cd7480",
+    "ct_snapshot_edges.parquet": "1c5dea9979ef1ab37cf58ed19225292cb65c92529b9f5cb4589df7ab6e2048f0",
+    "ct_snapshot_nodes.parquet": "c17e25bf3298e1aeb74db4358dbd7095cc0c769f787603e49aff82da89604b2e",
+    "match_manifest.parquet": "38d7ab4a85efe981e556d6e364bddd4b673707c0eb24f2125b1b06b2bdd3a243"
+  },
+  "rows": [
+    {
+      "seed": 0,
+      "baseline_reconstruction_mse": 0.008292914657243368,
+      "temporal_reconstruction_mse": 0.009143853303173492,
+      "next_area_mse": 0.0050138508387166875,
+      "persistence_mse": 0.006810345686972141,
+      "next_area_error_reduction_pct": 26.378908367192878,
+      "temporal_selected_epoch": 38
+    },
+    {
+      "seed": 1,
+      "baseline_reconstruction_mse": 0.008406028504772433,
+      "temporal_reconstruction_mse": 0.008845820123779363,
+      "next_area_mse": 0.005124760968289499,
+      "persistence_mse": 0.006810345686972141,
+      "next_area_error_reduction_pct": 24.750354771375026,
+      "temporal_selected_epoch": 40
+    },
+    {
+      "seed": 2,
+      "baseline_reconstruction_mse": 0.008055837535909537,
+      "temporal_reconstruction_mse": 0.008475087968439892,
+      "next_area_mse": 0.005198811614436322,
+      "persistence_mse": 0.006810345686972141,
+      "next_area_error_reduction_pct": 23.663028965161125,
+      "temporal_selected_epoch": 40
+    },
+    {
+      "seed": 3,
+      "baseline_reconstruction_mse": 0.00838849536175358,
+      "temporal_reconstruction_mse": 0.00887093326911844,
+      "next_area_mse": 0.004960996692935969,
+      "persistence_mse": 0.006810345686972141,
+      "next_area_error_reduction_pct": 27.154994460470437,
+      "temporal_selected_epoch": 40
+    },
+    {
+      "seed": 42,
+      "baseline_reconstruction_mse": 0.008366182382250655,
+      "temporal_reconstruction_mse": 0.008551404233379611,
+      "next_area_mse": 0.004988576638801345,
+      "persistence_mse": 0.006810345686972141,
+      "next_area_error_reduction_pct": 26.7500231545625,
+      "temporal_selected_epoch": 40
+    }
+  ],
+  "summary": {
+    "baseline_reconstruction_mse": {
+      "mean": 0.008301891688385915,
+      "seed_std": 0.0001441363929794495,
+      "min": 0.008055837535909537,
+      "max": 0.008406028504772433
+    },
+    "temporal_reconstruction_mse": {
+      "mean": 0.008777419779578159,
+      "seed_std": 0.00026934385930298636,
+      "min": 0.008475087968439892,
+      "max": 0.009143853303173492
+    },
+    "next_area_mse": {
+      "mean": 0.0050573993506359645,
+      "seed_std": 0.00010057525397969426,
+      "min": 0.004960996692935969,
+      "max": 0.005198811614436322
+    },
+    "next_area_error_reduction_pct": {
+      "mean": 25.739461943752392,
+      "seed_std": 1.4768010113214889,
+      "min": 23.663028965161125,
+      "max": 27.154994460470437
+    }
+  },
+  "resource_peaks": {
+    "allocated_VRAM_MiB": 52.5556640625,
+    "reserved_VRAM_MiB": 68.0,
+    "process_RAM_MiB": 1486.640625
+  },
+  "self_checks": [
+    "gradient boundary",
+    "prefix causality",
+    "player permutation",
+    "match split disjointness",
+    "finite input/output"
+  ],
+  "observation_extraction": {
+    "scope": "single series observation extraction; not independent benchmark",
+    "maps": [
+      {
+        "map": "de_mirage",
+        "records": 42,
+        "used": 42,
+        "missing_place": 0,
+        "dead_observations": 24
+      },
+      {
+        "map": "de_anubis",
+        "records": 42,
+        "used": 42,
+        "missing_place": 0,
+        "dead_observations": 13
+      },
+      {
+        "map": "de_inferno",
+        "records": 42,
+        "used": 42,
+        "missing_place": 0,
+        "dead_observations": 10
+      }
+    ]
+  },
+  "not_claimed": [
+    "retrieval relevance improvement",
+    "independent generalization",
+    "T-side training",
+    "unseen-map transfer",
+    "coach quality"
+  ],
+  "next_steps": [
+    "static predictor and no-context ablations",
+    "new independent series and audited qrels",
+    "verified map semantics and pause/tick alignment before cross-map training"
+  ]
+}

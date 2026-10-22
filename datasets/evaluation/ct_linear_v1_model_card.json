@@ -1,0 +1,30 @@
+{
+  "status": "experimental CT state forecast control; not a tactical recognizer",
+  "model_version": "ct-linear-v0.1",
+  "feature_version": "ct-common-v0.1",
+  "checkpoint": "datasets/models/ct_linear_v1.json",
+  "checkpoint_sha256": "65040624816e12e086c6f9b94d3bf74bcef836b27bc8a08ece0d3dd75d44b541",
+  "parameters": 88,
+  "training_map": "de_dust2",
+  "training_rounds": 486,
+  "validation_rounds": 95,
+  "selection": "regularization penalty 0.0001 selected from seven candidates using Dust2 validation only",
+  "inputs": "current 8 common state summaries plus alive CT mean normalized health/equipment; no map, IDs, time feature, or future frames",
+  "output": "next snapshot common occupancy/death fractions and normalized live pair mean/max distances",
+  "constraints": "nonnegative occupancy summing to one; no decreasing death fraction; 0 <= mean distance <= max distance",
+  "runtime": "NumPy on CPU; PyTorch and GPU not required",
+  "entrypoint": "scripts/predict_ct_opening.py",
+  "evaluation": "datasets/evaluation/ct_optimization_v2_report.json",
+  "benchmark": "datasets/evaluation/ct_linear_cpu_benchmark_v1.json",
+  "tested_target_maps": ["de_mirage", "de_anubis", "de_inferno", "de_ancient"],
+  "known_tradeoff": "better than static_snapshot_42 on current target checks, slightly worse on Dust2 published test; retrieval embeddings not provided",
+  "limitations": [
+    "all target comparisons retrospective; series2396949 was observed before this model was developed",
+    "source checkpoint selection and calibration reuse the validation split",
+    "match aliases and series independence not fully audited",
+    "64 Hz and pause alignment require independent verification",
+    "no navigation geometry, tactical intent, retrieval qrels, or coaching outcome validation",
+    "T and Nuke untested"
+  ],
+  "integration": "offline CT prediction service only; not enabled in AnalysisPipeline, Analyst, Coach, or frontend"
+}

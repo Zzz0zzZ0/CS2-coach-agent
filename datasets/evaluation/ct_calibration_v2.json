@@ -1,0 +1,317 @@
+{
+  "status": "source_validation_fitted_before_target_evaluation",
+  "calibration_version": "ct-gain-v0.2",
+  "feature_version": "ct-common-v0.1",
+  "method": "death-floor Euclidean projection; per-component gains in [0,2], nine-point grid plus least-squares candidate, Dust2 val only",
+  "fit_split": "Dust2 val only, 95 rounds; existing checkpoint selection reused this split",
+  "source_sha256": "c17e25bf3298e1aeb74db4358dbd7095cc0c769f787603e49aff82da89604b2e",
+  "validation_match_ids": [
+    "falcons-vs-natus-vincere_dust2",
+    "falcons-vs-nrg_dust2",
+    "natus-vincere-vs-monte_dust2",
+    "parivision-vs-pain_dust2",
+    "the-mongolz-vs-3dmax_dust2"
+  ],
+  "code_sha256": {
+    "scripts\\calibrate_ct_predictions.py": "1e837714a0342260a0ccb91b4879f512a2f89265754ae09a0944ca4d4f4fda09",
+    "app\\services\\ct_prediction_service.py": "0a063f39b27d977cc5dafd009d7fd807be9b4970c2cf84e2ef0ac1f3b125b7d1",
+    "app\\services\\ct_linear_service.py": "523e9909f53a31862165ff84c3256489f18a9a2dc66cdcb63778e42fb11053ca"
+  },
+  "frozen_sha256": {
+    "scripts\\run_ct_generalization.py": "259f26d423149c2a04cf734b96cceb8253ef3b71012b7bd72242063d502beb46",
+    "app\\services\\ct_feature_service.py": "7d2476cc88c6f3ad62e8a1ca71668c14ee71758f5904162763ac49a63e5bed0b",
+    "output\\tagnet\\ct_generalization_residual_v1\\static_snapshot_42.pt": "45331687f577dede4d22dff0126fc9a4de74de30b5004bd1cdea3122dc265ae3",
+    "output\\tagnet\\ct_generalization_residual_v1\\prefix_gru_42.pt": "30ae9a3f52a555e749c60dc00b84e14b0ca8ead64997decd47e74fcbf36fe336"
+  },
+  "models": {
+    "prefix_gru_0": {
+      "checkpoint": "output\\tagnet\\ct_generalization_residual_v1\\prefix_gru_0.pt",
+      "checkpoint_sha256": "06fc6ccf1cfcc3c689b6af54e2a243313380b3abdbebd5cfc85e0fa8e8d3e8e3",
+      "scales": [
+        1.0966673961460882,
+        0.9250925426186558
+      ],
+      "validation": {
+        "raw": {
+          "mse": 0.004219813738018274,
+          "occupancy_mse": 0.005024593323469162,
+          "distance_mse": 0.0018054748652502894
+        },
+        "constrained": {
+          "mse": 0.004219751190636481,
+          "occupancy_mse": 0.00502450993363589,
+          "distance_mse": 0.0018054749616382526
+        },
+        "calibrated": {
+          "mse": 0.004213138208042605,
+          "occupancy_mse": 0.005016046934910845,
+          "distance_mse": 0.0018044120274378838
+        }
+      }
+    },
+    "prefix_gru_1": {
+      "checkpoint": "output\\tagnet\\ct_generalization_residual_v1\\prefix_gru_1.pt",
+      "checkpoint_sha256": "91bc6e62d514620ca399dea90b3c8ede4fca1cb72e1ac09b7dba60fb14af4109",
+      "scales": [
+        1.0710022653342939,
+        0.9673945499087533
+      ],
+      "validation": {
+        "raw": {
+          "mse": 0.004221921321004629,
+          "occupancy_mse": 0.005031773820519447,
+          "distance_mse": 0.001792363473214209
+        },
+        "constrained": {
+          "mse": 0.004221766648283349,
+          "occupancy_mse": 0.005031567722315814,
+          "distance_mse": 0.0017923634261859571
+        },
+        "calibrated": {
+          "mse": 0.004218162298860233,
+          "occupancy_mse": 0.005026827947732697,
+          "distance_mse": 0.001792165352242838
+        }
+      }
+    },
+    "prefix_gru_2": {
+      "checkpoint": "output\\tagnet\\ct_generalization_residual_v1\\prefix_gru_2.pt",
+      "checkpoint_sha256": "78ee6753f0b713d137d5e774a0d08894fc49cac6a3e6340478e8def0d6ea6565",
+      "scales": [
+        1.0888549292678824,
+        1.0357211165864848
+      ],
+      "validation": {
+        "raw": {
+          "mse": 0.004185094963759184,
+          "occupancy_mse": 0.00498498510569334,
+          "distance_mse": 0.0017854237230494618
+        },
+        "constrained": {
+          "mse": 0.004184982091689548,
+          "occupancy_mse": 0.004984834866917066,
+          "distance_mse": 0.0017854237660069941
+        },
+        "calibrated": {
+          "mse": 0.004179294778363157,
+          "occupancy_mse": 0.0049773236759404075,
+          "distance_mse": 0.0017852080856314064
+        }
+      }
+    },
+    "prefix_gru_3": {
+      "checkpoint": "output\\tagnet\\ct_generalization_residual_v1\\prefix_gru_3.pt",
+      "checkpoint_sha256": "f122af0a9d85af5ab140c1a9d5119e17466d562e9348e6af03960ff0367db2b5",
+      "scales": [
+        1.0802685824079987,
+        0.9634470930278176
+      ],
+      "validation": {
+        "raw": {
+          "mse": 0.004236872773617506,
+          "occupancy_mse": 0.005051101557910442,
+          "distance_mse": 0.0017941852565854788
+        },
+        "constrained": {
+          "mse": 0.004235640907303516,
+          "occupancy_mse": 0.005049459431921866,
+          "distance_mse": 0.0017941853334484668
+        },
+        "calibrated": {
+          "mse": 0.004231182608020071,
+          "occupancy_mse": 0.005043597843492672,
+          "distance_mse": 0.0017939369016022663
+        }
+      }
+    },
+    "prefix_gru_42": {
+      "checkpoint": "output\\tagnet\\ct_generalization_residual_v1\\prefix_gru_42.pt",
+      "checkpoint_sha256": "30ae9a3f52a555e749c60dc00b84e14b0ca8ead64997decd47e74fcbf36fe336",
+      "scales": [
+        1.0723558004136005,
+        0.9601866866741595
+      ],
+      "validation": {
+        "raw": {
+          "mse": 0.004225778393447399,
+          "occupancy_mse": 0.005037376191467047,
+          "distance_mse": 0.0017909844173118472
+        },
+        "constrained": {
+          "mse": 0.004225471082667972,
+          "occupancy_mse": 0.0050369666835444115,
+          "distance_mse": 0.0017909842800386533
+        },
+        "calibrated": {
+          "mse": 0.004221731093854555,
+          "occupancy_mse": 0.005032080807859089,
+          "distance_mse": 0.001790681951840953
+        }
+      }
+    },
+    "static_snapshot_0": {
+      "checkpoint": "output\\tagnet\\ct_generalization_residual_v1\\static_snapshot_0.pt",
+      "checkpoint_sha256": "55fa12813b666314694e269a558525ae92fe97ed3cd6cec43b37e94d9031ac94",
+      "scales": [
+        1.078556512560653,
+        1.2606001526278217
+      ],
+      "validation": {
+        "raw": {
+          "mse": 0.004304626956582069,
+          "occupancy_mse": 0.005095160100609064,
+          "distance_mse": 0.0019330261275172234
+        },
+        "constrained": {
+          "mse": 0.00430363301532374,
+          "occupancy_mse": 0.00509383530491613,
+          "distance_mse": 0.001933026146546567
+        },
+        "calibrated": {
+          "mse": 0.004299213480741323,
+          "occupancy_mse": 0.005088441148763458,
+          "distance_mse": 0.0019315304766749169
+        }
+      }
+    },
+    "static_snapshot_1": {
+      "checkpoint": "output\\tagnet\\ct_generalization_residual_v1\\static_snapshot_1.pt",
+      "checkpoint_sha256": "d7a52482407bb5ae6e039463574cbc7a4c826f4b1e76569e96a2b25f23027f62",
+      "scales": [
+        1.0675799604174494,
+        1.2248929884390518
+      ],
+      "validation": {
+        "raw": {
+          "mse": 0.004312155768275261,
+          "occupancy_mse": 0.005105130840092897,
+          "distance_mse": 0.0019332311348989606
+        },
+        "constrained": {
+          "mse": 0.0043121556526069865,
+          "occupancy_mse": 0.0051051304208929804,
+          "distance_mse": 0.0019332313477490029
+        },
+        "calibrated": {
+          "mse": 0.004308847404846463,
+          "occupancy_mse": 0.005101106620233534,
+          "distance_mse": 0.00193206975868525
+        }
+      }
+    },
+    "static_snapshot_2": {
+      "checkpoint": "output\\tagnet\\ct_generalization_residual_v1\\static_snapshot_2.pt",
+      "checkpoint_sha256": "cfeb10fa1cb9601a739a6a276e0138ae7721baea48153a0d6d2b1018b40399de",
+      "scales": [
+        1.068907568852121,
+        1.2491739102511483
+      ],
+      "validation": {
+        "raw": {
+          "mse": 0.004308601841330528,
+          "occupancy_mse": 0.005100671201944351,
+          "distance_mse": 0.0019323948072269559
+        },
+        "constrained": {
+          "mse": 0.0043079376617348964,
+          "occupancy_mse": 0.005099785220744668,
+          "distance_mse": 0.0019323949847055817
+        },
+        "calibrated": {
+          "mse": 0.004304437068417545,
+          "occupancy_mse": 0.005095589228365179,
+          "distance_mse": 0.0019309805885746423
+        }
+      }
+    },
+    "static_snapshot_3": {
+      "checkpoint": "output\\tagnet\\ct_generalization_residual_v1\\static_snapshot_3.pt",
+      "checkpoint_sha256": "cf21518fea08772a0cae1cef046112ed1d80d9b4feecb4d92fe79a39ccc28375",
+      "scales": [
+        1.0254547064274417,
+        1.2135171619032334
+      ],
+      "validation": {
+        "raw": {
+          "mse": 0.004309535026550293,
+          "occupancy_mse": 0.0051016174256801605,
+          "distance_mse": 0.0019332871306687593
+        },
+        "constrained": {
+          "mse": 0.004309068768711298,
+          "occupancy_mse": 0.005100995957521532,
+          "distance_mse": 0.001933287202280597
+        },
+        "calibrated": {
+          "mse": 0.004308338891173278,
+          "occupancy_mse": 0.005100376772874439,
+          "distance_mse": 0.0019322252460697964
+        }
+      }
+    },
+    "static_snapshot_42": {
+      "checkpoint": "output\\tagnet\\ct_generalization_residual_v1\\static_snapshot_42.pt",
+      "checkpoint_sha256": "45331687f577dede4d22dff0126fc9a4de74de30b5004bd1cdea3122dc265ae3",
+      "scales": [
+        1.0637006286092223,
+        1.1829656550286514
+      ],
+      "validation": {
+        "raw": {
+          "mse": 0.0043325042352080345,
+          "occupancy_mse": 0.005131490528583527,
+          "distance_mse": 0.0019355446565896273
+        },
+        "constrained": {
+          "mse": 0.004331565443075724,
+          "occupancy_mse": 0.005130239042409684,
+          "distance_mse": 0.0019355446450738441
+        },
+        "calibrated": {
+          "mse": 0.004328743607215578,
+          "occupancy_mse": 0.005126729711869751,
+          "distance_mse": 0.0019347852932530595
+        }
+      }
+    }
+  },
+  "ridge_baseline": {
+    "inputs": "current 8 state summaries plus alive CT mean normalized health/equipment; no time or map ID",
+    "train_rounds": 486,
+    "penalty": 0.0001,
+    "validation_mse": 0.004090922536996453,
+    "trials": [
+      {
+        "penalty": 0.0001,
+        "validation_mse": 0.004090922536996453
+      },
+      {
+        "penalty": 0.001,
+        "validation_mse": 0.004091024918579416
+      },
+      {
+        "penalty": 0.01,
+        "validation_mse": 0.004092399014775962
+      },
+      {
+        "penalty": 0.1,
+        "validation_mse": 0.0041166141547358155
+      },
+      {
+        "penalty": 1,
+        "validation_mse": 0.004316125298710396
+      },
+      {
+        "penalty": 10,
+        "validation_mse": 0.004742366874105524
+      },
+      {
+        "penalty": 100,
+        "validation_mse": 0.004891190316923604
+      }
+    ],
+    "parameters": 88,
+    "weights_sha256": "6a45ca1a3fe3e0efc7957bf9052359b5e0c476f2bf10442a26ddd2212a8e2803",
+    "json_model_sha256": "65040624816e12e086c6f9b94d3bf74bcef836b27bc8a08ece0d3dd75d44b541"
+  }
+}

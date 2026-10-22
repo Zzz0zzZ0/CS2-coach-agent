@@ -1,0 +1,3031 @@
+{
+  "status": "completed_retrospective_calibration_check",
+  "calibration_sha256": "3f7971e549fd824113b68cdc6203d9caf48ac70609db5cc85815c1565bfe7232",
+  "feature_version": "ct-common-v0.1",
+  "calibration_version": "ct-gain-v0.2",
+  "scope": "Calibration fit on Dust2 validation only; target results previously observed, not a new blind test",
+  "primary_model": "static_snapshot_42",
+  "source_hashes": {
+    "output\\tagnet\\new_demos_2396949\\BLAST_Open_Porto_2026_Spirit_vs_Falcons_2396949_map2.dem": "9c2d5c33124f0e685aebc5f2acf9ceca49247a36fb5100da3f8e166945a18bf2",
+    "output\\tagnet\\mirage_opening_full_v1\\snapshots.json": "640280a7ec5a77c3be3e3a776bddd86d89ef6c9c8abc784478edb24395db1839",
+    "output\\tagnet\\anubis_opening_full_v1\\snapshots.json": "34bfc3368440d6c8f60745df1eaea4a10d9632764191f9dbc10f872fb25952a4",
+    "output\\tagnet\\inferno_opening_full_v1\\snapshots.json": "120a5e2639ed9b06d42d50fea1966798594f84c7dc0c8a8f8b844ad2cab4ad28",
+    "output\\tagnet\\2396940_map1_opening_v1\\snapshots.json": "2f756575767e1d57b9d3949983406668383fa7798cce02d1553af2e020751de9",
+    "output\\tagnet\\2396940_map2_opening_v1\\snapshots.json": "f2a2dee01285c061fe643768b531eeaf90f23362b93de09e157f75c28dcf739b"
+  },
+  "groups": {
+    "dust2_test": {
+      "rounds": 116,
+      "sample_ids": [
+        "aurora-vs-furia_dust2__r01",
+        "aurora-vs-furia_dust2__r02",
+        "aurora-vs-furia_dust2__r03",
+        "aurora-vs-furia_dust2__r04",
+        "aurora-vs-furia_dust2__r05",
+        "aurora-vs-furia_dust2__r06",
+        "aurora-vs-furia_dust2__r07",
+        "aurora-vs-furia_dust2__r08",
+        "aurora-vs-furia_dust2__r09",
+        "aurora-vs-furia_dust2__r10",
+        "aurora-vs-furia_dust2__r11",
+        "aurora-vs-furia_dust2__r12",
+        "aurora-vs-furia_dust2__r13",
+        "aurora-vs-furia_dust2__r14",
+        "aurora-vs-furia_dust2__r15",
+        "aurora-vs-furia_dust2__r16",
+        "aurora-vs-furia_dust2__r17",
+        "aurora-vs-furia_dust2__r18",
+        "aurora-vs-furia_dust2__r19",
+        "aurora-vs-furia_dust2__r20",
+        "aurora-vs-furia_dust2__r21",
+        "aurora-vs-furia_dust2__r22",
+        "aurora-vs-furia_dust2__r23",
+        "aurora-vs-furia_dust2__r24",
+        "aurora-vs-furia_dust2__r25",
+        "aurora-vs-furia_dust2__r26",
+        "aurora-vs-furia_dust2__r27",
+        "aurora-vs-furia_dust2__r28",
+        "aurora-vs-furia_dust2__r29",
+        "aurora-vs-furia_dust2__r30",
+        "fut-vs-furia_dust2__r01",
+        "fut-vs-furia_dust2__r02",
+        "fut-vs-furia_dust2__r03",
+        "fut-vs-furia_dust2__r04",
+        "fut-vs-furia_dust2__r05",
+        "fut-vs-furia_dust2__r06",
+        "fut-vs-furia_dust2__r07",
+        "fut-vs-furia_dust2__r08",
+        "fut-vs-furia_dust2__r09",
+        "fut-vs-furia_dust2__r10",
+        "fut-vs-furia_dust2__r11",
+        "fut-vs-furia_dust2__r12",
+        "fut-vs-furia_dust2__r13",
+        "fut-vs-furia_dust2__r14",
+        "fut-vs-furia_dust2__r15",
+        "fut-vs-furia_dust2__r16",
+        "fut-vs-furia_dust2__r17",
+        "fut-vs-furia_dust2__r18",
+        "fut-vs-furia_dust2__r19",
+        "fut-vs-furia_dust2__r20",
+        "fut-vs-furia_dust2__r21",
+        "fut-vs-furia_dust2__r22",
+        "fut-vs-furia_dust2__r23",
+        "fut-vs-furia_dust2__r24",
+        "gamerlegion-vs-vitality_dust2__r01",
+        "gamerlegion-vs-vitality_dust2__r02",
+        "gamerlegion-vs-vitality_dust2__r03",
+        "gamerlegion-vs-vitality_dust2__r04",
+        "gamerlegion-vs-vitality_dust2__r05",
+        "gamerlegion-vs-vitality_dust2__r06",
+        "gamerlegion-vs-vitality_dust2__r07",
+        "gamerlegion-vs-vitality_dust2__r08",
+        "gamerlegion-vs-vitality_dust2__r09",
+        "gamerlegion-vs-vitality_dust2__r10",
+        "gamerlegion-vs-vitality_dust2__r11",
+        "gamerlegion-vs-vitality_dust2__r12",
+        "gamerlegion-vs-vitality_dust2__r13",
+        "gamerlegion-vs-vitality_dust2__r14",
+        "gamerlegion-vs-vitality_dust2__r15",
+        "gamerlegion-vs-vitality_dust2__r16",
+        "gamerlegion-vs-vitality_dust2__r17",
+        "gamerlegion-vs-vitality_dust2__r18",
+        "gamerlegion-vs-vitality_dust2__r19",
+        "gamerlegion-vs-vitality_dust2__r20",
+        "gamerlegion-vs-vitality_dust2__r21",
+        "gamerlegion-vs-vitality_dust2__r22",
+        "gamerlegion-vs-vitality_dust2__r23",
+        "gamerlegion-vs-vitality_dust2__r24",
+        "nrg-vs-furia_dust2__r01",
+        "nrg-vs-furia_dust2__r02",
+        "nrg-vs-furia_dust2__r03",
+        "nrg-vs-furia_dust2__r04",
+        "nrg-vs-furia_dust2__r05",
+        "nrg-vs-furia_dust2__r06",
+        "nrg-vs-furia_dust2__r07",
+        "nrg-vs-furia_dust2__r08",
+        "nrg-vs-furia_dust2__r09",
+        "nrg-vs-furia_dust2__r10",
+        "nrg-vs-furia_dust2__r11",
+        "nrg-vs-furia_dust2__r12",
+        "nrg-vs-furia_dust2__r13",
+        "nrg-vs-furia_dust2__r15",
+        "nrg-vs-furia_dust2__r16",
+        "nrg-vs-furia_dust2__r17",
+        "nrg-vs-furia_dust2__r18",
+        "nrg-vs-furia_dust2__r19",
+        "nrg-vs-furia_dust2__r20",
+        "virtus-pro-vs-vitality_dust2__r01",
+        "virtus-pro-vs-vitality_dust2__r02",
+        "virtus-pro-vs-vitality_dust2__r03",
+        "virtus-pro-vs-vitality_dust2__r04",
+        "virtus-pro-vs-vitality_dust2__r05",
+        "virtus-pro-vs-vitality_dust2__r06",
+        "virtus-pro-vs-vitality_dust2__r07",
+        "virtus-pro-vs-vitality_dust2__r08",
+        "virtus-pro-vs-vitality_dust2__r09",
+        "virtus-pro-vs-vitality_dust2__r10",
+        "virtus-pro-vs-vitality_dust2__r11",
+        "virtus-pro-vs-vitality_dust2__r12",
+        "virtus-pro-vs-vitality_dust2__r13",
+        "virtus-pro-vs-vitality_dust2__r14",
+        "virtus-pro-vs-vitality_dust2__r15",
+        "virtus-pro-vs-vitality_dust2__r16",
+        "virtus-pro-vs-vitality_dust2__r17",
+        "virtus-pro-vs-vitality_dust2__r18",
+        "virtus-pro-vs-vitality_dust2__r19"
+      ]
+    },
+    "de_ancient_2396949": {
+      "rounds": 24,
+      "sample_ids": [
+        "2396949:1:CT",
+        "2396949:2:CT",
+        "2396949:3:CT",
+        "2396949:4:CT",
+        "2396949:5:CT",
+        "2396949:6:CT",
+        "2396949:7:CT",
+        "2396949:8:CT",
+        "2396949:9:CT",
+        "2396949:10:CT",
+        "2396949:11:CT",
+        "2396949:12:CT",
+        "2396949:13:CT",
+        "2396949:14:CT",
+        "2396949:15:CT",
+        "2396949:16:CT",
+        "2396949:17:CT",
+        "2396949:18:CT",
+        "2396949:19:CT",
+        "2396949:20:CT",
+        "2396949:21:CT",
+        "2396949:22:CT",
+        "2396949:23:CT",
+        "2396949:24:CT"
+      ]
+    },
+    "de_mirage": {
+      "rounds": 21,
+      "sample_ids": [
+        "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:1:CT",
+        "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:2:CT",
+        "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:3:CT",
+        "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:4:CT",
+        "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:5:CT",
+        "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:6:CT",
+        "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:7:CT",
+        "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:8:CT",
+        "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:9:CT",
+        "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:10:CT",
+        "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:11:CT",
+        "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:12:CT",
+        "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:13:CT",
+        "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:14:CT",
+        "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:15:CT",
+        "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:16:CT",
+        "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:17:CT",
+        "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:18:CT",
+        "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:19:CT",
+        "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:20:CT",
+        "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:21:CT"
+      ]
+    },
+    "de_anubis": {
+      "rounds": 21,
+      "sample_ids": [
+        "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:1:CT",
+        "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:2:CT",
+        "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:3:CT",
+        "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:4:CT",
+        "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:5:CT",
+        "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:6:CT",
+        "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:7:CT",
+        "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:8:CT",
+        "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:9:CT",
+        "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:10:CT",
+        "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:11:CT",
+        "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:12:CT",
+        "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:13:CT",
+        "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:14:CT",
+        "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:15:CT",
+        "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:16:CT",
+        "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:17:CT",
+        "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:18:CT",
+        "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:19:CT",
+        "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:20:CT",
+        "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:21:CT"
+      ]
+    },
+    "de_inferno": {
+      "rounds": 44,
+      "sample_ids": [
+        "374b2f600880e2f8b0437314924b3745c2b0d32e63d53abbedd8bfd52ab8b0b8:1:CT",
+        "374b2f600880e2f8b0437314924b3745c2b0d32e63d53abbedd8bfd52ab8b0b8:2:CT",
+        "374b2f600880e2f8b0437314924b3745c2b0d32e63d53abbedd8bfd52ab8b0b8:3:CT",
+        "374b2f600880e2f8b0437314924b3745c2b0d32e63d53abbedd8bfd52ab8b0b8:4:CT",
+        "374b2f600880e2f8b0437314924b3745c2b0d32e63d53abbedd8bfd52ab8b0b8:5:CT",
+        "374b2f600880e2f8b0437314924b3745c2b0d32e63d53abbedd8bfd52ab8b0b8:6:CT",
+        "374b2f600880e2f8b0437314924b3745c2b0d32e63d53abbedd8bfd52ab8b0b8:7:CT",
+        "374b2f600880e2f8b0437314924b3745c2b0d32e63d53abbedd8bfd52ab8b0b8:8:CT",
+        "374b2f600880e2f8b0437314924b3745c2b0d32e63d53abbedd8bfd52ab8b0b8:9:CT",
+        "374b2f600880e2f8b0437314924b3745c2b0d32e63d53abbedd8bfd52ab8b0b8:10:CT",
+        "374b2f600880e2f8b0437314924b3745c2b0d32e63d53abbedd8bfd52ab8b0b8:11:CT",
+        "374b2f600880e2f8b0437314924b3745c2b0d32e63d53abbedd8bfd52ab8b0b8:12:CT",
+        "374b2f600880e2f8b0437314924b3745c2b0d32e63d53abbedd8bfd52ab8b0b8:13:CT",
+        "374b2f600880e2f8b0437314924b3745c2b0d32e63d53abbedd8bfd52ab8b0b8:14:CT",
+        "374b2f600880e2f8b0437314924b3745c2b0d32e63d53abbedd8bfd52ab8b0b8:15:CT",
+        "374b2f600880e2f8b0437314924b3745c2b0d32e63d53abbedd8bfd52ab8b0b8:16:CT",
+        "374b2f600880e2f8b0437314924b3745c2b0d32e63d53abbedd8bfd52ab8b0b8:17:CT",
+        "374b2f600880e2f8b0437314924b3745c2b0d32e63d53abbedd8bfd52ab8b0b8:18:CT",
+        "374b2f600880e2f8b0437314924b3745c2b0d32e63d53abbedd8bfd52ab8b0b8:19:CT",
+        "374b2f600880e2f8b0437314924b3745c2b0d32e63d53abbedd8bfd52ab8b0b8:20:CT",
+        "374b2f600880e2f8b0437314924b3745c2b0d32e63d53abbedd8bfd52ab8b0b8:21:CT",
+        "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:1:CT",
+        "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:2:CT",
+        "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:3:CT",
+        "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:4:CT",
+        "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:5:CT",
+        "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:6:CT",
+        "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:7:CT",
+        "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:8:CT",
+        "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:9:CT",
+        "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:10:CT",
+        "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:11:CT",
+        "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:12:CT",
+        "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:13:CT",
+        "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:14:CT",
+        "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:15:CT",
+        "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:16:CT",
+        "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:17:CT",
+        "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:18:CT",
+        "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:19:CT",
+        "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:20:CT",
+        "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:21:CT",
+        "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:22:CT",
+        "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:23:CT"
+      ]
+    },
+    "de_ancient": {
+      "rounds": 19,
+      "sample_ids": [
+        "addb04dbcffaa81c3bf05b47265744af3fca3206b0746cc0ab5c4d1b00010956:1:CT",
+        "addb04dbcffaa81c3bf05b47265744af3fca3206b0746cc0ab5c4d1b00010956:2:CT",
+        "addb04dbcffaa81c3bf05b47265744af3fca3206b0746cc0ab5c4d1b00010956:3:CT",
+        "addb04dbcffaa81c3bf05b47265744af3fca3206b0746cc0ab5c4d1b00010956:4:CT",
+        "addb04dbcffaa81c3bf05b47265744af3fca3206b0746cc0ab5c4d1b00010956:5:CT",
+        "addb04dbcffaa81c3bf05b47265744af3fca3206b0746cc0ab5c4d1b00010956:6:CT",
+        "addb04dbcffaa81c3bf05b47265744af3fca3206b0746cc0ab5c4d1b00010956:7:CT",
+        "addb04dbcffaa81c3bf05b47265744af3fca3206b0746cc0ab5c4d1b00010956:8:CT",
+        "addb04dbcffaa81c3bf05b47265744af3fca3206b0746cc0ab5c4d1b00010956:9:CT",
+        "addb04dbcffaa81c3bf05b47265744af3fca3206b0746cc0ab5c4d1b00010956:10:CT",
+        "addb04dbcffaa81c3bf05b47265744af3fca3206b0746cc0ab5c4d1b00010956:11:CT",
+        "addb04dbcffaa81c3bf05b47265744af3fca3206b0746cc0ab5c4d1b00010956:12:CT",
+        "addb04dbcffaa81c3bf05b47265744af3fca3206b0746cc0ab5c4d1b00010956:13:CT",
+        "addb04dbcffaa81c3bf05b47265744af3fca3206b0746cc0ab5c4d1b00010956:14:CT",
+        "addb04dbcffaa81c3bf05b47265744af3fca3206b0746cc0ab5c4d1b00010956:15:CT",
+        "addb04dbcffaa81c3bf05b47265744af3fca3206b0746cc0ab5c4d1b00010956:16:CT",
+        "addb04dbcffaa81c3bf05b47265744af3fca3206b0746cc0ab5c4d1b00010956:17:CT",
+        "addb04dbcffaa81c3bf05b47265744af3fca3206b0746cc0ab5c4d1b00010956:18:CT",
+        "addb04dbcffaa81c3bf05b47265744af3fca3206b0746cc0ab5c4d1b00010956:19:CT"
+      ]
+    }
+  },
+  "skipped": [],
+  "models": {
+    "prefix_gru_0": {
+      "dust2_test": {
+        "raw": {
+          "mse": 0.003273420501500368,
+          "occupancy_mse": 0.003912804648280144,
+          "distance_mse": 0.0013552672462537885
+        },
+        "constrained": {
+          "mse": 0.0032726561022073885,
+          "occupancy_mse": 0.0039117857005847925,
+          "distance_mse": 0.001355267307075175
+        },
+        "calibrated": {
+          "mse": 0.0032740345194754903,
+          "occupancy_mse": 0.003914622974439486,
+          "distance_mse": 0.0013522691545835028
+        },
+        "raw_resurrection_fraction": 0.01293103448275862,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.0029582404531538486,
+            "calibrated_mse": 0.002956200372005209
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.003543067490682006,
+            "calibrated_mse": 0.0035516293312807543
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.0039248159155249596,
+            "calibrated_mse": 0.0038924364654044485
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.0026675581466406584,
+            "calibrated_mse": 0.0026958719092115492
+          }
+        ]
+      },
+      "de_ancient_2396949": {
+        "raw": {
+          "mse": 0.0058286613784730434,
+          "occupancy_mse": 0.007258286699652672,
+          "distance_mse": 0.001539783552289009
+        },
+        "constrained": {
+          "mse": 0.005828384464587811,
+          "occupancy_mse": 0.00725791808010449,
+          "distance_mse": 0.0015397836180377708
+        },
+        "calibrated": {
+          "mse": 0.005882234200763813,
+          "occupancy_mse": 0.007336299915669521,
+          "distance_mse": 0.0015200370560466906
+        },
+        "raw_resurrection_fraction": 0.020833333333333332,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.006456108298152685,
+            "calibrated_mse": 0.006572032555498199
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.005411388352513313,
+            "calibrated_mse": 0.005513486239735477
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.007528910879045725,
+            "calibrated_mse": 0.007573138318572673
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.0039182365871965885,
+            "calibrated_mse": 0.003870279689248903
+          }
+        ]
+      },
+      "de_mirage": {
+        "raw": {
+          "mse": 0.01158770639449358,
+          "occupancy_mse": 0.015113440342247486,
+          "distance_mse": 0.0010105022229254246
+        },
+        "constrained": {
+          "mse": 0.01158639736101239,
+          "occupancy_mse": 0.015111695775534905,
+          "distance_mse": 0.001010502117444852
+        },
+        "calibrated": {
+          "mse": 0.011482767684444102,
+          "occupancy_mse": 0.014974889765983617,
+          "distance_mse": 0.0010064014398255608
+        },
+        "raw_resurrection_fraction": 0.03571428571428571,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.014219124801456928,
+            "calibrated_mse": 0.01407425993424841
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.014731029979884624,
+            "calibrated_mse": 0.01459287715021226
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.010724197141826153,
+            "calibrated_mse": 0.010602598597337812
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.006676473654806614,
+            "calibrated_mse": 0.006661335055977928
+          }
+        ]
+      },
+      "de_anubis": {
+        "raw": {
+          "mse": 0.006762312259525061,
+          "occupancy_mse": 0.008760602213442326,
+          "distance_mse": 0.0007674421649426222
+        },
+        "constrained": {
+          "mse": 0.00676231228404904,
+          "occupancy_mse": 0.008760602305072349,
+          "distance_mse": 0.0007674422209791141
+        },
+        "calibrated": {
+          "mse": 0.006735102621138809,
+          "occupancy_mse": 0.008723389493345448,
+          "distance_mse": 0.0007702420045188955
+        },
+        "raw_resurrection_fraction": 0.0,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.012124200351536274,
+            "calibrated_mse": 0.011982827663160984
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.007031647954136133,
+            "calibrated_mse": 0.007068107251455473
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.003838048782199621,
+            "calibrated_mse": 0.0038434426023375885
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.004055351950228214,
+            "calibrated_mse": 0.004046032967601191
+          }
+        ]
+      },
+      "de_inferno": {
+        "raw": {
+          "mse": 0.008455394767224789,
+          "occupancy_mse": 0.010819661431014538,
+          "distance_mse": 0.001362590934149921
+        },
+        "constrained": {
+          "mse": 0.008455258326215175,
+          "occupancy_mse": 0.010819480773811412,
+          "distance_mse": 0.0013625909834264621
+        },
+        "calibrated": {
+          "mse": 0.008375892877897043,
+          "occupancy_mse": 0.01072409797735691,
+          "distance_mse": 0.0013312775795174395
+        },
+        "raw_resurrection_fraction": 0.005681818181818182,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.013599241152405739,
+            "calibrated_mse": 0.013328902221695728
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.009280594997107983,
+            "calibrated_mse": 0.009304821335248565
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.007736861705780029,
+            "calibrated_mse": 0.007668021296989954
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.0032048786524683237,
+            "calibrated_mse": 0.0032018266576539197
+          }
+        ]
+      },
+      "de_ancient": {
+        "raw": {
+          "mse": 0.008476975373923779,
+          "occupancy_mse": 0.010832000523805618,
+          "distance_mse": 0.0014118959661573172
+        },
+        "constrained": {
+          "mse": 0.008476774164516932,
+          "occupancy_mse": 0.010831733532428988,
+          "distance_mse": 0.0014118960607807695
+        },
+        "calibrated": {
+          "mse": 0.00849333358977776,
+          "occupancy_mse": 0.010855771046579532,
+          "distance_mse": 0.0014060212193724485
+        },
+        "raw_resurrection_fraction": 0.013157894736842105,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.012961409986019135,
+            "calibrated_mse": 0.013088818165548731
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.0051123532466590405,
+            "calibrated_mse": 0.005100239952882191
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.01233483012765646,
+            "calibrated_mse": 0.012244003693991558
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.0034993074368685484,
+            "calibrated_mse": 0.003540272546688562
+          }
+        ]
+      }
+    },
+    "prefix_gru_1": {
+      "dust2_test": {
+        "raw": {
+          "mse": 0.003273621667176485,
+          "occupancy_mse": 0.003913666121661663,
+          "distance_mse": 0.001353488420136273
+        },
+        "constrained": {
+          "mse": 0.003272779104666126,
+          "occupancy_mse": 0.0039125426714164396,
+          "distance_mse": 0.0013534884044151855
+        },
+        "calibrated": {
+          "mse": 0.0032747606363074423,
+          "occupancy_mse": 0.003915642610677807,
+          "distance_mse": 0.001352114713196345
+        },
+        "raw_resurrection_fraction": 0.01293103448275862,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.002981101628392935,
+            "calibrated_mse": 0.0029796446078882567
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.003546918509528041,
+            "calibrated_mse": 0.003556634714690316
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.0039027549792081118,
+            "calibrated_mse": 0.0038782858190925377
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.00266371201723814,
+            "calibrated_mse": 0.002684477403558657
+          }
+        ]
+      },
+      "de_ancient_2396949": {
+        "raw": {
+          "mse": 0.005801856517791748,
+          "occupancy_mse": 0.007220348343253136,
+          "distance_mse": 0.001546381856314838
+        },
+        "constrained": {
+          "mse": 0.005801052979710408,
+          "occupancy_mse": 0.007219276700914202,
+          "distance_mse": 0.0015463818160990316
+        },
+        "calibrated": {
+          "mse": 0.005839658175934806,
+          "occupancy_mse": 0.007273700455467093,
+          "distance_mse": 0.0015375313373379447
+        },
+        "raw_resurrection_fraction": 0.020833333333333332,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.006429292261600494,
+            "calibrated_mse": 0.006510510635648163
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.005349716637283564,
+            "calibrated_mse": 0.005412263395761445
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.0075319912284612656,
+            "calibrated_mse": 0.00756802397322733
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.0038964280392974615,
+            "calibrated_mse": 0.0038678346991022883
+          }
+        ]
+      },
+      "de_mirage": {
+        "raw": {
+          "mse": 0.011634111404418945,
+          "occupancy_mse": 0.015174763277173042,
+          "distance_mse": 0.0010121570667251945
+        },
+        "constrained": {
+          "mse": 0.011632992027034321,
+          "occupancy_mse": 0.015173270322604439,
+          "distance_mse": 0.0010121571403239697
+        },
+        "calibrated": {
+          "mse": 0.011560241954142507,
+          "occupancy_mse": 0.01507646686406587,
+          "distance_mse": 0.001011567224372419
+        },
+        "raw_resurrection_fraction": 0.03571428571428571,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.014610270969569683,
+            "calibrated_mse": 0.014521311141279226
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.014720556326210499,
+            "calibrated_mse": 0.01461399437649388
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.010626344941556454,
+            "calibrated_mse": 0.010534431436548785
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.006579277105629444,
+            "calibrated_mse": 0.006571230862248145
+          }
+        ]
+      },
+      "de_anubis": {
+        "raw": {
+          "mse": 0.006718649063259363,
+          "occupancy_mse": 0.00870327278971672,
+          "distance_mse": 0.0007647796301171184
+        },
+        "constrained": {
+          "mse": 0.006718649135693246,
+          "occupancy_mse": 0.00870327228233903,
+          "distance_mse": 0.0007647796957558896
+        },
+        "calibrated": {
+          "mse": 0.006696491526832546,
+          "occupancy_mse": 0.008673035268492484,
+          "distance_mse": 0.0007668603018527324
+        },
+        "raw_resurrection_fraction": 0.0,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.0119955288246274,
+            "calibrated_mse": 0.011877674010347929
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.006987022701650858,
+            "calibrated_mse": 0.007011237570368385
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.0038383095525205135,
+            "calibrated_mse": 0.003846773588302012
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.004053737502545118,
+            "calibrated_mse": 0.004050280938311857
+          }
+        ]
+      },
+      "de_inferno": {
+        "raw": {
+          "mse": 0.008387825451791286,
+          "occupancy_mse": 0.010735657997429371,
+          "distance_mse": 0.0013443258358165622
+        },
+        "constrained": {
+          "mse": 0.008387680763801293,
+          "occupancy_mse": 0.010735465741600917,
+          "distance_mse": 0.0013443258304024145
+        },
+        "calibrated": {
+          "mse": 0.008326648626466676,
+          "occupancy_mse": 0.010658123764818504,
+          "distance_mse": 0.0013322232114111883
+        },
+        "raw_resurrection_fraction": 0.005681818181818182,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.013575077056884766,
+            "calibrated_mse": 0.013380019778580048
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.009165925905108452,
+            "calibrated_mse": 0.009172043054718212
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.007596312556415796,
+            "calibrated_mse": 0.00753868093182354
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.0032139827962964773,
+            "calibrated_mse": 0.0032158507407449026
+          }
+        ]
+      },
+      "de_ancient": {
+        "raw": {
+          "mse": 0.008455296978354454,
+          "occupancy_mse": 0.010808049701154232,
+          "distance_mse": 0.0013970360159873962
+        },
+        "constrained": {
+          "mse": 0.008455165532975265,
+          "occupancy_mse": 0.010807875351790626,
+          "distance_mse": 0.0013970360765291814
+        },
+        "calibrated": {
+          "mse": 0.008462426134349678,
+          "occupancy_mse": 0.010818236580216963,
+          "distance_mse": 0.0013949947967478156
+        },
+        "raw_resurrection_fraction": 0.013157894736842105,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.012920771725475788,
+            "calibrated_mse": 0.013005272268840856
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.005031292326748371,
+            "calibrated_mse": 0.004994758594868771
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.012421972118318081,
+            "calibrated_mse": 0.012368320967892954
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.003447150345891714,
+            "calibrated_mse": 0.003481352705796124
+          }
+        ]
+      }
+    },
+    "prefix_gru_2": {
+      "dust2_test": {
+        "raw": {
+          "mse": 0.0032652162481099367,
+          "occupancy_mse": 0.0039020455442368984,
+          "distance_mse": 0.0013547280104830861
+        },
+        "constrained": {
+          "mse": 0.0032643371665347764,
+          "occupancy_mse": 0.0039008735582870355,
+          "distance_mse": 0.001354727991277998
+        },
+        "calibrated": {
+          "mse": 0.003270101413607684,
+          "occupancy_mse": 0.003908063481206547,
+          "distance_mse": 0.0013562152108110995
+        },
+        "raw_resurrection_fraction": 0.01293103448275862,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.002992312889546156,
+            "calibrated_mse": 0.002995782623392541
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.0035264973994344473,
+            "calibrated_mse": 0.0035301151188344756
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.0038520314265042543,
+            "calibrated_mse": 0.0038244758552603525
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.0026900225784629583,
+            "calibrated_mse": 0.0027300320569433696
+          }
+        ]
+      },
+      "de_ancient_2396949": {
+        "raw": {
+          "mse": 0.005834911018610001,
+          "occupancy_mse": 0.007278206292539835,
+          "distance_mse": 0.001505024265497923
+        },
+        "constrained": {
+          "mse": 0.005834523839050757,
+          "occupancy_mse": 0.007277690356272404,
+          "distance_mse": 0.0015050242873858148
+        },
+        "calibrated": {
+          "mse": 0.005893672331196244,
+          "occupancy_mse": 0.007353868276966112,
+          "distance_mse": 0.0015130844938866439
+        },
+        "raw_resurrection_fraction": 0.010416666666666666,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.00646227365359664,
+            "calibrated_mse": 0.006576787403975655
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.005302536766976118,
+            "calibrated_mse": 0.00537545932139516
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.007547160144895315,
+            "calibrated_mse": 0.007609256506835704
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.004027673043310642,
+            "calibrated_mse": 0.004013186092578463
+          }
+        ]
+      },
+      "de_mirage": {
+        "raw": {
+          "mse": 0.011770670302212238,
+          "occupancy_mse": 0.015367044135928154,
+          "distance_mse": 0.0009815467055886984
+        },
+        "constrained": {
+          "mse": 0.0117690610020964,
+          "occupancy_mse": 0.01536489910905095,
+          "distance_mse": 0.000981546681232758
+        },
+        "calibrated": {
+          "mse": 0.011688785463203283,
+          "occupancy_mse": 0.015257844993131134,
+          "distance_mse": 0.0009816068734197323
+        },
+        "raw_resurrection_fraction": 0.03571428571428571,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.014739754609763622,
+            "calibrated_mse": 0.014628773864352053
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.014737923629581928,
+            "calibrated_mse": 0.014599096439270244
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.010649370029568672,
+            "calibrated_mse": 0.010544659386214742
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.0069556329399347305,
+            "calibrated_mse": 0.006982612162976092
+          }
+        ]
+      },
+      "de_anubis": {
+        "raw": {
+          "mse": 0.006920567713677883,
+          "occupancy_mse": 0.008971277624368668,
+          "distance_mse": 0.0007684403099119663
+        },
+        "constrained": {
+          "mse": 0.006920568217797839,
+          "occupancy_mse": 0.008971277515374201,
+          "distance_mse": 0.0007684403250687556
+        },
+        "calibrated": {
+          "mse": 0.006916190840583872,
+          "occupancy_mse": 0.008965935790865019,
+          "distance_mse": 0.0007669559897404236
+        },
+        "raw_resurrection_fraction": 0.0,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.01244664192199707,
+            "calibrated_mse": 0.012340423953006333
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.007178721483796835,
+            "calibrated_mse": 0.007228709808932953
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.0038956226781010628,
+            "calibrated_mse": 0.003921443144509625
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.004161288030445576,
+            "calibrated_mse": 0.0041741864558865775
+          }
+        ]
+      },
+      "de_inferno": {
+        "raw": {
+          "mse": 0.008493348956108093,
+          "occupancy_mse": 0.010882029309868813,
+          "distance_mse": 0.0013273078948259354
+        },
+        "constrained": {
+          "mse": 0.008493124624555497,
+          "occupancy_mse": 0.010881730207668895,
+          "distance_mse": 0.0013273078752153002
+        },
+        "calibrated": {
+          "mse": 0.008435172526331653,
+          "occupancy_mse": 0.010799942721957553,
+          "distance_mse": 0.0013408619394539515
+        },
+        "raw_resurrection_fraction": 0.005681818181818182,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.01382362749427557,
+            "calibrated_mse": 0.013616612609210038
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.009252578020095825,
+            "calibrated_mse": 0.009266787474002015
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.007640434894710779,
+            "calibrated_mse": 0.007580962664815338
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.003256754716858268,
+            "calibrated_mse": 0.0032763273572992218
+          }
+        ]
+      },
+      "de_ancient": {
+        "raw": {
+          "mse": 0.008354884572327137,
+          "occupancy_mse": 0.010684416629374027,
+          "distance_mse": 0.0013662890996783972
+        },
+        "constrained": {
+          "mse": 0.008354715994596354,
+          "occupancy_mse": 0.01068419164225425,
+          "distance_mse": 0.001366289051622661
+        },
+        "calibrated": {
+          "mse": 0.00836091739249027,
+          "occupancy_mse": 0.010692163003646707,
+          "distance_mse": 0.0013671805590209575
+        },
+        "raw_resurrection_fraction": 0.013157894736842105,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.012951383367180824,
+            "calibrated_mse": 0.013062542953462758
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.0050895558670163155,
+            "calibrated_mse": 0.005045268612083326
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.012085064314305782,
+            "calibrated_mse": 0.011997544581681967
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.0032935377676039934,
+            "calibrated_mse": 0.0033383134227330277
+          }
+        ]
+      }
+    },
+    "prefix_gru_3": {
+      "dust2_test": {
+        "raw": {
+          "mse": 0.0033019164111465216,
+          "occupancy_mse": 0.003949359059333801,
+          "distance_mse": 0.0013595889322459698
+        },
+        "constrained": {
+          "mse": 0.003301152681654831,
+          "occupancy_mse": 0.00394834059040615,
+          "distance_mse": 0.0013595889554008733
+        },
+        "calibrated": {
+          "mse": 0.003303478953336114,
+          "occupancy_mse": 0.003952003146633276,
+          "distance_mse": 0.0013579063734446308
+        },
+        "raw_resurrection_fraction": 0.01939655172413793,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.0030154986307024956,
+            "calibrated_mse": 0.0030128051432384206
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.0035844214726239443,
+            "calibrated_mse": 0.0035931710414731106
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.003944629803299904,
+            "calibrated_mse": 0.003920829207052433
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.002663115970790386,
+            "calibrated_mse": 0.002687110421580493
+          }
+        ]
+      },
+      "de_ancient_2396949": {
+        "raw": {
+          "mse": 0.005787598434835672,
+          "occupancy_mse": 0.007195372600108385,
+          "distance_mse": 0.0015642782673239708
+        },
+        "constrained": {
+          "mse": 0.005783417078020148,
+          "occupancy_mse": 0.007189796696528312,
+          "distance_mse": 0.0015642782224956596
+        },
+        "calibrated": {
+          "mse": 0.005821541236374278,
+          "occupancy_mse": 0.007244250029314614,
+          "distance_mse": 0.001553414857553271
+        },
+        "raw_resurrection_fraction": 0.052083333333333336,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.00644455524161458,
+            "calibrated_mse": 0.006538118116394099
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.005455939564853907,
+            "calibrated_mse": 0.005519028775584141
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.007396422792226076,
+            "calibrated_mse": 0.0074183742553580595
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.0038534775376319885,
+            "calibrated_mse": 0.003810643798160814
+          }
+        ]
+      },
+      "de_mirage": {
+        "raw": {
+          "mse": 0.01183303352445364,
+          "occupancy_mse": 0.015436731278896332,
+          "distance_mse": 0.001021939911879599
+        },
+        "constrained": {
+          "mse": 0.01183160640822367,
+          "occupancy_mse": 0.015434828587651505,
+          "distance_mse": 0.0010219398699401578
+        },
+        "calibrated": {
+          "mse": 0.011758244070000132,
+          "occupancy_mse": 0.015337392038476113,
+          "distance_mse": 0.0010208001645721845
+        },
+        "raw_resurrection_fraction": 0.03571428571428571,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.014933750964701176,
+            "calibrated_mse": 0.014849050169443968
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.014790366403758526,
+            "calibrated_mse": 0.014668493348393197
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.010857447981834412,
+            "calibrated_mse": 0.010765865997405954
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.00675056641921401,
+            "calibrated_mse": 0.006749566764757411
+          }
+        ]
+      },
+      "de_anubis": {
+        "raw": {
+          "mse": 0.0067821373231709,
+          "occupancy_mse": 0.008785739541053772,
+          "distance_mse": 0.000771327642723918
+        },
+        "constrained": {
+          "mse": 0.006782136969896311,
+          "occupancy_mse": 0.008785740078842504,
+          "distance_mse": 0.000771327643057732
+        },
+        "calibrated": {
+          "mse": 0.006759858677133225,
+          "occupancy_mse": 0.008755380398759295,
+          "distance_mse": 0.0007732935122550127
+        },
+        "raw_resurrection_fraction": 0.0,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.012120847590267658,
+            "calibrated_mse": 0.01199349921501743
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.007093746215105057,
+            "calibrated_mse": 0.007126170371825855
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.003849421627819538,
+            "calibrated_mse": 0.003861042399120649
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.004064533393830061,
+            "calibrated_mse": 0.004058722722568969
+          }
+        ]
+      },
+      "de_inferno": {
+        "raw": {
+          "mse": 0.008484115824103355,
+          "occupancy_mse": 0.010862044058740139,
+          "distance_mse": 0.0013503319351002574
+        },
+        "constrained": {
+          "mse": 0.00848403224027216,
+          "occupancy_mse": 0.010861932344494242,
+          "distance_mse": 0.0013503319276059146
+        },
+        "calibrated": {
+          "mse": 0.008418074870502964,
+          "occupancy_mse": 0.01077864422556658,
+          "distance_mse": 0.0013363668053121163
+        },
+        "raw_resurrection_fraction": 0.005681818181818182,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.01382692251354456,
+            "calibrated_mse": 0.01361652359466899
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.009190238080918789,
+            "calibrated_mse": 0.00919802694746224
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.007687642704695463,
+            "calibrated_mse": 0.00762668017595993
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.0032316623255610466,
+            "calibrated_mse": 0.003231068763920694
+          }
+        ]
+      },
+      "de_ancient": {
+        "raw": {
+          "mse": 0.008559592999517918,
+          "occupancy_mse": 0.010942596942186356,
+          "distance_mse": 0.0014105786103755236
+        },
+        "constrained": {
+          "mse": 0.008559571171438784,
+          "occupancy_mse": 0.010942568657929076,
+          "distance_mse": 0.0014105787119679087
+        },
+        "calibrated": {
+          "mse": 0.00857450368391229,
+          "occupancy_mse": 0.01096340502951521,
+          "distance_mse": 0.0014077996471035213
+        },
+        "raw_resurrection_fraction": 0.013157894736842105,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.013213192112743855,
+            "calibrated_mse": 0.013334902116710278
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.005080516450107098,
+            "calibrated_mse": 0.0050439635404034506
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.012506255879998207,
+            "calibrated_mse": 0.012447608563538803
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.003438409185037017,
+            "calibrated_mse": 0.003471540514996628
+          }
+        ]
+      }
+    },
+    "prefix_gru_42": {
+      "dust2_test": {
+        "raw": {
+          "mse": 0.0032886581029742956,
+          "occupancy_mse": 0.003929752856492996,
+          "distance_mse": 0.001365375122986734
+        },
+        "constrained": {
+          "mse": 0.0032877779030012306,
+          "occupancy_mse": 0.0039285788361060146,
+          "distance_mse": 0.0013653751036868814
+        },
+        "calibrated": {
+          "mse": 0.003289726445885294,
+          "occupancy_mse": 0.0039319628235378766,
+          "distance_mse": 0.0013630173129275478
+        },
+        "raw_resurrection_fraction": 0.015086206896551725,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.002996189286932349,
+            "calibrated_mse": 0.0029954008469998024
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.0035613281652331352,
+            "calibrated_mse": 0.003570211158368327
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.003922917880117893,
+            "calibrated_mse": 0.003898168664898877
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.002674197545275092,
+            "calibrated_mse": 0.002695125113274171
+          }
+        ]
+      },
+      "de_ancient_2396949": {
+        "raw": {
+          "mse": 0.005827265325933695,
+          "occupancy_mse": 0.007246264256536961,
+          "distance_mse": 0.0015702717937529087
+        },
+        "constrained": {
+          "mse": 0.005825258682395037,
+          "occupancy_mse": 0.007243587644656725,
+          "distance_mse": 0.0015702717956099684
+        },
+        "calibrated": {
+          "mse": 0.005862330795877548,
+          "occupancy_mse": 0.0072969346565684556,
+          "distance_mse": 0.00155851921380483
+        },
+        "raw_resurrection_fraction": 0.03125,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.006443187594413757,
+            "calibrated_mse": 0.006523839248022737
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.005345450714230537,
+            "calibrated_mse": 0.00540153101626005
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.007556089665740728,
+            "calibrated_mse": 0.007588387365287098
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.0039643351919949055,
+            "calibrated_mse": 0.0039355655539403105
+          }
+        ]
+      },
+      "de_mirage": {
+        "raw": {
+          "mse": 0.01171549130231142,
+          "occupancy_mse": 0.015285514295101166,
+          "distance_mse": 0.001005421974696219
+        },
+        "constrained": {
+          "mse": 0.011713807894288185,
+          "occupancy_mse": 0.015283269882541037,
+          "distance_mse": 0.0010054219295296263
+        },
+        "calibrated": {
+          "mse": 0.011643229577175234,
+          "occupancy_mse": 0.015189250854205466,
+          "distance_mse": 0.0010051657460845322
+        },
+        "raw_resurrection_fraction": 0.047619047619047616,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.014601449482142925,
+            "calibrated_mse": 0.01450916031886228
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.014725944958627224,
+            "calibrated_mse": 0.014613552128242224
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.010737619362771511,
+            "calibrated_mse": 0.0106478976379717
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.00679695513099432,
+            "calibrated_mse": 0.006802308223624737
+          }
+        ]
+      },
+      "de_anubis": {
+        "raw": {
+          "mse": 0.006749949883669615,
+          "occupancy_mse": 0.008740775287151337,
+          "distance_mse": 0.0007774726836942136
+        },
+        "constrained": {
+          "mse": 0.0067499501108317555,
+          "occupancy_mse": 0.008740775928208353,
+          "distance_mse": 0.000777472658701961
+        },
+        "calibrated": {
+          "mse": 0.006727034148117604,
+          "occupancy_mse": 0.008709429708421484,
+          "distance_mse": 0.0007798474672059593
+        },
+        "raw_resurrection_fraction": 0.0,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.012025182135403156,
+            "calibrated_mse": 0.011906655737704056
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.007062219548970461,
+            "calibrated_mse": 0.007089317332132366
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.003835556097328663,
+            "calibrated_mse": 0.003840924199066096
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.004076843615621328,
+            "calibrated_mse": 0.004071239323567896
+          }
+        ]
+      },
+      "de_inferno": {
+        "raw": {
+          "mse": 0.008408298715949059,
+          "occupancy_mse": 0.010768751613795757,
+          "distance_mse": 0.001326942816376686
+        },
+        "constrained": {
+          "mse": 0.008408245508775029,
+          "occupancy_mse": 0.010768679737850307,
+          "distance_mse": 0.001326942821549198
+        },
+        "calibrated": {
+          "mse": 0.008344965338359144,
+          "occupancy_mse": 0.010688928913155824,
+          "distance_mse": 0.0013130746139691071
+        },
+        "raw_resurrection_fraction": 0.005681818181818182,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.01359530072659254,
+            "calibrated_mse": 0.013394745085180647
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.009147072210907936,
+            "calibrated_mse": 0.009149925054091172
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.007649201434105635,
+            "calibrated_mse": 0.007590634991471821
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.003241621656343341,
+            "calibrated_mse": 0.003244556222692938
+          }
+        ]
+      },
+      "de_ancient": {
+        "raw": {
+          "mse": 0.00849951058626175,
+          "occupancy_mse": 0.010855427011847496,
+          "distance_mse": 0.0014317609602585435
+        },
+        "constrained": {
+          "mse": 0.00849937958761545,
+          "occupancy_mse": 0.010855252460098757,
+          "distance_mse": 0.0014317609701655252
+        },
+        "calibrated": {
+          "mse": 0.008506204563329406,
+          "occupancy_mse": 0.010865766713404093,
+          "distance_mse": 0.0014275181131053426
+        },
+        "raw_resurrection_fraction": 0.013157894736842105,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.012862787581980228,
+            "calibrated_mse": 0.012943669168080667
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.0051246569491922855,
+            "calibrated_mse": 0.0050936255141034404
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.012568953447043896,
+            "calibrated_mse": 0.012515739253543313
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.0034416450653225183,
+            "calibrated_mse": 0.0034717843175902023
+          }
+        ]
+      }
+    },
+    "static_snapshot_0": {
+      "dust2_test": {
+        "raw": {
+          "mse": 0.0033757570199668407,
+          "occupancy_mse": 0.004023545887321234,
+          "distance_mse": 0.0014323907671496272
+        },
+        "constrained": {
+          "mse": 0.003375485706891641,
+          "occupancy_mse": 0.00402318402915681,
+          "distance_mse": 0.0014323907400961354
+        },
+        "calibrated": {
+          "mse": 0.0033761468822498778,
+          "occupancy_mse": 0.0040264183895929295,
+          "distance_mse": 0.0014253323602207207
+        },
+        "raw_resurrection_fraction": 0.004310344827586207,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.003146204398944974,
+            "calibrated_mse": 0.0031003888590705616
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.0035982003901153803,
+            "calibrated_mse": 0.003599398859811202
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.003892984939739108,
+            "calibrated_mse": 0.0038773987327015195
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.0028656376525759697,
+            "calibrated_mse": 0.0029274010774162284
+          }
+        ]
+      },
+      "de_ancient_2396949": {
+        "raw": {
+          "mse": 0.005675680935382843,
+          "occupancy_mse": 0.007117816247045994,
+          "distance_mse": 0.0013492765137925744
+        },
+        "constrained": {
+          "mse": 0.005675681167994088,
+          "occupancy_mse": 0.00711781601153481,
+          "distance_mse": 0.001349276637371919
+        },
+        "calibrated": {
+          "mse": 0.005717248698224522,
+          "occupancy_mse": 0.007180707410866141,
+          "distance_mse": 0.001326872560299666
+        },
+        "raw_resurrection_fraction": 0.0,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.005934085696935654,
+            "calibrated_mse": 0.005956727603332757
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.005469928029924631,
+            "calibrated_mse": 0.005541391741692742
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.007480374071747065,
+            "calibrated_mse": 0.007547314767187963
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.0038183361757546663,
+            "calibrated_mse": 0.003823560680684627
+          }
+        ]
+      },
+      "de_mirage": {
+        "raw": {
+          "mse": 0.011302348226308823,
+          "occupancy_mse": 0.014677067287266254,
+          "distance_mse": 0.0011781908106058836
+        },
+        "constrained": {
+          "mse": 0.011301388642088506,
+          "occupancy_mse": 0.014675787913343275,
+          "distance_mse": 0.0011781908283241907
+        },
+        "calibrated": {
+          "mse": 0.011196158042465654,
+          "occupancy_mse": 0.014535122236630242,
+          "distance_mse": 0.0011792654599718916
+        },
+        "raw_resurrection_fraction": 0.03571428571428571,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.01368747465312481,
+            "calibrated_mse": 0.013488046430857825
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.014810350723564625,
+            "calibrated_mse": 0.014678669728774999
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.010468041524291039,
+            "calibrated_mse": 0.01037995330744466
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.0062435283325612545,
+            "calibrated_mse": 0.006237962702785134
+          }
+        ]
+      },
+      "de_anubis": {
+        "raw": {
+          "mse": 0.00683932239189744,
+          "occupancy_mse": 0.0087898476049304,
+          "distance_mse": 0.0009877460543066263
+        },
+        "constrained": {
+          "mse": 0.006839319047155008,
+          "occupancy_mse": 0.008789843373431885,
+          "distance_mse": 0.000987746068324381
+        },
+        "calibrated": {
+          "mse": 0.006821276659295013,
+          "occupancy_mse": 0.00876476118830208,
+          "distance_mse": 0.0009908230722738129
+        },
+        "raw_resurrection_fraction": 0.011904761904761904,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.012307782657444477,
+            "calibrated_mse": 0.012161573890562109
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.007062650751322508,
+            "calibrated_mse": 0.007078409373502953
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.0038194770459085703,
+            "calibrated_mse": 0.0038508488592867707
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.004167380277067423,
+            "calibrated_mse": 0.0041942745138282235
+          }
+        ]
+      },
+      "de_inferno": {
+        "raw": {
+          "mse": 0.008470991626381874,
+          "occupancy_mse": 0.010925864800810814,
+          "distance_mse": 0.0011063729180023074
+        },
+        "constrained": {
+          "mse": 0.008470819404423376,
+          "occupancy_mse": 0.010925634879913762,
+          "distance_mse": 0.0011063729779522199
+        },
+        "calibrated": {
+          "mse": 0.00841922592066132,
+          "occupancy_mse": 0.010858592660122394,
+          "distance_mse": 0.0011011257022780975
+        },
+        "raw_resurrection_fraction": 0.011363636363636364,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.01392687950283289,
+            "calibrated_mse": 0.013745568196519627
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.009218699298799038,
+            "calibrated_mse": 0.009219607889507092
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.007392540108412504,
+            "calibrated_mse": 0.007326699675937001
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.0033458478283137083,
+            "calibrated_mse": 0.003385027920681558
+          }
+        ]
+      },
+      "de_ancient": {
+        "raw": {
+          "mse": 0.007970161736011505,
+          "occupancy_mse": 0.01013677753508091,
+          "distance_mse": 0.001470314571633935
+        },
+        "constrained": {
+          "mse": 0.00797010720914985,
+          "occupancy_mse": 0.010136704748787573,
+          "distance_mse": 0.00147031459023668
+        },
+        "calibrated": {
+          "mse": 0.007942695993719944,
+          "occupancy_mse": 0.01010400388115916,
+          "distance_mse": 0.0014587723314023018
+        },
+        "raw_resurrection_fraction": 0.013157894736842105,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.012544326484203339,
+            "calibrated_mse": 0.012541820816843388
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.004942778032273054,
+            "calibrated_mse": 0.004905974813014174
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.010912108235061169,
+            "calibrated_mse": 0.010774297918286144
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.0034814374521374702,
+            "calibrated_mse": 0.0035486904267360737
+          }
+        ]
+      }
+    },
+    "static_snapshot_1": {
+      "dust2_test": {
+        "raw": {
+          "mse": 0.0033859985414892435,
+          "occupancy_mse": 0.004034992773085833,
+          "distance_mse": 0.0014390171272680163
+        },
+        "constrained": {
+          "mse": 0.003385730404828543,
+          "occupancy_mse": 0.0040346348481819115,
+          "distance_mse": 0.0014390170747684374
+        },
+        "calibrated": {
+          "mse": 0.0033868185724494175,
+          "occupancy_mse": 0.00403764630309376,
+          "distance_mse": 0.0014343353805163928
+        },
+        "raw_resurrection_fraction": 0.004310344827586207,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.0031617095228284597,
+            "calibrated_mse": 0.0031222329271506756
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.0036030118353664875,
+            "calibrated_mse": 0.0036047040995643327
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.003918752074241638,
+            "calibrated_mse": 0.003907838270661619
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.0028605214320123196,
+            "calibrated_mse": 0.0029124989924210437
+          }
+        ]
+      },
+      "de_ancient_2396949": {
+        "raw": {
+          "mse": 0.0056411586701869965,
+          "occupancy_mse": 0.007072011474519968,
+          "distance_mse": 0.001348599442280829
+        },
+        "constrained": {
+          "mse": 0.005641158822391887,
+          "occupancy_mse": 0.007072011964253748,
+          "distance_mse": 0.001348599396806301
+        },
+        "calibrated": {
+          "mse": 0.005672561359302897,
+          "occupancy_mse": 0.007120381241996636,
+          "distance_mse": 0.0013291017112216858
+        },
+        "raw_resurrection_fraction": 0.0,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.005891118198633194,
+            "calibrated_mse": 0.005906201464730291
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.005455549340695143,
+            "calibrated_mse": 0.005514331766301404
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.007397705223411322,
+            "calibrated_mse": 0.007447919425416471
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.003820262849330902,
+            "calibrated_mse": 0.003821792780763424
+          }
+        ]
+      },
+      "de_mirage": {
+        "raw": {
+          "mse": 0.011397688649594784,
+          "occupancy_mse": 0.014811123721301556,
+          "distance_mse": 0.0011573854135349393
+        },
+        "constrained": {
+          "mse": 0.011396934629910068,
+          "occupancy_mse": 0.014810117674533545,
+          "distance_mse": 0.001157385496039633
+        },
+        "calibrated": {
+          "mse": 0.011307938957263359,
+          "occupancy_mse": 0.01469263265719267,
+          "distance_mse": 0.0011538578574754213
+        },
+        "raw_resurrection_fraction": 0.023809523809523808,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.013822870329022408,
+            "calibrated_mse": 0.013653509377727252
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.014850664883852005,
+            "calibrated_mse": 0.014736124194272763
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.010644041933119297,
+            "calibrated_mse": 0.010576274091354894
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.0062731788493692875,
+            "calibrated_mse": 0.006265848165698524
+          }
+        ]
+      },
+      "de_anubis": {
+        "raw": {
+          "mse": 0.006851993966847658,
+          "occupancy_mse": 0.008808123879134655,
+          "distance_mse": 0.000983602600172162
+        },
+        "constrained": {
+          "mse": 0.006851993278760153,
+          "occupancy_mse": 0.008808123535089247,
+          "distance_mse": 0.0009836025097728711
+        },
+        "calibrated": {
+          "mse": 0.006836802020845803,
+          "occupancy_mse": 0.008787125396045653,
+          "distance_mse": 0.0009858318952462551
+        },
+        "raw_resurrection_fraction": 0.011904761904761904,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.012249401770532131,
+            "calibrated_mse": 0.012116080681291386
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.007095848675817251,
+            "calibrated_mse": 0.007111366201331573
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.00387044670060277,
+            "calibrated_mse": 0.0039020761420483093
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.004192276857793331,
+            "calibrated_mse": 0.004217685058711944
+          }
+        ]
+      },
+      "de_inferno": {
+        "raw": {
+          "mse": 0.008453506976366043,
+          "occupancy_mse": 0.010905008763074875,
+          "distance_mse": 0.0010990045266225934
+        },
+        "constrained": {
+          "mse": 0.008453447147227138,
+          "occupancy_mse": 0.01090492804182667,
+          "distance_mse": 0.0010990044634285366
+        },
+        "calibrated": {
+          "mse": 0.008404660646988788,
+          "occupancy_mse": 0.010841868958438852,
+          "distance_mse": 0.0010930357126386027
+        },
+        "raw_resurrection_fraction": 0.011363636363636364,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.013957779854536057,
+            "calibrated_mse": 0.013800237465448738
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.009152695536613464,
+            "calibrated_mse": 0.009145772309928761
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.007372647989541292,
+            "calibrated_mse": 0.007311776967271708
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.0033309052232652903,
+            "calibrated_mse": 0.0033608558453059535
+          }
+        ]
+      },
+      "de_ancient": {
+        "raw": {
+          "mse": 0.008025845512747765,
+          "occupancy_mse": 0.01020791195333004,
+          "distance_mse": 0.001479641767218709
+        },
+        "constrained": {
+          "mse": 0.008025795745746814,
+          "occupancy_mse": 0.010207847061042868,
+          "distance_mse": 0.001479641799858651
+        },
+        "calibrated": {
+          "mse": 0.008003857080559746,
+          "occupancy_mse": 0.010181289132704935,
+          "distance_mse": 0.0014715609241241808
+        },
+        "raw_resurrection_fraction": 0.013157894736842105,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.012603573501110077,
+            "calibrated_mse": 0.012603998660907108
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.004942184314131737,
+            "calibrated_mse": 0.0049081010023989844
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.011102866381406784,
+            "calibrated_mse": 0.010994214048502132
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.0034547545947134495,
+            "calibrated_mse": 0.003509114610430761
+          }
+        ]
+      }
+    },
+    "static_snapshot_2": {
+      "dust2_test": {
+        "raw": {
+          "mse": 0.003382427617907524,
+          "occupancy_mse": 0.00403238832950592,
+          "distance_mse": 0.0014325438532978296
+        },
+        "constrained": {
+          "mse": 0.0033821054586378337,
+          "occupancy_mse": 0.004031959339322516,
+          "distance_mse": 0.0014325438165837894
+        },
+        "calibrated": {
+          "mse": 0.0033828834332471996,
+          "occupancy_mse": 0.004035226143729022,
+          "distance_mse": 0.00142585530180173
+        },
+        "raw_resurrection_fraction": 0.004310344827586207,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.003141737775877118,
+            "calibrated_mse": 0.003100091289456024
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.003609506180509925,
+            "calibrated_mse": 0.003611425393534229
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.003912898246198893,
+            "calibrated_mse": 0.0039008031820371926
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.0028655678033828735,
+            "calibrated_mse": 0.002919213867961352
+          }
+        ]
+      },
+      "de_ancient_2396949": {
+        "raw": {
+          "mse": 0.0056767575442790985,
+          "occupancy_mse": 0.007120382506400347,
+          "distance_mse": 0.0013458809116855264
+        },
+        "constrained": {
+          "mse": 0.005676757463677823,
+          "occupancy_mse": 0.00712038300566728,
+          "distance_mse": 0.0013458808377094453
+        },
+        "calibrated": {
+          "mse": 0.005712107957881143,
+          "occupancy_mse": 0.007174427268803015,
+          "distance_mse": 0.0013251500251155242
+        },
+        "raw_resurrection_fraction": 0.0,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.0059191263280808926,
+            "calibrated_mse": 0.00593675455022945
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.005443508271127939,
+            "calibrated_mse": 0.005503000696471863
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.007501740008592606,
+            "calibrated_mse": 0.007561536823894019
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.0038426548708230257,
+            "calibrated_mse": 0.0038471397609292374
+          }
+        ]
+      },
+      "de_mirage": {
+        "raw": {
+          "mse": 0.0113806938752532,
+          "occupancy_mse": 0.014790826477110386,
+          "distance_mse": 0.0011502960696816444
+        },
+        "constrained": {
+          "mse": 0.01137915461478741,
+          "occupancy_mse": 0.014788774152509183,
+          "distance_mse": 0.0011502960016220917
+        },
+        "calibrated": {
+          "mse": 0.01129016990753144,
+          "occupancy_mse": 0.014670937958692678,
+          "distance_mse": 0.001147865754047728
+        },
+        "raw_resurrection_fraction": 0.03571428571428571,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.013787765987217426,
+            "calibrated_mse": 0.013614076571352026
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.014920984394848347,
+            "calibrated_mse": 0.014812403629989642
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.010521004907786846,
+            "calibrated_mse": 0.010446396007424757
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.00629302067682147,
+            "calibrated_mse": 0.006287803421359333
+          }
+        ]
+      },
+      "de_anubis": {
+        "raw": {
+          "mse": 0.006847342010587454,
+          "occupancy_mse": 0.008806374855339527,
+          "distance_mse": 0.0009702414972707629
+        },
+        "constrained": {
+          "mse": 0.006847336775930254,
+          "occupancy_mse": 0.008806368533654838,
+          "distance_mse": 0.0009702415027564995
+        },
+        "calibrated": {
+          "mse": 0.006831318278818734,
+          "occupancy_mse": 0.008784863576603302,
+          "distance_mse": 0.0009706823854650362
+        },
+        "raw_resurrection_fraction": 0.011904761904761904,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.012201976031064987,
+            "calibrated_mse": 0.012061727500328731
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.0071426983922719955,
+            "calibrated_mse": 0.007161999385367111
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.003812857437878847,
+            "calibrated_mse": 0.0038402997096203375
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.004231834784150124,
+            "calibrated_mse": 0.004261246519958759
+          }
+        ]
+      },
+      "de_inferno": {
+        "raw": {
+          "mse": 0.008408138528466225,
+          "occupancy_mse": 0.010844230651855469,
+          "distance_mse": 0.0010998620418831706
+        },
+        "constrained": {
+          "mse": 0.008407930987988362,
+          "occupancy_mse": 0.010843953966250172,
+          "distance_mse": 0.001099862053202932
+        },
+        "calibrated": {
+          "mse": 0.00835690606471807,
+          "occupancy_mse": 0.010777349609770092,
+          "distance_mse": 0.001095575429562006
+        },
+        "raw_resurrection_fraction": 0.011363636363636364,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.013779113069176674,
+            "calibrated_mse": 0.01360893046841108
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.00910013634711504,
+            "calibrated_mse": 0.009091511136991299
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.007397806271910667,
+            "calibrated_mse": 0.007338226010229072
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.0033554963301867247,
+            "calibrated_mse": 0.0033889566432408324
+          }
+        ]
+      },
+      "de_ancient": {
+        "raw": {
+          "mse": 0.00789035577327013,
+          "occupancy_mse": 0.010034387931227684,
+          "distance_mse": 0.001458258368074894
+        },
+        "constrained": {
+          "mse": 0.007890265151160147,
+          "occupancy_mse": 0.010034267400743849,
+          "distance_mse": 0.0014582584024090434
+        },
+        "calibrated": {
+          "mse": 0.007859404033838443,
+          "occupancy_mse": 0.009997058825762914,
+          "distance_mse": 0.0014464396580650331
+        },
+        "raw_resurrection_fraction": 0.013157894736842105,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.012305223383009434,
+            "calibrated_mse": 0.012282752215219538
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.004948293790221214,
+            "calibrated_mse": 0.004914768132248105
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.01089556235820055,
+            "calibrated_mse": 0.01077395738824619
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.003412343095988035,
+            "calibrated_mse": 0.003466138399639944
+          }
+        ]
+      }
+    },
+    "static_snapshot_3": {
+      "dust2_test": {
+        "raw": {
+          "mse": 0.003372885985299945,
+          "occupancy_mse": 0.004017881583422422,
+          "distance_mse": 0.0014378990745171905
+        },
+        "constrained": {
+          "mse": 0.0033726912980498354,
+          "occupancy_mse": 0.0040176220156775445,
+          "distance_mse": 0.0014378991451667088
+        },
+        "calibrated": {
+          "mse": 0.0033724253045234577,
+          "occupancy_mse": 0.00401878919012211,
+          "distance_mse": 0.0014333336477275035
+        },
+        "raw_resurrection_fraction": 0.004310344827586207,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.0031849145889282227,
+            "calibrated_mse": 0.0031664323492623055
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.003568595042452216,
+            "calibrated_mse": 0.0035684141431897793
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.0038763144984841347,
+            "calibrated_mse": 0.0038718967720744245
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.002861719811335206,
+            "calibrated_mse": 0.002882957953567322
+          }
+        ]
+      },
+      "de_ancient_2396949": {
+        "raw": {
+          "mse": 0.005662739742547274,
+          "occupancy_mse": 0.007100860122591257,
+          "distance_mse": 0.001348379417322576
+        },
+        "constrained": {
+          "mse": 0.005662729433774116,
+          "occupancy_mse": 0.007100846145077678,
+          "distance_mse": 0.0013483792998634297
+        },
+        "calibrated": {
+          "mse": 0.005672965846956691,
+          "occupancy_mse": 0.0071207992011027765,
+          "distance_mse": 0.001329465784518432
+        },
+        "raw_resurrection_fraction": 0.010416666666666666,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.005826995242387056,
+            "calibrated_mse": 0.00582979448665485
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.005502196028828621,
+            "calibrated_mse": 0.005521879761717245
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.0075343395583331585,
+            "calibrated_mse": 0.007554265988458486
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.003787429304793477,
+            "calibrated_mse": 0.003785923150996181
+          }
+        ]
+      },
+      "de_mirage": {
+        "raw": {
+          "mse": 0.011778867803514004,
+          "occupancy_mse": 0.015317423269152641,
+          "distance_mse": 0.0011632016394287348
+        },
+        "constrained": {
+          "mse": 0.011778479940145335,
+          "occupancy_mse": 0.015316906017355308,
+          "distance_mse": 0.0011632017085154156
+        },
+        "calibrated": {
+          "mse": 0.01175497589859239,
+          "occupancy_mse": 0.01528686267800333,
+          "distance_mse": 0.0011593155603595734
+        },
+        "raw_resurrection_fraction": 0.023809523809523808,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.01419837400317192,
+            "calibrated_mse": 0.014143901528570868
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.015320153906941414,
+            "calibrated_mse": 0.015289410635630385
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.010770740918815136,
+            "calibrated_mse": 0.01075000372831133
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.006826200522482395,
+            "calibrated_mse": 0.006836587701856974
+          }
+        ]
+      },
+      "de_anubis": {
+        "raw": {
+          "mse": 0.0066496096551418304,
+          "occupancy_mse": 0.00853456649929285,
+          "distance_mse": 0.0009947411017492414
+        },
+        "constrained": {
+          "mse": 0.006649609945523252,
+          "occupancy_mse": 0.008534566238927037,
+          "distance_mse": 0.0009947410653118926
+        },
+        "calibrated": {
+          "mse": 0.0066398784538112795,
+          "occupancy_mse": 0.008520427925798086,
+          "distance_mse": 0.0009982300378508612
+        },
+        "raw_resurrection_fraction": 0.0,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.011659620329737663,
+            "calibrated_mse": 0.011591782012923622
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.0069581326097249985,
+            "calibrated_mse": 0.0069583324088628735
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.0038852414581924677,
+            "calibrated_mse": 0.00390216036494385
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.004095443990081549,
+            "calibrated_mse": 0.004107239028514773
+          }
+        ]
+      },
+      "de_inferno": {
+        "raw": {
+          "mse": 0.008272633887827396,
+          "occupancy_mse": 0.010661730542778969,
+          "distance_mse": 0.0011053505586460233
+        },
+        "constrained": {
+          "mse": 0.008272629124302105,
+          "occupancy_mse": 0.010661721965864726,
+          "distance_mse": 0.0011053505996142415
+        },
+        "calibrated": {
+          "mse": 0.008248835448870706,
+          "occupancy_mse": 0.010631802734870237,
+          "distance_mse": 0.0010999335908721127
+        },
+        "raw_resurrection_fraction": 0.005681818181818182,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.013354691676795483,
+            "calibrated_mse": 0.013281570143832898
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.00899022538214922,
+            "calibrated_mse": 0.008982353448314575
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.0073562259785830975,
+            "calibrated_mse": 0.00733029871986118
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.0033893936779350042,
+            "calibrated_mse": 0.003401119483474171
+          }
+        ]
+      },
+      "de_ancient": {
+        "raw": {
+          "mse": 0.008091660216450691,
+          "occupancy_mse": 0.010295617394149303,
+          "distance_mse": 0.0014797886833548546
+        },
+        "constrained": {
+          "mse": 0.008091649105296,
+          "occupancy_mse": 0.01029560261530536,
+          "distance_mse": 0.0014797885752679248
+        },
+        "calibrated": {
+          "mse": 0.008084281255361375,
+          "occupancy_mse": 0.01028844668512443,
+          "distance_mse": 0.0014717849660722045
+        },
+        "raw_resurrection_fraction": 0.013157894736842105,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.012520691379904747,
+            "calibrated_mse": 0.012511770632431718
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.004841035231947899,
+            "calibrated_mse": 0.00482622112684063
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.01157466508448124,
+            "calibrated_mse": 0.011549541365992186
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.0034302477724850178,
+            "calibrated_mse": 0.0034495918961809633
+          }
+        ]
+      }
+    },
+    "static_snapshot_42": {
+      "dust2_test": {
+        "raw": {
+          "mse": 0.0034063926432281733,
+          "occupancy_mse": 0.004061955027282238,
+          "distance_mse": 0.001439704792574048
+        },
+        "constrained": {
+          "mse": 0.003405938503762991,
+          "occupancy_mse": 0.0040613497128756905,
+          "distance_mse": 0.0014397048764248892
+        },
+        "calibrated": {
+          "mse": 0.0034082248588939074,
+          "occupancy_mse": 0.0040656880636423835,
+          "distance_mse": 0.0014358352446484806
+        },
+        "raw_resurrection_fraction": 0.01293103448275862,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.0032050982117652893,
+            "calibrated_mse": 0.0031701314172076435
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.003601672360673547,
+            "calibrated_mse": 0.003603451366343454
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.003946851007640362,
+            "calibrated_mse": 0.003938471566397013
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.002871948294341564,
+            "calibrated_mse": 0.002920845085627518
+          }
+        ]
+      },
+      "de_ancient_2396949": {
+        "raw": {
+          "mse": 0.005638768430799246,
+          "occupancy_mse": 0.007068673148751259,
+          "distance_mse": 0.001349052763544023
+        },
+        "constrained": {
+          "mse": 0.00563841650372237,
+          "occupancy_mse": 0.007068204431480411,
+          "distance_mse": 0.0013490527204482463
+        },
+        "calibrated": {
+          "mse": 0.005664555307572796,
+          "occupancy_mse": 0.0071086115197529125,
+          "distance_mse": 0.0013323866710324526
+        },
+        "raw_resurrection_fraction": 0.010416666666666666,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.0059012058191001415,
+            "calibrated_mse": 0.005914417802178336
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.0054631042294204235,
+            "calibrated_mse": 0.005515696276080912
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.007377329748123884,
+            "calibrated_mse": 0.007418424748669543
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.003813432762399316,
+            "calibrated_mse": 0.0038096824033623977
+          }
+        ]
+      },
+      "de_mirage": {
+        "raw": {
+          "mse": 0.011445684358477592,
+          "occupancy_mse": 0.01487097330391407,
+          "distance_mse": 0.0011698177549988031
+        },
+        "constrained": {
+          "mse": 0.011444585253795653,
+          "occupancy_mse": 0.014869507721758454,
+          "distance_mse": 0.0011698178499072493
+        },
+        "calibrated": {
+          "mse": 0.011360675278203156,
+          "occupancy_mse": 0.014758399281547008,
+          "distance_mse": 0.0011675032681715961
+        },
+        "raw_resurrection_fraction": 0.047619047619047616,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.014023667201399803,
+            "calibrated_mse": 0.013875426972098289
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.014865920878946781,
+            "calibrated_mse": 0.014757125149833834
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.010599195957183838,
+            "calibrated_mse": 0.01052823196994704
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.006293951068073511,
+            "calibrated_mse": 0.00628191702093346
+          }
+        ]
+      },
+      "de_anubis": {
+        "raw": {
+          "mse": 0.006898217834532261,
+          "occupancy_mse": 0.008867600932717323,
+          "distance_mse": 0.000990072381682694
+        },
+        "constrained": {
+          "mse": 0.006898218115484027,
+          "occupancy_mse": 0.008867600000493761,
+          "distance_mse": 0.000990072460454821
+        },
+        "calibrated": {
+          "mse": 0.0068836178397898495,
+          "occupancy_mse": 0.008847418085701992,
+          "distance_mse": 0.000992217102053426
+        },
+        "raw_resurrection_fraction": 0.0,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.012439564801752567,
+            "calibrated_mse": 0.012323425278793872
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.007063498254865408,
+            "calibrated_mse": 0.007075158324199367
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.003868668805807829,
+            "calibrated_mse": 0.003894410376772821
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.004221141804009676,
+            "calibrated_mse": 0.004241477379393339
+          }
+        ]
+      },
+      "de_inferno": {
+        "raw": {
+          "mse": 0.008483783341944218,
+          "occupancy_mse": 0.01094325166195631,
+          "distance_mse": 0.0011053751222789288
+        },
+        "constrained": {
+          "mse": 0.008483755118310905,
+          "occupancy_mse": 0.010943215122686646,
+          "distance_mse": 0.0011053751051836786
+        },
+        "calibrated": {
+          "mse": 0.008436913986036567,
+          "occupancy_mse": 0.01088226282423876,
+          "distance_mse": 0.0011008674714299905
+        },
+        "raw_resurrection_fraction": 0.005681818181818182,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.014044850133359432,
+            "calibrated_mse": 0.013898436328275502
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.009145626798272133,
+            "calibrated_mse": 0.009136442292950082
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.007416963577270508,
+            "calibrated_mse": 0.0073601258246356605
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.003327692858874798,
+            "calibrated_mse": 0.0033526514982850264
+          }
+        ]
+      },
+      "de_ancient": {
+        "raw": {
+          "mse": 0.008045313879847527,
+          "occupancy_mse": 0.010232063941657543,
+          "distance_mse": 0.0014850638108327985
+        },
+        "constrained": {
+          "mse": 0.008045160339817009,
+          "occupancy_mse": 0.01023185915526376,
+          "distance_mse": 0.0014850638934767574
+        },
+        "calibrated": {
+          "mse": 0.008021738041704913,
+          "occupancy_mse": 0.010202787512929636,
+          "distance_mse": 0.0014785896280307394
+        },
+        "raw_resurrection_fraction": 0.02631578947368421,
+        "per_transition": [
+          {
+            "from_second": 10,
+            "to_second": 12,
+            "raw_mse": 0.01257726177573204,
+            "calibrated_mse": 0.012574422306882133
+          },
+          {
+            "from_second": 12,
+            "to_second": 15,
+            "raw_mse": 0.00499727064743638,
+            "calibrated_mse": 0.004963131531933587
+          },
+          {
+            "from_second": 15,
+            "to_second": 18,
+            "raw_mse": 0.011168468743562698,
+            "calibrated_mse": 0.011064634253278775
+          },
+          {
+            "from_second": 18,
+            "to_second": 20,
+            "raw_mse": 0.0034382531885057688,
+            "calibrated_mse": 0.0034847640747251497
+          }
+        ]
+      }
+    }
+  },
+  "persistence": {
+    "dust2_test": {
+      "mse": 0.003992852289229631,
+      "occupancy_mse": 0.004827586002647877,
+      "distance_mse": 0.0014886505668982863
+    },
+    "de_ancient_2396949": {
+      "mse": 0.005887147039175034,
+      "occupancy_mse": 0.00736111169680953,
+      "distance_mse": 0.0014652544632554054
+    },
+    "de_mirage": {
+      "mse": 0.01363135501742363,
+      "occupancy_mse": 0.017777780070900917,
+      "distance_mse": 0.001192087889648974
+    },
+    "de_anubis": {
+      "mse": 0.007630712818354368,
+      "occupancy_mse": 0.009841269813477993,
+      "distance_mse": 0.000999039737507701
+    },
+    "de_inferno": {
+      "mse": 0.009888299740850925,
+      "occupancy_mse": 0.012803031131625175,
+      "distance_mse": 0.0011441059177741408
+    },
+    "de_ancient": {
+      "mse": 0.009201725013554096,
+      "occupancy_mse": 0.011754386126995087,
+      "distance_mse": 0.001543742255307734
+    }
+  },
+  "limitations": [
+    "calibration and checkpoint selection share the same 95 validation rounds",
+    "target maps and series previously observed",
+    "match aliases not independently audited",
+    "timing/pause calibration pending",
+    "no tactical or retrieval quality labels"
+  ],
+  "ridge_baseline": {
+    "dust2_test": {
+      "mse": 0.003428219964879394,
+      "occupancy_mse": 0.004099730794505442,
+      "distance_mse": 0.0014136874760012521
+    },
+    "de_ancient_2396949": {
+      "mse": 0.005476777483373516,
+      "occupancy_mse": 0.006907611676743875,
+      "distance_mse": 0.0011842749032624385
+    },
+    "de_mirage": {
+      "mse": 0.010613096729364705,
+      "occupancy_mse": 0.013761825526901347,
+      "distance_mse": 0.0011669103367547813
+    },
+    "de_anubis": {
+      "mse": 0.006343037146216713,
+      "occupancy_mse": 0.008144009585287899,
+      "distance_mse": 0.0009401198290031616
+    },
+    "de_inferno": {
+      "mse": 0.007810280366968583,
+      "occupancy_mse": 0.010059045912883976,
+      "distance_mse": 0.0010639837292224076
+    },
+    "de_ancient": {
+      "mse": 0.007900011977238565,
+      "occupancy_mse": 0.010080278037271307,
+      "distance_mse": 0.0013592137971403363
+    }
+  },
+  "resources": {
+    "peak_allocated_VRAM_MiB": 18.42822265625,
+    "process_RSS_MiB": 1270.87890625
+  }
+}

@@ -58,9 +58,54 @@ class TacticalDemoParser:
         try:
             frame = self.parser.parse_ticks(wanted_props, ticks=ticks)
         except Exception as error:
-            logger.warning("Unable to parse demo ticks for flash recovery: %s", error)
+            logger.warning("Unable to parse requested demo ticks: %s", error)
             return pd.DataFrame()
         return frame if isinstance(frame, pd.DataFrame) else pd.DataFrame()
+
+    def parse_opening_snapshots(self, *, max_rounds: int | None = None) -> dict:
+        """Extract both sides at five opening offsets without changing event parsing."""
+        from app.services.opening_snapshot_service import build_opening_snapshots
+
+        if max_rounds is not None and (isinstance(max_rounds, bool) or max_rounds < 1):
+            raise ValueError("max_rounds must be a positive integer")
+        if not self.parser:
+            raise ValueError("A loaded demo is required for opening snapshots")
+        ends, boundary = self._completed_rounds()
+        if ends.empty or "tick" not in ends:
+            raise ValueError("No completed match rounds found")
+        if max_rounds is not None:
+            ends = ends.head(max_rounds)
+        freezes = self._parse_event("round_freeze_end")
+        rosters = self.parse_round_rosters(ends, freezes, start_tick=boundary)
+        windows = []
+        previous = boundary
+        seconds = (10, 12, 15, 18, 20)
+        for number, end_tick in enumerate(ends["tick"], 1):
+            freeze_tick = rosters.get(number, {}).get("roster_tick")
+            windows.append({
+                "round_number": number, "start_tick": int(previous),
+                "freeze_end_tick": freeze_tick, "end_tick": int(end_tick),
+                **rosters.get(number, {}),
+            })
+            previous = end_tick
+        ticks = sorted({
+            item["freeze_end_tick"] + second * 64
+            for item in windows if item["freeze_end_tick"] is not None
+            and item["freeze_end_tick"] + 20 * 64 <= item["end_tick"]
+            for second in seconds
+        })
+        frame = self._parse_ticks([
+            "X", "Y", "Z", "health", "current_equip_value",
+            "team_name", "team_clan_name", "last_place_name",
+        ], ticks) if ticks else pd.DataFrame()
+        return {
+            "schema_version": "opening-v0.1",
+            "map_name": self.parser.parse_header().get("map_name", "Unknown"),
+            "tick_rate": 64, "tick_rate_status": "assumed_not_measured",
+            "time_alignment": "tick_offsets_not_pause_corrected",
+            "snapshot_seconds": list(seconds),
+            "rounds": build_opening_snapshots(windows, frame, seconds),
+        }
 
     @staticmethod
     def _number(value, default=0.0) -> float:

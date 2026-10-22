@@ -1,0 +1,26 @@
+{
+  "source_sha256": "c17e25bf3298e1aeb74db4358dbd7095cc0c769f787603e49aff82da89604b2e",
+  "samples": 697,
+  "matches": 33,
+  "exact_cross_split_duplicate_groups": [],
+  "cross_split_pair_aliases": [
+    {
+      "canonical_pair": [
+        "monte",
+        "natus-vincere"
+      ],
+      "labels": [
+        {
+          "match": "monte-vs-natus-vincere_dust2",
+          "split": "train"
+        },
+        {
+          "match": "natus-vincere-vs-monte_dust2",
+          "split": "val"
+        }
+      ],
+      "status": "possible series alias; not proof of shared series"
+    }
+  ],
+  "claim": "Exact duplicates checked independent of player order; series identity cannot be certified without original source metadata"
+}
