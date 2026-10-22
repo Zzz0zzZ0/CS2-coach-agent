@@ -456,6 +456,7 @@ data/, output/            # Local runtime data, excluded from Git
 | Runtime reliability | [History and idempotency](docs/ANALYSIS_HISTORY_V1.md) · [Report verification and follow-ups](docs/REPORT_QUESTIONS_V1.md) · [On-demand source loading](docs/SOURCE_LOADING_V1.md) |
 | Performance measurements | [Profile output equivalence and timing](docs/PLAYER_PERFORMANCE_V1.md) · [Source payload sizes and tradeoffs](docs/SOURCE_LOADING_V1.md) |
 | Versions and research plans | [Implementation progress](docs/IMPLEMENTATION_PROGRESS.md) · [Roadmap](docs/PROJECT_IMPROVEMENT_ROADMAP.md) · [Formal benchmark plan](docs/BENCHMARK_PLAN.md) |
+| TAGNet generalization and integration | [Multi-map and CT/T opening models, evaluation, and product integration](docs/TAGNET_GENERALIZATION_PLAN.md) (Chinese; planned capabilities and initial validation are listed separately) |
 
 ## License
 

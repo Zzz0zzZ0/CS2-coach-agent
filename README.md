@@ -456,6 +456,7 @@ data/、output/            # 本地运行数据，不进入 Git
 | 运行可靠性 | [历史与幂等](docs/ANALYSIS_HISTORY_V1.md) · [报告核验与追问](docs/REPORT_QUESTIONS_V1.md) · [来源按需加载](docs/SOURCE_LOADING_V1.md) |
 | 性能测量 | [画像输出等价与耗时](docs/PLAYER_PERFORMANCE_V1.md) · [来源传输量与代价](docs/SOURCE_LOADING_V1.md) |
 | 版本与研究规划 | [执行进度](docs/IMPLEMENTATION_PROGRESS.md) · [后续路线](docs/PROJECT_IMPROVEMENT_ROADMAP.md) · [正式 benchmark 方案](docs/BENCHMARK_PLAN.md) |
+| TAGNet 泛化与接入计划 | [多地图、CT/T 开局模型、评测与产品接入](docs/TAGNET_GENERALIZATION_PLAN.md)（研究与接入仍在实施，文档列明局部验证边界） |
 
 ## 许可证
 
