@@ -1,0 +1,1930 @@
+{
+  "status": "completed_retrospective_horizon_diagnostic",
+  "scope": "frozen encoders, no training or metric fitting; existing target results observed",
+  "tasks": {
+    "snapshot20": "10 pair distances at 20 seconds; common/static use last snapshot, GRU has earlier context",
+    "opening5": "50 pair distances; sequence methods use identical five observed frames; last-state controls retain original compact representations"
+  },
+  "candidate_scope": "Dust2 train, all five alive throughout, exclude query team pair conservatively for every method and reference",
+  "geometry_only": true,
+  "human_judgments": 0,
+  "input_report_sha256": {
+    "output\\tagnet\\ct_expansion_v3_checked": "089d82cc99147b8ac3196d0a2e98cd004b4474cb1890db3e0825bc6a5be025e2",
+    "output\\tagnet\\ct_event_transfer_v5_verified": "49cf01b127417223de7348b276025d35a75edd2e2b949026c472aea6b614f108",
+    "output\\tagnet\\ct_confirmation_2396945_v7": "7e97a8da7490a99de5df5041ef635429af59b635e630cb5b560b353adb3c2a34",
+    "output\\tagnet\\ct_confirmation_2396613_v7": "084154e7109eb5b608c15a15db494578ec7cf9b8dded7923e315b17dcb4aa052"
+  },
+  "frozen_sha256": {
+    "datasets/models/ct_linear_v1.json": "65040624816e12e086c6f9b94d3bf74bcef836b27bc8a08ece0d3dd75d44b541",
+    "app/services/ct_linear_service.py": "523e9909f53a31862165ff84c3256489f18a9a2dc66cdcb63778e42fb11053ca",
+    "app/services/ct_feature_service.py": "7d2476cc88c6f3ad62e8a1ca71668c14ee71758f5904162763ac49a63e5bed0b",
+    "app/services/ct_prediction_service.py": "0a063f39b27d977cc5dafd009d7fd807be9b4970c2cf84e2ef0ac1f3b125b7d1",
+    "app/services/parser_service.py": "2a63d5bbfc781ef3daa2e2c9ed6edc5d744e1f275d59aec07c50031fb67be873",
+    "app/services/opening_snapshot_service.py": "b0731c26bd90885258fdc0ec888450482ce89ec2dd383bf67474cc8659297485",
+    "scripts/run_ct_generalization.py": "259f26d423149c2a04cf734b96cceb8253ef3b71012b7bd72242063d502beb46",
+    "output/tagnet/ct_generalization_residual_v1/prefix_gru_0.pt": "06fc6ccf1cfcc3c689b6af54e2a243313380b3abdbebd5cfc85e0fa8e8d3e8e3",
+    "output/tagnet/ct_generalization_residual_v1/prefix_gru_1.pt": "91bc6e62d514620ca399dea90b3c8ede4fca1cb72e1ac09b7dba60fb14af4109",
+    "output/tagnet/ct_generalization_residual_v1/prefix_gru_2.pt": "78ee6753f0b713d137d5e774a0d08894fc49cac6a3e6340478e8def0d6ea6565",
+    "output/tagnet/ct_generalization_residual_v1/prefix_gru_3.pt": "f122af0a9d85af5ab140c1a9d5119e17466d562e9348e6af03960ff0367db2b5",
+    "output/tagnet/ct_generalization_residual_v1/prefix_gru_42.pt": "30ae9a3f52a555e749c60dc00b84e14b0ca8ead64997decd47e74fcbf36fe336",
+    "output/tagnet/ct_generalization_residual_v1/static_snapshot_0.pt": "55fa12813b666314694e269a558525ae92fe97ed3cd6cec43b37e94d9031ac94",
+    "output/tagnet/ct_generalization_residual_v1/static_snapshot_1.pt": "d7a52482407bb5ae6e039463574cbc7a4c826f4b1e76569e96a2b25f23027f62",
+    "output/tagnet/ct_generalization_residual_v1/static_snapshot_2.pt": "cfeb10fa1cb9601a739a6a276e0138ae7721baea48153a0d6d2b1018b40399de",
+    "output/tagnet/ct_generalization_residual_v1/static_snapshot_3.pt": "cf21518fea08772a0cae1cef046112ed1d80d9b4feecb4d92fe79a39ccc28375",
+    "output/tagnet/ct_generalization_residual_v1/static_snapshot_42.pt": "45331687f577dede4d22dff0126fc9a4de74de30b5004bd1cdea3122dc265ae3"
+  },
+  "script_sha256": "50c23004c08ff059d0ae34ef75c9d917774e241cc96e224dbb890d94a3a9ee1b",
+  "source_audit": {
+    "samples": 697,
+    "matches": 33,
+    "exact_cross_split_duplicate_groups": [],
+    "cross_split_pair_aliases": [
+      {
+        "canonical_pair": [
+          "monte",
+          "natus-vincere"
+        ],
+        "labels": [
+          {
+            "match": "monte-vs-natus-vincere_dust2",
+            "split": "train"
+          },
+          {
+            "match": "natus-vincere-vs-monte_dust2",
+            "split": "val"
+          }
+        ],
+        "status": "possible series alias; not proof of shared series"
+      }
+    ],
+    "claim": "Exact duplicates checked independent of player order; series identity cannot be certified without original source metadata"
+  },
+  "groups": {
+    "furia_falcons_existing_local__de_mirage": {
+      "eligible_queries": 17,
+      "excluded_with_deaths": 4,
+      "candidate_count": 380,
+      "same_pair_excluded": 24,
+      "tasks": {
+        "snapshot20": {
+          "common_last": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.00722003326734683,
+            "ideal_top5_geometry_mse": 0.0013819063393931351,
+            "top5_geometry_neighbor_overlap": 0.058823529411764705,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_last": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.0072352855995765734,
+            "ideal_top5_geometry_mse": 0.0013819063393931351,
+            "top5_geometry_neighbor_overlap": 0.03529411764705883,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.01824219280470408,
+            "ideal_top5_geometry_mse": 0.0013819063393931351,
+            "top5_geometry_neighbor_overlap": 0.011764705882352941,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.013976517902964641,
+            "ideal_top5_geometry_mse": 0.0013819063393931351,
+            "top5_geometry_neighbor_overlap": 0.023529411764705882,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        },
+        "opening5": {
+          "common_sequence": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.009433840153629995,
+            "ideal_top5_geometry_mse": 0.0022969050375269665,
+            "top5_geometry_neighbor_overlap": 0.03529411764705883,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_sequence": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.00995193183597436,
+            "ideal_top5_geometry_mse": 0.0022969050375269665,
+            "top5_geometry_neighbor_overlap": 0.0,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_sequence": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.01569607673691097,
+            "ideal_top5_geometry_mse": 0.0022969050375269665,
+            "top5_geometry_neighbor_overlap": 0.011764705882352941,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_sequence": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.015101101953183453,
+            "ideal_top5_geometry_mse": 0.0022969050375269665,
+            "top5_geometry_neighbor_overlap": 0.011764705882352941,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.01444802329464361,
+            "ideal_top5_geometry_mse": 0.0022969050375269665,
+            "top5_geometry_neighbor_overlap": 0.011764705882352941,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.018340662174696192,
+            "ideal_top5_geometry_mse": 0.0022969050375269665,
+            "top5_geometry_neighbor_overlap": 0.011764705882352941,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        }
+      }
+    },
+    "furia_falcons_existing_local__de_anubis": {
+      "eligible_queries": 18,
+      "excluded_with_deaths": 3,
+      "candidate_count": 380,
+      "same_pair_excluded": 24,
+      "tasks": {
+        "snapshot20": {
+          "common_last": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.009302969063783317,
+            "ideal_top5_geometry_mse": 0.0015608619211333959,
+            "top5_geometry_neighbor_overlap": 0.08888888888888888,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_last": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.010322340181038881,
+            "ideal_top5_geometry_mse": 0.0015608619211333959,
+            "top5_geometry_neighbor_overlap": 0.044444444444444446,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.01894794390248777,
+            "ideal_top5_geometry_mse": 0.0015608619211333959,
+            "top5_geometry_neighbor_overlap": 0.022222222222222223,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.02157198100540604,
+            "ideal_top5_geometry_mse": 0.0015608619211333959,
+            "top5_geometry_neighbor_overlap": 0.03333333333333334,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        },
+        "opening5": {
+          "common_sequence": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.00988796392991177,
+            "ideal_top5_geometry_mse": 0.00261172736698054,
+            "top5_geometry_neighbor_overlap": 0.08888888888888889,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_sequence": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.00994641319795315,
+            "ideal_top5_geometry_mse": 0.00261172736698054,
+            "top5_geometry_neighbor_overlap": 0.1111111111111111,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_sequence": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.020137218955767335,
+            "ideal_top5_geometry_mse": 0.00261172736698054,
+            "top5_geometry_neighbor_overlap": 0.044444444444444446,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_sequence": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.018946800277085448,
+            "ideal_top5_geometry_mse": 0.00261172736698054,
+            "top5_geometry_neighbor_overlap": 0.03333333333333334,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.019897311105989784,
+            "ideal_top5_geometry_mse": 0.00261172736698054,
+            "top5_geometry_neighbor_overlap": 0.022222222222222223,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.017030704956464943,
+            "ideal_top5_geometry_mse": 0.00261172736698054,
+            "top5_geometry_neighbor_overlap": 0.03333333333333334,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        }
+      }
+    },
+    "furia_falcons_existing_local__de_inferno": {
+      "eligible_queries": 18,
+      "excluded_with_deaths": 3,
+      "candidate_count": 380,
+      "same_pair_excluded": 24,
+      "tasks": {
+        "snapshot20": {
+          "common_last": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.00685563863712972,
+            "ideal_top5_geometry_mse": 0.0015746983406022897,
+            "top5_geometry_neighbor_overlap": 0.044444444444444446,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_last": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.007162120559430239,
+            "ideal_top5_geometry_mse": 0.0015746983406022897,
+            "top5_geometry_neighbor_overlap": 0.05555555555555555,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.015134703549660792,
+            "ideal_top5_geometry_mse": 0.0015746983406022897,
+            "top5_geometry_neighbor_overlap": 0.011111111111111112,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.013254186394918209,
+            "ideal_top5_geometry_mse": 0.0015746983406022897,
+            "top5_geometry_neighbor_overlap": 0.05555555555555555,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        },
+        "opening5": {
+          "common_sequence": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.008590886249879926,
+            "ideal_top5_geometry_mse": 0.003101915410227436,
+            "top5_geometry_neighbor_overlap": 0.022222222222222223,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_sequence": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.008483067648639788,
+            "ideal_top5_geometry_mse": 0.003101915410227436,
+            "top5_geometry_neighbor_overlap": 0.03333333333333334,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_sequence": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.015153276846313032,
+            "ideal_top5_geometry_mse": 0.003101915410227436,
+            "top5_geometry_neighbor_overlap": 0.0,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_sequence": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.015416893346191634,
+            "ideal_top5_geometry_mse": 0.003101915410227436,
+            "top5_geometry_neighbor_overlap": 0.0,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.01357488210435915,
+            "ideal_top5_geometry_mse": 0.003101915410227436,
+            "top5_geometry_neighbor_overlap": 0.03333333333333334,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.015125850588185238,
+            "ideal_top5_geometry_mse": 0.003101915410227436,
+            "top5_geometry_neighbor_overlap": 0.022222222222222223,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        }
+      }
+    },
+    "2396940__de_ancient": {
+      "eligible_queries": 14,
+      "excluded_with_deaths": 5,
+      "candidate_count": 389,
+      "same_pair_excluded": 15,
+      "tasks": {
+        "snapshot20": {
+          "common_last": {
+            "query_count": 14,
+            "top5_geometry_mse": 0.0076068380594744795,
+            "ideal_top5_geometry_mse": 0.0014219298732060662,
+            "top5_geometry_neighbor_overlap": 0.09999999999999999,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_last": {
+            "query_count": 14,
+            "top5_geometry_mse": 0.008874533681002087,
+            "ideal_top5_geometry_mse": 0.0014219298732060662,
+            "top5_geometry_neighbor_overlap": 0.08571428571428572,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 14,
+            "top5_geometry_mse": 0.01527158116068554,
+            "ideal_top5_geometry_mse": 0.0014219298732060662,
+            "top5_geometry_neighbor_overlap": 0.014285714285714287,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 14,
+            "top5_geometry_mse": 0.01400321206538116,
+            "ideal_top5_geometry_mse": 0.0014219298732060662,
+            "top5_geometry_neighbor_overlap": 0.014285714285714287,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        },
+        "opening5": {
+          "common_sequence": {
+            "query_count": 14,
+            "top5_geometry_mse": 0.007247336389518361,
+            "ideal_top5_geometry_mse": 0.002554678968742819,
+            "top5_geometry_neighbor_overlap": 0.17142857142857146,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_sequence": {
+            "query_count": 14,
+            "top5_geometry_mse": 0.0075452316964803355,
+            "ideal_top5_geometry_mse": 0.002554678968742819,
+            "top5_geometry_neighbor_overlap": 0.11428571428571428,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_sequence": {
+            "query_count": 14,
+            "top5_geometry_mse": 0.01454608500182275,
+            "ideal_top5_geometry_mse": 0.002554678968742819,
+            "top5_geometry_neighbor_overlap": 0.014285714285714287,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_sequence": {
+            "query_count": 14,
+            "top5_geometry_mse": 0.014534275908280447,
+            "ideal_top5_geometry_mse": 0.002554678968742819,
+            "top5_geometry_neighbor_overlap": 0.05714285714285715,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 14,
+            "top5_geometry_mse": 0.015378795185813313,
+            "ideal_top5_geometry_mse": 0.002554678968742819,
+            "top5_geometry_neighbor_overlap": 0.042857142857142864,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 14,
+            "top5_geometry_mse": 0.01638299869866558,
+            "ideal_top5_geometry_mse": 0.002554678968742819,
+            "top5_geometry_neighbor_overlap": 0.042857142857142864,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        }
+      }
+    },
+    "2396940__de_inferno": {
+      "eligible_queries": 23,
+      "excluded_with_deaths": 0,
+      "candidate_count": 389,
+      "same_pair_excluded": 15,
+      "tasks": {
+        "snapshot20": {
+          "common_last": {
+            "query_count": 23,
+            "top5_geometry_mse": 0.0067679711628986835,
+            "ideal_top5_geometry_mse": 0.0012958662661559624,
+            "top5_geometry_neighbor_overlap": 0.05217391304347826,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_last": {
+            "query_count": 23,
+            "top5_geometry_mse": 0.007609163807848896,
+            "ideal_top5_geometry_mse": 0.0012958662661559624,
+            "top5_geometry_neighbor_overlap": 0.034782608695652174,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 23,
+            "top5_geometry_mse": 0.014941714473556637,
+            "ideal_top5_geometry_mse": 0.0012958662661559624,
+            "top5_geometry_neighbor_overlap": 0.017391304347826087,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 23,
+            "top5_geometry_mse": 0.01411044740436588,
+            "ideal_top5_geometry_mse": 0.0012958662661559624,
+            "top5_geometry_neighbor_overlap": 0.0,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        },
+        "opening5": {
+          "common_sequence": {
+            "query_count": 23,
+            "top5_geometry_mse": 0.008955020144599816,
+            "ideal_top5_geometry_mse": 0.0026922013135373753,
+            "top5_geometry_neighbor_overlap": 0.026086956521739136,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_sequence": {
+            "query_count": 23,
+            "top5_geometry_mse": 0.008234590177768227,
+            "ideal_top5_geometry_mse": 0.0026922013135373753,
+            "top5_geometry_neighbor_overlap": 0.026086956521739136,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_sequence": {
+            "query_count": 23,
+            "top5_geometry_mse": 0.013145059875492224,
+            "ideal_top5_geometry_mse": 0.0026922013135373753,
+            "top5_geometry_neighbor_overlap": 0.026086956521739136,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_sequence": {
+            "query_count": 23,
+            "top5_geometry_mse": 0.014779094630939458,
+            "ideal_top5_geometry_mse": 0.0026922013135373753,
+            "top5_geometry_neighbor_overlap": 0.008695652173913044,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 23,
+            "top5_geometry_mse": 0.014397481046841415,
+            "ideal_top5_geometry_mse": 0.0026922013135373753,
+            "top5_geometry_neighbor_overlap": 0.0,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 23,
+            "top5_geometry_mse": 0.015493425237229602,
+            "ideal_top5_geometry_mse": 0.0026922013135373753,
+            "top5_geometry_neighbor_overlap": 0.0,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        }
+      }
+    },
+    "2396949__de_nuke": {
+      "eligible_queries": 19,
+      "excluded_with_deaths": 2,
+      "candidate_count": 404,
+      "same_pair_excluded": 0,
+      "tasks": {
+        "snapshot20": {
+          "common_last": {
+            "query_count": 19,
+            "top5_geometry_mse": 0.007111802709177123,
+            "ideal_top5_geometry_mse": 0.0011108501336696112,
+            "top5_geometry_neighbor_overlap": 0.15789473684210528,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_last": {
+            "query_count": 19,
+            "top5_geometry_mse": 0.007704603825844979,
+            "ideal_top5_geometry_mse": 0.0011108501336696112,
+            "top5_geometry_neighbor_overlap": 0.1473684210526316,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 19,
+            "top5_geometry_mse": 0.023690803354548925,
+            "ideal_top5_geometry_mse": 0.0011108501336696112,
+            "top5_geometry_neighbor_overlap": 0.042105263157894736,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 19,
+            "top5_geometry_mse": 0.02263561230909136,
+            "ideal_top5_geometry_mse": 0.0011108501336696112,
+            "top5_geometry_neighbor_overlap": 0.042105263157894736,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        },
+        "opening5": {
+          "common_sequence": {
+            "query_count": 19,
+            "top5_geometry_mse": 0.008421392432777095,
+            "ideal_top5_geometry_mse": 0.002313737993273799,
+            "top5_geometry_neighbor_overlap": 0.21052631578947367,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_sequence": {
+            "query_count": 19,
+            "top5_geometry_mse": 0.009376603204451377,
+            "ideal_top5_geometry_mse": 0.002313737993273799,
+            "top5_geometry_neighbor_overlap": 0.16842105263157897,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_sequence": {
+            "query_count": 19,
+            "top5_geometry_mse": 0.017515569475024913,
+            "ideal_top5_geometry_mse": 0.002313737993273799,
+            "top5_geometry_neighbor_overlap": 0.06315789473684212,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_sequence": {
+            "query_count": 19,
+            "top5_geometry_mse": 0.026966437622767937,
+            "ideal_top5_geometry_mse": 0.002313737993273799,
+            "top5_geometry_neighbor_overlap": 0.042105263157894736,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 19,
+            "top5_geometry_mse": 0.022642587329315355,
+            "ideal_top5_geometry_mse": 0.002313737993273799,
+            "top5_geometry_neighbor_overlap": 0.042105263157894736,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 19,
+            "top5_geometry_mse": 0.022814722860002672,
+            "ideal_top5_geometry_mse": 0.002313737993273799,
+            "top5_geometry_neighbor_overlap": 0.03157894736842106,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        }
+      }
+    },
+    "2396949__de_ancient": {
+      "eligible_queries": 20,
+      "excluded_with_deaths": 4,
+      "candidate_count": 404,
+      "same_pair_excluded": 0,
+      "tasks": {
+        "snapshot20": {
+          "common_last": {
+            "query_count": 20,
+            "top5_geometry_mse": 0.00629056180192769,
+            "ideal_top5_geometry_mse": 0.001182576839333485,
+            "top5_geometry_neighbor_overlap": 0.06999999999999999,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_last": {
+            "query_count": 20,
+            "top5_geometry_mse": 0.006886343116361993,
+            "ideal_top5_geometry_mse": 0.001182576839333485,
+            "top5_geometry_neighbor_overlap": 0.06999999999999999,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 20,
+            "top5_geometry_mse": 0.013974913146017922,
+            "ideal_top5_geometry_mse": 0.001182576839333485,
+            "top5_geometry_neighbor_overlap": 0.01,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 20,
+            "top5_geometry_mse": 0.014959907091856304,
+            "ideal_top5_geometry_mse": 0.001182576839333485,
+            "top5_geometry_neighbor_overlap": 0.01,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        },
+        "opening5": {
+          "common_sequence": {
+            "query_count": 20,
+            "top5_geometry_mse": 0.00874105907236899,
+            "ideal_top5_geometry_mse": 0.002762822610688437,
+            "top5_geometry_neighbor_overlap": 0.09,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_sequence": {
+            "query_count": 20,
+            "top5_geometry_mse": 0.009153686511862024,
+            "ideal_top5_geometry_mse": 0.002762822610688437,
+            "top5_geometry_neighbor_overlap": 0.07,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_sequence": {
+            "query_count": 20,
+            "top5_geometry_mse": 0.018476497701795755,
+            "ideal_top5_geometry_mse": 0.002762822610688437,
+            "top5_geometry_neighbor_overlap": 0.04,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_sequence": {
+            "query_count": 20,
+            "top5_geometry_mse": 0.021882196278335563,
+            "ideal_top5_geometry_mse": 0.002762822610688437,
+            "top5_geometry_neighbor_overlap": 0.01,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 20,
+            "top5_geometry_mse": 0.020054926631258234,
+            "ideal_top5_geometry_mse": 0.002762822610688437,
+            "top5_geometry_neighbor_overlap": 0.0,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 20,
+            "top5_geometry_mse": 0.017992797201121947,
+            "ideal_top5_geometry_mse": 0.002762822610688437,
+            "top5_geometry_neighbor_overlap": 0.01,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        }
+      }
+    },
+    "2396944__de_anubis": {
+      "eligible_queries": 18,
+      "excluded_with_deaths": 2,
+      "candidate_count": 404,
+      "same_pair_excluded": 0,
+      "tasks": {
+        "snapshot20": {
+          "common_last": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.007626015055602442,
+            "ideal_top5_geometry_mse": 0.0011618046992699612,
+            "top5_geometry_neighbor_overlap": 0.06666666666666668,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_last": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.008315311345790857,
+            "ideal_top5_geometry_mse": 0.0011618046992699612,
+            "top5_geometry_neighbor_overlap": 0.08888888888888889,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.015397431388493654,
+            "ideal_top5_geometry_mse": 0.0011618046992699612,
+            "top5_geometry_neighbor_overlap": 0.0,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.016379420694249816,
+            "ideal_top5_geometry_mse": 0.0011618046992699612,
+            "top5_geometry_neighbor_overlap": 0.011111111111111112,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        },
+        "opening5": {
+          "common_sequence": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.008599552959712866,
+            "ideal_top5_geometry_mse": 0.0022779742643631844,
+            "top5_geometry_neighbor_overlap": 0.06666666666666667,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_sequence": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.00817840442521754,
+            "ideal_top5_geometry_mse": 0.0022779742643631844,
+            "top5_geometry_neighbor_overlap": 0.044444444444444446,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_sequence": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.019846023137407992,
+            "ideal_top5_geometry_mse": 0.0022779742643631844,
+            "top5_geometry_neighbor_overlap": 0.011111111111111112,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_sequence": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.019953941336516512,
+            "ideal_top5_geometry_mse": 0.0022779742643631844,
+            "top5_geometry_neighbor_overlap": 0.011111111111111112,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.016307648742591493,
+            "ideal_top5_geometry_mse": 0.0022779742643631844,
+            "top5_geometry_neighbor_overlap": 0.022222222222222223,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.014780785583165179,
+            "ideal_top5_geometry_mse": 0.0022779742643631844,
+            "top5_geometry_neighbor_overlap": 0.0,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        }
+      }
+    },
+    "2396944__de_inferno": {
+      "eligible_queries": 27,
+      "excluded_with_deaths": 8,
+      "candidate_count": 404,
+      "same_pair_excluded": 0,
+      "tasks": {
+        "snapshot20": {
+          "common_last": {
+            "query_count": 27,
+            "top5_geometry_mse": 0.006023853757058334,
+            "ideal_top5_geometry_mse": 0.0013353987043246993,
+            "top5_geometry_neighbor_overlap": 0.07407407407407407,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_last": {
+            "query_count": 27,
+            "top5_geometry_mse": 0.006075712868578761,
+            "ideal_top5_geometry_mse": 0.0013353987043246993,
+            "top5_geometry_neighbor_overlap": 0.06666666666666667,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 27,
+            "top5_geometry_mse": 0.012657831826352904,
+            "ideal_top5_geometry_mse": 0.0013353987043246993,
+            "top5_geometry_neighbor_overlap": 0.022222222222222227,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 27,
+            "top5_geometry_mse": 0.011811119499108434,
+            "ideal_top5_geometry_mse": 0.0013353987043246993,
+            "top5_geometry_neighbor_overlap": 0.022222222222222227,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        },
+        "opening5": {
+          "common_sequence": {
+            "query_count": 27,
+            "top5_geometry_mse": 0.00883375054290261,
+            "ideal_top5_geometry_mse": 0.002651436146397772,
+            "top5_geometry_neighbor_overlap": 0.022222222222222227,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_sequence": {
+            "query_count": 27,
+            "top5_geometry_mse": 0.008859861811608244,
+            "ideal_top5_geometry_mse": 0.002651436146397772,
+            "top5_geometry_neighbor_overlap": 0.007407407407407408,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_sequence": {
+            "query_count": 27,
+            "top5_geometry_mse": 0.011427232637285763,
+            "ideal_top5_geometry_mse": 0.002651436146397772,
+            "top5_geometry_neighbor_overlap": 0.022222222222222227,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_sequence": {
+            "query_count": 27,
+            "top5_geometry_mse": 0.01409893556439559,
+            "ideal_top5_geometry_mse": 0.002651436146397772,
+            "top5_geometry_neighbor_overlap": 0.014814814814814815,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 27,
+            "top5_geometry_mse": 0.011754283120437374,
+            "ideal_top5_geometry_mse": 0.002651436146397772,
+            "top5_geometry_neighbor_overlap": 0.022222222222222227,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 27,
+            "top5_geometry_mse": 0.013554218983671044,
+            "ideal_top5_geometry_mse": 0.002651436146397772,
+            "top5_geometry_neighbor_overlap": 0.022222222222222227,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        }
+      }
+    },
+    "2396944__de_mirage": {
+      "eligible_queries": 13,
+      "excluded_with_deaths": 1,
+      "candidate_count": 404,
+      "same_pair_excluded": 0,
+      "tasks": {
+        "snapshot20": {
+          "common_last": {
+            "query_count": 13,
+            "top5_geometry_mse": 0.00743525815988046,
+            "ideal_top5_geometry_mse": 0.0011037749843553573,
+            "top5_geometry_neighbor_overlap": 0.03076923076923077,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_last": {
+            "query_count": 13,
+            "top5_geometry_mse": 0.008169976521494125,
+            "ideal_top5_geometry_mse": 0.0011037749843553573,
+            "top5_geometry_neighbor_overlap": 0.0,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 13,
+            "top5_geometry_mse": 0.019170278042217926,
+            "ideal_top5_geometry_mse": 0.0011037749843553573,
+            "top5_geometry_neighbor_overlap": 0.0,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 13,
+            "top5_geometry_mse": 0.01540460790833385,
+            "ideal_top5_geometry_mse": 0.0011037749843553573,
+            "top5_geometry_neighbor_overlap": 0.0,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        },
+        "opening5": {
+          "common_sequence": {
+            "query_count": 13,
+            "top5_geometry_mse": 0.009710430685453417,
+            "ideal_top5_geometry_mse": 0.0022378074864694577,
+            "top5_geometry_neighbor_overlap": 0.04615384615384616,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_sequence": {
+            "query_count": 13,
+            "top5_geometry_mse": 0.009300084431076766,
+            "ideal_top5_geometry_mse": 0.0022378074864694577,
+            "top5_geometry_neighbor_overlap": 0.03076923076923077,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_sequence": {
+            "query_count": 13,
+            "top5_geometry_mse": 0.019364075361379598,
+            "ideal_top5_geometry_mse": 0.0022378074864694577,
+            "top5_geometry_neighbor_overlap": 0.0,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_sequence": {
+            "query_count": 13,
+            "top5_geometry_mse": 0.01803434799394821,
+            "ideal_top5_geometry_mse": 0.0022378074864694577,
+            "top5_geometry_neighbor_overlap": 0.0,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 13,
+            "top5_geometry_mse": 0.01548959936704128,
+            "ideal_top5_geometry_mse": 0.0022378074864694577,
+            "top5_geometry_neighbor_overlap": 0.0,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 13,
+            "top5_geometry_mse": 0.019480743526566143,
+            "ideal_top5_geometry_mse": 0.0022378074864694577,
+            "top5_geometry_neighbor_overlap": 0.015384615384615385,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        }
+      }
+    },
+    "2396950__de_dust2": {
+      "eligible_queries": 21,
+      "excluded_with_deaths": 2,
+      "candidate_count": 404,
+      "same_pair_excluded": 0,
+      "tasks": {
+        "snapshot20": {
+          "common_last": {
+            "query_count": 21,
+            "top5_geometry_mse": 0.004202610829583527,
+            "ideal_top5_geometry_mse": 0.0013127589147652078,
+            "top5_geometry_neighbor_overlap": 0.14285714285714288,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_last": {
+            "query_count": 21,
+            "top5_geometry_mse": 0.0045905078594006285,
+            "ideal_top5_geometry_mse": 0.0013127589147652078,
+            "top5_geometry_neighbor_overlap": 0.11428571428571428,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 21,
+            "top5_geometry_mse": 0.00974617632268736,
+            "ideal_top5_geometry_mse": 0.0013127589147652078,
+            "top5_geometry_neighbor_overlap": 0.0380952380952381,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 21,
+            "top5_geometry_mse": 0.010302295667383237,
+            "ideal_top5_geometry_mse": 0.0013127589147652078,
+            "top5_geometry_neighbor_overlap": 0.0380952380952381,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        },
+        "opening5": {
+          "common_sequence": {
+            "query_count": 21,
+            "top5_geometry_mse": 0.0065183014900424465,
+            "ideal_top5_geometry_mse": 0.002440923266034176,
+            "top5_geometry_neighbor_overlap": 0.08571428571428573,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_sequence": {
+            "query_count": 21,
+            "top5_geometry_mse": 0.007348129165451597,
+            "ideal_top5_geometry_mse": 0.002440923266034176,
+            "top5_geometry_neighbor_overlap": 0.08571428571428572,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_sequence": {
+            "query_count": 21,
+            "top5_geometry_mse": 0.011620127452208535,
+            "ideal_top5_geometry_mse": 0.002440923266034176,
+            "top5_geometry_neighbor_overlap": 0.0380952380952381,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_sequence": {
+            "query_count": 21,
+            "top5_geometry_mse": 0.011087103030974642,
+            "ideal_top5_geometry_mse": 0.002440923266034176,
+            "top5_geometry_neighbor_overlap": 0.047619047619047616,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 21,
+            "top5_geometry_mse": 0.01000504547306515,
+            "ideal_top5_geometry_mse": 0.002440923266034176,
+            "top5_geometry_neighbor_overlap": 0.05714285714285714,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 21,
+            "top5_geometry_mse": 0.010619995013957686,
+            "ideal_top5_geometry_mse": 0.002440923266034176,
+            "top5_geometry_neighbor_overlap": 0.047619047619047616,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        }
+      }
+    },
+    "2396950__de_mirage": {
+      "eligible_queries": 18,
+      "excluded_with_deaths": 2,
+      "candidate_count": 404,
+      "same_pair_excluded": 0,
+      "tasks": {
+        "snapshot20": {
+          "common_last": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.007382267973015564,
+            "ideal_top5_geometry_mse": 0.0012852449677199964,
+            "top5_geometry_neighbor_overlap": 0.05555555555555555,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_last": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.007055587858938982,
+            "ideal_top5_geometry_mse": 0.0012852449677199964,
+            "top5_geometry_neighbor_overlap": 0.044444444444444446,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.019362724530107272,
+            "ideal_top5_geometry_mse": 0.0012852449677199964,
+            "top5_geometry_neighbor_overlap": 0.022222222222222223,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.018378099228492758,
+            "ideal_top5_geometry_mse": 0.0012852449677199964,
+            "top5_geometry_neighbor_overlap": 0.0,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        },
+        "opening5": {
+          "common_sequence": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.009452464958197212,
+            "ideal_top5_geometry_mse": 0.0023134171914369756,
+            "top5_geometry_neighbor_overlap": 0.07777777777777778,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_sequence": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.009695221599725896,
+            "ideal_top5_geometry_mse": 0.0023134171914369756,
+            "top5_geometry_neighbor_overlap": 0.07777777777777778,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_sequence": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.018835791174571126,
+            "ideal_top5_geometry_mse": 0.0023134171914369756,
+            "top5_geometry_neighbor_overlap": 0.0,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_sequence": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.02170815244823138,
+            "ideal_top5_geometry_mse": 0.0023134171914369756,
+            "top5_geometry_neighbor_overlap": 0.011111111111111112,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.01737182476754958,
+            "ideal_top5_geometry_mse": 0.0023134171914369756,
+            "top5_geometry_neighbor_overlap": 0.022222222222222223,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.020099346290871605,
+            "ideal_top5_geometry_mse": 0.0023134171914369756,
+            "top5_geometry_neighbor_overlap": 0.022222222222222223,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        }
+      }
+    },
+    "2396609__de_mirage": {
+      "eligible_queries": 16,
+      "excluded_with_deaths": 4,
+      "candidate_count": 404,
+      "same_pair_excluded": 0,
+      "tasks": {
+        "snapshot20": {
+          "common_last": {
+            "query_count": 16,
+            "top5_geometry_mse": 0.008794245169060055,
+            "ideal_top5_geometry_mse": 0.0012134683771042169,
+            "top5_geometry_neighbor_overlap": 0.025,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_last": {
+            "query_count": 16,
+            "top5_geometry_mse": 0.008533079002345794,
+            "ideal_top5_geometry_mse": 0.0012134683771042169,
+            "top5_geometry_neighbor_overlap": 0.025,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 16,
+            "top5_geometry_mse": 0.01813588958405974,
+            "ideal_top5_geometry_mse": 0.0012134683771042169,
+            "top5_geometry_neighbor_overlap": 0.025,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 16,
+            "top5_geometry_mse": 0.014638719548073026,
+            "ideal_top5_geometry_mse": 0.0012134683771042169,
+            "top5_geometry_neighbor_overlap": 0.025,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        },
+        "opening5": {
+          "common_sequence": {
+            "query_count": 16,
+            "top5_geometry_mse": 0.01044281060753435,
+            "ideal_top5_geometry_mse": 0.002157500963555897,
+            "top5_geometry_neighbor_overlap": 0.037500000000000006,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_sequence": {
+            "query_count": 16,
+            "top5_geometry_mse": 0.010508692278533335,
+            "ideal_top5_geometry_mse": 0.002157500963555897,
+            "top5_geometry_neighbor_overlap": 0.025,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_sequence": {
+            "query_count": 16,
+            "top5_geometry_mse": 0.01511268370721321,
+            "ideal_top5_geometry_mse": 0.002157500963555897,
+            "top5_geometry_neighbor_overlap": 0.025,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_sequence": {
+            "query_count": 16,
+            "top5_geometry_mse": 0.015922055391939655,
+            "ideal_top5_geometry_mse": 0.002157500963555897,
+            "top5_geometry_neighbor_overlap": 0.025,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 16,
+            "top5_geometry_mse": 0.016106921443918527,
+            "ideal_top5_geometry_mse": 0.002157500963555897,
+            "top5_geometry_neighbor_overlap": 0.0125,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 16,
+            "top5_geometry_mse": 0.02064986426742747,
+            "ideal_top5_geometry_mse": 0.002157500963555897,
+            "top5_geometry_neighbor_overlap": 0.0,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        }
+      }
+    },
+    "2396609__de_dust2": {
+      "eligible_queries": 17,
+      "excluded_with_deaths": 6,
+      "candidate_count": 404,
+      "same_pair_excluded": 0,
+      "tasks": {
+        "snapshot20": {
+          "common_last": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.0033393337686420683,
+            "ideal_top5_geometry_mse": 0.0011712483089043166,
+            "top5_geometry_neighbor_overlap": 0.16470588235294123,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_last": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.00407236710322438,
+            "ideal_top5_geometry_mse": 0.0011712483089043166,
+            "top5_geometry_neighbor_overlap": 0.09411764705882353,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.008408369933692176,
+            "ideal_top5_geometry_mse": 0.0011712483089043166,
+            "top5_geometry_neighbor_overlap": 0.03529411764705883,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.009138724388447032,
+            "ideal_top5_geometry_mse": 0.0011712483089043166,
+            "top5_geometry_neighbor_overlap": 0.0,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        },
+        "opening5": {
+          "common_sequence": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.005958216203111133,
+            "ideal_top5_geometry_mse": 0.0025212368581186253,
+            "top5_geometry_neighbor_overlap": 0.14117647058823532,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_sequence": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.006062566239488977,
+            "ideal_top5_geometry_mse": 0.0025212368581186253,
+            "top5_geometry_neighbor_overlap": 0.10588235294117646,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_sequence": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.009775834713972576,
+            "ideal_top5_geometry_mse": 0.0025212368581186253,
+            "top5_geometry_neighbor_overlap": 0.023529411764705882,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_sequence": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.009603018041462389,
+            "ideal_top5_geometry_mse": 0.0025212368581186253,
+            "top5_geometry_neighbor_overlap": 0.03529411764705883,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.010165359727183887,
+            "ideal_top5_geometry_mse": 0.0025212368581186253,
+            "top5_geometry_neighbor_overlap": 0.047058823529411764,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.009271319687572355,
+            "ideal_top5_geometry_mse": 0.0025212368581186253,
+            "top5_geometry_neighbor_overlap": 0.03529411764705883,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        }
+      }
+    },
+    "2396595__de_dust2": {
+      "eligible_queries": 17,
+      "excluded_with_deaths": 0,
+      "candidate_count": 404,
+      "same_pair_excluded": 0,
+      "tasks": {
+        "snapshot20": {
+          "common_last": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.004256249056600804,
+            "ideal_top5_geometry_mse": 0.00128535027564473,
+            "top5_geometry_neighbor_overlap": 0.24705882352941178,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_last": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.005314611187689003,
+            "ideal_top5_geometry_mse": 0.00128535027564473,
+            "top5_geometry_neighbor_overlap": 0.18823529411764706,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.008773404237942702,
+            "ideal_top5_geometry_mse": 0.00128535027564473,
+            "top5_geometry_neighbor_overlap": 0.058823529411764705,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.008465160398640328,
+            "ideal_top5_geometry_mse": 0.00128535027564473,
+            "top5_geometry_neighbor_overlap": 0.09411764705882353,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        },
+        "opening5": {
+          "common_sequence": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.006988170050478009,
+            "ideal_top5_geometry_mse": 0.002518499005597689,
+            "top5_geometry_neighbor_overlap": 0.15294117647058825,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_sequence": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.007022788555626116,
+            "ideal_top5_geometry_mse": 0.002518499005597689,
+            "top5_geometry_neighbor_overlap": 0.0823529411764706,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_sequence": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.010453018304399367,
+            "ideal_top5_geometry_mse": 0.002518499005597689,
+            "top5_geometry_neighbor_overlap": 0.03529411764705883,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_sequence": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.009965997230129378,
+            "ideal_top5_geometry_mse": 0.002518499005597689,
+            "top5_geometry_neighbor_overlap": 0.047058823529411764,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.010149096631714538,
+            "ideal_top5_geometry_mse": 0.002518499005597689,
+            "top5_geometry_neighbor_overlap": 0.047058823529411764,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.010403071269943005,
+            "ideal_top5_geometry_mse": 0.002518499005597689,
+            "top5_geometry_neighbor_overlap": 0.011764705882352941,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        }
+      }
+    },
+    "2396595__de_inferno": {
+      "eligible_queries": 21,
+      "excluded_with_deaths": 2,
+      "candidate_count": 404,
+      "same_pair_excluded": 0,
+      "tasks": {
+        "snapshot20": {
+          "common_last": {
+            "query_count": 21,
+            "top5_geometry_mse": 0.006466047156212864,
+            "ideal_top5_geometry_mse": 0.0014670545607846002,
+            "top5_geometry_neighbor_overlap": 0.06666666666666667,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_last": {
+            "query_count": 21,
+            "top5_geometry_mse": 0.006463331800409757,
+            "ideal_top5_geometry_mse": 0.0014670545607846002,
+            "top5_geometry_neighbor_overlap": 0.028571428571428574,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 21,
+            "top5_geometry_mse": 0.012980399498845845,
+            "ideal_top5_geometry_mse": 0.0014670545607846002,
+            "top5_geometry_neighbor_overlap": 0.028571428571428574,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 21,
+            "top5_geometry_mse": 0.011847269523195866,
+            "ideal_top5_geometry_mse": 0.0014670545607846002,
+            "top5_geometry_neighbor_overlap": 0.009523809523809525,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        },
+        "opening5": {
+          "common_sequence": {
+            "query_count": 21,
+            "top5_geometry_mse": 0.00950799392199782,
+            "ideal_top5_geometry_mse": 0.0030083672536248066,
+            "top5_geometry_neighbor_overlap": 0.028571428571428574,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_sequence": {
+            "query_count": 21,
+            "top5_geometry_mse": 0.009064610632280716,
+            "ideal_top5_geometry_mse": 0.0030083672536248066,
+            "top5_geometry_neighbor_overlap": 0.01904761904761905,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_sequence": {
+            "query_count": 21,
+            "top5_geometry_mse": 0.013378044677433665,
+            "ideal_top5_geometry_mse": 0.0030083672536248066,
+            "top5_geometry_neighbor_overlap": 0.01904761904761905,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_sequence": {
+            "query_count": 21,
+            "top5_geometry_mse": 0.013215596583195398,
+            "ideal_top5_geometry_mse": 0.0030083672536248066,
+            "top5_geometry_neighbor_overlap": 0.009523809523809525,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 21,
+            "top5_geometry_mse": 0.012910500022438013,
+            "ideal_top5_geometry_mse": 0.0030083672536248066,
+            "top5_geometry_neighbor_overlap": 0.028571428571428574,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 21,
+            "top5_geometry_mse": 0.012719890930552294,
+            "ideal_top5_geometry_mse": 0.0030083672536248066,
+            "top5_geometry_neighbor_overlap": 0.0,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        }
+      }
+    },
+    "2396945__de_nuke": {
+      "eligible_queries": 16,
+      "excluded_with_deaths": 3,
+      "candidate_count": 404,
+      "same_pair_excluded": 0,
+      "tasks": {
+        "snapshot20": {
+          "common_last": {
+            "query_count": 16,
+            "top5_geometry_mse": 0.007721401846368295,
+            "ideal_top5_geometry_mse": 0.000834573145766047,
+            "top5_geometry_neighbor_overlap": 0.1,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_last": {
+            "query_count": 16,
+            "top5_geometry_mse": 0.005859462335686956,
+            "ideal_top5_geometry_mse": 0.000834573145766047,
+            "top5_geometry_neighbor_overlap": 0.11250000000000002,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 16,
+            "top5_geometry_mse": 0.013751304583239482,
+            "ideal_top5_geometry_mse": 0.000834573145766047,
+            "top5_geometry_neighbor_overlap": 0.037500000000000006,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 16,
+            "top5_geometry_mse": 0.01711868107760133,
+            "ideal_top5_geometry_mse": 0.000834573145766047,
+            "top5_geometry_neighbor_overlap": 0.0,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        },
+        "opening5": {
+          "common_sequence": {
+            "query_count": 16,
+            "top5_geometry_mse": 0.008548697430458396,
+            "ideal_top5_geometry_mse": 0.002284408777363158,
+            "top5_geometry_neighbor_overlap": 0.275,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_sequence": {
+            "query_count": 16,
+            "top5_geometry_mse": 0.009111974368805679,
+            "ideal_top5_geometry_mse": 0.002284408777363158,
+            "top5_geometry_neighbor_overlap": 0.17500000000000002,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_sequence": {
+            "query_count": 16,
+            "top5_geometry_mse": 0.012304558680355859,
+            "ideal_top5_geometry_mse": 0.002284408777363158,
+            "top5_geometry_neighbor_overlap": 0.1,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_sequence": {
+            "query_count": 16,
+            "top5_geometry_mse": 0.01927125799046716,
+            "ideal_top5_geometry_mse": 0.002284408777363158,
+            "top5_geometry_neighbor_overlap": 0.0125,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 16,
+            "top5_geometry_mse": 0.019162449800480638,
+            "ideal_top5_geometry_mse": 0.002284408777363158,
+            "top5_geometry_neighbor_overlap": 0.0125,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 16,
+            "top5_geometry_mse": 0.016005277141400376,
+            "ideal_top5_geometry_mse": 0.002284408777363158,
+            "top5_geometry_neighbor_overlap": 0.025,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        }
+      }
+    },
+    "2396945__de_ancient": {
+      "eligible_queries": 14,
+      "excluded_with_deaths": 5,
+      "candidate_count": 404,
+      "same_pair_excluded": 0,
+      "tasks": {
+        "snapshot20": {
+          "common_last": {
+            "query_count": 14,
+            "top5_geometry_mse": 0.007900651993875199,
+            "ideal_top5_geometry_mse": 0.0016831154074320102,
+            "top5_geometry_neighbor_overlap": 0.1,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_last": {
+            "query_count": 14,
+            "top5_geometry_mse": 0.007797194677069237,
+            "ideal_top5_geometry_mse": 0.0016831154074320102,
+            "top5_geometry_neighbor_overlap": 0.09999999999999999,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 14,
+            "top5_geometry_mse": 0.017453700171074338,
+            "ideal_top5_geometry_mse": 0.0016831154074320102,
+            "top5_geometry_neighbor_overlap": 0.028571428571428574,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 14,
+            "top5_geometry_mse": 0.01751799998668981,
+            "ideal_top5_geometry_mse": 0.0016831154074320102,
+            "top5_geometry_neighbor_overlap": 0.014285714285714287,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        },
+        "opening5": {
+          "common_sequence": {
+            "query_count": 14,
+            "top5_geometry_mse": 0.008482319065198987,
+            "ideal_top5_geometry_mse": 0.0031506151013854233,
+            "top5_geometry_neighbor_overlap": 0.08571428571428573,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_sequence": {
+            "query_count": 14,
+            "top5_geometry_mse": 0.009004417662925968,
+            "ideal_top5_geometry_mse": 0.0031506151013854233,
+            "top5_geometry_neighbor_overlap": 0.14285714285714285,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_sequence": {
+            "query_count": 14,
+            "top5_geometry_mse": 0.02316650700674902,
+            "ideal_top5_geometry_mse": 0.0031506151013854233,
+            "top5_geometry_neighbor_overlap": 0.0,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_sequence": {
+            "query_count": 14,
+            "top5_geometry_mse": 0.024965473972019307,
+            "ideal_top5_geometry_mse": 0.0031506151013854233,
+            "top5_geometry_neighbor_overlap": 0.0,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 14,
+            "top5_geometry_mse": 0.019935022251214317,
+            "ideal_top5_geometry_mse": 0.0031506151013854233,
+            "top5_geometry_neighbor_overlap": 0.0,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 14,
+            "top5_geometry_mse": 0.019278307781838554,
+            "ideal_top5_geometry_mse": 0.0031506151013854233,
+            "top5_geometry_neighbor_overlap": 0.028571428571428574,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        }
+      }
+    },
+    "2396945__de_inferno": {
+      "eligible_queries": 13,
+      "excluded_with_deaths": 3,
+      "candidate_count": 404,
+      "same_pair_excluded": 0,
+      "tasks": {
+        "snapshot20": {
+          "common_last": {
+            "query_count": 13,
+            "top5_geometry_mse": 0.007749540411575823,
+            "ideal_top5_geometry_mse": 0.0017465647795961022,
+            "top5_geometry_neighbor_overlap": 0.07692307692307693,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_last": {
+            "query_count": 13,
+            "top5_geometry_mse": 0.007410178339055188,
+            "ideal_top5_geometry_mse": 0.0017465647795961022,
+            "top5_geometry_neighbor_overlap": 0.10769230769230768,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 13,
+            "top5_geometry_mse": 0.01156978722402237,
+            "ideal_top5_geometry_mse": 0.0017465647795961022,
+            "top5_geometry_neighbor_overlap": 0.03076923076923077,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 13,
+            "top5_geometry_mse": 0.014859768829855569,
+            "ideal_top5_geometry_mse": 0.0017465647795961022,
+            "top5_geometry_neighbor_overlap": 0.015384615384615385,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        },
+        "opening5": {
+          "common_sequence": {
+            "query_count": 13,
+            "top5_geometry_mse": 0.009766078835610566,
+            "ideal_top5_geometry_mse": 0.002813630867625968,
+            "top5_geometry_neighbor_overlap": 0.04615384615384616,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_sequence": {
+            "query_count": 13,
+            "top5_geometry_mse": 0.008763181744718844,
+            "ideal_top5_geometry_mse": 0.002813630867625968,
+            "top5_geometry_neighbor_overlap": 0.04615384615384616,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_sequence": {
+            "query_count": 13,
+            "top5_geometry_mse": 0.012629484901702345,
+            "ideal_top5_geometry_mse": 0.002813630867625968,
+            "top5_geometry_neighbor_overlap": 0.0,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_sequence": {
+            "query_count": 13,
+            "top5_geometry_mse": 0.013632766623466564,
+            "ideal_top5_geometry_mse": 0.002813630867625968,
+            "top5_geometry_neighbor_overlap": 0.015384615384615385,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 13,
+            "top5_geometry_mse": 0.014535793157382225,
+            "ideal_top5_geometry_mse": 0.002813630867625968,
+            "top5_geometry_neighbor_overlap": 0.0,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 13,
+            "top5_geometry_mse": 0.011723178553472975,
+            "ideal_top5_geometry_mse": 0.002813630867625968,
+            "top5_geometry_neighbor_overlap": 0.015384615384615385,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        }
+      }
+    },
+    "2396613__de_ancient": {
+      "eligible_queries": 18,
+      "excluded_with_deaths": 4,
+      "candidate_count": 404,
+      "same_pair_excluded": 0,
+      "tasks": {
+        "snapshot20": {
+          "common_last": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.009059601415933724,
+            "ideal_top5_geometry_mse": 0.001278841388862847,
+            "top5_geometry_neighbor_overlap": 0.03333333333333334,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_last": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.008045583826080914,
+            "ideal_top5_geometry_mse": 0.001278841388862847,
+            "top5_geometry_neighbor_overlap": 0.044444444444444446,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.019484252631799724,
+            "ideal_top5_geometry_mse": 0.001278841388862847,
+            "top5_geometry_neighbor_overlap": 0.011111111111111112,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.018302453530661716,
+            "ideal_top5_geometry_mse": 0.001278841388862847,
+            "top5_geometry_neighbor_overlap": 0.022222222222222223,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        },
+        "opening5": {
+          "common_sequence": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.007275455564466127,
+            "ideal_top5_geometry_mse": 0.0029078713412614946,
+            "top5_geometry_neighbor_overlap": 0.1,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_sequence": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.007515855726806295,
+            "ideal_top5_geometry_mse": 0.0029078713412614946,
+            "top5_geometry_neighbor_overlap": 0.07777777777777778,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_sequence": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.015851515150718802,
+            "ideal_top5_geometry_mse": 0.0029078713412614946,
+            "top5_geometry_neighbor_overlap": 0.044444444444444446,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_sequence": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.0163837479544353,
+            "ideal_top5_geometry_mse": 0.0029078713412614946,
+            "top5_geometry_neighbor_overlap": 0.044444444444444446,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.01609559802472551,
+            "ideal_top5_geometry_mse": 0.0029078713412614946,
+            "top5_geometry_neighbor_overlap": 0.011111111111111112,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 18,
+            "top5_geometry_mse": 0.01695570956752679,
+            "ideal_top5_geometry_mse": 0.0029078713412614946,
+            "top5_geometry_neighbor_overlap": 0.0,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        }
+      }
+    },
+    "2396613__de_nuke": {
+      "eligible_queries": 16,
+      "excluded_with_deaths": 6,
+      "candidate_count": 404,
+      "same_pair_excluded": 0,
+      "tasks": {
+        "snapshot20": {
+          "common_last": {
+            "query_count": 16,
+            "top5_geometry_mse": 0.008668118916222121,
+            "ideal_top5_geometry_mse": 0.0012611200483494517,
+            "top5_geometry_neighbor_overlap": 0.1,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_last": {
+            "query_count": 16,
+            "top5_geometry_mse": 0.007608274938894514,
+            "ideal_top5_geometry_mse": 0.0012611200483494517,
+            "top5_geometry_neighbor_overlap": 0.0875,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 16,
+            "top5_geometry_mse": 0.01626252112046648,
+            "ideal_top5_geometry_mse": 0.0012611200483494517,
+            "top5_geometry_neighbor_overlap": 0.037500000000000006,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 16,
+            "top5_geometry_mse": 0.021647635070558304,
+            "ideal_top5_geometry_mse": 0.0012611200483494517,
+            "top5_geometry_neighbor_overlap": 0.0,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        },
+        "opening5": {
+          "common_sequence": {
+            "query_count": 16,
+            "top5_geometry_mse": 0.0075024964225615335,
+            "ideal_top5_geometry_mse": 0.002408148892563603,
+            "top5_geometry_neighbor_overlap": 0.2875,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_sequence": {
+            "query_count": 16,
+            "top5_geometry_mse": 0.008247550426981548,
+            "ideal_top5_geometry_mse": 0.002408148892563603,
+            "top5_geometry_neighbor_overlap": 0.22500000000000003,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_sequence": {
+            "query_count": 16,
+            "top5_geometry_mse": 0.01592421197232874,
+            "ideal_top5_geometry_mse": 0.002408148892563603,
+            "top5_geometry_neighbor_overlap": 0.0125,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_sequence": {
+            "query_count": 16,
+            "top5_geometry_mse": 0.025085638269721166,
+            "ideal_top5_geometry_mse": 0.002408148892563603,
+            "top5_geometry_neighbor_overlap": 0.0,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 16,
+            "top5_geometry_mse": 0.02224882126914626,
+            "ideal_top5_geometry_mse": 0.002408148892563603,
+            "top5_geometry_neighbor_overlap": 0.0125,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 16,
+            "top5_geometry_mse": 0.018530503283053855,
+            "ideal_top5_geometry_mse": 0.002408148892563603,
+            "top5_geometry_neighbor_overlap": 0.0,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        }
+      }
+    },
+    "2396613__de_dust2": {
+      "eligible_queries": 17,
+      "excluded_with_deaths": 5,
+      "candidate_count": 404,
+      "same_pair_excluded": 0,
+      "tasks": {
+        "snapshot20": {
+          "common_last": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.004708337069470136,
+            "ideal_top5_geometry_mse": 0.0011917122483448164,
+            "top5_geometry_neighbor_overlap": 0.16470588235294117,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_last": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.005252913043174173,
+            "ideal_top5_geometry_mse": 0.0011917122483448164,
+            "top5_geometry_neighbor_overlap": 0.0823529411764706,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.010951227446354442,
+            "ideal_top5_geometry_mse": 0.0011917122483448164,
+            "top5_geometry_neighbor_overlap": 0.03529411764705883,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.01229603042044818,
+            "ideal_top5_geometry_mse": 0.0011917122483448164,
+            "top5_geometry_neighbor_overlap": 0.03529411764705883,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        },
+        "opening5": {
+          "common_sequence": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.0069359134874547425,
+            "ideal_top5_geometry_mse": 0.0025915640902252246,
+            "top5_geometry_neighbor_overlap": 0.17647058823529413,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "full_inputs_sequence": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.007361368787008831,
+            "ideal_top5_geometry_mse": 0.0025915640902252246,
+            "top5_geometry_neighbor_overlap": 0.14117647058823532,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_sequence": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.011711757608919652,
+            "ideal_top5_geometry_mse": 0.0025915640902252246,
+            "top5_geometry_neighbor_overlap": 0.07058823529411766,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_sequence": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.013705363485930225,
+            "ideal_top5_geometry_mse": 0.0025915640902252246,
+            "top5_geometry_neighbor_overlap": 0.058823529411764705,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "gru_last": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.01232983361276574,
+            "ideal_top5_geometry_mse": 0.0025915640902252246,
+            "top5_geometry_neighbor_overlap": 0.09411764705882353,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          },
+          "static_last": {
+            "query_count": 17,
+            "top5_geometry_mse": 0.011827249169579043,
+            "ideal_top5_geometry_mse": 0.0025915640902252246,
+            "top5_geometry_neighbor_overlap": 0.047058823529411764,
+            "claim": "label-free Euclidean geometry diagnostic, not tactical Recall or nDCG"
+          }
+        }
+      }
+    }
+  },
+  "aggregate": {
+    "snapshot20": {
+      "common_last": {
+        "queries": 391,
+        "top5_geometry_mse": 0.006845821618561396,
+        "neighbor_overlap": 0.09156010230179029
+      },
+      "full_inputs_last": {
+        "queries": 391,
+        "top5_geometry_mse": 0.007036711635019866,
+        "neighbor_overlap": 0.07468030690537084
+      },
+      "static_last": {
+        "queries": 391,
+        "top5_geometry_mse": 0.01508628658837341,
+        "neighbor_overlap": 0.024552429667519186
+      },
+      "gru_last": {
+        "queries": 391,
+        "top5_geometry_mse": 0.014974221220458212,
+        "neighbor_overlap": 0.021483375959079284
+      }
+    },
+    "opening5": {
+      "common_sequence": {
+        "queries": 391,
+        "top5_geometry_mse": 0.008440047685279738,
+        "neighbor_overlap": 0.09923273657289004
+      },
+      "full_inputs_sequence": {
+        "queries": 391,
+        "top5_geometry_mse": 0.008574005276880528,
+        "neighbor_overlap": 0.07877237851662404
+      },
+      "static_sequence": {
+        "queries": 391,
+        "top5_geometry_mse": 0.015095057361592836,
+        "neighbor_overlap": 0.028132992327365734
+      },
+      "gru_sequence": {
+        "queries": 391,
+        "top5_geometry_mse": 0.01686915701390812,
+        "neighbor_overlap": 0.022506393861892585
+      },
+      "gru_last": {
+        "queries": 391,
+        "top5_geometry_mse": 0.015511704792098761,
+        "neighbor_overlap": 0.02506393861892583
+      },
+      "static_last": {
+        "queries": 391,
+        "top5_geometry_mse": 0.01573618376964849,
+        "neighbor_overlap": 0.018925831202046037
+      }
+    }
+  },
+  "limitations": [
+    "constructed geometry reference, not independent tactical relevance",
+    "queries with deaths excluded from this diagnostic",
+    "health/equipment enter graph models; full-input controls make this preference explicit",
+    "source series aliases unresolved"
+  ]
+}

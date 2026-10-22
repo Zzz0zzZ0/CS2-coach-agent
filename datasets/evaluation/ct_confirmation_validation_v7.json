@@ -1,0 +1,90 @@
+{
+  "status": "completed_offline_CT_quantitative_confirmation",
+  "recorded_at": "2026-10-22T19:28:45.685354+00:00",
+  "base_commit": "3fd074b7e6baf348cffc696587ca9b2f2a1f80e8",
+  "tests": {
+    "command": "output/tagnet/.venv-regression/Scripts/python.exe -m pytest -q",
+    "passed": 416,
+    "warnings": 3,
+    "seconds": 13.05,
+    "network": "blocked by offline fixtures; no real backend or model API validation",
+    "stdout_sha256": "9426290978d0a5df0c963b5fbde498d8cb30c6f6374619cde3c92e1cdb8ee0ce"
+  },
+  "GPU_environment": {
+    "python": "3.13.9",
+    "torch": "2.14.1+cu130",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "demoparser2": "0.41.3",
+    "precision": {
+      "matmul": "ieee",
+      "cudnn_rnn": "tf32"
+    }
+  },
+  "data": {
+    "series": 9,
+    "map_instances": 22,
+    "map_types": 6,
+    "completed_rounds": 466,
+    "eligible_CT_rounds": 465,
+    "timing_passed": 465,
+    "new_series": 2,
+    "new_CT_rounds": 120,
+    "new_maps_public_scores_all_match": true,
+    "death_windows": 74
+  },
+  "matrix": {
+    "folds": 41,
+    "saved_neural_checkpoints": 282,
+    "whole_series_partitions_disjoint": true,
+    "G4_target_maps_absent_from_training_and_validation": true,
+    "fixed_original_checksums_pass_before_and_after": true,
+    "scores_are_three_seed_mean_errors_not_ensemble_predictions": true,
+    "unsupported": [
+      {
+        "task": "G2",
+        "map": "de_anubis",
+        "series": [
+          "2396944",
+          "furia_falcons_existing_local"
+        ],
+        "reason": "fewer than three series for disjoint train/validation/test"
+      }
+    ]
+  },
+  "verification": {
+    "causality": "first test window per fold, all282 weights; perturb future nodes/edges/alive at four cutoffs, earlier predictions exactly unchanged",
+    "player_permutation_max_absolute_error": 4.753470420837402e-06,
+    "player_permutation_tolerance": 1e-05,
+    "primary_saved_forecast_constraint_violations": 0,
+    "synthetic_smoke": "21 toy folds, 1 epoch, seed0; execution contract only, excluded from research metrics"
+  },
+  "resources": {
+    "peak_allocated_VRAM_MiB": 50.53564453125,
+    "process_peak_RAM_MiB": 1591.79296875
+  },
+  "training_seconds": 1129.81,
+  "recipe_sha256": "a023e53b00baf925890a97f2a7956ec7eeae9ac115d211b35dada554a4da27b4",
+  "receipt_sha256": {
+    "ct_grouped_v7_report.json": "9ee54ed1da8ae4572742d587a6c233aa3e27c91505688f46eae8694d0b9759b8",
+    "ct_error_audit_v7_report.json": "b5608fc0bcf1649ea8b0afae8ea0fee11954fb3edf56a146db419ff057b6d7a9",
+    "ct_weight_audit_v7_report.json": "b3751626d12041e2ad35e78db6cfd0e6359b6571b789fdf387819b0eda9c812c",
+    "ct_retrieval_horizon_v7_report.json": "397ffdb24da6334437062328afb027344167af2e1a2eea092e61d8ec707e1272",
+    "ct_structural_review_v7.json": "378a66cdca1b2bb437ea3735355a7da9eeb1c436e864f5f208fc35a095b665a1"
+  },
+  "source_sha256": {
+    "scripts/confirm_ct_generalization.py": "fff00eef1eaebd5edbf4b80ff8ba7d5bd3c851f2e18176c5227935d0aaa0a793",
+    "scripts/summarize_ct_confirmation.py": "7bf2c68ccf968e40e4bee0c00e6f68c34c2d1ac8c826e015930f7b17dec93772",
+    "scripts/audit_ct_forecasts.py": "3d8ef5cecc292bfe9ed6cb06378d80c487dba8a00a38063daa4018c9ac6aa814"
+  },
+  "claims": {
+    "state_forecast_transfer": "observed on this limited nine-series cohort; not universal generalization",
+    "neural_superiority_over_ridge": "not established",
+    "one_series_adaptation": "limited positive effect on fixed support choices; other doses and support draws untested",
+    "tactical_relevance": "unvalidated, human judgments zero",
+    "Anubis_per_map_train_validation_test": "insufficient series",
+    "T_side_training": "not started",
+    "real_backend": "deferred by user",
+    "strict_time_team_version_event_holdouts": "not certified"
+  }
+}

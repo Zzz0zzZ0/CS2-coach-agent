@@ -1,0 +1,122 @@
+{
+  "version": "ct-generalization-confirmation-v7",
+  "frozen_at": "2026-10-22T18:44:53.176501+00:00",
+  "status": "frozen_before_new_downloads_and_prediction",
+  "scope": "CT offline quantitative generalization; new acquisition is model-held-out but known in historical project metadata; grouped re-training CV is separately retrospective",
+  "primary_model": "ct-linear-v0.1",
+  "controls": [
+    "persistence",
+    "static_snapshot seeds0/1/2/3/42",
+    "prefix_gru seeds0/1/2/3/42"
+  ],
+  "limits": {
+    "new_series_max": 2,
+    "new_archives_max": 2,
+    "new_demos_max": 6,
+    "parallel_demo_parsers": 1,
+    "gpu_memory_fraction": 0.2,
+    "start_min_RAM_GiB": 2
+  },
+  "matches": [
+    {
+      "match_id": "2396945",
+      "team1": "MOUZ",
+      "team2": "Falcons",
+      "event": "BLAST Open Porto 2026",
+      "match_url": "https://www.hltv.org/matches/2396945/mouz-vs-falcons-blast-open-porto-2026",
+      "demo_url": "https://www.hltv.org/download/demo/110839",
+      "expected_prior_round_totals": {
+        "Nuke": 19,
+        "Ancient": 19,
+        "Inferno": 16
+      },
+      "round_count_reference": "historical parser only; not independent public-score evidence"
+    },
+    {
+      "match_id": "2396613",
+      "team1": "FURIA",
+      "team2": "Legacy",
+      "event": "Esports World Cup 2026",
+      "match_url": "https://www.hltv.org/matches/2396613/furia-vs-legacy-esports-world-cup-2026",
+      "demo_url": "https://www.hltv.org/download/demo/110491",
+      "expected_prior_round_totals": {
+        "Ancient": 22,
+        "Nuke": 22,
+        "Dust2": 22
+      },
+      "round_count_reference": "historical parser only; not independent public-score evidence"
+    }
+  ],
+  "frozen_sha256": {
+    "datasets/models/ct_linear_v1.json": "65040624816e12e086c6f9b94d3bf74bcef836b27bc8a08ece0d3dd75d44b541",
+    "app/services/ct_linear_service.py": "523e9909f53a31862165ff84c3256489f18a9a2dc66cdcb63778e42fb11053ca",
+    "app/services/ct_feature_service.py": "7d2476cc88c6f3ad62e8a1ca71668c14ee71758f5904162763ac49a63e5bed0b",
+    "app/services/ct_prediction_service.py": "0a063f39b27d977cc5dafd009d7fd807be9b4970c2cf84e2ef0ac1f3b125b7d1",
+    "app/services/parser_service.py": "2a63d5bbfc781ef3daa2e2c9ed6edc5d744e1f275d59aec07c50031fb67be873",
+    "app/services/opening_snapshot_service.py": "b0731c26bd90885258fdc0ec888450482ce89ec2dd383bf67474cc8659297485",
+    "scripts/run_ct_generalization.py": "259f26d423149c2a04cf734b96cceb8253ef3b71012b7bd72242063d502beb46",
+    "output/tagnet/ct_generalization_residual_v1/prefix_gru_0.pt": "06fc6ccf1cfcc3c689b6af54e2a243313380b3abdbebd5cfc85e0fa8e8d3e8e3",
+    "output/tagnet/ct_generalization_residual_v1/prefix_gru_1.pt": "91bc6e62d514620ca399dea90b3c8ede4fca1cb72e1ac09b7dba60fb14af4109",
+    "output/tagnet/ct_generalization_residual_v1/prefix_gru_2.pt": "78ee6753f0b713d137d5e774a0d08894fc49cac6a3e6340478e8def0d6ea6565",
+    "output/tagnet/ct_generalization_residual_v1/prefix_gru_3.pt": "f122af0a9d85af5ab140c1a9d5119e17466d562e9348e6af03960ff0367db2b5",
+    "output/tagnet/ct_generalization_residual_v1/prefix_gru_42.pt": "30ae9a3f52a555e749c60dc00b84e14b0ca8ead64997decd47e74fcbf36fe336",
+    "output/tagnet/ct_generalization_residual_v1/static_snapshot_0.pt": "55fa12813b666314694e269a558525ae92fe97ed3cd6cec43b37e94d9031ac94",
+    "output/tagnet/ct_generalization_residual_v1/static_snapshot_1.pt": "d7a52482407bb5ae6e039463574cbc7a4c826f4b1e76569e96a2b25f23027f62",
+    "output/tagnet/ct_generalization_residual_v1/static_snapshot_2.pt": "cfeb10fa1cb9601a739a6a276e0138ae7721baea48153a0d6d2b1018b40399de",
+    "output/tagnet/ct_generalization_residual_v1/static_snapshot_3.pt": "cf21518fea08772a0cae1cef046112ed1d80d9b4feecb4d92fe79a39ccc28375",
+    "output/tagnet/ct_generalization_residual_v1/static_snapshot_42.pt": "45331687f577dede4d22dff0126fc9a4de74de30b5004bd1cdea3122dc265ae3"
+  },
+  "comparison": "same frozen primary linear and five-seed graph controls, no tuning; report new event separately from v3; engine clock and prior-parser round totals checked",
+  "timing_audit": "sample freeze+0..20 seconds; game_time offset error <=1/64 seconds, unchanged accumulated paused ticks, not paused/warmup, totalRoundsPlayed==round_number-1; retain failures and report strict subset separately",
+  "uncertainty": "paired equal-series bootstrap with seed20261023 and 2000 resamples; descriptive intervals only, explicitly report series count",
+  "retrieval": "Dust2 train candidates only; common observation vs static/GRU embeddings, top5, leave match identities out of inputs; no human qrels => no tactical Recall/nDCG claims",
+  "source_audit": "exact content duplicate detection across splits; canonical team-pair aliases flagged, not assumed to be same series",
+  "integration": "real backend deferred explicitly by user; no integration or real model API calls",
+  "event_provenance": "target event labels from existing project selection; source event identities unavailable",
+  "previous_validation_report": "datasets/evaluation/ct_validation_v4_report.json",
+  "matrix": {
+    "G1": "existing source-only frozen models on two new series; no fitting",
+    "G2": "per-map nested leave-one-series-out; >=3 series per map, one cyclic next series validation, rest training",
+    "G3": "shared nested leave-one-series-out; cyclic next series validation, rest training",
+    "G4": "leave-one-map-out; all series containing test-map excluded from training/validation, validation first remaining sorted series",
+    "G5": "G4 plus one target-map support series (first sorted), testing remaining target-map series; source validation unchanged; no support siblings from other maps"
+  },
+  "training": {
+    "seeds": [
+      0,
+      1,
+      42
+    ],
+    "epochs_max": 40,
+    "batch_size": 64,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "loss": "snapshot reconstruction + next-state masked MSE; equal weight",
+    "checkpoint": "lowest validation next-state MSE; target tests not used",
+    "ridge_penalties": [
+      0.0001,
+      0.001,
+      0.01,
+      0.1,
+      1,
+      10,
+      100
+    ],
+    "selection": "training-only normalization; ridge penalty chosen only on fold validation; no target-driven routing; preserve every seed"
+  },
+  "statistics": {
+    "aggregation": "paired equal-series errors; report each map, horizon, component, death/equipment slice; three neural seeds averaged without target selection",
+    "intervals": "2000 paired series bootstrap, descriptive conditional on small shared-team cohort; not population significance",
+    "comparisons": [
+      "vs persistence",
+      "neural vs fold-fitted ridge",
+      "G5 vs same G4 initialization/control on identical test rows"
+    ]
+  },
+  "stopping": "exactly two archives, at most six demos, no additional acquisition based on outcomes; no tuning after test results",
+  "claim_gates": {
+    "state_transfer": "positive equal-series improvement over persistence, per-map and per-series failures disclosed; interval crossing zero marked inconclusive",
+    "neural_advantage": "positive paired advantage over strongest simple control with descriptive interval above zero; otherwise not established",
+    "tactics": "cannot be certified by these proxy state targets or geometry; independent human review remains pending"
+  }
+}
