@@ -5,13 +5,14 @@ import hashlib
 import pandas as pd
 
 from app.services.ct_feature_service import feature_sequence
+from app.services.team_identity_service import canonical_team
 
 
 def canonical_pair(name):
     teams = name.removesuffix("_dust2").split("-vs-")
     if len(teams) != 2:
         raise ValueError("Expected an upstream team-pair match label")
-    return tuple(sorted("natus-vincere" if team == "navi" else team for team in teams))
+    return tuple(sorted(canonical_team(team) for team in teams))
 
 
 def audit_source(frame):

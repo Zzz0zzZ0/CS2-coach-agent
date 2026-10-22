@@ -2,12 +2,14 @@
 app/services/ct_*.py -text whitespace=cr-at-eol
 app/services/opening_snapshot_service.py -text whitespace=cr-at-eol
 app/services/opening_timing_service.py -text whitespace=cr-at-eol
+app/services/team_identity_service.py -text whitespace=cr-at-eol
 app/services/parser_service.py -text whitespace=cr-at-eol,-blank-at-eol
 scripts/calibrate_ct_predictions.py -text whitespace=cr-at-eol
 scripts/check_ct_alias_sensitivity.py -text whitespace=cr-at-eol
 scripts/ct_experiment_data.py -text whitespace=cr-at-eol
 scripts/evaluate_ct_frozen_series.py -text whitespace=cr-at-eol
 scripts/evaluate_ct_structural_retrieval.py -text whitespace=cr-at-eol
+scripts/evaluate_ct_retrieval_horizon.py -text whitespace=cr-at-eol
 scripts/extract_opening_snapshots.py -text whitespace=cr-at-eol
 scripts/predict_ct_opening.py -text whitespace=cr-at-eol
 scripts/retrieve_ct_opening.py -text whitespace=cr-at-eol

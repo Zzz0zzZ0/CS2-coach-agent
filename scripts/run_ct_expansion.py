@@ -4,11 +4,9 @@ import os
 for key in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
     os.environ[key] = "1"
 import argparse
-from collections import Counter
 import hashlib
 import json
 from pathlib import Path
-import re
 import sys
 
 import numpy as np
@@ -21,7 +19,8 @@ from app.services.ct_feature_service import feature_sequence
 from app.services.ct_linear_service import CTLinearPredictor, linear_inputs, linear_forecast
 from app.services.opening_timing_service import CLOCK_PROPERTIES, audit_opening_timing, round_wins_from_rosters
 from app.services.parser_service import TacticalDemoParser
-from ct_experiment_data import load_source
+from app.services.team_identity_service import canonical_team
+from scripts.ct_experiment_data import load_source
 
 
 def sha(path):
@@ -33,11 +32,26 @@ def write(path, value):
     path.write_text(json.dumps(value, indent=2, allow_nan=False) + "\n", encoding="utf-8")
 
 
+def read_input_manifest(path, protocol):
+    rows = json.loads(path.read_text(encoding="utf-8"))["files"]
+    files = [(str(row["series"]), Path(row["demo_path"]).resolve()) for row in rows]
+    expected = {str(row["match_id"]) for row in protocol["matches"]}
+    if not files or len(files) > protocol["limits"]["new_demos_max"] or {s for s, _ in files} != expected:
+        raise ValueError("Input manifest must cover exactly the selected series within the demo limit")
+    if len({p for _, p in files}) != len(files) or any(not p.is_file() or p.suffix.lower() != ".dem" for _, p in files):
+        raise ValueError("Distinct existing demo files required")
+    for row, (_, demo) in zip(rows, files):
+        if sha(demo) != row["sha256"]:
+            raise ValueError("Input demo checksum mismatch")
+    return files
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--protocol", type=Path, default=ROOT / "datasets/selections/ct_expansion_v3.json")
     parser.add_argument("--upstream-dir", type=Path, default=ROOT / "output/tagnet/upstream")
     parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--input-manifest", type=Path, help="Evaluate only these selected, checksummed demos")
     args = parser.parse_args()
     if args.output_dir.exists():
         parser.error("Use a new output directory")
@@ -55,15 +69,18 @@ def main():
     groups = {"source_train": source_groups["train"], "dust2_test": source_groups["test"]}
     metadata = {"source_train": {"scope": "candidate_library_only"}, "dust2_test": {"scope": "published_development"}}
     matches = {row["match_id"]: row for row in protocol["matches"]}
-    original = Path("E:/iem-cologne-major-2026-furia-vs-falcons-bo5-KYwh5Z9rwDlzjmTFrwu0mb")
-    files = [("furia_falcons_existing_local", p) for p in sorted(original.glob("*.dem"))]
-    for series, directory in (("2396940", "new_demos_2396940"), ("2396949", "new_demos_2396949")):
-        files.extend((series, p) for p in sorted((ROOT / "output/tagnet" / directory).glob("*.dem")))
-    new_dir = ROOT / "output/tagnet/new_demos_expansion_v3"
-    new_files = sorted(new_dir.glob("*.dem"))
-    assert len(new_files) == 5
-    files.extend((next(s for s in matches if s in p.name), p) for p in new_files)
-    assert len(files) == 12
+    if args.input_manifest:
+        files = read_input_manifest(args.input_manifest, protocol)
+    else:
+        original = Path("E:/iem-cologne-major-2026-furia-vs-falcons-bo5-KYwh5Z9rwDlzjmTFrwu0mb")
+        files = [("furia_falcons_existing_local", p) for p in sorted(original.glob("*.dem"))]
+        for series, directory in (("2396940", "new_demos_2396940"), ("2396949", "new_demos_2396949")):
+            files.extend((series, p) for p in sorted((ROOT / "output/tagnet" / directory).glob("*.dem")))
+        new_dir = ROOT / "output/tagnet/new_demos_expansion_v3"
+        new_files = sorted(new_dir.glob("*.dem"))
+        assert len(new_files) == 5
+        files.extend((next(s for s in matches if s in p.name), p) for p in new_files)
+        assert len(files) == 12
     acquisition = []
     for series, path in files:
         assert psutil.virtual_memory().available > 2 * 2**30, "RAM guard before demo parse"
@@ -102,15 +119,24 @@ def main():
         # Dust2/Mirage title casing matches the frozen selection; all score checks are independent of predictions.
         if map_name == "de_dust2":
             expected = matches.get(series, {}).get("public_map_scores", {}).get("Dust2")
-        canonical = lambda name: re.sub(r"[^a-z0-9]", "", str(name).lower())
+        canonical = canonical_team
         score_match = ({canonical(k): v for k, v in wins.items()} == {canonical(k): v for k, v in expected.items()}) if expected else None
+        selected = matches.get(series)
+        native_teams = {canonical(row["team"]) for row in observed["rounds"] if row.get("team")}
+        teams_match = native_teams == {canonical(selected["team1"]), canonical(selected["team2"])} if selected else None
+        prior_rounds = selected.get("expected_prior_round_totals", {}).get(map_name.removeprefix("de_").title()) if selected else None
+        if selected and map_name == "de_dust2":
+            prior_rounds = selected.get("expected_prior_round_totals", {}).get("Dust2")
         metadata[name] = {"series": series, "map": map_name, "rounds": len(records), "skipped": skipped,
             "scope": "frozen_new_acquisition" if series in matches else "unobserved_map_existing_series" if map_name == "de_nuke" else "retrospective_development",
             "timing_passed": sum(r["timing_passed"] for r in records), "timing_failures": [r for r in timing["rounds"] if not r["passed"]],
             "engine_rounds": len(ends), "engine_wins": dict(wins), "expected_public_score": expected, "public_score_matches": score_match,
+            "teams_match_selection": teams_match, "expected_prior_rounds": prior_rounds,
+            "prior_round_count_matches": len(ends) == prior_rounds if prior_rounds is not None else None,
             "other_region_fraction": float(np.mean([r["features"]["targets"][:, 4].mean() for r in records]))}
         acquisition.append({"series": series, "file": path.name, "map": map_name, "sha256": digest, "bytes": path.stat().st_size})
         write(args.output_dir / "input_manifest.json", {"files": acquisition, "groups": metadata})
+        assert teams_match is not False, f"Native teams do not match selected series: {name}"
         print(json.dumps({"parsed": name, "rounds": len(records), "timing_passed": metadata[name]["timing_passed"],
                           "public_score_matches": score_match}), flush=True)
         del loaded, observed, clock
@@ -162,7 +188,8 @@ def main():
     write(args.output_dir / "sample_index.json", {name: [{k: v for k, v in row.items() if k != "features"} for row in rows] for name, rows in groups.items()})
     report = {"status": "frozen_expansion_completed", "protocol_sha256": sha(args.protocol), "frozen_sha256": protocol["frozen_sha256"],
               "evaluator_sha256": sha(Path(__file__)),
-              "helper_sha256": {str(p.relative_to(ROOT)): sha(p) for p in [ROOT / "app/services/opening_timing_service.py", ROOT / "app/services/ct_evaluation_service.py", ROOT / "scripts/ct_experiment_data.py"]},
+              "helper_sha256": {str(p.relative_to(ROOT)): sha(p) for p in [ROOT / "app/services/opening_timing_service.py", ROOT / "app/services/ct_evaluation_service.py", ROOT / "scripts/ct_experiment_data.py", ROOT / "app/services/team_identity_service.py"]},
+              "input_selection_sha256": sha(args.input_manifest) if args.input_manifest else None,
               "source_audit": source_audit, "acquisition": acquisition, "groups": metadata,
               "metrics": {}, "paired_series": {}, "limitations": ["only two newly acquired series; known in older project manifests",
               "source alias risk unresolved", "uncertainty intervals descriptive with few series", "no human tactical relevance judgments"]}

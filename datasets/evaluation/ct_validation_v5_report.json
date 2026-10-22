@@ -1,0 +1,9 @@
+{
+  "status": "full_offline_suite_passed",
+  "passed": 412,
+  "failed": 0,
+  "warnings": 3,
+  "log_sha256": "251a2df62c3d637abbf88a455772d093d6d54bb10ff5665353970c0272a164bd",
+  "scope": "local isolated supplemental environment; includes actual Windows DACL and manifest/alias checks; no live backends",
+  "prior_report": "datasets/evaluation/ct_validation_v4_report.json"
+}

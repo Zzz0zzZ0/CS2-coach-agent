@@ -2,9 +2,12 @@
 
 import pandas as pd
 import pytest
+import json
+import hashlib
 
 from app.services.ct_evaluation_service import error_totals, paired_series_bootstrap
 from scripts.ct_experiment_data import audit_source, canonical_pair
+from app.services.team_identity_service import canonical_team
 
 
 def test_source_aliases_and_duplicates_ignore_player_order():
@@ -28,3 +31,34 @@ def test_series_bootstrap_does_not_weight_by_round_count():
     assert result["improvement_pct"] == pytest.approx(-100)
     assert result["descriptive_95pct_interval"] == pytest.approx([-300, 100])
     assert paired_series_bootstrap([good], [base], ["A"])["descriptive_95pct_interval"] is None
+
+
+@pytest.mark.parametrize("problem", [None, "checksum", "duplicate", "series", "limit"])
+def test_input_manifest_isolated_and_checksummed(tmp_path, problem):
+    from scripts.run_ct_expansion import read_input_manifest
+    demo = tmp_path / "source.dem"; demo.write_bytes(b"synthetic demo fixture")
+    row = {"series": "one", "demo_path": str(demo), "sha256": hashlib.sha256(demo.read_bytes()).hexdigest()}
+    protocol = {"matches": [{"match_id": "one"}], "limits": {"new_demos_max": 2}}
+    rows = [row]
+    if problem == "checksum":
+        row["sha256"] = "invalid"
+    elif problem == "duplicate":
+        rows.append(dict(row))
+    elif problem == "series":
+        row["series"] = "unselected"
+    elif problem == "limit":
+        protocol["limits"]["new_demos_max"] = 0
+    path = tmp_path / "input.json"; path.write_text(json.dumps({"files": rows}))
+    if problem:
+        with pytest.raises(ValueError):
+            read_input_manifest(path, protocol)
+    else:
+        assert read_input_manifest(path, protocol) == [("one", demo.resolve())]
+
+
+def test_team_aliases_are_shared_and_unknown_brands_stay_distinct():
+    assert canonical_team("Team Falcons") == canonical_team("Falcons")
+    assert canonical_team("NAVI") == canonical_team("Natus Vincere")
+    assert canonical_team("PVISION") == canonical_team("PARIVISION")
+    assert canonical_pair("legacy-vs-team-falcons_dust2") == canonical_pair("falcons-vs-legacy_dust2")
+    assert canonical_team("Team Unknown") == "team-unknown"

@@ -460,6 +460,7 @@ data/, output/            # Local runtime data, excluded from Git
 | CT generalization progress | [Linear forecast control, CPU entry point, and validation limits](docs/CT_OPTIMIZATION_V2.md) (Chinese; experimental state prediction, not enabled in coaching) |
 | Expanded CT experiments | [Five series, six maps, timing checks, and observation retrieval](docs/CT_EXPANSION_V3.md) (Chinese; includes negative findings and remaining acceptance limits) |
 | CT experiment regression | [406 offline checks and Windows compatibility fixes](docs/CT_VALIDATION_V4.md) (Chinese; live backends and tactical relevance remain separate acceptance items) |
+| Latest CT experiments | [345 CT rounds, fair retrieval horizons, and 412 checks](docs/CT_EVENT_AND_RETRIEVAL_V6.md) (Chinese; independent relevance review remains pending) |
 
 ## License
 

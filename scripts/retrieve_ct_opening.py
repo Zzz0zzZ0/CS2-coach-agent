@@ -4,7 +4,6 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
-import re
 import sys
 
 import numpy as np
@@ -14,16 +13,12 @@ sys.path.insert(0, str(ROOT))
 from app.services.ct_feature_service import FEATURE_VERSION, feature_sequence
 from app.services.ct_linear_service import linear_inputs
 from app.services.ct_retrieval_service import nearest_common_candidates
+from app.services.team_identity_service import canonical_team
 from scripts.ct_experiment_data import canonical_pair, load_source
 
 
-def team_slug(name):
-    slug = re.sub(r"[^a-z0-9]+", "-", str(name).lower()).strip("-")
-    return "natus-vincere" if slug == "navi" else slug
-
-
 def retrieve(document, library):
-    teams = {team_slug(row["team"]) for row in document["rounds"] if row.get("team")}
+    teams = {canonical_team(row["team"]) for row in document["rounds"] if row.get("team")}
     pair = tuple(sorted(teams)) if len(teams) == 2 else None
     if pair is None:
         raise ValueError("Exactly two known teams required for candidate-library isolation")

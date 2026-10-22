@@ -1,0 +1,179 @@
+{
+  "status": "frozen-model cumulative diagnostic, not certification",
+  "series": 7,
+  "map_instances": 16,
+  "map_types": 6,
+  "completed_rounds": 346,
+  "eligible_CT_rounds": 345,
+  "engine_clock_passed": 345,
+  "groups": [
+    {
+      "id": "furia_falcons_existing_local__de_mirage",
+      "series": "furia_falcons_existing_local",
+      "map": "de_mirage",
+      "rounds": 21,
+      "engine_rounds": 21,
+      "timing_passed": 21
+    },
+    {
+      "id": "furia_falcons_existing_local__de_anubis",
+      "series": "furia_falcons_existing_local",
+      "map": "de_anubis",
+      "rounds": 21,
+      "engine_rounds": 21,
+      "timing_passed": 21
+    },
+    {
+      "id": "furia_falcons_existing_local__de_inferno",
+      "series": "furia_falcons_existing_local",
+      "map": "de_inferno",
+      "rounds": 21,
+      "engine_rounds": 21,
+      "timing_passed": 21
+    },
+    {
+      "id": "2396940__de_ancient",
+      "series": "2396940",
+      "map": "de_ancient",
+      "rounds": 19,
+      "engine_rounds": 19,
+      "timing_passed": 19
+    },
+    {
+      "id": "2396940__de_inferno",
+      "series": "2396940",
+      "map": "de_inferno",
+      "rounds": 23,
+      "engine_rounds": 23,
+      "timing_passed": 23
+    },
+    {
+      "id": "2396949__de_nuke",
+      "series": "2396949",
+      "map": "de_nuke",
+      "rounds": 21,
+      "engine_rounds": 21,
+      "timing_passed": 21
+    },
+    {
+      "id": "2396949__de_ancient",
+      "series": "2396949",
+      "map": "de_ancient",
+      "rounds": 24,
+      "engine_rounds": 24,
+      "timing_passed": 24
+    },
+    {
+      "id": "2396944__de_anubis",
+      "series": "2396944",
+      "map": "de_anubis",
+      "rounds": 20,
+      "engine_rounds": 20,
+      "timing_passed": 20
+    },
+    {
+      "id": "2396944__de_inferno",
+      "series": "2396944",
+      "map": "de_inferno",
+      "rounds": 35,
+      "engine_rounds": 35,
+      "timing_passed": 35
+    },
+    {
+      "id": "2396944__de_mirage",
+      "series": "2396944",
+      "map": "de_mirage",
+      "rounds": 14,
+      "engine_rounds": 14,
+      "timing_passed": 14
+    },
+    {
+      "id": "2396950__de_dust2",
+      "series": "2396950",
+      "map": "de_dust2",
+      "rounds": 23,
+      "engine_rounds": 24,
+      "timing_passed": 23
+    },
+    {
+      "id": "2396950__de_mirage",
+      "series": "2396950",
+      "map": "de_mirage",
+      "rounds": 20,
+      "engine_rounds": 20,
+      "timing_passed": 20
+    },
+    {
+      "id": "2396609__de_mirage",
+      "series": "2396609",
+      "map": "de_mirage",
+      "rounds": 20,
+      "engine_rounds": 20,
+      "timing_passed": 20
+    },
+    {
+      "id": "2396609__de_dust2",
+      "series": "2396609",
+      "map": "de_dust2",
+      "rounds": 23,
+      "engine_rounds": 23,
+      "timing_passed": 23
+    },
+    {
+      "id": "2396595__de_dust2",
+      "series": "2396595",
+      "map": "de_dust2",
+      "rounds": 17,
+      "engine_rounds": 17,
+      "timing_passed": 17
+    },
+    {
+      "id": "2396595__de_inferno",
+      "series": "2396595",
+      "map": "de_inferno",
+      "rounds": 23,
+      "engine_rounds": 23,
+      "timing_passed": 23
+    }
+  ],
+  "equal_series_metrics": {
+    "ct_linear_v1": {
+      "series_count": 7,
+      "weighting": "equal series, never independent rounds",
+      "improvement_pct": 17.885351721392617,
+      "descriptive_95pct_interval": [
+        14.412732700807839,
+        21.013013268208383
+      ],
+      "resamples": 2000,
+      "seed": 20261023
+    },
+    "static_snapshot_42": {
+      "series_count": 7,
+      "weighting": "equal series, never independent rounds",
+      "improvement_pct": 12.683228084881948,
+      "descriptive_95pct_interval": [
+        11.035857822128369,
+        13.950481492985055
+      ],
+      "resamples": 2000,
+      "seed": 20261023
+    },
+    "prefix_gru_42": {
+      "series_count": 7,
+      "weighting": "equal series, never independent rounds",
+      "improvement_pct": 11.634188821783887,
+      "descriptive_95pct_interval": [
+        9.214036376711721,
+        13.78950868021025
+      ],
+      "resamples": 2000,
+      "seed": 20261023
+    }
+  },
+  "limitations": [
+    "few series and shared teams; uncertainty descriptive",
+    "source event provenance and possible source pair alias unresolved",
+    "no independent tactical relevance labels"
+  ]
+}

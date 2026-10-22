@@ -1,0 +1,2304 @@
+{
+  "status": "frozen_expansion_completed",
+  "protocol_sha256": "9d907c64a70545ab30767f79b060d6778f090a0cee8749b3538ce88fdffab0de",
+  "frozen_sha256": {
+    "datasets/models/ct_linear_v1.json": "65040624816e12e086c6f9b94d3bf74bcef836b27bc8a08ece0d3dd75d44b541",
+    "app/services/ct_linear_service.py": "523e9909f53a31862165ff84c3256489f18a9a2dc66cdcb63778e42fb11053ca",
+    "app/services/ct_feature_service.py": "7d2476cc88c6f3ad62e8a1ca71668c14ee71758f5904162763ac49a63e5bed0b",
+    "app/services/ct_prediction_service.py": "0a063f39b27d977cc5dafd009d7fd807be9b4970c2cf84e2ef0ac1f3b125b7d1",
+    "app/services/parser_service.py": "2a63d5bbfc781ef3daa2e2c9ed6edc5d744e1f275d59aec07c50031fb67be873",
+    "app/services/opening_snapshot_service.py": "b0731c26bd90885258fdc0ec888450482ce89ec2dd383bf67474cc8659297485",
+    "scripts/run_ct_generalization.py": "259f26d423149c2a04cf734b96cceb8253ef3b71012b7bd72242063d502beb46",
+    "output/tagnet/ct_generalization_residual_v1/prefix_gru_0.pt": "06fc6ccf1cfcc3c689b6af54e2a243313380b3abdbebd5cfc85e0fa8e8d3e8e3",
+    "output/tagnet/ct_generalization_residual_v1/prefix_gru_1.pt": "91bc6e62d514620ca399dea90b3c8ede4fca1cb72e1ac09b7dba60fb14af4109",
+    "output/tagnet/ct_generalization_residual_v1/prefix_gru_2.pt": "78ee6753f0b713d137d5e774a0d08894fc49cac6a3e6340478e8def0d6ea6565",
+    "output/tagnet/ct_generalization_residual_v1/prefix_gru_3.pt": "f122af0a9d85af5ab140c1a9d5119e17466d562e9348e6af03960ff0367db2b5",
+    "output/tagnet/ct_generalization_residual_v1/prefix_gru_42.pt": "30ae9a3f52a555e749c60dc00b84e14b0ca8ead64997decd47e74fcbf36fe336",
+    "output/tagnet/ct_generalization_residual_v1/static_snapshot_0.pt": "55fa12813b666314694e269a558525ae92fe97ed3cd6cec43b37e94d9031ac94",
+    "output/tagnet/ct_generalization_residual_v1/static_snapshot_1.pt": "d7a52482407bb5ae6e039463574cbc7a4c826f4b1e76569e96a2b25f23027f62",
+    "output/tagnet/ct_generalization_residual_v1/static_snapshot_2.pt": "cfeb10fa1cb9601a739a6a276e0138ae7721baea48153a0d6d2b1018b40399de",
+    "output/tagnet/ct_generalization_residual_v1/static_snapshot_3.pt": "cf21518fea08772a0cae1cef046112ed1d80d9b4feecb4d92fe79a39ccc28375",
+    "output/tagnet/ct_generalization_residual_v1/static_snapshot_42.pt": "45331687f577dede4d22dff0126fc9a4de74de30b5004bd1cdea3122dc265ae3"
+  },
+  "evaluator_sha256": "0946587b717338c4d2efdbde4c98d2923a87068c69305705d23f6b97d104f89b",
+  "helper_sha256": {
+    "app\\services\\opening_timing_service.py": "962e76990e7ac393498605aab2e92c4015b4ca4f5da00ed649772a128ffa2d78",
+    "app\\services\\ct_evaluation_service.py": "185fdcad339c27bcaa1ff243377eb00830d1721774111f1874f2418e474db16d",
+    "scripts\\ct_experiment_data.py": "3bec918218f37ab5ecbd5fd05798e187443f61e65603f101b3e67ad649cf8139",
+    "app\\services\\team_identity_service.py": "6cdb5315027ccfc020897606236532e426bb6180090967075ae98136c9961750"
+  },
+  "input_selection_sha256": "047237f4c7c1575dab87d89434abf2e7d5190630fd572f450f216faaa409ff07",
+  "source_audit": {
+    "samples": 697,
+    "matches": 33,
+    "exact_cross_split_duplicate_groups": [],
+    "cross_split_pair_aliases": [
+      {
+        "canonical_pair": [
+          "monte",
+          "natus-vincere"
+        ],
+        "labels": [
+          {
+            "match": "monte-vs-natus-vincere_dust2",
+            "split": "train"
+          },
+          {
+            "match": "natus-vincere-vs-monte_dust2",
+            "split": "val"
+          }
+        ],
+        "status": "possible series alias; not proof of shared series"
+      }
+    ],
+    "claim": "Exact duplicates checked independent of player order; series identity cannot be certified without original source metadata"
+  },
+  "acquisition": [
+    {
+      "series": "2396609",
+      "file": "Esports_World_Cup_2026_Legacy_vs_Falcons_2396609_map1.dem",
+      "map": "de_mirage",
+      "sha256": "deeda64a7c879f69a10c1bd344e6966e4db44e75d74af1d26a733ee7add4e093",
+      "bytes": 340736356
+    },
+    {
+      "series": "2396609",
+      "file": "Esports_World_Cup_2026_Legacy_vs_Falcons_2396609_map2.dem",
+      "map": "de_dust2",
+      "sha256": "8fc1bae5b52a7580b89053f3896cb3bd77b39e89e073787fe002bb4b552934f9",
+      "bytes": 417739099
+    },
+    {
+      "series": "2396595",
+      "file": "Esports_World_Cup_2026_MOUZ_vs_PARIVISION_2396595_map1.dem",
+      "map": "de_dust2",
+      "sha256": "5ab8223140fbf38ebbd28a1b6c903a44ba4588de40beec79c6c08f78342000f1",
+      "bytes": 334277353
+    },
+    {
+      "series": "2396595",
+      "file": "Esports_World_Cup_2026_MOUZ_vs_PARIVISION_2396595_map2.dem",
+      "map": "de_inferno",
+      "sha256": "64898b61aa7300084268d8f57c4d7f5436d1fa902c4b18ea19e9f13979c1d809",
+      "bytes": 505886396
+    }
+  ],
+  "groups": {
+    "source_train": {
+      "scope": "candidate_library_only"
+    },
+    "dust2_test": {
+      "scope": "published_development"
+    },
+    "2396609__de_mirage": {
+      "series": "2396609",
+      "map": "de_mirage",
+      "rounds": 20,
+      "skipped": [],
+      "scope": "frozen_new_acquisition",
+      "timing_passed": 20,
+      "timing_failures": [],
+      "engine_rounds": 20,
+      "engine_wins": {
+        "Legacy": 13,
+        "Team Falcons": 7
+      },
+      "expected_public_score": null,
+      "public_score_matches": null,
+      "teams_match_selection": true,
+      "expected_prior_rounds": 20,
+      "prior_round_count_matches": true,
+      "other_region_fraction": 0.47800007462501526
+    },
+    "2396609__de_dust2": {
+      "series": "2396609",
+      "map": "de_dust2",
+      "rounds": 23,
+      "skipped": [],
+      "scope": "frozen_new_acquisition",
+      "timing_passed": 23,
+      "timing_failures": [],
+      "engine_rounds": 23,
+      "engine_wins": {
+        "Legacy": 13,
+        "Team Falcons": 10
+      },
+      "expected_public_score": null,
+      "public_score_matches": null,
+      "teams_match_selection": true,
+      "expected_prior_rounds": 23,
+      "prior_round_count_matches": true,
+      "other_region_fraction": 0.7200000882148743
+    },
+    "2396595__de_dust2": {
+      "series": "2396595",
+      "map": "de_dust2",
+      "rounds": 17,
+      "skipped": [],
+      "scope": "frozen_new_acquisition",
+      "timing_passed": 17,
+      "timing_failures": [],
+      "engine_rounds": 17,
+      "engine_wins": {
+        "MOUZ": 13,
+        "PVISION": 4
+      },
+      "expected_public_score": null,
+      "public_score_matches": null,
+      "teams_match_selection": true,
+      "expected_prior_rounds": 17,
+      "prior_round_count_matches": true,
+      "other_region_fraction": 0.6423529982566833
+    },
+    "2396595__de_inferno": {
+      "series": "2396595",
+      "map": "de_inferno",
+      "rounds": 23,
+      "skipped": [],
+      "scope": "frozen_new_acquisition",
+      "timing_passed": 23,
+      "timing_failures": [],
+      "engine_rounds": 23,
+      "engine_wins": {
+        "MOUZ": 13,
+        "PVISION": 10
+      },
+      "expected_public_score": null,
+      "public_score_matches": null,
+      "teams_match_selection": true,
+      "expected_prior_rounds": 23,
+      "prior_round_count_matches": true,
+      "other_region_fraction": 0.48695650696754456
+    }
+  },
+  "metrics": {
+    "dust2_test": {
+      "persistence": {
+        "all": {
+          "sse": 14.821467541884914,
+          "count": 3712,
+          "occupancy_sse": 13.43999984622004,
+          "occupancy_count": 2784,
+          "distance_sse": 1.3814676956648728,
+          "distance_count": 928,
+          "mse": 0.003992852247275031,
+          "occupancy_mse": 0.0048275861516594975,
+          "distance_mse": 0.0014886505341216302
+        },
+        "timing_strict": null,
+        "any_death_in_window": {
+          "sse": 3.3373447863663626,
+          "count": 448,
+          "occupancy_sse": 2.8800000381469775,
+          "occupancy_count": 336,
+          "distance_sse": 0.45734474821938514,
+          "distance_count": 112,
+          "mse": 0.007449430326710631,
+          "occupancy_mse": 0.008571428684961243,
+          "distance_mse": 0.004083435251958796
+        }
+      },
+      "ct_linear_v1": {
+        "all": {
+          "sse": 12.72555250963231,
+          "count": 3712,
+          "occupancy_sse": 11.41365053190315,
+          "occupancy_count": 2784,
+          "distance_sse": 1.311901977729162,
+          "distance_count": 928,
+          "mse": 0.003428219964879394,
+          "occupancy_mse": 0.004099730794505442,
+          "distance_mse": 0.0014136874760012521
+        },
+        "timing_strict": null,
+        "any_death_in_window": {
+          "sse": 2.8258662095545266,
+          "count": 448,
+          "occupancy_sse": 2.3691534276401844,
+          "occupancy_count": 336,
+          "distance_sse": 0.4567127819143425,
+          "distance_count": 112,
+          "mse": 0.006307737074898497,
+          "occupancy_mse": 0.007051051867976739,
+          "distance_mse": 0.0040777926956637725
+        }
+      },
+      "prefix_gru_0": {
+        "all": {
+          "sse": 12.1509370159396,
+          "count": 3712,
+          "occupancy_sse": 10.893248954973838,
+          "occupancy_count": 2784,
+          "distance_sse": 1.2576880609657624,
+          "distance_count": 928,
+          "mse": 0.003273420532311315,
+          "occupancy_mse": 0.003912804940723362,
+          "distance_mse": 0.001355267307075175
+        },
+        "timing_strict": null,
+        "any_death_in_window": {
+          "sse": 2.7953432868069044,
+          "count": 448,
+          "occupancy_sse": 2.3678229536597835,
+          "occupancy_count": 336,
+          "distance_sse": 0.42752033314712096,
+          "distance_count": 112,
+          "mse": 0.006239605550908268,
+          "occupancy_mse": 0.007047092123987451,
+          "distance_mse": 0.003817145831670723
+        }
+      },
+      "prefix_gru_1": {
+        "all": {
+          "sse": 12.151684001734669,
+          "count": 3712,
+          "occupancy_sse": 10.895646762437377,
+          "occupancy_count": 2784,
+          "distance_sse": 1.256037239297292,
+          "distance_count": 928,
+          "mse": 0.003273621767708693,
+          "occupancy_mse": 0.003913666222139863,
+          "distance_mse": 0.0013534884044151855
+        },
+        "timing_strict": null,
+        "any_death_in_window": {
+          "sse": 2.7742949426508567,
+          "count": 448,
+          "occupancy_sse": 2.346892655696652,
+          "occupancy_count": 336,
+          "distance_sse": 0.4274022869542043,
+          "distance_count": 112,
+          "mse": 0.006192622639845663,
+          "occupancy_mse": 0.00698479957052575,
+          "distance_mse": 0.0038160918478053955
+        }
+      },
+      "prefix_gru_2": {
+        "all": {
+          "sse": 12.120482610272239,
+          "count": 3712,
+          "occupancy_sse": 10.863295034366256,
+          "occupancy_count": 2784,
+          "distance_sse": 1.2571875759059823,
+          "distance_count": 928,
+          "mse": 0.0032652162204397195,
+          "occupancy_mse": 0.003902045630160293,
+          "distance_mse": 0.001354727991277998
+        },
+        "timing_strict": null,
+        "any_death_in_window": {
+          "sse": 2.7554220470064332,
+          "count": 448,
+          "occupancy_sse": 2.3299535575271624,
+          "occupancy_count": 336,
+          "distance_sse": 0.42546848947927113,
+          "distance_count": 112,
+          "mse": 0.00615049564063936,
+          "occupancy_mse": 0.00693438558787846,
+          "distance_mse": 0.0037988257989220635
+        }
+      },
+      "prefix_gru_3": {
+        "all": {
+          "sse": 12.256713953815249,
+          "count": 3712,
+          "occupancy_sse": 10.995015403203238,
+          "occupancy_count": 2784,
+          "distance_sse": 1.2616985506120104,
+          "distance_count": 928,
+          "mse": 0.0033019164746269525,
+          "occupancy_mse": 0.003949358981035646,
+          "distance_mse": 0.0013595889554008733
+        },
+        "timing_strict": null,
+        "any_death_in_window": {
+          "sse": 2.7971998068610535,
+          "count": 448,
+          "occupancy_sse": 2.3695534681202077,
+          "occupancy_count": 336,
+          "distance_sse": 0.42764633874084584,
+          "distance_count": 112,
+          "mse": 0.00624374956888628,
+          "occupancy_mse": 0.007052242464643475,
+          "distance_mse": 0.0038182708816146952
+        }
+      },
+      "prefix_gru_42": {
+        "all": {
+          "sse": 12.207498920188044,
+          "count": 3712,
+          "occupancy_sse": 10.940430823966619,
+          "occupancy_count": 2784,
+          "distance_sse": 1.267068096221426,
+          "distance_count": 928,
+          "mse": 0.0032886581142747965,
+          "occupancy_mse": 0.003929752451137435,
+          "distance_mse": 0.0013653751036868814
+        },
+        "timing_strict": null,
+        "any_death_in_window": {
+          "sse": 2.7917409794333494,
+          "count": 448,
+          "occupancy_sse": 2.3610822039659114,
+          "occupancy_count": 336,
+          "distance_sse": 0.4306587754674381,
+          "distance_count": 112,
+          "mse": 0.006231564686235155,
+          "occupancy_mse": 0.0070270303689461645,
+          "distance_mse": 0.003845167638102126
+        }
+      },
+      "static_snapshot_0": {
+        "all": {
+          "sse": 12.530809631664848,
+          "count": 3712,
+          "occupancy_sse": 11.201551024855634,
+          "occupancy_count": 2784,
+          "distance_sse": 1.3292586068092136,
+          "distance_count": 928,
+          "mse": 0.003375756905082125,
+          "occupancy_mse": 0.004023545626744122,
+          "distance_mse": 0.0014323907400961354
+        },
+        "timing_strict": null,
+        "any_death_in_window": {
+          "sse": 2.849938943944017,
+          "count": 448,
+          "occupancy_sse": 2.392189501977506,
+          "occupancy_count": 336,
+          "distance_sse": 0.4577494419665112,
+          "distance_count": 112,
+          "mse": 0.006361470857017895,
+          "occupancy_mse": 0.007119611613028291,
+          "distance_mse": 0.004087048588986707
+        }
+      },
+      "static_snapshot_1": {
+        "all": {
+          "sse": 12.568827006042858,
+          "count": 3712,
+          "occupancy_sse": 11.233419160657746,
+          "occupancy_count": 2784,
+          "distance_sse": 1.33540784538511,
+          "distance_count": 928,
+          "mse": 0.0033859986546451665,
+          "occupancy_mse": 0.004034992514604076,
+          "distance_mse": 0.0014390170747684374
+        },
+        "timing_strict": null,
+        "any_death_in_window": {
+          "sse": 2.8494573404572288,
+          "count": 448,
+          "occupancy_sse": 2.39243290817046,
+          "occupancy_count": 336,
+          "distance_sse": 0.45702443228676876,
+          "distance_count": 112,
+          "mse": 0.006360395849234886,
+          "occupancy_mse": 0.007120336036221607,
+          "distance_mse": 0.004080575288274721
+        }
+      },
+      "static_snapshot_2": {
+        "all": {
+          "sse": 12.555570799235182,
+          "count": 3712,
+          "occupancy_sse": 11.226170137445425,
+          "occupancy_count": 2784,
+          "distance_sse": 1.3294006617897565,
+          "distance_count": 928,
+          "mse": 0.0033824274782422365,
+          "occupancy_mse": 0.004032388698795053,
+          "distance_mse": 0.0014325438165837894
+        },
+        "timing_strict": null,
+        "any_death_in_window": {
+          "sse": 2.8540655195999416,
+          "count": 448,
+          "occupancy_sse": 2.3967226791671843,
+          "occupancy_count": 336,
+          "distance_sse": 0.45734284043275714,
+          "distance_count": 112,
+          "mse": 0.006370681963392727,
+          "occupancy_mse": 0.007133103211807096,
+          "distance_mse": 0.004083418218149617
+        }
+      },
+      "static_snapshot_3": {
+        "all": {
+          "sse": 12.520152534306376,
+          "count": 3712,
+          "occupancy_sse": 11.18578212759167,
+          "occupancy_count": 2784,
+          "distance_sse": 1.3343704067147057,
+          "distance_count": 928,
+          "mse": 0.0033728859198023644,
+          "occupancy_mse": 0.004017881511347582,
+          "distance_mse": 0.0014378991451667088
+        },
+        "timing_strict": null,
+        "any_death_in_window": {
+          "sse": 2.8443776525077116,
+          "count": 448,
+          "occupancy_sse": 2.3876842368080733,
+          "occupancy_count": 336,
+          "distance_sse": 0.4566934156996381,
+          "distance_count": 112,
+          "mse": 0.0063490572600618566,
+          "occupancy_mse": 0.007106203085738313,
+          "distance_mse": 0.004077619783032483
+        }
+      },
+      "static_snapshot_42": {
+        "all": {
+          "sse": 12.644529401251202,
+          "count": 3712,
+          "occupancy_sse": 11.308483275928904,
+          "occupancy_count": 2784,
+          "distance_sse": 1.3360461253222973,
+          "distance_count": 928,
+          "mse": 0.003406392618871552,
+          "occupancy_mse": 0.004061955199687106,
+          "distance_mse": 0.0014397048764248892
+        },
+        "timing_strict": null,
+        "any_death_in_window": {
+          "sse": 2.865661956129704,
+          "count": 448,
+          "occupancy_sse": 2.4086986978615816,
+          "occupancy_count": 336,
+          "distance_sse": 0.4569632582681225,
+          "distance_count": 112,
+          "mse": 0.006396566866360947,
+          "occupancy_mse": 0.0071687461245880406,
+          "distance_mse": 0.004080029091679665
+        }
+      }
+    },
+    "2396609__de_mirage": {
+      "persistence": {
+        "all": {
+          "sse": 10.181398162209584,
+          "count": 640,
+          "occupancy_sse": 9.840000454187408,
+          "occupancy_count": 480,
+          "distance_sse": 0.3413977080221766,
+          "distance_count": 160,
+          "mse": 0.015908434628452477,
+          "occupancy_mse": 0.020500000946223767,
+          "distance_mse": 0.0021337356751386038
+        },
+        "timing_strict": {
+          "sse": 10.181398162209584,
+          "count": 640,
+          "occupancy_sse": 9.840000454187408,
+          "occupancy_count": 480,
+          "distance_sse": 0.3413977080221766,
+          "distance_count": 160,
+          "mse": 0.015908434628452477,
+          "occupancy_mse": 0.020500000946223767,
+          "distance_mse": 0.0021337356751386038
+        },
+        "any_death_in_window": {
+          "sse": 1.8082925786522612,
+          "count": 128,
+          "occupancy_sse": 1.600000095367435,
+          "occupancy_count": 96,
+          "distance_sse": 0.2082924832848263,
+          "distance_count": 32,
+          "mse": 0.01412728577072079,
+          "occupancy_mse": 0.016666667660077447,
+          "distance_mse": 0.006509140102650822
+        }
+      },
+      "ct_linear_v1": {
+        "all": {
+          "sse": 8.458420464500207,
+          "count": 640,
+          "occupancy_sse": 8.136870835503093,
+          "occupancy_count": 480,
+          "distance_sse": 0.32154962899711376,
+          "distance_count": 160,
+          "mse": 0.013216281975781573,
+          "occupancy_mse": 0.016951814240631444,
+          "distance_mse": 0.002009685181231961
+        },
+        "timing_strict": {
+          "sse": 8.458420464500207,
+          "count": 640,
+          "occupancy_sse": 8.136870835503093,
+          "occupancy_count": 480,
+          "distance_sse": 0.32154962899711376,
+          "distance_count": 160,
+          "mse": 0.013216281975781573,
+          "occupancy_mse": 0.016951814240631444,
+          "distance_mse": 0.002009685181231961
+        },
+        "any_death_in_window": {
+          "sse": 1.6967049243941563,
+          "count": 128,
+          "occupancy_sse": 1.4921510033528356,
+          "occupancy_count": 96,
+          "distance_sse": 0.20455392104132078,
+          "distance_count": 32,
+          "mse": 0.013255507221829346,
+          "occupancy_mse": 0.015543239618258703,
+          "distance_mse": 0.006392310032541274
+        }
+      },
+      "prefix_gru_0": {
+        "all": {
+          "sse": 9.224219149832274,
+          "count": 640,
+          "occupancy_sse": 8.923985934604143,
+          "occupancy_count": 480,
+          "distance_sse": 0.30023321522812974,
+          "distance_count": 160,
+          "mse": 0.014412842421612929,
+          "occupancy_mse": 0.018591637363758632,
+          "distance_mse": 0.0018764575951758108
+        },
+        "timing_strict": {
+          "sse": 9.224219149832274,
+          "count": 640,
+          "occupancy_sse": 8.923985934604143,
+          "occupancy_count": 480,
+          "distance_sse": 0.30023321522812974,
+          "distance_count": 160,
+          "mse": 0.014412842421612929,
+          "occupancy_mse": 0.018591637363758632,
+          "distance_mse": 0.0018764575951758108
+        },
+        "any_death_in_window": {
+          "sse": 1.717490435103667,
+          "count": 128,
+          "occupancy_sse": 1.5139417216958395,
+          "occupancy_count": 96,
+          "distance_sse": 0.20354871340782754,
+          "distance_count": 32,
+          "mse": 0.013417894024247399,
+          "occupancy_mse": 0.015770226267664996,
+          "distance_mse": 0.006360897293994611
+        }
+      },
+      "prefix_gru_1": {
+        "all": {
+          "sse": 9.250622758752959,
+          "count": 640,
+          "occupancy_sse": 8.9510714484828,
+          "occupancy_count": 480,
+          "distance_sse": 0.29955131027015924,
+          "distance_count": 160,
+          "mse": 0.014454098060551498,
+          "occupancy_mse": 0.0186480655176725,
+          "distance_mse": 0.0018721956891884952
+        },
+        "timing_strict": {
+          "sse": 9.250622758752959,
+          "count": 640,
+          "occupancy_sse": 8.9510714484828,
+          "occupancy_count": 480,
+          "distance_sse": 0.29955131027015924,
+          "distance_count": 160,
+          "mse": 0.014454098060551498,
+          "occupancy_mse": 0.0186480655176725,
+          "distance_mse": 0.0018721956891884952
+        },
+        "any_death_in_window": {
+          "sse": 1.7053722033945176,
+          "count": 128,
+          "occupancy_sse": 1.5046664496727251,
+          "occupancy_count": 96,
+          "distance_sse": 0.20070575372179267,
+          "distance_count": 32,
+          "mse": 0.013323220339019668,
+          "occupancy_mse": 0.015673608850757553,
+          "distance_mse": 0.006272054803806021
+        }
+      },
+      "prefix_gru_2": {
+        "all": {
+          "sse": 9.220101802691937,
+          "count": 640,
+          "occupancy_sse": 8.932299249421401,
+          "occupancy_count": 480,
+          "distance_sse": 0.2878025532705364,
+          "distance_count": 160,
+          "mse": 0.014406409066706153,
+          "occupancy_mse": 0.01860895676962792,
+          "distance_mse": 0.0017987659579408524
+        },
+        "timing_strict": {
+          "sse": 9.220101802691937,
+          "count": 640,
+          "occupancy_sse": 8.932299249421401,
+          "occupancy_count": 480,
+          "distance_sse": 0.2878025532705364,
+          "distance_count": 160,
+          "mse": 0.014406409066706153,
+          "occupancy_mse": 0.01860895676962792,
+          "distance_mse": 0.0017987659579408524
+        },
+        "any_death_in_window": {
+          "sse": 1.6752629724651062,
+          "count": 128,
+          "occupancy_sse": 1.479033107206672,
+          "occupancy_count": 96,
+          "distance_sse": 0.19622986525843422,
+          "distance_count": 32,
+          "mse": 0.013087991972383643,
+          "occupancy_mse": 0.015406594866736166,
+          "distance_mse": 0.006132183289326069
+        }
+      },
+      "prefix_gru_3": {
+        "all": {
+          "sse": 9.316918421249708,
+          "count": 640,
+          "occupancy_sse": 9.019540723154776,
+          "occupancy_count": 480,
+          "distance_sse": 0.2973776980949323,
+          "distance_count": 160,
+          "mse": 0.014557685033202669,
+          "occupancy_mse": 0.018790709839905783,
+          "distance_mse": 0.0018586106130933269
+        },
+        "timing_strict": {
+          "sse": 9.316918421249708,
+          "count": 640,
+          "occupancy_sse": 9.019540723154776,
+          "occupancy_count": 480,
+          "distance_sse": 0.2973776980949323,
+          "distance_count": 160,
+          "mse": 0.014557685033202669,
+          "occupancy_mse": 0.018790709839905783,
+          "distance_mse": 0.0018586106130933269
+        },
+        "any_death_in_window": {
+          "sse": 1.7079440194709095,
+          "count": 128,
+          "occupancy_sse": 1.5068463706816346,
+          "occupancy_count": 96,
+          "distance_sse": 0.20109764878927483,
+          "distance_count": 32,
+          "mse": 0.01334331265211648,
+          "occupancy_mse": 0.01569631636126703,
+          "distance_mse": 0.0062843015246648384
+        }
+      },
+      "prefix_gru_42": {
+        "all": {
+          "sse": 9.282956977423774,
+          "count": 640,
+          "occupancy_sse": 8.98383658038957,
+          "occupancy_count": 480,
+          "distance_sse": 0.29912039703420445,
+          "distance_count": 160,
+          "mse": 0.014504620277224647,
+          "occupancy_mse": 0.018716326209144936,
+          "distance_mse": 0.0018695024814637778
+        },
+        "timing_strict": {
+          "sse": 9.282956977423774,
+          "count": 640,
+          "occupancy_sse": 8.98383658038957,
+          "occupancy_count": 480,
+          "distance_sse": 0.29912039703420445,
+          "distance_count": 160,
+          "mse": 0.014504620277224647,
+          "occupancy_mse": 0.018716326209144936,
+          "distance_mse": 0.0018695024814637778
+        },
+        "any_death_in_window": {
+          "sse": 1.6972031870856106,
+          "count": 128,
+          "occupancy_sse": 1.4956400603638973,
+          "occupancy_count": 96,
+          "distance_sse": 0.20156312672171328,
+          "distance_count": 32,
+          "mse": 0.013259399899106333,
+          "occupancy_mse": 0.01557958396212393,
+          "distance_mse": 0.00629884771005354
+        }
+      },
+      "static_snapshot_0": {
+        "all": {
+          "sse": 8.84005962766719,
+          "count": 640,
+          "occupancy_sse": 8.50957928477857,
+          "occupancy_count": 480,
+          "distance_sse": 0.33048034288861894,
+          "distance_count": 160,
+          "mse": 0.013812593168229984,
+          "occupancy_mse": 0.01772829017662202,
+          "distance_mse": 0.0020655021430538685
+        },
+        "timing_strict": {
+          "sse": 8.84005962766719,
+          "count": 640,
+          "occupancy_sse": 8.50957928477857,
+          "occupancy_count": 480,
+          "distance_sse": 0.33048034288861894,
+          "distance_count": 160,
+          "mse": 0.013812593168229984,
+          "occupancy_mse": 0.01772829017662202,
+          "distance_mse": 0.0020655021430538685
+        },
+        "any_death_in_window": {
+          "sse": 1.6206879704526258,
+          "count": 128,
+          "occupancy_sse": 1.4204444790483906,
+          "occupancy_count": 96,
+          "distance_sse": 0.20024349140423525,
+          "distance_count": 32,
+          "mse": 0.012661624769161139,
+          "occupancy_mse": 0.014796296656754068,
+          "distance_mse": 0.006257609106382352
+        }
+      },
+      "static_snapshot_1": {
+        "all": {
+          "sse": 8.933162625478614,
+          "count": 640,
+          "occupancy_sse": 8.60217272788736,
+          "occupancy_count": 480,
+          "distance_sse": 0.3309898975912542,
+          "distance_count": 160,
+          "mse": 0.013958066602310335,
+          "occupancy_mse": 0.017921193183098667,
+          "distance_mse": 0.0020686868599453386
+        },
+        "timing_strict": {
+          "sse": 8.933162625478614,
+          "count": 640,
+          "occupancy_sse": 8.60217272788736,
+          "occupancy_count": 480,
+          "distance_sse": 0.3309898975912542,
+          "distance_count": 160,
+          "mse": 0.013958066602310335,
+          "occupancy_mse": 0.017921193183098667,
+          "distance_mse": 0.0020686868599453386
+        },
+        "any_death_in_window": {
+          "sse": 1.6452314408221447,
+          "count": 128,
+          "occupancy_sse": 1.4408225104285814,
+          "occupancy_count": 96,
+          "distance_sse": 0.204408930393563,
+          "distance_count": 32,
+          "mse": 0.012853370631423005,
+          "occupancy_mse": 0.01500856781696439,
+          "distance_mse": 0.006387779074798844
+        }
+      },
+      "static_snapshot_2": {
+        "all": {
+          "sse": 8.857390393219973,
+          "count": 640,
+          "occupancy_sse": 8.531559218070178,
+          "occupancy_count": 480,
+          "distance_sse": 0.3258311751497929,
+          "distance_count": 160,
+          "mse": 0.013839672489406207,
+          "occupancy_mse": 0.017774081704312873,
+          "distance_mse": 0.0020364448446862056
+        },
+        "timing_strict": {
+          "sse": 8.857390393219973,
+          "count": 640,
+          "occupancy_sse": 8.531559218070178,
+          "occupancy_count": 480,
+          "distance_sse": 0.3258311751497929,
+          "distance_count": 160,
+          "mse": 0.013839672489406207,
+          "occupancy_mse": 0.017774081704312873,
+          "distance_mse": 0.0020364448446862056
+        },
+        "any_death_in_window": {
+          "sse": 1.6392244947470183,
+          "count": 128,
+          "occupancy_sse": 1.4389328690952368,
+          "occupancy_count": 96,
+          "distance_sse": 0.20029162565178127,
+          "distance_count": 32,
+          "mse": 0.01280644136521108,
+          "occupancy_mse": 0.014988884053075384,
+          "distance_mse": 0.006259113301618165
+        }
+      },
+      "static_snapshot_3": {
+        "all": {
+          "sse": 9.009733737052425,
+          "count": 640,
+          "occupancy_sse": 8.677469457116047,
+          "occupancy_count": 480,
+          "distance_sse": 0.3322642799363773,
+          "distance_count": 160,
+          "mse": 0.014077708964144415,
+          "occupancy_mse": 0.018078061368991764,
+          "distance_mse": 0.002076651749602358
+        },
+        "timing_strict": {
+          "sse": 9.009733737052425,
+          "count": 640,
+          "occupancy_sse": 8.677469457116047,
+          "occupancy_count": 480,
+          "distance_sse": 0.3322642799363773,
+          "distance_count": 160,
+          "mse": 0.014077708964144415,
+          "occupancy_mse": 0.018078061368991764,
+          "distance_mse": 0.002076651749602358
+        },
+        "any_death_in_window": {
+          "sse": 1.6345894991455134,
+          "count": 128,
+          "occupancy_sse": 1.4311546521852743,
+          "occupancy_count": 96,
+          "distance_sse": 0.2034348469602394,
+          "distance_count": 32,
+          "mse": 0.012770230462074324,
+          "occupancy_mse": 0.014907860960263274,
+          "distance_mse": 0.006357338967507481
+        }
+      },
+      "static_snapshot_42": {
+        "all": {
+          "sse": 8.995629892826091,
+          "count": 640,
+          "occupancy_sse": 8.665788858713439,
+          "occupancy_count": 480,
+          "distance_sse": 0.32984103411265275,
+          "distance_count": 160,
+          "mse": 0.014055671707540768,
+          "occupancy_mse": 0.01805372678898633,
+          "distance_mse": 0.0020615064632040795
+        },
+        "timing_strict": {
+          "sse": 8.995629892826091,
+          "count": 640,
+          "occupancy_sse": 8.665788858713439,
+          "occupancy_count": 480,
+          "distance_sse": 0.32984103411265275,
+          "distance_count": 160,
+          "mse": 0.014055671707540768,
+          "occupancy_mse": 0.01805372678898633,
+          "distance_mse": 0.0020615064632040795
+        },
+        "any_death_in_window": {
+          "sse": 1.6382739901066283,
+          "count": 128,
+          "occupancy_sse": 1.4358514803041162,
+          "occupancy_count": 96,
+          "distance_sse": 0.20242250980251209,
+          "distance_count": 32,
+          "mse": 0.012799015547708034,
+          "occupancy_mse": 0.014956786253167877,
+          "distance_mse": 0.006325703431328503
+        }
+      }
+    },
+    "2396609__de_dust2": {
+      "persistence": {
+        "all": {
+          "sse": 2.8417257104168905,
+          "count": 736,
+          "occupancy_sse": 2.5600000107288405,
+          "occupancy_count": 552,
+          "distance_sse": 0.28172569968805017,
+          "distance_count": 184,
+          "mse": 0.0038610403674142536,
+          "occupancy_mse": 0.004637681178856596,
+          "distance_mse": 0.0015311179330872293
+        },
+        "timing_strict": {
+          "sse": 2.8417257104168905,
+          "count": 736,
+          "occupancy_sse": 2.5600000107288405,
+          "occupancy_count": 552,
+          "distance_sse": 0.28172569968805017,
+          "distance_count": 184,
+          "mse": 0.0038610403674142536,
+          "occupancy_mse": 0.004637681178856596,
+          "distance_mse": 0.0015311179330872293
+        },
+        "any_death_in_window": {
+          "sse": 1.6983586058508346,
+          "count": 192,
+          "occupancy_sse": 1.520000033378604,
+          "occupancy_count": 144,
+          "distance_sse": 0.17835857247223075,
+          "distance_count": 48,
+          "mse": 0.008845617738806431,
+          "occupancy_mse": 0.010555555787351416,
+          "distance_mse": 0.003715803593171474
+        }
+      },
+      "ct_linear_v1": {
+        "all": {
+          "sse": 2.684357274932282,
+          "count": 736,
+          "occupancy_sse": 2.3898606531154507,
+          "occupancy_count": 552,
+          "distance_sse": 0.2944966218168311,
+          "distance_count": 184,
+          "mse": 0.003647224558331905,
+          "occupancy_mse": 0.004329457704919295,
+          "distance_mse": 0.0016005251185697343
+        },
+        "timing_strict": {
+          "sse": 2.684357274932282,
+          "count": 736,
+          "occupancy_sse": 2.3898606531154507,
+          "occupancy_count": 552,
+          "distance_sse": 0.2944966218168311,
+          "distance_count": 184,
+          "mse": 0.003647224558331905,
+          "occupancy_mse": 0.004329457704919295,
+          "distance_mse": 0.0016005251185697343
+        },
+        "any_death_in_window": {
+          "sse": 1.4646739622366267,
+          "count": 192,
+          "occupancy_sse": 1.2826949426758743,
+          "occupancy_count": 144,
+          "distance_sse": 0.1819790195607523,
+          "distance_count": 48,
+          "mse": 0.0076285102199824305,
+          "occupancy_mse": 0.00890760376858246,
+          "distance_mse": 0.0037912295741823394
+        }
+      },
+      "prefix_gru_0": {
+        "all": {
+          "sse": 2.7720862584769734,
+          "count": 736,
+          "occupancy_sse": 2.494028665192847,
+          "occupancy_count": 552,
+          "distance_sse": 0.2780575932841265,
+          "distance_count": 184,
+          "mse": 0.003766421546843714,
+          "occupancy_mse": 0.004518167871726172,
+          "distance_mse": 0.0015111825721963396
+        },
+        "timing_strict": {
+          "sse": 2.7720862584769734,
+          "count": 736,
+          "occupancy_sse": 2.494028665192847,
+          "occupancy_count": 552,
+          "distance_sse": 0.2780575932841265,
+          "distance_count": 184,
+          "mse": 0.003766421546843714,
+          "occupancy_mse": 0.004518167871726172,
+          "distance_mse": 0.0015111825721963396
+        },
+        "any_death_in_window": {
+          "sse": 1.5107838276701313,
+          "count": 192,
+          "occupancy_sse": 1.3413551796308136,
+          "occupancy_count": 144,
+          "distance_sse": 0.1694286480393179,
+          "distance_count": 48,
+          "mse": 0.007868665769115267,
+          "occupancy_mse": 0.009314966525213984,
+          "distance_mse": 0.0035297635008191227
+        }
+      },
+      "prefix_gru_1": {
+        "all": {
+          "sse": 2.7635663311938132,
+          "count": 736,
+          "occupancy_sse": 2.486843877895333,
+          "occupancy_count": 552,
+          "distance_sse": 0.27672245329848066,
+          "distance_count": 184,
+          "mse": 0.0037548455586872463,
+          "occupancy_mse": 0.004505151952708936,
+          "distance_mse": 0.0015039263766221775
+        },
+        "timing_strict": {
+          "sse": 2.7635663311938132,
+          "count": 736,
+          "occupancy_sse": 2.486843877895333,
+          "occupancy_count": 552,
+          "distance_sse": 0.27672245329848066,
+          "distance_count": 184,
+          "mse": 0.0037548455586872463,
+          "occupancy_mse": 0.004505151952708936,
+          "distance_mse": 0.0015039263766221775
+        },
+        "any_death_in_window": {
+          "sse": 1.5080516675156914,
+          "count": 192,
+          "occupancy_sse": 1.3393434789195695,
+          "occupancy_count": 144,
+          "distance_sse": 0.1687081885961219,
+          "distance_count": 48,
+          "mse": 0.007854435768310892,
+          "occupancy_mse": 0.0093009963813859,
+          "distance_mse": 0.003514753929085873
+        }
+      },
+      "prefix_gru_2": {
+        "all": {
+          "sse": 2.7570926037015653,
+          "count": 736,
+          "occupancy_sse": 2.4802315879714243,
+          "occupancy_count": 552,
+          "distance_sse": 0.2768610157301412,
+          "distance_count": 184,
+          "mse": 0.0037460497332901703,
+          "occupancy_mse": 0.0044931731666148994,
+          "distance_mse": 0.001504679433315985
+        },
+        "timing_strict": {
+          "sse": 2.7570926037015653,
+          "count": 736,
+          "occupancy_sse": 2.4802315879714243,
+          "occupancy_count": 552,
+          "distance_sse": 0.2768610157301412,
+          "distance_count": 184,
+          "mse": 0.0037460497332901703,
+          "occupancy_mse": 0.0044931731666148994,
+          "distance_mse": 0.001504679433315985
+        },
+        "any_death_in_window": {
+          "sse": 1.5059698334542198,
+          "count": 192,
+          "occupancy_sse": 1.3364611685786205,
+          "occupancy_count": 144,
+          "distance_sse": 0.16950866487559924,
+          "distance_count": 48,
+          "mse": 0.00784359288257406,
+          "occupancy_mse": 0.009280980337351532,
+          "distance_mse": 0.003531430518241651
+        }
+      },
+      "prefix_gru_3": {
+        "all": {
+          "sse": 2.745926860933784,
+          "count": 736,
+          "occupancy_sse": 2.4688364712102,
+          "occupancy_count": 552,
+          "distance_sse": 0.27709038972358413,
+          "distance_count": 184,
+          "mse": 0.003730878887138294,
+          "occupancy_mse": 0.004472529839148913,
+          "distance_mse": 0.0015059260311064354
+        },
+        "timing_strict": {
+          "sse": 2.745926860933784,
+          "count": 736,
+          "occupancy_sse": 2.4688364712102,
+          "occupancy_count": 552,
+          "distance_sse": 0.27709038972358413,
+          "distance_count": 184,
+          "mse": 0.003730878887138294,
+          "occupancy_mse": 0.004472529839148913,
+          "distance_mse": 0.0015059260311064354
+        },
+        "any_death_in_window": {
+          "sse": 1.5055562136825595,
+          "count": 192,
+          "occupancy_sse": 1.3361624803835894,
+          "occupancy_count": 144,
+          "distance_sse": 0.16939373329897012,
+          "distance_count": 48,
+          "mse": 0.007841438612929998,
+          "occupancy_mse": 0.009278906113774927,
+          "distance_mse": 0.003529036110395211
+        }
+      },
+      "prefix_gru_42": {
+        "all": {
+          "sse": 2.7401315792135037,
+          "count": 736,
+          "occupancy_sse": 2.46412932076233,
+          "occupancy_count": 552,
+          "distance_sse": 0.27600225845117365,
+          "distance_count": 184,
+          "mse": 0.003723004863061826,
+          "occupancy_mse": 0.00446400239268538,
+          "distance_mse": 0.001500012274191161
+        },
+        "timing_strict": {
+          "sse": 2.7401315792135037,
+          "count": 736,
+          "occupancy_sse": 2.46412932076233,
+          "occupancy_count": 552,
+          "distance_sse": 0.27600225845117365,
+          "distance_count": 184,
+          "mse": 0.003723004863061826,
+          "occupancy_mse": 0.00446400239268538,
+          "distance_mse": 0.001500012274191161
+        },
+        "any_death_in_window": {
+          "sse": 1.4865051541098435,
+          "count": 192,
+          "occupancy_sse": 1.3185720069441367,
+          "occupancy_count": 144,
+          "distance_sse": 0.16793314716570662,
+          "distance_count": 48,
+          "mse": 0.007742214344322102,
+          "occupancy_mse": 0.009156750048223172,
+          "distance_mse": 0.003498607232618888
+        }
+      },
+      "static_snapshot_0": {
+        "all": {
+          "sse": 2.6402700682543117,
+          "count": 736,
+          "occupancy_sse": 2.346481485270696,
+          "occupancy_count": 552,
+          "distance_sse": 0.29378858298361576,
+          "distance_count": 184,
+          "mse": 0.0035873234623020537,
+          "occupancy_mse": 0.004250872255925174,
+          "distance_mse": 0.0015966770814326945
+        },
+        "timing_strict": {
+          "sse": 2.6402700682543117,
+          "count": 736,
+          "occupancy_sse": 2.346481485270696,
+          "occupancy_count": 552,
+          "distance_sse": 0.29378858298361576,
+          "distance_count": 184,
+          "mse": 0.0035873234623020537,
+          "occupancy_mse": 0.004250872255925174,
+          "distance_mse": 0.0015966770814326945
+        },
+        "any_death_in_window": {
+          "sse": 1.4748617513726268,
+          "count": 192,
+          "occupancy_sse": 1.2888964661548592,
+          "occupancy_count": 144,
+          "distance_sse": 0.18596528521776756,
+          "distance_count": 48,
+          "mse": 0.007681571621732431,
+          "occupancy_mse": 0.008950669903853188,
+          "distance_mse": 0.0038742767753701577
+        }
+      },
+      "static_snapshot_1": {
+        "all": {
+          "sse": 2.6316262910925934,
+          "count": 736,
+          "occupancy_sse": 2.339636928709406,
+          "occupancy_count": 552,
+          "distance_sse": 0.2919893623831875,
+          "distance_count": 184,
+          "mse": 0.003575579199854067,
+          "occupancy_mse": 0.004238472696937329,
+          "distance_mse": 0.0015868987086042799
+        },
+        "timing_strict": {
+          "sse": 2.6316262910925934,
+          "count": 736,
+          "occupancy_sse": 2.339636928709406,
+          "occupancy_count": 552,
+          "distance_sse": 0.2919893623831875,
+          "distance_count": 184,
+          "mse": 0.003575579199854067,
+          "occupancy_mse": 0.004238472696937329,
+          "distance_mse": 0.0015868987086042799
+        },
+        "any_death_in_window": {
+          "sse": 1.4726156480630377,
+          "count": 192,
+          "occupancy_sse": 1.2875100836647346,
+          "occupancy_count": 144,
+          "distance_sse": 0.18510556439830306,
+          "distance_count": 48,
+          "mse": 0.007669873166994988,
+          "occupancy_mse": 0.008941042247671768,
+          "distance_mse": 0.003856365924964647
+        }
+      },
+      "static_snapshot_2": {
+        "all": {
+          "sse": 2.630127884928369,
+          "count": 736,
+          "occupancy_sse": 2.3367970050870466,
+          "occupancy_count": 552,
+          "distance_sse": 0.29333087984132233,
+          "distance_count": 184,
+          "mse": 0.003573543321913545,
+          "occupancy_mse": 0.004233327907766388,
+          "distance_mse": 0.0015941895643550128
+        },
+        "timing_strict": {
+          "sse": 2.630127884928369,
+          "count": 736,
+          "occupancy_sse": 2.3367970050870466,
+          "occupancy_count": 552,
+          "distance_sse": 0.29333087984132233,
+          "distance_count": 184,
+          "mse": 0.003573543321913545,
+          "occupancy_mse": 0.004233327907766388,
+          "distance_mse": 0.0015941895643550128
+        },
+        "any_death_in_window": {
+          "sse": 1.4691111586516383,
+          "count": 192,
+          "occupancy_sse": 1.2833028710825236,
+          "occupancy_count": 144,
+          "distance_sse": 0.18580828756911472,
+          "distance_count": 48,
+          "mse": 0.007651620617977283,
+          "occupancy_mse": 0.008911825493628636,
+          "distance_mse": 0.0038710059910232234
+        }
+      },
+      "static_snapshot_3": {
+        "all": {
+          "sse": 2.5900345898554122,
+          "count": 736,
+          "occupancy_sse": 2.2980808107064874,
+          "occupancy_count": 552,
+          "distance_sse": 0.29195377914892506,
+          "distance_count": 184,
+          "mse": 0.0035190687362165927,
+          "occupancy_mse": 0.004163189874468274,
+          "distance_mse": 0.0015867053214615493
+        },
+        "timing_strict": {
+          "sse": 2.5900345898554122,
+          "count": 736,
+          "occupancy_sse": 2.2980808107064874,
+          "occupancy_count": 552,
+          "distance_sse": 0.29195377914892506,
+          "distance_count": 184,
+          "mse": 0.0035190687362165927,
+          "occupancy_mse": 0.004163189874468274,
+          "distance_mse": 0.0015867053214615493
+        },
+        "any_death_in_window": {
+          "sse": 1.4286422698306749,
+          "count": 192,
+          "occupancy_sse": 1.2435561350886968,
+          "occupancy_count": 144,
+          "distance_sse": 0.18508613474197833,
+          "distance_count": 48,
+          "mse": 0.007440845155368098,
+          "occupancy_mse": 0.008635806493671506,
+          "distance_mse": 0.0038559611404578816
+        }
+      },
+      "static_snapshot_42": {
+        "all": {
+          "sse": 2.631819853185056,
+          "count": 736,
+          "occupancy_sse": 2.3398758016257672,
+          "occupancy_count": 552,
+          "distance_sse": 0.2919440515592886,
+          "distance_count": 184,
+          "mse": 0.003575842191827522,
+          "occupancy_mse": 0.0042389054377278395,
+          "distance_mse": 0.0015866524541265684
+        },
+        "timing_strict": {
+          "sse": 2.631819853185056,
+          "count": 736,
+          "occupancy_sse": 2.3398758016257672,
+          "occupancy_count": 552,
+          "distance_sse": 0.2919440515592886,
+          "distance_count": 184,
+          "mse": 0.003575842191827522,
+          "occupancy_mse": 0.0042389054377278395,
+          "distance_mse": 0.0015866524541265684
+        },
+        "any_death_in_window": {
+          "sse": 1.4734047898913478,
+          "count": 192,
+          "occupancy_sse": 1.288367751467035,
+          "occupancy_count": 144,
+          "distance_sse": 0.18503703842431274,
+          "distance_count": 48,
+          "mse": 0.007673983280684103,
+          "occupancy_mse": 0.008946998274076632,
+          "distance_mse": 0.0038549383005065155
+        }
+      }
+    },
+    "2396595__de_dust2": {
+      "persistence": {
+        "all": {
+          "sse": 2.184738017518095,
+          "count": 544,
+          "occupancy_sse": 2.0799999725818683,
+          "occupancy_count": 408,
+          "distance_sse": 0.1047380449362263,
+          "distance_count": 136,
+          "mse": 0.00401606253220238,
+          "occupancy_mse": 0.005098039148484971,
+          "distance_mse": 0.0007701326833546051
+        },
+        "timing_strict": {
+          "sse": 2.184738017518095,
+          "count": 544,
+          "occupancy_sse": 2.0799999725818683,
+          "occupancy_count": 408,
+          "distance_sse": 0.1047380449362263,
+          "distance_count": 136,
+          "mse": 0.00401606253220238,
+          "occupancy_mse": 0.005098039148484971,
+          "distance_mse": 0.0007701326833546051
+        },
+        "any_death_in_window": null
+      },
+      "ct_linear_v1": {
+        "all": {
+          "sse": 1.9708409770957402,
+          "count": 544,
+          "occupancy_sse": 1.8778836181296377,
+          "occupancy_count": 408,
+          "distance_sse": 0.09295735896610258,
+          "distance_count": 136,
+          "mse": 0.003622869443190699,
+          "occupancy_mse": 0.004602655926788327,
+          "distance_mse": 0.000683509992397813
+        },
+        "timing_strict": {
+          "sse": 1.9708409770957402,
+          "count": 544,
+          "occupancy_sse": 1.8778836181296377,
+          "occupancy_count": 408,
+          "distance_sse": 0.09295735896610258,
+          "distance_count": 136,
+          "mse": 0.003622869443190699,
+          "occupancy_mse": 0.004602655926788327,
+          "distance_mse": 0.000683509992397813
+        },
+        "any_death_in_window": null
+      },
+      "prefix_gru_0": {
+        "all": {
+          "sse": 1.9461674591192968,
+          "count": 544,
+          "occupancy_sse": 1.875408136528737,
+          "occupancy_count": 408,
+          "distance_sse": 0.07075932259055984,
+          "distance_count": 136,
+          "mse": 0.0035775137116163544,
+          "occupancy_mse": 0.0045965885699233745,
+          "distance_mse": 0.000520289136695293
+        },
+        "timing_strict": {
+          "sse": 1.9461674591192968,
+          "count": 544,
+          "occupancy_sse": 1.875408136528737,
+          "occupancy_count": 408,
+          "distance_sse": 0.07075932259055984,
+          "distance_count": 136,
+          "mse": 0.0035775137116163544,
+          "occupancy_mse": 0.0045965885699233745,
+          "distance_mse": 0.000520289136695293
+        },
+        "any_death_in_window": null
+      },
+      "prefix_gru_1": {
+        "all": {
+          "sse": 1.9521167896551528,
+          "count": 544,
+          "occupancy_sse": 1.882431318382418,
+          "occupancy_count": 408,
+          "distance_sse": 0.06968547127273483,
+          "distance_count": 136,
+          "mse": 0.0035884499809837366,
+          "occupancy_mse": 0.004613802250937299,
+          "distance_mse": 0.0005123931711230503
+        },
+        "timing_strict": {
+          "sse": 1.9521167896551528,
+          "count": 544,
+          "occupancy_sse": 1.882431318382418,
+          "occupancy_count": 408,
+          "distance_sse": 0.06968547127273483,
+          "distance_count": 136,
+          "mse": 0.0035884499809837366,
+          "occupancy_mse": 0.004613802250937299,
+          "distance_mse": 0.0005123931711230503
+        },
+        "any_death_in_window": null
+      },
+      "prefix_gru_2": {
+        "all": {
+          "sse": 1.8953984381116669,
+          "count": 544,
+          "occupancy_sse": 1.8237366706512312,
+          "occupancy_count": 408,
+          "distance_sse": 0.07166176746043562,
+          "distance_count": 136,
+          "mse": 0.003484188305352329,
+          "occupancy_mse": 0.004469942820223606,
+          "distance_mse": 0.0005269247607384972
+        },
+        "timing_strict": {
+          "sse": 1.8953984381116669,
+          "count": 544,
+          "occupancy_sse": 1.8237366706512312,
+          "occupancy_count": 408,
+          "distance_sse": 0.07166176746043562,
+          "distance_count": 136,
+          "mse": 0.003484188305352329,
+          "occupancy_mse": 0.004469942820223606,
+          "distance_mse": 0.0005269247607384972
+        },
+        "any_death_in_window": null
+      },
+      "prefix_gru_3": {
+        "all": {
+          "sse": 1.9544595963508427,
+          "count": 544,
+          "occupancy_sse": 1.8864364889139287,
+          "occupancy_count": 408,
+          "distance_sse": 0.06802310743691398,
+          "distance_count": 136,
+          "mse": 0.003592756610939049,
+          "occupancy_mse": 0.004623618845377276,
+          "distance_mse": 0.0005001699076243674
+        },
+        "timing_strict": {
+          "sse": 1.9544595963508427,
+          "count": 544,
+          "occupancy_sse": 1.8864364889139287,
+          "occupancy_count": 408,
+          "distance_sse": 0.06802310743691398,
+          "distance_count": 136,
+          "mse": 0.003592756610939049,
+          "occupancy_mse": 0.004623618845377276,
+          "distance_mse": 0.0005001699076243674
+        },
+        "any_death_in_window": null
+      },
+      "prefix_gru_42": {
+        "all": {
+          "sse": 1.9394690633020215,
+          "count": 544,
+          "occupancy_sse": 1.8705084731516148,
+          "occupancy_count": 408,
+          "distance_sse": 0.06896059015040668,
+          "distance_count": 136,
+          "mse": 0.0035652004840110688,
+          "occupancy_mse": 0.00458457959105788,
+          "distance_mse": 0.0005070631628706373
+        },
+        "timing_strict": {
+          "sse": 1.9394690633020215,
+          "count": 544,
+          "occupancy_sse": 1.8705084731516148,
+          "occupancy_count": 408,
+          "distance_sse": 0.06896059015040668,
+          "distance_count": 136,
+          "mse": 0.0035652004840110688,
+          "occupancy_mse": 0.00458457959105788,
+          "distance_mse": 0.0005070631628706373
+        },
+        "any_death_in_window": null
+      },
+      "static_snapshot_0": {
+        "all": {
+          "sse": 1.9900332319809546,
+          "count": 544,
+          "occupancy_sse": 1.8976062172721222,
+          "occupancy_count": 408,
+          "distance_sse": 0.09242701470883241,
+          "distance_count": 136,
+          "mse": 0.0036581493234944017,
+          "occupancy_mse": 0.004650995630568927,
+          "distance_mse": 0.0006796104022708265
+        },
+        "timing_strict": {
+          "sse": 1.9900332319809546,
+          "count": 544,
+          "occupancy_sse": 1.8976062172721222,
+          "occupancy_count": 408,
+          "distance_sse": 0.09242701470883241,
+          "distance_count": 136,
+          "mse": 0.0036581493234944017,
+          "occupancy_mse": 0.004650995630568927,
+          "distance_mse": 0.0006796104022708265
+        },
+        "any_death_in_window": null
+      },
+      "static_snapshot_1": {
+        "all": {
+          "sse": 1.9946303232437226,
+          "count": 544,
+          "occupancy_sse": 1.9018943120789344,
+          "occupancy_count": 408,
+          "distance_sse": 0.09273601116478813,
+          "distance_count": 136,
+          "mse": 0.003666599858903902,
+          "occupancy_mse": 0.004661505666860134,
+          "distance_mse": 0.0006818824350352068
+        },
+        "timing_strict": {
+          "sse": 1.9946303232437226,
+          "count": 544,
+          "occupancy_sse": 1.9018943120789344,
+          "occupancy_count": 408,
+          "distance_sse": 0.09273601116478813,
+          "distance_count": 136,
+          "mse": 0.003666599858903902,
+          "occupancy_mse": 0.004661505666860134,
+          "distance_mse": 0.0006818824350352068
+        },
+        "any_death_in_window": null
+      },
+      "static_snapshot_2": {
+        "all": {
+          "sse": 1.9919578454705915,
+          "count": 544,
+          "occupancy_sse": 1.8990817798746105,
+          "occupancy_count": 408,
+          "distance_sse": 0.09287606559598105,
+          "distance_count": 136,
+          "mse": 0.003661687215938587,
+          "occupancy_mse": 0.0046546122055750256,
+          "distance_mse": 0.0006829122470292724
+        },
+        "timing_strict": {
+          "sse": 1.9919578454705915,
+          "count": 544,
+          "occupancy_sse": 1.8990817798746105,
+          "occupancy_count": 408,
+          "distance_sse": 0.09287606559598105,
+          "distance_count": 136,
+          "mse": 0.003661687215938587,
+          "occupancy_mse": 0.0046546122055750256,
+          "distance_mse": 0.0006829122470292724
+        },
+        "any_death_in_window": null
+      },
+      "static_snapshot_3": {
+        "all": {
+          "sse": 1.9739804874930496,
+          "count": 544,
+          "occupancy_sse": 1.8813178734455434,
+          "occupancy_count": 408,
+          "distance_sse": 0.0926626140475062,
+          "distance_count": 136,
+          "mse": 0.003628640602009282,
+          "occupancy_mse": 0.004611073219229273,
+          "distance_mse": 0.0006813427503493103
+        },
+        "timing_strict": {
+          "sse": 1.9739804874930496,
+          "count": 544,
+          "occupancy_sse": 1.8813178734455434,
+          "occupancy_count": 408,
+          "distance_sse": 0.0926626140475062,
+          "distance_count": 136,
+          "mse": 0.003628640602009282,
+          "occupancy_mse": 0.004611073219229273,
+          "distance_mse": 0.0006813427503493103
+        },
+        "any_death_in_window": null
+      },
+      "static_snapshot_42": {
+        "all": {
+          "sse": 1.9951109065087949,
+          "count": 544,
+          "occupancy_sse": 1.9024073171139153,
+          "occupancy_count": 408,
+          "distance_sse": 0.09270358939487955,
+          "distance_count": 136,
+          "mse": 0.00366748328402352,
+          "occupancy_mse": 0.004662763032141949,
+          "distance_mse": 0.0006816440396682319
+        },
+        "timing_strict": {
+          "sse": 1.9951109065087949,
+          "count": 544,
+          "occupancy_sse": 1.9024073171139153,
+          "occupancy_count": 408,
+          "distance_sse": 0.09270358939487955,
+          "distance_count": 136,
+          "mse": 0.00366748328402352,
+          "occupancy_mse": 0.004662763032141949,
+          "distance_mse": 0.0006816440396682319
+        },
+        "any_death_in_window": null
+      }
+    },
+    "2396595__de_inferno": {
+      "persistence": {
+        "all": {
+          "sse": 8.26312394340411,
+          "count": 736,
+          "occupancy_sse": 7.920000444650665,
+          "occupancy_count": 552,
+          "distance_sse": 0.3431234987534457,
+          "distance_count": 184,
+          "mse": 0.011227070575277324,
+          "occupancy_mse": 0.014347826892483088,
+          "distance_mse": 0.001864801623660031
+        },
+        "timing_strict": {
+          "sse": 8.26312394340411,
+          "count": 736,
+          "occupancy_sse": 7.920000444650665,
+          "occupancy_count": 552,
+          "distance_sse": 0.3431234987534457,
+          "distance_count": 184,
+          "mse": 0.011227070575277324,
+          "occupancy_mse": 0.014347826892483088,
+          "distance_mse": 0.001864801623660031
+        },
+        "any_death_in_window": {
+          "sse": 1.146229243148852,
+          "count": 64,
+          "occupancy_sse": 1.04000004887581,
+          "occupancy_count": 48,
+          "distance_sse": 0.106229194273042,
+          "distance_count": 16,
+          "mse": 0.017909831924200814,
+          "occupancy_mse": 0.02166666768491271,
+          "distance_mse": 0.006639324642065125
+        }
+      },
+      "ct_linear_v1": {
+        "all": {
+          "sse": 6.141619513483863,
+          "count": 736,
+          "occupancy_sse": 5.827997596093553,
+          "occupancy_count": 552,
+          "distance_sse": 0.3136219173903098,
+          "distance_count": 184,
+          "mse": 0.008344591730276988,
+          "occupancy_mse": 0.01055796665958977,
+          "distance_mse": 0.0017044669423386402
+        },
+        "timing_strict": {
+          "sse": 6.141619513483863,
+          "count": 736,
+          "occupancy_sse": 5.827997596093553,
+          "occupancy_count": 552,
+          "distance_sse": 0.3136219173903098,
+          "distance_count": 184,
+          "mse": 0.008344591730276988,
+          "occupancy_mse": 0.01055796665958977,
+          "distance_mse": 0.0017044669423386402
+        },
+        "any_death_in_window": {
+          "sse": 0.9004654728001775,
+          "count": 64,
+          "occupancy_sse": 0.7730205511116357,
+          "occupancy_count": 48,
+          "distance_sse": 0.1274449216885419,
+          "distance_count": 16,
+          "mse": 0.014069773012502774,
+          "occupancy_mse": 0.016104594814825745,
+          "distance_mse": 0.00796530760553387
+        }
+      },
+      "prefix_gru_0": {
+        "all": {
+          "sse": 6.8564577285564265,
+          "count": 736,
+          "occupancy_sse": 6.502930376898633,
+          "occupancy_count": 552,
+          "distance_sse": 0.3535273516577939,
+          "distance_count": 184,
+          "mse": 0.00931583930510384,
+          "occupancy_mse": 0.011780670972642451,
+          "distance_mse": 0.0019213443024880105
+        },
+        "timing_strict": {
+          "sse": 6.8564577285564265,
+          "count": 736,
+          "occupancy_sse": 6.502930376898633,
+          "occupancy_count": 552,
+          "distance_sse": 0.3535273516577939,
+          "distance_count": 184,
+          "mse": 0.00931583930510384,
+          "occupancy_mse": 0.011780670972642451,
+          "distance_mse": 0.0019213443024880105
+        },
+        "any_death_in_window": {
+          "sse": 1.0503255536190648,
+          "count": 64,
+          "occupancy_sse": 0.9197355684015884,
+          "occupancy_count": 48,
+          "distance_sse": 0.13058998521747633,
+          "distance_count": 16,
+          "mse": 0.016411336775297887,
+          "occupancy_mse": 0.019161157675033094,
+          "distance_mse": 0.008161874076092271
+        }
+      },
+      "prefix_gru_1": {
+        "all": {
+          "sse": 6.83446924320892,
+          "count": 736,
+          "occupancy_sse": 6.487865136496751,
+          "occupancy_count": 552,
+          "distance_sse": 0.34660410671216924,
+          "distance_count": 184,
+          "mse": 0.009285963645664294,
+          "occupancy_mse": 0.011753378870465129,
+          "distance_mse": 0.0018837179712617893
+        },
+        "timing_strict": {
+          "sse": 6.83446924320892,
+          "count": 736,
+          "occupancy_sse": 6.487865136496751,
+          "occupancy_count": 552,
+          "distance_sse": 0.34660410671216924,
+          "distance_count": 184,
+          "mse": 0.009285963645664294,
+          "occupancy_mse": 0.011753378870465129,
+          "distance_mse": 0.0018837179712617893
+        },
+        "any_death_in_window": {
+          "sse": 1.0181111860206629,
+          "count": 64,
+          "occupancy_sse": 0.8914977341519399,
+          "occupancy_count": 48,
+          "distance_sse": 0.12661345186872297,
+          "distance_count": 16,
+          "mse": 0.015907987281572857,
+          "occupancy_mse": 0.018572869461498748,
+          "distance_mse": 0.007913340741795186
+        }
+      },
+      "prefix_gru_2": {
+        "all": {
+          "sse": 6.921660831402274,
+          "count": 736,
+          "occupancy_sse": 6.583453903254049,
+          "occupancy_count": 552,
+          "distance_sse": 0.33820692814822495,
+          "distance_count": 184,
+          "mse": 0.009404430477448742,
+          "occupancy_mse": 0.011926546926184872,
+          "distance_mse": 0.001838081131240353
+        },
+        "timing_strict": {
+          "sse": 6.921660831402274,
+          "count": 736,
+          "occupancy_sse": 6.583453903254049,
+          "occupancy_count": 552,
+          "distance_sse": 0.33820692814822495,
+          "distance_count": 184,
+          "mse": 0.009404430477448742,
+          "occupancy_mse": 0.011926546926184872,
+          "distance_mse": 0.001838081131240353
+        },
+        "any_death_in_window": {
+          "sse": 1.0534593661968261,
+          "count": 64,
+          "occupancy_sse": 0.9304274956833833,
+          "occupancy_count": 48,
+          "distance_sse": 0.12303187051344278,
+          "distance_count": 16,
+          "mse": 0.016460302596825408,
+          "occupancy_mse": 0.019383906160070487,
+          "distance_mse": 0.0076894919070901735
+        }
+      },
+      "prefix_gru_3": {
+        "all": {
+          "sse": 6.923461315512734,
+          "count": 736,
+          "occupancy_sse": 6.57185190709633,
+          "occupancy_count": 552,
+          "distance_sse": 0.35160940841640387,
+          "distance_count": 184,
+          "mse": 0.009406876787381432,
+          "occupancy_mse": 0.011905528817203496,
+          "distance_mse": 0.0019109206979152384
+        },
+        "timing_strict": {
+          "sse": 6.923461315512734,
+          "count": 736,
+          "occupancy_sse": 6.57185190709633,
+          "occupancy_count": 552,
+          "distance_sse": 0.35160940841640387,
+          "distance_count": 184,
+          "mse": 0.009406876787381432,
+          "occupancy_mse": 0.011905528817203496,
+          "distance_mse": 0.0019109206979152384
+        },
+        "any_death_in_window": {
+          "sse": 1.0184541907600813,
+          "count": 64,
+          "occupancy_sse": 0.8964801245866899,
+          "occupancy_count": 48,
+          "distance_sse": 0.12197406617339124,
+          "distance_count": 16,
+          "mse": 0.01591334673062627,
+          "occupancy_mse": 0.018676669262222705,
+          "distance_mse": 0.007623379135836952
+        }
+      },
+      "prefix_gru_42": {
+        "all": {
+          "sse": 6.907270858232116,
+          "count": 736,
+          "occupancy_sse": 6.564719185155958,
+          "occupancy_count": 552,
+          "distance_sse": 0.34255167307615775,
+          "distance_count": 184,
+          "mse": 0.009384878883467548,
+          "occupancy_mse": 0.011892607219485431,
+          "distance_mse": 0.0018616938754139009
+        },
+        "timing_strict": {
+          "sse": 6.907270858232116,
+          "count": 736,
+          "occupancy_sse": 6.564719185155958,
+          "occupancy_count": 552,
+          "distance_sse": 0.34255167307615775,
+          "distance_count": 184,
+          "mse": 0.009384878883467548,
+          "occupancy_mse": 0.011892607219485431,
+          "distance_mse": 0.0018616938754139009
+        },
+        "any_death_in_window": {
+          "sse": 1.0196406398671385,
+          "count": 64,
+          "occupancy_sse": 0.8956881137021546,
+          "occupancy_count": 48,
+          "distance_sse": 0.12395252616498387,
+          "distance_count": 16,
+          "mse": 0.01593188499792404,
+          "occupancy_mse": 0.018660169035461555,
+          "distance_mse": 0.007747032885311492
+        }
+      },
+      "static_snapshot_0": {
+        "all": {
+          "sse": 6.856447403750886,
+          "count": 736,
+          "occupancy_sse": 6.528048256248081,
+          "occupancy_count": 552,
+          "distance_sse": 0.32839914750280585,
+          "distance_count": 184,
+          "mse": 0.009315825276835443,
+          "occupancy_mse": 0.011826174377261016,
+          "distance_mse": 0.0017847779755587275
+        },
+        "timing_strict": {
+          "sse": 6.856447403750886,
+          "count": 736,
+          "occupancy_sse": 6.528048256248081,
+          "occupancy_count": 552,
+          "distance_sse": 0.32839914750280585,
+          "distance_count": 184,
+          "mse": 0.009315825276835443,
+          "occupancy_mse": 0.011826174377261016,
+          "distance_mse": 0.0017847779755587275
+        },
+        "any_death_in_window": {
+          "sse": 0.9926895006255106,
+          "count": 64,
+          "occupancy_sse": 0.8870153833118029,
+          "occupancy_count": 48,
+          "distance_sse": 0.1056741173137079,
+          "distance_count": 16,
+          "mse": 0.015510773447273604,
+          "occupancy_mse": 0.018479487152329225,
+          "distance_mse": 0.006604632332106744
+        }
+      },
+      "static_snapshot_1": {
+        "all": {
+          "sse": 6.89774218732718,
+          "count": 736,
+          "occupancy_sse": 6.5743086707853,
+          "occupancy_count": 552,
+          "distance_sse": 0.3234335165418798,
+          "distance_count": 184,
+          "mse": 0.009371932319738015,
+          "occupancy_mse": 0.011909979476060326,
+          "distance_mse": 0.001757790850771086
+        },
+        "timing_strict": {
+          "sse": 6.89774218732718,
+          "count": 736,
+          "occupancy_sse": 6.5743086707853,
+          "occupancy_count": 552,
+          "distance_sse": 0.3234335165418798,
+          "distance_count": 184,
+          "mse": 0.009371932319738015,
+          "occupancy_mse": 0.011909979476060326,
+          "distance_mse": 0.001757790850771086
+        },
+        "any_death_in_window": {
+          "sse": 0.9960259515131936,
+          "count": 64,
+          "occupancy_sse": 0.8903950916123458,
+          "occupancy_count": 48,
+          "distance_sse": 0.10563085990084797,
+          "distance_count": 16,
+          "mse": 0.01556290549239365,
+          "occupancy_mse": 0.01854989774192387,
+          "distance_mse": 0.006601928743802998
+        }
+      },
+      "static_snapshot_2": {
+        "all": {
+          "sse": 6.850873359003641,
+          "count": 736,
+          "occupancy_sse": 6.530920921362253,
+          "occupancy_count": 552,
+          "distance_sse": 0.3199524376413885,
+          "distance_count": 184,
+          "mse": 0.009308251846472338,
+          "occupancy_mse": 0.011831378480728719,
+          "distance_mse": 0.0017388719437031982
+        },
+        "timing_strict": {
+          "sse": 6.850873359003641,
+          "count": 736,
+          "occupancy_sse": 6.530920921362253,
+          "occupancy_count": 552,
+          "distance_sse": 0.3199524376413885,
+          "distance_count": 184,
+          "mse": 0.009308251846472338,
+          "occupancy_mse": 0.011831378480728719,
+          "distance_mse": 0.0017388719437031982
+        },
+        "any_death_in_window": {
+          "sse": 0.998753163584122,
+          "count": 64,
+          "occupancy_sse": 0.891945913346091,
+          "occupancy_count": 48,
+          "distance_sse": 0.10680725023803106,
+          "distance_count": 16,
+          "mse": 0.015605518181001907,
+          "occupancy_mse": 0.01858220652804356,
+          "distance_mse": 0.006675453139876941
+        }
+      },
+      "static_snapshot_3": {
+        "all": {
+          "sse": 6.909641216050732,
+          "count": 736,
+          "occupancy_sse": 6.580831216924168,
+          "occupancy_count": 552,
+          "distance_sse": 0.3288099991265634,
+          "distance_count": 184,
+          "mse": 0.009388099478329798,
+          "occupancy_mse": 0.011921795682833638,
+          "distance_mse": 0.0017870108648182794
+        },
+        "timing_strict": {
+          "sse": 6.909641216050732,
+          "count": 736,
+          "occupancy_sse": 6.580831216924168,
+          "occupancy_count": 552,
+          "distance_sse": 0.3288099991265634,
+          "distance_count": 184,
+          "mse": 0.009388099478329798,
+          "occupancy_mse": 0.011921795682833638,
+          "distance_mse": 0.0017870108648182794
+        },
+        "any_death_in_window": {
+          "sse": 0.9782769612771537,
+          "count": 64,
+          "occupancy_sse": 0.8735154429300469,
+          "occupancy_count": 48,
+          "distance_sse": 0.10476151834710667,
+          "distance_count": 16,
+          "mse": 0.015285577519955526,
+          "occupancy_mse": 0.01819823839437598,
+          "distance_mse": 0.006547594896694167
+        }
+      },
+      "static_snapshot_42": {
+        "all": {
+          "sse": 6.96120923936556,
+          "count": 736,
+          "occupancy_sse": 6.632107400324057,
+          "occupancy_count": 552,
+          "distance_sse": 0.3291018390415026,
+          "distance_count": 184,
+          "mse": 0.009458164727398858,
+          "occupancy_mse": 0.01201468731942764,
+          "distance_mse": 0.0017885969513125142
+        },
+        "timing_strict": {
+          "sse": 6.96120923936556,
+          "count": 736,
+          "occupancy_sse": 6.632107400324057,
+          "occupancy_count": 552,
+          "distance_sse": 0.3291018390415026,
+          "distance_count": 184,
+          "mse": 0.009458164727398858,
+          "occupancy_mse": 0.01201468731942764,
+          "distance_mse": 0.0017885969513125142
+        },
+        "any_death_in_window": {
+          "sse": 0.9980461329202609,
+          "count": 64,
+          "occupancy_sse": 0.8934864171061969,
+          "occupancy_count": 48,
+          "distance_sse": 0.10455971581406409,
+          "distance_count": 16,
+          "mse": 0.015594470826879077,
+          "occupancy_mse": 0.018614300356379104,
+          "distance_mse": 0.006534982238379006
+        }
+      }
+    }
+  },
+  "paired_series": {
+    "new_series_only": {
+      "ct_linear_v1": {
+        "series_count": 2,
+        "weighting": "equal series, never independent rounds",
+        "improvement_pct": 18.103399572262614,
+        "descriptive_95pct_interval": [
+          14.438518373815956,
+          22.35291276892466
+        ],
+        "resamples": 2000,
+        "seed": 20261023
+      },
+      "prefix_gru_0": {
+        "series_count": 2,
+        "weighting": "equal series, never independent rounds",
+        "improvement_pct": 11.525445983546788,
+        "descriptive_95pct_interval": [
+          7.884578802751885,
+          15.747114379957416
+        ],
+        "resamples": 2000,
+        "seed": 20261023
+      },
+      "prefix_gru_1": {
+        "series_count": 2,
+        "weighting": "equal series, never independent rounds",
+        "improvement_pct": 11.522800749803096,
+        "descriptive_95pct_interval": [
+          7.747256284649174,
+          15.900630523945914
+        ],
+        "resamples": 2000,
+        "seed": 20261023
+      },
+      "prefix_gru_2": {
+        "series_count": 2,
+        "weighting": "equal series, never independent rounds",
+        "improvement_pct": 11.540265306781428,
+        "descriptive_95pct_interval": [
+          8.03132548275478,
+          15.608960929115467
+        ],
+        "resamples": 2000,
+        "seed": 20261023
+      },
+      "prefix_gru_3": {
+        "series_count": 2,
+        "weighting": "equal series, never independent rounds",
+        "improvement_pct": 10.917384310836653,
+        "descriptive_95pct_interval": [
+          7.3736424519573855,
+          15.026433685002994
+        ],
+        "resamples": 2000,
+        "seed": 20261023
+      },
+      "prefix_gru_42": {
+        "series_count": 2,
+        "weighting": "equal series, never independent rounds",
+        "improvement_pct": 11.219497576883796,
+        "descriptive_95pct_interval": [
+          7.678920401664824,
+          15.324877428288119
+        ],
+        "resamples": 2000,
+        "seed": 20261023
+      },
+      "static_snapshot_0": {
+        "series_count": 2,
+        "weighting": "equal series, never independent rounds",
+        "improvement_pct": 13.458405420837572,
+        "descriptive_95pct_interval": [
+          11.846575305543993,
+          15.327359139888685
+        ],
+        "resamples": 2000,
+        "seed": 20261023
+      },
+      "static_snapshot_1": {
+        "series_count": 2,
+        "weighting": "equal series, never independent rounds",
+        "improvement_pct": 12.906785846177893,
+        "descriptive_95pct_interval": [
+          11.198042576563093,
+          14.888112574316636
+        ],
+        "resamples": 2000,
+        "seed": 20261023
+      },
+      "static_snapshot_2": {
+        "series_count": 2,
+        "weighting": "equal series, never independent rounds",
+        "improvement_pct": 13.444942214163348,
+        "descriptive_95pct_interval": [
+          11.791376704216471,
+          15.362289073603918
+        ],
+        "resamples": 2000,
+        "seed": 20261023
+      },
+      "static_snapshot_3": {
+        "series_count": 2,
+        "weighting": "equal series, never independent rounds",
+        "improvement_pct": 12.801352985467085,
+        "descriptive_95pct_interval": [
+          10.929447954575721,
+          14.971869490897749
+        ],
+        "resamples": 2000,
+        "seed": 20261023
+      },
+      "static_snapshot_42": {
+        "series_count": 2,
+        "weighting": "equal series, never independent rounds",
+        "improvement_pct": 12.365013686544913,
+        "descriptive_95pct_interval": [
+          10.716892047298398,
+          14.276048253954876
+        ],
+        "resamples": 2000,
+        "seed": 20261023
+      }
+    },
+    "all_target_series": {
+      "ct_linear_v1": {
+        "series_count": 2,
+        "weighting": "equal series, never independent rounds",
+        "improvement_pct": 18.103399572262614,
+        "descriptive_95pct_interval": [
+          14.438518373815956,
+          22.35291276892466
+        ],
+        "resamples": 2000,
+        "seed": 20261023
+      },
+      "prefix_gru_0": {
+        "series_count": 2,
+        "weighting": "equal series, never independent rounds",
+        "improvement_pct": 11.525445983546788,
+        "descriptive_95pct_interval": [
+          7.884578802751885,
+          15.747114379957416
+        ],
+        "resamples": 2000,
+        "seed": 20261023
+      },
+      "prefix_gru_1": {
+        "series_count": 2,
+        "weighting": "equal series, never independent rounds",
+        "improvement_pct": 11.522800749803096,
+        "descriptive_95pct_interval": [
+          7.747256284649174,
+          15.900630523945914
+        ],
+        "resamples": 2000,
+        "seed": 20261023
+      },
+      "prefix_gru_2": {
+        "series_count": 2,
+        "weighting": "equal series, never independent rounds",
+        "improvement_pct": 11.540265306781428,
+        "descriptive_95pct_interval": [
+          8.03132548275478,
+          15.608960929115467
+        ],
+        "resamples": 2000,
+        "seed": 20261023
+      },
+      "prefix_gru_3": {
+        "series_count": 2,
+        "weighting": "equal series, never independent rounds",
+        "improvement_pct": 10.917384310836653,
+        "descriptive_95pct_interval": [
+          7.3736424519573855,
+          15.026433685002994
+        ],
+        "resamples": 2000,
+        "seed": 20261023
+      },
+      "prefix_gru_42": {
+        "series_count": 2,
+        "weighting": "equal series, never independent rounds",
+        "improvement_pct": 11.219497576883796,
+        "descriptive_95pct_interval": [
+          7.678920401664824,
+          15.324877428288119
+        ],
+        "resamples": 2000,
+        "seed": 20261023
+      },
+      "static_snapshot_0": {
+        "series_count": 2,
+        "weighting": "equal series, never independent rounds",
+        "improvement_pct": 13.458405420837572,
+        "descriptive_95pct_interval": [
+          11.846575305543993,
+          15.327359139888685
+        ],
+        "resamples": 2000,
+        "seed": 20261023
+      },
+      "static_snapshot_1": {
+        "series_count": 2,
+        "weighting": "equal series, never independent rounds",
+        "improvement_pct": 12.906785846177893,
+        "descriptive_95pct_interval": [
+          11.198042576563093,
+          14.888112574316636
+        ],
+        "resamples": 2000,
+        "seed": 20261023
+      },
+      "static_snapshot_2": {
+        "series_count": 2,
+        "weighting": "equal series, never independent rounds",
+        "improvement_pct": 13.444942214163348,
+        "descriptive_95pct_interval": [
+          11.791376704216471,
+          15.362289073603918
+        ],
+        "resamples": 2000,
+        "seed": 20261023
+      },
+      "static_snapshot_3": {
+        "series_count": 2,
+        "weighting": "equal series, never independent rounds",
+        "improvement_pct": 12.801352985467085,
+        "descriptive_95pct_interval": [
+          10.929447954575721,
+          14.971869490897749
+        ],
+        "resamples": 2000,
+        "seed": 20261023
+      },
+      "static_snapshot_42": {
+        "series_count": 2,
+        "weighting": "equal series, never independent rounds",
+        "improvement_pct": 12.365013686544913,
+        "descriptive_95pct_interval": [
+          10.716892047298398,
+          14.276048253954876
+        ],
+        "resamples": 2000,
+        "seed": 20261023
+      }
+    }
+  },
+  "limitations": [
+    "only two newly acquired series; known in older project manifests",
+    "source alias risk unresolved",
+    "uncertainty intervals descriptive with few series",
+    "no human tactical relevance judgments"
+  ],
+  "resources": {
+    "peak_allocated_VRAM_MiB": 18.52392578125,
+    "process_RSS_MiB": 1235.4609375
+  }
+}
