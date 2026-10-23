@@ -1,0 +1,193 @@
+{
+  "version": "ct-human-silver-v10",
+  "status": "assigned_with_provisional_ai_silver_no_human_returns",
+  "seed": "ct-human-silver-v10",
+  "human_pairs": 60,
+  "silver_pairs": 59,
+  "already_distributed": [
+    "Q01",
+    "Q02",
+    "Q03"
+  ],
+  "human_ratings_received": 0,
+  "human": {
+    "Q01": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C09",
+      "C10"
+    ],
+    "Q02": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C09",
+      "C10"
+    ],
+    "Q03": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C09",
+      "C10"
+    ],
+    "Q04": [],
+    "Q05": [
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C10"
+    ],
+    "Q06": [],
+    "Q07": [
+      "C01",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C08",
+      "C09",
+      "C10"
+    ],
+    "Q08": [],
+    "Q09": [
+      "C01",
+      "C03",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C09"
+    ],
+    "Q10": [],
+    "Q11": [
+      "C01",
+      "C02",
+      "C04",
+      "C05",
+      "C06",
+      "C08",
+      "C09"
+    ],
+    "Q12": []
+  },
+  "silver": {
+    "Q01": [],
+    "Q02": [],
+    "Q03": [],
+    "Q04": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C09"
+    ],
+    "Q05": [
+      "C01",
+      "C09"
+    ],
+    "Q06": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C09",
+      "C10"
+    ],
+    "Q07": [
+      "C02",
+      "C07"
+    ],
+    "Q08": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C09",
+      "C10"
+    ],
+    "Q09": [
+      "C02",
+      "C04",
+      "C10"
+    ],
+    "Q10": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C09",
+      "C10"
+    ],
+    "Q11": [
+      "C03",
+      "C07",
+      "C10"
+    ],
+    "Q12": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C09",
+      "C10"
+    ]
+  },
+  "selection": "Keep Q01-Q03 unchanged; seeded SHA order chooses 8/8/7/7 extra human items from Q05/Q07/Q09/Q11; every remaining pair is silver",
+  "limits": [
+    "Human and AI rows are separate evidence sources; no pooled headline efficacy metric.",
+    "Human covers six maps; silver covers five because both Ancient packets were already sent.",
+    "Developer-involved AI annotation, not independent expert review.",
+    "No silver labels used to train or select models in this round."
+  ],
+  "silver_annotations_written": 59,
+  "silver_non_abstaining_tactical": 34,
+  "human_packet_sha256": {
+    "CT-human-Q05.zip": "5f0835fce089475fa3eb8c636105dd0e5ccc5a0e83808954701436e7a266ebf1",
+    "CT-human-Q07.zip": "f4b97b7b3a1f64b75f2b48e297ecb74746f0917e6b768e68f6c3eb41f60f3dce",
+    "CT-human-Q09.zip": "34d5da87dacc714a335cd8dffb7c09a6080f0caf97ec7698e227f4b4a7b636d0",
+    "CT-human-Q11.zip": "2b64bd6e303a308c1fbf64b26975593c4081343c9e95eef36fbc717b66c274bd"
+  },
+  "extra_human_bundle_sha256": "449a8944ef5326be85aded2cb4462a60c29c79214682a741081ce47d6bef85bd",
+  "original_sent_packet_versions": "Not yet verified; preserve actual version from each returned export"
+}
