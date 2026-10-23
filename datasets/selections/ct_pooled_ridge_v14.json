@@ -1,0 +1,44 @@
+{
+  "version": "ct-pooled-ridge-v14",
+  "written_before_first_fit_utc": "2026-10-23T12:12:50.817458+00:00",
+  "scope": "Exploratory controls on previously observed development data; not preregistered confirmation",
+  "tasks": [
+    "G3",
+    "G4"
+  ],
+  "ridge_penalties": [
+    0.0001,
+    0.001,
+    0.01,
+    0.1,
+    1,
+    10,
+    100
+  ],
+  "source_run_report_sha256": "9ee54ed1da8ae4572742d587a6c233aa3e27c91505688f46eae8694d0b9759b8",
+  "implementation_sha256": {
+    "scripts/evaluate_ct_pooled_ridge.py": "1caff281145267064069a8bdfdcf7099ea5f3c751ea4071cc9c1dd24362f7219",
+    "scripts/confirm_ct_generalization.py": "fff00eef1eaebd5edbf4b80ff8ba7d5bd3c851f2e18176c5227935d0aaa0a793",
+    "app/services/ct_feature_service.py": "7d2476cc88c6f3ad62e8a1ca71668c14ee71758f5904162763ac49a63e5bed0b",
+    "app/services/ct_linear_service.py": "523e9909f53a31862165ff84c3256489f18a9a2dc66cdcb63778e42fb11053ca",
+    "app/services/ct_prediction_service.py": "0a063f39b27d977cc5dafd009d7fd807be9b4970c2cf84e2ef0ac1f3b125b7d1",
+    "app/services/ct_evaluation_service.py": "185fdcad339c27bcaa1ff243377eb00830d1721774111f1874f2418e474db16d",
+    "output/tagnet/ct_grouped_confirmation_v7/folds.json": "5997bf6bdabc1df506fc2cd4e1527be35eac332463002bcc6f34f4ac15053585",
+    "output/tagnet/ct_grouped_confirmation_v7/sample_index.json": "83f34a6c24a6cff875fd458f355129cf41b89aae8769672aa9bd46558778dd4d"
+  },
+  "methods": {
+    "ridge": "Existing 10 current-state features, reproduced as a paired control",
+    "node_ridge": "Base10 + role-conditioned live health/equipment sums divided by five (10) + live health/equipment standard deviations (2)",
+    "pair_ridge": "Base10 + sorted ten live pair distances (zero padded) + ten validity flags",
+    "pooled_ridge": "Base10 + both added groups (42 total)"
+  },
+  "selection": "Training-only normalization; original seven penalties selected only on each source validation fold; all four methods reported",
+  "limits": [
+    "Human annotation work paused by user; no human or silver labels used.",
+    "Same raw node and edge inputs but lossy summaries; not a complete-information set or graph comparison.",
+    "No semantic roles, navigation distances or new map transforms introduced.",
+    "Previously viewed 9-series development cohort; no untouched test or publication efficacy claim.",
+    "Equal-series bootstrap is descriptive with shared teams and overlapping training folds.",
+    "No graph retraining, GPU, new downloads, T-side or real-backend work."
+  ]
+}

@@ -468,6 +468,7 @@ data/、output/            # 本地运行数据，不进入 Git
 | CT 首份人工反馈 v11 | [1 条完整、1 条部分回答，保留题多及难以区分的反馈](docs/CT_HUMAN_FEEDBACK_V11.md)（不据此判断模型效果） |
 | CT 人工回收记录 v12 | [Q01、Q05-A 完整，累计 14 条完整、1 条部分回答](docs/CT_HUMAN_RETURNS_V12.md)（按题包及版本统计，不代表模型效果） |
 | CT 下一批分发 v13 | [先发四包，每人 3 题；其余按顺序每人 2–3 题](docs/CT_HUMAN_DISTRIBUTION_V13.md)（Q05-A 已回收，其余按实际领取登记） |
+| CT 独立对照与论文证据 v14 | [更丰富统计的线性对照、英文方法/结果草稿](docs/CT_POOLED_CONTROLS_V14.md)（人工工作暂缓；新对照未建立稳定增益） |
 
 ## 许可证
 

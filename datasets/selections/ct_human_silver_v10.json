@@ -205,5 +205,10 @@
   },
   "mixed_version_analysis": "Cumulative counts only; score summaries remain per packet/version",
   "active_additional_human_distribution": "datasets/selections/ct_human_micro_v13.json",
-  "previous_7_8_pair_packets": "Superseded for new distribution; retained as historical artifacts"
+  "previous_7_8_pair_packets": "Superseded for new distribution; retained as historical artifacts",
+  "annotation_workflow": {
+    "status": "paused_by_user",
+    "scope": "Human packet distribution, collection follow-up and AI silver annotation",
+    "existing_responses_and_allocation_preserved": true
+  }
 }
