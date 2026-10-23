@@ -463,8 +463,9 @@ data/、output/            # 本地运行数据，不进入 Git
 | CT 公平检索实验 v6 | [累计 345 个 CT 回合、公平检索窗口与 412 项检查](docs/CT_EVENT_AND_RETRIEVAL_V6.md)（保留历史结果） |
 | CT 数值泛化确认 v7 | [9 系列、465 回合、41 折与 282 份权重检查](docs/CT_GENERALIZATION_CONFIRMATION_V7.md)（线性对照总体更好；战术相关性未验收，真实后端暂缓） |
 | CT 投稿研究与地图核查 v8 | [研究协议](docs/CT_STUDY_PROTOCOL_V8.md) · [Awpy 升级与导航定位修复](docs/CT_RESEARCH_PROGRESS_V8.md)（覆盖率不代表定位或战术正确率；历史地图兼容仍待核查） |
-| CT 地图上下文与看图测试 v9 | [中文位置、通俗说明，12 个独立题包（每包 9–10 题）](docs/CT_MAP_CONTEXT_AND_PILOT_V9.md)（尚未收集真实评分） |
-| CT 人工与银标分配 v10 | [60 条人工、59 条 AI 银标，已发三包保持原样](docs/CT_HUMAN_SILVER_V10.md)（人工尚未回收，AI 标签未获人工核实） |
+| CT 地图上下文与看图测试 v9 | [中文位置、通俗说明，12 个独立题包（每包 9–10 题）](docs/CT_MAP_CONTEXT_AND_PILOT_V9.md) |
+| CT 人工与银标分配 v10 | [60 条人工、59 条 AI 银标，已发三包保持原样](docs/CT_HUMAN_SILVER_V10.md)（分配目标，尚未收齐；AI 标签未获人工核实） |
+| CT 首份人工反馈 v11 | [1 条完整、1 条部分回答，保留题多及难以区分的反馈](docs/CT_HUMAN_FEEDBACK_V11.md)（不据此判断模型效果） |
 
 ## 许可证
 

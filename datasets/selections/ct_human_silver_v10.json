@@ -1,6 +1,6 @@
 {
   "version": "ct-human-silver-v10",
-  "status": "assigned_with_provisional_ai_silver_no_human_returns",
+  "status": "one_partial_human_return_with_provisional_ai_silver",
   "seed": "ct-human-silver-v10",
   "human_pairs": 60,
   "silver_pairs": 59,
@@ -9,7 +9,7 @@
     "Q02",
     "Q03"
   ],
-  "human_ratings_received": 0,
+  "human_ratings_received": 1,
   "human": {
     "Q01": [
       "C01",
@@ -189,5 +189,16 @@
     "CT-human-Q11.zip": "2b64bd6e303a308c1fbf64b26975593c4081343c9e95eef36fbc717b66c274bd"
   },
   "extra_human_bundle_sha256": "449a8944ef5326be85aded2cb4462a60c29c79214682a741081ce47d6bef85bd",
-  "original_sent_packet_versions": "Not yet verified; preserve actual version from each returned export"
+  "original_sent_packet_versions": "Q03 verified from returned export; Q01/Q02 not yet verified",
+  "human_response_files_received": 1,
+  "human_complete_pairs_received": 1,
+  "human_partial_pairs_received": 1,
+  "human_blank_pairs_in_returned_files": 8,
+  "human_complete_packets_received": 0,
+  "human_received_tactical_grades": 2,
+  "human_received_structural_grades": 1,
+  "latest_human_intake": "datasets/evaluation/ct_human_feedback_v11_report.json",
+  "received_packet_versions": {
+    "Q03": "ct-pilot-v9-distributed-r3-zh-Q03"
+  }
 }

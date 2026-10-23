@@ -1,0 +1,60 @@
+{
+  "version": "ct-human-feedback-v11",
+  "date": "2026-10-23",
+  "status": "one_partial_human_return_not_model_efficacy_evidence",
+  "source_export_sha256": "f76e982f94edd10b4ae3e71edd6777d606cd44f8bd5080a81b3b70bc15bc2cab",
+  "participant_id": "P001",
+  "reviewer_background_self_report": "frequent CS2 player",
+  "returned_version": "ct-pilot-v9-distributed-r3-zh-Q03",
+  "payload_sha256": "6245ec8772685719f4194360d8258fc1009f682cd016cc6e986ffcd272052c49",
+  "query_id": "Q03",
+  "returned_files": 1,
+  "assigned_pairs_in_this_return": 10,
+  "complete_pairs": 1,
+  "partial_pairs": 1,
+  "blank_pairs": 8,
+  "completed_packets": 0,
+  "tactical_grades_present": 2,
+  "structural_grades_present": 1,
+  "explicit_unjudgeable_choices": 0,
+  "answered_rows": [
+    {
+      "query_id": "Q03",
+      "candidate_id": "C05",
+      "tactical_grade": 3,
+      "tactical_unjudgeable": false,
+      "structural_grade": 0,
+      "structural_unjudgeable": false,
+      "complete": true
+    },
+    {
+      "query_id": "Q03",
+      "candidate_id": "C02",
+      "tactical_grade": 3,
+      "tactical_unjudgeable": false,
+      "structural_grade": null,
+      "structural_unjudgeable": false,
+      "complete": false
+    }
+  ],
+  "feedback_summary": [
+    "Participant reported completing only one item.",
+    "Participant found the packet too long.",
+    "Participant perceived little difference and limited variety in standard openings."
+  ],
+  "written_reason_summary": "The complete response discussed the general importance of middle control on Ancient and B-side emphasis on Anubis; no exact route or teammate movement was identified.",
+  "interpretation": [
+    "Incomplete return is retained as process feedback and partial observations, not discarded.",
+    "Unanswered fields remain missing; no zero filling or replacement with AI labels.",
+    "Reference grade 3 and structural grade 0 measure different questions and are not automatically inconsistent.",
+    "The rationale may rely on map-wide prior knowledge; it does not establish specific transfer between the displayed rounds.",
+    "One participant cannot establish poor model discrimination, rubric validity, overall dropout rates or model efficacy."
+  ],
+  "next_iteration_proposal": [
+    "Use 2-3 comparisons per person rather than 7-10; do not rewrite already distributed packets.",
+    "Check whether differences are visible before asking about possible transfer.",
+    "Offer optional short reasons; version the changed completion rule before collection.",
+    "Do not count the proposed simplified question as equivalent to the existing two dimensions."
+  ],
+  "privacy": "Raw export, reviewer code and chat image remain local; public summary uses a project-local pseudonym and no verbatim chat or written reason."
+}
