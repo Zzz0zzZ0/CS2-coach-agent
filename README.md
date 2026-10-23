@@ -467,6 +467,7 @@ data/、output/            # 本地运行数据，不进入 Git
 | CT 人工与银标分配 v10 | [60 条人工、59 条 AI 银标，已发三包保持原样](docs/CT_HUMAN_SILVER_V10.md)（分配目标，尚未收齐；AI 标签未获人工核实） |
 | CT 首份人工反馈 v11 | [1 条完整、1 条部分回答，保留题多及难以区分的反馈](docs/CT_HUMAN_FEEDBACK_V11.md)（不据此判断模型效果） |
 | CT 完整人工回传 v12 | [Q01 十条齐全，累计 11 条完整、1 条部分回答](docs/CT_HUMAN_RETURNS_V12.md)（r2/r3 分版统计，不代表模型效果） |
+| CT 下一批分发 v13 | [先发四包，每人 3 题；其余按顺序每人 2–3 题](docs/CT_HUMAN_DISTRIBUTION_V13.md)（仅准备完成，未确认发出） |
 
 ## 许可证
 

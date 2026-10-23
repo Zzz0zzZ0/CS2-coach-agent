@@ -202,5 +202,7 @@
     "Q03": "ct-pilot-v9-distributed-r3-zh-Q03",
     "Q01": "ct-pilot-v9-distributed-r2-Q01"
   },
-  "mixed_version_analysis": "Cumulative counts only; score summaries remain per packet/version"
+  "mixed_version_analysis": "Cumulative counts only; score summaries remain per packet/version",
+  "active_additional_human_distribution": "datasets/selections/ct_human_micro_v13.json",
+  "previous_7_8_pair_packets": "Superseded for new distribution; retained as historical artifacts"
 }

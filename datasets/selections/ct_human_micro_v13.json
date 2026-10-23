@@ -1,0 +1,214 @@
+{
+  "version": "ct-human-micro-v13",
+  "date": "2026-10-23",
+  "status": "prepared_not_confirmed_sent",
+  "pairs": 30,
+  "packets": [
+    {
+      "order": 1,
+      "wave": 1,
+      "packet": "Q05-A",
+      "query_id": "Q05",
+      "map_zh": "炙热沙城2",
+      "candidate_ids": [
+        "C02",
+        "C03",
+        "C04"
+      ],
+      "pairs": 3,
+      "filename": "01-Q05-A-3题.zip",
+      "payload_sha256": "70f503efa9b33fa937b1773a206715fce6c2b7a6339cbeafeedfc33ad37a0eee",
+      "archive_sha256": "8c7419599ea1954e28fe4ab993c7b2d441d124a5478199f1c591fa1882072e3d",
+      "status": "prepared_not_confirmed_sent"
+    },
+    {
+      "order": 2,
+      "wave": 1,
+      "packet": "Q07-A",
+      "query_id": "Q07",
+      "map_zh": "炼狱小镇",
+      "candidate_ids": [
+        "C01",
+        "C03",
+        "C04"
+      ],
+      "pairs": 3,
+      "filename": "02-Q07-A-3题.zip",
+      "payload_sha256": "4250eb58447f9b1b299c62f04cab72c00457bb9d0ff8646b7f58ed274e3c8b6c",
+      "archive_sha256": "ddeece8dfd2e1c5d0efae6d47d55fa536b6b59cec6d693261a32061cce65e206",
+      "status": "prepared_not_confirmed_sent"
+    },
+    {
+      "order": 3,
+      "wave": 1,
+      "packet": "Q09-A",
+      "query_id": "Q09",
+      "map_zh": "荒漠迷城",
+      "candidate_ids": [
+        "C01",
+        "C03",
+        "C05"
+      ],
+      "pairs": 3,
+      "filename": "03-Q09-A-3题.zip",
+      "payload_sha256": "9751092c4df2e5108c5b397bf12e87304aabe9b4fe1ce5abe22043c8ab345c95",
+      "archive_sha256": "b77fe182136347aef6be978e01e22857790746126455bd4b8983358e5c2d4f29",
+      "status": "prepared_not_confirmed_sent"
+    },
+    {
+      "order": 4,
+      "wave": 1,
+      "packet": "Q11-A",
+      "query_id": "Q11",
+      "map_zh": "核子危机",
+      "candidate_ids": [
+        "C01",
+        "C02",
+        "C04"
+      ],
+      "pairs": 3,
+      "filename": "04-Q11-A-3题.zip",
+      "payload_sha256": "99ebaeed65deadcde35e2bc293c6ab4304d7811a891cefe5583ccedcfa82bcf2",
+      "archive_sha256": "9af8bef38e0249f534d3d843530d770bd6488c9d27de70a6490b6e90b7e53ede",
+      "status": "prepared_not_confirmed_sent"
+    },
+    {
+      "order": 5,
+      "wave": 2,
+      "packet": "Q05-B",
+      "query_id": "Q05",
+      "map_zh": "炙热沙城2",
+      "candidate_ids": [
+        "C05",
+        "C06",
+        "C07"
+      ],
+      "pairs": 3,
+      "filename": "05-Q05-B-3题.zip",
+      "payload_sha256": "c1b330558db1ab321e42b2c5f3c7950cb6f33b245cb3b787e76db88fbdd12e77",
+      "archive_sha256": "cc0589ad630c50f82dd0939870b568abcb539dfa6a64324069a03b1f2f8fdbab",
+      "status": "prepared_not_confirmed_sent"
+    },
+    {
+      "order": 6,
+      "wave": 2,
+      "packet": "Q07-B",
+      "query_id": "Q07",
+      "map_zh": "炼狱小镇",
+      "candidate_ids": [
+        "C05",
+        "C06",
+        "C08"
+      ],
+      "pairs": 3,
+      "filename": "06-Q07-B-3题.zip",
+      "payload_sha256": "5ede75033d45e1eba56b1075bbcf714fdcb60d0b129a68e8f0db978f25c5cf5a",
+      "archive_sha256": "07c8289a66846f838a4ecfd7733cadec10297638d36057857faee77a41adb1e1",
+      "status": "prepared_not_confirmed_sent"
+    },
+    {
+      "order": 7,
+      "wave": 2,
+      "packet": "Q09-B",
+      "query_id": "Q09",
+      "map_zh": "荒漠迷城",
+      "candidate_ids": [
+        "C06",
+        "C07"
+      ],
+      "pairs": 2,
+      "filename": "07-Q09-B-2题.zip",
+      "payload_sha256": "bd672c48cc754ce7d69b9d70a9fd046aa01ee7e5a6c7357d62d9117c98b76743",
+      "archive_sha256": "986b926b0b951cffd3fe848b55cefc44cb5339503e3358fc1adc5b25b26eadc9",
+      "status": "prepared_not_confirmed_sent"
+    },
+    {
+      "order": 8,
+      "wave": 2,
+      "packet": "Q11-B",
+      "query_id": "Q11",
+      "map_zh": "核子危机",
+      "candidate_ids": [
+        "C05",
+        "C06"
+      ],
+      "pairs": 2,
+      "filename": "08-Q11-B-2题.zip",
+      "payload_sha256": "1913aac7ac7dbce158bbbefea539c0c9cbb2c3ac311ca476d877796249c59e9a",
+      "archive_sha256": "252411406897a5dbac59fb4623effaed75d692613c325c25b89b70eb10d566e0",
+      "status": "prepared_not_confirmed_sent"
+    },
+    {
+      "order": 9,
+      "wave": 3,
+      "packet": "Q05-C",
+      "query_id": "Q05",
+      "map_zh": "炙热沙城2",
+      "candidate_ids": [
+        "C08",
+        "C10"
+      ],
+      "pairs": 2,
+      "filename": "09-Q05-C-2题.zip",
+      "payload_sha256": "e1c2744d9e38406178b6b7030fa8447b900d5ac9aee3732a094c1478c1adf94f",
+      "archive_sha256": "0b150cd7c6825c64da1ff7d1ef202a2af6a50ecd43f53c2acac91128a9a205ec",
+      "status": "prepared_not_confirmed_sent"
+    },
+    {
+      "order": 10,
+      "wave": 3,
+      "packet": "Q07-C",
+      "query_id": "Q07",
+      "map_zh": "炼狱小镇",
+      "candidate_ids": [
+        "C09",
+        "C10"
+      ],
+      "pairs": 2,
+      "filename": "10-Q07-C-2题.zip",
+      "payload_sha256": "743ed1037a734f33e0639d3e0debe0947fd6d8cade466bb1b6c8e2eae0789aa7",
+      "archive_sha256": "3e0254e08a6744d805e2774012c1840dabbec45f475a84fe5486e8a0bbbef67c",
+      "status": "prepared_not_confirmed_sent"
+    },
+    {
+      "order": 11,
+      "wave": 3,
+      "packet": "Q09-C",
+      "query_id": "Q09",
+      "map_zh": "荒漠迷城",
+      "candidate_ids": [
+        "C08",
+        "C09"
+      ],
+      "pairs": 2,
+      "filename": "11-Q09-C-2题.zip",
+      "payload_sha256": "a16cd820ee3db087a433c1ad4ffe7497e178215ed29fe7a2d057c67e2bc26273",
+      "archive_sha256": "2e151ab85457e9fd0cbdbdea33a97e207b7e7d7caacc7c8ad64be3d81e3ea51c",
+      "status": "prepared_not_confirmed_sent"
+    },
+    {
+      "order": 12,
+      "wave": 3,
+      "packet": "Q11-C",
+      "query_id": "Q11",
+      "map_zh": "核子危机",
+      "candidate_ids": [
+        "C08",
+        "C09"
+      ],
+      "pairs": 2,
+      "filename": "12-Q11-C-2题.zip",
+      "payload_sha256": "f1e04cd293cdb2202492000294f3cccce77d216e25c50fecbade1df9ed7c5bae",
+      "archive_sha256": "f4656e4bf343b194de6f773152fd6fe1dd5de6d567c229713cc1cac17e24b4e3",
+      "status": "prepared_not_confirmed_sent"
+    }
+  ],
+  "delivery_order": "Round-robin Q05,Q07,Q09,Q11, three waves; first four each contain three pairs",
+  "human_silver_allocation_unchanged": true,
+  "rubric_version": "v9-r3-zh unchanged; only assignment and export version changed",
+  "limits": [
+    "No improved contrast or changed question has been claimed; these are the existing assigned human items.",
+    "Do not send old 7-8 pair packs alongside these subsets.",
+    "Preparation does not establish delivery or response completion."
+  ]
+}

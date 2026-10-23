@@ -8,7 +8,7 @@
 - 再发 Q05/Q07 各 8 条、Q09/Q11 各 7 条，共 30 条，人工合计 60 条，覆盖六张地图。
 - 剩余 59 条由本次 Codex 会话作初步银标，覆盖五张地图。Ancient 两个查询已全部发给人，所以银标没有 Ancient 查询，不能直接比较人工与 AI 平均分来判断质量。
 
-补充包：`output/tagnet/ct_human_silver_v10/人工补充4小包.zip`。只发里面对应的小包；不要继续发原版完整 Q05/Q07/Q09/Q11。人工新增条目在上述四个查询内按固定 SHA 顺序选择，不看分数或方法来源挑题。分配清单见 `datasets/selections/ct_human_silver_v10.json`。
+原补充包已由 [v13 每人 2–3 题的小包](CT_HUMAN_DISTRIBUTION_V13.md)替代，原先每包 7–8 题的 `output/tagnet/ct_human_silver_v10/人工补充4小包.zip` 不再用于新分发。原定新增人工题未改变，仍按四个查询内固定 SHA 顺序选择；人工/银标分配见 `datasets/selections/ct_human_silver_v10.json`。
 
 ## 银标记录了什么
 
