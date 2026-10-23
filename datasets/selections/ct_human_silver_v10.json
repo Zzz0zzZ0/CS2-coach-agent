@@ -1,6 +1,6 @@
 {
   "version": "ct-human-silver-v10",
-  "status": "one_complete_and_one_partial_human_return_with_provisional_ai_silver",
+  "status": "two_complete_and_one_partial_human_return_with_provisional_ai_silver",
   "seed": "ct-human-silver-v10",
   "human_pairs": 60,
   "silver_pairs": 59,
@@ -9,7 +9,7 @@
     "Q02",
     "Q03"
   ],
-  "human_ratings_received": 11,
+  "human_ratings_received": 14,
   "human": {
     "Q01": [
       "C01",
@@ -190,17 +190,18 @@
   },
   "extra_human_bundle_sha256": "449a8944ef5326be85aded2cb4462a60c29c79214682a741081ce47d6bef85bd",
   "original_sent_packet_versions": "Q01 r2 and Q03 r3 verified from returns; Q02 not yet verified",
-  "human_response_files_received": 2,
-  "human_complete_pairs_received": 11,
+  "human_response_files_received": 3,
+  "human_complete_pairs_received": 14,
   "human_partial_pairs_received": 1,
   "human_blank_pairs_in_returned_files": 8,
-  "human_complete_packets_received": 1,
-  "human_received_tactical_grades": 12,
-  "human_received_structural_grades": 11,
+  "human_complete_packets_received": 2,
+  "human_received_tactical_grades": 15,
+  "human_received_structural_grades": 14,
   "latest_human_intake": "datasets/evaluation/ct_human_returns_v12_report.json",
   "received_packet_versions": {
     "Q03": "ct-pilot-v9-distributed-r3-zh-Q03",
-    "Q01": "ct-pilot-v9-distributed-r2-Q01"
+    "Q01": "ct-pilot-v9-distributed-r2-Q01",
+    "Q05-A": "ct-human-v13-r3-zh-Q05-A"
   },
   "mixed_version_analysis": "Cumulative counts only; score summaries remain per packet/version",
   "active_additional_human_distribution": "datasets/selections/ct_human_micro_v13.json",

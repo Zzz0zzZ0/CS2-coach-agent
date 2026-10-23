@@ -1,7 +1,7 @@
 {
   "version": "ct-human-micro-v13",
   "date": "2026-10-23",
-  "status": "prepared_not_confirmed_sent",
+  "status": "partially_returned",
   "pairs": 30,
   "packets": [
     {
@@ -19,7 +19,9 @@
       "filename": "01-Q05-A-3题.zip",
       "payload_sha256": "70f503efa9b33fa937b1773a206715fce6c2b7a6339cbeafeedfc33ad37a0eee",
       "archive_sha256": "8c7419599ea1954e28fe4ab993c7b2d441d124a5478199f1c591fa1882072e3d",
-      "status": "prepared_not_confirmed_sent"
+      "status": "returned_complete",
+      "returned_complete_pairs": 3,
+      "source_export_sha256": "302034e417a8694aa54c2dce4e0434d11638535eacd5466eaff65f401d0626a8"
     },
     {
       "order": 2,
@@ -210,5 +212,8 @@
     "No improved contrast or changed question has been claimed; these are the existing assigned human items.",
     "Do not send old 7-8 pair packs alongside these subsets.",
     "Preparation does not establish delivery or response completion."
+  ],
+  "confirmed_complete_returns": [
+    "Q05-A"
   ]
 }
