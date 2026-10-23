@@ -14,14 +14,15 @@
 <p><b>部署参考相关性：</b>0 不适用或可能误导；1 只有局部参考且需重大调整；2 职责覆盖或轮转思路有明确可借鉴性；3 高度相关且能说明可迁移部分。</p>
 <p><b>结构相似性：</b>0 明显不同；1 局部相似；2 主要职责分布或变化过程相似；3 高度相似。不要仅凭同样的 A/B 人数判定战术相关。每条请写简短理由；“无法判断”和 0 分不同。</p>
 <p>材料仅包含 CT 位置、区域、血量、装备与腾空状态，未提供敌方、投掷物、沟通或胜负。雷达层只用于查看高度，不等于战术楼层。底图兼容不确定的条目会单独提示。</p>
-<p>评分只保存在你的浏览器，不会自动上传。可随时暂停，结束或暂停前请导出；两位评审分别保存各自文件，不先讨论评分。</p>
+<p>打开即可评分，已自动分配匿名代号。评分只保存在你的浏览器，不会自动上传。可随时暂停，结束或暂停前请导出；各自独立填写。</p>
 </details>
 <div class="panel row">
 <label>评审代号 <input id="reviewer" placeholder="如 R1" maxlength="32" autocomplete="off"></label>
 <label>CS2 经验简述 <input id="background" placeholder="竞技、观赛或复盘经验；无需姓名" maxlength="300"></label>
-<button id="start" class="primary">开始／继续评分</button><button id="export" disabled>导出我的评分</button>
+<button id="start">切换代号／恢复</button><button id="export" disabled>导出我的评分</button>
 <span id="save-status" role="status" aria-live="polite"></span>
 </div>
+<noscript><p class="warning">当前预览不支持评分。请先解压，用 Chrome 或 Edge 打开 review.html，并允许 JavaScript。</p></noscript>
 <div class="row toolbar"><button id="previous">上一条</button><button id="next">下一条</button><span id="position" class="progress"></span><span id="progress" class="muted progress"></span></div>
 <div class="row toolbar"><label>观察时刻 <input id="time" type="range" min="0" max="4" step="1" value="4"></label><strong id="second">20 秒</strong><span class="muted">相对冻结结束；线条表示此前已显示的轨迹，A–E 为匿名玩家。</span></div>
 <div class="maps">
@@ -73,5 +74,9 @@ get('previous').onclick=()=>move(-1);get('next').onclick=()=>move(1);
 get('previous-bottom').onclick=()=>move(-1);get('next-bottom').onclick=()=>move(1);
 get('export').onclick=()=>{save();const ratings=pairs.map(({q,c})=>{const r=state.ratings[`${q.id}/${c.id}`]||{tactical:'',structural:'',reason:''};return {query_id:q.id,candidate_id:c.id,tactical_grade:['','unknown'].includes(r.tactical)?null:Number(r.tactical),tactical_unjudgeable:r.tactical==='unknown',structural_grade:['','unknown'].includes(r.structural)?null:Number(r.structural),structural_unjudgeable:r.structural==='unknown',reason:r.reason,complete:!!complete(r),edited_at:r.edited_at||null};});const output={version:DATA.version,payload_sha256:DATA.payload_sha256,reviewer_id:reviewer,reviewer_background:state.reviewer_background,exported_at:new Date().toISOString(),elapsed_seconds_this_session:Math.round((Date.now()-started)/1000),elapsed_time_note:'Interface-open time, not measured active annotation time',ratings};const url=URL.createObjectURL(new Blob([JSON.stringify(output,null,2)],{type:'application/json'}));const link=document.createElement('a');link.href=url;link.download=`CT-pilot-v9-${reviewer}.json`;link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);status('已导出；请保留此文件');};
 render();
+let defaultReviewer='R-'+Math.random().toString(36).slice(2,10);
+try{const slot=`ct-pilot-reviewer:${DATA.payload_sha256}`;defaultReviewer=localStorage.getItem(slot)||defaultReviewer;localStorage.setItem(slot,defaultReviewer);}catch{storageWorks=false;}
+get('reviewer').value=defaultReviewer;get('start').click();
+get('background').addEventListener('input',()=>{state.reviewer_background=get('background').value.trim();persist();});
 </script>
 </html>

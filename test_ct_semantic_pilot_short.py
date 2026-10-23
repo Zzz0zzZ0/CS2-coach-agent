@@ -1,10 +1,13 @@
 """Synthetic process-pilot checks; these are not human ratings."""
 
 import copy
+import json
+import re
+import zipfile
 
 import pytest
 
-from scripts.shorten_ct_semantic_pilot import payload_hash, shorten
+from scripts.shorten_ct_semantic_pilot import ROOT, distribute, payload_hash, shorten
 
 
 def fixture():
@@ -45,3 +48,25 @@ def test_invalid_inputs_are_rejected(fault):
         del key["queries"]["Q01"]["candidates"]["b"]
     with pytest.raises(ValueError):
         shorten(payload, key)
+
+
+def test_distribution_keeps_every_pair_once_and_private_keys_out_of_packets(tmp_path):
+    payload, key = fixture()
+    second = copy.deepcopy(payload["queries"][0])
+    second["id"] = "Q02"
+    payload["queries"].append(second)
+    key["queries"]["Q02"] = copy.deepcopy(key["queries"]["Q01"])
+    payload["payload_sha256"] = key["payload_sha256"] = payload_hash(payload)
+    before = copy.deepcopy(payload)
+    output = tmp_path / "packets"
+    distribute(payload, key, (ROOT / "scripts/templates/ct_pilot_review.html").read_text(encoding="utf-8"), output)
+    seen = []
+    for archive in output.glob("CT-Q*.zip"):
+        with zipfile.ZipFile(archive) as bundle:
+            assert set(bundle.namelist()) == {"review.html", "说明.txt"}
+            html = bundle.read("review.html").decode()
+            data = json.loads(re.search(r'<script id="data" type="application/json">(.*?)</script>', html, re.S)[1])
+            assert payload_hash(data) == data["payload_sha256"]
+            seen.extend((q["id"], c["id"]) for q in data["queries"] for c in q["candidates"])
+    assert len(seen) == len(set(seen)) == 6
+    assert payload == before

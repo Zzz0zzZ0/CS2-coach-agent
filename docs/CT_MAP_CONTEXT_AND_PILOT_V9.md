@@ -42,7 +42,17 @@ v8 的 200 次未定位观测中，**108 次腾空、92 次地面状态**。不�
 
 完整碰撞来源是本机 `world_physics.vmdl_c`，Source2Viewer CLI 20.0.6980 导出后，使用 [Awpy-data 固定提交](https://github.com/pnxenopoulos/awpy-data/tree/7c73907f74521d271f0eb40bcbe14a4912184e05)的 `process_geometry.py --drop --no-decimate` 转换，191,628 个三角形。公开 Awpy 可见性网格会去掉 clip、玻璃等，并作简化，因此不能替代玩家碰撞网格。[上游处理说明](https://github.com/pnxenopoulos/awpy-data#collision-meshes)。world physics 也不等于所有实体或动态碰撞。
 
-## 4. 两位评审的材料
+## 4. 评审材料与分发
+
+**当前改用分发版 r2：12 个独立题包，每包 9–10 条，不同人领取不同包，共 119 条且无重复。** 不需要每人做同一份 24 条。按实际人数逐包发放，未发出的包保持未评；无需同时做区域核查表。
+
+材料位于 `output/tagnet/ct_semantic_pilot_v9_distributed_r2/`。组织者解压 `CT-12题包-分发合集.zip`，按 `分发清单.txt` 将不同的 `CT-Qxx.zip` 分给不同人；合集不包含分析对应表。评审先解压收到的题包，再用 Chrome/Edge 打开 `review.html`，**自动分配匿名代号，直接可评分**，无需先点击开始。结束后导出 JSON 交回；不要在聊天或压缩包预览内填写。`analyst_key.json` 仅供组织者本机分析。
+
+此修复取消原页面必须手动启动才解锁的门槛，浏览器存储不可用时也允许评分和导出。只检查了本次相关的分包无重复、打开后评分、导出和恢复，没有重跑训练或全套回归。原 24 条版本另存修复包 `output/tagnet/ct_semantic_pilot_v9_short24_r2/ct-reviewer-kit-v9-short24.zip`；以分发版为当前安排。
+
+分发版保留原候选与匿名标签，没有重新挑选结果。材料仍是开发资料上的评分试点；无同题重叠的分配不能计算同题评审一致性，不据此声称模型泛化有效。原有 Q04 补丁提示和 CT 信息边界继续生效。公开清单为 `datasets/evaluation/ct_semantic_pilot_distributed_v9_report.json`。
+
+以下保留此前短版和完整版的制作记录。
 
 **首轮改用短版：每位评审 24 条，12 个查询各看 2 个候选，覆盖六张地图。** 先检查材料是否足够判断、评分规则是否清楚；105 项区域核查不同时布置。短版评分包为 `output/tagnet/ct_semantic_pilot_v9_short24/ct-reviewer-kit-v9-short24.zip`，仅含评分页与说明；同目录的 `analyst_key.json` 不发送。119 条完整版保留，暂不要求填写。
 
