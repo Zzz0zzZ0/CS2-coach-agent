@@ -1,0 +1,1938 @@
+{
+  "status": "completed_development_inventory_not_semantic_acceptance",
+  "cohort": {
+    "rounds": 465,
+    "series": [
+      "2396595",
+      "2396609",
+      "2396613",
+      "2396940",
+      "2396944",
+      "2396945",
+      "2396949",
+      "2396950",
+      "furia_falcons_existing_local"
+    ],
+    "demos": 22
+  },
+  "run_report_sha256": "9ee54ed1da8ae4572742d587a6c233aa3e27c91505688f46eae8694d0b9759b8",
+  "script_sha256": "e46a65e4e3e4b81a1347b65bd567385072c04e788d1bc82eb7734ee9a8a31427",
+  "dataset_sha256": {
+    "output/tagnet/ct_expansion_v3_checked/sample_index.json": "268d674360ed3c4d712369cf984f73ccd1a7684337c40488543d0605720697af",
+    "output/tagnet/ct_expansion_v3_checked/2396940__de_ancient_snapshots.json": "b56a0189fd8df7494033609fa0a2fb1166228fc64b135770fa9773eae960b92c",
+    "output/tagnet/ct_expansion_v3_checked/2396940__de_ancient_timing.json": "f95d8b602c6263eb96cba3bc477ae8cf65757a1008d0da9416d19796ed821c92",
+    "output/tagnet/ct_expansion_v3_checked/2396940__de_inferno_snapshots.json": "9968fde767e898604ff8be15918bd99fff45ea41f77f49cfd0982ff4533cdb68",
+    "output/tagnet/ct_expansion_v3_checked/2396940__de_inferno_timing.json": "74977cc46cf418f57573a3f3a6bca88e13ddcd014688f9318c5c34688ee6f96e",
+    "output/tagnet/ct_expansion_v3_checked/2396944__de_anubis_snapshots.json": "fdc3b2f428c5ff97640c2a8e184e2b6486329ec4f7d7f6fdf9269c56fc732b6f",
+    "output/tagnet/ct_expansion_v3_checked/2396944__de_anubis_timing.json": "6a3af0a047b2657e719fc11e8f4242869f7656b72e32958fb5e8b801a4af174d",
+    "output/tagnet/ct_expansion_v3_checked/2396944__de_inferno_snapshots.json": "e3d6f062e95f4d6b8a025f8467a5a451cd6b0572112b5f221d08d95fc151fb1b",
+    "output/tagnet/ct_expansion_v3_checked/2396944__de_inferno_timing.json": "9f76e83828c7b418ed011bc9d0d96bb113f987cfd96ad0fb5d9fb1cd20b73d85",
+    "output/tagnet/ct_expansion_v3_checked/2396944__de_mirage_snapshots.json": "ef8c0839cdf37b7f8f9331bee79ed0e33e82fe36ffb95a9be339de63a6432bdd",
+    "output/tagnet/ct_expansion_v3_checked/2396944__de_mirage_timing.json": "fb89b279e13cf4a30cf4d47336cbc04cb426651545eb3d70a420eeccc6d80224",
+    "output/tagnet/ct_expansion_v3_checked/2396949__de_ancient_snapshots.json": "c9af20c90d5e0a86971a1cf9214819ddb2c3e83b39fa52174ecade5e45107222",
+    "output/tagnet/ct_expansion_v3_checked/2396949__de_ancient_timing.json": "67221c7a325387908a170905e40472c944bf3497409826ef3a189705c6f22107",
+    "output/tagnet/ct_expansion_v3_checked/2396949__de_nuke_snapshots.json": "6901de294992d5c6117f10703e601d18219266f10b672816fd7724783f3f3e90",
+    "output/tagnet/ct_expansion_v3_checked/2396949__de_nuke_timing.json": "a198058c170a30b6464c1d585951910f748a6fb3da66f363b076385b33991421",
+    "output/tagnet/ct_expansion_v3_checked/2396950__de_dust2_snapshots.json": "5e39426b28244c3134de3d41e565c5d56786ee3eec220e72dfd09dfae317c7bc",
+    "output/tagnet/ct_expansion_v3_checked/2396950__de_dust2_timing.json": "eb76c87531bec088ae269fa648d0146b9b733de6d659994ad2b4356ccab8db95",
+    "output/tagnet/ct_expansion_v3_checked/2396950__de_mirage_snapshots.json": "a812934d0f6746cf05c5b08f586c66c03fd635401a6468a687174a9319d97c00",
+    "output/tagnet/ct_expansion_v3_checked/2396950__de_mirage_timing.json": "6a3af0a047b2657e719fc11e8f4242869f7656b72e32958fb5e8b801a4af174d",
+    "output/tagnet/ct_expansion_v3_checked/furia_falcons_existing_local__de_anubis_snapshots.json": "51366df338be543f10771643bb7438dfe78313b74716b66f1aa31d478016a56a",
+    "output/tagnet/ct_expansion_v3_checked/furia_falcons_existing_local__de_anubis_timing.json": "a198058c170a30b6464c1d585951910f748a6fb3da66f363b076385b33991421",
+    "output/tagnet/ct_expansion_v3_checked/furia_falcons_existing_local__de_inferno_snapshots.json": "be2ced34ecd52fb2058f2cbb7eb0a6b3e71b1d7b5ee7ed0cbcb46ae04c80d25a",
+    "output/tagnet/ct_expansion_v3_checked/furia_falcons_existing_local__de_inferno_timing.json": "a198058c170a30b6464c1d585951910f748a6fb3da66f363b076385b33991421",
+    "output/tagnet/ct_expansion_v3_checked/furia_falcons_existing_local__de_mirage_snapshots.json": "6d91c9db4086dd7e501f76885a8e6a492b9aeecb1cf929f8d4907a4feefded86",
+    "output/tagnet/ct_expansion_v3_checked/furia_falcons_existing_local__de_mirage_timing.json": "a198058c170a30b6464c1d585951910f748a6fb3da66f363b076385b33991421",
+    "output/tagnet/ct_event_transfer_v5_verified/sample_index.json": "0bb4452e8cd196b750f4a5b16c253a035217961621704c7cf27ac661eee8af3a",
+    "output/tagnet/ct_event_transfer_v5_verified/2396595__de_dust2_snapshots.json": "53c137d0daad37fb16ade0c55d60ae48191cd3a1190012d5b9956c8e08d1af75",
+    "output/tagnet/ct_event_transfer_v5_verified/2396595__de_dust2_timing.json": "7c5798de2dfd96c35ebe5c1ca68ecf2b926990fa9ef667dd7f03be02935bb31c",
+    "output/tagnet/ct_event_transfer_v5_verified/2396595__de_inferno_snapshots.json": "5df0440a78c1064c629d239ec1b4c0780165862c12afb5cb0b49aa11b27242c5",
+    "output/tagnet/ct_event_transfer_v5_verified/2396595__de_inferno_timing.json": "74977cc46cf418f57573a3f3a6bca88e13ddcd014688f9318c5c34688ee6f96e",
+    "output/tagnet/ct_event_transfer_v5_verified/2396609__de_dust2_snapshots.json": "abf641c2fbbad6e7a011c7a2b351c14f42689be17f43eef185e1fbd94f46a442",
+    "output/tagnet/ct_event_transfer_v5_verified/2396609__de_dust2_timing.json": "74977cc46cf418f57573a3f3a6bca88e13ddcd014688f9318c5c34688ee6f96e",
+    "output/tagnet/ct_event_transfer_v5_verified/2396609__de_mirage_snapshots.json": "61291060931fbad6190bfb9e88314714cdebdf4a2fbaa9607295dad7cd7b1850",
+    "output/tagnet/ct_event_transfer_v5_verified/2396609__de_mirage_timing.json": "6a3af0a047b2657e719fc11e8f4242869f7656b72e32958fb5e8b801a4af174d",
+    "output/tagnet/ct_confirmation_2396945_v7/sample_index.json": "464cd70e2a5d19a587ad8f15a118497c898e4c57b8ddd99e640d3fdf1e638521",
+    "output/tagnet/ct_confirmation_2396945_v7/2396945__de_ancient_snapshots.json": "8c82eba3cdef87c79d95a97865b69ad4328cf4eb0f9650629b6070e0f82e2eb3",
+    "output/tagnet/ct_confirmation_2396945_v7/2396945__de_ancient_timing.json": "f95d8b602c6263eb96cba3bc477ae8cf65757a1008d0da9416d19796ed821c92",
+    "output/tagnet/ct_confirmation_2396945_v7/2396945__de_inferno_snapshots.json": "f2d01ff3a08f091dd47e2abd04ccfc6931d8493dc71675f0120f5679fbd2b8ea",
+    "output/tagnet/ct_confirmation_2396945_v7/2396945__de_inferno_timing.json": "46b37575a6f2f2f96b6d1562e7e3dceeadfd97f034c4b80cee67cd9fe7ecbb0a",
+    "output/tagnet/ct_confirmation_2396945_v7/2396945__de_nuke_snapshots.json": "a26d7f1cb2668b640b177a3810502ca3b825fb0595d2c439a1c3139c9274c26e",
+    "output/tagnet/ct_confirmation_2396945_v7/2396945__de_nuke_timing.json": "f95d8b602c6263eb96cba3bc477ae8cf65757a1008d0da9416d19796ed821c92",
+    "output/tagnet/ct_confirmation_2396613_v7/sample_index.json": "e6b44f9d84ba08d15b3e5eea6f71fa7a0d6f8e9cbc7709bbb6fd33f05dcc19c3",
+    "output/tagnet/ct_confirmation_2396613_v7/2396613__de_ancient_snapshots.json": "a04123eef53eb9302f173e2b9b5e9409f46e9100f83485dc3c216a5e611b7625",
+    "output/tagnet/ct_confirmation_2396613_v7/2396613__de_ancient_timing.json": "8f55de1ac8fe2ed4a2b432db61ff33242f33d8c4a637681ff8b68ff090db3886",
+    "output/tagnet/ct_confirmation_2396613_v7/2396613__de_dust2_snapshots.json": "c292a53f2d9ac1313013d68ef58856f51252f548abe48bf6e4a55d237e4831a4",
+    "output/tagnet/ct_confirmation_2396613_v7/2396613__de_dust2_timing.json": "8f55de1ac8fe2ed4a2b432db61ff33242f33d8c4a637681ff8b68ff090db3886",
+    "output/tagnet/ct_confirmation_2396613_v7/2396613__de_nuke_snapshots.json": "61bf2362068c9fb771ce17189aaae35bd67ffd5d056fce3c8bbc86cd293094bf",
+    "output/tagnet/ct_confirmation_2396613_v7/2396613__de_nuke_timing.json": "8f55de1ac8fe2ed4a2b432db61ff33242f33d8c4a637681ff8b68ff090db3886"
+  },
+  "asset_sha256": {
+    "de_ancient": {
+      "map_vpk_sha256": "6e54d22ff86709d71843b52febbfe6fcd48633a20b6a2b25c6ffbdf0b796d712",
+      "nav_sha256": "09cbb2a4568998b72ce504b19352456c20f046fa5b3f165c43bfc38fb7602c8d",
+      "entity_dump_sha256": "577211547d9a070adeee10c1fff746551556e3079be9873e1da90ef13ae5d87a",
+      "overview_sha256": "f6b420a983e2702c3c0d903a901483b6bc61fcf5eef2b6fb62da485ba93eb3c1"
+    },
+    "de_anubis": {
+      "map_vpk_sha256": "bca91cee11592c65c2869c599769232f29335458376ed90431a013b58c938e07",
+      "nav_sha256": "5d492f867497cc47a6072fc803fb7b0fcf8f1b99030590e3fbff627c9cba7eeb",
+      "entity_dump_sha256": "3204b0f32e6c1be60cd8d46d9c5e3540c8924c5b254d016f5a5924835e31d521",
+      "overview_sha256": "f83755ed8a85365923ac565d3fbd2ab1391e75d8b89cfd759da9214bf80e9fff"
+    },
+    "de_dust2": {
+      "map_vpk_sha256": "51d6bb432b6553bfae6c38219a527c5de2464a2b107080f2b8be7d8427ebb885",
+      "nav_sha256": "64bbc202edae8a92d432368e86948bbee3af9c56555e190dda251d28c64e1ea7",
+      "entity_dump_sha256": "79bbf72074d310f9d220648a9e541eab9a8f634f1d2d7c6177f5019a4db80821",
+      "overview_sha256": "97947e99bc7930fc06dc15af3dcf942dbca5ca1c6f36119a089615fd4b383620"
+    },
+    "de_inferno": {
+      "map_vpk_sha256": "bfe3d8a996feb43962b11a51acd76068fd001f793fa750f7df5cf7d9d23a9d89",
+      "nav_sha256": "8d312122a9758a1b64b397f0e02b16e18e9432f738ab7308d0b73cb7df118111",
+      "entity_dump_sha256": "0f657297a0f038fc145c28cd5cece3a068e0d0f51b86867f35c6bed9b818c82e",
+      "overview_sha256": "ff93b0ff1f6705ccfb4daf3b038dd88ccdf3ca776823667c19782650e94d2c54"
+    },
+    "de_mirage": {
+      "map_vpk_sha256": "e66cdf1ae6a976f6f6ba510a2addd04b25a4c1cfd811f51f1ef13f0954e6e350",
+      "nav_sha256": "2ba8608994c178dc5ff2553fefdd2a8473aadd0e0b09b8004201e1fa578bb0bd",
+      "entity_dump_sha256": "4f70f5eb9fd552b2ee6e42d954e258e090a822313b18137b93916fb067c4e429",
+      "overview_sha256": "f201fd608d6ea0bd091920620a4f74e97197d26caf36f133875b58d5ba1d77fe"
+    },
+    "de_nuke": {
+      "map_vpk_sha256": "ab56860b13c86ead3f0f17f1488e4cec44ac0208dbfdda9f1fecb5d5e769d4a7",
+      "nav_sha256": "f331ebc7830b910bd8405e6c5ff4512937c8c7917ffc6b37fb6fc3a078a49b57",
+      "entity_dump_sha256": "dd7b59e9fe480dd47f58bba81b3c1d9c625f85ac60af48a175f67580be574250",
+      "overview_sha256": "877a8df76cee8e5abc4756df162790ed25c5f5dd994ed9d895a7bc3a9c3ac585"
+    }
+  },
+  "steam_info": {
+    "ClientVersion": "2000934",
+    "ServerVersion": "2000934",
+    "PatchVersion": "1.41.9.1",
+    "ProductName": "cs2",
+    "appID": "730",
+    "ServerAppID": "2347773",
+    "SourceRevision": "11150591",
+    "VersionDate": "Oct 20 2026",
+    "VersionTime": "11:41:22"
+  },
+  "steam_info_sha256": "cd486dc60f1b0224f52b1f668231a0bf87166c140be82f4a1e19d188a14d4070",
+  "extractor_sha256": "a4bb4f9945db985efb2cad90a90d06867de5ba7e0447a2a4a69a07dace781028",
+  "environment": {
+    "awpy": "3.1.1",
+    "polars": "2.0.0",
+    "demoparser2": "0.41.3"
+  },
+  "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+  "demo_headers": [
+    {
+      "demo": "BLAST_Open_Porto_2026_G2_vs_Natus_Vincere_2396940_map1.dem",
+      "sha256": "addb04dbcffaa81c3bf05b47265744af3fca3206b0746cc0ab5c4d1b00010956",
+      "map": "de_ancient",
+      "patch_version": "14174",
+      "compatibility": "unverified_patch_mismatch"
+    },
+    {
+      "demo": "BLAST_Open_Porto_2026_G2_vs_Natus_Vincere_2396940_map2.dem",
+      "sha256": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352",
+      "map": "de_inferno",
+      "patch_version": "14174",
+      "compatibility": "unverified_patch_mismatch"
+    },
+    {
+      "demo": "BLAST_Open_Porto_2026_G2_vs_Aurora_2396944_map1.dem",
+      "sha256": "e6bdd552f9336cd03a42f758d3849277461095bd3d019cd22c6608af8f2e3dc1",
+      "map": "de_anubis",
+      "patch_version": "14174",
+      "compatibility": "unverified_patch_mismatch"
+    },
+    {
+      "demo": "BLAST_Open_Porto_2026_G2_vs_Aurora_2396944_map2.dem",
+      "sha256": "e71bad7ed9d272f72806940dcd1e8f732c31f947865e49e5ccbbcf1f43bcdc83",
+      "map": "de_inferno",
+      "patch_version": "14174",
+      "compatibility": "unverified_patch_mismatch"
+    },
+    {
+      "demo": "BLAST_Open_Porto_2026_G2_vs_Aurora_2396944_map3.dem",
+      "sha256": "e348879717172add00b80285c20f884f4e180aa8cffa5a7ae9990d0d1d20b9fd",
+      "map": "de_mirage",
+      "patch_version": "14174",
+      "compatibility": "unverified_patch_mismatch"
+    },
+    {
+      "demo": "BLAST_Open_Porto_2026_Spirit_vs_Falcons_2396949_map2.dem",
+      "sha256": "9c2d5c33124f0e685aebc5f2acf9ceca49247a36fb5100da3f8e166945a18bf2",
+      "map": "de_ancient",
+      "patch_version": "14174",
+      "compatibility": "unverified_patch_mismatch"
+    },
+    {
+      "demo": "BLAST_Open_Porto_2026_Spirit_vs_Falcons_2396949_map1.dem",
+      "sha256": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7",
+      "map": "de_nuke",
+      "patch_version": "14174",
+      "compatibility": "unverified_patch_mismatch"
+    },
+    {
+      "demo": "BLAST_Open_Porto_2026_MOUZ_vs_Vitality_2396950_map1.dem",
+      "sha256": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190",
+      "map": "de_dust2",
+      "patch_version": "14174",
+      "compatibility": "unverified_patch_mismatch"
+    },
+    {
+      "demo": "BLAST_Open_Porto_2026_MOUZ_vs_Vitality_2396950_map2.dem",
+      "sha256": "1b8097794845b8994846d52d47db86faec78c838b345d3013c57e883ad230126",
+      "map": "de_mirage",
+      "patch_version": "14174",
+      "compatibility": "unverified_patch_mismatch"
+    },
+    {
+      "demo": "furia-vs-falcons-m2-anubis.dem",
+      "sha256": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8",
+      "map": "de_anubis",
+      "patch_version": "14165",
+      "compatibility": "unverified_patch_mismatch"
+    },
+    {
+      "demo": "furia-vs-falcons-m3-inferno.dem",
+      "sha256": "374b2f600880e2f8b0437314924b3745c2b0d32e63d53abbedd8bfd52ab8b0b8",
+      "map": "de_inferno",
+      "patch_version": "14165",
+      "compatibility": "unverified_patch_mismatch"
+    },
+    {
+      "demo": "furia-vs-falcons-m1-mirage.dem",
+      "sha256": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697",
+      "map": "de_mirage",
+      "patch_version": "14165",
+      "compatibility": "unverified_patch_mismatch"
+    },
+    {
+      "demo": "Esports_World_Cup_2026_MOUZ_vs_PARIVISION_2396595_map1.dem",
+      "sha256": "5ab8223140fbf38ebbd28a1b6c903a44ba4588de40beec79c6c08f78342000f1",
+      "map": "de_dust2",
+      "patch_version": "14174",
+      "compatibility": "unverified_patch_mismatch"
+    },
+    {
+      "demo": "Esports_World_Cup_2026_MOUZ_vs_PARIVISION_2396595_map2.dem",
+      "sha256": "64898b61aa7300084268d8f57c4d7f5436d1fa902c4b18ea19e9f13979c1d809",
+      "map": "de_inferno",
+      "patch_version": "14174",
+      "compatibility": "unverified_patch_mismatch"
+    },
+    {
+      "demo": "Esports_World_Cup_2026_Legacy_vs_Falcons_2396609_map2.dem",
+      "sha256": "8fc1bae5b52a7580b89053f3896cb3bd77b39e89e073787fe002bb4b552934f9",
+      "map": "de_dust2",
+      "patch_version": "14174",
+      "compatibility": "unverified_patch_mismatch"
+    },
+    {
+      "demo": "Esports_World_Cup_2026_Legacy_vs_Falcons_2396609_map1.dem",
+      "sha256": "deeda64a7c879f69a10c1bd344e6966e4db44e75d74af1d26a733ee7add4e093",
+      "map": "de_mirage",
+      "patch_version": "14174",
+      "compatibility": "unverified_patch_mismatch"
+    },
+    {
+      "demo": "BLAST_Open_Porto_2026_MOUZ_vs_Falcons_2396945_map2.dem",
+      "sha256": "9515221434fbde02a8beb2a19e100a00df35ff37306549b32b6b241cc4c55ff3",
+      "map": "de_ancient",
+      "patch_version": "14174",
+      "compatibility": "unverified_patch_mismatch"
+    },
+    {
+      "demo": "BLAST_Open_Porto_2026_MOUZ_vs_Falcons_2396945_map3.dem",
+      "sha256": "d8ef19dbfc262b74ce927ebe3dc60fc088d50ba63d93ba85097c2cc2c4525a11",
+      "map": "de_inferno",
+      "patch_version": "14174",
+      "compatibility": "unverified_patch_mismatch"
+    },
+    {
+      "demo": "BLAST_Open_Porto_2026_MOUZ_vs_Falcons_2396945_map1.dem",
+      "sha256": "a20d78e76c5545872a87a35dd5cc5e22f8d307a44bddc9d2189e3ff0ba04d987",
+      "map": "de_nuke",
+      "patch_version": "14174",
+      "compatibility": "unverified_patch_mismatch"
+    },
+    {
+      "demo": "Esports_World_Cup_2026_FURIA_vs_Legacy_2396613_map1.dem",
+      "sha256": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2",
+      "map": "de_ancient",
+      "patch_version": "14174",
+      "compatibility": "unverified_patch_mismatch"
+    },
+    {
+      "demo": "Esports_World_Cup_2026_FURIA_vs_Legacy_2396613_map3.dem",
+      "sha256": "f3079a77e5b6b276bc792740c5d43513070723af4976315ca3888e428cc69eb4",
+      "map": "de_dust2",
+      "patch_version": "14174",
+      "compatibility": "unverified_patch_mismatch"
+    },
+    {
+      "demo": "Esports_World_Cup_2026_FURIA_vs_Legacy_2396613_map2.dem",
+      "sha256": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144",
+      "map": "de_nuke",
+      "patch_version": "14174",
+      "compatibility": "unverified_patch_mismatch"
+    }
+  ],
+  "maps": {
+    "de_ancient": {
+      "rounds": 84,
+      "series": [
+        "2396613",
+        "2396940",
+        "2396945",
+        "2396949"
+      ],
+      "live_player_snapshots": 2049,
+      "baseline_other_count": 1440,
+      "baseline_other_fraction": 0.7027818448023426,
+      "places_absent_from_current_entities": [],
+      "current_entity_names": {
+        "Alley": 1,
+        "BombsiteA": 1,
+        "BombsiteB": 1,
+        "CTSpawn": 1,
+        "House": 1,
+        "MainHall": 1,
+        "Middle": 1,
+        "Outside": 1,
+        "Ramp": 1,
+        "Ruins": 1,
+        "SideEntrance": 1,
+        "SideHall": 1,
+        "TSideLower": 1,
+        "TSideUpper": 1,
+        "TSpawn": 1,
+        "TopofMid": 1,
+        "Tunnel": 1,
+        "Water": 1
+      },
+      "place_inventory": [
+        {
+          "place": "Alley",
+          "live_observations": 326,
+          "z_min": 69.3028793334961,
+          "z_median": 124.41910934448242,
+          "z_max": 203.63668823242188,
+          "current_nav_misses": 70,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "BombsiteA",
+          "live_observations": 199,
+          "z_min": 52.01872253417969,
+          "z_median": 68.03125,
+          "z_max": 177.4070281982422,
+          "current_nav_misses": 45,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": "site_a",
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "BombsiteB",
+          "live_observations": 354,
+          "z_min": 104.42594909667969,
+          "z_median": 130.53125,
+          "z_max": 189.859375,
+          "current_nav_misses": 75,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": "site_b",
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "CTSpawn",
+          "live_observations": 56,
+          "z_min": 22.914894104003906,
+          "z_median": 67.03125,
+          "z_max": 122.078125,
+          "current_nav_misses": 2,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": "ct_spawn",
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "House",
+          "live_observations": 294,
+          "z_min": 77.18802642822266,
+          "z_median": 131.69327545166016,
+          "z_max": 175.03125,
+          "current_nav_misses": 76,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "MainHall",
+          "live_observations": 44,
+          "z_min": 72.03128814697266,
+          "z_median": 76.56834030151367,
+          "z_max": 88.03125,
+          "current_nav_misses": 16,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Middle",
+          "live_observations": 288,
+          "z_min": 32.03049850463867,
+          "z_median": 62.58516502380371,
+          "z_max": 174.03125,
+          "current_nav_misses": 61,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Outside",
+          "live_observations": 2,
+          "z_min": 42.592750549316406,
+          "z_median": 43.4022102355957,
+          "z_max": 44.211669921875,
+          "current_nav_misses": 2,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Ramp",
+          "live_observations": 18,
+          "z_min": 1.2610421180725098,
+          "z_median": 34.67761039733887,
+          "z_max": 88.2399673461914,
+          "current_nav_misses": 6,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "SideEntrance",
+          "live_observations": 243,
+          "z_min": 134.00823974609375,
+          "z_median": 172.03125,
+          "z_max": 225.578125,
+          "current_nav_misses": 37,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "SideHall",
+          "live_observations": 177,
+          "z_min": 78.55486297607422,
+          "z_median": 104.29662322998047,
+          "z_max": 160.953125,
+          "current_nav_misses": 34,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "TSideLower",
+          "live_observations": 4,
+          "z_min": 16.87997055053711,
+          "z_median": 89.83934783935547,
+          "z_max": 109.46147155761719,
+          "current_nav_misses": 1,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "TSideUpper",
+          "live_observations": 30,
+          "z_min": 153.03123474121094,
+          "z_median": 153.32584381103516,
+          "z_max": 164.03125,
+          "current_nav_misses": 5,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "TopofMid",
+          "live_observations": 14,
+          "z_min": 111.68827819824219,
+          "z_median": 162.95105743408203,
+          "z_max": 174.03125,
+          "current_nav_misses": 3,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        }
+      ],
+      "current_nav_probe": {
+        "version": 36,
+        "sub_version": 1,
+        "areas": 1969,
+        "no_xy_area": 433,
+        "assigned": 1616,
+        "centroid_abs_dz_median": 3.2511978149414062,
+        "centroid_abs_dz_max": 76.25003051757812,
+        "centroid_abs_dz_over_128": 0
+      },
+      "vertical_diagnostic": {
+        "xy_max_units": 200,
+        "abs_dz_min_units": 160,
+        "live_pair_snapshots": 4002,
+        "close_xy_large_dz_pairs": 0,
+        "affected_rounds": 0,
+        "examples": [],
+        "current_radar_lower_altitude_max": null,
+        "places_on_both_sides_of_current_radar_split": []
+      }
+    },
+    "de_anubis": {
+      "rounds": 41,
+      "series": [
+        "2396944",
+        "furia_falcons_existing_local"
+      ],
+      "live_player_snapshots": 1017,
+      "baseline_other_count": 621,
+      "baseline_other_fraction": 0.6106194690265486,
+      "places_absent_from_current_entities": [],
+      "current_entity_names": {
+        "Alley": 1,
+        "BackofB": 1,
+        "BombsiteA": 6,
+        "BombsiteB": 3,
+        "Bricks": 1,
+        "Bridge": 2,
+        "CTSideUpper": 2,
+        "CTSpawn": 2,
+        "Canal": 2,
+        "Connector": 1,
+        "Fountain": 1,
+        "Heaven": 3,
+        "LowerTunnel": 2,
+        "Main": 2,
+        "MidDoors": 1,
+        "Middle": 2,
+        "OutsideLong": 4,
+        "PalaceInterior": 4,
+        "Ruins": 5,
+        "SnipersNest": 2,
+        "Street": 4,
+        "TSideUpper": 1,
+        "TSpawn": 1,
+        "TStairs": 1,
+        "Tunnel": 1,
+        "TunnelStairs": 2,
+        "Walkway": 4,
+        "Water": 1
+      },
+      "place_inventory": [
+        {
+          "place": "Alley",
+          "live_observations": 26,
+          "z_min": -30.96875,
+          "z_median": 0.031250953674316406,
+          "z_max": 27.79703140258789,
+          "current_nav_misses": 8,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "BackofB",
+          "live_observations": 38,
+          "z_min": 35.03125,
+          "z_median": 38.03125,
+          "z_max": 66.859375,
+          "current_nav_misses": 15,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "BombsiteA",
+          "live_observations": 92,
+          "z_min": -191.96875,
+          "z_median": -151.96875,
+          "z_max": -37.96875,
+          "current_nav_misses": 11,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": "site_a",
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "BombsiteB",
+          "live_observations": 304,
+          "z_min": -55.96875,
+          "z_median": -1.023529052734375,
+          "z_max": 116.88436889648438,
+          "current_nav_misses": 40,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": "site_b",
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Bricks",
+          "live_observations": 2,
+          "z_min": 35.031246185302734,
+          "z_median": 35.03124809265137,
+          "z_max": 35.03125,
+          "current_nav_misses": 0,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Bridge",
+          "live_observations": 5,
+          "z_min": 0.25269198417663574,
+          "z_median": 0.26654529571533203,
+          "z_max": 0.3329908847808838,
+          "current_nav_misses": 1,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Canal",
+          "live_observations": 18,
+          "z_min": -188.83367919921875,
+          "z_median": -151.96875,
+          "z_max": -93.96875,
+          "current_nav_misses": 3,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Connector",
+          "live_observations": 88,
+          "z_min": -96.8662109375,
+          "z_median": -67.26705932617188,
+          "z_max": -5.734375,
+          "current_nav_misses": 36,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Fountain",
+          "live_observations": 41,
+          "z_min": -151.96875,
+          "z_median": -71.6993408203125,
+          "z_max": -51.671875,
+          "current_nav_misses": 9,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Heaven",
+          "live_observations": 4,
+          "z_min": -39.96875,
+          "z_median": -39.96875,
+          "z_max": -38.84136962890625,
+          "current_nav_misses": 0,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Main",
+          "live_observations": 84,
+          "z_min": -151.96875,
+          "z_median": -151.96875,
+          "z_max": -81.21875,
+          "current_nav_misses": 2,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "MidDoors",
+          "live_observations": 42,
+          "z_min": -31.96875,
+          "z_median": -28.894683837890625,
+          "z_max": 2.03125,
+          "current_nav_misses": 10,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Middle",
+          "live_observations": 185,
+          "z_min": -87.96875,
+          "z_median": -28.96875,
+          "z_max": 52.03125,
+          "current_nav_misses": 56,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "OutsideLong",
+          "live_observations": 12,
+          "z_min": 0.03125,
+          "z_median": 0.6128238439559937,
+          "z_max": 32.03125,
+          "current_nav_misses": 2,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "PalaceInterior",
+          "live_observations": 25,
+          "z_min": -21.8988037109375,
+          "z_median": 58.71409606933594,
+          "z_max": 147.78125,
+          "current_nav_misses": 1,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "SnipersNest",
+          "live_observations": 5,
+          "z_min": 48.03125,
+          "z_median": 48.03125,
+          "z_max": 48.03125,
+          "current_nav_misses": 0,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Walkway",
+          "live_observations": 46,
+          "z_min": -87.96875,
+          "z_median": -87.96875,
+          "z_max": -9.0,
+          "current_nav_misses": 10,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        }
+      ],
+      "current_nav_probe": {
+        "version": 36,
+        "sub_version": 1,
+        "areas": 2633,
+        "no_xy_area": 204,
+        "assigned": 813,
+        "centroid_abs_dz_median": 3.968780517578125,
+        "centroid_abs_dz_max": 86.2656021118164,
+        "centroid_abs_dz_over_128": 0
+      },
+      "vertical_diagnostic": {
+        "xy_max_units": 200,
+        "abs_dz_min_units": 160,
+        "live_pair_snapshots": 2018,
+        "close_xy_large_dz_pairs": 0,
+        "affected_rounds": 0,
+        "examples": [],
+        "current_radar_lower_altitude_max": null,
+        "places_on_both_sides_of_current_radar_split": []
+      }
+    },
+    "de_dust2": {
+      "rounds": 85,
+      "series": [
+        "2396595",
+        "2396609",
+        "2396613",
+        "2396950"
+      ],
+      "live_player_snapshots": 2062,
+      "baseline_other_count": 1496,
+      "baseline_other_fraction": 0.7255092143549952,
+      "places_absent_from_current_entities": [],
+      "current_entity_names": {
+        "ARamp": 1,
+        "BDoors": 2,
+        "BombsiteA": 2,
+        "BombsiteB": 3,
+        "CTSpawn": 1,
+        "Catwalk": 2,
+        "ExtendedA": 2,
+        "Hole": 1,
+        "LongA": 2,
+        "LongDoors": 2,
+        "LowerTunnel": 1,
+        "MidDoors": 2,
+        "Middle": 1,
+        "OutsideLong": 2,
+        "OutsideTunnel": 1,
+        "Pit": 1,
+        "ShortStairs": 1,
+        "Side": 1,
+        "TRamp": 1,
+        "TSpawn": 2,
+        "TopofMid": 1,
+        "TunnelStairs": 3,
+        "UnderA": 2,
+        "UpperTunnel": 6
+      },
+      "place_inventory": [
+        {
+          "place": "ARamp",
+          "live_observations": 23,
+          "z_min": 20.058841705322266,
+          "z_median": 46.30423355102539,
+          "z_max": 119.109375,
+          "current_nav_misses": 0,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "BDoors",
+          "live_observations": 123,
+          "z_min": -108.7198486328125,
+          "z_median": -20.67706298828125,
+          "z_max": 157.65625,
+          "current_nav_misses": 3,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "BombsiteA",
+          "live_observations": 8,
+          "z_min": 95.64801025390625,
+          "z_median": 111.75890731811523,
+          "z_max": 149.25,
+          "current_nav_misses": 2,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": "site_a",
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "BombsiteB",
+          "live_observations": 480,
+          "z_min": -6.8382568359375,
+          "z_median": 5.260909557342529,
+          "z_max": 186.328125,
+          "current_nav_misses": 123,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": "site_b",
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "CTSpawn",
+          "live_observations": 78,
+          "z_min": -129.430419921875,
+          "z_median": -125.12838745117188,
+          "z_max": -49.88897705078125,
+          "current_nav_misses": 15,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": "ct_spawn",
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Catwalk",
+          "live_observations": 67,
+          "z_min": -0.47607421875,
+          "z_median": 1.0837631225585938,
+          "z_max": 57.671875,
+          "current_nav_misses": 34,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "ExtendedA",
+          "live_observations": 59,
+          "z_min": 95.93064880371094,
+          "z_median": 127.06339263916016,
+          "z_max": 165.828125,
+          "current_nav_misses": 20,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Hole",
+          "live_observations": 37,
+          "z_min": 117.48234558105469,
+          "z_median": 130.03125,
+          "z_max": 130.03125,
+          "current_nav_misses": 11,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "LongA",
+          "live_observations": 458,
+          "z_min": -13.4384765625,
+          "z_median": 0.6694271564483643,
+          "z_max": 60.41199493408203,
+          "current_nav_misses": 50,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "LongDoors",
+          "live_observations": 104,
+          "z_min": -2.74725341796875,
+          "z_median": 1.8405218124389648,
+          "z_max": 142.84375,
+          "current_nav_misses": 19,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "LowerTunnel",
+          "live_observations": 14,
+          "z_min": -112.561767578125,
+          "z_median": -111.64401245117188,
+          "z_max": -109.0430908203125,
+          "current_nav_misses": 6,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "MidDoors",
+          "live_observations": 276,
+          "z_min": -128.05145263671875,
+          "z_median": -112.80816650390625,
+          "z_max": -27.921875,
+          "current_nav_misses": 70,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Middle",
+          "live_observations": 21,
+          "z_min": -125.94830322265625,
+          "z_median": -63.3740234375,
+          "z_max": -28.87164306640625,
+          "current_nav_misses": 7,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Pit",
+          "live_observations": 8,
+          "z_min": -58.647216796875,
+          "z_median": -22.04742431640625,
+          "z_max": -7.60906982421875,
+          "current_nav_misses": 1,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "ShortStairs",
+          "live_observations": 157,
+          "z_min": 0.037288665771484375,
+          "z_median": 3.428443431854248,
+          "z_max": 155.796875,
+          "current_nav_misses": 49,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Side",
+          "live_observations": 3,
+          "z_min": 25.915245056152344,
+          "z_median": 55.579673767089844,
+          "z_max": 56.03125,
+          "current_nav_misses": 2,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "TopofMid",
+          "live_observations": 8,
+          "z_min": -0.43695068359375,
+          "z_median": 8.56190299987793,
+          "z_max": 9.03125,
+          "current_nav_misses": 0,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "UnderA",
+          "live_observations": 125,
+          "z_min": -107.6246337890625,
+          "z_median": 6.109375,
+          "z_max": 127.21875762939453,
+          "current_nav_misses": 28,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "UpperTunnel",
+          "live_observations": 13,
+          "z_min": 31.555904388427734,
+          "z_median": 32.68571853637695,
+          "z_max": 34.01798629760742,
+          "current_nav_misses": 3,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        }
+      ],
+      "current_nav_probe": {
+        "version": 36,
+        "sub_version": 1,
+        "areas": 2242,
+        "no_xy_area": 443,
+        "assigned": 1619,
+        "centroid_abs_dz_median": 3.4042458534240723,
+        "centroid_abs_dz_max": 274.390625,
+        "centroid_abs_dz_over_128": 9
+      },
+      "vertical_diagnostic": {
+        "xy_max_units": 200,
+        "abs_dz_min_units": 160,
+        "live_pair_snapshots": 4017,
+        "close_xy_large_dz_pairs": 4,
+        "affected_rounds": 3,
+        "examples": [
+          {
+            "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:3:CT",
+            "second": 20,
+            "places": [
+              "CTSpawn",
+              "UnderA"
+            ],
+            "xy": 188.8460736882264,
+            "abs_dz": 241.50494384765625
+          },
+          {
+            "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:3:CT",
+            "second": 20,
+            "places": [
+              "CTSpawn",
+              "UnderA"
+            ],
+            "xy": 150.02979745820465,
+            "abs_dz": 181.50494384765625
+          },
+          {
+            "id": "5ab8223140fbf38ebbd28a1b6c903a44ba4588de40beec79c6c08f78342000f1:17:CT",
+            "second": 15,
+            "places": [
+              "UnderA",
+              "UnderA"
+            ],
+            "xy": 195.82082686955005,
+            "abs_dz": 195.9373550415039
+          },
+          {
+            "id": "f3079a77e5b6b276bc792740c5d43513070723af4976315ca3888e428cc69eb4:9:CT",
+            "second": 18,
+            "places": [
+              "CTSpawn",
+              "ExtendedA"
+            ],
+            "xy": 173.40062846166026,
+            "abs_dz": 221.52794647216797
+          }
+        ],
+        "current_radar_lower_altitude_max": null,
+        "places_on_both_sides_of_current_radar_split": []
+      }
+    },
+    "de_inferno": {
+      "rounds": 118,
+      "series": [
+        "2396595",
+        "2396940",
+        "2396944",
+        "2396945",
+        "furia_falcons_existing_local"
+      ],
+      "live_player_snapshots": 2896,
+      "baseline_other_count": 1539,
+      "baseline_other_fraction": 0.5314226519337016,
+      "places_absent_from_current_entities": [],
+      "current_entity_names": {
+        "Apartments": 3,
+        "Arch": 2,
+        "BackAlley": 1,
+        "Balcony": 3,
+        "Banana": 2,
+        "BombsiteA": 3,
+        "BombsiteB": 3,
+        "Bridge": 1,
+        "CTSpawn": 1,
+        "Deck": 1,
+        "Kitchen": 2,
+        "Library": 2,
+        "LowerMid": 2,
+        "Middle": 2,
+        "Pit": 2,
+        "Quad": 1,
+        "Ruins": 4,
+        "SecondMid": 2,
+        "TRamp": 2,
+        "TSpawn": 4,
+        "TopofMid": 1,
+        "Underpass": 1,
+        "Upstairs": 1
+      },
+      "place_inventory": [
+        {
+          "place": "Apartments",
+          "live_observations": 255,
+          "z_min": 128.03125,
+          "z_median": 260.03125,
+          "z_max": 315.0625,
+          "current_nav_misses": 108,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Arch",
+          "live_observations": 220,
+          "z_min": 156.31878662109375,
+          "z_median": 169.53125,
+          "z_max": 230.46875,
+          "current_nav_misses": 32,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Balcony",
+          "live_observations": 63,
+          "z_min": 100.734375,
+          "z_median": 268.5625,
+          "z_max": 310.5625,
+          "current_nav_misses": 9,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Banana",
+          "live_observations": 536,
+          "z_min": 104.03123474121094,
+          "z_median": 136.0313262939453,
+          "z_max": 245.53125,
+          "current_nav_misses": 96,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "BombsiteA",
+          "live_observations": 499,
+          "z_min": 109.16150665283203,
+          "z_median": 155.43710327148438,
+          "z_max": 331.5,
+          "current_nav_misses": 116,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": "site_a",
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "BombsiteB",
+          "live_observations": 746,
+          "z_min": 126.14629364013672,
+          "z_median": 140.0843048095703,
+          "z_max": 295.140625,
+          "current_nav_misses": 318,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": "site_b",
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "CTSpawn",
+          "live_observations": 112,
+          "z_min": 124.03180694580078,
+          "z_median": 160.03125,
+          "z_max": 236.65625,
+          "current_nav_misses": 7,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": "ct_spawn",
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Library",
+          "live_observations": 24,
+          "z_min": 157.6285400390625,
+          "z_median": 159.32518768310547,
+          "z_max": 200.890625,
+          "current_nav_misses": 1,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Middle",
+          "live_observations": 21,
+          "z_min": 96.03124237060547,
+          "z_median": 116.21620178222656,
+          "z_max": 124.50540161132812,
+          "current_nav_misses": 6,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Pit",
+          "live_observations": 18,
+          "z_min": 92.96925354003906,
+          "z_median": 101.0576171875,
+          "z_max": 159.03125,
+          "current_nav_misses": 6,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Quad",
+          "live_observations": 18,
+          "z_min": 132.03125,
+          "z_median": 141.3070831298828,
+          "z_max": 142.03125,
+          "current_nav_misses": 7,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Ruins",
+          "live_observations": 96,
+          "z_min": 124.03157806396484,
+          "z_median": 127.21245193481445,
+          "z_max": 196.203125,
+          "current_nav_misses": 16,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "TopofMid",
+          "live_observations": 288,
+          "z_min": 117.7838363647461,
+          "z_median": 135.43517303466797,
+          "z_max": 199.28125,
+          "current_nav_misses": 61,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        }
+      ],
+      "current_nav_probe": {
+        "version": 36,
+        "sub_version": 1,
+        "areas": 2738,
+        "no_xy_area": 783,
+        "assigned": 2113,
+        "centroid_abs_dz_median": 3.968475341796875,
+        "centroid_abs_dz_max": 200.03130340576172,
+        "centroid_abs_dz_over_128": 19
+      },
+      "vertical_diagnostic": {
+        "xy_max_units": 200,
+        "abs_dz_min_units": 160,
+        "live_pair_snapshots": 5697,
+        "close_xy_large_dz_pairs": 0,
+        "affected_rounds": 0,
+        "examples": [],
+        "current_radar_lower_altitude_max": null,
+        "places_on_both_sides_of_current_radar_split": []
+      }
+    },
+    "de_mirage": {
+      "rounds": 75,
+      "series": [
+        "2396609",
+        "2396944",
+        "2396950",
+        "furia_falcons_existing_local"
+      ],
+      "live_player_snapshots": 1833,
+      "baseline_other_count": 927,
+      "baseline_other_fraction": 0.5057283142389526,
+      "places_absent_from_current_entities": [],
+      "current_entity_names": {
+        "Apartments": 1,
+        "BackAlley": 1,
+        "BombsiteA": 1,
+        "BombsiteB": 1,
+        "CTSpawn": 1,
+        "Catwalk": 1,
+        "Connector": 1,
+        "House": 1,
+        "Jungle": 1,
+        "Ladder": 1,
+        "Middle": 1,
+        "PalaceAlley": 1,
+        "PalaceInterior": 1,
+        "Scaffolding": 1,
+        "Shop": 1,
+        "SideAlley": 1,
+        "SnipersNest": 1,
+        "Stairs": 1,
+        "TRamp": 1,
+        "TSpawn": 1,
+        "TopofMid": 1,
+        "Truck": 1,
+        "Underpass": 1
+      },
+      "place_inventory": [
+        {
+          "place": "Apartments",
+          "live_observations": 40,
+          "z_min": -79.96875,
+          "z_median": -47.96875,
+          "z_max": -7.96875,
+          "current_nav_misses": 10,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "BombsiteA",
+          "live_observations": 409,
+          "z_min": -179.96875,
+          "z_median": -167.96875,
+          "z_max": -62.0904541015625,
+          "current_nav_misses": 60,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": "site_a",
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "BombsiteB",
+          "live_observations": 327,
+          "z_min": -171.2823486328125,
+          "z_median": -160.75213623046875,
+          "z_max": -72.296875,
+          "current_nav_misses": 51,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": "site_b",
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "CTSpawn",
+          "live_observations": 170,
+          "z_min": -264.5079345703125,
+          "z_median": -167.96875,
+          "z_max": -97.96875,
+          "current_nav_misses": 21,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": "ct_spawn",
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Catwalk",
+          "live_observations": 110,
+          "z_min": -264.078125,
+          "z_median": -167.47222900390625,
+          "z_max": -48.09375,
+          "current_nav_misses": 27,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Connector",
+          "live_observations": 85,
+          "z_min": -263.96875,
+          "z_median": -167.96875,
+          "z_max": -142.859375,
+          "current_nav_misses": 22,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Jungle",
+          "live_observations": 65,
+          "z_min": -175.3336181640625,
+          "z_median": -167.96875,
+          "z_max": -105.4375,
+          "current_nav_misses": 19,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Ladder",
+          "live_observations": 26,
+          "z_min": -167.96875,
+          "z_median": -55.96875,
+          "z_max": -31.96875,
+          "current_nav_misses": 2,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Middle",
+          "live_observations": 56,
+          "z_min": -287.96875,
+          "z_median": -263.96875,
+          "z_max": -127.34375,
+          "current_nav_misses": 5,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "PalaceInterior",
+          "live_observations": 44,
+          "z_min": -175.96875,
+          "z_median": -49.0,
+          "z_max": -23.875,
+          "current_nav_misses": 20,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Scaffolding",
+          "live_observations": 5,
+          "z_min": -39.96875,
+          "z_median": -39.96875,
+          "z_max": -39.96875,
+          "current_nav_misses": 2,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Shop",
+          "live_observations": 17,
+          "z_min": -167.96875,
+          "z_median": -167.96875,
+          "z_max": -107.03125,
+          "current_nav_misses": 0,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "SnipersNest",
+          "live_observations": 208,
+          "z_min": -167.96875,
+          "z_median": -167.96875,
+          "z_max": -54.578125,
+          "current_nav_misses": 58,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Stairs",
+          "live_observations": 49,
+          "z_min": -159.96875,
+          "z_median": -64.99365234375,
+          "z_max": -39.968505859375,
+          "current_nav_misses": 20,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "TRamp",
+          "live_observations": 1,
+          "z_min": -224.728271484375,
+          "z_median": -224.728271484375,
+          "z_max": -224.728271484375,
+          "current_nav_misses": 0,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "TopofMid",
+          "live_observations": 2,
+          "z_min": -180.555908203125,
+          "z_median": -172.00906372070312,
+          "z_max": -163.46221923828125,
+          "current_nav_misses": 0,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Truck",
+          "live_observations": 138,
+          "z_min": -147.1578369140625,
+          "z_median": -102.390625,
+          "z_max": -32.765625,
+          "current_nav_misses": 62,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Underpass",
+          "live_observations": 81,
+          "z_min": -367.96875,
+          "z_median": -172.7957763671875,
+          "z_max": -143.96875,
+          "current_nav_misses": 29,
+          "current_radar_lower_observations": null,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        }
+      ],
+      "current_nav_probe": {
+        "version": 36,
+        "sub_version": 1,
+        "areas": 2544,
+        "no_xy_area": 408,
+        "assigned": 1425,
+        "centroid_abs_dz_median": 3.96875,
+        "centroid_abs_dz_max": 330.6979064941406,
+        "centroid_abs_dz_over_128": 9
+      },
+      "vertical_diagnostic": {
+        "xy_max_units": 200,
+        "abs_dz_min_units": 160,
+        "live_pair_snapshots": 3599,
+        "close_xy_large_dz_pairs": 3,
+        "affected_rounds": 2,
+        "examples": [
+          {
+            "id": "e348879717172add00b80285c20f884f4e180aa8cffa5a7ae9990d0d1d20b9fd:2:CT",
+            "second": 18,
+            "places": [
+              "Underpass",
+              "Catwalk"
+            ],
+            "xy": 88.02729268632365,
+            "abs_dz": 197.64208984375
+          },
+          {
+            "id": "1b8097794845b8994846d52d47db86faec78c838b345d3013c57e883ad230126:4:CT",
+            "second": 10,
+            "places": [
+              "Underpass",
+              "Ladder"
+            ],
+            "xy": 148.28193891158472,
+            "abs_dz": 208.0
+          },
+          {
+            "id": "1b8097794845b8994846d52d47db86faec78c838b345d3013c57e883ad230126:4:CT",
+            "second": 20,
+            "places": [
+              "Middle",
+              "Catwalk"
+            ],
+            "xy": 123.59286862338196,
+            "abs_dz": 215.875
+          }
+        ],
+        "current_radar_lower_altitude_max": null,
+        "places_on_both_sides_of_current_radar_split": []
+      }
+    },
+    "de_nuke": {
+      "rounds": 62,
+      "series": [
+        "2396613",
+        "2396945",
+        "2396949"
+      ],
+      "live_player_snapshots": 1511,
+      "baseline_other_count": 1224,
+      "baseline_other_fraction": 0.8100595632031767,
+      "places_absent_from_current_entities": [],
+      "current_entity_names": {
+        "Admin": 1,
+        "BombsiteA": 3,
+        "BombsiteB": 2,
+        "CTSpawn": 1,
+        "Catwalk": 1,
+        "Control": 1,
+        "Crane": 2,
+        "Decon": 1,
+        "Garage": 2,
+        "Heaven": 1,
+        "Hell": 1,
+        "Hut": 1,
+        "HutRoof": 1,
+        "Lobby": 3,
+        "LockerRoom": 1,
+        "Mini": 1,
+        "Observation": 1,
+        "Outside": 10,
+        "Rafters": 1,
+        "Ramp": 2,
+        "Roof": 7,
+        "Secret": 2,
+        "Silo": 1,
+        "Squeaky": 1,
+        "TSpawn": 1,
+        "Trophy": 1,
+        "Tunnels": 6,
+        "Vending": 1,
+        "Vents": 1
+      },
+      "place_inventory": [
+        {
+          "place": "Admin",
+          "live_observations": 48,
+          "z_min": -415.96875,
+          "z_median": -415.96875,
+          "z_max": -415.319091796875,
+          "current_nav_misses": 10,
+          "current_radar_lower_observations": 0,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "BombsiteA",
+          "live_observations": 282,
+          "z_min": -457.515625,
+          "z_median": -415.96875,
+          "z_max": -240.421875,
+          "current_nav_misses": 14,
+          "current_radar_lower_observations": 0,
+          "label_role_candidate": "site_a",
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "BombsiteB",
+          "live_observations": 5,
+          "z_min": -639.96875,
+          "z_median": -639.96875,
+          "z_max": -576.421875,
+          "current_nav_misses": 0,
+          "current_radar_lower_observations": 5,
+          "label_role_candidate": "site_b",
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Catwalk",
+          "live_observations": 21,
+          "z_min": -239.96875,
+          "z_median": -127.96875,
+          "z_max": -72.5625,
+          "current_nav_misses": 0,
+          "current_radar_lower_observations": 0,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Control",
+          "live_observations": 39,
+          "z_min": -415.96875,
+          "z_median": -415.96875,
+          "z_max": -395.84375,
+          "current_nav_misses": 10,
+          "current_radar_lower_observations": 0,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Crane",
+          "live_observations": 36,
+          "z_min": -127.96875,
+          "z_median": -127.96875,
+          "z_max": -127.96875,
+          "current_nav_misses": 7,
+          "current_radar_lower_observations": 0,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Decon",
+          "live_observations": 1,
+          "z_min": -775.96875,
+          "z_median": -775.96875,
+          "z_max": -775.96875,
+          "current_nav_misses": 0,
+          "current_radar_lower_observations": 1,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Garage",
+          "live_observations": 35,
+          "z_min": -415.96875,
+          "z_median": -415.96875,
+          "z_max": -415.96875,
+          "current_nav_misses": 4,
+          "current_radar_lower_observations": 0,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Heaven",
+          "live_observations": 54,
+          "z_min": -325.734375,
+          "z_median": -127.96875,
+          "z_max": -82.34375,
+          "current_nav_misses": 1,
+          "current_radar_lower_observations": 0,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Hell",
+          "live_observations": 21,
+          "z_min": -415.96875,
+          "z_median": -415.96875,
+          "z_max": -249.640625,
+          "current_nav_misses": 0,
+          "current_radar_lower_observations": 0,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Hut",
+          "live_observations": 14,
+          "z_min": -391.96875,
+          "z_median": -391.96875,
+          "z_max": -391.46875,
+          "current_nav_misses": 0,
+          "current_radar_lower_observations": 0,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "HutRoof",
+          "live_observations": 44,
+          "z_min": -288.96875,
+          "z_median": -251.96875,
+          "z_max": -251.46875,
+          "current_nav_misses": 0,
+          "current_radar_lower_observations": 0,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Lobby",
+          "live_observations": 4,
+          "z_min": -415.96875,
+          "z_median": -415.96875,
+          "z_max": -415.96875,
+          "current_nav_misses": 0,
+          "current_radar_lower_observations": 0,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "LockerRoom",
+          "live_observations": 4,
+          "z_min": -415.96875,
+          "z_median": -415.96875,
+          "z_max": -377.84375,
+          "current_nav_misses": 0,
+          "current_radar_lower_observations": 0,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Mini",
+          "live_observations": 57,
+          "z_min": -415.96875,
+          "z_median": -415.96875,
+          "z_max": -374.796875,
+          "current_nav_misses": 6,
+          "current_radar_lower_observations": 0,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Observation",
+          "live_observations": 6,
+          "z_min": -745.251708984375,
+          "z_median": -639.96875,
+          "z_max": -639.96875,
+          "current_nav_misses": 0,
+          "current_radar_lower_observations": 6,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Outside",
+          "live_observations": 339,
+          "z_min": -415.96875,
+          "z_median": -415.96875,
+          "z_max": -206.890625,
+          "current_nav_misses": 57,
+          "current_radar_lower_observations": 0,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Rafters",
+          "live_observations": 178,
+          "z_min": -313.3125,
+          "z_median": -199.5546875,
+          "z_max": -77.625,
+          "current_nav_misses": 2,
+          "current_radar_lower_observations": 0,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Ramp",
+          "live_observations": 288,
+          "z_min": -639.9688110351562,
+          "z_median": -415.96875,
+          "z_max": -271.96875,
+          "current_nav_misses": 24,
+          "current_radar_lower_observations": 19,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Secret",
+          "live_observations": 3,
+          "z_min": -639.96875,
+          "z_median": -639.96875,
+          "z_max": -415.96875,
+          "current_nav_misses": 0,
+          "current_radar_lower_observations": 2,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Trophy",
+          "live_observations": 2,
+          "z_min": -415.96875,
+          "z_median": -415.96875,
+          "z_max": -415.96875,
+          "current_nav_misses": 0,
+          "current_radar_lower_observations": 0,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Tunnels",
+          "live_observations": 18,
+          "z_min": -767.96875,
+          "z_median": -639.96875,
+          "z_max": -613.296875,
+          "current_nav_misses": 0,
+          "current_radar_lower_observations": 18,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Vending",
+          "live_observations": 1,
+          "z_min": -415.75048828125,
+          "z_median": -415.75048828125,
+          "z_max": -415.75048828125,
+          "current_nav_misses": 0,
+          "current_radar_lower_observations": 0,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        },
+        {
+          "place": "Vents",
+          "live_observations": 11,
+          "z_min": -607.96875,
+          "z_median": -607.96875,
+          "z_max": -507.1875,
+          "current_nav_misses": 6,
+          "current_radar_lower_observations": 11,
+          "label_role_candidate": null,
+          "semantic_review_status": "unreviewed"
+        }
+      ],
+      "current_nav_probe": {
+        "version": 36,
+        "sub_version": 1,
+        "areas": 3040,
+        "no_xy_area": 141,
+        "assigned": 1370,
+        "centroid_abs_dz_median": 3.96875,
+        "centroid_abs_dz_max": 636.03125,
+        "centroid_abs_dz_over_128": 249
+      },
+      "vertical_diagnostic": {
+        "xy_max_units": 200,
+        "abs_dz_min_units": 160,
+        "live_pair_snapshots": 2968,
+        "close_xy_large_dz_pairs": 17,
+        "affected_rounds": 15,
+        "examples": [
+          {
+            "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:8:CT",
+            "second": 10,
+            "places": [
+              "Heaven",
+              "BombsiteA"
+            ],
+            "xy": 144.12236269635076,
+            "abs_dz": 288.0
+          },
+          {
+            "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:14:CT",
+            "second": 12,
+            "places": [
+              "Ramp",
+              "Admin"
+            ],
+            "xy": 194.1001845579431,
+            "abs_dz": 224.0
+          },
+          {
+            "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:15:CT",
+            "second": 18,
+            "places": [
+              "Outside",
+              "Tunnels"
+            ],
+            "xy": 104.79447659333992,
+            "abs_dz": 340.4102783203125
+          },
+          {
+            "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:16:CT",
+            "second": 18,
+            "places": [
+              "Outside",
+              "Outside"
+            ],
+            "xy": 188.8996718328603,
+            "abs_dz": 193.0
+          },
+          {
+            "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:16:CT",
+            "second": 20,
+            "places": [
+              "Outside",
+              "Outside"
+            ],
+            "xy": 105.62282797709383,
+            "abs_dz": 192.5
+          }
+        ],
+        "current_radar_lower_altitude_max": -495.0,
+        "places_on_both_sides_of_current_radar_split": [
+          "Ramp",
+          "Secret"
+        ]
+      }
+    }
+  },
+  "limits": [
+    "Current static map assets are newer than the audited Demos; compatibility remains unverified.",
+    "NAV area assignment and centroid height are diagnostics, not validated floor or walk-distance truth.",
+    "Named-place membership does not validate volume geometry or tactical roles; all semantic reviews are pending.",
+    "Only the frozen eligible CT cohort is counted; T-side data is excluded.",
+    "No new model, training, human labels, navigation-distance features, or unseen test outcomes."
+  ]
+}

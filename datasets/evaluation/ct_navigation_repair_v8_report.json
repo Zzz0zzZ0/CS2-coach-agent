@@ -1,0 +1,628 @@
+{
+  "status": "completed_bounded_localization_probe_not_patch_acceptance",
+  "inventory_sha256": "2a7ca2d8df45e0cefc7ffa46a35c5743d4146cf93ffe64d23fc602ed138f8dcd",
+  "source_sha256": {
+    "app/services/ct_navigation_service.py": "eef886104537b46041c0b7e36e2e1de782e222be8a6ec1e2ea8dc6171d10eb56",
+    "scripts/audit_ct_navigation_repair.py": "1692087e95881ebaa81aa44b14fc2ae7a6d9f8580d4c540121065f1af69a9f63"
+  },
+  "protocol": {
+    "xy_tolerances_units": [
+      0,
+      16,
+      32
+    ],
+    "z_tolerance_units": 64,
+    "selection": "valid XY-containing surface first; otherwise nearest 3D surface within both bounds; area-ID tie break; hull 0 only",
+    "training": "none; development diagnostics only; bounds are engineering limits, not expert ground truth"
+  },
+  "maps": {
+    "de_ancient": {
+      "counts": {
+        "observations": 2049,
+        "accepted_xy0_z64": 1615,
+        "accepted_xy16_z64": 2042,
+        "accepted_xy32_z64": 2042,
+        "bounded_snap": 427,
+        "recovered_previous_miss": 427,
+        "changed_previous_area": 0,
+        "accepted_previous_centroid_gap_over128": 0,
+        "changed_area_previous_centroid_gap_over128": 0,
+        "inside": 1615,
+        "rejected_previous_match": 1
+      },
+      "unresolved_by_place": {
+        "Alley": 3,
+        "BombsiteA": 4
+      },
+      "examples": []
+    },
+    "de_anubis": {
+      "counts": {
+        "observations": 1017,
+        "accepted_xy0_z64": 810,
+        "accepted_xy16_z64": 1010,
+        "accepted_xy32_z64": 1011,
+        "inside": 810,
+        "recovered_previous_miss": 200,
+        "changed_previous_area": 1,
+        "accepted_previous_centroid_gap_over128": 0,
+        "changed_area_previous_centroid_gap_over128": 0,
+        "bounded_snap": 201,
+        "rejected_previous_match": 2
+      },
+      "unresolved_by_place": {
+        "Connector": 1,
+        "Middle": 1,
+        "BombsiteB": 4
+      },
+      "examples": []
+    },
+    "de_dust2": {
+      "counts": {
+        "observations": 2062,
+        "accepted_xy0_z64": 1588,
+        "accepted_xy16_z64": 2006,
+        "accepted_xy32_z64": 2018,
+        "inside": 1588,
+        "recovered_previous_miss": 418,
+        "changed_previous_area": 12,
+        "accepted_previous_centroid_gap_over128": 7,
+        "changed_area_previous_centroid_gap_over128": 7,
+        "bounded_snap": 430,
+        "rejected_previous_match": 19
+      },
+      "unresolved_by_place": {
+        "UnderA": 6,
+        "BombsiteB": 8,
+        "ShortStairs": 13,
+        "CTSpawn": 14,
+        "Middle": 1,
+        "BDoors": 2
+      },
+      "examples": [
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:15:CT",
+          "second": 20,
+          "place": "ExtendedA",
+          "position": [
+            503.1159973144531,
+            2092.218994140625,
+            127.03125
+          ],
+          "old_area_id": 1263,
+          "old_centroid_abs_dz": 248.03125,
+          "bounded_match": {
+            "area_id": 1288,
+            "xy_residual": 13.383941650390625,
+            "z_residual": 2.96875,
+            "surface_position": [
+              516.4999389648438,
+              2092.218994140625,
+              130.0
+            ],
+            "status": "bounded_snap"
+          }
+        },
+        {
+          "id": "5ab8223140fbf38ebbd28a1b6c903a44ba4588de40beec79c6c08f78342000f1:3:CT",
+          "second": 10,
+          "place": "BombsiteB",
+          "position": [
+            -1563.8153076171875,
+            2582.81591796875,
+            163.0625
+          ],
+          "old_area_id": 2015,
+          "old_centroid_abs_dz": 157.06249952316284,
+          "bounded_match": {
+            "area_id": 2009,
+            "xy_residual": 31.7120168720252,
+            "z_residual": 27.0625,
+            "surface_position": [
+              -1595.5,
+              2581.499755859375,
+              136.0
+            ],
+            "status": "bounded_snap"
+          }
+        },
+        {
+          "id": "5ab8223140fbf38ebbd28a1b6c903a44ba4588de40beec79c6c08f78342000f1:5:CT",
+          "second": 10,
+          "place": "ExtendedA",
+          "position": [
+            509.0848388671875,
+            2179.001953125,
+            128.40625
+          ],
+          "old_area_id": 1317,
+          "old_centroid_abs_dz": 251.07291412353516,
+          "bounded_match": {
+            "area_id": 1288,
+            "xy_residual": 7.41510009765625,
+            "z_residual": 1.59375,
+            "surface_position": [
+              516.4999389648438,
+              2179.001953125,
+              130.0
+            ],
+            "status": "bounded_snap"
+          }
+        },
+        {
+          "id": "8fc1bae5b52a7580b89053f3896cb3bd77b39e89e073787fe002bb4b552934f9:6:CT",
+          "second": 20,
+          "place": "UnderA",
+          "position": [
+            547.4177856445312,
+            2152.05322265625,
+            127.044189453125
+          ],
+          "old_area_id": 1316,
+          "old_centroid_abs_dz": 223.044189453125,
+          "bounded_match": {
+            "area_id": 1288,
+            "xy_residual": 0.91778564453125,
+            "z_residual": 2.955810546875,
+            "surface_position": [
+              546.5,
+              2152.05322265625,
+              130.0
+            ],
+            "status": "bounded_snap"
+          }
+        },
+        {
+          "id": "f3079a77e5b6b276bc792740c5d43513070723af4976315ca3888e428cc69eb4:9:CT",
+          "second": 15,
+          "place": "ExtendedA",
+          "position": [
+            499.9393310546875,
+            2101.21484375,
+            96.09651184082031
+          ],
+          "old_area_id": 1263,
+          "old_centroid_abs_dz": 217.0965118408203,
+          "bounded_match": {
+            "area_id": 1248,
+            "xy_residual": 2.939361572265625,
+            "z_residual": 2.326423431144036,
+            "surface_position": [
+              496.9999694824219,
+              2101.21484375,
+              98.42293527196435
+            ],
+            "status": "bounded_snap"
+          }
+        }
+      ]
+    },
+    "de_inferno": {
+      "counts": {
+        "observations": 2896,
+        "accepted_xy0_z64": 2082,
+        "accepted_xy16_z64": 2875,
+        "accepted_xy32_z64": 2882,
+        "bounded_snap": 800,
+        "recovered_previous_miss": 781,
+        "changed_previous_area": 19,
+        "accepted_previous_centroid_gap_over128": 16,
+        "changed_area_previous_centroid_gap_over128": 16,
+        "inside": 2082,
+        "rejected_previous_match": 12
+      },
+      "unresolved_by_place": {
+        "Balcony": 1,
+        "CTSpawn": 2,
+        "BombsiteA": 7,
+        "Banana": 2,
+        "Ruins": 1,
+        "BombsiteB": 1
+      },
+      "examples": [
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:2:CT",
+          "second": 18,
+          "place": "Balcony",
+          "position": [
+            2092.443115234375,
+            -236.66162109375,
+            256.03125
+          ],
+          "old_area_id": 1550,
+          "old_centroid_abs_dz": 156.03130340576172,
+          "bounded_match": {
+            "area_id": 1573,
+            "xy_residual": 2.443115234375,
+            "z_residual": 3.96868896484375,
+            "surface_position": [
+              2090.0,
+              -236.66162109375,
+              259.99993896484375
+            ],
+            "status": "bounded_snap"
+          }
+        },
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:14:CT",
+          "second": 20,
+          "place": "Balcony",
+          "position": [
+            2115.103515625,
+            -212.9873046875,
+            290.53125
+          ],
+          "old_area_id": 1550,
+          "old_centroid_abs_dz": 190.53130340576172,
+          "bounded_match": {
+            "area_id": 1606,
+            "xy_residual": 2.603515625,
+            "z_residual": 3.46868896484375,
+            "surface_position": [
+              2112.5,
+              -212.9873046875,
+              293.99993896484375
+            ],
+            "status": "bounded_snap"
+          }
+        },
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:16:CT",
+          "second": 20,
+          "place": "Balcony",
+          "position": [
+            2092.437255859375,
+            -294.01666259765625,
+            256.03125
+          ],
+          "old_area_id": 1569,
+          "old_centroid_abs_dz": 156.03130340576172,
+          "bounded_match": {
+            "area_id": 1576,
+            "xy_residual": 2.437255859375,
+            "z_residual": 3.96868896484375,
+            "surface_position": [
+              2090.0,
+              -294.01666259765625,
+              259.99993896484375
+            ],
+            "status": "bounded_snap"
+          }
+        },
+        {
+          "id": "e71bad7ed9d272f72806940dcd1e8f732c31f947865e49e5ccbbcf1f43bcdc83:22:CT",
+          "second": 18,
+          "place": "Balcony",
+          "position": [
+            2092.36962890625,
+            -274.13946533203125,
+            256.03125
+          ],
+          "old_area_id": 1550,
+          "old_centroid_abs_dz": 156.03130340576172,
+          "bounded_match": {
+            "area_id": 1576,
+            "xy_residual": 2.36962890625,
+            "z_residual": 3.96868896484375,
+            "surface_position": [
+              2090.0,
+              -274.13946533203125,
+              259.99993896484375
+            ],
+            "status": "bounded_snap"
+          }
+        },
+        {
+          "id": "e71bad7ed9d272f72806940dcd1e8f732c31f947865e49e5ccbbcf1f43bcdc83:32:CT",
+          "second": 20,
+          "place": "Balcony",
+          "position": [
+            2105.070068359375,
+            -242.76763916015625,
+            290.53125
+          ],
+          "old_area_id": 1550,
+          "old_centroid_abs_dz": 190.53130340576172,
+          "bounded_match": {
+            "area_id": 1606,
+            "xy_residual": 4.429931640625,
+            "z_residual": 3.46868896484375,
+            "surface_position": [
+              2109.5,
+              -242.76763916015625,
+              293.99993896484375
+            ],
+            "status": "bounded_snap"
+          }
+        }
+      ]
+    },
+    "de_mirage": {
+      "counts": {
+        "observations": 1833,
+        "accepted_xy0_z64": 1409,
+        "accepted_xy16_z64": 1813,
+        "accepted_xy32_z64": 1827,
+        "inside": 1409,
+        "recovered_previous_miss": 408,
+        "changed_previous_area": 10,
+        "accepted_previous_centroid_gap_over128": 7,
+        "changed_area_previous_centroid_gap_over128": 7,
+        "bounded_snap": 418,
+        "rejected_previous_match": 6
+      },
+      "unresolved_by_place": {
+        "Ladder": 2,
+        "Truck": 2,
+        "BombsiteB": 1,
+        "Middle": 1
+      },
+      "examples": [
+        {
+          "id": "e348879717172add00b80285c20f884f4e180aa8cffa5a7ae9990d0d1d20b9fd:2:CT",
+          "second": 18,
+          "place": "Underpass",
+          "position": [
+            -1047.9593505859375,
+            188.1331329345703,
+            -367.96875
+          ],
+          "old_area_id": 627,
+          "old_centroid_abs_dz": 201.3020782470703,
+          "bounded_match": {
+            "area_id": 610,
+            "xy_residual": 2.9593505859375,
+            "z_residual": 3.96875,
+            "surface_position": [
+              -1045.0,
+              188.1331329345703,
+              -364.0
+            ],
+            "status": "bounded_snap"
+          }
+        },
+        {
+          "id": "e348879717172add00b80285c20f884f4e180aa8cffa5a7ae9990d0d1d20b9fd:3:CT",
+          "second": 12,
+          "place": "BombsiteA",
+          "position": [
+            28.516149520874023,
+            -1922.0672607421875,
+            -167.96875
+          ],
+          "old_area_id": 1668,
+          "old_centroid_abs_dz": 131.96874618530273,
+          "bounded_match": {
+            "area_id": 1738,
+            "xy_residual": 3.427978515625,
+            "z_residual": 3.96875,
+            "surface_position": [
+              28.516149520874023,
+              -1925.4952392578125,
+              -164.0
+            ],
+            "status": "bounded_snap"
+          }
+        },
+        {
+          "id": "1b8097794845b8994846d52d47db86faec78c838b345d3013c57e883ad230126:15:CT",
+          "second": 12,
+          "place": "Apartments",
+          "position": [
+            -2022.4227294921875,
+            627.2699584960938,
+            -31.828125
+          ],
+          "old_area_id": 1907,
+          "old_centroid_abs_dz": 132.171875,
+          "bounded_match": {
+            "area_id": 1940,
+            "xy_residual": 19.7349853515625,
+            "z_residual": 8.171867370605469,
+            "surface_position": [
+              -2022.4227294921875,
+              647.0049438476562,
+              -39.99999237060547
+            ],
+            "status": "bounded_snap"
+          }
+        },
+        {
+          "id": "1b8097794845b8994846d52d47db86faec78c838b345d3013c57e883ad230126:16:CT",
+          "second": 18,
+          "place": "Ladder",
+          "position": [
+            -976.5994873046875,
+            -158.9183349609375,
+            -167.96875
+          ],
+          "old_area_id": 630,
+          "old_centroid_abs_dz": 196.03125,
+          "bounded_match": {
+            "area_id": 587,
+            "xy_residual": 2.4005126953125,
+            "z_residual": 3.96875,
+            "surface_position": [
+              -979.0,
+              -158.9183349609375,
+              -164.0
+            ],
+            "status": "bounded_snap"
+          }
+        },
+        {
+          "id": "1b8097794845b8994846d52d47db86faec78c838b345d3013c57e883ad230126:18:CT",
+          "second": 18,
+          "place": "Ladder",
+          "position": [
+            -976.062744140625,
+            -199.9373779296875,
+            -153.1875
+          ],
+          "old_area_id": 615,
+          "old_centroid_abs_dz": 209.47915649414062,
+          "bounded_match": {
+            "area_id": 587,
+            "xy_residual": 3.8199327118038977,
+            "z_residual": 10.8125,
+            "surface_position": [
+              -979.0,
+              -197.4951629638672,
+              -164.0
+            ],
+            "status": "bounded_snap"
+          }
+        }
+      ]
+    },
+    "de_nuke": {
+      "counts": {
+        "observations": 1511,
+        "accepted_xy0_z64": 1106,
+        "accepted_xy16_z64": 1356,
+        "accepted_xy32_z64": 1388,
+        "inside": 1106,
+        "recovered_previous_miss": 129,
+        "changed_previous_area": 153,
+        "accepted_previous_centroid_gap_over128": 151,
+        "changed_area_previous_centroid_gap_over128": 151,
+        "rejected_previous_match": 111,
+        "bounded_snap": 282
+      },
+      "unresolved_by_place": {
+        "Rafters": 92,
+        "Vents": 3,
+        "BombsiteA": 8,
+        "Heaven": 3,
+        "Outside": 8,
+        "Hell": 3,
+        "Ramp": 6
+      },
+      "examples": [
+        {
+          "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:1:CT",
+          "second": 12,
+          "place": "Heaven",
+          "position": [
+            1144.1365966796875,
+            -451.130615234375,
+            -104.15625
+          ],
+          "old_area_id": 1250,
+          "old_centroid_abs_dz": 531.84375,
+          "bounded_match": {
+            "area_id": 944,
+            "xy_residual": 14.636474609375,
+            "z_residual": 17.843780517578125,
+            "surface_position": [
+              1129.5001220703125,
+              -451.130615234375,
+              -122.00003051757812
+            ],
+            "status": "bounded_snap"
+          }
+        },
+        {
+          "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:1:CT",
+          "second": 12,
+          "place": "Rafters",
+          "position": [
+            469.72479248046875,
+            -894.1287231445312,
+            -251.46875
+          ],
+          "old_area_id": 650,
+          "old_centroid_abs_dz": 515.1979370117188,
+          "bounded_match": {
+            "area_id": 638,
+            "xy_residual": 2.37139892578125,
+            "z_residual": 3.46875,
+            "surface_position": [
+              469.72479248046875,
+              -896.5001220703125,
+              -248.0
+            ],
+            "status": "bounded_snap"
+          }
+        },
+        {
+          "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:1:CT",
+          "second": 15,
+          "place": "Rafters",
+          "position": [
+            474.8258972167969,
+            -892.6447143554688,
+            -251.46875
+          ],
+          "old_area_id": 650,
+          "old_centroid_abs_dz": 515.1979370117188,
+          "bounded_match": {
+            "area_id": 638,
+            "xy_residual": 3.85540771484375,
+            "z_residual": 3.46875,
+            "surface_position": [
+              474.8258972167969,
+              -896.5001220703125,
+              -248.0
+            ],
+            "status": "bounded_snap"
+          }
+        },
+        {
+          "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:1:CT",
+          "second": 18,
+          "place": "Outside",
+          "position": [
+            1121.13623046875,
+            -1296.9373779296875,
+            -415.96875
+          ],
+          "old_area_id": 1972,
+          "old_centroid_abs_dz": 222.03125,
+          "bounded_match": {
+            "area_id": 1704,
+            "xy_residual": 2.937255859375,
+            "z_residual": 6.856588490307331,
+            "surface_position": [
+              1121.13623046875,
+              -1294.0001220703125,
+              -409.11216150969267
+            ],
+            "status": "bounded_snap"
+          }
+        },
+        {
+          "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:1:CT",
+          "second": 18,
+          "place": "Rafters",
+          "position": [
+            475.8208923339844,
+            -892.2238159179688,
+            -251.46875
+          ],
+          "old_area_id": 650,
+          "old_centroid_abs_dz": 515.1979370117188,
+          "bounded_match": {
+            "area_id": 638,
+            "xy_residual": 4.27630615234375,
+            "z_residual": 3.46875,
+            "surface_position": [
+              475.8208923339844,
+              -896.5001220703125,
+              -248.0
+            ],
+            "status": "bounded_snap"
+          }
+        }
+      ]
+    }
+  },
+  "seconds": 19.182059500000378,
+  "RSS_MiB_at_end": 74.9921875,
+  "limits": [
+    "Original NAV bytes and graph connections are unchanged.",
+    "Bounded snaps can cross thin walls; collision and patch compatibility remain unverified.",
+    "Unknowns stay masked; higher match coverage is not tactical or geometric accuracy.",
+    "Jumping or missing walkable surfaces can remain unresolved; do not fabricate nodes or paths."
+  ]
+}

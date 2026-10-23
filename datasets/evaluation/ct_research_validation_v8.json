@@ -1,0 +1,169 @@
+{
+  "status": "completed_development_protocol_inventory_and_navigation_localization_repair",
+  "recorded_at": "2026-10-23T05:09:15.777345+00:00",
+  "python": "3.13.9",
+  "environment": {
+    "awpy": "3.1.1",
+    "polars": "2.0.0",
+    "demoparser2": "0.41.3",
+    "numpy": "2.3.5",
+    "typer": "0.20.0",
+    "rich": "14.2.0"
+  },
+  "tests": {
+    "command": "output/tagnet/.venv-regression/Scripts/python.exe -m pytest -q",
+    "passed": 429,
+    "warnings": 3,
+    "seconds": 33.56,
+    "stdout_sha256": "0382135e89d2de52e4f340d4c891bbcfa09fa1658af7c1563c25dc332b4446b2",
+    "network": "blocked by offline fixtures"
+  },
+  "dependency_check": {
+    "pip_check": "No broken requirements found",
+    "new_dependency_constraints": "awpy, polars, typer, rich, markdown-it-py mandatory requirements checked against requirements-lock.txt; no conflicts",
+    "Python_3_11_environment_recreated": false
+  },
+  "old_v7_frozen_artifacts_checked": 18,
+  "old_v7_checksum_mismatches": 0,
+  "old_awpy_nav_probe": {
+    "de_ancient.nav": {
+      "status": "unsupported",
+      "error": "Unsupported nav version: 36"
+    },
+    "de_anubis.nav": {
+      "status": "unsupported",
+      "error": "Unsupported nav version: 36"
+    },
+    "de_dust2.nav": {
+      "status": "unsupported",
+      "error": "Unsupported nav version: 36"
+    },
+    "de_inferno.nav": {
+      "status": "unsupported",
+      "error": "Unsupported nav version: 36"
+    },
+    "de_mirage.nav": {
+      "status": "unsupported",
+      "error": "Unsupported nav version: 36"
+    },
+    "de_nuke.nav": {
+      "status": "unsupported",
+      "error": "Unsupported nav version: 36"
+    }
+  },
+  "new_awpy_nav_probe": {
+    "awpy": "3.1.1",
+    "polars": "2.0.0",
+    "maps": {
+      "de_ancient": {
+        "version": 36,
+        "sub_version": 1,
+        "area_count": 1969,
+        "first_centroid": [
+          -203.25015258789062,
+          -205.35137939453125,
+          70.49996185302734
+        ],
+        "matched_area": 1,
+        "seconds": 0.0032992000001286215
+      },
+      "de_anubis": {
+        "version": 36,
+        "sub_version": 1,
+        "area_count": 2633,
+        "first_centroid": [
+          -81.49037170410156,
+          54.499839782714844,
+          4.000025272369385
+        ],
+        "matched_area": 1,
+        "seconds": 0.0024439000001166278
+      },
+      "de_dust2": {
+        "version": 36,
+        "sub_version": 1,
+        "area_count": 2242,
+        "first_centroid": [
+          162.49993896484375,
+          25.124717712402344,
+          10.999994277954102
+        ],
+        "matched_area": 1,
+        "seconds": 0.0023575000000164437
+      },
+      "de_inferno": {
+        "version": 36,
+        "sub_version": 1,
+        "area_count": 2738,
+        "first_centroid": [
+          -23.500091552734375,
+          -106.62535095214844,
+          38.499935150146484
+        ],
+        "matched_area": 1,
+        "seconds": 0.002773700000034296
+      },
+      "de_mirage": {
+        "version": 36,
+        "sub_version": 1,
+        "area_count": 2544,
+        "first_centroid": [
+          184.99993896484375,
+          104.75487518310547,
+          -157.5
+        ],
+        "matched_area": 1,
+        "seconds": 0.0025763999999526277
+      },
+      "de_nuke": {
+        "version": 36,
+        "sub_version": 1,
+        "area_count": 3040,
+        "first_centroid": [
+          68.00001525878906,
+          -368.0000305175781,
+          -168.00001525878906
+        ],
+        "matched_area": 1,
+        "seconds": 0.0029217000001153792
+      }
+    }
+  },
+  "real_demo_upgrade_snapshot_check": {
+    "status": "passed",
+    "demo_sha256": "a20d78e76c5545872a87a35dd5cc5e22f8d307a44bddc9d2189e3ff0ba04d987",
+    "round_number": 1,
+    "tick": 5941,
+    "CT_players_matched": 5,
+    "compared": [
+      "XYZ",
+      "health",
+      "equipment_value",
+      "place"
+    ],
+    "seconds": 3.500809400000435,
+    "RSS_MiB_at_end": 133.9921875
+  },
+  "scope": {
+    "training": false,
+    "GPU_used": false,
+    "new_demo_downloads": 0,
+    "raw_navigation_modified": false,
+    "semantic_reviews": 0,
+    "production_backend": false,
+    "T_training": false
+  },
+  "artifact_sha256": {
+    "datasets/evaluation/ct_map_semantics_v8_report.json": "2a7ca2d8df45e0cefc7ffa46a35c5743d4146cf93ffe64d23fc602ed138f8dcd",
+    "datasets/evaluation/ct_navigation_repair_v8_report.json": "b7bdb17bfd939703f5d0bc35f2634ac882622995f5d73215d03e6aa915e5bbdb",
+    "app/services/ct_navigation_service.py": "eef886104537b46041c0b7e36e2e1de782e222be8a6ec1e2ea8dc6171d10eb56",
+    "scripts/audit_ct_map_semantics.py": "e46a65e4e3e4b81a1347b65bd567385072c04e788d1bc82eb7734ee9a8a31427",
+    "scripts/audit_ct_navigation_repair.py": "1692087e95881ebaa81aa44b14fc2ae7a6d9f8580d4c540121065f1af69a9f63"
+  },
+  "limits": [
+    "Map assets patch 14191 versus Demo patches 14165/14174; historical compatibility unverified.",
+    "Bounded surface coverage is not accuracy; wall crossing, jumping and missing Rafters surfaces remain.",
+    "Formal model recipes, primary contrast, recruitment, power/sample budget and new blind-test acquisition not frozen."
+  ],
+  "temporary_environment_cleanup": "automatic approval rejected the exact-path deletion again after explicit user authorization; unused environment retained under ignored output directory"
+}
