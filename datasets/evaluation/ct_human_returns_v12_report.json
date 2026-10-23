@@ -1,0 +1,153 @@
+{
+  "version": "ct-human-returns-v12",
+  "date": "2026-10-23",
+  "status": "one_complete_and_one_partial_return_no_model_efficacy_claim",
+  "latest_participant": {
+    "participant_id": "P002",
+    "source_export_sha256": "a8c061c12af938f9eff13f7c2915ebd316e141dd72e8da2527aa61f26437ff6d",
+    "returned_version": "ct-pilot-v9-distributed-r2-Q01",
+    "payload_sha256": "03317d8ac7b5cd777a2e2c7298cd185196997ab14c5eb60a6dfad4060846d68b",
+    "query_id": "Q01",
+    "background": "Self-reported competitive CS2 experience; no independent qualification check",
+    "assigned_pairs": 10,
+    "complete_pairs": 10,
+    "partial_pairs": 0,
+    "blank_pairs": 0,
+    "completed_packets": 1,
+    "tactical_score_counts": {
+      "0": 2,
+      "1": 4,
+      "2": 4
+    },
+    "structural_score_counts": {
+      "0": 4,
+      "1": 3,
+      "2": 2,
+      "3": 1
+    },
+    "tactical_mean_descriptive_this_packet": 1.2,
+    "structural_mean_descriptive_this_packet": 1.0,
+    "tactical_grade_at_least_2": 4,
+    "structural_grade_at_least_2": 3,
+    "ratings": [
+      {
+        "query_id": "Q01",
+        "candidate_id": "C01",
+        "tactical_grade": 2,
+        "structural_grade": 2,
+        "complete": true,
+        "reason_summary": "Distinguished mid control, aggression and emphasis on one side."
+      },
+      {
+        "query_id": "Q01",
+        "candidate_id": "C02",
+        "tactical_grade": 1,
+        "structural_grade": 0,
+        "complete": true,
+        "reason_summary": "Described a short-range/economy explanation as likely; opponent weapons and full economy are not provided."
+      },
+      {
+        "query_id": "Q01",
+        "candidate_id": "C03",
+        "tactical_grade": 2,
+        "structural_grade": 2,
+        "complete": true,
+        "reason_summary": "Compared a middle-focused group with a lone site defender."
+      },
+      {
+        "query_id": "Q01",
+        "candidate_id": "C04",
+        "tactical_grade": 0,
+        "structural_grade": 1,
+        "complete": true,
+        "reason_summary": "Used a visible casualty and speculated that opponents would accelerate toward B; enemy plan is unobserved."
+      },
+      {
+        "query_id": "Q01",
+        "candidate_id": "C05",
+        "tactical_grade": 2,
+        "structural_grade": 3,
+        "complete": true,
+        "reason_summary": "Identified middle control and proposed a teammate position change; proposal is not an observed action."
+      },
+      {
+        "query_id": "Q01",
+        "candidate_id": "C06",
+        "tactical_grade": 1,
+        "structural_grade": 1,
+        "complete": true,
+        "reason_summary": "Compared default versus aggressive positions and proposed utility use; utility was not shown."
+      },
+      {
+        "query_id": "Q01",
+        "candidate_id": "C07",
+        "tactical_grade": 0,
+        "structural_grade": 0,
+        "complete": true,
+        "reason_summary": "Compared positional supports and perceived economic conditions; superiority is an opinion, not an outcome measurement."
+      },
+      {
+        "query_id": "Q01",
+        "candidate_id": "C08",
+        "tactical_grade": 1,
+        "structural_grade": 0,
+        "complete": true,
+        "reason_summary": "Suggested a conditional alternative if utility or weapons were unfavorable; these conditions are not established."
+      },
+      {
+        "query_id": "Q01",
+        "candidate_id": "C09",
+        "tactical_grade": 1,
+        "structural_grade": 0,
+        "complete": true,
+        "reason_summary": "Explicitly hypothesized opponent site preferences and a gamble defense; opponent history is not shown."
+      },
+      {
+        "query_id": "Q01",
+        "candidate_id": "C10",
+        "tactical_grade": 2,
+        "structural_grade": 1,
+        "complete": true,
+        "reason_summary": "Suggested transfer under a hypothetical strong enemy middle presence; that enemy condition is not observed."
+      }
+    ]
+  },
+  "previous_return_report": "datasets/evaluation/ct_human_feedback_v11_report.json",
+  "cumulative_counts_only": {
+    "response_files": 2,
+    "complete_packets": 1,
+    "partial_packets": 1,
+    "complete_pairs": 11,
+    "partial_pairs": 1,
+    "blank_pairs": 8,
+    "tactical_grades_present": 12,
+    "structural_grades_present": 11
+  },
+  "by_version": [
+    {
+      "version": "ct-pilot-v9-distributed-r2-Q01",
+      "participant_id": "P002",
+      "query_id": "Q01",
+      "complete_pairs": 10,
+      "partial_pairs": 0,
+      "blank_pairs": 0
+    },
+    {
+      "version": "ct-pilot-v9-distributed-r3-zh-Q03",
+      "participant_id": "P001",
+      "query_id": "Q03",
+      "complete_pairs": 1,
+      "partial_pairs": 1,
+      "blank_pairs": 8
+    }
+  ],
+  "interpretation": [
+    "This return uses multiple grades and candidate-specific reasons; it coexists with the earlier report of difficulty seeing differences.",
+    "Different query maps, self-reported backgrounds and rubric/display versions prevent attributing the difference to any one cause; distinct anonymous codes do not verify independent identities.",
+    "Hypothetical enemy plans, equipment conditions and utility suggestions are retained as participant opinions, not verified events.",
+    "No pooled score means across r2 and r3, no method superiority test, no human-AI agreement estimate.",
+    "AI silver lacks Ancient queries and shares no allocated pairs with these human returns; it cannot validate this Q01 annotation."
+  ],
+  "privacy": "Raw files, reviewer code, exact platform rank, timestamps and verbatim reasons remain local; public report includes pseudonymous scores and paraphrased rationale only.",
+  "returner_identity_independence_verified": false
+}
