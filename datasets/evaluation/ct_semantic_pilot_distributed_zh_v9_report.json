@@ -1,0 +1,100 @@
+{
+  "status": "prepared_distributed_process_pilot_without_human_ratings",
+  "human_ratings": 0,
+  "candidate_pairs": 119,
+  "packets": [
+    {
+      "packet": "Q01",
+      "candidate_pairs": 10,
+      "payload_sha256": "2409696f3afa6cbe932a9e5dac75770eed68b5f07838fc2a55c165fa4869bd00",
+      "archive": "CT-Q01.zip",
+      "archive_sha256": "a671995b1952668ddd416ed2ff678a9a00e93e9b72a076010de8145c5a63c11a"
+    },
+    {
+      "packet": "Q02",
+      "candidate_pairs": 10,
+      "payload_sha256": "eb72c790c7e2dde28855f0a993e1038b7a4362f2865e5b7904ce01d40477b8c6",
+      "archive": "CT-Q02.zip",
+      "archive_sha256": "3ca90f6cedac662f5274cd4a7cf48bbacea598d4670db1e9ef65a245368a658a"
+    },
+    {
+      "packet": "Q03",
+      "candidate_pairs": 10,
+      "payload_sha256": "6245ec8772685719f4194360d8258fc1009f682cd016cc6e986ffcd272052c49",
+      "archive": "CT-Q03.zip",
+      "archive_sha256": "beb29f03dbc7eb951fa1dcfaf9d6db844506c9708475f0850ea30aaa6e054f35"
+    },
+    {
+      "packet": "Q04",
+      "candidate_pairs": 9,
+      "payload_sha256": "5968a731b74a58bd57021a7a8ee08eb2f549a5964d2abc4946a4541c739d2987",
+      "archive": "CT-Q04.zip",
+      "archive_sha256": "cee21a9cf5661be672e611b5b2ccdcea18f873c466e24849ce9f770c4effb105"
+    },
+    {
+      "packet": "Q05",
+      "candidate_pairs": 10,
+      "payload_sha256": "e3f2dfb1703199111c8bb672d8a2baf868eb3b006df4c09235de0541af83d543",
+      "archive": "CT-Q05.zip",
+      "archive_sha256": "a1de502a7905f9220e439a67435f73b5d1aba78bfbe5cbd234b41814d2a127df"
+    },
+    {
+      "packet": "Q06",
+      "candidate_pairs": 10,
+      "payload_sha256": "a74a3c4ad7b3717bdbf3b084995676d0aba43d6b5b864e4a6b261ad47903b37e",
+      "archive": "CT-Q06.zip",
+      "archive_sha256": "8d4269f35e96b769f05e0f7b1fb4b0d61616cc1d53c77b7b072083779693623f"
+    },
+    {
+      "packet": "Q07",
+      "candidate_pairs": 10,
+      "payload_sha256": "b9ad6750601eee6a129ba12b501b7b024097fa684687e49d3991969779533584",
+      "archive": "CT-Q07.zip",
+      "archive_sha256": "f8a28ef48c7b7541ca62eab0cf6b6e11ee45f9f39f5c8613e03b72abcd3691ea"
+    },
+    {
+      "packet": "Q08",
+      "candidate_pairs": 10,
+      "payload_sha256": "2bdc4ae0e1b6de8a31052f14dcac6052f9426bf020324ca7b689f0837bcf87c3",
+      "archive": "CT-Q08.zip",
+      "archive_sha256": "64cd0fa5f2a16065cd3934c0abce72c8b7fcd7addcbe78d216c1d480c685487e"
+    },
+    {
+      "packet": "Q09",
+      "candidate_pairs": 10,
+      "payload_sha256": "d0d74e4e0e0a0124e2528eb28ca2ad7119585f20c3df0440f115d94ab59897df",
+      "archive": "CT-Q09.zip",
+      "archive_sha256": "7fc87db9700b4bcea50f6a20a32686411d680ab01cd006268cf6c20ca3f799fd"
+    },
+    {
+      "packet": "Q10",
+      "candidate_pairs": 10,
+      "payload_sha256": "d012eb4f1a9efa2c3f43d89cc4c10d3095aa94a4283c02a5caa593aa7538884d",
+      "archive": "CT-Q10.zip",
+      "archive_sha256": "ab3d31e2e56f9daec6d9fdc1055c0541f9433a8d8b7b8216940ee92608430e02"
+    },
+    {
+      "packet": "Q11",
+      "candidate_pairs": 10,
+      "payload_sha256": "998864567871a7477d0dff6a2ec995d43d479727d18dfe315dca98fa34d9abb3",
+      "archive": "CT-Q11.zip",
+      "archive_sha256": "16476a9224ed700523718e14814daa30f7881f614070ad31aa989873b011b0d2"
+    },
+    {
+      "packet": "Q12",
+      "candidate_pairs": 10,
+      "payload_sha256": "24d5e9782d364eeed72ef73b76ba54ec8ee1e052ce1f5783ceca1f60898bdcd9",
+      "archive": "CT-Q12.zip",
+      "archive_sha256": "951e42c9c7f12ed243542447b221f4c99460b98cd1e1427c47f68fe1f4633a74"
+    }
+  ],
+  "source_payload_sha256": "dcd604b383a452ea56456f50467f74672be51c924b7341652eb0cd60e6f8511a",
+  "audience": "General participants; no professional CS2 qualification required",
+  "display": "Chinese map and location labels; plain-language questions; original snapshot data preserved",
+  "limits": [
+    "Disjoint packets cannot measure agreement on the same items.",
+    "Development materials only; not neural-model efficacy evidence."
+  ],
+  "source_sha256": "b6a564e4b2cc3486d0d30692b9293eeda07e5fe1b421a6f1db8a1c87c9982dcf",
+  "template_sha256": "edd8b91d477f6c1657ce0a128838318f07cce00ad2eee4ffcc65653d0c4c1ab0"
+}

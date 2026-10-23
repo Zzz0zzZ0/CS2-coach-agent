@@ -3,40 +3,55 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'; base-uri 'none'; form-action 'none'">
-<title>CT 开局部署参考 · 独立评审试点</title>
+<title>CT 开局看图小测试</title>
 <style>
 *{box-sizing:border-box}body{margin:24px auto;padding:0 18px;max-width:1220px;font:16px/1.55 system-ui,sans-serif;background:#f4f6f9;color:#17212d}h1{font-size:25px;margin:0 0 10px}h2{font-size:18px;margin:0 0 8px}button,input,select,textarea{font:inherit}button{cursor:pointer;border:1px solid #9ba9ba;border-radius:7px;background:#fff;padding:8px 14px}button:disabled{opacity:.45;cursor:default}input,select,textarea{padding:7px;border:1px solid #8c9aab;border-radius:5px;background:white;color:#17212d}input:focus,select:focus,textarea:focus,button:focus{outline:3px solid #4a8be0;outline-offset:2px}input[type=range]{width:200px}textarea{width:100%;min-height:85px}.panel,details,.scoring{padding:16px;background:white;border:1px solid #d2dbe6;border-radius:10px;margin:12px 0}.row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.maps{display:grid;grid-template-columns:1fr 1fr;gap:16px}.panel{min-width:0;margin:0}.muted{color:#536173}.warning{color:#8b361b;background:#fff0e8;padding:8px 10px;border-radius:5px}.warning:empty{display:none}canvas{width:100%;height:auto;aspect-ratio:1;display:block;background:#1e2b34;margin:10px 0}table{width:100%;font-size:14px;border-collapse:collapse}td,th{text-align:left;padding:4px;border-bottom:1px solid #e6eaf0}label{display:inline-block}.grades{display:grid;grid-template-columns:1fr 1fr;gap:12px}.grades label{display:grid;gap:5px}.primary{background:#183f72;color:white;border-color:#183f72}.progress{font-variant-numeric:tabular-nums}.toolbar{margin:14px 0}#background{width:340px;max-width:100%}#reviewer{width:100px}.scoring textarea{margin-top:5px}summary{cursor:pointer;font-weight:600}@media(max-width:760px){.maps,.grades{grid-template-columns:1fr}body{margin:12px auto}h1{font-size:21px}table{font-size:13px}}
 [hidden]{display:none!important}
 </style>
-<h1>CT 开局部署参考 · 独立评审试点</h1>
-<p class="muted">观察 10–20 秒的 CT 全队部署，评价另一张地图上的开局是否有可借鉴之处。这里没有正确答案提示；请独立完成，并在不确定时明确选择“无法判断”。</p>
-<details open><summary>评分说明与信息边界</summary>
-<p><b>部署参考相关性：</b>0 不适用或可能误导；1 只有局部参考且需重大调整；2 职责覆盖或轮转思路有明确可借鉴性；3 高度相关且能说明可迁移部分。</p>
-<p><b>结构相似性：</b>0 明显不同；1 局部相似；2 主要职责分布或变化过程相似；3 高度相似。不要仅凭同样的 A/B 人数判定战术相关。每条请写简短理由；“无法判断”和 0 分不同。</p>
-<p>材料仅包含 CT 位置、区域、血量、装备与腾空状态，未提供敌方、投掷物、沟通或胜负。雷达层只用于查看高度，不等于战术楼层。底图兼容不确定的条目会单独提示。</p>
-<p>打开即可评分，已自动分配匿名代号。评分只保存在你的浏览器，不会自动上传。可随时暂停，结束或暂停前请导出；各自独立填写。</p>
+<h1>CT 开局看图小测试</h1>
+<p class="muted">左右各是一队防守方（CT）的开局站位。看一看右边的做法对左边有没有参考，再看看两边的人分布和移动像不像。<b>不需要专业知识；不熟悉或看不懂就选“看不出来”，不用猜。</b></p>
+<details open><summary>怎么填？</summary>
+<p>① 看左右两张图。每张图的 A–E 是五个人；两张图里相同的字母不代表同一个人。点表示位置，线表示此前走过的路。</p>
+<p>② 拖动时间条，看开局能行动后第 10–20 秒的变化。地图有上下层时，可以切换楼层。</p>
+<p>③ 回答下面两个问题，各选一个分数，再用一句话说说原因。没有标准答案，按你的理解填写就行。</p>
+<p><b>有没有参考：</b>0 没有参考或照做可能不好；1 只有一点，需要改很多；2 比较有参考，能说出值得学的地方；3 很有参考，大部分做法都值得学。</p>
+<p><b>像不像：</b>0 不像；1 有一点像；2 比较像；3 很像。看人是分散还是聚在一起、往哪走，不是看两张地图长得像不像。</p>
+<p>这里只能看到防守方，没显示对手、烟闪等道具和队内交流。信息不够就选“看不出来”，这和 0 分不同。</p>
+<p>④ 填完或中途休息前，点“导出我的评分”，把下载的文件交回。页面不会自动上传；请自己填写，不用和别人统一答案。</p>
 </details>
 <div class="panel row">
-<label>评审代号 <input id="reviewer" placeholder="如 R1" maxlength="32" autocomplete="off"></label>
-<label>CS2 经验简述 <input id="background" placeholder="竞技、观赛或复盘经验；无需姓名" maxlength="300"></label>
+<label>你的代号 <input id="reviewer" placeholder="如 R1" maxlength="32" autocomplete="off"></label>
+<label>玩过 CS2 吗（可不填） <input id="background" placeholder="如：没玩过／偶尔玩／经常玩" maxlength="300"></label>
 <button id="start">切换代号／恢复</button><button id="export" disabled>导出我的评分</button>
 <span id="save-status" role="status" aria-live="polite"></span>
 </div>
 <noscript><p class="warning">当前预览不支持评分。请先解压，用 Chrome 或 Edge 打开 review.html，并允许 JavaScript。</p></noscript>
 <div class="row toolbar"><button id="previous">上一条</button><button id="next">下一条</button><span id="position" class="progress"></span><span id="progress" class="muted progress"></span></div>
-<div class="row toolbar"><label>观察时刻 <input id="time" type="range" min="0" max="4" step="1" value="4"></label><strong id="second">20 秒</strong><span class="muted">相对冻结结束；线条表示此前已显示的轨迹，A–E 为匿名玩家。</span></div>
+<div class="row toolbar"><label>开局时间 <input id="time" type="range" min="0" max="4" step="1" value="4"></label><strong id="second">20 秒</strong><span class="muted">拖动滑块，看站位和移动怎么变化。</span></div>
 <div class="maps">
-<section class="panel"><h2 id="query-title"></h2><div class="warning" id="query-warning"></div><label id="query-floor-label">雷达层 <select id="query-floor"><option value="upper">上层／地表</option><option value="lower">下层</option></select></label><canvas id="query-canvas" width="1024" height="1024" aria-label="查询开局五名 CT 的部署与轨迹"></canvas><div id="query-status" class="muted"></div><table><thead><tr><th>玩家</th><th>区域</th><th>血量</th><th>装备</th><th>状态</th></tr></thead><tbody id="query-players"></tbody></table></section>
-<section class="panel"><h2 id="candidate-title"></h2><div class="warning" id="candidate-warning"></div><label id="candidate-floor-label">雷达层 <select id="candidate-floor"><option value="upper">上层／地表</option><option value="lower">下层</option></select></label><canvas id="candidate-canvas" width="1024" height="1024" aria-label="候选开局五名 CT 的部署与轨迹"></canvas><div id="candidate-status" class="muted"></div><table><thead><tr><th>玩家</th><th>区域</th><th>血量</th><th>装备</th><th>状态</th></tr></thead><tbody id="candidate-players"></tbody></table></section>
+<section class="panel"><h2 id="query-title"></h2><div class="warning" id="query-warning"></div><label id="query-floor-label">查看楼层 <select id="query-floor"><option value="upper">上层／地表</option><option value="lower">下层</option></select></label><canvas id="query-canvas" width="1024" height="1024" aria-label="左图五名防守队员的位置和移动"></canvas><div id="query-status" class="muted"></div><table><thead><tr><th>玩家</th><th>位置</th><th>血量</th><th>装备价值</th><th>状态</th></tr></thead><tbody id="query-players"></tbody></table></section>
+<section class="panel"><h2 id="candidate-title"></h2><div class="warning" id="candidate-warning"></div><label id="candidate-floor-label">查看楼层 <select id="candidate-floor"><option value="upper">上层／地表</option><option value="lower">下层</option></select></label><canvas id="candidate-canvas" width="1024" height="1024" aria-label="右图五名防守队员的位置和移动"></canvas><div id="candidate-status" class="muted"></div><table><thead><tr><th>玩家</th><th>位置</th><th>血量</th><th>装备价值</th><th>状态</th></tr></thead><tbody id="candidate-players"></tbody></table></section>
 </div>
-<section class="scoring"><h2>当前条目评分</h2><div class="grades"><label>部署参考相关性 <select id="tactical" disabled><option value="">尚未评分</option><option value="0">0 · 不适用或可能误导</option><option value="1">1 · 只有局部参考</option><option value="2">2 · 有明确可借鉴性</option><option value="3">3 · 高度相关</option><option value="unknown">无法判断</option></select></label><label>结构相似性 <select id="structural" disabled><option value="">尚未评分</option><option value="0">0 · 明显不同</option><option value="1">1 · 局部相似</option><option value="2">2 · 主要结构相似</option><option value="3">3 · 高度相似</option><option value="unknown">无法判断</option></select></label></div>
-<label style="display:block;margin-top:12px">简短理由／缺失信息 <textarea id="reason" disabled placeholder="哪些职责、覆盖或变化值得借鉴？若无法判断，说明还缺什么。"></textarea></label>
+<section class="scoring"><h2>看完这两张图，你觉得：</h2><div class="grades"><label>右边的站位，对左边有没有参考？ <select id="tactical" disabled><option value="">请选择</option><option value="0">0 · 没有参考</option><option value="1">1 · 有一点参考</option><option value="2">2 · 比较有参考</option><option value="3">3 · 很有参考</option><option value="unknown">看不出来</option></select></label><label>两边的人员分布和移动像不像？ <select id="structural" disabled><option value="">请选择</option><option value="0">0 · 不像</option><option value="1">1 · 有一点像</option><option value="2">2 · 比较像</option><option value="3">3 · 很像</option><option value="unknown">看不出来</option></select></label></div>
+<label style="display:block;margin-top:12px">用一句话说说为什么 <textarea id="reason" disabled placeholder="例如：两边都分开守；不熟悉这张图；还想看看对手在哪。"></textarea></label>
 <div class="row toolbar"><button id="previous-bottom">上一条</button><button id="next-bottom" class="primary">保存并下一条</button></div></section>
 <script id="data" type="application/json">@@PAYLOAD@@</script>
 <script>
 'use strict';
 const DATA=JSON.parse(document.getElementById('data').textContent), get=id=>document.getElementById(id);
 const pairs=DATA.queries.flatMap(q=>q.candidates.map(c=>({q,c}))), images={}, palette=['#328cff','#30d6a2','#ffc34c','#d398ff','#ff7f93'];
+const MAP_ZH={de_ancient:'远古遗迹',de_anubis:'阿努比斯',de_dust2:'炙热沙城2',de_inferno:'炼狱小镇',de_mirage:'荒漠迷城',de_nuke:'核子危机'};
+// Use descriptive Chinese where a NAV region has no single agreed callout.
+const PLACE_ZH={
+ common:{BombsiteA:'A区',BombsiteB:'B区',CTSpawn:'警家（防守方出生点）',Middle:'中路',TopofMid:'中路上段',Alley:'小路',Ramp:'斜坡',Connector:'连接通道',Heaven:'高台',Apartments:'公寓',MidDoors:'中门'},
+ de_ancient:{House:'房间',MainHall:'主走廊',SideEntrance:'侧门入口',SideHall:'侧边走廊',TSideUpper:'进攻方高处'},
+ de_anubis:{BackofB:'B区后方',Bridge:'桥上',Canal:'水道',Fountain:'喷泉',Main:'主通道',OutsideLong:'长道外侧',Walkway:'走道'},
+ de_dust2:{ARamp:'A区斜坡',BDoors:'B门',Catwalk:'A小道',ExtendedA:'A平台外侧',Hole:'B洞口',LongA:'A大道',LongDoors:'A大门',ShortStairs:'A小道楼梯',UnderA:'A区下方',UpperTunnel:'B洞上层'},
+ de_inferno:{Arch:'拱门',Balcony:'阳台',Banana:'香蕉道',Library:'书房',Pit:'大坑',Quad:'四箱位',Ruins:'废墟'},
+ de_mirage:{Catwalk:'B小道',Jungle:'丛林位',Ladder:'梯子间',PalaceInterior:'宫殿内部',Shop:'超市',SnipersNest:'中路窗口',Stairs:'A区楼梯',Truck:'车旁',Underpass:'下水道'},
+ de_nuke:{Admin:'办公室',Catwalk:'高处走道',Control:'控制室',Crane:'吊车旁',Garage:'车库',Heaven:'A区高台',Hell:'高台下方',Hut:'黄房',HutRoof:'黄房顶',Lobby:'大厅',Mini:'A区小门',Observation:'观察室',Outside:'外场',Rafters:'房梁',Secret:'外场下地下的通道',Trophy:'奖杯室',Tunnels:'地下通道',Vending:'自动售货机旁',Vents:'通风管道'}
+};
+function placeName(map,place){return PLACE_ZH[map]?.[place]||PLACE_ZH.common[place]||'未标注位置';}
 let index=0, reviewer='', state=null, started=Date.now(), storageWorks=true;
 for(const [name,map] of Object.entries(DATA.maps)){images[name]={};for(const level of ['upper','lower']){const source=level==='upper'?map.image:map.lower_image;if(source){const image=new Image();image.onload=render;image.src=source;images[name][level]=image;}}}
 function key(){const {q,c}=pairs[index];return `${q.id}/${c.id}`;}
@@ -49,8 +64,8 @@ function pixel(point,map){return [(point[0]-map.pos_x)/map.scale,(map.pos_y-poin
 function isLower(player,map){return map.lower_z!==null&&player.position[2]<map.lower_z;}
 function draw(prefix,record){
  const map=DATA.maps[record.map], frame=record.frames[Number(get('time').value)], level=get(prefix+'-floor').value, lower=level==='lower';
- get(prefix+'-title').textContent=(prefix==='query'?`查询 ${pairs[index].q.id}`:`候选 ${pairs[index].c.id}`)+' · '+record.map.slice(3);
- get(prefix+'-warning').textContent=record.patch===DATA.radar_patch?'':`版本提示：回合补丁 ${record.patch}，底图补丁 ${DATA.radar_patch}；兼容未核实，可选择无法判断。`;
+ get(prefix+'-title').textContent=(prefix==='query'?`左图 ${pairs[index].q.id}`:`右图 ${pairs[index].c.id}`)+' · '+(MAP_ZH[record.map]||'地图');
+ get(prefix+'-warning').textContent=record.patch===DATA.radar_patch?'':'这道题的比赛和地图图片不是同一版本，个别位置可能有差异。影响判断就选“看不出来”。';
  get(prefix+'-floor-label').hidden=map.lower_z===null;
  const canvas=get(prefix+'-canvas'), ctx=canvas.getContext('2d');ctx.clearRect(0,0,1024,1024);
  const image=images[record.map][map.lower_z===null?'upper':level];if(image&&image.complete&&image.naturalWidth)ctx.drawImage(image,0,0,1024,1024);
@@ -61,13 +76,13 @@ function draw(prefix,record){
   const player=frame.players[k];if(map.lower_z!==null&&isLower(player,map)!==lower){offLevel++;continue;}const [x,y]=pixel(player.position,map);if(x<0||x>1024||y<0||y>1024){offMap++;continue;}
   ctx.fillStyle=player.health>0?palette[k]:'#9ba3ad';ctx.strokeStyle='#142133';ctx.lineWidth=3;ctx.beginPath();ctx.arc(x,y,13,0,Math.PI*2);ctx.fill();ctx.stroke();ctx.font='bold 30px system-ui';ctx.strokeStyle='#10202b';ctx.lineWidth=5;ctx.strokeText(player.label,x+16,y-10);ctx.fillStyle='#fff';ctx.fillText(player.label,x+16,y-10);
  }
- get(prefix+'-status').textContent=`${offLevel} 人在另一雷达层；${offMap} 人超出底图范围。`;
- const tbody=get(prefix+'-players');tbody.replaceChildren();for(const player of frame.players){const row=document.createElement('tr');for(const text of [player.label,player.place,String(player.health),String(player.equipment),player.health<=0?'已阵亡':player.airborne===true?'空中':player.airborne===false?'地面':'未知']){const td=document.createElement('td');td.textContent=text;row.append(td);}tbody.append(row);}
+ get(prefix+'-status').textContent=`${offLevel} 人在另一层；${offMap} 人不在这张地图图片里。`;
+ const tbody=get(prefix+'-players');tbody.replaceChildren();for(const player of frame.players){const row=document.createElement('tr');for(const text of [player.label,placeName(record.map,player.place),String(player.health),String(player.equipment),player.health<=0?'已阵亡':player.airborne===true?'空中':player.airborne===false?'地面':'未知']){const td=document.createElement('td');td.textContent=text;row.append(td);}tbody.append(row);}
 }
 function render(){if(!pairs.length)return;const pair=pairs[index];get('position').textContent=`${pair.q.id} / ${pair.c.id} · ${index+1} / ${pairs.length}`;for(const id of ['previous','previous-bottom'])get(id).disabled=index===0;for(const id of ['next','next-bottom'])get(id).disabled=index===pairs.length-1;get('second').textContent=`${pair.q.query.frames[Number(get('time').value)].second} 秒`;draw('query',pair.q.query);draw('candidate',pair.c.record);progress();}
 function showRating(){const r=state?.ratings[key()];get('tactical').value=r?.tactical??'';get('structural').value=r?.structural??'';get('reason').value=r?.reason??'';}
 function move(delta){save();index=Math.max(0,Math.min(pairs.length-1,index+delta));if(state){state.current_index=index;persist();}get('query-floor').value='upper';get('candidate-floor').value='upper';showRating();render();get('position').scrollIntoView({block:'start'});}
-get('start').onclick=()=>{const id=get('reviewer').value.trim();if(!/^[A-Za-z0-9_-]{1,32}$/.test(id)){status('请输入 R1、R2 等字母数字代号');return;}if(state)save();reviewer=id;started=Date.now();let restored=null;try{restored=JSON.parse(localStorage.getItem(`ct-pilot:${DATA.payload_sha256}:${reviewer}`));}catch{storageWorks=false;}state=restored&&restored.payload_sha256===DATA.payload_sha256&&restored.ratings&&typeof restored.ratings==='object'?restored:{payload_sha256:DATA.payload_sha256,reviewer_id:id,ratings:{}};index=Number.isInteger(state.current_index)?Math.max(0,Math.min(pairs.length-1,state.current_index)):0;state.reviewer_background=get('background').value.trim()||state.reviewer_background||'';get('background').value=state.reviewer_background;for(const id of ['tactical','structural','reason','export'])get(id).disabled=false;showRating();render();status(storageWorks?'可以评分；请独立完成':'请及时导出，自动保存不可用');};
+get('start').onclick=()=>{const id=get('reviewer').value.trim();if(!/^[A-Za-z0-9_-]{1,32}$/.test(id)){status('请输入 R1、R2 等字母数字代号');return;}if(state)save();reviewer=id;started=Date.now();let restored=null;try{restored=JSON.parse(localStorage.getItem(`ct-pilot:${DATA.payload_sha256}:${reviewer}`));}catch{storageWorks=false;}state=restored&&restored.payload_sha256===DATA.payload_sha256&&restored.ratings&&typeof restored.ratings==='object'?restored:{payload_sha256:DATA.payload_sha256,reviewer_id:id,ratings:{}};index=Number.isInteger(state.current_index)?Math.max(0,Math.min(pairs.length-1,state.current_index)):0;state.reviewer_background=get('background').value.trim()||state.reviewer_background||'';get('background').value=state.reviewer_background;for(const id of ['tactical','structural','reason','export'])get(id).disabled=false;showRating();render();status(storageWorks?'可以评分；按你的理解填写就行':'请及时导出，自动保存不可用');};
 for(const id of ['tactical','structural','reason'])get(id).addEventListener('input',save);
 for(const id of ['time','query-floor','candidate-floor'])get(id).addEventListener('input',render);
 get('previous').onclick=()=>move(-1);get('next').onclick=()=>move(1);

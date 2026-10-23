@@ -9,7 +9,7 @@ import re
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "ct-semantic-pilot-v9-short24-r2"
+VERSION = "ct-semantic-pilot-v9-short24-r3-zh"
 
 
 def digest(data):
@@ -57,19 +57,21 @@ def distribute(payload, key, template, output_dir):
     for query in payload["queries"]:
         qid, count = query["id"], len(query["candidates"])
         packet = copy.deepcopy(payload)
-        packet.update(version=f"ct-pilot-v9-distributed-r2-{qid}", queries=[copy.deepcopy(query)])
+        packet.update(version=f"ct-pilot-v9-distributed-r3-zh-{qid}", queries=[copy.deepcopy(query)])
         packet["payload_sha256"] = payload_hash(packet)
         folder = output_dir / qid
         folder.mkdir()
-        html = template.replace("独立评审试点", f"分发题包 {qid} · {count} 条")
+        html = template.replace("CT 开局看图小测试", f"CT 开局看图小测试 · {qid}（{count} 题）")
         html = html.replace("CT-pilot-v9-${reviewer}", f"CT-pilot-v9-{qid}-" + "${reviewer}")
         html = html.replace("@@PAYLOAD@@", json.dumps(packet, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c"))
         (folder / "review.html").write_text(html, encoding="utf-8")
-        guide = (f"题包 {qid}，共 {count} 条；只需完成这一包。\n"
+        guide = (f"看图小测试 {qid}，共 {count} 题；只做收到的这一包就行。\n"
                  "先解压，再用 Chrome 或 Edge 打开 review.html；不要在聊天或压缩包预览内填写。\n"
-                 "打开即可评分，无需注册或点开始。匿名代号自动分配，CS2 经验可补填。\n"
-                 "每条填写两项评分和简短理由；信息不足选无法判断。结束或暂停时点导出，将 JSON 交回组织者。\n"
-                 "各自独立填写；不会自动上传。此批材料用于检查部署参考和评分规则，尚不支持模型效果结论。\n")
+                 "不要求专业知识，也不用注册。打开后就能填，代号已经自动分配。\n"
+                 "左右各有五个人，点是位置，线是走过的路。拖动时间条可以看变化。\n"
+                 "每题回答两个问题：右边对左边有没有参考？两边的人分布和移动像不像？再说一句为什么。\n"
+                 "不熟悉地图或看不懂就选“看不出来”，不用猜。按自己的理解填，不用和别人统一答案。\n"
+                 "填完或休息前，点“导出我的评分”，把下载的文件交回。页面不会自动上传。\n")
         (folder / "说明.txt").write_text(guide, encoding="utf-8")
         archive = output_dir / f"CT-{qid}.zip"
         with zipfile.ZipFile(archive, "w", compression=zipfile.ZIP_DEFLATED) as bundle:
@@ -81,7 +83,7 @@ def distribute(payload, key, template, output_dir):
     (output_dir / "analyst_key.json").write_text(json.dumps(private, indent=2) + "\n", encoding="utf-8")
     instructions = "组织者：每人分发一个不同的 CT-Qxx.zip，不要发送 analyst_key.json 或整个目录。\n"
     instructions += "\n".join(f"{p['archive']}：{p['candidate_pairs']} 条；领取人：________" for p in packets)
-    instructions += "\n各包题目不重复；回收每人的 JSON。此分配不测量同题评审一致性。\n"
+    instructions += "\n各包题目不重复；回收每人导出的文件即可。不要求专业水平，看不懂可以直接选“看不出来”。\n"
     (output_dir / "分发清单.txt").write_text(instructions, encoding="utf-8")
     with zipfile.ZipFile(output_dir / "CT-12题包-分发合集.zip", "w", compression=zipfile.ZIP_DEFLATED) as bundle:
         for name in [p["archive"] for p in packets] + ["分发清单.txt"]:
@@ -89,6 +91,8 @@ def distribute(payload, key, template, output_dir):
     report = {"status": "prepared_distributed_process_pilot_without_human_ratings", "human_ratings": 0,
               "candidate_pairs": sum(p["candidate_pairs"] for p in packets), "packets": packets,
               "source_payload_sha256": payload["payload_sha256"],
+              "audience": "General participants; no professional CS2 qualification required",
+              "display": "Chinese map and location labels; plain-language questions; original snapshot data preserved",
               "limits": ["Disjoint packets cannot measure agreement on the same items.",
                          "Development materials only; not neural-model efficacy evidence."],
               "source_sha256": digest(Path(__file__).read_bytes()), "template_sha256": digest(template.encode())}
@@ -122,8 +126,8 @@ def main():
         return
     payload, key = shorten(payload, key)
     assert len(payload["queries"]) == 12 and sum(len(q["candidates"]) for q in payload["queries"]) == 24
-    html = template.read_text(encoding="utf-8").replace("独立评审试点", "首轮短版 · 24 条")
-    html = html.replace("<details open>", '<p class="warning">本轮共 24 条，检查材料和评分规则是否清楚；不用于正式模型效果结论。</p><details open>')
+    html = template.read_text(encoding="utf-8").replace("CT 开局看图小测试", "CT 开局看图小测试 · 24 题短版")
+    html = html.replace("<details open>", '<p class="muted">本包共 24 题，不需要专业知识，按你的理解填写即可。</p><details open>')
     html = html.replace("CT-pilot-v9-${reviewer}", "CT-pilot-v9-short24-${reviewer}")
     html = html.replace("@@PAYLOAD@@", json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c"))
     guide = (args.source_dir / "README_评审.txt").read_text(encoding="utf-8")
