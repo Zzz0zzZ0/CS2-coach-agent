@@ -1,0 +1,26 @@
+{
+  "status": "prepared_short_process_pilot_without_human_ratings",
+  "queries": 12,
+  "candidate_pairs": 24,
+  "human_ratings": 0,
+  "version": "ct-semantic-pilot-v9-short24",
+  "selection": "Common-state rank 1 plus first distinct random-control candidate; deterministic reblinding",
+  "limits": [
+    "Process pilot only; no neural comparison, efficacy claim or nDCG@5.",
+    "Random control skips overlap with common-state rank 1; not an unbiased method comparison.",
+    "Inherited Q04 patch mismatch and CT-only information limits remain."
+  ],
+  "source_report_sha256": "d734d13d110a68db1bc118e0528b633da3f2c7b543fb718560a78257df48ead3",
+  "source_payload_sha256": "dcd604b383a452ea56456f50467f74672be51c924b7341652eb0cd60e6f8511a",
+  "payload_sha256": "6fc77436c45d81c294f573f8690b82bfd68f8c0dee85667d3beda0cf7340de65",
+  "artifact_sha256": {
+    "analyst_key.json": "d5403bfaf778b30f16efa93eb765d9974e019f9e0abd3158df9cfa622fbca615",
+    "ct-reviewer-kit-v9-short24.zip": "26726f4304d09dabedad7d028e2d15b90c778974351a74764db0531ca3b8c666",
+    "README_评审.txt": "75edf2818fa85af1038ef35ffdd42b416cfb802dbb8bbb75976089cb5c88eb35",
+    "review.html": "2074727baaf7e811dc1290a768903c0fd20156433eaaa5e29560e6de6ae5f02d"
+  },
+  "source_sha256": {
+    "scripts\\shorten_ct_semantic_pilot.py": "b75057ad347b9493956cc18107480f07ef74013b22abc414e03bc2bec08bae7f",
+    "scripts\\templates\\ct_pilot_review.html": "077202e08fd73c9157a3be5ec1d48afce9cf6d926694d738c7a98ebc7e50f5b7"
+  }
+}

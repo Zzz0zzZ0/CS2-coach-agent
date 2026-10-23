@@ -463,7 +463,7 @@ data/、output/            # 本地运行数据，不进入 Git
 | CT 公平检索实验 v6 | [累计 345 个 CT 回合、公平检索窗口与 412 项检查](docs/CT_EVENT_AND_RETRIEVAL_V6.md)（保留历史结果） |
 | CT 数值泛化确认 v7 | [9 系列、465 回合、41 折与 282 份权重检查](docs/CT_GENERALIZATION_CONFIRMATION_V7.md)（线性对照总体更好；战术相关性未验收，真实后端暂缓） |
 | CT 投稿研究与地图核查 v8 | [研究协议](docs/CT_STUDY_PROTOCOL_V8.md) · [Awpy 升级与导航定位修复](docs/CT_RESEARCH_PROGRESS_V8.md)（覆盖率不代表定位或战术正确率；历史地图兼容仍待核查） |
-| CT 地图上下文与评审试点 v9 | [腾空诊断、历史资产对照与 12 查询离线评分材料](docs/CT_MAP_CONTEXT_AND_PILOT_V9.md)（区域职责和真实专家评分尚未验收） |
+| CT 地图上下文与评审试点 v9 | [腾空诊断、历史资产对照与 24 条首轮短版评分材料](docs/CT_MAP_CONTEXT_AND_PILOT_V9.md)（区域职责和真实专家评分尚未验收） |
 
 ## 许可证
 
