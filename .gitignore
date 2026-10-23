@@ -28,5 +28,6 @@ Thumbs.db
 # 测试与日志
 *.log
 .pytest_cache/
+.playwright-cli/
 celerybeat-schedule
 celerybeat.pid

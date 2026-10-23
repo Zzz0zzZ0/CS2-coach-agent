@@ -1,0 +1,699 @@
+{
+  "status": "completed_static_comparison_and_review_materials_not_semantic_acceptance",
+  "script_sha256": "346ef96cb0aa81bdd6235b233af9697c514632d010b16bee8209df603c234600",
+  "context_report_sha256": "351e57c6e061e5986c4db59406915a7ee04d1de1c388ead199843be5a22f9d8b",
+  "nav_comparison": {
+    "de_ancient": {
+      "versions": [
+        "2000934",
+        "2000883"
+      ],
+      "exposed_area_records_identical": false,
+      "areas_only_in_first": 0,
+      "areas_only_in_second": 1,
+      "shared_areas_with_changed_records": 1817,
+      "polygon_multisets_equal_ignoring_ids": false,
+      "polygons_only_in_first": 13,
+      "polygons_only_in_second": 14,
+      "directed_edge_multisets_equal_by_polygon_shape": false,
+      "scope": "Awpy-exposed polygons, hull/flags, adjacency and ladders; excludes unexposed NAV metadata"
+    },
+    "de_anubis": {
+      "versions": [
+        "2000934",
+        "2000883"
+      ],
+      "exposed_area_records_identical": true,
+      "areas_only_in_first": 0,
+      "areas_only_in_second": 0,
+      "shared_areas_with_changed_records": 0,
+      "polygon_multisets_equal_ignoring_ids": true,
+      "polygons_only_in_first": 0,
+      "polygons_only_in_second": 0,
+      "directed_edge_multisets_equal_by_polygon_shape": true,
+      "scope": "Awpy-exposed polygons, hull/flags, adjacency and ladders; excludes unexposed NAV metadata"
+    },
+    "de_dust2": {
+      "versions": [
+        "2000934",
+        "2000883"
+      ],
+      "exposed_area_records_identical": true,
+      "areas_only_in_first": 0,
+      "areas_only_in_second": 0,
+      "shared_areas_with_changed_records": 0,
+      "polygon_multisets_equal_ignoring_ids": true,
+      "polygons_only_in_first": 0,
+      "polygons_only_in_second": 0,
+      "directed_edge_multisets_equal_by_polygon_shape": true,
+      "scope": "Awpy-exposed polygons, hull/flags, adjacency and ladders; excludes unexposed NAV metadata"
+    },
+    "de_inferno": {
+      "versions": [
+        "2000934",
+        "2000883"
+      ],
+      "exposed_area_records_identical": true,
+      "areas_only_in_first": 0,
+      "areas_only_in_second": 0,
+      "shared_areas_with_changed_records": 0,
+      "polygon_multisets_equal_ignoring_ids": true,
+      "polygons_only_in_first": 0,
+      "polygons_only_in_second": 0,
+      "directed_edge_multisets_equal_by_polygon_shape": true,
+      "scope": "Awpy-exposed polygons, hull/flags, adjacency and ladders; excludes unexposed NAV metadata"
+    },
+    "de_mirage": {
+      "versions": [
+        "2000934",
+        "2000883"
+      ],
+      "exposed_area_records_identical": true,
+      "areas_only_in_first": 0,
+      "areas_only_in_second": 0,
+      "shared_areas_with_changed_records": 0,
+      "polygon_multisets_equal_ignoring_ids": true,
+      "polygons_only_in_first": 0,
+      "polygons_only_in_second": 0,
+      "directed_edge_multisets_equal_by_polygon_shape": true,
+      "scope": "Awpy-exposed polygons, hull/flags, adjacency and ladders; excludes unexposed NAV metadata"
+    },
+    "de_nuke": {
+      "versions": [
+        "2000934",
+        "2000883"
+      ],
+      "exposed_area_records_identical": true,
+      "areas_only_in_first": 0,
+      "areas_only_in_second": 0,
+      "shared_areas_with_changed_records": 0,
+      "polygon_multisets_equal_ignoring_ids": true,
+      "polygons_only_in_first": 0,
+      "polygons_only_in_second": 0,
+      "directed_edge_multisets_equal_by_polygon_shape": true,
+      "scope": "Awpy-exposed polygons, hull/flags, adjacency and ladders; excludes unexposed NAV metadata"
+    }
+  },
+  "nuke_full_collision_sha256": "43f7f730de1ca09cbcc794a6794f96ef442a413e7348a649359f0924c49e46da",
+  "nuke_full_collision_triangles": 191628,
+  "rafters_grounded_unlocalized": 53,
+  "rafters_with_nearby_static_collision_below": 39,
+  "support_probe": {
+    "start_above_feet_units": 2,
+    "end_below_feet_units": 16,
+    "observations": [
+      {
+        "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:2:CT",
+        "tick": 17460,
+        "second": 10,
+        "position": [
+          719.9121704101562,
+          -675.0888671875,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:3:CT",
+        "tick": 23541,
+        "second": 10,
+        "position": [
+          775.9063720703125,
+          -698.4526977539062,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:4:CT",
+        "tick": 31568,
+        "second": 10,
+        "position": [
+          656.119873046875,
+          -711.1693115234375,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:4:CT",
+        "tick": 31568,
+        "second": 10,
+        "position": [
+          739.7024536132812,
+          -649.3716430664062,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:4:CT",
+        "tick": 31696,
+        "second": 12,
+        "position": [
+          663.5267333984375,
+          -648.7745971679688,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:4:CT",
+        "tick": 31888,
+        "second": 15,
+        "position": [
+          687.6497802734375,
+          -649.8656005859375,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:4:CT",
+        "tick": 32080,
+        "second": 18,
+        "position": [
+          687.6497802734375,
+          -649.8656005859375,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:4:CT",
+        "tick": 32208,
+        "second": 20,
+        "position": [
+          688.9016723632812,
+          -648.7684326171875,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:5:CT",
+        "tick": 38852,
+        "second": 10,
+        "position": [
+          687.72314453125,
+          -721.8824462890625,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:6:CT",
+        "tick": 49950,
+        "second": 10,
+        "position": [
+          641.760986328125,
+          -722.64013671875,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:6:CT",
+        "tick": 50078,
+        "second": 12,
+        "position": [
+          690.9556274414062,
+          -643.231201171875,
+          -206.96875
+        ],
+        "nearby_static_collision_below": false
+      },
+      {
+        "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:6:CT",
+        "tick": 50270,
+        "second": 15,
+        "position": [
+          690.8424072265625,
+          -642.7686157226562,
+          -206.96875
+        ],
+        "nearby_static_collision_below": false
+      },
+      {
+        "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:6:CT",
+        "tick": 50462,
+        "second": 18,
+        "position": [
+          690.8424072265625,
+          -642.7686157226562,
+          -206.96875
+        ],
+        "nearby_static_collision_below": false
+      },
+      {
+        "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:6:CT",
+        "tick": 50590,
+        "second": 20,
+        "position": [
+          690.8424072265625,
+          -642.7686157226562,
+          -206.96875
+        ],
+        "nearby_static_collision_below": false
+      },
+      {
+        "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:8:CT",
+        "tick": 67765,
+        "second": 10,
+        "position": [
+          691.0184936523438,
+          -676.2761840820312,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:9:CT",
+        "tick": 73374,
+        "second": 10,
+        "position": [
+          800.6532592773438,
+          -696.1927490234375,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:10:CT",
+        "tick": 80201,
+        "second": 10,
+        "position": [
+          608.0206298828125,
+          -726.1046142578125,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:11:CT",
+        "tick": 84889,
+        "second": 10,
+        "position": [
+          728.0015869140625,
+          -701.7813110351562,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:12:CT",
+        "tick": 96374,
+        "second": 10,
+        "position": [
+          657.4232177734375,
+          -694.98486328125,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:12:CT",
+        "tick": 96374,
+        "second": 10,
+        "position": [
+          792.9537963867188,
+          -695.63525390625,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:14:CT",
+        "tick": 123482,
+        "second": 10,
+        "position": [
+          843.974365234375,
+          -648.2021484375,
+          -206.96875
+        ],
+        "nearby_static_collision_below": false
+      },
+      {
+        "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:15:CT",
+        "tick": 131526,
+        "second": 10,
+        "position": [
+          811.4869995117188,
+          -644.1531372070312,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:16:CT",
+        "tick": 137676,
+        "second": 10,
+        "position": [
+          707.688232421875,
+          -662.3739624023438,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:17:CT",
+        "tick": 146764,
+        "second": 10,
+        "position": [
+          785.225341796875,
+          -659.1098022460938,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:18:CT",
+        "tick": 153859,
+        "second": 10,
+        "position": [
+          650.9083251953125,
+          -722.9910888671875,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:20:CT",
+        "tick": 174934,
+        "second": 10,
+        "position": [
+          807.8902587890625,
+          -638.8554077148438,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:21:CT",
+        "tick": 185856,
+        "second": 10,
+        "position": [
+          651.4089965820312,
+          -729.41552734375,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "a20d78e76c5545872a87a35dd5cc5e22f8d307a44bddc9d2189e3ff0ba04d987:2:CT",
+        "tick": 9240,
+        "second": 10,
+        "position": [
+          846.6297607421875,
+          -664.3991088867188,
+          -206.96875
+        ],
+        "nearby_static_collision_below": false
+      },
+      {
+        "id": "a20d78e76c5545872a87a35dd5cc5e22f8d307a44bddc9d2189e3ff0ba04d987:3:CT",
+        "tick": 12676,
+        "second": 12,
+        "position": [
+          659.048828125,
+          -631.10400390625,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "a20d78e76c5545872a87a35dd5cc5e22f8d307a44bddc9d2189e3ff0ba04d987:7:CT",
+        "tick": 41555,
+        "second": 10,
+        "position": [
+          671.5069580078125,
+          -627.9243774414062,
+          -206.96875
+        ],
+        "nearby_static_collision_below": false
+      },
+      {
+        "id": "a20d78e76c5545872a87a35dd5cc5e22f8d307a44bddc9d2189e3ff0ba04d987:8:CT",
+        "tick": 48983,
+        "second": 10,
+        "position": [
+          742.825439453125,
+          -717.1739501953125,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "a20d78e76c5545872a87a35dd5cc5e22f8d307a44bddc9d2189e3ff0ba04d987:8:CT",
+        "tick": 48983,
+        "second": 10,
+        "position": [
+          781.9089965820312,
+          -670.4539184570312,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "a20d78e76c5545872a87a35dd5cc5e22f8d307a44bddc9d2189e3ff0ba04d987:12:CT",
+        "tick": 83157,
+        "second": 10,
+        "position": [
+          807.2622680664062,
+          -635.9736938476562,
+          -206.96875
+        ],
+        "nearby_static_collision_below": false
+      },
+      {
+        "id": "a20d78e76c5545872a87a35dd5cc5e22f8d307a44bddc9d2189e3ff0ba04d987:14:CT",
+        "tick": 111803,
+        "second": 10,
+        "position": [
+          769.8488159179688,
+          -708.2355346679688,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "a20d78e76c5545872a87a35dd5cc5e22f8d307a44bddc9d2189e3ff0ba04d987:15:CT",
+        "tick": 119918,
+        "second": 10,
+        "position": [
+          769.0014038085938,
+          -665.0505981445312,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:3:CT",
+        "tick": 17847,
+        "second": 10,
+        "position": [
+          746.6154174804688,
+          -735.181640625,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:4:CT",
+        "tick": 23938,
+        "second": 10,
+        "position": [
+          810.5635375976562,
+          -710.0267944335938,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:6:CT",
+        "tick": 42671,
+        "second": 10,
+        "position": [
+          722.0216674804688,
+          -672.98876953125,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:6:CT",
+        "tick": 42799,
+        "second": 12,
+        "position": [
+          663.0550537109375,
+          -638.8881225585938,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:6:CT",
+        "tick": 42991,
+        "second": 15,
+        "position": [
+          675.4364013671875,
+          -633.118896484375,
+          -206.96875
+        ],
+        "nearby_static_collision_below": false
+      },
+      {
+        "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:7:CT",
+        "tick": 50491,
+        "second": 10,
+        "position": [
+          674.1461791992188,
+          -628.0706176757812,
+          -206.96875
+        ],
+        "nearby_static_collision_below": false
+      },
+      {
+        "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:7:CT",
+        "tick": 50619,
+        "second": 12,
+        "position": [
+          662.5792846679688,
+          -633.4655151367188,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:7:CT",
+        "tick": 50811,
+        "second": 15,
+        "position": [
+          679.3739013671875,
+          -637.1949462890625,
+          -206.96875
+        ],
+        "nearby_static_collision_below": false
+      },
+      {
+        "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:7:CT",
+        "tick": 51003,
+        "second": 18,
+        "position": [
+          655.2071533203125,
+          -618.9247436523438,
+          -206.96875
+        ],
+        "nearby_static_collision_below": false
+      },
+      {
+        "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:7:CT",
+        "tick": 51131,
+        "second": 20,
+        "position": [
+          652.8916625976562,
+          -616.8744506835938,
+          -206.96875
+        ],
+        "nearby_static_collision_below": false
+      },
+      {
+        "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:12:CT",
+        "tick": 91337,
+        "second": 10,
+        "position": [
+          812.3712158203125,
+          -713.5990600585938,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:14:CT",
+        "tick": 107355,
+        "second": 10,
+        "position": [
+          797.3295288085938,
+          -709.5250244140625,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:15:CT",
+        "tick": 116000,
+        "second": 10,
+        "position": [
+          668.9243774414062,
+          -723.7569580078125,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:16:CT",
+        "tick": 125175,
+        "second": 10,
+        "position": [
+          787.0911865234375,
+          -719.5254516601562,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:17:CT",
+        "tick": 134214,
+        "second": 10,
+        "position": [
+          710.54541015625,
+          -697.8004760742188,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:18:CT",
+        "tick": 143174,
+        "second": 10,
+        "position": [
+          794.1185913085938,
+          -725.2283325195312,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:18:CT",
+        "tick": 143174,
+        "second": 10,
+        "position": [
+          641.5234985351562,
+          -667.6483764648438,
+          -206.96875
+        ],
+        "nearby_static_collision_below": true
+      },
+      {
+        "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:21:CT",
+        "tick": 170393,
+        "second": 10,
+        "position": [
+          793.2967529296875,
+          -757.1737060546875,
+          -206.96875
+        ],
+        "nearby_static_collision_below": false
+      }
+    ],
+    "interpretation": "Nearby collision supports a NAV coverage-gap explanation; no walkable-area or connectivity inferred."
+  },
+  "review_queue_items": 105,
+  "reviewed_items": 0,
+  "review_queue_sha256": "051819a5d863ea9ec73de0573190a4ab774e14540d34ee06fa927bc8713ae6f7",
+  "limits": [
+    "Unfiltered world physics excludes separate entity/dynamic collision; no player-hull test.",
+    "Current full geometry and unknown exact Demo build prevent treating support probes as historical ground truth.",
+    "No NAV augmentation, new model training, human judgments or test-set optimization."
+  ]
+}

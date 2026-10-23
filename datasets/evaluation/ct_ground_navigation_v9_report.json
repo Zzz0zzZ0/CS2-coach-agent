@@ -1,0 +1,821 @@
+{
+  "status": "completed_ground_state_and_two_version_development_audit",
+  "inventory_sha256": "2a7ca2d8df45e0cefc7ffa46a35c5743d4146cf93ffe64d23fc602ed138f8dcd",
+  "source_sha256": {
+    "scripts/audit_ct_ground_navigation.py": "9acb0279e322adffcf9ebe04c9ef3a85a5eacd189c5b4a5ce9d3f8c961502b78",
+    "app/services/ct_ground_navigation_service.py": "e308ebe31f4694a8d2296f8a01c3f905d1a28ac4253030f1cf7c3ab9c8957c02",
+    "app/services/ct_navigation_service.py": "eef886104537b46041c0b7e36e2e1de782e222be8a6ec1e2ea8dc6171d10eb56"
+  },
+  "environment": {
+    "awpy": "3.1.1",
+    "demoparser2": "0.41.3",
+    "numpy": "2.3.5"
+  },
+  "protocol": {
+    "xy_max_units": 32,
+    "z_max_units": 64,
+    "ray_above_feet_units": 16,
+    "airborne_source": "demoparser2 is_airborne (m_hGroundEntity); no velocity estimates from sparse ticks",
+    "ground_gate": "airborne and unknown flags excluded from navigation candidates; spatial/role observations retained",
+    "visibility_mesh": "visual occluders, not player collision; a clear ray is only a candidate"
+  },
+  "assets": {
+    "2000934": {
+      "manifest_sha256": "3095189d5a6339ae90386bffe99d149583e56cca1dd65628c484fec3d71908bc",
+      "maps": {
+        "de_ancient": {
+          "nav_sha256": "09cbb2a4568998b72ce504b19352456c20f046fa5b3f165c43bfc38fb7602c8d",
+          "mesh_sha256": "991bd47e39c47ab07c74bd64fd76103c90cc569acce2ecda6b6adfe3064e3d02",
+          "nav_areas": 1969,
+          "visual_triangles": 455880
+        },
+        "de_anubis": {
+          "nav_sha256": "5d492f867497cc47a6072fc803fb7b0fcf8f1b99030590e3fbff627c9cba7eeb",
+          "mesh_sha256": "685fae82a5d01cc9faf312d91670e18ea0ded07f9e171fe9449e6f7a15992b49",
+          "nav_areas": 2633,
+          "visual_triangles": 378619
+        },
+        "de_dust2": {
+          "nav_sha256": "64bbc202edae8a92d432368e86948bbee3af9c56555e190dda251d28c64e1ea7",
+          "mesh_sha256": "a21f26cb5df390dd03e10a8b43da8c89781b5f5c7cf1216a31748fd23a341766",
+          "nav_areas": 2242,
+          "visual_triangles": 239917
+        },
+        "de_inferno": {
+          "nav_sha256": "8d312122a9758a1b64b397f0e02b16e18e9432f738ab7308d0b73cb7df118111",
+          "mesh_sha256": "897e6f22dc76ecd3815ce8214ae1eb3254b07f72ba7b5f9470430bd8749ed632",
+          "nav_areas": 2738,
+          "visual_triangles": 547966
+        },
+        "de_mirage": {
+          "nav_sha256": "2ba8608994c178dc5ff2553fefdd2a8473aadd0e0b09b8004201e1fa578bb0bd",
+          "mesh_sha256": "d5e3aabe17583f07ca899236d015ecc46f7e542fa093ada4782944941b41e679",
+          "nav_areas": 2544,
+          "visual_triangles": 73290
+        },
+        "de_nuke": {
+          "nav_sha256": "f331ebc7830b910bd8405e6c5ff4512937c8c7917ffc6b37fb6fc3a078a49b57",
+          "mesh_sha256": "e9d78f26aa0aa705e4cdd16e98fae453ba99f6e8cfcc3a09aa3e549925b54984",
+          "nav_areas": 3040,
+          "visual_triangles": 89563
+        }
+      }
+    },
+    "2000883": {
+      "manifest_sha256": "ae7219deaf4e10e19777974ffedfcbb77d6a094c14431716667ecdff11ac7612",
+      "maps": {
+        "de_ancient": {
+          "nav_sha256": "967c483c0e2e4471834a9e0ba80432c8e9a8114e61ff5a6fb08c32b7331fc6d4",
+          "mesh_sha256": "c72e121d1cacca4db20413293b8c7dcdd8d92b4a06134a915f99ab8c38f9e80a",
+          "nav_areas": 1970,
+          "visual_triangles": 455962
+        },
+        "de_anubis": {
+          "nav_sha256": "5d492f867497cc47a6072fc803fb7b0fcf8f1b99030590e3fbff627c9cba7eeb",
+          "mesh_sha256": "685fae82a5d01cc9faf312d91670e18ea0ded07f9e171fe9449e6f7a15992b49",
+          "nav_areas": 2633,
+          "visual_triangles": 378619
+        },
+        "de_dust2": {
+          "nav_sha256": "64bbc202edae8a92d432368e86948bbee3af9c56555e190dda251d28c64e1ea7",
+          "mesh_sha256": "a21f26cb5df390dd03e10a8b43da8c89781b5f5c7cf1216a31748fd23a341766",
+          "nav_areas": 2242,
+          "visual_triangles": 239917
+        },
+        "de_inferno": {
+          "nav_sha256": "8d312122a9758a1b64b397f0e02b16e18e9432f738ab7308d0b73cb7df118111",
+          "mesh_sha256": "897e6f22dc76ecd3815ce8214ae1eb3254b07f72ba7b5f9470430bd8749ed632",
+          "nav_areas": 2738,
+          "visual_triangles": 547966
+        },
+        "de_mirage": {
+          "nav_sha256": "f9b23bb5d2303549259040ddfd5ed6c075760d2dfa5ab2025e097719e2e016aa",
+          "mesh_sha256": "0e320dbed9141215f7bd2c7e10cb7c616ec188ad963546fd3fcbf1c820f2290f",
+          "nav_areas": 2544,
+          "visual_triangles": 73286
+        },
+        "de_nuke": {
+          "nav_sha256": "58a9ef6b9ba7f471fcfc1e399f28c638b4a56b5609e4920e4b5e8f4f5aeb1c56",
+          "mesh_sha256": "e9d78f26aa0aa705e4cdd16e98fae453ba99f6e8cfcc3a09aa3e549925b54984",
+          "nav_areas": 3040,
+          "visual_triangles": 89563
+        }
+      }
+    }
+  },
+  "manifests": [
+    {
+      "artifacts": {
+        "geometry.zip": {
+          "bytes": 56674290,
+          "sha256": "edfae7235b87e6ca4cb49c453777a40991f5ba1ce438b8d9f14128bd0a8c56b3"
+        },
+        "images.zip": {
+          "bytes": 2876805,
+          "sha256": "3824c0330e628666fe63d6165335aa34809464f0c113dbc758bce3ca4ec4adbb"
+        },
+        "navs.zip": {
+          "bytes": 8432990,
+          "sha256": "90a353d8d0f4af9368898e530bdc9b0620801d4beafc3126999d27882569b1fa"
+        }
+      },
+      "buildid": "26087496",
+      "client_version": "2000934",
+      "generated_at": "2026-10-21T06:08:15.872467+00:00",
+      "maps": [
+        "ar_baggage",
+        "ar_pool_day",
+        "ar_shoots",
+        "ar_shoots_night",
+        "cs_italy",
+        "cs_office",
+        "cs_shelter",
+        "de_ancient",
+        "de_ancient_night",
+        "de_anubis",
+        "de_boulder",
+        "de_cache",
+        "de_debris",
+        "de_dust2",
+        "de_eldorado",
+        "de_fachwerk",
+        "de_inferno",
+        "de_mirage",
+        "de_nuke",
+        "de_overpass",
+        "de_poseidon",
+        "de_train",
+        "de_vertigo",
+        "rush_001"
+      ],
+      "patch_version": "1.41.9.1",
+      "release_key": "2000934",
+      "server_version": "2000934",
+      "source_revision": "11150591",
+      "version_date": "Oct 20 2026",
+      "version_time": "11:41:22"
+    },
+    {
+      "artifacts": {
+        "geometry.zip": {
+          "bytes": 48144478,
+          "sha256": "e4f82df6edd18ea2e14f5892d2bfd7ee988d69efa5be0a15b1f83383c4f5b3c8"
+        },
+        "images.zip": {
+          "bytes": 2876805,
+          "sha256": "c6e74ae7718e7e618d7e57ef8a2a139bac99640c2ba89404473c5ffdd83d4efd"
+        },
+        "navs.zip": {
+          "bytes": 6916074,
+          "sha256": "afd630acd86b64b4b6a0198279f6f008b40bf1b798cefeca1ab66418b42f159c"
+        }
+      },
+      "buildid": "24662694",
+      "client_version": "2000883",
+      "generated_at": "2026-08-11T03:25:37.416012+00:00",
+      "maps": [
+        "ar_baggage",
+        "ar_pool_day",
+        "ar_shoots",
+        "ar_shoots_night",
+        "cs_italy",
+        "cs_office",
+        "cs_shelter",
+        "de_ancient",
+        "de_ancient_night",
+        "de_anubis",
+        "de_boulder",
+        "de_cache",
+        "de_debris",
+        "de_dust2",
+        "de_eldorado",
+        "de_fachwerk",
+        "de_inferno",
+        "de_mirage",
+        "de_nuke",
+        "de_overpass",
+        "de_poseidon",
+        "de_train",
+        "de_vertigo"
+      ],
+      "patch_version": "1.41.7.4",
+      "release_key": "2000883",
+      "server_version": "2000883",
+      "source_revision": "10898412",
+      "version_date": "Aug 10 2026",
+      "version_time": "16:36:19"
+    }
+  ],
+  "demos": [
+    {
+      "demo": "BLAST_Open_Porto_2026_G2_vs_Natus_Vincere_2396940_map1.dem",
+      "sha256": "addb04dbcffaa81c3bf05b47265744af3fca3206b0746cc0ab5c4d1b00010956",
+      "map": "de_ancient",
+      "patch_version": "14174",
+      "frozen_player_snapshots_rechecked": 475,
+      "ticks": 95
+    },
+    {
+      "demo": "BLAST_Open_Porto_2026_G2_vs_Natus_Vincere_2396940_map2.dem",
+      "sha256": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352",
+      "map": "de_inferno",
+      "patch_version": "14174",
+      "frozen_player_snapshots_rechecked": 575,
+      "ticks": 115
+    },
+    {
+      "demo": "BLAST_Open_Porto_2026_G2_vs_Aurora_2396944_map1.dem",
+      "sha256": "e6bdd552f9336cd03a42f758d3849277461095bd3d019cd22c6608af8f2e3dc1",
+      "map": "de_anubis",
+      "patch_version": "14174",
+      "frozen_player_snapshots_rechecked": 500,
+      "ticks": 100
+    },
+    {
+      "demo": "BLAST_Open_Porto_2026_G2_vs_Aurora_2396944_map2.dem",
+      "sha256": "e71bad7ed9d272f72806940dcd1e8f732c31f947865e49e5ccbbcf1f43bcdc83",
+      "map": "de_inferno",
+      "patch_version": "14174",
+      "frozen_player_snapshots_rechecked": 875,
+      "ticks": 175
+    },
+    {
+      "demo": "BLAST_Open_Porto_2026_G2_vs_Aurora_2396944_map3.dem",
+      "sha256": "e348879717172add00b80285c20f884f4e180aa8cffa5a7ae9990d0d1d20b9fd",
+      "map": "de_mirage",
+      "patch_version": "14174",
+      "frozen_player_snapshots_rechecked": 350,
+      "ticks": 70
+    },
+    {
+      "demo": "BLAST_Open_Porto_2026_Spirit_vs_Falcons_2396949_map2.dem",
+      "sha256": "9c2d5c33124f0e685aebc5f2acf9ceca49247a36fb5100da3f8e166945a18bf2",
+      "map": "de_ancient",
+      "patch_version": "14174",
+      "frozen_player_snapshots_rechecked": 600,
+      "ticks": 120
+    },
+    {
+      "demo": "BLAST_Open_Porto_2026_Spirit_vs_Falcons_2396949_map1.dem",
+      "sha256": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7",
+      "map": "de_nuke",
+      "patch_version": "14174",
+      "frozen_player_snapshots_rechecked": 525,
+      "ticks": 105
+    },
+    {
+      "demo": "BLAST_Open_Porto_2026_MOUZ_vs_Vitality_2396950_map1.dem",
+      "sha256": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190",
+      "map": "de_dust2",
+      "patch_version": "14174",
+      "frozen_player_snapshots_rechecked": 575,
+      "ticks": 115
+    },
+    {
+      "demo": "BLAST_Open_Porto_2026_MOUZ_vs_Vitality_2396950_map2.dem",
+      "sha256": "1b8097794845b8994846d52d47db86faec78c838b345d3013c57e883ad230126",
+      "map": "de_mirage",
+      "patch_version": "14174",
+      "frozen_player_snapshots_rechecked": 500,
+      "ticks": 100
+    },
+    {
+      "demo": "furia-vs-falcons-m2-anubis.dem",
+      "sha256": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8",
+      "map": "de_anubis",
+      "patch_version": "14165",
+      "frozen_player_snapshots_rechecked": 525,
+      "ticks": 105
+    },
+    {
+      "demo": "furia-vs-falcons-m3-inferno.dem",
+      "sha256": "374b2f600880e2f8b0437314924b3745c2b0d32e63d53abbedd8bfd52ab8b0b8",
+      "map": "de_inferno",
+      "patch_version": "14165",
+      "frozen_player_snapshots_rechecked": 525,
+      "ticks": 105
+    },
+    {
+      "demo": "furia-vs-falcons-m1-mirage.dem",
+      "sha256": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697",
+      "map": "de_mirage",
+      "patch_version": "14165",
+      "frozen_player_snapshots_rechecked": 525,
+      "ticks": 105
+    },
+    {
+      "demo": "Esports_World_Cup_2026_MOUZ_vs_PARIVISION_2396595_map1.dem",
+      "sha256": "5ab8223140fbf38ebbd28a1b6c903a44ba4588de40beec79c6c08f78342000f1",
+      "map": "de_dust2",
+      "patch_version": "14174",
+      "frozen_player_snapshots_rechecked": 425,
+      "ticks": 85
+    },
+    {
+      "demo": "Esports_World_Cup_2026_MOUZ_vs_PARIVISION_2396595_map2.dem",
+      "sha256": "64898b61aa7300084268d8f57c4d7f5436d1fa902c4b18ea19e9f13979c1d809",
+      "map": "de_inferno",
+      "patch_version": "14174",
+      "frozen_player_snapshots_rechecked": 575,
+      "ticks": 115
+    },
+    {
+      "demo": "Esports_World_Cup_2026_Legacy_vs_Falcons_2396609_map2.dem",
+      "sha256": "8fc1bae5b52a7580b89053f3896cb3bd77b39e89e073787fe002bb4b552934f9",
+      "map": "de_dust2",
+      "patch_version": "14174",
+      "frozen_player_snapshots_rechecked": 575,
+      "ticks": 115
+    },
+    {
+      "demo": "Esports_World_Cup_2026_Legacy_vs_Falcons_2396609_map1.dem",
+      "sha256": "deeda64a7c879f69a10c1bd344e6966e4db44e75d74af1d26a733ee7add4e093",
+      "map": "de_mirage",
+      "patch_version": "14174",
+      "frozen_player_snapshots_rechecked": 500,
+      "ticks": 100
+    },
+    {
+      "demo": "BLAST_Open_Porto_2026_MOUZ_vs_Falcons_2396945_map2.dem",
+      "sha256": "9515221434fbde02a8beb2a19e100a00df35ff37306549b32b6b241cc4c55ff3",
+      "map": "de_ancient",
+      "patch_version": "14174",
+      "frozen_player_snapshots_rechecked": 475,
+      "ticks": 95
+    },
+    {
+      "demo": "BLAST_Open_Porto_2026_MOUZ_vs_Falcons_2396945_map3.dem",
+      "sha256": "d8ef19dbfc262b74ce927ebe3dc60fc088d50ba63d93ba85097c2cc2c4525a11",
+      "map": "de_inferno",
+      "patch_version": "14174",
+      "frozen_player_snapshots_rechecked": 400,
+      "ticks": 80
+    },
+    {
+      "demo": "BLAST_Open_Porto_2026_MOUZ_vs_Falcons_2396945_map1.dem",
+      "sha256": "a20d78e76c5545872a87a35dd5cc5e22f8d307a44bddc9d2189e3ff0ba04d987",
+      "map": "de_nuke",
+      "patch_version": "14174",
+      "frozen_player_snapshots_rechecked": 475,
+      "ticks": 95
+    },
+    {
+      "demo": "Esports_World_Cup_2026_FURIA_vs_Legacy_2396613_map1.dem",
+      "sha256": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2",
+      "map": "de_ancient",
+      "patch_version": "14174",
+      "frozen_player_snapshots_rechecked": 550,
+      "ticks": 110
+    },
+    {
+      "demo": "Esports_World_Cup_2026_FURIA_vs_Legacy_2396613_map3.dem",
+      "sha256": "f3079a77e5b6b276bc792740c5d43513070723af4976315ca3888e428cc69eb4",
+      "map": "de_dust2",
+      "patch_version": "14174",
+      "frozen_player_snapshots_rechecked": 550,
+      "ticks": 110
+    },
+    {
+      "demo": "Esports_World_Cup_2026_FURIA_vs_Legacy_2396613_map2.dem",
+      "sha256": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144",
+      "map": "de_nuke",
+      "patch_version": "14174",
+      "frozen_player_snapshots_rechecked": 550,
+      "ticks": 110
+    }
+  ],
+  "maps": {
+    "2000934": {
+      "by_map": {
+        "de_ancient": {
+          "observations": 2049,
+          "visual_ray_clear_candidate": 1938,
+          "ungated_bounded_match": 2042,
+          "grounded_bounded_match": 1938,
+          "airborne_bounded_match": 104,
+          "patch_number_matches": 0,
+          "airborne": 105,
+          "grounded_unlocalized": 6
+        },
+        "de_inferno": {
+          "observations": 2896,
+          "visual_ray_clear_candidate": 2593,
+          "ungated_bounded_match": 2882,
+          "grounded_bounded_match": 2593,
+          "airborne_bounded_match": 289,
+          "patch_number_matches": 0,
+          "airborne": 303
+        },
+        "de_anubis": {
+          "observations": 1017,
+          "visual_ray_clear_candidate": 959,
+          "ungated_bounded_match": 1011,
+          "grounded_bounded_match": 959,
+          "airborne_bounded_match": 52,
+          "patch_number_matches": 0,
+          "airborne": 54,
+          "grounded_unlocalized": 4
+        },
+        "de_mirage": {
+          "observations": 1833,
+          "visual_ray_clear_candidate": 1671,
+          "ungated_bounded_match": 1827,
+          "grounded_bounded_match": 1671,
+          "airborne_bounded_match": 156,
+          "patch_number_matches": 0,
+          "airborne": 161,
+          "grounded_unlocalized": 1
+        },
+        "de_nuke": {
+          "observations": 1511,
+          "visual_ray_clear_candidate": 1329,
+          "ungated_bounded_match": 1388,
+          "grounded_bounded_match": 1329,
+          "airborne_bounded_match": 59,
+          "patch_number_matches": 0,
+          "airborne": 123,
+          "grounded_unlocalized": 59
+        },
+        "de_dust2": {
+          "observations": 2062,
+          "visual_ray_clear_candidate": 1891,
+          "ungated_bounded_match": 2018,
+          "grounded_bounded_match": 1891,
+          "airborne_bounded_match": 127,
+          "patch_number_matches": 0,
+          "airborne": 149,
+          "grounded_unlocalized": 22
+        }
+      },
+      "unlocalized_by_place_and_ground_state": [
+        {
+          "map": "de_ancient",
+          "place": "Alley",
+          "grounded": 2,
+          "airborne": 1
+        },
+        {
+          "map": "de_ancient",
+          "place": "BombsiteA",
+          "grounded": 4
+        },
+        {
+          "map": "de_anubis",
+          "place": "BombsiteB",
+          "grounded": 4
+        },
+        {
+          "map": "de_anubis",
+          "place": "Connector",
+          "airborne": 1
+        },
+        {
+          "map": "de_anubis",
+          "place": "Middle",
+          "airborne": 1
+        },
+        {
+          "map": "de_dust2",
+          "place": "BDoors",
+          "airborne": 2
+        },
+        {
+          "map": "de_dust2",
+          "place": "BombsiteB",
+          "airborne": 8
+        },
+        {
+          "map": "de_dust2",
+          "place": "CTSpawn",
+          "grounded": 14
+        },
+        {
+          "map": "de_dust2",
+          "place": "Middle",
+          "airborne": 1
+        },
+        {
+          "map": "de_dust2",
+          "place": "ShortStairs",
+          "airborne": 5,
+          "grounded": 8
+        },
+        {
+          "map": "de_dust2",
+          "place": "UnderA",
+          "airborne": 6
+        },
+        {
+          "map": "de_inferno",
+          "place": "Balcony",
+          "airborne": 1
+        },
+        {
+          "map": "de_inferno",
+          "place": "Banana",
+          "airborne": 2
+        },
+        {
+          "map": "de_inferno",
+          "place": "BombsiteA",
+          "airborne": 7
+        },
+        {
+          "map": "de_inferno",
+          "place": "BombsiteB",
+          "airborne": 1
+        },
+        {
+          "map": "de_inferno",
+          "place": "CTSpawn",
+          "airborne": 2
+        },
+        {
+          "map": "de_inferno",
+          "place": "Ruins",
+          "airborne": 1
+        },
+        {
+          "map": "de_mirage",
+          "place": "BombsiteB",
+          "airborne": 1
+        },
+        {
+          "map": "de_mirage",
+          "place": "Ladder",
+          "grounded": 1,
+          "airborne": 1
+        },
+        {
+          "map": "de_mirage",
+          "place": "Middle",
+          "airborne": 1
+        },
+        {
+          "map": "de_mirage",
+          "place": "Truck",
+          "airborne": 2
+        },
+        {
+          "map": "de_nuke",
+          "place": "BombsiteA",
+          "airborne": 8
+        },
+        {
+          "map": "de_nuke",
+          "place": "Heaven",
+          "airborne": 3
+        },
+        {
+          "map": "de_nuke",
+          "place": "Hell",
+          "airborne": 3
+        },
+        {
+          "map": "de_nuke",
+          "place": "Outside",
+          "airborne": 3,
+          "grounded": 5
+        },
+        {
+          "map": "de_nuke",
+          "place": "Rafters",
+          "airborne": 39,
+          "grounded": 53
+        },
+        {
+          "map": "de_nuke",
+          "place": "Ramp",
+          "airborne": 5,
+          "grounded": 1
+        },
+        {
+          "map": "de_nuke",
+          "place": "Vents",
+          "airborne": 3
+        }
+      ]
+    },
+    "2000883": {
+      "by_map": {
+        "de_ancient": {
+          "observations": 2049,
+          "visual_ray_clear_candidate": 1938,
+          "ungated_bounded_match": 2042,
+          "grounded_bounded_match": 1938,
+          "airborne_bounded_match": 104,
+          "patch_number_matches": 2049,
+          "airborne": 105,
+          "grounded_unlocalized": 6
+        },
+        "de_inferno": {
+          "observations": 2896,
+          "visual_ray_clear_candidate": 2593,
+          "ungated_bounded_match": 2882,
+          "grounded_bounded_match": 2593,
+          "airborne_bounded_match": 289,
+          "patch_number_matches": 2378,
+          "airborne": 303
+        },
+        "de_anubis": {
+          "observations": 1017,
+          "visual_ray_clear_candidate": 959,
+          "ungated_bounded_match": 1011,
+          "grounded_bounded_match": 959,
+          "airborne_bounded_match": 52,
+          "patch_number_matches": 497,
+          "airborne": 54,
+          "grounded_unlocalized": 4
+        },
+        "de_mirage": {
+          "observations": 1833,
+          "visual_ray_clear_candidate": 1671,
+          "ungated_bounded_match": 1827,
+          "grounded_bounded_match": 1671,
+          "airborne_bounded_match": 156,
+          "patch_number_matches": 1320,
+          "airborne": 161,
+          "grounded_unlocalized": 1
+        },
+        "de_nuke": {
+          "observations": 1511,
+          "visual_ray_clear_candidate": 1329,
+          "ungated_bounded_match": 1388,
+          "grounded_bounded_match": 1329,
+          "airborne_bounded_match": 59,
+          "patch_number_matches": 1511,
+          "airborne": 123,
+          "grounded_unlocalized": 59
+        },
+        "de_dust2": {
+          "observations": 2062,
+          "visual_ray_clear_candidate": 1891,
+          "ungated_bounded_match": 2018,
+          "grounded_bounded_match": 1891,
+          "airborne_bounded_match": 127,
+          "patch_number_matches": 2062,
+          "airborne": 149,
+          "grounded_unlocalized": 22
+        }
+      },
+      "unlocalized_by_place_and_ground_state": [
+        {
+          "map": "de_ancient",
+          "place": "Alley",
+          "grounded": 2,
+          "airborne": 1
+        },
+        {
+          "map": "de_ancient",
+          "place": "BombsiteA",
+          "grounded": 4
+        },
+        {
+          "map": "de_anubis",
+          "place": "BombsiteB",
+          "grounded": 4
+        },
+        {
+          "map": "de_anubis",
+          "place": "Connector",
+          "airborne": 1
+        },
+        {
+          "map": "de_anubis",
+          "place": "Middle",
+          "airborne": 1
+        },
+        {
+          "map": "de_dust2",
+          "place": "BDoors",
+          "airborne": 2
+        },
+        {
+          "map": "de_dust2",
+          "place": "BombsiteB",
+          "airborne": 8
+        },
+        {
+          "map": "de_dust2",
+          "place": "CTSpawn",
+          "grounded": 14
+        },
+        {
+          "map": "de_dust2",
+          "place": "Middle",
+          "airborne": 1
+        },
+        {
+          "map": "de_dust2",
+          "place": "ShortStairs",
+          "airborne": 5,
+          "grounded": 8
+        },
+        {
+          "map": "de_dust2",
+          "place": "UnderA",
+          "airborne": 6
+        },
+        {
+          "map": "de_inferno",
+          "place": "Balcony",
+          "airborne": 1
+        },
+        {
+          "map": "de_inferno",
+          "place": "Banana",
+          "airborne": 2
+        },
+        {
+          "map": "de_inferno",
+          "place": "BombsiteA",
+          "airborne": 7
+        },
+        {
+          "map": "de_inferno",
+          "place": "BombsiteB",
+          "airborne": 1
+        },
+        {
+          "map": "de_inferno",
+          "place": "CTSpawn",
+          "airborne": 2
+        },
+        {
+          "map": "de_inferno",
+          "place": "Ruins",
+          "airborne": 1
+        },
+        {
+          "map": "de_mirage",
+          "place": "BombsiteB",
+          "airborne": 1
+        },
+        {
+          "map": "de_mirage",
+          "place": "Ladder",
+          "grounded": 1,
+          "airborne": 1
+        },
+        {
+          "map": "de_mirage",
+          "place": "Middle",
+          "airborne": 1
+        },
+        {
+          "map": "de_mirage",
+          "place": "Truck",
+          "airborne": 2
+        },
+        {
+          "map": "de_nuke",
+          "place": "BombsiteA",
+          "airborne": 8
+        },
+        {
+          "map": "de_nuke",
+          "place": "Heaven",
+          "airborne": 3
+        },
+        {
+          "map": "de_nuke",
+          "place": "Hell",
+          "airborne": 3
+        },
+        {
+          "map": "de_nuke",
+          "place": "Outside",
+          "airborne": 3,
+          "grounded": 5
+        },
+        {
+          "map": "de_nuke",
+          "place": "Rafters",
+          "airborne": 39,
+          "grounded": 53
+        },
+        {
+          "map": "de_nuke",
+          "place": "Ramp",
+          "airborne": 5,
+          "grounded": 1
+        },
+        {
+          "map": "de_nuke",
+          "place": "Vents",
+          "airborne": 3
+        }
+      ]
+    }
+  },
+  "live_CT_player_snapshots": 11368,
+  "sidecar_sha256": "e13ae3c3d81487891af024b3e9eb377c313da1bea7d06ffd13733fbc02048d41",
+  "seconds": 26.957178999999996,
+  "RSS_MiB_at_end": 374.78515625,
+  "limits": [
+    "Matching patch numbers do not identify the Demo server's exact client build or map checksum.",
+    "Visual meshes omit clips/glass and are decimated; no full player-hull walkability or path guarantee.",
+    "Airborne is an engine/parser flag, not expert tactical gold; unlocalized grounded observations remain unknown.",
+    "All nine series remain development data; no new model training, human labels or unseen test."
+  ]
+}

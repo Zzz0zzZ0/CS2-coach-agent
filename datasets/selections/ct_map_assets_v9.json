@@ -1,0 +1,102 @@
+{
+  "status": "posthoc_development_asset_acquisition_not_preregistration",
+  "recorded_at": "2026-10-23T05:43:55.539684+00:00",
+  "publisher": "pnxenopoulos/awpy-data; Valve game assets, no claim of Valve endorsement",
+  "versions": {
+    "2000880": {
+      "patch_version": "1.41.7.4",
+      "buildid": "24537688",
+      "version_date": "Aug 03 2026",
+      "downloads": {
+        "navs.zip": {
+          "url": "https://github.com/pnxenopoulos/awpy-data/releases/download/2000880/navs.zip",
+          "bytes": 6916074,
+          "sha256": "0fadc7cb538b00947902d12eea3684f45ceb3daa0f82c6b671e9e3d5216ec363"
+        }
+      },
+      "metadata": {
+        "manifest.json": {
+          "url": "https://github.com/pnxenopoulos/awpy-data/releases/download/2000880/manifest.json",
+          "sha256": "792d797381f4469dc352491a8e6218a591904735a7a41b2985dc0186bcae5908"
+        }
+      }
+    },
+    "2000883": {
+      "patch_version": "1.41.7.4",
+      "buildid": "24662694",
+      "version_date": "Aug 10 2026",
+      "downloads": {
+        "geometry.zip": {
+          "url": "https://github.com/pnxenopoulos/awpy-data/releases/download/2000883/geometry.zip",
+          "bytes": 48144478,
+          "sha256": "e4f82df6edd18ea2e14f5892d2bfd7ee988d69efa5be0a15b1f83383c4f5b3c8"
+        },
+        "images.zip": {
+          "url": "https://github.com/pnxenopoulos/awpy-data/releases/download/2000883/images.zip",
+          "bytes": 2876805,
+          "sha256": "c6e74ae7718e7e618d7e57ef8a2a139bac99640c2ba89404473c5ffdd83d4efd"
+        },
+        "navs.zip": {
+          "url": "https://github.com/pnxenopoulos/awpy-data/releases/download/2000883/navs.zip",
+          "bytes": 6916074,
+          "sha256": "afd630acd86b64b4b6a0198279f6f008b40bf1b798cefeca1ab66418b42f159c"
+        }
+      },
+      "metadata": {
+        "manifest.json": {
+          "url": "https://github.com/pnxenopoulos/awpy-data/releases/download/2000883/manifest.json",
+          "sha256": "ae7219deaf4e10e19777974ffedfcbb77d6a094c14431716667ecdff11ac7612"
+        },
+        "map_data.json": {
+          "url": "https://github.com/pnxenopoulos/awpy-data/releases/download/2000883/map_data.json",
+          "sha256": "a408448870f8ba607998e1daac6c421a6d6c437105b7cd47e83fd3dc562f2050"
+        }
+      }
+    },
+    "2000934": {
+      "patch_version": "1.41.9.1",
+      "buildid": "26087496",
+      "version_date": "Oct 20 2026",
+      "downloads": {
+        "geometry.zip": {
+          "url": "https://github.com/pnxenopoulos/awpy-data/releases/download/2000934/geometry.zip",
+          "bytes": 56674290,
+          "sha256": "edfae7235b87e6ca4cb49c453777a40991f5ba1ce438b8d9f14128bd0a8c56b3"
+        },
+        "navs.zip": {
+          "url": "https://github.com/pnxenopoulos/awpy-data/releases/download/2000934/navs.zip",
+          "bytes": 8432990,
+          "sha256": "90a353d8d0f4af9368898e530bdc9b0620801d4beafc3126999d27882569b1fa"
+        }
+      },
+      "metadata": {
+        "manifest.json": {
+          "url": "https://github.com/pnxenopoulos/awpy-data/releases/download/2000934/manifest.json",
+          "sha256": "3095189d5a6339ae90386bffe99d149583e56cca1dd65628c484fec3d71908bc"
+        }
+      }
+    }
+  },
+  "archive_bytes_downloaded": 129960711,
+  "new_Demo_downloads": 0,
+  "full_physics": {
+    "game_client_version": "2000934",
+    "vmdl_sha256": "0b5ddd669eed6a31917ab27a7f1e8336d4445e0ae0787b42d52c9c1ba1799fc7",
+    "glb_sha256": "51aec980c1615750a2b0e62994254948c682f754d08beb3e39e8cdac52c5e3a9",
+    "unfiltered_mesh_sha256": "43f7f730de1ca09cbcc794a6794f96ef442a413e7348a649359f0924c49e46da",
+    "exporter": "Source2Viewer CLI 20.0.6980+a06886f7d06049052d32a7381ec05523064a2ca0",
+    "converter_commit": "7c73907f74521d271f0eb40bcbe14a4912184e05",
+    "converter_sha256": "796977d6191e3066e3fb50bcc51047dddf42f893cc38c5ffa6a86170d29fe2a1",
+    "lib_sha256": "4a3f1fbcb71fef54e949ac19b1c957992af013d2cfd50077925c6f5510d3f06d",
+    "converter_options": [
+      "--drop",
+      "--no-decimate"
+    ],
+    "conversion": "Raw Hammer XYZ positions from VRF; GLTF scene transforms are export presentation transforms and not applied, following upstream converter."
+  },
+  "limits": [
+    "Patch number is not an exact map checksum; Demo client build remains unknown.",
+    "No matching-patch 14165 release in inspected Awpy-data catalog.",
+    "Assets are local-only; the repository stores manifests, checksums, code and derived audits."
+  ]
+}

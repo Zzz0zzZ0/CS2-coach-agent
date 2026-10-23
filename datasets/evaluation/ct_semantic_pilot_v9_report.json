@@ -1,0 +1,38 @@
+{
+  "status": "prepared_blinded_pilot_without_human_ratings",
+  "seed": 20261023,
+  "scope": "Development-only annotation-process pilot; common-state retrieval plus random control, not a neural comparison",
+  "query_selection": "two distinct series per map; prefer radar-patch-matched rows, then SHA-256 seeded order",
+  "library": "patch 14174 only; exclude every series containing the query map",
+  "queries": 12,
+  "candidate_pairs": 119,
+  "query_patch_counts": {
+    "14174": 11,
+    "14165": 1
+  },
+  "human_ratings": 0,
+  "payload_sha256": "dcd604b383a452ea56456f50467f74672be51c924b7341652eb0cd60e6f8511a",
+  "html_sha256": "f06e34b83b8f5380254f14f2fedcdb94a9d4be52b0da56da06e540bc490a4de2",
+  "private_key_sha256": "01049d4b4e04be64b850d07fd625474357f334b2bf1ba3603a3218ac1295be98",
+  "context_report_sha256": "351e57c6e061e5986c4db59406915a7ee04d1de1c388ead199843be5a22f9d8b",
+  "radar_sha256": {
+    "de_ancient.png": "cb6adca45e32ecff0b131f742c129324ba5e2dd695247f61d2d21d85ef2c581c",
+    "de_anubis.png": "b8f07c36edb13e34dbfaabf9a74e057961ac4fb29545d98d16ff9b7c4e6d1206",
+    "de_dust2.png": "0828297130ce26db25a299806ff743df9104de634a3e64b52b358f6f4399354d",
+    "de_inferno.png": "53e1d660d5e61a9b876cc56725c2e891c56efcb788657520fa9c10fec321dce3",
+    "de_mirage.png": "c8032f6c83ffca63c0a20ebdcc598a0e1aa618efd746e381e2db26f33a4a964f",
+    "de_nuke.png": "21167d05292e80eebe7b068f0bba36a2e3f9116d154d96952a8366cdcc72e6b1",
+    "de_nuke_lower.png": "b8c4e659491ba79be60b7d3f9bc78bdaeb808afc2bae14bf3b25b1801220ebe0"
+  },
+  "map_data_sha256": "a408448870f8ba607998e1daac6c421a6d6c437105b7cd47e83fd3dc562f2050",
+  "source_sha256": {
+    "scripts\\build_ct_semantic_pilot.py": "9cea78cde4c74f6aab0afa23532a36676355f76fdc56362c51de8ada40efe84c",
+    "scripts\\templates\\ct_pilot_review.html": "077202e08fd73c9157a3be5ec1d48afce9cf6d926694d738c7a98ebc7e50f5b7"
+  },
+  "limits": [
+    "One Anubis query necessarily uses an older patch because the development map has only two series; warn and allow abstention.",
+    "CT-only deployment evidence omits enemy, utility and communication; do not infer tactical intent.",
+    "Analyst key and Valve radar assets stay local; do not send analyst materials to reviewers.",
+    "Local saved ratings and elapsed time require manual export; no network or automatic submission."
+  ]
+}

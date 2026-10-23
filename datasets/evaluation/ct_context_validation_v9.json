@@ -1,0 +1,95 @@
+{
+  "status": "completed_development_map_context_audit_and_blinded_pilot_preparation",
+  "recorded_at": "2026-10-23T05:58:34.040498+00:00",
+  "tests": {
+    "passed": 439,
+    "warnings": 3,
+    "seconds": 12.49,
+    "command": "output/tagnet/.venv-regression/Scripts/python.exe -m pytest -q",
+    "stdout_sha256": "2340f58bf815fa1341ababc3cd9ccfe945c98c368a88b329d0ab21ed6e241453",
+    "scope": "offline fixture regression; no production backend"
+  },
+  "frozen_checks": {
+    "v7_artifacts_unchanged": 18,
+    "v8_artifacts_unchanged": 5
+  },
+  "data": {
+    "series": 9,
+    "demos": 22,
+    "CT_rounds": 465,
+    "all_player_snapshots_rechecked": 11625,
+    "live_player_snapshots": 11368,
+    "airborne": 895,
+    "ground_state_missing": 0,
+    "grounded": 10473,
+    "grounded_unlocalized": 92,
+    "original_unlocalized_airborne": 108,
+    "original_unlocalized_total": 200
+  },
+  "pilot": {
+    "queries": 12,
+    "candidate_pairs": 119,
+    "human_ratings": 0,
+    "user_can_arrange_two_independent_reviewers": true,
+    "query_patch_counts": {
+      "14174": 11,
+      "14165": 1
+    },
+    "reviewer_kit_sha256": "582f05ddc33cf9d5609ffd924cc4d71511bf3efca996c28782014357626d0256",
+    "kit_files": [
+      "review.html",
+      "README_评审.txt"
+    ],
+    "analyst_key_in_package": false,
+    "role_queue_items": 105,
+    "approved_zone_roles": 0
+  },
+  "browser_check": {
+    "status": "passed_simulated_UI_checks_only",
+    "browser": "Playwright CLI 0.1.7 with installed Chromium headless shell",
+    "transport": "loopback static preview; direct file scheme blocked by browser tool and not tested",
+    "cases": [
+      "radar images loaded",
+      "methods and raw identities absent from reviewer page",
+      "non-Nuke floor selector hidden",
+      "0 distinct from unknown",
+      "save and restore current item",
+      "Nuke layer switch changes canvas",
+      "time slider",
+      "Q04 patch mismatch warning",
+      "offline export",
+      "mobile width without overflow"
+    ],
+    "page_errors": 0,
+    "simulation_export_sha256": "f689ed253dbe7a79ac2fd2142d5310669ea017965039888ff774d40560ca1fd3",
+    "simulation_is_real_human_evidence": false,
+    "artifacts": {
+      "ct-pilot-nuke-v9.png": "abb7a747d91a24469dc84419fa0e75182369a313eaebcbad2338e8b559280d1a",
+      "ct-pilot-mobile-v9.png": "13ecec6a2281464004f3463b955c79887d62a7816a6689c2523d5ee335ee0408"
+    },
+    "temporary_browser_and_preview_servers_closed": true
+  },
+  "resources": {
+    "ground_context_seconds": 26.957178999999996,
+    "RSS_MiB_at_end_not_peak": 374.78515625,
+    "archive_download_bytes": 129960711,
+    "new_demo_downloads": 0,
+    "GPU_used": false,
+    "new_model_training": false
+  },
+  "artifact_sha256": {
+    "datasets/evaluation/ct_ground_navigation_v9_report.json": "351e57c6e061e5986c4db59406915a7ee04d1de1c388ead199843be5a22f9d8b",
+    "datasets/evaluation/ct_static_map_comparison_v9_report.json": "f76c4cced3073497f3a5b3cf779d84e20a00317180c40b9f3d2fb7d59915d620",
+    "datasets/evaluation/ct_map_role_review_v9.json": "051819a5d863ea9ec73de0573190a4ab774e14540d34ee06fa927bc8713ae6f7",
+    "datasets/evaluation/ct_semantic_pilot_v9_report.json": "d734d13d110a68db1bc118e0528b633da3f2c7b543fb718560a78257df48ead3",
+    "datasets/selections/ct_map_assets_v9.json": "f3beaf842aa9912ad780905d185150915264afad23e8d6715c59ba7509e59ba1",
+    "docs/assets/ct_navigation_ground_v9.png": "8bce0755b90d06c6c3af8a6dee66455d746ac14a153b46022fcd3f6c02b5e5fe",
+    "scripts/plot_ct_ground_navigation.py": "c101e307c0e68c162f78697c0fce39a2a97afccd343506d80749331b1b9fad98"
+  },
+  "limits": [
+    "No independent human ratings or zone-role acceptance yet.",
+    "Matching patch numbers do not identify exact historical map builds; Q04 has a known mismatch.",
+    "Visual rays do not prove player-hull traversability; Rafters and other grounded NAV gaps remain masked.",
+    "All data remain development; no formal blinded generalization result or new neural-effect claim."
+  ]
+}

@@ -1,0 +1,5418 @@
+{
+  "status": "unreviewed_real_data_queue_no_expert_labels",
+  "context_report_sha256": "351e57c6e061e5986c4db59406915a7ee04d1de1c388ead199843be5a22f9d8b",
+  "roles": [
+    "site_a",
+    "site_b",
+    "a_approach",
+    "b_approach",
+    "connector",
+    "ct_spawn",
+    "t_spawn",
+    "other_known",
+    "unknown"
+  ],
+  "instructions": [
+    "Review map-zone function, not player tactical intent; multiple or unknown roles are allowed.",
+    "Literal role candidates are lexical hints, not accepted labels.",
+    "Copy this queue before annotation; preserve each independent review, rationale, asset version and evidence.",
+    "Each judgment requires reviewer_id, roles, rationale and evidence; conflicts need separate adjudication.",
+    "No semantic feature acceptance before independent review and patch/geometry checks."
+  ],
+  "items": [
+    {
+      "map": "de_ancient",
+      "place": "Alley",
+      "live_observations": 326,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 290,
+        "airborne": 34,
+        "grounded_unlocalized": 2
+      },
+      "z_min": 69.3028793334961,
+      "z_max": 203.63668823242188,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:5:CT",
+          "second": 12,
+          "tick": 38594,
+          "position": [
+            1149.045654296875,
+            758.0433959960938,
+            203.63668823242188
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:10:CT",
+          "second": 10,
+          "tick": 74021,
+          "position": [
+            743.5565185546875,
+            470.3305358886719,
+            131.58839416503906
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:11:CT",
+          "second": 10,
+          "tick": 83869,
+          "position": [
+            709.4525756835938,
+            576.4228515625,
+            125.27684783935547
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_ancient",
+      "place": "BombsiteA",
+      "live_observations": 199,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 192,
+        "airborne": 3,
+        "grounded_unlocalized": 4
+      },
+      "z_min": 52.01872253417969,
+      "z_max": 177.4070281982422,
+      "current_entity_name_present": true,
+      "literal_role_candidate": "site_a",
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:10:CT",
+          "second": 15,
+          "tick": 74341,
+          "position": [
+            -1582.386474609375,
+            560.062744140625,
+            174.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:14:CT",
+          "second": 12,
+          "tick": 114856,
+          "position": [
+            -1550.5135498046875,
+            560.67138671875,
+            174.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:11:CT",
+          "second": 10,
+          "tick": 83869,
+          "position": [
+            -1870.91796875,
+            649.1319580078125,
+            52.06251525878906
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_ancient",
+      "place": "BombsiteB",
+      "live_observations": 354,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 330,
+        "airborne": 24
+      },
+      "z_min": 104.42594909667969,
+      "z_max": 189.859375,
+      "current_entity_name_present": true,
+      "literal_role_candidate": "site_b",
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:11:CT",
+          "second": 15,
+          "tick": 84189,
+          "position": [
+            687.9581298828125,
+            441.8761901855469,
+            126.89717102050781
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:12:CT",
+          "second": 10,
+          "tick": 94689,
+          "position": [
+            694.5126953125,
+            163.81976318359375,
+            130.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:13:CT",
+          "second": 10,
+          "tick": 105255,
+          "position": [
+            686.596435546875,
+            179.77609252929688,
+            131.73672485351562
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_ancient",
+      "place": "CTSpawn",
+      "live_observations": 56,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 53,
+        "airborne": 3
+      },
+      "z_min": 22.914894104003906,
+      "z_max": 122.078125,
+      "current_entity_name_present": true,
+      "literal_role_candidate": "ct_spawn",
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:13:CT",
+          "second": 12,
+          "tick": 105383,
+          "position": [
+            -289.1552734375,
+            1011.2838745117188,
+            67.2047119140625
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:14:CT",
+          "second": 10,
+          "tick": 114728,
+          "position": [
+            -273.9971923828125,
+            1028.2611083984375,
+            67.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:16:CT",
+          "second": 10,
+          "tick": 125483,
+          "position": [
+            -570.8695678710938,
+            1126.999267578125,
+            64.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_ancient",
+      "place": "House",
+      "live_observations": 294,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 289,
+        "airborne": 5
+      },
+      "z_min": 77.18802642822266,
+      "z_max": 175.03125,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:10:CT",
+          "second": 18,
+          "tick": 74533,
+          "position": [
+            -593.7725830078125,
+            505.8858642578125,
+            161.7093505859375
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:11:CT",
+          "second": 10,
+          "tick": 83869,
+          "position": [
+            -526.6595458984375,
+            913.96875,
+            104.13365936279297
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:13:CT",
+          "second": 10,
+          "tick": 105255,
+          "position": [
+            -486.70172119140625,
+            634.5379638671875,
+            155.80931091308594
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_ancient",
+      "place": "MainHall",
+      "live_observations": 44,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 44
+      },
+      "z_min": 72.03128814697266,
+      "z_max": 88.03125,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:12:CT",
+          "second": 10,
+          "tick": 94689,
+          "position": [
+            -1996.27734375,
+            271.74517822265625,
+            88.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "9515221434fbde02a8beb2a19e100a00df35ff37306549b32b6b241cc4c55ff3:6:CT",
+          "second": 15,
+          "tick": 46038,
+          "position": [
+            -2132.281982421875,
+            107.01942443847656,
+            72.48896789550781
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "9515221434fbde02a8beb2a19e100a00df35ff37306549b32b6b241cc4c55ff3:8:CT",
+          "second": 10,
+          "tick": 56803,
+          "position": [
+            -1992.70068359375,
+            309.2762756347656,
+            88.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_ancient",
+      "place": "Middle",
+      "live_observations": 288,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 276,
+        "airborne": 12
+      },
+      "z_min": 32.03049850463867,
+      "z_max": 174.03125,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:10:CT",
+          "second": 10,
+          "tick": 74021,
+          "position": [
+            -909.637939453125,
+            -199.9114990234375,
+            97.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:12:CT",
+          "second": 10,
+          "tick": 94689,
+          "position": [
+            -767.7308349609375,
+            -212.64068603515625,
+            70.57675170898438
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:15:CT",
+          "second": 15,
+          "tick": 121747,
+          "position": [
+            -990.63134765625,
+            -215.23486328125,
+            101.19004821777344
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_ancient",
+      "place": "Outside",
+      "live_observations": 2,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 2
+      },
+      "z_min": 42.592750549316406,
+      "z_max": 44.211669921875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "9515221434fbde02a8beb2a19e100a00df35ff37306549b32b6b241cc4c55ff3:12:CT",
+          "second": 18,
+          "tick": 89997,
+          "position": [
+            -1169.2574462890625,
+            -787.0628051757812,
+            44.211669921875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_ancient",
+      "place": "Ramp",
+      "live_observations": 18,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 17,
+        "airborne": 1
+      },
+      "z_min": 1.2610421180725098,
+      "z_max": 88.2399673461914,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:12:CT",
+          "second": 15,
+          "tick": 95009,
+          "position": [
+            1253.1160888671875,
+            -663.6075439453125,
+            12.15158748626709
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:1:CT",
+          "second": 18,
+          "tick": 2401,
+          "position": [
+            1176.7071533203125,
+            -378.629638671875,
+            77.17056274414062
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "9c2d5c33124f0e685aebc5f2acf9ceca49247a36fb5100da3f8e166945a18bf2:11:CT",
+          "second": 18,
+          "tick": 91491,
+          "position": [
+            1177.86962890625,
+            -456.015625,
+            51.36421585083008
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_ancient",
+      "place": "SideEntrance",
+      "live_observations": 243,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 228,
+        "airborne": 15
+      },
+      "z_min": 134.00823974609375,
+      "z_max": 225.578125,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:11:CT",
+          "second": 10,
+          "tick": 83869,
+          "position": [
+            565.3663330078125,
+            168.9479217529297,
+            156.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:15:CT",
+          "second": 12,
+          "tick": 121555,
+          "position": [
+            493.51385498046875,
+            -16.212890625,
+            152.65475463867188
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:16:CT",
+          "second": 10,
+          "tick": 125483,
+          "position": [
+            526.9173583984375,
+            139.9774932861328,
+            152.65475463867188
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_ancient",
+      "place": "SideHall",
+      "live_observations": 177,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 171,
+        "airborne": 6
+      },
+      "z_min": 78.55486297607422,
+      "z_max": 160.953125,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:10:CT",
+          "second": 20,
+          "tick": 74661,
+          "position": [
+            -1249.5469970703125,
+            -203.33673095703125,
+            106.03124237060547
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:11:CT",
+          "second": 10,
+          "tick": 83869,
+          "position": [
+            -1382.32177734375,
+            21.904613494873047,
+            103.38977813720703
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:12:CT",
+          "second": 15,
+          "tick": 95009,
+          "position": [
+            -1211.7984619140625,
+            -111.34613037109375,
+            103.37413787841797
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_ancient",
+      "place": "TSideLower",
+      "live_observations": 4,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 3,
+        "airborne": 1
+      },
+      "z_min": 16.87997055053711,
+      "z_max": 109.46147155761719,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:12:CT",
+          "second": 18,
+          "tick": 95201,
+          "position": [
+            845.0994873046875,
+            -679.6702270507812,
+            98.453125
+          ],
+          "is_airborne": true,
+          "patch_version": "14174"
+        },
+        {
+          "id": "9515221434fbde02a8beb2a19e100a00df35ff37306549b32b6b241cc4c55ff3:11:CT",
+          "second": 18,
+          "tick": 81385,
+          "position": [
+            679.8212280273438,
+            -777.38232421875,
+            81.22557067871094
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_ancient",
+      "place": "TSideUpper",
+      "live_observations": 30,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 30
+      },
+      "z_min": 153.03123474121094,
+      "z_max": 164.03125,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:20:CT",
+          "second": 18,
+          "tick": 158270,
+          "position": [
+            142.07606506347656,
+            -710.060791015625,
+            153.5694122314453
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:21:CT",
+          "second": 18,
+          "tick": 166638,
+          "position": [
+            -129.0347900390625,
+            -754.3321533203125,
+            153.45130920410156
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:22:CT",
+          "second": 15,
+          "tick": 172514,
+          "position": [
+            194.89276123046875,
+            -714.3764038085938,
+            153.16879272460938
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_ancient",
+      "place": "TopofMid",
+      "live_observations": 14,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 13,
+        "airborne": 1
+      },
+      "z_min": 111.68827819824219,
+      "z_max": 174.03125,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:15:CT",
+          "second": 15,
+          "tick": 121747,
+          "position": [
+            -597.251708984375,
+            159.65765380859375,
+            168.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:4:CT",
+          "second": 15,
+          "tick": 28594,
+          "position": [
+            -520.4223022460938,
+            243.26443481445312,
+            162.89500427246094
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2:5:CT",
+          "second": 15,
+          "tick": 38786,
+          "position": [
+            -628.2771606445312,
+            197.9044189453125,
+            171.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "place": "Alley",
+      "live_observations": 26,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 25,
+        "airborne": 1
+      },
+      "z_min": -30.96875,
+      "z_max": 27.79703140258789,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:17:CT",
+          "second": 10,
+          "tick": 149753,
+          "position": [
+            -1120.019287109375,
+            1236.0433349609375,
+            1.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:21:CT",
+          "second": 10,
+          "tick": 189843,
+          "position": [
+            -1314.4957275390625,
+            1314.037109375,
+            27.28125
+          ],
+          "is_airborne": true,
+          "patch_version": "14165"
+        },
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:5:CT",
+          "second": 10,
+          "tick": 33063,
+          "position": [
+            -1189.792236328125,
+            1086.6676025390625,
+            0.031249046325683594
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "place": "BackofB",
+      "live_observations": 38,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 37,
+        "airborne": 1
+      },
+      "z_min": 35.03125,
+      "z_max": 66.859375,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:11:CT",
+          "second": 10,
+          "tick": 84442,
+          "position": [
+            -581.0780639648438,
+            709.21484375,
+            38.031253814697266
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:14:CT",
+          "second": 15,
+          "tick": 123430,
+          "position": [
+            -756.1113891601562,
+            712.3838500976562,
+            35.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:18:CT",
+          "second": 20,
+          "tick": 161946,
+          "position": [
+            -814.05712890625,
+            806.231689453125,
+            35.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "place": "BombsiteA",
+      "live_observations": 92,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 76,
+        "airborne": 16
+      },
+      "z_min": -191.96875,
+      "z_max": -37.96875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": "site_a",
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:10:CT",
+          "second": 10,
+          "tick": 77240,
+          "position": [
+            1359.7691650390625,
+            1651.6263427734375,
+            -114.390625
+          ],
+          "is_airborne": true,
+          "patch_version": "14165"
+        },
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:11:CT",
+          "second": 10,
+          "tick": 84442,
+          "position": [
+            1513.7713623046875,
+            1563.4327392578125,
+            -151.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:12:CT",
+          "second": 10,
+          "tick": 92995,
+          "position": [
+            1215.8055419921875,
+            1570.193115234375,
+            -140.3125
+          ],
+          "is_airborne": true,
+          "patch_version": "14165"
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "place": "BombsiteB",
+      "live_observations": 304,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 294,
+        "airborne": 6,
+        "grounded_unlocalized": 4
+      },
+      "z_min": -55.96875,
+      "z_max": 116.88436889648438,
+      "current_entity_name_present": true,
+      "literal_role_candidate": "site_b",
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:15:CT",
+          "second": 12,
+          "tick": 130394,
+          "position": [
+            -959.94580078125,
+            664.9139404296875,
+            116.88436889648438
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:10:CT",
+          "second": 10,
+          "tick": 77240,
+          "position": [
+            -931.5224609375,
+            859.228271484375,
+            35.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:11:CT",
+          "second": 10,
+          "tick": 84442,
+          "position": [
+            -1135.8966064453125,
+            451.99066162109375,
+            1.0312480926513672
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "place": "Bricks",
+      "live_observations": 2,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 2
+      },
+      "z_min": 35.031246185302734,
+      "z_max": 35.03125,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:2:CT",
+          "second": 12,
+          "tick": 10229,
+          "position": [
+            -887.179443359375,
+            1071.2437744140625,
+            35.031246185302734
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "e6bdd552f9336cd03a42f758d3849277461095bd3d019cd22c6608af8f2e3dc1:11:CT",
+          "second": 18,
+          "tick": 105623,
+          "position": [
+            -888.6593627929688,
+            998.1538696289062,
+            35.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "place": "Bridge",
+      "live_observations": 5,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 5
+      },
+      "z_min": 0.25269198417663574,
+      "z_max": 0.3329908847808838,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:9:CT",
+          "second": 12,
+          "tick": 66969,
+          "position": [
+            -42.7198486328125,
+            582.7678833007812,
+            0.26654529571533203
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "e6bdd552f9336cd03a42f758d3849277461095bd3d019cd22c6608af8f2e3dc1:15:CT",
+          "second": 15,
+          "tick": 152599,
+          "position": [
+            -139.15875244140625,
+            389.4521484375,
+            0.26654529571533203
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "place": "Canal",
+      "live_observations": 18,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 17,
+        "airborne": 1
+      },
+      "z_min": -188.83367919921875,
+      "z_max": -93.96875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:13:CT",
+          "second": 12,
+          "tick": 116704,
+          "position": [
+            237.1552276611328,
+            361.9374084472656,
+            -141.5
+          ],
+          "is_airborne": true,
+          "patch_version": "14165"
+        },
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:6:CT",
+          "second": 10,
+          "tick": 41096,
+          "position": [
+            319.9288330078125,
+            361.9555969238281,
+            -151.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "e6bdd552f9336cd03a42f758d3849277461095bd3d019cd22c6608af8f2e3dc1:11:CT",
+          "second": 18,
+          "tick": 105623,
+          "position": [
+            -437.93634033203125,
+            145.03298950195312,
+            -119.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "place": "Connector",
+      "live_observations": 88,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 84,
+        "airborne": 4
+      },
+      "z_min": -96.8662109375,
+      "z_max": -5.734375,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:10:CT",
+          "second": 12,
+          "tick": 77368,
+          "position": [
+            -787.0955200195312,
+            261.20672607421875,
+            -55.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:12:CT",
+          "second": 12,
+          "tick": 93123,
+          "position": [
+            -788.6497192382812,
+            267.0373229980469,
+            -55.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:13:CT",
+          "second": 10,
+          "tick": 116576,
+          "position": [
+            -776.5816650390625,
+            269.6500244140625,
+            -55.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "place": "Fountain",
+      "live_observations": 41,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 37,
+        "airborne": 4
+      },
+      "z_min": -151.96875,
+      "z_max": -51.671875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:12:CT",
+          "second": 12,
+          "tick": 93123,
+          "position": [
+            1580.45263671875,
+            1643.34716796875,
+            -151.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:13:CT",
+          "second": 12,
+          "tick": 116704,
+          "position": [
+            1597.9473876953125,
+            1853.9019775390625,
+            -73.15625
+          ],
+          "is_airborne": true,
+          "patch_version": "14165"
+        },
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:16:CT",
+          "second": 20,
+          "tick": 138600,
+          "position": [
+            1586.0909423828125,
+            1680.8406982421875,
+            -143.4019775390625
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "place": "Heaven",
+      "live_observations": 4,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 4
+      },
+      "z_min": -39.96875,
+      "z_max": -38.84136962890625,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "e6bdd552f9336cd03a42f758d3849277461095bd3d019cd22c6608af8f2e3dc1:10:CT",
+          "second": 20,
+          "tick": 96663,
+          "position": [
+            799.9385375976562,
+            1810.4708251953125,
+            -39.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "e6bdd552f9336cd03a42f758d3849277461095bd3d019cd22c6608af8f2e3dc1:18:CT",
+          "second": 18,
+          "tick": 182007,
+          "position": [
+            839.9178466796875,
+            2042.2069091796875,
+            -39.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "e6bdd552f9336cd03a42f758d3849277461095bd3d019cd22c6608af8f2e3dc1:2:CT",
+          "second": 20,
+          "tick": 26463,
+          "position": [
+            718.3662109375,
+            1924.7388916015625,
+            -38.84136962890625
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "place": "Main",
+      "live_observations": 84,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 79,
+        "airborne": 5
+      },
+      "z_min": -151.96875,
+      "z_max": -81.21875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:10:CT",
+          "second": 12,
+          "tick": 77368,
+          "position": [
+            1619.7242431640625,
+            1408.3173828125,
+            -99.203125
+          ],
+          "is_airborne": true,
+          "patch_version": "14165"
+        },
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:11:CT",
+          "second": 12,
+          "tick": 84570,
+          "position": [
+            1617.159423828125,
+            1273.7774658203125,
+            -149.41448974609375
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:12:CT",
+          "second": 20,
+          "tick": 93635,
+          "position": [
+            1596.910400390625,
+            1593.2275390625,
+            -151.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "place": "MidDoors",
+      "live_observations": 42,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 42
+      },
+      "z_min": -31.96875,
+      "z_max": 2.03125,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:10:CT",
+          "second": 15,
+          "tick": 77560,
+          "position": [
+            221.89974975585938,
+            645.3082275390625,
+            -31.77203369140625
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:12:CT",
+          "second": 10,
+          "tick": 92995,
+          "position": [
+            250.40945434570312,
+            467.3415222167969,
+            -29.171875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:13:CT",
+          "second": 10,
+          "tick": 116576,
+          "position": [
+            182.76406860351562,
+            428.74249267578125,
+            -25.94964599609375
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "place": "Middle",
+      "live_observations": 185,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 176,
+        "airborne": 9
+      },
+      "z_min": -87.96875,
+      "z_max": 52.03125,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:10:CT",
+          "second": 10,
+          "tick": 77240,
+          "position": [
+            291.3740234375,
+            756.3677978515625,
+            -28.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:12:CT",
+          "second": 10,
+          "tick": 92995,
+          "position": [
+            246.90283203125,
+            1207.7784423828125,
+            -31.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:13:CT",
+          "second": 10,
+          "tick": 116576,
+          "position": [
+            41.691497802734375,
+            841.779296875,
+            25.046875
+          ],
+          "is_airborne": true,
+          "patch_version": "14165"
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "place": "OutsideLong",
+      "live_observations": 12,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 12
+      },
+      "z_min": 0.03125,
+      "z_max": 32.03125,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:17:CT",
+          "second": 10,
+          "tick": 149753,
+          "position": [
+            -1649.929443359375,
+            198.06494140625,
+            0.9097380638122559
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "e6bdd552f9336cd03a42f758d3849277461095bd3d019cd22c6608af8f2e3dc1:18:CT",
+          "second": 12,
+          "tick": 181623,
+          "position": [
+            -1646.4591064453125,
+            363.2951965332031,
+            0.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "place": "PalaceInterior",
+      "live_observations": 25,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 20,
+        "airborne": 5
+      },
+      "z_min": -21.8988037109375,
+      "z_max": 147.78125,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:14:CT",
+          "second": 10,
+          "tick": 123110,
+          "position": [
+            -844.4133911132812,
+            1118.518798828125,
+            36.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:20:CT",
+          "second": 10,
+          "tick": 176066,
+          "position": [
+            -357.990478515625,
+            1203.0450439453125,
+            113.8125
+          ],
+          "is_airborne": true,
+          "patch_version": "14165"
+        },
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:21:CT",
+          "second": 10,
+          "tick": 189843,
+          "position": [
+            -237.15142822265625,
+            1384.50244140625,
+            59.93138122558594
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "place": "SnipersNest",
+      "live_observations": 5,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 5
+      },
+      "z_min": 48.03125,
+      "z_max": 48.03125,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:14:CT",
+          "second": 10,
+          "tick": 123110,
+          "position": [
+            -1143.8255615234375,
+            1762.219482421875,
+            48.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "place": "Walkway",
+      "live_observations": 46,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 44,
+        "airborne": 2
+      },
+      "z_min": -87.96875,
+      "z_max": -9.0,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:10:CT",
+          "second": 10,
+          "tick": 77240,
+          "position": [
+            892.0299072265625,
+            1687.9710693359375,
+            -59.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:11:CT",
+          "second": 10,
+          "tick": 84442,
+          "position": [
+            733.9124145507812,
+            1342.5657958984375,
+            -87.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:17:CT",
+          "second": 10,
+          "tick": 149753,
+          "position": [
+            517.603515625,
+            1279.2735595703125,
+            -33.0068359375
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "place": "ARamp",
+      "live_observations": 23,
+      "ground_navigation_counts": {
+        "airborne": 1,
+        "visual_ray_clear_candidate": 22
+      },
+      "z_min": 20.058841705322266,
+      "z_max": 119.109375,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:20:CT",
+          "second": 15,
+          "tick": 167061,
+          "position": [
+            1326.478759765625,
+            2641.9833984375,
+            119.109375
+          ],
+          "is_airborne": true,
+          "patch_version": "14174"
+        },
+        {
+          "id": "5ab8223140fbf38ebbd28a1b6c903a44ba4588de40beec79c6c08f78342000f1:14:CT",
+          "second": 15,
+          "tick": 124207,
+          "position": [
+            1330.6695556640625,
+            2572.637451171875,
+            84.04203033447266
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "5ab8223140fbf38ebbd28a1b6c903a44ba4588de40beec79c6c08f78342000f1:15:CT",
+          "second": 15,
+          "tick": 130764,
+          "position": [
+            1383.5555419921875,
+            2425.966796875,
+            35.96245574951172
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "place": "BDoors",
+      "live_observations": 123,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 111,
+        "airborne": 12
+      },
+      "z_min": -108.7198486328125,
+      "z_max": 157.65625,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:15:CT",
+          "second": 15,
+          "tick": 125318,
+          "position": [
+            -924.5104370117188,
+            2487.4013671875,
+            -24.8746337890625
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:17:CT",
+          "second": 10,
+          "tick": 139149,
+          "position": [
+            -1020.62646484375,
+            2386.171630859375,
+            -19.32281494140625
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:18:CT",
+          "second": 10,
+          "tick": 150538,
+          "position": [
+            -1209.063232421875,
+            2671.15869140625,
+            120.625
+          ],
+          "is_airborne": true,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "place": "BombsiteA",
+      "live_observations": 8,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 7,
+        "airborne": 1
+      },
+      "z_min": 95.64801025390625,
+      "z_max": 149.25,
+      "current_entity_name_present": true,
+      "literal_role_candidate": "site_a",
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:20:CT",
+          "second": 12,
+          "tick": 166869,
+          "position": [
+            806.4451904296875,
+            2420.49365234375,
+            138.28125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:23:CT",
+          "second": 18,
+          "tick": 200040,
+          "position": [
+            1144.603271484375,
+            2591.54150390625,
+            96.48656463623047
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "5ab8223140fbf38ebbd28a1b6c903a44ba4588de40beec79c6c08f78342000f1:15:CT",
+          "second": 18,
+          "tick": 130956,
+          "position": [
+            1135.566162109375,
+            2541.49169921875,
+            95.64801025390625
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "place": "BombsiteB",
+      "live_observations": 480,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 443,
+        "airborne": 37
+      },
+      "z_min": -6.8382568359375,
+      "z_max": 186.328125,
+      "current_entity_name_present": true,
+      "literal_role_candidate": "site_b",
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:10:CT",
+          "second": 12,
+          "tick": 79985,
+          "position": [
+            -1619.182861328125,
+            2853.66943359375,
+            12.699344635009766
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:11:CT",
+          "second": 10,
+          "tick": 87762,
+          "position": [
+            -1612.4188232421875,
+            2209.607666015625,
+            -3.0224609375
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:12:CT",
+          "second": 10,
+          "tick": 95113,
+          "position": [
+            -1501.3157958984375,
+            2594.589111328125,
+            186.328125
+          ],
+          "is_airborne": true,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "place": "CTSpawn",
+      "live_observations": 78,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 62,
+        "airborne": 2,
+        "grounded_unlocalized": 14
+      },
+      "z_min": -129.430419921875,
+      "z_max": -49.88897705078125,
+      "current_entity_name_present": true,
+      "literal_role_candidate": "ct_spawn",
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:18:CT",
+          "second": 10,
+          "tick": 150538,
+          "position": [
+            -64.95770263671875,
+            2010.05908203125,
+            -49.88897705078125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "5ab8223140fbf38ebbd28a1b6c903a44ba4588de40beec79c6c08f78342000f1:13:CT",
+          "second": 10,
+          "tick": 118237,
+          "position": [
+            -64.96435546875,
+            2010.049072265625,
+            -49.88897705078125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "8fc1bae5b52a7580b89053f3896cb3bd77b39e89e073787fe002bb4b552934f9:15:CT",
+          "second": 20,
+          "tick": 126600,
+          "position": [
+            -221.2276611328125,
+            2206.966064453125,
+            -53.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "place": "Catwalk",
+      "live_observations": 67,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 66,
+        "airborne": 1
+      },
+      "z_min": -0.47607421875,
+      "z_max": 57.671875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:11:CT",
+          "second": 10,
+          "tick": 87762,
+          "position": [
+            94.13646697998047,
+            1510.42333984375,
+            1.0682878494262695
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:12:CT",
+          "second": 10,
+          "tick": 95113,
+          "position": [
+            27.27417755126953,
+            1519.796875,
+            0.5482664108276367
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:1:CT",
+          "second": 10,
+          "tick": 12401,
+          "position": [
+            -110.79400634765625,
+            1581.52001953125,
+            2.22210693359375
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "place": "ExtendedA",
+      "live_observations": 59,
+      "ground_navigation_counts": {
+        "airborne": 17,
+        "visual_ray_clear_candidate": 42
+      },
+      "z_min": 95.93064880371094,
+      "z_max": 165.828125,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:15:CT",
+          "second": 12,
+          "tick": 125126,
+          "position": [
+            517.9190063476562,
+            2173.886474609375,
+            127.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:1:CT",
+          "second": 20,
+          "tick": 13041,
+          "position": [
+            449.2283020019531,
+            1986.39697265625,
+            158.25
+          ],
+          "is_airborne": true,
+          "patch_version": "14174"
+        },
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:20:CT",
+          "second": 10,
+          "tick": 166741,
+          "position": [
+            454.7759094238281,
+            2231.6455078125,
+            95.93064880371094
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "place": "Hole",
+      "live_observations": 37,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 37
+      },
+      "z_min": 117.48234558105469,
+      "z_max": 130.03125,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:10:CT",
+          "second": 10,
+          "tick": 79857,
+          "position": [
+            -1365.6015625,
+            2684.855224609375,
+            130.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:11:CT",
+          "second": 10,
+          "tick": 87762,
+          "position": [
+            -1348.959228515625,
+            2683.151611328125,
+            130.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:15:CT",
+          "second": 18,
+          "tick": 125510,
+          "position": [
+            -1248.8878173828125,
+            2664.18798828125,
+            124.76399993896484
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "place": "LongA",
+      "live_observations": 458,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 434,
+        "airborne": 24
+      },
+      "z_min": -13.4384765625,
+      "z_max": 60.41199493408203,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:10:CT",
+          "second": 10,
+          "tick": 79857,
+          "position": [
+            1254.13916015625,
+            1279.9893798828125,
+            1.0837631225585938
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:11:CT",
+          "second": 10,
+          "tick": 87762,
+          "position": [
+            1516.5799560546875,
+            1453.557373046875,
+            -3.13433837890625
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:15:CT",
+          "second": 10,
+          "tick": 124998,
+          "position": [
+            1275.673583984375,
+            1233.4100341796875,
+            0.5030910968780518
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "place": "LongDoors",
+      "live_observations": 104,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 98,
+        "airborne": 6
+      },
+      "z_min": -2.74725341796875,
+      "z_max": 142.84375,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:10:CT",
+          "second": 18,
+          "tick": 80369,
+          "position": [
+            1136.756591796875,
+            713.7984619140625,
+            7.2024245262146
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:12:CT",
+          "second": 10,
+          "tick": 95113,
+          "position": [
+            1092.9197998046875,
+            1006.8201293945312,
+            -2.2767333984375
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:15:CT",
+          "second": 15,
+          "tick": 125318,
+          "position": [
+            1187.481689453125,
+            1195.939453125,
+            0.444793701171875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "place": "LowerTunnel",
+      "live_observations": 14,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 14
+      },
+      "z_min": -112.561767578125,
+      "z_max": -109.0430908203125,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:10:CT",
+          "second": 10,
+          "tick": 79857,
+          "position": [
+            -763.96875,
+            1334.041015625,
+            -111.67877197265625
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "5ab8223140fbf38ebbd28a1b6c903a44ba4588de40beec79c6c08f78342000f1:1:CT",
+          "second": 15,
+          "tick": 2235,
+          "position": [
+            -638.6555786132812,
+            1484.764892578125,
+            -111.62841796875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "f3079a77e5b6b276bc792740c5d43513070723af4976315ca3888e428cc69eb4:16:CT",
+          "second": 20,
+          "tick": 121222,
+          "position": [
+            -656.2422485351562,
+            1492.6400146484375,
+            -111.0926513671875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "place": "MidDoors",
+      "live_observations": 276,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 271,
+        "airborne": 5
+      },
+      "z_min": -128.05145263671875,
+      "z_max": -27.921875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:10:CT",
+          "second": 10,
+          "tick": 79857,
+          "position": [
+            -409.32861328125,
+            1692.4921875,
+            -126.45123291015625
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:11:CT",
+          "second": 10,
+          "tick": 87762,
+          "position": [
+            -670.7776489257812,
+            2548.90478515625,
+            -81.02880859375
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:15:CT",
+          "second": 10,
+          "tick": 124998,
+          "position": [
+            -610.3159790039062,
+            2361.4345703125,
+            -107.42572021484375
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "place": "Middle",
+      "live_observations": 21,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 19,
+        "airborne": 2
+      },
+      "z_min": -125.94830322265625,
+      "z_max": -28.87164306640625,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:13:CT",
+          "second": 10,
+          "tick": 114894,
+          "position": [
+            -324.59259033203125,
+            1049.4058837890625,
+            -58.31927490234375
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:17:CT",
+          "second": 10,
+          "tick": 139149,
+          "position": [
+            -349.9853515625,
+            1076.1082763671875,
+            -70.23565673828125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "5ab8223140fbf38ebbd28a1b6c903a44ba4588de40beec79c6c08f78342000f1:1:CT",
+          "second": 10,
+          "tick": 1915,
+          "position": [
+            -519.9942016601562,
+            1015.6406860351562,
+            -52.61700439453125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "place": "Pit",
+      "live_observations": 8,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 8
+      },
+      "z_min": -58.647216796875,
+      "z_max": -7.60906982421875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:21:CT",
+          "second": 15,
+          "tick": 176332,
+          "position": [
+            1315.744384765625,
+            748.3952026367188,
+            -10.0247802734375
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:22:CT",
+          "second": 15,
+          "tick": 188170,
+          "position": [
+            1384.32177734375,
+            618.8594970703125,
+            -58.647216796875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:6:CT",
+          "second": 15,
+          "tick": 48731,
+          "position": [
+            1433.2581787109375,
+            737.4293823242188,
+            -21.8226318359375
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "place": "ShortStairs",
+      "live_observations": 157,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 137,
+        "airborne": 12,
+        "grounded_unlocalized": 8
+      },
+      "z_min": 0.037288665771484375,
+      "z_max": 155.796875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "5ab8223140fbf38ebbd28a1b6c903a44ba4588de40beec79c6c08f78342000f1:10:CT",
+          "second": 12,
+          "tick": 86982,
+          "position": [
+            273.26434326171875,
+            1543.0430908203125,
+            74.72379302978516
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "5ab8223140fbf38ebbd28a1b6c903a44ba4588de40beec79c6c08f78342000f1:5:CT",
+          "second": 18,
+          "tick": 37159,
+          "position": [
+            265.2561950683594,
+            1348.0465087890625,
+            72.35823059082031
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "8fc1bae5b52a7580b89053f3896cb3bd77b39e89e073787fe002bb4b552934f9:20:CT",
+          "second": 10,
+          "tick": 163071,
+          "position": [
+            273.06304931640625,
+            1536.4981689453125,
+            74.67237854003906
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "place": "Side",
+      "live_observations": 3,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 3
+      },
+      "z_min": 25.915245056152344,
+      "z_max": 56.03125,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:7:CT",
+          "second": 15,
+          "tick": 59270,
+          "position": [
+            1706.9583740234375,
+            692.110107421875,
+            56.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "place": "TopofMid",
+      "live_observations": 8,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 8
+      },
+      "z_min": -0.43695068359375,
+      "z_max": 9.03125,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:13:CT",
+          "second": 10,
+          "tick": 114894,
+          "position": [
+            -548.7324829101562,
+            589.3116455078125,
+            7.982090950012207
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "8fc1bae5b52a7580b89053f3896cb3bd77b39e89e073787fe002bb4b552934f9:13:CT",
+          "second": 10,
+          "tick": 113085,
+          "position": [
+            -503.1934814453125,
+            661.2606201171875,
+            9.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "place": "UnderA",
+      "live_observations": 125,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 96,
+        "airborne": 29
+      },
+      "z_min": -107.6246337890625,
+      "z_max": 127.21875762939453,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:12:CT",
+          "second": 15,
+          "tick": 95433,
+          "position": [
+            612.6369018554688,
+            2220.78662109375,
+            27.03125
+          ],
+          "is_airborne": true,
+          "patch_version": "14174"
+        },
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:15:CT",
+          "second": 15,
+          "tick": 125318,
+          "position": [
+            675.1417236328125,
+            2262.115478515625,
+            -70.3173828125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:19:CT",
+          "second": 15,
+          "tick": 157616,
+          "position": [
+            917.9461059570312,
+            2119.46875,
+            -16.61676025390625
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "place": "UpperTunnel",
+      "live_observations": 13,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 13
+      },
+      "z_min": 31.555904388427734,
+      "z_max": 34.01798629760742,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:12:CT",
+          "second": 20,
+          "tick": 95753,
+          "position": [
+            -2021.5540771484375,
+            1646.18359375,
+            32.68571853637695
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:5:CT",
+          "second": 18,
+          "tick": 40017,
+          "position": [
+            -2015.0269775390625,
+            1565.5396728515625,
+            32.81236267089844
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "5ab8223140fbf38ebbd28a1b6c903a44ba4588de40beec79c6c08f78342000f1:1:CT",
+          "second": 15,
+          "tick": 2235,
+          "position": [
+            -1968.0828857421875,
+            1619.385009765625,
+            32.27967071533203
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "place": "Apartments",
+      "live_observations": 255,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 251,
+        "airborne": 4
+      },
+      "z_min": 128.03125,
+      "z_max": 315.0625,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:10:CT",
+          "second": 15,
+          "tick": 94233,
+          "position": [
+            1893.79541015625,
+            -232.0008544921875,
+            261.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:11:CT",
+          "second": 15,
+          "tick": 101817,
+          "position": [
+            1856.1402587890625,
+            -262.17816162109375,
+            261.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:12:CT",
+          "second": 15,
+          "tick": 112492,
+          "position": [
+            1321.2430419921875,
+            305.1804504394531,
+            128.4630584716797
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "place": "Arch",
+      "live_observations": 220,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 206,
+        "airborne": 14
+      },
+      "z_min": 156.31878662109375,
+      "z_max": 230.46875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:11:CT",
+          "second": 15,
+          "tick": 101817,
+          "position": [
+            1696.0013427734375,
+            1052.88232421875,
+            156.7315216064453
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:12:CT",
+          "second": 15,
+          "tick": 112492,
+          "position": [
+            1607.543212890625,
+            1225.3199462890625,
+            177.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:13:CT",
+          "second": 10,
+          "tick": 132834,
+          "position": [
+            1778.068115234375,
+            1246.5206298828125,
+            169.53125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "place": "Balcony",
+      "live_observations": 63,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 42,
+        "airborne": 21
+      },
+      "z_min": 100.734375,
+      "z_max": 310.5625,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:10:CT",
+          "second": 12,
+          "tick": 94041,
+          "position": [
+            1999.6331787109375,
+            -158.5863037109375,
+            278.71875
+          ],
+          "is_airborne": true,
+          "patch_version": "14174"
+        },
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:14:CT",
+          "second": 18,
+          "tick": 140690,
+          "position": [
+            2072.32421875,
+            -233.1800537109375,
+            303.921875
+          ],
+          "is_airborne": true,
+          "patch_version": "14174"
+        },
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:15:CT",
+          "second": 12,
+          "tick": 149956,
+          "position": [
+            1947.6376953125,
+            -187.067626953125,
+            260.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "place": "Banana",
+      "live_observations": 536,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 492,
+        "airborne": 44
+      },
+      "z_min": 104.03123474121094,
+      "z_max": 245.53125,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:10:CT",
+          "second": 10,
+          "tick": 93913,
+          "position": [
+            758.9064331054688,
+            2188.4375,
+            136.0312957763672
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:11:CT",
+          "second": 10,
+          "tick": 101497,
+          "position": [
+            711.3058471679688,
+            2144.38671875,
+            136.03131103515625
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:12:CT",
+          "second": 10,
+          "tick": 112172,
+          "position": [
+            702.1746215820312,
+            2209.604248046875,
+            136.0312957763672
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "place": "BombsiteA",
+      "live_observations": 499,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 391,
+        "airborne": 108
+      },
+      "z_min": 109.16150665283203,
+      "z_max": 331.5,
+      "current_entity_name_present": true,
+      "literal_role_candidate": "site_a",
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:10:CT",
+          "second": 10,
+          "tick": 93913,
+          "position": [
+            1991.64599609375,
+            6.788077354431152,
+            174.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:11:CT",
+          "second": 10,
+          "tick": 101497,
+          "position": [
+            1982.0723876953125,
+            -11.78485107421875,
+            193.296875
+          ],
+          "is_airborne": true,
+          "patch_version": "14174"
+        },
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:12:CT",
+          "second": 10,
+          "tick": 112172,
+          "position": [
+            1698.6639404296875,
+            86.82933807373047,
+            131.00790405273438
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "place": "BombsiteB",
+      "live_observations": 746,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 684,
+        "airborne": 62
+      },
+      "z_min": 126.14629364013672,
+      "z_max": 295.140625,
+      "current_entity_name_present": true,
+      "literal_role_candidate": "site_b",
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:10:CT",
+          "second": 10,
+          "tick": 93913,
+          "position": [
+            916.3342895507812,
+            2714.177490234375,
+            134.4723358154297
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:11:CT",
+          "second": 10,
+          "tick": 101497,
+          "position": [
+            850.8458251953125,
+            2565.41357421875,
+            140.0843048095703
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:12:CT",
+          "second": 10,
+          "tick": 112172,
+          "position": [
+            952.2256469726562,
+            2777.333251953125,
+            133.13320922851562
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "place": "CTSpawn",
+      "live_observations": 112,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 96,
+        "airborne": 16
+      },
+      "z_min": 124.03180694580078,
+      "z_max": 236.65625,
+      "current_entity_name_present": true,
+      "literal_role_candidate": "ct_spawn",
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:10:CT",
+          "second": 10,
+          "tick": 93913,
+          "position": [
+            1644.26611328125,
+            2752.938232421875,
+            124.03197479248047
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:11:CT",
+          "second": 10,
+          "tick": 101497,
+          "position": [
+            1924.63037109375,
+            2675.017578125,
+            124.03184509277344
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:12:CT",
+          "second": 10,
+          "tick": 112172,
+          "position": [
+            1663.48974609375,
+            2684.3759765625,
+            213.9375
+          ],
+          "is_airborne": true,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "place": "Library",
+      "live_observations": 24,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 21,
+        "airborne": 3
+      },
+      "z_min": 157.6285400390625,
+      "z_max": 200.890625,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:12:CT",
+          "second": 20,
+          "tick": 112812,
+          "position": [
+            2524.9580078125,
+            1289.955078125,
+            200.890625
+          ],
+          "is_airborne": true,
+          "patch_version": "14174"
+        },
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:7:CT",
+          "second": 18,
+          "tick": 58839,
+          "position": [
+            2551.977294921875,
+            1311.1038818359375,
+            160.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "64898b61aa7300084268d8f57c4d7f5436d1fa902c4b18ea19e9f13979c1d809:10:CT",
+          "second": 18,
+          "tick": 84383,
+          "position": [
+            2476.654296875,
+            1429.1162109375,
+            194.609375
+          ],
+          "is_airborne": true,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "place": "Middle",
+      "live_observations": 21,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 21
+      },
+      "z_min": 96.03124237060547,
+      "z_max": 124.50540161132812,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:17:CT",
+          "second": 10,
+          "tick": 171797,
+          "position": [
+            1246.850830078125,
+            569.8013305664062,
+            120.22230529785156
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "374b2f600880e2f8b0437314924b3745c2b0d32e63d53abbedd8bfd52ab8b0b8:21:CT",
+          "second": 10,
+          "tick": 195338,
+          "position": [
+            1291.41357421875,
+            554.1644897460938,
+            120.71232604980469
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "64898b61aa7300084268d8f57c4d7f5436d1fa902c4b18ea19e9f13979c1d809:15:CT",
+          "second": 10,
+          "tick": 134182,
+          "position": [
+            1284.11572265625,
+            564.83154296875,
+            121.89051818847656
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "place": "Pit",
+      "live_observations": 18,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 17,
+        "airborne": 1
+      },
+      "z_min": 92.96925354003906,
+      "z_max": 159.03125,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:20:CT",
+          "second": 10,
+          "tick": 203619,
+          "position": [
+            2462.695556640625,
+            -47.66748046875,
+            141.390625
+          ],
+          "is_airborne": true,
+          "patch_version": "14174"
+        },
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:3:CT",
+          "second": 20,
+          "tick": 20212,
+          "position": [
+            2486.935302734375,
+            -216.084716796875,
+            102.03125762939453
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:9:CT",
+          "second": 18,
+          "tick": 80717,
+          "position": [
+            2353.99462890625,
+            -253.14324951171875,
+            94.5999526977539
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "place": "Quad",
+      "live_observations": 18,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 18
+      },
+      "z_min": 132.03125,
+      "z_max": 142.03125,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "374b2f600880e2f8b0437314924b3745c2b0d32e63d53abbedd8bfd52ab8b0b8:4:CT",
+          "second": 18,
+          "tick": 33653,
+          "position": [
+            1549.47509765625,
+            -84.6748046875,
+            142.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "374b2f600880e2f8b0437314924b3745c2b0d32e63d53abbedd8bfd52ab8b0b8:5:CT",
+          "second": 12,
+          "tick": 40234,
+          "position": [
+            1493.3653564453125,
+            -40.03497314453125,
+            132.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "64898b61aa7300084268d8f57c4d7f5436d1fa902c4b18ea19e9f13979c1d809:1:CT",
+          "second": 12,
+          "tick": 2044,
+          "position": [
+            1491.733642578125,
+            -73.45465087890625,
+            132.03125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "place": "Ruins",
+      "live_observations": 96,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 90,
+        "airborne": 6
+      },
+      "z_min": 124.03157806396484,
+      "z_max": 196.203125,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:11:CT",
+          "second": 12,
+          "tick": 101625,
+          "position": [
+            1453.504150390625,
+            2784.507080078125,
+            124.03182220458984
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:14:CT",
+          "second": 20,
+          "tick": 140818,
+          "position": [
+            1125.84765625,
+            2759.1787109375,
+            125.62360382080078
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:15:CT",
+          "second": 10,
+          "tick": 149828,
+          "position": [
+            1363.80908203125,
+            2859.690185546875,
+            128.69546508789062
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "place": "TopofMid",
+      "live_observations": 288,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 264,
+        "airborne": 24
+      },
+      "z_min": 117.7838363647461,
+      "z_max": 199.28125,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:10:CT",
+          "second": 12,
+          "tick": 94041,
+          "position": [
+            1398.65673828125,
+            201.96102905273438,
+            130.4626922607422
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:11:CT",
+          "second": 10,
+          "tick": 101497,
+          "position": [
+            1512.96875,
+            717.9618530273438,
+            185.84375
+          ],
+          "is_airborne": true,
+          "patch_version": "14174"
+        },
+        {
+          "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:12:CT",
+          "second": 10,
+          "tick": 112172,
+          "position": [
+            1364.8558349609375,
+            586.6402587890625,
+            120.24971008300781
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "place": "Apartments",
+      "live_observations": 40,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 37,
+        "airborne": 3
+      },
+      "z_min": -79.96875,
+      "z_max": -7.96875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:17:CT",
+          "second": 15,
+          "tick": 142654,
+          "position": [
+            -1666.108642578125,
+            698.4893188476562,
+            -47.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:18:CT",
+          "second": 15,
+          "tick": 146819,
+          "position": [
+            -1979.4658203125,
+            668.2943115234375,
+            -43.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:1:CT",
+          "second": 15,
+          "tick": 2234,
+          "position": [
+            -2002.160400390625,
+            849.9370727539062,
+            -12.65625
+          ],
+          "is_airborne": true,
+          "patch_version": "14165"
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "place": "BombsiteA",
+      "live_observations": 409,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 397,
+        "airborne": 12
+      },
+      "z_min": -179.96875,
+      "z_max": -62.0904541015625,
+      "current_entity_name_present": true,
+      "literal_role_candidate": "site_a",
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:10:CT",
+          "second": 10,
+          "tick": 66928,
+          "position": [
+            -269.80560302734375,
+            -2191.186279296875,
+            -170.3433837890625
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:11:CT",
+          "second": 10,
+          "tick": 74059,
+          "position": [
+            -770.7433471679688,
+            -2211.97412109375,
+            -179.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:12:CT",
+          "second": 10,
+          "tick": 82411,
+          "position": [
+            -79.74493408203125,
+            -1854.14990234375,
+            -167.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "place": "BombsiteB",
+      "live_observations": 327,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 300,
+        "airborne": 27
+      },
+      "z_min": -171.2823486328125,
+      "z_max": -72.296875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": "site_b",
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:10:CT",
+          "second": 10,
+          "tick": 66928,
+          "position": [
+            -2060.053955078125,
+            226.807861328125,
+            -159.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:11:CT",
+          "second": 10,
+          "tick": 74059,
+          "position": [
+            -1553.01171875,
+            129.78302001953125,
+            -167.9766845703125
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:12:CT",
+          "second": 12,
+          "tick": 82539,
+          "position": [
+            -1983.24853515625,
+            -142.2403564453125,
+            -165.71875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "place": "CTSpawn",
+      "live_observations": 170,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 158,
+        "airborne": 12
+      },
+      "z_min": -264.5079345703125,
+      "z_max": -97.96875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": "ct_spawn",
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:10:CT",
+          "second": 15,
+          "tick": 67248,
+          "position": [
+            -1247.96875,
+            -856.0504150390625,
+            -129.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:11:CT",
+          "second": 18,
+          "tick": 74571,
+          "position": [
+            -1227.964111328125,
+            -856.0546875,
+            -129.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:12:CT",
+          "second": 10,
+          "tick": 82411,
+          "position": [
+            -900.86962890625,
+            -2329.22705078125,
+            -167.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "place": "Catwalk",
+      "live_observations": 110,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 103,
+        "airborne": 7
+      },
+      "z_min": -264.078125,
+      "z_max": -48.09375,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:10:CT",
+          "second": 18,
+          "tick": 67440,
+          "position": [
+            -899.909912109375,
+            -134.76171875,
+            -167.9832763671875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:11:CT",
+          "second": 12,
+          "tick": 74187,
+          "position": [
+            -1063.4808349609375,
+            154.63571166992188,
+            -172.084716796875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:13:CT",
+          "second": 15,
+          "tick": 107298,
+          "position": [
+            -1127.8404541015625,
+            150.22592163085938,
+            -171.6932373046875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "place": "Connector",
+      "live_observations": 85,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 78,
+        "airborne": 7
+      },
+      "z_min": -263.96875,
+      "z_max": -142.859375,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:12:CT",
+          "second": 10,
+          "tick": 82411,
+          "position": [
+            -608.552978515625,
+            -1018.6054077148438,
+            -163.484375
+          ],
+          "is_airborne": true,
+          "patch_version": "14165"
+        },
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:21:CT",
+          "second": 10,
+          "tick": 165630,
+          "position": [
+            -564.0435791015625,
+            -1154.1795654296875,
+            -167.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:2:CT",
+          "second": 15,
+          "tick": 6601,
+          "position": [
+            -617.1080322265625,
+            -958.300537109375,
+            -215.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "place": "Jungle",
+      "live_observations": 65,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 58,
+        "airborne": 7
+      },
+      "z_min": -175.3336181640625,
+      "z_max": -105.4375,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:12:CT",
+          "second": 15,
+          "tick": 82731,
+          "position": [
+            -918.5935668945312,
+            -1391.9302978515625,
+            -167.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:15:CT",
+          "second": 10,
+          "tick": 121955,
+          "position": [
+            -1096.8369140625,
+            -1527.952880859375,
+            -159.9927978515625
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:17:CT",
+          "second": 12,
+          "tick": 142462,
+          "position": [
+            -835.7454223632812,
+            -1368.0633544921875,
+            -167.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "place": "Ladder",
+      "live_observations": 26,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 22,
+        "grounded_unlocalized": 1,
+        "airborne": 3
+      },
+      "z_min": -167.96875,
+      "z_max": -31.96875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "e348879717172add00b80285c20f884f4e180aa8cffa5a7ae9990d0d1d20b9fd:6:CT",
+          "second": 12,
+          "tick": 61003,
+          "position": [
+            -976.03125,
+            -215.9393310546875,
+            -31.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:10:CT",
+          "second": 10,
+          "tick": 66928,
+          "position": [
+            -1070.6937255859375,
+            -127.043701171875,
+            -167.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:2:CT",
+          "second": 10,
+          "tick": 6281,
+          "position": [
+            -1152.8779296875,
+            -358.9324951171875,
+            -55.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "place": "Middle",
+      "live_observations": 56,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 52,
+        "airborne": 4
+      },
+      "z_min": -287.96875,
+      "z_max": -127.34375,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:15:CT",
+          "second": 10,
+          "tick": 121955,
+          "position": [
+            -953.7672119140625,
+            -596.08544921875,
+            -267.0555419921875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:19:CT",
+          "second": 10,
+          "tick": 150019,
+          "position": [
+            -1014.79443359375,
+            -507.146728515625,
+            -239.125
+          ],
+          "is_airborne": true,
+          "patch_version": "14165"
+        },
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:20:CT",
+          "second": 10,
+          "tick": 158154,
+          "position": [
+            -675.5169067382812,
+            -693.0922241210938,
+            -268.40911865234375
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "place": "PalaceInterior",
+      "live_observations": 44,
+      "ground_navigation_counts": {
+        "airborne": 7,
+        "visual_ray_clear_candidate": 37
+      },
+      "z_min": -175.96875,
+      "z_max": -23.875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:12:CT",
+          "second": 15,
+          "tick": 82731,
+          "position": [
+            210.91879272460938,
+            -1550.0289306640625,
+            -175.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:14:CT",
+          "second": 18,
+          "tick": 114220,
+          "position": [
+            180.38182067871094,
+            -1653.0372314453125,
+            -167.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:16:CT",
+          "second": 12,
+          "tick": 134527,
+          "position": [
+            146.82118225097656,
+            -2019.7760009765625,
+            -23.875
+          ],
+          "is_airborne": true,
+          "patch_version": "14165"
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "place": "Scaffolding",
+      "live_observations": 5,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 5
+      },
+      "z_min": -39.96875,
+      "z_max": -39.96875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:16:CT",
+          "second": 15,
+          "tick": 134719,
+          "position": [
+            22.13878059387207,
+            -2194.4326171875,
+            -39.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "1b8097794845b8994846d52d47db86faec78c838b345d3013c57e883ad230126:6:CT",
+          "second": 18,
+          "tick": 46245,
+          "position": [
+            -5.43804931640625,
+            -2006.664306640625,
+            -39.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "e348879717172add00b80285c20f884f4e180aa8cffa5a7ae9990d0d1d20b9fd:6:CT",
+          "second": 15,
+          "tick": 61195,
+          "position": [
+            31.2280330657959,
+            -2142.573974609375,
+            -39.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "place": "Shop",
+      "live_observations": 17,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 11,
+        "airborne": 6
+      },
+      "z_min": -167.96875,
+      "z_max": -107.03125,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:12:CT",
+          "second": 10,
+          "tick": 82411,
+          "position": [
+            -1868.2667236328125,
+            -519.8463745117188,
+            -167.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:14:CT",
+          "second": 10,
+          "tick": 113708,
+          "position": [
+            -1915.66796875,
+            -333.5999755859375,
+            -146.421875
+          ],
+          "is_airborne": true,
+          "patch_version": "14165"
+        },
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:15:CT",
+          "second": 15,
+          "tick": 122275,
+          "position": [
+            -1779.4962158203125,
+            -621.366455078125,
+            -167.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "place": "SnipersNest",
+      "live_observations": 208,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 200,
+        "airborne": 8
+      },
+      "z_min": -167.96875,
+      "z_max": -54.578125,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:10:CT",
+          "second": 10,
+          "tick": 66928,
+          "position": [
+            -1155.4329833984375,
+            -621.6731567382812,
+            -167.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:11:CT",
+          "second": 10,
+          "tick": 74059,
+          "position": [
+            -1241.1722412109375,
+            -666.7797241210938,
+            -167.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:12:CT",
+          "second": 10,
+          "tick": 82411,
+          "position": [
+            -1184.767333984375,
+            -556.425048828125,
+            -167.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "place": "Stairs",
+      "live_observations": 49,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 49
+      },
+      "z_min": -159.96875,
+      "z_max": -39.968505859375,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:13:CT",
+          "second": 12,
+          "tick": 107106,
+          "position": [
+            -496.15020751953125,
+            -1319.6385498046875,
+            -159.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:17:CT",
+          "second": 15,
+          "tick": 142654,
+          "position": [
+            -496.03778076171875,
+            -1309.03125,
+            -159.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:2:CT",
+          "second": 20,
+          "tick": 6921,
+          "position": [
+            -509.608154296875,
+            -1445.8662109375,
+            -72.0670166015625
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "place": "TRamp",
+      "live_observations": 1,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 1
+      },
+      "z_min": -224.728271484375,
+      "z_max": -224.728271484375,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:12:CT",
+          "second": 20,
+          "tick": 83051,
+          "position": [
+            425.5263977050781,
+            -1661.2333984375,
+            -224.728271484375
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "place": "TopofMid",
+      "live_observations": 2,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 2
+      },
+      "z_min": -180.555908203125,
+      "z_max": -163.46221923828125,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:15:CT",
+          "second": 20,
+          "tick": 122595,
+          "position": [
+            255.2577362060547,
+            -800.32958984375,
+            -163.46221923828125
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "e348879717172add00b80285c20f884f4e180aa8cffa5a7ae9990d0d1d20b9fd:12:CT",
+          "second": 20,
+          "tick": 104395,
+          "position": [
+            42.192665100097656,
+            -499.45166015625,
+            -180.555908203125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "place": "Truck",
+      "live_observations": 138,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 80,
+        "airborne": 58
+      },
+      "z_min": -147.1578369140625,
+      "z_max": -32.765625,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:10:CT",
+          "second": 12,
+          "tick": 67056,
+          "position": [
+            -2167.249755859375,
+            695.9825439453125,
+            -100.25
+          ],
+          "is_airborne": true,
+          "patch_version": "14165"
+        },
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:13:CT",
+          "second": 12,
+          "tick": 107106,
+          "position": [
+            -2194.696533203125,
+            680.6386108398438,
+            -122.765625
+          ],
+          "is_airborne": true,
+          "patch_version": "14165"
+        },
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:14:CT",
+          "second": 12,
+          "tick": 113836,
+          "position": [
+            -2143.081787109375,
+            831.9371948242188,
+            -87.546875
+          ],
+          "is_airborne": true,
+          "patch_version": "14165"
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "place": "Underpass",
+      "live_observations": 81,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 81
+      },
+      "z_min": -367.96875,
+      "z_max": -143.96875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:11:CT",
+          "second": 10,
+          "tick": 74059,
+          "position": [
+            -979.3414916992188,
+            -314.25494384765625,
+            -367.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:14:CT",
+          "second": 18,
+          "tick": 114220,
+          "position": [
+            -922.12451171875,
+            294.92364501953125,
+            -167.35577392578125
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        },
+        {
+          "id": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697:17:CT",
+          "second": 10,
+          "tick": 142334,
+          "position": [
+            -977.3665161132812,
+            23.593669891357422,
+            -367.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14165"
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "place": "Admin",
+      "live_observations": 48,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 48
+      },
+      "z_min": -415.96875,
+      "z_max": -415.319091796875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:13:CT",
+          "second": 10,
+          "tick": 101121,
+          "position": [
+            1214.937255859375,
+            6.1179890632629395,
+            -415.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:17:CT",
+          "second": 12,
+          "tick": 134342,
+          "position": [
+            1204.508056640625,
+            2.16896390914917,
+            -415.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:18:CT",
+          "second": 12,
+          "tick": 143302,
+          "position": [
+            1180.84326171875,
+            -77.705810546875,
+            -415.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "place": "BombsiteA",
+      "live_observations": 282,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 260,
+        "airborne": 22
+      },
+      "z_min": -457.515625,
+      "z_max": -240.421875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": "site_a",
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:10:CT",
+          "second": 10,
+          "tick": 75644,
+          "position": [
+            781.2395629882812,
+            -501.41009521484375,
+            -411.6964111328125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:11:CT",
+          "second": 10,
+          "tick": 82377,
+          "position": [
+            862.201904296875,
+            -443.10888671875,
+            -415.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:12:CT",
+          "second": 10,
+          "tick": 91337,
+          "position": [
+            781.1051635742188,
+            -499.08404541015625,
+            -412.2578125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "place": "BombsiteB",
+      "live_observations": 5,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 4,
+        "airborne": 1
+      },
+      "z_min": -639.96875,
+      "z_max": -576.421875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": "site_b",
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:15:CT",
+          "second": 15,
+          "tick": 131846,
+          "position": [
+            1042.9449462890625,
+            -551.4817504882812,
+            -576.421875
+          ],
+          "is_airborne": true,
+          "patch_version": "14174"
+        },
+        {
+          "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:3:CT",
+          "second": 20,
+          "tick": 24181,
+          "position": [
+            884.1693725585938,
+            -238.4215087890625,
+            -639.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:5:CT",
+          "second": 20,
+          "tick": 39492,
+          "position": [
+            889.6145629882812,
+            -258.9306640625,
+            -639.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "place": "Catwalk",
+      "live_observations": 21,
+      "ground_navigation_counts": {
+        "airborne": 2,
+        "visual_ray_clear_candidate": 19
+      },
+      "z_min": -239.96875,
+      "z_max": -72.5625,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:3:CT",
+          "second": 10,
+          "tick": 17847,
+          "position": [
+            1356.59716796875,
+            -410.953857421875,
+            -72.5625
+          ],
+          "is_airborne": true,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:5:CT",
+          "second": 18,
+          "tick": 35375,
+          "position": [
+            1322.6229248046875,
+            -401.63427734375,
+            -127.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:8:CT",
+          "second": 20,
+          "tick": 61467,
+          "position": [
+            1330.8802490234375,
+            -408.42669677734375,
+            -127.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "place": "Control",
+      "live_observations": 39,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 38,
+        "airborne": 1
+      },
+      "z_min": -415.96875,
+      "z_max": -395.84375,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:11:CT",
+          "second": 18,
+          "tick": 82889,
+          "position": [
+            128.4904327392578,
+            143.67718505859375,
+            -415.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:14:CT",
+          "second": 15,
+          "tick": 107675,
+          "position": [
+            123.34239196777344,
+            18.193973541259766,
+            -415.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:17:CT",
+          "second": 12,
+          "tick": 134342,
+          "position": [
+            152.20498657226562,
+            58.65089416503906,
+            -415.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "place": "Crane",
+      "live_observations": 36,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 36
+      },
+      "z_min": -127.96875,
+      "z_max": -127.96875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:16:CT",
+          "second": 10,
+          "tick": 125175,
+          "position": [
+            965.6332397460938,
+            -790.3025512695312,
+            -127.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:19:CT",
+          "second": 12,
+          "tick": 152183,
+          "position": [
+            991.4998779296875,
+            -945.9302368164062,
+            -127.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:20:CT",
+          "second": 12,
+          "tick": 158647,
+          "position": [
+            987.2377319335938,
+            -945.9412841796875,
+            -127.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "place": "Decon",
+      "live_observations": 1,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 1
+      },
+      "z_min": -775.96875,
+      "z_max": -775.96875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:16:CT",
+          "second": 20,
+          "tick": 125815,
+          "position": [
+            263.68206787109375,
+            -1371.116455078125,
+            -775.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "place": "Garage",
+      "live_observations": 35,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 35
+      },
+      "z_min": -415.96875,
+      "z_max": -415.96875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:2:CT",
+          "second": 10,
+          "tick": 9078,
+          "position": [
+            1711.5489501953125,
+            -1640.0506591796875,
+            -415.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:5:CT",
+          "second": 10,
+          "tick": 34863,
+          "position": [
+            1892.912841796875,
+            -1874.375732421875,
+            -415.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:18:CT",
+          "second": 10,
+          "tick": 153859,
+          "position": [
+            1933.8753662109375,
+            -1707.3876953125,
+            -415.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "place": "Heaven",
+      "live_observations": 54,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 47,
+        "airborne": 7
+      },
+      "z_min": -325.734375,
+      "z_max": -82.34375,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:14:CT",
+          "second": 15,
+          "tick": 107675,
+          "position": [
+            1045.348388671875,
+            -424.27801513671875,
+            -127.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:17:CT",
+          "second": 10,
+          "tick": 134214,
+          "position": [
+            1036.16943359375,
+            -454.3092041015625,
+            -127.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:18:CT",
+          "second": 10,
+          "tick": 143174,
+          "position": [
+            1051.2777099609375,
+            -459.4227294921875,
+            -127.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "place": "Hell",
+      "live_observations": 21,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 14,
+        "airborne": 7
+      },
+      "z_min": -415.96875,
+      "z_max": -249.640625,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:13:CT",
+          "second": 18,
+          "tick": 101633,
+          "position": [
+            1228.0526123046875,
+            -370.6397705078125,
+            -415.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:17:CT",
+          "second": 10,
+          "tick": 134214,
+          "position": [
+            1161.6866455078125,
+            -299.2894287109375,
+            -415.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:18:CT",
+          "second": 10,
+          "tick": 143174,
+          "position": [
+            1198.890869140625,
+            -517.6234741210938,
+            -415.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "place": "Hut",
+      "live_observations": 14,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 14
+      },
+      "z_min": -391.96875,
+      "z_max": -391.46875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:11:CT",
+          "second": 18,
+          "tick": 82889,
+          "position": [
+            411.40484619140625,
+            -929.7174072265625,
+            -391.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:17:CT",
+          "second": 18,
+          "tick": 134726,
+          "position": [
+            436.2448425292969,
+            -878.677490234375,
+            -391.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:18:CT",
+          "second": 18,
+          "tick": 143686,
+          "position": [
+            437.4523620605469,
+            -878.6874389648438,
+            -391.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "place": "HutRoof",
+      "live_observations": 44,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 44
+      },
+      "z_min": -288.96875,
+      "z_max": -251.46875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:13:CT",
+          "second": 12,
+          "tick": 101249,
+          "position": [
+            454.220947265625,
+            -1170.4390869140625,
+            -255.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:15:CT",
+          "second": 15,
+          "tick": 116320,
+          "position": [
+            467.5367736816406,
+            -913.2516479492188,
+            -251.46875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:13:CT",
+          "second": 12,
+          "tick": 117527,
+          "position": [
+            493.8206481933594,
+            -1107.9302978515625,
+            -251.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "place": "Lobby",
+      "live_observations": 4,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 4
+      },
+      "z_min": -415.96875,
+      "z_max": -415.96875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:12:CT",
+          "second": 15,
+          "tick": 96694,
+          "position": [
+            207.36737060546875,
+            -1104.9056396484375,
+            -415.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:8:CT",
+          "second": 20,
+          "tick": 68405,
+          "position": [
+            209.1969451904297,
+            -1019.8743286132812,
+            -415.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "place": "LockerRoom",
+      "live_observations": 4,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 3,
+        "airborne": 1
+      },
+      "z_min": -415.96875,
+      "z_max": -377.84375,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:18:CT",
+          "second": 20,
+          "tick": 143814,
+          "position": [
+            1191.584716796875,
+            -633.6949462890625,
+            -415.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:8:CT",
+          "second": 15,
+          "tick": 61147,
+          "position": [
+            1233.616943359375,
+            -607.6852416992188,
+            -415.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:12:CT",
+          "second": 20,
+          "tick": 97014,
+          "position": [
+            1178.8153076171875,
+            -643.9583740234375,
+            -415.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "place": "Mini",
+      "live_observations": 57,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 56,
+        "airborne": 1
+      },
+      "z_min": -415.96875,
+      "z_max": -374.796875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:10:CT",
+          "second": 18,
+          "tick": 76156,
+          "position": [
+            707.8536376953125,
+            -1477.6890869140625,
+            -415.46875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:12:CT",
+          "second": 18,
+          "tick": 91849,
+          "position": [
+            804.4108276367188,
+            -1638.9151611328125,
+            -415.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:15:CT",
+          "second": 10,
+          "tick": 116000,
+          "position": [
+            565.6622924804688,
+            -1602.250732421875,
+            -415.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "place": "Observation",
+      "live_observations": 6,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 6
+      },
+      "z_min": -745.251708984375,
+      "z_max": -639.96875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:20:CT",
+          "second": 15,
+          "tick": 158839,
+          "position": [
+            1218.7615966796875,
+            -569.9950561523438,
+            -639.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:8:CT",
+          "second": 15,
+          "tick": 61147,
+          "position": [
+            1170.15283203125,
+            -588.87646484375,
+            -639.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:14:CT",
+          "second": 15,
+          "tick": 123802,
+          "position": [
+            1212.8240966796875,
+            -604.5538940429688,
+            -639.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "place": "Outside",
+      "live_observations": 339,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 316,
+        "airborne": 18,
+        "grounded_unlocalized": 5
+      },
+      "z_min": -415.96875,
+      "z_max": -206.890625,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:21:CT",
+          "second": 10,
+          "tick": 170393,
+          "position": [
+            1995.971923828125,
+            -1583.932861328125,
+            -335.9375
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:10:CT",
+          "second": 10,
+          "tick": 75644,
+          "position": [
+            929.4915161132812,
+            -1628.5936279296875,
+            -415.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:11:CT",
+          "second": 10,
+          "tick": 82377,
+          "position": [
+            1173.6851806640625,
+            -1546.17236328125,
+            -415.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "place": "Rafters",
+      "live_observations": 178,
+      "ground_navigation_counts": {
+        "airborne": 40,
+        "visual_ray_clear_candidate": 85,
+        "grounded_unlocalized": 53
+      },
+      "z_min": -313.3125,
+      "z_max": -77.625,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:12:CT",
+          "second": 10,
+          "tick": 91337,
+          "position": [
+            812.3712158203125,
+            -713.5990600585938,
+            -206.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:14:CT",
+          "second": 10,
+          "tick": 107355,
+          "position": [
+            797.3295288085938,
+            -709.5250244140625,
+            -206.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:15:CT",
+          "second": 10,
+          "tick": 116000,
+          "position": [
+            668.9243774414062,
+            -723.7569580078125,
+            -206.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "place": "Ramp",
+      "live_observations": 288,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 271,
+        "airborne": 16,
+        "grounded_unlocalized": 1
+      },
+      "z_min": -639.9688110351562,
+      "z_max": -271.96875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:7:CT",
+          "second": 12,
+          "tick": 50619,
+          "position": [
+            624.3794555664062,
+            328.0966796875,
+            -374.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:10:CT",
+          "second": 10,
+          "tick": 75644,
+          "position": [
+            678.691650390625,
+            318.82550048828125,
+            -374.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:11:CT",
+          "second": 10,
+          "tick": 82377,
+          "position": [
+            689.0062255859375,
+            -29.25860595703125,
+            -415.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "place": "Secret",
+      "live_observations": 3,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 3
+      },
+      "z_min": -639.96875,
+      "z_max": -415.96875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:13:CT",
+          "second": 18,
+          "tick": 101633,
+          "position": [
+            1544.1673583984375,
+            -2183.615234375,
+            -639.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:16:CT",
+          "second": 18,
+          "tick": 125687,
+          "position": [
+            1312.919921875,
+            -2420.9619140625,
+            -415.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "place": "Trophy",
+      "live_observations": 2,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 2
+      },
+      "z_min": -415.96875,
+      "z_max": -415.96875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:6:CT",
+          "second": 18,
+          "tick": 43183,
+          "position": [
+            13.733827590942383,
+            -504.6763916015625,
+            -415.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "a20d78e76c5545872a87a35dd5cc5e22f8d307a44bddc9d2189e3ff0ba04d987:13:CT",
+          "second": 20,
+          "tick": 102416,
+          "position": [
+            62.60210418701172,
+            -384.13702392578125,
+            -415.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "place": "Tunnels",
+      "live_observations": 18,
+      "ground_navigation_counts": {
+        "airborne": 3,
+        "visual_ray_clear_candidate": 15
+      },
+      "z_min": -767.96875,
+      "z_max": -613.296875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:13:CT",
+          "second": 20,
+          "tick": 101761,
+          "position": [
+            1169.442138671875,
+            -1078.8482666015625,
+            -767.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:15:CT",
+          "second": 20,
+          "tick": 116640,
+          "position": [
+            819.511962890625,
+            -1619.360107421875,
+            -639.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:16:CT",
+          "second": 18,
+          "tick": 125687,
+          "position": [
+            504.74725341796875,
+            -1587.2630615234375,
+            -639.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "place": "Vending",
+      "live_observations": 1,
+      "ground_navigation_counts": {
+        "visual_ray_clear_candidate": 1
+      },
+      "z_min": -415.75048828125,
+      "z_max": -415.75048828125,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:6:CT",
+          "second": 20,
+          "tick": 43311,
+          "position": [
+            -47.1307373046875,
+            -446.27398681640625,
+            -415.75048828125
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "place": "Vents",
+      "live_observations": 11,
+      "ground_navigation_counts": {
+        "airborne": 4,
+        "visual_ray_clear_candidate": 7
+      },
+      "z_min": -607.96875,
+      "z_max": -507.1875,
+      "current_entity_name_present": true,
+      "literal_role_candidate": null,
+      "review_status": "unreviewed",
+      "approved_roles": null,
+      "reviewer_judgments": [],
+      "examples": [
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:13:CT",
+          "second": 18,
+          "tick": 101633,
+          "position": [
+            886.0157470703125,
+            -1370.7882080078125,
+            -607.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:15:CT",
+          "second": 15,
+          "tick": 116320,
+          "position": [
+            440.0720520019531,
+            -1448.7548828125,
+            -511.34375
+          ],
+          "is_airborne": true,
+          "patch_version": "14174"
+        },
+        {
+          "id": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144:3:CT",
+          "second": 18,
+          "tick": 18359,
+          "position": [
+            681.5619506835938,
+            -1440.8128662109375,
+            -607.96875
+          ],
+          "is_airborne": false,
+          "patch_version": "14174"
+        }
+      ]
+    }
+  ]
+}
