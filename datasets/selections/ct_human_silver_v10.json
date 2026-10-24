@@ -1,6 +1,6 @@
 {
   "version": "ct-human-silver-v10",
-  "status": "five_human_returns_with_explicit_abstention_counts",
+  "status": "six_human_returns_with_explicit_missing_reason_and_abstention_counts",
   "seed": "ct-human-silver-v10",
   "human_pairs": 51,
   "silver_pairs": 68,
@@ -190,20 +190,21 @@
   },
   "extra_human_bundle_sha256": "449a8944ef5326be85aded2cb4462a60c29c79214682a741081ce47d6bef85bd",
   "original_sent_packet_versions": "Q01/Q02 r2 and Q03 r3 verified from returned exports",
-  "human_response_files_received": 5,
+  "human_response_files_received": 6,
   "human_complete_pairs_received": 23,
-  "human_partial_pairs_received": 11,
-  "human_blank_pairs_in_returned_files": 8,
+  "human_partial_pairs_received": 19,
+  "human_blank_pairs_in_returned_files": 9,
   "human_complete_packets_received": 3,
-  "human_received_tactical_grades": 30,
-  "human_received_structural_grades": 29,
+  "human_received_tactical_grades": 38,
+  "human_received_structural_grades": 37,
   "latest_human_intake": "datasets/evaluation/ct_human_returns_v12_report.json",
   "received_packet_versions": {
     "Q03": "ct-pilot-v9-distributed-r3-zh-Q03",
     "Q01": "ct-pilot-v9-distributed-r2-Q01",
     "Q05-A": "ct-human-v13-r3-zh-Q05-A",
     "Q02": "ct-pilot-v9-distributed-r2-Q02",
-    "v16-R01": "ct-human-v16-r3-zh-R01"
+    "v16-R01": "ct-human-v16-r3-zh-R01",
+    "v16-R02": "ct-human-v16-r3-zh-R02"
   },
   "mixed_version_analysis": "Cumulative counts only; score summaries remain per packet/version",
   "active_additional_human_distribution": "datasets/selections/ct_remaining_v16.json",
@@ -214,8 +215,8 @@
     "existing_responses_and_allocation_preserved": true,
     "last_explicit_exception": "Nine transferred silver items annotated at user request; no general distribution or collection restart"
   },
-  "human_both_grades_present_pairs": 29,
-  "human_both_grades_without_reason": 10,
+  "human_both_grades_present_pairs": 37,
+  "human_both_grades_without_reason": 18,
   "active_remaining_materials": "datasets/selections/ct_remaining_v16.json",
   "previous_micro_distribution": "v13 replaced for new packaging only; prior exports remain accepted",
   "allocation_revision": "v16_user_transferred_unanswered_packets",
@@ -238,7 +239,7 @@
     "datasets/evaluation/ct_ai_silver_v10.json",
     "datasets/evaluation/ct_ai_silver_transfer_v16.json"
   ],
-  "human_both_choices_present_pairs": 33,
+  "human_both_choices_present_pairs": 41,
   "human_both_dimensions_unjudgeable_pairs": 4,
-  "human_unanswered_assigned_pairs": 17
+  "human_unanswered_assigned_pairs": 9
 }

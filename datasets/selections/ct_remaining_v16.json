@@ -4,7 +4,7 @@
   "status": "partially_returned",
   "human_assigned": 51,
   "silver_assigned": 68,
-  "human_unscored": 17,
+  "human_unscored": 9,
   "new_packets": [
     {
       "packet": "R01",
@@ -100,7 +100,18 @@
       ],
       "payload_sha256": "47bad8a84385edc6f68b53a69842aa78270d86939fdef0b3d617ff18bb047276",
       "archive_sha256": "c7d672e3f9f3afadf929fd8f9976b542ae47d9dfab1960909eba18d3a7bc49fa",
-      "status": "prepared_not_confirmed_sent"
+      "status": "returned_score_only_with_one_blank",
+      "source_export_sha256": "35190e0141f14a5b03e4f2a576a7f3cd1009c3b7830447883c3efb02a2f05e78",
+      "complete_pairs_received": 0,
+      "both_numeric_pairs_received": 8,
+      "reason_missing_pairs_received": 8,
+      "blank_pairs_received": 1,
+      "unanswered_case_ids": [
+        {
+          "query_id": "Q05",
+          "candidate_id": "C06"
+        }
+      ]
     },
     {
       "packet": "R03",
@@ -235,9 +246,41 @@
     {
       "query_id": "Q02",
       "candidate_id": "C10"
+    },
+    {
+      "query_id": "Q05",
+      "candidate_id": "C07"
+    },
+    {
+      "query_id": "Q05",
+      "candidate_id": "C08"
+    },
+    {
+      "query_id": "Q05",
+      "candidate_id": "C10"
+    },
+    {
+      "query_id": "Q07",
+      "candidate_id": "C05"
+    },
+    {
+      "query_id": "Q07",
+      "candidate_id": "C06"
+    },
+    {
+      "query_id": "Q07",
+      "candidate_id": "C08"
+    },
+    {
+      "query_id": "Q07",
+      "candidate_id": "C09"
+    },
+    {
+      "query_id": "Q07",
+      "candidate_id": "C10"
     }
   ],
-  "human_both_scores_received": 29,
+  "human_both_scores_received": 37,
   "human_one_dimension_only": 1,
   "human_complete_with_reason": 23,
   "silver_source_files": [
@@ -255,6 +298,89 @@
     "R02",
     "R03"
   ],
-  "human_both_choices_received": 33,
-  "human_both_unjudgeable_received": 4
+  "human_both_choices_received": 41,
+  "human_both_unjudgeable_received": 4,
+  "returned_score_only_packets": [
+    "R02"
+  ],
+  "remaining_case_ids": [
+    {
+      "query_id": "Q05",
+      "candidate_id": "C06"
+    },
+    {
+      "query_id": "Q09",
+      "candidate_id": "C06"
+    },
+    {
+      "query_id": "Q09",
+      "candidate_id": "C07"
+    },
+    {
+      "query_id": "Q09",
+      "candidate_id": "C08"
+    },
+    {
+      "query_id": "Q09",
+      "candidate_id": "C09"
+    },
+    {
+      "query_id": "Q11",
+      "candidate_id": "C05"
+    },
+    {
+      "query_id": "Q11",
+      "candidate_id": "C06"
+    },
+    {
+      "query_id": "Q11",
+      "candidate_id": "C08"
+    },
+    {
+      "query_id": "Q11",
+      "candidate_id": "C09"
+    }
+  ],
+  "reason_only_followup_at_packaging": [
+    {
+      "query_id": "Q02",
+      "candidate_id": "C01"
+    },
+    {
+      "query_id": "Q02",
+      "candidate_id": "C02"
+    },
+    {
+      "query_id": "Q02",
+      "candidate_id": "C03"
+    },
+    {
+      "query_id": "Q02",
+      "candidate_id": "C04"
+    },
+    {
+      "query_id": "Q02",
+      "candidate_id": "C05"
+    },
+    {
+      "query_id": "Q02",
+      "candidate_id": "C06"
+    },
+    {
+      "query_id": "Q02",
+      "candidate_id": "C07"
+    },
+    {
+      "query_id": "Q02",
+      "candidate_id": "C08"
+    },
+    {
+      "query_id": "Q02",
+      "candidate_id": "C09"
+    },
+    {
+      "query_id": "Q02",
+      "candidate_id": "C10"
+    }
+  ]
 }

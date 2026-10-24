@@ -466,11 +466,11 @@ data/、output/            # 本地运行数据，不进入 Git
 | CT 地图上下文与看图测试 v9 | [中文位置、通俗说明，12 个独立题包（每包 9–10 题）](docs/CT_MAP_CONTEXT_AND_PILOT_V9.md) |
 | CT 人工与银标分配 v10 | [60 条人工、59 条 AI 银标，已发三包保持原样](docs/CT_HUMAN_SILVER_V10.md)（分配目标，尚未收齐；AI 标签未获人工核实） |
 | CT 首份人工反馈 v11 | [1 条完整、1 条部分回答，保留题多及难以区分的反馈](docs/CT_HUMAN_FEEDBACK_V11.md)（不据此判断模型效果） |
-| CT 人工回收记录 v12 | [五份回传：23 条带理由完成，含 4 条明确弃评](docs/CT_HUMAN_RETURNS_V12.md)（数字、弃评、缺理由分别统计） |
+| CT 人工回收记录 v12 | [六份回传：23 条带理由完成，另 18 条仅缺理由](docs/CT_HUMAN_RETURNS_V12.md)（数字、弃评、未答分别统计） |
 | CT 下一批分发 v13 | [先发四包，每人 3 题；其余按顺序每人 2–3 题](docs/CT_HUMAN_DISTRIBUTION_V13.md)（Q05-A 已回收，其余按实际领取登记） |
 | CT 独立对照与论文证据 v14 | [更丰富统计的线性对照、英文方法/结果草稿](docs/CT_POOLED_CONTROLS_V14.md)（人工工作暂缓；新对照未建立稳定增益） |
 | CT 剩余题重整 v15 | [35 道未评分题分两包：18 题、17 题；补填另列](docs/CT_REMAINING_V15.md)（仅整理材料，已领旧包需避免重复） |
-| CT 现用剩余题 v16 | [第1包已回，剩第2/3包共17题；旧三包九题已转银标](docs/CT_REMAINING_V16.md)（替代 v15 两包） |
+| CT 现用剩余题 v16 | [尚未评分9题：Q05/C06 加第3包八题](docs/CT_REMAINING_V16.md)（已有分数不重填） |
 
 ## 许可证
 
