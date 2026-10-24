@@ -45,18 +45,27 @@ E0：原研究来源/数值复核；E1：共同表示与有效性；E2：主模�
 
 研究流程与隔离图、六图表示/失配示例、输入与模型对照、模式/检索证据、新系列主结果分别对应E0/E1/E2/E3–E4/E5。现有辅助预测图保留在[历史矢量图](../assets/ct_information_control_v17.svg)。先有数据和图意再作图，不生成虚构结果。
 
-## 已检索的 skill
+## 已检索的 skill：高星原仓库优先
 
-2026-10-25检索官方可安装目录，并阅读以下第三方公开skill。当前均未安装；主文骨架按已完整阅读的Codex版scientific-writing流程手动建立。其余为候选参考，未执行其外部工具或安装依赖。
+2026-10-25通过GitHub仓库API核对。下列星标属于整个仓库，不代表某个skill的独立评分；四库均未归档，仓库许可证均显示MIT。当前均未安装，安装后的本机兼容性尚未测试。
 
-| Skill | 用途 | 来源和本轮使用范围 |
-| --- | --- | --- |
-| scientific-writing，Codex版 | 完整章节骨架、逐节写作、LaTeX/BibTeX、真实引用 | [SKILL.md](https://github.com/StickTaTa/codex-scientific-writing-skill/blob/main/scientific-writing/SKILL.md)；已完整阅读主说明，参考相关IMRaD章节，实际用于本框架 |
-| ml-paper-writing | 从研究仓库组织论证、对照、引用和图表 | [SKILL.md](https://github.com/Orchestra-Research/AI-Research-SKILLs/blob/main/20-ml-paper-writing/ml-paper-writing/SKILL.md)；候选，重点核对其仓库到论文的流程；会议规则不等于ToG规则 |
-| scientific-critical-thinking | 研究问题、独立单位、混杂、证据边界 | [SKILL.md](https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/scientific-critical-thinking/SKILL.md)；候选，已检查适用范围与设计审查流程 |
-| statistical-analysis | 分析单位、效应量、区间、缺失和样本规划 | [SKILL.md](https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/statistical-analysis/SKILL.md)；候选，不能直接套独立样本检验到系列/查询嵌套数据 |
+| 优先来源 | 仓库星标快照 | 最近push（UTC日期） | 与本研究的用途 |
+| --- | ---: | --- | --- |
+| [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | 54,407 | 2026-10-19 | 研究设计、批判性检查、统计与写作规范；仅选相关skill，不整包引入其他领域工具 |
+| [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | 13,906 | 2026-10-11 | ML论文组织、对照、消融和引用流程；会议格式不直接套到ToG |
+| [Master-cai/Research-Paper-Writing-Skills](https://github.com/Master-cai/Research-Paper-Writing-Skills) | 7,766 | 2026-06-23 | 正文章节、段落论证、主张与证据对应、自审；已完整阅读主SKILL.md |
+| [zLanqing/codex-claude-academic-skills](https://github.com/zLanqing/codex-claude-academic-skills) | 5,254 | 2026-05-14 | 中文科研讨论、写作检查与科学计算辅助；英文主稿语言按本项目已定要求 |
 
-这些是社区来源，尚未做安装后的兼容性测试。需要时再按具体步骤使用；不整包安装、不为阅读说明更改现有实验环境。
+具体入口：
+
+- 写作主力候选：[Master-cai research-paper-writing](https://github.com/Master-cai/Research-Paper-Writing-Skills/blob/main/research-paper-writing/SKILL.md)。按章节阅读对应参考，不改变已定研究主线。
+- ML论文与实验叙事候选：[Orchestra ml-paper-writing](https://github.com/Orchestra-Research/AI-Research-SKILLs/blob/main/20-ml-paper-writing/ml-paper-writing/SKILL.md)。
+- 实验设计与证据候选：[K-Dense scientific-critical-thinking](https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/scientific-critical-thinking/SKILL.md)。
+- 统计候选：[K-Dense statistical-analysis](https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/statistical-analysis/SKILL.md)。系列/查询嵌套不能直接套独立样本检验。
+- 写作规范参考：[K-Dense scientific-writing](https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/scientific-writing/SKILL.md)。
+- 中文写作候选：[zLanqing research-writing-skill](https://github.com/zLanqing/codex-claude-academic-skills/blob/main/research-writing-skill/SKILL.md)。
+
+历史说明：最初框架参考的是[StickTaTa的Codex适配版](https://github.com/StickTaTa/codex-scientific-writing-skill/blob/main/scientific-writing/SKILL.md)，同日核对仅3星；保留其实际来源记录，后续不再列为优先候选。框架与证据数据不因更换写作参考而改动。此前还核对了K-Dense写作器（2,520星）与Google DeepMind science-skills（3,327星）；前者与K-Dense库用途重叠，后者主要面向生命科学数据库，本项目不优先采用。
 
 ## 初始文献来源
 
