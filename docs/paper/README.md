@@ -47,7 +47,7 @@ E0：原研究来源/数值复核；E1：共同表示与有效性；E2：主模�
 
 ## 已检索的 skill：高星原仓库优先
 
-2026-10-25通过GitHub仓库API核对。下列星标属于整个仓库，不代表某个skill的独立评分；四库均未归档，仓库许可证均显示MIT。K-Dense库的177个skill已安装到Codex用户技能目录，固定上游版本`593377bb048752abb0152deab9fbb1083a6087df`，技能文件及配套资源约20.3 MiB；其余候选尚未安装。已核对177份技能说明，配套科学软件/API依赖未安装，实际功能兼容性尚未测试。
+2026-10-25通过GitHub仓库API核对。下列星标属于整个仓库，不代表某个skill的独立评分；四库均未归档，仓库许可证均显示MIT。K-Dense已精简为8个论文/实验相关skill，固定上游版本`593377bb048752abb0152deab9fbb1083a6087df`；其余169个已移到技能目录外的本机备份，可按需恢复。保留：scientific-writing、literature-review、citation-management、experimental-design、statistical-analysis、statistical-power、scientific-visualization、scientific-critical-thinking。其他候选库未安装。配套科学软件/API依赖未安装，实际功能兼容性尚未测试。
 
 | 优先来源 | 仓库星标快照 | 最近push（UTC日期） | 与本研究的用途 |
 | --- | ---: | --- | --- |
