@@ -1,69 +1,144 @@
 {
   "version": "ct-human-returns-v12",
-  "date": "2026-10-23",
-  "status": "two_complete_and_one_partial_return_no_model_efficacy_claim",
+  "date": "2026-10-24",
+  "status": "four_returns_two_protocol_complete_packets_one_score_only_packet_one_partial_packet",
   "latest_participant": {
-    "participant_id": "P003",
-    "source_export_sha256": "302034e417a8694aa54c2dce4e0434d11638535eacd5466eaff65f401d0626a8",
-    "returned_version": "ct-human-v13-r3-zh-Q05-A",
-    "payload_sha256": "70f503efa9b33fa937b1773a206715fce6c2b7a6339cbeafeedfc33ad37a0eee",
-    "query_id": "Q05",
-    "packet_id": "Q05-A",
-    "background": "Self-reported having played CS2; no qualification verification",
-    "assigned_pairs": 3,
-    "complete_pairs": 3,
-    "partial_pairs": 0,
+    "participant_id": "P004",
+    "source_export_sha256": "2ee7682e5ac3b6868e8665ab0403410db4041dd3e60ad6f67a4ce286169666cc",
+    "returned_version": "ct-pilot-v9-distributed-r2-Q02",
+    "payload_sha256": "4ff77e80c69cc79f22e4a678bf61290bbc2794e31c028394405d56135386d514",
+    "query_id": "Q02",
+    "packet_id": "Q02",
+    "background": "Not provided; do not infer experience or expertise",
+    "assigned_pairs": 10,
+    "complete_pairs": 0,
+    "partial_pairs": 10,
     "blank_pairs": 0,
-    "completed_packets": 1,
+    "completed_packets": 0,
+    "numeric_complete_pairs": 10,
+    "reason_missing_pairs": 10,
     "tactical_score_counts": {
-      "0": 2,
-      "1": 1
+      "0": 3,
+      "1": 3,
+      "2": 1,
+      "3": 3
     },
     "structural_score_counts": {
-      "0": 2,
-      "1": 1
+      "0": 4,
+      "1": 3,
+      "2": 1,
+      "3": 2
     },
-    "tactical_mean_descriptive_this_packet": 0.3333333333333333,
-    "structural_mean_descriptive_this_packet": 0.3333333333333333,
-    "tactical_grade_at_least_2": 0,
-    "structural_grade_at_least_2": 0,
+    "tactical_mean_descriptive_this_packet": 1.4,
+    "structural_mean_descriptive_this_packet": 1.1,
+    "tactical_grade_at_least_2": 4,
+    "structural_grade_at_least_2": 3,
     "ratings": [
       {
-        "query_id": "Q05",
+        "query_id": "Q02",
+        "candidate_id": "C01",
+        "tactical_grade": 3,
+        "structural_grade": 2,
+        "complete": false,
+        "reason_present": false,
+        "reason_summary": null
+      },
+      {
+        "query_id": "Q02",
         "candidate_id": "C02",
+        "tactical_grade": 3,
+        "structural_grade": 3,
+        "complete": false,
+        "reason_present": false,
+        "reason_summary": null
+      },
+      {
+        "query_id": "Q02",
+        "candidate_id": "C03",
+        "tactical_grade": 1,
+        "structural_grade": 0,
+        "complete": false,
+        "reason_present": false,
+        "reason_summary": null
+      },
+      {
+        "query_id": "Q02",
+        "candidate_id": "C04",
+        "tactical_grade": 2,
+        "structural_grade": 1,
+        "complete": false,
+        "reason_present": false,
+        "reason_summary": null
+      },
+      {
+        "query_id": "Q02",
+        "candidate_id": "C05",
+        "tactical_grade": 3,
+        "structural_grade": 3,
+        "complete": false,
+        "reason_present": false,
+        "reason_summary": null
+      },
+      {
+        "query_id": "Q02",
+        "candidate_id": "C06",
+        "tactical_grade": 0,
+        "structural_grade": 0,
+        "complete": false,
+        "reason_present": false,
+        "reason_summary": null
+      },
+      {
+        "query_id": "Q02",
+        "candidate_id": "C07",
+        "tactical_grade": 0,
+        "structural_grade": 0,
+        "complete": false,
+        "reason_present": false,
+        "reason_summary": null
+      },
+      {
+        "query_id": "Q02",
+        "candidate_id": "C08",
+        "tactical_grade": 0,
+        "structural_grade": 0,
+        "complete": false,
+        "reason_present": false,
+        "reason_summary": null
+      },
+      {
+        "query_id": "Q02",
+        "candidate_id": "C09",
         "tactical_grade": 1,
         "structural_grade": 1,
-        "complete": true,
-        "reason_summary": "Identified a two-plus-one positional arrangement and contrasted middle information; abandoning middle control is the participant interpretation, not verified vision coverage."
+        "complete": false,
+        "reason_present": false,
+        "reason_summary": null
       },
       {
-        "query_id": "Q05",
-        "candidate_id": "C03",
-        "tactical_grade": 0,
-        "structural_grade": 0,
-        "complete": true,
-        "reason_summary": "Contrasted Dust2 retreat and Anubis forward movement; enemy pressure and partial-buy intention are not established by this material."
-      },
-      {
-        "query_id": "Q05",
-        "candidate_id": "C04",
-        "tactical_grade": 0,
-        "structural_grade": 0,
-        "complete": true,
-        "reason_summary": "Contrasted Dust2 retreat and Nuke information-seeking movement; utility, sniper roles, enemy threat and a possible failed jump are unverified interpretations."
+        "query_id": "Q02",
+        "candidate_id": "C10",
+        "tactical_grade": 1,
+        "structural_grade": 1,
+        "complete": false,
+        "reason_present": false,
+        "reason_summary": null
       }
     ]
   },
   "previous_return_report": "datasets/evaluation/ct_human_feedback_v11_report.json",
   "cumulative_counts_only": {
-    "response_files": 3,
+    "response_files": 4,
     "complete_packets": 2,
-    "partial_packets": 1,
+    "partial_packets": 2,
     "complete_pairs": 14,
-    "partial_pairs": 1,
+    "partial_pairs": 11,
     "blank_pairs": 8,
-    "tactical_grades_present": 15,
-    "structural_grades_present": 14
+    "tactical_grades_present": 25,
+    "structural_grades_present": 24,
+    "both_grades_present_pairs": 24,
+    "both_grades_present_without_reason": 10,
+    "single_dimension_only_pairs": 1
   },
   "by_version": [
     {
@@ -90,15 +165,26 @@
       "complete_pairs": 3,
       "partial_pairs": 0,
       "blank_pairs": 0
+    },
+    {
+      "version": "ct-pilot-v9-distributed-r2-Q02",
+      "participant_id": "P004",
+      "query_id": "Q02",
+      "packet_id": "Q02",
+      "complete_pairs": 0,
+      "partial_pairs": 10,
+      "blank_pairs": 0,
+      "numeric_complete_pairs": 10,
+      "reason_missing_pairs": 10
     }
   ],
   "interpretation": [
-    "Q05-A is a complete three-item return: scores 1/1, 0/0 and 0/0; low scores are retained without correction.",
-    "Completion of this small packet does not establish that reducing packet size caused higher completion; returners and questions differ.",
-    "Enemy pressure, weapons, utility and jump-failure explanations are unverified participant interpretations, not added factual labels.",
-    "C04 player C shows lower sampled heights and health; five snapshots cannot determine a missed jump or the cause of health loss.",
-    "Counts are cumulative; descriptive scores remain per packet/rubric version. No method superiority test or human-AI agreement estimate is performed.",
-    "No returned Q05-A item overlaps the silver assignment, and no human score is used to rewrite silver labels."
+    "Q02 has both scores on all ten items but no reasons. Retain all numerical answers; do not treat complete=false as blank or discard the file.",
+    "The existing reason-required rubric is not changed retrospectively: Q02 contributes ten score-only observations, not ten reason-supported protocol-complete judgments.",
+    "No reasons or participant background are invented, no AI fills missing text, and no request to complete the form is automatically sent.",
+    "Descriptive scores remain per packet/version; pooled counts do not imply pooled efficacy analysis or independent participant identities.",
+    "Annotation distribution, follow-up and silver generation remain paused by user; this is passive intake of an explicitly supplied export.",
+    "No human score is used to rewrite silver labels, train models or calculate unestablished human-AI agreement."
   ],
   "privacy": "Raw files, reviewer codes, self-reported details, timestamps and verbatim reasons remain local; public report uses pseudonymous scores and paraphrased rationale.",
   "returner_identity_independence_verified": false,
@@ -210,6 +296,58 @@
           "structural_grade": 1,
           "complete": true,
           "reason_summary": "Suggested transfer under a hypothetical strong enemy middle presence; that enemy condition is not observed."
+        }
+      ]
+    },
+    {
+      "participant_id": "P003",
+      "source_export_sha256": "302034e417a8694aa54c2dce4e0434d11638535eacd5466eaff65f401d0626a8",
+      "returned_version": "ct-human-v13-r3-zh-Q05-A",
+      "payload_sha256": "70f503efa9b33fa937b1773a206715fce6c2b7a6339cbeafeedfc33ad37a0eee",
+      "query_id": "Q05",
+      "packet_id": "Q05-A",
+      "background": "Self-reported having played CS2; no qualification verification",
+      "assigned_pairs": 3,
+      "complete_pairs": 3,
+      "partial_pairs": 0,
+      "blank_pairs": 0,
+      "completed_packets": 1,
+      "tactical_score_counts": {
+        "0": 2,
+        "1": 1
+      },
+      "structural_score_counts": {
+        "0": 2,
+        "1": 1
+      },
+      "tactical_mean_descriptive_this_packet": 0.3333333333333333,
+      "structural_mean_descriptive_this_packet": 0.3333333333333333,
+      "tactical_grade_at_least_2": 0,
+      "structural_grade_at_least_2": 0,
+      "ratings": [
+        {
+          "query_id": "Q05",
+          "candidate_id": "C02",
+          "tactical_grade": 1,
+          "structural_grade": 1,
+          "complete": true,
+          "reason_summary": "Identified a two-plus-one positional arrangement and contrasted middle information; abandoning middle control is the participant interpretation, not verified vision coverage."
+        },
+        {
+          "query_id": "Q05",
+          "candidate_id": "C03",
+          "tactical_grade": 0,
+          "structural_grade": 0,
+          "complete": true,
+          "reason_summary": "Contrasted Dust2 retreat and Anubis forward movement; enemy pressure and partial-buy intention are not established by this material."
+        },
+        {
+          "query_id": "Q05",
+          "candidate_id": "C04",
+          "tactical_grade": 0,
+          "structural_grade": 0,
+          "complete": true,
+          "reason_summary": "Contrasted Dust2 retreat and Nuke information-seeking movement; utility, sniper roles, enemy threat and a possible failed jump are unverified interpretations."
         }
       ]
     }

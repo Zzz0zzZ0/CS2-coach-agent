@@ -466,7 +466,7 @@ data/、output/            # 本地运行数据，不进入 Git
 | CT 地图上下文与看图测试 v9 | [中文位置、通俗说明，12 个独立题包（每包 9–10 题）](docs/CT_MAP_CONTEXT_AND_PILOT_V9.md) |
 | CT 人工与银标分配 v10 | [60 条人工、59 条 AI 银标，已发三包保持原样](docs/CT_HUMAN_SILVER_V10.md)（分配目标，尚未收齐；AI 标签未获人工核实） |
 | CT 首份人工反馈 v11 | [1 条完整、1 条部分回答，保留题多及难以区分的反馈](docs/CT_HUMAN_FEEDBACK_V11.md)（不据此判断模型效果） |
-| CT 人工回收记录 v12 | [Q01、Q05-A 完整，累计 14 条完整、1 条部分回答](docs/CT_HUMAN_RETURNS_V12.md)（按题包及版本统计，不代表模型效果） |
+| CT 人工回收记录 v12 | [四份回传：14 条带理由完整，另 10 条双项分数齐全但缺理由](docs/CT_HUMAN_RETURNS_V12.md)（按题包及版本统计，分发仍暂缓） |
 | CT 下一批分发 v13 | [先发四包，每人 3 题；其余按顺序每人 2–3 题](docs/CT_HUMAN_DISTRIBUTION_V13.md)（Q05-A 已回收，其余按实际领取登记） |
 | CT 独立对照与论文证据 v14 | [更丰富统计的线性对照、英文方法/结果草稿](docs/CT_POOLED_CONTROLS_V14.md)（人工工作暂缓；新对照未建立稳定增益） |
 
