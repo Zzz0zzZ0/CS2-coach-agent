@@ -1,0 +1,246 @@
+{
+  "version": "ct-remaining-v16",
+  "date": "2026-10-24",
+  "status": "prepared_not_sent_user_authorized_silver_transfer_complete",
+  "human_assigned": 51,
+  "silver_assigned": 68,
+  "human_unscored": 26,
+  "new_packets": [
+    {
+      "packet": "R01",
+      "pairs": 9,
+      "filename": "第1包_9题.zip",
+      "cases": [
+        {
+          "query_id": "Q03",
+          "candidate_id": "C01"
+        },
+        {
+          "query_id": "Q03",
+          "candidate_id": "C03"
+        },
+        {
+          "query_id": "Q03",
+          "candidate_id": "C04"
+        },
+        {
+          "query_id": "Q03",
+          "candidate_id": "C06"
+        },
+        {
+          "query_id": "Q03",
+          "candidate_id": "C07"
+        },
+        {
+          "query_id": "Q03",
+          "candidate_id": "C08"
+        },
+        {
+          "query_id": "Q03",
+          "candidate_id": "C09"
+        },
+        {
+          "query_id": "Q03",
+          "candidate_id": "C10"
+        },
+        {
+          "query_id": "Q05",
+          "candidate_id": "C05"
+        }
+      ],
+      "payload_sha256": "8fb252ed6c41a430bf43ad8cdadbd3ae0a389ef248af548d78f97c50f5393a08",
+      "archive_sha256": "beecc4f8ad3c09bd320c30b0d0eb11dea5ed78d40be57b915c53d6dfbd88ef87",
+      "status": "prepared_not_confirmed_sent"
+    },
+    {
+      "packet": "R02",
+      "pairs": 9,
+      "filename": "第2包_9题.zip",
+      "cases": [
+        {
+          "query_id": "Q05",
+          "candidate_id": "C06"
+        },
+        {
+          "query_id": "Q05",
+          "candidate_id": "C07"
+        },
+        {
+          "query_id": "Q05",
+          "candidate_id": "C08"
+        },
+        {
+          "query_id": "Q05",
+          "candidate_id": "C10"
+        },
+        {
+          "query_id": "Q07",
+          "candidate_id": "C05"
+        },
+        {
+          "query_id": "Q07",
+          "candidate_id": "C06"
+        },
+        {
+          "query_id": "Q07",
+          "candidate_id": "C08"
+        },
+        {
+          "query_id": "Q07",
+          "candidate_id": "C09"
+        },
+        {
+          "query_id": "Q07",
+          "candidate_id": "C10"
+        }
+      ],
+      "payload_sha256": "47bad8a84385edc6f68b53a69842aa78270d86939fdef0b3d617ff18bb047276",
+      "archive_sha256": "c7d672e3f9f3afadf929fd8f9976b542ae47d9dfab1960909eba18d3a7bc49fa",
+      "status": "prepared_not_confirmed_sent"
+    },
+    {
+      "packet": "R03",
+      "pairs": 8,
+      "filename": "第3包_8题.zip",
+      "cases": [
+        {
+          "query_id": "Q09",
+          "candidate_id": "C06"
+        },
+        {
+          "query_id": "Q09",
+          "candidate_id": "C07"
+        },
+        {
+          "query_id": "Q09",
+          "candidate_id": "C08"
+        },
+        {
+          "query_id": "Q09",
+          "candidate_id": "C09"
+        },
+        {
+          "query_id": "Q11",
+          "candidate_id": "C05"
+        },
+        {
+          "query_id": "Q11",
+          "candidate_id": "C06"
+        },
+        {
+          "query_id": "Q11",
+          "candidate_id": "C08"
+        },
+        {
+          "query_id": "Q11",
+          "candidate_id": "C09"
+        }
+      ],
+      "payload_sha256": "b0d83cdef9e6fc1b7a6166b25633151e7b99a1388395bdcab7d264ac412611e8",
+      "archive_sha256": "2699b2b96a811b7d9665cc3fccb1828fb6abfb52045f1f5f5ca2c8d4496b040f",
+      "status": "prepared_not_confirmed_sent"
+    }
+  ],
+  "transferred_to_silver": [
+    {
+      "query_id": "Q07",
+      "candidate_id": "C01"
+    },
+    {
+      "query_id": "Q07",
+      "candidate_id": "C03"
+    },
+    {
+      "query_id": "Q07",
+      "candidate_id": "C04"
+    },
+    {
+      "query_id": "Q09",
+      "candidate_id": "C01"
+    },
+    {
+      "query_id": "Q09",
+      "candidate_id": "C03"
+    },
+    {
+      "query_id": "Q09",
+      "candidate_id": "C05"
+    },
+    {
+      "query_id": "Q11",
+      "candidate_id": "C01"
+    },
+    {
+      "query_id": "Q11",
+      "candidate_id": "C02"
+    },
+    {
+      "query_id": "Q11",
+      "candidate_id": "C04"
+    }
+  ],
+  "original_sent_but_user_confirmed_unfilled": [
+    "Q07-A",
+    "Q09-A",
+    "Q11-A"
+  ],
+  "prior_allocation_manifest_sha256": "dc7fd51f545e7952e5771bf5a110ff0d54b9c55518c94bc497718ab116df2be2",
+  "partial_score_followup": [
+    {
+      "query_id": "Q03",
+      "candidate_id": "C02"
+    }
+  ],
+  "reason_only_followup": [
+    {
+      "query_id": "Q02",
+      "candidate_id": "C01"
+    },
+    {
+      "query_id": "Q02",
+      "candidate_id": "C02"
+    },
+    {
+      "query_id": "Q02",
+      "candidate_id": "C03"
+    },
+    {
+      "query_id": "Q02",
+      "candidate_id": "C04"
+    },
+    {
+      "query_id": "Q02",
+      "candidate_id": "C05"
+    },
+    {
+      "query_id": "Q02",
+      "candidate_id": "C06"
+    },
+    {
+      "query_id": "Q02",
+      "candidate_id": "C07"
+    },
+    {
+      "query_id": "Q02",
+      "candidate_id": "C08"
+    },
+    {
+      "query_id": "Q02",
+      "candidate_id": "C09"
+    },
+    {
+      "query_id": "Q02",
+      "candidate_id": "C10"
+    }
+  ],
+  "human_both_scores_received": 24,
+  "human_one_dimension_only": 1,
+  "human_complete_with_reason": 14,
+  "silver_source_files": [
+    "datasets/evaluation/ct_ai_silver_v10.json",
+    "datasets/evaluation/ct_ai_silver_transfer_v16.json"
+  ],
+  "rubric": "Original r3 Chinese wording and score definitions unchanged",
+  "organizer_bundle_sha256": "81518ec962d5b9fb6cfcb506dd89f1832fe1bfa3efb31fbd49054d1c4882b111",
+  "later_old_returns_policy": "Preserve separately as additional human evidence with its actual version; do not replace silver or count duplicate cases as new tasks."
+}

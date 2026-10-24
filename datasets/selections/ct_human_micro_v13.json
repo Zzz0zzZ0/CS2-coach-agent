@@ -38,7 +38,8 @@
       "filename": "02-Q07-A-3题.zip",
       "payload_sha256": "4250eb58447f9b1b299c62f04cab72c00457bb9d0ff8646b7f58ed274e3c8b6c",
       "archive_sha256": "ddeece8dfd2e1c5d0efae6d47d55fa536b6b59cec6d693261a32061cce65e206",
-      "status": "prepared_not_confirmed_sent"
+      "status": "user_confirmed_unfilled_transferred_to_ai_silver_v16",
+      "transfer_manifest": "datasets/selections/ct_remaining_v16.json"
     },
     {
       "order": 3,
@@ -55,7 +56,8 @@
       "filename": "03-Q09-A-3题.zip",
       "payload_sha256": "9751092c4df2e5108c5b397bf12e87304aabe9b4fe1ce5abe22043c8ab345c95",
       "archive_sha256": "b77fe182136347aef6be978e01e22857790746126455bd4b8983358e5c2d4f29",
-      "status": "prepared_not_confirmed_sent"
+      "status": "user_confirmed_unfilled_transferred_to_ai_silver_v16",
+      "transfer_manifest": "datasets/selections/ct_remaining_v16.json"
     },
     {
       "order": 4,
@@ -72,7 +74,8 @@
       "filename": "04-Q11-A-3题.zip",
       "payload_sha256": "99ebaeed65deadcde35e2bc293c6ab4304d7811a891cefe5583ccedcfa82bcf2",
       "archive_sha256": "9af8bef38e0249f534d3d843530d770bd6488c9d27de70a6490b6e90b7e53ede",
-      "status": "prepared_not_confirmed_sent"
+      "status": "user_confirmed_unfilled_transferred_to_ai_silver_v16",
+      "transfer_manifest": "datasets/selections/ct_remaining_v16.json"
     },
     {
       "order": 5,
@@ -215,5 +218,6 @@
   ],
   "confirmed_complete_returns": [
     "Q05-A"
-  ]
+  ],
+  "current_remaining_materials": "datasets/selections/ct_remaining_v16.json"
 }

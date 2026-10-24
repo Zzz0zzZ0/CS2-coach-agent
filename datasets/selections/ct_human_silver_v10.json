@@ -2,8 +2,8 @@
   "version": "ct-human-silver-v10",
   "status": "four_returns_with_separate_score_only_and_complete_counts",
   "seed": "ct-human-silver-v10",
-  "human_pairs": 60,
-  "silver_pairs": 59,
+  "human_pairs": 51,
+  "silver_pairs": 68,
   "already_distributed": [
     "Q01",
     "Q02",
@@ -60,9 +60,6 @@
     ],
     "Q06": [],
     "Q07": [
-      "C01",
-      "C03",
-      "C04",
       "C05",
       "C06",
       "C08",
@@ -71,9 +68,6 @@
     ],
     "Q08": [],
     "Q09": [
-      "C01",
-      "C03",
-      "C05",
       "C06",
       "C07",
       "C08",
@@ -81,9 +75,6 @@
     ],
     "Q10": [],
     "Q11": [
-      "C01",
-      "C02",
-      "C04",
       "C05",
       "C06",
       "C08",
@@ -123,7 +114,10 @@
       "C10"
     ],
     "Q07": [
+      "C01",
       "C02",
+      "C03",
+      "C04",
       "C07"
     ],
     "Q08": [
@@ -139,8 +133,11 @@
       "C10"
     ],
     "Q09": [
+      "C01",
       "C02",
+      "C03",
       "C04",
+      "C05",
       "C10"
     ],
     "Q10": [
@@ -156,7 +153,10 @@
       "C10"
     ],
     "Q11": [
+      "C01",
+      "C02",
       "C03",
+      "C04",
       "C07",
       "C10"
     ],
@@ -173,15 +173,15 @@
       "C10"
     ]
   },
-  "selection": "Keep Q01-Q03 unchanged; seeded SHA order chooses 8/8/7/7 extra human items from Q05/Q07/Q09/Q11; every remaining pair is silver",
+  "selection": "Original fixed v10 assignment, revised only by nine user-confirmed unfilled cases transferred to silver in v16",
   "limits": [
     "Human and AI rows are separate evidence sources; no pooled headline efficacy metric.",
     "Human covers six maps; silver covers five because both Ancient packets were already sent.",
     "Developer-involved AI annotation, not independent expert review.",
     "No silver labels used to train or select models in this round."
   ],
-  "silver_annotations_written": 59,
-  "silver_non_abstaining_tactical": 34,
+  "silver_annotations_written": 68,
+  "silver_non_abstaining_tactical": 39,
   "human_packet_sha256": {
     "CT-human-Q05.zip": "5f0835fce089475fa3eb8c636105dd0e5ccc5a0e83808954701436e7a266ebf1",
     "CT-human-Q07.zip": "f4b97b7b3a1f64b75f2b48e297ecb74746f0917e6b768e68f6c3eb41f60f3dce",
@@ -205,15 +205,36 @@
     "Q02": "ct-pilot-v9-distributed-r2-Q02"
   },
   "mixed_version_analysis": "Cumulative counts only; score summaries remain per packet/version",
-  "active_additional_human_distribution": "datasets/selections/ct_remaining_v15.json",
+  "active_additional_human_distribution": "datasets/selections/ct_remaining_v16.json",
   "previous_7_8_pair_packets": "Superseded for new distribution; retained as historical artifacts",
   "annotation_workflow": {
     "status": "paused_by_user",
     "scope": "Human packet distribution, collection follow-up and AI silver annotation",
-    "existing_responses_and_allocation_preserved": true
+    "existing_responses_and_allocation_preserved": true,
+    "last_explicit_exception": "Nine transferred silver items annotated at user request; no general distribution or collection restart"
   },
   "human_both_grades_present_pairs": 24,
   "human_both_grades_without_reason": 10,
-  "active_remaining_materials": "datasets/selections/ct_remaining_v15.json",
-  "previous_micro_distribution": "v13 replaced for new packaging only; prior exports remain accepted"
+  "active_remaining_materials": "datasets/selections/ct_remaining_v16.json",
+  "previous_micro_distribution": "v13 replaced for new packaging only; prior exports remain accepted",
+  "allocation_revision": "v16_user_transferred_unanswered_packets",
+  "allocation_history": [
+    {
+      "revision": "v10_before_v16",
+      "human_pairs": 60,
+      "silver_pairs": 59,
+      "transferred_packets": [
+        "Q07-A",
+        "Q09-A",
+        "Q11-A"
+      ],
+      "transferred_pairs": 9,
+      "reason": "User confirmed these sent packets were unfilled and requested AI silver instead"
+    }
+  ],
+  "original_selection_before_v16": "Keep Q01-Q03 unchanged; seeded SHA order chooses 8/8/7/7 extra human items from Q05/Q07/Q09/Q11; every remaining pair is silver",
+  "silver_annotation_files": [
+    "datasets/evaluation/ct_ai_silver_v10.json",
+    "datasets/evaluation/ct_ai_silver_transfer_v16.json"
+  ]
 }
