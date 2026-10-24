@@ -1,0 +1,240 @@
+{
+  "version": "ct-remaining-v15",
+  "date": "2026-10-24",
+  "status": "prepared_only_distribution_still_paused",
+  "human_assigned": 60,
+  "new_unscored_pairs": 35,
+  "new_packets": [
+    {
+      "packet": "R01",
+      "pairs": 18,
+      "filename": "剩余第1包_18题.zip",
+      "cases": [
+        {
+          "query_id": "Q03",
+          "candidate_id": "C01"
+        },
+        {
+          "query_id": "Q03",
+          "candidate_id": "C03"
+        },
+        {
+          "query_id": "Q03",
+          "candidate_id": "C04"
+        },
+        {
+          "query_id": "Q03",
+          "candidate_id": "C06"
+        },
+        {
+          "query_id": "Q03",
+          "candidate_id": "C07"
+        },
+        {
+          "query_id": "Q03",
+          "candidate_id": "C08"
+        },
+        {
+          "query_id": "Q03",
+          "candidate_id": "C09"
+        },
+        {
+          "query_id": "Q03",
+          "candidate_id": "C10"
+        },
+        {
+          "query_id": "Q05",
+          "candidate_id": "C05"
+        },
+        {
+          "query_id": "Q05",
+          "candidate_id": "C06"
+        },
+        {
+          "query_id": "Q05",
+          "candidate_id": "C07"
+        },
+        {
+          "query_id": "Q05",
+          "candidate_id": "C08"
+        },
+        {
+          "query_id": "Q05",
+          "candidate_id": "C10"
+        },
+        {
+          "query_id": "Q07",
+          "candidate_id": "C01"
+        },
+        {
+          "query_id": "Q07",
+          "candidate_id": "C03"
+        },
+        {
+          "query_id": "Q07",
+          "candidate_id": "C04"
+        },
+        {
+          "query_id": "Q07",
+          "candidate_id": "C05"
+        },
+        {
+          "query_id": "Q07",
+          "candidate_id": "C06"
+        }
+      ],
+      "payload_sha256": "8db9f3091bb880fd6009b46edc6124c47227e6da966ebb81dd09947f1be32205",
+      "archive_sha256": "586bfa008652d3626f1c4dc84208039d4dbda12016761f4bd8addd9ac5d226e0",
+      "status": "prepared_not_confirmed_sent"
+    },
+    {
+      "packet": "R02",
+      "pairs": 17,
+      "filename": "剩余第2包_17题.zip",
+      "cases": [
+        {
+          "query_id": "Q07",
+          "candidate_id": "C08"
+        },
+        {
+          "query_id": "Q07",
+          "candidate_id": "C09"
+        },
+        {
+          "query_id": "Q07",
+          "candidate_id": "C10"
+        },
+        {
+          "query_id": "Q09",
+          "candidate_id": "C01"
+        },
+        {
+          "query_id": "Q09",
+          "candidate_id": "C03"
+        },
+        {
+          "query_id": "Q09",
+          "candidate_id": "C05"
+        },
+        {
+          "query_id": "Q09",
+          "candidate_id": "C06"
+        },
+        {
+          "query_id": "Q09",
+          "candidate_id": "C07"
+        },
+        {
+          "query_id": "Q09",
+          "candidate_id": "C08"
+        },
+        {
+          "query_id": "Q09",
+          "candidate_id": "C09"
+        },
+        {
+          "query_id": "Q11",
+          "candidate_id": "C01"
+        },
+        {
+          "query_id": "Q11",
+          "candidate_id": "C02"
+        },
+        {
+          "query_id": "Q11",
+          "candidate_id": "C04"
+        },
+        {
+          "query_id": "Q11",
+          "candidate_id": "C05"
+        },
+        {
+          "query_id": "Q11",
+          "candidate_id": "C06"
+        },
+        {
+          "query_id": "Q11",
+          "candidate_id": "C08"
+        },
+        {
+          "query_id": "Q11",
+          "candidate_id": "C09"
+        }
+      ],
+      "payload_sha256": "df2393d913fbd80c784902840c26025919444d482328399f8f7a001b11a0da99",
+      "archive_sha256": "5d78b2f4963d82f7839294a6d32d86d65b3058ea05e6ae62d51ee196ea4eea60",
+      "status": "prepared_not_confirmed_sent"
+    }
+  ],
+  "partial_score_followup": [
+    {
+      "query_id": "Q03",
+      "candidate_id": "C02"
+    }
+  ],
+  "reason_only_followup": [
+    {
+      "query_id": "Q02",
+      "candidate_id": "C01"
+    },
+    {
+      "query_id": "Q02",
+      "candidate_id": "C02"
+    },
+    {
+      "query_id": "Q02",
+      "candidate_id": "C03"
+    },
+    {
+      "query_id": "Q02",
+      "candidate_id": "C04"
+    },
+    {
+      "query_id": "Q02",
+      "candidate_id": "C05"
+    },
+    {
+      "query_id": "Q02",
+      "candidate_id": "C06"
+    },
+    {
+      "query_id": "Q02",
+      "candidate_id": "C07"
+    },
+    {
+      "query_id": "Q02",
+      "candidate_id": "C08"
+    },
+    {
+      "query_id": "Q02",
+      "candidate_id": "C09"
+    },
+    {
+      "query_id": "Q02",
+      "candidate_id": "C10"
+    }
+  ],
+  "already_complete_with_reason": 14,
+  "existing_both_score_pairs": 24,
+  "source_return_sha256": {
+    "participant_001": "f76e982f94edd10b4ae3e71edd6777d606cd44f8bd5080a81b3b70bc15bc2cab",
+    "participant_002": "a8c061c12af938f9eff13f7c2915ebd316e141dd72e8da2527aa61f26437ff6d",
+    "participant_003": "302034e417a8694aa54c2dce4e0434d11638535eacd5466eaff65f401d0626a8",
+    "participant_004": "2ee7682e5ac3b6868e8665ab0403410db4041dd3e60ad6f67a4ce286169666cc"
+  },
+  "source_payload_sha256": {
+    "Q03": "6245ec8772685719f4194360d8258fc1009f682cd016cc6e986ffcd272052c49",
+    "Q05": "e3f2dfb1703199111c8bb672d8a2baf868eb3b006df4c09235de0541af83d543",
+    "Q07": "b9ad6750601eee6a129ba12b501b7b024097fa684687e49d3991969779533584",
+    "Q09": "d0d74e4e0e0a0124e2528eb28ca2ad7119585f20c3df0440f115d94ab59897df",
+    "Q11": "998864567871a7477d0dff6a2ec995d43d479727d18dfe315dca98fa34d9abb3"
+  },
+  "template_sha256": "edd8b91d477f6c1657ce0a128838318f07cce00ad2eee4ffcc65653d0c4c1ab0",
+  "organizer_bundle_sha256": "1b7beccb1200e466031e482ab9e968757b50c5cb8a494110b65ec866eeb3bd31",
+  "rubric": "v9 r3 Chinese wording unchanged; assignment/export versions differ",
+  "limits": [
+    "Unreturned is not proof unsent; check existing recipients before redistributing overlapping old-packet items.",
+    "Follow-up belongs to the original respondent and cannot be supplied by AI or another respondent.",
+    "Repackaging does not convert missing scores or missing reasons into completed answers."
+  ]
+}

@@ -205,7 +205,7 @@
     "Q02": "ct-pilot-v9-distributed-r2-Q02"
   },
   "mixed_version_analysis": "Cumulative counts only; score summaries remain per packet/version",
-  "active_additional_human_distribution": "datasets/selections/ct_human_micro_v13.json",
+  "active_additional_human_distribution": "datasets/selections/ct_remaining_v15.json",
   "previous_7_8_pair_packets": "Superseded for new distribution; retained as historical artifacts",
   "annotation_workflow": {
     "status": "paused_by_user",
@@ -213,5 +213,7 @@
     "existing_responses_and_allocation_preserved": true
   },
   "human_both_grades_present_pairs": 24,
-  "human_both_grades_without_reason": 10
+  "human_both_grades_without_reason": 10,
+  "active_remaining_materials": "datasets/selections/ct_remaining_v15.json",
+  "previous_micro_distribution": "v13 replaced for new packaging only; prior exports remain accepted"
 }
