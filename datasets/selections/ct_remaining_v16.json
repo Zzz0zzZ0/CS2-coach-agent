@@ -1,10 +1,10 @@
 {
   "version": "ct-remaining-v16",
   "date": "2026-10-24",
-  "status": "prepared_not_sent_user_authorized_silver_transfer_complete",
+  "status": "partially_returned",
   "human_assigned": 51,
   "silver_assigned": 68,
-  "human_unscored": 26,
+  "human_unscored": 17,
   "new_packets": [
     {
       "packet": "R01",
@@ -50,7 +50,11 @@
       ],
       "payload_sha256": "8fb252ed6c41a430bf43ad8cdadbd3ae0a389ef248af548d78f97c50f5393a08",
       "archive_sha256": "beecc4f8ad3c09bd320c30b0d0eb11dea5ed78d40be57b915c53d6dfbd88ef87",
-      "status": "prepared_not_confirmed_sent"
+      "status": "returned_complete",
+      "source_export_sha256": "d6fbd8a8dcab3298e8f6c7022dc4f32cc67d4b045937b310ffa3ca0d5996ce57",
+      "complete_pairs_received": 9,
+      "both_numeric_pairs_received": 5,
+      "both_unjudgeable_pairs_received": 4
     },
     {
       "packet": "R02",
@@ -233,14 +237,24 @@
       "candidate_id": "C10"
     }
   ],
-  "human_both_scores_received": 24,
+  "human_both_scores_received": 29,
   "human_one_dimension_only": 1,
-  "human_complete_with_reason": 14,
+  "human_complete_with_reason": 23,
   "silver_source_files": [
     "datasets/evaluation/ct_ai_silver_v10.json",
     "datasets/evaluation/ct_ai_silver_transfer_v16.json"
   ],
   "rubric": "Original r3 Chinese wording and score definitions unchanged",
   "organizer_bundle_sha256": "81518ec962d5b9fb6cfcb506dd89f1832fe1bfa3efb31fbd49054d1c4882b111",
-  "later_old_returns_policy": "Preserve separately as additional human evidence with its actual version; do not replace silver or count duplicate cases as new tasks."
+  "later_old_returns_policy": "Preserve separately as additional human evidence with its actual version; do not replace silver or count duplicate cases as new tasks.",
+  "human_unscored_at_packaging": 26,
+  "returned_complete_packets": [
+    "R01"
+  ],
+  "remaining_packet_ids": [
+    "R02",
+    "R03"
+  ],
+  "human_both_choices_received": 33,
+  "human_both_unjudgeable_received": 4
 }
