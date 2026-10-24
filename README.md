@@ -473,6 +473,7 @@ data/、output/            # 本地运行数据，不进入 Git
 | CT 人工题包记录 v16 | [9条未评分的历史分配记录](docs/CT_REMAINING_V16.md)（保留原状态，已停止追补） |
 | CT 实施与对照 v17 | [完整实施方案、90 份控制模型、几何描述与论文结果](docs/CT_IMPLEMENTATION_V17.md)（计算阶段已完成；无稳定神经优势，人工停止追补，正式战术泛化未验收） |
 | CT 研究总计划 | [当前唯一执行入口：真实进度、主任务、阶段依赖和验收](docs/CT_PUBLICATION_ROADMAP.md)（按完整研究论文推进；v18缩减安排已撤回） |
+| CT 论文工作区 | [英文LaTeX框架](docs/paper/manuscript/main.tex) · [章节、实验与证据对应表](docs/paper/README.md)（已有辅助结果已填，主任务结果按实验进展补入） |
 
 ## 许可证
 

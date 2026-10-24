@@ -1,4 +1,6 @@
-# Cross-map CT state prediction: manuscript evidence draft
+# Auxiliary CT state-prediction evidence supplement
+
+The active full-paper framework is [manuscript/main.tex](manuscript/main.tex), with section/experiment tracking in the [writing guide](README.md). This file preserves the completed numerical evidence; it is not a second manuscript or a change of the main deployment-representation task.
 
 Status: working Methods, Results and Limitations sections, not a submission-ready paper. Human annotation is paused at the user's request. These numerical results use previously observed development data. No tactical efficacy, coaching benefit or superiority of the original TAGNet task is established.
 

@@ -1,0 +1,200 @@
+\documentclass[journal]{IEEEtran}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{url}
+\newcommand{\pending}[2]{\par\smallskip\noindent\textbf{Pending [#1].} #2\par\smallskip}
+\title{Cross-Map Representation and Generalization of Defensive Openings in Counter-Strike 2}
+\author{Working manuscript framework}
+\begin{document}
+\maketitle
+\noindent\textbf{Draft status, 25 October 2026.}
+This document is a full-paper framework. Recorded development evidence is distinguished from proposed methods and experiments awaiting execution. It does not report completed tactical generalization or a registered final test. Experimental identifiers connect each result slot to the accompanying writing guide.
+
+\begin{abstract}
+\pending{ABS}{After the main experiments, write one paragraph covering the cross-map deployment problem, the final representation and comparison, the independent cohort and primary result with uncertainty, and the supported conclusion. The present prediction controls are auxiliary evidence and must not become the abstract's sole endpoint. No future sample size or successful result is supplied here.}
+\end{abstract}
+\begin{IEEEkeywords}
+Counter-Strike 2, defensive deployments, representation learning, cross-map generalization, graph models.
+\end{IEEEkeywords}
+
+\section{Introduction}
+Representing a Counter-Strike 2 defensive opening across maps requires a distinction between a player's map-specific location and the deployment information that a representation is intended to retain. Similar occupancy counts or short Euclidean distances alone do not establish that two deployments support the same defensive interpretation.
+
+TAGNet studies defensive pattern recognition from five CT snapshots on Dust2~\cite{tagnet2026}. Our research concerns the extension of deployment representations, pattern analysis, and comparable-opening retrieval across maps. Snapshot reconstruction, pattern stability, retrieval relevance, and next-state prediction answer different questions. The latter is retained as an auxiliary probe.
+
+\subsection{Research questions and intended contribution}
+We organize the study around four questions: which deployment information a common representation retains across maps (R1); what graph structure and learned temporal aggregation contribute under matched inputs (R2); whether discovered patterns are stable and retrieved deployments are interpretable and relevant (R3); and whether the frozen procedure transfers to independent series under a stated map-exclusion regime (R4).
+
+\pending{INTRO}{Complete the literature-supported gap and contribution statement after the related-work comparison and main design are fixed. Contributions must describe supported results rather than planned experiments or a presumed neural advantage. Preserve the full deployment-representation research scope.}
+
+\begin{table}[t]
+\caption{Research questions and required evidence. These are experiment requirements, not completed results.}
+\label{tab:questions}
+\centering\small
+\begin{tabular}{p{.08\linewidth}p{.36\linewidth}p{.43\linewidth}}
+\toprule
+Question & Comparison & Evidence required\\
+\midrule
+R1 & Existing and revised common inputs & E1 field validity and coverage; E2 controlled representation study\\
+R2 & Full-input non-graph, graph, static and temporal encoders & E2 matched-input comparisons and ablations\\
+R3 & Pattern analysis and identical-library retrieval & E3 stability; E4 deployment evidence and judgments\\
+R4 & Frozen methods on new series & E5 independent evaluation and uncertainty\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Related Work}
+\subsection{Defensive pattern representation}
+TAGNet is the reference for the original snapshot-reconstruction and defensive-pattern task~\cite{tagnet2026}. Its original feature vocabulary, context branch, aggregation implementation, and clustering analysis must be documented separately from any new common-input or learned-temporal variant.
+
+\subsection{Permutation-invariant and graph controls}
+Deep Sets develops a framework for permutation-invariant set functions~\cite{NIPS2017_f22e4747}. Janossy pooling constructs invariance through averaging an order-sensitive function over reorderings~\cite{murphy2019janossy}. Our existing five-player non-graph control applies this symmetrization principle to jointly permuted nodes and edge endpoints. It serves as a comparator and is not presented as a new pooling algorithm.
+
+\pending{RW}{Add and verify primary work on esports deployment representation, spatiotemporal prediction, retrieval, and cross-domain evaluation. Build a task/data/split/endpoint comparison before claiming novelty. These three references are a starting set, not a completed literature review.}
+
+\section{Task, Data, and Evidence Sources}
+\subsection{Deployment window and available observations}
+A CT opening is represented by observations at 10, 12, 15, 18, and 20 seconds after freeze time. Current inputs contain five consistent player identities, positions, named places, health, equipment, and validity information. Identity is used for alignment and provenance; team identity and future outcomes are not common encoder inputs.
+
+\subsection{Development cohort}
+The existing development cohort contains nine series, 22 Demos, six maps, and 465 eligible CT windows. Seventy-four windows contain casualties. Survival and valid-pair masks remain explicit. All nine series have already been inspected and cannot be relabeled as an untouched final cohort.
+
+\begin{table}[t]
+\caption{Recorded development cohort and the pending independent cohort. Counts refer to distinct eligible windows, not independent frames.}
+\label{tab:data}
+\centering
+\begin{tabular}{lrr}
+\toprule
+Item & Development & Independent test\\
+\midrule
+Series & 9 & Pending E5\\
+Demos & 22 & Pending E5\\
+Maps & 6 & Pending E5\\
+Eligible CT windows & 465 & Pending E5\\
+Windows with casualties & 74 & Pending E5\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Independent data and human evidence}
+\pending{DATA}{Supply the final cohort, sample-precision rationale, series identifiers, acquisition and replacement rules, patches, exclusions, and hashes after the formal protocol is frozen. Separate map, time, and team exclusion conditions. The six known maps have already participated in development.}
+Existing participant returns and developer-involved AI silver judgments remain separate pilot sources with incomplete coverage. They do not establish the formal independent tactical endpoint. Previously distributed unanswered items are not automatically reopened.
+
+\section{Common Deployment Representation}
+\subsection{Recorded common-input baseline}
+The current common-input implementation uses five place categories: BombsiteA, BombsiteB, CTSpawn, TSpawn, and other. Each node contains their one-hot encoding, normalized health, transformed equipment value, and an alive indicator, giving eight channels. This coarse vocabulary is not a validated tactical-role taxonomy.
+
+The existing auxiliary state contains the five live-category fractions, dead-player fraction, and mean and maximum live-pair Euclidean distances. Distances use a fixed 5,000-game-unit scale. Undefined pair statistics are masked.
+
+\subsection{Implemented geometric descriptors}
+A separate geometry export implements relative height, airborne/grounded/unknown state, NAV-candidate information, horizontal distance, height difference, and validity masks. It has been audited on the existing 465 windows. This export has not yet been integrated into the final main representation or validated as tactical semantics.
+
+\pending{REP}{E1 must fix the six-map functional vocabulary, source-to-common mapping, height/ground fields, unknown handling, normalization, exact feature dimensions, and the versioned schema. Show which concrete deployments the representation separates or incorrectly merges.}
+
+\subsection{Asset and navigation validity}
+Patch-number agreement alone does not establish exact map-asset compatibility. NAV residuals, traversable distances, visibility, and functional roles require their respective evidence.
+\pending{NAV}{Provide the per-map/patch asset-validity table, localization and connection checks, disabled fields, and spot-checked deployment examples. Coverage alone is not correctness; unsupported quantities remain unknown.}
+
+\section{Models and Learning Procedure}
+\subsection{Common notation}
+For each window, let $X_t$, $A_t$, and $M_t$ denote node observations, pair information, and masks. A snapshot representation and window representation can be written as
+\begin{equation}
+ g_t=f_\theta(X_t,A_t,M_t), \qquad
+ z=\mathcal{A}_\phi(g_1,\ldots,g_5).
+\end{equation}
+This notation does not specify an already completed revised model.
+
+\subsection{Reference and comparison families}
+The planned main comparison includes direct common-feature sequences, a full-input non-graph encoder, a distance-aware graph encoder, and corresponding static and learned-temporal conditions. Original TAGNet context and fixed aggregation are a separately described reproduction condition.
+
+The completed v17 non-graph control reads the full masked node matrix, distance matrix, and alive mask. It averages a shared MLP over all 120 joint player permutations, preserving edge-endpoint correspondence in every input. Static and causal-GRU prediction variants were compared under the recorded development recipe.
+
+\pending{TRAIN}{E2 must specify the main reconstruction targets, temporal objective, losses and weights, decoder, dimensions, candidate conditions, seeds, training budgets, and source-validation selection before training. Reuse prior weights only if inputs, objective, and selection are genuinely the same. Auxiliary prediction validation does not automatically select the best tactical representation.}
+
+\section{Experimental Protocol}
+\subsection{Development and final isolation}
+Recorded G3 prediction controls leave one complete series out. Recorded G4 controls exclude a target map and every series containing that map from training and validation. These are development results. The final task protocol must separately specify its train/validation/test membership and prevent a query series from entering the retrieval library.
+
+\subsection{Pattern and retrieval endpoints}
+\pending{METRIC}{Freeze E3 stability measures, source-only selection of cluster number and centers, E4 judgment instructions and primary retrieval endpoint, effect measure, missing judgments, and query/series aggregation. Structural resemblance, tactical reference quality, and automatic geometry are distinct endpoints.}
+
+The earlier protocol proposes pooled nDCG at five, with the ideal ranking restricted to the same judged candidate pool. If retained, its definition is
+\begin{equation}
+ \mathrm{DCG@5}=\sum_{k=1}^{5}
+ \frac{2^{r_k}-1}{\log_2(k+1)}.
+\end{equation}
+Normalization, missing grades, and all-zero or incomplete pools must be fixed before final scoring. A candidate-pool score cannot establish full-library recall.
+
+\subsection{Sampling units, uncertainty, and selection}
+The independent unit must follow the actual sampling design; frames, rounds, or model seeds cannot be counted as independent series. Existing prediction intervals are conditional descriptive series-resampling summaries. They do not remove shared-team or overlapping-training dependencies.
+\pending{STAT}{Before E5 data entry, fix the primary contrast, precision/sample-size analysis, dependence handling, uncertainty method, secondary-comparison policy, resource limits, and stopping rules. No claim of adequate power or equivalence is currently made.}
+
+\section{Results}
+\subsection{Representation validity and coverage: E1}
+\pending{RES1}{Insert six-map source/semantic validity, unknown rates by field, height/ground diagnostics, version coverage, and concrete failure cases. Separate implemented geometry coverage from correctness.}
+
+\subsection{Main representation and temporal comparison: E2}
+\pending{RES2}{Insert the complete matched-input main-task comparison, per-seed and per-map results, uncertainty, and ablations. Identify input contribution and encoder/temporal contribution separately. Report every frozen condition.}
+
+\subsection{Stable patterns and relevant retrieval: E3--E4}
+\pending{RES34}{Insert source-fitted pattern profiles, stability and coverage, interpretable deployment evidence, identical-library retrieval comparisons, independent-judgment scope, missingness, and failures. No completed tactical relevance result is asserted.}
+
+\begin{figure}[t]
+\centering
+\fbox{\parbox{.89\linewidth}{\small Planned E3--E4 display: aligned query and retrieved deployments with time, height, unknown markers, anonymized method ordering, and the source evidence supporting each interpretation.}}
+\caption{Reserved deployment-evidence figure. The display and its judgments have not yet been produced for the revised main model.}
+\label{fig:deployment}
+\end{figure}
+
+\subsection{Independent generalization: E5}
+\pending{RES5}{Insert only results from the frozen new-series evaluation: actual cohort, primary effect and uncertainty, map/series failures, supported external-validity scope, and protocol deviations. No result cell is filled from development data.}
+
+\subsection{Completed auxiliary state-prediction controls: E6}
+Table~\ref{tab:aux} reports the completed v17 development comparison using the original common inputs and masks. Values are equal-series relative MSE reductions against persistence. Neural scores average errors over seeds 0, 1, and 42; they are not a prediction ensemble.
+
+\begin{table}[t]
+\caption{Completed auxiliary development prediction, E6. Relative MSE reduction against persistence (\%). These values do not measure tactical relevance or the revised main representation.}
+\label{tab:aux}
+\centering
+\begin{tabular}{lrr}
+\toprule
+Method & G3 & G4\\
+\midrule
+Ridge & 18.06 & 14.71 \\
+Graph & 14.51 & 12.07 \\
+Graph + GRU & 16.76 & 11.46 \\
+Full-input MLP & 15.88 & 13.03 \\
+Full-input MLP + GRU & 17.07 & 10.80 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The new non-graph conditions did not establish a stable advantage over ridge. This result bounds the current predictive probe; it neither validates the revised deployment representation nor rules out graph usefulness for the original pattern task. The full v7 and v14 controls, paired descriptive intervals, seeds, and failures remain in the evidence supplement.
+
+\section{Discussion and Limitations}
+\subsection{What the evidence can establish}
+Existing predictive controls help separate raw-input availability from architecture choice. Euclidean geometry and pooled occupancy cannot, by themselves, certify tactical responsibilities, walkable routes, or useful deployment analogies. The current development cohort is small and contains repeated teams.
+
+\pending{DISC}{After E1--E5, interpret the main findings, competing explanations, component failures, and deployment-use conditions. Distinguish stable descriptive patterns from tactical correctness and association from causation. Do not turn non-significance into equivalence.}
+
+\subsection{Scope of the project}
+This CT study targets offline deployment representation and evidence retrieval. T-side openings, a production backend, coaching interventions, and win-rate effects are separate projects and have not been validated by the present experiments.
+
+\section{Conclusion}
+\pending{CONC}{Summarize the final supported contribution, primary independent result, and remaining limitations. Keep the same research scope as the introduction; do not replace missing main-task results with auxiliary prediction gains.}
+
+\appendices
+\section{Evidence and Reproducibility}
+Recorded auxiliary evidence is in
+\path{datasets/evaluation/ct_information_control_v17_report.json}.
+Geometry coverage is in
+\path{datasets/evaluation/ct_geometry_features_v17_report.json}.
+Cohort and historical protocols are linked in the manuscript writing guide. Raw Demos, human returns, environments, and most weights remain local; the public summaries alone are not a fresh-clone training dataset.
+
+\pending{REPRO}{Supply legally shareable minimal inputs, complete manifests and environments, executable training/evaluation entry points, licenses, deviations, and the distinction between source reproduction and metric reproduction.}
+\section{Declarations and Pilot Sources}
+\pending{DECL}{Before submission, supply factual author contributions, applicable participant/consent information for any human evidence actually used, data/code availability, funding/conflicts if applicable, and the venue-required AI assistance disclosure. No approval, consent, authorship, or funding statement is invented here.}
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+\end{document}
