@@ -1,0 +1,75 @@
+{
+  "version": "ct-information-control-v17",
+  "written_before_first_training_utc": "2026-10-24T16:27:18.333579+00:00",
+  "scope": "Fixed development comparison on the already observed v7 cohort; not a preregistered untouched test",
+  "tasks": [
+    "G3",
+    "G4"
+  ],
+  "training": {
+    "seeds": [
+      0,
+      1,
+      42
+    ],
+    "epochs_max": 40,
+    "batch_size": 64,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "loss": "snapshot reconstruction + next-state masked MSE; equal weight",
+    "checkpoint": "lowest validation next-state MSE; target tests not used",
+    "ridge_penalties": [
+      0.0001,
+      0.001,
+      0.01,
+      0.1,
+      1,
+      10,
+      100
+    ],
+    "selection": "training-only normalization; ridge penalty chosen only on fold validation; no target-driven routing; preserve every seed",
+    "neural_scoring": "same death-floor/order projection as ridge, at validation selection and test; training residual model unchanged",
+    "prefix_ridge": "first 1/2/3/4 available 10D observations, zero future padding, four-way time index; 44 inputs, normalization fit on train only",
+    "velocity": "current plus observed latest change times next_dt/last_dt, persistence at first horizon; project constraints",
+    "G5": "initialize from selected G4 weight, train on G4 source plus first target-map support series; same source validation; no target validation",
+    "G5_control": "initialize from identical G4 weight, continue on source only, cycle batches to exactly match optimizer steps each epoch; same validation selection rule",
+    "source_dataset": "only nine directly parsed series; upstream samples excluded from retraining because source series identity unknown"
+  },
+  "model": "Full masked five-node/every-distance matrix plus alive mask; 120 synchronous permutations -> shared70-128-128-64 MLP -> mean -> static or GRU heads",
+  "models_to_train": 90,
+  "input_sha256": {
+    "scripts/run_ct_information_control.py": "a5cebe1bcbb1e5e10b15e57e7026275388e7253328d607f13460d1ff31a47551",
+    "scripts/run_ct_generalization.py": "259f26d423149c2a04cf734b96cceb8253ef3b71012b7bd72242063d502beb46",
+    "scripts/confirm_ct_generalization.py": "fff00eef1eaebd5edbf4b80ff8ba7d5bd3c851f2e18176c5227935d0aaa0a793",
+    "app/services/ct_feature_service.py": "7d2476cc88c6f3ad62e8a1ca71668c14ee71758f5904162763ac49a63e5bed0b",
+    "app/services/ct_linear_service.py": "523e9909f53a31862165ff84c3256489f18a9a2dc66cdcb63778e42fb11053ca",
+    "app/services/ct_prediction_service.py": "0a063f39b27d977cc5dafd009d7fd807be9b4970c2cf84e2ef0ac1f3b125b7d1",
+    "app/services/ct_evaluation_service.py": "185fdcad339c27bcaa1ff243377eb00830d1721774111f1874f2418e474db16d",
+    "output/tagnet/ct_grouped_confirmation_v7/report.json": "9ee54ed1da8ae4572742d587a6c233aa3e27c91505688f46eae8694d0b9759b8",
+    "output/tagnet/ct_grouped_confirmation_v7/folds.json": "5997bf6bdabc1df506fc2cd4e1527be35eac332463002bcc6f34f4ac15053585",
+    "output/tagnet/ct_grouped_confirmation_v7/sample_index.json": "83f34a6c24a6cff875fd458f355129cf41b89aae8769672aa9bd46558778dd4d",
+    "output\\tagnet\\ct_grouped_confirmation_v7\\G3__2396595\\predictions.npz": "a89016d859248f94f9735d7e34bd5fdd02ffda3da2f9d5d4a5277c55569cf0c9",
+    "output\\tagnet\\ct_grouped_confirmation_v7\\G3__2396609\\predictions.npz": "5fc9e320e970735625340d620f7ec96f2ae6cb4485ab4d6af7d9160ddf6f84f4",
+    "output\\tagnet\\ct_grouped_confirmation_v7\\G3__2396613\\predictions.npz": "b77f9c4c9f2d900e957354bb928ed28b1602b1878e80be75466ac9920c081d68",
+    "output\\tagnet\\ct_grouped_confirmation_v7\\G3__2396940\\predictions.npz": "97a2f561ef946aa944bdf50ea9dfb7d4bdd0a66d45a80162da7871eaac6b09d7",
+    "output\\tagnet\\ct_grouped_confirmation_v7\\G3__2396944\\predictions.npz": "def7195f6a46aaf8f807a14de08121f52740786bbb18e1e08793d72234eecd21",
+    "output\\tagnet\\ct_grouped_confirmation_v7\\G3__2396945\\predictions.npz": "7eee38d442aa624bda1f65d6393ba66aaf6213fff42d9639b75d72803744196a",
+    "output\\tagnet\\ct_grouped_confirmation_v7\\G3__2396949\\predictions.npz": "f5425f321c42ad952fd11b0f25e481dd8e31f2db2c2e783c620e31bbb4453461",
+    "output\\tagnet\\ct_grouped_confirmation_v7\\G3__2396950\\predictions.npz": "aeb4fcca0a2b8ab6a6a5241f3f760d8eafe15a85f7d33035cebd7915063e0990",
+    "output\\tagnet\\ct_grouped_confirmation_v7\\G3__furia_falcons_existing_local\\predictions.npz": "05482e9c59631d7f3a007901e154b922275319250c9c1f719d4b936e300c0e87",
+    "output\\tagnet\\ct_grouped_confirmation_v7\\G4__de_ancient\\predictions.npz": "5156b848edc7d523b16a2a5be94c4841272fe2893bfbbf5794f9051a018be036",
+    "output\\tagnet\\ct_grouped_confirmation_v7\\G4__de_anubis\\predictions.npz": "1961b74ba8f7a4ad4352dd3cb83b9a6f112aebea944e326aeaa5243f2b546e17",
+    "output\\tagnet\\ct_grouped_confirmation_v7\\G4__de_dust2\\predictions.npz": "d645e96c215de81e404c923671891602a2d258fc736fc8a10e012abc3c5a811e",
+    "output\\tagnet\\ct_grouped_confirmation_v7\\G4__de_inferno\\predictions.npz": "38d65647e6d1b874ddfae1b709972907a86c52fa1efda5ca9efcc27b297a54fd",
+    "output\\tagnet\\ct_grouped_confirmation_v7\\G4__de_mirage\\predictions.npz": "83fe2fbc5f76bd685630f23cebe02773fd2ee150a0305ef1f2cb006565a79883",
+    "output\\tagnet\\ct_grouped_confirmation_v7\\G4__de_nuke\\predictions.npz": "30f1ff42d982715d514eb7ea5ed3001c319792c6e97e39787beb754d6a194b36"
+  },
+  "limits": [
+    "All nine series are development data; state prediction is not tactical truth.",
+    "Same raw effective inputs and optimizer-step budget, not equal FLOPs or parameter count; exact 120 permutations cost more compute.",
+    "No hyperparameter/architecture search, no added seeds after outcomes.",
+    "RAM >=2 GiB at startup and >=1.5 GiB during fitting; CUDA allocation cap 20%; single process.",
+    "No new Demos, human labels, AI silver, map IDs, teams or outcomes in inputs.",
+    "All stored v7 comparisons retained; no product-model replacement."
+  ]
+}

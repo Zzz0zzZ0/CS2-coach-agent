@@ -12,6 +12,8 @@ All train/validation/test partitions are separated by complete series. G2 trains
 
 The v14 exploratory comparison retains the exact G3/G4 folds, target masks, prediction constraints and seven ridge penalties from v7. The base model has ten current-frame features. Node summaries add ten role-conditioned live health/equipment sums and two live health/equipment standard deviations. Pair summaries add ten sorted live-pair distances and ten padding-validity indicators. Combined summaries contain 42 inputs and 344 fitted regression coefficients including intercepts. These summaries are permutation-invariant and use the same raw node/edge sources, but discard associations; they do not constitute a complete-information set-model control.
 
+The v17 non-graph control reads the full masked five-player node matrix, full pair-distance matrix and alive mask (70 scalar inputs). It applies the same MLP to all 120 joint node/edge permutations and averages the embeddings. This preserves the incidence between each edge and its endpoints in every network input while enforcing permutation invariance. Static and causal-GRU variants use the same loss, 40 epochs, batch size, optimizer steps and validation selection as the cached graph controls. The model has 59,984 parameters versus 78,419 for the graph comparator. Averaging all permutations incurs extra computation; the comparison is not compute- or parameter-matched.
+
 We report relative reductions in equal-series mean squared error. Paired series bootstrap intervals use 2,000 resamples and seed 20261023. They are conditional descriptive intervals: there are few series, teams overlap, and training folds overlap. The cohort has already been inspected, so none of these results are untouched confirmatory tests.
 
 ## Results
@@ -42,7 +44,26 @@ Table 2. v14 fixed richer-summary controls: reduction versus persistence, follow
 
 The combined summary yields only a 0.23% paired reduction relative to ridge in G3, with an interval spanning zero. In G4 it increases error by 0.82%, again with an interval spanning zero. Neither added group alone gives a consistent improvement. These results do not support adopting the richer summaries as a superior model; all four conditions remain reported. The reproduced base-ridge forecasts differ from the saved v7 predictions by at most 7.78e-16.
 
-Table 3. Failures and constraints that accompany the aggregate results.
+Table 3. v17 full-input controls: equal-series relative reduction versus persistence (%), and paired reduction versus ridge with descriptive intervals. All 90 additional models were trained under the fixed recipe.
+
+| Setting | Method | vs persistence (%) | vs ridge (%) | Descriptive interval (%) |
+|---|---|---:|---:|---|
+| G3 | Graph static | 14.51 | -4.32 | [-6.13, -2.14] |
+| G3 | Graph + GRU | 16.76 | -1.58 | [-3.63, 0.23] |
+| G3 | Full-input MLP | 15.88 | -2.66 | [-4.42, -0.62] |
+| G3 | Full-input MLP + GRU | 17.07 | -1.20 | [-3.43, 0.84] |
+| G4 | Graph static | 12.07 | -3.09 | [-5.45, -0.51] |
+| G4 | Graph + GRU | 11.46 | -3.81 | [-6.42, -1.69] |
+| G4 | Full-input MLP | 13.03 | -1.97 | [-4.28, 0.61] |
+| G4 | Full-input MLP + GRU | 10.80 | -4.59 | [-7.20, -2.65] |
+
+The full-input static MLP outperforms the cached static graph in point estimates in both settings, but neither new control establishes an advantage over ridge. G3 full-input GRU remains inconclusive relative to ridge; G4 full-input GRU has higher error. This fixed development recipe does not establish a graph-structure advantage, nor prove that no graph model could be useful.
+
+![v17 paired development comparison](../assets/ct_information_control_v17.png)
+
+The separate experimental geometry export covers all 465 windows with 15 node descriptors and two pair descriptors. It separates horizontal distances, relative heights, airborne/unknown state and masked NAV-candidate residuals. Only 8,979 of 11,368 live observations retain projection validity after the historical patch-number gate; this is a validity filter, not an improvement in localization accuracy. This representation has not been trained or judged as tactical semantics.
+
+Table 4. Failures and constraints that accompany the aggregate results.
 
 | Observation | Evidence | Consequence |
 |---|---|---|
@@ -56,9 +77,9 @@ Table 3. Failures and constraints that accompany the aggregate results.
 
 No independent tactical endpoint is established. Human responses and developer-involved AI silver judgments are separate pilot evidence and are not used for this experiment. Their workstream is paused. The geometric retrieval diagnostic uses the original frozen encoders and a Dust2 training library, not the newly cross-validated encoders. Shared teams and the small number of series prevent population-level conclusions. Target-map static geometry access must be disclosed when future map semantics are evaluated; historical patch compatibility is not fully established.
 
-The next missing model control is an information-matched trainable set or pair-set model; the pooled ridge summaries do not fill that gap. New semantic roles, navigable distances and clustering claims also require separate evidence. A new untouched test cohort should be collected only after the recipe, primary comparison, sampling budget and stopping rule are fixed. Original-task reconstruction/clustering reproduction remains a separate track. Related work, publication novelty, statistical power and submission requirements need separate verification before manuscript completion.
+The v17 full-input non-graph control now addresses the raw-input omission of the v14 pooled statistics, while compute and parameter differences remain explicit. It gives no stable advantage over ridge. New geometry is implemented and audited separately; no predictive improvement from geometry is claimed. New semantic roles, navigable distances and clustering claims also require separate evidence. A new untouched test cohort should be collected only after the recipe, primary comparison, sampling budget and stopping rule are fixed. Original-task reconstruction/clustering reproduction remains a separate track. Related work, publication novelty, statistical power and submission requirements need separate verification before manuscript completion.
 
-## Reproducibility pointers
+## v14 reproducibility pointers
 
 - [v7 numerical report](../../datasets/evaluation/ct_grouped_v7_report.json)
 - [v14 fixed development recipe](../../datasets/selections/ct_pooled_ridge_v14.json)
@@ -66,3 +87,11 @@ The next missing model control is an information-matched trainable set or pair-s
 - [Run script](../../scripts/evaluate_ct_pooled_ridge.py)
 - Only two targeted synthetic tests were run for the new summaries: permutation/causality and missing-pair/invalid-distance handling. Full regression and GPU retraining were not repeated.
 - v14 used no new Demos or GPU; elapsed fitting/evaluation was approximately 1.58 seconds, with process peak working set approximately 56.37 MiB. RAM guards require 2 GiB at start and 1.5 GiB during fitting. Raw Demos, weights and map images remain local and are not bundled for redistribution.
+
+## v17 implementation receipts
+
+- [Fixed training recipe](../../datasets/selections/ct_information_control_v17.json)
+- [90-weight results, each seed and failure groups](../../datasets/evaluation/ct_information_control_v17_report.json)
+- [Separate geometry coverage](../../datasets/evaluation/ct_geometry_features_v17_report.json)
+- Four targeted synthetic tests passed. Two selected trained checkpoints were also checked on the fixed first test row: maximum permutation difference 5.96e-8; all earlier-prefix changes under future perturbation were zero. This is not a full-suite or tactical validation claim.
+- Training took 209.22 seconds; peak allocated tensor VRAM 124.25 MiB, process peak working set 1,526.83 MiB. CUDA driver context and other processes are separate. No new Demos were downloaded.

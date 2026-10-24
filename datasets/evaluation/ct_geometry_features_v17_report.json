@@ -1,0 +1,143 @@
+{
+  "status": "implemented_and_audited_experimental_geometry_not_trained",
+  "feature_version": "ct-height-ground-v0.1",
+  "rounds": 465,
+  "node_features": [
+    "height_above_live_min_div512",
+    "height_from_live_mean_div512",
+    "airborne",
+    "grounded",
+    "ground_unknown",
+    "nav_inside_candidate",
+    "nav_snap_candidate",
+    "nav_airborne",
+    "nav_unlocalized",
+    "nav_ray_blocked",
+    "nav_unknown",
+    "nav_xy_residual_div32",
+    "nav_z_residual_div64",
+    "nav_projection_valid",
+    "nav_patch_number_matches"
+  ],
+  "edge_features": [
+    "horizontal_distance_div5000",
+    "absolute_height_difference_div512"
+  ],
+  "shape": {
+    "nodes": [
+      465,
+      5,
+      5,
+      15
+    ],
+    "edges": [
+      465,
+      5,
+      5,
+      5,
+      2
+    ],
+    "node_mask": [
+      465,
+      5,
+      5
+    ],
+    "pair_mask": [
+      465,
+      5,
+      5,
+      5
+    ]
+  },
+  "by_map": {
+    "de_ancient": {
+      "live_observations": 2049,
+      "nav_projection_valid": 1938,
+      "nav_patch_number_matches": 2049,
+      "ground_unknown": 0,
+      "airborne": 105,
+      "nav_unknown": 0,
+      "nonzero_relative_height": 2049,
+      "live_ordered_pairs": 8004,
+      "height_gap_ge128_fraction": 0.018740629685157422,
+      "height_gap_ge512_fraction": 0.0
+    },
+    "de_inferno": {
+      "live_observations": 2896,
+      "nav_projection_valid": 2142,
+      "nav_patch_number_matches": 2378,
+      "ground_unknown": 0,
+      "airborne": 303,
+      "nav_unknown": 451,
+      "nonzero_relative_height": 2896,
+      "live_ordered_pairs": 11394,
+      "height_gap_ge128_fraction": 0.058627347726873794,
+      "height_gap_ge512_fraction": 0.0
+    },
+    "de_anubis": {
+      "live_observations": 1017,
+      "nav_projection_valid": 478,
+      "nav_patch_number_matches": 497,
+      "ground_unknown": 0,
+      "airborne": 54,
+      "nav_unknown": 485,
+      "nonzero_relative_height": 1017,
+      "live_ordered_pairs": 4036,
+      "height_gap_ge128_fraction": 0.1897918731417245,
+      "height_gap_ge512_fraction": 0.0
+    },
+    "de_mirage": {
+      "live_observations": 1833,
+      "nav_projection_valid": 1201,
+      "nav_patch_number_matches": 1320,
+      "ground_unknown": 0,
+      "airborne": 161,
+      "nav_unknown": 470,
+      "nonzero_relative_height": 1821,
+      "live_ordered_pairs": 7198,
+      "height_gap_ge128_fraction": 0.08224506807446513,
+      "height_gap_ge512_fraction": 0.0
+    },
+    "de_nuke": {
+      "live_observations": 1511,
+      "nav_projection_valid": 1329,
+      "nav_patch_number_matches": 1511,
+      "ground_unknown": 0,
+      "airborne": 123,
+      "nav_unknown": 0,
+      "nonzero_relative_height": 1481,
+      "live_ordered_pairs": 5936,
+      "height_gap_ge128_fraction": 0.4369946091644205,
+      "height_gap_ge512_fraction": 0.006738544474393531
+    },
+    "de_dust2": {
+      "live_observations": 2062,
+      "nav_projection_valid": 1891,
+      "nav_patch_number_matches": 2062,
+      "ground_unknown": 0,
+      "airborne": 149,
+      "nav_unknown": 0,
+      "nonzero_relative_height": 2062,
+      "live_ordered_pairs": 8034,
+      "height_gap_ge128_fraction": 0.15409509584266864,
+      "height_gap_ge512_fraction": 0.0
+    }
+  },
+  "context_report_sha256": "351e57c6e061e5986c4db59406915a7ee04d1de1c388ead199843be5a22f9d8b",
+  "inventory_sha256": "2a7ca2d8df45e0cefc7ffa46a35c5743d4146cf93ffe64d23fc602ed138f8dcd",
+  "output_sha256": "f254869a334ca29210b103f567ea456e960c6f3e3176d5f3c8ee1672fe20e4f6",
+  "source_sha256": {
+    "scripts\\audit_ct_geometry_features.py": "1f02e3c24bb36ac6d61a705c4af6f3deb19d814cc6fed7d07e47f6449768bcce",
+    "app\\services\\ct_geometry_service.py": "dbf0904bb9fdb0905050c5e515c07b71292ce9bc2b842282bf3727c079fc3981"
+  },
+  "elapsed_seconds": 1.0836758999939775,
+  "process_peak_RAM_MiB": 98.1640625,
+  "limits": [
+    "NAV residuals masked unless historical patch number matches; exact map compatibility still unverified.",
+    "Height and ground state are geometry, not tactical roles, line of sight or traversability.",
+    "No change to v7 common features, no new training or claimed performance gain.",
+    "No target-match-fitted scaling; 512/5000/32/64 are fixed descriptive scales."
+  ],
+  "live_total": 11368,
+  "valid_patch_gated_projection_total": 8979
+}
