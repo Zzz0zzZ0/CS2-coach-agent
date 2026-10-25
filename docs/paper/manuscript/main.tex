@@ -247,7 +247,44 @@ Graph + GRU, common input & 0.387 & 0.566 & 18/18 & 85.0 \\ % [claim:C145] [evid
 
 The same-library exports contain 18,600 query-method-seed ranking records across the two regimes, including the direct observation/statistical controls. Six fixed first-in-index G4 query cases show the top candidate from each of two prespecified temporal encoders at seed zero. Their relevance is unjudged; no tactical nDCG or recall is reported for these new rankings. % [claim:C128] [evidence:E110,E116]
 
-\pending{RES34}{Source-fitted descriptive pattern analysis and unjudged retrieval are complete. Tactical interpretation, context-specific relevance and the independent judgment endpoint remain unvalidated. Do not infer responsibilities or useful coaching from cluster compactness, source-radius coverage or a plotted retrieval example.}
+\subsubsection{Explicit context facets}
+We retain the frozen state encoders and add explicit CT context: five log equipment totals, two public pre-round scores, and thirty log throw counts over the five times and six grenade types, for 37 coordinates. Equipment reweights information already present in the node input; score and recorded utility supply additional observations. Opponent equipment and raw view angles are excluded. % [claim:C150] [evidence:E121]
+
+Each state or context-group squared distance is divided by its source-library mean off-diagonal pair distance. The contextual distance equally averages equipment, score and utility groups. The fixed mixture is $d_\lambda=(1-\lambda)d_{\mathrm{state}}+\lambda d_{\mathrm{context}}$, with $\lambda=0.5$ and prespecified sensitivities 0.25 and 0.75. Single-group and context-only controls are retained. Unknown source context makes that condition unsupported; an unknown query is not assigned a zero distance. No encoder weights are updated. % [claim:C151] [evidence:E121]
+
+The development replay produced 315 method/fold/seed entries and 131,130 query-method-policy records. These new full-library rankings remain unjudged. % [claim:C152] [evidence:E122]
+
+With context, full graph-temporal seed ARI was 1.000 in G3 and 0.995 in G4; full MLP-temporal ARI was 0.983 and 0.988. G4 diagnostic assignment coverage was 90.2\% and 91.3\%, respectively. All these neural context fits selected two source clusters. Different accepted query subsets still limit comparisons with the state-only table. % [claim:C153] [evidence:E123]
+
+A post-hoc source-centroid decomposition explains much of this stability. For G4 Graph + GRU with context, state coordinates contributed 2.66\% of squared centroid separation, equipment 66.55\%, score 6.34\%, and utility 24.45\%. Its query partition agreed with context-only clustering at mean ARI 0.987 on eligible common assignments. These are properties of the normalized representation, not causal feature importance. Stable resource groups do not establish tactical duties; deployment descriptions and contextual facets remain separate. % [claim:C154] [evidence:E124]
+
+\subsubsection{Exploratory replay of previously judged pairs}
+An exact-stimulus audit checked the old packet hashes and displayed coordinates, places, health and equipment against the same frozen windows. Restricting candidates to the current source-training library leaves 17 complete numeric pairs across three queries. A sensitivity subset retains existing numeric scores without requiring the original completion flag: 30 usefulness and 29 similarity records across five queries. Original scores, missing values and abstentions remain unchanged. % [claim:C155] [evidence:E125]
+
+Table~\ref{tab:oldpool} ranks only the eligible rated candidates for each old query, with gains $2^g-1$ and cutoff $\min(5,N)$. Neural seeds are averaged within each query before the query macro-average. The old materials omitted the new utility/score facets, candidate selection depended on earlier methods, and grader independence was not verified. This is an information-limited development observation, not a new independent tactical test or full-library retrieval metric. % [claim:C156] [evidence:E125,E126]
+
+\begin{table*}[t]
+\caption{Exploratory nDCG within the restricted old rated pool. Complete: three queries, 17 pairs. All numeric: five queries, 30 usefulness and 29 similarity records. All prespecified conditions and weights remain in the structured supplement.}
+\label{tab:oldpool}
+\centering\small
+\begin{tabular}{lrrrr}
+\toprule
+ & \multicolumn{2}{c}{Complete records} & \multicolumn{2}{c}{All numeric records}\\
+Condition & Usefulness & Similarity & Usefulness & Similarity\\
+\midrule
+Graph + GRU & 0.7468 & 0.5500 & 0.6193 & 0.4813 \\ % [claim:C160] [evidence:E126]
+MLP + GRU & 0.6807 & 0.5095 & 0.6547 & 0.5499 \\ % [claim:C161] [evidence:E126]
+Graph + GRU + context & 0.7825 & 0.7577 & 0.7035 & 0.6785 \\ % [claim:C162] [evidence:E126]
+MLP + GRU + context & 0.7555 & 0.7438 & 0.6821 & 0.6654 \\ % [claim:C163] [evidence:E126]
+Statistics sequence & 0.7282 & 0.6318 & 0.6836 & 0.6260 \\ % [claim:C164] [evidence:E126]
+Full observation matching & 0.7400 & 0.6169 & 0.5925 & 0.5045 \\ % [claim:C165] [evidence:E126]
+Context only & 0.7281 & 0.8253 & 0.7372 & 0.7988 \\ % [claim:C166] [evidence:E126]
+Uniform-random expectation & 0.6773 & 0.6034 & 0.6669 & 0.6172 \\ % [claim:C167] [evidence:E126]
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\pending{RES34}{Descriptive patterns, contextual controls and the restricted old-pool replay are recorded. Independent context-specific relevance remains unvalidated. Do not infer useful coaching from stable resource clusters, a small selected rated pool, or plotted retrieval examples.}
 
 \begin{figure*}[t]
 \centering
@@ -257,6 +294,8 @@ The same-library exports contain 18,600 query-method-seed ranking records across
 \end{figure*}
 
 \subsection{Independent generalization: E5}
+The technical-confirmation planning scenario balances six maps with two series per map. Under independent normal within-map log-ratio residuals with SD 0.05, a 12-series design has approximately 93.9\% probability that the nominal 95\% interval half-width is at most 0.05 log units; SD 0.10 requires 24 series for 80\% width assurance under the same model. These are assumption-dependent precision calculations, not tactical-effect power or proof that 12 series suffice for the full study. The exact new cohort remains unfrozen. % [claim:C157] [evidence:E127]
+
 \pending{RES5}{Insert only results from the frozen new-series evaluation: actual cohort, primary effect and uncertainty, map/series failures, supported external-validity scope, and protocol deviations. No result cell is filled from development data.}
 
 \subsection{Completed auxiliary state-prediction controls: E6}
@@ -305,7 +344,7 @@ Cohort and historical protocols are linked in the manuscript writing guide. Raw 
 
 \pending{REPRO}{Supply legally shareable minimal inputs, complete manifests and environments, executable training/evaluation entry points, licenses, deviations, and the distinction between source reproduction and metric reproduction.}
 \subsection{Research workflow assistance}
-Scientific Agent Skills~\cite{kassis2026skills} informed evidence organization and experimental-design checks. The installed source was pinned to repository revision \path{593377bb048752abb0152deab9fbb1083a6087df}. Its use is workflow assistance, not independent validation of sources, models, or scientific conclusions. % [claim:C107] [evidence:E106]
+Scientific Agent Skills~\cite{kassis2026skills} informed evidence organization, paired observational comparisons and precision planning. The earlier scientific-writing installation was recorded at repository revision \path{593377bb048752abb0152deab9fbb1083a6087df}; current procedural files are recorded separately by content hash, without asserting the same upstream revision for all files. This is workflow assistance, not independent validation of sources, models, or scientific conclusions. % [claim:C107] [evidence:E106,E128]
 
 \section{Declarations and Pilot Sources}
 \pending{DECL}{Before submission, supply factual author contributions, applicable participant/consent information for any human evidence actually used, data/code availability, funding/conflicts if applicable, and the venue-required AI assistance disclosure. No approval, consent, authorship, or funding statement is invented here.}

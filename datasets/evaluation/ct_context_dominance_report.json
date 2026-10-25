@@ -1,0 +1,4164 @@
+{
+  "status": "completed",
+  "scope": "post-hoc development cluster dominance diagnostic",
+  "pattern_report_sha256": "1b9192e7d6fcf7caeb35d363c141f684c77ac5aa55c7fe20355e483a343dff8b",
+  "script_sha256": "5acc4f1bded5efde4bdfaf5e73e6fadc5670d9aaf48b59a746e397cfa545b0e5",
+  "definition": "Mean squared separation over all unordered source-centroid pairs, partitioned into concatenated coordinate blocks; normalized shares sum to one.",
+  "limits": [
+    "Shares describe the chosen normalized embedding and K, not causal importance or tactical responsibility.",
+    "Agreement with context-only clusters uses common accepted queries and requires at least two clusters on each side.",
+    "High seed stability can reflect resource groups; it does not establish useful deployment patterns."
+  ],
+  "models": [
+    {
+      "fold": "G3__2396595",
+      "task": "G3",
+      "variant": "mlp_static+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.027670758572185827,
+        "equipment": 0.6726808933068078,
+        "score": 0.05513079329101648,
+        "utility": 0.24451755482998985
+      },
+      "common_accepted_queries": 38,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396595",
+      "task": "G3",
+      "variant": "mlp_static+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.029366370000720537,
+        "equipment": 0.6715078282977035,
+        "score": 0.05503465260205483,
+        "utility": 0.2440911490995212
+      },
+      "common_accepted_queries": 38,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396595",
+      "task": "G3",
+      "variant": "mlp_static+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.025358438344147777,
+        "equipment": 0.6742806123837781,
+        "score": 0.055261901194680274,
+        "utility": 0.24509904807739394
+      },
+      "common_accepted_queries": 38,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396595",
+      "task": "G3",
+      "variant": "mlp_gru+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.012179790017289506,
+        "equipment": 0.6852494418536736,
+        "score": 0.056744802823928395,
+        "utility": 0.24582596530510842
+      },
+      "common_accepted_queries": 38,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396595",
+      "task": "G3",
+      "variant": "mlp_gru+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.01250735442765542,
+        "equipment": 0.6831713031504288,
+        "score": 0.055990554022116855,
+        "utility": 0.2483307883997989
+      },
+      "common_accepted_queries": 38,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396595",
+      "task": "G3",
+      "variant": "mlp_gru+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.016874375823094704,
+        "equipment": 0.6801500920953543,
+        "score": 0.055742945142746046,
+        "utility": 0.24723258693880507
+      },
+      "common_accepted_queries": 38,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396595",
+      "task": "G3",
+      "variant": "graph_static+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.0518990918723221,
+        "equipment": 0.6559191461606065,
+        "score": 0.053757053637774936,
+        "utility": 0.23842470832929646
+      },
+      "common_accepted_queries": 38,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396595",
+      "task": "G3",
+      "variant": "graph_static+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.03613836527093837,
+        "equipment": 0.6668227981312238,
+        "score": 0.05465068238342613,
+        "utility": 0.24238815421441173
+      },
+      "common_accepted_queries": 38,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396595",
+      "task": "G3",
+      "variant": "graph_static+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.04164302710210516,
+        "equipment": 0.6630145398991628,
+        "score": 0.054338569612750465,
+        "utility": 0.2410038633859817
+      },
+      "common_accepted_queries": 38,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396595",
+      "task": "G3",
+      "variant": "graph_gru+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.02975294503355049,
+        "equipment": 0.6712403863373728,
+        "score": 0.055012733906906745,
+        "utility": 0.24399393472216982
+      },
+      "common_accepted_queries": 38,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396595",
+      "task": "G3",
+      "variant": "graph_gru+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.023429122059600706,
+        "equipment": 0.6756153600664198,
+        "score": 0.05537129288295262,
+        "utility": 0.24558422499102703
+      },
+      "common_accepted_queries": 38,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396595",
+      "task": "G3",
+      "variant": "graph_gru+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.030064719907585698,
+        "equipment": 0.6710246929365774,
+        "score": 0.05499505635963015,
+        "utility": 0.24391553079620693
+      },
+      "common_accepted_queries": 37,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396595",
+      "task": "G3",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.01684836920048741,
+        "equipment": 0.6801680841060661,
+        "score": 0.055744419710900606,
+        "utility": 0.24723912698254577
+      },
+      "common_accepted_queries": 37,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396595",
+      "task": "G3",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.02434595015364454,
+        "equipment": 0.6749810762096424,
+        "score": 0.05531930898903834,
+        "utility": 0.24535366464767475
+      },
+      "common_accepted_queries": 38,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396595",
+      "task": "G3",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.028200601754065815,
+        "equipment": 0.6723143349748008,
+        "score": 0.055100751332292724,
+        "utility": 0.2443843119388408
+      },
+      "common_accepted_queries": 38,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396595",
+      "task": "G3",
+      "variant": "graph_gru_common+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.02225211651539566,
+        "equipment": 0.6764296409778323,
+        "score": 0.05543802876478691,
+        "utility": 0.24588021374198524
+      },
+      "common_accepted_queries": 38,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396595",
+      "task": "G3",
+      "variant": "graph_gru_common+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.01662081882397889,
+        "equipment": 0.6803255089617841,
+        "score": 0.05575732175296217,
+        "utility": 0.24729635046127488
+      },
+      "common_accepted_queries": 37,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396595",
+      "task": "G3",
+      "variant": "graph_gru_common+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.030924437567139678,
+        "equipment": 0.6669918987252745,
+        "score": 0.05209900813446593,
+        "utility": 0.24998465557311983
+      },
+      "common_accepted_queries": 38,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396595",
+      "task": "G3",
+      "variant": "statistics_sequence+context",
+      "seed": null,
+      "centroid_separation_shares": {
+        "state": 0.10472572418549442,
+        "equipment": 0.626540781200598,
+        "score": 0.05009893801303231,
+        "utility": 0.21863455660087544
+      },
+      "common_accepted_queries": 38,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396609",
+      "task": "G3",
+      "variant": "mlp_static+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.04300645275518202,
+        "equipment": 0.6910274036720452,
+        "score": 0.04225442511443247,
+        "utility": 0.22371171845834031
+      },
+      "common_accepted_queries": 42,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396609",
+      "task": "G3",
+      "variant": "mlp_static+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.02956716601266375,
+        "equipment": 0.7007316649511557,
+        "score": 0.042847814000792274,
+        "utility": 0.2268533550353882
+      },
+      "common_accepted_queries": 42,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396609",
+      "task": "G3",
+      "variant": "mlp_static+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.03182592129866393,
+        "equipment": 0.6937349023503082,
+        "score": 0.04488723081108332,
+        "utility": 0.22955194553994465
+      },
+      "common_accepted_queries": 42,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396609",
+      "task": "G3",
+      "variant": "mlp_gru+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.016326913134242796,
+        "equipment": 0.7098595371346775,
+        "score": 0.04663721684697317,
+        "utility": 0.22717633288410669
+      },
+      "common_accepted_queries": 43,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396609",
+      "task": "G3",
+      "variant": "mlp_gru+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.009895133850038236,
+        "equipment": 0.714500977392218,
+        "score": 0.04694215584468944,
+        "utility": 0.22866173291305444
+      },
+      "common_accepted_queries": 43,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396609",
+      "task": "G3",
+      "variant": "mlp_gru+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.013736982383962867,
+        "equipment": 0.7117285392128603,
+        "score": 0.04676000882291744,
+        "utility": 0.22777446958025954
+      },
+      "common_accepted_queries": 43,
+      "ARI_with_context_only": 0.8882149046793761
+    },
+    {
+      "fold": "G3__2396609",
+      "task": "G3",
+      "variant": "graph_static+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.04289590741172887,
+        "equipment": 0.68928624522371,
+        "score": 0.04453414169470628,
+        "utility": 0.22328370566985498
+      },
+      "common_accepted_queries": 41,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396609",
+      "task": "G3",
+      "variant": "graph_static+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.047889130237733814,
+        "equipment": 0.6840612825769041,
+        "score": 0.04291151910304994,
+        "utility": 0.22513806808231213
+      },
+      "common_accepted_queries": 42,
+      "ARI_with_context_only": 0.8868038876792889
+    },
+    {
+      "fold": "G3__2396609",
+      "task": "G3",
+      "variant": "graph_static+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.045096630029126734,
+        "equipment": 0.6846555086376698,
+        "score": 0.043064945630004174,
+        "utility": 0.2271829157031995
+      },
+      "common_accepted_queries": 42,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396609",
+      "task": "G3",
+      "variant": "graph_gru+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.029325978196299236,
+        "equipment": 0.697398315056435,
+        "score": 0.04374815806888564,
+        "utility": 0.22952754867838002
+      },
+      "common_accepted_queries": 42,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396609",
+      "task": "G3",
+      "variant": "graph_gru+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.019548038190329194,
+        "equipment": 0.7044234529829814,
+        "score": 0.04418884861520766,
+        "utility": 0.23183966021148178
+      },
+      "common_accepted_queries": 43,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396609",
+      "task": "G3",
+      "variant": "graph_gru+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.024540034127020584,
+        "equipment": 0.7008368631734098,
+        "score": 0.04396385997596109,
+        "utility": 0.23065924272360866
+      },
+      "common_accepted_queries": 43,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396609",
+      "task": "G3",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.026671905093645688,
+        "equipment": 0.6993051819017926,
+        "score": 0.043867776815254805,
+        "utility": 0.23015513618930708
+      },
+      "common_accepted_queries": 43,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396609",
+      "task": "G3",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.02470933458891897,
+        "equipment": 0.7007152261931114,
+        "score": 0.04395622962508954,
+        "utility": 0.23061920959288015
+      },
+      "common_accepted_queries": 43,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396609",
+      "task": "G3",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.02751296895895781,
+        "equipment": 0.6987009043489292,
+        "score": 0.043829870170903354,
+        "utility": 0.22995625652120968
+      },
+      "common_accepted_queries": 43,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396609",
+      "task": "G3",
+      "variant": "graph_gru_common+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.013687085425173273,
+        "equipment": 0.7086343605495092,
+        "score": 0.04445300103120399,
+        "utility": 0.23322555299411368
+      },
+      "common_accepted_queries": 43,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396609",
+      "task": "G3",
+      "variant": "graph_gru_common+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.025396950162738314,
+        "equipment": 0.7002211963418776,
+        "score": 0.04392523887625073,
+        "utility": 0.2304566146191334
+      },
+      "common_accepted_queries": 43,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396609",
+      "task": "G3",
+      "variant": "graph_gru_common+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.026957500298662514,
+        "equipment": 0.6990999908589779,
+        "score": 0.04385490507469913,
+        "utility": 0.23008760376766046
+      },
+      "common_accepted_queries": 41,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396609",
+      "task": "G3",
+      "variant": "statistics_sequence+context",
+      "seed": null,
+      "centroid_separation_shares": {
+        "state": 0.10991032834272191,
+        "equipment": 0.6423024221652365,
+        "score": 0.04138586737753907,
+        "utility": 0.20640138211450249
+      },
+      "common_accepted_queries": 43,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396613",
+      "task": "G3",
+      "variant": "mlp_static+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.01668318216042589,
+        "equipment": 0.7013683054473638,
+        "score": 0.04578507117816245,
+        "utility": 0.2361634412140477
+      },
+      "common_accepted_queries": 61,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396613",
+      "task": "G3",
+      "variant": "mlp_static+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.02227218509555193,
+        "equipment": 0.6973818491530822,
+        "score": 0.045524836742467635,
+        "utility": 0.2348211290088983
+      },
+      "common_accepted_queries": 60,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396613",
+      "task": "G3",
+      "variant": "mlp_static+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.023288462781306446,
+        "equipment": 0.6966569709191396,
+        "score": 0.04547751695159771,
+        "utility": 0.23457704934795628
+      },
+      "common_accepted_queries": 60,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396613",
+      "task": "G3",
+      "variant": "mlp_gru+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.009465098880866113,
+        "equipment": 0.7096755887285144,
+        "score": 0.04848229085843836,
+        "utility": 0.23237702153218112
+      },
+      "common_accepted_queries": 62,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396613",
+      "task": "G3",
+      "variant": "mlp_gru+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.010051545121085307,
+        "equipment": 0.7092554252589436,
+        "score": 0.04845358691558988,
+        "utility": 0.23223944270438118
+      },
+      "common_accepted_queries": 61,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396613",
+      "task": "G3",
+      "variant": "mlp_gru+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.013720620164607272,
+        "equipment": 0.7034814057717896,
+        "score": 0.04592301360870716,
+        "utility": 0.23687496045489595
+      },
+      "common_accepted_queries": 62,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396613",
+      "task": "G3",
+      "variant": "graph_static+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.051684113103653284,
+        "equipment": 0.6794274836488828,
+        "score": 0.04641585733348825,
+        "utility": 0.22247254591397558
+      },
+      "common_accepted_queries": 63,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396613",
+      "task": "G3",
+      "variant": "graph_static+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.03136260942005342,
+        "equipment": 0.6908979414352409,
+        "score": 0.045101569574464304,
+        "utility": 0.23263787957024135
+      },
+      "common_accepted_queries": 63,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396613",
+      "task": "G3",
+      "variant": "graph_static+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.04187801603243109,
+        "equipment": 0.6864531297965207,
+        "score": 0.04689582229974631,
+        "utility": 0.2247730318713018
+      },
+      "common_accepted_queries": 62,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396613",
+      "task": "G3",
+      "variant": "graph_gru+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.03136149433383577,
+        "equipment": 0.6908987367904272,
+        "score": 0.04510162149496533,
+        "utility": 0.23263814738077165
+      },
+      "common_accepted_queries": 61,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396613",
+      "task": "G3",
+      "variant": "graph_gru+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.025792588736766743,
+        "equipment": 0.6948708582989297,
+        "score": 0.045360920160990865,
+        "utility": 0.23397563280331282
+      },
+      "common_accepted_queries": 61,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396613",
+      "task": "G3",
+      "variant": "graph_gru+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.023350024605887077,
+        "equipment": 0.696613060846818,
+        "score": 0.045474650517840914,
+        "utility": 0.23456226402945407
+      },
+      "common_accepted_queries": 63,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396613",
+      "task": "G3",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.015443034819611024,
+        "equipment": 0.7022528627163461,
+        "score": 0.04584281475911266,
+        "utility": 0.23646128770493027
+      },
+      "common_accepted_queries": 61,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396613",
+      "task": "G3",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.025119844725732886,
+        "equipment": 0.6953507049958013,
+        "score": 0.04539224438109069,
+        "utility": 0.23413720589737516
+      },
+      "common_accepted_queries": 60,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396613",
+      "task": "G3",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.02687115396549015,
+        "equipment": 0.6927954620044391,
+        "score": 0.04533216250337706,
+        "utility": 0.2350012215266938
+      },
+      "common_accepted_queries": 62,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396613",
+      "task": "G3",
+      "variant": "graph_gru_common+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.029150106452839324,
+        "equipment": 0.6854898027107537,
+        "score": 0.04472396231550408,
+        "utility": 0.24063612852090296
+      },
+      "common_accepted_queries": 62,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396613",
+      "task": "G3",
+      "variant": "graph_gru_common+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.03256242086379218,
+        "equipment": 0.6864222140331646,
+        "score": 0.04737089003525422,
+        "utility": 0.23364447506778885
+      },
+      "common_accepted_queries": 60,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396613",
+      "task": "G3",
+      "variant": "graph_gru_common+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.03029859826171904,
+        "equipment": 0.6846788849481659,
+        "score": 0.04467105495596127,
+        "utility": 0.2403514618341539
+      },
+      "common_accepted_queries": 59,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396613",
+      "task": "G3",
+      "variant": "statistics_sequence+context",
+      "seed": null,
+      "centroid_separation_shares": {
+        "state": 0.10887403073481726,
+        "equipment": 0.6356115340087974,
+        "score": 0.04149249274629194,
+        "utility": 0.21402194251009338
+      },
+      "common_accepted_queries": 54,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396940",
+      "task": "G3",
+      "variant": "mlp_static+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.021872963038316453,
+        "equipment": 0.6810908955225058,
+        "score": 0.044088749745971434,
+        "utility": 0.25294739169320624
+      },
+      "common_accepted_queries": 35,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396940",
+      "task": "G3",
+      "variant": "mlp_static+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.019191902272825415,
+        "equipment": 0.6802210491637503,
+        "score": 0.04546373789919992,
+        "utility": 0.2551233106642245
+      },
+      "common_accepted_queries": 33,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396940",
+      "task": "G3",
+      "variant": "mlp_static+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.01957582642678077,
+        "equipment": 0.6826904411569341,
+        "score": 0.04419229241207839,
+        "utility": 0.25354144000420664
+      },
+      "common_accepted_queries": 35,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396940",
+      "task": "G3",
+      "variant": "mlp_gru+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.005780824464477942,
+        "equipment": 0.6922961977562251,
+        "score": 0.04481409752151529,
+        "utility": 0.25710888025778167
+      },
+      "common_accepted_queries": 35,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396940",
+      "task": "G3",
+      "variant": "mlp_gru+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.010748952643438064,
+        "equipment": 0.6895136691116468,
+        "score": 0.048608296902582455,
+        "utility": 0.2511290813423327
+      },
+      "common_accepted_queries": 35,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396940",
+      "task": "G3",
+      "variant": "mlp_gru+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.010287695467545996,
+        "equipment": 0.689835168015897,
+        "score": 0.04863096144846706,
+        "utility": 0.25124617506809005
+      },
+      "common_accepted_queries": 35,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396940",
+      "task": "G3",
+      "variant": "graph_static+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.05120827012817866,
+        "equipment": 0.6639560622287082,
+        "score": 0.045354663341020784,
+        "utility": 0.23948100430209232
+      },
+      "common_accepted_queries": 33,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396940",
+      "task": "G3",
+      "variant": "graph_static+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.03624199144216671,
+        "equipment": 0.6744293317036902,
+        "score": 0.046070089614143626,
+        "utility": 0.24325858723999944
+      },
+      "common_accepted_queries": 35,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396940",
+      "task": "G3",
+      "variant": "graph_static+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.03542013250093587,
+        "equipment": 0.672317714868977,
+        "score": 0.04739604240090183,
+        "utility": 0.2448661102291854
+      },
+      "common_accepted_queries": 33,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396940",
+      "task": "G3",
+      "variant": "graph_gru+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.01584090864206206,
+        "equipment": 0.685291144749178,
+        "score": 0.04436064258471419,
+        "utility": 0.2545073040240458
+      },
+      "common_accepted_queries": 35,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396940",
+      "task": "G3",
+      "variant": "graph_gru+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.013287275752544443,
+        "equipment": 0.6870692942592455,
+        "score": 0.04447574673494681,
+        "utility": 0.2551676832532632
+      },
+      "common_accepted_queries": 35,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396940",
+      "task": "G3",
+      "variant": "graph_gru+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.014361525921524124,
+        "equipment": 0.6863212707592733,
+        "score": 0.04442732526710575,
+        "utility": 0.2548898780520969
+      },
+      "common_accepted_queries": 35,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396940",
+      "task": "G3",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.013873400555888756,
+        "equipment": 0.6866611629510283,
+        "score": 0.044449327355052325,
+        "utility": 0.2550161091380305
+      },
+      "common_accepted_queries": 35,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396940",
+      "task": "G3",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.010741285495283161,
+        "equipment": 0.6888421220400786,
+        "score": 0.04459050639608116,
+        "utility": 0.255826086068557
+      },
+      "common_accepted_queries": 35,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396940",
+      "task": "G3",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.0183922564842916,
+        "equipment": 0.6835145863666887,
+        "score": 0.04424564143222546,
+        "utility": 0.25384751571679415
+      },
+      "common_accepted_queries": 35,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396940",
+      "task": "G3",
+      "variant": "graph_gru_common+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.02214868107181332,
+        "equipment": 0.6742463716986066,
+        "score": 0.04322831334920673,
+        "utility": 0.26037663388037335
+      },
+      "common_accepted_queries": 35,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396940",
+      "task": "G3",
+      "variant": "graph_gru_common+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.017057169562488497,
+        "equipment": 0.6801707088362736,
+        "score": 0.046705134123230005,
+        "utility": 0.256066987478008
+      },
+      "common_accepted_queries": 35,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396940",
+      "task": "G3",
+      "variant": "graph_gru_common+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.011510442925225385,
+        "equipment": 0.688306541176897,
+        "score": 0.04455583688162902,
+        "utility": 0.2556271790162485
+      },
+      "common_accepted_queries": 37,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396940",
+      "task": "G3",
+      "variant": "statistics_sequence+context",
+      "seed": null,
+      "centroid_separation_shares": {
+        "state": 0.10669103088124583,
+        "equipment": 0.6254051716942569,
+        "score": 0.037772050416301856,
+        "utility": 0.2301317470081953
+      },
+      "common_accepted_queries": 37,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396944",
+      "task": "G3",
+      "variant": "mlp_static+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.02344812558389052,
+        "equipment": 0.6696577902366774,
+        "score": 0.0546788853775049,
+        "utility": 0.25221519880192733
+      },
+      "common_accepted_queries": 51,
+      "ARI_with_context_only": 0.9206685001057753
+    },
+    {
+      "fold": "G3__2396944",
+      "task": "G3",
+      "variant": "mlp_static+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.028316115080707204,
+        "equipment": 0.6719941613262467,
+        "score": 0.05327979256110109,
+        "utility": 0.24640993103194506
+      },
+      "common_accepted_queries": 50,
+      "ARI_with_context_only": 0.9187011140080588
+    },
+    {
+      "fold": "G3__2396944",
+      "task": "G3",
+      "variant": "mlp_static+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.021729753378394872,
+        "equipment": 0.6768850345257434,
+        "score": 0.05485532620855887,
+        "utility": 0.24652988588730287
+      },
+      "common_accepted_queries": 50,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396944",
+      "task": "G3",
+      "variant": "mlp_gru+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.013400031967341523,
+        "equipment": 0.6823426931443716,
+        "score": 0.06014671423873756,
+        "utility": 0.2441105606495493
+      },
+      "common_accepted_queries": 50,
+      "ARI_with_context_only": 0.919240585692432
+    },
+    {
+      "fold": "G3__2396944",
+      "task": "G3",
+      "variant": "mlp_gru+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.015515194297373035,
+        "equipment": 0.6783409210199841,
+        "score": 0.05810604758752855,
+        "utility": 0.24803783709511423
+      },
+      "common_accepted_queries": 51,
+      "ARI_with_context_only": 0.9206685001057753
+    },
+    {
+      "fold": "G3__2396944",
+      "task": "G3",
+      "variant": "mlp_gru+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.012015511848422325,
+        "equipment": 0.6807523120358205,
+        "score": 0.05831260508211054,
+        "utility": 0.24891957103364665
+      },
+      "common_accepted_queries": 51,
+      "ARI_with_context_only": 0.9206685001057753
+    },
+    {
+      "fold": "G3__2396944",
+      "task": "G3",
+      "variant": "graph_static+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.06642379592749127,
+        "equipment": 0.6489544705722223,
+        "score": 0.05514454011207,
+        "utility": 0.22947719338821632
+      },
+      "common_accepted_queries": 50,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396944",
+      "task": "G3",
+      "variant": "graph_static+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.04766708302614521,
+        "equipment": 0.6586432479151114,
+        "score": 0.05805767045744903,
+        "utility": 0.2356319986012943
+      },
+      "common_accepted_queries": 50,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396944",
+      "task": "G3",
+      "variant": "graph_static+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.025103462388864305,
+        "equipment": 0.6711201650533142,
+        "score": 0.05645513444465405,
+        "utility": 0.2473212381131675
+      },
+      "common_accepted_queries": 52,
+      "ARI_with_context_only": 0.9220275196989298
+    },
+    {
+      "fold": "G3__2396944",
+      "task": "G3",
+      "variant": "graph_gru+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.01751412155352106,
+        "equipment": 0.6751586460767233,
+        "score": 0.05808592435265913,
+        "utility": 0.24924130801709643
+      },
+      "common_accepted_queries": 50,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396944",
+      "task": "G3",
+      "variant": "graph_gru+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.01922773044623881,
+        "equipment": 0.6783121968908055,
+        "score": 0.05979143659183199,
+        "utility": 0.24266863607112377
+      },
+      "common_accepted_queries": 51,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396944",
+      "task": "G3",
+      "variant": "graph_gru+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.020037839158432474,
+        "equipment": 0.6719963499502735,
+        "score": 0.054869833411549246,
+        "utility": 0.25309597747974477
+      },
+      "common_accepted_queries": 50,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396944",
+      "task": "G3",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.01887467724592216,
+        "equipment": 0.6742236800285131,
+        "score": 0.05800548641786525,
+        "utility": 0.2488961563076995
+      },
+      "common_accepted_queries": 50,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396944",
+      "task": "G3",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.02051548889640328,
+        "equipment": 0.67166880783355,
+        "score": 0.05484308894875385,
+        "utility": 0.25297261432129303
+      },
+      "common_accepted_queries": 51,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396944",
+      "task": "G3",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.019040351358006705,
+        "equipment": 0.6791327211202737,
+        "score": 0.05224361712461716,
+        "utility": 0.24958331039710244
+      },
+      "common_accepted_queries": 50,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396944",
+      "task": "G3",
+      "variant": "graph_gru_common+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.013334611447965538,
+        "equipment": 0.6858582213927027,
+        "score": 0.058280415523501244,
+        "utility": 0.2425267516358306
+      },
+      "common_accepted_queries": 50,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396944",
+      "task": "G3",
+      "variant": "graph_gru_common+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.011259913784768623,
+        "equipment": 0.679456501691819,
+        "score": 0.05845568176832397,
+        "utility": 0.25082790275508837
+      },
+      "common_accepted_queries": 50,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396944",
+      "task": "G3",
+      "variant": "graph_gru_common+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.008666469345731632,
+        "equipment": 0.6812387017972333,
+        "score": 0.05860900979145742,
+        "utility": 0.25148581906557754
+      },
+      "common_accepted_queries": 51,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396944",
+      "task": "G3",
+      "variant": "statistics_sequence+context",
+      "seed": null,
+      "centroid_separation_shares": {
+        "state": 0.11062498421695945,
+        "equipment": 0.629685515076097,
+        "score": 0.054772958808224304,
+        "utility": 0.2049165418987193
+      },
+      "common_accepted_queries": 51,
+      "ARI_with_context_only": 0.9206685001057753
+    },
+    {
+      "fold": "G3__2396945",
+      "task": "G3",
+      "variant": "mlp_static+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.028464920335534244,
+        "equipment": 0.6817560892796136,
+        "score": 0.06356772121085538,
+        "utility": 0.22621126917399675
+      },
+      "common_accepted_queries": 51,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396945",
+      "task": "G3",
+      "variant": "mlp_static+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.032717380812369565,
+        "equipment": 0.6734036608105718,
+        "score": 0.06583081071074383,
+        "utility": 0.2280481476663148
+      },
+      "common_accepted_queries": 51,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396945",
+      "task": "G3",
+      "variant": "mlp_static+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.05083419678261609,
+        "equipment": 0.6773040741957665,
+        "score": 0.057527656103251536,
+        "utility": 0.21433407291836595
+      },
+      "common_accepted_queries": 51,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396945",
+      "task": "G3",
+      "variant": "mlp_gru+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.011800856735243333,
+        "equipment": 0.689014263683877,
+        "score": 0.06705082373911955,
+        "utility": 0.23213405584176006
+      },
+      "common_accepted_queries": 50,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396945",
+      "task": "G3",
+      "variant": "mlp_gru+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.012016486353990495,
+        "equipment": 0.6928491781701037,
+        "score": 0.06412406673869513,
+        "utility": 0.23101026873721067
+      },
+      "common_accepted_queries": 50,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396945",
+      "task": "G3",
+      "variant": "mlp_gru+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.019154115318888547,
+        "equipment": 0.6816456854971877,
+        "score": 0.06347318761405943,
+        "utility": 0.23572701156986436
+      },
+      "common_accepted_queries": 50,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396945",
+      "task": "G3",
+      "variant": "graph_static+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.06201305842469608,
+        "equipment": 0.6619345765380322,
+        "score": 0.058635862262710385,
+        "utility": 0.21741650277456143
+      },
+      "common_accepted_queries": 49,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396945",
+      "task": "G3",
+      "variant": "graph_static+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.05433706154206233,
+        "equipment": 0.6660792462184731,
+        "score": 0.057804428175630085,
+        "utility": 0.2217792640638344
+      },
+      "common_accepted_queries": 52,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396945",
+      "task": "G3",
+      "variant": "graph_static+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.043147770798904465,
+        "equipment": 0.6661422227765529,
+        "score": 0.06512094472615755,
+        "utility": 0.22558906169838513
+      },
+      "common_accepted_queries": 48,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396945",
+      "task": "G3",
+      "variant": "graph_gru+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.029145643437123246,
+        "equipment": 0.6808369105119135,
+        "score": 0.06301231619143859,
+        "utility": 0.22700512985952473
+      },
+      "common_accepted_queries": 50,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396945",
+      "task": "G3",
+      "variant": "graph_gru+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.033164935677198325,
+        "equipment": 0.678650750428719,
+        "score": 0.06135481139331819,
+        "utility": 0.2268295025007644
+      },
+      "common_accepted_queries": 49,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396945",
+      "task": "G3",
+      "variant": "graph_gru+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.032540923434357404,
+        "equipment": 0.6723424298716061,
+        "score": 0.06260689108742128,
+        "utility": 0.23250975560661521
+      },
+      "common_accepted_queries": 51,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396945",
+      "task": "G3",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.023877166199485007,
+        "equipment": 0.6783633683611078,
+        "score": 0.06316754622907028,
+        "utility": 0.23459191921033698
+      },
+      "common_accepted_queries": 52,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396945",
+      "task": "G3",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.03223371413478426,
+        "equipment": 0.6779594868412594,
+        "score": 0.060089056002632306,
+        "utility": 0.22971774302132403
+      },
+      "common_accepted_queries": 50,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396945",
+      "task": "G3",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.0318621274686409,
+        "equipment": 0.6795652308825506,
+        "score": 0.06143748687217425,
+        "utility": 0.2271351547766342
+      },
+      "common_accepted_queries": 51,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396945",
+      "task": "G3",
+      "variant": "graph_gru_common+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.02890654372625426,
+        "equipment": 0.6790022611979424,
+        "score": 0.06166770941425201,
+        "utility": 0.23042348566155124
+      },
+      "common_accepted_queries": 49,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396945",
+      "task": "G3",
+      "variant": "graph_gru_common+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.023407405642498796,
+        "equipment": 0.6809216865917503,
+        "score": 0.06626330163863604,
+        "utility": 0.22940760612711472
+      },
+      "common_accepted_queries": 51,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396945",
+      "task": "G3",
+      "variant": "graph_gru_common+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.024896669167672223,
+        "equipment": 0.6818060221282702,
+        "score": 0.06192234997172739,
+        "utility": 0.2313749587323301
+      },
+      "common_accepted_queries": 50,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396945",
+      "task": "G3",
+      "variant": "statistics_sequence+context",
+      "seed": null,
+      "centroid_separation_shares": {
+        "state": 0.12397370395194514,
+        "equipment": 0.6316543667342406,
+        "score": 0.050169645728032584,
+        "utility": 0.19420228358578165
+      },
+      "common_accepted_queries": 41,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396949",
+      "task": "G3",
+      "variant": "mlp_static+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.03129193606826461,
+        "equipment": 0.6766684382697217,
+        "score": 0.06077291017590736,
+        "utility": 0.2312667154861063
+      },
+      "common_accepted_queries": 42,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396949",
+      "task": "G3",
+      "variant": "mlp_static+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.025555482392364996,
+        "equipment": 0.680675504272995,
+        "score": 0.06113279257696711,
+        "utility": 0.23263622075767282
+      },
+      "common_accepted_queries": 41,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396949",
+      "task": "G3",
+      "variant": "mlp_static+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.0295152825987694,
+        "equipment": 0.6756087678877116,
+        "score": 0.05931447525618385,
+        "utility": 0.23556147425733506
+      },
+      "common_accepted_queries": 43,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396949",
+      "task": "G3",
+      "variant": "mlp_gru+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.013196559207088614,
+        "equipment": 0.6930996104589634,
+        "score": 0.05934001930597003,
+        "utility": 0.234363811027978
+      },
+      "common_accepted_queries": 43,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396949",
+      "task": "G3",
+      "variant": "mlp_gru+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.013456259589792432,
+        "equipment": 0.6929172051017795,
+        "score": 0.059324402593374216,
+        "utility": 0.2343021327150538
+      },
+      "common_accepted_queries": 44,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396949",
+      "task": "G3",
+      "variant": "mlp_gru+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.011814095371445394,
+        "equipment": 0.6902742298760068,
+        "score": 0.061994872815801155,
+        "utility": 0.2359168019367467
+      },
+      "common_accepted_queries": 43,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396949",
+      "task": "G3",
+      "variant": "graph_static+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.04001083123677636,
+        "equipment": 0.6794700921820115,
+        "score": 0.05551522199115446,
+        "utility": 0.22500385459005776
+      },
+      "common_accepted_queries": 43,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396949",
+      "task": "G3",
+      "variant": "graph_static+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.03437437541134452,
+        "equipment": 0.674515272115744,
+        "score": 0.06057953013057218,
+        "utility": 0.23053082234233926
+      },
+      "common_accepted_queries": 44,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396949",
+      "task": "G3",
+      "variant": "graph_static+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.027343857996204108,
+        "equipment": 0.6794262761805006,
+        "score": 0.06102059696925041,
+        "utility": 0.23220926885404497
+      },
+      "common_accepted_queries": 44,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396949",
+      "task": "G3",
+      "variant": "graph_gru+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.02880271683710564,
+        "equipment": 0.6797809042515521,
+        "score": 0.056849801377461325,
+        "utility": 0.23456657753388077
+      },
+      "common_accepted_queries": 45,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396949",
+      "task": "G3",
+      "variant": "graph_gru+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.021932963891689198,
+        "equipment": 0.6832059301337094,
+        "score": 0.06136005505123475,
+        "utility": 0.2335010509233666
+      },
+      "common_accepted_queries": 44,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396949",
+      "task": "G3",
+      "variant": "graph_gru+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.025154523006893578,
+        "equipment": 0.6847007138713433,
+        "score": 0.05862094418583226,
+        "utility": 0.23152381893593071
+      },
+      "common_accepted_queries": 44,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396949",
+      "task": "G3",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.023495002818327525,
+        "equipment": 0.6858663085061977,
+        "score": 0.058720737068545595,
+        "utility": 0.23191795160692924
+      },
+      "common_accepted_queries": 45,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396949",
+      "task": "G3",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.027940720072519395,
+        "equipment": 0.6790093520894555,
+        "score": 0.06098315220472136,
+        "utility": 0.2320667756333037
+      },
+      "common_accepted_queries": 45,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396949",
+      "task": "G3",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.03140269966380572,
+        "equipment": 0.6839904953016837,
+        "score": 0.05877977956442469,
+        "utility": 0.22582702547008596
+      },
+      "common_accepted_queries": 44,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396949",
+      "task": "G3",
+      "variant": "graph_gru_common+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.020808784066606377,
+        "equipment": 0.6839911997468122,
+        "score": 0.061430581644410856,
+        "utility": 0.23376943454217064
+      },
+      "common_accepted_queries": 42,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396949",
+      "task": "G3",
+      "variant": "graph_gru_common+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.02922753294917662,
+        "equipment": 0.6833882120300532,
+        "score": 0.05863911398888599,
+        "utility": 0.22874514103188426
+      },
+      "common_accepted_queries": 44,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396949",
+      "task": "G3",
+      "variant": "graph_gru_common+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.017648717294338704,
+        "equipment": 0.6915392735777959,
+        "score": 0.059338527614720506,
+        "utility": 0.23147348151314495
+      },
+      "common_accepted_queries": 45,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396949",
+      "task": "G3",
+      "variant": "statistics_sequence+context",
+      "seed": null,
+      "centroid_separation_shares": {
+        "state": 0.10549490556885553,
+        "equipment": 0.6331211629746175,
+        "score": 0.05172834288697231,
+        "utility": 0.20965558856955455
+      },
+      "common_accepted_queries": 39,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396950",
+      "task": "G3",
+      "variant": "mlp_static+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.03345412997140913,
+        "equipment": 0.6671995655770452,
+        "score": 0.0674321558179381,
+        "utility": 0.23191414863360751
+      },
+      "common_accepted_queries": 38,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396950",
+      "task": "G3",
+      "variant": "mlp_static+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.03201186923425659,
+        "equipment": 0.6681951476462631,
+        "score": 0.06753277675458841,
+        "utility": 0.23226020636489197
+      },
+      "common_accepted_queries": 38,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396950",
+      "task": "G3",
+      "variant": "mlp_static+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.03483547504951131,
+        "equipment": 0.6695118761994845,
+        "score": 0.06553917999605403,
+        "utility": 0.23011346875495012
+      },
+      "common_accepted_queries": 39,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396950",
+      "task": "G3",
+      "variant": "mlp_gru+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.014367799606697295,
+        "equipment": 0.6859060657106921,
+        "score": 0.06860469775581422,
+        "utility": 0.23112143692679635
+      },
+      "common_accepted_queries": 41,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396950",
+      "task": "G3",
+      "variant": "mlp_gru+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.014757720150275105,
+        "equipment": 0.6856347181777296,
+        "score": 0.06857755742798174,
+        "utility": 0.23103000424401368
+      },
+      "common_accepted_queries": 41,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396950",
+      "task": "G3",
+      "variant": "mlp_gru+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.013174030504265927,
+        "equipment": 0.686736815221604,
+        "score": 0.06868778977373922,
+        "utility": 0.23140136450039092
+      },
+      "common_accepted_queries": 41,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396950",
+      "task": "G3",
+      "variant": "graph_static+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.05026353932284889,
+        "equipment": 0.6609260522790531,
+        "score": 0.06610618322578438,
+        "utility": 0.22270422517231359
+      },
+      "common_accepted_queries": 41,
+      "ARI_with_context_only": 0.8853050605645228
+    },
+    {
+      "fold": "G3__2396950",
+      "task": "G3",
+      "variant": "graph_static+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.041094031165300304,
+        "equipment": 0.6700975129857963,
+        "score": 0.06610966592292704,
+        "utility": 0.22269878992597628
+      },
+      "common_accepted_queries": 38,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396950",
+      "task": "G3",
+      "variant": "graph_static+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.044465675018181584,
+        "equipment": 0.6595983763325852,
+        "score": 0.06666392303725462,
+        "utility": 0.22927202561197868
+      },
+      "common_accepted_queries": 39,
+      "ARI_with_context_only": 0.882010324829875
+    },
+    {
+      "fold": "G3__2396950",
+      "task": "G3",
+      "variant": "graph_gru+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.02809065784397898,
+        "equipment": 0.6720443648946338,
+        "score": 0.07042046321959464,
+        "utility": 0.2294445140417925
+      },
+      "common_accepted_queries": 41,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396950",
+      "task": "G3",
+      "variant": "graph_gru+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.03161412676209816,
+        "equipment": 0.6684697063742702,
+        "score": 0.06756052570390335,
+        "utility": 0.23235564115972823
+      },
+      "common_accepted_queries": 41,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396950",
+      "task": "G3",
+      "variant": "graph_gru+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.029624631922095766,
+        "equipment": 0.6709836706607397,
+        "score": 0.07030931790957201,
+        "utility": 0.22908237950759264
+      },
+      "common_accepted_queries": 41,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396950",
+      "task": "G3",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.024222269743033664,
+        "equipment": 0.6790482937769212,
+        "score": 0.0679187796770651,
+        "utility": 0.22881065680297996
+      },
+      "common_accepted_queries": 41,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396950",
+      "task": "G3",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.020147343405401856,
+        "equipment": 0.6775369139169428,
+        "score": 0.07099600237535852,
+        "utility": 0.23131974030229693
+      },
+      "common_accepted_queries": 41,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396950",
+      "task": "G3",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.024479117217426214,
+        "equipment": 0.681708257810415,
+        "score": 0.06725514467280588,
+        "utility": 0.22655748029935285
+      },
+      "common_accepted_queries": 41,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__2396950",
+      "task": "G3",
+      "variant": "graph_gru_common+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.022711075654181553,
+        "equipment": 0.6757641746951251,
+        "score": 0.07081024511930664,
+        "utility": 0.23071450453138678
+      },
+      "common_accepted_queries": 41,
+      "ARI_with_context_only": 0.8853050605645228
+    },
+    {
+      "fold": "G3__2396950",
+      "task": "G3",
+      "variant": "graph_gru_common+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.02691734444346232,
+        "equipment": 0.6728556737532599,
+        "score": 0.07050547657380611,
+        "utility": 0.22972150522947168
+      },
+      "common_accepted_queries": 41,
+      "ARI_with_context_only": 0.8853050605645228
+    },
+    {
+      "fold": "G3__2396950",
+      "task": "G3",
+      "variant": "graph_gru_common+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.02261948950673612,
+        "equipment": 0.6758275036000171,
+        "score": 0.07081688106635219,
+        "utility": 0.23073612582689462
+      },
+      "common_accepted_queries": 41,
+      "ARI_with_context_only": 0.8853050605645228
+    },
+    {
+      "fold": "G3__2396950",
+      "task": "G3",
+      "variant": "statistics_sequence+context",
+      "seed": null,
+      "centroid_separation_shares": {
+        "state": 0.10480699978003052,
+        "equipment": 0.6284989807183656,
+        "score": 0.0600449901701602,
+        "utility": 0.20664902933144352
+      },
+      "common_accepted_queries": 41,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__furia_falcons_existing_local",
+      "task": "G3",
+      "variant": "mlp_static+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.03154109439910629,
+        "equipment": 0.6577713608529916,
+        "score": 0.06773185598201716,
+        "utility": 0.24295568876588497
+      },
+      "common_accepted_queries": 57,
+      "ARI_with_context_only": 0.9227514105542649
+    },
+    {
+      "fold": "G3__furia_falcons_existing_local",
+      "task": "G3",
+      "variant": "mlp_static+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.031178228621548357,
+        "equipment": 0.6609878277321217,
+        "score": 0.07060797821201653,
+        "utility": 0.2372259654343133
+      },
+      "common_accepted_queries": 57,
+      "ARI_with_context_only": 0.9204086430571288
+    },
+    {
+      "fold": "G3__furia_falcons_existing_local",
+      "task": "G3",
+      "variant": "mlp_static+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.02759035016005642,
+        "equipment": 0.6613993054181803,
+        "score": 0.06981571631097294,
+        "utility": 0.24119462811079043
+      },
+      "common_accepted_queries": 57,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__furia_falcons_existing_local",
+      "task": "G3",
+      "variant": "mlp_gru+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.011365985692338243,
+        "equipment": 0.6779390158909564,
+        "score": 0.07090495332780192,
+        "utility": 0.2397900450889035
+      },
+      "common_accepted_queries": 60,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__furia_falcons_existing_local",
+      "task": "G3",
+      "variant": "mlp_gru+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.01565620941190097,
+        "equipment": 0.67788459563324,
+        "score": 0.07348246869887098,
+        "utility": 0.23297672625598811
+      },
+      "common_accepted_queries": 59,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__furia_falcons_existing_local",
+      "task": "G3",
+      "variant": "mlp_gru+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.013491872665220481,
+        "equipment": 0.6730545115633871,
+        "score": 0.0718969643526124,
+        "utility": 0.24155665141877994
+      },
+      "common_accepted_queries": 59,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__furia_falcons_existing_local",
+      "task": "G3",
+      "variant": "graph_static+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.052526270495302216,
+        "equipment": 0.6472843396801651,
+        "score": 0.07084166685614972,
+        "utility": 0.22934772296838304
+      },
+      "common_accepted_queries": 59,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__furia_falcons_existing_local",
+      "task": "G3",
+      "variant": "graph_static+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.03938276031625357,
+        "equipment": 0.6587269876357106,
+        "score": 0.06889558679948617,
+        "utility": 0.23299466524854975
+      },
+      "common_accepted_queries": 58,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__furia_falcons_existing_local",
+      "task": "G3",
+      "variant": "graph_static+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.045714186410612055,
+        "equipment": 0.6571846737379122,
+        "score": 0.07123860392816973,
+        "utility": 0.22586253592330602
+      },
+      "common_accepted_queries": 57,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__furia_falcons_existing_local",
+      "task": "G3",
+      "variant": "graph_gru+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.02387579589000403,
+        "equipment": 0.6650057484290376,
+        "score": 0.0728177283762876,
+        "utility": 0.23830072730467067
+      },
+      "common_accepted_queries": 60,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__furia_falcons_existing_local",
+      "task": "G3",
+      "variant": "graph_gru+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.024463433731291857,
+        "equipment": 0.6646054074265244,
+        "score": 0.07277389127796512,
+        "utility": 0.23815726756421857
+      },
+      "common_accepted_queries": 60,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__furia_falcons_existing_local",
+      "task": "G3",
+      "variant": "graph_gru+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.023354058773302287,
+        "equipment": 0.6653611931360889,
+        "score": 0.07285664935733474,
+        "utility": 0.2384280987332741
+      },
+      "common_accepted_queries": 58,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__furia_falcons_existing_local",
+      "task": "G3",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.025768776336802905,
+        "equipment": 0.6680625463640306,
+        "score": 0.0698719834080374,
+        "utility": 0.23629669389112906
+      },
+      "common_accepted_queries": 60,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__furia_falcons_existing_local",
+      "task": "G3",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.017468498142290796,
+        "equipment": 0.6712347103569745,
+        "score": 0.0734629015694848,
+        "utility": 0.23783388993124996
+      },
+      "common_accepted_queries": 60,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__furia_falcons_existing_local",
+      "task": "G3",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.021533014924024187,
+        "equipment": 0.6666018186864157,
+        "score": 0.07299249710685238,
+        "utility": 0.23887266928270776
+      },
+      "common_accepted_queries": 58,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__furia_falcons_existing_local",
+      "task": "G3",
+      "variant": "graph_gru_common+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.02314095921895627,
+        "equipment": 0.6655063718213741,
+        "score": 0.07287254633581364,
+        "utility": 0.23848012262385598
+      },
+      "common_accepted_queries": 59,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__furia_falcons_existing_local",
+      "task": "G3",
+      "variant": "graph_gru_common+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.02456594450692023,
+        "equipment": 0.662969492848462,
+        "score": 0.07274957911254343,
+        "utility": 0.23971498353207438
+      },
+      "common_accepted_queries": 58,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__furia_falcons_existing_local",
+      "task": "G3",
+      "variant": "graph_gru_common+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.02159216286657375,
+        "equipment": 0.6649906715174249,
+        "score": 0.07297136895214304,
+        "utility": 0.24044579666385832
+      },
+      "common_accepted_queries": 59,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G3__furia_falcons_existing_local",
+      "task": "G3",
+      "variant": "statistics_sequence+context",
+      "seed": null,
+      "centroid_separation_shares": {
+        "state": 0.10410746004626512,
+        "equipment": 0.6196887995630508,
+        "score": 0.06618875543221532,
+        "utility": 0.21001498495846876
+      },
+      "common_accepted_queries": 60,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_ancient",
+      "task": "G4",
+      "variant": "mlp_static+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.03555130055918892,
+        "equipment": 0.6650103286966041,
+        "score": 0.05460075792635609,
+        "utility": 0.24483761281785085
+      },
+      "common_accepted_queries": 79,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_ancient",
+      "task": "G4",
+      "variant": "mlp_static+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.031100482018645244,
+        "equipment": 0.670875465182141,
+        "score": 0.059395258613419606,
+        "utility": 0.23862879418579408
+      },
+      "common_accepted_queries": 77,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_ancient",
+      "task": "G4",
+      "variant": "mlp_static+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.039722496910997565,
+        "equipment": 0.6669782160263091,
+        "score": 0.060490323594302786,
+        "utility": 0.23280896346839042
+      },
+      "common_accepted_queries": 76,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_ancient",
+      "task": "G4",
+      "variant": "mlp_gru+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.009947612224182244,
+        "equipment": 0.6868068743088503,
+        "score": 0.060251014637087666,
+        "utility": 0.2429944988298798
+      },
+      "common_accepted_queries": 76,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_ancient",
+      "task": "G4",
+      "variant": "mlp_gru+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.01700629548331935,
+        "equipment": 0.6790479435302028,
+        "score": 0.055201363405057706,
+        "utility": 0.2487443975814201
+      },
+      "common_accepted_queries": 77,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_ancient",
+      "task": "G4",
+      "variant": "mlp_gru+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.013802898426569088,
+        "equipment": 0.6841324329369389,
+        "score": 0.060016395834811956,
+        "utility": 0.2420482728016801
+      },
+      "common_accepted_queries": 77,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_ancient",
+      "task": "G4",
+      "variant": "graph_static+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.05379896370598708,
+        "equipment": 0.6557277346649473,
+        "score": 0.05704024763327682,
+        "utility": 0.23343305399578893
+      },
+      "common_accepted_queries": 79,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_ancient",
+      "task": "G4",
+      "variant": "graph_static+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.02494264966952883,
+        "equipment": 0.6764047027418295,
+        "score": 0.0593384707840973,
+        "utility": 0.23931417680454437
+      },
+      "common_accepted_queries": 75,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_ancient",
+      "task": "G4",
+      "variant": "graph_static+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.039224818169581635,
+        "equipment": 0.6630659891472351,
+        "score": 0.05345218314812921,
+        "utility": 0.2442570095350541
+      },
+      "common_accepted_queries": 78,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_ancient",
+      "task": "G4",
+      "variant": "graph_gru+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.036062113037640994,
+        "equipment": 0.6704987046921753,
+        "score": 0.0579754263185673,
+        "utility": 0.23546375595161645
+      },
+      "common_accepted_queries": 80,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_ancient",
+      "task": "G4",
+      "variant": "graph_gru+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.031909318668558596,
+        "equipment": 0.6840958445178457,
+        "score": 0.059679727974769246,
+        "utility": 0.2243151088388265
+      },
+      "common_accepted_queries": 77,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_ancient",
+      "task": "G4",
+      "variant": "graph_gru+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.035223358834588436,
+        "equipment": 0.6720317541915384,
+        "score": 0.05923003988127742,
+        "utility": 0.23351484709259576
+      },
+      "common_accepted_queries": 80,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_ancient",
+      "task": "G4",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.034652192751716805,
+        "equipment": 0.671479421124445,
+        "score": 0.058060225070392726,
+        "utility": 0.2358081610534454
+      },
+      "common_accepted_queries": 79,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_ancient",
+      "task": "G4",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.030012919166137207,
+        "equipment": 0.6750347815886215,
+        "score": 0.060647718146655934,
+        "utility": 0.23430458109858537
+      },
+      "common_accepted_queries": 78,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_ancient",
+      "task": "G4",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.020550000666469448,
+        "equipment": 0.6771241693865148,
+        "score": 0.054072129156132485,
+        "utility": 0.2482537007908834
+      },
+      "common_accepted_queries": 77,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_ancient",
+      "task": "G4",
+      "variant": "graph_gru_common+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.019501515610267358,
+        "equipment": 0.6801792588381308,
+        "score": 0.05966959856268224,
+        "utility": 0.24064962698891967
+      },
+      "common_accepted_queries": 75,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_ancient",
+      "task": "G4",
+      "variant": "graph_gru_common+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.022518886925213463,
+        "equipment": 0.6739964880220976,
+        "score": 0.05533856768486103,
+        "utility": 0.24814605736782783
+      },
+      "common_accepted_queries": 76,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_ancient",
+      "task": "G4",
+      "variant": "graph_gru_common+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.03380467438157733,
+        "equipment": 0.6662146690095281,
+        "score": 0.054699640441483025,
+        "utility": 0.24528101616741166
+      },
+      "common_accepted_queries": 77,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_ancient",
+      "task": "G4",
+      "variant": "statistics_sequence+context",
+      "seed": null,
+      "centroid_separation_shares": {
+        "state": 0.13963420880115307,
+        "equipment": 0.6080497996949173,
+        "score": 0.05084133591615483,
+        "utility": 0.20147465558777475
+      },
+      "common_accepted_queries": 73,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_anubis",
+      "task": "G4",
+      "variant": "mlp_static+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.02312176251952862,
+        "equipment": 0.6565848963319656,
+        "score": 0.07667292841868609,
+        "utility": 0.24362041272981982
+      },
+      "common_accepted_queries": 30,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_anubis",
+      "task": "G4",
+      "variant": "mlp_static+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.02727060716347708,
+        "equipment": 0.6537963515308549,
+        "score": 0.07634729513482243,
+        "utility": 0.2425857461708457
+      },
+      "common_accepted_queries": 29,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_anubis",
+      "task": "G4",
+      "variant": "mlp_static+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.024828462014951858,
+        "equipment": 0.6554377798661893,
+        "score": 0.07653897349654318,
+        "utility": 0.24319478462231567
+      },
+      "common_accepted_queries": 29,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_anubis",
+      "task": "G4",
+      "variant": "mlp_gru+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.01680621856852001,
+        "equipment": 0.6605627353247132,
+        "score": 0.07417583355700952,
+        "utility": 0.2484552125497572
+      },
+      "common_accepted_queries": 31,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_anubis",
+      "task": "G4",
+      "variant": "mlp_gru+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.014508038239968586,
+        "equipment": 0.6598912122576555,
+        "score": 0.07530060138607218,
+        "utility": 0.2503001481163038
+      },
+      "common_accepted_queries": 32,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_anubis",
+      "task": "G4",
+      "variant": "mlp_gru+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.014209994740073985,
+        "equipment": 0.6623070188484929,
+        "score": 0.07437170243882361,
+        "utility": 0.2491112839726095
+      },
+      "common_accepted_queries": 31,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_anubis",
+      "task": "G4",
+      "variant": "graph_static+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.04649718702248324,
+        "equipment": 0.6382337731183321,
+        "score": 0.06998683851701021,
+        "utility": 0.2452822013421745
+      },
+      "common_accepted_queries": 30,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_anubis",
+      "task": "G4",
+      "variant": "graph_static+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.04847571075940077,
+        "equipment": 0.6368041174907162,
+        "score": 0.07284379977752421,
+        "utility": 0.24187637197235887
+      },
+      "common_accepted_queries": 32,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_anubis",
+      "task": "G4",
+      "variant": "graph_static+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.03787694751210813,
+        "equipment": 0.6440037906924911,
+        "score": 0.07061956167459232,
+        "utility": 0.24749970012080832
+      },
+      "common_accepted_queries": 30,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_anubis",
+      "task": "G4",
+      "variant": "graph_gru+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.0183384155331202,
+        "equipment": 0.6595333225709843,
+        "score": 0.07406023886024764,
+        "utility": 0.2480680230356478
+      },
+      "common_accepted_queries": 31,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_anubis",
+      "task": "G4",
+      "variant": "graph_gru+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.019001053589046947,
+        "equipment": 0.6590881265017864,
+        "score": 0.07401024695522014,
+        "utility": 0.2479005729539466
+      },
+      "common_accepted_queries": 30,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_anubis",
+      "task": "G4",
+      "variant": "graph_gru+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.02118633663527127,
+        "equipment": 0.655067430369318,
+        "score": 0.07493293373577402,
+        "utility": 0.24881329925963674
+      },
+      "common_accepted_queries": 30,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_anubis",
+      "task": "G4",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.013014637582277232,
+        "equipment": 0.6631101244099362,
+        "score": 0.07446188467476984,
+        "utility": 0.24941335333301662
+      },
+      "common_accepted_queries": 29,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_anubis",
+      "task": "G4",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.010029989237802489,
+        "equipment": 0.6625337746751842,
+        "score": 0.07578700624370578,
+        "utility": 0.2516492298433075
+      },
+      "common_accepted_queries": 31,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_anubis",
+      "task": "G4",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.016725135738546712,
+        "equipment": 0.660617211153351,
+        "score": 0.07418195075039909,
+        "utility": 0.2484757023577031
+      },
+      "common_accepted_queries": 30,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_anubis",
+      "task": "G4",
+      "variant": "graph_gru_common+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.021596263783056246,
+        "equipment": 0.654793088139138,
+        "score": 0.07490155182423032,
+        "utility": 0.24870909625357546
+      },
+      "common_accepted_queries": 29,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_anubis",
+      "task": "G4",
+      "variant": "graph_gru_common+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.01492547669709883,
+        "equipment": 0.661826319389715,
+        "score": 0.07431772379131829,
+        "utility": 0.2489304801218678
+      },
+      "common_accepted_queries": 31,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_anubis",
+      "task": "G4",
+      "variant": "graph_gru_common+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.01765992630748389,
+        "equipment": 0.6537300806832397,
+        "score": 0.0709857892671613,
+        "utility": 0.25762420374211525
+      },
+      "common_accepted_queries": 31,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_anubis",
+      "task": "G4",
+      "variant": "statistics_sequence+context",
+      "seed": null,
+      "centroid_separation_shares": {
+        "state": 0.10346967083674423,
+        "equipment": 0.6099501104755796,
+        "score": 0.06467030333627774,
+        "utility": 0.22190991535139848
+      },
+      "common_accepted_queries": 35,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_dust2",
+      "task": "G4",
+      "variant": "mlp_static+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.03686822123444723,
+        "equipment": 0.6749636721218244,
+        "score": 0.04522780957005771,
+        "utility": 0.24294029707367076
+      },
+      "common_accepted_queries": 83,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_dust2",
+      "task": "G4",
+      "variant": "mlp_static+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.03591191252383537,
+        "equipment": 0.6756338541812553,
+        "score": 0.04527271697443094,
+        "utility": 0.2431815163204782
+      },
+      "common_accepted_queries": 83,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_dust2",
+      "task": "G4",
+      "variant": "mlp_static+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.04105554306120138,
+        "equipment": 0.6720291929790383,
+        "score": 0.045031176670630675,
+        "utility": 0.24188408728912958
+      },
+      "common_accepted_queries": 83,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_dust2",
+      "task": "G4",
+      "variant": "mlp_gru+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.022574241374032595,
+        "equipment": 0.6889622800253142,
+        "score": 0.046307676058181216,
+        "utility": 0.2421558025424719
+      },
+      "common_accepted_queries": 83,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_dust2",
+      "task": "G4",
+      "variant": "mlp_gru+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.01900907276374529,
+        "equipment": 0.6903811388732135,
+        "score": 0.04625409442000452,
+        "utility": 0.24435569394303658
+      },
+      "common_accepted_queries": 83,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_dust2",
+      "task": "G4",
+      "variant": "mlp_gru+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.023344095985042196,
+        "equipment": 0.6884196293089726,
+        "score": 0.046271202517736934,
+        "utility": 0.24196507218824823
+      },
+      "common_accepted_queries": 84,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_dust2",
+      "task": "G4",
+      "variant": "graph_static+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.06590954193639169,
+        "equipment": 0.654611486786007,
+        "score": 0.043864055044115266,
+        "utility": 0.23561491623348613
+      },
+      "common_accepted_queries": 84,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_dust2",
+      "task": "G4",
+      "variant": "graph_static+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.062132075409446395,
+        "equipment": 0.6634764757470214,
+        "score": 0.04502162786954423,
+        "utility": 0.229369820973988
+      },
+      "common_accepted_queries": 84,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_dust2",
+      "task": "G4",
+      "variant": "graph_static+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.046905878593532305,
+        "equipment": 0.6679292722401463,
+        "score": 0.04475645013038886,
+        "utility": 0.2404083990359325
+      },
+      "common_accepted_queries": 84,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_dust2",
+      "task": "G4",
+      "variant": "graph_gru+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.040260588538439085,
+        "equipment": 0.6754251945765118,
+        "score": 0.04525207738812409,
+        "utility": 0.23906213949692492
+      },
+      "common_accepted_queries": 82,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_dust2",
+      "task": "G4",
+      "variant": "graph_gru+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.03853825238305406,
+        "equipment": 0.6766373040501715,
+        "score": 0.045333286191327406,
+        "utility": 0.239491157375447
+      },
+      "common_accepted_queries": 83,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_dust2",
+      "task": "G4",
+      "variant": "graph_gru+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.03180606254029099,
+        "equipment": 0.6813751428636778,
+        "score": 0.045650711496694744,
+        "utility": 0.24116808309933643
+      },
+      "common_accepted_queries": 83,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_dust2",
+      "task": "G4",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.02590105822531922,
+        "equipment": 0.6855308424637819,
+        "score": 0.0459291346905817,
+        "utility": 0.24263896462031717
+      },
+      "common_accepted_queries": 84,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_dust2",
+      "task": "G4",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.03351976920506084,
+        "equipment": 0.6801691064712194,
+        "score": 0.04556990957724808,
+        "utility": 0.24074121474647167
+      },
+      "common_accepted_queries": 83,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_dust2",
+      "task": "G4",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.02420593261307652,
+        "equipment": 0.6878121428344044,
+        "score": 0.046230371128719534,
+        "utility": 0.24175155342379956
+      },
+      "common_accepted_queries": 84,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_dust2",
+      "task": "G4",
+      "variant": "graph_gru_common+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.02462169060699312,
+        "equipment": 0.6864312088676444,
+        "score": 0.04598945735919461,
+        "utility": 0.24295764316616777
+      },
+      "common_accepted_queries": 83,
+      "ARI_with_context_only": 0.9417162832063208
+    },
+    {
+      "fold": "G4__de_dust2",
+      "task": "G4",
+      "variant": "graph_gru_common+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.027761250123261458,
+        "equipment": 0.6853060909563832,
+        "score": 0.046061930211245584,
+        "utility": 0.2408707287091098
+      },
+      "common_accepted_queries": 84,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_dust2",
+      "task": "G4",
+      "variant": "graph_gru_common+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.018313266417569293,
+        "equipment": 0.690870818812519,
+        "score": 0.04628690195322476,
+        "utility": 0.24452901281668696
+      },
+      "common_accepted_queries": 80,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_dust2",
+      "task": "G4",
+      "variant": "statistics_sequence+context",
+      "seed": null,
+      "centroid_separation_shares": {
+        "state": 0.11592667756472033,
+        "equipment": 0.6231605485728225,
+        "score": 0.041884900889622705,
+        "utility": 0.21902787297283438
+      },
+      "common_accepted_queries": 81,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_inferno",
+      "task": "G4",
+      "variant": "mlp_static+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.018893976935213296,
+        "equipment": 0.65630718958701,
+        "score": 0.061719234711564847,
+        "utility": 0.26307959876621195
+      },
+      "common_accepted_queries": 85,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_inferno",
+      "task": "G4",
+      "variant": "mlp_static+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.024817312983007343,
+        "equipment": 0.6523447961829177,
+        "score": 0.06134661059223954,
+        "utility": 0.26149128024183554
+      },
+      "common_accepted_queries": 84,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_inferno",
+      "task": "G4",
+      "variant": "mlp_static+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.018066572921150006,
+        "equipment": 0.656860678394903,
+        "score": 0.06177128488896131,
+        "utility": 0.26330146379498565
+      },
+      "common_accepted_queries": 83,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_inferno",
+      "task": "G4",
+      "variant": "mlp_gru+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.01362419955932059,
+        "equipment": 0.6350233475480926,
+        "score": 0.06621234930963105,
+        "utility": 0.28514010358295583
+      },
+      "common_accepted_queries": 89,
+      "ARI_with_context_only": 0.953671807193152
+    },
+    {
+      "fold": "G4__de_inferno",
+      "task": "G4",
+      "variant": "mlp_gru+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.014744021472953815,
+        "equipment": 0.6673824827275905,
+        "score": 0.06893013249405418,
+        "utility": 0.2489433633054015
+      },
+      "common_accepted_queries": 85,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_inferno",
+      "task": "G4",
+      "variant": "mlp_gru+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.012780203377913408,
+        "equipment": 0.6523926537030222,
+        "score": 0.06852197367384898,
+        "utility": 0.26630516924521525
+      },
+      "common_accepted_queries": 79,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_inferno",
+      "task": "G4",
+      "variant": "graph_static+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.03632468411356025,
+        "equipment": 0.6395719356320295,
+        "score": 0.060756558482212855,
+        "utility": 0.2633468217721973
+      },
+      "common_accepted_queries": 74,
+      "ARI_with_context_only": 0.9451424530078822
+    },
+    {
+      "fold": "G4__de_inferno",
+      "task": "G4",
+      "variant": "graph_static+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.03266562684953564,
+        "equipment": 0.6357355943087835,
+        "score": 0.06713601490193095,
+        "utility": 0.2644627639397499
+      },
+      "common_accepted_queries": 77,
+      "ARI_with_context_only": 0.9475042468548723
+    },
+    {
+      "fold": "G4__de_inferno",
+      "task": "G4",
+      "variant": "graph_static+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.04595958620573217,
+        "equipment": 0.6269987568856458,
+        "score": 0.06621337276471781,
+        "utility": 0.26082828414390413
+      },
+      "common_accepted_queries": 80,
+      "ARI_with_context_only": 0.9492667620472134
+    },
+    {
+      "fold": "G4__de_inferno",
+      "task": "G4",
+      "variant": "graph_gru+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.019347597416219862,
+        "equipment": 0.6444882506723074,
+        "score": 0.06806032757737887,
+        "utility": 0.26810382433409374
+      },
+      "common_accepted_queries": 84,
+      "ARI_with_context_only": 0.9516174828409265
+    },
+    {
+      "fold": "G4__de_inferno",
+      "task": "G4",
+      "variant": "graph_gru+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.01390571647535607,
+        "equipment": 0.6679503250779776,
+        "score": 0.0689887816936675,
+        "utility": 0.24915517675299886
+      },
+      "common_accepted_queries": 85,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_inferno",
+      "task": "G4",
+      "variant": "graph_gru+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.011484585159820093,
+        "equipment": 0.6695903259138899,
+        "score": 0.06915816803184015,
+        "utility": 0.24976692089444996
+      },
+      "common_accepted_queries": 88,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_inferno",
+      "task": "G4",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.021889225441960678,
+        "equipment": 0.6297023690719165,
+        "score": 0.06565754374713649,
+        "utility": 0.2827508617389863
+      },
+      "common_accepted_queries": 80,
+      "ARI_with_context_only": 0.9494691876206391
+    },
+    {
+      "fold": "G4__de_inferno",
+      "task": "G4",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.012258454217645461,
+        "equipment": 0.6690661305125184,
+        "score": 0.06910402687679867,
+        "utility": 0.24957138839303739
+      },
+      "common_accepted_queries": 89,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_inferno",
+      "task": "G4",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.010093706127401918,
+        "equipment": 0.6705324651366498,
+        "score": 0.06925547622187124,
+        "utility": 0.25011835251407716
+      },
+      "common_accepted_queries": 85,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_inferno",
+      "task": "G4",
+      "variant": "graph_gru_common+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.01409871188284942,
+        "equipment": 0.6678195958492136,
+        "score": 0.06897527941679812,
+        "utility": 0.2491064128511388
+      },
+      "common_accepted_queries": 84,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_inferno",
+      "task": "G4",
+      "variant": "graph_gru_common+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.01002225526922638,
+        "equipment": 0.6705808637783849,
+        "score": 0.06926047504169897,
+        "utility": 0.2501364059106897
+      },
+      "common_accepted_queries": 85,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_inferno",
+      "task": "G4",
+      "variant": "graph_gru_common+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.009132072294823617,
+        "equipment": 0.671183846694994,
+        "score": 0.0693227537100926,
+        "utility": 0.25036132730008975
+      },
+      "common_accepted_queries": 81,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_inferno",
+      "task": "G4",
+      "variant": "statistics_sequence+context",
+      "seed": null,
+      "centroid_separation_shares": {
+        "state": 0.11131705342218452,
+        "equipment": 0.6116849169677224,
+        "score": 0.058954034597444624,
+        "utility": 0.2180439950126484
+      },
+      "common_accepted_queries": 91,
+      "ARI_with_context_only": 0.8092963129496403
+    },
+    {
+      "fold": "G4__de_mirage",
+      "task": "G4",
+      "variant": "mlp_static+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.033732110695010996,
+        "equipment": 0.6415214038091345,
+        "score": 0.07156673332419865,
+        "utility": 0.2531797521716557
+      },
+      "common_accepted_queries": 66,
+      "ARI_with_context_only": 0.9346320194099652
+    },
+    {
+      "fold": "G4__de_mirage",
+      "task": "G4",
+      "variant": "mlp_static+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.03385022231178291,
+        "equipment": 0.6407665246467827,
+        "score": 0.06755651788532205,
+        "utility": 0.25782673515611226
+      },
+      "common_accepted_queries": 62,
+      "ARI_with_context_only": 0.9303598736285663
+    },
+    {
+      "fold": "G4__de_mirage",
+      "task": "G4",
+      "variant": "mlp_static+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.03050745735891352,
+        "equipment": 0.6402205516068178,
+        "score": 0.06930108437985324,
+        "utility": 0.25997090665441525
+      },
+      "common_accepted_queries": 63,
+      "ARI_with_context_only": 0.9294949132646406
+    },
+    {
+      "fold": "G4__de_mirage",
+      "task": "G4",
+      "variant": "mlp_gru+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.019403144498206473,
+        "equipment": 0.6468972500774997,
+        "score": 0.06608947424845907,
+        "utility": 0.2676101311758348
+      },
+      "common_accepted_queries": 69,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_mirage",
+      "task": "G4",
+      "variant": "mlp_gru+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.02003014453818778,
+        "equipment": 0.646483619746761,
+        "score": 0.06604721620656995,
+        "utility": 0.26743901950848115
+      },
+      "common_accepted_queries": 69,
+      "ARI_with_context_only": 0.9365922760291712
+    },
+    {
+      "fold": "G4__de_mirage",
+      "task": "G4",
+      "variant": "mlp_gru+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.01919042539856785,
+        "equipment": 0.6470375803261876,
+        "score": 0.06610381091839519,
+        "utility": 0.26766818335684933
+      },
+      "common_accepted_queries": 69,
+      "ARI_with_context_only": 0.9365922760291712
+    },
+    {
+      "fold": "G4__de_mirage",
+      "task": "G4",
+      "variant": "graph_static+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.06363415142528091,
+        "equipment": 0.61771816737012,
+        "score": 0.0631084285956108,
+        "utility": 0.2555392526089883
+      },
+      "common_accepted_queries": 62,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_mirage",
+      "task": "G4",
+      "variant": "graph_static+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.04331204718320205,
+        "equipment": 0.6311246078213917,
+        "score": 0.06447808135091572,
+        "utility": 0.26108526364449053
+      },
+      "common_accepted_queries": 61,
+      "ARI_with_context_only": 0.9295612009237876
+    },
+    {
+      "fold": "G4__de_mirage",
+      "task": "G4",
+      "variant": "graph_static+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.05312560266947026,
+        "equipment": 0.6246506302413788,
+        "score": 0.06381667527057128,
+        "utility": 0.25840709181857985
+      },
+      "common_accepted_queries": 64,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_mirage",
+      "task": "G4",
+      "variant": "graph_gru+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.031668864823382804,
+        "equipment": 0.6394535968394123,
+        "score": 0.06921806486897047,
+        "utility": 0.2596594734682345
+      },
+      "common_accepted_queries": 68,
+      "ARI_with_context_only": 0.9359636086876623
+    },
+    {
+      "fold": "G4__de_mirage",
+      "task": "G4",
+      "variant": "graph_gru+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.026556407570051982,
+        "equipment": 0.642178260633168,
+        "score": 0.0656073644059415,
+        "utility": 0.26565796739083847
+      },
+      "common_accepted_queries": 68,
+      "ARI_with_context_only": 0.9359636086876623
+    },
+    {
+      "fold": "G4__de_mirage",
+      "task": "G4",
+      "variant": "graph_gru+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.025398483970053055,
+        "equipment": 0.6429421398853158,
+        "score": 0.06568540520478199,
+        "utility": 0.26597397093984926
+      },
+      "common_accepted_queries": 68,
+      "ARI_with_context_only": 0.9359636086876623
+    },
+    {
+      "fold": "G4__de_mirage",
+      "task": "G4",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.030221977389943585,
+        "equipment": 0.6397600935514047,
+        "score": 0.06536031529410881,
+        "utility": 0.2646576137645428
+      },
+      "common_accepted_queries": 67,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_mirage",
+      "task": "G4",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.019673619725579076,
+        "equipment": 0.6467188182583279,
+        "score": 0.06607124497771036,
+        "utility": 0.2675363170383828
+      },
+      "common_accepted_queries": 67,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_mirage",
+      "task": "G4",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.02246336074251705,
+        "equipment": 0.6483184797192467,
+        "score": 0.06835272643913702,
+        "utility": 0.26086543309909915
+      },
+      "common_accepted_queries": 67,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_mirage",
+      "task": "G4",
+      "variant": "graph_gru_common+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.020780091430031292,
+        "equipment": 0.6459888816907335,
+        "score": 0.06599667189213725,
+        "utility": 0.2672343549870979
+      },
+      "common_accepted_queries": 69,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_mirage",
+      "task": "G4",
+      "variant": "graph_gru_common+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.017949018551959676,
+        "equipment": 0.6513124661831585,
+        "score": 0.0686683847831948,
+        "utility": 0.2620701304816871
+      },
+      "common_accepted_queries": 66,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_mirage",
+      "task": "G4",
+      "variant": "graph_gru_common+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.02142900098910607,
+        "equipment": 0.6455607977060059,
+        "score": 0.06595293721018979,
+        "utility": 0.2670572640946981
+      },
+      "common_accepted_queries": 67,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_mirage",
+      "task": "G4",
+      "variant": "statistics_sequence+context",
+      "seed": null,
+      "centroid_separation_shares": {
+        "state": 0.09977397452951858,
+        "equipment": 0.5970448009805938,
+        "score": 0.06294690222467217,
+        "utility": 0.2402343222652154
+      },
+      "common_accepted_queries": 66,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_nuke",
+      "task": "G4",
+      "variant": "mlp_static+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.030627103670589986,
+        "equipment": 0.6700234466363756,
+        "score": 0.06785505563728016,
+        "utility": 0.2314943940557543
+      },
+      "common_accepted_queries": 60,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_nuke",
+      "task": "G4",
+      "variant": "mlp_static+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.0267856650306736,
+        "equipment": 0.6726786208910974,
+        "score": 0.06812395219259518,
+        "utility": 0.2324117618856339
+      },
+      "common_accepted_queries": 60,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_nuke",
+      "task": "G4",
+      "variant": "mlp_static+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.030994238563814756,
+        "equipment": 0.6697696856869303,
+        "score": 0.06782935659132942,
+        "utility": 0.23140671915792535
+      },
+      "common_accepted_queries": 57,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_nuke",
+      "task": "G4",
+      "variant": "mlp_gru+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.011647173815621248,
+        "equipment": 0.6843995832191697,
+        "score": 0.06888303497125584,
+        "utility": 0.2350702079939531
+      },
+      "common_accepted_queries": 60,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_nuke",
+      "task": "G4",
+      "variant": "mlp_gru+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.011762939100936334,
+        "equipment": 0.6843194198292125,
+        "score": 0.0688749667349079,
+        "utility": 0.23504267433494336
+      },
+      "common_accepted_queries": 60,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_nuke",
+      "task": "G4",
+      "variant": "mlp_gru+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.014718129563546468,
+        "equipment": 0.6862560594332265,
+        "score": 0.06130529356977377,
+        "utility": 0.2377205174334533
+      },
+      "common_accepted_queries": 61,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_nuke",
+      "task": "G4",
+      "variant": "graph_static+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.04375566495803475,
+        "equipment": 0.6671837442400691,
+        "score": 0.06273286207162494,
+        "utility": 0.22632772873027118
+      },
+      "common_accepted_queries": 61,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_nuke",
+      "task": "G4",
+      "variant": "graph_static+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.034621525544234755,
+        "equipment": 0.6680540481990876,
+        "score": 0.05873551456303005,
+        "utility": 0.23858891169364757
+      },
+      "common_accepted_queries": 61,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_nuke",
+      "task": "G4",
+      "variant": "graph_static+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.02989183181896234,
+        "equipment": 0.6786278443458426,
+        "score": 0.05549589912676152,
+        "utility": 0.2359844247084337
+      },
+      "common_accepted_queries": 44,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_nuke",
+      "task": "G4",
+      "variant": "graph_gru+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.037098166259739586,
+        "equipment": 0.6747849750242079,
+        "score": 0.0641395046895814,
+        "utility": 0.2239773540264711
+      },
+      "common_accepted_queries": 61,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_nuke",
+      "task": "G4",
+      "variant": "graph_gru+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.028330188196325243,
+        "equipment": 0.6809294226212719,
+        "score": 0.0647235452951871,
+        "utility": 0.2260168438872157
+      },
+      "common_accepted_queries": 61,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_nuke",
+      "task": "G4",
+      "variant": "graph_gru+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.013018247592425576,
+        "equipment": 0.6834501628335062,
+        "score": 0.06878747828298248,
+        "utility": 0.23474411129108563
+      },
+      "common_accepted_queries": 57,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_nuke",
+      "task": "G4",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.02372925548698536,
+        "equipment": 0.6760331664485265,
+        "score": 0.06804097692048147,
+        "utility": 0.2321966011440065
+      },
+      "common_accepted_queries": 60,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_nuke",
+      "task": "G4",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.02396960295763041,
+        "equipment": 0.6839852454458626,
+        "score": 0.06501400665642494,
+        "utility": 0.2270311449400822
+      },
+      "common_accepted_queries": 61,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_nuke",
+      "task": "G4",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.021426386289356975,
+        "equipment": 0.6743596504404566,
+        "score": 0.06422731447369706,
+        "utility": 0.2399866487964893
+      },
+      "common_accepted_queries": 62,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_nuke",
+      "task": "G4",
+      "variant": "graph_gru_common+context",
+      "seed": 0,
+      "centroid_separation_shares": {
+        "state": 0.017130690153922195,
+        "equipment": 0.6879283787243096,
+        "score": 0.06486671594444726,
+        "utility": 0.23007421517732116
+      },
+      "common_accepted_queries": 59,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_nuke",
+      "task": "G4",
+      "variant": "graph_gru_common+context",
+      "seed": 1,
+      "centroid_separation_shares": {
+        "state": 0.01643202227971146,
+        "equipment": 0.6884173892704296,
+        "score": 0.06491282613435952,
+        "utility": 0.23023776231549947
+      },
+      "common_accepted_queries": 54,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_nuke",
+      "task": "G4",
+      "variant": "graph_gru_common+context",
+      "seed": 42,
+      "centroid_separation_shares": {
+        "state": 0.021140410652829535,
+        "equipment": 0.6745567234328009,
+        "score": 0.06424608408579545,
+        "utility": 0.24005678182857404
+      },
+      "common_accepted_queries": 57,
+      "ARI_with_context_only": 1.0
+    },
+    {
+      "fold": "G4__de_nuke",
+      "task": "G4",
+      "variant": "statistics_sequence+context",
+      "seed": null,
+      "centroid_separation_shares": {
+        "state": 0.12604429996700692,
+        "equipment": 0.6210027437646823,
+        "score": 0.05742199799464605,
+        "utility": 0.19553095827366476
+      },
+      "common_accepted_queries": 10,
+      "ARI_with_context_only": 1.0
+    }
+  ],
+  "summary": {
+    "G3": {
+      "mlp_static+context": {
+        "fits": 27,
+        "mean_centroid_separation_shares": {
+          "state": 0.02859866552694705,
+          "equipment": 0.678236719279841,
+          "score": 0.055761816859192535,
+          "utility": 0.23740279833401934
+        },
+        "computed_context_only_comparisons": 27,
+        "mean_ARI_with_context_only": 0.9882418395453789
+      },
+      "mlp_gru+context": {
+        "fits": 27,
+        "mean_centroid_separation_shares": {
+          "state": 0.012842889448095852,
+          "equipment": 0.6906336728395531,
+          "score": 0.05806507784484771,
+          "utility": 0.23845835986750344
+        },
+        "computed_context_only_comparisons": 27,
+        "mean_ARI_with_context_only": 0.9869923144660504
+      },
+      "graph_static+context": {
+        "fits": 27,
+        "mean_centroid_separation_shares": {
+          "state": 0.0439712979271245,
+          "equipment": 0.6693090628338696,
+          "score": 0.05587705613573694,
+          "utility": 0.2308425831032689
+        },
+        "computed_context_only_comparisons": 27,
+        "mean_ARI_with_context_only": 0.9843017330656525
+      },
+      "graph_gru+context": {
+        "fits": 27,
+        "mean_centroid_separation_shares": {
+          "state": 0.024785139180456925,
+          "equipment": 0.6804836429320374,
+          "score": 0.05665820170583378,
+          "utility": 0.23807301618167195
+        },
+        "computed_context_only_comparisons": 27,
+        "mean_ARI_with_context_only": 1.0
+      },
+      "graph_gru_no_motion+context": {
+        "fits": 27,
+        "mean_centroid_separation_shares": {
+          "state": 0.02302189160825527,
+          "equipment": 0.6825768037290746,
+          "score": 0.05623845602640101,
+          "utility": 0.23816284863626905
+        },
+        "computed_context_only_comparisons": 27,
+        "mean_ARI_with_context_only": 1.0
+      },
+      "graph_gru_common+context": {
+        "fits": 27,
+        "mean_centroid_separation_shares": {
+          "state": 0.022158146353807747,
+          "equipment": 0.6813382625262651,
+          "score": 0.057115388289297575,
+          "utility": 0.23938820283062956
+        },
+        "computed_context_only_comparisons": 27,
+        "mean_ARI_with_context_only": 0.9872561178405026
+      },
+      "statistics_sequence+context": {
+        "fits": 9,
+        "mean_centroid_separation_shares": {
+          "state": 0.10880101863425946,
+          "equipment": 0.630278748237251,
+          "score": 0.050406004619863325,
+          "utility": 0.21051422850862603
+        },
+        "computed_context_only_comparisons": 9,
+        "mean_ARI_with_context_only": 0.9911853889006418
+      }
+    },
+    "G4": {
+      "mlp_static+context": {
+        "fits": 18,
+        "mean_centroid_separation_shares": {
+          "state": 0.030205858248690542,
+          "equipment": 0.6606557030198973,
+          "score": 0.06314705947792187,
+          "utility": 0.24599137925349027
+        },
+        "computed_context_only_comparisons": 18,
+        "mean_ARI_with_context_only": 0.9885826003501763
+      },
+      "mlp_gru+context": {
+        "fits": 18,
+        "mean_centroid_separation_shares": {
+          "state": 0.01606160272948374,
+          "equipment": 0.6694835145569509,
+          "score": 0.06328434091009341,
+          "utility": 0.2511705418034719
+        },
+        "computed_context_only_comparisons": 18,
+        "mean_ARI_with_context_only": 0.9903809088473052
+      },
+      "graph_static+context": {
+        "fits": 18,
+        "mean_centroid_separation_shares": {
+          "state": 0.04494747186369296,
+          "equipment": 0.6494401484262818,
+          "score": 0.0599664800947808,
+          "utility": 0.24564589961524433
+        },
+        "computed_context_only_comparisons": 18,
+        "mean_ARI_with_context_only": 0.9873041479352085
+      },
+      "graph_gru+context": {
+        "fits": 18,
+        "mean_centroid_separation_shares": {
+          "state": 0.026618542067965826,
+          "equipment": 0.6655289046575037,
+          "score": 0.0633607404917963,
+          "utility": 0.2444918127827342
+        },
+        "computed_context_only_comparisons": 18,
+        "mean_ARI_with_context_only": 0.9866393504946619
+      },
+      "graph_gru_no_motion+context": {
+        "fits": 18,
+        "mean_centroid_separation_shares": {
+          "state": 0.02190762353141261,
+          "equipment": 0.666771555149576,
+          "score": 0.06311244228033173,
+          "utility": 0.24820837903867965
+        },
+        "computed_context_only_comparisons": 18,
+        "mean_ARI_with_context_only": 0.997192732645591
+      },
+      "graph_gru_common+context": {
+        "fits": 18,
+        "mean_centroid_separation_shares": {
+          "state": 0.019378734686498922,
+          "equipment": 0.6698164981138015,
+          "score": 0.06280296051745082,
+          "utility": 0.2480018066822488
+        },
+        "computed_context_only_comparisons": 18,
+        "mean_ARI_with_context_only": 0.9967620157336845
+      },
+      "statistics_sequence+context": {
+        "fits": 6,
+        "mean_centroid_separation_shares": {
+          "state": 0.11602764752022128,
+          "equipment": 0.6118154867427198,
+          "score": 0.05611991249313635,
+          "utility": 0.2160369532439227
+        },
+        "computed_context_only_comparisons": 6,
+        "mean_ARI_with_context_only": 0.9682160521582733
+      }
+    }
+  }
+}

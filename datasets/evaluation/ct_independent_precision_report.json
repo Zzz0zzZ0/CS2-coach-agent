@@ -1,0 +1,687 @@
+{
+  "status": "planning_not_data_collection",
+  "script_sha256": "d72f945aaa29d2410cd1e47c3321f1bad27d720056c0cfc5a89ef03ee5fe959d",
+  "source_report_sha256": "18c93c2a65a48f146bd2afa80ba2f752983f3f7c19473fd72d6a7547cc11c541",
+  "runtime": {
+    "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "scipy": "1.16.3"
+  },
+  "technical_estimand": "Equal mean over six maps of per-series log(mean graph_gru reconstruction loss / mean mlp_gru loss); average model seeds and windows inside series first.",
+  "model": "One selected map per series, equal series counts per map; six fixed map means and independent Gaussian homoscedastic residuals. Residual df=n-6. Planning model only.",
+  "width_target_log_units": 0.05,
+  "confidence_level": 0.95,
+  "assurance_target": 0.8,
+  "descriptive_development_series_log_ratio_sd": 0.0287691006504182,
+  "development_sd_limit": "Only nine existing series, repeated teams and overlapping development fits; not a reliable population variance estimate or a post-hoc power calculation.",
+  "scenarios": [
+    {
+      "series": 12,
+      "maps": 6,
+      "series_per_map": 2,
+      "residual_df": 6,
+      "assumed_within_map_log_ratio_sigma": 0.02,
+      "variance_multiplier_sensitivity": 1.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.014127252159418336,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.9999999999999644
+    },
+    {
+      "series": 18,
+      "maps": 6,
+      "series_per_map": 3,
+      "residual_df": 12,
+      "assumed_within_map_log_ratio_sigma": 0.02,
+      "variance_multiplier_sensitivity": 1.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.010271022178608352,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 1.0
+    },
+    {
+      "series": 24,
+      "maps": 6,
+      "series_per_map": 4,
+      "residual_df": 18,
+      "assumed_within_map_log_ratio_sigma": 0.02,
+      "variance_multiplier_sensitivity": 1.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.008576978313262233,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 1.0
+    },
+    {
+      "series": 36,
+      "maps": 6,
+      "series_per_map": 6,
+      "residual_df": 30,
+      "assumed_within_map_log_ratio_sigma": 0.02,
+      "variance_multiplier_sensitivity": 1.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.006807574854337458,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 1.0
+    },
+    {
+      "series": 48,
+      "maps": 6,
+      "series_per_map": 8,
+      "residual_df": 42,
+      "assumed_within_map_log_ratio_sigma": 0.02,
+      "variance_multiplier_sensitivity": 1.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.005825700071844435,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 1.0
+    },
+    {
+      "series": 12,
+      "maps": 6,
+      "series_per_map": 2,
+      "residual_df": 6,
+      "assumed_within_map_log_ratio_sigma": 0.02,
+      "variance_multiplier_sensitivity": 1.5,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.017302279629103356,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.999999995522209
+    },
+    {
+      "series": 18,
+      "maps": 6,
+      "series_per_map": 3,
+      "residual_df": 12,
+      "assumed_within_map_log_ratio_sigma": 0.02,
+      "variance_multiplier_sensitivity": 1.5,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.012579381737199845,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 1.0
+    },
+    {
+      "series": 24,
+      "maps": 6,
+      "series_per_map": 4,
+      "residual_df": 18,
+      "assumed_within_map_log_ratio_sigma": 0.02,
+      "variance_multiplier_sensitivity": 1.5,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.0105046102012048,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 1.0
+    },
+    {
+      "series": 36,
+      "maps": 6,
+      "series_per_map": 6,
+      "residual_df": 30,
+      "assumed_within_map_log_ratio_sigma": 0.02,
+      "variance_multiplier_sensitivity": 1.5,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.008337542389464145,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 1.0
+    },
+    {
+      "series": 48,
+      "maps": 6,
+      "series_per_map": 8,
+      "residual_df": 42,
+      "assumed_within_map_log_ratio_sigma": 0.02,
+      "variance_multiplier_sensitivity": 1.5,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.007134996285257083,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 1.0
+    },
+    {
+      "series": 12,
+      "maps": 6,
+      "series_per_map": 2,
+      "residual_df": 6,
+      "assumed_within_map_log_ratio_sigma": 0.02,
+      "variance_multiplier_sensitivity": 2.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.01997895160291401,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.9999986424368641
+    },
+    {
+      "series": 18,
+      "maps": 6,
+      "series_per_map": 3,
+      "residual_df": 12,
+      "assumed_within_map_log_ratio_sigma": 0.02,
+      "variance_multiplier_sensitivity": 2.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.014525418864422787,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 1.0
+    },
+    {
+      "series": 24,
+      "maps": 6,
+      "series_per_map": 4,
+      "residual_df": 18,
+      "assumed_within_map_log_ratio_sigma": 0.02,
+      "variance_multiplier_sensitivity": 2.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.012129679054795364,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 1.0
+    },
+    {
+      "series": 36,
+      "maps": 6,
+      "series_per_map": 6,
+      "residual_df": 30,
+      "assumed_within_map_log_ratio_sigma": 0.02,
+      "variance_multiplier_sensitivity": 2.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.00962736468587408,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 1.0
+    },
+    {
+      "series": 48,
+      "maps": 6,
+      "series_per_map": 8,
+      "residual_df": 42,
+      "assumed_within_map_log_ratio_sigma": 0.02,
+      "variance_multiplier_sensitivity": 2.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.008238784051920314,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 1.0
+    },
+    {
+      "series": 12,
+      "maps": 6,
+      "series_per_map": 2,
+      "residual_df": 6,
+      "assumed_within_map_log_ratio_sigma": 0.05,
+      "variance_multiplier_sensitivity": 1.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.035318130398545845,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.9385931892462742
+    },
+    {
+      "series": 18,
+      "maps": 6,
+      "series_per_map": 3,
+      "residual_df": 12,
+      "assumed_within_map_log_ratio_sigma": 0.05,
+      "variance_multiplier_sensitivity": 1.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.025677555446520884,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.999991542859501
+    },
+    {
+      "series": 24,
+      "maps": 6,
+      "series_per_map": 4,
+      "residual_df": 18,
+      "assumed_within_map_log_ratio_sigma": 0.05,
+      "variance_multiplier_sensitivity": 1.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.02144244578315558,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.9999999999994578
+    },
+    {
+      "series": 36,
+      "maps": 6,
+      "series_per_map": 6,
+      "residual_df": 30,
+      "assumed_within_map_log_ratio_sigma": 0.05,
+      "variance_multiplier_sensitivity": 1.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.017018937135843643,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 1.0
+    },
+    {
+      "series": 48,
+      "maps": 6,
+      "series_per_map": 8,
+      "residual_df": 42,
+      "assumed_within_map_log_ratio_sigma": 0.05,
+      "variance_multiplier_sensitivity": 1.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.014564250179611087,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 1.0
+    },
+    {
+      "series": 12,
+      "maps": 6,
+      "series_per_map": 2,
+      "residual_df": 6,
+      "assumed_within_map_log_ratio_sigma": 0.05,
+      "variance_multiplier_sensitivity": 1.5,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.04325569907275839,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.7631296891320155
+    },
+    {
+      "series": 18,
+      "maps": 6,
+      "series_per_map": 3,
+      "residual_df": 12,
+      "assumed_within_map_log_ratio_sigma": 0.05,
+      "variance_multiplier_sensitivity": 1.5,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.03144845434299961,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.9975130450827171
+    },
+    {
+      "series": 24,
+      "maps": 6,
+      "series_per_map": 4,
+      "residual_df": 18,
+      "assumed_within_map_log_ratio_sigma": 0.05,
+      "variance_multiplier_sensitivity": 1.5,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.026261525503012,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.9999997173669894
+    },
+    {
+      "series": 36,
+      "maps": 6,
+      "series_per_map": 6,
+      "residual_df": 30,
+      "assumed_within_map_log_ratio_sigma": 0.05,
+      "variance_multiplier_sensitivity": 1.5,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.020843855973660366,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 1.0
+    },
+    {
+      "series": 48,
+      "maps": 6,
+      "series_per_map": 8,
+      "residual_df": 42,
+      "assumed_within_map_log_ratio_sigma": 0.05,
+      "variance_multiplier_sensitivity": 1.5,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.01783749071314271,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 1.0
+    },
+    {
+      "series": 12,
+      "maps": 6,
+      "series_per_map": 2,
+      "residual_df": 6,
+      "assumed_within_map_log_ratio_sigma": 0.05,
+      "variance_multiplier_sensitivity": 2.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.04994737900728501,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.5782253769726007
+    },
+    {
+      "series": 18,
+      "maps": 6,
+      "series_per_map": 3,
+      "residual_df": 12,
+      "assumed_within_map_log_ratio_sigma": 0.05,
+      "variance_multiplier_sensitivity": 2.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.036313547161056975,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.9700762806980263
+    },
+    {
+      "series": 24,
+      "maps": 6,
+      "series_per_map": 4,
+      "residual_df": 18,
+      "assumed_within_map_log_ratio_sigma": 0.05,
+      "variance_multiplier_sensitivity": 2.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.03032419763698841,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.9998908751532822
+    },
+    {
+      "series": 36,
+      "maps": 6,
+      "series_per_map": 6,
+      "residual_df": 30,
+      "assumed_within_map_log_ratio_sigma": 0.05,
+      "variance_multiplier_sensitivity": 2.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.0240684117146852,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.9999999999999746
+    },
+    {
+      "series": 48,
+      "maps": 6,
+      "series_per_map": 8,
+      "residual_df": 42,
+      "assumed_within_map_log_ratio_sigma": 0.05,
+      "variance_multiplier_sensitivity": 2.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.02059696012980079,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 1.0
+    },
+    {
+      "series": 12,
+      "maps": 6,
+      "series_per_map": 2,
+      "residual_df": 6,
+      "assumed_within_map_log_ratio_sigma": 0.1,
+      "variance_multiplier_sensitivity": 1.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.07063626079709169,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.19194737949100024
+    },
+    {
+      "series": 18,
+      "maps": 6,
+      "series_per_map": 3,
+      "residual_df": 12,
+      "assumed_within_map_log_ratio_sigma": 0.1,
+      "variance_multiplier_sensitivity": 1.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.05135511089304177,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.5029219158581395
+    },
+    {
+      "series": 24,
+      "maps": 6,
+      "series_per_map": 4,
+      "residual_df": 18,
+      "assumed_within_map_log_ratio_sigma": 0.1,
+      "variance_multiplier_sensitivity": 1.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.04288489156631116,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.8597239121738032
+    },
+    {
+      "series": 36,
+      "maps": 6,
+      "series_per_map": 6,
+      "residual_df": 30,
+      "assumed_within_map_log_ratio_sigma": 0.1,
+      "variance_multiplier_sensitivity": 1.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.034037874271687286,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.9997628362466422
+    },
+    {
+      "series": 48,
+      "maps": 6,
+      "series_per_map": 8,
+      "residual_df": 42,
+      "assumed_within_map_log_ratio_sigma": 0.1,
+      "variance_multiplier_sensitivity": 1.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.029128500359222174,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.9999999994544686
+    },
+    {
+      "series": 12,
+      "maps": 6,
+      "series_per_map": 2,
+      "residual_df": 6,
+      "assumed_within_map_log_ratio_sigma": 0.1,
+      "variance_multiplier_sensitivity": 1.5,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.08651139814551678,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.08068958120665005
+    },
+    {
+      "series": 18,
+      "maps": 6,
+      "series_per_map": 3,
+      "residual_df": 12,
+      "assumed_within_map_log_ratio_sigma": 0.1,
+      "variance_multiplier_sensitivity": 1.5,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.06289690868599922,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.1832176525024625
+    },
+    {
+      "series": 24,
+      "maps": 6,
+      "series_per_map": 4,
+      "residual_df": 18,
+      "assumed_within_map_log_ratio_sigma": 0.1,
+      "variance_multiplier_sensitivity": 1.5,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.052523051006024,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.4292313876177642
+    },
+    {
+      "series": 36,
+      "maps": 6,
+      "series_per_map": 6,
+      "residual_df": 30,
+      "assumed_within_map_log_ratio_sigma": 0.1,
+      "variance_multiplier_sensitivity": 1.5,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.04168771194732073,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.943239607847084
+    },
+    {
+      "series": 48,
+      "maps": 6,
+      "series_per_map": 8,
+      "residual_df": 42,
+      "assumed_within_map_log_ratio_sigma": 0.1,
+      "variance_multiplier_sensitivity": 1.5,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.03567498142628542,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.9998097486756391
+    },
+    {
+      "series": 12,
+      "maps": 6,
+      "series_per_map": 2,
+      "residual_df": 6,
+      "assumed_within_map_log_ratio_sigma": 0.1,
+      "variance_multiplier_sensitivity": 2.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.09989475801457003,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.04071577384293815
+    },
+    {
+      "series": 18,
+      "maps": 6,
+      "series_per_map": 3,
+      "residual_df": 12,
+      "assumed_within_map_log_ratio_sigma": 0.1,
+      "variance_multiplier_sensitivity": 2.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.07262709432211395,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.06899293860351549
+    },
+    {
+      "series": 24,
+      "maps": 6,
+      "series_per_map": 4,
+      "residual_df": 18,
+      "assumed_within_map_log_ratio_sigma": 0.1,
+      "variance_multiplier_sensitivity": 2.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.06064839527397682,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.16508426057814737
+    },
+    {
+      "series": 36,
+      "maps": 6,
+      "series_per_map": 6,
+      "residual_df": 30,
+      "assumed_within_map_log_ratio_sigma": 0.1,
+      "variance_multiplier_sensitivity": 2.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.0481368234293704,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.6493551750399549
+    },
+    {
+      "series": 48,
+      "maps": 6,
+      "series_per_map": 8,
+      "residual_df": 42,
+      "assumed_within_map_log_ratio_sigma": 0.1,
+      "variance_multiplier_sensitivity": 2.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.04119392025960158,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.9754869793974055
+    },
+    {
+      "series": 12,
+      "maps": 6,
+      "series_per_map": 2,
+      "residual_df": 6,
+      "assumed_within_map_log_ratio_sigma": 0.15,
+      "variance_multiplier_sensitivity": 1.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.10595439119563752,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.03037268480963336
+    },
+    {
+      "series": 18,
+      "maps": 6,
+      "series_per_map": 3,
+      "residual_df": 12,
+      "assumed_within_map_log_ratio_sigma": 0.15,
+      "variance_multiplier_sensitivity": 1.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.07703266633956264,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.04390344016192771
+    },
+    {
+      "series": 24,
+      "maps": 6,
+      "series_per_map": 4,
+      "residual_df": 18,
+      "assumed_within_map_log_ratio_sigma": 0.15,
+      "variance_multiplier_sensitivity": 1.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.06432733734946675,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.10040624032209096
+    },
+    {
+      "series": 36,
+      "maps": 6,
+      "series_per_map": 6,
+      "residual_df": 30,
+      "assumed_within_map_log_ratio_sigma": 0.15,
+      "variance_multiplier_sensitivity": 1.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.05105681140753093,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.4703471667003925
+    },
+    {
+      "series": 48,
+      "maps": 6,
+      "series_per_map": 8,
+      "residual_df": 42,
+      "assumed_within_map_log_ratio_sigma": 0.15,
+      "variance_multiplier_sensitivity": 1.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.043692750538833265,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.9138866601378481
+    },
+    {
+      "series": 12,
+      "maps": 6,
+      "series_per_map": 2,
+      "residual_df": 6,
+      "assumed_within_map_log_ratio_sigma": 0.15,
+      "variance_multiplier_sensitivity": 1.5,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.12976709721827517,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.010583523796666272
+    },
+    {
+      "series": 18,
+      "maps": 6,
+      "series_per_map": 3,
+      "residual_df": 12,
+      "assumed_within_map_log_ratio_sigma": 0.15,
+      "variance_multiplier_sensitivity": 1.5,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.09434536302899883,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.007683990110584734
+    },
+    {
+      "series": 24,
+      "maps": 6,
+      "series_per_map": 4,
+      "residual_df": 18,
+      "assumed_within_map_log_ratio_sigma": 0.15,
+      "variance_multiplier_sensitivity": 1.5,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.078784576509036,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.012155404524423399
+    },
+    {
+      "series": 36,
+      "maps": 6,
+      "series_per_map": 6,
+      "residual_df": 30,
+      "assumed_within_map_log_ratio_sigma": 0.15,
+      "variance_multiplier_sensitivity": 1.5,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.06253156792098108,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.06385467117065304
+    },
+    {
+      "series": 48,
+      "maps": 6,
+      "series_per_map": 8,
+      "residual_df": 42,
+      "assumed_within_map_log_ratio_sigma": 0.15,
+      "variance_multiplier_sensitivity": 1.5,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.05351247213942812,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.2963763087806924
+    },
+    {
+      "series": 12,
+      "maps": 6,
+      "series_per_map": 2,
+      "residual_df": 6,
+      "assumed_within_map_log_ratio_sigma": 0.15,
+      "variance_multiplier_sensitivity": 2.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.14984213702185503,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.004845646840248565
+    },
+    {
+      "series": 18,
+      "maps": 6,
+      "series_per_map": 3,
+      "residual_df": 12,
+      "assumed_within_map_log_ratio_sigma": 0.15,
+      "variance_multiplier_sensitivity": 2.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.1089406414831709,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.00194146516566641
+    },
+    {
+      "series": 24,
+      "maps": 6,
+      "series_per_map": 4,
+      "residual_df": 18,
+      "assumed_within_map_log_ratio_sigma": 0.15,
+      "variance_multiplier_sensitivity": 2.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.09097259291096521,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.002003291055290059
+    },
+    {
+      "series": 36,
+      "maps": 6,
+      "series_per_map": 6,
+      "residual_df": 30,
+      "assumed_within_map_log_ratio_sigma": 0.15,
+      "variance_multiplier_sensitivity": 2.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.0722052351440556,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.0072223761437870855
+    },
+    {
+      "series": 48,
+      "maps": 6,
+      "series_per_map": 8,
+      "residual_df": 42,
+      "assumed_within_map_log_ratio_sigma": 0.15,
+      "variance_multiplier_sensitivity": 2.0,
+      "half_width_if_residual_sd_equals_assumed_sigma": 0.06179088038940235,
+      "probability_width_within_target_under_normal_independent_homoscedastic_model": 0.04114237258427117
+    }
+  ],
+  "required_series_sensitivity": [
+    {
+      "sigma": 0.02,
+      "variance_multiplier": 1.0,
+      "series_for_80percent_width_assurance": 12
+    },
+    {
+      "sigma": 0.02,
+      "variance_multiplier": 1.5,
+      "series_for_80percent_width_assurance": 12
+    },
+    {
+      "sigma": 0.02,
+      "variance_multiplier": 2.0,
+      "series_for_80percent_width_assurance": 12
+    },
+    {
+      "sigma": 0.05,
+      "variance_multiplier": 1.0,
+      "series_for_80percent_width_assurance": 12
+    },
+    {
+      "sigma": 0.05,
+      "variance_multiplier": 1.5,
+      "series_for_80percent_width_assurance": 18
+    },
+    {
+      "sigma": 0.05,
+      "variance_multiplier": 2.0,
+      "series_for_80percent_width_assurance": 18
+    },
+    {
+      "sigma": 0.1,
+      "variance_multiplier": 1.0,
+      "series_for_80percent_width_assurance": 24
+    },
+    {
+      "sigma": 0.1,
+      "variance_multiplier": 1.5,
+      "series_for_80percent_width_assurance": 36
+    },
+    {
+      "sigma": 0.1,
+      "variance_multiplier": 2.0,
+      "series_for_80percent_width_assurance": 42
+    },
+    {
+      "sigma": 0.15,
+      "variance_multiplier": 1.0,
+      "series_for_80percent_width_assurance": 48
+    },
+    {
+      "sigma": 0.15,
+      "variance_multiplier": 1.5,
+      "series_for_80percent_width_assurance": 66
+    },
+    {
+      "sigma": 0.15,
+      "variance_multiplier": 2.0,
+      "series_for_80percent_width_assurance": 84
+    }
+  ],
+  "limits": [
+    "The 0.05 target is a planning resolution (~5.13% multiplicative ratio), not a justified threshold for tactical benefit.",
+    "Shared teams/events and heterogeneous variances can invalidate the independent common-variance model; variance multipliers are stress scenarios, not estimated ICC corrections.",
+    "Tactical relevance requires a separately designed judgment endpoint; this calculation cannot determine its sample size.",
+    "A feasible 12-series cohort does not guarantee a narrow interval or a publishable generalization claim; report realized uncertainty without effect-based sample extension."
+  ]
+}

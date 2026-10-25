@@ -1,0 +1,143 @@
+{
+  "scope": "development_context_matrix",
+  "created": "2026-10-25",
+  "timezone": "Asia/Shanghai",
+  "timing": "Development-informed design after observing previous reconstruction results, field availability, and six fixed context examples; before new contextualized rankings. Not an independent-test preregistration.",
+  "matrix_protocol": "datasets/selections/ct_reconstruction_matrix.json",
+  "matrix_analysis_report": "datasets/evaluation/ct_reconstruction_development_report.json",
+  "model_dir": "output/tagnet/ct_reconstruction_matrix",
+  "context_dir": "output/tagnet/ct_context_availability_v2",
+  "features": "output/tagnet/ct_deployment_inputs_p1_v03/features.npz",
+  "sample_index": "output/tagnet/ct_deployment_inputs_p1_v03/sample_index.json",
+  "folds": "output/tagnet/ct_grouped_confirmation_v7/folds.json",
+  "observation_distances": "output/tagnet/ct_reconstruction_analysis/observation_distances.npz",
+  "fold_names": [
+    "G3__2396595",
+    "G3__2396609",
+    "G3__2396613",
+    "G3__2396940",
+    "G3__2396944",
+    "G3__2396945",
+    "G3__2396949",
+    "G3__2396950",
+    "G3__furia_falcons_existing_local",
+    "G4__de_ancient",
+    "G4__de_anubis",
+    "G4__de_dust2",
+    "G4__de_inferno",
+    "G4__de_mirage",
+    "G4__de_nuke"
+  ],
+  "conditions": [
+    "mlp_static",
+    "mlp_gru",
+    "graph_static",
+    "graph_gru",
+    "graph_gru_no_motion",
+    "graph_gru_common"
+  ],
+  "seeds": [
+    0,
+    1,
+    42
+  ],
+  "pilot": {
+    "fold": "G3__2396595",
+    "seed": 0,
+    "query_partition": "validation",
+    "uses_new_test_queries": false
+  },
+  "policies": {
+    "base": {
+      "groups": [],
+      "weight": 0
+    },
+    "ct_equipment": {
+      "groups": [
+        "equipment"
+      ],
+      "weight": 0.5
+    },
+    "public_score": {
+      "groups": [
+        "score"
+      ],
+      "weight": 0.5
+    },
+    "ct_utility": {
+      "groups": [
+        "utility"
+      ],
+      "weight": 0.5
+    },
+    "own_context_025": {
+      "groups": [
+        "equipment",
+        "score",
+        "utility"
+      ],
+      "weight": 0.25
+    },
+    "own_context_050": {
+      "groups": [
+        "equipment",
+        "score",
+        "utility"
+      ],
+      "weight": 0.5
+    },
+    "own_context_075": {
+      "groups": [
+        "equipment",
+        "score",
+        "utility"
+      ],
+      "weight": 0.75
+    }
+  },
+  "additional_control": "context_only: all three context groups, weight 1, once per fold with no neural seed",
+  "context_fields": {
+    "equipment": "log1p CT equipment total at each of five times: 5 dimensions",
+    "score": "pre-round CT and T public scores: 2 dimensions",
+    "utility": "log1p recorded CT throws of smokegrenade, incgrenade, molotov, flashbang, hegrenade, decoy at each time: 30 dimensions"
+  },
+  "distance": "Normalize each base/group mean squared distance by its source-library mean off-diagonal pair distance; context is the equal mean of selected groups. Mix (1-weight)*base+weight*context. Constant-source scale uses 1 with a flag.",
+  "missing": "No zero imputation of unknown. If any selected source context is unknown, the contextual condition is unsupported for that fold; an incomplete query is unsupported for that condition. Preserve identical libraries; -1/inf are explicit NPZ sentinels.",
+  "calibration_unit": "Source-library window pairs; no target normalization. Statistical summaries use series/query denominators, not seeds as independent samples.",
+  "encoder_training": "No training, weight updates, hyperparameter selection or context projection learning; existing encoder checkpoints remain frozen.",
+  "ranking_k": 5,
+  "strata": [
+    "all_source",
+    "same_map",
+    "cross_map"
+  ],
+  "max_seconds": 1800,
+  "interpretation_limits": [
+    "Rankings remain unjudged; no tactical nDCG, recall, success rate or coaching benefit is inferred.",
+    "Top-neighbor changes and agreement on included context fields are diagnostics, not independent relevance validation.",
+    "Equipment already occurs in the base input; its explicit facet reweights existing information rather than adding a new observation.",
+    "Scores and utility counts do not identify tactical duties, active smoke/fire coverage, or visibility.",
+    "No opponent equipment, raw heading, map/team identity, future result, or fixed place-to-duty label is introduced.",
+    "Development results cannot substitute for a frozen new-series test or independent semantic judgments."
+  ],
+  "input_sha256": {
+    "app/services/ct_context_retrieval_service.py": "c47146325124ed276a0d3f7c6be0930e1026883a796f0b49483837d858fe90db",
+    "scripts/evaluate_ct_context_retrieval.py": "1ac7307610281e055a38ced4dd7e5c6e15f6a1be0af48457c5e4d6c77723b597",
+    "test_ct_context_retrieval.py": "f731855731d380ac10408d63d9f60c28280049dbe6faf4a70d0da6d758b49a39",
+    "datasets/selections/ct_reconstruction_matrix.json": "69f58d0bbdcb441dd4b4af339bc3f45eaae0d94b6539f0ac92e1c6ccb78125b6",
+    "datasets/evaluation/ct_reconstruction_development_report.json": "18c93c2a65a48f146bd2afa80ba2f752983f3f7c19473fd72d6a7547cc11c541",
+    "datasets/evaluation/ct_context_availability_report.json": "c941864c9341a75aeda434d0b118f1aeba8ff6b31a5c9d853b84f5a943d7116f",
+    "output/tagnet/ct_context_availability_v2/context.json": "ba75c532f9d8cf0c0010817460d0a120ca5bfb7908fc50ad30a63babf83660a3",
+    "output/tagnet/ct_context_availability_v2/report.json": "c941864c9341a75aeda434d0b118f1aeba8ff6b31a5c9d853b84f5a943d7116f",
+    "output/tagnet/ct_deployment_inputs_p1_v03/features.npz": "f7bc4b100a654250f13b646b3dc5ed136f0295faad1b2283f33ed485adecf799",
+    "output/tagnet/ct_deployment_inputs_p1_v03/sample_index.json": "83f34a6c24a6cff875fd458f355129cf41b89aae8769672aa9bd46558778dd4d",
+    "output/tagnet/ct_grouped_confirmation_v7/folds.json": "5997bf6bdabc1df506fc2cd4e1527be35eac332463002bcc6f34f4ac15053585",
+    "output/tagnet/ct_reconstruction_analysis/observation_distances.npz": "6028c652828700f27b7b305266d1c45f89e790cd6e124e983cd35a496e553854",
+    "scripts/evaluate_ct_reconstruction.py": "b34db5b723d9e835c942024c03c2412401f197d8a06ccbe2da1f7b3c3e979c30",
+    "app/services/ct_retrieval_service.py": "498a12134cc9f18b581c9f78d6a7b9731464877283b5c32d459dda2d6730cda8",
+    "datasets/selections/ct_context_retrieval_pilot.json": "326f2db74d83ea71943aa1ea2f48f5c592be2b88add6b25cb25ad1943c653ba0",
+    "output/tagnet/ct_context_retrieval_pilot/report.json": "2f1ca00e77e27d066999ca687b1f0ee2b1558af1387c70c02d05638972c5d036"
+  },
+  "source_pilot_protocol": "datasets/selections/ct_context_retrieval_pilot.json",
+  "pilot_report": "output/tagnet/ct_context_retrieval_pilot/report.json"
+}

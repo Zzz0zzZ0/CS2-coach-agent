@@ -1,0 +1,83 @@
+{
+  "status": "verified_exact_old_stimuli_not_new_labels",
+  "script_sha256": "82786fbf5189506b3d9caa4a4ce27e4eee3265fe3c2d644ad8f6db5c6e2b834c",
+  "source_sha256": {
+    "output/tagnet/ct_semantic_pilot_v9_distributed_r3_zh/analyst_key.json": "dcf824b22a7b82953979e0b77c7e7d398175cf98eaf62fac1ed9ad773fa63a74",
+    "output/tagnet/ct_deployment_inputs_p1_v03/sample_index.json": "83f34a6c24a6cff875fd458f355129cf41b89aae8769672aa9bd46558778dd4d",
+    "output/tagnet/ct_grouped_confirmation_v7/folds.json": "5997bf6bdabc1df506fc2cd4e1527be35eac332463002bcc6f34f4ac15053585",
+    "datasets/evaluation/ct_map_semantics_v8_report.json": "2a7ca2d8df45e0cefc7ffa46a35c5743d4146cf93ffe64d23fc602ed138f8dcd",
+    "output/tagnet/ct_human_feedback_v11/participant_001/original_export.json": "f76e982f94edd10b4ae3e71edd6777d606cd44f8bd5080a81b3b70bc15bc2cab",
+    "output/tagnet/ct_semantic_pilot_v9_distributed_r3_zh/Q03/review.html": "c83b71255d616ad184f33fc9c8a4724e5c9dde95ca8224a72280a0caf0a55ade",
+    "output/tagnet/ct_human_feedback_v11/participant_002/original_export.json": "a8c061c12af938f9eff13f7c2915ebd316e141dd72e8da2527aa61f26437ff6d",
+    "output/tagnet/ct_semantic_pilot_v9_distributed_r2/Q01/review.html": "79118eec97b0f19ba90a14c534d1d10adec7ddafe944f65266cc0c6db750a825",
+    "output/tagnet/ct_human_feedback_v11/participant_003/original_export.json": "302034e417a8694aa54c2dce4e0434d11638535eacd5466eaff65f401d0626a8",
+    "output/tagnet/ct_human_micro_v13/Q05-A/review.html": "56db2213fc1e3b2ac51aa4f3903fa393eb9c1c398970345e8bc1dfc2e505c59c",
+    "output/tagnet/ct_human_feedback_v11/participant_004/original_export.json": "2ee7682e5ac3b6868e8665ab0403410db4041dd3e60ad6f67a4ce286169666cc",
+    "output/tagnet/ct_semantic_pilot_v9_distributed_r2/Q02/review.html": "56b80ac9957083819c31d73a44cde4b4e470098b32c3922c167b8527256c9b54",
+    "output/tagnet/ct_human_feedback_v11/participant_005/original_export.json": "d6fbd8a8dcab3298e8f6c7022dc4f32cc67d4b045937b310ffa3ca0d5996ce57",
+    "output/tagnet/ct_remaining_v16/R01/review.html": "e823fc4e52f380318a70c84fa2a7e915f8b652e2e8638c1221003eef4824e8ec",
+    "output/tagnet/ct_human_feedback_v11/participant_006/original_export.json": "35190e0141f14a5b03e4f2a576a7f3cd1009c3b7830447883c3efb02a2f05e78",
+    "output/tagnet/ct_remaining_v16/R02/review.html": "67505b710806084a22a2a43a95bbc3a6b5806a5f97f132138bbe4610b05a8a75"
+  },
+  "returns": 6,
+  "checked_old_pairs": 43,
+  "counts": {
+    "protocol_complete_numeric": {
+      "tactical": {
+        "original_numeric_records": 19,
+        "eligible_records": 17,
+        "excluded_outside_current_source_train": 2,
+        "eligible_by_query": {
+          "Q03": 6,
+          "Q01": 8,
+          "Q05": 3
+        }
+      },
+      "structural": {
+        "original_numeric_records": 19,
+        "eligible_records": 17,
+        "excluded_outside_current_source_train": 2,
+        "eligible_by_query": {
+          "Q03": 6,
+          "Q01": 8,
+          "Q05": 3
+        }
+      }
+    },
+    "all_numeric": {
+      "tactical": {
+        "original_numeric_records": 38,
+        "eligible_records": 30,
+        "excluded_outside_current_source_train": 8,
+        "eligible_by_query": {
+          "Q03": 7,
+          "Q01": 8,
+          "Q05": 6,
+          "Q02": 7,
+          "Q07": 2
+        }
+      },
+      "structural": {
+        "original_numeric_records": 37,
+        "eligible_records": 29,
+        "excluded_outside_current_source_train": 8,
+        "eligible_by_query": {
+          "Q03": 6,
+          "Q01": 8,
+          "Q05": 6,
+          "Q02": 7,
+          "Q07": 2
+        }
+      }
+    }
+  },
+  "returner_identity_independence_verified": false,
+  "limits": [
+    "Raw responses/reasons remain local; only aggregate audit is public.",
+    "Only exact old cases are eligible, and current source-training membership is required. Excluded old labels are retained, not edited.",
+    "Old views did not show new utility/score facets; comparisons against these judgments remain information-limited development diagnostics.",
+    "No new candidate receives an old score. Missing and unjudgeable remain missing, never grade zero.",
+    "Pool selection, few queries and unverified grader independence prohibit a new independent tactical-validation claim."
+  ],
+  "local_scores_sha256": "3beffade0eabd1e8177eaa83f6bd944b11dd634e82d81d58d3501c3095f2ca7a"
+}

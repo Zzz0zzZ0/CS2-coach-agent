@@ -1,0 +1,39 @@
+{
+  "scope": "workflow_provenance_not_model_validation",
+  "date": "2026-10-25",
+  "skills": [
+    {
+      "skill_name": "scientific-writing",
+      "file": "SKILL.md",
+      "sha256": "511a2096bebecd8cf0f8212b9d262d37154ae1ba566eb385d93ac968682edbd1",
+      "declared_version": "2.3",
+      "current_upstream_revision_verified": false
+    },
+    {
+      "skill_name": "experimental-design",
+      "file": "SKILL.md",
+      "sha256": "db2de0f3d29b7729776a91e923c9c83801298f5ad8e88fe44570045fbefcc248",
+      "declared_version": "1.5",
+      "current_upstream_revision_verified": false
+    },
+    {
+      "skill_name": "statistical-power",
+      "file": "SKILL.md",
+      "sha256": "a969660eafdc3504ac36e49bd7ded00e18b00fe5cef5699940d5d8281e24dd3d",
+      "declared_version": "1.3",
+      "current_upstream_revision_verified": false
+    }
+  ],
+  "historical_scientific_writing_installation_revision_recorded_in_project": "593377bb048752abb0152deab9fbb1083a6087df",
+  "scope_of_historical_revision": "Earlier installation record; does not certify an upstream revision for every current procedural file.",
+  "paper_reference": {
+    "url": "https://arxiv.org/abs/2609.00065",
+    "doi": "10.48550/arXiv.2609.00065",
+    "current_arxiv_version_checked": "v2",
+    "checked_date": "2026-10-25"
+  },
+  "limits": [
+    "Procedural guidance does not constitute independent source verification, human review, or empirical model validation.",
+    "No skill or dependency installation was performed for this batch."
+  ]
+}

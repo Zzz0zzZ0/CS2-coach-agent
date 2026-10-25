@@ -557,6 +557,182 @@
         "verified_by": "",
         "verified_on": ""
       }
+    },
+    {
+      "evidence_id": "E121",
+      "title": "Frozen context retrieval development design",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/selections/ct_context_retrieval_matrix.json"
+      },
+      "locator": "datasets/selections/ct_context_retrieval_matrix.json; sha256=1e3eaca45c1ce4f05b6bf8c180a83e4f442073dc58049ec85007fb64ea8ceace",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E122",
+      "title": "Frozen-encoder contextual retrieval development report",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_context_retrieval_report.json"
+      },
+      "locator": "datasets/evaluation/ct_context_retrieval_report.json; sha256=9540e433dc90f83a35e081d8314133dbcf3acb0a7ac6874f8776fda90ae818e1",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E123",
+      "title": "Source-only contextual pattern report",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_context_pattern_report.json"
+      },
+      "locator": "datasets/evaluation/ct_context_pattern_report.json; sha256=1b9192e7d6fcf7caeb35d363c141f684c77ac5aa55c7fe20355e483a343dff8b",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E124",
+      "title": "Post-hoc context cluster dominance diagnosis",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_context_dominance_report.json"
+      },
+      "locator": "datasets/evaluation/ct_context_dominance_report.json; sha256=0eb98367795335955bc1d9fd584bfbe7afad7e105730dcf2842459362411c336",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E125",
+      "title": "Exact old human stimulus and source-membership audit",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_existing_judgment_audit_report.json"
+      },
+      "locator": "datasets/evaluation/ct_existing_judgment_audit_report.json; sha256=80c187a5c66684286babf09505e455551e1a41b07c62151829baf0a06aa215df",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E126",
+      "title": "Exploratory replay within previously rated eligible candidate pools",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_existing_pool_replay_report.json"
+      },
+      "locator": "datasets/evaluation/ct_existing_pool_replay_report.json; sha256=3f9a4f3f69e9b647b84e23bcee5cea0d4f262f6d54fdaa4498cfab8fda932c1e",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E127",
+      "title": "Conditional balanced-map technical precision planning",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_independent_precision_report.json"
+      },
+      "locator": "datasets/evaluation/ct_independent_precision_report.json; sha256=30ec6853a670a8bab9d5b91786925838f365d1fc6c47d9cc603e9999d9bf0b1d",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E128",
+      "title": "Current procedural skill content hashes and historical installation scope",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_workflow_skill_receipt.json"
+      },
+      "locator": "datasets/evaluation/ct_workflow_skill_receipt.json; sha256=88ad94cfb529f50eada508d09605a4d17cf11e300acd5d590d443a5e4abe2cf5",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
     }
   ]
 }

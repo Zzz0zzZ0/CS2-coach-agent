@@ -1,0 +1,32 @@
+{
+  "scope": "exploratory_replay_of_exact_old_judged_pool",
+  "created": "2026-10-25",
+  "timing": "Frozen after exact stimulus, partition and score availability audit and before computing new model-versus-old-judgment metrics. Old judgments and previous model results were already known to the developer; this is not a new blind test.",
+  "audit_report": "output/tagnet/ct_existing_judgment_audit/report.json",
+  "local_scores": "output/tagnet/ct_existing_judgment_audit/reusable_scores.json",
+  "retrieval_protocol": "datasets/selections/ct_context_retrieval_matrix.json",
+  "subsets": [
+    "protocol_complete_numeric",
+    "all_numeric"
+  ],
+  "endpoint": "nDCG@min(5,N) within only the eligible explicitly numerically rated candidates for each original query; gain=2^mean_original_grade-1, discount=1/log2(rank+1). N<2 or IDCG=0 remains undefined.",
+  "aggregation": "Average neural seeds within each query, then macro-average eligible queries. Stable tie break by frozen global candidate index. Do not treat seeds or rated pairs as independent replicates.",
+  "selection": "Current G4 source-training membership required; old source-validation candidates are excluded by this rule without changing original scores. Incomplete/no-reason numeric scores are a separately named sensitivity subset. Missing and unjudgeable are never grade zero.",
+  "limits": [
+    "Primary auxiliary subset has only three queries and seventeen complete numeric pairs; all-numeric sensitivity has five queries (30 usefulness/29 similarity records).",
+    "The original candidate pools were selected by earlier methods; results are conditional on the restricted rated pool, not full-library tactical nDCG.",
+    "Old material did not display new score/utility facets; graders did not rate the expanded context.",
+    "Six anonymous returns do not establish six independent expert evaluators; no significance test or coaching benefit claim.",
+    "No old score is attached to a new candidate, no human/silver merging, and no new annotation or contact.",
+    "All previously frozen weights and policies are retained; do not select a fusion weight from these metrics."
+  ],
+  "input_sha256": {
+    "scripts/audit_ct_existing_judgments.py": "82786fbf5189506b3d9caa4a4ce27e4eee3265fe3c2d644ad8f6db5c6e2b834c",
+    "scripts/evaluate_ct_existing_pool.py": "2b901c064854d6055ee85ce14cd0d58a4fea49090e381d92bbac05a6e4463be0",
+    "test_ct_existing_pool.py": "db5718b66646a4bd495ae319e6763e8e021cf2ffdb22427c248c8c521ce35968",
+    "scripts/shorten_ct_semantic_pilot.py": "b6a564e4b2cc3486d0d30692b9293eeda07e5fe1b421a6f1db8a1c87c9982dcf",
+    "datasets/selections/ct_context_retrieval_matrix.json": "1e3eaca45c1ce4f05b6bf8c180a83e4f442073dc58049ec85007fb64ea8ceace",
+    "output/tagnet/ct_existing_judgment_audit/report.json": "80c187a5c66684286babf09505e455551e1a41b07c62151829baf0a06aa215df",
+    "output/tagnet/ct_existing_judgment_audit/reusable_scores.json": "3beffade0eabd1e8177eaa83f6bd944b11dd634e82d81d58d3501c3095f2ca7a"
+  }
+}

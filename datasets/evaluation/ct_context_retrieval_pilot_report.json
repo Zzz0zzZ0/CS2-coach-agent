@@ -1,0 +1,1145 @@
+{
+  "status": "completed",
+  "scope": "source_validation_resource_pilot",
+  "context_version": "ct-context-observation-v0.1",
+  "protocol_sha256": "326f2db74d83ea71943aa1ea2f48f5c592be2b88add6b25cb25ad1943c653ba0",
+  "script_sha256": "1ac7307610281e055a38ced4dd7e5c6e15f6a1be0af48457c5e4d6c77723b597",
+  "runtime": {
+    "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+    "numpy": "2.3.5"
+  },
+  "fits": [
+    {
+      "fold": "G3__2396595",
+      "method": "mlp_static",
+      "seed": 0,
+      "queries": 43,
+      "library": 382,
+      "base_scale": 0.6243648969111368,
+      "context_scales": {
+        "equipment": {
+          "equipment": {
+            "scale": 0.9863329422824938,
+            "constant_source": false
+          }
+        },
+        "score": {
+          "score": {
+            "scale": 31.440463921067476,
+            "constant_source": false
+          }
+        },
+        "utility": {
+          "utility": {
+            "scale": 0.3445676435691832,
+            "constant_source": false
+          }
+        },
+        "equipment+score+utility": {
+          "equipment": {
+            "scale": 0.9863329422824938,
+            "constant_source": false
+          },
+          "score": {
+            "scale": 31.440463921067476,
+            "constant_source": false
+          },
+          "utility": {
+            "scale": 0.3445676435691832,
+            "constant_source": false
+          }
+        }
+      },
+      "policies": {
+        "base": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            0,
+            0,
+            0
+          ]
+        },
+        "ct_equipment": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            25,
+            22,
+            23
+          ]
+        },
+        "public_score": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            33,
+            24,
+            31
+          ]
+        },
+        "ct_utility": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            37,
+            31,
+            32
+          ]
+        },
+        "own_context_025": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            29,
+            26,
+            23
+          ]
+        },
+        "own_context_050": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            36,
+            32,
+            28
+          ]
+        },
+        "own_context_075": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            39,
+            37,
+            35
+          ]
+        }
+      },
+      "output_file": "G3__2396595__mlp_static_0.npz",
+      "output_sha256": "8199cfad9ebd9990fef65bb827c04424c4c8565257ed33bdf9ea41eadb403d67"
+    },
+    {
+      "fold": "G3__2396595",
+      "method": "mlp_gru",
+      "seed": 0,
+      "queries": 43,
+      "library": 382,
+      "base_scale": 0.5336453046071515,
+      "context_scales": {
+        "equipment": {
+          "equipment": {
+            "scale": 0.9863329422824938,
+            "constant_source": false
+          }
+        },
+        "score": {
+          "score": {
+            "scale": 31.440463921067476,
+            "constant_source": false
+          }
+        },
+        "utility": {
+          "utility": {
+            "scale": 0.3445676435691832,
+            "constant_source": false
+          }
+        },
+        "equipment+score+utility": {
+          "equipment": {
+            "scale": 0.9863329422824938,
+            "constant_source": false
+          },
+          "score": {
+            "scale": 31.440463921067476,
+            "constant_source": false
+          },
+          "utility": {
+            "scale": 0.3445676435691832,
+            "constant_source": false
+          }
+        }
+      },
+      "policies": {
+        "base": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            0,
+            0,
+            0
+          ]
+        },
+        "ct_equipment": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            24,
+            23,
+            17
+          ]
+        },
+        "public_score": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            33,
+            27,
+            32
+          ]
+        },
+        "ct_utility": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            34,
+            33,
+            32
+          ]
+        },
+        "own_context_025": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            26,
+            25,
+            26
+          ]
+        },
+        "own_context_050": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            31,
+            31,
+            32
+          ]
+        },
+        "own_context_075": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            35,
+            38,
+            37
+          ]
+        }
+      },
+      "output_file": "G3__2396595__mlp_gru_0.npz",
+      "output_sha256": "f6d0556cb24fa98f2cbdc62ee5a2e446271a30e5c1c969fcaf091380b3faf371"
+    },
+    {
+      "fold": "G3__2396595",
+      "method": "graph_static",
+      "seed": 0,
+      "queries": 43,
+      "library": 382,
+      "base_scale": 0.7532535955664518,
+      "context_scales": {
+        "equipment": {
+          "equipment": {
+            "scale": 0.9863329422824938,
+            "constant_source": false
+          }
+        },
+        "score": {
+          "score": {
+            "scale": 31.440463921067476,
+            "constant_source": false
+          }
+        },
+        "utility": {
+          "utility": {
+            "scale": 0.3445676435691832,
+            "constant_source": false
+          }
+        },
+        "equipment+score+utility": {
+          "equipment": {
+            "scale": 0.9863329422824938,
+            "constant_source": false
+          },
+          "score": {
+            "scale": 31.440463921067476,
+            "constant_source": false
+          },
+          "utility": {
+            "scale": 0.3445676435691832,
+            "constant_source": false
+          }
+        }
+      },
+      "policies": {
+        "base": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            0,
+            0,
+            0
+          ]
+        },
+        "ct_equipment": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            20,
+            20,
+            16
+          ]
+        },
+        "public_score": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            35,
+            30,
+            35
+          ]
+        },
+        "ct_utility": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            36,
+            31,
+            30
+          ]
+        },
+        "own_context_025": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            25,
+            17,
+            27
+          ]
+        },
+        "own_context_050": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            32,
+            31,
+            34
+          ]
+        },
+        "own_context_075": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            38,
+            37,
+            39
+          ]
+        }
+      },
+      "output_file": "G3__2396595__graph_static_0.npz",
+      "output_sha256": "8be60b8394d89ed1dd377d652ae7d60c9e4b4bc1387022c9b84dec1ab6c2b145"
+    },
+    {
+      "fold": "G3__2396595",
+      "method": "graph_gru",
+      "seed": 0,
+      "queries": 43,
+      "library": 382,
+      "base_scale": 0.5953150220003807,
+      "context_scales": {
+        "equipment": {
+          "equipment": {
+            "scale": 0.9863329422824938,
+            "constant_source": false
+          }
+        },
+        "score": {
+          "score": {
+            "scale": 31.440463921067476,
+            "constant_source": false
+          }
+        },
+        "utility": {
+          "utility": {
+            "scale": 0.3445676435691832,
+            "constant_source": false
+          }
+        },
+        "equipment+score+utility": {
+          "equipment": {
+            "scale": 0.9863329422824938,
+            "constant_source": false
+          },
+          "score": {
+            "scale": 31.440463921067476,
+            "constant_source": false
+          },
+          "utility": {
+            "scale": 0.3445676435691832,
+            "constant_source": false
+          }
+        }
+      },
+      "policies": {
+        "base": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            0,
+            0,
+            0
+          ]
+        },
+        "ct_equipment": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            22,
+            18,
+            22
+          ]
+        },
+        "public_score": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            30,
+            27,
+            29
+          ]
+        },
+        "ct_utility": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            32,
+            28,
+            34
+          ]
+        },
+        "own_context_025": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            22,
+            19,
+            25
+          ]
+        },
+        "own_context_050": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            30,
+            26,
+            34
+          ]
+        },
+        "own_context_075": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            36,
+            37,
+            39
+          ]
+        }
+      },
+      "output_file": "G3__2396595__graph_gru_0.npz",
+      "output_sha256": "511df36b409e0457b2501937757f1ed61d6b03ea9a68889519b816786fd6210b"
+    },
+    {
+      "fold": "G3__2396595",
+      "method": "graph_gru_no_motion",
+      "seed": 0,
+      "queries": 43,
+      "library": 382,
+      "base_scale": 0.5633470914623909,
+      "context_scales": {
+        "equipment": {
+          "equipment": {
+            "scale": 0.9863329422824938,
+            "constant_source": false
+          }
+        },
+        "score": {
+          "score": {
+            "scale": 31.440463921067476,
+            "constant_source": false
+          }
+        },
+        "utility": {
+          "utility": {
+            "scale": 0.3445676435691832,
+            "constant_source": false
+          }
+        },
+        "equipment+score+utility": {
+          "equipment": {
+            "scale": 0.9863329422824938,
+            "constant_source": false
+          },
+          "score": {
+            "scale": 31.440463921067476,
+            "constant_source": false
+          },
+          "utility": {
+            "scale": 0.3445676435691832,
+            "constant_source": false
+          }
+        }
+      },
+      "policies": {
+        "base": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            0,
+            0,
+            0
+          ]
+        },
+        "ct_equipment": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            23,
+            21,
+            19
+          ]
+        },
+        "public_score": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            29,
+            25,
+            31
+          ]
+        },
+        "ct_utility": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            34,
+            32,
+            36
+          ]
+        },
+        "own_context_025": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            21,
+            19,
+            26
+          ]
+        },
+        "own_context_050": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            31,
+            27,
+            33
+          ]
+        },
+        "own_context_075": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            36,
+            36,
+            38
+          ]
+        }
+      },
+      "output_file": "G3__2396595__graph_gru_no_motion_0.npz",
+      "output_sha256": "2d1024b5d34889b0251a14e31ed5ff3cb0cf148ac4cd200053baa8e35ee8965b"
+    },
+    {
+      "fold": "G3__2396595",
+      "method": "graph_gru_common",
+      "seed": 0,
+      "queries": 43,
+      "library": 382,
+      "base_scale": 0.47796658674373843,
+      "context_scales": {
+        "equipment": {
+          "equipment": {
+            "scale": 0.9863329422824938,
+            "constant_source": false
+          }
+        },
+        "score": {
+          "score": {
+            "scale": 31.440463921067476,
+            "constant_source": false
+          }
+        },
+        "utility": {
+          "utility": {
+            "scale": 0.3445676435691832,
+            "constant_source": false
+          }
+        },
+        "equipment+score+utility": {
+          "equipment": {
+            "scale": 0.9863329422824938,
+            "constant_source": false
+          },
+          "score": {
+            "scale": 31.440463921067476,
+            "constant_source": false
+          },
+          "utility": {
+            "scale": 0.3445676435691832,
+            "constant_source": false
+          }
+        }
+      },
+      "policies": {
+        "base": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            0,
+            0,
+            0
+          ]
+        },
+        "ct_equipment": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            26,
+            20,
+            16
+          ]
+        },
+        "public_score": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            36,
+            34,
+            36
+          ]
+        },
+        "ct_utility": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            30,
+            31,
+            31
+          ]
+        },
+        "own_context_025": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            28,
+            24,
+            31
+          ]
+        },
+        "own_context_050": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            38,
+            32,
+            38
+          ]
+        },
+        "own_context_075": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            41,
+            41,
+            41
+          ]
+        }
+      },
+      "output_file": "G3__2396595__graph_gru_common_0.npz",
+      "output_sha256": "7b12d099cc10278974eddff8334954f083516487acd40fbc0f00f8c373d61872"
+    },
+    {
+      "fold": "G3__2396595",
+      "method": "statistics_sequence",
+      "seed": null,
+      "queries": 43,
+      "library": 382,
+      "base_scale": 1.654330708661417,
+      "context_scales": {
+        "equipment": {
+          "equipment": {
+            "scale": 0.9863329422824938,
+            "constant_source": false
+          }
+        },
+        "score": {
+          "score": {
+            "scale": 31.440463921067476,
+            "constant_source": false
+          }
+        },
+        "utility": {
+          "utility": {
+            "scale": 0.3445676435691832,
+            "constant_source": false
+          }
+        },
+        "equipment+score+utility": {
+          "equipment": {
+            "scale": 0.9863329422824938,
+            "constant_source": false
+          },
+          "score": {
+            "scale": 31.440463921067476,
+            "constant_source": false
+          },
+          "utility": {
+            "scale": 0.3445676435691832,
+            "constant_source": false
+          }
+        }
+      },
+      "policies": {
+        "base": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            0,
+            0,
+            0
+          ]
+        },
+        "ct_equipment": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            10,
+            11,
+            9
+          ]
+        },
+        "public_score": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            35,
+            33,
+            36
+          ]
+        },
+        "ct_utility": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            38,
+            37,
+            37
+          ]
+        },
+        "own_context_025": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            26,
+            23,
+            27
+          ]
+        },
+        "own_context_050": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            33,
+            31,
+            35
+          ]
+        },
+        "own_context_075": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            38,
+            36,
+            38
+          ]
+        }
+      },
+      "output_file": "G3__2396595__statistics_sequence_None.npz",
+      "output_sha256": "3afa4fe833aec4d063f37343c9c8eadc6c516210668435cf7cac30beef7f0cea"
+    },
+    {
+      "fold": "G3__2396595",
+      "method": "full_input_matching",
+      "seed": null,
+      "queries": 43,
+      "library": 382,
+      "base_scale": 0.05549115260415344,
+      "context_scales": {
+        "equipment": {
+          "equipment": {
+            "scale": 0.9863329422824938,
+            "constant_source": false
+          }
+        },
+        "score": {
+          "score": {
+            "scale": 31.440463921067476,
+            "constant_source": false
+          }
+        },
+        "utility": {
+          "utility": {
+            "scale": 0.3445676435691832,
+            "constant_source": false
+          }
+        },
+        "equipment+score+utility": {
+          "equipment": {
+            "scale": 0.9863329422824938,
+            "constant_source": false
+          },
+          "score": {
+            "scale": 31.440463921067476,
+            "constant_source": false
+          },
+          "utility": {
+            "scale": 0.3445676435691832,
+            "constant_source": false
+          }
+        }
+      },
+      "policies": {
+        "base": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            0,
+            0,
+            0
+          ]
+        },
+        "ct_equipment": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            22,
+            18,
+            25
+          ]
+        },
+        "public_score": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            35,
+            34,
+            32
+          ]
+        },
+        "ct_utility": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            39,
+            31,
+            39
+          ]
+        },
+        "own_context_025": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            30,
+            21,
+            28
+          ]
+        },
+        "own_context_050": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            36,
+            30,
+            38
+          ]
+        },
+        "own_context_075": {
+          "supported_context_queries": 43,
+          "eligible_top1_comparisons_by_stratum": [
+            43,
+            43,
+            43
+          ],
+          "top1_changed_by_stratum": [
+            41,
+            35,
+            40
+          ]
+        }
+      },
+      "output_file": "G3__2396595__full_input_matching_None.npz",
+      "output_sha256": "c5a8d1c273b0a621bf7e4cfadc1175d253de0039b5779a7d0634ff4ecaa9fa46"
+    },
+    {
+      "fold": "G3__2396595",
+      "method": "context_only",
+      "seed": null,
+      "queries": 43,
+      "library": 382,
+      "output_file": "G3__2396595__context_only.npz",
+      "output_sha256": "1d7558e94ad26761d5ff23c04facadb3e41de78b0124cbdf5655371c6a0209eb",
+      "supported_context_queries": 43
+    }
+  ],
+  "input_artifact_sha256": {
+    "output/tagnet/ct_reconstruction_matrix/G3__2396595/mlp_static_0_library.npz": "9e12c56be80532697ee191a8dd78ac574bb87386baffcc2145a4b14cdc60c016",
+    "output/tagnet/ct_reconstruction_matrix/G3__2396595/mlp_static_0.pt": "0590f916f7c1633547fc978cbe0f5e1a70e290fb826f75a3bbcb70e51eb67ee6",
+    "output/tagnet/ct_reconstruction_matrix/G3__2396595/mlp_gru_0_library.npz": "bd25b9d89ebe8feff7f2462d3c33ee38d2a5da6bb635f25a14c07b87c90dd38a",
+    "output/tagnet/ct_reconstruction_matrix/G3__2396595/mlp_gru_0.pt": "ece55baac810ee1b0c997c9af14ba74eb6f233724a81012ba17367ee8881bb3f",
+    "output/tagnet/ct_reconstruction_matrix/G3__2396595/graph_static_0_library.npz": "6e3bc72c220909310d2c60fbd8ee9ee8f0d5e7b77987caa94406993268fe362a",
+    "output/tagnet/ct_reconstruction_matrix/G3__2396595/graph_static_0.pt": "0e346352d187f5f370790134d922ac4e1ade62302aeae7323a2af4c89dc64263",
+    "output/tagnet/ct_reconstruction_matrix/G3__2396595/graph_gru_0_library.npz": "6ebaedfd6cd1d42db9ba9356c856d8b5522e38dec6dadb156c1c179990dbb07b",
+    "output/tagnet/ct_reconstruction_matrix/G3__2396595/graph_gru_0.pt": "6230469b99a0cc20100362226880feb31d7a97a35baf2285e5e9f504b87db7ff",
+    "output/tagnet/ct_reconstruction_matrix/G3__2396595/graph_gru_no_motion_0_library.npz": "e92d9144b505bfb99528b60e3ba255d8f81da0dbf63f9ea9bb27dbcd5ec103af",
+    "output/tagnet/ct_reconstruction_matrix/G3__2396595/graph_gru_no_motion_0.pt": "524123996408ebd43af622a938fbe2a48fd76de0b63f1e6882caa7a364260bd4",
+    "output/tagnet/ct_reconstruction_matrix/G3__2396595/graph_gru_common_0_library.npz": "dd723d570d6b10c00307198b9b1d1b7def3d60a7b46e2873770dac5f0fcc6515",
+    "output/tagnet/ct_reconstruction_matrix/G3__2396595/graph_gru_common_0.pt": "2414ccf274795b9ff442c917fc1e37b847012595b6e012d9b67fb5042b5f7fba"
+  },
+  "limits": [
+    "Rankings remain unjudged; no tactical nDCG, recall, success rate or coaching benefit is inferred.",
+    "Top-neighbor changes and agreement on included context fields are diagnostics, not independent relevance validation.",
+    "Equipment already occurs in the base input; its explicit facet reweights existing information rather than adding a new observation.",
+    "Scores and utility counts do not identify tactical duties, active smoke/fire coverage, or visibility.",
+    "No opponent equipment, raw heading, map/team identity, future result, or fixed place-to-duty label is introduced.",
+    "Development results cannot substitute for a frozen new-series test or independent semantic judgments."
+  ],
+  "elapsed_seconds": 1.6246344999817666,
+  "peak_RAM_MiB": 1063.203125,
+  "output_bytes": 258427,
+  "CUDA_peak_allocated_MiB": 78.064453125
+}

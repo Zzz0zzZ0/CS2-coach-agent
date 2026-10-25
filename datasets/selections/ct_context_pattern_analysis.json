@@ -1,0 +1,45 @@
+{
+  "scope": "development_context_pattern_diagnostics",
+  "created": "2026-10-25",
+  "timing": "Fixed after source-only inference pilot and before contextualized real-data clustering. Previous state-only clustering, six fixed context cases, and development contextual retrieval implementation are known; not independent registration.",
+  "retrieval_protocol": "datasets/selections/ct_context_retrieval_matrix.json",
+  "reference_pattern_report": "datasets/evaluation/ct_deployment_pattern_report.json",
+  "weight": 0.5,
+  "clustering": {
+    "k_candidates": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "n_init": 10,
+    "max_iter": 100,
+    "seed": 20261025,
+    "selection": "Maximum source-training silhouette, smaller K on ties within 1e-12; never query/test selection.",
+    "source_radius_quantile": 0.95,
+    "minimum_cluster_support": 5,
+    "series_bootstrap_replicates": 20
+  },
+  "bootstrap_model_seed": 0,
+  "max_seconds": 2400,
+  "variants": "All six neural conditions with context, all three model seeds and 15 folds; statistics without/with context and context-only once per fold. Existing neural no-context patterns remain unchanged as references.",
+  "limits": [
+    "Patterns remain unnamed, source-fitted descriptions, not tactical duties or semantic validation.",
+    "Neural-seed ARI uses only common accepted queries with at least two represented clusters per comparison; report missing counts.",
+    "Deterministic controls have no neural-seed ARI, not an ARI of zero.",
+    "Source-series bootstrap holds encoder, context normalization and K fixed; not full-pipeline uncertainty.",
+    "Coverage counts are query-seed assignments, not independent observations; old no-context source/test results are preserved.",
+    "No selection of weight or architecture by new test clustering results."
+  ],
+  "input_sha256": {
+    "scripts/analyze_ct_context_patterns.py": "fa692bf6e6aec3fd53fac382255f56317ba8f478c210e3c5cf682a3e4ef675df",
+    "scripts/analyze_ct_deployment_patterns.py": "20bcdfbbaa93e7325a24527497d2172577abff84a156f75eaf93a30953d1e465",
+    "scripts/evaluate_ct_context_retrieval.py": "1ac7307610281e055a38ced4dd7e5c6e15f6a1be0af48457c5e4d6c77723b597",
+    "app/services/ct_context_retrieval_service.py": "c47146325124ed276a0d3f7c6be0930e1026883a796f0b49483837d858fe90db",
+    "test_ct_context_retrieval.py": "f731855731d380ac10408d63d9f60c28280049dbe6faf4a70d0da6d758b49a39",
+    "datasets/selections/ct_context_retrieval_matrix.json": "1e3eaca45c1ce4f05b6bf8c180a83e4f442073dc58049ec85007fb64ea8ceace",
+    "datasets/evaluation/ct_deployment_pattern_report.json": "f33ff2f46d155d059a9149cebfe07160bfda0d0b7c62dcd6866417f352470cb3",
+    "output/tagnet/ct_context_retrieval_matrix/report.json": "9540e433dc90f83a35e081d8314133dbcf3acb0a7ac6874f8776fda90ae818e1"
+  }
+}
