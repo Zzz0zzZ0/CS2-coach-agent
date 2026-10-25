@@ -63,7 +63,7 @@ class ReconstructionModel(nn.Module):
         if self.family == "mlp":
             p = self.permutations
             joint = torch.cat([x[:, p].flatten(2), edge[:, p[:, :, None], p[:, None, :]].flatten(2)], -1)
-            g = self.encoder(joint).mean(1)
+            tracks = self.encoder(joint).reshape(n, 5, len(p), 64).transpose(1, 2)
         else:
             x = self.encoder(x) * alive[..., None]
             for layer in self.layers:
@@ -72,9 +72,9 @@ class ReconstructionModel(nn.Module):
                 attention = logits.masked_fill(~alive[:, None, :], -torch.inf).softmax(-1)
                 x = layer["norm"](x + attention @ layer["value"](x))
                 x = layer["ffn_norm"](x + layer["ffn"](x)) * alive[..., None]
-            g = x.sum(1) / 5
-        g = g.reshape(n, 5, 64)
-        h = self.gru(g)[0] if self.gru is not None else g
+            tracks = x.reshape(n, 5, 5, 64).transpose(1, 2)
+        # Pool after temporal encoding so only a consistent whole-window relabeling is invariant.
+        h = self.gru(tracks.flatten(0, 1))[0].reshape(n, -1, 5, 64).mean(1) if self.gru is not None else tracks.mean(1)
         z = h[:, -1] if self.gru is not None else h.mean(1)
         return z, h
 

@@ -1,0 +1,221 @@
+{
+  "status": "completed",
+  "scope": "source_only_resource_pilot",
+  "protocol_sha256": "dbc02a6afecc353fd08e9a767e6914377359a0e79f7592d6b7524dee30b45cb0",
+  "input_sha256": {
+    "scripts/run_ct_reconstruction.py": "26a781d0454515fff935583caee647a5366cfc9f0c074e603a52fcf9360f4c86",
+    "test_ct_reconstruction.py": "0a7ef0e7fe0474230cd735d47f98716521cd2339a860129d3390818ab3d3934c",
+    "output/tagnet/ct_deployment_inputs_p1_v03/report.json": "91a404b48b98c6664612863430cf307dd2703641f1ce36ba98373c355a2f50c0",
+    "output/tagnet/ct_deployment_inputs_p1_v03/features.npz": "f7bc4b100a654250f13b646b3dc5ed136f0295faad1b2283f33ed485adecf799",
+    "output/tagnet/ct_deployment_inputs_p1_v03/sample_index.json": "83f34a6c24a6cff875fd458f355129cf41b89aae8769672aa9bd46558778dd4d",
+    "output/tagnet/ct_grouped_confirmation_v7/folds.json": "5997bf6bdabc1df506fc2cd4e1527be35eac332463002bcc6f34f4ac15053585",
+    "output/tagnet/ct_grouped_confirmation_v7/sample_index.json": "83f34a6c24a6cff875fd458f355129cf41b89aae8769672aa9bd46558778dd4d"
+  },
+  "feature_version": "ct-deployment-input-v0.3",
+  "training": {
+    "seeds": [
+      0
+    ],
+    "epochs_max": 100,
+    "batch_size": 16,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "gradient_clip": 5
+  },
+  "loss_groups": [
+    "survival",
+    "region",
+    "resources",
+    "height",
+    "ground",
+    "motion",
+    "pairs"
+  ],
+  "planned_models": 6,
+  "target_alignment": "All indexed raw windows checked for consistent identity slots across five frames; IDs never fed to encoder",
+  "versions": {
+    "torch": "2.14.1+cu130",
+    "cuda": "13.0",
+    "numpy": "2.3.5"
+  },
+  "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "precision": {
+    "matmul": "ieee",
+    "rnn": "tf32"
+  },
+  "limits": [
+    "Development reconstruction only, not tactical relevance or independent generalization.",
+    "Raw regression outputs do not enforce realizable navigation or full geometric constraints.",
+    "Direct retrieval controls and pattern analysis are separate evaluations."
+  ],
+  "human_verification": {
+    "status": "pending",
+    "verified_by": null
+  },
+  "elapsed_seconds": 105.7328700000071,
+  "process_peak_RAM_MiB": 1562.078125,
+  "models": [
+    {
+      "fold": "G3__2396595",
+      "condition": "mlp_static",
+      "seed": 0,
+      "parameter_count": 113997,
+      "train_windows": 382,
+      "validation_windows": 43,
+      "initial_validation_loss": 0.6640419363975525,
+      "selected_epoch": 28,
+      "validation_loss": 0.11033964902162552,
+      "validation_components": {
+        "survival": 0.043932877480983734,
+        "region": 0.38857680559158325,
+        "resources": 0.007986587472259998,
+        "height": 0.012820853851735592,
+        "ground": 0.2605559229850769,
+        "motion": 0.03743167594075203,
+        "pairs": 0.02107275277376175
+      },
+      "checkpoint_sha256": "50208d380212df3aa64ca2eab7f254b17c67543570e053c24fb2e842a79e9acc",
+      "status": "completed",
+      "seconds": 12.231877400015946,
+      "peak_allocated_VRAM_MiB": 58.57958984375,
+      "peak_reserved_VRAM_MiB": 68.0
+    },
+    {
+      "fold": "G3__2396595",
+      "condition": "mlp_gru",
+      "seed": 0,
+      "parameter_count": 138957,
+      "train_windows": 382,
+      "validation_windows": 43,
+      "initial_validation_loss": 0.6376596093177795,
+      "selected_epoch": 44,
+      "validation_loss": 0.10154267400503159,
+      "validation_components": {
+        "survival": 0.06407056003808975,
+        "region": 0.30231526494026184,
+        "resources": 0.008059860207140446,
+        "height": 0.013894287869334221,
+        "ground": 0.2667422294616699,
+        "motion": 0.03520657867193222,
+        "pairs": 0.020509831607341766
+      },
+      "checkpoint_sha256": "9c386b003875e5c2725e749ffb2fbca1b3858be6cb149711a3375275d46c60c1",
+      "status": "completed",
+      "seconds": 13.522875399998156,
+      "peak_allocated_VRAM_MiB": 128.392578125,
+      "peak_reserved_VRAM_MiB": 178.0
+    },
+    {
+      "fold": "G3__2396595",
+      "condition": "graph_static",
+      "seed": 0,
+      "parameter_count": 136725,
+      "train_windows": 382,
+      "validation_windows": 43,
+      "initial_validation_loss": 0.667633056640625,
+      "selected_epoch": 59,
+      "validation_loss": 0.11066589504480362,
+      "validation_components": {
+        "survival": 0.10345965623855591,
+        "region": 0.32772186398506165,
+        "resources": 0.00594519404694438,
+        "height": 0.013088101521134377,
+        "ground": 0.268741250038147,
+        "motion": 0.03244452551007271,
+        "pairs": 0.02326064556837082
+      },
+      "checkpoint_sha256": "03820b3cb8446609b4ce25fd05bdb5b61da6bbace90d28d77378e1f1fd3cb4f0",
+      "status": "completed",
+      "seconds": 18.570000600011554,
+      "peak_allocated_VRAM_MiB": 39.501953125,
+      "peak_reserved_VRAM_MiB": 50.0
+    },
+    {
+      "fold": "G3__2396595",
+      "condition": "graph_gru",
+      "seed": 0,
+      "parameter_count": 161685,
+      "train_windows": 382,
+      "validation_windows": 43,
+      "initial_validation_loss": 0.649536669254303,
+      "selected_epoch": 57,
+      "validation_loss": 0.09622258692979813,
+      "validation_components": {
+        "survival": 0.08407440036535263,
+        "region": 0.26416346430778503,
+        "resources": 0.007512827403843403,
+        "height": 0.013609644956886768,
+        "ground": 0.24425001442432404,
+        "motion": 0.03707154840230942,
+        "pairs": 0.022876277565956116
+      },
+      "checkpoint_sha256": "7a4c52e15e5d0baf8012c041ce3c595dd13bce468767a6b569125c07711a8e77",
+      "status": "completed",
+      "seconds": 20.080970200011507,
+      "peak_allocated_VRAM_MiB": 40.599609375,
+      "peak_reserved_VRAM_MiB": 52.0
+    },
+    {
+      "fold": "G3__2396595",
+      "condition": "graph_gru_no_motion",
+      "seed": 0,
+      "parameter_count": 161429,
+      "train_windows": 382,
+      "validation_windows": 43,
+      "initial_validation_loss": 0.6464218497276306,
+      "selected_epoch": 54,
+      "validation_loss": 0.10473465174436569,
+      "validation_components": {
+        "survival": 0.07132696360349655,
+        "region": 0.30863550305366516,
+        "resources": 0.009119230322539806,
+        "height": 0.014933174476027489,
+        "ground": 0.2668675482273102,
+        "motion": 0.037333495914936066,
+        "pairs": 0.024926582351326942
+      },
+      "checkpoint_sha256": "640451052a94d6d5e9c371e59ca63a254a2eea3903c013c1ac3cbfab4a72e827",
+      "status": "completed",
+      "seconds": 19.972273299994413,
+      "peak_allocated_VRAM_MiB": 40.591796875,
+      "peak_reserved_VRAM_MiB": 52.0
+    },
+    {
+      "fold": "G3__2396595",
+      "condition": "graph_gru_common",
+      "seed": 0,
+      "parameter_count": 160785,
+      "train_windows": 382,
+      "validation_windows": 43,
+      "initial_validation_loss": 0.6457571983337402,
+      "selected_epoch": 47,
+      "validation_loss": 0.10470850765705109,
+      "validation_components": {
+        "survival": 0.08143261075019836,
+        "region": 0.28232672810554504,
+        "resources": 0.006992509122937918,
+        "height": 0.01401701383292675,
+        "ground": 0.2892206013202667,
+        "motion": 0.037307772785425186,
+        "pairs": 0.021662244573235512
+      },
+      "checkpoint_sha256": "18c85b88680c82fd4c1f1f900608fe23f209e84357979caa7dfcb1aaa01992a6",
+      "status": "completed",
+      "seconds": 19.93943460000446,
+      "peak_allocated_VRAM_MiB": 40.55712890625,
+      "peak_reserved_VRAM_MiB": 52.0
+    }
+  ],
+  "full_local_report_sha256": "814d5ec5f96decc36702b5ccf8a2c10d10b194ef583f38625796bb29d2c43a54",
+  "contract_tests": {
+    "command": "output/tagnet/.venv-gpu/Scripts/python.exe test_ct_reconstruction.py -v",
+    "passed": 6,
+    "device_used_for_tests": "CPU; source-only training used CUDA",
+    "new_failure_and_fix": "Independent frame relabeling incorrectly preserved temporal embeddings before repair; GRU now precedes invariant track/view pooling. Global relabeling remains invariant."
+  },
+  "historical_source_only_pilot": {
+    "report": "datasets/evaluation/ct_reconstruction_pilot_report.json",
+    "source_commit": "83168e8",
+    "weights_not_reused": true
+  }
+}

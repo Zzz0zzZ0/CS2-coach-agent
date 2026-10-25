@@ -1,0 +1,44 @@
+{
+  "scope": "source_only_resource_pilot",
+  "created": "2026-10-25",
+  "folds": [
+    "G3__2396595"
+  ],
+  "conditions": [
+    "mlp_static",
+    "mlp_gru",
+    "graph_static",
+    "graph_gru",
+    "graph_gru_no_motion",
+    "graph_gru_common"
+  ],
+  "training": {
+    "seeds": [
+      0
+    ],
+    "epochs_max": 100,
+    "batch_size": 16,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "gradient_clip": 5
+  },
+  "max_seconds": 1800,
+  "input_sha256": {
+    "scripts/run_ct_reconstruction.py": "26a781d0454515fff935583caee647a5366cfc9f0c074e603a52fcf9360f4c86",
+    "test_ct_reconstruction.py": "0a7ef0e7fe0474230cd735d47f98716521cd2339a860129d3390818ab3d3934c",
+    "output/tagnet/ct_deployment_inputs_p1_v03/report.json": "91a404b48b98c6664612863430cf307dd2703641f1ce36ba98373c355a2f50c0",
+    "output/tagnet/ct_deployment_inputs_p1_v03/features.npz": "f7bc4b100a654250f13b646b3dc5ed136f0295faad1b2283f33ed485adecf799",
+    "output/tagnet/ct_deployment_inputs_p1_v03/sample_index.json": "83f34a6c24a6cff875fd458f355129cf41b89aae8769672aa9bd46558778dd4d",
+    "output/tagnet/ct_grouped_confirmation_v7/folds.json": "5997bf6bdabc1df506fc2cd4e1527be35eac332463002bcc6f34f4ac15053585",
+    "output/tagnet/ct_grouped_confirmation_v7/sample_index.json": "83f34a6c24a6cff875fd458f355129cf41b89aae8769672aa9bd46558778dd4d"
+  },
+  "selection": "Minimum source-validation reconstruction loss, earliest epoch on ties; no test scores computed.",
+  "target": "Same v0.3 five-frame node/pair observations and masks in all six conditions; seven equally weighted loss groups; one joint player assignment across the window.",
+  "not_final_matrix": true,
+  "architecture_revision": "Temporal GRU runs on consistent player tracks (graph) or consistent joint whole-window permutations (MLP), before invariant pooling.",
+  "historical_pilot": {
+    "report": "datasets/evaluation/ct_reconstruction_pilot_report.json",
+    "source_commit": "83168e8",
+    "not_reused": "Previous pool-before-GRU pilot is preserved; no weights or test scores reused."
+  }
+}

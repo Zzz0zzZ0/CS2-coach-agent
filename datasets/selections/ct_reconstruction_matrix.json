@@ -1,0 +1,103 @@
+{
+  "scope": "development_matrix",
+  "created": "2026-10-25",
+  "folds": [
+    "G3__2396595",
+    "G3__2396609",
+    "G3__2396613",
+    "G3__2396940",
+    "G3__2396944",
+    "G3__2396945",
+    "G3__2396949",
+    "G3__2396950",
+    "G3__furia_falcons_existing_local",
+    "G4__de_ancient",
+    "G4__de_anubis",
+    "G4__de_dust2",
+    "G4__de_inferno",
+    "G4__de_mirage",
+    "G4__de_nuke"
+  ],
+  "conditions": [
+    "mlp_static",
+    "mlp_gru",
+    "graph_static",
+    "graph_gru",
+    "graph_gru_no_motion",
+    "graph_gru_common"
+  ],
+  "training": {
+    "seeds": [
+      0,
+      1,
+      42
+    ],
+    "epochs_max": 100,
+    "batch_size": 16,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "gradient_clip": 5
+  },
+  "max_seconds": 7200,
+  "input_sha256": {
+    "scripts/run_ct_reconstruction.py": "26a781d0454515fff935583caee647a5366cfc9f0c074e603a52fcf9360f4c86",
+    "test_ct_reconstruction.py": "0a7ef0e7fe0474230cd735d47f98716521cd2339a860129d3390818ab3d3934c",
+    "output/tagnet/ct_deployment_inputs_p1_v03/report.json": "91a404b48b98c6664612863430cf307dd2703641f1ce36ba98373c355a2f50c0",
+    "output/tagnet/ct_deployment_inputs_p1_v03/features.npz": "f7bc4b100a654250f13b646b3dc5ed136f0295faad1b2283f33ed485adecf799",
+    "output/tagnet/ct_deployment_inputs_p1_v03/sample_index.json": "83f34a6c24a6cff875fd458f355129cf41b89aae8769672aa9bd46558778dd4d",
+    "output/tagnet/ct_grouped_confirmation_v7/folds.json": "5997bf6bdabc1df506fc2cd4e1527be35eac332463002bcc6f34f4ac15053585",
+    "output/tagnet/ct_grouped_confirmation_v7/sample_index.json": "83f34a6c24a6cff875fd458f355129cf41b89aae8769672aa9bd46558778dd4d"
+  },
+  "selection": "Minimum source-validation reconstruction loss, earliest epoch on ties; test outputs only after selected weights fixed.",
+  "target": "Same v0.3 five-frame node/pair observations and masks in all six conditions; seven equally weighted loss groups; one joint player assignment across the window.",
+  "pilot_report_sha256": "814d5ec5f96decc36702b5ccf8a2c10d10b194ef583f38625796bb29d2c43a54",
+  "development_evidence": "Recipe frozen after a source-only resource pilot. All nine series were already development data; this is not a final independent test.",
+  "resource_budget": {
+    "runtime_estimate_seconds": 3912.1161900002626,
+    "runtime_hard_stop_seconds": 7200,
+    "output_estimate_MiB": 220,
+    "output_planned_max_MiB": 512,
+    "RAM_start_available_GiB": 2,
+    "RAM_runtime_available_GiB": 1.5,
+    "CUDA_process_memory_fraction": 0.2,
+    "models": 270,
+    "single_training_process": true
+  },
+  "architecture": {
+    "snapshot_embedding_dim": 64,
+    "window_embedding_dim": 64,
+    "mlp": "Joint-permutation-average MLP: (5*(2*node_dim+1)+25*edge_dim)->128 GELU->64 LayerNorm; all 120 joint node/edge permutations.",
+    "graph": "Node+validity+alive projection to 64; two 64-dimensional single-head distance-biased attention blocks with residual LayerNorm and 64->128 GELU->64 feedforward. Live-key masking, self attention allowed, sum pooling divided by five.",
+    "temporal": "Graph: shared GRU(64,64) per consistent player track, then average five final states. MLP: shared GRU per consistent joint whole-window permutation view, then average 120 final states. Static conditions average encoded states over time/views without GRU.",
+    "decoder": "64->128 GELU->525 raw outputs: 5*5*15 node fields and 5*10*3 unordered pair fields; survival/region/ground logits, other fields unconstrained regression.",
+    "parameter_counts": {
+      "mlp_static": 113997,
+      "mlp_gru": 138957,
+      "graph_static": 136725,
+      "graph_gru": 161685,
+      "graph_gru_no_motion": 161429,
+      "graph_gru_common": 160785
+    }
+  },
+  "direct_controls": {
+    "statistics_sequence": "24 scalars/frame: original 10 common-state/resource statistics; relative-height range and std; three ground-state fractions; two mean motion channels, mean absolute vertical motion and motion-known fraction; horizontal and absolute-height pair mean/max; pair-known indicator. Zero-fill undefined numeric summaries, retain indicators. Flatten five frames. Source-training-only coordinate standardization (std floored at 1e-6), mean squared vector distance.",
+    "full_input_matching": "Min over 120 consistent five-frame player assignments of the equal mean of five squared-error blocks: 15 masked node fields; node feature-validity bits; three unordered-pair fields; unordered pair-validity bits; survival bits. Fixed v0.3 scales only; no fitted normalization. Invalid own-side observations are zero-filled with explicit mask blocks.",
+    "library": "Same source-training windows for all methods; no query series; same-map cross-series and cross-map retrieval reported separately; stable candidate index breaks ties.",
+    "neural_distance": "Mean squared distance between 64-dimensional embeddings; no test normalization or reranking.",
+    "ranking_k": 5,
+    "status": "Rules frozen here before matrix test outputs; direct-control ranking implementation belongs to E3-E4."
+  },
+  "planned_contrasts": [
+    "graph_gru vs mlp_gru at full input",
+    "graph_gru vs graph_static",
+    "mlp_gru vs mlp_static",
+    "graph_gru vs graph_gru_no_motion",
+    "graph_gru vs graph_gru_common"
+  ],
+  "interpretation_limits": [
+    "Same input and decoder, but graph and MLP parameter counts are reported rather than exactly matched.",
+    "Temporal vs static contrasts include preservation of track correspondence and recurrent parameters, not a pure parameter-count intervention.",
+    "Input ablations are conditional on the specified graph-temporal architecture, not a full factorial design.",
+    "No model selected on test reconstruction, pattern or retrieval outcomes; all six conditions retained."
+  ]
+}

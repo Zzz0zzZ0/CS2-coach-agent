@@ -106,6 +106,17 @@ class ReconstructionContracts(unittest.TestCase):
         torch.testing.assert_close(before[:, :4], after[:, :4], atol=1e-7, rtol=0)
         self.assertFalse(torch.allclose(before[:, -1], after[:, -1]))
 
+    def test_temporal_controls_retain_consistent_player_tracks(self):
+        changed = {key: value.clone() for key, value in self.batch.items()}
+        switched = self.reordered([1, 0, 2, 3, 4])
+        for key in changed:
+            changed[key][:, -1] = switched[key][:, -1]
+        for family in ("mlp", "graph"):
+            static = self.model_class(family + "_static").eval()
+            torch.testing.assert_close(static(changed)[1], static(self.batch)[1], atol=1e-5, rtol=0)
+            temporal = self.model_class(family + "_gru").eval()
+            self.assertFalse(torch.allclose(temporal(changed)[1], temporal(self.batch)[1], atol=1e-6, rtol=0))
+
     def test_input_and_split_boundaries_reject_invalid_data(self):
         from scripts.run_ct_reconstruction import validate_fold, validate_inputs
         validate_inputs(self.arrays)

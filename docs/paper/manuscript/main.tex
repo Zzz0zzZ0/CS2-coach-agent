@@ -50,7 +50,14 @@ TAGNet is the reference for the original snapshot-reconstruction and defensive-p
 \subsection{Permutation-invariant and graph controls}
 Deep Sets develops a framework for permutation-invariant set functions~\cite{NIPS2017_f22e4747}. Janossy pooling constructs invariance through averaging an order-sensitive function over reorderings~\cite{murphy2019janossy}. Our existing five-player non-graph control applies this symmetrization principle to jointly permuted nodes and edge endpoints. It serves as a comparator and is not presented as a new pooling algorithm.
 
-\pending{RW}{Add and verify primary work on esports deployment representation, spatiotemporal prediction, retrieval, and cross-domain evaluation. Build a task/data/split/endpoint comparison before claiming novelty. These three references are a starting set, not a completed literature review.}
+\subsection{Team observation, movement and spatial context}
+X-Ego learns team-level video representations and evaluates teammate/opponent location prediction; its reported dataset uses Mirage and a round-based partition~\cite{wang2025xego}. Our offline CT-window task uses structured team observations, rather than enforcing individual first-person visibility, and addresses a different endpoint. % [claim:C201] [evidence:E201,E103]
+
+Durst et al. learn movement control for CS:GO Retakes on Dust2~\cite{durst2024move}. Human-like movement generation is distinct from retrieving comparable observed openings. Their map-specific training design does not supply a zero-shot multi-map result for the present task. % [claim:C202] [evidence:E202,E109]
+
+Xenopoulos et al. derive directed navigation-graph distances and contextual action values~\cite{xenopoulos2020valuing}. Their spatial example distinguishes asymmetric traversal from Euclidean proximity. Our current geometry is therefore described as an observation, not a validated navigation or tactical-role relation. % [claim:C203] [evidence:E203,E101]
+
+\pending{RW}{The accompanying targeted source comparison now distinguishes deployment patterns, egocentric location prediction, movement imitation and contextual action values. Complete primary-source coverage for cross-domain retrieval and pattern stability, and read the TAGNet publication before claiming novelty. This is a narrative starting set, not a systematic or exhaustive review.}
 
 \section{Task, Data, and Evidence Sources}
 \subsection{Deployment window and available observations}
@@ -109,19 +116,21 @@ Patch-number agreement alone does not establish exact map-asset compatibility. N
 
 \section{Models and Learning Procedure}
 \subsection{Common notation}
-For each window, let $X_t$, $A_t$, and $M_t$ denote node observations, pair information, and masks. A snapshot representation and window representation can be written as
+For each window, let $X_t$, $A_t$, and $M_t$ denote node observations, pair information, and masks. Let $H_{t,u}$ be the encoded state of a player track or a consistently ordered whole-window permutation view. Temporal encoding precedes invariant pooling:
 \begin{equation}
- g_t=f_\theta(X_t,A_t,M_t), \qquad
- z=\mathcal{A}_\phi(g_1,\ldots,g_5).
+ z=\frac{1}{U}\sum_{u=1}^{U}\mathrm{GRU}_{\phi}(H_{1,u},\ldots,H_{5,u})_5.
 \end{equation}
-This notation does not specify an already completed revised model.
+For the graph condition, $U=5$ player tracks; for the non-graph condition, $U=120$ consistent joint node/edge permutations. The static counterparts average the same encoded states over time and views without a recurrent module. Player identity aligns tracks but is not an encoder feature. % [claim:C120] [evidence:E107]
+
+\subsection{Implemented common decoder and matching objective}
+All six conditions share a 64-to-128-to-525 decoder: five times by five anonymous player slots by 15 node channels, plus five times by ten unordered player pairs by three pair channels. The reconstruction loss averages seven groups: survival binary cross-entropy, live-player coarse-region cross-entropy, resource MSE, relative-height MSE, ground-state cross-entropy, known-motion MSE and valid-pair MSE. Each group averages its valid entries, with an empty group contributing zero. A single jointly permuted player assignment across all times and pair endpoints minimizes the window loss over 120 assignments. Survival, region and ground outputs are logits; continuous outputs remain unconstrained regressions. % [claim:C121] [evidence:E107]
 
 \subsection{Reference and comparison families}
 The planned main comparison includes direct common-feature sequences, a full-input non-graph encoder, a distance-aware graph encoder, and corresponding static and learned-temporal conditions. Original TAGNet context and fixed aggregation are a separately described reproduction condition.
 
 The completed v17 non-graph control reads the full masked node matrix, distance matrix, and alive mask. It averages a shared MLP over all 120 joint player permutations, preserving edge-endpoint correspondence in every input. Static and causal-GRU prediction variants were compared under the recorded development recipe.
 
-\pending{TRAIN}{E2 must specify the main reconstruction targets, temporal objective, losses and weights, decoder, dimensions, candidate conditions, seeds, training budgets, and source-validation selection before training. Reuse prior weights only if inputs, objective, and selection are genuinely the same. Auxiliary prediction validation does not automatically select the best tactical representation.}
+\pending{TRAIN}{E2 implementation and source-side resource pilots are recorded separately from the complete development matrix. Bind the final recipe, code hashes, source-validation selection, all six conditions and actual completion receipts here. Do not count pilot weights as completed matrix cells or reuse auxiliary prediction weights.}
 
 \section{Experimental Protocol}
 \subsection{Development and final isolation}
@@ -163,7 +172,7 @@ Nuke & 62 & 1511 & 81.01 & 123 \\ % [claim:C116] [evidence:E101]
 \bottomrule
 \end{tabular}
 \end{table}
-The export retains 8,979 patch-gated NAV candidates for diagnostics only; those flags are excluded from encoder inputs. The v0.3 export preserves the original 13 node channels, their masks and all remaining shared arrays from v0.2. Motion is observed for 9,049 live player observations and unknown for 2,319; 8,679 valid intervals have nonzero horizontal displacement. No new model has been trained on this export. % [claim:C106] [evidence:E101]
+The export retains 8,979 patch-gated NAV candidates for diagnostics only; those flags are excluded from encoder inputs. The v0.3 export preserves the original 13 node channels, their masks and all remaining shared arrays from v0.2. Motion is observed for 9,049 live player observations and unknown for 2,319; 8,679 valid intervals have nonzero horizontal displacement. These are input-audit counts, separate from E2 model performance. % [claim:C106] [evidence:E101]
 \pending{RES1}{Complete context-validity checks, main representation experiments and window-specific relevance judgments. Map-place duty annotation is not an input prerequisite. The export does not establish tactical correctness or main-model performance.}
 
 
