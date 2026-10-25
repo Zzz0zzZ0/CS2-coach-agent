@@ -136,6 +136,9 @@ CSV的`evidence_ids`按写作工具接口使用分号分隔，TeX中的来源标
 
 ## 现有证据入口
 
+- [P3逐图误差与情境核查](../CT_DEPLOYMENT_FAILURE_CONTEXT_AUDIT.md)：270结果分量复核、22个Demo的时间边界核查、存活朝向掩码及观战信息边界。
+- [原有六图案例的CT情境](fixed_case_context.md)：只补充比分、装备和已记录投掷；不改排名、不作战术评分。
+
 - [v7数据与系列隔离](../CT_GENERALIZATION_CONFIRMATION_V7.md)
 - [原TAGNet来源](../TAGNET_PROVENANCE.md)及[数值/GPU复核](../TAGNET_NUMERICAL_DIAGNOSIS.md)
 - [v17实际实施结果](../CT_IMPLEMENTATION_V17.md)及[几何核查报告](../../datasets/evaluation/ct_geometry_features_v17_report.json)

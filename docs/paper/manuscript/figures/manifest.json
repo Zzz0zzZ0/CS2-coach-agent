@@ -67,7 +67,8 @@
     "reconstruction.pdf": "a51cc47a0057823782dc9c7be783a2a61270bae3be1b9a399831b724bcc8be22",
     "reconstruction.png": "a3adee498932829970fc26493180cf833be6358b1aed2288d0370f4ea222ead9",
     "reconstruction.svg": "8c84b4369621aa4d76fbeae0a715173b5b9c841e59f528212fdc962963683777",
-    "series_data.csv": "af075473e7c7f4cb5347fc816f690b1c9463b8d07f465e1949e744ce5344c7a8"
+    "series_data.csv": "af075473e7c7f4cb5347fc816f690b1c9463b8d07f465e1949e744ce5344c7a8",
+    "evidence_context.json": "b1aadb20e58ae37a9eaa995b4d915712dcb386c2216242c9957c4bfb57286819"
   },
   "pdf_validation": {
     "de_ancient.pdf": {

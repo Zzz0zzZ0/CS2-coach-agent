@@ -1,0 +1,2142 @@
+{
+  "status": "completed_unjudged",
+  "script_sha256": "20053d8f576f654d6e76426a5e5552a4e05a06da956958a0f1d7fdc59e5bba43",
+  "source_sha256": {
+    "docs\\paper\\manuscript\\figures\\evidence.json": "b72a0e61d3c74f833c614e4e2df64940d98399aeb82aac91e3417a1e8e6aeaf5",
+    "output\\tagnet\\ct_deployment_inputs_p1_v03\\sample_index.json": "83f34a6c24a6cff875fd458f355129cf41b89aae8769672aa9bd46558778dd4d",
+    "output\\tagnet\\ct_grouped_confirmation_v7\\folds.json": "5997bf6bdabc1df506fc2cd4e1527be35eac332463002bcc6f34f4ac15053585",
+    "output\\tagnet\\ct_context_availability_v2\\report.json": "c941864c9341a75aeda434d0b118f1aeba8ff6b31a5c9d853b84f5a943d7116f",
+    "output\\tagnet\\ct_context_availability_v2\\context.json": "ba75c532f9d8cf0c0010817460d0a120ca5bfb7908fc50ad30a63babf83660a3"
+  },
+  "limits": [
+    "No new selection, reranking, relevance score or tactical-duty label.",
+    "Only CT equipment, score and recorded CT throws are shown; opponent equipment and raw angles are omitted.",
+    "Different utility counts can be compatible with useful analogies; count agreement is not tactical relevance."
+  ],
+  "examples": [
+    {
+      "map": "de_ancient",
+      "tactical_relevance": null,
+      "records": [
+        {
+          "method": "query",
+          "record": {
+            "id": "addb04dbcffaa81c3bf05b47265744af3fca3206b0746cc0ab5c4d1b00010956:1:CT",
+            "series": "2396940",
+            "map": "de_ancient",
+            "round_number": 1,
+            "timing_passed": true
+          },
+          "score_before": {
+            "CT": 0,
+            "T": 0
+          },
+          "snapshots": [
+            {
+              "second": 10,
+              "tick": 5825,
+              "CT_equipment_total": 3950.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 12,
+              "tick": 5953,
+              "CT_equipment_total": 3950.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 15,
+              "tick": 6145,
+              "CT_equipment_total": 3950.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 18,
+              "tick": 6337,
+              "CT_equipment_total": 3950.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 20,
+              "tick": 6465,
+              "CT_equipment_total": 3950.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            }
+          ]
+        },
+        {
+          "method": "graph_gru",
+          "record": {
+            "id": "deeda64a7c879f69a10c1bd344e6966e4db44e75d74af1d26a733ee7add4e093:7:CT",
+            "series": "2396609",
+            "map": "de_mirage",
+            "round_number": 7,
+            "timing_passed": true
+          },
+          "score_before": {
+            "CT": 3,
+            "T": 3
+          },
+          "snapshots": [
+            {
+              "second": 10,
+              "tick": 34571,
+              "CT_equipment_total": 29850.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "incgrenade": 2,
+                  "flashbang": 1
+                },
+                "geographical_throw_places": {
+                  "incgrenade": {
+                    "CTSpawn": 1,
+                    "SnipersNest": 1
+                  },
+                  "flashbang": {
+                    "CTSpawn": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 12,
+              "tick": 34699,
+              "CT_equipment_total": 29850.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "incgrenade": 3,
+                  "flashbang": 1,
+                  "smokegrenade": 1
+                },
+                "geographical_throw_places": {
+                  "incgrenade": {
+                    "CTSpawn": 1,
+                    "SnipersNest": 1,
+                    "BombsiteB": 1
+                  },
+                  "flashbang": {
+                    "CTSpawn": 1
+                  },
+                  "smokegrenade": {
+                    "BombsiteA": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 15,
+              "tick": 34891,
+              "CT_equipment_total": 29850.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "incgrenade": 3,
+                  "flashbang": 1,
+                  "smokegrenade": 1,
+                  "hegrenade": 2
+                },
+                "geographical_throw_places": {
+                  "incgrenade": {
+                    "CTSpawn": 1,
+                    "SnipersNest": 1,
+                    "BombsiteB": 1
+                  },
+                  "flashbang": {
+                    "CTSpawn": 1
+                  },
+                  "smokegrenade": {
+                    "BombsiteA": 1
+                  },
+                  "hegrenade": {
+                    "BombsiteB": 1,
+                    "Middle": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 18,
+              "tick": 35083,
+              "CT_equipment_total": 29850.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "incgrenade": 4,
+                  "flashbang": 1,
+                  "smokegrenade": 1,
+                  "hegrenade": 3
+                },
+                "geographical_throw_places": {
+                  "incgrenade": {
+                    "CTSpawn": 1,
+                    "SnipersNest": 1,
+                    "BombsiteB": 1,
+                    "Middle": 1
+                  },
+                  "flashbang": {
+                    "CTSpawn": 1
+                  },
+                  "smokegrenade": {
+                    "BombsiteA": 1
+                  },
+                  "hegrenade": {
+                    "BombsiteB": 1,
+                    "Middle": 1,
+                    "SnipersNest": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 20,
+              "tick": 35211,
+              "CT_equipment_total": 29850.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "incgrenade": 4,
+                  "flashbang": 1,
+                  "smokegrenade": 1,
+                  "hegrenade": 3
+                },
+                "geographical_throw_places": {
+                  "incgrenade": {
+                    "CTSpawn": 1,
+                    "SnipersNest": 1,
+                    "BombsiteB": 1,
+                    "Middle": 1
+                  },
+                  "flashbang": {
+                    "CTSpawn": 1
+                  },
+                  "smokegrenade": {
+                    "BombsiteA": 1
+                  },
+                  "hegrenade": {
+                    "BombsiteB": 1,
+                    "Middle": 1,
+                    "SnipersNest": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            }
+          ]
+        },
+        {
+          "method": "mlp_gru",
+          "record": {
+            "id": "1b8097794845b8994846d52d47db86faec78c838b345d3013c57e883ad230126:11:CT",
+            "series": "2396950",
+            "map": "de_mirage",
+            "round_number": 11,
+            "timing_passed": true
+          },
+          "score_before": {
+            "CT": 5,
+            "T": 5
+          },
+          "snapshots": [
+            {
+              "second": 10,
+              "tick": 83220,
+              "CT_equipment_total": 10700.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 12,
+              "tick": 83348,
+              "CT_equipment_total": 10700.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 15,
+              "tick": 83540,
+              "CT_equipment_total": 10700.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 18,
+              "tick": 83732,
+              "CT_equipment_total": 10700.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 20,
+              "tick": 83860,
+              "CT_equipment_total": 10700.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "tactical_relevance": null,
+      "records": [
+        {
+          "method": "query",
+          "record": {
+            "id": "e6bdd552f9336cd03a42f758d3849277461095bd3d019cd22c6608af8f2e3dc1:1:CT",
+            "series": "2396944",
+            "map": "de_anubis",
+            "round_number": 1,
+            "timing_passed": true
+          },
+          "score_before": {
+            "CT": 0,
+            "T": 0
+          },
+          "snapshots": [
+            {
+              "second": 10,
+              "tick": 20438,
+              "CT_equipment_total": 4000.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 12,
+              "tick": 20566,
+              "CT_equipment_total": 4000.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 15,
+              "tick": 20758,
+              "CT_equipment_total": 4000.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 18,
+              "tick": 20950,
+              "CT_equipment_total": 4000.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 20,
+              "tick": 21078,
+              "CT_equipment_total": 4000.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            }
+          ]
+        },
+        {
+          "method": "graph_gru",
+          "record": {
+            "id": "d8ef19dbfc262b74ce927ebe3dc60fc088d50ba63d93ba85097c2cc2c4525a11:6:CT",
+            "series": "2396945",
+            "map": "de_inferno",
+            "round_number": 6,
+            "timing_passed": true
+          },
+          "score_before": {
+            "CT": 4,
+            "T": 1
+          },
+          "snapshots": [
+            {
+              "second": 10,
+              "tick": 52253,
+              "CT_equipment_total": 29850.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "smokegrenade": 2,
+                  "incgrenade": 1
+                },
+                "geographical_throw_places": {
+                  "smokegrenade": {
+                    "CTSpawn": 1,
+                    "BombsiteB": 1
+                  },
+                  "incgrenade": {
+                    "BombsiteB": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 12,
+              "tick": 52381,
+              "CT_equipment_total": 29850.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "smokegrenade": 2,
+                  "incgrenade": 2
+                },
+                "geographical_throw_places": {
+                  "smokegrenade": {
+                    "CTSpawn": 1,
+                    "BombsiteB": 1
+                  },
+                  "incgrenade": {
+                    "BombsiteB": 1,
+                    "Banana": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 15,
+              "tick": 52573,
+              "CT_equipment_total": 29850.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "smokegrenade": 2,
+                  "incgrenade": 2
+                },
+                "geographical_throw_places": {
+                  "smokegrenade": {
+                    "CTSpawn": 1,
+                    "BombsiteB": 1
+                  },
+                  "incgrenade": {
+                    "BombsiteB": 1,
+                    "Banana": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 18,
+              "tick": 52765,
+              "CT_equipment_total": 29850.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "smokegrenade": 2,
+                  "incgrenade": 2,
+                  "flashbang": 2
+                },
+                "geographical_throw_places": {
+                  "smokegrenade": {
+                    "CTSpawn": 1,
+                    "BombsiteB": 1
+                  },
+                  "incgrenade": {
+                    "BombsiteB": 1,
+                    "Banana": 1
+                  },
+                  "flashbang": {
+                    "BombsiteB": 1,
+                    "Banana": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 20,
+              "tick": 52893,
+              "CT_equipment_total": 29850.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "smokegrenade": 2,
+                  "incgrenade": 2,
+                  "flashbang": 3,
+                  "hegrenade": 1
+                },
+                "geographical_throw_places": {
+                  "smokegrenade": {
+                    "CTSpawn": 1,
+                    "BombsiteB": 1
+                  },
+                  "incgrenade": {
+                    "BombsiteB": 1,
+                    "Banana": 1
+                  },
+                  "flashbang": {
+                    "BombsiteB": 2,
+                    "Banana": 1
+                  },
+                  "hegrenade": {
+                    "Banana": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            }
+          ]
+        },
+        {
+          "method": "mlp_gru",
+          "record": {
+            "id": "1b8097794845b8994846d52d47db86faec78c838b345d3013c57e883ad230126:12:CT",
+            "series": "2396950",
+            "map": "de_mirage",
+            "round_number": 12,
+            "timing_passed": true
+          },
+          "score_before": {
+            "CT": 5,
+            "T": 6
+          },
+          "snapshots": [
+            {
+              "second": 10,
+              "tick": 91292,
+              "CT_equipment_total": 25600.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "incgrenade": 1,
+                  "flashbang": 1
+                },
+                "geographical_throw_places": {
+                  "incgrenade": {
+                    "CTSpawn": 1
+                  },
+                  "flashbang": {
+                    "CTSpawn": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 12,
+              "tick": 91420,
+              "CT_equipment_total": 25400.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "incgrenade": 2,
+                  "flashbang": 1
+                },
+                "geographical_throw_places": {
+                  "incgrenade": {
+                    "CTSpawn": 1,
+                    "BombsiteB": 1
+                  },
+                  "flashbang": {
+                    "CTSpawn": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 15,
+              "tick": 91612,
+              "CT_equipment_total": 25400.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "incgrenade": 2,
+                  "flashbang": 1,
+                  "smokegrenade": 1
+                },
+                "geographical_throw_places": {
+                  "incgrenade": {
+                    "CTSpawn": 1,
+                    "BombsiteB": 1
+                  },
+                  "flashbang": {
+                    "CTSpawn": 1
+                  },
+                  "smokegrenade": {
+                    "Jungle": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 18,
+              "tick": 91804,
+              "CT_equipment_total": 25400.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "incgrenade": 2,
+                  "flashbang": 1,
+                  "smokegrenade": 1,
+                  "hegrenade": 2
+                },
+                "geographical_throw_places": {
+                  "incgrenade": {
+                    "CTSpawn": 1,
+                    "BombsiteB": 1
+                  },
+                  "flashbang": {
+                    "CTSpawn": 1
+                  },
+                  "smokegrenade": {
+                    "Jungle": 1
+                  },
+                  "hegrenade": {
+                    "BombsiteB": 1,
+                    "BombsiteA": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 20,
+              "tick": 91932,
+              "CT_equipment_total": 25400.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "incgrenade": 2,
+                  "flashbang": 1,
+                  "smokegrenade": 1,
+                  "hegrenade": 3
+                },
+                "geographical_throw_places": {
+                  "incgrenade": {
+                    "CTSpawn": 1,
+                    "BombsiteB": 1
+                  },
+                  "flashbang": {
+                    "CTSpawn": 1
+                  },
+                  "smokegrenade": {
+                    "Jungle": 1
+                  },
+                  "hegrenade": {
+                    "BombsiteB": 1,
+                    "BombsiteA": 1,
+                    "Jungle": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "tactical_relevance": null,
+      "records": [
+        {
+          "method": "query",
+          "record": {
+            "id": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190:1:CT",
+            "series": "2396950",
+            "map": "de_dust2",
+            "round_number": 1,
+            "timing_passed": true
+          },
+          "score_before": {
+            "CT": 0,
+            "T": 0
+          },
+          "snapshots": [
+            {
+              "second": 10,
+              "tick": 12401,
+              "CT_equipment_total": 4200.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 12,
+              "tick": 12529,
+              "CT_equipment_total": 4200.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 15,
+              "tick": 12721,
+              "CT_equipment_total": 4200.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 18,
+              "tick": 12913,
+              "CT_equipment_total": 4200.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "flashbang": 1
+                },
+                "geographical_throw_places": {
+                  "flashbang": {
+                    "MidDoors": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 20,
+              "tick": 13041,
+              "CT_equipment_total": 4200.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "flashbang": 1
+                },
+                "geographical_throw_places": {
+                  "flashbang": {
+                    "MidDoors": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            }
+          ]
+        },
+        {
+          "method": "graph_gru",
+          "record": {
+            "id": "9c2d5c33124f0e685aebc5f2acf9ceca49247a36fb5100da3f8e166945a18bf2:14:CT",
+            "series": "2396949",
+            "map": "de_ancient",
+            "round_number": 14,
+            "timing_passed": true
+          },
+          "score_before": {
+            "CT": 7,
+            "T": 6
+          },
+          "snapshots": [
+            {
+              "second": 10,
+              "tick": 123756,
+              "CT_equipment_total": 19700.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "smokegrenade": 2,
+                  "incgrenade": 3,
+                  "hegrenade": 1
+                },
+                "geographical_throw_places": {
+                  "smokegrenade": {
+                    "CTSpawn": 2
+                  },
+                  "incgrenade": {
+                    "House": 1,
+                    "Alley": 2
+                  },
+                  "hegrenade": {
+                    "House": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 12,
+              "tick": 123884,
+              "CT_equipment_total": 19700.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "smokegrenade": 2,
+                  "incgrenade": 3,
+                  "hegrenade": 2
+                },
+                "geographical_throw_places": {
+                  "smokegrenade": {
+                    "CTSpawn": 2
+                  },
+                  "incgrenade": {
+                    "House": 1,
+                    "Alley": 2
+                  },
+                  "hegrenade": {
+                    "House": 1,
+                    "Alley": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 15,
+              "tick": 124076,
+              "CT_equipment_total": 19700.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "smokegrenade": 2,
+                  "incgrenade": 3,
+                  "hegrenade": 3
+                },
+                "geographical_throw_places": {
+                  "smokegrenade": {
+                    "CTSpawn": 2
+                  },
+                  "incgrenade": {
+                    "House": 1,
+                    "Alley": 2
+                  },
+                  "hegrenade": {
+                    "House": 1,
+                    "Alley": 1,
+                    "BombsiteB": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 18,
+              "tick": 124268,
+              "CT_equipment_total": 19700.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "smokegrenade": 2,
+                  "incgrenade": 3,
+                  "hegrenade": 3
+                },
+                "geographical_throw_places": {
+                  "smokegrenade": {
+                    "CTSpawn": 2
+                  },
+                  "incgrenade": {
+                    "House": 1,
+                    "Alley": 2
+                  },
+                  "hegrenade": {
+                    "House": 1,
+                    "Alley": 1,
+                    "BombsiteB": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 20,
+              "tick": 124396,
+              "CT_equipment_total": 19700.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "smokegrenade": 3,
+                  "incgrenade": 3,
+                  "hegrenade": 3
+                },
+                "geographical_throw_places": {
+                  "smokegrenade": {
+                    "CTSpawn": 2,
+                    "Middle": 1
+                  },
+                  "incgrenade": {
+                    "House": 1,
+                    "Alley": 2
+                  },
+                  "hegrenade": {
+                    "House": 1,
+                    "Alley": 1,
+                    "BombsiteB": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            }
+          ]
+        },
+        {
+          "method": "mlp_gru",
+          "record": {
+            "id": "9c2d5c33124f0e685aebc5f2acf9ceca49247a36fb5100da3f8e166945a18bf2:3:CT",
+            "series": "2396949",
+            "map": "de_ancient",
+            "round_number": 3,
+            "timing_passed": true
+          },
+          "score_before": {
+            "CT": 2,
+            "T": 0
+          },
+          "snapshots": [
+            {
+              "second": 10,
+              "tick": 19064,
+              "CT_equipment_total": 26500.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "smokegrenade": 2,
+                  "incgrenade": 3,
+                  "hegrenade": 1
+                },
+                "geographical_throw_places": {
+                  "smokegrenade": {
+                    "CTSpawn": 2
+                  },
+                  "incgrenade": {
+                    "House": 2,
+                    "Alley": 1
+                  },
+                  "hegrenade": {
+                    "BombsiteB": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 12,
+              "tick": 19192,
+              "CT_equipment_total": 26500.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "smokegrenade": 2,
+                  "incgrenade": 3,
+                  "hegrenade": 1
+                },
+                "geographical_throw_places": {
+                  "smokegrenade": {
+                    "CTSpawn": 2
+                  },
+                  "incgrenade": {
+                    "House": 2,
+                    "Alley": 1
+                  },
+                  "hegrenade": {
+                    "BombsiteB": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 15,
+              "tick": 19384,
+              "CT_equipment_total": 26500.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "smokegrenade": 2,
+                  "incgrenade": 4,
+                  "hegrenade": 1
+                },
+                "geographical_throw_places": {
+                  "smokegrenade": {
+                    "CTSpawn": 2
+                  },
+                  "incgrenade": {
+                    "House": 2,
+                    "Alley": 1,
+                    "SideEntrance": 1
+                  },
+                  "hegrenade": {
+                    "BombsiteB": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 18,
+              "tick": 19576,
+              "CT_equipment_total": 26000.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "smokegrenade": 2,
+                  "incgrenade": 4,
+                  "hegrenade": 2
+                },
+                "geographical_throw_places": {
+                  "smokegrenade": {
+                    "CTSpawn": 2
+                  },
+                  "incgrenade": {
+                    "House": 2,
+                    "Alley": 1,
+                    "SideEntrance": 1
+                  },
+                  "hegrenade": {
+                    "BombsiteB": 1,
+                    "House": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 20,
+              "tick": 19704,
+              "CT_equipment_total": 26000.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "smokegrenade": 2,
+                  "incgrenade": 4,
+                  "hegrenade": 2
+                },
+                "geographical_throw_places": {
+                  "smokegrenade": {
+                    "CTSpawn": 2
+                  },
+                  "incgrenade": {
+                    "House": 2,
+                    "Alley": 1,
+                    "SideEntrance": 1
+                  },
+                  "hegrenade": {
+                    "BombsiteB": 1,
+                    "House": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "tactical_relevance": null,
+      "records": [
+        {
+          "method": "query",
+          "record": {
+            "id": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352:1:CT",
+            "series": "2396940",
+            "map": "de_inferno",
+            "round_number": 1,
+            "timing_passed": true
+          },
+          "score_before": {
+            "CT": 0,
+            "T": 0
+          },
+          "snapshots": [
+            {
+              "second": 10,
+              "tick": 5311,
+              "CT_equipment_total": 4200.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 12,
+              "tick": 5439,
+              "CT_equipment_total": 4200.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 15,
+              "tick": 5631,
+              "CT_equipment_total": 4200.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 18,
+              "tick": 5823,
+              "CT_equipment_total": 4200.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 20,
+              "tick": 5951,
+              "CT_equipment_total": 4200.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            }
+          ]
+        },
+        {
+          "method": "graph_gru",
+          "record": {
+            "id": "1b8097794845b8994846d52d47db86faec78c838b345d3013c57e883ad230126:5:CT",
+            "series": "2396950",
+            "map": "de_mirage",
+            "round_number": 5,
+            "timing_passed": true
+          },
+          "score_before": {
+            "CT": 4,
+            "T": 0
+          },
+          "snapshots": [
+            {
+              "second": 10,
+              "tick": 38932,
+              "CT_equipment_total": 28600.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "incgrenade": 1,
+                  "flashbang": 1,
+                  "smokegrenade": 1
+                },
+                "geographical_throw_places": {
+                  "incgrenade": {
+                    "BombsiteA": 1
+                  },
+                  "flashbang": {
+                    "BombsiteA": 1
+                  },
+                  "smokegrenade": {
+                    "BombsiteA": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 12,
+              "tick": 39060,
+              "CT_equipment_total": 28600.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "incgrenade": 2,
+                  "flashbang": 1,
+                  "smokegrenade": 1
+                },
+                "geographical_throw_places": {
+                  "incgrenade": {
+                    "BombsiteA": 1,
+                    "BombsiteB": 1
+                  },
+                  "flashbang": {
+                    "BombsiteA": 1
+                  },
+                  "smokegrenade": {
+                    "BombsiteA": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 15,
+              "tick": 39252,
+              "CT_equipment_total": 28600.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "incgrenade": 3,
+                  "flashbang": 1,
+                  "smokegrenade": 1
+                },
+                "geographical_throw_places": {
+                  "incgrenade": {
+                    "BombsiteA": 1,
+                    "BombsiteB": 1,
+                    "SnipersNest": 1
+                  },
+                  "flashbang": {
+                    "BombsiteA": 1
+                  },
+                  "smokegrenade": {
+                    "BombsiteA": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 18,
+              "tick": 39444,
+              "CT_equipment_total": 28600.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "incgrenade": 4,
+                  "flashbang": 1,
+                  "smokegrenade": 1,
+                  "hegrenade": 1
+                },
+                "geographical_throw_places": {
+                  "incgrenade": {
+                    "BombsiteA": 1,
+                    "BombsiteB": 2,
+                    "SnipersNest": 1
+                  },
+                  "flashbang": {
+                    "BombsiteA": 1
+                  },
+                  "smokegrenade": {
+                    "BombsiteA": 1
+                  },
+                  "hegrenade": {
+                    "Truck": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 20,
+              "tick": 39572,
+              "CT_equipment_total": 28600.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "incgrenade": 4,
+                  "flashbang": 1,
+                  "smokegrenade": 2,
+                  "hegrenade": 2
+                },
+                "geographical_throw_places": {
+                  "incgrenade": {
+                    "BombsiteA": 1,
+                    "BombsiteB": 2,
+                    "SnipersNest": 1
+                  },
+                  "flashbang": {
+                    "BombsiteA": 1
+                  },
+                  "smokegrenade": {
+                    "BombsiteA": 1,
+                    "Truck": 1
+                  },
+                  "hegrenade": {
+                    "Truck": 1,
+                    "BombsiteA": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            }
+          ]
+        },
+        {
+          "method": "mlp_gru",
+          "record": {
+            "id": "9c2d5c33124f0e685aebc5f2acf9ceca49247a36fb5100da3f8e166945a18bf2:12:CT",
+            "series": "2396949",
+            "map": "de_ancient",
+            "round_number": 12,
+            "timing_passed": true
+          },
+          "score_before": {
+            "CT": 6,
+            "T": 5
+          },
+          "snapshots": [
+            {
+              "second": 10,
+              "tick": 99381,
+              "CT_equipment_total": 16800.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "smokegrenade": 1,
+                  "incgrenade": 3,
+                  "hegrenade": 1
+                },
+                "geographical_throw_places": {
+                  "smokegrenade": {
+                    "CTSpawn": 1
+                  },
+                  "incgrenade": {
+                    "House": 1,
+                    "Alley": 2
+                  },
+                  "hegrenade": {
+                    "House": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 12,
+              "tick": 99509,
+              "CT_equipment_total": 16800.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "smokegrenade": 1,
+                  "incgrenade": 3,
+                  "hegrenade": 2
+                },
+                "geographical_throw_places": {
+                  "smokegrenade": {
+                    "CTSpawn": 1
+                  },
+                  "incgrenade": {
+                    "House": 1,
+                    "Alley": 2
+                  },
+                  "hegrenade": {
+                    "House": 1,
+                    "BombsiteB": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 15,
+              "tick": 99701,
+              "CT_equipment_total": 16800.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "smokegrenade": 1,
+                  "incgrenade": 3,
+                  "hegrenade": 3
+                },
+                "geographical_throw_places": {
+                  "smokegrenade": {
+                    "CTSpawn": 1
+                  },
+                  "incgrenade": {
+                    "House": 1,
+                    "Alley": 2
+                  },
+                  "hegrenade": {
+                    "House": 1,
+                    "BombsiteB": 2
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 18,
+              "tick": 99893,
+              "CT_equipment_total": 17000.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "smokegrenade": 1,
+                  "incgrenade": 3,
+                  "hegrenade": 3,
+                  "flashbang": 1
+                },
+                "geographical_throw_places": {
+                  "smokegrenade": {
+                    "CTSpawn": 1
+                  },
+                  "incgrenade": {
+                    "House": 1,
+                    "Alley": 2
+                  },
+                  "hegrenade": {
+                    "House": 1,
+                    "BombsiteB": 2
+                  },
+                  "flashbang": {
+                    "BombsiteB": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 20,
+              "tick": 100021,
+              "CT_equipment_total": 17000.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "smokegrenade": 2,
+                  "incgrenade": 3,
+                  "hegrenade": 3,
+                  "flashbang": 1
+                },
+                "geographical_throw_places": {
+                  "smokegrenade": {
+                    "CTSpawn": 1,
+                    "BombsiteB": 1
+                  },
+                  "incgrenade": {
+                    "House": 1,
+                    "Alley": 2
+                  },
+                  "hegrenade": {
+                    "House": 1,
+                    "BombsiteB": 2
+                  },
+                  "flashbang": {
+                    "BombsiteB": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "tactical_relevance": null,
+      "records": [
+        {
+          "method": "query",
+          "record": {
+            "id": "e348879717172add00b80285c20f884f4e180aa8cffa5a7ae9990d0d1d20b9fd:1:CT",
+            "series": "2396944",
+            "map": "de_mirage",
+            "round_number": 1,
+            "timing_passed": true
+          },
+          "score_before": {
+            "CT": 0,
+            "T": 0
+          },
+          "snapshots": [
+            {
+              "second": 10,
+              "tick": 12362,
+              "CT_equipment_total": 4000.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 12,
+              "tick": 12490,
+              "CT_equipment_total": 4000.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 15,
+              "tick": 12682,
+              "CT_equipment_total": 4000.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 18,
+              "tick": 12874,
+              "CT_equipment_total": 4000.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 20,
+              "tick": 13002,
+              "CT_equipment_total": 4000.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            }
+          ]
+        },
+        {
+          "method": "graph_gru",
+          "record": {
+            "id": "d8ef19dbfc262b74ce927ebe3dc60fc088d50ba63d93ba85097c2cc2c4525a11:11:CT",
+            "series": "2396945",
+            "map": "de_inferno",
+            "round_number": 11,
+            "timing_passed": true
+          },
+          "score_before": {
+            "CT": 7,
+            "T": 3
+          },
+          "snapshots": [
+            {
+              "second": 10,
+              "tick": 100675,
+              "CT_equipment_total": 29750.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "hegrenade": 1
+                },
+                "geographical_throw_places": {
+                  "hegrenade": {
+                    "TopofMid": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 12,
+              "tick": 100803,
+              "CT_equipment_total": 29750.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "hegrenade": 1
+                },
+                "geographical_throw_places": {
+                  "hegrenade": {
+                    "TopofMid": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 15,
+              "tick": 100995,
+              "CT_equipment_total": 29750.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "hegrenade": 1,
+                  "smokegrenade": 1
+                },
+                "geographical_throw_places": {
+                  "hegrenade": {
+                    "TopofMid": 1
+                  },
+                  "smokegrenade": {
+                    "BombsiteB": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 18,
+              "tick": 101187,
+              "CT_equipment_total": 29750.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "hegrenade": 1,
+                  "smokegrenade": 1,
+                  "incgrenade": 1,
+                  "flashbang": 1
+                },
+                "geographical_throw_places": {
+                  "hegrenade": {
+                    "TopofMid": 1
+                  },
+                  "smokegrenade": {
+                    "BombsiteB": 1
+                  },
+                  "incgrenade": {
+                    "BombsiteB": 1
+                  },
+                  "flashbang": {
+                    "BombsiteB": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 20,
+              "tick": 101315,
+              "CT_equipment_total": 29750.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "hegrenade": 1,
+                  "smokegrenade": 1,
+                  "incgrenade": 1,
+                  "flashbang": 2
+                },
+                "geographical_throw_places": {
+                  "hegrenade": {
+                    "TopofMid": 1
+                  },
+                  "smokegrenade": {
+                    "BombsiteB": 1
+                  },
+                  "incgrenade": {
+                    "BombsiteB": 1
+                  },
+                  "flashbang": {
+                    "BombsiteB": 2
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            }
+          ]
+        },
+        {
+          "method": "mlp_gru",
+          "record": {
+            "id": "9c2d5c33124f0e685aebc5f2acf9ceca49247a36fb5100da3f8e166945a18bf2:18:CT",
+            "series": "2396949",
+            "map": "de_ancient",
+            "round_number": 18,
+            "timing_passed": true
+          },
+          "score_before": {
+            "CT": 10,
+            "T": 7
+          },
+          "snapshots": [
+            {
+              "second": 10,
+              "tick": 155294,
+              "CT_equipment_total": 28600.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "smokegrenade": 2,
+                  "incgrenade": 4,
+                  "flashbang": 2,
+                  "hegrenade": 1
+                },
+                "geographical_throw_places": {
+                  "smokegrenade": {
+                    "CTSpawn": 2
+                  },
+                  "incgrenade": {
+                    "House": 1,
+                    "TopofMid": 1,
+                    "Alley": 2
+                  },
+                  "flashbang": {
+                    "House": 2
+                  },
+                  "hegrenade": {
+                    "Middle": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 12,
+              "tick": 155422,
+              "CT_equipment_total": 28600.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "smokegrenade": 2,
+                  "incgrenade": 4,
+                  "flashbang": 2,
+                  "hegrenade": 4
+                },
+                "geographical_throw_places": {
+                  "smokegrenade": {
+                    "CTSpawn": 2
+                  },
+                  "incgrenade": {
+                    "House": 1,
+                    "TopofMid": 1,
+                    "Alley": 2
+                  },
+                  "flashbang": {
+                    "House": 2
+                  },
+                  "hegrenade": {
+                    "Middle": 1,
+                    "BombsiteB": 2,
+                    "House": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 15,
+              "tick": 155614,
+              "CT_equipment_total": 28600.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "smokegrenade": 2,
+                  "incgrenade": 4,
+                  "flashbang": 2,
+                  "hegrenade": 4
+                },
+                "geographical_throw_places": {
+                  "smokegrenade": {
+                    "CTSpawn": 2
+                  },
+                  "incgrenade": {
+                    "House": 1,
+                    "TopofMid": 1,
+                    "Alley": 2
+                  },
+                  "flashbang": {
+                    "House": 2
+                  },
+                  "hegrenade": {
+                    "Middle": 1,
+                    "BombsiteB": 2,
+                    "House": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 18,
+              "tick": 155806,
+              "CT_equipment_total": 28600.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "smokegrenade": 2,
+                  "incgrenade": 4,
+                  "flashbang": 2,
+                  "hegrenade": 4
+                },
+                "geographical_throw_places": {
+                  "smokegrenade": {
+                    "CTSpawn": 2
+                  },
+                  "incgrenade": {
+                    "House": 1,
+                    "TopofMid": 1,
+                    "Alley": 2
+                  },
+                  "flashbang": {
+                    "House": 2
+                  },
+                  "hegrenade": {
+                    "Middle": 1,
+                    "BombsiteB": 2,
+                    "House": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 20,
+              "tick": 155934,
+              "CT_equipment_total": 28600.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "smokegrenade": 2,
+                  "incgrenade": 4,
+                  "flashbang": 2,
+                  "hegrenade": 4
+                },
+                "geographical_throw_places": {
+                  "smokegrenade": {
+                    "CTSpawn": 2
+                  },
+                  "incgrenade": {
+                    "House": 1,
+                    "TopofMid": 1,
+                    "Alley": 2
+                  },
+                  "flashbang": {
+                    "House": 2
+                  },
+                  "hegrenade": {
+                    "Middle": 1,
+                    "BombsiteB": 2,
+                    "House": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "tactical_relevance": null,
+      "records": [
+        {
+          "method": "query",
+          "record": {
+            "id": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7:1:CT",
+            "series": "2396949",
+            "map": "de_nuke",
+            "round_number": 1,
+            "timing_passed": true
+          },
+          "score_before": {
+            "CT": 0,
+            "T": 0
+          },
+          "snapshots": [
+            {
+              "second": 10,
+              "tick": 10043,
+              "CT_equipment_total": 4150.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "smokegrenade": 1
+                },
+                "geographical_throw_places": {
+                  "smokegrenade": {
+                    "Heaven": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 12,
+              "tick": 10171,
+              "CT_equipment_total": 4150.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "smokegrenade": 1,
+                  "flashbang": 1
+                },
+                "geographical_throw_places": {
+                  "smokegrenade": {
+                    "Heaven": 1
+                  },
+                  "flashbang": {
+                    "Rafters": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 15,
+              "tick": 10363,
+              "CT_equipment_total": 4150.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "smokegrenade": 1,
+                  "flashbang": 1
+                },
+                "geographical_throw_places": {
+                  "smokegrenade": {
+                    "Heaven": 1
+                  },
+                  "flashbang": {
+                    "Rafters": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 18,
+              "tick": 10555,
+              "CT_equipment_total": 4150.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "smokegrenade": 1,
+                  "flashbang": 1
+                },
+                "geographical_throw_places": {
+                  "smokegrenade": {
+                    "Heaven": 1
+                  },
+                  "flashbang": {
+                    "Rafters": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 20,
+              "tick": 10683,
+              "CT_equipment_total": 4150.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "smokegrenade": 1,
+                  "flashbang": 1
+                },
+                "geographical_throw_places": {
+                  "smokegrenade": {
+                    "Heaven": 1
+                  },
+                  "flashbang": {
+                    "Rafters": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            }
+          ]
+        },
+        {
+          "method": "graph_gru",
+          "record": {
+            "id": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8:13:CT",
+            "series": "furia_falcons_existing_local",
+            "map": "de_anubis",
+            "round_number": 13,
+            "timing_passed": true
+          },
+          "score_before": {
+            "CT": 7,
+            "T": 5
+          },
+          "snapshots": [
+            {
+              "second": 10,
+              "tick": 116576,
+              "CT_equipment_total": 4400.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 12,
+              "tick": 116704,
+              "CT_equipment_total": 4400.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 15,
+              "tick": 116896,
+              "CT_equipment_total": 4400.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 18,
+              "tick": 117088,
+              "CT_equipment_total": 4400.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 20,
+              "tick": 117216,
+              "CT_equipment_total": 4400.0,
+              "utility": {
+                "recorded_ct_throws": {},
+                "geographical_throw_places": {},
+                "unattributed_recorded_throws": 0
+              }
+            }
+          ]
+        },
+        {
+          "method": "mlp_gru",
+          "record": {
+            "id": "8fc1bae5b52a7580b89053f3896cb3bd77b39e89e073787fe002bb4b552934f9:16:CT",
+            "series": "2396609",
+            "map": "de_dust2",
+            "round_number": 16,
+            "timing_passed": true
+          },
+          "score_before": {
+            "CT": 6,
+            "T": 9
+          },
+          "snapshots": [
+            {
+              "second": 10,
+              "tick": 134306,
+              "CT_equipment_total": 29300.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "hegrenade": 1,
+                  "flashbang": 3,
+                  "incgrenade": 2
+                },
+                "geographical_throw_places": {
+                  "hegrenade": {
+                    "CTSpawn": 1
+                  },
+                  "flashbang": {
+                    "LongA": 3
+                  },
+                  "incgrenade": {
+                    "LongA": 1,
+                    "BDoors": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 12,
+              "tick": 134434,
+              "CT_equipment_total": 28800.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "hegrenade": 1,
+                  "flashbang": 3,
+                  "incgrenade": 2,
+                  "smokegrenade": 1
+                },
+                "geographical_throw_places": {
+                  "hegrenade": {
+                    "CTSpawn": 1
+                  },
+                  "flashbang": {
+                    "LongA": 3
+                  },
+                  "incgrenade": {
+                    "LongA": 1,
+                    "BDoors": 1
+                  },
+                  "smokegrenade": {
+                    "LongDoors": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 15,
+              "tick": 134626,
+              "CT_equipment_total": 28800.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "hegrenade": 1,
+                  "flashbang": 3,
+                  "incgrenade": 2,
+                  "smokegrenade": 2
+                },
+                "geographical_throw_places": {
+                  "hegrenade": {
+                    "CTSpawn": 1
+                  },
+                  "flashbang": {
+                    "LongA": 3
+                  },
+                  "incgrenade": {
+                    "LongA": 1,
+                    "BDoors": 1
+                  },
+                  "smokegrenade": {
+                    "LongDoors": 1,
+                    "BDoors": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 18,
+              "tick": 134818,
+              "CT_equipment_total": 28800.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "hegrenade": 1,
+                  "flashbang": 4,
+                  "incgrenade": 2,
+                  "smokegrenade": 2
+                },
+                "geographical_throw_places": {
+                  "hegrenade": {
+                    "CTSpawn": 1
+                  },
+                  "flashbang": {
+                    "LongA": 4
+                  },
+                  "incgrenade": {
+                    "LongA": 1,
+                    "BDoors": 1
+                  },
+                  "smokegrenade": {
+                    "LongDoors": 1,
+                    "BDoors": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            },
+            {
+              "second": 20,
+              "tick": 134946,
+              "CT_equipment_total": 28800.0,
+              "utility": {
+                "recorded_ct_throws": {
+                  "hegrenade": 1,
+                  "flashbang": 4,
+                  "incgrenade": 2,
+                  "smokegrenade": 2
+                },
+                "geographical_throw_places": {
+                  "hegrenade": {
+                    "CTSpawn": 1
+                  },
+                  "flashbang": {
+                    "LongA": 4
+                  },
+                  "incgrenade": {
+                    "LongA": 1,
+                    "BDoors": 1
+                  },
+                  "smokegrenade": {
+                    "LongDoors": 1,
+                    "BDoors": 1
+                  }
+                },
+                "unattributed_recorded_throws": 0
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

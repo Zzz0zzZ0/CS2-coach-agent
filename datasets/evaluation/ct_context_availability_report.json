@@ -1,0 +1,261 @@
+{
+  "status": "completed",
+  "scope": "observational context availability, not a model input revision",
+  "script_sha256": "4f220bb770b3c028e97db36b05c526b462f0e39778b3d2285bd54777c35b9b59",
+  "inventory_sha256": "2a7ca2d8df45e0cefc7ffa46a35c5743d4146cf93ffe64d23fc602ed138f8dcd",
+  "sample_index_sha256": "83f34a6c24a6cff875fd458f355129cf41b89aae8769672aa9bd46558778dd4d",
+  "snapshot_source_sha256": {
+    "output/tagnet/ct_expansion_v3_checked/2396940__de_ancient_snapshots.json": "b56a0189fd8df7494033609fa0a2fb1166228fc64b135770fa9773eae960b92c",
+    "output/tagnet/ct_expansion_v3_checked/2396940__de_inferno_snapshots.json": "9968fde767e898604ff8be15918bd99fff45ea41f77f49cfd0982ff4533cdb68",
+    "output/tagnet/ct_expansion_v3_checked/2396944__de_anubis_snapshots.json": "fdc3b2f428c5ff97640c2a8e184e2b6486329ec4f7d7f6fdf9269c56fc732b6f",
+    "output/tagnet/ct_expansion_v3_checked/2396944__de_inferno_snapshots.json": "e3d6f062e95f4d6b8a025f8467a5a451cd6b0572112b5f221d08d95fc151fb1b",
+    "output/tagnet/ct_expansion_v3_checked/2396944__de_mirage_snapshots.json": "ef8c0839cdf37b7f8f9331bee79ed0e33e82fe36ffb95a9be339de63a6432bdd",
+    "output/tagnet/ct_expansion_v3_checked/2396949__de_ancient_snapshots.json": "c9af20c90d5e0a86971a1cf9214819ddb2c3e83b39fa52174ecade5e45107222",
+    "output/tagnet/ct_expansion_v3_checked/2396949__de_nuke_snapshots.json": "6901de294992d5c6117f10703e601d18219266f10b672816fd7724783f3f3e90",
+    "output/tagnet/ct_expansion_v3_checked/2396950__de_dust2_snapshots.json": "5e39426b28244c3134de3d41e565c5d56786ee3eec220e72dfd09dfae317c7bc",
+    "output/tagnet/ct_expansion_v3_checked/2396950__de_mirage_snapshots.json": "a812934d0f6746cf05c5b08f586c66c03fd635401a6468a687174a9319d97c00",
+    "output/tagnet/ct_expansion_v3_checked/furia_falcons_existing_local__de_anubis_snapshots.json": "51366df338be543f10771643bb7438dfe78313b74716b66f1aa31d478016a56a",
+    "output/tagnet/ct_expansion_v3_checked/furia_falcons_existing_local__de_inferno_snapshots.json": "be2ced34ecd52fb2058f2cbb7eb0a6b3e71b1d7b5ee7ed0cbcb46ae04c80d25a",
+    "output/tagnet/ct_expansion_v3_checked/furia_falcons_existing_local__de_mirage_snapshots.json": "6d91c9db4086dd7e501f76885a8e6a492b9aeecb1cf929f8d4907a4feefded86",
+    "output/tagnet/ct_event_transfer_v5_verified/2396595__de_dust2_snapshots.json": "53c137d0daad37fb16ade0c55d60ae48191cd3a1190012d5b9956c8e08d1af75",
+    "output/tagnet/ct_event_transfer_v5_verified/2396595__de_inferno_snapshots.json": "5df0440a78c1064c629d239ec1b4c0780165862c12afb5cb0b49aa11b27242c5",
+    "output/tagnet/ct_event_transfer_v5_verified/2396609__de_dust2_snapshots.json": "abf641c2fbbad6e7a011c7a2b351c14f42689be17f43eef185e1fbd94f46a442",
+    "output/tagnet/ct_event_transfer_v5_verified/2396609__de_mirage_snapshots.json": "61291060931fbad6190bfb9e88314714cdebdf4a2fbaa9607295dad7cd7b1850",
+    "output/tagnet/ct_confirmation_2396945_v7/2396945__de_ancient_snapshots.json": "8c82eba3cdef87c79d95a97865b69ad4328cf4eb0f9650629b6070e0f82e2eb3",
+    "output/tagnet/ct_confirmation_2396945_v7/2396945__de_inferno_snapshots.json": "f2d01ff3a08f091dd47e2abd04ccfc6931d8493dc71675f0120f5679fbd2b8ea",
+    "output/tagnet/ct_confirmation_2396945_v7/2396945__de_nuke_snapshots.json": "a26d7f1cb2668b640b177a3810502ca3b825fb0595d2c439a1c3139c9274c26e",
+    "output/tagnet/ct_confirmation_2396613_v7/2396613__de_ancient_snapshots.json": "a04123eef53eb9302f173e2b9b5e9409f46e9100f83485dc3c216a5e611b7625",
+    "output/tagnet/ct_confirmation_2396613_v7/2396613__de_dust2_snapshots.json": "c292a53f2d9ac1313013d68ef58856f51252f548abe48bf6e4a55d237e4831a4",
+    "output/tagnet/ct_confirmation_2396613_v7/2396613__de_nuke_snapshots.json": "61bf2362068c9fb771ce17189aaae35bd67ffd5d056fce3c8bbc86cd293094bf"
+  },
+  "context_sha256": "ba75c532f9d8cf0c0010817460d0a120ca5bfb7908fc50ad30a63babf83660a3",
+  "demos": [
+    {
+      "source_demo": "BLAST_Open_Porto_2026_G2_vs_Natus_Vincere_2396940_map1.dem",
+      "sha256": "addb04dbcffaa81c3bf05b47265744af3fca3206b0746cc0ab5c4d1b00010956",
+      "map": "de_ancient",
+      "rounds": 19,
+      "selected_windows": 19,
+      "recorded_throws": 425,
+      "plant_events": 9
+    },
+    {
+      "source_demo": "BLAST_Open_Porto_2026_G2_vs_Natus_Vincere_2396940_map2.dem",
+      "sha256": "0b091648374df01c47a51b909e9de96b7f919350d719e24513229d4e0be0f352",
+      "map": "de_inferno",
+      "rounds": 23,
+      "selected_windows": 23,
+      "recorded_throws": 607,
+      "plant_events": 17
+    },
+    {
+      "source_demo": "BLAST_Open_Porto_2026_G2_vs_Aurora_2396944_map1.dem",
+      "sha256": "e6bdd552f9336cd03a42f758d3849277461095bd3d019cd22c6608af8f2e3dc1",
+      "map": "de_anubis",
+      "rounds": 20,
+      "selected_windows": 20,
+      "recorded_throws": 418,
+      "plant_events": 8
+    },
+    {
+      "source_demo": "BLAST_Open_Porto_2026_G2_vs_Aurora_2396944_map2.dem",
+      "sha256": "e71bad7ed9d272f72806940dcd1e8f732c31f947865e49e5ccbbcf1f43bcdc83",
+      "map": "de_inferno",
+      "rounds": 35,
+      "selected_windows": 35,
+      "recorded_throws": 968,
+      "plant_events": 25
+    },
+    {
+      "source_demo": "BLAST_Open_Porto_2026_G2_vs_Aurora_2396944_map3.dem",
+      "sha256": "e348879717172add00b80285c20f884f4e180aa8cffa5a7ae9990d0d1d20b9fd",
+      "map": "de_mirage",
+      "rounds": 14,
+      "selected_windows": 14,
+      "recorded_throws": 241,
+      "plant_events": 9
+    },
+    {
+      "source_demo": "BLAST_Open_Porto_2026_Spirit_vs_Falcons_2396949_map2.dem",
+      "sha256": "9c2d5c33124f0e685aebc5f2acf9ceca49247a36fb5100da3f8e166945a18bf2",
+      "map": "de_ancient",
+      "rounds": 24,
+      "selected_windows": 24,
+      "recorded_throws": 565,
+      "plant_events": 14
+    },
+    {
+      "source_demo": "BLAST_Open_Porto_2026_Spirit_vs_Falcons_2396949_map1.dem",
+      "sha256": "8308cae777d53e1f626a1a96c31e2fe4c195078daaa199990bb56436a37f25a7",
+      "map": "de_nuke",
+      "rounds": 21,
+      "selected_windows": 21,
+      "recorded_throws": 444,
+      "plant_events": 6
+    },
+    {
+      "source_demo": "BLAST_Open_Porto_2026_MOUZ_vs_Vitality_2396950_map1.dem",
+      "sha256": "57fb9a105d2c4f989024cc29ad40dc27ed34e65a1c51986c9f6d7ee63d44e190",
+      "map": "de_dust2",
+      "rounds": 24,
+      "selected_windows": 23,
+      "recorded_throws": 537,
+      "plant_events": 12
+    },
+    {
+      "source_demo": "BLAST_Open_Porto_2026_MOUZ_vs_Vitality_2396950_map2.dem",
+      "sha256": "1b8097794845b8994846d52d47db86faec78c838b345d3013c57e883ad230126",
+      "map": "de_mirage",
+      "rounds": 20,
+      "selected_windows": 20,
+      "recorded_throws": 368,
+      "plant_events": 11
+    },
+    {
+      "source_demo": "furia-vs-falcons-m2-anubis.dem",
+      "sha256": "89907025d5d5c3d05ef7859d8437303cc83ff1be0be8bb3c92e14c6a774c5fa8",
+      "map": "de_anubis",
+      "rounds": 21,
+      "selected_windows": 21,
+      "recorded_throws": 472,
+      "plant_events": 15
+    },
+    {
+      "source_demo": "furia-vs-falcons-m3-inferno.dem",
+      "sha256": "374b2f600880e2f8b0437314924b3745c2b0d32e63d53abbedd8bfd52ab8b0b8",
+      "map": "de_inferno",
+      "rounds": 21,
+      "selected_windows": 21,
+      "recorded_throws": 530,
+      "plant_events": 11
+    },
+    {
+      "source_demo": "furia-vs-falcons-m1-mirage.dem",
+      "sha256": "04f26f0f092f24fd13e7939dc56e72a3783a61872500b97b09810ed5a2363697",
+      "map": "de_mirage",
+      "rounds": 21,
+      "selected_windows": 21,
+      "recorded_throws": 453,
+      "plant_events": 8
+    },
+    {
+      "source_demo": "Esports_World_Cup_2026_MOUZ_vs_PARIVISION_2396595_map1.dem",
+      "sha256": "5ab8223140fbf38ebbd28a1b6c903a44ba4588de40beec79c6c08f78342000f1",
+      "map": "de_dust2",
+      "rounds": 17,
+      "selected_windows": 17,
+      "recorded_throws": 369,
+      "plant_events": 11
+    },
+    {
+      "source_demo": "Esports_World_Cup_2026_MOUZ_vs_PARIVISION_2396595_map2.dem",
+      "sha256": "64898b61aa7300084268d8f57c4d7f5436d1fa902c4b18ea19e9f13979c1d809",
+      "map": "de_inferno",
+      "rounds": 23,
+      "selected_windows": 23,
+      "recorded_throws": 581,
+      "plant_events": 17
+    },
+    {
+      "source_demo": "Esports_World_Cup_2026_Legacy_vs_Falcons_2396609_map2.dem",
+      "sha256": "8fc1bae5b52a7580b89053f3896cb3bd77b39e89e073787fe002bb4b552934f9",
+      "map": "de_dust2",
+      "rounds": 23,
+      "selected_windows": 23,
+      "recorded_throws": 560,
+      "plant_events": 13
+    },
+    {
+      "source_demo": "Esports_World_Cup_2026_Legacy_vs_Falcons_2396609_map1.dem",
+      "sha256": "deeda64a7c879f69a10c1bd344e6966e4db44e75d74af1d26a733ee7add4e093",
+      "map": "de_mirage",
+      "rounds": 20,
+      "selected_windows": 20,
+      "recorded_throws": 444,
+      "plant_events": 6
+    },
+    {
+      "source_demo": "BLAST_Open_Porto_2026_MOUZ_vs_Falcons_2396945_map2.dem",
+      "sha256": "9515221434fbde02a8beb2a19e100a00df35ff37306549b32b6b241cc4c55ff3",
+      "map": "de_ancient",
+      "rounds": 19,
+      "selected_windows": 19,
+      "recorded_throws": 397,
+      "plant_events": 7
+    },
+    {
+      "source_demo": "BLAST_Open_Porto_2026_MOUZ_vs_Falcons_2396945_map3.dem",
+      "sha256": "d8ef19dbfc262b74ce927ebe3dc60fc088d50ba63d93ba85097c2cc2c4525a11",
+      "map": "de_inferno",
+      "rounds": 16,
+      "selected_windows": 16,
+      "recorded_throws": 357,
+      "plant_events": 8
+    },
+    {
+      "source_demo": "BLAST_Open_Porto_2026_MOUZ_vs_Falcons_2396945_map1.dem",
+      "sha256": "a20d78e76c5545872a87a35dd5cc5e22f8d307a44bddc9d2189e3ff0ba04d987",
+      "map": "de_nuke",
+      "rounds": 19,
+      "selected_windows": 19,
+      "recorded_throws": 370,
+      "plant_events": 8
+    },
+    {
+      "source_demo": "Esports_World_Cup_2026_FURIA_vs_Legacy_2396613_map1.dem",
+      "sha256": "409d6e9d214573780d40c3acfac85e80193a48fd3a8adb947e12b9d8452806e2",
+      "map": "de_ancient",
+      "rounds": 22,
+      "selected_windows": 22,
+      "recorded_throws": 549,
+      "plant_events": 14
+    },
+    {
+      "source_demo": "Esports_World_Cup_2026_FURIA_vs_Legacy_2396613_map3.dem",
+      "sha256": "f3079a77e5b6b276bc792740c5d43513070723af4976315ca3888e428cc69eb4",
+      "map": "de_dust2",
+      "rounds": 22,
+      "selected_windows": 22,
+      "recorded_throws": 508,
+      "plant_events": 13
+    },
+    {
+      "source_demo": "Esports_World_Cup_2026_FURIA_vs_Legacy_2396613_map2.dem",
+      "sha256": "24583aabbe3707ee96baa3fdf03e311c47a5f6ff206d3af7dd25b55f4f7f2144",
+      "map": "de_nuke",
+      "rounds": 22,
+      "selected_windows": 22,
+      "recorded_throws": 478,
+      "plant_events": 13
+    }
+  ],
+  "runtime_versions": {
+    "demoparser2": "0.41.3",
+    "pandas": "2.3.3",
+    "numpy": "2.3.5",
+    "psutil": "7.0.0"
+  },
+  "windows": 465,
+  "snapshots": 2325,
+  "coverage": {
+    "score_before_windows": 465,
+    "CT_equipment_snapshots": 2325,
+    "T_equipment_snapshots": 2325,
+    "CT_angle_pairs": 11368,
+    "throws_with_unattributed_side": 0
+  },
+  "limits": [
+    "All data remain the already inspected development cohort.",
+    "Current opponent equipment is privileged observer information, not CT player knowledge; keep separate in any future experiment.",
+    "Live-player angles are recorded view direction, not demonstrated visibility, intent, or tactical duty; dead slots are masked unknown.",
+    "Counts start at freeze end and stop at each query tick; they describe recorded throws, not active smokes/fires. Throw places are geography only.",
+    "No-plant rounds do not reveal an attack site; only an exact previous BombsiteA/B observation is mapped.",
+    "Economy bins, pistol flags, the upstream 25-dimensional context, and new model integration are not implemented here."
+  ],
+  "elapsed_seconds": 56.23102929999004,
+  "peak_RAM_MiB": 933.78125,
+  "human_verification": {
+    "status": "pending",
+    "verified_by": null
+  }
+}

@@ -215,6 +215,15 @@ Adding motion to the specified graph-temporal architecture reduced the G3 object
 \label{fig:reconstruction}
 \end{figure*}
 
+\subsection{Failure decomposition and contextual availability}
+The G4 Nuke diagnostic contains 62 windows from three series. Full Graph + GRU has 8.44\% higher loss than MLP + GRU and 3.72\% higher loss than its common-input control. Against the common-input control, the total loss reduction is $-0.003703$, with the region group contributing $-0.003193$ after division by seven. Against the no-motion control, the largest negative contribution is instead the ground-state group ($-0.003691$). These post-hoc component differences use the fixed CE/MSE scales and model-specific optimal player matchings; they do not identify a causal input-field failure. % [claim:C146] [evidence:E117]
+
+A separate context audit reread the same 22 development demos without changing any encoder input. It recovered pre-round scores for all 465 windows, CT and T equipment totals at all 2,325 query times, and finite angle pairs for all 11,368 live CT observations. Dead-player angle slots are masked. This establishes field availability, not improved representation or tactical generalization. % [claim:C147] [evidence:E118]
+
+Throw counts start at freeze end and stop at each query tick; they count recorded releases rather than active smoke or fire effects. Previous outcomes are restricted to completed earlier rounds, with score attributed to stable team identities across side switches. Opponent equipment is privileged observer information, and recorded view direction alone does not establish visibility or tactical duty. These fields remain outside the frozen common encoder input. % [claim:C148] [evidence:E118,E119]
+
+The unchanged six fixed query cases now have CT-only equipment, score and throw-count sidecars. All six queries are first-round windows under the original first-in-index selection rule, so their resource conditions are not representative of the full cohort. Context differences are observable, but neither agreement nor disagreement supplies a tactical relevance judgment. % [claim:C149] [evidence:E120]
+
 \subsection{Stable patterns and relevant retrieval: E3--E4}
 Source-only cluster selection and assignment were completed for all 270 encoder fits. For example, the full graph-temporal condition selected two clusters in 24 of its 27 G3 fits, rather than recovering a predetermined six-pattern taxonomy. Table~\ref{tab:stability} reports descriptive agreement and diagnostic assignment coverage; numeric cluster IDs are local to each fit and do not name duties. % [claim:C127] [evidence:E114]
 

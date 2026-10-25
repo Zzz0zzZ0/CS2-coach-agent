@@ -1,0 +1,81 @@
+{
+  "status": "exploratory_field_diagnostic",
+  "scope": "Numeric angle updates between adjacent sampled times with the same CT player dead at both endpoints; not camera identification or independent statistical evidence.",
+  "method": "For pitch and yaw, wrapped_delta=((current-previous+180) mod 360)-180; count an interval if max absolute delta > 0.0001 degrees. Identity order is checked. Dead means frozen health-based alive flag is false.",
+  "source_sha256": {
+    "output\\tagnet\\ct_context_availability\\context.json": "b96b5ba39f59126abbeb1ae6b4e51afdcc59fd4f0448b0940cc786e826f38b34",
+    "output\\tagnet\\ct_context_availability\\report.json": "3e8e695a04a67b1ae2092207f6d6af888946753b98fc42c62f5b7f2925ab4893",
+    "output/tagnet/ct_expansion_v3_checked/2396940__de_ancient_snapshots.json": "b56a0189fd8df7494033609fa0a2fb1166228fc64b135770fa9773eae960b92c",
+    "output/tagnet/ct_expansion_v3_checked/2396940__de_inferno_snapshots.json": "9968fde767e898604ff8be15918bd99fff45ea41f77f49cfd0982ff4533cdb68",
+    "output/tagnet/ct_expansion_v3_checked/2396944__de_anubis_snapshots.json": "fdc3b2f428c5ff97640c2a8e184e2b6486329ec4f7d7f6fdf9269c56fc732b6f",
+    "output/tagnet/ct_expansion_v3_checked/2396944__de_inferno_snapshots.json": "e3d6f062e95f4d6b8a025f8467a5a451cd6b0572112b5f221d08d95fc151fb1b",
+    "output/tagnet/ct_expansion_v3_checked/2396944__de_mirage_snapshots.json": "ef8c0839cdf37b7f8f9331bee79ed0e33e82fe36ffb95a9be339de63a6432bdd",
+    "output/tagnet/ct_expansion_v3_checked/2396949__de_ancient_snapshots.json": "c9af20c90d5e0a86971a1cf9214819ddb2c3e83b39fa52174ecade5e45107222",
+    "output/tagnet/ct_expansion_v3_checked/2396949__de_nuke_snapshots.json": "6901de294992d5c6117f10703e601d18219266f10b672816fd7724783f3f3e90",
+    "output/tagnet/ct_expansion_v3_checked/2396950__de_dust2_snapshots.json": "5e39426b28244c3134de3d41e565c5d56786ee3eec220e72dfd09dfae317c7bc",
+    "output/tagnet/ct_expansion_v3_checked/2396950__de_mirage_snapshots.json": "a812934d0f6746cf05c5b08f586c66c03fd635401a6468a687174a9319d97c00",
+    "output/tagnet/ct_expansion_v3_checked/furia_falcons_existing_local__de_anubis_snapshots.json": "51366df338be543f10771643bb7438dfe78313b74716b66f1aa31d478016a56a",
+    "output/tagnet/ct_expansion_v3_checked/furia_falcons_existing_local__de_inferno_snapshots.json": "be2ced34ecd52fb2058f2cbb7eb0a6b3e71b1d7b5ee7ed0cbcb46ae04c80d25a",
+    "output/tagnet/ct_expansion_v3_checked/furia_falcons_existing_local__de_mirage_snapshots.json": "6d91c9db4086dd7e501f76885a8e6a492b9aeecb1cf929f8d4907a4feefded86",
+    "output/tagnet/ct_event_transfer_v5_verified/2396595__de_dust2_snapshots.json": "53c137d0daad37fb16ade0c55d60ae48191cd3a1190012d5b9956c8e08d1af75",
+    "output/tagnet/ct_event_transfer_v5_verified/2396595__de_inferno_snapshots.json": "5df0440a78c1064c629d239ec1b4c0780165862c12afb5cb0b49aa11b27242c5",
+    "output/tagnet/ct_event_transfer_v5_verified/2396609__de_dust2_snapshots.json": "abf641c2fbbad6e7a011c7a2b351c14f42689be17f43eef185e1fbd94f46a442",
+    "output/tagnet/ct_event_transfer_v5_verified/2396609__de_mirage_snapshots.json": "61291060931fbad6190bfb9e88314714cdebdf4a2fbaa9607295dad7cd7b1850",
+    "output/tagnet/ct_confirmation_2396945_v7/2396945__de_ancient_snapshots.json": "8c82eba3cdef87c79d95a97865b69ad4328cf4eb0f9650629b6070e0f82e2eb3",
+    "output/tagnet/ct_confirmation_2396945_v7/2396945__de_inferno_snapshots.json": "f2d01ff3a08f091dd47e2abd04ccfc6931d8493dc71675f0120f5679fbd2b8ea",
+    "output/tagnet/ct_confirmation_2396945_v7/2396945__de_nuke_snapshots.json": "a26d7f1cb2668b640b177a3810502ca3b825fb0595d2c439a1c3139c9274c26e",
+    "output/tagnet/ct_confirmation_2396613_v7/2396613__de_ancient_snapshots.json": "a04123eef53eb9302f173e2b9b5e9409f46e9100f83485dc3c216a5e611b7625",
+    "output/tagnet/ct_confirmation_2396613_v7/2396613__de_dust2_snapshots.json": "c292a53f2d9ac1313013d68ef58856f51252f548abe48bf6e4a55d237e4831a4",
+    "output/tagnet/ct_confirmation_2396613_v7/2396613__de_nuke_snapshots.json": "61bf2362068c9fb771ce17189aaae35bd67ffd5d056fce3c8bbc86cd293094bf"
+  },
+  "counts": {
+    "dead_observations": 257,
+    "consecutive_dead_intervals": 158,
+    "changed_angles_while_dead": 47
+  },
+  "examples": [
+    {
+      "id": "addb04dbcffaa81c3bf05b47265744af3fca3206b0746cc0ab5c4d1b00010956:5:CT",
+      "map": "de_ancient",
+      "player_slot_zero_based": 0,
+      "seconds": [
+        18,
+        20
+      ],
+      "angles": [
+        [
+          -16.513137817382812,
+          157.3516845703125
+        ],
+        [
+          -15.919189453125,
+          157.5
+        ]
+      ]
+    },
+    {
+      "id": "addb04dbcffaa81c3bf05b47265744af3fca3206b0746cc0ab5c4d1b00010956:11:CT",
+      "map": "de_ancient",
+      "player_slot_zero_based": 0,
+      "seconds": [
+        12,
+        15
+      ],
+      "angles": [
+        [
+          2.5543212890625,
+          -109.92851257324219
+        ],
+        [
+          -15.85980224609375,
+          122.18307495117188
+        ]
+      ]
+    }
+  ],
+  "limits": [
+    "Use only raw angle fields from the preserved first-pass export; its superseded utility counts are not used.",
+    "Sparse 10/12/15/18/20-second observations cannot identify the camera, observer target, or update mechanism.",
+    "Counts are dependent sampled intervals, not independent matches."
+  ]
+}

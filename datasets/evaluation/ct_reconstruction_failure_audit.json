@@ -1,0 +1,1899 @@
+{
+  "status": "completed",
+  "scope": "post-hoc descriptive development failure decomposition",
+  "source_sha256": {
+    "datasets\\evaluation\\ct_reconstruction_development_report.json": "18c93c2a65a48f146bd2afa80ba2f752983f3f7c19473fd72d6a7547cc11c541",
+    "datasets\\selections\\ct_reconstruction_matrix.json": "69f58d0bbdcb441dd4b4af339bc3f45eaae0d94b6539f0ac92e1c6ccb78125b6",
+    "output\\tagnet\\ct_deployment_inputs_p1_v03\\sample_index.json": "83f34a6c24a6cff875fd458f355129cf41b89aae8769672aa9bd46558778dd4d"
+  },
+  "script_sha256": "0c8a6b299fa8525ea8baa4fcb0e4e150b5f052c2a1ca0a48b0a4ce8870082180",
+  "evaluation_sha256": {
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396595\\mlp_static_0_evaluation.npz": "94fbbbecc9732123e71ba2683badc5563b817b4cca30d9ff7fea02429dcb572a",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396595\\mlp_gru_0_evaluation.npz": "a159e3aa296241334a05b522cfac1c267900e587daccb5f7d91933d91cdb42e8",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396595\\graph_static_0_evaluation.npz": "336a755c78a9f0a83a134666137625d1b924704f739de40b7d5323bcf535f995",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396595\\graph_gru_0_evaluation.npz": "0070a85046f2f99c1616e01955bbe5cbf799dfd7c732eeac2afba60121148c10",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396595\\graph_gru_no_motion_0_evaluation.npz": "553a579c4870dadd8ae7422fab8b744c0a22e3dab444b7427bb480bde58a0638",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396595\\graph_gru_common_0_evaluation.npz": "4077ef824374ecebc077d290917eb6311480c53902681a2958063dd86b32888b",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396595\\mlp_static_1_evaluation.npz": "f40fe272925347081ccd618942c4b97ad1fa999a518dfbfe7092a85588b11d22",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396595\\mlp_gru_1_evaluation.npz": "1cdf67082b88a28355fa775926e24487d406f3454354a0cf794d325a68f065be",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396595\\graph_static_1_evaluation.npz": "42ca1c090e54df7f2cce9f85f089751a5475131fcd5f1ea08477b4a12d916edb",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396595\\graph_gru_1_evaluation.npz": "ed7b83f2dac7585d1a08c201bbf81e4f32c751b3a506ab47b125f003da8738db",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396595\\graph_gru_no_motion_1_evaluation.npz": "28c997998ef5d5fd3342a9b2ded67e6ad28ec1aa75b6302aeebc1ca916cf6a15",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396595\\graph_gru_common_1_evaluation.npz": "473f7522a8904248b99f5fb73d60c43b5ee899bdbe67b79158d9ba6774bc6fe8",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396595\\mlp_static_42_evaluation.npz": "30dc801f10250ccdf58e3d7e776d6aa8786dbf1362171f1eeabfc585d1d8efcd",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396595\\mlp_gru_42_evaluation.npz": "84ff11e24d216ab83e4a41763401db8bab6a3a174a38984fc46556c670ddad6d",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396595\\graph_static_42_evaluation.npz": "f2690a71626c7cf96e7c8396987f1554234860ad7c4e3c399d7cbb810da099c9",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396595\\graph_gru_42_evaluation.npz": "af5df8f8e8f6fd15432df14438bf078ba53508eace3f981fa88302f675fb8691",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396595\\graph_gru_no_motion_42_evaluation.npz": "31937ff1f68e1424f34fc563c2595424b56c30fc4eb09c4c9bd3f3c282398a61",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396595\\graph_gru_common_42_evaluation.npz": "1c388698597b476c14482a613acc2eb3dc6c94f2a9f38acabcba3213f143cb39",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396609\\mlp_static_0_evaluation.npz": "828c0348bd1698acd7c015b4d02f055e349f5c305ed6ed87b07494a2c95b545e",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396609\\mlp_gru_0_evaluation.npz": "db101153c2bf0d2a72cc233327b9b46d60f19745e07378f91f289bdfc590572b",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396609\\graph_static_0_evaluation.npz": "02ddced3992e016637e64b5a46e8420f037231d5de17f9fb9e27b87fba47b1f8",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396609\\graph_gru_0_evaluation.npz": "f844f93bfe0d670975bc5b3e2021fa8e208dd49cfb01e212fdb8601d70781a55",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396609\\graph_gru_no_motion_0_evaluation.npz": "277ddb2f6a5b5e1111ef29d8fc79d5b2955b213fe981d4fbdb3b2103aa9b2e4a",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396609\\graph_gru_common_0_evaluation.npz": "eb895635aff87d1f6135379515161b02b40b66706da369ca413b0ac557434aab",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396609\\mlp_static_1_evaluation.npz": "df824e57f7b4c1065be3816d4ec119613ceeeff15e010ec6e4f4636e613486f6",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396609\\mlp_gru_1_evaluation.npz": "3ab3b741616a8193308919e6a1695a93a43f386d7ed76164503ea1610a6982c7",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396609\\graph_static_1_evaluation.npz": "fa58caafb5b0ed9e4bbdcfd3180d8e120c64436496a5a4fa0b0f47fecd8ea878",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396609\\graph_gru_1_evaluation.npz": "ef6b4cd0ba9036a5af037aaa0954811a850918731925d54611393597c825b522",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396609\\graph_gru_no_motion_1_evaluation.npz": "d7b27e247e76355ec3f88afb2cf35b90634291f35e68413e89b7874fbcada875",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396609\\graph_gru_common_1_evaluation.npz": "29879a7e8d8537226ec0ce861a059192019a52aa28858f8d87e6bb8bd2b313a0",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396609\\mlp_static_42_evaluation.npz": "cb8997c817dc0b9bb86b9018d1f67e895055ff7b2d1aa41e3d7e3028859f3aea",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396609\\mlp_gru_42_evaluation.npz": "4bce045af1520f297824968683b465610c86bc105ab5156baf3dc78310953242",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396609\\graph_static_42_evaluation.npz": "e7fc5ea9f2bc3ca39cde846a6920838d766b6a61726f53f9a3b36c191d9e73f0",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396609\\graph_gru_42_evaluation.npz": "b162541ec9a556c758fa337b827b3c824adccac4e0e916cf35e4877a3b213dfe",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396609\\graph_gru_no_motion_42_evaluation.npz": "9da8929fa7fa7c2d4937adf44ee0a6351e483b6f0ad08faed0062caebab12d7f",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396609\\graph_gru_common_42_evaluation.npz": "784d26cc256b7c16271dd9266041e5f0edf156698459eec5b89b3a23fb33dffa",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396613\\mlp_static_0_evaluation.npz": "943204f7c290b996b6d49f902e5d2aac685c0390ac8cb79ec53199f2ad1b5f9f",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396613\\mlp_gru_0_evaluation.npz": "6c1d1e73c56d27a02195889e193ca35871cb5b89a894ca4ec454125b7fee9889",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396613\\graph_static_0_evaluation.npz": "00ccf17c0800806ba0c0bf85f2793f1c0a1c5ad7764318e229d2c23cc2849d65",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396613\\graph_gru_0_evaluation.npz": "a039d50bb9f37d4a662354334c4f142678839e3830464eec7afa0d4d69d97a33",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396613\\graph_gru_no_motion_0_evaluation.npz": "730fd0983dfa7964b1d41cabf361b0460ea3ca78d6f1c494c2c352718d6e5dd8",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396613\\graph_gru_common_0_evaluation.npz": "0b4e4a2df023aa122b14e15ce0262091d39fd0168d5a938e1fa7e4e567118487",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396613\\mlp_static_1_evaluation.npz": "963e3b9d89078c0d70e4aab09b44a63ca55745312cf826674c9434cd72297015",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396613\\mlp_gru_1_evaluation.npz": "3cd9f41f160b3e1b2bb45d1f59ea9eaffe667f1f80f8295d1e96e3ca52735e4c",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396613\\graph_static_1_evaluation.npz": "c66445773b4f333917077deabe3743610da02abb83f1d5877101d1133fa7f9f7",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396613\\graph_gru_1_evaluation.npz": "d84627a31e6d97fd2029640612a4d191c4c017949c92bb69c042d156142b41bf",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396613\\graph_gru_no_motion_1_evaluation.npz": "8bae79b8d332126d231065d4587f79be7b05a7ffcb9eea1ae485ade04a352bb1",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396613\\graph_gru_common_1_evaluation.npz": "7cf93fbfa1e08744eb708545ec6159903d6aa71a19737dd005bfd94ef1b046d0",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396613\\mlp_static_42_evaluation.npz": "be933c58d028e812f9cfcd32e99430e20a9f9ad7786d3d335ed1e082b8416800",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396613\\mlp_gru_42_evaluation.npz": "53f88bb588dfe5e7bab1ed40a35bb340c30a01fe95552ff13d09e144170d02ab",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396613\\graph_static_42_evaluation.npz": "90c77b10de220e7e1cfee68e06638b9dce56470d7b1de44bdbdd15b09ad6135c",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396613\\graph_gru_42_evaluation.npz": "b1c2bd6b0652f26af962314cc04252164173c68733f8762f78647abb866405ea",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396613\\graph_gru_no_motion_42_evaluation.npz": "a33ec54181ab5e62d42be215e5a99778be13600d07cac0187990479c0f228880",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396613\\graph_gru_common_42_evaluation.npz": "690a9526a6681888e7e82268554640463579efd7987e14116bb70aa1bc567cb8",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396940\\mlp_static_0_evaluation.npz": "bea22330feeba388c338b5dfdafcd13b5ea3e45094ae289d3bd52e1292b0267a",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396940\\mlp_gru_0_evaluation.npz": "0bc2b5e41cb549eb0a521a2fda1c093b76261292f791e7094eba8b54c73dd6ad",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396940\\graph_static_0_evaluation.npz": "280b145335a4bb09460acefdb66c08c8ddad22b5c1b5b69aad6ec583235997a4",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396940\\graph_gru_0_evaluation.npz": "b55efabfe48ee5762cc033227b66718084919f5b3dd5f683fa370a1c9f24ce62",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396940\\graph_gru_no_motion_0_evaluation.npz": "0878e448bb0662e81da576aeaf25d3167961eaaaa9ebe7846908c1fb6b81f76c",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396940\\graph_gru_common_0_evaluation.npz": "3658ed549c932684f99c19c5a76bcbc23e4e903e8b24fc9360bbebe023ec97f3",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396940\\mlp_static_1_evaluation.npz": "0ab834325a5f03f71133e43cdfe971eb044d0febddc2d12e67c51bf4f2a44e7d",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396940\\mlp_gru_1_evaluation.npz": "5a4d5a7099239723f39a1e39d3648347646a34844bcd6d170206371d574071be",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396940\\graph_static_1_evaluation.npz": "58b1cdb6eaf607f3ef36f1ea28f6b9f0a6d6d4b2d2da9f5affada83ff597a978",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396940\\graph_gru_1_evaluation.npz": "20f2f444ef2e08e295fab1541c104874119286ffd28b548a705003fe607f8830",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396940\\graph_gru_no_motion_1_evaluation.npz": "5f82e2c4d840137190cda13ddbad05491eb7e6714ecb0bd2f13a90b1ef02f106",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396940\\graph_gru_common_1_evaluation.npz": "02b7f0ab22ada91940c07a128ffa556697808e68e4bc156212600f477269647f",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396940\\mlp_static_42_evaluation.npz": "5bbb44fe24cf5a7e06c27a7076bb0fd2fe7bf534f2f330062d6621126dd6fe7a",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396940\\mlp_gru_42_evaluation.npz": "2ee6c87435de9c784478a4bf9735a07991ceccb999674d34f763764ef9aba541",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396940\\graph_static_42_evaluation.npz": "5f578a3578db21e6c899b466c89dee23560b9aa59ffb91bd45be51722b53a073",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396940\\graph_gru_42_evaluation.npz": "6417233383a7d9e698d09f59318b29a0151f3becf13c6abe98709d65eb3ee04b",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396940\\graph_gru_no_motion_42_evaluation.npz": "fd15d8522c6f609ffcae47d1946c55e72a00d83e79d4a88c8c6c0faf7388e4cd",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396940\\graph_gru_common_42_evaluation.npz": "afed44e3e385ec9d6071e5ece578a125b89a02b89d87f23ba04a86642e8fe92b",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396944\\mlp_static_0_evaluation.npz": "83683c5363c49a11dcc0f7fdecd9a3a756c10929561b8e5905d1d6e758863d6c",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396944\\mlp_gru_0_evaluation.npz": "17712aa47906df3a45583ff3f9160c65b13c8cb73b85e196d8bc68429e53306f",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396944\\graph_static_0_evaluation.npz": "3af229f4194e21179f33f2959b1c02ee189763b9f95f83b418cb34d6d2499aa6",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396944\\graph_gru_0_evaluation.npz": "91a2ccdea0969fb0da16f07aa71f387979977688ffee2b3fbb75152ded0dce7a",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396944\\graph_gru_no_motion_0_evaluation.npz": "4ba93138bfb361a83b4f5384c3f776be0bdc6b69c9dc5945bdb2e4315738a8d6",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396944\\graph_gru_common_0_evaluation.npz": "dc1c9f314cd2e46be05667f12efd6da7fc82315bdcdb2dbd7b464f5fcd63722b",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396944\\mlp_static_1_evaluation.npz": "e4dc35d8dd6ab672c6824b24bd132a662d5a1ad033472bc44eac72e0c83dd121",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396944\\mlp_gru_1_evaluation.npz": "0c3ba903b724e2baedcfa407f8981533847d7bca430472a768df1efbeb8caa53",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396944\\graph_static_1_evaluation.npz": "ec42ca37a7692164b377f9e7cbfe99237705e2e085b3b4a2bb7d1a1745c79455",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396944\\graph_gru_1_evaluation.npz": "4afcfb9baddc5bb40760b081c2abf4f8fa373c11ef7f439676db9fcb70736fba",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396944\\graph_gru_no_motion_1_evaluation.npz": "94f8a74a7375b3c6b40aff88dcb43e8a35e6c6b48e2111a2ebcaa619d4452fd7",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396944\\graph_gru_common_1_evaluation.npz": "b0fb92811d17909c16b8f45baf1cff380ccc5412aa7bc988a294a98f329bfe3f",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396944\\mlp_static_42_evaluation.npz": "44f7c106ce2546c018dd90a3a55700909eb61c734b6bbc6e2a80632eb085a69b",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396944\\mlp_gru_42_evaluation.npz": "3539c0dfca1ebebdf61df12417de97cd3cb67e6251dc90ab197f7d4daa10f181",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396944\\graph_static_42_evaluation.npz": "85dfbef2526ca79d0cc3b93cabdc8b1b97be900ed56ea8a9ebdf60cfd1280557",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396944\\graph_gru_42_evaluation.npz": "2e6ee78f15060291fc6eb0b82ece7404a9945f6a33e526423d55b39ba4db7c8e",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396944\\graph_gru_no_motion_42_evaluation.npz": "03f4f4b62fbfa581265d8a5bf6465c96cb0a382c790a9a551e961b688ea4bc8a",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396944\\graph_gru_common_42_evaluation.npz": "47f80fdfdf5cff206339e8606a145e35d612a049095508121fe6de06fe948d6d",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396945\\mlp_static_0_evaluation.npz": "cfb6420b6fc75e79efc535d5fa517c44b483f5e8c049cf9ab42bf3cb476db133",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396945\\mlp_gru_0_evaluation.npz": "7096d7c9b7c957d7c6b51fc3aaa33c83a75e0d9b3cb78deecd1c13061c53a609",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396945\\graph_static_0_evaluation.npz": "2ae3807497a40f5401e0ab738172cc3d47fa080cce4c52552dd69fbd827a0a4c",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396945\\graph_gru_0_evaluation.npz": "11f5b94b2575682d8529ea74f4eef481414c7635cf699557db16687d9fe831e3",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396945\\graph_gru_no_motion_0_evaluation.npz": "861fba8fdb27073190bdae9f7cd96fc0d3a914c9c9fe39472d62b442e5e037bd",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396945\\graph_gru_common_0_evaluation.npz": "fc722392af9ee020e4d946f3ffa578f85cceb59a41ed982b75629bb6d3162ad6",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396945\\mlp_static_1_evaluation.npz": "2b5aa2738916ef1908eaa59f5b069b4e0623a061d5db4ea4455c0b4100692d12",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396945\\mlp_gru_1_evaluation.npz": "fa42eb51783978a5dde51b86fe891bc9630685d59fe9eba50557fbf711b10373",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396945\\graph_static_1_evaluation.npz": "9a45c7d19e6bde1a5102cd42b89287b2077d4f22f111725a45196bf8bba91771",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396945\\graph_gru_1_evaluation.npz": "66c6ff2db5ada7a325b361bbfa5682faf7aac78804d5c41b61a3ef4bfb8ab701",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396945\\graph_gru_no_motion_1_evaluation.npz": "5769095e44a89d1eca77c08299431266723c10533e9789ef03c625819fd403b4",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396945\\graph_gru_common_1_evaluation.npz": "74e836a80d6e2bfc47b46e511a05ee92ea9d3a2481a6eb18db2f2bbc8d5e30ca",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396945\\mlp_static_42_evaluation.npz": "5243665ffad56a54693d9254bc4e277ddc3d8a0c9c7103d3a433acbcb72cb299",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396945\\mlp_gru_42_evaluation.npz": "eea99745e7fe8a1392f354c689d27d574d0a98a7977dcfba95227f5ff27084cf",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396945\\graph_static_42_evaluation.npz": "2c208d4bda6feeccbee75cb4e5606212a864f10e1fd6ed1717a8d882ee6d4032",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396945\\graph_gru_42_evaluation.npz": "c98a253039e8ae7416d00680c506171a7e0a9dd62eae1f1ee294d1cdbbca7891",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396945\\graph_gru_no_motion_42_evaluation.npz": "726cebbb90cf623df09e376ba49b32652acbcaf5ea94f2d11d805e3066c1cc65",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396945\\graph_gru_common_42_evaluation.npz": "d670abbc7babda51f7885da0243aa6fd6488d6141386973ff96b8a74e7fd4a62",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396949\\mlp_static_0_evaluation.npz": "9d38e9c6e3e4b292876d758363159fa18faf1e4066aae6cb66bf0995a1d495b6",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396949\\mlp_gru_0_evaluation.npz": "4fc2bf288e7044aecc62772c0481c6519684cc4edfa8808b34813239fa9cf8f4",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396949\\graph_static_0_evaluation.npz": "4c98a07872b36f40ef3db6f515ae8defa7f8e8515d874daaf8dff494aace3853",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396949\\graph_gru_0_evaluation.npz": "5c75adc25956ad91991d1e6625e8431428fc49c7d547e440e0e7d6ec35700ceb",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396949\\graph_gru_no_motion_0_evaluation.npz": "35f0de9ed3dd80f6a936bab885603719d3e5f52390b9079d2d3c4e94a3f9f37a",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396949\\graph_gru_common_0_evaluation.npz": "68d04edd86b1b8bb8777216260b3d27048f4a5665bf04bfb16ba621b9ea50421",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396949\\mlp_static_1_evaluation.npz": "aacaafb8749c765f3b45d688933ba38e7c5d67e419ec36f2c9d25fe4e667f3da",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396949\\mlp_gru_1_evaluation.npz": "aca707c053f4575bcb4e819df2dd82efe7717bb117b8ecabdefedbf954303047",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396949\\graph_static_1_evaluation.npz": "c0c27c59b833f6e0d9297b3d9a484c163dd5acba9f9da16c087dc581ca0b9f3d",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396949\\graph_gru_1_evaluation.npz": "a42a3e213f623cacd151d6c2a0c899b3c0c097a559a3dff8000b07b15c5ab522",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396949\\graph_gru_no_motion_1_evaluation.npz": "3c3e68a368c5039b3aba0b14e33c92e475c5fdc87025c8c3424e447b886ad16c",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396949\\graph_gru_common_1_evaluation.npz": "25c9cf299574a2f85a6291d9b4ddd3f290ff3fde3c5deca1b58f5aff902751d0",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396949\\mlp_static_42_evaluation.npz": "ed8dea1d0dad5a7f77f72abd79e0cbd90a5bb652238427309ea7f02486c57333",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396949\\mlp_gru_42_evaluation.npz": "e65973d616ce74968431f6358be61fcb2c166e90b45b79ad612b477635ebbe7e",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396949\\graph_static_42_evaluation.npz": "3ac86d62be66f7c5f54e736940a5744cdd5e71b72c300322c3019dfcf871efd7",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396949\\graph_gru_42_evaluation.npz": "d03f367b7446fd71a3f8d64efbf4220274e255a6d22d96961253d4dc51a3e1f1",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396949\\graph_gru_no_motion_42_evaluation.npz": "8329e948b1dc39f7387dad58c0d31efc9dfb9c8968cace6c6db190396377d005",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396949\\graph_gru_common_42_evaluation.npz": "a2bbac5b1fe355743e2ac9d38f4502bda7f06639f2c092571f1d07d9e51dc55a",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396950\\mlp_static_0_evaluation.npz": "d2f359519007bbfaa224dd9800dead88b6374b3800dfdfe8973233ca000e75cb",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396950\\mlp_gru_0_evaluation.npz": "1f2454b95d0aba6ec1813b0f3aa80cf85ad32ad5b70837cc236b44f1f3f31ad5",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396950\\graph_static_0_evaluation.npz": "86fe8c5c36b93bcbbc8b04ac96cc80e038ee2b414a2fdb62a451e0cf2075312d",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396950\\graph_gru_0_evaluation.npz": "7ee44ce910928ce3fc9ad5c51851697bef8f039cf6e3926400d163b5089aa05e",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396950\\graph_gru_no_motion_0_evaluation.npz": "312197817023e0158ef92c2553cde05c8c6aa1d7fd066013eaf8ffc72b2ce0fa",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396950\\graph_gru_common_0_evaluation.npz": "bf87a40d781013f7a0b82fe27874f4199d536b60ffc596e8250281c99813e9c8",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396950\\mlp_static_1_evaluation.npz": "0d5716b8c5a1d34287ea2eff9a97f72c5d1f4d5b94e408ac4175167b2dae5264",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396950\\mlp_gru_1_evaluation.npz": "7056a7cb2b19eec4364003a43aa9d0f1444bbecf89f228cc0eb196589e9c5fe5",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396950\\graph_static_1_evaluation.npz": "e6e1f44d8ac3ad8df66450a499b85171235add0f1c58dad67ba858e38747edb0",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396950\\graph_gru_1_evaluation.npz": "504d4b1b57c213ba3074d553710b19bb11f0283a313ea6276c705d682a8a2b9a",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396950\\graph_gru_no_motion_1_evaluation.npz": "a47723ae5660649d400360abbe8eba9e5e200fe80583939afb5b864c712f0444",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396950\\graph_gru_common_1_evaluation.npz": "c1e2345f5298a570ece789268fc7e757495b7c703dae1c1f23962f760f47eab4",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396950\\mlp_static_42_evaluation.npz": "d092e668d8c2ce91f982781edd4c250e4e55784f536b7681dbbea8e21a8f10c1",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396950\\mlp_gru_42_evaluation.npz": "3337f561d1ada10c93c392a1acc833117ce37c22fc18fbdbcfd79044b2c68301",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396950\\graph_static_42_evaluation.npz": "cb329979d76e34f8b53eba874ffb7c14d6e79b313366a440217569b421494091",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396950\\graph_gru_42_evaluation.npz": "5036218afc4d3f56987d788467aefd3e976617c1fc4d3ce7a142eac41775de44",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396950\\graph_gru_no_motion_42_evaluation.npz": "ee8fd636a5046e319fb6b2f892c053b0901c6724d652697451f1b51cb727d1c6",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__2396950\\graph_gru_common_42_evaluation.npz": "389e93fe6c31fae46de093bb1715542aa82dbf71e7c65d8c8a204535423dc5c6",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__furia_falcons_existing_local\\mlp_static_0_evaluation.npz": "c2f1f3ccb0892bddcf28294193edd526e343c0275a58c0f97789a1577d68c81c",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__furia_falcons_existing_local\\mlp_gru_0_evaluation.npz": "3d874e1c64eecbfac15e2e364cff1c099f9db7c1311e30758f4c58cc021917cf",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__furia_falcons_existing_local\\graph_static_0_evaluation.npz": "7831445d783e75e5d82489968bd6fd8d7e14f32aa9fe2bec76ff5bf6d8c7d18a",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__furia_falcons_existing_local\\graph_gru_0_evaluation.npz": "428289ddc3463391a1271972eec03778f125ac2ef50a0b4457b5103acaa62981",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__furia_falcons_existing_local\\graph_gru_no_motion_0_evaluation.npz": "2e3ffd24a4551cf495e2a8070e4fdab62a86c434ac7c5e32e91f6be1b756e766",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__furia_falcons_existing_local\\graph_gru_common_0_evaluation.npz": "80fb6974297a008b37402e350915a3192d43ffa7f75a1ca7060323ba2676cd4e",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__furia_falcons_existing_local\\mlp_static_1_evaluation.npz": "c534828de00ea9961ddb9bc217077183b7321ab0c136550d2ba2031cb0e1d67d",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__furia_falcons_existing_local\\mlp_gru_1_evaluation.npz": "2f6fa4c5c2551eb4f8f566d133b89a0709a98b5323ad09f6cd6811220bddaa76",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__furia_falcons_existing_local\\graph_static_1_evaluation.npz": "74cf576c8015c8fd97e33b086ce364c83cd4f408d9e59ae94d00771eab88f74d",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__furia_falcons_existing_local\\graph_gru_1_evaluation.npz": "dfc8110ce2f1bae27ee367164ac702ce2d4d9fc084987a0547c03a757e2edc2a",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__furia_falcons_existing_local\\graph_gru_no_motion_1_evaluation.npz": "d07f5f3ceaf13f7aa7c9848b2c4015464dd056fa38712ceec47d82e96cff8980",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__furia_falcons_existing_local\\graph_gru_common_1_evaluation.npz": "df45beda347761899778b42fa8e20926f4af23e221ef7f7906bdda60017bcfdc",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__furia_falcons_existing_local\\mlp_static_42_evaluation.npz": "d0e03ba6aa37a6ce01557556c7e509fd825660b6faaceb47648e4800881ad04e",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__furia_falcons_existing_local\\mlp_gru_42_evaluation.npz": "659355c4feb92f77eec5690bc30f62da2bdc43d7f704168cf345009219ea74fb",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__furia_falcons_existing_local\\graph_static_42_evaluation.npz": "c72681251a217b3718d7aa052a2520e75d74f89068658ab2d96472526c162b66",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__furia_falcons_existing_local\\graph_gru_42_evaluation.npz": "65b0b711a4e067a4eba039e015e85fe23c7f9a5fb041bc4edbd7f9e92ed4e892",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__furia_falcons_existing_local\\graph_gru_no_motion_42_evaluation.npz": "654a4eb79b84a0892f6759a2981d6f28eefd8465b06fa66d098c92a3391b7363",
+    "output\\tagnet\\ct_reconstruction_matrix\\G3__furia_falcons_existing_local\\graph_gru_common_42_evaluation.npz": "56725677d9e40f04ae635413b9c06fd63c15a530b5f7403c396362a4cf864682",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_ancient\\mlp_static_0_evaluation.npz": "d4a6df80bc6fa12d38d8fd0882be9966a189bde62ec7e633e68b060665336b72",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_ancient\\mlp_gru_0_evaluation.npz": "e60ed20c68f68d4200028ed343c871f4d1faa208ba580d6afb84bce8e0d0d0f2",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_ancient\\graph_static_0_evaluation.npz": "a958edca75cb0ff9db0456aa6be7f0363b69812a38d06125ba4ee627e18ba06f",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_ancient\\graph_gru_0_evaluation.npz": "62d35dc1c443c04b70bec90f35e9b2702b7a02af50162afb8b8fc00ef0c9fb27",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_ancient\\graph_gru_no_motion_0_evaluation.npz": "6cd3947eee93f67c8c093cf885fb8aec607cb5da04d65903c2a4ea3f58146ba6",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_ancient\\graph_gru_common_0_evaluation.npz": "ac3c1ed08b5a9df8b0e61f77e844ee338634a951dfe5764938816b1329a26362",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_ancient\\mlp_static_1_evaluation.npz": "41146bc2412892b29a33bdea3a0814087d8cb21b8e403a1a519b5b534f7f3a49",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_ancient\\mlp_gru_1_evaluation.npz": "b5001ba5a946c03ffa954a9bfbf673a498a7441274fe7ad3d3e8f994aeecebf9",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_ancient\\graph_static_1_evaluation.npz": "42d62ce155b4879fb3bd83979b3fc582003194ad3395e69926b3282815ad3f8a",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_ancient\\graph_gru_1_evaluation.npz": "6dac29e02204e0a2fc90ac3239725a48d7a8b8e66f7baacae7d4ee35ec59bd97",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_ancient\\graph_gru_no_motion_1_evaluation.npz": "cb9305aa4b01c6c14a2b0882353cd57dc6b11da71f44b678033d6c5c7ec47df3",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_ancient\\graph_gru_common_1_evaluation.npz": "d4abc284b4c73d3dab288fa0a4dc347ffec55a30ed6d7ad186a077c5af745ab0",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_ancient\\mlp_static_42_evaluation.npz": "4105e7b04c3ec390a4c11cb4c1b81cdf14cf41e95ac05dc58efe2121dd0fcbb5",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_ancient\\mlp_gru_42_evaluation.npz": "ab245cb837aa9eb0a19d1b97da2e50361382b66b5198e71e46939f26642537a0",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_ancient\\graph_static_42_evaluation.npz": "e9191be301a5306ecec03192aa07d6bdfea67c923757410bed89dc6bf80e031b",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_ancient\\graph_gru_42_evaluation.npz": "b5c6a5e547130353ae3ccff5ee5df5ed4adccac3259b23cfcab311af5b4dacf6",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_ancient\\graph_gru_no_motion_42_evaluation.npz": "14544507051bcc5fc8fa94c0b2ad402f424f6ebe9e32d1921d61a506b3303efc",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_ancient\\graph_gru_common_42_evaluation.npz": "d23951f762daa2ce2dbad025daa617a29f97572dda946c88df5e5f40686b7e3a",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_anubis\\mlp_static_0_evaluation.npz": "79dd8d745aaba81991014987d98fa40fc1ff2d129be3f4760856c75f04b12044",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_anubis\\mlp_gru_0_evaluation.npz": "2f3871b79307bc1530376b94831d4bb3dc98c37d049e7d75e1606f92a445d342",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_anubis\\graph_static_0_evaluation.npz": "b0bd4ac7830a17fcb123b735fdcce88c69b4e08a34683838b7ad00840bacd381",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_anubis\\graph_gru_0_evaluation.npz": "d0407eacd8612307896772330bb33aa15e62a8b2312b08737fd6ee9a4a180d14",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_anubis\\graph_gru_no_motion_0_evaluation.npz": "9999a8acf4dbc48fa190a77b27705fb09fc2c528033c87308c82f96697b5e679",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_anubis\\graph_gru_common_0_evaluation.npz": "d88a994c5238e73fc8cea16de786d87651003a6cf3d6c2bf9e8b2bb21ea33771",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_anubis\\mlp_static_1_evaluation.npz": "997a687221d587a29f9c9a32fd005e2eeb611fe6ced811987c766df8ff062a86",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_anubis\\mlp_gru_1_evaluation.npz": "33348a53065795db6ad05b3792afb338999c53f433eaee9939f7ed46cdf4f9b8",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_anubis\\graph_static_1_evaluation.npz": "64f7e63005f05d5f87663bdc0937917f60f420e19348f737b82eee48e6ade28b",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_anubis\\graph_gru_1_evaluation.npz": "892e48add05602bc492e7a3a3ecaa6323ac53bd0fce8520713c6013c1d28650c",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_anubis\\graph_gru_no_motion_1_evaluation.npz": "9809ea1768ff8d8b2005bd598be25c293f51bbb406c22fc26ee186bebff698e3",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_anubis\\graph_gru_common_1_evaluation.npz": "0c4d94f86fc89996c920cf9c2d4c1351f405657df491da539491c0062476a92c",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_anubis\\mlp_static_42_evaluation.npz": "0f0e5ee87dfa807d8c20902e7248de6bf123428744e7f0e6246d14d7644562b6",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_anubis\\mlp_gru_42_evaluation.npz": "50cf4e4f22e6de187c33ef63caa00d83185d4a4a72fb232600abfc64ae036d32",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_anubis\\graph_static_42_evaluation.npz": "5be5abb3795d252be5f5a6d4f76740e656cab0cacd9f39ffcac3211c426921e4",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_anubis\\graph_gru_42_evaluation.npz": "462d0c2858e6cbfbf9e966fbb269eb9e7479182e7702ecd466d8f88589d3eae5",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_anubis\\graph_gru_no_motion_42_evaluation.npz": "7314bcd2ce0cfca67fcdaf19f3bfa7acb0c0602034cc49e4e1187a938f1fb1ed",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_anubis\\graph_gru_common_42_evaluation.npz": "2daca31c1e5c30a894bf5bf544be3a062534c43721eb4c1547fd08d306cdf632",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_dust2\\mlp_static_0_evaluation.npz": "df37bdd0dd63cdcb87874ed7d53eceaa924cf701663a31fe3876a5591aea0532",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_dust2\\mlp_gru_0_evaluation.npz": "e23475f66aa01f38bfb44da08cfe96ec6709632627e2020bb8aaf988800d8f01",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_dust2\\graph_static_0_evaluation.npz": "1f7fd712b8018c2ab0b2fd4a61e70f03e0ef5b7acc547ec9dafc3c3d19cf87a4",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_dust2\\graph_gru_0_evaluation.npz": "ce8c2a7067bf9df13635de1b4fdda0c9bbb0f67c906b7e3afca4da36985e67f2",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_dust2\\graph_gru_no_motion_0_evaluation.npz": "67c61aa521b031a1e693b03e6fe3a0b4fa7cb404146099a1a0ab89ccaa95d627",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_dust2\\graph_gru_common_0_evaluation.npz": "91c4c82999542095960817ae8de8db298db205be7f1cdb4d8c3616b657e486a8",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_dust2\\mlp_static_1_evaluation.npz": "0b14e493b7dde0fb08695797febf0b9f67d3a7919ff889ebb779c3e2a63c1213",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_dust2\\mlp_gru_1_evaluation.npz": "d12d86d40092b86627a057aef3532574b80fb86009877a3dd555080540bfec6f",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_dust2\\graph_static_1_evaluation.npz": "6749fdaaf970d2acc6498bde40e1d55f94a917c488d4b9adf3e2d73e4f2df7e0",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_dust2\\graph_gru_1_evaluation.npz": "52fe699564b5bae1986335053c57d414a035fe108187c353177f96dc38075776",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_dust2\\graph_gru_no_motion_1_evaluation.npz": "a2e8713a9267f4c2de431a5eb80dbb00319266ee85b5ee2c5b909a43254c930a",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_dust2\\graph_gru_common_1_evaluation.npz": "30e863c1ea9fec79948a4b01f72e0adeae31faeeed4833c7b301f8d248dfd24a",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_dust2\\mlp_static_42_evaluation.npz": "d48db0bda01c36140eb46e2f6d4189a221b39aeb301326cd2f2e84d504fa740f",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_dust2\\mlp_gru_42_evaluation.npz": "c65ff2f2175ce22b244ffabc2214b0ed0c29be2d6288984bbf4a63ab75f01af6",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_dust2\\graph_static_42_evaluation.npz": "390d06bacf184d37cf40e77ad523c67909ae774e79c70c8b70f12472b6ed29c8",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_dust2\\graph_gru_42_evaluation.npz": "765cb406c2b1478f2aeacd6200788f9801e2dc4c34625c0f370a815e3abce65a",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_dust2\\graph_gru_no_motion_42_evaluation.npz": "61941bd619f2811804c27caa6995e9f9eed83df98e71c0a9e7572b1f537ede22",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_dust2\\graph_gru_common_42_evaluation.npz": "ee87a2cf23682be08ef149399f89cb3265f4a5d4bec2919b9305bb5e4af08073",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_inferno\\mlp_static_0_evaluation.npz": "7771ad5e31797111d0b520bc2aed84f5f7a7ff3bc809ae4fce43d2b0efd608f9",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_inferno\\mlp_gru_0_evaluation.npz": "2f67e36faf185346c57322871093a3198503c967e39695a5dcc69bd6fe860898",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_inferno\\graph_static_0_evaluation.npz": "6b524220a477ee4b0ee3f19daa0f3bb8eddd45da238de424bdda23d495cd466f",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_inferno\\graph_gru_0_evaluation.npz": "a94ca2c236e4837f1558eec4bbee62753416ccb10ef0770b61ef2b5d7767ce63",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_inferno\\graph_gru_no_motion_0_evaluation.npz": "ee35870cd78db45177bbcb9e567ded2e56902643675310672d92df9d9a739dc9",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_inferno\\graph_gru_common_0_evaluation.npz": "54915c89a5cb6a57417227fcb9ae424345d4f76dad173b821e8177ca6ad37c4c",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_inferno\\mlp_static_1_evaluation.npz": "64c0a36669d775a4fb0a0a6099a7ad3d713f3f9dfad57ec05c4dfa50c27b9181",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_inferno\\mlp_gru_1_evaluation.npz": "d4c0c3ac485c60c7d7384d0a212c36bf733d9e1d7d47e0d866313b7f5bcaabb4",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_inferno\\graph_static_1_evaluation.npz": "4386d22230d7d0b899f13fb250af21470d9b7755a977bdc665aabc9e610aa255",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_inferno\\graph_gru_1_evaluation.npz": "a970ea4cd79d1f25254c8b57152aa7565622e65db385751ed6861c71ad6b25fd",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_inferno\\graph_gru_no_motion_1_evaluation.npz": "a3a15fb403980d97acde40f7eece6e547c112d4bb00289f97054e9a2169d9ebf",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_inferno\\graph_gru_common_1_evaluation.npz": "c0ab9838c18422fe7716fe07f83bef2c9f96b54e8729aa5148709ebb5dc95011",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_inferno\\mlp_static_42_evaluation.npz": "11abd09e45320a8256a7bad56338c1b7159940d08f18ef7e68285341d4577a93",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_inferno\\mlp_gru_42_evaluation.npz": "00dfc2c0da16438fb780358bbb57ffed2f1d088711c9db1442cfbbc9ae0680d0",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_inferno\\graph_static_42_evaluation.npz": "255083d9ec44eb3cc98d2f9cfad66038d74deb4a982943e4d8deddd969e12999",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_inferno\\graph_gru_42_evaluation.npz": "15b6c5f6f457fa4baa29a5742dd02bdaa8699429280dfec89d4d586458b954f1",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_inferno\\graph_gru_no_motion_42_evaluation.npz": "2dc15b4111968aa8d08df1ebe1570cc937a8c22bd3892fe2683afec58f3da83b",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_inferno\\graph_gru_common_42_evaluation.npz": "b4a46c80a26e6d213758f5c47236e816ac909188a68e3bacceb489782f7a7e20",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_mirage\\mlp_static_0_evaluation.npz": "3bea7df79cab337037a1a07ba6aa64b282fa27c82dcbdd5b1f77fec6505d3122",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_mirage\\mlp_gru_0_evaluation.npz": "c07aab35eb43837662de3264b7a2e68abb5f8f657bce712c9c0d2e412b23be7d",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_mirage\\graph_static_0_evaluation.npz": "d153515db67814c6895239ea8944401ffc73d7fdf33b9554085074d4cf2ef7bd",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_mirage\\graph_gru_0_evaluation.npz": "e2345041251c836b9526aefd20fa7571cdd98781bf0ee94405d4d6bfc8910964",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_mirage\\graph_gru_no_motion_0_evaluation.npz": "52311ab3f240946b8a61734f2749a749dc37aa5945d461d0374ac7c9f745de4d",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_mirage\\graph_gru_common_0_evaluation.npz": "6d336b34c56cb8a964d56a7d66222b596eda2ce531db28103764cd55c3e50818",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_mirage\\mlp_static_1_evaluation.npz": "8e3f1f1bfb692ba45a37918aba1cd8c7dbc92a41b1dec9093e221c7190d8d887",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_mirage\\mlp_gru_1_evaluation.npz": "cfa0c1c54572951e472ae7a99c0e80f113ceb07bb6f488464b6ae554942209e5",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_mirage\\graph_static_1_evaluation.npz": "a0889106f0cfc49d59543f2c424071004599ead228daf419eaecfc2429fef6f3",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_mirage\\graph_gru_1_evaluation.npz": "dca7ed7069e983228f9af848c9819017c8e82f238499c1be1f0d0648f5381766",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_mirage\\graph_gru_no_motion_1_evaluation.npz": "298f2892e2d3b4348546d0423dd9e819cb01fadf8ef184c4d7193265d3723a74",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_mirage\\graph_gru_common_1_evaluation.npz": "94309be55af7a35f5117d241d2a7e380629d2a317fa2f026a7c8097d3edeb439",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_mirage\\mlp_static_42_evaluation.npz": "2af013954b8e6f4ec286c23c1a054e55152553bf3010c90baf45b0ec65430a27",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_mirage\\mlp_gru_42_evaluation.npz": "57ea058f088ebf626f8808e3420948bd4b009931ddbe8ccecc333c4c8ba5ac35",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_mirage\\graph_static_42_evaluation.npz": "9fd1143bc1156fe48a1b7e626ab68c013982aec154721dd8b1dad7a81e7d15bd",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_mirage\\graph_gru_42_evaluation.npz": "8dca18c6202bcbe271e6837a0619d67858e72a937ed2b09fd52547625e1667af",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_mirage\\graph_gru_no_motion_42_evaluation.npz": "ee4a1cf29819feb251b1b92ce66031f530fe1558c48072c47c9fcdb925e92e76",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_mirage\\graph_gru_common_42_evaluation.npz": "27ccd8c853e9710d0f522a523b6d48595471ce0652b108861e5bdd1bbc635f47",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_nuke\\mlp_static_0_evaluation.npz": "5e49bae2b45f7aad24332553728f15ff29112b65faa3fb26bbe534de5f0506f1",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_nuke\\mlp_gru_0_evaluation.npz": "a9d7c4d998b905b45d6b3c163749da141e0afaedefb330da9cb6d9a005c9653c",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_nuke\\graph_static_0_evaluation.npz": "8430446ef1f510e4b1c349cf1d9931d3327a3c44aa80ee34c7fddef49e0df85d",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_nuke\\graph_gru_0_evaluation.npz": "30f6928fb408a9cd617f1edecec4bf9744f02a3c96a243272c6a5c591b558d11",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_nuke\\graph_gru_no_motion_0_evaluation.npz": "5f1407e02955925b49435603f0b36dccb8e71ae21785a8eab16eba7fdb220379",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_nuke\\graph_gru_common_0_evaluation.npz": "cb1266c431dcccdbeeec26a869861304a31ba48873262e7c52e53ab4663fe677",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_nuke\\mlp_static_1_evaluation.npz": "573d337d23dde77b2235e19ac0593c5ff711cafde1a15c2874ae3f6c25b598ab",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_nuke\\mlp_gru_1_evaluation.npz": "9b67e2280c4f47902110f7bdd2176b291b1fc0218ddc258bfcad57c32a296629",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_nuke\\graph_static_1_evaluation.npz": "642c4f5c8a30165a4a4f404a9044c31b78e9220c323d300098aec72c2af5d7ab",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_nuke\\graph_gru_1_evaluation.npz": "8413716f8fbc68dd1371c3f61ed97ee72b752b31b058725bcad92865e1a4cccf",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_nuke\\graph_gru_no_motion_1_evaluation.npz": "249b05af54c2d3b320f3653f04f9e2a394cbe5dd432d00b54a836ebe973022f9",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_nuke\\graph_gru_common_1_evaluation.npz": "c1311c45f3f38faf1f28af62740ce188db8d9fb80eea78428c7b773cc8c53091",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_nuke\\mlp_static_42_evaluation.npz": "01e88299b3367f2d3fd42e560d3c65135b4a14b5f66e1535d0b7a297709d7313",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_nuke\\mlp_gru_42_evaluation.npz": "54b2f61bebf32e58e3da708eded8a82961883deed05ae630141f1ba0c93bb73f",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_nuke\\graph_static_42_evaluation.npz": "e4cb1d5709bcc61614354d2cb99caae19bcc6bf36f938796be67483eb0913489",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_nuke\\graph_gru_42_evaluation.npz": "7b2fc0d7b2ff0e5cea470d22b34663d9160615f6aab867e7090406c2a6ebe5e5",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_nuke\\graph_gru_no_motion_42_evaluation.npz": "e60e806d47256cf3a589961e1abf6a8ec0c2b50abcbaa7cf19843a3d321947c2",
+    "output\\tagnet\\ct_reconstruction_matrix\\G4__de_nuke\\graph_gru_common_42_evaluation.npz": "47db7132e5401cc96599ba0e93b65cfc12c87b7ca059872012b180bd8fe75675"
+  },
+  "loss_groups": [
+    "survival",
+    "region",
+    "resources",
+    "height",
+    "ground",
+    "motion",
+    "pairs"
+  ],
+  "tasks": {
+    "G3": {
+      "all": {
+        "windows": 465,
+        "series": 9,
+        "methods": {
+          "mlp_static": {
+            "survival": 0.03106431810328064,
+            "region": 0.36467311599821906,
+            "resources": 0.009657829564586762,
+            "height": 0.015473096647866565,
+            "ground": 0.25200843249454824,
+            "motion": 0.03641170504114596,
+            "pairs": 0.019767397176609754
+          },
+          "mlp_gru": {
+            "survival": 0.032640910042276886,
+            "region": 0.27964566707557686,
+            "resources": 0.01107861195811715,
+            "height": 0.01719152062501012,
+            "ground": 0.24098817804662773,
+            "motion": 0.037934645434318286,
+            "pairs": 0.022009105680849413
+          },
+          "graph_static": {
+            "survival": 0.06399002615100338,
+            "region": 0.32963147581644164,
+            "resources": 0.008234876323190542,
+            "height": 0.015435736838974753,
+            "ground": 0.23300597643527374,
+            "motion": 0.03538326889942561,
+            "pairs": 0.02144002912147373
+          },
+          "graph_gru": {
+            "survival": 0.05348091912023941,
+            "region": 0.27493928994605654,
+            "resources": 0.010801119872476232,
+            "height": 0.01730886304396069,
+            "ground": 0.23116403514641407,
+            "motion": 0.036780523136929116,
+            "pairs": 0.022112173006369244
+          },
+          "graph_gru_no_motion": {
+            "survival": 0.05293769453332719,
+            "region": 0.29272979441786406,
+            "resources": 0.01132636234659063,
+            "height": 0.017150632386842363,
+            "ground": 0.23762922746602863,
+            "motion": 0.03875579564521889,
+            "pairs": 0.02206270739255088
+          },
+          "graph_gru_common": {
+            "survival": 0.04673995768426385,
+            "region": 0.26588666650688325,
+            "resources": 0.009965412114281941,
+            "height": 0.0173498384963699,
+            "ground": 0.2774871084516255,
+            "motion": 0.03822882536250038,
+            "pairs": 0.021702691276921475
+          }
+        },
+        "contrasts": {
+          "mlp_gru": {
+            "loss_reduction": -0.0007283263442384169,
+            "relative_reduction_percent": -0.7947583325414925,
+            "component_contributions": {
+              "survival": -0.0029771441539946466,
+              "region": 0.0006723395899314746,
+              "resources": 3.964172652013124e-05,
+              "height": -1.6763202707224512e-05,
+              "ground": 0.0014034489857448088,
+              "motion": 0.00016487461391273848,
+              "pairs": -1.4723903645690237e-05
+            }
+          },
+          "graph_static": {
+            "loss_reduction": 0.008647780901905447,
+            "relative_reduction_percent": 8.560689466457509,
+            "component_contributions": {
+              "survival": 0.001501301004394853,
+              "region": 0.007813169410055014,
+              "resources": -0.00036660622132652704,
+              "height": -0.0002675894578551339,
+              "ground": 0.000263134469837096,
+              "motion": -0.00019960774821478622,
+              "pairs": -9.60205549850735e-05
+            }
+          },
+          "graph_gru_no_motion": {
+            "loss_reduction": 0.0037150415594253416,
+            "relative_reduction_percent": 3.866427586789187,
+            "component_contributions": {
+              "survival": -7.760351241603172e-05,
+              "region": 0.0025415006388296462,
+              "resources": 7.503463915919989e-05,
+              "height": -2.260437958833247e-05,
+              "ground": 0.0009235989028020808,
+              "motion": 0.0002821817868985388,
+              "pairs": -7.066516259766105e-06
+            }
+          },
+          "graph_gru_common": {
+            "loss_reduction": 0.004396225231485862,
+            "relative_reduction_percent": 4.543160787390052,
+            "component_contributions": {
+              "survival": -0.0009629944908536511,
+              "region": -0.0012932319198818987,
+              "resources": -0.0001193868225991843,
+              "height": 5.853636058458492e-06,
+              "ground": 0.00661758190074449,
+              "motion": 0.00020690031793875165,
+              "pairs": -5.84973899211099e-05
+            }
+          }
+        }
+      },
+      "de_ancient": {
+        "windows": 84,
+        "series": 4,
+        "methods": {
+          "mlp_static": {
+            "survival": 0.02643890357707552,
+            "region": 0.3795309213319299,
+            "resources": 0.009682220497859079,
+            "height": 0.008685946667696773,
+            "ground": 0.1903812125085874,
+            "motion": 0.03819505399870558,
+            "pairs": 0.01538919284149893
+          },
+          "mlp_gru": {
+            "survival": 0.029946786902933037,
+            "region": 0.25812456026056396,
+            "resources": 0.012574152093995443,
+            "height": 0.010830787250756087,
+            "ground": 0.1807125730114386,
+            "motion": 0.04140917955744447,
+            "pairs": 0.019144325883809224
+          },
+          "graph_static": {
+            "survival": 0.06843332794619807,
+            "region": 0.3305365060248022,
+            "resources": 0.008054840270053047,
+            "height": 0.008773741545546327,
+            "ground": 0.17099208675047897,
+            "motion": 0.03761444615457253,
+            "pairs": 0.017759414116198365
+          },
+          "graph_gru": {
+            "survival": 0.0560719119050584,
+            "region": 0.26835893481889034,
+            "resources": 0.011017354707804341,
+            "height": 0.009759861997248768,
+            "ground": 0.1654830113655853,
+            "motion": 0.03940377644665989,
+            "pairs": 0.018582606508969916
+          },
+          "graph_gru_no_motion": {
+            "survival": 0.055347231598820226,
+            "region": 0.28835053019118717,
+            "resources": 0.010702797068636014,
+            "height": 0.009527977046344394,
+            "ground": 0.17243117768342095,
+            "motion": 0.04126003275032253,
+            "pairs": 0.01797571729479269
+          },
+          "graph_gru_common": {
+            "survival": 0.04562163528044909,
+            "region": 0.2498944182558394,
+            "resources": 0.010449436445220221,
+            "height": 0.009613100444249678,
+            "ground": 0.21525124434396828,
+            "motion": 0.04054841829486987,
+            "pairs": 0.017657138983589886
+          }
+        },
+        "contrasts": {
+          "mlp_gru": {
+            "loss_reduction": -0.002276441827039455,
+            "relative_reduction_percent": -2.882915043141704,
+            "component_contributions": {
+              "survival": -0.0037321607145893373,
+              "region": -0.0014620535083323394,
+              "resources": 0.00022239962659872887,
+              "height": 0.0001529893219296171,
+              "ground": 0.002175651663693327,
+              "motion": 0.00028648615868351123,
+              "pairs": 8.024562497704394e-05
+            }
+          },
+          "graph_static": {
+            "loss_reduction": 0.0104981292939475,
+            "relative_reduction_percent": 11.443628658605816,
+            "component_contributions": {
+              "survival": 0.0017659165773056668,
+              "region": 0.008882510172273126,
+              "resources": -0.00042321634825018495,
+              "height": -0.00014087435024320586,
+              "ground": 0.000787010769270525,
+              "motion": -0.00025561861315533715,
+              "pairs": -0.00011759891325307883
+            }
+          },
+          "graph_gru_no_motion": {
+            "loss_reduction": 0.003845429411900969,
+            "relative_reduction_percent": 4.519511568991686,
+            "component_contributions": {
+              "survival": -0.00010352575803402458,
+              "region": 0.0028559421960424047,
+              "resources": -4.4936805595475384e-05,
+              "height": -3.312642155776775e-05,
+              "ground": 0.000992595188262236,
+              "motion": 0.0002651794719518053,
+              "pairs": -8.669845916817534e-05
+            }
+          },
+          "graph_gru_common": {
+            "loss_reduction": 0.002908276328281334,
+            "relative_reduction_percent": 3.4561478941326405,
+            "component_contributions": {
+              "survival": -0.0014928966606584729,
+              "region": -0.0026377880804358466,
+              "resources": -8.113118036915999e-05,
+              "height": -2.09659361427271e-05,
+              "ground": 0.0071097475683404255,
+              "motion": 0.0001635202640299966,
+              "pairs": -0.0001322096464828615
+            }
+          }
+        }
+      },
+      "de_anubis": {
+        "windows": 41,
+        "series": 2,
+        "methods": {
+          "mlp_static": {
+            "survival": 0.023614243181945646,
+            "region": 0.2957562576388083,
+            "resources": 0.007821144245653637,
+            "height": 0.014087295770970367,
+            "ground": 0.18480382445120502,
+            "motion": 0.029660059064109293,
+            "pairs": 0.015855229877874195
+          },
+          "mlp_gru": {
+            "survival": 0.021154949433838784,
+            "region": 0.22373290307568533,
+            "resources": 0.008928986814978074,
+            "height": 0.01854410351268829,
+            "ground": 0.1798705132035095,
+            "motion": 0.029481211533799526,
+            "pairs": 0.018118604846365217
+          },
+          "graph_static": {
+            "survival": 0.03355076272208472,
+            "region": 0.26250736941361713,
+            "resources": 0.006220739075659019,
+            "height": 0.014676347470635343,
+            "ground": 0.1766255164703739,
+            "motion": 0.02822651284902046,
+            "pairs": 0.019992859909192674
+          },
+          "graph_gru": {
+            "survival": 0.03101427595926135,
+            "region": 0.21204603798317884,
+            "resources": 0.007621817952964367,
+            "height": 0.018881248039126927,
+            "ground": 0.17133976805323203,
+            "motion": 0.028576160223770238,
+            "pairs": 0.01869154338639909
+          },
+          "graph_gru_no_motion": {
+            "survival": 0.028739202338202006,
+            "region": 0.21684463879921367,
+            "resources": 0.0070071221970480005,
+            "height": 0.01783640921847629,
+            "ground": 0.17680633206933088,
+            "motion": 0.030881283966647015,
+            "pairs": 0.01823365427387346
+          },
+          "graph_gru_common": {
+            "survival": 0.027018883287711924,
+            "region": 0.22731777762195893,
+            "resources": 0.006816672081347659,
+            "height": 0.020634731081765265,
+            "ground": 0.2169286448242409,
+            "motion": 0.03078054611881574,
+            "pairs": 0.019727341387243497
+          }
+        },
+        "contrasts": {
+          "mlp_gru": {
+            "loss_reduction": 0.001665774403275977,
+            "relative_reduction_percent": 2.332871404075255,
+            "component_contributions": {
+              "survival": -0.0014084752179175093,
+              "region": 0.0016695521560723561,
+              "resources": 0.00018673840885910113,
+              "height": -4.816350377694811e-05,
+              "ground": 0.001218677878611066,
+              "motion": 0.00012929304428989822,
+              "pairs": -8.184836286198196e-05
+            }
+          },
+          "graph_static": {
+            "loss_reduction": 0.0076613223303786115,
+            "relative_reduction_percent": 9.89834729259616,
+            "component_contributions": {
+              "survival": 0.0003623552518319107,
+              "region": 0.007208761632919757,
+              "resources": -0.00020015412532933534,
+              "height": -0.0006007000812130835,
+              "ground": 0.0007551069167345508,
+              "motion": -4.9949624964253985e-05,
+              "pairs": 0.0001859023603990833
+            }
+          },
+          "graph_gru_no_motion": {
+            "loss_reduction": 0.0011682558949797778,
+            "relative_reduction_percent": 1.6475901329540013,
+            "component_contributions": {
+              "survival": -0.0003250105172941917,
+              "region": 0.000685514402290691,
+              "resources": -8.781367941662373e-05,
+              "height": -0.0001492626886643767,
+              "ground": 0.0007809377165855502,
+              "motion": 0.0003293033918395395,
+              "pairs": -6.541273036080439e-05
+            }
+          },
+          "graph_gru_common": {
+            "loss_reduction": 0.008721963543593017,
+            "relative_reduction_percent": 11.116352982913911,
+            "component_contributions": {
+              "survival": -0.0005707703816499177,
+              "region": 0.0021816770912542987,
+              "resources": -0.00011502083880238682,
+              "height": 0.0002504975775197625,
+              "ground": 0.006512696681572695,
+              "motion": 0.0003149122707207861,
+              "pairs": 0.0001479711429777722
+            }
+          }
+        }
+      },
+      "de_dust2": {
+        "windows": 85,
+        "series": 4,
+        "methods": {
+          "mlp_static": {
+            "survival": 0.030446954585026567,
+            "region": 0.22157026186766887,
+            "resources": 0.010031396275424188,
+            "height": 0.01523033555095677,
+            "ground": 0.22665007226899014,
+            "motion": 0.03773004850429152,
+            "pairs": 0.025446528634348056
+          },
+          "mlp_gru": {
+            "survival": 0.037677410943437635,
+            "region": 0.1418687558408682,
+            "resources": 0.01094789029986792,
+            "height": 0.016580319424896912,
+            "ground": 0.21176325050555805,
+            "motion": 0.03794295345643999,
+            "pairs": 0.02639758871931012
+          },
+          "graph_static": {
+            "survival": 0.07283690102941223,
+            "region": 0.1705539988747295,
+            "resources": 0.007894249446117616,
+            "height": 0.01529818077393977,
+            "ground": 0.2080632169652882,
+            "motion": 0.03624339569086911,
+            "pairs": 0.025405971264733488
+          },
+          "graph_gru": {
+            "survival": 0.06326690857389139,
+            "region": 0.12502342469199068,
+            "resources": 0.009828776333499597,
+            "height": 0.015956541424429902,
+            "ground": 0.20069444788646076,
+            "motion": 0.0376959929476066,
+            "pairs": 0.02679294226069668
+          },
+          "graph_gru_no_motion": {
+            "survival": 0.06343460751962833,
+            "region": 0.1397842623035027,
+            "resources": 0.00996495300412262,
+            "height": 0.016004487215499984,
+            "ground": 0.2058111116010233,
+            "motion": 0.038276757339609196,
+            "pairs": 0.026316012184038607
+          },
+          "graph_gru_common": {
+            "survival": 0.05653006374858322,
+            "region": 0.1274727534655114,
+            "resources": 0.008674860602059064,
+            "height": 0.015670308181235944,
+            "ground": 0.25819949950296167,
+            "motion": 0.03807564409515596,
+            "pairs": 0.026771527939882224
+          }
+        },
+        "contrasts": {
+          "mlp_gru": {
+            "loss_reduction": 0.0005598764388290156,
+            "relative_reduction_percent": 0.8111159240431073,
+            "component_contributions": {
+              "survival": -0.0036556425186362504,
+              "region": 0.0024064758784110734,
+              "resources": 0.00015987342376690337,
+              "height": 8.911114292385861e-05,
+              "ground": 0.0015812575170138985,
+              "motion": 3.528007269048422e-05,
+              "pairs": -5.6479077340936883e-05
+            }
+          },
+          "graph_static": {
+            "loss_reduction": 0.00814812570378777,
+            "relative_reduction_percent": 10.635337401007853,
+            "component_contributions": {
+              "survival": 0.0013671417793601204,
+              "region": 0.006504367740391259,
+              "resources": -0.00027636098391171156,
+              "height": -9.405152149859035e-05,
+              "ground": 0.0010526812969753488,
+              "motion": -0.00020751389381964174,
+              "pairs": -0.0001981387137090274
+            }
+          },
+          "graph_gru_no_motion": {
+            "loss_reduction": 0.0029047367212641506,
+            "relative_reduction_percent": 4.06995093364759,
+            "component_contributions": {
+              "survival": 2.395699224813443e-05,
+              "region": 0.002108691087358858,
+              "resources": 1.94538100890032e-05,
+              "height": 6.8493987242973704e-06,
+              "ground": 0.0007309519592232203,
+              "motion": 8.296634171465636e-05,
+              "pairs": -6.813286809401038e-05
+            }
+          },
+          "graph_gru_common": {
+            "loss_reduction": 0.007447946202401981,
+            "relative_reduction_percent": 9.811092881253094,
+            "component_contributions": {
+              "survival": -0.0009624064036154525,
+              "region": 0.00034990411050296003,
+              "resources": -0.00016484510449150475,
+              "height": -4.0890463313422624e-05,
+              "ground": 0.008215007373785844,
+              "motion": 5.423587822133662e-05,
+              "pairs": -3.0591886877793872e-06
+            }
+          }
+        }
+      },
+      "de_inferno": {
+        "windows": 118,
+        "series": 5,
+        "methods": {
+          "mlp_static": {
+            "survival": 0.028178351459500255,
+            "region": 0.4685687838004499,
+            "resources": 0.010781313595222414,
+            "height": 0.010061952864587002,
+            "ground": 0.32629171154592923,
+            "motion": 0.03720573756282376,
+            "pairs": 0.01751191931965345
+          },
+          "mlp_gru": {
+            "survival": 0.02769644411237493,
+            "region": 0.3780161809427644,
+            "resources": 0.0119568430304054,
+            "height": 0.011378103485061793,
+            "ground": 0.3217623029153259,
+            "motion": 0.03948379221964908,
+            "pairs": 0.01951491274892785
+          },
+          "graph_static": {
+            "survival": 0.06141838203694115,
+            "region": 0.43713045894221664,
+            "resources": 0.01020130027322531,
+            "height": 0.0098566439581796,
+            "ground": 0.3081702801717633,
+            "motion": 0.03656689212903357,
+            "pairs": 0.019766237654496983
+          },
+          "graph_gru": {
+            "survival": 0.049844671338241026,
+            "region": 0.3748947514885821,
+            "resources": 0.011312095467709813,
+            "height": 0.01196711802571367,
+            "ground": 0.3125386038403527,
+            "motion": 0.038096822727792315,
+            "pairs": 0.019087181574035293
+          },
+          "graph_gru_no_motion": {
+            "survival": 0.0469783667671852,
+            "region": 0.40610304699527466,
+            "resources": 0.010630042619225797,
+            "height": 0.011382628713711632,
+            "ground": 0.31896992969837007,
+            "motion": 0.039559618034625,
+            "pairs": 0.019549846695939316
+          },
+          "graph_gru_common": {
+            "survival": 0.04312821887944342,
+            "region": 0.36733022590684583,
+            "resources": 0.010370089233169375,
+            "height": 0.010937613679553728,
+            "ground": 0.35589764188754,
+            "motion": 0.03989775958811971,
+            "pairs": 0.018592965500033993
+          }
+        },
+        "contrasts": {
+          "mlp_gru": {
+            "loss_reduction": -0.001133237858273961,
+            "relative_reduction_percent": -0.9795728532860453,
+            "component_contributions": {
+              "survival": -0.003164032460838014,
+              "region": 0.000445918493454616,
+              "resources": 9.21067946707982e-05,
+              "height": -8.414493437883946e-05,
+              "ground": 0.0013176712964247464,
+              "motion": 0.00019813849883668078,
+              "pairs": 6.110445355607942e-05
+            }
+          },
+          "graph_static": {
+            "loss_reduction": 0.009338421529061378,
+            "relative_reduction_percent": 7.402128416279095,
+            "component_contributions": {
+              "survival": 0.0016533872426714466,
+              "region": 0.008890815350519221,
+              "resources": -0.00015868502778350037,
+              "height": -0.00030149629536200997,
+              "ground": -0.0006240462383699162,
+              "motion": -0.00021856151410839183,
+              "pairs": 9.700801149452718e-05
+            }
+          },
+          "graph_gru_no_motion": {
+            "loss_reduction": 0.005061747865986399,
+            "relative_reduction_percent": 4.1529930210277115,
+            "component_contributions": {
+              "survival": -0.00040947208157940396,
+              "region": 0.00445832792952751,
+              "resources": -9.743612121200234e-05,
+              "height": -8.349847314314823e-05,
+              "ground": 0.0009187608368596238,
+              "motion": 0.0002089707581189553,
+              "pairs": 6.609501741486038e-05
+            }
+          },
+          "graph_gru_common": {
+            "loss_reduction": 0.0040590386017541474,
+            "relative_reduction_percent": 3.357929281178884,
+            "component_contributions": {
+              "survival": -0.0009594932083996584,
+              "region": -0.0010806465116766084,
+              "resources": -0.00013457231922006256,
+              "height": -0.00014707204945142022,
+              "ground": 0.006194148292455325,
+              "motion": 0.0002572766943324851,
+              "pairs": -7.060229628590004e-05
+            }
+          }
+        }
+      },
+      "de_mirage": {
+        "windows": 75,
+        "series": 4,
+        "methods": {
+          "mlp_static": {
+            "survival": 0.03924507375969759,
+            "region": 0.5373178988429053,
+            "resources": 0.01059216288535575,
+            "height": 0.012625333757208113,
+            "ground": 0.2645992663245471,
+            "motion": 0.0350411422782585,
+            "pairs": 0.019725850541588097
+          },
+          "mlp_gru": {
+            "survival": 0.044372548389647486,
+            "region": 0.46542750170143954,
+            "resources": 0.01194505195938594,
+            "height": 0.013718324343836498,
+            "ground": 0.26018729641745314,
+            "motion": 0.035376066556533,
+            "pairs": 0.02157237609730117
+          },
+          "graph_static": {
+            "survival": 0.06668542008117526,
+            "region": 0.5235318047748435,
+            "resources": 0.009402951347389416,
+            "height": 0.012261113442853834,
+            "ground": 0.24868891869767729,
+            "motion": 0.033224548903360435,
+            "pairs": 0.020669224326931208
+          },
+          "graph_gru": {
+            "survival": 0.06154263915689351,
+            "region": 0.4662027633741557,
+            "resources": 0.018240331827837505,
+            "height": 0.0139048316906805,
+            "ground": 0.25764636946324676,
+            "motion": 0.03488014130760723,
+            "pairs": 0.021635779954626094
+          },
+          "graph_gru_no_motion": {
+            "survival": 0.05802535832245696,
+            "region": 0.48038093531282533,
+            "resources": 0.028401160888403415,
+            "height": 0.014346252334034365,
+            "ground": 0.2701003584497061,
+            "motion": 0.040622489730687064,
+            "pairs": 0.022293770681726673
+          },
+          "graph_gru_common": {
+            "survival": 0.05214876261034222,
+            "region": 0.4491295076463194,
+            "resources": 0.018964778597809425,
+            "height": 0.014420593651205613,
+            "ground": 0.2990269022358079,
+            "motion": 0.03738067543987806,
+            "pairs": 0.021735352730666777
+          }
+        },
+        "contrasts": {
+          "mlp_gru": {
+            "loss_reduction": -0.0030648130442072208,
+            "relative_reduction_percent": -2.5162693301177326,
+            "component_contributions": {
+              "survival": -0.0024528701096065745,
+              "region": -0.00011075166753088395,
+              "resources": -0.0008993256954930807,
+              "height": -2.6643906692000304e-05,
+              "ground": 0.0003629895648866256,
+              "motion": 7.084646413225287e-05,
+              "pairs": -9.057693903560418e-06
+            }
+          },
+          "graph_static": {
+            "loss_reduction": 0.005773017828454838,
+            "relative_reduction_percent": 4.419105138467777,
+            "component_contributions": {
+              "survival": 0.0007346829891831068,
+              "region": 0.008189863057241112,
+              "resources": -0.0012624829257782985,
+              "height": -0.0002348168925466666,
+              "ground": -0.0012796358236527821,
+              "motion": -0.00023651320060668474,
+              "pairs": -0.0001380793753849838
+            }
+          },
+          "graph_gru_no_motion": {
+            "loss_reduction": 0.005731066992113218,
+            "relative_reduction_percent": 4.388402009571145,
+            "component_contributions": {
+              "survival": -0.0005024686906337922,
+              "region": 0.0020254531340956577,
+              "resources": 0.0014515470086522728,
+              "height": 6.306009190769495e-05,
+              "ground": 0.0017791412837799042,
+              "motion": 0.0008203354890114052,
+              "pairs": 9.399867530008262e-05
+            }
+          },
+          "graph_gru_common": {
+            "loss_reduction": 0.0026791023052831903,
+            "relative_reduction_percent": 2.1005351781645296,
+            "component_contributions": {
+              "survival": -0.0013419823637930409,
+              "region": -0.002439036532548043,
+              "resources": 0.00010349239571027424,
+              "height": 7.368028007501608e-05,
+              "ground": 0.0059115046817944505,
+              "motion": 0.00035721916175297596,
+              "pairs": 1.4224682291526039e-05
+            }
+          }
+        }
+      },
+      "de_nuke": {
+        "windows": 62,
+        "series": 3,
+        "methods": {
+          "mlp_static": {
+            "survival": 0.04271326184158692,
+            "region": 0.16835120873906653,
+            "resources": 0.010522703387962165,
+            "height": 0.04149910557182668,
+            "ground": 0.24852996314668427,
+            "motion": 0.036175814481145,
+            "pairs": 0.025447995713762588
+          },
+          "mlp_gru": {
+            "survival": 0.03885526367676576,
+            "region": 0.11057633274425312,
+            "resources": 0.011924381194074756,
+            "height": 0.04305299302238272,
+            "ground": 0.21337825395618146,
+            "motion": 0.037240732886263644,
+            "pairs": 0.02775727192481565
+          },
+          "graph_static": {
+            "survival": 0.0669675253076338,
+            "region": 0.13818603212579267,
+            "resources": 0.008758532068476736,
+            "height": 0.04107157650469765,
+            "ground": 0.21624412498544876,
+            "motion": 0.03572232585080117,
+            "pairs": 0.026554125844736282
+          },
+          "graph_gru": {
+            "survival": 0.05526329707422567,
+            "region": 0.10263653548493741,
+            "resources": 0.01190103065114082,
+            "height": 0.04567098338811206,
+            "ground": 0.2014884919392782,
+            "motion": 0.03570058480390725,
+            "pairs": 0.029448169089339973
+          },
+          "graph_gru_no_motion": {
+            "survival": 0.05456341678307411,
+            "region": 0.11210316121578688,
+            "resources": 0.010806781557227313,
+            "height": 0.04584389075259911,
+            "ground": 0.20982755229118807,
+            "motion": 0.0386045785445017,
+            "pairs": 0.03001250999178687
+          },
+          "graph_gru_common": {
+            "survival": 0.04715925242437594,
+            "region": 0.08418189198681143,
+            "resources": 0.009736530462576623,
+            "height": 0.04719168080777523,
+            "ground": 0.24962466084031346,
+            "motion": 0.037232794106931894,
+            "pairs": 0.028980949549213566
+          }
+        },
+        "contrasts": {
+          "mlp_gru": {
+            "loss_reduction": 9.659099625652923e-05,
+            "relative_reduction_percent": 0.14004922533138922,
+            "component_contributions": {
+              "survival": -0.002344004771065701,
+              "region": 0.0011342567513308152,
+              "resources": 3.3357918477051093e-06,
+              "height": -0.0003739986236756205,
+              "ground": 0.0016985374309861792,
+              "motion": 0.0002200211546223425,
+              "pairs": -0.0002415567377891888
+            }
+          },
+          "graph_static": {
+            "loss_reduction": 0.007342164322377942,
+            "relative_reduction_percent": 9.63350356835717,
+            "component_contributions": {
+              "survival": 0.001672032604772589,
+              "region": 0.00507849952012218,
+              "resources": -0.00044892836895201203,
+              "height": -0.0006570581262020588,
+              "ground": 0.0021079475780243656,
+              "motion": 3.105863841989282e-06,
+              "pairs": -0.00041343474922909864
+            }
+          },
+          "graph_gru_no_motion": {
+            "loss_reduction": 0.0028075426721746732,
+            "relative_reduction_percent": 3.916757938854606,
+            "component_contributions": {
+              "survival": -9.998289873593731e-05,
+              "region": 0.0013523751044070673,
+              "resources": -0.00015632129913050106,
+              "height": 2.4701052069578795e-05,
+              "ground": 0.0011912943359871245,
+              "motion": 0.0004148562486563506,
+              "pairs": 8.06201289209855e-05
+            }
+          },
+          "graph_gru_common": {
+            "loss_reduction": 0.003142666821008111,
+            "relative_reduction_percent": 4.363881988106898,
+            "component_contributions": {
+              "survival": -0.0011577206642642468,
+              "region": -0.0026363776425894253,
+              "resources": -0.00030921431265202817,
+              "height": 0.00021724248852330954,
+              "ground": 0.00687659555729075,
+              "motion": 0.00021888704328923525,
+              "pairs": -6.674564858948668e-05
+            }
+          }
+        }
+      }
+    },
+    "G4": {
+      "all": {
+        "windows": 465,
+        "series": 9,
+        "methods": {
+          "mlp_static": {
+            "survival": 0.04063731509368158,
+            "region": 0.5008675112038361,
+            "resources": 0.01160121009043261,
+            "height": 0.018959636985298442,
+            "ground": 0.27285426832858545,
+            "motion": 0.04236769869165457,
+            "pairs": 0.02611787774568812
+          },
+          "mlp_gru": {
+            "survival": 0.0378622358817951,
+            "region": 0.4451645687137421,
+            "resources": 0.013056443659967297,
+            "height": 0.02076032688293157,
+            "ground": 0.27666845260092693,
+            "motion": 0.04261204905393998,
+            "pairs": 0.0293068041132966
+          },
+          "graph_static": {
+            "survival": 0.06671178239291065,
+            "region": 0.4786190205751486,
+            "resources": 0.010390242951352784,
+            "height": 0.018806143410819046,
+            "ground": 0.272116952022335,
+            "motion": 0.04030192777426571,
+            "pairs": 0.02982747626077907
+          },
+          "graph_gru": {
+            "survival": 0.05916630547578953,
+            "region": 0.4292625885972987,
+            "resources": 0.011713662415940558,
+            "height": 0.021141657581946072,
+            "ground": 0.2846421870086826,
+            "motion": 0.04176482878925315,
+            "pairs": 0.03004387662066644
+          },
+          "graph_gru_no_motion": {
+            "survival": 0.055766210281478795,
+            "region": 0.4375428411055139,
+            "resources": 0.011404135652609644,
+            "height": 0.020441617583459425,
+            "ground": 0.28448834164637943,
+            "motion": 0.04316754818128142,
+            "pairs": 0.029266374146429925
+          },
+          "graph_gru_common": {
+            "survival": 0.05787426529392234,
+            "region": 0.41740978170187637,
+            "resources": 0.011720384267485139,
+            "height": 0.02084049586543189,
+            "ground": 0.30141968180372725,
+            "motion": 0.04299546980363278,
+            "pairs": 0.02919944275783188
+          }
+        },
+        "contrasts": {
+          "mlp_gru": {
+            "loss_reduction": -0.0017577465118539387,
+            "relative_reduction_percent": -1.421745613016262,
+            "component_contributions": {
+              "survival": -0.003043438513427775,
+              "region": 0.0022717114452061988,
+              "resources": 0.0001918258920038199,
+              "height": -5.447581414492882e-05,
+              "ground": -0.0011391049153936675,
+              "motion": 0.00012103146638383197,
+              "pairs": -0.00010529607248140556
+            }
+          },
+          "graph_static": {
+            "loss_reduction": 0.0055769198425762445,
+            "relative_reduction_percent": 4.258242299250498,
+            "component_contributions": {
+              "survival": 0.0010779252738744455,
+              "region": 0.007050918853978556,
+              "resources": -0.0001890599235125391,
+              "height": -0.0003336448815895752,
+              "ground": -0.0017893192837639444,
+              "motion": -0.00020898585928392062,
+              "pairs": -3.091433712676692e-05
+            }
+          },
+          "graph_gru_no_motion": {
+            "loss_reduction": 0.0006202803010821878,
+            "relative_reduction_percent": 0.4922429413657395,
+            "component_contributions": {
+              "survival": -0.00048572788490153327,
+              "region": 0.0011828932154593114,
+              "resources": -4.421810904727333e-05,
+              "height": -0.000100005714069521,
+              "ground": -2.197790890045332e-05,
+              "motion": 0.00020038848457546682,
+              "pairs": -0.00011107178203378771
+            }
+          },
+          "graph_gru_common": {
+            "loss_reduction": 0.000532059286332931,
+            "relative_reduction_percent": 0.4225281948305846,
+            "component_contributions": {
+              "survival": -0.00018457716883816988,
+              "region": -0.0016932581279174772,
+              "resources": 9.602645063686914e-07,
+              "height": -4.302310235916893e-05,
+              "ground": 0.0023967849707206635,
+              "motion": 0.00017580585919708958,
+              "pairs": -0.00012063340897636563
+            }
+          }
+        }
+      },
+      "de_ancient": {
+        "windows": 84,
+        "series": 4,
+        "methods": {
+          "mlp_static": {
+            "survival": 0.04070536258353211,
+            "region": 0.42666107739318426,
+            "resources": 0.011125740493878728,
+            "height": 0.010230097902326879,
+            "ground": 0.19827102527338866,
+            "motion": 0.042095757113475796,
+            "pairs": 0.01669630152747371
+          },
+          "mlp_gru": {
+            "survival": 0.03675056955766231,
+            "region": 0.3419263639210306,
+            "resources": 0.014383732098972632,
+            "height": 0.01050403633389786,
+            "ground": 0.19986237928752396,
+            "motion": 0.0464042657010895,
+            "pairs": 0.02039894206300977
+          },
+          "graph_static": {
+            "survival": 0.07002644302955947,
+            "region": 0.40502643603218197,
+            "resources": 0.01025489723852736,
+            "height": 0.009322762916809403,
+            "ground": 0.1912624989553155,
+            "motion": 0.03953769088497856,
+            "pairs": 0.019610737679151276
+          },
+          "graph_gru": {
+            "survival": 0.07090661455946337,
+            "region": 0.3308623409724202,
+            "resources": 0.011449573603108403,
+            "height": 0.011463389772268889,
+            "ground": 0.19652423995310203,
+            "motion": 0.04231555885314726,
+            "pairs": 0.02131431638703514
+          },
+          "graph_gru_no_motion": {
+            "survival": 0.058920806542279484,
+            "region": 0.33959364232943623,
+            "resources": 0.012484034966771935,
+            "height": 0.010423337993069574,
+            "ground": 0.20611975611040714,
+            "motion": 0.04452638238291407,
+            "pairs": 0.01972479341456165
+          },
+          "graph_gru_common": {
+            "survival": 0.061010098077107874,
+            "region": 0.3132388979879939,
+            "resources": 0.012754413346972072,
+            "height": 0.010861100214586732,
+            "ground": 0.22608351436163143,
+            "motion": 0.04205776388869695,
+            "pairs": 0.020322680826797605
+          }
+        },
+        "contrasts": {
+          "mlp_gru": {
+            "loss_reduction": -0.002086535019622665,
+            "relative_reduction_percent": -2.1792129329089303,
+            "component_contributions": {
+              "survival": -0.004879435000257295,
+              "region": 0.0015805747069443457,
+              "resources": 0.00041916549940917557,
+              "height": -0.0001370504911958612,
+              "ground": 0.00047687704777456063,
+              "motion": 0.0005841009782774631,
+              "pairs": -0.00013076776057505273
+            }
+          },
+          "graph_static": {
+            "loss_reduction": 0.008600776090854037,
+            "relative_reduction_percent": 8.08081634700063,
+            "component_contributions": {
+              "survival": -0.00012573878998627108,
+              "region": 0.010594870722823113,
+              "resources": -0.00017066805208300613,
+              "height": -0.0003058038364942123,
+              "ground": -0.0007516772853980764,
+              "motion": -0.00039683828116695636,
+              "pairs": -0.0002433683868405519
+            }
+          },
+          "graph_gru_no_motion": {
+            "loss_reduction": 0.0009938170912706795,
+            "relative_reduction_percent": 1.0056074743903674,
+            "component_contributions": {
+              "survival": -0.0017122582881691267,
+              "region": 0.0012473287652880075,
+              "resources": 0.000147780194809076,
+              "height": -0.0001485788255999021,
+              "ground": 0.0013707880224721589,
+              "motion": 0.00031583193282383064,
+              "pairs": -0.00022707471035335572
+            }
+          },
+          "graph_gru_common": {
+            "loss_reduction": 0.00021320494332019435,
+            "relative_reduction_percent": 0.21745194484792416,
+            "component_contributions": {
+              "survival": -0.0014137880689079282,
+              "region": -0.0025176347120608933,
+              "resources": 0.00018640567769480986,
+              "height": -8.604136538316518e-05,
+              "ground": 0.004222753486932772,
+              "motion": -3.682785206432999e-05,
+              "pairs": -0.00014166222289107636
+            }
+          }
+        }
+      },
+      "de_anubis": {
+        "windows": 41,
+        "series": 2,
+        "methods": {
+          "mlp_static": {
+            "survival": 0.03385009464087373,
+            "region": 0.34729535252683685,
+            "resources": 0.008053097419167262,
+            "height": 0.019313933399675916,
+            "ground": 0.2039629614675447,
+            "motion": 0.03172019436874146,
+            "pairs": 0.020861939100977327
+          },
+          "mlp_gru": {
+            "survival": 0.023147255511090436,
+            "region": 0.2823519680412516,
+            "resources": 0.009678874154933653,
+            "height": 0.020087532443179203,
+            "ground": 0.19941133144348563,
+            "motion": 0.034105409208374717,
+            "pairs": 0.021848431970584132
+          },
+          "graph_static": {
+            "survival": 0.03798776356584673,
+            "region": 0.3125443589666651,
+            "resources": 0.006885021996900572,
+            "height": 0.019291476513229548,
+            "ground": 0.19665057780442852,
+            "motion": 0.03080684845372738,
+            "pairs": 0.021702111256124066
+          },
+          "graph_gru": {
+            "survival": 0.038675121006534544,
+            "region": 0.2520110538273695,
+            "resources": 0.007711536628157198,
+            "height": 0.02084816614284165,
+            "ground": 0.20246922129077755,
+            "motion": 0.03075660439429893,
+            "pairs": 0.021554864998093795
+          },
+          "graph_gru_no_motion": {
+            "survival": 0.03324748640359122,
+            "region": 0.27019660460008754,
+            "resources": 0.007568289915151478,
+            "height": 0.021627049506937585,
+            "ground": 0.2081343248885657,
+            "motion": 0.03204645903130608,
+            "pairs": 0.021349323713885888
+          },
+          "graph_gru_common": {
+            "survival": 0.03272102091874648,
+            "region": 0.2635466432184099,
+            "resources": 0.0070734864311932134,
+            "height": 0.023033034885006527,
+            "ground": 0.21574677689267058,
+            "motion": 0.03106669643302522,
+            "pairs": 0.022167743336305848
+          }
+        },
+        "contrasts": {
+          "mlp_gru": {
+            "loss_reduction": 0.0023720334978323127,
+            "relative_reduction_percent": 2.811271340213288,
+            "component_contributions": {
+              "survival": -0.0022182664993491584,
+              "region": 0.0043344163162688755,
+              "resources": 0.00028104821811092217,
+              "height": -0.00010866195709463516,
+              "ground": -0.00043684140675598733,
+              "motion": 0.00047840068772511235,
+              "pairs": 4.1938138927190977e-05
+            }
+          },
+          "graph_static": {
+            "loss_reduction": 0.0074059414669784,
+            "relative_reduction_percent": 8.283148704733772,
+            "component_contributions": {
+              "survival": -9.819392009825888e-05,
+              "region": 0.008647615019899373,
+              "resources": -0.0001180735187509465,
+              "height": -0.00022238423280172885,
+              "ground": -0.0008312347837641469,
+              "motion": 7.177722775492806e-06,
+              "pairs": 2.1035179718610136e-05
+            }
+          },
+          "graph_gru_no_motion": {
+            "loss_reduction": 0.0028775671102074657,
+            "relative_reduction_percent": 3.3901047565037383,
+            "component_contributions": {
+              "survival": -0.0007753763718490458,
+              "region": 0.0025979358246740075,
+              "resources": -2.0463816143674297e-05,
+              "height": 0.000111269052013705,
+              "ground": 0.0008093005139697367,
+              "motion": 0.00018426494814387885,
+              "pairs": -2.936304060112961e-05
+            }
+          },
+          "graph_gru_common": {
+            "loss_reduction": 0.0030469762610406542,
+            "relative_reduction_percent": 3.5825380523131365,
+            "component_contributions": {
+              "survival": -0.0008505857268268664,
+              "region": 0.001647941341577205,
+              "resources": -9.115002813771206e-05,
+              "height": 0.00031212410602355397,
+              "ground": 0.0018967936574132902,
+              "motion": 4.4298862675184416e-05,
+              "pairs": 8.755404831600755e-05
+            }
+          }
+        }
+      },
+      "de_dust2": {
+        "windows": 85,
+        "series": 4,
+        "methods": {
+          "mlp_static": {
+            "survival": 0.031704148478219056,
+            "region": 0.2871638679381904,
+            "resources": 0.010541147311872348,
+            "height": 0.01800256160274267,
+            "ground": 0.24136345472684045,
+            "motion": 0.042954835148930545,
+            "pairs": 0.029115897746716107
+          },
+          "mlp_gru": {
+            "survival": 0.03726367907618176,
+            "region": 0.20870948587299576,
+            "resources": 0.011769469340854264,
+            "height": 0.01855708781451898,
+            "ground": 0.24430545147845892,
+            "motion": 0.04202063448386736,
+            "pairs": 0.03442327763694816
+          },
+          "graph_static": {
+            "survival": 0.07227171542854371,
+            "region": 0.23095741509507192,
+            "resources": 0.010256275121704144,
+            "height": 0.016635544609357948,
+            "ground": 0.24236025705359276,
+            "motion": 0.04153312318341845,
+            "pairs": 0.03666252690596351
+          },
+          "graph_gru": {
+            "survival": 0.06355364290265919,
+            "region": 0.21012868176160068,
+            "resources": 0.011674126157215584,
+            "height": 0.01926406009023276,
+            "ground": 0.2385706162508333,
+            "motion": 0.04249361922486017,
+            "pairs": 0.037052992182070435
+          },
+          "graph_gru_no_motion": {
+            "survival": 0.06258459309149965,
+            "region": 0.2035699297527315,
+            "resources": 0.010871767385501135,
+            "height": 0.017955005322908182,
+            "ground": 0.24636698874561136,
+            "motion": 0.04161849886809524,
+            "pairs": 0.03525355988520862
+          },
+          "graph_gru_common": {
+            "survival": 0.06524373295671226,
+            "region": 0.20430247612318614,
+            "resources": 0.010109170732370975,
+            "height": 0.01940184615464169,
+            "ground": 0.2641078583419564,
+            "motion": 0.04226937118492499,
+            "pairs": 0.0344581525700956
+          }
+        },
+        "contrasts": {
+          "mlp_gru": {
+            "loss_reduction": -0.0036698075522352686,
+            "relative_reduction_percent": -4.302603166264642,
+            "component_contributions": {
+              "survival": -0.003755709118068204,
+              "region": -0.0002027422698007034,
+              "resources": 1.3620454805525731e-05,
+              "height": -0.00010099603938768262,
+              "ground": 0.0008192621753750866,
+              "motion": -6.756924871325879e-05,
+              "pairs": -0.00037567350644603884
+            }
+          },
+          "graph_static": {
+            "loss_reduction": 0.003991302689740045,
+            "relative_reduction_percent": 4.2938547007682635,
+            "component_contributions": {
+              "survival": 0.0012454389322692177,
+              "region": 0.0029755333333530342,
+              "resources": -0.00020255014793020578,
+              "height": -0.0003755022115535443,
+              "ground": 0.0005413772575370647,
+              "motion": -0.00013721372020595947,
+              "pairs": -5.578075372956023e-05
+            }
+          },
+          "graph_gru_no_motion": {
+            "loss_reduction": -0.0006453422168452294,
+            "relative_reduction_percent": -0.7307096197479681,
+            "component_contributions": {
+              "survival": -0.000138435687308506,
+              "region": -0.0009369645726955977,
+              "resources": -0.00011462268167349269,
+              "height": -0.00018700782390351084,
+              "ground": 0.0011137674992540067,
+              "motion": -0.00012501719382356145,
+              "pairs": -0.00025706175669454524
+            }
+          },
+          "graph_gru_common": {
+            "loss_reduction": 0.0024506956420594084,
+            "relative_reduction_percent": 2.680898212954991,
+            "component_contributions": {
+              "survival": 0.00024144143629329612,
+              "region": -0.0008323150912020778,
+              "resources": -0.000223565060692087,
+              "height": 1.9683723486990062e-05,
+              "ground": 0.00364817744158901,
+              "motion": -3.203543427645379e-05,
+              "pairs": -0.0003706913731392619
+            }
+          }
+        }
+      },
+      "de_inferno": {
+        "windows": 118,
+        "series": 5,
+        "methods": {
+          "mlp_static": {
+            "survival": 0.04563554109148218,
+            "region": 0.7575203317662302,
+            "resources": 0.01338165337603386,
+            "height": 0.012791010706264974,
+            "ground": 0.36908510397485955,
+            "motion": 0.046543655500083964,
+            "pairs": 0.02751550681592917
+          },
+          "mlp_gru": {
+            "survival": 0.03961754344191351,
+            "region": 0.7645553115561471,
+            "resources": 0.01456223695194834,
+            "height": 0.013699620150883213,
+            "ground": 0.3719281139434299,
+            "motion": 0.04375957423881187,
+            "pairs": 0.02857967361609861
+          },
+          "graph_static": {
+            "survival": 0.06876531595017257,
+            "region": 0.7725555911411327,
+            "resources": 0.012752449825271944,
+            "height": 0.01353938148805924,
+            "ground": 0.37104774974487087,
+            "motion": 0.04474704091807698,
+            "pairs": 0.029089534825070464
+          },
+          "graph_gru": {
+            "survival": 0.059120422110211845,
+            "region": 0.7234625159541764,
+            "resources": 0.012654934860075595,
+            "height": 0.01367150200212974,
+            "ground": 0.393740703794357,
+            "motion": 0.045136076665455785,
+            "pairs": 0.02624580117622538
+          },
+          "graph_gru_no_motion": {
+            "survival": 0.05670007418786126,
+            "region": 0.7536139037458932,
+            "resources": 0.013318251084907976,
+            "height": 0.014122905634293654,
+            "ground": 0.38548340344759124,
+            "motion": 0.048262364087347395,
+            "pairs": 0.029131532344299327
+          },
+          "graph_gru_common": {
+            "survival": 0.06114675259802753,
+            "region": 0.7150140746920373,
+            "resources": 0.014022830580095255,
+            "height": 0.013750500708058885,
+            "ground": 0.39580578599743454,
+            "motion": 0.04943653425813657,
+            "pairs": 0.02768979894158799
+          }
+        },
+        "contrasts": {
+          "mlp_gru": {
+            "loss_reduction": 0.00038144533380007895,
+            "relative_reduction_percent": 0.20914177169350315,
+            "component_contributions": {
+              "survival": -0.002786125524042619,
+              "region": 0.005870399371710093,
+              "resources": 0.00027247172741039216,
+              "height": 4.016878393353381e-06,
+              "ground": -0.003116084264418157,
+              "motion": -0.00019664320380627376,
+              "pairs": 0.0003334103485533184
+            }
+          },
+          "graph_static": {
+            "loss_reduction": 0.005495015332860398,
+            "relative_reduction_percent": 2.9306814002266397,
+            "component_contributions": {
+              "survival": 0.0013778419771372469,
+              "region": 0.007013296455279467,
+              "resources": 1.3930709313764017e-05,
+              "height": -1.8874359152928452e-05,
+              "ground": -0.003241850578498018,
+              "motion": -5.557653533982965e-05,
+              "pairs": 0.0004062476641207261
+            }
+          },
+          "graph_gru_no_motion": {
+            "loss_reduction": 0.0038000682813660314,
+            "relative_reduction_percent": 2.045195649694048,
+            "component_contributions": {
+              "survival": -0.00034576398890722685,
+              "region": 0.0043073411131023965,
+              "resources": 9.47594606903401e-05,
+              "height": 6.44862331662735e-05,
+              "ground": -0.00117961433525225,
+              "motion": 0.0004466124888416586,
+              "pairs": 0.00041224730972484947
+            }
+          },
+          "graph_gru_common": {
+            "loss_reduction": 0.0004049030303923118,
+            "relative_reduction_percent": 0.2219747879695188,
+            "component_contributions": {
+              "survival": 0.00028947578397366905,
+              "region": -0.001206920180305596,
+              "resources": 0.00019541367428852277,
+              "height": 1.1285529418449323e-05,
+              "ground": 0.00029501174329679296,
+              "motion": 0.0006143510846686838,
+              "pairs": 0.00020628539505180128
+            }
+          }
+        }
+      },
+      "de_mirage": {
+        "windows": 75,
+        "series": 4,
+        "methods": {
+          "mlp_static": {
+            "survival": 0.05779501710437346,
+            "region": 0.6435033051208372,
+            "resources": 0.013418192527208862,
+            "height": 0.014328773869506439,
+            "ground": 0.2992376377225838,
+            "motion": 0.04184068490950657,
+            "pairs": 0.023927277247772535
+          },
+          "mlp_gru": {
+            "survival": 0.05402489390118702,
+            "region": 0.6084959571619356,
+            "resources": 0.014029586752035863,
+            "height": 0.01583668675767036,
+            "ground": 0.3008581454784328,
+            "motion": 0.04314708364647,
+            "pairs": 0.025870835114388712
+          },
+          "graph_static": {
+            "survival": 0.06590239812577484,
+            "region": 0.6304061516986361,
+            "resources": 0.01120554802829348,
+            "height": 0.014168935205458503,
+            "ground": 0.29055068243427995,
+            "motion": 0.038800210405569815,
+            "pairs": 0.024765640248854956
+          },
+          "graph_gru": {
+            "survival": 0.060501817897502114,
+            "region": 0.5922012380693877,
+            "resources": 0.014506845337607611,
+            "height": 0.015605370622795326,
+            "ground": 0.30320259043577286,
+            "motion": 0.0408517622032262,
+            "pairs": 0.027383300586832714
+          },
+          "graph_gru_no_motion": {
+            "survival": 0.0642246688297486,
+            "region": 0.5699154659972658,
+            "resources": 0.013299045242883802,
+            "height": 0.014561679591526397,
+            "ground": 0.31913389432214434,
+            "motion": 0.04276955863608728,
+            "pairs": 0.02496612323983942
+          },
+          "graph_gru_common": {
+            "survival": 0.062140324731358096,
+            "region": 0.5732262905302739,
+            "resources": 0.013698486456534797,
+            "height": 0.015394604698355706,
+            "ground": 0.32671964962538036,
+            "motion": 0.04221827096549705,
+            "pairs": 0.025451512151538198
+          }
+        },
+        "contrasts": {
+          "mlp_gru": {
+            "loss_reduction": 0.0011443233798565933,
+            "relative_reduction_percent": 0.7540752370374104,
+            "component_contributions": {
+              "survival": -0.0009252748566164422,
+              "region": 0.0023278170132211245,
+              "resources": -6.817979793882123e-05,
+              "height": 3.3045162125004786e-05,
+              "ground": -0.00033492070819143453,
+              "motion": 0.0003279030633205427,
+              "pairs": -0.0002160664960634288
+            }
+          },
+          "graph_static": {
+            "loss_reduction": 0.0030780915705347356,
+            "relative_reduction_percent": 2.0028490131219865,
+            "component_contributions": {
+              "survival": 0.0007715114611818175,
+              "region": 0.00545784480417834,
+              "resources": -0.0004716139013305902,
+              "height": -0.00020520505961954611,
+              "ground": -0.0018074154287847008,
+              "motion": -0.0002930788282366263,
+              "pairs": -0.0003739514768539654
+            }
+          },
+          "graph_gru_no_motion": {
+            "loss_reduction": -0.0007689270419469485,
+            "relative_reduction_percent": -0.5131700837022796,
+            "component_contributions": {
+              "survival": 0.000531835847463784,
+              "region": -0.003183681724588843,
+              "resources": -0.00017254287067482984,
+              "height": -0.0001490987187527042,
+              "ground": 0.002275900555195926,
+              "motion": 0.00027397091898015424,
+              "pairs": -0.00034531104957047067
+            }
+          },
+          "graph_gru_common": {
+            "loss_reduction": 0.0006566020008305085,
+            "relative_reduction_percent": 0.434076379328637,
+            "component_contributions": {
+              "survival": 0.00023407240483656888,
+              "region": -0.0027107067913019834,
+              "resources": -0.00011547984015325915,
+              "height": -3.010941777708861e-05,
+              "ground": 0.003359579884229643,
+              "motion": 0.00019521553746726473,
+              "pairs": -0.00027596977647064515
+            }
+          }
+        }
+      },
+      "de_nuke": {
+        "windows": 62,
+        "series": 3,
+        "methods": {
+          "mlp_static": {
+            "survival": 0.03880800667247168,
+            "region": 0.3280236945286186,
+            "resources": 0.013576466328182253,
+            "height": 0.052118805688806225,
+            "ground": 0.24644326294617494,
+            "motion": 0.041460960650321114,
+            "pairs": 0.03974956273080075
+          },
+          "mlp_gru": {
+            "survival": 0.035137422897052295,
+            "region": 0.2057277284844948,
+            "resources": 0.01515512924955254,
+            "height": 0.06078277955086164,
+            "ground": 0.26339177339379755,
+            "motion": 0.040991479134350396,
+            "pairs": 0.0445757945402293
+          },
+          "graph_static": {
+            "survival": 0.07752703811327742,
+            "region": 0.28164097641192176,
+            "resources": 0.01144839686630923,
+            "height": 0.05336692880025743,
+            "ground": 0.2578133952346559,
+            "motion": 0.038714062641711094,
+            "pairs": 0.04696798383377041
+          },
+          "graph_gru": {
+            "survival": 0.052675033025764956,
+            "region": 0.2155164112541937,
+            "resources": 0.013103116871910285,
+            "height": 0.06143272264692772,
+            "ground": 0.28941431977225907,
+            "motion": 0.04145638751333733,
+            "pairs": 0.04837901922033979
+          },
+          "graph_gru_no_motion": {
+            "survival": 0.047406717046270384,
+            "region": 0.2347912405230657,
+            "resources": 0.01076601190251116,
+            "height": 0.05987961776895275,
+            "ground": 0.2635800033648939,
+            "motion": 0.04092262978292658,
+            "pairs": 0.04477345136035917
+          },
+          "graph_gru_common": {
+            "survival": 0.04787975275167141,
+            "region": 0.193165386584351,
+            "resources": 0.012790095833529129,
+            "height": 0.0589278860367472,
+            "ground": 0.2956132021667343,
+            "motion": 0.0412550420932956,
+            "pairs": 0.046421587330162974
+          }
+        },
+        "contrasts": {
+          "mlp_gru": {
+            "loss_reduction": -0.008030700436342048,
+            "relative_reduction_percent": -8.443692190077817,
+            "component_contributions": {
+              "survival": -0.00250537287553038,
+              "region": -0.0013983832528141299,
+              "resources": 0.000293144625377465,
+              "height": -9.284901372372553e-05,
+              "ground": -0.0037175066254945027,
+              "motion": -6.641548271241887e-05,
+              "pairs": -0.0005433178114443557
+            }
+          },
+          "graph_static": {
+            "loss_reduction": 0.006500253085310062,
+            "relative_reduction_percent": 5.928733493375758,
+            "component_contributions": {
+              "survival": 0.0035502864410732094,
+              "region": 0.009446366451104008,
+              "resources": -0.00023638857222872206,
+              "height": -0.0011522562638100417,
+              "ground": -0.004514417791086166,
+              "motion": -0.0003917606959466048,
+              "pairs": -0.00020157648379562552
+            }
+          },
+          "graph_gru_no_motion": {
+            "loss_reduction": -0.002836762650821903,
+            "relative_reduction_percent": -2.828198575648608,
+            "component_contributions": {
+              "survival": -0.0007526165684992245,
+              "region": 0.0027535470384102818,
+              "resources": -0.00033387213848558924,
+              "height": -0.00022187212542499574,
+              "ground": -0.003690616629623595,
+              "motion": -7.625110434439265e-05,
+              "pairs": -0.000515081122854374
+            }
+          },
+          "graph_gru_common": {
+            "loss_reduction": -0.003703436786891612,
+            "relative_reduction_percent": -3.7244375451734957,
+            "component_contributions": {
+              "survival": -0.0006850400391562207,
+              "region": -0.0031930035242632437,
+              "resources": -4.4717291197308005e-05,
+              "height": -0.00035783380145436007,
+              "ground": 0.0008855546277821781,
+              "motion": -2.876363143453274e-05,
+              "pairs": -0.0002796331271681167
+            }
+          }
+        }
+      }
+    }
+  },
+  "interpretation": [
+    "Positive contribution means lower loss for graph_gru; seven contributions sum to the total loss reduction.",
+    "Contributions use fixed training-loss scales; magnitudes across CE/MSE groups are not comparable physical error rates.",
+    "Loss matching can choose different global player permutations for different models.",
+    "No causal attribution to an input field, tactical judgment, new training, or independent test is performed."
+  ]
+}

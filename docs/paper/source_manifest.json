@@ -469,6 +469,94 @@
         "verified_by": "",
         "verified_on": ""
       }
+    },
+    {
+      "evidence_id": "E117",
+      "title": "Completed development reconstruction failure decomposition",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_reconstruction_failure_audit.json"
+      },
+      "locator": "datasets/evaluation/ct_reconstruction_failure_audit.json; sha256=99980a3d626ef53178910bceac7bb119cead1340d4ddc9c81d9f9156b670bccc",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E118",
+      "title": "Time-bounded context availability audit on the existing development cohort",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_context_availability_report.json"
+      },
+      "locator": "datasets/evaluation/ct_context_availability_report.json; sha256=c941864c9341a75aeda434d0b118f1aeba8ff6b31a5c9d853b84f5a943d7116f",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E119",
+      "title": "CT context audit code with freeze-boundary and live-angle masking",
+      "source_type": "software",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/scripts/audit_ct_context_availability.py"
+      },
+      "locator": "scripts/audit_ct_context_availability.py; sha256=4f220bb770b3c028e97db36b05c526b462f0e39778b3d2285bd54777c35b9b59",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E120",
+      "title": "CT-only context annotations for the unchanged six fixed retrieval cases",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/docs/paper/manuscript/figures/evidence_context.json"
+      },
+      "locator": "docs/paper/manuscript/figures/evidence_context.json; sha256=b1aadb20e58ae37a9eaa995b4d915712dcb386c2216242c9957c4bfb57286819",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
     }
   ]
 }
