@@ -725,7 +725,7 @@
         "pmid": "",
         "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_workflow_skill_receipt.json"
       },
-      "locator": "datasets/evaluation/ct_workflow_skill_receipt.json; sha256=227988c222667ea3eff6cf5448e46264de6c18adbba90acb88765ef3547aa2a3",
+      "locator": "datasets/evaluation/ct_workflow_skill_receipt.json; sha256=199cc5944f803803a00745c519228b069b7fad2dcc68445d721972bf800e4e6d",
       "confidentiality": "public",
       "verification": {
         "source_opened": false,
@@ -880,6 +880,94 @@
         "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/selections/ct_independent_confirmation.json"
       },
       "locator": "datasets/selections/ct_independent_confirmation.json; sha256=192a73a97447afd9cafda880d81476dafb1fb483cbd5337ec424766fcea3b442; Local pre-acquisition selection and 108 checkpoint hashes; not external preregistration, new evaluation results, or semantic validation.",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E130",
+      "title": "External cohort acquisition, native timing and identity audit",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_independent_acquisition_report.json"
+      },
+      "locator": "datasets/evaluation/ct_independent_acquisition_report.json; sha256=3f30f5fb7994862579191da73e325305a955bffb3b9c1f99abbd19cd43f0a91b",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E131",
+      "title": "Frozen source-checkpoint CT technical confirmation on twelve new series",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_independent_confirmation_report.json"
+      },
+      "locator": "datasets/evaluation/ct_independent_confirmation_report.json; sha256=06c1a4d5216c96e8576edc5a3b6237e8ca4fba24eca45b358f2e5ccbd4824505",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E132",
+      "title": "Pre-inference technical analysis implementation and amendments",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/selections/ct_independent_analysis.json"
+      },
+      "locator": "datasets/selections/ct_independent_analysis.json; sha256=24cef5980e23ba96d25334b24b1c6e541cee550a4a482910856ecbb9f7bcb762",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E133",
+      "title": "External series-level figure and source-data provenance",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/docs/paper/manuscript/figures/independent_confirmation_manifest.json"
+      },
+      "locator": "docs/paper/manuscript/figures/independent_confirmation_manifest.json; sha256=cd4aecb7c9028d819eb15a5f40c0712008d2926a6503878a42179297d59e31e5",
       "confidentiality": "public",
       "verification": {
         "source_opened": false,

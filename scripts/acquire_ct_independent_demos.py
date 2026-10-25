@@ -41,6 +41,23 @@ def selected_member(listing, map_name):
     raise ValueError('Archive does not identify exactly one requested map')
 
 
+def resolved_primary(cohort, replacements):
+    primary = {r['match_id']:r for r in cohort['primary']}
+    assert set(replacements) <= set(primary)
+    result = []
+    for original in cohort['primary']:
+        row = original
+        if original['match_id'] in replacements:
+            replacement = replacements[original['match_id']]
+            row = next(r for r in cohort['alternates'] if r['match_id']==replacement['match_id'])
+            assert original['match_id'] in row['replaceable_primary_match_ids']
+            assert row['event_id']==original['event_id'] and row['selected_map']==original['selected_map']
+            assert replacement['reason']
+        result.append(row)
+    assert len({r['match_id'] for r in result})==len(result)
+    return result
+
+
 def main():
     import psutil
     from DrissionPage import ChromiumPage, ChromiumOptions
@@ -70,13 +87,9 @@ def main():
     ledger.setdefault('script_revisions', []).append(digest(Path(__file__)))
     write(ledger_path, ledger)
     assert psutil.virtual_memory().available > 2500 * 2**20, 'Browser start RAM guard'
-    co = ChromiumOptions();co.auto_port();co.headless(False)
-    co.set_argument('--window-position=-2000,-2000');co.set_argument('--blink-settings=imagesEnabled=false')
-    co.set_argument('--disable-component-update')
-    co.set_timeouts(base=10, page_load=20)
     page = None
     try:
-        for row in cohort['primary']:
+        for row in resolved_primary(cohort, ledger.get('replacements', {})):
             match_id, map_name = row['match_id'], row['selected_map']
             assert re.fullmatch('[0-9]+', match_id) and map_name in ('de_ancient','de_anubis','de_dust2','de_inferno','de_mirage','de_nuke')
             completed = next((r for r in ledger['files'] if r['match_id'] == match_id), None)
@@ -86,7 +99,10 @@ def main():
             archive = out / f'archive_{match_id}.rar'
             if not archive.exists():
                 assert psutil.virtual_memory().available > 2500 * 2**20, 'Browser start RAM guard'
-                co.auto_port();page = ChromiumPage(co)
+                co = ChromiumOptions();co.auto_port();co.headless(False)
+                co.set_argument('--window-position=-2000,-2000');co.set_argument('--blink-settings=imagesEnabled=false')
+                co.set_argument('--disable-component-update');co.set_timeouts(base=10,page_load=20)
+                page = ChromiumPage(co)
                 page.set.load_mode.eager();page.set.download_path(str(out.resolve()))
                 page.get(row['match_url'], retry=0)
                 for _ in range(10):

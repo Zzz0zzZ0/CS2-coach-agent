@@ -1,0 +1,27 @@
+{
+  "status": "frozen_before_new_model_outputs",
+  "frozen_utc": "2026-10-25T18:46:42.010540+00:00",
+  "confirmation_protocol_sha256": "192a73a97447afd9cafda880d81476dafb1fb483cbd5337ec424766fcea3b442",
+  "evaluator_sha256": "83d31127885c5b217de82c3784399694ca527886ff080850f4a3c3920851ce34",
+  "primary": "Preselected six-map equal-series log ratio: log(mean Graph loss over seeds/windows / mean MLP loss over seeds/windows). Pooled within-map normal residual t interval, df=N-6.",
+  "sensitivity": "Prespecified unequal-variance fixed-map mean using per-map sample variance/n and Welch-Satterthwaite df; balanced two-series/map gives same SE but may lower df. No diagnostic-driven switching or outcome-based sample extension.",
+  "diagnostics": "Retain all 12 series values, six map means and within-map SDs; numerical normality or variance screens cannot establish independence. Plot and inspect before substantive interpretation.",
+  "secondary": "All other four frozen neural conditions and seven component losses retained descriptively; no secondary superiority tests.",
+  "inferential_scope": "Conditional technical precision, not a formal new tactical or coach-efficacy endpoint.",
+  "pre_inference_amendments": [
+    {
+      "utc": "2026-10-25T18:52:45.797776+00:00",
+      "previous_evaluator_sha256": "5ca2c315cafd8a13b0b3ad13652de4ccf425cdd9abb621d3163c8a739785cfc4",
+      "reason": "Require exact-five-player roster proof for lexical clan-name differences; no new model outputs exist and the estimand/interval are unchanged."
+    },
+    {
+      "previous_evaluator_sha256": "bfabaaf8468a7b1f8a0e4b84f80c0b17ccf24cf712e7fce63e0bfca134eade4d",
+      "reason": "Bind the nickname verifier and two primary-source-supported nickname aliases before any model inference."
+    },
+    {
+      "previous_evaluator_sha256": "97e09ada199ea273fcec4f51f3b67e0a70b8c46b0d64025db3e8a13aa4e0b7a9",
+      "reason": "Initial import failed before any inference because SciPy is absent in the GPU runtime. Use the existing GPU runtime for inference and the existing Anaconda SciPy runtime for the unchanged summary, without installation."
+    }
+  ],
+  "identity_verifier_sha256": "0c0bc5afb71f71f394c7449d06c9a954fd9a39b8b352e79e6653c1f2088501a9"
+}

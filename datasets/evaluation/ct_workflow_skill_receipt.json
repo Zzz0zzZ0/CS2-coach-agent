@@ -1,6 +1,6 @@
 {
   "scope": "workflow_provenance_not_model_validation",
-  "date": "2026-10-25",
+  "date": "2026-10-26",
   "skills": [
     {
       "skill_name": "scientific-writing",
@@ -29,6 +29,20 @@
       "sha256": "dc79fe1e8438dcf598040615d5323360c6a7ed0b868fc3ffc82512c871a1e3ff",
       "declared_version": "2.3",
       "current_upstream_revision_verified": false
+    },
+    {
+      "skill_name": "statistical-analysis",
+      "file": "SKILL.md",
+      "sha256": "e112848726b3713267cac65e4e2c15491a0a26ee1ed628db01195f7e43f97997",
+      "declared_version": "2.0",
+      "current_upstream_revision_verified": false
+    },
+    {
+      "skill_name": "scientific-visualization",
+      "file": "SKILL.md",
+      "sha256": "8cbde7cdc10d959cf72cfd08335cc8ce996247eee6ebdb900eb64a4cb0ff34a3",
+      "declared_version": "1.4",
+      "current_upstream_revision_verified": false
     }
   ],
   "historical_scientific_writing_installation_revision_recorded_in_project": "593377bb048752abb0152deab9fbb1083a6087df",
@@ -37,7 +51,7 @@
     "url": "https://arxiv.org/abs/2609.00065",
     "doi": "10.48550/arXiv.2609.00065",
     "current_arxiv_version_checked": "v2",
-    "checked_date": "2026-10-25"
+    "checked_date": "2026-10-26"
   },
   "limits": [
     "Procedural guidance does not constitute independent source verification, human review, or empirical model validation.",

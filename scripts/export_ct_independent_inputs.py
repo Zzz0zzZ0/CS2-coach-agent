@@ -11,7 +11,7 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from scripts.acquire_ct_independent_demos import digest
+from scripts.acquire_ct_independent_demos import digest, resolved_primary
 from scripts.confirm_ct_generalization import write
 from app.services.ct_deployment_service import DEPLOYMENT_VERSION, deployment_sequence
 from app.services.opening_timing_service import CLOCK_PROPERTIES, audit_opening_timing
@@ -30,7 +30,8 @@ def main():
     acquisition = json.loads(manifest_path.read_text(encoding='utf-8'))
     assert acquisition['protocol_sha256'] == digest(protocol_path)
     cohort = json.loads((ROOT / protocol['cohort_path']).read_text(encoding='utf-8'))
-    wanted = {r['match_id']:r['selected_map'] for r in cohort['primary']}
+    selected_rows = resolved_primary(cohort, acquisition.get('replacements', {}))
+    wanted = {r['match_id']:r['selected_map'] for r in selected_rows}
     assert len(acquisition['files']) <= 12
     old_index = json.loads((ROOT / 'output/tagnet/ct_deployment_inputs_p1_v03/sample_index.json').read_text(encoding='utf-8'))
     old_hashes = {r['id'].split(':')[0] for r in old_index}
@@ -40,6 +41,7 @@ def main():
                     'app/services/opening_timing_service.py','app/services/ct_feature_service.py',
                     'app/services/ct_geometry_service.py','app/services/ct_deployment_service.py',
                     'app/services/team_identity_service.py',
+                    'scripts/acquire_ct_independent_demos.py',
                     'scripts/export_ct_independent_inputs.py']
     sources = {name:digest(ROOT / name) for name in source_paths}
     receipts = []
@@ -60,7 +62,7 @@ def main():
         observed.update(source_demo=path.name,source_demo_sha256=source['sha256'])
         rows = [r for r in observed['rounds'] if r['side'] == 'CT']
         native_teams = sorted({canonical_team(r['team']) for r in observed['rounds'] if r.get('team')})
-        selected = next(r for r in cohort['primary'] if r['match_id']==source['match_id'])
+        selected = next(r for r in selected_rows if r['match_id']==source['match_id'])
         expected_teams = sorted({canonical_team(t) for t in selected['teams']})
         ticks = sorted({r['freeze_end_tick'] + second * 64 for r in rows if r['status']=='ok' for second in range(21)})
         assert ticks, 'No eligible snapshot clock samples; do not request all native ticks'

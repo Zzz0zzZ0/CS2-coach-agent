@@ -67,3 +67,8 @@ datasets/evaluation/relation_expression_v2_cases.json text eol=lf
 scripts/acquire_ct_independent_demos.py -text
 test_ct_independent_acquisition.py -text
 scripts/export_ct_independent_inputs.py -text
+scripts/evaluate_ct_independent_confirmation.py -text
+test_ct_independent_confirmation.py -text
+scripts/verify_ct_independent_identities.py -text
+test_ct_independent_identity.py -text
+scripts/plot_ct_independent_confirmation.py -text

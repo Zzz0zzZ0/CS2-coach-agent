@@ -1,5 +1,5 @@
 {
-  "status": "metadata_frozen_archive_acquisition_in_progress",
+  "status": "acquisition_completed_see_final_report",
   "date": "2026-10-26",
   "initial_preflight": {
     "status": "acquisition_preparation_blocked",
@@ -112,5 +112,7 @@
     "archive_attempts": 7,
     "reserved_archive_bytes": 2340575461,
     "new_model_outputs": false
-  }
+  },
+  "final_report": "datasets/evaluation/ct_independent_acquisition_report.json",
+  "final_report_sha256": "3f30f5fb7994862579191da73e325305a955bffb3b9c1f99abbd19cd43f0a91b"
 }

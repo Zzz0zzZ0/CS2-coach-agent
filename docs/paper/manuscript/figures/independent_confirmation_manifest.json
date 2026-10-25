@@ -1,0 +1,28 @@
+{
+  "source_report_sha256": "06c1a4d5216c96e8576edc5a3b6237e8ca4fba24eca45b358f2e5ccbd4824505",
+  "plot_script_sha256": "cef67644fd4cf385dbddfd4092c051e47c92ddc17b8bca0e771096c50e71c949",
+  "phase": "IEEE ToG full-paper working draft, not submission certification",
+  "width_mm": 181.9,
+  "height_mm": 108,
+  "raster_DPI": 600,
+  "unit": "12 series; seed/window means within series, two series per map",
+  "uncertainty": "Prespecified pooled normal-residual t CI, df6; Welch-Satterthwaite variance sensitivity, df 2.074791158082971",
+  "transformations": [
+    "Arithmetic averaging over windows and seeds within series",
+    "Graph/MLP series loss ratio",
+    "Equal-map mean of series log ratios, then exponentiation for the summary"
+  ],
+  "missing_data": "No selected series omitted; one prelisted format replacement and one early-window exclusion are recorded upstream",
+  "alt_text": "Twelve series-level Graph+GRU to MLP+GRU reconstruction loss ratios across six maps. Both model-based 95% summary intervals include one; Anubis has the largest within-map separation.",
+  "guidelines_checked_date": "2026-10-26",
+  "guidelines": [
+    "https://transactions.games/submit/submission-guidelines",
+    "https://journals.ieeeauthorcenter.ieee.org/create-your-ieee-journal-article/create-graphics-for-your-article/resolution-and-size/"
+  ],
+  "outputs_sha256": {
+    "independent_confirmation.pdf": "499ad3847d23fece357adf2979546a8185f0014f951c78ce040beedd1ac7e93a",
+    "independent_confirmation.svg": "10fbbcdc88ad8261ebbed33984f14dcecc77113efabe9a0c081a817b6995bf6a",
+    "independent_confirmation.png": "eaea35284bd0c7ebb72beee91cf255ae2744fef02aed312d210763dd07e5b4d7",
+    "independent_confirmation_source_data.csv": "0a5db9d4278438c941b9025b020040ce80b461ed09b3ff51afd26d91469c3528"
+  }
+}

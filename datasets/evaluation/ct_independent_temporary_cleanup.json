@@ -1,0 +1,5 @@
+{
+  "scope": "Only Chrome background CRX packages in this run owned download directory; demos, archives, weights and evidence preserved.",
+  "removed_files": 11,
+  "removed_bytes": 68597764
+}

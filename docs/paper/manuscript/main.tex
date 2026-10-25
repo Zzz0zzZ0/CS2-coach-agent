@@ -8,11 +8,11 @@
 \author{Working manuscript framework}
 \begin{document}
 \maketitle
-\noindent\textbf{Draft status, 25 October 2026.}
-This document is a full-paper working draft. The complete development reconstruction matrix and descriptive pattern analysis are recorded; independent tactical evaluation and new-series generalization remain pending. It does not report completed tactical generalization or a registered final test. Experimental identifiers connect each result slot to the accompanying writing guide.
+\noindent\textbf{Draft status, 26 October 2026.}
+This document is a full-paper working draft. The complete development reconstruction matrix and descriptive pattern analysis are recorded; a new-series technical confirmation is now recorded, while independent tactical evaluation remains pending. It does not report completed tactical generalization or a registered final test. Experimental identifiers connect each result slot to the accompanying writing guide.
 
 \begin{abstract}
-\pending{ABS}{After the main experiments, write one paragraph covering the cross-map deployment problem, the final representation and comparison, the independent cohort and primary result with uncertainty, and the supported conclusion. The present prediction controls are auxiliary evidence and must not become the abstract's sole endpoint. No future sample size or successful result is supplied here.}
+Cross-map comparison of Counter-Strike 2 defensive openings is complicated by map geometry, resources, and recurring teams. We study window representations, source-fitted deployment patterns, and evidence retrieval without assigning fixed tactical duties to locations. An observable schema combines coarse geography, resources, relative height, ground state, and sampled motion with explicit masks. Graph and nongraph encoders, with and without recurrence, share a whole-window reconstruction objective and consistent player matching. A development matrix covers 465 windows from nine series and six maps. Frozen-checkpoint confirmation adds 246 windows from 12 newly acquired series, with two series per map and no target-side training. The recurrent graph model has a geometric mean loss ratio of 1.016 relative to its full-input nongraph recurrent control, with a model-based 95 percent interval of 0.996 to 1.036. A prespecified variance sensitivity also includes parity. Own-team context stabilizes development clusters, but equipment dominates their centroid separation. Existing human returns support only a small restricted-candidate-pool replay. The results bound architectural and pattern-interpretation claims; independent retrieval relevance and practical coaching efficacy remain unconfirmed. % [claim:C180] [evidence:E110,E124,E126,E131]
 \end{abstract}
 \begin{IEEEkeywords}
 Counter-Strike 2, defensive deployments, representation learning, cross-map generalization, graph models.
@@ -301,9 +301,40 @@ Uniform-random expectation & 0.6773 & 0.6034 & 0.6669 & 0.6172 \\ % [claim:C167]
 \end{figure*}
 
 \subsection{Independent generalization: E5}
-The technical-confirmation planning scenario balances six maps with two series per map. Under independent normal within-map log-ratio residuals with SD 0.05, a 12-series design has approximately 93.9\% probability that the nominal 95\% interval half-width is at most 0.05 log units; SD 0.10 requires 24 series for 80\% width assurance under the same model. These are assumption-dependent precision calculations, not tactical-effect power or proof that 12 series suffice for the full study. The new cohort and source checkpoints were locally frozen before archive acquisition; independent model results remain pending. % [claim:C157] [evidence:E127,E129]
+The technical-confirmation planning scenario balances six maps with two series per map. Under independent normal within-map log-ratio residuals with SD 0.05, a 12-series design has approximately 93.9\% probability that the nominal 95\% interval half-width is at most 0.05 log units; SD 0.10 requires 24 series for 80\% width assurance under the same model. These are assumption-dependent precision calculations, not tactical-effect power or proof that 12 series suffice for the full study. The new cohort and source checkpoints were locally frozen before archive acquisition; its technical results are reported below. % [claim:C157] [evidence:E127,E129]
 
-\pending{RES5}{Insert only results from the frozen new-series evaluation: actual cohort, primary effect and uncertainty, map/series failures, supported external-validity scope, and protocol deviations. No result cell is filled from development data.}
+The acquired cohort contains 12 series from three events, two per map. Native parsing yields 246 eligible CT windows from 247 completed rounds; one window ends before the final supplied time. The prelisted same-event Mirage alternate replaces a primary archive containing split map fragments, before any model output. Newly acquired series include May and October matches, so this is not a chronological future-only split or an entirely researcher-unseen map evaluation. % [claim:C170] [evidence:E130]
+
+All 108 corresponding source checkpoints were reused without training or test-side selection. For each series, we first average losses across its windows and three seeds, then compute the Graph+GRU to MLP+GRU log ratio. The equal-map estimate is 0.01564 log units, or a geometric loss ratio of 1.01576; the pooled normal-residual 95\% interval is [0.99586, 1.03606] on the ratio scale, with six residual degrees of freedom. This is not the ratio of the two grand arithmetic means. % [claim:C171] [evidence:E129,E131]
+
+The prespecified unequal-variance sensitivity gives a ratio interval of [0.98218, 1.05049], with Welch--Satterthwaite degrees of freedom approximately 2.075. Anubis has the largest observed within-map separation. Two series per map cannot verify normal residuals; repeated teams, three selected events, and metadata availability further limit population inference. Both intervals include parity: the data do not establish graph superiority or equivalence. The outcome concerns the declared reconstruction task, not a direct refutation of TAGNet's original task. % [claim:C172] [evidence:E131,E132]
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/independent_confirmation.pdf}
+\caption{External technical confirmation. Open symbols show all 12 series, with shapes identifying the three events. Each series averages the three source-checkpoint seeds and its eligible windows. Diamonds and bars show the exponentiated equal-map mean log ratio and two prespecified, model-dependent 95\% intervals. They do not remove shared-team/event dependence. The source data table records every series and all six conditions.}
+\label{fig:independent}
+\end{figure*}
+
+\begin{table}[t]
+\caption{New-series reconstruction, E5. Losses average seeds and windows within series, then weight the six two-series map groups equally. Lower is better. Secondary conditions are descriptive.}
+\label{tab:external}
+\centering
+\begin{tabular}{lr}
+\toprule
+Condition & Mean loss\\
+\midrule
+MLP static & 0.128612 \\ % [claim:C174] [evidence:E131]
+MLP + GRU & 0.122492 \\ % [claim:C175] [evidence:E131]
+Graph static & 0.129249 \\ % [claim:C176] [evidence:E131]
+Graph + GRU & 0.124658 \\ % [claim:C177] [evidence:E131]
+Graph + GRU, no motion & 0.124499 \\ % [claim:C178] [evidence:E131]
+Graph + GRU, common input & 0.125665 \\ % [claim:C179] [evidence:E131]
+\bottomrule
+\end{tabular}
+\end{table}
+
+\pending{RES5}{The frozen new-series reconstruction contrast is complete. Transfer of source-fitted patterns, context-aware rankings, and semantic retrieval validity remain distinct E5 endpoints; no new relevance grades are inferred from these losses.}
 
 \subsection{Completed auxiliary state-prediction controls: E6}
 Table~\ref{tab:aux} reports the completed v17 development comparison using the original common inputs and masks. Values are equal-series relative MSE reductions against persistence. Neural scores average errors over seeds 0, 1, and 42; they are not a prediction ensemble.
@@ -333,13 +364,13 @@ Existing predictive controls help separate raw-input availability from architect
 
 A synthetic information-loss probe preserves coarse place categories, resources and relative formation while translating the whole team over time. The preceding 13-channel node and three-channel pair summaries remain identical, while the appended motion quantities distinguish the constructed moving and stationary windows. Endpoint displacement still cannot recover an intervening out-and-back path or identify horizontal direction. This diagnostic checks information retention, not real tactical intent or model accuracy. % [claim:C109] [evidence:E101,E103]
 
-\pending{DISC}{After E1--E5, interpret the main findings, competing explanations, component failures, and deployment-use conditions. Distinguish stable descriptive patterns from tactical correctness and association from causation. Do not turn non-significance into equivalence.}
+The new-series reconstruction estimate is consistent with the development warning against assuming a graph advantage. Temporal controls remain informative, while additional motion channels do not automatically improve this objective. In a separate development analysis, the highly stable joint clusters largely follow resources. These results motivate retaining deployment observations, contextual facets, and tactical judgments as separate evidence layers; no fixed place-to-duty rule follows from the current experiments. % [claim:C181] [evidence:E110,E124,E131]
 
 \subsection{Scope of the project}
 This CT study targets offline deployment representation and evidence retrieval. T-side openings, a production backend, coaching interventions, and win-rate effects are separate projects and have not been validated by the present experiments.
 
 \section{Conclusion}
-\pending{CONC}{Summarize the final supported contribution, primary independent result, and remaining limitations. Keep the same research scope as the introduction; do not replace missing main-task results with auxiliary prediction gains.}
+We report an auditable CT opening schema and matched architecture, pattern, and retrieval controls across maps. The frozen new-series technical comparison does not establish a stable graph advantage. Recorded context can stabilize clusters while changing what those clusters represent, so computational stability must not substitute for tactical interpretation. The limited existing judged-pool replay remains auxiliary; independent semantic retrieval and coaching efficacy are unresolved. % [claim:C182] [evidence:E124,E126,E131]
 
 \appendices
 \section{Evidence and Reproducibility}

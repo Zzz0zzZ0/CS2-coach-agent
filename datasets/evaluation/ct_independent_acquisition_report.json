@@ -1,0 +1,181 @@
+{
+  "status": "complete_acquisition_and_native_input_QA",
+  "date": "2026-10-26",
+  "protocol_sha256": "192a73a97447afd9cafda880d81476dafb1fb483cbd5337ec424766fcea3b442",
+  "cohort_sha256": "1d302b576d7f8281aa51ba042de7e596f33df0aebea475e58f444dc26711d549",
+  "primary_series": 12,
+  "maps": {
+    "de_dust2": 2,
+    "de_anubis": 2,
+    "de_ancient": 2,
+    "de_inferno": 2,
+    "de_nuke": 2,
+    "de_mirage": 2
+  },
+  "eligible_CT_windows": 246,
+  "completed_CT_rounds": 247,
+  "exclusions": [
+    {
+      "match_id": "2399385",
+      "round": 16,
+      "reason": "round_ended_before_final_snapshot"
+    }
+  ],
+  "archive_GET_attempts": 14,
+  "completed_archives": 13,
+  "actual_archive_bytes": 5541168792,
+  "conservative_archive_budget_debit_bytes": 5801419655,
+  "retained_demo_bytes": 4169735253,
+  "replacements": {
+    "2398721": {
+      "match_id": "2398722",
+      "reason": "Frozen primary Mirage is split into p1 and p2 demo files; no partial-map substitution or concatenation. Use prelisted same-event Mirage alternate before model evaluation."
+    }
+  },
+  "files": [
+    {
+      "match_id": "2394204",
+      "event_id": 8263,
+      "map": "de_dust2",
+      "demo_path": "output/tagnet/ct_independent_demos/2394204__de_dust2.dem",
+      "sha256": "db7c9ac4ce8a28983acc306f1f402ffba53f3286b62914dac6792d20856c11b5",
+      "bytes": 444073502,
+      "archive_sha256": "bd41ede58d0317a5f057c4e096fa4054d8fa708d9ea04a5c0d1bb8117c12d428",
+      "archive_member": "parivision-vs-liquid-dust2.dem"
+    },
+    {
+      "match_id": "2394203",
+      "event_id": 8263,
+      "map": "de_anubis",
+      "demo_path": "output/tagnet/ct_independent_demos/2394203__de_anubis.dem",
+      "sha256": "d29232cb13e38b94e076fb156171fd5a46d186a7ca20da249477878e8ea9dc2e",
+      "bytes": 403372383,
+      "archive_sha256": "b1a8fc8fe1e028b7b93ff18afb0139678f0fa493e2d13e8b1d5ec7d4e141ea1f",
+      "archive_member": "3dmax-vs-mibr-anubis.dem"
+    },
+    {
+      "match_id": "2394205",
+      "event_id": 8263,
+      "map": "de_ancient",
+      "demo_path": "output/tagnet/ct_independent_demos/2394205__de_ancient.dem",
+      "sha256": "57434abd8c498f569bc322ec7094ed86944c5641bc34883d8b8ee0bc6797b99f",
+      "bytes": 315363460,
+      "archive_sha256": "23108954fec9185aa5367937e2b1bf1721efc28daa7fef3ee8be0ab82054fdc1",
+      "archive_member": "the-mongolz-vs-lynn-vision-ancient.dem"
+    },
+    {
+      "match_id": "2394200",
+      "event_id": 8263,
+      "map": "de_inferno",
+      "demo_path": "output/tagnet/ct_independent_demos/2394200__de_inferno.dem",
+      "sha256": "1388e119fe8773c20b5ac1dda497c0b9e5e2403f67b93eb80dea1eb44aae9dfd",
+      "bytes": 464982302,
+      "archive_sha256": "ba36c613efafc194235eb80b29aa5333572425c602f1691ad5676863ada67bd2",
+      "archive_member": "mouz-vs-tyloo-inferno.dem"
+    },
+    {
+      "match_id": "2398717",
+      "event_id": 8244,
+      "map": "de_anubis",
+      "demo_path": "output/tagnet/ct_independent_demos/2398717__de_anubis.dem",
+      "sha256": "e454e16b96a15bcaa6dd1fb61f88bfb816dc9da4229ad0b34294b1c1b0de2f43",
+      "bytes": 295296092,
+      "archive_sha256": "c40b4a2abb5a982652d2de938cc03d32a96147c64952373177e86c40d0334bac",
+      "archive_member": "falcons-vs-tyloo-m2-anubis.dem"
+    },
+    {
+      "match_id": "2398718",
+      "event_id": 8244,
+      "map": "de_inferno",
+      "demo_path": "output/tagnet/ct_independent_demos/2398718__de_inferno.dem",
+      "sha256": "86c38e0db4646195347a5fc966e0b8241b2668fbae5633bf39d6a900af06a220",
+      "bytes": 285438008,
+      "archive_sha256": "32528876a28eba7ad1dc186cc0d9638469802d74e8f6f768839059842e27827c",
+      "archive_member": "legacy-vs-parivision-m2-inferno.dem"
+    },
+    {
+      "match_id": "2398720",
+      "event_id": 8244,
+      "map": "de_nuke",
+      "demo_path": "output/tagnet/ct_independent_demos/2398720__de_nuke.dem",
+      "sha256": "ba251cebf7d1e0438d1bac28a8e250c1b386c643dade0fc97fefd5a814019ea3",
+      "bytes": 374742501,
+      "archive_sha256": "52abc6ab51157cb8dff9cd75395e113ef939a2b5e7c16b82e924025a34055588",
+      "archive_member": "spirit-vs-shinden-m2-nuke.dem"
+    },
+    {
+      "match_id": "2398722",
+      "event_id": 8244,
+      "map": "de_mirage",
+      "demo_path": "output/tagnet/ct_independent_demos/2398722__de_mirage.dem",
+      "sha256": "907a6982ca4947498d70a76f06a43ed3abd47bec1272a74bf97e664de807dc7d",
+      "bytes": 277703653,
+      "archive_sha256": "69e0d24c1adad9031e8b27fa670e6a459fb293cce696c90476250f6347be58e3",
+      "archive_member": "mouz-vs-m80-m2-mirage.dem"
+    },
+    {
+      "match_id": "2399384",
+      "event_id": 8932,
+      "map": "de_nuke",
+      "demo_path": "output/tagnet/ct_independent_demos/2399384__de_nuke.dem",
+      "sha256": "c6b05969f72a6d7751cb2fd495c07c540720573a12440f40ec4356309383704d",
+      "bytes": 212881436,
+      "archive_sha256": "906117eeae9ecc1882931ff2f917d7f095697a8d1fe450954f92d72ee887524c",
+      "archive_member": "9z-vs-aurora-m2-nuke.dem"
+    },
+    {
+      "match_id": "2399385",
+      "event_id": 8932,
+      "map": "de_ancient",
+      "demo_path": "output/tagnet/ct_independent_demos/2399385__de_ancient.dem",
+      "sha256": "a7820924acf2c1b08312a317099c8eb54e2d44879558d62d4bb9754e8500523f",
+      "bytes": 378032920,
+      "archive_sha256": "0d390103c9c4d98898d35171a948529c004860d3cf9afb7bd1076f6b07b79af5",
+      "archive_member": "falcons-vs-ninjas-in-pyjamas-m1-ancient.dem"
+    },
+    {
+      "match_id": "2399386",
+      "event_id": 8932,
+      "map": "de_dust2",
+      "demo_path": "output/tagnet/ct_independent_demos/2399386__de_dust2.dem",
+      "sha256": "90f0131dc840c294d673421093dadaa06adb86e1ce6526a7194afe8eb390c07f",
+      "bytes": 389734211,
+      "archive_sha256": "b5863cfc579e264c10105ec3874701f6da92aa8adc7c6ed04e06bbd529f758c7",
+      "archive_member": "legacy-vs-parivision-m1-dust2.dem"
+    },
+    {
+      "match_id": "2399387",
+      "event_id": 8932,
+      "map": "de_mirage",
+      "demo_path": "output/tagnet/ct_independent_demos/2399387__de_mirage.dem",
+      "sha256": "373e87be6115667b89048af1b27c7e1fc06b4f25d4776bd8d5cec48aa4a9e43e",
+      "bytes": 328114785,
+      "archive_sha256": "0a3cce83001434cf1075a73ca3ce2dd5c0d1000d3d78db60d53c3b6fdd7adee0",
+      "archive_member": "furia-vs-betboom-m2-mirage.dem"
+    }
+  ],
+  "input_QA_sha256": "36e30a29d39335434bcffead73a3788f1ce66172de018d5578669d7e36008c78",
+  "identity_checks_sha256": "fcd84701c2bf57043e69eb6aae44e1fe42dc40b6e9ae14f0a1892e22e3501e8b",
+  "native_QA_source_sha256": {
+    "app/services/parser_service.py": "2a63d5bbfc781ef3daa2e2c9ed6edc5d744e1f275d59aec07c50031fb67be873",
+    "app/services/opening_snapshot_service.py": "b0731c26bd90885258fdc0ec888450482ce89ec2dd383bf67474cc8659297485",
+    "app/services/opening_timing_service.py": "962e76990e7ac393498605aab2e92c4015b4ca4f5da00ed649772a128ffa2d78",
+    "app/services/ct_feature_service.py": "7d2476cc88c6f3ad62e8a1ca71668c14ee71758f5904162763ac49a63e5bed0b",
+    "app/services/ct_geometry_service.py": "dbf0904bb9fdb0905050c5e515c07b71292ce9bc2b842282bf3727c079fc3981",
+    "app/services/ct_deployment_service.py": "c5791ec8db5dc01ed5f54b7c30c01308eb636d7210b04c5eaff04f607bfb1769",
+    "app/services/team_identity_service.py": "6cdb5315027ccfc020897606236532e426bb6180090967075ae98136c9961750",
+    "scripts/acquire_ct_independent_demos.py": "399098da88dc189be154e14444c0d3574c9048f56cfd6a3652bafae215b678ee",
+    "scripts/export_ct_independent_inputs.py": "216ddf34660e935aa5cfa26a590e0a24130ab7eb48bc99f495c7fe07014d1de9"
+  },
+  "source_demo_content_duplicates": 0,
+  "unresolved_team_identities": [],
+  "parser_versions": [
+    "0.41.3"
+  ],
+  "new_context_facets_exported": false,
+  "limits": [
+    "Newly acquired series on six researcher-familiar maps; source models exclude the target map.",
+    "Chronological metadata selection from 82 available match pages out of 85 links; not random sampling or a chronological future-only split.",
+    "Three events and repeated professional teams; no new relevance judgments or coach intervention."
+  ]
+}
