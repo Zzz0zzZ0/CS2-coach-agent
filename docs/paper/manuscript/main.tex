@@ -336,32 +336,34 @@ Graph + GRU, common input & 0.125665 \\ % [claim:C179] [evidence:E131]
 
 The new-series state-only source prototypes accept 93.2\% of Graph+GRU query-seed assignments and 87.0\% for MLP+GRU. Their eligible seed-pair ARI means are 0.430 and 0.527, each from eighteen comparisons. Coverage is not calibrated confidence, and the method-specific common-accepted populations limit direct stability comparisons. % [claim:C190] [evidence:E134]
 
-Pre-round score and CT equipment are known for all 246 windows; the required throw event is not exposed by the frozen parser for the 80 May windows. Utility-dependent policies are therefore supported for 166 windows, with unknown outputs retained rather than replaced by zeros or inferred detonations. All original seven policies, six neural conditions with three seeds, statistics, full consistent-window matching and context-only controls are retained. % [claim:C191] [evidence:E135,E136]
+Pre-round score and CT equipment are known for all 246 windows. A corrective telemetry adapter recovers release-timed utility observations for 60 of the 80 originally unavailable May windows, raising utility support from 166 to 226 windows. The 20 old Inferno windows remain unknown because firing/projectile records cannot be completely paired. All seven original policies, six neural conditions with three seeds, statistics, full consistent-window matching and context-only controls are retained; unknown counts are not zero-imputed. % [claim:C191] [evidence:E140,E141]
 
-For Graph+GRU plus joint context, acceptance is 61.7\% across all query-seed assignments and 91.4\% among the context-known subset. Seed ARI is 0.938 across eighteen eligible pairs, while agreement with context-only assignments is 1.000 on eighteen common-accepted comparisons. The source prototypes were already resource-dominated; neither the increased conditional stability nor this agreement establishes tactical correctness. The unknown-context and acceptance subsets differ from the state-only summaries. % [claim:C192] [evidence:E124,E137]
+For Graph+GRU plus joint context, acceptance is 84.6\% across all query-seed assignments and 92.0\% among the context-known subset. Seed ARI is 0.946 across eighteen eligible pairs, while agreement with context-only assignments is 1.000 on eighteen common-accepted comparisons. The source prototypes were already resource-dominated; neither conditional stability nor this agreement establishes tactical correctness. Availability and acceptance subsets differ from the state-only summaries. % [claim:C192] [evidence:E124,E142]
 
 A version-sensitivity probe reparsed one unchanged May Dust2 Demo with demoparser2 0.42.1 instead of 0.41.3. The dedicated throw event remained unavailable, while opening snapshots, timing audits and all five model-input arrays matched exactly. This single-file result does not determine whether recording differences or a remaining compatibility issue causes the event gap, and it does not validate other parser-version substitutions. % [claim:C189] [evidence:E138]
 
+The event-channel audit distinguishes prefixed weapon-fire values from release events. On one October Dust2 control, all 535 paired dedicated releases occur 6--14 game ticks after firing and exactly at the first observed projectile tick; firing timestamps are therefore not interchangeable with releases. Eight dedicated-event Demos were checked, with 828 of 830 CT query-time count comparisons supported by the derivation and matching exactly; two ambiguous derived snapshots were withheld, while their original dedicated-event context remained available. After correction, all 282,060 previously supported candidate slots and 3,566 previously known prototype assignments retain their candidate identities or cluster labels and acceptance. These are telemetry and replay checks, not semantic judgments. % [claim:C200] [evidence:E139,E140,E143]
+
 \begin{table}[t]
-\caption{New-series unjudged retrieval turnover. Counts pool twenty method/seed variants, not independent participants. Utility-dependent policies use the 166 context-known windows. Changing the first result is not evidence of improved relevance.}
+\caption{New-series unjudged retrieval turnover. Counts pool twenty method/seed variants, not independent participants. Utility-dependent policies use the 226 context-known windows. Changing the first result is not evidence of improved relevance.}
 \label{tab:transferretrieval}
 \centering\small
 \begin{tabular}{lrr}
 \toprule
 Policy & Queries & Top-1 changes/comparisons\\
 \midrule
-Base & 246 & 0/4920 \\ % [claim:C193] [evidence:E136]
-CT equipment & 246 & 2408/4920 \\ % [claim:C194] [evidence:E136]
-Public score & 246 & 3892/4920 \\ % [claim:C195] [evidence:E136]
-CT utility & 166 & 2771/3320 \\ % [claim:C196] [evidence:E136]
-Joint context, 0.25 & 166 & 2060/3320 \\ % [claim:C197] [evidence:E136]
-Joint context, 0.50 & 166 & 2697/3320 \\ % [claim:C198] [evidence:E136]
-Joint context, 0.75 & 166 & 3085/3320 \\ % [claim:C199] [evidence:E136]
+Base & 246 & 0/4920 \\ % [claim:C193] [evidence:E141]
+CT equipment & 246 & 2408/4920 \\ % [claim:C194] [evidence:E141]
+Public score & 246 & 3892/4920 \\ % [claim:C195] [evidence:E141]
+CT utility & 226 & 3798/4520 \\ % [claim:C196] [evidence:E141]
+Joint context, 0.25 & 226 & 2850/4520 \\ % [claim:C197] [evidence:E141]
+Joint context, 0.50 & 226 & 3706/4520 \\ % [claim:C198] [evidence:E141]
+Joint context, 0.75 & 226 & 4173/4520 \\ % [claim:C199] [evidence:E141]
 \bottomrule
 \end{tabular}
 \end{table}
 
-No source cluster, radius, context weight or encoder is refitted for these transfers. G4 has no same-map source candidates, so same-map retrieval is unsupported and all-source and other-map strata coincide. The evidence supports reporting computational transfer and telemetry limits; independent semantic retrieval validity remains unresolved.
+The telemetry correction follows the initial secondary analysis and is reported as an amendment; both result versions are retained. No source cluster, radius, context weight or encoder is refitted for these transfers. G4 has no same-map source candidates, so same-map retrieval is unsupported and all-source and other-map strata coincide. The evidence supports reporting computational transfer and telemetry limits; independent semantic retrieval validity remains unresolved.
 
 \subsection{Completed auxiliary state-prediction controls: E6}
 Table~\ref{tab:aux} reports the completed v17 development comparison using the original common inputs and masks. Values are equal-series relative MSE reductions against persistence. Neural scores average errors over seeds 0, 1, and 42; they are not a prediction ensemble.

@@ -1,0 +1,34 @@
+{
+  "scope": "Complete existing seven-policy follow-up on the frozen new cohort; rankings unjudged, no new condition or test-side selection.",
+  "input_sha256": {
+    "scripts/retrieve_ct_independent_context.py": "15abcd4af61ae70ceda83192bf5e16923f379af99ac6c5c0e2e4d5202a4f7899",
+    "scripts/evaluate_ct_context_retrieval.py": "1ac7307610281e055a38ced4dd7e5c6e15f6a1be0af48457c5e4d6c77723b597",
+    "scripts/evaluate_ct_reconstruction.py": "b34db5b723d9e835c942024c03c2412401f197d8a06ccbe2da1f7b3c3e979c30",
+    "app/services/ct_context_retrieval_service.py": "c47146325124ed276a0d3f7c6be0930e1026883a796f0b49483837d858fe90db",
+    "app/services/ct_retrieval_service.py": "498a12134cc9f18b581c9f78d6a7b9731464877283b5c32d459dda2d6730cda8",
+    "datasets/selections/ct_context_retrieval_matrix.json": "1e3eaca45c1ce4f05b6bf8c180a83e4f442073dc58049ec85007fb64ea8ceace",
+    "datasets/selections/ct_independent_confirmation.json": "192a73a97447afd9cafda880d81476dafb1fb483cbd5337ec424766fcea3b442",
+    "datasets/evaluation/ct_independent_confirmation_report.json": "06c1a4d5216c96e8576edc5a3b6237e8ca4fba24eca45b358f2e5ccbd4824505",
+    "output/tagnet/ct_independent_context_v2/context.json": "6633308809f1a1eac743bce09c8253298498f0087a230c63ec1f5052bcc1e2f6",
+    "output/tagnet/ct_independent_context_v2/report.json": "6a18d8b050e0e9e5dcf50c2d19bb19daa55f98c0eff4f0b5014994b004d00233",
+    "output/tagnet/ct_independent_inputs/report.json": "36e30a29d39335434bcffead73a3788f1ce66172de018d5578669d7e36008c78",
+    "output/tagnet/ct_reconstruction_analysis/observation_distances.npz": "6028c652828700f27b7b305266d1c45f89e790cd6e124e983cd35a496e553854",
+    "output/tagnet/ct_deployment_inputs_p1_v03/features.npz": "f7bc4b100a654250f13b646b3dc5ed136f0295faad1b2283f33ed485adecf799",
+    "output/tagnet/ct_deployment_inputs_p1_v03/sample_index.json": "83f34a6c24a6cff875fd458f355129cf41b89aae8769672aa9bd46558778dd4d",
+    "output/tagnet/ct_context_availability_v2/context.json": "ba75c532f9d8cf0c0010817460d0a120ca5bfb7908fc50ad30a63babf83660a3",
+    "output/tagnet/ct_grouped_confirmation_v7/folds.json": "5997bf6bdabc1df506fc2cd4e1527be35eac332463002bcc6f34f4ac15053585",
+    "datasets/evaluation/ct_independent_context_repair_report.json": "6a18d8b050e0e9e5dcf50c2d19bb19daa55f98c0eff4f0b5014994b004d00233",
+    "datasets/selections/ct_independent_utility_repair.json": "9a3e1e58c0e2573ff11dabd22ef748ff7e0dbfeeb6656eb32dd2f475c9ed4a89"
+  },
+  "conditions": "Six frozen neural conditions x three seeds, source-standardized statistics, full consistent-window matching, and context-only.",
+  "missing_context": "20 Inferno windows remain unavailable after incomplete pairing; utility-dependent policies support226 windows. No zero imputation.",
+  "source_only": "All means, variances, off-diagonal pair scales and candidate pools from source train only.",
+  "strata": [
+    "all_source",
+    "same_map_unsupported_in_G4",
+    "other_map"
+  ],
+  "parent_protocol_sha256": "b2b13a18d0c796f5c43a67c72cd688da1d59aaa6958931a45c5133006d198c58",
+  "parent_revision": "3336003",
+  "corrective_amendment": "Secondary rerun after telemetry compatibility repair; old results retained. Same policies/source checkpoints/centroids/weights, no new fits or labels. The corrected context recovers60 windows, retaining20 unavailable windows."
+}

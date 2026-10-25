@@ -46,7 +46,7 @@ def load_transfer_inputs():
         new_index.extend(json.loads((folder/'sample_index.json').read_text(encoding='utf-8')))
     new_data={k:np.concatenate([p[k] for p in pieces]) for k in keys}
     old_context=json.loads((ROOT/'output/tagnet/ct_context_availability_v2/context.json').read_text(encoding='utf-8'))
-    new_context=json.loads((ROOT/'output/tagnet/ct_independent_context/context.json').read_text(encoding='utf-8'))
+    new_context=json.loads((ROOT/'output/tagnet/ct_independent_context_v2/context.json').read_text(encoding='utf-8'))
     assert [r['id'] for r in old_context]==[r['id'] for r in old_index]
     assert [r['id'] for r in new_context]==[r['id'] for r in new_index]
     folds={r['name']:r for r in json.loads((ROOT/'output/tagnet/ct_grouped_confirmation_v7/folds.json').read_text(encoding='utf-8')) if r['task']=='G4'}
@@ -55,7 +55,7 @@ def load_transfer_inputs():
 
 def main():
     import psutil
-    protocol_path=ROOT/'datasets/selections/ct_independent_retrieval_transfer.json'
+    protocol_path=ROOT/'datasets/selections/ct_independent_retrieval_transfer_v2.json'
     cfg=json.loads(protocol_path.read_text(encoding='utf-8'))
     for name,expected in cfg['input_sha256'].items():assert digest(ROOT/name)==expected,name
     original=json.loads((ROOT/'datasets/selections/ct_independent_confirmation.json').read_text(encoding='utf-8'))
@@ -70,7 +70,7 @@ def main():
     np.testing.assert_allclose(parity,source_direct[:4],atol=1e-8,rtol=0)
     direct=cross_observation_distances(new_data,old_data)
     source_stats=statistics_sequence(old_data);query_stats=statistics_sequence(new_data)
-    out=ROOT/'output/tagnet/ct_independent_retrieval';assert not out.exists();out.mkdir()
+    out=ROOT/'output/tagnet/ct_independent_retrieval_v2';assert not out.exists();out.mkdir()
     np.savez_compressed(out/'observation_distances.npz',distances=direct)
     entries=[];artifacts={'observation_distances.npz':digest(out/'observation_distances.npz')}
     for fold_name,fold in sorted(folds.items()):

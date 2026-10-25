@@ -1085,6 +1085,116 @@
         "verified_by": "",
         "verified_on": ""
       }
+    },
+    {
+      "evidence_id": "E139",
+      "title": "Upstream parser-version comparison and utility event timing audit",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_utility_upstream_versions.json"
+      },
+      "locator": "datasets/evaluation/ct_utility_upstream_versions.json; sha256=80dd288a3cfce7f0e21501ba60282d229313b4435ab8ed38adede8d0d402e499",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E140",
+      "title": "Corrective partial utility recovery with explicit unqualified Demo and control coverage",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_independent_context_repair_report.json"
+      },
+      "locator": "datasets/evaluation/ct_independent_context_repair_report.json; sha256=6a18d8b050e0e9e5dcf50c2d19bb19daa55f98c0eff4f0b5014994b004d00233",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E141",
+      "title": "Original policy matrix replay after partial telemetry recovery",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_independent_retrieval_report_v2.json"
+      },
+      "locator": "datasets/evaluation/ct_independent_retrieval_report_v2.json; sha256=6cf815466e7fda6c81217573dd3a2370112c81f6751e2286a8674dd896c27e44",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E142",
+      "title": "Frozen joint prototype transfer after partial telemetry recovery",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_independent_context_pattern_report_v2.json"
+      },
+      "locator": "datasets/evaluation/ct_independent_context_pattern_report_v2.json; sha256=e492bb8abb7784dcdf4896b26fbc8883512ca3215f55c36e4b1397939fb8d123",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E143",
+      "title": "Exact replay parity for previously supported rankings and prototype assignments",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_utility_repair_replay_parity.json"
+      },
+      "locator": "datasets/evaluation/ct_utility_repair_replay_parity.json; sha256=e91519bcf93ba3526733a9cb2aba57c18e6b663c256e7d010e990605b69ec8f1",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
     }
   ]
 }

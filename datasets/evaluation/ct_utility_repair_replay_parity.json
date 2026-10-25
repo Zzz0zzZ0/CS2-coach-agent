@@ -1,0 +1,19 @@
+{
+  "status": "exact_existing_supported_replay",
+  "retrieval_files": 126,
+  "previously_supported_candidate_slots": 282060,
+  "previously_known_prototype_assignments": 3566,
+  "ranking_candidate_ids_equal": true,
+  "ranking_distances_atol": 1e-10,
+  "cluster_labels_and_acceptance_equal": true,
+  "centroid_distances_atol": 1e-10,
+  "scope": "Original supported observations stay unchanged; recovered60 windows add availability. Original20 Inferno windows remain unsupported for utility. No new labels or model/source refits.",
+  "input_sha256": {
+    "output/tagnet/ct_independent_context/context.json": "5efd5f0315482134ea8c130f16348d5b737ecceccaf09c4d2b36ee8ed0d14c20",
+    "output/tagnet/ct_independent_context_v2/context.json": "6633308809f1a1eac743bce09c8253298498f0087a230c63ec1f5052bcc1e2f6",
+    "datasets/evaluation/ct_independent_retrieval_report.json": "b9b0404f1146ffb17e61aaeb8e016cfed407ca6a75c7e3fbbbe4157ca6c1b847",
+    "datasets/evaluation/ct_independent_retrieval_report_v2.json": "6cf815466e7fda6c81217573dd3a2370112c81f6751e2286a8674dd896c27e44",
+    "datasets/evaluation/ct_independent_context_pattern_report.json": "6e63946749fa25f14b2e535f0f38ca5778fb2673a19c8e412abbd62d5cd8fa5b",
+    "datasets/evaluation/ct_independent_context_pattern_report_v2.json": "e492bb8abb7784dcdf4896b26fbc8883512ca3215f55c36e4b1397939fb8d123"
+  }
+}

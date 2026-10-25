@@ -1,0 +1,21 @@
+{
+  "scope": "Fixed source-prototype transfer, follow-up diagnostics; no new fit or semantic labels.",
+  "input_sha256": {
+    "scripts/transfer_ct_independent_context_patterns.py": "1375223948bd50d96d6f6e58d9685d6088ab4720234ec80e360fd69c1694d29e",
+    "scripts/transfer_ct_independent_patterns.py": "75d6c5139bb570cdd8865b420eccd45653828f26e21041391f93149ea0efda3f",
+    "scripts/retrieve_ct_independent_context.py": "15abcd4af61ae70ceda83192bf5e16923f379af99ac6c5c0e2e4d5202a4f7899",
+    "app/services/ct_context_retrieval_service.py": "c47146325124ed276a0d3f7c6be0930e1026883a796f0b49483837d858fe90db",
+    "datasets/evaluation/ct_context_pattern_report.json": "1b9192e7d6fcf7caeb35d363c141f684c77ac5aa55c7fe20355e483a343dff8b",
+    "datasets/selections/ct_context_pattern_analysis.json": "20108a53b041e61de77fc06d1892b6273dc7d526df75b2da20bf52baa6b30fe1",
+    "datasets/selections/ct_independent_confirmation.json": "192a73a97447afd9cafda880d81476dafb1fb483cbd5337ec424766fcea3b442",
+    "output/tagnet/ct_independent_context_v2/context.json": "6633308809f1a1eac743bce09c8253298498f0087a230c63ec1f5052bcc1e2f6",
+    "output/tagnet/ct_independent_inputs/report.json": "36e30a29d39335434bcffead73a3788f1ce66172de018d5578669d7e36008c78",
+    "datasets/evaluation/ct_independent_context_repair_report.json": "6a18d8b050e0e9e5dcf50c2d19bb19daa55f98c0eff4f0b5014994b004d00233",
+    "datasets/selections/ct_independent_utility_repair.json": "9a3e1e58c0e2573ff11dabd22ef748ff7e0dbfeeb6656eb32dd2f475c9ed4a89"
+  },
+  "availability": "All-query and known-query coverage both reported; unavailable throw streams stay unknown.",
+  "source_validation": "Reproduce the stored old query labels, acceptance and centroid distances before applying every existing source prototype.",
+  "parent_protocol_sha256": "98ce2551506f1be4f47f132f38125f3876c4db8d4d860f67502463e64191a177",
+  "parent_revision": "3336003",
+  "corrective_amendment": "Secondary rerun after telemetry compatibility repair; old results retained. Same policies/source checkpoints/centroids/weights, no new fits or labels. The corrected context recovers60 windows, retaining20 unavailable windows."
+}

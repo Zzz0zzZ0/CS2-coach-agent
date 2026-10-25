@@ -1,0 +1,167 @@
+{
+  "checked_date": "2026-10-26",
+  "repository": "https://github.com/LaihoE/demoparser",
+  "release_notes": "https://github.com/LaihoE/demoparser/releases",
+  "published_github_releases": 0,
+  "comparison_url": "https://github.com/LaihoE/demoparser/compare/54e320f381417b85c2b085921253499bacf9acdc...44f3a6cc97c62a9efc222fded1b986e034268821",
+  "base": "54e320f381417b85c2b085921253499bacf9acdc",
+  "head": "44f3a6cc97c62a9efc222fded1b986e034268821",
+  "total_commits": 23,
+  "commits": [
+    {
+      "sha": "44f3a6cc97c62a9efc222fded1b986e034268821",
+      "date": "2026-10-25T16:36:31Z",
+      "message": "0.42.1"
+    },
+    {
+      "sha": "45ca85aeac8fb0de9d385124d2c7fe0e7b8ff0c8",
+      "date": "2026-10-05T20:48:58Z",
+      "message": "fix: handle repeated econ item custom names (#361)"
+    },
+    {
+      "sha": "451321a517ec9c0c6be7f0103dd07e7a805c3345",
+      "date": "2026-10-05T20:48:33Z",
+      "message": "fix: decode 14-bit demo entity handles (#363)"
+    },
+    {
+      "sha": "5ab2ab4fb45aa994f65b14b105cf23d3309bd006",
+      "date": "2026-10-05T20:48:10Z",
+      "message": "Handle invalid UTF-8 in game event string values (#364)"
+    },
+    {
+      "sha": "c8f79275f30132696abaa22796f7234300b005af",
+      "date": "2026-09-30T13:17:50Z",
+      "message": "fix: avoid allocation when decoding fixed64 values (#360)"
+    },
+    {
+      "sha": "9ddb3739c65664392df6120337374f94511f8ea5",
+      "date": "2026-09-21T14:40:29Z",
+      "message": "Fix typos (#356)"
+    },
+    {
+      "sha": "2ca4a0e8307e51448e03c7528098d14fbd142b53",
+      "date": "2026-09-21T14:39:26Z",
+      "message": "Fix CI instantly failing (#357)"
+    },
+    {
+      "sha": "2d0f3b3a55d9830bef296e3f0003973fccf17849",
+      "date": "2026-09-03T17:52:38Z",
+      "message": "Decode CS2 UserCmd button states (#354)"
+    },
+    {
+      "sha": "67c4ccabf96d56fea6d9ee0cf931cbd5200a0cca",
+      "date": "2026-09-03T16:21:38Z",
+      "message": "Keep tick filtering on when velocity props are combined with events (#353)"
+    },
+    {
+      "sha": "fb12f068c5bc1271f1c96b2542355c22c7da55e8",
+      "date": "2026-08-31T19:36:07Z",
+      "message": "Fix sparse UserCmd repeated deltas (#352)"
+    },
+    {
+      "sha": "57f24c76776ac176e893833f3a5b4aad718a8196",
+      "date": "2026-08-25T19:36:48Z",
+      "message": "fix: avoid out-of-bounds panic on mismatched game event key count (#351)"
+    },
+    {
+      "sha": "266a831f08b0264dd722b017a5c05d765206a7ed",
+      "date": "2026-08-10T14:38:17Z",
+      "message": "fix: expose user command subtick moves (#346)"
+    },
+    {
+      "sha": "adaf1bf6422237d95d5a4fff7786d2805b654976",
+      "date": "2026-08-08T15:48:12Z",
+      "message": "stable version of get_or_insert_default"
+    },
+    {
+      "sha": "ea03f55248230e6ab85ccfd1c4245180476f6ebe",
+      "date": "2026-08-08T15:22:38Z",
+      "message": "update ethnum to 1.5.3"
+    },
+    {
+      "sha": "d3767705dc5846d73ed29db50eaeda58778dc934",
+      "date": "2026-08-08T15:11:36Z",
+      "message": "0.42.0"
+    },
+    {
+      "sha": "1298ca11c0d264ce7c951fa2e275c60ac506f994",
+      "date": "2026-08-08T15:06:39Z",
+      "message": "Fix button extraction for delta-encoded usercmds (#344)"
+    },
+    {
+      "sha": "d91ab936eeeba7696ae31662ffeedffcd9afcd1d",
+      "date": "2026-08-08T15:05:42Z",
+      "message": "Support delta-encoded user commands (#343)"
+    },
+    {
+      "sha": "ba39cc44cd5abfd7f34df2b3c0a7dd3630048311",
+      "date": "2026-07-07T14:56:00Z",
+      "message": "remove mimalloc"
+    },
+    {
+      "sha": "78e5544850d0ae0593b05f9a31675d24e7d3d865",
+      "date": "2026-07-06T20:51:02Z",
+      "message": "remove mimalloc"
+    },
+    {
+      "sha": "db3ba5f7a1b02b8cb27d0063d52649883a98469c",
+      "date": "2026-07-06T20:31:22Z",
+      "message": "0.41.4"
+    },
+    {
+      "sha": "0c6be8ee8e6a032700d21e3df2c2d89257d2ccd5",
+      "date": "2026-07-06T20:26:16Z",
+      "message": "perf(parser): port upstream-safe parse speedups and benchmark rerun (#334)"
+    },
+    {
+      "sha": "e8c1ad452ced4d5938219ac9a5ee6300ee1ea37c",
+      "date": "2026-06-14T14:02:06Z",
+      "message": "feat(parser): expose live player roster as fallback for empty player_md (#333)"
+    },
+    {
+      "sha": "37987fa96df4754150aa9170adcc9befa5100045",
+      "date": "2026-06-06T09:24:37Z",
+      "message": "Fallback to zero when CMsgQAngle is missing (#331)"
+    }
+  ],
+  "decoder_names": "Both versions preserve event_desc.name and descriptor field names; no hardcoded grenade_thrown literal in this module.",
+  "base_hardcoded_grenade_thrown": false,
+  "candidate_hardcoded_grenade_thrown": false,
+  "interpretation": "No event rename identified in these 23 commit summaries or the inspected descriptor-name mapping. This is not proof excluding all decoder or recording differences.",
+  "observed_fields": {
+    "weapon_fire": {
+      "weapon_examples": [
+        "weapon_flashbang",
+        "weapon_smokegrenade",
+        "weapon_incgrenade"
+      ]
+    },
+    "grenade_thrown": {
+      "weapon_examples": [
+        "flashbang",
+        "smokegrenade",
+        "incgrenade"
+      ]
+    }
+  },
+  "same_demo_october_control": {
+    "match_id": "2399386",
+    "tick_rate": 64,
+    "paired_actions": 535,
+    "dedicated_minus_weapon_fire_ticks": {
+      "6": 297,
+      "7": 208,
+      "13": 15,
+      "14": 15
+    },
+    "ct_snapshot_comparisons": 120,
+    "ct_snapshot_count_differences": 2,
+    "projectile_birth_matches_dedicated_tick": 535,
+    "flash_example": {
+      "weapon_fire_tick": 4000,
+      "grenade_thrown_tick": 4007,
+      "flashbang_detonate_tick": 4111
+    }
+  },
+  "conclusion": "weapon_fire is not detonation on this control; prefixes can be normalized, but event timestamps must not be substituted."
+}

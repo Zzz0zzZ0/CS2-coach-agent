@@ -78,3 +78,5 @@ scripts/export_ct_independent_context.py -text
 scripts/retrieve_ct_independent_context.py -text
 test_ct_independent_retrieval.py -text
 scripts/transfer_ct_independent_context_patterns.py -text
+scripts/repair_ct_independent_utility.py -text
+test_ct_utility_event_compatibility.py -text

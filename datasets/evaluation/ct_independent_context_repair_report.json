@@ -1,0 +1,410 @@
+{
+  "status": "complete_projectile_release_repair",
+  "protocol_sha256": "9a3e1e58c0e2573ff11dabd22ef748ff7e0dbfeeb6656eb32dd2f475c9ed4a89",
+  "parser_version": "0.41.3",
+  "windows": 246,
+  "repaired_windows": 60,
+  "partially_repaired_windows": [
+    {
+      "match_id": "2394200",
+      "id": "1388e119fe8773c20b5ac1dda497c0b9e5e2403f67b93eb80dea1eb44aae9dfd:1:CT"
+    },
+    {
+      "match_id": "2394200",
+      "id": "1388e119fe8773c20b5ac1dda497c0b9e5e2403f67b93eb80dea1eb44aae9dfd:2:CT"
+    },
+    {
+      "match_id": "2394200",
+      "id": "1388e119fe8773c20b5ac1dda497c0b9e5e2403f67b93eb80dea1eb44aae9dfd:3:CT"
+    },
+    {
+      "match_id": "2394200",
+      "id": "1388e119fe8773c20b5ac1dda497c0b9e5e2403f67b93eb80dea1eb44aae9dfd:4:CT"
+    },
+    {
+      "match_id": "2394200",
+      "id": "1388e119fe8773c20b5ac1dda497c0b9e5e2403f67b93eb80dea1eb44aae9dfd:5:CT"
+    },
+    {
+      "match_id": "2394200",
+      "id": "1388e119fe8773c20b5ac1dda497c0b9e5e2403f67b93eb80dea1eb44aae9dfd:6:CT"
+    },
+    {
+      "match_id": "2394200",
+      "id": "1388e119fe8773c20b5ac1dda497c0b9e5e2403f67b93eb80dea1eb44aae9dfd:7:CT"
+    },
+    {
+      "match_id": "2394200",
+      "id": "1388e119fe8773c20b5ac1dda497c0b9e5e2403f67b93eb80dea1eb44aae9dfd:8:CT"
+    },
+    {
+      "match_id": "2394200",
+      "id": "1388e119fe8773c20b5ac1dda497c0b9e5e2403f67b93eb80dea1eb44aae9dfd:9:CT"
+    },
+    {
+      "match_id": "2394200",
+      "id": "1388e119fe8773c20b5ac1dda497c0b9e5e2403f67b93eb80dea1eb44aae9dfd:10:CT"
+    },
+    {
+      "match_id": "2394200",
+      "id": "1388e119fe8773c20b5ac1dda497c0b9e5e2403f67b93eb80dea1eb44aae9dfd:11:CT"
+    },
+    {
+      "match_id": "2394200",
+      "id": "1388e119fe8773c20b5ac1dda497c0b9e5e2403f67b93eb80dea1eb44aae9dfd:12:CT"
+    },
+    {
+      "match_id": "2394200",
+      "id": "1388e119fe8773c20b5ac1dda497c0b9e5e2403f67b93eb80dea1eb44aae9dfd:13:CT"
+    },
+    {
+      "match_id": "2394200",
+      "id": "1388e119fe8773c20b5ac1dda497c0b9e5e2403f67b93eb80dea1eb44aae9dfd:14:CT"
+    },
+    {
+      "match_id": "2394200",
+      "id": "1388e119fe8773c20b5ac1dda497c0b9e5e2403f67b93eb80dea1eb44aae9dfd:15:CT"
+    },
+    {
+      "match_id": "2394200",
+      "id": "1388e119fe8773c20b5ac1dda497c0b9e5e2403f67b93eb80dea1eb44aae9dfd:16:CT"
+    },
+    {
+      "match_id": "2394200",
+      "id": "1388e119fe8773c20b5ac1dda497c0b9e5e2403f67b93eb80dea1eb44aae9dfd:17:CT"
+    },
+    {
+      "match_id": "2394200",
+      "id": "1388e119fe8773c20b5ac1dda497c0b9e5e2403f67b93eb80dea1eb44aae9dfd:18:CT"
+    },
+    {
+      "match_id": "2394200",
+      "id": "1388e119fe8773c20b5ac1dda497c0b9e5e2403f67b93eb80dea1eb44aae9dfd:19:CT"
+    },
+    {
+      "match_id": "2394200",
+      "id": "1388e119fe8773c20b5ac1dda497c0b9e5e2403f67b93eb80dea1eb44aae9dfd:20:CT"
+    }
+  ],
+  "positive_control_demos": 8,
+  "demos": [
+    {
+      "match_id": "2394204",
+      "demo_sha256": "db7c9ac4ce8a28983acc306f1f402ffba53f3286b62914dac6792d20856c11b5",
+      "dedicated_event_available": false,
+      "recovered_releases": 474,
+      "raw_weapon_fire_utility_names": {
+        "weapon_hegrenade": 72,
+        "weapon_smokegrenade": 145,
+        "weapon_flashbang": 149,
+        "weapon_molotov": 50,
+        "weapon_incgrenade": 58
+      },
+      "birth_minus_firing_tick_distribution": {
+        "7": 196,
+        "6": 242,
+        "14": 11,
+        "13": 25
+      },
+      "control_snapshots_checked": 0,
+      "repaired_snapshots": 110,
+      "stationary_recording_gaps_merged": 0,
+      "unpaired_projectiles_outside_queries": 0,
+      "unpaired_projectiles_inside_queries": 0,
+      "uncertain_CT_projectiles_inside_queries": 0,
+      "safe_query_interval_CT_release_identity_time_side_parity": null
+    },
+    {
+      "match_id": "2394203",
+      "demo_sha256": "d29232cb13e38b94e076fb156171fd5a46d186a7ca20da249477878e8ea9dc2e",
+      "dedicated_event_available": false,
+      "recovered_releases": 444,
+      "raw_weapon_fire_utility_names": {
+        "weapon_flashbang": 135,
+        "weapon_molotov": 59,
+        "weapon_smokegrenade": 122,
+        "weapon_hegrenade": 68,
+        "weapon_incgrenade": 60
+      },
+      "birth_minus_firing_tick_distribution": {
+        "7": 169,
+        "6": 232,
+        "13": 24,
+        "14": 19
+      },
+      "control_snapshots_checked": 0,
+      "repaired_snapshots": 110,
+      "stationary_recording_gaps_merged": 2,
+      "unpaired_projectiles_outside_queries": 0,
+      "unpaired_projectiles_inside_queries": 0,
+      "uncertain_CT_projectiles_inside_queries": 0,
+      "safe_query_interval_CT_release_identity_time_side_parity": null
+    },
+    {
+      "match_id": "2394205",
+      "demo_sha256": "57434abd8c498f569bc322ec7094ed86944c5641bc34883d8b8ee0bc6797b99f",
+      "dedicated_event_available": false,
+      "recovered_releases": 357,
+      "raw_weapon_fire_utility_names": {
+        "weapon_flashbang": 106,
+        "weapon_incgrenade": 41,
+        "weapon_hegrenade": 70,
+        "weapon_smokegrenade": 103,
+        "weapon_molotov": 37
+      },
+      "birth_minus_firing_tick_distribution": {
+        "6": 183,
+        "7": 116,
+        "13": 36,
+        "14": 22
+      },
+      "control_snapshots_checked": 0,
+      "repaired_snapshots": 80,
+      "stationary_recording_gaps_merged": 0,
+      "unpaired_projectiles_outside_queries": 1,
+      "unpaired_projectiles_inside_queries": 0,
+      "uncertain_CT_projectiles_inside_queries": 0,
+      "safe_query_interval_CT_release_identity_time_side_parity": null
+    },
+    {
+      "match_id": "2394200",
+      "demo_sha256": "1388e119fe8773c20b5ac1dda497c0b9e5e2403f67b93eb80dea1eb44aae9dfd",
+      "dedicated_event_available": false,
+      "derivation_status": "withheld",
+      "reason": "Projectile and firing counts disagree",
+      "repaired_snapshots": 0
+    },
+    {
+      "match_id": "2398717",
+      "demo_sha256": "e454e16b96a15bcaa6dd1fb61f88bfb816dc9da4229ad0b34294b1c1b0de2f43",
+      "dedicated_event_available": true,
+      "recovered_releases": 360,
+      "raw_weapon_fire_utility_names": {
+        "weapon_smokegrenade": 120,
+        "weapon_hegrenade": 57,
+        "weapon_flashbang": 91,
+        "weapon_molotov": 56,
+        "weapon_incgrenade": 36
+      },
+      "birth_minus_firing_tick_distribution": {
+        "6": 239,
+        "14": 13,
+        "7": 104,
+        "13": 4
+      },
+      "control_snapshots_checked": 100,
+      "repaired_snapshots": 0,
+      "stationary_recording_gaps_merged": 0,
+      "unpaired_projectiles_outside_queries": 0,
+      "unpaired_projectiles_inside_queries": 0,
+      "uncertain_CT_projectiles_inside_queries": 0,
+      "safe_query_interval_CT_release_identity_time_side_parity": true
+    },
+    {
+      "match_id": "2398718",
+      "demo_sha256": "86c38e0db4646195347a5fc966e0b8241b2668fbae5633bf39d6a900af06a220",
+      "dedicated_event_available": true,
+      "recovered_releases": 331,
+      "raw_weapon_fire_utility_names": {
+        "weapon_decoy": 2,
+        "weapon_smokegrenade": 106,
+        "weapon_molotov": 34,
+        "weapon_flashbang": 82,
+        "weapon_hegrenade": 64,
+        "weapon_incgrenade": 43
+      },
+      "birth_minus_firing_tick_distribution": {
+        "7": 139,
+        "6": 164,
+        "14": 10,
+        "13": 18
+      },
+      "control_snapshots_checked": 75,
+      "repaired_snapshots": 0,
+      "stationary_recording_gaps_merged": 0,
+      "unpaired_projectiles_outside_queries": 1,
+      "unpaired_projectiles_inside_queries": 0,
+      "uncertain_CT_projectiles_inside_queries": 0,
+      "safe_query_interval_CT_release_identity_time_side_parity": true
+    },
+    {
+      "match_id": "2398720",
+      "demo_sha256": "ba251cebf7d1e0438d1bac28a8e250c1b386c643dade0fc97fefd5a814019ea3",
+      "dedicated_event_available": true,
+      "recovered_releases": 510,
+      "raw_weapon_fire_utility_names": {
+        "weapon_hegrenade": 98,
+        "weapon_molotov": 61,
+        "weapon_flashbang": 111,
+        "weapon_smokegrenade": 177,
+        "weapon_incgrenade": 62,
+        "weapon_decoy": 1
+      },
+      "birth_minus_firing_tick_distribution": {
+        "7": 181,
+        "6": 319,
+        "14": 6,
+        "13": 4
+      },
+      "control_snapshots_checked": 120,
+      "repaired_snapshots": 0,
+      "stationary_recording_gaps_merged": 0,
+      "unpaired_projectiles_outside_queries": 0,
+      "unpaired_projectiles_inside_queries": 0,
+      "uncertain_CT_projectiles_inside_queries": 0,
+      "safe_query_interval_CT_release_identity_time_side_parity": true
+    },
+    {
+      "match_id": "2398722",
+      "demo_sha256": "907a6982ca4947498d70a76f06a43ed3abd47bec1272a74bf97e664de807dc7d",
+      "dedicated_event_available": true,
+      "recovered_releases": 348,
+      "raw_weapon_fire_utility_names": {
+        "weapon_smokegrenade": 115,
+        "weapon_molotov": 40,
+        "weapon_flashbang": 91,
+        "weapon_incgrenade": 51,
+        "weapon_hegrenade": 51
+      },
+      "birth_minus_firing_tick_distribution": {
+        "7": 127,
+        "6": 207,
+        "14": 6,
+        "13": 8
+      },
+      "control_snapshots_checked": 95,
+      "repaired_snapshots": 0,
+      "stationary_recording_gaps_merged": 0,
+      "unpaired_projectiles_outside_queries": 0,
+      "unpaired_projectiles_inside_queries": 0,
+      "uncertain_CT_projectiles_inside_queries": 0,
+      "safe_query_interval_CT_release_identity_time_side_parity": true
+    },
+    {
+      "match_id": "2399384",
+      "demo_sha256": "c6b05969f72a6d7751cb2fd495c07c540720573a12440f40ec4356309383704d",
+      "dedicated_event_available": true,
+      "recovered_releases": 275,
+      "raw_weapon_fire_utility_names": {
+        "weapon_hegrenade": 53,
+        "weapon_flashbang": 59,
+        "weapon_smokegrenade": 94,
+        "weapon_molotov": 23,
+        "weapon_incgrenade": 46
+      },
+      "birth_minus_firing_tick_distribution": {
+        "6": 168,
+        "7": 99,
+        "14": 3,
+        "13": 5
+      },
+      "control_snapshots_checked": 68,
+      "repaired_snapshots": 0,
+      "stationary_recording_gaps_merged": 0,
+      "unpaired_projectiles_outside_queries": 0,
+      "unpaired_projectiles_inside_queries": 1,
+      "uncertain_CT_projectiles_inside_queries": 1,
+      "safe_query_interval_CT_release_identity_time_side_parity": true
+    },
+    {
+      "match_id": "2399385",
+      "demo_sha256": "a7820924acf2c1b08312a317099c8eb54e2d44879558d62d4bb9754e8500523f",
+      "dedicated_event_available": true,
+      "recovered_releases": 682,
+      "raw_weapon_fire_utility_names": {
+        "weapon_smokegrenade": 193,
+        "weapon_flashbang": 189,
+        "weapon_decoy": 1,
+        "weapon_hegrenade": 128,
+        "weapon_molotov": 73,
+        "weapon_incgrenade": 98
+      },
+      "birth_minus_firing_tick_distribution": {
+        "6": 372,
+        "13": 40,
+        "14": 27,
+        "7": 243
+      },
+      "control_snapshots_checked": 140,
+      "repaired_snapshots": 0,
+      "stationary_recording_gaps_merged": 0,
+      "unpaired_projectiles_outside_queries": 0,
+      "unpaired_projectiles_inside_queries": 0,
+      "uncertain_CT_projectiles_inside_queries": 0,
+      "safe_query_interval_CT_release_identity_time_side_parity": true
+    },
+    {
+      "match_id": "2399386",
+      "demo_sha256": "90f0131dc840c294d673421093dadaa06adb86e1ce6526a7194afe8eb390c07f",
+      "dedicated_event_available": true,
+      "recovered_releases": 535,
+      "raw_weapon_fire_utility_names": {
+        "weapon_smokegrenade": 157,
+        "weapon_molotov": 52,
+        "weapon_flashbang": 157,
+        "weapon_hegrenade": 100,
+        "weapon_incgrenade": 68,
+        "weapon_decoy": 1
+      },
+      "birth_minus_firing_tick_distribution": {
+        "6": 297,
+        "7": 208,
+        "13": 15,
+        "14": 15
+      },
+      "control_snapshots_checked": 120,
+      "repaired_snapshots": 0,
+      "stationary_recording_gaps_merged": 0,
+      "unpaired_projectiles_outside_queries": 0,
+      "unpaired_projectiles_inside_queries": 0,
+      "uncertain_CT_projectiles_inside_queries": 0,
+      "safe_query_interval_CT_release_identity_time_side_parity": true
+    },
+    {
+      "match_id": "2399387",
+      "demo_sha256": "373e87be6115667b89048af1b27c7e1fc06b4f25d4776bd8d5cec48aa4a9e43e",
+      "dedicated_event_available": true,
+      "recovered_releases": 512,
+      "raw_weapon_fire_utility_names": {
+        "weapon_decoy": 2,
+        "weapon_hegrenade": 82,
+        "weapon_smokegrenade": 144,
+        "weapon_flashbang": 156,
+        "weapon_molotov": 54,
+        "weapon_incgrenade": 74
+      },
+      "birth_minus_firing_tick_distribution": {
+        "6": 297,
+        "7": 172,
+        "14": 16,
+        "13": 27
+      },
+      "control_snapshots_checked": 110,
+      "repaired_snapshots": 0,
+      "stationary_recording_gaps_merged": 0,
+      "unpaired_projectiles_outside_queries": 0,
+      "unpaired_projectiles_inside_queries": 0,
+      "uncertain_CT_projectiles_inside_queries": 0,
+      "safe_query_interval_CT_release_identity_time_side_parity": true
+    }
+  ],
+  "positive_control_demos_attempted": 8,
+  "complete_windows_by_group": {
+    "equipment": 246,
+    "score": 246,
+    "utility": 226
+  },
+  "parent_context_sha256": "5efd5f0315482134ea8c130f16348d5b737ecceccaf09c4d2b36ee8ed0d14c20",
+  "context_sha256": "6633308809f1a1eac743bce09c8253298498f0087a230c63ec1f5052bcc1e2f6",
+  "elapsed_seconds": 22.415236900007585,
+  "peak_RAM_MiB": 872.4375,
+  "limits": [
+    "Dedicated event absence is not absence of all utility information.",
+    "Weapon-fire values have a weapon_ prefix and occur earlier; their ticks are not release ticks.",
+    "Projectile births supply observed release ticks; firing supplies subtype, including incendiary versus molotov.",
+    "All eight dedicated-event Demos are probed; qualified derivations require exact safe-query CT identity/time/side and count parity. Withheld derivations are explicit.",
+    "No new matches, model training, clustering fit or label; old contexts and results remain available.",
+    "Unpaired CT projectiles leave affected snapshot counts unknown; unpaired T projectiles do not alter CT counts.",
+    "Birth segmentation closes only observed stationary recording gaps; other incomplete/ambiguous pairing fails closed."
+  ]
+}

@@ -1,0 +1,2458 @@
+{
+  "status": "complete_frozen_context_prototype_transfer",
+  "protocol_sha256": "058d002980fb4a14a432e35946fb765730875b5edb2a66352f733fdd14c7cfe1",
+  "models": [
+    {
+      "map": "de_ancient",
+      "variant": "mlp_static+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 44,
+      "context_known_queries": 44,
+      "accepted": 41
+    },
+    {
+      "map": "de_ancient",
+      "variant": "mlp_static+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 44,
+      "context_known_queries": 44,
+      "accepted": 39
+    },
+    {
+      "map": "de_ancient",
+      "variant": "mlp_static+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 44,
+      "context_known_queries": 44,
+      "accepted": 39
+    },
+    {
+      "map": "de_ancient",
+      "variant": "mlp_gru+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 44,
+      "context_known_queries": 44,
+      "accepted": 39
+    },
+    {
+      "map": "de_ancient",
+      "variant": "mlp_gru+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 44,
+      "context_known_queries": 44,
+      "accepted": 38
+    },
+    {
+      "map": "de_ancient",
+      "variant": "mlp_gru+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 44,
+      "context_known_queries": 44,
+      "accepted": 40
+    },
+    {
+      "map": "de_ancient",
+      "variant": "graph_static+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 44,
+      "context_known_queries": 44,
+      "accepted": 41
+    },
+    {
+      "map": "de_ancient",
+      "variant": "graph_static+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 44,
+      "context_known_queries": 44,
+      "accepted": 39
+    },
+    {
+      "map": "de_ancient",
+      "variant": "graph_static+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 44,
+      "context_known_queries": 44,
+      "accepted": 41
+    },
+    {
+      "map": "de_ancient",
+      "variant": "graph_gru+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 44,
+      "context_known_queries": 44,
+      "accepted": 37
+    },
+    {
+      "map": "de_ancient",
+      "variant": "graph_gru+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 44,
+      "context_known_queries": 44,
+      "accepted": 38
+    },
+    {
+      "map": "de_ancient",
+      "variant": "graph_gru+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 44,
+      "context_known_queries": 44,
+      "accepted": 39
+    },
+    {
+      "map": "de_ancient",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 44,
+      "context_known_queries": 44,
+      "accepted": 40
+    },
+    {
+      "map": "de_ancient",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 44,
+      "context_known_queries": 44,
+      "accepted": 38
+    },
+    {
+      "map": "de_ancient",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 44,
+      "context_known_queries": 44,
+      "accepted": 38
+    },
+    {
+      "map": "de_ancient",
+      "variant": "graph_gru_common+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 44,
+      "context_known_queries": 44,
+      "accepted": 37
+    },
+    {
+      "map": "de_ancient",
+      "variant": "graph_gru_common+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 44,
+      "context_known_queries": 44,
+      "accepted": 37
+    },
+    {
+      "map": "de_ancient",
+      "variant": "graph_gru_common+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 44,
+      "context_known_queries": 44,
+      "accepted": 38
+    },
+    {
+      "map": "de_ancient",
+      "variant": "statistics_sequence",
+      "seed": null,
+      "source_K": 2,
+      "queries": 44,
+      "context_known_queries": 44,
+      "accepted": 44
+    },
+    {
+      "map": "de_ancient",
+      "variant": "statistics_sequence+context",
+      "seed": null,
+      "source_K": 2,
+      "queries": 44,
+      "context_known_queries": 44,
+      "accepted": 36
+    },
+    {
+      "map": "de_ancient",
+      "variant": "context_only",
+      "seed": null,
+      "source_K": 2,
+      "queries": 44,
+      "context_known_queries": 44,
+      "accepted": 36
+    },
+    {
+      "map": "de_anubis",
+      "variant": "mlp_static+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 42,
+      "context_known_queries": 42,
+      "accepted": 38
+    },
+    {
+      "map": "de_anubis",
+      "variant": "mlp_static+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 42,
+      "context_known_queries": 42,
+      "accepted": 37
+    },
+    {
+      "map": "de_anubis",
+      "variant": "mlp_static+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 42,
+      "context_known_queries": 42,
+      "accepted": 36
+    },
+    {
+      "map": "de_anubis",
+      "variant": "mlp_gru+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 42,
+      "context_known_queries": 42,
+      "accepted": 36
+    },
+    {
+      "map": "de_anubis",
+      "variant": "mlp_gru+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 42,
+      "context_known_queries": 42,
+      "accepted": 37
+    },
+    {
+      "map": "de_anubis",
+      "variant": "mlp_gru+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 42,
+      "context_known_queries": 42,
+      "accepted": 36
+    },
+    {
+      "map": "de_anubis",
+      "variant": "graph_static+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 42,
+      "context_known_queries": 42,
+      "accepted": 38
+    },
+    {
+      "map": "de_anubis",
+      "variant": "graph_static+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 42,
+      "context_known_queries": 42,
+      "accepted": 39
+    },
+    {
+      "map": "de_anubis",
+      "variant": "graph_static+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 42,
+      "context_known_queries": 42,
+      "accepted": 39
+    },
+    {
+      "map": "de_anubis",
+      "variant": "graph_gru+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 42,
+      "context_known_queries": 42,
+      "accepted": 38
+    },
+    {
+      "map": "de_anubis",
+      "variant": "graph_gru+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 42,
+      "context_known_queries": 42,
+      "accepted": 38
+    },
+    {
+      "map": "de_anubis",
+      "variant": "graph_gru+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 42,
+      "context_known_queries": 42,
+      "accepted": 38
+    },
+    {
+      "map": "de_anubis",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 42,
+      "context_known_queries": 42,
+      "accepted": 37
+    },
+    {
+      "map": "de_anubis",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 42,
+      "context_known_queries": 42,
+      "accepted": 39
+    },
+    {
+      "map": "de_anubis",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 42,
+      "context_known_queries": 42,
+      "accepted": 37
+    },
+    {
+      "map": "de_anubis",
+      "variant": "graph_gru_common+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 42,
+      "context_known_queries": 42,
+      "accepted": 34
+    },
+    {
+      "map": "de_anubis",
+      "variant": "graph_gru_common+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 42,
+      "context_known_queries": 42,
+      "accepted": 39
+    },
+    {
+      "map": "de_anubis",
+      "variant": "graph_gru_common+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 42,
+      "context_known_queries": 42,
+      "accepted": 38
+    },
+    {
+      "map": "de_anubis",
+      "variant": "statistics_sequence",
+      "seed": null,
+      "source_K": 2,
+      "queries": 42,
+      "context_known_queries": 42,
+      "accepted": 38
+    },
+    {
+      "map": "de_anubis",
+      "variant": "statistics_sequence+context",
+      "seed": null,
+      "source_K": 2,
+      "queries": 42,
+      "context_known_queries": 42,
+      "accepted": 41
+    },
+    {
+      "map": "de_anubis",
+      "variant": "context_only",
+      "seed": null,
+      "source_K": 2,
+      "queries": 42,
+      "context_known_queries": 42,
+      "accepted": 38
+    },
+    {
+      "map": "de_dust2",
+      "variant": "mlp_static+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 46,
+      "context_known_queries": 46,
+      "accepted": 43
+    },
+    {
+      "map": "de_dust2",
+      "variant": "mlp_static+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 46,
+      "context_known_queries": 46,
+      "accepted": 43
+    },
+    {
+      "map": "de_dust2",
+      "variant": "mlp_static+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 46,
+      "context_known_queries": 46,
+      "accepted": 43
+    },
+    {
+      "map": "de_dust2",
+      "variant": "mlp_gru+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 46,
+      "context_known_queries": 46,
+      "accepted": 45
+    },
+    {
+      "map": "de_dust2",
+      "variant": "mlp_gru+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 46,
+      "context_known_queries": 46,
+      "accepted": 43
+    },
+    {
+      "map": "de_dust2",
+      "variant": "mlp_gru+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 46,
+      "context_known_queries": 46,
+      "accepted": 43
+    },
+    {
+      "map": "de_dust2",
+      "variant": "graph_static+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 46,
+      "context_known_queries": 46,
+      "accepted": 46
+    },
+    {
+      "map": "de_dust2",
+      "variant": "graph_static+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 46,
+      "context_known_queries": 46,
+      "accepted": 46
+    },
+    {
+      "map": "de_dust2",
+      "variant": "graph_static+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 46,
+      "context_known_queries": 46,
+      "accepted": 46
+    },
+    {
+      "map": "de_dust2",
+      "variant": "graph_gru+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 46,
+      "context_known_queries": 46,
+      "accepted": 45
+    },
+    {
+      "map": "de_dust2",
+      "variant": "graph_gru+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 46,
+      "context_known_queries": 46,
+      "accepted": 45
+    },
+    {
+      "map": "de_dust2",
+      "variant": "graph_gru+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 46,
+      "context_known_queries": 46,
+      "accepted": 45
+    },
+    {
+      "map": "de_dust2",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 46,
+      "context_known_queries": 46,
+      "accepted": 45
+    },
+    {
+      "map": "de_dust2",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 46,
+      "context_known_queries": 46,
+      "accepted": 45
+    },
+    {
+      "map": "de_dust2",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 46,
+      "context_known_queries": 46,
+      "accepted": 45
+    },
+    {
+      "map": "de_dust2",
+      "variant": "graph_gru_common+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 46,
+      "context_known_queries": 46,
+      "accepted": 45
+    },
+    {
+      "map": "de_dust2",
+      "variant": "graph_gru_common+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 46,
+      "context_known_queries": 46,
+      "accepted": 45
+    },
+    {
+      "map": "de_dust2",
+      "variant": "graph_gru_common+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 46,
+      "context_known_queries": 46,
+      "accepted": 44
+    },
+    {
+      "map": "de_dust2",
+      "variant": "statistics_sequence",
+      "seed": null,
+      "source_K": 2,
+      "queries": 46,
+      "context_known_queries": 46,
+      "accepted": 41
+    },
+    {
+      "map": "de_dust2",
+      "variant": "statistics_sequence+context",
+      "seed": null,
+      "source_K": 2,
+      "queries": 46,
+      "context_known_queries": 46,
+      "accepted": 44
+    },
+    {
+      "map": "de_dust2",
+      "variant": "context_only",
+      "seed": null,
+      "source_K": 2,
+      "queries": 46,
+      "context_known_queries": 46,
+      "accepted": 46
+    },
+    {
+      "map": "de_inferno",
+      "variant": "mlp_static+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 35,
+      "context_known_queries": 15,
+      "accepted": 13
+    },
+    {
+      "map": "de_inferno",
+      "variant": "mlp_static+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 35,
+      "context_known_queries": 15,
+      "accepted": 12
+    },
+    {
+      "map": "de_inferno",
+      "variant": "mlp_static+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 35,
+      "context_known_queries": 15,
+      "accepted": 11
+    },
+    {
+      "map": "de_inferno",
+      "variant": "mlp_gru+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 35,
+      "context_known_queries": 15,
+      "accepted": 13
+    },
+    {
+      "map": "de_inferno",
+      "variant": "mlp_gru+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 35,
+      "context_known_queries": 15,
+      "accepted": 12
+    },
+    {
+      "map": "de_inferno",
+      "variant": "mlp_gru+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 35,
+      "context_known_queries": 15,
+      "accepted": 11
+    },
+    {
+      "map": "de_inferno",
+      "variant": "graph_static+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 35,
+      "context_known_queries": 15,
+      "accepted": 11
+    },
+    {
+      "map": "de_inferno",
+      "variant": "graph_static+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 35,
+      "context_known_queries": 15,
+      "accepted": 13
+    },
+    {
+      "map": "de_inferno",
+      "variant": "graph_static+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 35,
+      "context_known_queries": 15,
+      "accepted": 13
+    },
+    {
+      "map": "de_inferno",
+      "variant": "graph_gru+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 35,
+      "context_known_queries": 15,
+      "accepted": 12
+    },
+    {
+      "map": "de_inferno",
+      "variant": "graph_gru+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 35,
+      "context_known_queries": 15,
+      "accepted": 12
+    },
+    {
+      "map": "de_inferno",
+      "variant": "graph_gru+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 35,
+      "context_known_queries": 15,
+      "accepted": 13
+    },
+    {
+      "map": "de_inferno",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 35,
+      "context_known_queries": 15,
+      "accepted": 12
+    },
+    {
+      "map": "de_inferno",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 35,
+      "context_known_queries": 15,
+      "accepted": 13
+    },
+    {
+      "map": "de_inferno",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 35,
+      "context_known_queries": 15,
+      "accepted": 12
+    },
+    {
+      "map": "de_inferno",
+      "variant": "graph_gru_common+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 35,
+      "context_known_queries": 15,
+      "accepted": 13
+    },
+    {
+      "map": "de_inferno",
+      "variant": "graph_gru_common+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 35,
+      "context_known_queries": 15,
+      "accepted": 13
+    },
+    {
+      "map": "de_inferno",
+      "variant": "graph_gru_common+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 35,
+      "context_known_queries": 15,
+      "accepted": 10
+    },
+    {
+      "map": "de_inferno",
+      "variant": "statistics_sequence",
+      "seed": null,
+      "source_K": 2,
+      "queries": 35,
+      "context_known_queries": 35,
+      "accepted": 35
+    },
+    {
+      "map": "de_inferno",
+      "variant": "statistics_sequence+context",
+      "seed": null,
+      "source_K": 2,
+      "queries": 35,
+      "context_known_queries": 15,
+      "accepted": 12
+    },
+    {
+      "map": "de_inferno",
+      "variant": "context_only",
+      "seed": null,
+      "source_K": 2,
+      "queries": 35,
+      "context_known_queries": 15,
+      "accepted": 12
+    },
+    {
+      "map": "de_mirage",
+      "variant": "mlp_static+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 41,
+      "context_known_queries": 41,
+      "accepted": 39
+    },
+    {
+      "map": "de_mirage",
+      "variant": "mlp_static+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 41,
+      "context_known_queries": 41,
+      "accepted": 38
+    },
+    {
+      "map": "de_mirage",
+      "variant": "mlp_static+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 41,
+      "context_known_queries": 41,
+      "accepted": 37
+    },
+    {
+      "map": "de_mirage",
+      "variant": "mlp_gru+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 41,
+      "context_known_queries": 41,
+      "accepted": 40
+    },
+    {
+      "map": "de_mirage",
+      "variant": "mlp_gru+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 41,
+      "context_known_queries": 41,
+      "accepted": 41
+    },
+    {
+      "map": "de_mirage",
+      "variant": "mlp_gru+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 41,
+      "context_known_queries": 41,
+      "accepted": 41
+    },
+    {
+      "map": "de_mirage",
+      "variant": "graph_static+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 41,
+      "context_known_queries": 41,
+      "accepted": 35
+    },
+    {
+      "map": "de_mirage",
+      "variant": "graph_static+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 41,
+      "context_known_queries": 41,
+      "accepted": 35
+    },
+    {
+      "map": "de_mirage",
+      "variant": "graph_static+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 41,
+      "context_known_queries": 41,
+      "accepted": 36
+    },
+    {
+      "map": "de_mirage",
+      "variant": "graph_gru+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 41,
+      "context_known_queries": 41,
+      "accepted": 40
+    },
+    {
+      "map": "de_mirage",
+      "variant": "graph_gru+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 41,
+      "context_known_queries": 41,
+      "accepted": 38
+    },
+    {
+      "map": "de_mirage",
+      "variant": "graph_gru+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 41,
+      "context_known_queries": 41,
+      "accepted": 39
+    },
+    {
+      "map": "de_mirage",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 41,
+      "context_known_queries": 41,
+      "accepted": 38
+    },
+    {
+      "map": "de_mirage",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 41,
+      "context_known_queries": 41,
+      "accepted": 38
+    },
+    {
+      "map": "de_mirage",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 41,
+      "context_known_queries": 41,
+      "accepted": 38
+    },
+    {
+      "map": "de_mirage",
+      "variant": "graph_gru_common+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 41,
+      "context_known_queries": 41,
+      "accepted": 38
+    },
+    {
+      "map": "de_mirage",
+      "variant": "graph_gru_common+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 41,
+      "context_known_queries": 41,
+      "accepted": 38
+    },
+    {
+      "map": "de_mirage",
+      "variant": "graph_gru_common+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 41,
+      "context_known_queries": 41,
+      "accepted": 39
+    },
+    {
+      "map": "de_mirage",
+      "variant": "statistics_sequence",
+      "seed": null,
+      "source_K": 2,
+      "queries": 41,
+      "context_known_queries": 41,
+      "accepted": 35
+    },
+    {
+      "map": "de_mirage",
+      "variant": "statistics_sequence+context",
+      "seed": null,
+      "source_K": 2,
+      "queries": 41,
+      "context_known_queries": 41,
+      "accepted": 39
+    },
+    {
+      "map": "de_mirage",
+      "variant": "context_only",
+      "seed": null,
+      "source_K": 2,
+      "queries": 41,
+      "context_known_queries": 41,
+      "accepted": 40
+    },
+    {
+      "map": "de_nuke",
+      "variant": "mlp_static+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 38,
+      "context_known_queries": 38,
+      "accepted": 38
+    },
+    {
+      "map": "de_nuke",
+      "variant": "mlp_static+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 38,
+      "context_known_queries": 38,
+      "accepted": 38
+    },
+    {
+      "map": "de_nuke",
+      "variant": "mlp_static+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 38,
+      "context_known_queries": 38,
+      "accepted": 35
+    },
+    {
+      "map": "de_nuke",
+      "variant": "mlp_gru+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 38,
+      "context_known_queries": 38,
+      "accepted": 38
+    },
+    {
+      "map": "de_nuke",
+      "variant": "mlp_gru+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 38,
+      "context_known_queries": 38,
+      "accepted": 37
+    },
+    {
+      "map": "de_nuke",
+      "variant": "mlp_gru+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 38,
+      "context_known_queries": 38,
+      "accepted": 38
+    },
+    {
+      "map": "de_nuke",
+      "variant": "graph_static+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 38,
+      "context_known_queries": 38,
+      "accepted": 38
+    },
+    {
+      "map": "de_nuke",
+      "variant": "graph_static+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 38,
+      "context_known_queries": 38,
+      "accepted": 37
+    },
+    {
+      "map": "de_nuke",
+      "variant": "graph_static+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 38,
+      "context_known_queries": 38,
+      "accepted": 29
+    },
+    {
+      "map": "de_nuke",
+      "variant": "graph_gru+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 38,
+      "context_known_queries": 38,
+      "accepted": 36
+    },
+    {
+      "map": "de_nuke",
+      "variant": "graph_gru+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 38,
+      "context_known_queries": 38,
+      "accepted": 37
+    },
+    {
+      "map": "de_nuke",
+      "variant": "graph_gru+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 38,
+      "context_known_queries": 38,
+      "accepted": 34
+    },
+    {
+      "map": "de_nuke",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 38,
+      "context_known_queries": 38,
+      "accepted": 37
+    },
+    {
+      "map": "de_nuke",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 38,
+      "context_known_queries": 38,
+      "accepted": 38
+    },
+    {
+      "map": "de_nuke",
+      "variant": "graph_gru_no_motion+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 38,
+      "context_known_queries": 38,
+      "accepted": 38
+    },
+    {
+      "map": "de_nuke",
+      "variant": "graph_gru_common+context",
+      "seed": 0,
+      "source_K": 2,
+      "queries": 38,
+      "context_known_queries": 38,
+      "accepted": 36
+    },
+    {
+      "map": "de_nuke",
+      "variant": "graph_gru_common+context",
+      "seed": 1,
+      "source_K": 2,
+      "queries": 38,
+      "context_known_queries": 38,
+      "accepted": 33
+    },
+    {
+      "map": "de_nuke",
+      "variant": "graph_gru_common+context",
+      "seed": 42,
+      "source_K": 2,
+      "queries": 38,
+      "context_known_queries": 38,
+      "accepted": 36
+    },
+    {
+      "map": "de_nuke",
+      "variant": "statistics_sequence",
+      "seed": null,
+      "source_K": 2,
+      "queries": 38,
+      "context_known_queries": 38,
+      "accepted": 11
+    },
+    {
+      "map": "de_nuke",
+      "variant": "statistics_sequence+context",
+      "seed": null,
+      "source_K": 2,
+      "queries": 38,
+      "context_known_queries": 38,
+      "accepted": 7
+    },
+    {
+      "map": "de_nuke",
+      "variant": "context_only",
+      "seed": null,
+      "source_K": 2,
+      "queries": 38,
+      "context_known_queries": 38,
+      "accepted": 37
+    }
+  ],
+  "seed_comparisons": [
+    {
+      "map": "de_ancient",
+      "variant": "graph_gru+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 36,
+      "ARI": 0.8689138576779026
+    },
+    {
+      "map": "de_ancient",
+      "variant": "graph_gru+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 36,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_ancient",
+      "variant": "graph_gru+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 38,
+      "ARI": 0.8801949233341471
+    },
+    {
+      "map": "de_anubis",
+      "variant": "graph_gru+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 38,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_anubis",
+      "variant": "graph_gru+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 38,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_anubis",
+      "variant": "graph_gru+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 38,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_dust2",
+      "variant": "graph_gru+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 45,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_dust2",
+      "variant": "graph_gru+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 45,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_dust2",
+      "variant": "graph_gru+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 45,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_inferno",
+      "variant": "graph_gru+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 11,
+      "ARI": 0.6196403872752421
+    },
+    {
+      "map": "de_inferno",
+      "variant": "graph_gru+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 12,
+      "ARI": 0.6648199445983379
+    },
+    {
+      "map": "de_inferno",
+      "variant": "graph_gru+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 12,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_mirage",
+      "variant": "graph_gru+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 38,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_mirage",
+      "variant": "graph_gru+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 39,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_mirage",
+      "variant": "graph_gru+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 38,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_nuke",
+      "variant": "graph_gru+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 36,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_nuke",
+      "variant": "graph_gru+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 33,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_nuke",
+      "variant": "graph_gru+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 33,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_ancient",
+      "variant": "graph_gru_common+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 36,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_ancient",
+      "variant": "graph_gru_common+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 36,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_ancient",
+      "variant": "graph_gru_common+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 36,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_anubis",
+      "variant": "graph_gru_common+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 34,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_anubis",
+      "variant": "graph_gru_common+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 34,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_anubis",
+      "variant": "graph_gru_common+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 38,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_dust2",
+      "variant": "graph_gru_common+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 45,
+      "ARI": 0.8908018891573997
+    },
+    {
+      "map": "de_dust2",
+      "variant": "graph_gru_common+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 44,
+      "ARI": 0.8895453977701627
+    },
+    {
+      "map": "de_dust2",
+      "variant": "graph_gru_common+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 44,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_inferno",
+      "variant": "graph_gru_common+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 13,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_inferno",
+      "variant": "graph_gru_common+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 10,
+      "ARI": null
+    },
+    {
+      "map": "de_inferno",
+      "variant": "graph_gru_common+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 10,
+      "ARI": null
+    },
+    {
+      "map": "de_mirage",
+      "variant": "graph_gru_common+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 37,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_mirage",
+      "variant": "graph_gru_common+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 38,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_mirage",
+      "variant": "graph_gru_common+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 38,
+      "ARI": 0.8801949233341471
+    },
+    {
+      "map": "de_nuke",
+      "variant": "graph_gru_common+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 33,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_nuke",
+      "variant": "graph_gru_common+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 36,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_nuke",
+      "variant": "graph_gru_common+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 33,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_ancient",
+      "variant": "graph_gru_no_motion+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 37,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_ancient",
+      "variant": "graph_gru_no_motion+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 37,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_ancient",
+      "variant": "graph_gru_no_motion+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 37,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_anubis",
+      "variant": "graph_gru_no_motion+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 37,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_anubis",
+      "variant": "graph_gru_no_motion+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 37,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_anubis",
+      "variant": "graph_gru_no_motion+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 37,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_dust2",
+      "variant": "graph_gru_no_motion+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 45,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_dust2",
+      "variant": "graph_gru_no_motion+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 45,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_dust2",
+      "variant": "graph_gru_no_motion+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 45,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_inferno",
+      "variant": "graph_gru_no_motion+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 12,
+      "ARI": 0.6409495548961425
+    },
+    {
+      "map": "de_inferno",
+      "variant": "graph_gru_no_motion+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 12,
+      "ARI": 0.6409495548961425
+    },
+    {
+      "map": "de_inferno",
+      "variant": "graph_gru_no_motion+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 12,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_mirage",
+      "variant": "graph_gru_no_motion+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 37,
+      "ARI": 0.8782523916885017
+    },
+    {
+      "map": "de_mirage",
+      "variant": "graph_gru_no_motion+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 38,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_mirage",
+      "variant": "graph_gru_no_motion+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 37,
+      "ARI": 0.8782523916885017
+    },
+    {
+      "map": "de_nuke",
+      "variant": "graph_gru_no_motion+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 37,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_nuke",
+      "variant": "graph_gru_no_motion+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 37,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_nuke",
+      "variant": "graph_gru_no_motion+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 38,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_ancient",
+      "variant": "graph_static+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 39,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_ancient",
+      "variant": "graph_static+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 41,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_ancient",
+      "variant": "graph_static+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 39,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_anubis",
+      "variant": "graph_static+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 38,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_anubis",
+      "variant": "graph_static+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 38,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_anubis",
+      "variant": "graph_static+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 39,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_dust2",
+      "variant": "graph_static+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 46,
+      "ARI": 0.8919902321601257
+    },
+    {
+      "map": "de_dust2",
+      "variant": "graph_static+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 46,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_dust2",
+      "variant": "graph_static+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 46,
+      "ARI": 0.8919902321601257
+    },
+    {
+      "map": "de_inferno",
+      "variant": "graph_static+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 11,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_inferno",
+      "variant": "graph_static+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 11,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_inferno",
+      "variant": "graph_static+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 13,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_mirage",
+      "variant": "graph_static+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 33,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_mirage",
+      "variant": "graph_static+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 33,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_mirage",
+      "variant": "graph_static+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 34,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_nuke",
+      "variant": "graph_static+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 37,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_nuke",
+      "variant": "graph_static+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 29,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_nuke",
+      "variant": "graph_static+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 29,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_ancient",
+      "variant": "mlp_gru+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 37,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_ancient",
+      "variant": "mlp_gru+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 39,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_ancient",
+      "variant": "mlp_gru+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 38,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_anubis",
+      "variant": "mlp_gru+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 36,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_anubis",
+      "variant": "mlp_gru+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 36,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_anubis",
+      "variant": "mlp_gru+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 36,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_dust2",
+      "variant": "mlp_gru+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 43,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_dust2",
+      "variant": "mlp_gru+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 43,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_dust2",
+      "variant": "mlp_gru+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 43,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_inferno",
+      "variant": "mlp_gru+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 12,
+      "ARI": 0.6409495548961425
+    },
+    {
+      "map": "de_inferno",
+      "variant": "mlp_gru+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 11,
+      "ARI": 0.5338983050847458
+    },
+    {
+      "map": "de_inferno",
+      "variant": "mlp_gru+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 11,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_mirage",
+      "variant": "mlp_gru+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 40,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_mirage",
+      "variant": "mlp_gru+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 40,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_mirage",
+      "variant": "mlp_gru+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 41,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_nuke",
+      "variant": "mlp_gru+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 37,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_nuke",
+      "variant": "mlp_gru+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 38,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_nuke",
+      "variant": "mlp_gru+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 37,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_ancient",
+      "variant": "mlp_static+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 39,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_ancient",
+      "variant": "mlp_static+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 39,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_ancient",
+      "variant": "mlp_static+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 39,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_anubis",
+      "variant": "mlp_static+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 37,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_anubis",
+      "variant": "mlp_static+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 36,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_anubis",
+      "variant": "mlp_static+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 36,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_dust2",
+      "variant": "mlp_static+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 43,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_dust2",
+      "variant": "mlp_static+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 43,
+      "ARI": 0.8882149046793761
+    },
+    {
+      "map": "de_dust2",
+      "variant": "mlp_static+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 43,
+      "ARI": 0.8882149046793761
+    },
+    {
+      "map": "de_inferno",
+      "variant": "mlp_static+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 12,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_inferno",
+      "variant": "mlp_static+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 11,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_inferno",
+      "variant": "mlp_static+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 11,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_mirage",
+      "variant": "mlp_static+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 38,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_mirage",
+      "variant": "mlp_static+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 36,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_mirage",
+      "variant": "mlp_static+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 35,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_nuke",
+      "variant": "mlp_static+context",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 38,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_nuke",
+      "variant": "mlp_static+context",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 35,
+      "ARI": 1.0
+    },
+    {
+      "map": "de_nuke",
+      "variant": "mlp_static+context",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 35,
+      "ARI": 1.0
+    }
+  ],
+  "summary": {
+    "context_only": {
+      "coverage_all_queries": 0.8495934959349594,
+      "coverage_known_queries": 0.9247787610619469,
+      "queries": 246,
+      "known_queries": 226,
+      "accepted": 209,
+      "mean_seed_ARI": null,
+      "eligible_seed_pairs": 0,
+      "mean_ARI_vs_context_only": null,
+      "context_only_comparisons": 0
+    },
+    "graph_gru+context": {
+      "coverage_all_queries": 0.8455284552845529,
+      "coverage_known_queries": 0.9203539823008849,
+      "queries": 738,
+      "known_queries": 678,
+      "accepted": 624,
+      "mean_seed_ARI": 0.9463093951603128,
+      "eligible_seed_pairs": 18,
+      "mean_ARI_vs_context_only": 1.0,
+      "context_only_comparisons": 18
+    },
+    "graph_gru_common+context": {
+      "coverage_all_queries": 0.8306233062330624,
+      "coverage_known_queries": 0.9041297935103245,
+      "queries": 738,
+      "known_queries": 678,
+      "accepted": 613,
+      "mean_seed_ARI": 0.9787838881413569,
+      "eligible_seed_pairs": 16,
+      "mean_ARI_vs_context_only": 0.9935765817151413,
+      "context_only_comparisons": 17
+    },
+    "graph_gru_no_motion+context": {
+      "coverage_all_queries": 0.8509485094850948,
+      "coverage_known_queries": 0.9262536873156342,
+      "queries": 738,
+      "known_queries": 678,
+      "accepted": 628,
+      "mean_seed_ARI": 0.9465779940649605,
+      "eligible_seed_pairs": 18,
+      "mean_ARI_vs_context_only": 1.0,
+      "context_only_comparisons": 18
+    },
+    "graph_static+context": {
+      "coverage_all_queries": 0.8428184281842819,
+      "coverage_known_queries": 0.9174041297935103,
+      "queries": 738,
+      "known_queries": 678,
+      "accepted": 622,
+      "mean_seed_ARI": 0.9879989146844584,
+      "eligible_seed_pairs": 18,
+      "mean_ARI_vs_context_only": 0.9939994573422292,
+      "context_only_comparisons": 18
+    },
+    "mlp_gru+context": {
+      "coverage_all_queries": 0.8509485094850948,
+      "coverage_known_queries": 0.9262536873156342,
+      "queries": 738,
+      "known_queries": 678,
+      "accepted": 628,
+      "mean_seed_ARI": 0.9541582144433826,
+      "eligible_seed_pairs": 18,
+      "mean_ARI_vs_context_only": 1.0,
+      "context_only_comparisons": 18
+    },
+    "mlp_static+context": {
+      "coverage_all_queries": 0.8401084010840109,
+      "coverage_known_queries": 0.9144542772861357,
+      "queries": 738,
+      "known_queries": 678,
+      "accepted": 620,
+      "mean_seed_ARI": 0.9875794338532641,
+      "eligible_seed_pairs": 18,
+      "mean_ARI_vs_context_only": 0.993789716926632,
+      "context_only_comparisons": 18
+    },
+    "statistics_sequence": {
+      "coverage_all_queries": 0.8292682926829268,
+      "coverage_known_queries": 0.8292682926829268,
+      "queries": 246,
+      "known_queries": 246,
+      "accepted": 204,
+      "mean_seed_ARI": null,
+      "eligible_seed_pairs": 0,
+      "mean_ARI_vs_context_only": null,
+      "context_only_comparisons": 0
+    },
+    "statistics_sequence+context": {
+      "coverage_all_queries": 0.7276422764227642,
+      "coverage_known_queries": 0.7920353982300885,
+      "queries": 246,
+      "known_queries": 226,
+      "accepted": 179,
+      "mean_seed_ARI": null,
+      "eligible_seed_pairs": 0,
+      "mean_ARI_vs_context_only": 1.0,
+      "context_only_comparisons": 6
+    }
+  },
+  "artifacts_sha256": {
+    "G4__de_ancient__mlp_static+context_0.npz": "1faf14bf66ad754fad1ccd5d7a53541dfade8d1cbc12780f4a0be1fa6b98474e",
+    "G4__de_ancient__mlp_static+context_1.npz": "3aae0e5889384ff442707574d384b553bffa59dd575988d7dba7fd53acc9b677",
+    "G4__de_ancient__mlp_static+context_42.npz": "fcbe5c38de2fa65c041b78aeb2c5f72656057ed04a886b6bf27bdc263feeab7d",
+    "G4__de_ancient__mlp_gru+context_0.npz": "e589346dcb992c45f092e2bcc8b56052de3d3192e0fae2a6094c96cc875e5a09",
+    "G4__de_ancient__mlp_gru+context_1.npz": "77e4f64df1594128faa379de6833cfcda6922b62e1a710405424c193cf2e2f76",
+    "G4__de_ancient__mlp_gru+context_42.npz": "568d791d607bfa80e02426a21e467d77164b45e5053d7e036a5d94a1f9868f68",
+    "G4__de_ancient__graph_static+context_0.npz": "32e0b43ec68d411c4823a2179ab36db7cebba4654716c82c8429ae3c714ea0b5",
+    "G4__de_ancient__graph_static+context_1.npz": "59115fe850d502fb9d44407282ef74061cfcff85f5ffc7f16d6174cc57b88c9c",
+    "G4__de_ancient__graph_static+context_42.npz": "2d30f8a600318430ef29c4cdfca585937423af90ddffe5acc779fb88d00a0fc3",
+    "G4__de_ancient__graph_gru+context_0.npz": "6264b03753ecf700e45c89a1c4142b2f1c1809ce7c529c4f2bf9ad9b137ca3d8",
+    "G4__de_ancient__graph_gru+context_1.npz": "ebb30f500ada940e57e13182dea28ec805bba6dcc87f544dc21bab9bcc4df1a8",
+    "G4__de_ancient__graph_gru+context_42.npz": "2a259ed1da17d18a8d0b46294f7c02e277bede4fa1e3e2afffdfaaffa713c7a9",
+    "G4__de_ancient__graph_gru_no_motion+context_0.npz": "9612012716f14f10f22ccd6b71ae09bdb7eae6eb91704583880ad7f1fe9747cb",
+    "G4__de_ancient__graph_gru_no_motion+context_1.npz": "8084b2cee81e0d9dc7bcdcdd5c4c09e9ccd2b3aa7b6241237e8a10c289063d8a",
+    "G4__de_ancient__graph_gru_no_motion+context_42.npz": "d7786b143a07fbf5de0a79e72435d62057ff7b6c9b01805a88695b17556dbbc2",
+    "G4__de_ancient__graph_gru_common+context_0.npz": "ddfea79468d9a508bdd9bc0ecfc9535fa8ddf5efdd301a216a3fee903108e87f",
+    "G4__de_ancient__graph_gru_common+context_1.npz": "8b42e93072f64af521d7d57a999c9fa4f20186259d619c26c4f895ec09de9d22",
+    "G4__de_ancient__graph_gru_common+context_42.npz": "f6c3c3a48336ad0d1872796549daee4cbad9bb6bbde2d319c146410ceb36d865",
+    "G4__de_ancient__statistics_sequence_None.npz": "8bae7668864cec335616318d27cd575854574d1c48128cae7d2dfbf19859fc7b",
+    "G4__de_ancient__statistics_sequence+context_None.npz": "da386c4294db25f46c16c347800145ae0ad5100942daee2d4b48749d99e38bc8",
+    "G4__de_ancient__context_only_None.npz": "2087be897c7d00102152097484756052ac2bca4dd5370e03671f098c92c81c19",
+    "G4__de_anubis__mlp_static+context_0.npz": "89627c90d0f28ddfac93ee454fa4d16d798e586a7c2231c6d64e44676f4d1b76",
+    "G4__de_anubis__mlp_static+context_1.npz": "16adf5363f2a274bd071bf476525e536789284f1cfdd6e2ebcb3ba6409ae3b20",
+    "G4__de_anubis__mlp_static+context_42.npz": "ff518e68041c26a92b4188b7b54c2ed5795956786d5406212d2600bfb5200a33",
+    "G4__de_anubis__mlp_gru+context_0.npz": "db24fd7380bc2f8483c3da0b0985a002d16c98443e018f8938c16a350679333f",
+    "G4__de_anubis__mlp_gru+context_1.npz": "538d2034aaf17d20711e77632a1c8cf40fd8dd639129e4e1d836ff38fe80b59f",
+    "G4__de_anubis__mlp_gru+context_42.npz": "3019533af38abfd178e2f82fbf0fe4768bfc5f70d383279229311d2e7028ebc7",
+    "G4__de_anubis__graph_static+context_0.npz": "168fb137cef6d04c0959bf52b2ad8bdfc6e45913711e2d283deae8c67c0c921d",
+    "G4__de_anubis__graph_static+context_1.npz": "e971b2aca9e0cec8c5d419c3e797c92bc717b169ec5e9802d7c1fe9d089a66a2",
+    "G4__de_anubis__graph_static+context_42.npz": "b40f779eaac4f6a50df8befb8e74959fa2cff3f2c3aa8d4009833f2fc87ca7f5",
+    "G4__de_anubis__graph_gru+context_0.npz": "79c7a7b9df0d7a964164d8e7f401e12d05abbd803be3e30599ee12036847c796",
+    "G4__de_anubis__graph_gru+context_1.npz": "243498cc45967167c0dfdcf568ff9b388090cff121d2de1c83cd447216730228",
+    "G4__de_anubis__graph_gru+context_42.npz": "1383f8f5acf633788e8928d8a275e79a2d4584af50087fb71ff44f7fe96dfb94",
+    "G4__de_anubis__graph_gru_no_motion+context_0.npz": "770df5f9cb62c0dba006cd22bd48809e4fa254442caba449cbd6851e8f8123b2",
+    "G4__de_anubis__graph_gru_no_motion+context_1.npz": "950f33a60cc460456d43da09ba5f00f2c099a75b2b6fdbddcbc1e3c9025fa27d",
+    "G4__de_anubis__graph_gru_no_motion+context_42.npz": "d094e0112704a1ea95ae030885b62a0528e199dd4d639e14f301e7acc85c072b",
+    "G4__de_anubis__graph_gru_common+context_0.npz": "b444d233ab19590567bd7121926497473e66a2cf3650142c318480f1745ab0ac",
+    "G4__de_anubis__graph_gru_common+context_1.npz": "8c55327d790ad14973ad0b03faf8bf1bc6573b156c27d10ddc68490d67285f91",
+    "G4__de_anubis__graph_gru_common+context_42.npz": "22ba3a4f3b66286aade762d367554f6c0659349a86dceb9e48650f08dc19b0bb",
+    "G4__de_anubis__statistics_sequence_None.npz": "cb1c65e5680e360e942b38991676a3a2fc993a9fbc5a434bd2ca7ca96eeab82e",
+    "G4__de_anubis__statistics_sequence+context_None.npz": "ed11bfc97b4a865af623a2a0a3505be2139600a959605f10da0c2b78e4c8dda4",
+    "G4__de_anubis__context_only_None.npz": "c407f9efe18543ffc3f8606ea8b9b90696ffceccbde0e36ee91844e52b043290",
+    "G4__de_dust2__mlp_static+context_0.npz": "c113c4b443c2315dd20a851f807d8473922ccc7787d603c32ecfeb82189bc3c4",
+    "G4__de_dust2__mlp_static+context_1.npz": "ff34547d374f1b88a301f04bda3a22400f9a94a802563fb78655ea1af26378ee",
+    "G4__de_dust2__mlp_static+context_42.npz": "c98e08d549f3c0b6f0e167e7e7bfd3ab7355d711f9644691dca717e41c5e83e3",
+    "G4__de_dust2__mlp_gru+context_0.npz": "ef95d64052d08a1db3d75c2cb63c6a6d83eb7f82dd9cbe705bb2a9719e026aee",
+    "G4__de_dust2__mlp_gru+context_1.npz": "f4131f6160f9069dcd4d0df53539fe09e1f46802be69d6fae6007dca6292d710",
+    "G4__de_dust2__mlp_gru+context_42.npz": "6fba2bb80c75a6612b1980f67f97113f5f9f4f4528c069a185ffe32566ad8355",
+    "G4__de_dust2__graph_static+context_0.npz": "317307c5639f2c4e3202a12eda60d2f2bc3ed9e0ad4be37c33c7109a45de17e7",
+    "G4__de_dust2__graph_static+context_1.npz": "f7e61ecbdf855368c97524dd194f1c0aea315337bb4a427486c5689831779025",
+    "G4__de_dust2__graph_static+context_42.npz": "1f1ccae2d5bacdbca5320ea95fe0ed3ca6ba1b4d71a01bf795b8a80376472ec2",
+    "G4__de_dust2__graph_gru+context_0.npz": "9a75d050afad1b42c642fd19bd2970999c5e7b6886754fd3f36c14a4734c3911",
+    "G4__de_dust2__graph_gru+context_1.npz": "3dff0e483d825b4af87cf1801508e59a6298c385f7ae8f96320ea8b294dfe5b3",
+    "G4__de_dust2__graph_gru+context_42.npz": "5ec1d2794a0ac486108143a440fcf03c5065e4e1ffef63cf24c17cbbaea22f09",
+    "G4__de_dust2__graph_gru_no_motion+context_0.npz": "d50ba073a4780be312ff556c5bd1eac56b4c682d753370852673f2cd7c6c2c85",
+    "G4__de_dust2__graph_gru_no_motion+context_1.npz": "e64846af75306951f79cc587dc25b2ba2746440257eb4b512c5558f2216f4e3d",
+    "G4__de_dust2__graph_gru_no_motion+context_42.npz": "e5341170fbf1ae070b1fe285e33756d5aa0e619de6c455c6ac50b3326081b0ec",
+    "G4__de_dust2__graph_gru_common+context_0.npz": "5738f28510e0bfe0034b62538423c9780c70dd16f2d4353da5f4760050352a04",
+    "G4__de_dust2__graph_gru_common+context_1.npz": "f0b3abdf92758b9925367a86b2698bed33897dbbfdbcc158b2c505987c20c18e",
+    "G4__de_dust2__graph_gru_common+context_42.npz": "fda461a355bb81d73502c270a71ad7f9d6ff52d8147bb71716da2676a3c91339",
+    "G4__de_dust2__statistics_sequence_None.npz": "307efeb46d620b453bd692fb98cc41bee5fca47663fd09aa7fd74ea860d31404",
+    "G4__de_dust2__statistics_sequence+context_None.npz": "4a3c9d2ad46de7999cc492702fc76be663b03ceb2f6f605805ee3320fb2920b2",
+    "G4__de_dust2__context_only_None.npz": "eb285bdb2138cb5e79f3b68f09894f71fd7b410a2b1b03119b83d9c9096a6115",
+    "G4__de_inferno__mlp_static+context_0.npz": "d7444be03d25221a52c5ff3fa8ca0c41a7864fa53a19d83d23f4b2a71a17be4c",
+    "G4__de_inferno__mlp_static+context_1.npz": "f7752873d2c44790c47d4c417aaa994e72fa6b58f02d1f2ea024449eb8700142",
+    "G4__de_inferno__mlp_static+context_42.npz": "1f9192d0c6d497173f2d79c878a3f67f2033555c062187b8e538d7f6e083a745",
+    "G4__de_inferno__mlp_gru+context_0.npz": "8685ecdcca56410c696b855cdd671b685fd836a5fac6807b635e2dc51009cb13",
+    "G4__de_inferno__mlp_gru+context_1.npz": "20d24f33f7ec4fefde1223cdd5504fa1b74e1688c4371ae18a6525478336f343",
+    "G4__de_inferno__mlp_gru+context_42.npz": "051ffd4dc7de1b1a267500b33b70040d8ad682e2209a3fd2959dc73a88212bcc",
+    "G4__de_inferno__graph_static+context_0.npz": "cba4042f9d8fce98735c94ce2c38a299575b5c5d51e61bd416b89165bd9cd784",
+    "G4__de_inferno__graph_static+context_1.npz": "22d29e31a489b6c5c355e95b8a6bc38e7c4903436ce71cd1e7c3a884c13fcdca",
+    "G4__de_inferno__graph_static+context_42.npz": "01b81d30d41f357cccf0a21cd8baed72907733ba0097b271da6dd66a43c0087e",
+    "G4__de_inferno__graph_gru+context_0.npz": "b71f2ee7f7548ed8f3fb94dc63a370a3cd230fbf314c9e3d3cbc5401aacb657e",
+    "G4__de_inferno__graph_gru+context_1.npz": "6eb8f202ecacce2e047ea8f8c20b2e75eb8ece345302692fcaa71b279c6f8a41",
+    "G4__de_inferno__graph_gru+context_42.npz": "f7a66ec3a7a8e69de6b82fbfc01b43bb656069beadde4869647d42ffe497e5c6",
+    "G4__de_inferno__graph_gru_no_motion+context_0.npz": "6b5ea3e2101af5c84295eff740b8bf1f4f44d00b7ce9dc316f0cdf771f0dbe83",
+    "G4__de_inferno__graph_gru_no_motion+context_1.npz": "de72d9703359f75d538e9061fe02a815f4c43d043492edc91c9ab943a1ad5121",
+    "G4__de_inferno__graph_gru_no_motion+context_42.npz": "f21834c0fdff2456d7ce038a8a27baedba8b06c7b1427a50278bb32215cd591b",
+    "G4__de_inferno__graph_gru_common+context_0.npz": "de2fb58b4b0b3cab37f8b14a7e4ff565282b7551043cad4e50dcff78f355fa0d",
+    "G4__de_inferno__graph_gru_common+context_1.npz": "94bfc5355f77e4f1ed2e5ad77489d2b2cfed36fc5cc1f593431af4ca80c3c106",
+    "G4__de_inferno__graph_gru_common+context_42.npz": "5483ffa6ffda06148d217262facd9182e813fdc940368cc7014de2fc124b5aa3",
+    "G4__de_inferno__statistics_sequence_None.npz": "68082b5eca7c21b26c4e5808e00c8285c594c7da087ec5a25babaea75b629c1c",
+    "G4__de_inferno__statistics_sequence+context_None.npz": "5f1bbd142577712042274fefd36c9a3b77b51d981b7be99a64073f1208a4be7e",
+    "G4__de_inferno__context_only_None.npz": "6ee8ad460be5c73a77bfb14caa29cd545b5dcdaeb8d52354a8ec66800da7b26a",
+    "G4__de_mirage__mlp_static+context_0.npz": "d4c2473867c2dae9c951427a0a79ab413606e51867b8570ada6381f4a2017435",
+    "G4__de_mirage__mlp_static+context_1.npz": "fd3b436e3b783111787bb48006a085662559efd07499e10a7a99b634b541455b",
+    "G4__de_mirage__mlp_static+context_42.npz": "150c5f4631fad33c6a1ce35d6d7bea3de65f9abf69baff762e493526706361b5",
+    "G4__de_mirage__mlp_gru+context_0.npz": "77dde21cbf3aff0189dd661f3a9420e48e7ee3f3d2e16f7a54f82ef2fbe4f7eb",
+    "G4__de_mirage__mlp_gru+context_1.npz": "28f4f36c4c0df2161e8f1881e32626a65a9a1d03a2d52682d65bd1d4129d76cf",
+    "G4__de_mirage__mlp_gru+context_42.npz": "1ec5ff08b67f1061f6f9fa475d7d4908e0ca6c1c0ed45680c5d74b925d65bfbb",
+    "G4__de_mirage__graph_static+context_0.npz": "5fae1e69ad18bf8369ff79571a884c31136362573416dc6d021803d3f9a8ba6c",
+    "G4__de_mirage__graph_static+context_1.npz": "71d2319c993c361b162439eb5a8ebcb4d58a9c8a67116ef4af11acf03c9bc5db",
+    "G4__de_mirage__graph_static+context_42.npz": "86d713cff81da5fc146bc881c5ac17af329a0e68513517435a50d9ee42a15869",
+    "G4__de_mirage__graph_gru+context_0.npz": "39a21f7245ba2206f092b4b177598ee9f311134e04fa462e7450596c2aff42ba",
+    "G4__de_mirage__graph_gru+context_1.npz": "c70d9120c60515690e5db7908575f3c469232433df66617eee4526782e22e389",
+    "G4__de_mirage__graph_gru+context_42.npz": "5df598ec0a249f5c5eecdc0f55c0d3147963aee86ae28d9f4f8a093d7fd95b94",
+    "G4__de_mirage__graph_gru_no_motion+context_0.npz": "5567a237b2197614b79bf8c49c71ad2ae640f74a9379f1733e06b146b3e8864b",
+    "G4__de_mirage__graph_gru_no_motion+context_1.npz": "8f599599ea890dccfec8417e6eea7c030d967267d6aa612476c6a434e9d91f0b",
+    "G4__de_mirage__graph_gru_no_motion+context_42.npz": "6a6d4b1eeaaae587b44d0e500a7945b82be52690e30d791a7aa698019c9c7ece",
+    "G4__de_mirage__graph_gru_common+context_0.npz": "8f31f920346735ffb0043ebae7388e47b8c3f2492fb18e77f6fc74cc78963bc1",
+    "G4__de_mirage__graph_gru_common+context_1.npz": "c5a7cf9444b8e1d9d51f9cdfe7221891b7bc283047a53365a08828e85024a9f3",
+    "G4__de_mirage__graph_gru_common+context_42.npz": "ff01b850be156739ed1a5b29e70b1340fc5713c854348cb30f823888f98229b1",
+    "G4__de_mirage__statistics_sequence_None.npz": "e4100e79bcf0ae62e9bd85698192468af51a22dadb24ce148f25ba82643ec14c",
+    "G4__de_mirage__statistics_sequence+context_None.npz": "989c4d110dece39606f38ae9cd47a0b651bcb9aa51a544847e05af4b9b4bf301",
+    "G4__de_mirage__context_only_None.npz": "b07722b4827f24714cedf6dfe133e200287598b88312b1a54e7f65744933efc8",
+    "G4__de_nuke__mlp_static+context_0.npz": "100229ed42764767ef74f09e125ed2a55372348f93a7e437902881b62e86df99",
+    "G4__de_nuke__mlp_static+context_1.npz": "0cfe5c7c57f1ec54b6f8c7afa674504220de3bcd0ee9afd882d703acce3f2a40",
+    "G4__de_nuke__mlp_static+context_42.npz": "719f8f6d06773a5ff385ac76918b428e451c2e737296dc5fbea4ad4c002dfd95",
+    "G4__de_nuke__mlp_gru+context_0.npz": "ddffcec45a6aab35785f0153c21ca2338e0b727de5ef03cf395a44cc5cbc5f8d",
+    "G4__de_nuke__mlp_gru+context_1.npz": "dba64f2c1b26ab8eb72d0a34601ff7266d0155af982403e1c4089df6ab493f01",
+    "G4__de_nuke__mlp_gru+context_42.npz": "92c7f3687470a5bba74e734a25513f7bf43183b3de262d8c44ebeb57e5153103",
+    "G4__de_nuke__graph_static+context_0.npz": "4c1e13f4b08bbdc23f8881a8ca0f0c6e74b8cb3a5df3e9e4878fe5794d9e2685",
+    "G4__de_nuke__graph_static+context_1.npz": "9969276cbc03d1274ccb56d6c7f2d41b02efa7bacb171cf5de968bc1a57516ce",
+    "G4__de_nuke__graph_static+context_42.npz": "1371359daf43b0e90b6bb0cdcb8814c73f4d21f65700cc01354e21658d23f2b8",
+    "G4__de_nuke__graph_gru+context_0.npz": "d2e303dce51cd424da358b9097f3bf8cdfb1dc54c5ae21ae48fc305a3857e373",
+    "G4__de_nuke__graph_gru+context_1.npz": "a3bac8a5693f259c65e49ec1e3c0a39c2c1b4ec786c434d42f76cf0ab6579a4d",
+    "G4__de_nuke__graph_gru+context_42.npz": "29c5150cca0ae06b61fd929e48f867a61cee3fb4a1fc690eef200f871625df41",
+    "G4__de_nuke__graph_gru_no_motion+context_0.npz": "62f4a63fb12d5124c04d406f50ccdfe1e0b12f118782c8519869c4c439545e04",
+    "G4__de_nuke__graph_gru_no_motion+context_1.npz": "7e0e5010bfb4d311341d8c75de185cfb5400cdcea0edfdd628562335c43e665b",
+    "G4__de_nuke__graph_gru_no_motion+context_42.npz": "3baa6d0b64c32d537624f658f63dc0e37ec3914235a81b41db338909590a329c",
+    "G4__de_nuke__graph_gru_common+context_0.npz": "5f057bba3864426815a60a454df370912d4393c01ff564f8687ad3a0f26681c3",
+    "G4__de_nuke__graph_gru_common+context_1.npz": "71633e26167e5c3205d8a2203dfa9edcda79a0093f88acf70c2179d1c5127939",
+    "G4__de_nuke__graph_gru_common+context_42.npz": "47587847149589330d9d8ed05b73559a0c14cde758d4e6a26b5835162014a029",
+    "G4__de_nuke__statistics_sequence_None.npz": "c61430e3dbaad5c2a0ba5eb46b2c84b29fe181ea629662aac00ab205361b0c50",
+    "G4__de_nuke__statistics_sequence+context_None.npz": "abcfc9e2104fa2bbe8556c11cff6563d7cf5613deb0fcb6d714d5337c0b2a247",
+    "G4__de_nuke__context_only_None.npz": "b04be1cfda890137616167a73604a4e33a0a1558ba24a899fb4afc82b213c7a0"
+  },
+  "elapsed_seconds": 1.2859541999932844,
+  "peak_RAM_MiB": 159.65234375,
+  "limits": [
+    "Unknown utility is not zero and is not silently dropped from the denominator.",
+    "The source joint prototypes remain resource-dominated; stability is not tactical validity.",
+    "No source clustering, encoder, threshold or context weight was refitted on these queries."
+  ]
+}

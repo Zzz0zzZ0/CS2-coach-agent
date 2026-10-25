@@ -1,0 +1,13 @@
+{
+  "scope": "Only two local temporary trajectory caches created in this utility probe; no raw Demo, archive, weights, returns or evidence removed",
+  "removed": [
+    {
+      "path": "output/tagnet/ct_event_version_audit/october_projectiles.pkl",
+      "bytes": 97708228
+    },
+    {
+      "path": "output/tagnet/ct_event_version_audit/october_projectiles_only.pkl",
+      "bytes": 10313158
+    }
+  ]
+}

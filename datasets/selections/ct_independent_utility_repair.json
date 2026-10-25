@@ -1,0 +1,45 @@
+{
+  "scope": "Corrective secondary-context extraction after finding prefixed weapon-fire values; no model or source-centroid refit.",
+  "parent_revision": "3336003f67a5cac496db40f131d5f38822a5df0d",
+  "parent_protocol_sha256": "a44008852347f8d7128abd7f3ea77c3e3d3ed13b43bb8752a2e15a14fe42a299",
+  "input_sha256": {
+    "scripts/repair_ct_independent_utility.py": "eed64f5b23788ad5f8c47a7ae2f07bc0de19520f03ccdfab10883bc854a46c1e",
+    "scripts/audit_ct_context_availability.py": "4f220bb770b3c028e97db36b05c526b462f0e39778b3d2285bd54777c35b9b59",
+    "app/services/ct_context_retrieval_service.py": "c47146325124ed276a0d3f7c6be0930e1026883a796f0b49483837d858fe90db",
+    "output/tagnet/ct_independent_context/context.json": "5efd5f0315482134ea8c130f16348d5b737ecceccaf09c4d2b36ee8ed0d14c20",
+    "output/tagnet/ct_independent_inputs/report.json": "36e30a29d39335434bcffead73a3788f1ce66172de018d5578669d7e36008c78",
+    "output/tagnet/ct_independent_demos/acquisition.json": "a16b2ee319af25557cb8469021fabdc4071a4688ee540d377080213130cb6176",
+    "datasets/evaluation/ct_utility_upstream_versions.json": "80dd288a3cfce7f0e21501ba60282d229313b4435ab8ed38adede8d0d402e499"
+  },
+  "frozen_parser_version": "0.41.3",
+  "controls": "Probe all eight dedicated-event Demos; require exact safe-query CT identity/time/side and count parity for each qualified derivation. Report failures and original availability. Recovery depends on telemetry validity, not model results.",
+  "repair": "Attempt all original80 unavailable windows; pair prefixed firing types to native projectile births, observe side/place at birth. Preserve affected counts as unknown for unmatched CT projectiles. No learned offset or detonation substitution.",
+  "post_output_amendment": "Original 166-window context transfer remains available at parent revision and original output folders. This repair follows those results; it is a correction, not new pre-registration. Recompute the same fixed secondary policies without selecting models or weights.",
+  "failed_attempt": {
+    "protocol_sha256": "54f9f35faacb5a8953d1332c19428e553fc5f70d6863834746133bf6e6cd212d",
+    "completed_demos_before_failure": 1,
+    "error": "Projectile/firing count mismatch on second Demo",
+    "diagnosis": "One globally unrecorded tick (181437) split two already stationary projectiles into false births; unchanged owner/class/position and no intervening firing prove continuation for these rows.",
+    "amendment": "Merge only such stationary continuations across a globally unrecorded gap; retain strict count and causal pairing checks. A test covers the gap and existing entity-reuse test preserves actual new releases."
+  },
+  "failed_attempt_2": {
+    "protocol_sha256": "0f3557c3df200d89d7116bb87c741fc3f74dd39684a98a18ed9ea6779fac1bcf",
+    "completed_demos_before_failure": 2,
+    "error": "An extra flash projectile at tick 104790 on 2394205 had no corresponding firing event.",
+    "observation": "The owner death event has the same tick. Its round freeze ends at tick100043; last query101323. The extra projectile occurs74.171875seconds after freeze and is outside every original query interval.",
+    "amendment": "Ignore unmatched projectile births only outside original frozen query intervals, record their number, and reject unmatched births inside intervals. Do not assume their cause or synthesize firing events. Retain one-to-one pairing for firing records."
+  },
+  "failed_attempt_3": {
+    "protocol_sha256": "2ca658a0e785bc393d076ff00d01e5eccadfc1bf1fd24e48a90a4196726e3fe0",
+    "completed_demos_before_failure": 3,
+    "error": "Unpaired projectiles inside Inferno query intervals",
+    "observation": "Tick97537 owner is T; tick183539 owner is CT. Their dedicated event semantics are unresolved.",
+    "amendment": "Observe owner side at birth; retain unknown CT counts from any ambiguous CT projectile onward. Unpaired T projectiles cannot add CT throws. Positive-control comparisons use only unambiguous derived CT intervals; preserve all original dedicated-event contexts unchanged."
+  },
+  "failed_attempt_4": {
+    "protocol_sha256": "cb588ecc00f4d9b25c52501570764ba9aabe10b6939405eeb04e6f682e4bbd24",
+    "completed_demos_before_failure": 3,
+    "error": "Inferno also contains unmatched firing records; cannot require complete recovery by assertion.",
+    "amendment": "Withhold derivation for an entire Demo on incomplete pairing/schema/order. Preserve original direct-event contexts and retain original missing values for unqualified May Demos. Probe all eight positive-control Demos; report qualified and withheld derivations separately. No telemetry is forced to fit expected coverage."
+  }
+}
