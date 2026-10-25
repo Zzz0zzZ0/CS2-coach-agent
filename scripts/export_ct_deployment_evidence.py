@@ -5,9 +5,6 @@ import json
 from pathlib import Path
 import sys
 
-import matplotlib
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -29,6 +26,10 @@ def observed_tracks(frames):
 
 
 def main():
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ("analysis-dir", "run-dir", "inventory", "output-dir"):
         parser.add_argument("--" + name, type=Path, required=True)
