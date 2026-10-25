@@ -72,7 +72,7 @@ Table 4. Failures and constraints that accompany the aggregate results.
 | Coarse state dominates improvement | G4 ridge region/death components improve 15.26%, distances only 1.62% | Do not infer learned navigation or tactical intent |
 | More history is not uniformly helpful | G4 prefix ridge improves only 1.02% versus persistence | A longer prefix is not automatically better transfer |
 | A neural component can degrade | G4 GRU death-count error increases about 2.32% versus persistence | Report per-component failures |
-| Map vocabularies lose detail | About 49–79% of live occupancy is mapped to other across maps | Static role/route semantics remain unresolved |
+| Map vocabularies lose detail | The frozen six-map input audit maps 50.57–81.01% of live observations to other | Static role/route semantics remain unresolved; this is a category fraction, not model error |
 | Geometry retrieval is a proxy | Five-frame top-5 geometric MSE: common 0.008440, static 0.015095, GRU 0.015512 | Do not call this tactical relevance |
 
 ## Limitations and work remaining

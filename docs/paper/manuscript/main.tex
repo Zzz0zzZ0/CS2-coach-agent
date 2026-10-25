@@ -91,6 +91,12 @@ A separate geometry export implements relative height, airborne/grounded/unknown
 
 \pending{REP}{E1 must fix the six-map functional vocabulary, source-to-common mapping, height/ground fields, unknown handling, normalization, exact feature dimensions, and the versioned schema. Show which concrete deployments the representation separates or incorrectly merges.}
 
+
+\subsection{Candidate input implementation and validity masks}
+A separately versioned candidate combines the original eight node fields with relative height and ground-state descriptors, producing 13 node channels and three pair channels; NAV projection features are excluded from the model input. % [claim:C101] [evidence:E101,E103]
+Functional-role annotations remain separate metadata: all 105 map--place review entries are unreviewed, so functional-role assignments are unknown for every live observation and is not fed to the encoder. % [claim:C102] [evidence:E101,E102]
+Death masks zero invalid nodes and pairs. Ground-state feature masks distinguish physical observations from an explicit unknown indicator; raw place names remain available for traceability. This is an implemented geometric input candidate, not an accepted tactical-role representation. % [claim:C103] [evidence:E101,E103]
+
 \subsection{Asset and navigation validity}
 Patch-number agreement alone does not establish exact map-asset compatibility. NAV residuals, traversable distances, visibility, and functional roles require their respective evidence.
 \pending{NAV}{Provide the per-map/patch asset-validity table, localization and connection checks, disabled fields, and spot-checked deployment examples. Coverage alone is not correctness; unsupported quantities remain unknown.}
@@ -131,7 +137,29 @@ The independent unit must follow the actual sampling design; frames, rounds, or 
 
 \section{Results}
 \subsection{Representation validity and coverage: E1}
-\pending{RES1}{Insert six-map source/semantic validity, unknown rates by field, height/ground diagnostics, version coverage, and concrete failure cases. Separate implemented geometry coverage from correctness.}
+The E1 engineering export covers 465 development windows and 11,368 live player observations; three targeted synthetic contract checks passed. Table~\ref{tab:inputaudit} reports the exact live-observation denominators. These entries are agent-audited draft evidence awaiting accountable human source review. % [claim:C104] [evidence:E101]
+The original coarse vocabulary maps 50.57--81.01\% of live observations to other across the six maps. This loss of named-place detail motivates representation work, but a smaller other category would not alone establish semantic correctness. % [claim:C105] [evidence:E101,E104]
+\begin{table}[t]
+\caption{E1 computational input audit on the development cohort. Other refers to the original coarse vocabulary. Functional-role acceptance remains absent; airborne counts are observations, not independent samples.}
+\label{tab:inputaudit}
+\centering\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrr}
+\toprule
+Map & Windows & Live obs. & Other (\%) & Airborne\\
+\midrule
+Ancient & 84 & 2049 & 70.28 & 105 \\ % [claim:C111] [evidence:E101]
+Anubis & 41 & 1017 & 61.06 & 54 \\ % [claim:C112] [evidence:E101]
+Dust2 & 85 & 2062 & 72.55 & 149 \\ % [claim:C113] [evidence:E101]
+Inferno & 118 & 2896 & 53.14 & 303 \\ % [claim:C114] [evidence:E101]
+Mirage & 75 & 1833 & 50.57 & 161 \\ % [claim:C115] [evidence:E101]
+Nuke & 62 & 1511 & 81.01 & 123 \\ % [claim:C116] [evidence:E101]
+\bottomrule
+\end{tabular}
+\end{table}
+The export retains 8,979 patch-gated NAV candidates for diagnostics only; those flags are excluded from encoder inputs. The export took 1.38 seconds with a 104.04 MiB peak process working set and did not train a model. % [claim:C106] [evidence:E101]
+\pending{RES1}{Complete independent semantic/asset acceptance and concrete deployment interpretation. The exported candidate does not establish tactical correctness, main-model performance, or final representation acceptance.}
+
 
 \subsection{Main representation and temporal comparison: E2}
 \pending{RES2}{Insert the complete matched-input main-task comparison, per-seed and per-map results, uncertainty, and ablations. Identify input contribution and encoder/temporal contribution separately. Report every frozen condition.}
@@ -192,6 +220,9 @@ Geometry coverage is in
 Cohort and historical protocols are linked in the manuscript writing guide. Raw Demos, human returns, environments, and most weights remain local; the public summaries alone are not a fresh-clone training dataset.
 
 \pending{REPRO}{Supply legally shareable minimal inputs, complete manifests and environments, executable training/evaluation entry points, licenses, deviations, and the distinction between source reproduction and metric reproduction.}
+\subsection{Research workflow assistance}
+Scientific Agent Skills~\cite{kassis2026skills} informed evidence organization and experimental-design checks. The installed source was pinned to repository revision \path{593377bb048752abb0152deab9fbb1083a6087df}. Its use is workflow assistance, not independent validation of sources, models, or scientific conclusions. % [claim:C107] [evidence:E106]
+
 \section{Declarations and Pilot Sources}
 \pending{DECL}{Before submission, supply factual author contributions, applicable participant/consent information for any human evidence actually used, data/code availability, funding/conflicts if applicable, and the venue-required AI assistance disclosure. No approval, consent, authorship, or funding statement is invented here.}
 

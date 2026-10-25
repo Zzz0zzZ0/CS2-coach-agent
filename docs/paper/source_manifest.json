@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "evidence_id": "E101",
+      "title": "Deployment input audit",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_deployment_input_report.json"
+      },
+      "locator": "datasets/evaluation/ct_deployment_input_report.json; rounds; shape; by_map; semantic_queue_items; semantic_reviewed_items; targeted_checks; resource fields; sha256=d5ddf2049a5942172b328362df15a7220bfd010a48c0ca60d0d8415a17cf0fe3",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E102",
+      "title": "Existing map-place semantic review queue",
+      "source_type": "dataset",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_map_role_review_v9.json"
+      },
+      "locator": "datasets/evaluation/ct_map_role_review_v9.json; status; roles; all items[].review_status and approved_roles; sha256=051819a5d863ea9ec73de0573190a4ab774e14540d34ee06fa927bc8713ae6f7",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E103",
+      "title": "Deployment input construction",
+      "source_type": "software",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/app/services/ct_deployment_service.py"
+      },
+      "locator": "app/services/ct_deployment_service.py; deployment_sequence; NODE_FEATURES; EDGE_FEATURES; masks and excluded diagnostic fields; sha256=7b8f53c6edaee4dac20ee80808de336fc8d09e1d3654111a7963ab9a120fe0b5",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E104",
+      "title": "Frozen six-map development inventory",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_map_semantics_v8_report.json"
+      },
+      "locator": "datasets/evaluation/ct_map_semantics_v8_report.json; maps[].baseline_other_count and live_player_snapshots; sha256=2a7ca2d8df45e0cefc7ffa46a35c5743d4146cf93ffe64d23fc602ed138f8dcd",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E106",
+      "title": "Scientific Agent Skills: A Library of Procedural Knowledge for Research Agents",
+      "source_type": "preprint",
+      "authors": [
+        "Timothy Kassis",
+        "Vinayak Agarwal",
+        "Yuhuan He",
+        "Darshil Patel",
+        "Aubrey M. Brueckner"
+      ],
+      "year": 2026,
+      "identifiers": {
+        "doi": "10.48550/arXiv.2609.00065",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://arxiv.org/abs/2609.00065"
+      },
+      "locator": "Current arXiv title, author, submission-history and DOI fields accessed 2026-10-25; installed workflow revision recorded in paper/README.md",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    }
+  ]
+}
