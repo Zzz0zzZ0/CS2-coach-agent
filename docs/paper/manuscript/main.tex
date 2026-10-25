@@ -89,16 +89,19 @@ The existing auxiliary state contains the five live-category fractions, dead-pla
 \subsection{Implemented geometric descriptors}
 A separate geometry export implements relative height, airborne/grounded/unknown state, NAV-candidate information, horizontal distance, height difference, and validity masks. It has been audited on the existing 465 windows. This export has not yet been integrated into the final main representation or validated as tactical semantics.
 
-\pending{REP}{E1 must fix the six-map functional vocabulary, source-to-common mapping, height/ground fields, unknown handling, normalization, exact feature dimensions, and the versioned schema. Show which concrete deployments the representation separates or incorrectly merges.}
+\pending{REP}{E1 must fix observable spatial/resource fields, temporal alignment, valid ranges, unknown handling, normalization, and the versioned schema. Validate additional topology fields independently. Do not require or introduce a deterministic location-to-duty mapping. Show which deployment observations the representation separates or incorrectly merges.}
 
 
 \subsection{Candidate input implementation and validity masks}
 A separately versioned candidate combines the original eight node fields with relative height and ground-state descriptors, producing 13 node channels and three pair channels; NAV projection features are excluded from the model input. % [claim:C101] [evidence:E101,E103]
-Functional-role annotations remain separate metadata: all 105 map--place review entries are unreviewed, so functional-role assignments are unknown for every live observation and is not fed to the encoder. % [claim:C102] [evidence:E101,E102]
-Death masks zero invalid nodes and pairs. Ground-state feature masks distinguish physical observations from an explicit unknown indicator; raw place names remain available for traceability. This is an implemented geometric input candidate, not an accepted tactical-role representation. % [claim:C103] [evidence:E101,E103]
+The input contract supplies no fixed place-to-duty vocabulary or duty-label array. Place membership describes geography; tactical interpretation is conditional on the particular deployment window and available context, with multiple interpretations or insufficient evidence allowed. % [claim:C102] [evidence:E101,E103]
+Death masks zero invalid nodes and pairs. Ground-state feature masks distinguish physical observations from an explicit unknown indicator; raw place names remain available for traceability. This input candidate supplies observations for later representation learning and does not assign duties. % [claim:C103] [evidence:E101,E103]
+
+\paragraph{Information boundary}
+The joined encoder observations are five ordered snapshots of coarse geographic membership, survival, health, equipment, relative geometry and ground state. Utility events, facing/visibility and round-level score/economy have not been joined to this input; missing context is not assumed known. % [claim:C108] [evidence:E101,E103]
 
 \subsection{Asset and navigation validity}
-Patch-number agreement alone does not establish exact map-asset compatibility. NAV residuals, traversable distances, visibility, and functional roles require their respective evidence.
+Patch-number agreement alone does not establish exact map-asset compatibility. NAV residuals, traversable distances and visibility require their respective evidence; structural validity is separate from context-specific tactical interpretation.
 \pending{NAV}{Provide the per-map/patch asset-validity table, localization and connection checks, disabled fields, and spot-checked deployment examples. Coverage alone is not correctness; unsupported quantities remain unknown.}
 
 \section{Models and Learning Procedure}
@@ -122,7 +125,7 @@ The completed v17 non-graph control reads the full masked node matrix, distance 
 Recorded G3 prediction controls leave one complete series out. Recorded G4 controls exclude a target map and every series containing that map from training and validation. These are development results. The final task protocol must separately specify its train/validation/test membership and prevent a query series from entering the retrieval library.
 
 \subsection{Pattern and retrieval endpoints}
-\pending{METRIC}{Freeze E3 stability measures, source-only selection of cluster number and centers, E4 judgment instructions and primary retrieval endpoint, effect measure, missing judgments, and query/series aggregation. Structural resemblance, tactical reference quality, and automatic geometry are distinct endpoints.}
+\pending{METRIC}{Freeze E3 stability measures, source-only cluster selection, E4 window-specific judgment instructions and primary retrieval endpoint, effect measure, missing judgments, and query/series aggregation. Fix the observation horizon and viewer information; do not assign a universal duty to a place or infer hidden intent. Structural resemblance, tactical reference quality, and automatic geometry remain distinct endpoints.}
 
 The earlier protocol proposes pooled nDCG at five, with the ideal ranking restricted to the same judged candidate pool. If retained, its definition is
 \begin{equation}
@@ -137,10 +140,10 @@ The independent unit must follow the actual sampling design; frames, rounds, or 
 
 \section{Results}
 \subsection{Representation validity and coverage: E1}
-The E1 engineering export covers 465 development windows and 11,368 live player observations; three targeted synthetic contract checks passed. Table~\ref{tab:inputaudit} reports the exact live-observation denominators. These entries are agent-audited draft evidence awaiting accountable human source review. % [claim:C104] [evidence:E101]
+The E1 engineering export covers 465 development windows and 11,368 live player observations; four targeted synthetic contract checks passed. Table~\ref{tab:inputaudit} reports the exact live-observation denominators. These entries are agent-audited draft evidence awaiting accountable human source review. % [claim:C104] [evidence:E101]
 The original coarse vocabulary maps 50.57--81.01\% of live observations to other across the six maps. This loss of named-place detail motivates representation work, but a smaller other category would not alone establish semantic correctness. % [claim:C105] [evidence:E101,E104]
 \begin{table}[t]
-\caption{E1 computational input audit on the development cohort. Other refers to the original coarse vocabulary. Functional-role acceptance remains absent; airborne counts are observations, not independent samples.}
+\caption{E1 computational input audit on the development cohort. Other refers to the original coarse vocabulary. No fixed geographic duty labels are defined; airborne counts are observations, not independent samples.}
 \label{tab:inputaudit}
 \centering\small
 \setlength{\tabcolsep}{3pt}
@@ -157,8 +160,8 @@ Nuke & 62 & 1511 & 81.01 & 123 \\ % [claim:C116] [evidence:E101]
 \bottomrule
 \end{tabular}
 \end{table}
-The export retains 8,979 patch-gated NAV candidates for diagnostics only; those flags are excluded from encoder inputs. The export took 1.38 seconds with a 104.04 MiB peak process working set and did not train a model. % [claim:C106] [evidence:E101]
-\pending{RES1}{Complete independent semantic/asset acceptance and concrete deployment interpretation. The exported candidate does not establish tactical correctness, main-model performance, or final representation acceptance.}
+The export retains 8,979 patch-gated NAV candidates for diagnostics only; those flags are excluded from encoder inputs. The v0.2 export retains the same numerical model inputs as v0.1 and did not train a model. % [claim:C106] [evidence:E101]
+\pending{RES1}{Complete context-validity checks, main representation experiments and window-specific relevance judgments. Map-place duty annotation is not an input prerequisite. The export does not establish tactical correctness or main-model performance.}
 
 
 \subsection{Main representation and temporal comparison: E2}
@@ -202,6 +205,8 @@ The new non-graph conditions did not establish a stable advantage over ridge. Th
 \section{Discussion and Limitations}
 \subsection{What the evidence can establish}
 Existing predictive controls help separate raw-input availability from architecture choice. Euclidean geometry and pooled occupancy cannot, by themselves, certify tactical responsibilities, walkable routes, or useful deployment analogies. The current development cohort is small and contains repeated teams.
+
+A synthetic information-loss probe preserves coarse place categories, resources and relative formation while translating the whole team over time. The current node and edge summaries remain identical, so a time sequence of these summaries does not necessarily retain team movement. This diagnostic motivates an explicit observed-motion comparison; it is not evidence about real tactical intent or task accuracy. % [claim:C109] [evidence:E101,E103]
 
 \pending{DISC}{After E1--E5, interpret the main findings, competing explanations, component failures, and deployment-use conditions. Distinguish stable descriptive patterns from tactical correctness and association from causation. Do not turn non-significance into equivalence.}
 

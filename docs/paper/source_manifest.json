@@ -3,7 +3,7 @@
   "sources": [
     {
       "evidence_id": "E101",
-      "title": "Deployment input audit",
+      "title": "Observational deployment input audit v0.2 without static duty labels",
       "source_type": "report",
       "authors": [],
       "year": 2026,
@@ -12,9 +12,9 @@
         "isbn": "",
         "pmcid": "",
         "pmid": "",
-        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_deployment_input_report.json"
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_deployment_input_v02_report.json"
       },
-      "locator": "datasets/evaluation/ct_deployment_input_report.json; rounds; shape; by_map; semantic_queue_items; semantic_reviewed_items; targeted_checks; resource fields; sha256=d5ddf2049a5942172b328362df15a7220bfd010a48c0ca60d0d8415a17cf0fe3",
+      "locator": "datasets/evaluation/ct_deployment_input_v02_report.json; shape; by_map; tactical_interpretation; revision_note; context_information_limits; targeted_checks; sha256=ecb78e67c9b4c2a650c5106655e21b47c242c7e1cabcd2c4e2b299c9451b4f7c",
       "confidentiality": "public",
       "verification": {
         "source_opened": false,
@@ -25,7 +25,7 @@
     },
     {
       "evidence_id": "E102",
-      "title": "Existing map-place semantic review queue",
+      "title": "Historical map-place vocabulary proposal, not a current training requirement",
       "source_type": "dataset",
       "authors": [],
       "year": 2026,
@@ -58,7 +58,7 @@
         "pmid": "",
         "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/app/services/ct_deployment_service.py"
       },
-      "locator": "app/services/ct_deployment_service.py; deployment_sequence; NODE_FEATURES; EDGE_FEATURES; masks and excluded diagnostic fields; sha256=7b8f53c6edaee4dac20ee80808de336fc8d09e1d3654111a7963ab9a120fe0b5",
+      "locator": "app/services/ct_deployment_service.py; deployment_sequence; observable fields and masks; no duty-label output; sha256=1b92d68d719ba5bbbf764f55c860748564db5c891c5e761327b3c07ff7933f48",
       "confidentiality": "public",
       "verification": {
         "source_opened": false,
