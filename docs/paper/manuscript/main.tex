@@ -1,6 +1,7 @@
 \documentclass[journal]{IEEEtran}
 \usepackage{amsmath}
 \usepackage{booktabs}
+\usepackage{graphicx}
 \usepackage{url}
 \newcommand{\pending}[2]{\par\smallskip\noindent\textbf{Pending [#1].} #2\par\smallskip}
 \title{Cross-Map Representation and Generalization of Defensive Openings in Counter-Strike 2}
@@ -8,7 +9,7 @@
 \begin{document}
 \maketitle
 \noindent\textbf{Draft status, 25 October 2026.}
-This document is a full-paper framework. Recorded development evidence is distinguished from proposed methods and experiments awaiting execution. It does not report completed tactical generalization or a registered final test. Experimental identifiers connect each result slot to the accompanying writing guide.
+This document is a full-paper working draft. The complete development reconstruction matrix and descriptive pattern analysis are recorded; independent tactical evaluation and new-series generalization remain pending. It does not report completed tactical generalization or a registered final test. Experimental identifiers connect each result slot to the accompanying writing guide.
 
 \begin{abstract}
 \pending{ABS}{After the main experiments, write one paragraph covering the cross-map deployment problem, the final representation and comparison, the independent cohort and primary result with uncertainty, and the supported conclusion. The present prediction controls are auxiliary evidence and must not become the abstract's sole endpoint. No future sample size or successful result is supplied here.}
@@ -47,6 +48,8 @@ R4 & Frozen methods on new series & E5 independent evaluation and uncertainty\\
 \subsection{Defensive pattern representation}
 TAGNet is the reference for the original snapshot-reconstruction and defensive-pattern task~\cite{tagnet2026}. Its original feature vocabulary, context branch, aggregation implementation, and clustering analysis must be documented separately from any new common-input or learned-temporal variant.
 
+The released author manuscript explicitly keeps its GRU and context projection at seeded initialization because snapshot reconstruction bypasses them; it fits its reported clustering to embeddings from all reported rounds. Our window decoder instead trains the temporal path, and development centroids are fitted only on source-training embeddings. These are changes in objective and evaluation scope, not repairs to an unintended missing-gradient defect. Absolute reconstruction losses across the two tasks are not directly comparable. % [claim:C206] [evidence:E205,E107,E111]
+
 \subsection{Permutation-invariant and graph controls}
 Deep Sets develops a framework for permutation-invariant set functions~\cite{NIPS2017_f22e4747}. Janossy pooling constructs invariance through averaging an order-sensitive function over reorderings~\cite{murphy2019janossy}. Our existing five-player non-graph control applies this symmetrization principle to jointly permuted nodes and edge endpoints. It serves as a comparator and is not presented as a new pooling algorithm.
 
@@ -57,11 +60,13 @@ Durst et al. learn movement control for CS:GO Retakes on Dust2~\cite{durst2024mo
 
 Xenopoulos et al. derive directed navigation-graph distances and contextual action values~\cite{xenopoulos2020valuing}. Their spatial example distinguishes asymmetric traversal from Euclidean proximity. Our current geometry is therefore described as an observation, not a validated navigation or tactical-role relation. % [claim:C203] [evidence:E203,E101]
 
-\pending{RW}{The accompanying targeted source comparison now distinguishes deployment patterns, egocentric location prediction, movement imitation and contextual action values. Complete primary-source coverage for cross-domain retrieval and pattern stability, and read the TAGNet publication before claiming novelty. This is a narrative starting set, not a systematic or exhaustive review.}
+\pending{RW}{The accompanying targeted source comparison now distinguishes deployment patterns, egocentric location prediction, movement imitation and contextual action values. Complete primary-source coverage for cross-domain retrieval and pattern stability; the pinned author manuscript has now been read, while the publisher version has not been independently checked. This is a narrative starting set, not a systematic or exhaustive review.}
 
 \section{Task, Data, and Evidence Sources}
 \subsection{Deployment window and available observations}
 A CT opening is represented by observations at 10, 12, 15, 18, and 20 seconds after freeze time. Current inputs contain five consistent player identities, positions, named places, health, equipment, and validity information. Identity is used for alignment and provenance; team identity and future outcomes are not common encoder inputs.
+
+The current input contract requires all five supplied observation times and at least one live CT at every time. Consequently, the evaluated task is conditional on this window availability and does not cover arbitrary early-ending rounds or frames in which all CT players have already been eliminated. % [claim:C125] [evidence:E107]
 
 \subsection{Development cohort}
 The existing development cohort contains nine series, 22 Demos, six maps, and 465 eligible CT windows. Seventy-four windows contain casualties. Survival and valid-pair masks remain explicit. All nine series have already been inspected and cannot be relabeled as an untouched final cohort.
@@ -96,7 +101,7 @@ The existing auxiliary state contains the five live-category fractions, dead-pla
 \subsection{Implemented geometric descriptors}
 A separate geometry export implements relative height, airborne/grounded/unknown state, NAV-candidate information, horizontal distance, height difference, and validity masks. It has been audited on the existing 465 windows. This export has not yet been integrated into the final main representation or validated as tactical semantics.
 
-\pending{REP}{E1 must fix observable spatial/resource fields, temporal alignment, valid ranges, unknown handling, normalization, and the versioned schema. Validate additional topology fields independently. Do not require or introduce a deterministic location-to-duty mapping. Show which deployment observations the representation separates or incorrectly merges.}
+\pending{REP}{The v0.3 observable schema and time/mask contract are implemented. Remaining E1 work concerns contextual validity and whether unjoined information changes window-specific interpretation. Validate additional topology fields independently, and show remaining observational collisions. Do not introduce a deterministic location-to-duty mapping.}
 
 
 \subsection{Candidate input implementation and validity masks}
@@ -126,11 +131,11 @@ For the graph condition, $U=5$ player tracks; for the non-graph condition, $U=12
 All six conditions share a 64-to-128-to-525 decoder: five times by five anonymous player slots by 15 node channels, plus five times by ten unordered player pairs by three pair channels. The reconstruction loss averages seven groups: survival binary cross-entropy, live-player coarse-region cross-entropy, resource MSE, relative-height MSE, ground-state cross-entropy, known-motion MSE and valid-pair MSE. Each group averages its valid entries, with an empty group contributing zero. A single jointly permuted player assignment across all times and pair endpoints minimizes the window loss over 120 assignments. Survival, region and ground outputs are logits; continuous outputs remain unconstrained regressions. % [claim:C121] [evidence:E107]
 
 \subsection{Reference and comparison families}
-The planned main comparison includes direct common-feature sequences, a full-input non-graph encoder, a distance-aware graph encoder, and corresponding static and learned-temporal conditions. Original TAGNet context and fixed aggregation are a separately described reproduction condition.
+The implemented development comparison includes direct common-feature sequences, a full-input non-graph encoder, a distance-aware graph encoder, and corresponding static and learned-temporal conditions. Original TAGNet context and fixed aggregation are described separately; the revised matrix does not reproduce that complete context branch.
 
 The completed v17 non-graph control reads the full masked node matrix, distance matrix, and alive mask. It averages a shared MLP over all 120 joint player permutations, preserving edge-endpoint correspondence in every input. Static and causal-GRU prediction variants were compared under the recorded development recipe.
 
-\pending{TRAIN}{E2 implementation and source-side resource pilots are recorded separately from the complete development matrix. Bind the final recipe, code hashes, source-validation selection, all six conditions and actual completion receipts here. Do not count pilot weights as completed matrix cells or reuse auxiliary prediction weights.}
+All six conditions were trained from scratch under the fixed development recipe: AdamW with learning rate $10^{-3}$ and weight decay $10^{-4}$, batch size 16, 100 epochs, gradient clipping at 5, and seeds 0, 1 and 42. The earliest epoch minimizing source-validation reconstruction was selected. Nine series-exclusion folds and six map-plus-series-exclusion folds yielded 270 selected checkpoints; pilots were excluded. The graph and MLP models share input observations, 64-dimensional bottlenecks and the decoder, but their parameter counts are not exactly matched. % [claim:C122] [evidence:E109,E110]
 
 \section{Experimental Protocol}
 \subsection{Development and final isolation}
@@ -175,21 +180,72 @@ Nuke & 62 & 1511 & 81.01 & 123 \\ % [claim:C116] [evidence:E101]
 \end{tabular}
 \end{table}
 The export retains 8,979 patch-gated NAV candidates for diagnostics only; those flags are excluded from encoder inputs. The v0.3 export preserves the original 13 node channels, their masks and all remaining shared arrays from v0.2. Motion is observed for 9,049 live player observations and unknown for 2,319; 8,679 valid intervals have nonzero horizontal displacement. These are input-audit counts, separate from E2 model performance. % [claim:C106] [evidence:E101]
-\pending{RES1}{Complete context-validity checks, main representation experiments and window-specific relevance judgments. Map-place duty annotation is not an input prerequisite. The export does not establish tactical correctness or main-model performance.}
+\pending{RES1}{Complete context-validity checks and window-specific relevance judgments. Development reconstruction results are reported in E2, but do not establish tactical correctness. Map-place duty annotation is not an input prerequisite.}
 
 
 \subsection{Main representation and temporal comparison: E2}
-\pending{RES2}{Insert the complete matched-input main-task comparison, per-seed and per-map results, uncertainty, and ablations. Identify input contribution and encoder/temporal contribution separately. Report every frozen condition.}
+The complete development matrix covers the same 465 windows under each exclusion regime, rather than 930 independent windows. We average seed-specific losses within each window, then within each series, and finally weight the nine series equally. Table~\ref{tab:mainrec} reports the seven-group reconstruction objective; it is not a tactical accuracy score. % [claim:C123] [evidence:E110]
+
+\begin{table}[t]
+\caption{Completed development window reconstruction, E2. Lower is better. Every condition reconstructs the same v0.3 target; three seeds are averaged before equal-series aggregation.}
+\label{tab:mainrec}
+\centering\small
+\begin{tabular}{lrr}
+\toprule
+Condition & G3 & G4\\
+\midrule
+MLP, static & 0.104151 & 0.130487 \\ % [claim:C130] [evidence:E110]
+MLP + GRU & 0.091641 & 0.123633 \\ % [claim:C131] [evidence:E110]
+Graph, static & 0.101017 & 0.130968 \\ % [claim:C132] [evidence:E110]
+Graph + GRU & 0.092370 & 0.125391 \\ % [claim:C133] [evidence:E110]
+Graph + GRU, no motion & 0.096085 & 0.126011 \\ % [claim:C134] [evidence:E110]
+Graph + GRU, common input & 0.096766 & 0.125923 \\ % [claim:C135] [evidence:E110]
+\bottomrule
+\end{tabular}
+\end{table}
+
+Temporal graph and MLP conditions reduced the objective against their static counterparts by 8.56\%/4.26\% and 12.01\%/5.25\% in G3/G4, respectively. Graph + GRU nevertheless had 0.79\%/1.42\% higher loss than full-input MLP + GRU. The corresponding descriptive paired reduction intervals were [-2.54, 0.69]\% and [-3.36, 0.25]\%; a stable graph advantage is not established. These conditional series-resampling summaries do not remove shared-team or overlapping-fold dependence. % [claim:C124] [evidence:E110]
+
+Adding motion to the specified graph-temporal architecture reduced the G3 objective by 3.87\%, with descriptive interval [1.45, 6.01]\%. The G4 reduction was 0.49\%, with interval [-0.68, 1.60]\%, so this development experiment does not establish a reliable cross-map motion gain. Input-ablation results are conditional on this architecture. % [claim:C126] [evidence:E110]
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/reconstruction.pdf}
+\caption{Development reconstruction by series. Each dot averages the three neural seeds within windows and then the windows within one series; the square is the equal-series mean. The panels use a common objective scale. These are descriptive development observations, not independent tactical judgments.}
+\label{fig:reconstruction}
+\end{figure*}
 
 \subsection{Stable patterns and relevant retrieval: E3--E4}
-\pending{RES34}{Insert source-fitted pattern profiles, stability and coverage, interpretable deployment evidence, identical-library retrieval comparisons, independent-judgment scope, missingness, and failures. No completed tactical relevance result is asserted.}
+Source-only cluster selection and assignment were completed for all 270 encoder fits. For example, the full graph-temporal condition selected two clusters in 24 of its 27 G3 fits, rather than recovering a predetermined six-pattern taxonomy. Table~\ref{tab:stability} reports descriptive agreement and diagnostic assignment coverage; numeric cluster IDs are local to each fit and do not name duties. % [claim:C127] [evidence:E114]
 
-\begin{figure}[t]
+\begin{table*}[t]
+\caption{Descriptive pattern diagnostics. ARI is averaged over fold/seed pairs on their common accepted queries; different K and method-specific eligible subsets limit direct comparisons. G3 has 27 computed pairs for each condition. G4 pair counts show missing comparisons. G4 coverage pools 1,395 query-seed assignments per condition, not independent samples.}
+\label{tab:stability}
+\centering\small
+\begin{tabular}{lrrrr}
+\toprule
+Condition & G3 ARI & G4 ARI & G4 computed pairs & G4 coverage (\%)\\
+\midrule
+MLP, static & 0.684 & 0.582 & 18/18 & 83.7 \\ % [claim:C140] [evidence:E114]
+MLP + GRU & 0.353 & 0.520 & 18/18 & 86.0 \\ % [claim:C141] [evidence:E114]
+Graph, static & 0.578 & 0.534 & 16/18 & 85.8 \\ % [claim:C142] [evidence:E114]
+Graph + GRU & 0.502 & 0.406 & 18/18 & 93.0 \\ % [claim:C143] [evidence:E114]
+Graph + GRU, no motion & 0.586 & 0.346 & 16/18 & 89.5 \\ % [claim:C144] [evidence:E114]
+Graph + GRU, common input & 0.387 & 0.566 & 18/18 & 85.0 \\ % [claim:C145] [evidence:E114]
+\bottomrule
+\end{tabular}
+\end{table*}
+
+The same-library exports contain 18,600 query-method-seed ranking records across the two regimes, including the direct observation/statistical controls. Six fixed first-in-index G4 query cases show the top candidate from each of two prespecified temporal encoders at seed zero. Their relevance is unjudged; no tactical nDCG or recall is reported for these new rankings. % [claim:C128] [evidence:E110,E116]
+
+\pending{RES34}{Source-fitted descriptive pattern analysis and unjudged retrieval are complete. Tactical interpretation, context-specific relevance and the independent judgment endpoint remain unvalidated. Do not infer responsibilities or useful coaching from cluster compactness, source-radius coverage or a plotted retrieval example.}
+
+\begin{figure*}[t]
 \centering
-\fbox{\parbox{.89\linewidth}{\small Planned E3--E4 display: aligned query and retrieved deployments with time, height, unknown markers, anonymized method ordering, and the source evidence supporting each interpretation.}}
-\caption{Reserved deployment-evidence figure. The display and its judgments have not yet been produced for the revised main model.}
+\includegraphics[width=\textwidth]{figures/de_ancient.pdf}
+\caption{The fixed first Ancient G4 query and the top cross-map candidates from full-input graph/GRU and MLP/GRU, seed zero. Coordinates are centered at each window's initial live-team center with native axes and a shared scale; colors identify players within each panel only. Dashed links connect observed endpoints, not traversed routes. Walls, opponents and utility are absent, and relevance remains unjudged.}
 \label{fig:deployment}
-\end{figure}
+\end{figure*}
 
 \subsection{Independent generalization: E5}
 \pending{RES5}{Insert only results from the frozen new-series evaluation: actual cohort, primary effect and uncertainty, map/series failures, supported external-validity scope, and protocol deviations. No result cell is filled from development data.}

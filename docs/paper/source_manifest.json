@@ -374,6 +374,101 @@
         "verified_by": "",
         "verified_on": ""
       }
+    },
+    {
+      "evidence_id": "E205",
+      "title": "TAGNet author-provided final manuscript at the pinned upstream revision",
+      "source_type": "preprint",
+      "authors": [
+        "Xiang Zhang",
+        "RongQi Zhang",
+        "Guancheng Chen",
+        "Xinlei Cao",
+        "ChaoFan Yue",
+        "Chunhong Yuan"
+      ],
+      "year": 2026,
+      "identifiers": {
+        "doi": "10.1109/TG.2026.3745970",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/weyoung-open-lab/TAGNet-CS2/blob/1a7ac7cf817ba5ba476e94b3bee36046f4fef56c/TAGNet_ToG_final%E5%AE%9A%E7%A8%BF.pdf"
+      },
+      "locator": "Author PDF, 13 pages; sections III-D/E/F and IV-I, pages 4-6 and 9-10; blob 804572a21d6d2fee1a416d5efa09f1a505623010; SHA256 15b38b517e3663971d69414100d88207640e18eaa03f2d67dfec0ca7fde0aaf4; publisher version not independently checked",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E110",
+      "title": "Complete 270-checkpoint development reconstruction and ranking report",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_reconstruction_development_report.json"
+      },
+      "locator": "datasets/evaluation/ct_reconstruction_development_report.json; sha256=18c93c2a65a48f146bd2afa80ba2f752983f3f7c19473fd72d6a7547cc11c541",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E114",
+      "title": "Completed source-fitted development pattern and conditional stability report",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_deployment_pattern_report.json"
+      },
+      "locator": "datasets/evaluation/ct_deployment_pattern_report.json; sha256=f33ff2f46d155d059a9149cebfe07160bfda0d0b7c62dcd6866417f352470cb3",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E116",
+      "title": "Fixed first-query cross-map observation evidence with no relevance judgments",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/docs/paper/manuscript/figures/evidence.json"
+      },
+      "locator": "docs/paper/manuscript/figures/evidence.json; sha256=b72a0e61d3c74f833c614e4e2df64940d98399aeb82aac91e3417a1e8e6aeaf5",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
     }
   ]
 }

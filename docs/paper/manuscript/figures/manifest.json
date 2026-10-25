@@ -1,0 +1,170 @@
+{
+  "status": "agent_visual_review_completed_human_review_pending",
+  "source_report_sha256": "7df0f61af10fce9a6c0e14248b5c22616d7944b7259904a80e32c7c67bdc051a",
+  "script_sha256": "07e71e68aea25d953f0fb629ce81d967e6b89c1f395ed878afb3016b9b6d20d8",
+  "figures": {
+    "reconstruction": "Per-series loss after averaging neural seeds within windows; square is equal-series mean, no inferential error bar.",
+    "map_comparison": "100*(1-method_loss/common_input_graph_gru_loss), equal-series within each map. Positive means lower objective, not tactical improvement."
+  },
+  "destination": "Provisional full-paper figures, journal-specific export requirements not yet verified",
+  "dimensions_inches": {
+    "reconstruction": [
+      7.1,
+      3.4
+    ],
+    "map_comparison": [
+      7.1,
+      3.6
+    ]
+  },
+  "formats": [
+    "PDF vector with Type42 fonts",
+    "SVG with editable text",
+    "PNG at 300 DPI"
+  ],
+  "limits": [
+    "Development data only; shared teams/folds are not independent.",
+    "No tactical relevance, win-rate or coaching effect claimed."
+  ],
+  "output_sha256": {
+    "map_comparison.pdf": "f8f206bde39b2fea6f7a7d98f0de223553f253feb26711af73340cefaef2785d",
+    "map_comparison.png": "82e7a55653029525ee7cbbba33962ee136b802902b448765cd2060b20c91701a",
+    "map_comparison.svg": "bb463fbc24448ce6e13706c336ea14b9ddcf39333e6d6befa0fdd0d6a3c03c2f",
+    "map_data.csv": "9d7729a474864429500787417a9702381c87eeba5d4f89ccf383cf0503cf0873",
+    "reconstruction.pdf": "a51cc47a0057823782dc9c7be783a2a61270bae3be1b9a399831b724bcc8be22",
+    "reconstruction.png": "a3adee498932829970fc26493180cf833be6358b1aed2288d0370f4ea222ead9",
+    "reconstruction.svg": "8c84b4369621aa4d76fbeae0a715173b5b9c841e59f528212fdc962963683777",
+    "series_data.csv": "af075473e7c7f4cb5347fc816f690b1c9463b8d07f465e1949e744ce5344c7a8"
+  },
+  "visual_review": {
+    "images_inspected": 8,
+    "scope": "All two metric figures and six fixed observation figures; readable labels/common scales and no clipping observed. Numeric player labels can overlap at coincident positions. No semantic relevance accepted."
+  },
+  "published_sha256": {
+    "de_ancient.pdf": "4896c21cf9113503be717b7d123d7d4a57afb1794976bb1a26714ff3c6b7b027",
+    "de_ancient.png": "e32f67ea72e5e2f83bff00a0e737b61a3c2f205c3013bcdd89b88658821bf07d",
+    "de_ancient.svg": "7d5fc8a3da1d46b7baa8c32fb11e0ef3ce13860d4a099a1af28a6a4b68c30687",
+    "de_anubis.pdf": "6daf77f3cede1b67a42c59139ae104ea1519862e18722559ce158c3c37db85d1",
+    "de_anubis.png": "d7d7846f9da93e75acfbe440da43a1cf2043bd538b39f5f4e1b6cc6252ba7dd5",
+    "de_anubis.svg": "16c939bbda96f372447994e4472e43b7dfd36b36b8262106071d1e3e90783106",
+    "de_dust2.pdf": "d6e1a12bde185a7370e3bdde394cc72d66ca5af1bdda59a94d8c444a15c4dc5e",
+    "de_dust2.png": "ddf39d4a81a02881bf2791fb1295a448903ff7e8b5f8874ad689345f961003a3",
+    "de_dust2.svg": "19799a0d0226de499d550f513fad37d3a0a2ebfc018e7d8e9870908c671ee24e",
+    "de_inferno.pdf": "a6545831ef5a4d615dadb06f6fe0095813906cdf0ea33ff8cb8a732e3820804e",
+    "de_inferno.png": "ee7c3d44ceb92777e595fa68e8218084598c1a97889684178992ad9acb836591",
+    "de_inferno.svg": "bb129744d592b978db7ad5b551798341a4dbf155b148bdfb5738b4c7ca0355d8",
+    "de_mirage.pdf": "f45e3d742115797dfc7dfc275ef90ab13f1f7aa74574e7d36dc99c7fe3a5789a",
+    "de_mirage.png": "6b51384621fbc0cba1bc74ee1e8d4dfb04290087d65773002919e949f2ed163c",
+    "de_mirage.svg": "bf3e2478077979bab2c082ae24f862119ba3dc442af8a55c6dcaccf8a1e25e55",
+    "de_nuke.pdf": "9ff0109f29730ecacc78fcb32335deaacc3eed286e02545e6780dfd8e865caaa",
+    "de_nuke.png": "cc0fe647138ac89ac9d0ec5b69b8dbf9308335a889cb85987c4007fd18fab8a5",
+    "de_nuke.svg": "97a9cf1b3791dbaabd56c235a5b05bb9579f3f1f326549d62b442c9977faca3e",
+    "evidence.json": "b72a0e61d3c74f833c614e4e2df64940d98399aeb82aac91e3417a1e8e6aeaf5",
+    "map_comparison.pdf": "f8f206bde39b2fea6f7a7d98f0de223553f253feb26711af73340cefaef2785d",
+    "map_comparison.png": "82e7a55653029525ee7cbbba33962ee136b802902b448765cd2060b20c91701a",
+    "map_comparison.svg": "bb463fbc24448ce6e13706c336ea14b9ddcf39333e6d6befa0fdd0d6a3c03c2f",
+    "map_data.csv": "9d7729a474864429500787417a9702381c87eeba5d4f89ccf383cf0503cf0873",
+    "reconstruction.pdf": "a51cc47a0057823782dc9c7be783a2a61270bae3be1b9a399831b724bcc8be22",
+    "reconstruction.png": "a3adee498932829970fc26493180cf833be6358b1aed2288d0370f4ea222ead9",
+    "reconstruction.svg": "8c84b4369621aa4d76fbeae0a715173b5b9c841e59f528212fdc962963683777",
+    "series_data.csv": "af075473e7c7f4cb5347fc816f690b1c9463b8d07f465e1949e744ce5344c7a8"
+  },
+  "pdf_validation": {
+    "de_ancient.pdf": {
+      "page_inches": [
+        7.100000169542101,
+        2.8000000847710504
+      ],
+      "font_types": [
+        "Type0"
+      ],
+      "fonts": [
+        "EBWHKJ+ArialMT"
+      ]
+    },
+    "de_anubis.pdf": {
+      "page_inches": [
+        7.100000169542101,
+        2.8000000847710504
+      ],
+      "font_types": [
+        "Type0"
+      ],
+      "fonts": [
+        "EBWHKJ+ArialMT"
+      ]
+    },
+    "de_dust2.pdf": {
+      "page_inches": [
+        7.100000169542101,
+        2.8000000847710504
+      ],
+      "font_types": [
+        "Type0"
+      ],
+      "fonts": [
+        "EBWHKJ+ArialMT"
+      ]
+    },
+    "de_inferno.pdf": {
+      "page_inches": [
+        7.100000169542101,
+        2.8000000847710504
+      ],
+      "font_types": [
+        "Type0"
+      ],
+      "fonts": [
+        "EBWHKJ+ArialMT"
+      ]
+    },
+    "de_mirage.pdf": {
+      "page_inches": [
+        7.100000169542101,
+        2.8000000847710504
+      ],
+      "font_types": [
+        "Type0"
+      ],
+      "fonts": [
+        "EBWHKJ+ArialMT"
+      ]
+    },
+    "de_nuke.pdf": {
+      "page_inches": [
+        7.100000169542101,
+        2.8000000847710504
+      ],
+      "font_types": [
+        "Type0"
+      ],
+      "fonts": [
+        "EBWHKJ+ArialMT"
+      ]
+    },
+    "map_comparison.pdf": {
+      "page_inches": [
+        7.100000169542101,
+        3.600000169542101
+      ],
+      "font_types": [
+        "Type0"
+      ],
+      "fonts": [
+        "EBWHKJ+ArialMT"
+      ]
+    },
+    "reconstruction.pdf": {
+      "page_inches": [
+        7.100000169542101,
+        3.4000000423855252
+      ],
+      "font_types": [
+        "Type0"
+      ],
+      "fonts": [
+        "EBWHKJ+ArialMT"
+      ]
+    }
+  }
+}
