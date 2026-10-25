@@ -72,3 +72,9 @@ test_ct_independent_confirmation.py -text
 scripts/verify_ct_independent_identities.py -text
 test_ct_independent_identity.py -text
 scripts/plot_ct_independent_confirmation.py -text
+scripts/transfer_ct_independent_patterns.py -text
+test_ct_independent_pattern_transfer.py -text
+scripts/export_ct_independent_context.py -text
+scripts/retrieve_ct_independent_context.py -text
+test_ct_independent_retrieval.py -text
+scripts/transfer_ct_independent_context_patterns.py -text

@@ -975,6 +975,116 @@
         "verified_by": "",
         "verified_on": ""
       }
+    },
+    {
+      "evidence_id": "E134",
+      "title": "Frozen state-pattern transfer and unjudged neural rankings on the new CT cohort",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_independent_pattern_transfer_report.json"
+      },
+      "locator": "datasets/evaluation/ct_independent_pattern_transfer_report.json; sha256=1a973580cf328bff47a5503e5202675ef1ecf968aa680984459c4db882fafbb5",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E135",
+      "title": "New-series CT context availability with missing throw-event masks",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_independent_context_report.json"
+      },
+      "locator": "datasets/evaluation/ct_independent_context_report.json; sha256=7074d0966999deb3ffcfe3a2bb34e0f8bc8a307eb8da2113a86572fea4e53d0d",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E136",
+      "title": "Complete existing context-policy and same-library retrieval transfer",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_independent_retrieval_report.json"
+      },
+      "locator": "datasets/evaluation/ct_independent_retrieval_report.json; sha256=b9b0404f1146ffb17e61aaeb8e016cfed407ca6a75c7e3fbbbe4157ca6c1b847",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E137",
+      "title": "Frozen joint-context prototype transfer with all-query and known-query coverage",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_independent_context_pattern_report.json"
+      },
+      "locator": "datasets/evaluation/ct_independent_context_pattern_report.json; sha256=6e63946749fa25f14b2e535f0f38ca5778fb2673a19c8e412abbd62d5cd8fa5b",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E138",
+      "title": "Single-demo parser-version probe with exact input parity",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_grenade_event_parser_probe.json"
+      },
+      "locator": "datasets/evaluation/ct_grenade_event_parser_probe.json; sha256=544e338887134ca5573911b62b2ad8af9c6e8125c6870ae84be2e09f13343f3f",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
     }
   ]
 }

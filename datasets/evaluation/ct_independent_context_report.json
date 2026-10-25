@@ -1,0 +1,185 @@
+{
+  "status": "complete_existing_definition_CT_context_facets",
+  "protocol_sha256": "a44008852347f8d7128abd7f3ea77c3e3d3ed13b43bb8752a2e15a14fe42a299",
+  "windows": 246,
+  "snapshots": 1230,
+  "legacy_equipment_parity_checks": 2325,
+  "group_shapes": {
+    "equipment": [
+      246,
+      5
+    ],
+    "score": [
+      246,
+      2
+    ],
+    "utility": [
+      246,
+      30
+    ]
+  },
+  "demos": [
+    {
+      "match_id": "2394204",
+      "map": "de_dust2",
+      "selected_windows": 22,
+      "grenade_thrown_event_listed": false,
+      "throws_available": false,
+      "grenade_event_weapons": null
+    },
+    {
+      "match_id": "2394203",
+      "map": "de_anubis",
+      "selected_windows": 22,
+      "grenade_thrown_event_listed": false,
+      "throws_available": false,
+      "grenade_event_weapons": null
+    },
+    {
+      "match_id": "2394205",
+      "map": "de_ancient",
+      "selected_windows": 16,
+      "grenade_thrown_event_listed": false,
+      "throws_available": false,
+      "grenade_event_weapons": null
+    },
+    {
+      "match_id": "2394200",
+      "map": "de_inferno",
+      "selected_windows": 20,
+      "grenade_thrown_event_listed": false,
+      "throws_available": false,
+      "grenade_event_weapons": null
+    },
+    {
+      "match_id": "2398717",
+      "map": "de_anubis",
+      "selected_windows": 20,
+      "grenade_thrown_event_listed": true,
+      "throws_available": true,
+      "grenade_event_weapons": {
+        "smokegrenade": 120,
+        "hegrenade": 57,
+        "flashbang": 91,
+        "molotov": 56,
+        "incgrenade": 36
+      }
+    },
+    {
+      "match_id": "2398718",
+      "map": "de_inferno",
+      "selected_windows": 15,
+      "grenade_thrown_event_listed": true,
+      "throws_available": true,
+      "grenade_event_weapons": {
+        "decoy": 2,
+        "smokegrenade": 106,
+        "molotov": 34,
+        "flashbang": 82,
+        "hegrenade": 64,
+        "incgrenade": 43
+      }
+    },
+    {
+      "match_id": "2398720",
+      "map": "de_nuke",
+      "selected_windows": 24,
+      "grenade_thrown_event_listed": true,
+      "throws_available": true,
+      "grenade_event_weapons": {
+        "hegrenade": 98,
+        "molotov": 61,
+        "flashbang": 111,
+        "smokegrenade": 177,
+        "incgrenade": 62,
+        "decoy": 1
+      }
+    },
+    {
+      "match_id": "2398722",
+      "map": "de_mirage",
+      "selected_windows": 19,
+      "grenade_thrown_event_listed": true,
+      "throws_available": true,
+      "grenade_event_weapons": {
+        "smokegrenade": 115,
+        "molotov": 40,
+        "flashbang": 91,
+        "incgrenade": 51,
+        "hegrenade": 51
+      }
+    },
+    {
+      "match_id": "2399384",
+      "map": "de_nuke",
+      "selected_windows": 14,
+      "grenade_thrown_event_listed": true,
+      "throws_available": true,
+      "grenade_event_weapons": {
+        "hegrenade": 53,
+        "flashbang": 59,
+        "smokegrenade": 94,
+        "molotov": 23,
+        "incgrenade": 46
+      }
+    },
+    {
+      "match_id": "2399385",
+      "map": "de_ancient",
+      "selected_windows": 28,
+      "grenade_thrown_event_listed": true,
+      "throws_available": true,
+      "grenade_event_weapons": {
+        "smokegrenade": 193,
+        "flashbang": 189,
+        "decoy": 1,
+        "hegrenade": 128,
+        "molotov": 73,
+        "incgrenade": 98
+      }
+    },
+    {
+      "match_id": "2399386",
+      "map": "de_dust2",
+      "selected_windows": 24,
+      "grenade_thrown_event_listed": true,
+      "throws_available": true,
+      "grenade_event_weapons": {
+        "smokegrenade": 157,
+        "molotov": 52,
+        "flashbang": 157,
+        "hegrenade": 100,
+        "incgrenade": 68,
+        "decoy": 1
+      }
+    },
+    {
+      "match_id": "2399387",
+      "map": "de_mirage",
+      "selected_windows": 22,
+      "grenade_thrown_event_listed": true,
+      "throws_available": true,
+      "grenade_event_weapons": {
+        "decoy": 2,
+        "hegrenade": 82,
+        "smokegrenade": 144,
+        "flashbang": 156,
+        "molotov": 54,
+        "incgrenade": 74
+      }
+    }
+  ],
+  "complete_windows_by_group": {
+    "equipment": 246,
+    "score": 246,
+    "utility": 166
+  },
+  "context_sha256": "5efd5f0315482134ea8c130f16348d5b737ecceccaf09c4d2b36ee8ed0d14c20",
+  "sample_index_sha256": "cc699b7916c2f0e6eac52c866ba21590ebdb8923cebd44659e1aba45bd7f2d25",
+  "elapsed_seconds": 20.390891900024144,
+  "peak_RAM_MiB": 682.6484375,
+  "limits": [
+    "Recorded own-CT equipment and throws plus pre-round public score only; no opponent equipment or future outcome input.",
+    "Throw counts are not active areas, visibility, intent, or tactical duty. No new training or labels."
+  ]
+}

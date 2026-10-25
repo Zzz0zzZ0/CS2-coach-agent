@@ -1,0 +1,23 @@
+{
+  "scope": "Follow-up computational diagnostics after the reconstruction result, using already frozen source clusters and libraries. Not a new primary endpoint or tactical validation.",
+  "created_utc": "2026-10-25T19:26:30.499024+00:00",
+  "input_sha256": {
+    "scripts/transfer_ct_independent_patterns.py": "75d6c5139bb570cdd8865b420eccd45653828f26e21041391f93149ea0efda3f",
+    "app/services/ct_retrieval_service.py": "498a12134cc9f18b581c9f78d6a7b9731464877283b5c32d459dda2d6730cda8",
+    "datasets/evaluation/ct_deployment_pattern_report.json": "f33ff2f46d155d059a9149cebfe07160bfda0d0b7c62dcd6866417f352470cb3",
+    "datasets/selections/ct_deployment_pattern_analysis.json": "e7a9fbeb49a0d116d38966455d649367e41fec583e3d464162b88934138faed6",
+    "datasets/evaluation/ct_independent_confirmation_report.json": "06c1a4d5216c96e8576edc5a3b6237e8ca4fba24eca45b358f2e5ccbd4824505",
+    "datasets/selections/ct_independent_confirmation.json": "192a73a97447afd9cafda880d81476dafb1fb483cbd5337ec424766fcea3b442",
+    "output/tagnet/ct_deployment_inputs_p1_v03/sample_index.json": "83f34a6c24a6cff875fd458f355129cf41b89aae8769672aa9bd46558778dd4d",
+    "output/tagnet/ct_independent_inputs/report.json": "36e30a29d39335434bcffead73a3788f1ce66172de018d5578669d7e36008c78",
+    "output/tagnet/ct_independent_confirmation/de_ancient_index.json": "803a4a3f63e7cfdd9b819ac422eab6c6e1ca72ad97b2d8f63836b1ab600209e9",
+    "output/tagnet/ct_independent_confirmation/de_anubis_index.json": "ffeefd3377d96325ace0280183987d4c9682554160316adc22ccfb8052870a2c",
+    "output/tagnet/ct_independent_confirmation/de_dust2_index.json": "561dbfe2e4fe0002aca60f825af13665fe7162535d1a6caa14c496b52245a421",
+    "output/tagnet/ct_independent_confirmation/de_inferno_index.json": "009d838bf6bbd215742177fe77e532fc16af0c164ef135630dca389a48b39e7e",
+    "output/tagnet/ct_independent_confirmation/de_mirage_index.json": "677a4cfb89ac359fa18ca4c2b0dd7de91dcefb07dae11f962bb4015ea64d84b7",
+    "output/tagnet/ct_independent_confirmation/de_nuke_index.json": "2213860706c1f42477ef731a116716adcf9702838fbef36f314354cf847fd7d1"
+  },
+  "rules": "Apply existing source centers, 95th-percentile radii and support>=5 with no new fitting. Verify exact labels/acceptance on the old queries before new transfer. Retain all six neural conditions and three seeds.",
+  "rankings": "Top five from the same frozen source-training library, stable source-index ties; no target-map candidates exist in G4; rankings unjudged.",
+  "stability": "ARI on common accepted queries only when both assignments span at least two clusters; otherwise undefined, with denominators. No window-level uncertainty or duty labels."
+}

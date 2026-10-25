@@ -1,0 +1,26 @@
+{
+  "match_id": "2394204",
+  "demo_sha256": "db7c9ac4ce8a28983acc306f1f402ffba53f3286b62914dac6792d20856c11b5",
+  "baseline_version": "0.41.3",
+  "candidate_version": "0.42.1",
+  "baseline_event_present": false,
+  "candidate_event_present": false,
+  "candidate_event_result_type": "list",
+  "candidate_throw_count": 0,
+  "candidate_throw_columns": [],
+  "candidate_weapons": {},
+  "opening_rounds_exact_match": true,
+  "timing_exact_match": true,
+  "model_input_exact_matches": {
+    "nodes": true,
+    "edges": true,
+    "node_mask": true,
+    "node_feature_mask": true,
+    "pair_mask": true
+  },
+  "elapsed_seconds": 3.4809942000138108,
+  "peak_RAM_MiB": 1076.84375,
+  "scope": "One unchanged May Dust2 Demo; isolated latest parser diagnostic. Frozen study environment and results preserved.",
+  "package_source": "https://pypi.org/project/demoparser2/0.42.1/",
+  "conclusion": "Updating from 0.41.3 to 0.42.1 did not recover this event on this sample; recording differences and unresolved parser compatibility remain possible. Do not infer zero throws."
+}

@@ -1,0 +1,19 @@
+{
+  "scope": "Follow-up transfer of the existing source-defined CT facets after technical reconstruction confirmation; no new feature/weight selection.",
+  "input_sha256": {
+    "scripts/export_ct_independent_context.py": "5d8b2b7039b6033590ef12ca2348fdb99e5d6c39f2dd57286353cb00063a0045",
+    "scripts/audit_ct_context_availability.py": "4f220bb770b3c028e97db36b05c526b462f0e39778b3d2285bd54777c35b9b59",
+    "app/services/parser_service.py": "2a63d5bbfc781ef3daa2e2c9ed6edc5d744e1f275d59aec07c50031fb67be873",
+    "app/services/team_identity_service.py": "6cdb5315027ccfc020897606236532e426bb6180090967075ae98136c9961750",
+    "app/services/ct_context_retrieval_service.py": "c47146325124ed276a0d3f7c6be0930e1026883a796f0b49483837d858fe90db",
+    "datasets/selections/ct_context_retrieval_matrix.json": "1e3eaca45c1ce4f05b6bf8c180a83e4f442073dc58049ec85007fb64ea8ceace",
+    "datasets/selections/ct_context_pattern_analysis.json": "20108a53b041e61de77fc06d1892b6273dc7d526df75b2da20bf52baa6b30fe1",
+    "output/tagnet/ct_context_availability_v2/context.json": "ba75c532f9d8cf0c0010817460d0a120ca5bfb7908fc50ad30a63babf83660a3",
+    "output/tagnet/ct_independent_inputs/report.json": "36e30a29d39335434bcffead73a3788f1ce66172de018d5578669d7e36008c78",
+    "output/tagnet/ct_independent_demos/acquisition.json": "a16b2ee319af25557cb8469021fabdc4071a4688ee540d377080213130cb6176",
+    "datasets/evaluation/ct_map_semantics_v8_report.json": "2a7ca2d8df45e0cefc7ffa46a35c5743d4146cf93ffe64d23fc602ed138f8dcd"
+  },
+  "time": "Pre-round score, CT equipment and recorded CT throws from freeze end through each supplied query time only.",
+  "legacy_parity": "CT snapshot equipment sum must equal all 2325 old context equipment totals before using the new snapshots.",
+  "amendment_before_context_outputs": "The first native parse exposed an absent grenade_thrown event stream, not a confirmed zero. Preserve unknown counts with the existing context-service availability mask; do not infer throws from detonations or substitute zero."
+}

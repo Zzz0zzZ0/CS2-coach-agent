@@ -1,0 +1,3521 @@
+{
+  "status": "completed_frozen_source_pattern_and_neural_ranking_transfer",
+  "protocol_sha256": "8f0312d4936b572c92915827e614f666243adf2d5bd982ba5d0fc0ec37340e0d",
+  "models": [
+    {
+      "map": "de_ancient",
+      "condition": "mlp_static",
+      "seed": 0,
+      "source_K": 2,
+      "query_windows": 44,
+      "accepted": 42,
+      "series": [
+        {
+          "series": "2394205",
+          "windows": 16,
+          "accepted": 15
+        },
+        {
+          "series": "2399385",
+          "windows": 28,
+          "accepted": 27
+        }
+      ]
+    },
+    {
+      "map": "de_ancient",
+      "condition": "mlp_gru",
+      "seed": 0,
+      "source_K": 5,
+      "query_windows": 44,
+      "accepted": 40,
+      "series": [
+        {
+          "series": "2394205",
+          "windows": 16,
+          "accepted": 15
+        },
+        {
+          "series": "2399385",
+          "windows": 28,
+          "accepted": 25
+        }
+      ]
+    },
+    {
+      "map": "de_ancient",
+      "condition": "graph_static",
+      "seed": 0,
+      "source_K": 2,
+      "query_windows": 44,
+      "accepted": 43,
+      "series": [
+        {
+          "series": "2394205",
+          "windows": 16,
+          "accepted": 15
+        },
+        {
+          "series": "2399385",
+          "windows": 28,
+          "accepted": 28
+        }
+      ]
+    },
+    {
+      "map": "de_ancient",
+      "condition": "graph_gru",
+      "seed": 0,
+      "source_K": 5,
+      "query_windows": 44,
+      "accepted": 40,
+      "series": [
+        {
+          "series": "2394205",
+          "windows": 16,
+          "accepted": 15
+        },
+        {
+          "series": "2399385",
+          "windows": 28,
+          "accepted": 25
+        }
+      ]
+    },
+    {
+      "map": "de_ancient",
+      "condition": "graph_gru_no_motion",
+      "seed": 0,
+      "source_K": 3,
+      "query_windows": 44,
+      "accepted": 44,
+      "series": [
+        {
+          "series": "2394205",
+          "windows": 16,
+          "accepted": 16
+        },
+        {
+          "series": "2399385",
+          "windows": 28,
+          "accepted": 28
+        }
+      ]
+    },
+    {
+      "map": "de_ancient",
+      "condition": "graph_gru_common",
+      "seed": 0,
+      "source_K": 4,
+      "query_windows": 44,
+      "accepted": 40,
+      "series": [
+        {
+          "series": "2394205",
+          "windows": 16,
+          "accepted": 15
+        },
+        {
+          "series": "2399385",
+          "windows": 28,
+          "accepted": 25
+        }
+      ]
+    },
+    {
+      "map": "de_ancient",
+      "condition": "mlp_static",
+      "seed": 1,
+      "source_K": 2,
+      "query_windows": 44,
+      "accepted": 42,
+      "series": [
+        {
+          "series": "2394205",
+          "windows": 16,
+          "accepted": 15
+        },
+        {
+          "series": "2399385",
+          "windows": 28,
+          "accepted": 27
+        }
+      ]
+    },
+    {
+      "map": "de_ancient",
+      "condition": "mlp_gru",
+      "seed": 1,
+      "source_K": 2,
+      "query_windows": 44,
+      "accepted": 41,
+      "series": [
+        {
+          "series": "2394205",
+          "windows": 16,
+          "accepted": 16
+        },
+        {
+          "series": "2399385",
+          "windows": 28,
+          "accepted": 25
+        }
+      ]
+    },
+    {
+      "map": "de_ancient",
+      "condition": "graph_static",
+      "seed": 1,
+      "source_K": 2,
+      "query_windows": 44,
+      "accepted": 39,
+      "series": [
+        {
+          "series": "2394205",
+          "windows": 16,
+          "accepted": 14
+        },
+        {
+          "series": "2399385",
+          "windows": 28,
+          "accepted": 25
+        }
+      ]
+    },
+    {
+      "map": "de_ancient",
+      "condition": "graph_gru",
+      "seed": 1,
+      "source_K": 3,
+      "query_windows": 44,
+      "accepted": 42,
+      "series": [
+        {
+          "series": "2394205",
+          "windows": 16,
+          "accepted": 15
+        },
+        {
+          "series": "2399385",
+          "windows": 28,
+          "accepted": 27
+        }
+      ]
+    },
+    {
+      "map": "de_ancient",
+      "condition": "graph_gru_no_motion",
+      "seed": 1,
+      "source_K": 2,
+      "query_windows": 44,
+      "accepted": 43,
+      "series": [
+        {
+          "series": "2394205",
+          "windows": 16,
+          "accepted": 15
+        },
+        {
+          "series": "2399385",
+          "windows": 28,
+          "accepted": 28
+        }
+      ]
+    },
+    {
+      "map": "de_ancient",
+      "condition": "graph_gru_common",
+      "seed": 1,
+      "source_K": 4,
+      "query_windows": 44,
+      "accepted": 43,
+      "series": [
+        {
+          "series": "2394205",
+          "windows": 16,
+          "accepted": 16
+        },
+        {
+          "series": "2399385",
+          "windows": 28,
+          "accepted": 27
+        }
+      ]
+    },
+    {
+      "map": "de_ancient",
+      "condition": "mlp_static",
+      "seed": 42,
+      "source_K": 5,
+      "query_windows": 44,
+      "accepted": 38,
+      "series": [
+        {
+          "series": "2394205",
+          "windows": 16,
+          "accepted": 16
+        },
+        {
+          "series": "2399385",
+          "windows": 28,
+          "accepted": 22
+        }
+      ]
+    },
+    {
+      "map": "de_ancient",
+      "condition": "mlp_gru",
+      "seed": 42,
+      "source_K": 5,
+      "query_windows": 44,
+      "accepted": 43,
+      "series": [
+        {
+          "series": "2394205",
+          "windows": 16,
+          "accepted": 16
+        },
+        {
+          "series": "2399385",
+          "windows": 28,
+          "accepted": 27
+        }
+      ]
+    },
+    {
+      "map": "de_ancient",
+      "condition": "graph_static",
+      "seed": 42,
+      "source_K": 4,
+      "query_windows": 44,
+      "accepted": 38,
+      "series": [
+        {
+          "series": "2394205",
+          "windows": 16,
+          "accepted": 14
+        },
+        {
+          "series": "2399385",
+          "windows": 28,
+          "accepted": 24
+        }
+      ]
+    },
+    {
+      "map": "de_ancient",
+      "condition": "graph_gru",
+      "seed": 42,
+      "source_K": 4,
+      "query_windows": 44,
+      "accepted": 44,
+      "series": [
+        {
+          "series": "2394205",
+          "windows": 16,
+          "accepted": 16
+        },
+        {
+          "series": "2399385",
+          "windows": 28,
+          "accepted": 28
+        }
+      ]
+    },
+    {
+      "map": "de_ancient",
+      "condition": "graph_gru_no_motion",
+      "seed": 42,
+      "source_K": 2,
+      "query_windows": 44,
+      "accepted": 43,
+      "series": [
+        {
+          "series": "2394205",
+          "windows": 16,
+          "accepted": 16
+        },
+        {
+          "series": "2399385",
+          "windows": 28,
+          "accepted": 27
+        }
+      ]
+    },
+    {
+      "map": "de_ancient",
+      "condition": "graph_gru_common",
+      "seed": 42,
+      "source_K": 6,
+      "query_windows": 44,
+      "accepted": 44,
+      "series": [
+        {
+          "series": "2394205",
+          "windows": 16,
+          "accepted": 16
+        },
+        {
+          "series": "2399385",
+          "windows": 28,
+          "accepted": 28
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "condition": "mlp_static",
+      "seed": 0,
+      "source_K": 5,
+      "query_windows": 42,
+      "accepted": 40,
+      "series": [
+        {
+          "series": "2394203",
+          "windows": 22,
+          "accepted": 22
+        },
+        {
+          "series": "2398717",
+          "windows": 20,
+          "accepted": 18
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "condition": "mlp_gru",
+      "seed": 0,
+      "source_K": 5,
+      "query_windows": 42,
+      "accepted": 40,
+      "series": [
+        {
+          "series": "2394203",
+          "windows": 22,
+          "accepted": 22
+        },
+        {
+          "series": "2398717",
+          "windows": 20,
+          "accepted": 18
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "condition": "graph_static",
+      "seed": 0,
+      "source_K": 5,
+      "query_windows": 42,
+      "accepted": 39,
+      "series": [
+        {
+          "series": "2394203",
+          "windows": 22,
+          "accepted": 21
+        },
+        {
+          "series": "2398717",
+          "windows": 20,
+          "accepted": 18
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "condition": "graph_gru",
+      "seed": 0,
+      "source_K": 2,
+      "query_windows": 42,
+      "accepted": 42,
+      "series": [
+        {
+          "series": "2394203",
+          "windows": 22,
+          "accepted": 22
+        },
+        {
+          "series": "2398717",
+          "windows": 20,
+          "accepted": 20
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "condition": "graph_gru_no_motion",
+      "seed": 0,
+      "source_K": 2,
+      "query_windows": 42,
+      "accepted": 38,
+      "series": [
+        {
+          "series": "2394203",
+          "windows": 22,
+          "accepted": 22
+        },
+        {
+          "series": "2398717",
+          "windows": 20,
+          "accepted": 16
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "condition": "graph_gru_common",
+      "seed": 0,
+      "source_K": 5,
+      "query_windows": 42,
+      "accepted": 40,
+      "series": [
+        {
+          "series": "2394203",
+          "windows": 22,
+          "accepted": 20
+        },
+        {
+          "series": "2398717",
+          "windows": 20,
+          "accepted": 20
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "condition": "mlp_static",
+      "seed": 1,
+      "source_K": 2,
+      "query_windows": 42,
+      "accepted": 40,
+      "series": [
+        {
+          "series": "2394203",
+          "windows": 22,
+          "accepted": 22
+        },
+        {
+          "series": "2398717",
+          "windows": 20,
+          "accepted": 18
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "condition": "mlp_gru",
+      "seed": 1,
+      "source_K": 2,
+      "query_windows": 42,
+      "accepted": 40,
+      "series": [
+        {
+          "series": "2394203",
+          "windows": 22,
+          "accepted": 21
+        },
+        {
+          "series": "2398717",
+          "windows": 20,
+          "accepted": 19
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "condition": "graph_static",
+      "seed": 1,
+      "source_K": 2,
+      "query_windows": 42,
+      "accepted": 39,
+      "series": [
+        {
+          "series": "2394203",
+          "windows": 22,
+          "accepted": 22
+        },
+        {
+          "series": "2398717",
+          "windows": 20,
+          "accepted": 17
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "condition": "graph_gru",
+      "seed": 1,
+      "source_K": 2,
+      "query_windows": 42,
+      "accepted": 37,
+      "series": [
+        {
+          "series": "2394203",
+          "windows": 22,
+          "accepted": 22
+        },
+        {
+          "series": "2398717",
+          "windows": 20,
+          "accepted": 15
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "condition": "graph_gru_no_motion",
+      "seed": 1,
+      "source_K": 5,
+      "query_windows": 42,
+      "accepted": 41,
+      "series": [
+        {
+          "series": "2394203",
+          "windows": 22,
+          "accepted": 22
+        },
+        {
+          "series": "2398717",
+          "windows": 20,
+          "accepted": 19
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "condition": "graph_gru_common",
+      "seed": 1,
+      "source_K": 6,
+      "query_windows": 42,
+      "accepted": 41,
+      "series": [
+        {
+          "series": "2394203",
+          "windows": 22,
+          "accepted": 21
+        },
+        {
+          "series": "2398717",
+          "windows": 20,
+          "accepted": 20
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "condition": "mlp_static",
+      "seed": 42,
+      "source_K": 2,
+      "query_windows": 42,
+      "accepted": 38,
+      "series": [
+        {
+          "series": "2394203",
+          "windows": 22,
+          "accepted": 22
+        },
+        {
+          "series": "2398717",
+          "windows": 20,
+          "accepted": 16
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "condition": "mlp_gru",
+      "seed": 42,
+      "source_K": 5,
+      "query_windows": 42,
+      "accepted": 39,
+      "series": [
+        {
+          "series": "2394203",
+          "windows": 22,
+          "accepted": 21
+        },
+        {
+          "series": "2398717",
+          "windows": 20,
+          "accepted": 18
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "condition": "graph_static",
+      "seed": 42,
+      "source_K": 2,
+      "query_windows": 42,
+      "accepted": 37,
+      "series": [
+        {
+          "series": "2394203",
+          "windows": 22,
+          "accepted": 22
+        },
+        {
+          "series": "2398717",
+          "windows": 20,
+          "accepted": 15
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "condition": "graph_gru",
+      "seed": 42,
+      "source_K": 2,
+      "query_windows": 42,
+      "accepted": 42,
+      "series": [
+        {
+          "series": "2394203",
+          "windows": 22,
+          "accepted": 22
+        },
+        {
+          "series": "2398717",
+          "windows": 20,
+          "accepted": 20
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "condition": "graph_gru_no_motion",
+      "seed": 42,
+      "source_K": 4,
+      "query_windows": 42,
+      "accepted": 41,
+      "series": [
+        {
+          "series": "2394203",
+          "windows": 22,
+          "accepted": 21
+        },
+        {
+          "series": "2398717",
+          "windows": 20,
+          "accepted": 20
+        }
+      ]
+    },
+    {
+      "map": "de_anubis",
+      "condition": "graph_gru_common",
+      "seed": 42,
+      "source_K": 6,
+      "query_windows": 42,
+      "accepted": 37,
+      "series": [
+        {
+          "series": "2394203",
+          "windows": 22,
+          "accepted": 18
+        },
+        {
+          "series": "2398717",
+          "windows": 20,
+          "accepted": 19
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "condition": "mlp_static",
+      "seed": 0,
+      "source_K": 6,
+      "query_windows": 46,
+      "accepted": 39,
+      "series": [
+        {
+          "series": "2394204",
+          "windows": 22,
+          "accepted": 18
+        },
+        {
+          "series": "2399386",
+          "windows": 24,
+          "accepted": 21
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "condition": "mlp_gru",
+      "seed": 0,
+      "source_K": 5,
+      "query_windows": 46,
+      "accepted": 42,
+      "series": [
+        {
+          "series": "2394204",
+          "windows": 22,
+          "accepted": 19
+        },
+        {
+          "series": "2399386",
+          "windows": 24,
+          "accepted": 23
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "condition": "graph_static",
+      "seed": 0,
+      "source_K": 2,
+      "query_windows": 46,
+      "accepted": 46,
+      "series": [
+        {
+          "series": "2394204",
+          "windows": 22,
+          "accepted": 22
+        },
+        {
+          "series": "2399386",
+          "windows": 24,
+          "accepted": 24
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "condition": "graph_gru",
+      "seed": 0,
+      "source_K": 2,
+      "query_windows": 46,
+      "accepted": 45,
+      "series": [
+        {
+          "series": "2394204",
+          "windows": 22,
+          "accepted": 22
+        },
+        {
+          "series": "2399386",
+          "windows": 24,
+          "accepted": 23
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "condition": "graph_gru_no_motion",
+      "seed": 0,
+      "source_K": 4,
+      "query_windows": 46,
+      "accepted": 45,
+      "series": [
+        {
+          "series": "2394204",
+          "windows": 22,
+          "accepted": 22
+        },
+        {
+          "series": "2399386",
+          "windows": 24,
+          "accepted": 23
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "condition": "graph_gru_common",
+      "seed": 0,
+      "source_K": 6,
+      "query_windows": 46,
+      "accepted": 45,
+      "series": [
+        {
+          "series": "2394204",
+          "windows": 22,
+          "accepted": 22
+        },
+        {
+          "series": "2399386",
+          "windows": 24,
+          "accepted": 23
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "condition": "mlp_static",
+      "seed": 1,
+      "source_K": 6,
+      "query_windows": 46,
+      "accepted": 41,
+      "series": [
+        {
+          "series": "2394204",
+          "windows": 22,
+          "accepted": 20
+        },
+        {
+          "series": "2399386",
+          "windows": 24,
+          "accepted": 21
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "condition": "mlp_gru",
+      "seed": 1,
+      "source_K": 6,
+      "query_windows": 46,
+      "accepted": 33,
+      "series": [
+        {
+          "series": "2394204",
+          "windows": 22,
+          "accepted": 18
+        },
+        {
+          "series": "2399386",
+          "windows": 24,
+          "accepted": 15
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "condition": "graph_static",
+      "seed": 1,
+      "source_K": 4,
+      "query_windows": 46,
+      "accepted": 42,
+      "series": [
+        {
+          "series": "2394204",
+          "windows": 22,
+          "accepted": 21
+        },
+        {
+          "series": "2399386",
+          "windows": 24,
+          "accepted": 21
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "condition": "graph_gru",
+      "seed": 1,
+      "source_K": 5,
+      "query_windows": 46,
+      "accepted": 45,
+      "series": [
+        {
+          "series": "2394204",
+          "windows": 22,
+          "accepted": 21
+        },
+        {
+          "series": "2399386",
+          "windows": 24,
+          "accepted": 24
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "condition": "graph_gru_no_motion",
+      "seed": 1,
+      "source_K": 2,
+      "query_windows": 46,
+      "accepted": 46,
+      "series": [
+        {
+          "series": "2394204",
+          "windows": 22,
+          "accepted": 22
+        },
+        {
+          "series": "2399386",
+          "windows": 24,
+          "accepted": 24
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "condition": "graph_gru_common",
+      "seed": 1,
+      "source_K": 4,
+      "query_windows": 46,
+      "accepted": 43,
+      "series": [
+        {
+          "series": "2394204",
+          "windows": 22,
+          "accepted": 20
+        },
+        {
+          "series": "2399386",
+          "windows": 24,
+          "accepted": 23
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "condition": "mlp_static",
+      "seed": 42,
+      "source_K": 2,
+      "query_windows": 46,
+      "accepted": 44,
+      "series": [
+        {
+          "series": "2394204",
+          "windows": 22,
+          "accepted": 20
+        },
+        {
+          "series": "2399386",
+          "windows": 24,
+          "accepted": 24
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "condition": "mlp_gru",
+      "seed": 42,
+      "source_K": 5,
+      "query_windows": 46,
+      "accepted": 43,
+      "series": [
+        {
+          "series": "2394204",
+          "windows": 22,
+          "accepted": 22
+        },
+        {
+          "series": "2399386",
+          "windows": 24,
+          "accepted": 21
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "condition": "graph_static",
+      "seed": 42,
+      "source_K": 2,
+      "query_windows": 46,
+      "accepted": 46,
+      "series": [
+        {
+          "series": "2394204",
+          "windows": 22,
+          "accepted": 22
+        },
+        {
+          "series": "2399386",
+          "windows": 24,
+          "accepted": 24
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "condition": "graph_gru",
+      "seed": 42,
+      "source_K": 2,
+      "query_windows": 46,
+      "accepted": 45,
+      "series": [
+        {
+          "series": "2394204",
+          "windows": 22,
+          "accepted": 21
+        },
+        {
+          "series": "2399386",
+          "windows": 24,
+          "accepted": 24
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "condition": "graph_gru_no_motion",
+      "seed": 42,
+      "source_K": 6,
+      "query_windows": 46,
+      "accepted": 42,
+      "series": [
+        {
+          "series": "2394204",
+          "windows": 22,
+          "accepted": 22
+        },
+        {
+          "series": "2399386",
+          "windows": 24,
+          "accepted": 20
+        }
+      ]
+    },
+    {
+      "map": "de_dust2",
+      "condition": "graph_gru_common",
+      "seed": 42,
+      "source_K": 4,
+      "query_windows": 46,
+      "accepted": 44,
+      "series": [
+        {
+          "series": "2394204",
+          "windows": 22,
+          "accepted": 21
+        },
+        {
+          "series": "2399386",
+          "windows": 24,
+          "accepted": 23
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "condition": "mlp_static",
+      "seed": 0,
+      "source_K": 2,
+      "query_windows": 35,
+      "accepted": 30,
+      "series": [
+        {
+          "series": "2394200",
+          "windows": 20,
+          "accepted": 18
+        },
+        {
+          "series": "2398718",
+          "windows": 15,
+          "accepted": 12
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "condition": "mlp_gru",
+      "seed": 0,
+      "source_K": 6,
+      "query_windows": 35,
+      "accepted": 30,
+      "series": [
+        {
+          "series": "2394200",
+          "windows": 20,
+          "accepted": 19
+        },
+        {
+          "series": "2398718",
+          "windows": 15,
+          "accepted": 11
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "condition": "graph_static",
+      "seed": 0,
+      "source_K": 2,
+      "query_windows": 35,
+      "accepted": 27,
+      "series": [
+        {
+          "series": "2394200",
+          "windows": 20,
+          "accepted": 17
+        },
+        {
+          "series": "2398718",
+          "windows": 15,
+          "accepted": 10
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "condition": "graph_gru",
+      "seed": 0,
+      "source_K": 6,
+      "query_windows": 35,
+      "accepted": 29,
+      "series": [
+        {
+          "series": "2394200",
+          "windows": 20,
+          "accepted": 16
+        },
+        {
+          "series": "2398718",
+          "windows": 15,
+          "accepted": 13
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "condition": "graph_gru_no_motion",
+      "seed": 0,
+      "source_K": 4,
+      "query_windows": 35,
+      "accepted": 27,
+      "series": [
+        {
+          "series": "2394200",
+          "windows": 20,
+          "accepted": 16
+        },
+        {
+          "series": "2398718",
+          "windows": 15,
+          "accepted": 11
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "condition": "graph_gru_common",
+      "seed": 0,
+      "source_K": 6,
+      "query_windows": 35,
+      "accepted": 29,
+      "series": [
+        {
+          "series": "2394200",
+          "windows": 20,
+          "accepted": 17
+        },
+        {
+          "series": "2398718",
+          "windows": 15,
+          "accepted": 12
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "condition": "mlp_static",
+      "seed": 1,
+      "source_K": 2,
+      "query_windows": 35,
+      "accepted": 28,
+      "series": [
+        {
+          "series": "2394200",
+          "windows": 20,
+          "accepted": 16
+        },
+        {
+          "series": "2398718",
+          "windows": 15,
+          "accepted": 12
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "condition": "mlp_gru",
+      "seed": 1,
+      "source_K": 5,
+      "query_windows": 35,
+      "accepted": 26,
+      "series": [
+        {
+          "series": "2394200",
+          "windows": 20,
+          "accepted": 16
+        },
+        {
+          "series": "2398718",
+          "windows": 15,
+          "accepted": 10
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "condition": "graph_static",
+      "seed": 1,
+      "source_K": 2,
+      "query_windows": 35,
+      "accepted": 26,
+      "series": [
+        {
+          "series": "2394200",
+          "windows": 20,
+          "accepted": 16
+        },
+        {
+          "series": "2398718",
+          "windows": 15,
+          "accepted": 10
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "condition": "graph_gru",
+      "seed": 1,
+      "source_K": 6,
+      "query_windows": 35,
+      "accepted": 34,
+      "series": [
+        {
+          "series": "2394200",
+          "windows": 20,
+          "accepted": 20
+        },
+        {
+          "series": "2398718",
+          "windows": 15,
+          "accepted": 14
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "condition": "graph_gru_no_motion",
+      "seed": 1,
+      "source_K": 2,
+      "query_windows": 35,
+      "accepted": 31,
+      "series": [
+        {
+          "series": "2394200",
+          "windows": 20,
+          "accepted": 20
+        },
+        {
+          "series": "2398718",
+          "windows": 15,
+          "accepted": 11
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "condition": "graph_gru_common",
+      "seed": 1,
+      "source_K": 6,
+      "query_windows": 35,
+      "accepted": 25,
+      "series": [
+        {
+          "series": "2394200",
+          "windows": 20,
+          "accepted": 15
+        },
+        {
+          "series": "2398718",
+          "windows": 15,
+          "accepted": 10
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "condition": "mlp_static",
+      "seed": 42,
+      "source_K": 2,
+      "query_windows": 35,
+      "accepted": 31,
+      "series": [
+        {
+          "series": "2394200",
+          "windows": 20,
+          "accepted": 18
+        },
+        {
+          "series": "2398718",
+          "windows": 15,
+          "accepted": 13
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "condition": "mlp_gru",
+      "seed": 42,
+      "source_K": 6,
+      "query_windows": 35,
+      "accepted": 25,
+      "series": [
+        {
+          "series": "2394200",
+          "windows": 20,
+          "accepted": 16
+        },
+        {
+          "series": "2398718",
+          "windows": 15,
+          "accepted": 9
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "condition": "graph_static",
+      "seed": 42,
+      "source_K": 2,
+      "query_windows": 35,
+      "accepted": 27,
+      "series": [
+        {
+          "series": "2394200",
+          "windows": 20,
+          "accepted": 16
+        },
+        {
+          "series": "2398718",
+          "windows": 15,
+          "accepted": 11
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "condition": "graph_gru",
+      "seed": 42,
+      "source_K": 6,
+      "query_windows": 35,
+      "accepted": 32,
+      "series": [
+        {
+          "series": "2394200",
+          "windows": 20,
+          "accepted": 19
+        },
+        {
+          "series": "2398718",
+          "windows": 15,
+          "accepted": 13
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "condition": "graph_gru_no_motion",
+      "seed": 42,
+      "source_K": 4,
+      "query_windows": 35,
+      "accepted": 31,
+      "series": [
+        {
+          "series": "2394200",
+          "windows": 20,
+          "accepted": 17
+        },
+        {
+          "series": "2398718",
+          "windows": 15,
+          "accepted": 14
+        }
+      ]
+    },
+    {
+      "map": "de_inferno",
+      "condition": "graph_gru_common",
+      "seed": 42,
+      "source_K": 6,
+      "query_windows": 35,
+      "accepted": 32,
+      "series": [
+        {
+          "series": "2394200",
+          "windows": 20,
+          "accepted": 19
+        },
+        {
+          "series": "2398718",
+          "windows": 15,
+          "accepted": 13
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "condition": "mlp_static",
+      "seed": 0,
+      "source_K": 2,
+      "query_windows": 41,
+      "accepted": 28,
+      "series": [
+        {
+          "series": "2398722",
+          "windows": 19,
+          "accepted": 13
+        },
+        {
+          "series": "2399387",
+          "windows": 22,
+          "accepted": 15
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "condition": "mlp_gru",
+      "seed": 0,
+      "source_K": 5,
+      "query_windows": 41,
+      "accepted": 34,
+      "series": [
+        {
+          "series": "2398722",
+          "windows": 19,
+          "accepted": 16
+        },
+        {
+          "series": "2399387",
+          "windows": 22,
+          "accepted": 18
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "condition": "graph_static",
+      "seed": 0,
+      "source_K": 5,
+      "query_windows": 41,
+      "accepted": 34,
+      "series": [
+        {
+          "series": "2398722",
+          "windows": 19,
+          "accepted": 17
+        },
+        {
+          "series": "2399387",
+          "windows": 22,
+          "accepted": 17
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "condition": "graph_gru",
+      "seed": 0,
+      "source_K": 2,
+      "query_windows": 41,
+      "accepted": 33,
+      "series": [
+        {
+          "series": "2398722",
+          "windows": 19,
+          "accepted": 15
+        },
+        {
+          "series": "2399387",
+          "windows": 22,
+          "accepted": 18
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "condition": "graph_gru_no_motion",
+      "seed": 0,
+      "source_K": 2,
+      "query_windows": 41,
+      "accepted": 29,
+      "series": [
+        {
+          "series": "2398722",
+          "windows": 19,
+          "accepted": 14
+        },
+        {
+          "series": "2399387",
+          "windows": 22,
+          "accepted": 15
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "condition": "graph_gru_common",
+      "seed": 0,
+      "source_K": 6,
+      "query_windows": 41,
+      "accepted": 27,
+      "series": [
+        {
+          "series": "2398722",
+          "windows": 19,
+          "accepted": 15
+        },
+        {
+          "series": "2399387",
+          "windows": 22,
+          "accepted": 12
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "condition": "mlp_static",
+      "seed": 1,
+      "source_K": 2,
+      "query_windows": 41,
+      "accepted": 29,
+      "series": [
+        {
+          "series": "2398722",
+          "windows": 19,
+          "accepted": 14
+        },
+        {
+          "series": "2399387",
+          "windows": 22,
+          "accepted": 15
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "condition": "mlp_gru",
+      "seed": 1,
+      "source_K": 2,
+      "query_windows": 41,
+      "accepted": 38,
+      "series": [
+        {
+          "series": "2398722",
+          "windows": 19,
+          "accepted": 19
+        },
+        {
+          "series": "2399387",
+          "windows": 22,
+          "accepted": 19
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "condition": "graph_static",
+      "seed": 1,
+      "source_K": 3,
+      "query_windows": 41,
+      "accepted": 27,
+      "series": [
+        {
+          "series": "2398722",
+          "windows": 19,
+          "accepted": 13
+        },
+        {
+          "series": "2399387",
+          "windows": 22,
+          "accepted": 14
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "condition": "graph_gru",
+      "seed": 1,
+      "source_K": 3,
+      "query_windows": 41,
+      "accepted": 39,
+      "series": [
+        {
+          "series": "2398722",
+          "windows": 19,
+          "accepted": 18
+        },
+        {
+          "series": "2399387",
+          "windows": 22,
+          "accepted": 21
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "condition": "graph_gru_no_motion",
+      "seed": 1,
+      "source_K": 5,
+      "query_windows": 41,
+      "accepted": 32,
+      "series": [
+        {
+          "series": "2398722",
+          "windows": 19,
+          "accepted": 17
+        },
+        {
+          "series": "2399387",
+          "windows": 22,
+          "accepted": 15
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "condition": "graph_gru_common",
+      "seed": 1,
+      "source_K": 5,
+      "query_windows": 41,
+      "accepted": 35,
+      "series": [
+        {
+          "series": "2398722",
+          "windows": 19,
+          "accepted": 18
+        },
+        {
+          "series": "2399387",
+          "windows": 22,
+          "accepted": 17
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "condition": "mlp_static",
+      "seed": 42,
+      "source_K": 2,
+      "query_windows": 41,
+      "accepted": 26,
+      "series": [
+        {
+          "series": "2398722",
+          "windows": 19,
+          "accepted": 12
+        },
+        {
+          "series": "2399387",
+          "windows": 22,
+          "accepted": 14
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "condition": "mlp_gru",
+      "seed": 42,
+      "source_K": 3,
+      "query_windows": 41,
+      "accepted": 23,
+      "series": [
+        {
+          "series": "2398722",
+          "windows": 19,
+          "accepted": 11
+        },
+        {
+          "series": "2399387",
+          "windows": 22,
+          "accepted": 12
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "condition": "graph_static",
+      "seed": 42,
+      "source_K": 3,
+      "query_windows": 41,
+      "accepted": 21,
+      "series": [
+        {
+          "series": "2398722",
+          "windows": 19,
+          "accepted": 11
+        },
+        {
+          "series": "2399387",
+          "windows": 22,
+          "accepted": 10
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "condition": "graph_gru",
+      "seed": 42,
+      "source_K": 2,
+      "query_windows": 41,
+      "accepted": 27,
+      "series": [
+        {
+          "series": "2398722",
+          "windows": 19,
+          "accepted": 15
+        },
+        {
+          "series": "2399387",
+          "windows": 22,
+          "accepted": 12
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "condition": "graph_gru_no_motion",
+      "seed": 42,
+      "source_K": 4,
+      "query_windows": 41,
+      "accepted": 32,
+      "series": [
+        {
+          "series": "2398722",
+          "windows": 19,
+          "accepted": 18
+        },
+        {
+          "series": "2399387",
+          "windows": 22,
+          "accepted": 14
+        }
+      ]
+    },
+    {
+      "map": "de_mirage",
+      "condition": "graph_gru_common",
+      "seed": 42,
+      "source_K": 6,
+      "query_windows": 41,
+      "accepted": 33,
+      "series": [
+        {
+          "series": "2398722",
+          "windows": 19,
+          "accepted": 18
+        },
+        {
+          "series": "2399387",
+          "windows": 22,
+          "accepted": 15
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "condition": "mlp_static",
+      "seed": 0,
+      "source_K": 5,
+      "query_windows": 38,
+      "accepted": 14,
+      "series": [
+        {
+          "series": "2398720",
+          "windows": 24,
+          "accepted": 8
+        },
+        {
+          "series": "2399384",
+          "windows": 14,
+          "accepted": 6
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "condition": "mlp_gru",
+      "seed": 0,
+      "source_K": 4,
+      "query_windows": 38,
+      "accepted": 34,
+      "series": [
+        {
+          "series": "2398720",
+          "windows": 24,
+          "accepted": 22
+        },
+        {
+          "series": "2399384",
+          "windows": 14,
+          "accepted": 12
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "condition": "graph_static",
+      "seed": 0,
+      "source_K": 2,
+      "query_windows": 38,
+      "accepted": 38,
+      "series": [
+        {
+          "series": "2398720",
+          "windows": 24,
+          "accepted": 24
+        },
+        {
+          "series": "2399384",
+          "windows": 14,
+          "accepted": 14
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "condition": "graph_gru",
+      "seed": 0,
+      "source_K": 4,
+      "query_windows": 38,
+      "accepted": 36,
+      "series": [
+        {
+          "series": "2398720",
+          "windows": 24,
+          "accepted": 22
+        },
+        {
+          "series": "2399384",
+          "windows": 14,
+          "accepted": 14
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "condition": "graph_gru_no_motion",
+      "seed": 0,
+      "source_K": 5,
+      "query_windows": 38,
+      "accepted": 31,
+      "series": [
+        {
+          "series": "2398720",
+          "windows": 24,
+          "accepted": 19
+        },
+        {
+          "series": "2399384",
+          "windows": 14,
+          "accepted": 12
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "condition": "graph_gru_common",
+      "seed": 0,
+      "source_K": 5,
+      "query_windows": 38,
+      "accepted": 37,
+      "series": [
+        {
+          "series": "2398720",
+          "windows": 24,
+          "accepted": 23
+        },
+        {
+          "series": "2399384",
+          "windows": 14,
+          "accepted": 14
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "condition": "mlp_static",
+      "seed": 1,
+      "source_K": 2,
+      "query_windows": 38,
+      "accepted": 34,
+      "series": [
+        {
+          "series": "2398720",
+          "windows": 24,
+          "accepted": 21
+        },
+        {
+          "series": "2399384",
+          "windows": 14,
+          "accepted": 13
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "condition": "mlp_gru",
+      "seed": 1,
+      "source_K": 5,
+      "query_windows": 38,
+      "accepted": 36,
+      "series": [
+        {
+          "series": "2398720",
+          "windows": 24,
+          "accepted": 22
+        },
+        {
+          "series": "2399384",
+          "windows": 14,
+          "accepted": 14
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "condition": "graph_static",
+      "seed": 1,
+      "source_K": 2,
+      "query_windows": 38,
+      "accepted": 38,
+      "series": [
+        {
+          "series": "2398720",
+          "windows": 24,
+          "accepted": 24
+        },
+        {
+          "series": "2399384",
+          "windows": 14,
+          "accepted": 14
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "condition": "graph_gru",
+      "seed": 1,
+      "source_K": 4,
+      "query_windows": 38,
+      "accepted": 38,
+      "series": [
+        {
+          "series": "2398720",
+          "windows": 24,
+          "accepted": 24
+        },
+        {
+          "series": "2399384",
+          "windows": 14,
+          "accepted": 14
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "condition": "graph_gru_no_motion",
+      "seed": 1,
+      "source_K": 2,
+      "query_windows": 38,
+      "accepted": 37,
+      "series": [
+        {
+          "series": "2398720",
+          "windows": 24,
+          "accepted": 23
+        },
+        {
+          "series": "2399384",
+          "windows": 14,
+          "accepted": 14
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "condition": "graph_gru_common",
+      "seed": 1,
+      "source_K": 5,
+      "query_windows": 38,
+      "accepted": 32,
+      "series": [
+        {
+          "series": "2398720",
+          "windows": 24,
+          "accepted": 22
+        },
+        {
+          "series": "2399384",
+          "windows": 14,
+          "accepted": 10
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "condition": "mlp_static",
+      "seed": 42,
+      "source_K": 5,
+      "query_windows": 38,
+      "accepted": 13,
+      "series": [
+        {
+          "series": "2398720",
+          "windows": 24,
+          "accepted": 7
+        },
+        {
+          "series": "2399384",
+          "windows": 14,
+          "accepted": 6
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "condition": "mlp_gru",
+      "seed": 42,
+      "source_K": 5,
+      "query_windows": 38,
+      "accepted": 35,
+      "series": [
+        {
+          "series": "2398720",
+          "windows": 24,
+          "accepted": 21
+        },
+        {
+          "series": "2399384",
+          "windows": 14,
+          "accepted": 14
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "condition": "graph_static",
+      "seed": 42,
+      "source_K": 2,
+      "query_windows": 38,
+      "accepted": 34,
+      "series": [
+        {
+          "series": "2398720",
+          "windows": 24,
+          "accepted": 23
+        },
+        {
+          "series": "2399384",
+          "windows": 14,
+          "accepted": 11
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "condition": "graph_gru",
+      "seed": 42,
+      "source_K": 3,
+      "query_windows": 38,
+      "accepted": 38,
+      "series": [
+        {
+          "series": "2398720",
+          "windows": 24,
+          "accepted": 24
+        },
+        {
+          "series": "2399384",
+          "windows": 14,
+          "accepted": 14
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "condition": "graph_gru_no_motion",
+      "seed": 42,
+      "source_K": 4,
+      "query_windows": 38,
+      "accepted": 38,
+      "series": [
+        {
+          "series": "2398720",
+          "windows": 24,
+          "accepted": 24
+        },
+        {
+          "series": "2399384",
+          "windows": 14,
+          "accepted": 14
+        }
+      ]
+    },
+    {
+      "map": "de_nuke",
+      "condition": "graph_gru_common",
+      "seed": 42,
+      "source_K": 6,
+      "query_windows": 38,
+      "accepted": 30,
+      "series": [
+        {
+          "series": "2398720",
+          "windows": 24,
+          "accepted": 20
+        },
+        {
+          "series": "2399384",
+          "windows": 14,
+          "accepted": 10
+        }
+      ]
+    }
+  ],
+  "seed_stability": [
+    {
+      "map": "de_ancient",
+      "condition": "graph_gru",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 39,
+      "ARI": 0.3318254778928936,
+      "missing_reason": null
+    },
+    {
+      "map": "de_ancient",
+      "condition": "graph_gru",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 40,
+      "ARI": 0.6502438204136539,
+      "missing_reason": null
+    },
+    {
+      "map": "de_ancient",
+      "condition": "graph_gru",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 42,
+      "ARI": 0.5923542333037882,
+      "missing_reason": null
+    },
+    {
+      "map": "de_ancient",
+      "condition": "graph_gru_common",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 39,
+      "ARI": 0.8372434199893078,
+      "missing_reason": null
+    },
+    {
+      "map": "de_ancient",
+      "condition": "graph_gru_common",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 40,
+      "ARI": 0.5597726064373645,
+      "missing_reason": null
+    },
+    {
+      "map": "de_ancient",
+      "condition": "graph_gru_common",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 43,
+      "ARI": 0.611290557343136,
+      "missing_reason": null
+    },
+    {
+      "map": "de_ancient",
+      "condition": "graph_gru_no_motion",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 43,
+      "ARI": 0.0593819163094389,
+      "missing_reason": null
+    },
+    {
+      "map": "de_ancient",
+      "condition": "graph_gru_no_motion",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 43,
+      "ARI": 0.05032351180873519,
+      "missing_reason": null
+    },
+    {
+      "map": "de_ancient",
+      "condition": "graph_gru_no_motion",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 42,
+      "ARI": 0.9047568941374537,
+      "missing_reason": null
+    },
+    {
+      "map": "de_ancient",
+      "condition": "graph_static",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 39,
+      "ARI": 0.622197619706615,
+      "missing_reason": null
+    },
+    {
+      "map": "de_ancient",
+      "condition": "graph_static",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 38,
+      "ARI": 0.6140865230173672,
+      "missing_reason": null
+    },
+    {
+      "map": "de_ancient",
+      "condition": "graph_static",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 37,
+      "ARI": 0.46924386092876247,
+      "missing_reason": null
+    },
+    {
+      "map": "de_ancient",
+      "condition": "mlp_gru",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 37,
+      "ARI": 0.21108092533135753,
+      "missing_reason": null
+    },
+    {
+      "map": "de_ancient",
+      "condition": "mlp_gru",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 39,
+      "ARI": 0.6935660703981535,
+      "missing_reason": null
+    },
+    {
+      "map": "de_ancient",
+      "condition": "mlp_gru",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 40,
+      "ARI": 0.07475149105367793,
+      "missing_reason": null
+    },
+    {
+      "map": "de_ancient",
+      "condition": "mlp_static",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 42,
+      "ARI": 1.0,
+      "missing_reason": null
+    },
+    {
+      "map": "de_ancient",
+      "condition": "mlp_static",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 37,
+      "ARI": 0.3636808215828511,
+      "missing_reason": null
+    },
+    {
+      "map": "de_ancient",
+      "condition": "mlp_static",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 37,
+      "ARI": 0.3636808215828511,
+      "missing_reason": null
+    },
+    {
+      "map": "de_anubis",
+      "condition": "graph_gru",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 37,
+      "ARI": -0.009582588923176871,
+      "missing_reason": null
+    },
+    {
+      "map": "de_anubis",
+      "condition": "graph_gru",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 42,
+      "ARI": 0.9036915379179955,
+      "missing_reason": null
+    },
+    {
+      "map": "de_anubis",
+      "condition": "graph_gru",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 37,
+      "ARI": -0.021324962113011475,
+      "missing_reason": null
+    },
+    {
+      "map": "de_anubis",
+      "condition": "graph_gru_common",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 39,
+      "ARI": 0.6602627162779932,
+      "missing_reason": null
+    },
+    {
+      "map": "de_anubis",
+      "condition": "graph_gru_common",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 37,
+      "ARI": 0.6973022108236211,
+      "missing_reason": null
+    },
+    {
+      "map": "de_anubis",
+      "condition": "graph_gru_common",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 36,
+      "ARI": 0.5354605174956428,
+      "missing_reason": null
+    },
+    {
+      "map": "de_anubis",
+      "condition": "graph_gru_no_motion",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 37,
+      "ARI": 0.16378102614258147,
+      "missing_reason": null
+    },
+    {
+      "map": "de_anubis",
+      "condition": "graph_gru_no_motion",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 37,
+      "ARI": 0.14304096075487882,
+      "missing_reason": null
+    },
+    {
+      "map": "de_anubis",
+      "condition": "graph_gru_no_motion",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 40,
+      "ARI": 0.8370627389888118,
+      "missing_reason": null
+    },
+    {
+      "map": "de_anubis",
+      "condition": "graph_static",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 38,
+      "ARI": 0.1381152751710359,
+      "missing_reason": null
+    },
+    {
+      "map": "de_anubis",
+      "condition": "graph_static",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 36,
+      "ARI": 0.1398390342052314,
+      "missing_reason": null
+    },
+    {
+      "map": "de_anubis",
+      "condition": "graph_static",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 36,
+      "ARI": 0.3426773984642428,
+      "missing_reason": null
+    },
+    {
+      "map": "de_anubis",
+      "condition": "mlp_gru",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 39,
+      "ARI": 0.3173808114384591,
+      "missing_reason": null
+    },
+    {
+      "map": "de_anubis",
+      "condition": "mlp_gru",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 39,
+      "ARI": 0.8975963000156623,
+      "missing_reason": null
+    },
+    {
+      "map": "de_anubis",
+      "condition": "mlp_gru",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 38,
+      "ARI": 0.303474704015976,
+      "missing_reason": null
+    },
+    {
+      "map": "de_anubis",
+      "condition": "mlp_static",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 40,
+      "ARI": 0.16106940603187145,
+      "missing_reason": null
+    },
+    {
+      "map": "de_anubis",
+      "condition": "mlp_static",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 38,
+      "ARI": 0.21832271383520108,
+      "missing_reason": null
+    },
+    {
+      "map": "de_anubis",
+      "condition": "mlp_static",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 38,
+      "ARI": 0.49505700442714795,
+      "missing_reason": null
+    },
+    {
+      "map": "de_dust2",
+      "condition": "graph_gru",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 44,
+      "ARI": 0.08699511762094984,
+      "missing_reason": null
+    },
+    {
+      "map": "de_dust2",
+      "condition": "graph_gru",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 44,
+      "ARI": -0.05986832429252425,
+      "missing_reason": null
+    },
+    {
+      "map": "de_dust2",
+      "condition": "graph_gru",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 45,
+      "ARI": -0.030333105886731593,
+      "missing_reason": null
+    },
+    {
+      "map": "de_dust2",
+      "condition": "graph_gru_common",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 42,
+      "ARI": 0.5966433033811782,
+      "missing_reason": null
+    },
+    {
+      "map": "de_dust2",
+      "condition": "graph_gru_common",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 43,
+      "ARI": 0.44225111368260234,
+      "missing_reason": null
+    },
+    {
+      "map": "de_dust2",
+      "condition": "graph_gru_common",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 43,
+      "ARI": 0.23635322039446763,
+      "missing_reason": null
+    },
+    {
+      "map": "de_dust2",
+      "condition": "graph_gru_no_motion",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 45,
+      "ARI": -0.0708569340398319,
+      "missing_reason": null
+    },
+    {
+      "map": "de_dust2",
+      "condition": "graph_gru_no_motion",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 42,
+      "ARI": 0.534181652924755,
+      "missing_reason": null
+    },
+    {
+      "map": "de_dust2",
+      "condition": "graph_gru_no_motion",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 42,
+      "ARI": 0.1595734902104973,
+      "missing_reason": null
+    },
+    {
+      "map": "de_dust2",
+      "condition": "graph_static",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 42,
+      "ARI": 0.3937602577350921,
+      "missing_reason": null
+    },
+    {
+      "map": "de_dust2",
+      "condition": "graph_static",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 46,
+      "ARI": 0.7955059812479793,
+      "missing_reason": null
+    },
+    {
+      "map": "de_dust2",
+      "condition": "graph_static",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 42,
+      "ARI": 0.26303941262035047,
+      "missing_reason": null
+    },
+    {
+      "map": "de_dust2",
+      "condition": "mlp_gru",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 32,
+      "ARI": 0.9001627052686314,
+      "missing_reason": null
+    },
+    {
+      "map": "de_dust2",
+      "condition": "mlp_gru",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 39,
+      "ARI": 0.7521071827802573,
+      "missing_reason": null
+    },
+    {
+      "map": "de_dust2",
+      "condition": "mlp_gru",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 33,
+      "ARI": 1.0,
+      "missing_reason": null
+    },
+    {
+      "map": "de_dust2",
+      "condition": "mlp_static",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 37,
+      "ARI": 0.9248910582015356,
+      "missing_reason": null
+    },
+    {
+      "map": "de_dust2",
+      "condition": "mlp_static",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 38,
+      "ARI": 0.023050057258363593,
+      "missing_reason": null
+    },
+    {
+      "map": "de_dust2",
+      "condition": "mlp_static",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 40,
+      "ARI": 0.07007299270072993,
+      "missing_reason": null
+    },
+    {
+      "map": "de_inferno",
+      "condition": "graph_gru",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 28,
+      "ARI": 0.25058365758754864,
+      "missing_reason": null
+    },
+    {
+      "map": "de_inferno",
+      "condition": "graph_gru",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 26,
+      "ARI": 0.42653805434654746,
+      "missing_reason": null
+    },
+    {
+      "map": "de_inferno",
+      "condition": "graph_gru",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 31,
+      "ARI": 0.3389599684621725,
+      "missing_reason": null
+    },
+    {
+      "map": "de_inferno",
+      "condition": "graph_gru_common",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 24,
+      "ARI": 0.5130623600461424,
+      "missing_reason": null
+    },
+    {
+      "map": "de_inferno",
+      "condition": "graph_gru_common",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 29,
+      "ARI": 0.6502161968854644,
+      "missing_reason": null
+    },
+    {
+      "map": "de_inferno",
+      "condition": "graph_gru_common",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 24,
+      "ARI": 0.34243964421855144,
+      "missing_reason": null
+    },
+    {
+      "map": "de_inferno",
+      "condition": "graph_gru_no_motion",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 25,
+      "ARI": 0.37252608852105074,
+      "missing_reason": null
+    },
+    {
+      "map": "de_inferno",
+      "condition": "graph_gru_no_motion",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 24,
+      "ARI": 0.2753682487725041,
+      "missing_reason": null
+    },
+    {
+      "map": "de_inferno",
+      "condition": "graph_gru_no_motion",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 28,
+      "ARI": 0.1872703972661256,
+      "missing_reason": null
+    },
+    {
+      "map": "de_inferno",
+      "condition": "graph_static",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 25,
+      "ARI": 0.84,
+      "missing_reason": null
+    },
+    {
+      "map": "de_inferno",
+      "condition": "graph_static",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 26,
+      "ARI": 0.46054021427493586,
+      "missing_reason": null
+    },
+    {
+      "map": "de_inferno",
+      "condition": "graph_static",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 26,
+      "ARI": 0.7040971168437026,
+      "missing_reason": null
+    },
+    {
+      "map": "de_inferno",
+      "condition": "mlp_gru",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 25,
+      "ARI": 0.7013010000885034,
+      "missing_reason": null
+    },
+    {
+      "map": "de_inferno",
+      "condition": "mlp_gru",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 24,
+      "ARI": 0.7463501733011239,
+      "missing_reason": null
+    },
+    {
+      "map": "de_inferno",
+      "condition": "mlp_gru",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 21,
+      "ARI": 0.9618632525197494,
+      "missing_reason": null
+    },
+    {
+      "map": "de_inferno",
+      "condition": "mlp_static",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 27,
+      "ARI": 0.851493848857645,
+      "missing_reason": null
+    },
+    {
+      "map": "de_inferno",
+      "condition": "mlp_static",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 29,
+      "ARI": 1.0,
+      "missing_reason": null
+    },
+    {
+      "map": "de_inferno",
+      "condition": "mlp_static",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 28,
+      "ARI": 0.856492027334852,
+      "missing_reason": null
+    },
+    {
+      "map": "de_mirage",
+      "condition": "graph_gru",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 32,
+      "ARI": 0.0415382404139451,
+      "missing_reason": null
+    },
+    {
+      "map": "de_mirage",
+      "condition": "graph_gru",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 25,
+      "ARI": 1.0,
+      "missing_reason": null
+    },
+    {
+      "map": "de_mirage",
+      "condition": "graph_gru",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 27,
+      "ARI": 0.23669724770642203,
+      "missing_reason": null
+    },
+    {
+      "map": "de_mirage",
+      "condition": "graph_gru_common",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 24,
+      "ARI": 0.7407786885245902,
+      "missing_reason": null
+    },
+    {
+      "map": "de_mirage",
+      "condition": "graph_gru_common",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 23,
+      "ARI": 0.17504719409644756,
+      "missing_reason": null
+    },
+    {
+      "map": "de_mirage",
+      "condition": "graph_gru_common",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 31,
+      "ARI": 0.46195884363429224,
+      "missing_reason": null
+    },
+    {
+      "map": "de_mirage",
+      "condition": "graph_gru_no_motion",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 25,
+      "ARI": 0.05747429475349328,
+      "missing_reason": null
+    },
+    {
+      "map": "de_mirage",
+      "condition": "graph_gru_no_motion",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 25,
+      "ARI": 0.11003236245954692,
+      "missing_reason": null
+    },
+    {
+      "map": "de_mirage",
+      "condition": "graph_gru_no_motion",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 29,
+      "ARI": 0.31362099464833515,
+      "missing_reason": null
+    },
+    {
+      "map": "de_mirage",
+      "condition": "graph_static",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 25,
+      "ARI": 0.10780669144981413,
+      "missing_reason": null
+    },
+    {
+      "map": "de_mirage",
+      "condition": "graph_static",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 21,
+      "ARI": 0.1376,
+      "missing_reason": null
+    },
+    {
+      "map": "de_mirage",
+      "condition": "graph_static",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 20,
+      "ARI": 0.43146507077914603,
+      "missing_reason": null
+    },
+    {
+      "map": "de_mirage",
+      "condition": "mlp_gru",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 33,
+      "ARI": 0.14668443852049318,
+      "missing_reason": null
+    },
+    {
+      "map": "de_mirage",
+      "condition": "mlp_gru",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 22,
+      "ARI": 0.001967051880993361,
+      "missing_reason": null
+    },
+    {
+      "map": "de_mirage",
+      "condition": "mlp_gru",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 22,
+      "ARI": 0.22485903068460927,
+      "missing_reason": null
+    },
+    {
+      "map": "de_mirage",
+      "condition": "mlp_static",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 26,
+      "ARI": 0.7047691143073429,
+      "missing_reason": null
+    },
+    {
+      "map": "de_mirage",
+      "condition": "mlp_static",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 26,
+      "ARI": 0.7047691143073429,
+      "missing_reason": null
+    },
+    {
+      "map": "de_mirage",
+      "condition": "mlp_static",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 24,
+      "ARI": 1.0,
+      "missing_reason": null
+    },
+    {
+      "map": "de_nuke",
+      "condition": "graph_gru",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 36,
+      "ARI": 1.0,
+      "missing_reason": null
+    },
+    {
+      "map": "de_nuke",
+      "condition": "graph_gru",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 36,
+      "ARI": 1.0,
+      "missing_reason": null
+    },
+    {
+      "map": "de_nuke",
+      "condition": "graph_gru",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 38,
+      "ARI": 1.0,
+      "missing_reason": null
+    },
+    {
+      "map": "de_nuke",
+      "condition": "graph_gru_common",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 31,
+      "ARI": 0.6346117867165575,
+      "missing_reason": null
+    },
+    {
+      "map": "de_nuke",
+      "condition": "graph_gru_common",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 30,
+      "ARI": 0.461719072246724,
+      "missing_reason": null
+    },
+    {
+      "map": "de_nuke",
+      "condition": "graph_gru_common",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 29,
+      "ARI": 0.8620856990343088,
+      "missing_reason": null
+    },
+    {
+      "map": "de_nuke",
+      "condition": "graph_gru_no_motion",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 30,
+      "ARI": null,
+      "missing_reason": "insufficient_common_or_multiple_clusters"
+    },
+    {
+      "map": "de_nuke",
+      "condition": "graph_gru_no_motion",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 31,
+      "ARI": 1.0,
+      "missing_reason": null
+    },
+    {
+      "map": "de_nuke",
+      "condition": "graph_gru_no_motion",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 37,
+      "ARI": null,
+      "missing_reason": "insufficient_common_or_multiple_clusters"
+    },
+    {
+      "map": "de_nuke",
+      "condition": "graph_static",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 38,
+      "ARI": 1.0,
+      "missing_reason": null
+    },
+    {
+      "map": "de_nuke",
+      "condition": "graph_static",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 34,
+      "ARI": 0.1271393643031785,
+      "missing_reason": null
+    },
+    {
+      "map": "de_nuke",
+      "condition": "graph_static",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 34,
+      "ARI": 0.1271393643031785,
+      "missing_reason": null
+    },
+    {
+      "map": "de_nuke",
+      "condition": "mlp_gru",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 32,
+      "ARI": 0.3537459283387622,
+      "missing_reason": null
+    },
+    {
+      "map": "de_nuke",
+      "condition": "mlp_gru",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 31,
+      "ARI": 0.8739495798319328,
+      "missing_reason": null
+    },
+    {
+      "map": "de_nuke",
+      "condition": "mlp_gru",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 34,
+      "ARI": 0.332435648525083,
+      "missing_reason": null
+    },
+    {
+      "map": "de_nuke",
+      "condition": "mlp_static",
+      "seeds": [
+        0,
+        1
+      ],
+      "common_accepted": 13,
+      "ARI": 0.37407407407407406,
+      "missing_reason": null
+    },
+    {
+      "map": "de_nuke",
+      "condition": "mlp_static",
+      "seeds": [
+        0,
+        42
+      ],
+      "common_accepted": 10,
+      "ARI": 1.0,
+      "missing_reason": null
+    },
+    {
+      "map": "de_nuke",
+      "condition": "mlp_static",
+      "seeds": [
+        1,
+        42
+      ],
+      "common_accepted": 12,
+      "ARI": 0.26098191214470284,
+      "missing_reason": null
+    }
+  ],
+  "summary": {
+    "graph_gru": {
+      "pooled_query_seed_coverage": 0.9322493224932249,
+      "equal_series_mean_coverage": 0.9313166122376648,
+      "mean_eligible_seed_ARI": 0.42990657635835955,
+      "eligible_seed_pairs": 18,
+      "planned_seed_pairs": 18
+    },
+    "graph_gru_common": {
+      "pooled_query_seed_coverage": 0.8902439024390244,
+      "equal_series_mean_coverage": 0.8852651673375358,
+      "mean_eligible_seed_ARI": 0.5565832861793552,
+      "eligible_seed_pairs": 18,
+      "planned_seed_pairs": 18
+    },
+    "graph_gru_no_motion": {
+      "pooled_query_seed_coverage": 0.9092140921409214,
+      "equal_series_mean_coverage": 0.9065024461406038,
+      "mean_eligible_seed_ARI": 0.3185961027286485,
+      "eligible_seed_pairs": 16,
+      "planned_seed_pairs": 18
+    },
+    "graph_static": {
+      "pooled_query_seed_coverage": 0.8685636856368564,
+      "equal_series_mean_coverage": 0.8612176748689907,
+      "mean_eligible_seed_ARI": 0.4285696213917018,
+      "eligible_seed_pairs": 18,
+      "planned_seed_pairs": 18
+    },
+    "mlp_gru": {
+      "pooled_query_seed_coverage": 0.8699186991869918,
+      "equal_series_mean_coverage": 0.868070665932508,
+      "mean_eligible_seed_ARI": 0.5274042385551903,
+      "eligible_seed_pairs": 18,
+      "planned_seed_pairs": 18
+    },
+    "mlp_static": {
+      "pooled_query_seed_coverage": 0.8089430894308943,
+      "equal_series_mean_coverage": 0.8050183856104908,
+      "mean_eligible_seed_ARI": 0.5762447203692507,
+      "eligible_seed_pairs": 18,
+      "planned_seed_pairs": 18
+    }
+  },
+  "unjudged_neural_rankings": 4428,
+  "candidate_slots": 22140,
+  "same_map_library_supported": false,
+  "artifacts_sha256": {
+    "G4__de_ancient__mlp_static__0.npz": "60e4f536d68e07cbd0aece0a813d23888187f0fa013d9ee64cc2079f437ff19a",
+    "G4__de_ancient__mlp_gru__0.npz": "ef521d3bd8db179249f3babe62756facedc7d35b8cefd7dc916ffb514990e737",
+    "G4__de_ancient__graph_static__0.npz": "1bcc1612efa6a162e623325ece23dde10ed6554872ec145908d9e0d42ff2539d",
+    "G4__de_ancient__graph_gru__0.npz": "e99bf69109f340a9005b504ade2062005603aa7bab26a7647d20993f664fa364",
+    "G4__de_ancient__graph_gru_no_motion__0.npz": "fc8ce40484fd88b92d4cb52df93f1e1a08734e2c642416542ebddd91ae904303",
+    "G4__de_ancient__graph_gru_common__0.npz": "00b420ddf5a98c22da8fe0174c307aba7c804039fa325af3341724c852938de4",
+    "G4__de_ancient__mlp_static__1.npz": "65b01ea6a774a58b1d52dad6660c6dbe3bff2204cbc64c4d324f95249d2c2ae3",
+    "G4__de_ancient__mlp_gru__1.npz": "7672fa0cd659c9d1cfb00235c381be4712bb53095682d79a8708a928d4c06b5c",
+    "G4__de_ancient__graph_static__1.npz": "e64ffc7de07817ad5554a11431341e7c36e3663df8b7b3211de76dba2770f1fe",
+    "G4__de_ancient__graph_gru__1.npz": "c60c6caceb2f6d96cabebcb4e052eef9f0949d8f41147f239ba65f18519927ac",
+    "G4__de_ancient__graph_gru_no_motion__1.npz": "c2344948ec6ebcd7023b912d80cd1804260c647149a3ac3992c90f98ef58030b",
+    "G4__de_ancient__graph_gru_common__1.npz": "5e98a2cdfc3cb49870465c97f85bfebc62a965f2dad8171b15f1a902df58c41c",
+    "G4__de_ancient__mlp_static__42.npz": "c55d0dcbc92740937666cf108bb7c35f8006dbc5faabd583ea66cb9e747a5f2b",
+    "G4__de_ancient__mlp_gru__42.npz": "d89999f2ed8f7ddd18940041be1d3ac191cde77554868f0a1c8f2e62888cbf58",
+    "G4__de_ancient__graph_static__42.npz": "020a855dca32c15f8f461b69a7b5cb1a13b8450e7bdecf2bd66dee13ae4fd6a8",
+    "G4__de_ancient__graph_gru__42.npz": "97ab48a080bd20c8db4acb19a0148c38d7647fdb7652a65ceb4cf7c71f388563",
+    "G4__de_ancient__graph_gru_no_motion__42.npz": "80a7a94350ef5f902db04d54babed43b9089c0b4a037fb21c8ca1be28a635379",
+    "G4__de_ancient__graph_gru_common__42.npz": "f7b496e882c53bd3e33bac51b61c589dab761549109c3a7ddaf8864e6b3aee6c",
+    "G4__de_anubis__mlp_static__0.npz": "a94ecf09533b762aae592b6c74fe6f4333ea315c0a9ff38dd1da1bdc566cbf32",
+    "G4__de_anubis__mlp_gru__0.npz": "440b01fb7b0c437f4a97ed23e05fb61386a5ba18ec8f3df76fe31fd6c4bfa49d",
+    "G4__de_anubis__graph_static__0.npz": "58cba1a198bdd80c472bca693241237d08375cd62dd6780b4464ef586f4ad8d0",
+    "G4__de_anubis__graph_gru__0.npz": "2e71ec3858cb833dd57b6957452f129196d266030bb49bbde7fe9fc3b6568695",
+    "G4__de_anubis__graph_gru_no_motion__0.npz": "0e40f08f8e8a3e827246b5dbfe900540bca432a543dbbe748d4d4b2cd0655607",
+    "G4__de_anubis__graph_gru_common__0.npz": "375aa1301370099f46bd22dcdf1fd615eaf70b701b86f9d7e75021840a67db34",
+    "G4__de_anubis__mlp_static__1.npz": "2c30c7d661bda876eeddbdfb7bca5ce4865a2afe3b2ad7bd8b6aebd4075bcc7f",
+    "G4__de_anubis__mlp_gru__1.npz": "67ee2a2aa178b85e6b823471cf40b28bf4d5bda0d0fc420916f98500c5e6e34d",
+    "G4__de_anubis__graph_static__1.npz": "dea80c213485c2d06c6887785a003090d8e835890bd9bb79e7468c0f570f892b",
+    "G4__de_anubis__graph_gru__1.npz": "3eae9888e1baeae51d66253b3bc82a5fbdd5c23b6c4db3feeea14924b46be6f9",
+    "G4__de_anubis__graph_gru_no_motion__1.npz": "8baca892f157490a4b0458e2ccf3e039451650e6ad58900f68cf280b6b1a6662",
+    "G4__de_anubis__graph_gru_common__1.npz": "6a648ae53ab8d33eeb3a7578626ad844918cfbdbbb257d3476b74634b80c0e50",
+    "G4__de_anubis__mlp_static__42.npz": "44347460790c12df53e8a888fb30ba49c53662b2820633481cc4cf0cf1b37ee7",
+    "G4__de_anubis__mlp_gru__42.npz": "064d288158de30912c491984c93262010b99ef61c38ed3703f5f62909176f524",
+    "G4__de_anubis__graph_static__42.npz": "a8c1f561e84c9f6488e068ac94945937e468e8c372f5aeb29b13b19bc081b291",
+    "G4__de_anubis__graph_gru__42.npz": "117aa4f8ed74d517a1f6c487d8eac983c5db0c0f0364b484d144f515a0808fae",
+    "G4__de_anubis__graph_gru_no_motion__42.npz": "09b70c95dbe95e7c7fc4d9c241cd3a52e9429a69d7e3121150d936ea34060bef",
+    "G4__de_anubis__graph_gru_common__42.npz": "94a6ff77abc5c786e6b32e2bebe1c55d0870dbb73a2c103bd0767ac3a168c140",
+    "G4__de_dust2__mlp_static__0.npz": "241138b26945c944c420f0eeadddf5d4378b063e6c234ef4d63fd5d8d3a1fb8e",
+    "G4__de_dust2__mlp_gru__0.npz": "693d176ac7af424f84be365d802f67d2dd2f727426a722697c7a5ba1f6a17184",
+    "G4__de_dust2__graph_static__0.npz": "d62ad558b4f83d31507fccfc713a049033b6ff38f9694d358ec897a733a08fcb",
+    "G4__de_dust2__graph_gru__0.npz": "bbca000f1fb6614521dfb29beb01c8d7b8b2085f06d8d886e76c5c9be0c6beb2",
+    "G4__de_dust2__graph_gru_no_motion__0.npz": "b6fd2308ea04e4239fc4e65ca9e6e05240ad8b4c2017d9a8d64b0c8a51c29d99",
+    "G4__de_dust2__graph_gru_common__0.npz": "3a8ee0b9359026c8c723ae6efac0032e88101ca92a68d4a565486175badd6402",
+    "G4__de_dust2__mlp_static__1.npz": "d2a9aca092dac159484538b365910ac8c5cb87b5a24e095737cfe403834e797f",
+    "G4__de_dust2__mlp_gru__1.npz": "7dd8fc2ce9c66c50f131245dc46a9ef896ed82904ad7d173c074d57f8f74b73c",
+    "G4__de_dust2__graph_static__1.npz": "4c65b968a3a9b6a15beb0a060d46cfd7f13e86953ca381ad746c8c01fbf99912",
+    "G4__de_dust2__graph_gru__1.npz": "e827c3fb9ce73ddb3eaa45200ddf9b887be4f5d07301f3d9732f7aba25b32823",
+    "G4__de_dust2__graph_gru_no_motion__1.npz": "449edaccdd3986e76c933426d52f86b03f878ef7ff6b0edaa5f565f9de8ed2cf",
+    "G4__de_dust2__graph_gru_common__1.npz": "8e2bad0f94ed27ceca9074b0cc1aa78f96739924e55fd59d7e3162a16a1c0a49",
+    "G4__de_dust2__mlp_static__42.npz": "4f65d3784f2c2ac1c0bab5c2cfa388d72d66ccb0753337b69ee32408fae2841f",
+    "G4__de_dust2__mlp_gru__42.npz": "fc4d544e066d8b0fa953a0c7c82ce1ae20b1de56aa8dd5e74f35fbae6df57d37",
+    "G4__de_dust2__graph_static__42.npz": "5f5164eafe55141c7e04e839da35e2479bff3141ce0b58ea3bacb1164f621473",
+    "G4__de_dust2__graph_gru__42.npz": "fbe9b5642fa4a19acc2fa417289b7b12d4da7ffecb7f9495e27d74097c695b49",
+    "G4__de_dust2__graph_gru_no_motion__42.npz": "7a6cc496616437855777703b217f9370f4b985dfbd1207d1c24373dfd280993e",
+    "G4__de_dust2__graph_gru_common__42.npz": "26e427dbd197241240322c913e16b4030554235482456295b589bffeaf938846",
+    "G4__de_inferno__mlp_static__0.npz": "34c2a62c75448be41880c597be78f107b3a0eaff2136b194853dc5b50616185a",
+    "G4__de_inferno__mlp_gru__0.npz": "bec904ac1e7ee7dab7d9db7b45099cad07c69aef7b6b310cb0b1642553565b19",
+    "G4__de_inferno__graph_static__0.npz": "e035a5d49dcbdf43dea96ede3a1f849ef0e296693f4e66f4cc17479c73f4cc68",
+    "G4__de_inferno__graph_gru__0.npz": "793b341cf0e379b7936dffff27a467b81c4da79ebd34465e69c9a068f31090d4",
+    "G4__de_inferno__graph_gru_no_motion__0.npz": "172c314031840724499b31f4bc93ef49e110472e13beaf9c2211d8c0d93900ec",
+    "G4__de_inferno__graph_gru_common__0.npz": "bceb25c27cde058e387212c2b00439f31d4c9c3c45a80bb968122bb571fa5b7a",
+    "G4__de_inferno__mlp_static__1.npz": "65b50a48f4e4e1754bcaa9daee40cf5565016b934ee8458db11b1dc547b28883",
+    "G4__de_inferno__mlp_gru__1.npz": "a357755b4e04aaa1068301aee72f691f7f7badb84e180fb72de564cfee5d4dad",
+    "G4__de_inferno__graph_static__1.npz": "6eb93caefc1deba2d7a826590a432e69eb755466eeaf8d032efe9bdaed0cb6b5",
+    "G4__de_inferno__graph_gru__1.npz": "cd856af2d6e8ee23f9333742d1a9c4912712f028e50cc2769db16662611bdc99",
+    "G4__de_inferno__graph_gru_no_motion__1.npz": "6b74247a9bf93f1b1d735158ba6445a87018a4ee221ca46d1b006fe741a5dd05",
+    "G4__de_inferno__graph_gru_common__1.npz": "86da0374a81e8b83601b67a23ae031620b7d80c258d46ace74691b0600d774b5",
+    "G4__de_inferno__mlp_static__42.npz": "8aec34d11b2effccbc1d40c96cd6c4fc0ae345366ad7af60559ba20d9e19ac68",
+    "G4__de_inferno__mlp_gru__42.npz": "3883b3bfea1eb6a3fc307250bb0dcb076f96f589801be95cb0adab7be376cfb3",
+    "G4__de_inferno__graph_static__42.npz": "9fc304f9c5052aee7d8b122c27566b327cbdf34fd8cfd73b11058f8fa9d9e3d8",
+    "G4__de_inferno__graph_gru__42.npz": "372eb34ef031e61c3c9b02536a689a9c7d2f2781eb6cbca2a6feb24dd54f3566",
+    "G4__de_inferno__graph_gru_no_motion__42.npz": "ea99b9ce56744be604d5b45226118c25b6320514396aa0c39ebf1aec1b2f26c5",
+    "G4__de_inferno__graph_gru_common__42.npz": "87e8491abc4c589372abbe90c966edf431e2e9899bddab5030e7aa41cb485923",
+    "G4__de_mirage__mlp_static__0.npz": "8d3308323afeb8cf9039fe05d27a12b24e144f1a702fb034c926edda721faed2",
+    "G4__de_mirage__mlp_gru__0.npz": "9a6f6093fd13e4d9473eb3c0e2d9bbec7b1e11227d9d74eeb05eec8f81fb7b30",
+    "G4__de_mirage__graph_static__0.npz": "b126cab1d584597683d195871ae265faab6aa5e22fdcd1beccd6dbb23a414fd8",
+    "G4__de_mirage__graph_gru__0.npz": "7c69dad8419f1985f13433047429851edb65bea06c39127acd4a1f183083352a",
+    "G4__de_mirage__graph_gru_no_motion__0.npz": "336541281d87d0b1f42abc8dd99f6e9b3d2eb85dd0c76564ad4ad52323d1dd2e",
+    "G4__de_mirage__graph_gru_common__0.npz": "123d2876e2444545ed221b65526de6bbf32fa2d2b35f46958f3f1115ac50da8f",
+    "G4__de_mirage__mlp_static__1.npz": "bd1f11851cdb0ce717541dbc536049cea7a453627755616e4ef513a9637ac524",
+    "G4__de_mirage__mlp_gru__1.npz": "96790cfd98d7b9c966752b1acadcd6aac981219e75639a09a3a0efb820f74f39",
+    "G4__de_mirage__graph_static__1.npz": "b92367694dd06e93b6c0195a3daed21188fc8cd1cc37baf57e89564544ccb3e4",
+    "G4__de_mirage__graph_gru__1.npz": "8c57b07e79adb8b5e39bb1f77a45cd5b47884d1ff5be1fa1d8d930fa76579441",
+    "G4__de_mirage__graph_gru_no_motion__1.npz": "51f662925238e5fa3a0bb37b2342e83806afa107617edb50aff01f79cc4cfd94",
+    "G4__de_mirage__graph_gru_common__1.npz": "6b00eea434f2892f4efbeb8317372783b16ed82fb69d606ac83022e80a772a15",
+    "G4__de_mirage__mlp_static__42.npz": "635e6304d726523a282be53aeb34f983be9ce59f4082ed32b483c3998bcf8de2",
+    "G4__de_mirage__mlp_gru__42.npz": "60d88faaf3d1d366d2976f8846a813320ca2e7f77f78b0c9af59f94c7abfc819",
+    "G4__de_mirage__graph_static__42.npz": "1c96f9da7d24536a886883c50dd2278090e4f6a42db49aedbc41dbafd293e6b8",
+    "G4__de_mirage__graph_gru__42.npz": "7ec581dc9d1857d672ce3dbb1746df13257eeaa0510561dca4cc7068e4648222",
+    "G4__de_mirage__graph_gru_no_motion__42.npz": "f1385c4dbc903d07e7d211ac96daf14601ba0efa36e3d2dad24b491ec32d2222",
+    "G4__de_mirage__graph_gru_common__42.npz": "5733082d2b65274ad6bcce6cc35895f11c414d3e8a764b22b98a72b4693b0b8e",
+    "G4__de_nuke__mlp_static__0.npz": "26f7bc8551dbaf217a3daf8f477b388400c4a1feed767c5ea30f62e72028cfdc",
+    "G4__de_nuke__mlp_gru__0.npz": "b975b096bab0d3cbc2f18eb0ca3ced908feeaea7b82c50caaeb96585c36e560d",
+    "G4__de_nuke__graph_static__0.npz": "80a22cc48ccac118a811819d30e318efe01df6ae1b174fb73db7eae8a3119e87",
+    "G4__de_nuke__graph_gru__0.npz": "dbe0370c82286a1455c5f7bbb0fa2251b0029bd95b1c48d2430b6736cb7a690c",
+    "G4__de_nuke__graph_gru_no_motion__0.npz": "43c612d397931b24fa99c2f62199270163f6c2e4b60e89ca3ee67bde936b512a",
+    "G4__de_nuke__graph_gru_common__0.npz": "b2bbaf40175a22b9e7cca8c344beb6e6cf26b290266d3c78b84e9306f1e9ca35",
+    "G4__de_nuke__mlp_static__1.npz": "b413da6b1d12abb464cf3a2d21c16e6094a5ad302e252a076ba9332989e95526",
+    "G4__de_nuke__mlp_gru__1.npz": "b6f2cb676682f8e3213d5cf5df629ccff22f81f464806b04834894d2d67fc26e",
+    "G4__de_nuke__graph_static__1.npz": "a3c32d8fccb02d19a20dddb0024d208684192924b31dd9b87a9e6beaa1aa3f46",
+    "G4__de_nuke__graph_gru__1.npz": "84e073c15a035d3cec32864f7ac87bef319d6314186dbd43ae28555752d73e5d",
+    "G4__de_nuke__graph_gru_no_motion__1.npz": "117ffda60685b9e02fc87d0ea067b2559f05893648c3a580905eacaaffb6e07d",
+    "G4__de_nuke__graph_gru_common__1.npz": "c66f78076de662de47983041f88e90d9dae65937f64dfd9fa900556eb92bba7c",
+    "G4__de_nuke__mlp_static__42.npz": "d1579a20ab03ac2f877d9741bf6dd525531ed4afde10c9da7d878b2b063449ec",
+    "G4__de_nuke__mlp_gru__42.npz": "4604967ce4c22efd4eb4642e677dbc9523df1276c6b0801f33948f5a04da873d",
+    "G4__de_nuke__graph_static__42.npz": "b428a75d1c2a37cb540995289d1e5c2625fa09304bfdfd1f7dcabc46269b94fc",
+    "G4__de_nuke__graph_gru__42.npz": "7b750fccff8567d1f7ef49ff1e9cd3e2996fd701a29420b424d4a892114a8325",
+    "G4__de_nuke__graph_gru_no_motion__42.npz": "b720753e1e1436faedb33f8d4c836466754b5a4b6890e0cd3d432fc8ab1263e2",
+    "G4__de_nuke__graph_gru_common__42.npz": "1c00997aea8dbf477d507b77b95b17bd304ca5aedf4e5580e6e7022bf0492dc7"
+  },
+  "elapsed_seconds": 4.732243499980541,
+  "peak_RAM_MiB": 161.09375,
+  "limits": [
+    "No new fit, K selection, radius calibration, or relevance labels.",
+    "Coverage and ARI are conditional descriptive diagnostics, not tactical correctness.",
+    "Source labels are numeric and do not define fixed geographic duties.",
+    "This neural-only transfer does not replace direct/statistical/context retrieval controls."
+  ]
+}

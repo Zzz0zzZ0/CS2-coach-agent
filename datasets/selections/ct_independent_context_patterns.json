@@ -1,0 +1,16 @@
+{
+  "scope": "Fixed source-prototype transfer, follow-up diagnostics; no new fit or semantic labels.",
+  "input_sha256": {
+    "scripts/transfer_ct_independent_context_patterns.py": "d38e3067c40132300727e3c30f3d228205ca962531610971296276f55df87a3d",
+    "scripts/transfer_ct_independent_patterns.py": "75d6c5139bb570cdd8865b420eccd45653828f26e21041391f93149ea0efda3f",
+    "scripts/retrieve_ct_independent_context.py": "fa477c992b5d8d9d29f87fec3f6e189e66bfc14fa168489763cdd1d208969fa8",
+    "app/services/ct_context_retrieval_service.py": "c47146325124ed276a0d3f7c6be0930e1026883a796f0b49483837d858fe90db",
+    "datasets/evaluation/ct_context_pattern_report.json": "1b9192e7d6fcf7caeb35d363c141f684c77ac5aa55c7fe20355e483a343dff8b",
+    "datasets/selections/ct_context_pattern_analysis.json": "20108a53b041e61de77fc06d1892b6273dc7d526df75b2da20bf52baa6b30fe1",
+    "datasets/selections/ct_independent_confirmation.json": "192a73a97447afd9cafda880d81476dafb1fb483cbd5337ec424766fcea3b442",
+    "output/tagnet/ct_independent_context/context.json": "5efd5f0315482134ea8c130f16348d5b737ecceccaf09c4d2b36ee8ed0d14c20",
+    "output/tagnet/ct_independent_inputs/report.json": "36e30a29d39335434bcffead73a3788f1ce66172de018d5578669d7e36008c78"
+  },
+  "availability": "All-query and known-query coverage both reported; unavailable throw streams stay unknown.",
+  "source_validation": "Reproduce the stored old query labels, acceptance and centroid distances before applying every existing source prototype."
+}

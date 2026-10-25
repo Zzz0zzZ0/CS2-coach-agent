@@ -12,7 +12,7 @@
 This document is a full-paper working draft. The complete development reconstruction matrix and descriptive pattern analysis are recorded; a new-series technical confirmation is now recorded, while independent tactical evaluation remains pending. It does not report completed tactical generalization or a registered final test. Experimental identifiers connect each result slot to the accompanying writing guide.
 
 \begin{abstract}
-Cross-map comparison of Counter-Strike 2 defensive openings is complicated by map geometry, resources, and recurring teams. We study window representations, source-fitted deployment patterns, and evidence retrieval without assigning fixed tactical duties to locations. An observable schema combines coarse geography, resources, relative height, ground state, and sampled motion with explicit masks. Graph and nongraph encoders, with and without recurrence, share a whole-window reconstruction objective and consistent player matching. A development matrix covers 465 windows from nine series and six maps. Frozen-checkpoint confirmation adds 246 windows from 12 newly acquired series, with two series per map and no target-side training. The recurrent graph model has a geometric mean loss ratio of 1.016 relative to its full-input nongraph recurrent control, with a model-based 95 percent interval of 0.996 to 1.036. A prespecified variance sensitivity also includes parity. Own-team context stabilizes development clusters, but equipment dominates their centroid separation. Existing human returns support only a small restricted-candidate-pool replay. The results bound architectural and pattern-interpretation claims; independent retrieval relevance and practical coaching efficacy remain unconfirmed. % [claim:C180] [evidence:E110,E124,E126,E131]
+Cross-map comparison of Counter-Strike 2 defensive openings is complicated by map geometry, resources, and recurring teams. We study window representations, source-fitted deployment patterns, and evidence retrieval without assigning fixed tactical duties to locations. An observable schema combines coarse geography, resources, relative height, ground state, and sampled motion with explicit masks. Graph and nongraph encoders, with and without recurrence, share a whole-window reconstruction objective and consistent player matching. A development matrix covers 465 windows from nine series and six maps. Frozen-checkpoint confirmation adds 246 windows from 12 newly acquired series, with two series per map and no target-side training. The recurrent graph model has a geometric mean loss ratio of 1.016 relative to its full-input nongraph recurrent control, with a model-based 95 percent interval of 0.996 to 1.036. A prespecified variance sensitivity also includes parity. Joint-context clusters have high development stability, but equipment dominates their centroid separation. Existing human returns support only a small restricted-candidate-pool replay. The results bound architectural and pattern-interpretation claims; independent retrieval relevance and practical coaching efficacy remain unconfirmed. % [claim:C180] [evidence:E110,E124,E126,E131]
 \end{abstract}
 \begin{IEEEkeywords}
 Counter-Strike 2, defensive deployments, representation learning, cross-map generalization, graph models.
@@ -26,7 +26,7 @@ TAGNet studies defensive pattern recognition from five CT snapshots on Dust2~\ci
 \subsection{Research questions and intended contribution}
 We organize the study around four questions: which deployment information a common representation retains across maps (R1); what graph structure and learned temporal aggregation contribute under matched inputs (R2); whether discovered patterns are stable and retrieved deployments are interpretable and relevant (R3); and whether the frozen procedure transfers to independent series under a stated map-exclusion regime (R4).
 
-\pending{INTRO}{Complete the literature-supported gap and contribution statement after the related-work comparison and main design are fixed. Contributions must describe supported results rather than planned experiments or a presumed neural advantage. Preserve the full deployment-representation research scope.}
+Our contribution is an empirical methodology for cross-map CT opening analysis: an explicit observation and missingness contract; source-only, matched-input architecture and pattern comparisons; and a traceable retrieval evaluation that separates deployment information from resource context. The contribution is the integrated task definition, controls and transfer evidence. Graph encoders, recurrence and contextual features individually are established components, and the new-series comparison does not establish graph superiority. % [claim:C183] [evidence:E101,E107,E124,E130,E131]
 
 \begin{table}[t]
 \caption{Research questions and required evidence. These are experiment requirements, not completed results.}
@@ -67,7 +67,7 @@ Von Luxburg's overview distinguishes stability mechanisms under idealized and ac
 
 Graded cumulative-gain evaluation accommodates nonbinary relevance judgments~\cite{jarvelin2002gain}. Buckley and Voorhees examine the sensitivity of evaluation to incomplete judgments~\cite{buckley2004incomplete}. We therefore describe the old rated-subset replay as a conditional diagnostic, and do not infer full-library relevance from it. The exponential gain and missing-value rules are specified separately in our protocol. % [claim:C209] [evidence:E210,E211]
 
-\pending{RW}{The targeted comparison now covers deployment observation, movement, explicit domain-shift protocols, clustering stability and incomplete retrieval judgments. Complete the FPS-specific retrieval citation trail and author review. The author TAGNet manuscript has been read and publisher-deposited metadata checked; the publisher PDF remains unchecked. This is a narrative source set, not a systematic or exhaustive review.}
+This is a targeted narrative comparison of game representations, source-domain selection, clustering stability and graded retrieval evaluation. It motivates separating computational transfer, context-conditioned grouping and useful tactical reference. It does not establish that the component techniques are new or that the literature set is exhaustive.
 
 \section{Task, Data, and Evidence Sources}
 \subsection{Deployment window and available observations}
@@ -96,7 +96,7 @@ Windows with casualties & 74 & Pending E5\\
 \end{table}
 
 \subsection{Independent data and human evidence}
-\pending{DATA}{Supply the final cohort, sample-precision rationale, series identifiers, acquisition and replacement rules, patches, exclusions, and hashes after the formal protocol is frozen. Separate map, time, and team exclusion conditions. The six known maps have already participated in development.}
+The external technical cohort is fixed at twelve new series, with one selected map per series, two series per map and four series from each of three events. Acquisition, content-duplicate checks, native clocks, one format-based prelisted replacement and one early-ending exclusion are recorded with checksums. Training-map exclusion is maintained by the corresponding source G4 checkpoint. Repeated teams and the mixed May/October acquisition do not establish unseen-team or future-only generalization. % [claim:C184] [evidence:E129,E130]
 Existing participant returns and developer-involved AI silver judgments remain separate pilot sources with incomplete coverage. They do not establish the formal independent tactical endpoint. Previously distributed unanswered items are not automatically reopened.
 
 \section{Common Deployment Representation}
@@ -108,7 +108,7 @@ The existing auxiliary state contains the five live-category fractions, dead-pla
 \subsection{Implemented geometric descriptors}
 The v0.3 model input includes relative height, airborne/grounded/unknown state, horizontal distance, height difference, and validity masks. NAV-candidate and patch-matching diagnostics remain excluded from the model. These fields describe observations and do not establish tactical semantics.
 
-\pending{REP}{The v0.3 observable schema and time/mask contract are implemented. Remaining E1 work concerns tactical validity and remaining observational collisions; the explicit context controls are reported below. NAV diagnostics do not establish walkability or visibility. Do not introduce a deterministic location-to-duty mapping.}
+The representation is an observable feature interface, not a latent tactical-duty annotation. Similar recorded windows may differ in visibility, opponents or unobserved intent. The separate context facets expose additional information without converting a location into a universal role.
 
 
 \subsection{Candidate input implementation and validity masks}
@@ -124,7 +124,7 @@ For each player, the two appended quantities are horizontal displacement magnitu
 
 \subsection{Asset and navigation validity}
 Patch-number agreement alone does not establish exact map-asset compatibility. NAV residuals, traversable distances and visibility require their respective evidence; structural validity is separate from context-specific tactical interpretation.
-\pending{NAV}{Provide the per-map/patch asset-validity table, localization and connection checks, disabled fields, and spot-checked deployment examples. Coverage alone is not correctness; unsupported quantities remain unknown.}
+Only the first five height/ground quantities enter the deployment node input; NAV-candidate, patch-matching and ray diagnostics remain excluded. Native ground-state observations and validity masks are preserved separately from navigation diagnostics. The present results make no claim of validated walkability, connectivity or visibility from a NAV projection. % [claim:C185] [evidence:E101,E103,E129]
 
 \section{Models and Learning Procedure}
 \subsection{Common notation}
@@ -146,23 +146,23 @@ All six conditions were trained from scratch under the fixed development recipe:
 
 \section{Experimental Protocol}
 \subsection{Development and final isolation}
-Recorded G3 prediction controls leave one complete series out. Recorded G4 controls exclude a target map and every series containing that map from training and validation. These are development results. The final task protocol must separately specify its train/validation/test membership and prevent a query series from entering the retrieval library.
+Recorded G3 prediction controls leave one complete series out. Recorded G4 controls exclude a target map and every series containing that map from training and validation. These are development results. The new-series technical protocol reuses the corresponding G4 source models and libraries, with all new series excluded from those libraries; this is a local freeze rather than an external preregistration.
 
 \subsection{Pattern and retrieval endpoints}
 The development pattern-analysis implementation uses scikit-learn~\cite{pedregosa2011sklearn}. Candidate cluster counts are two through six, selected solely by source-training silhouette; the query embeddings do not select or refit centroids. Numeric cluster IDs are retained without tactical names. A source-radius and minimum-support rule records rejected queries as a diagnostic, with cross-seed agreement reported only where both assignments are accepted and vary across at least two clusters. The separate source-series bootstrap fixes the neural encoder and selected cluster count. % [claim:C204] [evidence:E111,E112,E204]
 
-\pending{METRIC}{Freeze E3 stability measures, source-only cluster selection, E4 window-specific judgment instructions and primary retrieval endpoint, effect measure, missing judgments, and query/series aggregation. Fix the observation horizon and viewer information; do not assign a universal duty to a place or infer hidden intent. Structural resemblance, tactical reference quality, and automatic geometry remain distinct endpoints.}
+Transfer reuses the saved source centroids, cluster support and 95th-percentile source radius with minimum support five. It does not refit on new windows. We report both coverage and cross-seed adjusted Rand index on common accepted windows, requiring multiple clusters in each assignment. Eligibility can differ between methods, so their ARI summaries are conditional diagnostics. Source-series bootstrap variability fixes the encoder and source-selected cluster count. % [claim:C186] [evidence:E111,E114,E134,E137]
 
-The earlier protocol proposes pooled nDCG at five, with the ideal ranking restricted to the same judged candidate pool. If retained, its definition is
+The old-pair replay uses graded discounted gain, with cutoff $\min(5,N)$ and the ideal ranking restricted to the same eligible rated pool. Its discounted-gain definition is
 \begin{equation}
- \mathrm{DCG@5}=\sum_{k=1}^{5}
+ \mathrm{DCG@\min(5,N)}=\sum_{k=1}^{\min(5,N)}
  \frac{2^{r_k}-1}{\log_2(k+1)}.
 \end{equation}
-Normalization, missing grades, and all-zero or incomplete pools must be fixed before final scoring. A candidate-pool score cannot establish full-library recall.
+Grades for an exact pair are averaged before ranking evaluation; missing or unjudgeable values are not zero. Singleton and all-zero-gain pools are undefined. Seeds are averaged within query before query macro-averaging. These candidate-pool scores do not establish full-library recall or new-series relevance.
 
 \subsection{Sampling units, uncertainty, and selection}
 The independent unit must follow the actual sampling design; frames, rounds, or model seeds cannot be counted as independent series. Existing prediction intervals are conditional descriptive series-resampling summaries. They do not remove shared-team or overlapping-training dependencies.
-\pending{STAT}{Before E5 data entry, fix the primary contrast, precision/sample-size analysis, dependence handling, uncertainty method, secondary-comparison policy, resource limits, and stopping rules. No claim of adequate power or equivalence is currently made.}
+The primary external quantity is the equal-map mean of series log loss ratios after averaging windows and seeds within each series. A pooled within-map normal-residual t interval has N minus six residual degrees of freedom; the prespecified variance sensitivity uses the map-specific variance contributions and Welch--Satterthwaite approximation. Neither procedure resolves shared-team/event dependence. Other reconstruction conditions and retrieval/pattern diagnostics are descriptive; no target-side model, policy or sample-size selection is performed. % [claim:C187] [evidence:E129,E131,E132]
 
 \section{Results}
 \subsection{Representation validity and coverage: E1}
@@ -187,7 +187,7 @@ Nuke & 62 & 1511 & 81.01 & 123 \\ % [claim:C116] [evidence:E101]
 \end{tabular}
 \end{table}
 The export retains 8,979 patch-gated NAV candidates for diagnostics only; those flags are excluded from encoder inputs. The v0.3 export preserves the original 13 node channels, their masks and all remaining shared arrays from v0.2. Motion is observed for 9,049 live player observations and unknown for 2,319; 8,679 valid intervals have nonzero horizontal displacement. These are input-audit counts, separate from E2 model performance. % [claim:C106] [evidence:E101]
-\pending{RES1}{Complete context-validity checks and window-specific relevance judgments. Development reconstruction results are reported in E2, but do not establish tactical correctness. Map-place duty annotation is not an input prerequisite.}
+Native export on the new cohort preserves the same fifteen-node/three-pair-channel contract and yields finite, mask-consistent inputs. This verifies computational availability, not tactical semantics. The throw-event stream is unavailable for the four May series, while all selected windows have pre-round scores and CT equipment; unavailable throw counts remain unknown. % [claim:C188] [evidence:E130,E135]
 
 
 \subsection{Main representation and temporal comparison: E2}
@@ -291,7 +291,7 @@ Uniform-random expectation & 0.6773 & 0.6034 & 0.6669 & 0.6172 \\ % [claim:C167]
 \end{tabular}
 \end{table*}
 
-\pending{RES34}{Descriptive patterns, contextual controls and the restricted old-pool replay are recorded. Independent context-specific relevance remains unvalidated. Do not infer useful coaching from stable resource clusters, a small selected rated pool, or plotted retrieval examples.}
+The restricted old judged-pool replay and all new rankings have different evidential roles. No old grade is transferred to a new query or candidate pair. The new-series ranking outputs remain unjudged, so turnover, source-radius acceptance and pattern agreement do not establish reference quality, tactical responsibilities or coaching value.
 
 \begin{figure*}[t]
 \centering
@@ -334,7 +334,34 @@ Graph + GRU, common input & 0.125665 \\ % [claim:C179] [evidence:E131]
 \end{tabular}
 \end{table}
 
-\pending{RES5}{The frozen new-series reconstruction contrast is complete. Transfer of source-fitted patterns, context-aware rankings, and semantic retrieval validity remain distinct E5 endpoints; no new relevance grades are inferred from these losses.}
+The new-series state-only source prototypes accept 93.2\% of Graph+GRU query-seed assignments and 87.0\% for MLP+GRU. Their eligible seed-pair ARI means are 0.430 and 0.527, each from eighteen comparisons. Coverage is not calibrated confidence, and the method-specific common-accepted populations limit direct stability comparisons. % [claim:C190] [evidence:E134]
+
+Pre-round score and CT equipment are known for all 246 windows; the required throw event is not exposed by the frozen parser for the 80 May windows. Utility-dependent policies are therefore supported for 166 windows, with unknown outputs retained rather than replaced by zeros or inferred detonations. All original seven policies, six neural conditions with three seeds, statistics, full consistent-window matching and context-only controls are retained. % [claim:C191] [evidence:E135,E136]
+
+For Graph+GRU plus joint context, acceptance is 61.7\% across all query-seed assignments and 91.4\% among the context-known subset. Seed ARI is 0.938 across eighteen eligible pairs, while agreement with context-only assignments is 1.000 on eighteen common-accepted comparisons. The source prototypes were already resource-dominated; neither the increased conditional stability nor this agreement establishes tactical correctness. The unknown-context and acceptance subsets differ from the state-only summaries. % [claim:C192] [evidence:E124,E137]
+
+A version-sensitivity probe reparsed one unchanged May Dust2 Demo with demoparser2 0.42.1 instead of 0.41.3. The dedicated throw event remained unavailable, while opening snapshots, timing audits and all five model-input arrays matched exactly. This single-file result does not determine whether recording differences or a remaining compatibility issue causes the event gap, and it does not validate other parser-version substitutions. % [claim:C189] [evidence:E138]
+
+\begin{table}[t]
+\caption{New-series unjudged retrieval turnover. Counts pool twenty method/seed variants, not independent participants. Utility-dependent policies use the 166 context-known windows. Changing the first result is not evidence of improved relevance.}
+\label{tab:transferretrieval}
+\centering\small
+\begin{tabular}{lrr}
+\toprule
+Policy & Queries & Top-1 changes/comparisons\\
+\midrule
+Base & 246 & 0/4920 \\ % [claim:C193] [evidence:E136]
+CT equipment & 246 & 2408/4920 \\ % [claim:C194] [evidence:E136]
+Public score & 246 & 3892/4920 \\ % [claim:C195] [evidence:E136]
+CT utility & 166 & 2771/3320 \\ % [claim:C196] [evidence:E136]
+Joint context, 0.25 & 166 & 2060/3320 \\ % [claim:C197] [evidence:E136]
+Joint context, 0.50 & 166 & 2697/3320 \\ % [claim:C198] [evidence:E136]
+Joint context, 0.75 & 166 & 3085/3320 \\ % [claim:C199] [evidence:E136]
+\bottomrule
+\end{tabular}
+\end{table}
+
+No source cluster, radius, context weight or encoder is refitted for these transfers. G4 has no same-map source candidates, so same-map retrieval is unsupported and all-source and other-map strata coincide. The evidence supports reporting computational transfer and telemetry limits; independent semantic retrieval validity remains unresolved.
 
 \subsection{Completed auxiliary state-prediction controls: E6}
 Table~\ref{tab:aux} reports the completed v17 development comparison using the original common inputs and masks. Values are equal-series relative MSE reductions against persistence. Neural scores average errors over seeds 0, 1, and 42; they are not a prediction ensemble.
