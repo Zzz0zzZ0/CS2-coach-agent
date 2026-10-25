@@ -1,0 +1,43 @@
+{
+  "scope": "source_only_resource_pilot",
+  "created": "2026-10-25",
+  "folds": [
+    "G3__2396595"
+  ],
+  "conditions": [
+    "mlp_static",
+    "mlp_gru",
+    "graph_static",
+    "graph_gru",
+    "graph_gru_no_motion",
+    "graph_gru_common"
+  ],
+  "training": {
+    "seeds": [
+      0
+    ],
+    "epochs_max": 100,
+    "batch_size": 16,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "gradient_clip": 5
+  },
+  "max_seconds": 1800,
+  "input_sha256": {
+    "scripts/run_ct_reconstruction.py": "4ee1c9d794336f2ac9d94e5dcfd93376fa47b7607b7497eb28a6aea73c41a5d9",
+    "test_ct_reconstruction.py": "50d720bd1360bbabad18bd829e97049261f9aea99d62776d60ba6dffe437ddab",
+    "output/tagnet/ct_deployment_inputs_p1_v03/report.json": "91a404b48b98c6664612863430cf307dd2703641f1ce36ba98373c355a2f50c0",
+    "output/tagnet/ct_deployment_inputs_p1_v03/features.npz": "f7bc4b100a654250f13b646b3dc5ed136f0295faad1b2283f33ed485adecf799",
+    "output/tagnet/ct_deployment_inputs_p1_v03/sample_index.json": "83f34a6c24a6cff875fd458f355129cf41b89aae8769672aa9bd46558778dd4d",
+    "output/tagnet/ct_grouped_confirmation_v7/folds.json": "5997bf6bdabc1df506fc2cd4e1527be35eac332463002bcc6f34f4ac15053585",
+    "output/tagnet/ct_grouped_confirmation_v7/sample_index.json": "83f34a6c24a6cff875fd458f355129cf41b89aae8769672aa9bd46558778dd4d"
+  },
+  "selection": "Minimum source-validation reconstruction loss, earliest epoch on ties; no test scores computed.",
+  "target": "Same v0.3 five-frame node/pair observations and masks in all six conditions; seven equally weighted loss groups; one joint player assignment across the window.",
+  "not_final_matrix": true,
+  "preflight_amendment": {
+    "previous_protocol_sha256": "864a34aae6e6ded98b2a16721fe45a614cb11de4d6d40c1e13989b40df7d27a2",
+    "previous_runner_sha256": "5f85ac0733b31c399682ddfb1d85a9e5918515c1193703f1ce0bdf6bba2e85a2",
+    "reason": "Initial launch failed before output creation or training: Windows psutil.disk_usage requires a string path. Converted Path to str; training recipe unchanged."
+  }
+}

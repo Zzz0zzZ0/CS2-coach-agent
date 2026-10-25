@@ -1,0 +1,215 @@
+{
+  "status": "completed",
+  "scope": "source_only_resource_pilot",
+  "protocol_sha256": "f672bb426bfe0cacbc4a3c5535a57f82c722039612736bad4ca20eccfb0bb0f1",
+  "input_sha256": {
+    "scripts/run_ct_reconstruction.py": "4ee1c9d794336f2ac9d94e5dcfd93376fa47b7607b7497eb28a6aea73c41a5d9",
+    "test_ct_reconstruction.py": "50d720bd1360bbabad18bd829e97049261f9aea99d62776d60ba6dffe437ddab",
+    "output/tagnet/ct_deployment_inputs_p1_v03/report.json": "91a404b48b98c6664612863430cf307dd2703641f1ce36ba98373c355a2f50c0",
+    "output/tagnet/ct_deployment_inputs_p1_v03/features.npz": "f7bc4b100a654250f13b646b3dc5ed136f0295faad1b2283f33ed485adecf799",
+    "output/tagnet/ct_deployment_inputs_p1_v03/sample_index.json": "83f34a6c24a6cff875fd458f355129cf41b89aae8769672aa9bd46558778dd4d",
+    "output/tagnet/ct_grouped_confirmation_v7/folds.json": "5997bf6bdabc1df506fc2cd4e1527be35eac332463002bcc6f34f4ac15053585",
+    "output/tagnet/ct_grouped_confirmation_v7/sample_index.json": "83f34a6c24a6cff875fd458f355129cf41b89aae8769672aa9bd46558778dd4d"
+  },
+  "feature_version": "ct-deployment-input-v0.3",
+  "training": {
+    "seeds": [
+      0
+    ],
+    "epochs_max": 100,
+    "batch_size": 16,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "gradient_clip": 5
+  },
+  "loss_groups": [
+    "survival",
+    "region",
+    "resources",
+    "height",
+    "ground",
+    "motion",
+    "pairs"
+  ],
+  "planned_models": 6,
+  "target_alignment": "All indexed raw windows checked for consistent identity slots across five frames; IDs never fed to encoder",
+  "versions": {
+    "torch": "2.14.1+cu130",
+    "cuda": "13.0",
+    "numpy": "2.3.5"
+  },
+  "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "precision": {
+    "matmul": "ieee",
+    "rnn": "tf32"
+  },
+  "limits": [
+    "Development reconstruction only, not tactical relevance or independent generalization.",
+    "Raw regression outputs do not enforce realizable navigation or full geometric constraints.",
+    "Direct retrieval controls and pattern analysis are separate evaluations."
+  ],
+  "human_verification": {
+    "status": "pending",
+    "verified_by": null
+  },
+  "elapsed_seconds": 107.30009010000504,
+  "process_peak_RAM_MiB": 1562.65625,
+  "models": [
+    {
+      "fold": "G3__2396595",
+      "condition": "mlp_static",
+      "seed": 0,
+      "parameter_count": 113997,
+      "train_windows": 382,
+      "validation_windows": 43,
+      "initial_validation_loss": 0.6640419363975525,
+      "selected_epoch": 28,
+      "validation_loss": 0.11033964902162552,
+      "validation_components": {
+        "survival": 0.043932877480983734,
+        "region": 0.38857680559158325,
+        "resources": 0.007986587472259998,
+        "height": 0.012820853851735592,
+        "ground": 0.2605559229850769,
+        "motion": 0.03743167594075203,
+        "pairs": 0.02107275277376175
+      },
+      "checkpoint_sha256": "89e081e4f3c5bc6d641052f114d5aba045e7fb35205c7eb26367a15af0d23dac",
+      "status": "completed",
+      "seconds": 12.114808499987703,
+      "peak_allocated_VRAM_MiB": 58.57958984375,
+      "peak_reserved_VRAM_MiB": 68.0
+    },
+    {
+      "fold": "G3__2396595",
+      "condition": "mlp_gru",
+      "seed": 0,
+      "parameter_count": 138957,
+      "train_windows": 382,
+      "validation_windows": 43,
+      "initial_validation_loss": 0.6375967860221863,
+      "selected_epoch": 44,
+      "validation_loss": 0.10093779861927032,
+      "validation_components": {
+        "survival": 0.051947981119155884,
+        "region": 0.3078681528568268,
+        "resources": 0.010539951734244823,
+        "height": 0.014469461515545845,
+        "ground": 0.26247933506965637,
+        "motion": 0.03681223466992378,
+        "pairs": 0.022447487339377403
+      },
+      "checkpoint_sha256": "f21a25791508953cad4fb9b2ea77caf396796bda8ef34c937ba30338aeabe6b6",
+      "status": "completed",
+      "seconds": 13.206304599996656,
+      "peak_allocated_VRAM_MiB": 59.02294921875,
+      "peak_reserved_VRAM_MiB": 68.0
+    },
+    {
+      "fold": "G3__2396595",
+      "condition": "graph_static",
+      "seed": 0,
+      "parameter_count": 136725,
+      "train_windows": 382,
+      "validation_windows": 43,
+      "initial_validation_loss": 0.667633056640625,
+      "selected_epoch": 59,
+      "validation_loss": 0.11066589504480362,
+      "validation_components": {
+        "survival": 0.10345965623855591,
+        "region": 0.32772186398506165,
+        "resources": 0.00594519404694438,
+        "height": 0.013088101521134377,
+        "ground": 0.268741250038147,
+        "motion": 0.03244452551007271,
+        "pairs": 0.02326064556837082
+      },
+      "checkpoint_sha256": "a60a286ca1918d980a8fe6d053eee78581dfed743891026c8e4f17948887c9a5",
+      "status": "completed",
+      "seconds": 18.489406700013205,
+      "peak_allocated_VRAM_MiB": 39.501953125,
+      "peak_reserved_VRAM_MiB": 52.0
+    },
+    {
+      "fold": "G3__2396595",
+      "condition": "graph_gru",
+      "seed": 0,
+      "parameter_count": 161685,
+      "train_windows": 382,
+      "validation_windows": 43,
+      "initial_validation_loss": 0.6496567130088806,
+      "selected_epoch": 49,
+      "validation_loss": 0.10279016941785812,
+      "validation_components": {
+        "survival": 0.07170648127794266,
+        "region": 0.31238898634910583,
+        "resources": 0.010037090629339218,
+        "height": 0.016034584492444992,
+        "ground": 0.24999232590198517,
+        "motion": 0.03652995824813843,
+        "pairs": 0.02284178137779236
+      },
+      "checkpoint_sha256": "8c2cbb761aa16c5e2a7eb16ce0894895c8954cdcf4c9575d614eddd09c31e115",
+      "status": "completed",
+      "seconds": 19.76439830000163,
+      "peak_allocated_VRAM_MiB": 39.939453125,
+      "peak_reserved_VRAM_MiB": 52.0
+    },
+    {
+      "fold": "G3__2396595",
+      "condition": "graph_gru_no_motion",
+      "seed": 0,
+      "parameter_count": 161429,
+      "train_windows": 382,
+      "validation_windows": 43,
+      "initial_validation_loss": 0.6464974284172058,
+      "selected_epoch": 43,
+      "validation_loss": 0.10647600889205933,
+      "validation_components": {
+        "survival": 0.07000841200351715,
+        "region": 0.3220967948436737,
+        "resources": 0.008699565194547176,
+        "height": 0.01683935336768627,
+        "ground": 0.26315534114837646,
+        "motion": 0.03884970024228096,
+        "pairs": 0.025682859122753143
+      },
+      "checkpoint_sha256": "e18f5da0b87600e27364163b68f3844fbe868e9fbb247d0baea3bf1b7e45fe24",
+      "status": "completed",
+      "seconds": 20.885508800012758,
+      "peak_allocated_VRAM_MiB": 39.931640625,
+      "peak_reserved_VRAM_MiB": 52.0
+    },
+    {
+      "fold": "G3__2396595",
+      "condition": "graph_gru_common",
+      "seed": 0,
+      "parameter_count": 160785,
+      "train_windows": 382,
+      "validation_windows": 43,
+      "initial_validation_loss": 0.645683765411377,
+      "selected_epoch": 54,
+      "validation_loss": 0.10631037503480911,
+      "validation_components": {
+        "survival": 0.07946612685918808,
+        "region": 0.2731013000011444,
+        "resources": 0.007856379263103008,
+        "height": 0.014431921765208244,
+        "ground": 0.30752065777778625,
+        "motion": 0.038287412375211716,
+        "pairs": 0.023508740589022636
+      },
+      "checkpoint_sha256": "e96b19b9c551510226ebd90fff1f974a53307563da0043198a7a557b635015cf",
+      "status": "completed",
+      "seconds": 20.951787900005,
+      "peak_allocated_VRAM_MiB": 39.89697265625,
+      "peak_reserved_VRAM_MiB": 52.0
+    }
+  ],
+  "full_local_report_sha256": "c3b333ff4aa1ee612b24ca310dfdb4d2158d33f398dbaccddab0e436cd391b2f",
+  "contract_tests": {
+    "command": "output/tagnet/.venv-gpu/Scripts/python.exe test_ct_reconstruction.py -v",
+    "passed": 5,
+    "device_used_for_tests": "CPU within the research GPU environment; pilot training used CUDA"
+  }
+}
