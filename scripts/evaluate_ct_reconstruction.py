@@ -196,6 +196,10 @@ def main():
             methods[method] = loss
             result["methods"][method] = {"loss_equal_series": float(equal_series(loss, series)),
                 "components_equal_series": dict(zip(source["loss_groups"], equal_series(values, series).tolist())),
+                "by_series": {name: {"windows": int((series == name).sum()), "loss": float(loss[series == name].mean())}
+                              for name in sorted(set(series))},
+                "seed_equal_series_loss": {str(seed): float(equal_series(grouped[(task, method, seed)].mean(-1), series))
+                                           for seed in cfg["training"]["seeds"]},
                 "by_map": {name: {"windows": int((maps == name).sum()), "series": len(set(series[maps == name])),
                                    "loss_equal_series": float(equal_series(loss[maps == name], series[maps == name]))}
                            for name in sorted(set(maps))}}

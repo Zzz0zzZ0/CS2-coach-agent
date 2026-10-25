@@ -137,6 +137,8 @@ The completed v17 non-graph control reads the full masked node matrix, distance 
 Recorded G3 prediction controls leave one complete series out. Recorded G4 controls exclude a target map and every series containing that map from training and validation. These are development results. The final task protocol must separately specify its train/validation/test membership and prevent a query series from entering the retrieval library.
 
 \subsection{Pattern and retrieval endpoints}
+The development pattern-analysis implementation uses scikit-learn~\cite{pedregosa2011sklearn}. Candidate cluster counts are two through six, selected solely by source-training silhouette; the query embeddings do not select or refit centroids. Numeric cluster IDs are retained without tactical names. A source-radius and minimum-support rule records rejected queries as a diagnostic, with cross-seed agreement reported only where both assignments are accepted and vary across at least two clusters. The separate source-series bootstrap fixes the neural encoder and selected cluster count. % [claim:C204] [evidence:E111,E112,E204]
+
 \pending{METRIC}{Freeze E3 stability measures, source-only cluster selection, E4 window-specific judgment instructions and primary retrieval endpoint, effect measure, missing judgments, and query/series aggregation. Fix the observation horizon and viewer information; do not assign a universal duty to a place or infer hidden intent. Structural resemblance, tactical reference quality, and automatic geometry remain distinct endpoints.}
 
 The earlier protocol proposes pooled nDCG at five, with the ideal ranking restricted to the same judged candidate pool. If retained, its definition is

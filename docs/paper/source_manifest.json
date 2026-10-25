@@ -269,6 +269,111 @@
         "verified_by": "",
         "verified_on": ""
       }
+    },
+    {
+      "evidence_id": "E111",
+      "title": "Development pattern-analysis and direct-ranking rules",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/selections/ct_deployment_pattern_analysis.json"
+      },
+      "locator": "datasets/selections/ct_deployment_pattern_analysis.json; sha256=e7a9fbeb49a0d116d38966455d649367e41fec583e3d464162b88934138faed6",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E112",
+      "title": "Source-only clustering and conditional stability implementation",
+      "source_type": "software",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/scripts/analyze_ct_deployment_patterns.py"
+      },
+      "locator": "scripts/analyze_ct_deployment_patterns.py; sha256=20bcdfbbaa93e7325a24527497d2172577abff84a156f75eaf93a30953d1e465",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E113",
+      "title": "Fixed-matrix reconstruction summaries and unjudged same-library rankings",
+      "source_type": "software",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/scripts/evaluate_ct_reconstruction.py"
+      },
+      "locator": "scripts/evaluate_ct_reconstruction.py; sha256=b34db5b723d9e835c942024c03c2412401f197d8a06ccbe2da1f7b3c3e979c30",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E204",
+      "title": "Scikit-learn: Machine Learning in Python",
+      "source_type": "journal_article",
+      "authors": [
+        "Fabian Pedregosa",
+        "Gael Varoquaux",
+        "Alexandre Gramfort",
+        "Vincent Michel",
+        "Bertrand Thirion",
+        "Olivier Grisel",
+        "Mathieu Blondel",
+        "Peter Prettenhofer",
+        "Ron Weiss",
+        "Vincent Dubourg",
+        "Jake Vanderplas",
+        "Alexandre Passos",
+        "David Cournapeau",
+        "Matthieu Brucher",
+        "Matthieu Perrot",
+        "Edouard Duchesnay"
+      ],
+      "year": 2011,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://jmlr.org/papers/v12/pedregosa11a.html"
+      },
+      "locator": "JMLR primary record: 12(85):2825-2830, 2011; author/title metadata accessed 2026-10-25",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
     }
   ]
 }

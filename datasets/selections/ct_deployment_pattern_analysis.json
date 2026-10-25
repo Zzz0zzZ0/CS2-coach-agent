@@ -1,0 +1,44 @@
+{
+  "scope": "development_pattern_and_ranking_analysis",
+  "timing": "Specified during frozen matrix training, before inspecting its test scores or running real-data clustering/ranking. Not an independent-test registration.",
+  "input_sha256": {
+    "scripts/analyze_ct_deployment_patterns.py": "20bcdfbbaa93e7325a24527497d2172577abff84a156f75eaf93a30953d1e465",
+    "scripts/evaluate_ct_reconstruction.py": "b34db5b723d9e835c942024c03c2412401f197d8a06ccbe2da1f7b3c3e979c30",
+    "test_ct_deployment_patterns.py": "bcf6a2fc4c515b9a5eae3e0e8e2b22b8b9155fc16a2fa377ebbaf52b21e00288",
+    "test_ct_reconstruction_analysis.py": "0a0e8e677b523fe9c0d4c3f4c7abbe6cbb4679cffe5739e31f3972e631ae21aa",
+    "datasets/selections/ct_reconstruction_matrix.json": "69f58d0bbdcb441dd4b4af339bc3f45eaae0d94b6539f0ac92e1c6ccb78125b6",
+    "output/tagnet/ct_grouped_confirmation_v7/folds.json": "5997bf6bdabc1df506fc2cd4e1527be35eac332463002bcc6f34f4ac15053585",
+    "output/tagnet/ct_grouped_confirmation_v7/sample_index.json": "83f34a6c24a6cff875fd458f355129cf41b89aae8769672aa9bd46558778dd4d",
+    "app/services/ct_linear_service.py": "523e9909f53a31862165ff84c3256489f18a9a2dc66cdcb63778e42fb11053ca",
+    "app/services/ct_retrieval_service.py": "498a12134cc9f18b581c9f78d6a7b9731464877283b5c32d459dda2d6730cda8"
+  },
+  "clustering": {
+    "k_candidates": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "n_init": 10,
+    "max_iter": 100,
+    "seed": 20261025,
+    "selection": "Maximum source-training silhouette, smaller K on ties within 1e-12; never query/test selection.",
+    "source_radius_quantile": 0.95,
+    "minimum_cluster_support": 5,
+    "series_bootstrap_replicates": 20
+  },
+  "bootstrap_model_seed": 0,
+  "bootstrap_scope": "All six conditions and all 15 folds, neural seed 0, source-series resampling at fixed encoder and source-selected K.",
+  "seed_stability": "All three neural seed pairs per condition/fold; ARI only on common accepted queries with at least two clusters in each assignment, otherwise missing with denominator/reason.",
+  "naming": "Numeric cluster IDs only; no geographic place-to-duty mapping; three nearest source examples per cluster.",
+  "association_diagnostics": [
+    "source cluster vs map NMI",
+    "source cluster vs series NMI"
+  ],
+  "limitations": [
+    "Source-window silhouette and radius are descriptive, not validated tactical relevance or calibrated confidence.",
+    "Shared teams, repeated matches and conditional encoder fits limit inference.",
+    "Independent P4-P5 test and tactical judgments remain pending."
+  ]
+}

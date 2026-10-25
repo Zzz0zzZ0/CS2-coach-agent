@@ -47,3 +47,21 @@ def test_series_weighting_does_not_count_more_rounds_as_more_independent_series(
     assert result["series_count"] == 2
     assert abs(result["equal_series_reduction_pct"] - 50) < 1e-10
     np.testing.assert_allclose(result["descriptive_95pct_interval"], [50, 50])
+
+
+def test_evidence_tracks_follow_identity_and_hide_dead_coordinates():
+    import copy
+    from scripts.export_ct_deployment_evidence import observed_tracks
+    rows = snapshots()
+    original = np.asarray(observed_tracks(rows), dtype=float)
+    moved = copy.deepcopy(rows)
+    for t, frame in enumerate(moved):
+        if t:
+            frame["players"] = frame["players"][::-1]
+        for player in frame["players"]:
+            player["position"][0] += 300
+            player["position"][1] -= 500
+            if player["health"] == 0:
+                player["position"] = [1e6, 1e6, 1e6]
+    np.testing.assert_allclose(np.asarray(observed_tracks(moved), dtype=float), original, equal_nan=True)
+    assert np.isnan(original[4]).all()
