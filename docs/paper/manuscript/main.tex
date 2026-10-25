@@ -60,7 +60,14 @@ Durst et al. learn movement control for CS:GO Retakes on Dust2~\cite{durst2024mo
 
 Xenopoulos et al. derive directed navigation-graph distances and contextual action values~\cite{xenopoulos2020valuing}. Their spatial example distinguishes asymmetric traversal from Euclidean proximity. Our current geometry is therefore described as an observation, not a validated navigation or tactical-role relation. % [claim:C203] [evidence:E203,E101]
 
-\pending{RW}{The accompanying targeted source comparison now distinguishes deployment patterns, egocentric location prediction, movement imitation and contextual action values. Complete primary-source coverage for cross-domain retrieval and pattern stability; the pinned author manuscript has now been read, while the publisher version has not been independently checked. This is a narrative starting set, not a systematic or exhaustive review.}
+\subsection{Generalization protocols and cluster interpretation}
+Gulrajani and Lopez-Paz emphasize the role of architecture, experimental conditions and model selection in domain-generalization comparisons~\cite{gulrajani2020domain}. WILDS organizes evaluation around explicit real-world distribution shifts~\cite{koh2021wilds}. We accordingly distinguish unseen series, training-held maps and chronological transfer; newly acquired data alone do not establish a future-only test. % [claim:C207] [evidence:E206,E207]
+
+Von Luxburg's overview distinguishes stability mechanisms under idealized and actual K-means optimization~\cite{luxburg2010stability}. Its assumptions matter when interpreting agreement across fits. Our stability diagnostics characterize a chosen observation space; an interpretation as defensive duties requires additional evidence. % [claim:C208] [evidence:E208]
+
+Graded cumulative-gain evaluation accommodates nonbinary relevance judgments~\cite{jarvelin2002gain}. Buckley and Voorhees examine the sensitivity of evaluation to incomplete judgments~\cite{buckley2004incomplete}. We therefore describe the old rated-subset replay as a conditional diagnostic, and do not infer full-library relevance from it. The exponential gain and missing-value rules are specified separately in our protocol. % [claim:C209] [evidence:E210,E211]
+
+\pending{RW}{The targeted comparison now covers deployment observation, movement, explicit domain-shift protocols, clustering stability and incomplete retrieval judgments. Complete the FPS-specific retrieval citation trail and author review. The author TAGNet manuscript has been read and publisher-deposited metadata checked; the publisher PDF remains unchecked. This is a narrative source set, not a systematic or exhaustive review.}
 
 \section{Task, Data, and Evidence Sources}
 \subsection{Deployment window and available observations}
@@ -99,9 +106,9 @@ The current common-input implementation uses five place categories: BombsiteA, B
 The existing auxiliary state contains the five live-category fractions, dead-player fraction, and mean and maximum live-pair Euclidean distances. Distances use a fixed 5,000-game-unit scale. Undefined pair statistics are masked.
 
 \subsection{Implemented geometric descriptors}
-A separate geometry export implements relative height, airborne/grounded/unknown state, NAV-candidate information, horizontal distance, height difference, and validity masks. It has been audited on the existing 465 windows. This export has not yet been integrated into the final main representation or validated as tactical semantics.
+The v0.3 model input includes relative height, airborne/grounded/unknown state, horizontal distance, height difference, and validity masks. NAV-candidate and patch-matching diagnostics remain excluded from the model. These fields describe observations and do not establish tactical semantics.
 
-\pending{REP}{The v0.3 observable schema and time/mask contract are implemented. Remaining E1 work concerns contextual validity and whether unjoined information changes window-specific interpretation. Validate additional topology fields independently, and show remaining observational collisions. Do not introduce a deterministic location-to-duty mapping.}
+\pending{REP}{The v0.3 observable schema and time/mask contract are implemented. Remaining E1 work concerns tactical validity and remaining observational collisions; the explicit context controls are reported below. NAV diagnostics do not establish walkability or visibility. Do not introduce a deterministic location-to-duty mapping.}
 
 
 \subsection{Candidate input implementation and validity masks}
@@ -294,7 +301,7 @@ Uniform-random expectation & 0.6773 & 0.6034 & 0.6669 & 0.6172 \\ % [claim:C167]
 \end{figure*}
 
 \subsection{Independent generalization: E5}
-The technical-confirmation planning scenario balances six maps with two series per map. Under independent normal within-map log-ratio residuals with SD 0.05, a 12-series design has approximately 93.9\% probability that the nominal 95\% interval half-width is at most 0.05 log units; SD 0.10 requires 24 series for 80\% width assurance under the same model. These are assumption-dependent precision calculations, not tactical-effect power or proof that 12 series suffice for the full study. The exact new cohort remains unfrozen. % [claim:C157] [evidence:E127]
+The technical-confirmation planning scenario balances six maps with two series per map. Under independent normal within-map log-ratio residuals with SD 0.05, a 12-series design has approximately 93.9\% probability that the nominal 95\% interval half-width is at most 0.05 log units; SD 0.10 requires 24 series for 80\% width assurance under the same model. These are assumption-dependent precision calculations, not tactical-effect power or proof that 12 series suffice for the full study. The new cohort and source checkpoints were locally frozen before archive acquisition; independent model results remain pending. % [claim:C157] [evidence:E127,E129]
 
 \pending{RES5}{Insert only results from the frozen new-series evaluation: actual cohort, primary effect and uncertainty, map/series failures, supported external-validity scope, and protocol deviations. No result cell is filled from development data.}
 
@@ -344,7 +351,7 @@ Cohort and historical protocols are linked in the manuscript writing guide. Raw 
 
 \pending{REPRO}{Supply legally shareable minimal inputs, complete manifests and environments, executable training/evaluation entry points, licenses, deviations, and the distinction between source reproduction and metric reproduction.}
 \subsection{Research workflow assistance}
-Scientific Agent Skills~\cite{kassis2026skills} informed evidence organization, paired observational comparisons and precision planning. The earlier scientific-writing installation was recorded at repository revision \path{593377bb048752abb0152deab9fbb1083a6087df}; current procedural files are recorded separately by content hash, without asserting the same upstream revision for all files. This is workflow assistance, not independent validation of sources, models, or scientific conclusions. % [claim:C107] [evidence:E106,E128]
+Scientific Agent Skills~\cite{kassis2026skills} informed evidence organization, paired observational comparisons, precision planning and citation checks. The earlier scientific-writing installation was recorded at repository revision \path{593377bb048752abb0152deab9fbb1083a6087df}; current procedural files are recorded separately by content hash, without asserting the same upstream revision for all files. This is workflow assistance, not independent validation of sources, models, or scientific conclusions. % [claim:C107] [evidence:E106,E128]
 
 \section{Declarations and Pilot Sources}
 \pending{DECL}{Before submission, supply factual author contributions, applicable participant/consent information for any human evidence actually used, data/code availability, funding/conflicts if applicable, and the venue-required AI assistance disclosure. No approval, consent, authorship, or funding statement is invented here.}

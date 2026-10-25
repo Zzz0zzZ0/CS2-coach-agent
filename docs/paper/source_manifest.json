@@ -725,7 +725,161 @@
         "pmid": "",
         "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_workflow_skill_receipt.json"
       },
-      "locator": "datasets/evaluation/ct_workflow_skill_receipt.json; sha256=88ad94cfb529f50eada508d09605a4d17cf11e300acd5d590d443a5e4abe2cf5",
+      "locator": "datasets/evaluation/ct_workflow_skill_receipt.json; sha256=227988c222667ea3eff6cf5448e46264de6c18adbba90acb88765ef3547aa2a3",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E206",
+      "title": "In Search of Lost Domain Generalization",
+      "source_type": "preprint",
+      "authors": [],
+      "year": 2020,
+      "identifiers": {
+        "doi": "10.48550/arXiv.2007.01434",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://arxiv.org/abs/2007.01434"
+      },
+      "locator": "Authors and abstract; final OpenReview record unavailable in this check.",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E207",
+      "title": "WILDS: A Benchmark of in-the-Wild Distribution Shifts",
+      "source_type": "conference_paper",
+      "authors": [],
+      "year": 2021,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://proceedings.mlr.press/v139/koh21a.html"
+      },
+      "locator": "Official PMLR abstract and citation metadata, volume 139, pages 5637-5664.",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E208",
+      "title": "Clustering Stability: An Overview",
+      "source_type": "journal_article",
+      "authors": [],
+      "year": 2010,
+      "identifiers": {
+        "doi": "10.1561/2200000008",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://arxiv.org/abs/1007.1075"
+      },
+      "locator": "Author text: idealized/actual K-means stability and outlook; publisher-deposited metadata via Crossref.",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E209",
+      "title": "TAGNet publisher-deposited bibliographic metadata audit",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "10.1109/TG.2026.3745970",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://api.crossref.org/works/10.1109/TG.2026.3745970"
+      },
+      "locator": "datasets/evaluation/ct_citation_metadata_audit.json; sha256=a66395fda9fb2724c19382a9c9cebb57efc8cfad732f8c203a81cabf2ac761d4",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E210",
+      "title": "Retrieval Evaluation with Incomplete Information",
+      "source_type": "conference_paper",
+      "authors": [],
+      "year": 2004,
+      "identifiers": {
+        "doi": "10.1145/1008992.1009000",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://www.nist.gov/publications/retrieval-evaluation-incomplete-information"
+      },
+      "locator": "Author-institution abstract and publisher-deposited Crossref metadata.",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E211",
+      "title": "Cumulated Gain-Based Evaluation of IR Techniques",
+      "source_type": "journal_article",
+      "authors": [],
+      "year": 2002,
+      "identifiers": {
+        "doi": "10.1145/582415.582418",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://api.crossref.org/works/10.1145/582415.582418"
+      },
+      "locator": "Publisher-deposited abstract and metadata; exponential gain is this experiment choice, not an asserted identical original formula.",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E129",
+      "title": "Locally frozen external CT cohort and source checkpoint protocol",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/selections/ct_independent_confirmation.json"
+      },
+      "locator": "datasets/selections/ct_independent_confirmation.json; sha256=192a73a97447afd9cafda880d81476dafb1fb483cbd5337ec424766fcea3b442; Local pre-acquisition selection and 108 checkpoint hashes; not external preregistration, new evaluation results, or semantic validation.",
       "confidentiality": "public",
       "verification": {
         "source_opened": false,

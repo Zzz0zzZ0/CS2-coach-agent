@@ -1,0 +1,2892 @@
+{
+  "status": "selected_by_metadata_before_download_or_model_evaluation",
+  "script_sha256": "027b1dbbdccfd1d7b3ab060154cb8ac9025f58d13f78529fea059df96970e423",
+  "selection_rule": "Minimum total chronological candidate rank subject to 12 unique series, two per map, four per event maximum, and one series per event/map. No score or model result enters selection.",
+  "events": [
+    8263,
+    8244,
+    8932
+  ],
+  "candidates": [
+    {
+      "match_id": "2394204",
+      "event_id": 8263,
+      "result_unix_ms": 1779249686000,
+      "match_url": "https://www.hltv.org/matches/2394204/parivision-vs-liquid-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108141",
+      "teams": [
+        "PARIVISION",
+        "Liquid"
+      ],
+      "played_maps": [
+        "de_dust2"
+      ],
+      "map_order": [
+        {
+          "map": "de_dust2",
+          "map_number": 1
+        }
+      ],
+      "match_html_sha256": "da61fe3f89925e2965ee65e3815eddda5de26a8726cd9185360ec44cb28ef541"
+    },
+    {
+      "match_id": "2394203",
+      "event_id": 8263,
+      "result_unix_ms": 1779249878000,
+      "match_url": "https://www.hltv.org/matches/2394203/3dmax-vs-mibr-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108142",
+      "teams": [
+        "3DMAX",
+        "MIBR"
+      ],
+      "played_maps": [
+        "de_anubis"
+      ],
+      "map_order": [
+        {
+          "map": "de_anubis",
+          "map_number": 1
+        }
+      ],
+      "match_html_sha256": "3b6a827dcbe55c0351c0849174291b6109d83b7e59a1fbc8ab8c40125427b8dd"
+    },
+    {
+      "match_id": "2394205",
+      "event_id": 8263,
+      "result_unix_ms": 1779252864000,
+      "match_url": "https://www.hltv.org/matches/2394205/the-mongolz-vs-lynn-vision-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108143",
+      "teams": [
+        "The MongolZ",
+        "Lynn Vision"
+      ],
+      "played_maps": [
+        "de_ancient"
+      ],
+      "map_order": [
+        {
+          "map": "de_ancient",
+          "map_number": 1
+        }
+      ],
+      "match_html_sha256": "2e6799ec75cf37ddce228e9a31eed6c17bace20cb32a223c99a7ecdbcc8f6512"
+    },
+    {
+      "match_id": "2394206",
+      "event_id": 8263,
+      "result_unix_ms": 1779254107000,
+      "match_url": "https://www.hltv.org/matches/2394206/b8-vs-ninjas-in-pyjamas-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108144",
+      "teams": [
+        "B8",
+        "Ninjas in Pyjamas"
+      ],
+      "played_maps": [
+        "de_ancient"
+      ],
+      "map_order": [
+        {
+          "map": "de_ancient",
+          "map_number": 1
+        }
+      ],
+      "match_html_sha256": "ed48594c9e5534544ac61f65009434f18de2588fd24d144f3ab14a40badcef7b"
+    },
+    {
+      "match_id": "2394200",
+      "event_id": 8263,
+      "result_unix_ms": 1779257330000,
+      "match_url": "https://www.hltv.org/matches/2394200/mouz-vs-tyloo-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108145",
+      "teams": [
+        "MOUZ",
+        "TYLOO"
+      ],
+      "played_maps": [
+        "de_inferno"
+      ],
+      "map_order": [
+        {
+          "map": "de_inferno",
+          "map_number": 1
+        }
+      ],
+      "match_html_sha256": "3e2580026dc44effd6f07b74913b9bb4f84574e31bdb4fd42c17a7a74ea88187"
+    },
+    {
+      "match_id": "2394199",
+      "event_id": 8263,
+      "result_unix_ms": 1779258395000,
+      "match_url": "https://www.hltv.org/matches/2394199/legacy-vs-nrg-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108146",
+      "teams": [
+        "Legacy",
+        "NRG"
+      ],
+      "played_maps": [
+        "de_nuke"
+      ],
+      "map_order": [
+        {
+          "map": "de_nuke",
+          "map_number": 1
+        }
+      ],
+      "match_html_sha256": "45c0d151c058fec1f7b32f0090b811c071c8b09cfe33192d76021a28264e90d7"
+    },
+    {
+      "match_id": "2394201",
+      "event_id": 8263,
+      "result_unix_ms": 1779262232000,
+      "match_url": "https://www.hltv.org/matches/2394201/falcons-vs-bcgame-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108148",
+      "teams": [
+        "Falcons",
+        "BC.Game"
+      ],
+      "played_maps": [
+        "de_dust2"
+      ],
+      "map_order": [
+        {
+          "map": "de_dust2",
+          "map_number": 1
+        }
+      ],
+      "match_html_sha256": "f5d7291f3736d627159f61361b92b5b901d1bd87de9e8c9afd28e3f2a4982414"
+    },
+    {
+      "match_id": "2394202",
+      "event_id": 8263,
+      "result_unix_ms": 1779262643000,
+      "match_url": "https://www.hltv.org/matches/2394202/pain-vs-m80-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108147",
+      "teams": [
+        "paiN",
+        "M80"
+      ],
+      "played_maps": [
+        "de_mirage"
+      ],
+      "map_order": [
+        {
+          "map": "de_mirage",
+          "map_number": 1
+        }
+      ],
+      "match_html_sha256": "21e464e78562e65faba1b66b00c8daa63a4b2941c241daf9857db98b2dbc4cea"
+    },
+    {
+      "match_id": "2394209",
+      "event_id": 8263,
+      "result_unix_ms": 1779269920000,
+      "match_url": "https://www.hltv.org/matches/2394209/mibr-vs-parivision-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108149",
+      "teams": [
+        "MIBR",
+        "PARIVISION"
+      ],
+      "played_maps": [
+        "de_mirage",
+        "de_ancient"
+      ],
+      "map_order": [
+        {
+          "map": "de_mirage",
+          "map_number": 1
+        },
+        {
+          "map": "de_ancient",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "9ad12e3c926d5010178da14e176cc804807d3461a90cc65ef378fc6c9668a9c4"
+    },
+    {
+      "match_id": "2394210",
+      "event_id": 8263,
+      "result_unix_ms": 1779274137000,
+      "match_url": "https://www.hltv.org/matches/2394210/the-mongolz-vs-b8-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108152",
+      "teams": [
+        "The MongolZ",
+        "B8"
+      ],
+      "played_maps": [
+        "de_ancient",
+        "de_nuke",
+        "de_mirage"
+      ],
+      "map_order": [
+        {
+          "map": "de_ancient",
+          "map_number": 1
+        },
+        {
+          "map": "de_nuke",
+          "map_number": 2
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "e869057f5fe1549323c1fbd07cd0bd148208dee42334c4669a972ceed81f9ccd"
+    },
+    {
+      "match_id": "2394208",
+      "event_id": 8263,
+      "result_unix_ms": 1779282583000,
+      "match_url": "https://www.hltv.org/matches/2394208/falcons-vs-m80-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108155",
+      "teams": [
+        "Falcons",
+        "M80"
+      ],
+      "played_maps": [
+        "de_inferno",
+        "de_ancient"
+      ],
+      "map_order": [
+        {
+          "map": "de_inferno",
+          "map_number": 1
+        },
+        {
+          "map": "de_ancient",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "d6cd95b7c6dc847d794984c57f61e3734636d2a9a56a03d2580105c6adc25367"
+    },
+    {
+      "match_id": "2394207",
+      "event_id": 8263,
+      "result_unix_ms": 1779285826000,
+      "match_url": "https://www.hltv.org/matches/2394207/legacy-vs-tyloo-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108157",
+      "teams": [
+        "Legacy",
+        "TYLOO"
+      ],
+      "played_maps": [
+        "de_overpass",
+        "de_ancient"
+      ],
+      "map_order": [
+        {
+          "map": "de_overpass",
+          "map_number": 1
+        },
+        {
+          "map": "de_ancient",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "0349069d97b5d9fe0b74a2a5696a42e694fb4bd1cc02c4113acc32abe6d26508"
+    },
+    {
+      "match_id": "2394211",
+      "event_id": 8263,
+      "result_unix_ms": 1779342100000,
+      "match_url": "https://www.hltv.org/matches/2394211/nrg-vs-mouz-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108173",
+      "teams": [
+        "NRG",
+        "MOUZ"
+      ],
+      "played_maps": [
+        "de_ancient",
+        "de_nuke",
+        "de_mirage"
+      ],
+      "map_order": [
+        {
+          "map": "de_ancient",
+          "map_number": 1
+        },
+        {
+          "map": "de_nuke",
+          "map_number": 2
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "9cb7c84a4199fb2ee48d884fccb37b4d7fd3a9a0e7e81634137bf825e857a5ef"
+    },
+    {
+      "match_id": "2394213",
+      "event_id": 8263,
+      "result_unix_ms": 1779344851000,
+      "match_url": "https://www.hltv.org/matches/2394213/3dmax-vs-liquid-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108174",
+      "teams": [
+        "3DMAX",
+        "Liquid"
+      ],
+      "played_maps": [
+        "de_nuke",
+        "de_dust2",
+        "de_inferno"
+      ],
+      "map_order": [
+        {
+          "map": "de_nuke",
+          "map_number": 1
+        },
+        {
+          "map": "de_dust2",
+          "map_number": 2
+        },
+        {
+          "map": "de_inferno",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "285fd19a5ebfc1fb1abc900cb5188cfe5cc7349619560165739908ecd12374e4"
+    },
+    {
+      "match_id": "2394212",
+      "event_id": 8263,
+      "result_unix_ms": 1779353853000,
+      "match_url": "https://www.hltv.org/matches/2394212/bcgame-vs-pain-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108176",
+      "teams": [
+        "BC.Game",
+        "paiN"
+      ],
+      "played_maps": [
+        "de_dust2",
+        "de_anubis"
+      ],
+      "map_order": [
+        {
+          "map": "de_dust2",
+          "map_number": 1
+        },
+        {
+          "map": "de_anubis",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "895a85788001cab1f7a34c890c7ee86eeddded7906b459d84e21bd1532d3f482"
+    },
+    {
+      "match_id": "2394214",
+      "event_id": 8263,
+      "result_unix_ms": 1779354255000,
+      "match_url": "https://www.hltv.org/matches/2394214/lynn-vision-vs-ninjas-in-pyjamas-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108177",
+      "teams": [
+        "Lynn Vision",
+        "Ninjas in Pyjamas"
+      ],
+      "played_maps": [
+        "de_dust2",
+        "de_nuke",
+        "de_ancient"
+      ],
+      "map_order": [
+        {
+          "map": "de_dust2",
+          "map_number": 1
+        },
+        {
+          "map": "de_nuke",
+          "map_number": 2
+        },
+        {
+          "map": "de_ancient",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "cd749eaf75fe5678184be2607e983e36ebdb7c9977897c9fe1ce675faa3a68b8"
+    },
+    {
+      "match_id": "2394215",
+      "event_id": 8263,
+      "result_unix_ms": 1779364975000,
+      "match_url": "https://www.hltv.org/matches/2394215/m80-vs-mouz-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108188",
+      "teams": [
+        "M80",
+        "MOUZ"
+      ],
+      "played_maps": [
+        "de_overpass",
+        "de_inferno",
+        "de_mirage"
+      ],
+      "map_order": [
+        {
+          "map": "de_overpass",
+          "map_number": 1
+        },
+        {
+          "map": "de_inferno",
+          "map_number": 2
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "ed2697209407ebd597073a1f2e3e4a7505de40048134b45db08c80874e754250"
+    },
+    {
+      "match_id": "2394217",
+      "event_id": 8263,
+      "result_unix_ms": 1779366012000,
+      "match_url": "https://www.hltv.org/matches/2394217/the-mongolz-vs-liquid-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108189",
+      "teams": [
+        "The MongolZ",
+        "Liquid"
+      ],
+      "played_maps": [
+        "de_mirage",
+        "de_inferno",
+        "de_nuke"
+      ],
+      "map_order": [
+        {
+          "map": "de_mirage",
+          "map_number": 1
+        },
+        {
+          "map": "de_inferno",
+          "map_number": 2
+        },
+        {
+          "map": "de_nuke",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "780959fc431319426909995e8908bb6c9b4110112789d0bf8b04d2734b356c64"
+    },
+    {
+      "match_id": "2394218",
+      "event_id": 8263,
+      "result_unix_ms": 1779374023000,
+      "match_url": "https://www.hltv.org/matches/2394218/parivision-vs-lynn-vision-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108199",
+      "teams": [
+        "PARIVISION",
+        "Lynn Vision"
+      ],
+      "played_maps": [
+        "de_ancient",
+        "de_dust2"
+      ],
+      "map_order": [
+        {
+          "map": "de_ancient",
+          "map_number": 1
+        },
+        {
+          "map": "de_dust2",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "88fb3baf9e2cf19b617cc41b54a63de64c9d2aa6c3529f80ed668ab4caed36ff"
+    },
+    {
+      "match_id": "2394216",
+      "event_id": 8263,
+      "result_unix_ms": 1779377055000,
+      "match_url": "https://www.hltv.org/matches/2394216/tyloo-vs-pain-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108200",
+      "teams": [
+        "TYLOO",
+        "paiN"
+      ],
+      "played_maps": [
+        "de_mirage",
+        "de_nuke",
+        "de_overpass"
+      ],
+      "map_order": [
+        {
+          "map": "de_mirage",
+          "map_number": 1
+        },
+        {
+          "map": "de_nuke",
+          "map_number": 2
+        },
+        {
+          "map": "de_overpass",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "7e7e80c8d083c41b822bd5c1d16f965a1ed8fd1d14fa6febfe9b6560068f325d"
+    },
+    {
+      "match_id": "2394219",
+      "event_id": 8263,
+      "result_unix_ms": 1779425017000,
+      "match_url": "https://www.hltv.org/matches/2394219/falcons-vs-legacy-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108220",
+      "teams": [
+        "Falcons",
+        "Legacy"
+      ],
+      "played_maps": [
+        "de_dust2",
+        "de_ancient"
+      ],
+      "map_order": [
+        {
+          "map": "de_dust2",
+          "map_number": 1
+        },
+        {
+          "map": "de_ancient",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "0b38e559dc0fe704efd2a5f140f4639fef025a6256047dd9c9760c1092f778e6"
+    },
+    {
+      "match_id": "2394221",
+      "event_id": 8263,
+      "result_unix_ms": 1779427578000,
+      "match_url": "https://www.hltv.org/matches/2394221/mibr-vs-b8-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108221",
+      "teams": [
+        "MIBR",
+        "B8"
+      ],
+      "played_maps": [
+        "de_inferno",
+        "de_mirage",
+        "de_ancient"
+      ],
+      "map_order": [
+        {
+          "map": "de_inferno",
+          "map_number": 1
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 2
+        },
+        {
+          "map": "de_ancient",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "9896a63874e56b5b9c83563e8a338de3a5ec6499ade1b443f5263fa1bb4fa53b"
+    },
+    {
+      "match_id": "2394220",
+      "event_id": 8263,
+      "result_unix_ms": 1779432987000,
+      "match_url": "https://www.hltv.org/matches/2394220/mouz-vs-pain-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108222",
+      "teams": [
+        "MOUZ",
+        "paiN"
+      ],
+      "played_maps": [
+        "de_nuke",
+        "de_overpass"
+      ],
+      "map_order": [
+        {
+          "map": "de_nuke",
+          "map_number": 1
+        },
+        {
+          "map": "de_overpass",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "67b8973feb9bcd208ccf59760abf9f4012a3849be549536fe3d1f25cb0257126"
+    },
+    {
+      "match_id": "2394222",
+      "event_id": 8263,
+      "result_unix_ms": 1779435973000,
+      "match_url": "https://www.hltv.org/matches/2394222/the-mongolz-vs-parivision-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108223",
+      "teams": [
+        "The MongolZ",
+        "PARIVISION"
+      ],
+      "played_maps": [
+        "de_dust2",
+        "de_mirage"
+      ],
+      "map_order": [
+        {
+          "map": "de_dust2",
+          "map_number": 1
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "e31d01b4c468777c88937ac8606e235137e6dd9d6cb1fa5f824fbb4417c15eb3"
+    },
+    {
+      "match_id": "2394224",
+      "event_id": 8263,
+      "result_unix_ms": 1779449139000,
+      "match_url": "https://www.hltv.org/matches/2394224/b8-vs-mouz-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108231",
+      "teams": [
+        "B8",
+        "MOUZ"
+      ],
+      "played_maps": [
+        "de_overpass",
+        "de_ancient"
+      ],
+      "map_order": [
+        {
+          "map": "de_overpass",
+          "map_number": 1
+        },
+        {
+          "map": "de_ancient",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "4fc86744b8a445107371da03c29323ef6143853769644ea9926cee8feba0aebc"
+    },
+    {
+      "match_id": "2394223",
+      "event_id": 8263,
+      "result_unix_ms": 1779451848000,
+      "match_url": "https://www.hltv.org/matches/2394223/legacy-vs-the-mongolz-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108233",
+      "teams": [
+        "Legacy",
+        "The MongolZ"
+      ],
+      "played_maps": [
+        "de_inferno",
+        "de_mirage",
+        "de_nuke"
+      ],
+      "map_order": [
+        {
+          "map": "de_inferno",
+          "map_number": 1
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 2
+        },
+        {
+          "map": "de_nuke",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "c5f120546eafac90bd25e645df6c01e26192de42fb9ad77853170f753ced6b4e"
+    },
+    {
+      "match_id": "2394225",
+      "event_id": 8263,
+      "result_unix_ms": 1779522631000,
+      "match_url": "https://www.hltv.org/matches/2394225/falcons-vs-mouz-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108264",
+      "teams": [
+        "Falcons",
+        "MOUZ"
+      ],
+      "played_maps": [
+        "de_mirage",
+        "de_dust2",
+        "de_nuke"
+      ],
+      "map_order": [
+        {
+          "map": "de_mirage",
+          "map_number": 1
+        },
+        {
+          "map": "de_dust2",
+          "map_number": 2
+        },
+        {
+          "map": "de_nuke",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "2c6f564c68ed604be05a0a827405835c59a627914c96f9269ffd2a4d3bd6f49e"
+    },
+    {
+      "match_id": "2394226",
+      "event_id": 8263,
+      "result_unix_ms": 1779534915000,
+      "match_url": "https://www.hltv.org/matches/2394226/mibr-vs-legacy-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108273",
+      "teams": [
+        "MIBR",
+        "Legacy"
+      ],
+      "played_maps": [
+        "de_mirage",
+        "de_inferno"
+      ],
+      "map_order": [
+        {
+          "map": "de_mirage",
+          "map_number": 1
+        },
+        {
+          "map": "de_inferno",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "ac3e1147fb6850ae0fdf3f0ef214e32406ff43c98db5d2f9bba19c2b2802f4ec"
+    },
+    {
+      "match_id": "2394227",
+      "event_id": 8263,
+      "result_unix_ms": 1779596244000,
+      "match_url": "https://www.hltv.org/matches/2394227/mouz-vs-mibr-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108320",
+      "teams": [
+        "MOUZ",
+        "MIBR"
+      ],
+      "played_maps": [
+        "de_overpass",
+        "de_ancient"
+      ],
+      "map_order": [
+        {
+          "map": "de_overpass",
+          "map_number": 1
+        },
+        {
+          "map": "de_ancient",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "0da9734d3652f96a913b21cad1cacfc67fba910d2c767616d585934f4aca0110"
+    },
+    {
+      "match_id": "2394228",
+      "event_id": 8263,
+      "result_unix_ms": 1779617984000,
+      "match_url": "https://www.hltv.org/matches/2394228/falcons-vs-legacy-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108324",
+      "teams": [
+        "Falcons",
+        "Legacy"
+      ],
+      "played_maps": [
+        "de_nuke",
+        "de_ancient",
+        "de_mirage",
+        "de_dust2"
+      ],
+      "map_order": [
+        {
+          "map": "de_nuke",
+          "map_number": 1
+        },
+        {
+          "map": "de_ancient",
+          "map_number": 2
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 3
+        },
+        {
+          "map": "de_dust2",
+          "map_number": 4
+        }
+      ],
+      "match_html_sha256": "5ab34166bf5d72ca770ccf247fc2fa5b3f3166d7ef6e97a2ef1006152d693b28"
+    },
+    {
+      "match_id": "2398717",
+      "event_id": 8244,
+      "result_unix_ms": 1791024625000,
+      "match_url": "https://www.hltv.org/matches/2398717/falcons-vs-tyloo-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112344",
+      "teams": [
+        "Falcons",
+        "TYLOO"
+      ],
+      "played_maps": [
+        "de_mirage",
+        "de_anubis"
+      ],
+      "map_order": [
+        {
+          "map": "de_mirage",
+          "map_number": 1
+        },
+        {
+          "map": "de_anubis",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "8043b47188c4975b42b8b8372810305ee3a3e86978e1547d4d10dbbfc80328da"
+    },
+    {
+      "match_id": "2398718",
+      "event_id": 8244,
+      "result_unix_ms": 1791027986000,
+      "match_url": "https://www.hltv.org/matches/2398718/legacy-vs-parivision-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112345",
+      "teams": [
+        "Legacy",
+        "PARIVISION"
+      ],
+      "played_maps": [
+        "de_dust2",
+        "de_inferno",
+        "de_ancient"
+      ],
+      "map_order": [
+        {
+          "map": "de_dust2",
+          "map_number": 1
+        },
+        {
+          "map": "de_inferno",
+          "map_number": 2
+        },
+        {
+          "map": "de_ancient",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "935f52e4835b9ca2c987bf07ab97d3bf1d25f08eda1060ad3c05cccf0f4e2b4a"
+    },
+    {
+      "match_id": "2398719",
+      "event_id": 8244,
+      "result_unix_ms": 1791032393000,
+      "match_url": "https://www.hltv.org/matches/2398719/vitality-vs-1win-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112352",
+      "teams": [
+        "Vitality",
+        "1win"
+      ],
+      "played_maps": [
+        "de_dust2",
+        "de_cache"
+      ],
+      "map_order": [
+        {
+          "map": "de_dust2",
+          "map_number": 1
+        },
+        {
+          "map": "de_cache",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "350fbd5867cd69dd06dba835d68547fc7a45a36da6f442fd3c0be16024928845"
+    },
+    {
+      "match_id": "2398720",
+      "event_id": 8244,
+      "result_unix_ms": 1791039915000,
+      "match_url": "https://www.hltv.org/matches/2398720/spirit-vs-shinden-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112358",
+      "teams": [
+        "Spirit",
+        "ShindeN"
+      ],
+      "played_maps": [
+        "de_dust2",
+        "de_nuke",
+        "de_mirage"
+      ],
+      "map_order": [
+        {
+          "map": "de_dust2",
+          "map_number": 1
+        },
+        {
+          "map": "de_nuke",
+          "map_number": 2
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "5850f9753b4cbb28aded9c98999198ad1725dd4c287453721fd0e2609ed12139"
+    },
+    {
+      "match_id": "2398721",
+      "event_id": 8244,
+      "result_unix_ms": 1791042318000,
+      "match_url": "https://www.hltv.org/matches/2398721/aurora-vs-9z-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112360",
+      "teams": [
+        "Aurora",
+        "9z"
+      ],
+      "played_maps": [
+        "de_dust2",
+        "de_mirage"
+      ],
+      "map_order": [
+        {
+          "map": "de_dust2",
+          "map_number": 1
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "7afdbfc76ab96bd62a0eaa3ab4f71470c52673365ba50083415d914d62636a5b"
+    },
+    {
+      "match_id": "2398722",
+      "event_id": 8244,
+      "result_unix_ms": 1791047270000,
+      "match_url": "https://www.hltv.org/matches/2398722/mouz-vs-m80-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112366",
+      "teams": [
+        "MOUZ",
+        "M80"
+      ],
+      "played_maps": [
+        "de_cache",
+        "de_mirage"
+      ],
+      "map_order": [
+        {
+          "map": "de_cache",
+          "map_number": 1
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "a4d50959dc01864cedda799cd57a7e8f23ae1d4c8dd351ecc2b04c587f024279"
+    },
+    {
+      "match_id": "2398723",
+      "event_id": 8244,
+      "result_unix_ms": 1791051397000,
+      "match_url": "https://www.hltv.org/matches/2398723/g2-vs-natus-vincere-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112369",
+      "teams": [
+        "G2",
+        "Natus Vincere"
+      ],
+      "played_maps": [
+        "de_cache",
+        "de_inferno"
+      ],
+      "map_order": [
+        {
+          "map": "de_cache",
+          "map_number": 1
+        },
+        {
+          "map": "de_inferno",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "523e53c1afb2eaa0a4484711eae9850498b589581922c5b6ba1e17406d006aea"
+    },
+    {
+      "match_id": "2398724",
+      "event_id": 8244,
+      "result_unix_ms": 1791055665000,
+      "match_url": "https://www.hltv.org/matches/2398724/furia-vs-betboom-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112374",
+      "teams": [
+        "FURIA",
+        "BETBOOM"
+      ],
+      "played_maps": [
+        "de_mirage",
+        "de_cache"
+      ],
+      "map_order": [
+        {
+          "map": "de_mirage",
+          "map_number": 1
+        },
+        {
+          "map": "de_cache",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "b311126fccfc42e6f344c6c092ed59dfe2479aef9a5282c604bf5a6e84c56b0c"
+    },
+    {
+      "match_id": "2398726",
+      "event_id": 8244,
+      "result_unix_ms": 1791111304000,
+      "match_url": "https://www.hltv.org/matches/2398726/shinden-vs-legacy-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112383",
+      "teams": [
+        "ShindeN",
+        "Legacy"
+      ],
+      "played_maps": [
+        "de_nuke",
+        "de_mirage"
+      ],
+      "map_order": [
+        {
+          "map": "de_nuke",
+          "map_number": 1
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "0e1299b10d1c5b3c2dbcb2414c16811c7c687fb180ca5d311bb588427e2acfef"
+    },
+    {
+      "match_id": "2398725",
+      "event_id": 8244,
+      "result_unix_ms": 1791115271000,
+      "match_url": "https://www.hltv.org/matches/2398725/spirit-vs-parivision-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112384",
+      "teams": [
+        "Spirit",
+        "PARIVISION"
+      ],
+      "played_maps": [
+        "de_ancient",
+        "de_dust2",
+        "de_anubis"
+      ],
+      "map_order": [
+        {
+          "map": "de_ancient",
+          "map_number": 1
+        },
+        {
+          "map": "de_dust2",
+          "map_number": 2
+        },
+        {
+          "map": "de_anubis",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "05e0d67ef13c32c4db3904a2e02daa38337a77e86e8dc269d6f805f2c5c26d09"
+    },
+    {
+      "match_id": "2398727",
+      "event_id": 8244,
+      "result_unix_ms": 1791119486000,
+      "match_url": "https://www.hltv.org/matches/2398727/9z-vs-tyloo-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112388",
+      "teams": [
+        "9z",
+        "TYLOO"
+      ],
+      "played_maps": [
+        "de_nuke",
+        "de_mirage"
+      ],
+      "map_order": [
+        {
+          "map": "de_nuke",
+          "map_number": 1
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "87df699e506078258e3d197d54649d06ef164c0596c66fe0cdfc3af564686d58"
+    },
+    {
+      "match_id": "2398728",
+      "event_id": 8244,
+      "result_unix_ms": 1791122513000,
+      "match_url": "https://www.hltv.org/matches/2398728/falcons-vs-aurora-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112390",
+      "teams": [
+        "Falcons",
+        "Aurora"
+      ],
+      "played_maps": [
+        "de_mirage",
+        "de_dust2"
+      ],
+      "map_order": [
+        {
+          "map": "de_mirage",
+          "map_number": 1
+        },
+        {
+          "map": "de_dust2",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "9b512fb03eaefc0c8518643aa2ee869249b75f69deca23310cf6d464ad1e500a"
+    },
+    {
+      "match_id": "2398729",
+      "event_id": 8244,
+      "result_unix_ms": 1791129572000,
+      "match_url": "https://www.hltv.org/matches/2398729/furia-vs-mouz-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112394",
+      "teams": [
+        "FURIA",
+        "MOUZ"
+      ],
+      "played_maps": [
+        "de_cache",
+        "de_mirage"
+      ],
+      "map_order": [
+        {
+          "map": "de_cache",
+          "map_number": 1
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "3796a7ac166aa41a7d01924f627eb0697013c9e3de3a1d1de91feb6ac6ecf003"
+    },
+    {
+      "match_id": "2398730",
+      "event_id": 8244,
+      "result_unix_ms": 1791132627000,
+      "match_url": "https://www.hltv.org/matches/2398730/g2-vs-1win-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112398",
+      "teams": [
+        "G2",
+        "1win"
+      ],
+      "played_maps": [
+        "de_dust2",
+        "de_ancient",
+        "de_mirage"
+      ],
+      "map_order": [
+        {
+          "map": "de_dust2",
+          "map_number": 1
+        },
+        {
+          "map": "de_ancient",
+          "map_number": 2
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "8bceb8f4dad86bf1fb9907f509fcfd23b584e7e9c44220d222d0b7e547297c10"
+    },
+    {
+      "match_id": "2398731",
+      "event_id": 8244,
+      "result_unix_ms": 1791140526000,
+      "match_url": "https://www.hltv.org/matches/2398731/vitality-vs-natus-vincere-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112400",
+      "teams": [
+        "Vitality",
+        "Natus Vincere"
+      ],
+      "played_maps": [
+        "de_anubis",
+        "de_nuke",
+        "de_mirage"
+      ],
+      "map_order": [
+        {
+          "map": "de_anubis",
+          "map_number": 1
+        },
+        {
+          "map": "de_nuke",
+          "map_number": 2
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "14862c846df9cff0bcc598e70ef40fd0befaf088dc13a8a5a1631430592a7860"
+    },
+    {
+      "match_id": "2398732",
+      "event_id": 8244,
+      "result_unix_ms": 1791141903000,
+      "match_url": "https://www.hltv.org/matches/2398732/betboom-vs-m80-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112402",
+      "teams": [
+        "BETBOOM",
+        "M80"
+      ],
+      "played_maps": [
+        "de_cache",
+        "de_anubis"
+      ],
+      "map_order": [
+        {
+          "map": "de_cache",
+          "map_number": 1
+        },
+        {
+          "map": "de_anubis",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "b32c44fb757b63e1211f3d159ecb0ac2ffeda3fe1206da0d7db88fba32516e00"
+    },
+    {
+      "match_id": "2398734",
+      "event_id": 8244,
+      "result_unix_ms": 1791197368000,
+      "match_url": "https://www.hltv.org/matches/2398734/shinden-vs-g2-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112412",
+      "teams": [
+        "ShindeN",
+        "G2"
+      ],
+      "played_maps": [
+        "de_dust2",
+        "de_ancient"
+      ],
+      "map_order": [
+        {
+          "map": "de_dust2",
+          "map_number": 1
+        },
+        {
+          "map": "de_ancient",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "97297794b72ebea81f14bf2b39958e4a5f4a0d4effc0d0f2aeff5e0fbbb56dcc"
+    },
+    {
+      "match_id": "2398733",
+      "event_id": 8244,
+      "result_unix_ms": 1791201607000,
+      "match_url": "https://www.hltv.org/matches/2398733/parivision-vs-furia-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112413",
+      "teams": [
+        "PARIVISION",
+        "FURIA"
+      ],
+      "played_maps": [
+        "de_ancient",
+        "de_mirage",
+        "de_inferno"
+      ],
+      "map_order": [
+        {
+          "map": "de_ancient",
+          "map_number": 1
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 2
+        },
+        {
+          "map": "de_inferno",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "bfa8b9e1f8e521550f73e3323d8b4bc8dd5dac6bdb0c23935d42cc9612e70b7d"
+    },
+    {
+      "match_id": "2398736",
+      "event_id": 8244,
+      "result_unix_ms": 1791206471000,
+      "match_url": "https://www.hltv.org/matches/2398736/legacy-vs-1win-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112415",
+      "teams": [
+        "Legacy",
+        "1win"
+      ],
+      "played_maps": [
+        "de_dust2",
+        "de_ancient"
+      ],
+      "map_order": [
+        {
+          "map": "de_dust2",
+          "map_number": 1
+        },
+        {
+          "map": "de_ancient",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "51361618497e96e55e5505ec9eab613e0c8378a92402468cd903fd55f7357186"
+    },
+    {
+      "match_id": "2398735",
+      "event_id": 8244,
+      "result_unix_ms": 1791209024000,
+      "match_url": "https://www.hltv.org/matches/2398735/9z-vs-natus-vincere-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112416",
+      "teams": [
+        "9z",
+        "Natus Vincere"
+      ],
+      "played_maps": [
+        "de_nuke",
+        "de_cache"
+      ],
+      "map_order": [
+        {
+          "map": "de_nuke",
+          "map_number": 1
+        },
+        {
+          "map": "de_cache",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "847cce34fd6cb83e4ae271aecd291b5a7a9170062a9943632aaffc34b511a07b"
+    },
+    {
+      "match_id": "2398737",
+      "event_id": 8244,
+      "result_unix_ms": 1791216649000,
+      "match_url": "https://www.hltv.org/matches/2398737/spirit-vs-mouz-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112417",
+      "teams": [
+        "Spirit",
+        "MOUZ"
+      ],
+      "played_maps": [
+        "de_dust2",
+        "de_mirage"
+      ],
+      "map_order": [
+        {
+          "map": "de_dust2",
+          "map_number": 1
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "44778f26b81b3fad6fe17dcc2d705cd570922c65b156c30707479ccef614702b"
+    },
+    {
+      "match_id": "2398738",
+      "event_id": 8244,
+      "result_unix_ms": 1791219816000,
+      "match_url": "https://www.hltv.org/matches/2398738/m80-vs-tyloo-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112418",
+      "teams": [
+        "M80",
+        "TYLOO"
+      ],
+      "played_maps": [
+        "de_mirage",
+        "de_cache",
+        "de_anubis"
+      ],
+      "map_order": [
+        {
+          "map": "de_mirage",
+          "map_number": 1
+        },
+        {
+          "map": "de_cache",
+          "map_number": 2
+        },
+        {
+          "map": "de_anubis",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "f21faf8a3ca225d83b975ab2906d7c6c6a44410289bb8fb01af99b4275617c10"
+    },
+    {
+      "match_id": "2398739",
+      "event_id": 8244,
+      "result_unix_ms": 1791228002000,
+      "match_url": "https://www.hltv.org/matches/2398739/vitality-vs-falcons-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112423",
+      "teams": [
+        "Vitality",
+        "Falcons"
+      ],
+      "played_maps": [
+        "de_anubis",
+        "de_dust2",
+        "de_mirage"
+      ],
+      "map_order": [
+        {
+          "map": "de_anubis",
+          "map_number": 1
+        },
+        {
+          "map": "de_dust2",
+          "map_number": 2
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "fc098769b8aa05c9b1bc92ca02223c255b6a405392bba045eced0e08df5ee9bd"
+    },
+    {
+      "match_id": "2398740",
+      "event_id": 8244,
+      "result_unix_ms": 1791231146000,
+      "match_url": "https://www.hltv.org/matches/2398740/aurora-vs-betboom-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112424",
+      "teams": [
+        "Aurora",
+        "BETBOOM"
+      ],
+      "played_maps": [
+        "de_mirage",
+        "de_nuke",
+        "de_anubis"
+      ],
+      "map_order": [
+        {
+          "map": "de_mirage",
+          "map_number": 1
+        },
+        {
+          "map": "de_nuke",
+          "map_number": 2
+        },
+        {
+          "map": "de_anubis",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "36f6c201fa8bae51ee1a6880556e1abf1327a5298ef13f4270871b1df4b1081a"
+    },
+    {
+      "match_id": "2398742",
+      "event_id": 8244,
+      "result_unix_ms": 1791294802000,
+      "match_url": "https://www.hltv.org/matches/2398742/spirit-vs-1win-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112427",
+      "teams": [
+        "Spirit",
+        "1win"
+      ],
+      "played_maps": [
+        "de_cache",
+        "de_anubis"
+      ],
+      "map_order": [
+        {
+          "map": "de_cache",
+          "map_number": 1
+        },
+        {
+          "map": "de_anubis",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "b64121fde6987f745edc6a112b20f83e14284f13e9b480f2f85f2a095e17a28e"
+    },
+    {
+      "match_id": "2398741",
+      "event_id": 8244,
+      "result_unix_ms": 1791299843000,
+      "match_url": "https://www.hltv.org/matches/2398741/g2-vs-parivision-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112429",
+      "teams": [
+        "G2",
+        "PARIVISION"
+      ],
+      "played_maps": [
+        "de_ancient",
+        "de_anubis",
+        "de_inferno"
+      ],
+      "map_order": [
+        {
+          "map": "de_ancient",
+          "map_number": 1
+        },
+        {
+          "map": "de_anubis",
+          "map_number": 2
+        },
+        {
+          "map": "de_inferno",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "15733b23e0a4279d3111f0b3497e39736295e8856c8feb04e2275bcb6ecbca24"
+    },
+    {
+      "match_id": "2398744",
+      "event_id": 8244,
+      "result_unix_ms": 1791303552000,
+      "match_url": "https://www.hltv.org/matches/2398744/9z-vs-betboom-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112431",
+      "teams": [
+        "9z",
+        "BETBOOM"
+      ],
+      "played_maps": [
+        "de_dust2",
+        "de_mirage"
+      ],
+      "map_order": [
+        {
+          "map": "de_dust2",
+          "map_number": 1
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "b04e82c520d57862ee257275936b7d4df958c971783e01af321f8d0054d9513d"
+    },
+    {
+      "match_id": "2398743",
+      "event_id": 8244,
+      "result_unix_ms": 1791312264000,
+      "match_url": "https://www.hltv.org/matches/2398743/furia-vs-aurora-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112433",
+      "teams": [
+        "FURIA",
+        "Aurora"
+      ],
+      "played_maps": [
+        "de_dust2",
+        "de_mirage",
+        "de_nuke"
+      ],
+      "map_order": [
+        {
+          "map": "de_dust2",
+          "map_number": 1
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 2
+        },
+        {
+          "map": "de_nuke",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "5230ac73cecd092f6be9f6355c9f3f72cd0b585fda0d14f2597cc0e727ac4d25"
+    },
+    {
+      "match_id": "2398746",
+      "event_id": 8244,
+      "result_unix_ms": 1791315599000,
+      "match_url": "https://www.hltv.org/matches/2398746/legacy-vs-m80-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112435",
+      "teams": [
+        "Legacy",
+        "M80"
+      ],
+      "played_maps": [
+        "de_cache",
+        "de_mirage",
+        "de_dust2"
+      ],
+      "map_order": [
+        {
+          "map": "de_cache",
+          "map_number": 1
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 2
+        },
+        {
+          "map": "de_dust2",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "ce625f352b28d8aa2c815c312744d2c634ecd34a3b57c226dfd497857919fd15"
+    },
+    {
+      "match_id": "2398745",
+      "event_id": 8244,
+      "result_unix_ms": 1791326429000,
+      "match_url": "https://www.hltv.org/matches/2398745/falcons-vs-natus-vincere-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112437",
+      "teams": [
+        "Falcons",
+        "Natus Vincere"
+      ],
+      "played_maps": [
+        "de_inferno",
+        "de_anubis",
+        "de_mirage"
+      ],
+      "map_order": [
+        {
+          "map": "de_inferno",
+          "map_number": 1
+        },
+        {
+          "map": "de_anubis",
+          "map_number": 2
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "4f30bd9ada6493a36687fe755ec8424ad9d083c1f8ae185ece85ce986e15ac4f"
+    },
+    {
+      "match_id": "2398747",
+      "event_id": 8244,
+      "result_unix_ms": 1791380579000,
+      "match_url": "https://www.hltv.org/matches/2398747/furia-vs-9z-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112456",
+      "teams": [
+        "FURIA",
+        "9z"
+      ],
+      "played_maps": [
+        "de_nuke",
+        "de_inferno"
+      ],
+      "map_order": [
+        {
+          "map": "de_nuke",
+          "map_number": 1
+        },
+        {
+          "map": "de_inferno",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "0b7d908774ca311d7c11e052631a2da8ab159917c9da453d3f51a3032f7576fc"
+    },
+    {
+      "match_id": "2398748",
+      "event_id": 8244,
+      "result_unix_ms": 1791395269000,
+      "match_url": "https://www.hltv.org/matches/2398748/parivision-vs-natus-vincere-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112483",
+      "teams": [
+        "PARIVISION",
+        "Natus Vincere"
+      ],
+      "played_maps": [
+        "de_inferno",
+        "de_cache",
+        "de_mirage"
+      ],
+      "map_order": [
+        {
+          "map": "de_inferno",
+          "map_number": 1
+        },
+        {
+          "map": "de_cache",
+          "map_number": 2
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "92ba08879502b24a32a7fbb99b09af4aa4298805e7f779df0b091ea2ac6d63d4"
+    },
+    {
+      "match_id": "2398749",
+      "event_id": 8244,
+      "result_unix_ms": 1791403832000,
+      "match_url": "https://www.hltv.org/matches/2398749/spirit-vs-m80-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112497",
+      "teams": [
+        "Spirit",
+        "M80"
+      ],
+      "played_maps": [
+        "de_dust2",
+        "de_cache"
+      ],
+      "map_order": [
+        {
+          "map": "de_dust2",
+          "map_number": 1
+        },
+        {
+          "map": "de_cache",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "c35c06bfda19b27a863b85bc58a7804eef88190d372ea97c97af0eeeb4bab104"
+    },
+    {
+      "match_id": "2398750",
+      "event_id": 8244,
+      "result_unix_ms": 1791542053000,
+      "match_url": "https://www.hltv.org/matches/2398750/1win-vs-aurora-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112570",
+      "teams": [
+        "1win",
+        "Aurora"
+      ],
+      "played_maps": [
+        "de_dust2",
+        "de_anubis"
+      ],
+      "map_order": [
+        {
+          "map": "de_dust2",
+          "map_number": 1
+        },
+        {
+          "map": "de_anubis",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "b19e7681f91d14d84eeaa2f0911f724369667a4656f72e16e5c9ba2f511b2f34"
+    },
+    {
+      "match_id": "2398751",
+      "event_id": 8244,
+      "result_unix_ms": 1791552074000,
+      "match_url": "https://www.hltv.org/matches/2398751/vitality-vs-parivision-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112578",
+      "teams": [
+        "Vitality",
+        "PARIVISION"
+      ],
+      "played_maps": [
+        "de_inferno",
+        "de_dust2"
+      ],
+      "map_order": [
+        {
+          "map": "de_inferno",
+          "map_number": 1
+        },
+        {
+          "map": "de_dust2",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "140c524d0ceaf34dc4aa5c78c7e0666bde9c439102844222c03fc239868e5fa3"
+    },
+    {
+      "match_id": "2398752",
+      "event_id": 8244,
+      "result_unix_ms": 1791562214000,
+      "match_url": "https://www.hltv.org/matches/2398752/furia-vs-mouz-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112586",
+      "teams": [
+        "FURIA",
+        "MOUZ"
+      ],
+      "played_maps": [
+        "de_nuke",
+        "de_inferno"
+      ],
+      "map_order": [
+        {
+          "map": "de_nuke",
+          "map_number": 1
+        },
+        {
+          "map": "de_inferno",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "25d19c49b2225be64c8c46167038117661b6bfabc5c7e8c3ce4214bfde61d52f"
+    },
+    {
+      "match_id": "2398753",
+      "event_id": 8244,
+      "result_unix_ms": 1791572854000,
+      "match_url": "https://www.hltv.org/matches/2398753/falcons-vs-spirit-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112595",
+      "teams": [
+        "Falcons",
+        "Spirit"
+      ],
+      "played_maps": [
+        "de_mirage",
+        "de_anubis"
+      ],
+      "map_order": [
+        {
+          "map": "de_mirage",
+          "map_number": 1
+        },
+        {
+          "map": "de_anubis",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "f5817afbe4e80bd1a63f6225a4bdba91b3caf26a0efde2b82c9a36716aab73d3"
+    },
+    {
+      "match_id": "2398754",
+      "event_id": 8244,
+      "result_unix_ms": 1791650839000,
+      "match_url": "https://www.hltv.org/matches/2398754/aurora-vs-vitality-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112636",
+      "teams": [
+        "Aurora",
+        "Vitality"
+      ],
+      "played_maps": [
+        "de_anubis",
+        "de_cache",
+        "de_mirage"
+      ],
+      "map_order": [
+        {
+          "map": "de_anubis",
+          "map_number": 1
+        },
+        {
+          "map": "de_cache",
+          "map_number": 2
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "882799d6965210e4cf6bc409e507577086c6149f298a3e137310141a5e0bcce5"
+    },
+    {
+      "match_id": "2398755",
+      "event_id": 8244,
+      "result_unix_ms": 1791665190000,
+      "match_url": "https://www.hltv.org/matches/2398755/mouz-vs-spirit-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112648",
+      "teams": [
+        "MOUZ",
+        "Spirit"
+      ],
+      "played_maps": [
+        "de_dust2",
+        "de_mirage",
+        "de_nuke"
+      ],
+      "map_order": [
+        {
+          "map": "de_dust2",
+          "map_number": 1
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 2
+        },
+        {
+          "map": "de_nuke",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "adce477f1a98f76f648f29667d7d00e62960e0a96f43818cfaba9514fd004b22"
+    },
+    {
+      "match_id": "2398756",
+      "event_id": 8244,
+      "result_unix_ms": 1791725367000,
+      "match_url": "https://www.hltv.org/matches/2398756/aurora-vs-spirit-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112674",
+      "teams": [
+        "Aurora",
+        "Spirit"
+      ],
+      "played_maps": [
+        "de_mirage",
+        "de_anubis"
+      ],
+      "map_order": [
+        {
+          "map": "de_mirage",
+          "map_number": 1
+        },
+        {
+          "map": "de_anubis",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "780f7f175816299c33b716d8e7fa9dc6c08b304906a50c5b9cdf27de9f1b1da8"
+    },
+    {
+      "match_id": "2398757",
+      "event_id": 8244,
+      "result_unix_ms": 1791742316000,
+      "match_url": "https://www.hltv.org/matches/2398757/vitality-vs-mouz-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112682",
+      "teams": [
+        "Vitality",
+        "MOUZ"
+      ],
+      "played_maps": [
+        "de_cache",
+        "de_inferno",
+        "de_dust2"
+      ],
+      "map_order": [
+        {
+          "map": "de_cache",
+          "map_number": 1
+        },
+        {
+          "map": "de_inferno",
+          "map_number": 2
+        },
+        {
+          "map": "de_dust2",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "d1b473af4fe6683644c67fd72c016db24d65ba91e8d0fddc24926850003194ef"
+    },
+    {
+      "match_id": "2399384",
+      "event_id": 8932,
+      "result_unix_ms": 1791976669000,
+      "match_url": "https://www.hltv.org/matches/2399384/9z-vs-aurora-thunderpick-world-championship-2026",
+      "demo_url": "https://www.hltv.org/download/demo/112743",
+      "teams": [
+        "9z",
+        "Aurora"
+      ],
+      "played_maps": [
+        "de_inferno",
+        "de_nuke"
+      ],
+      "map_order": [
+        {
+          "map": "de_inferno",
+          "map_number": 1
+        },
+        {
+          "map": "de_nuke",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "6bb486bd68bd981f53021d19dc6cca7c4b15e3b3c5b68f248edff745f3b899cb"
+    },
+    {
+      "match_id": "2399385",
+      "event_id": 8932,
+      "result_unix_ms": 1791988661000,
+      "match_url": "https://www.hltv.org/matches/2399385/falcons-vs-ninjas-in-pyjamas-thunderpick-world-championship-2026",
+      "demo_url": "https://www.hltv.org/download/demo/112750",
+      "teams": [
+        "Falcons",
+        "Ninjas in Pyjamas"
+      ],
+      "played_maps": [
+        "de_ancient",
+        "de_dust2"
+      ],
+      "map_order": [
+        {
+          "map": "de_ancient",
+          "map_number": 1
+        },
+        {
+          "map": "de_dust2",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "be61af842abe98289e9f7d5f3bda2a274156a0cab1ae35145d280f68f2c23870"
+    },
+    {
+      "match_id": "2399386",
+      "event_id": 8932,
+      "result_unix_ms": 1792000738000,
+      "match_url": "https://www.hltv.org/matches/2399386/legacy-vs-parivision-thunderpick-world-championship-2026",
+      "demo_url": "https://www.hltv.org/download/demo/112763",
+      "teams": [
+        "Legacy",
+        "PARIVISION"
+      ],
+      "played_maps": [
+        "de_dust2",
+        "de_mirage"
+      ],
+      "map_order": [
+        {
+          "map": "de_dust2",
+          "map_number": 1
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "22c205e42bbe0563a263d5555b63a3bb9a61b8b3f6a34b3770fe9f636161d9b9"
+    },
+    {
+      "match_id": "2399387",
+      "event_id": 8932,
+      "result_unix_ms": 1792011609000,
+      "match_url": "https://www.hltv.org/matches/2399387/furia-vs-betboom-thunderpick-world-championship-2026",
+      "demo_url": "https://www.hltv.org/download/demo/112772",
+      "teams": [
+        "FURIA",
+        "BETBOOM"
+      ],
+      "played_maps": [
+        "de_ancient",
+        "de_mirage"
+      ],
+      "map_order": [
+        {
+          "map": "de_ancient",
+          "map_number": 1
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "b2d37f6b4024f83df084a94f63fc6051e91c376ee7b87d3758c94256409960b7"
+    },
+    {
+      "match_id": "2399408",
+      "event_id": 8932,
+      "result_unix_ms": 1792061242000,
+      "match_url": "https://www.hltv.org/matches/2399408/aurora-vs-ninjas-in-pyjamas-thunderpick-world-championship-2026",
+      "demo_url": "https://www.hltv.org/download/demo/112782",
+      "teams": [
+        "Aurora",
+        "Ninjas in Pyjamas"
+      ],
+      "played_maps": [
+        "de_cache",
+        "de_dust2"
+      ],
+      "map_order": [
+        {
+          "map": "de_cache",
+          "map_number": 1
+        },
+        {
+          "map": "de_dust2",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "311682cb8ba64ccc1770f5323c0ce2bc47ee0fe4049ee27af4b5ab40e20e503b"
+    },
+    {
+      "match_id": "2399409",
+      "event_id": 8932,
+      "result_unix_ms": 1792074509000,
+      "match_url": "https://www.hltv.org/matches/2399409/9z-vs-falcons-thunderpick-world-championship-2026",
+      "demo_url": "https://www.hltv.org/download/demo/112791",
+      "teams": [
+        "9z",
+        "Falcons"
+      ],
+      "played_maps": [
+        "de_nuke",
+        "de_mirage",
+        "de_dust2"
+      ],
+      "map_order": [
+        {
+          "map": "de_nuke",
+          "map_number": 1
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 2
+        },
+        {
+          "map": "de_dust2",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "cc9936fc112cbcaebd73156fe9f9a0ccdacfefc32873e43c609e785d0d094c28"
+    },
+    {
+      "match_id": "2399410",
+      "event_id": 8932,
+      "result_unix_ms": 1792087579000,
+      "match_url": "https://www.hltv.org/matches/2399410/parivision-vs-betboom-thunderpick-world-championship-2026",
+      "demo_url": "https://www.hltv.org/download/demo/112800",
+      "teams": [
+        "PARIVISION",
+        "BETBOOM"
+      ],
+      "played_maps": [
+        "de_ancient",
+        "de_anubis",
+        "de_mirage"
+      ],
+      "map_order": [
+        {
+          "map": "de_ancient",
+          "map_number": 1
+        },
+        {
+          "map": "de_anubis",
+          "map_number": 2
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "49f0a119231667de09296498f152c0a941fc606928418d33e686407ebde7d208"
+    },
+    {
+      "match_id": "2399411",
+      "event_id": 8932,
+      "result_unix_ms": 1792101678000,
+      "match_url": "https://www.hltv.org/matches/2399411/legacy-vs-furia-thunderpick-world-championship-2026",
+      "demo_url": "https://www.hltv.org/download/demo/112807",
+      "teams": [
+        "Legacy",
+        "FURIA"
+      ],
+      "played_maps": [
+        "de_cache",
+        "de_inferno",
+        "de_mirage"
+      ],
+      "map_order": [
+        {
+          "map": "de_cache",
+          "map_number": 1
+        },
+        {
+          "map": "de_inferno",
+          "map_number": 2
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "16998d61977c7522ac210565a5496f5f180c97c3152c0c354312ae37b1545794"
+    },
+    {
+      "match_id": "2399412",
+      "event_id": 8932,
+      "result_unix_ms": 1792166881000,
+      "match_url": "https://www.hltv.org/matches/2399412/aurora-vs-9z-thunderpick-world-championship-2026",
+      "demo_url": "https://www.hltv.org/download/demo/112837",
+      "teams": [
+        "Aurora",
+        "9z"
+      ],
+      "played_maps": [
+        "de_cache",
+        "de_inferno"
+      ],
+      "map_order": [
+        {
+          "map": "de_cache",
+          "map_number": 1
+        },
+        {
+          "map": "de_inferno",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "6d5a460b3681888ccde6e3d6b79a580258de080756ee72cf0a020cf10ed8f95a"
+    },
+    {
+      "match_id": "2399415",
+      "event_id": 8932,
+      "result_unix_ms": 1792267856000,
+      "match_url": "https://www.hltv.org/matches/2399415/falcons-vs-betboom-thunderpick-world-championship-2026",
+      "demo_url": "https://www.hltv.org/download/demo/112893",
+      "teams": [
+        "Falcons",
+        "BETBOOM"
+      ],
+      "played_maps": [
+        "de_anubis",
+        "de_dust2",
+        "de_mirage"
+      ],
+      "map_order": [
+        {
+          "map": "de_anubis",
+          "map_number": 1
+        },
+        {
+          "map": "de_dust2",
+          "map_number": 2
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "5eae69e7d3b49c771ce05f8c0c4a65816edc0e270219c1c05b12e8105c4cb1eb"
+    },
+    {
+      "match_id": "2399417",
+      "event_id": 8932,
+      "result_unix_ms": 1792359244000,
+      "match_url": "https://www.hltv.org/matches/2399417/furia-vs-betboom-thunderpick-world-championship-2026",
+      "demo_url": "https://www.hltv.org/download/demo/112923",
+      "teams": [
+        "FURIA",
+        "BETBOOM"
+      ],
+      "played_maps": [
+        "de_dust2",
+        "de_ancient",
+        "de_nuke",
+        "de_mirage",
+        "de_cache"
+      ],
+      "map_order": [
+        {
+          "map": "de_dust2",
+          "map_number": 1
+        },
+        {
+          "map": "de_ancient",
+          "map_number": 2
+        },
+        {
+          "map": "de_nuke",
+          "map_number": 3
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 4
+        },
+        {
+          "map": "de_cache",
+          "map_number": 5
+        }
+      ],
+      "match_html_sha256": "bf85756aa3e68197a1c5a6d07a0389ad8187360bfdb3fabc0cfb3d1c8c4e9908"
+    }
+  ],
+  "primary": [
+    {
+      "match_id": "2394204",
+      "event_id": 8263,
+      "result_unix_ms": 1779249686000,
+      "match_url": "https://www.hltv.org/matches/2394204/parivision-vs-liquid-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108141",
+      "teams": [
+        "PARIVISION",
+        "Liquid"
+      ],
+      "played_maps": [
+        "de_dust2"
+      ],
+      "map_order": [
+        {
+          "map": "de_dust2",
+          "map_number": 1
+        }
+      ],
+      "match_html_sha256": "da61fe3f89925e2965ee65e3815eddda5de26a8726cd9185360ec44cb28ef541",
+      "selected_map": "de_dust2"
+    },
+    {
+      "match_id": "2394203",
+      "event_id": 8263,
+      "result_unix_ms": 1779249878000,
+      "match_url": "https://www.hltv.org/matches/2394203/3dmax-vs-mibr-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108142",
+      "teams": [
+        "3DMAX",
+        "MIBR"
+      ],
+      "played_maps": [
+        "de_anubis"
+      ],
+      "map_order": [
+        {
+          "map": "de_anubis",
+          "map_number": 1
+        }
+      ],
+      "match_html_sha256": "3b6a827dcbe55c0351c0849174291b6109d83b7e59a1fbc8ab8c40125427b8dd",
+      "selected_map": "de_anubis"
+    },
+    {
+      "match_id": "2394205",
+      "event_id": 8263,
+      "result_unix_ms": 1779252864000,
+      "match_url": "https://www.hltv.org/matches/2394205/the-mongolz-vs-lynn-vision-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108143",
+      "teams": [
+        "The MongolZ",
+        "Lynn Vision"
+      ],
+      "played_maps": [
+        "de_ancient"
+      ],
+      "map_order": [
+        {
+          "map": "de_ancient",
+          "map_number": 1
+        }
+      ],
+      "match_html_sha256": "2e6799ec75cf37ddce228e9a31eed6c17bace20cb32a223c99a7ecdbcc8f6512",
+      "selected_map": "de_ancient"
+    },
+    {
+      "match_id": "2394200",
+      "event_id": 8263,
+      "result_unix_ms": 1779257330000,
+      "match_url": "https://www.hltv.org/matches/2394200/mouz-vs-tyloo-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108145",
+      "teams": [
+        "MOUZ",
+        "TYLOO"
+      ],
+      "played_maps": [
+        "de_inferno"
+      ],
+      "map_order": [
+        {
+          "map": "de_inferno",
+          "map_number": 1
+        }
+      ],
+      "match_html_sha256": "3e2580026dc44effd6f07b74913b9bb4f84574e31bdb4fd42c17a7a74ea88187",
+      "selected_map": "de_inferno"
+    },
+    {
+      "match_id": "2398717",
+      "event_id": 8244,
+      "result_unix_ms": 1791024625000,
+      "match_url": "https://www.hltv.org/matches/2398717/falcons-vs-tyloo-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112344",
+      "teams": [
+        "Falcons",
+        "TYLOO"
+      ],
+      "played_maps": [
+        "de_mirage",
+        "de_anubis"
+      ],
+      "map_order": [
+        {
+          "map": "de_mirage",
+          "map_number": 1
+        },
+        {
+          "map": "de_anubis",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "8043b47188c4975b42b8b8372810305ee3a3e86978e1547d4d10dbbfc80328da",
+      "selected_map": "de_anubis"
+    },
+    {
+      "match_id": "2398718",
+      "event_id": 8244,
+      "result_unix_ms": 1791027986000,
+      "match_url": "https://www.hltv.org/matches/2398718/legacy-vs-parivision-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112345",
+      "teams": [
+        "Legacy",
+        "PARIVISION"
+      ],
+      "played_maps": [
+        "de_dust2",
+        "de_inferno",
+        "de_ancient"
+      ],
+      "map_order": [
+        {
+          "map": "de_dust2",
+          "map_number": 1
+        },
+        {
+          "map": "de_inferno",
+          "map_number": 2
+        },
+        {
+          "map": "de_ancient",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "935f52e4835b9ca2c987bf07ab97d3bf1d25f08eda1060ad3c05cccf0f4e2b4a",
+      "selected_map": "de_inferno"
+    },
+    {
+      "match_id": "2398720",
+      "event_id": 8244,
+      "result_unix_ms": 1791039915000,
+      "match_url": "https://www.hltv.org/matches/2398720/spirit-vs-shinden-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112358",
+      "teams": [
+        "Spirit",
+        "ShindeN"
+      ],
+      "played_maps": [
+        "de_dust2",
+        "de_nuke",
+        "de_mirage"
+      ],
+      "map_order": [
+        {
+          "map": "de_dust2",
+          "map_number": 1
+        },
+        {
+          "map": "de_nuke",
+          "map_number": 2
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 3
+        }
+      ],
+      "match_html_sha256": "5850f9753b4cbb28aded9c98999198ad1725dd4c287453721fd0e2609ed12139",
+      "selected_map": "de_nuke"
+    },
+    {
+      "match_id": "2398721",
+      "event_id": 8244,
+      "result_unix_ms": 1791042318000,
+      "match_url": "https://www.hltv.org/matches/2398721/aurora-vs-9z-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112360",
+      "teams": [
+        "Aurora",
+        "9z"
+      ],
+      "played_maps": [
+        "de_dust2",
+        "de_mirage"
+      ],
+      "map_order": [
+        {
+          "map": "de_dust2",
+          "map_number": 1
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "7afdbfc76ab96bd62a0eaa3ab4f71470c52673365ba50083415d914d62636a5b",
+      "selected_map": "de_mirage"
+    },
+    {
+      "match_id": "2399384",
+      "event_id": 8932,
+      "result_unix_ms": 1791976669000,
+      "match_url": "https://www.hltv.org/matches/2399384/9z-vs-aurora-thunderpick-world-championship-2026",
+      "demo_url": "https://www.hltv.org/download/demo/112743",
+      "teams": [
+        "9z",
+        "Aurora"
+      ],
+      "played_maps": [
+        "de_inferno",
+        "de_nuke"
+      ],
+      "map_order": [
+        {
+          "map": "de_inferno",
+          "map_number": 1
+        },
+        {
+          "map": "de_nuke",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "6bb486bd68bd981f53021d19dc6cca7c4b15e3b3c5b68f248edff745f3b899cb",
+      "selected_map": "de_nuke"
+    },
+    {
+      "match_id": "2399385",
+      "event_id": 8932,
+      "result_unix_ms": 1791988661000,
+      "match_url": "https://www.hltv.org/matches/2399385/falcons-vs-ninjas-in-pyjamas-thunderpick-world-championship-2026",
+      "demo_url": "https://www.hltv.org/download/demo/112750",
+      "teams": [
+        "Falcons",
+        "Ninjas in Pyjamas"
+      ],
+      "played_maps": [
+        "de_ancient",
+        "de_dust2"
+      ],
+      "map_order": [
+        {
+          "map": "de_ancient",
+          "map_number": 1
+        },
+        {
+          "map": "de_dust2",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "be61af842abe98289e9f7d5f3bda2a274156a0cab1ae35145d280f68f2c23870",
+      "selected_map": "de_ancient"
+    },
+    {
+      "match_id": "2399386",
+      "event_id": 8932,
+      "result_unix_ms": 1792000738000,
+      "match_url": "https://www.hltv.org/matches/2399386/legacy-vs-parivision-thunderpick-world-championship-2026",
+      "demo_url": "https://www.hltv.org/download/demo/112763",
+      "teams": [
+        "Legacy",
+        "PARIVISION"
+      ],
+      "played_maps": [
+        "de_dust2",
+        "de_mirage"
+      ],
+      "map_order": [
+        {
+          "map": "de_dust2",
+          "map_number": 1
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "22c205e42bbe0563a263d5555b63a3bb9a61b8b3f6a34b3770fe9f636161d9b9",
+      "selected_map": "de_dust2"
+    },
+    {
+      "match_id": "2399387",
+      "event_id": 8932,
+      "result_unix_ms": 1792011609000,
+      "match_url": "https://www.hltv.org/matches/2399387/furia-vs-betboom-thunderpick-world-championship-2026",
+      "demo_url": "https://www.hltv.org/download/demo/112772",
+      "teams": [
+        "FURIA",
+        "BETBOOM"
+      ],
+      "played_maps": [
+        "de_ancient",
+        "de_mirage"
+      ],
+      "map_order": [
+        {
+          "map": "de_ancient",
+          "map_number": 1
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "b2d37f6b4024f83df084a94f63fc6051e91c376ee7b87d3758c94256409960b7",
+      "selected_map": "de_mirage"
+    }
+  ],
+  "alternates": [
+    {
+      "match_id": "2394206",
+      "event_id": 8263,
+      "result_unix_ms": 1779254107000,
+      "match_url": "https://www.hltv.org/matches/2394206/b8-vs-ninjas-in-pyjamas-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108144",
+      "teams": [
+        "B8",
+        "Ninjas in Pyjamas"
+      ],
+      "played_maps": [
+        "de_ancient"
+      ],
+      "map_order": [
+        {
+          "map": "de_ancient",
+          "map_number": 1
+        }
+      ],
+      "match_html_sha256": "ed48594c9e5534544ac61f65009434f18de2588fd24d144f3ab14a40badcef7b",
+      "selected_map": "de_ancient",
+      "replaceable_primary_match_ids": [
+        "2394205"
+      ]
+    },
+    {
+      "match_id": "2394212",
+      "event_id": 8263,
+      "result_unix_ms": 1779353853000,
+      "match_url": "https://www.hltv.org/matches/2394212/bcgame-vs-pain-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108176",
+      "teams": [
+        "BC.Game",
+        "paiN"
+      ],
+      "played_maps": [
+        "de_dust2",
+        "de_anubis"
+      ],
+      "map_order": [
+        {
+          "map": "de_dust2",
+          "map_number": 1
+        },
+        {
+          "map": "de_anubis",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "895a85788001cab1f7a34c890c7ee86eeddded7906b459d84e21bd1532d3f482",
+      "selected_map": "de_anubis",
+      "replaceable_primary_match_ids": [
+        "2394203"
+      ]
+    },
+    {
+      "match_id": "2394201",
+      "event_id": 8263,
+      "result_unix_ms": 1779262232000,
+      "match_url": "https://www.hltv.org/matches/2394201/falcons-vs-bcgame-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108148",
+      "teams": [
+        "Falcons",
+        "BC.Game"
+      ],
+      "played_maps": [
+        "de_dust2"
+      ],
+      "map_order": [
+        {
+          "map": "de_dust2",
+          "map_number": 1
+        }
+      ],
+      "match_html_sha256": "f5d7291f3736d627159f61361b92b5b901d1bd87de9e8c9afd28e3f2a4982414",
+      "selected_map": "de_dust2",
+      "replaceable_primary_match_ids": [
+        "2394204"
+      ]
+    },
+    {
+      "match_id": "2394208",
+      "event_id": 8263,
+      "result_unix_ms": 1779282583000,
+      "match_url": "https://www.hltv.org/matches/2394208/falcons-vs-m80-cs-asia-championships-2026",
+      "demo_url": "https://www.hltv.org/download/demo/108155",
+      "teams": [
+        "Falcons",
+        "M80"
+      ],
+      "played_maps": [
+        "de_inferno",
+        "de_ancient"
+      ],
+      "map_order": [
+        {
+          "map": "de_inferno",
+          "map_number": 1
+        },
+        {
+          "map": "de_ancient",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "d6cd95b7c6dc847d794984c57f61e3734636d2a9a56a03d2580105c6adc25367",
+      "selected_map": "de_inferno",
+      "replaceable_primary_match_ids": [
+        "2394200"
+      ]
+    },
+    {
+      "match_id": "2398722",
+      "event_id": 8244,
+      "result_unix_ms": 1791047270000,
+      "match_url": "https://www.hltv.org/matches/2398722/mouz-vs-m80-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112366",
+      "teams": [
+        "MOUZ",
+        "M80"
+      ],
+      "played_maps": [
+        "de_cache",
+        "de_mirage"
+      ],
+      "map_order": [
+        {
+          "map": "de_cache",
+          "map_number": 1
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "a4d50959dc01864cedda799cd57a7e8f23ae1d4c8dd351ecc2b04c587f024279",
+      "selected_map": "de_mirage",
+      "replaceable_primary_match_ids": [
+        "2398721"
+      ]
+    },
+    {
+      "match_id": "2398726",
+      "event_id": 8244,
+      "result_unix_ms": 1791111304000,
+      "match_url": "https://www.hltv.org/matches/2398726/shinden-vs-legacy-esl-pro-league-season-24",
+      "demo_url": "https://www.hltv.org/download/demo/112383",
+      "teams": [
+        "ShindeN",
+        "Legacy"
+      ],
+      "played_maps": [
+        "de_nuke",
+        "de_mirage"
+      ],
+      "map_order": [
+        {
+          "map": "de_nuke",
+          "map_number": 1
+        },
+        {
+          "map": "de_mirage",
+          "map_number": 2
+        }
+      ],
+      "match_html_sha256": "0e1299b10d1c5b3c2dbcb2414c16811c7c687fb180ca5d311bb588427e2acfef",
+      "selected_map": "de_nuke",
+      "replaceable_primary_match_ids": [
+        "2398720"
+      ]
+    }
+  ],
+  "optional_same_archive_cache": null,
+  "metadata_sha256": {
+    "event_8263.html": "e7a4521cde671526a249ae92cbee876b15f72566a85209a4f9de01306402d671",
+    "match_2394204.html": "da61fe3f89925e2965ee65e3815eddda5de26a8726cd9185360ec44cb28ef541",
+    "match_2394203.html": "3b6a827dcbe55c0351c0849174291b6109d83b7e59a1fbc8ab8c40125427b8dd",
+    "match_2394205.html": "2e6799ec75cf37ddce228e9a31eed6c17bace20cb32a223c99a7ecdbcc8f6512",
+    "match_2394206.html": "ed48594c9e5534544ac61f65009434f18de2588fd24d144f3ab14a40badcef7b",
+    "match_2394200.html": "3e2580026dc44effd6f07b74913b9bb4f84574e31bdb4fd42c17a7a74ea88187",
+    "match_2394199.html": "45c0d151c058fec1f7b32f0090b811c071c8b09cfe33192d76021a28264e90d7",
+    "match_2394201.html": "f5d7291f3736d627159f61361b92b5b901d1bd87de9e8c9afd28e3f2a4982414",
+    "match_2394202.html": "21e464e78562e65faba1b66b00c8daa63a4b2941c241daf9857db98b2dbc4cea",
+    "match_2394209.html": "9ad12e3c926d5010178da14e176cc804807d3461a90cc65ef378fc6c9668a9c4",
+    "match_2394210.html": "e869057f5fe1549323c1fbd07cd0bd148208dee42334c4669a972ceed81f9ccd",
+    "match_2394208.html": "d6cd95b7c6dc847d794984c57f61e3734636d2a9a56a03d2580105c6adc25367",
+    "match_2394207.html": "0349069d97b5d9fe0b74a2a5696a42e694fb4bd1cc02c4113acc32abe6d26508",
+    "match_2394211.html": "9cb7c84a4199fb2ee48d884fccb37b4d7fd3a9a0e7e81634137bf825e857a5ef",
+    "match_2394213.html": "285fd19a5ebfc1fb1abc900cb5188cfe5cc7349619560165739908ecd12374e4",
+    "match_2394212.html": "895a85788001cab1f7a34c890c7ee86eeddded7906b459d84e21bd1532d3f482",
+    "match_2394214.html": "cd749eaf75fe5678184be2607e983e36ebdb7c9977897c9fe1ce675faa3a68b8",
+    "match_2394215.html": "ed2697209407ebd597073a1f2e3e4a7505de40048134b45db08c80874e754250",
+    "match_2394217.html": "780959fc431319426909995e8908bb6c9b4110112789d0bf8b04d2734b356c64",
+    "match_2394218.html": "88fb3baf9e2cf19b617cc41b54a63de64c9d2aa6c3529f80ed668ab4caed36ff",
+    "match_2394216.html": "7e7e80c8d083c41b822bd5c1d16f965a1ed8fd1d14fa6febfe9b6560068f325d",
+    "match_2394219.html": "0b38e559dc0fe704efd2a5f140f4639fef025a6256047dd9c9760c1092f778e6",
+    "match_2394221.html": "9896a63874e56b5b9c83563e8a338de3a5ec6499ade1b443f5263fa1bb4fa53b",
+    "match_2394220.html": "67b8973feb9bcd208ccf59760abf9f4012a3849be549536fe3d1f25cb0257126",
+    "match_2394222.html": "e31d01b4c468777c88937ac8606e235137e6dd9d6cb1fa5f824fbb4417c15eb3",
+    "match_2394224.html": "4fc86744b8a445107371da03c29323ef6143853769644ea9926cee8feba0aebc",
+    "match_2394223.html": "c5f120546eafac90bd25e645df6c01e26192de42fb9ad77853170f753ced6b4e",
+    "match_2394225.html": "2c6f564c68ed604be05a0a827405835c59a627914c96f9269ffd2a4d3bd6f49e",
+    "match_2394226.html": "ac3e1147fb6850ae0fdf3f0ef214e32406ff43c98db5d2f9bba19c2b2802f4ec",
+    "match_2394227.html": "0da9734d3652f96a913b21cad1cacfc67fba910d2c767616d585934f4aca0110",
+    "match_2394228.html": "5ab34166bf5d72ca770ccf247fc2fa5b3f3166d7ef6e97a2ef1006152d693b28",
+    "event_8244.html": "f653bd852ae7f97c2d39ea59e41c18ef85a0983d2e78130e9636803774f40ef8",
+    "match_2398717.html": "8043b47188c4975b42b8b8372810305ee3a3e86978e1547d4d10dbbfc80328da",
+    "match_2398718.html": "935f52e4835b9ca2c987bf07ab97d3bf1d25f08eda1060ad3c05cccf0f4e2b4a",
+    "match_2398719.html": "350fbd5867cd69dd06dba835d68547fc7a45a36da6f442fd3c0be16024928845",
+    "match_2398720.html": "5850f9753b4cbb28aded9c98999198ad1725dd4c287453721fd0e2609ed12139",
+    "match_2398721.html": "7afdbfc76ab96bd62a0eaa3ab4f71470c52673365ba50083415d914d62636a5b",
+    "match_2398722.html": "a4d50959dc01864cedda799cd57a7e8f23ae1d4c8dd351ecc2b04c587f024279",
+    "match_2398723.html": "523e53c1afb2eaa0a4484711eae9850498b589581922c5b6ba1e17406d006aea",
+    "match_2398724.html": "b311126fccfc42e6f344c6c092ed59dfe2479aef9a5282c604bf5a6e84c56b0c",
+    "match_2398726.html": "0e1299b10d1c5b3c2dbcb2414c16811c7c687fb180ca5d311bb588427e2acfef",
+    "match_2398725.html": "05e0d67ef13c32c4db3904a2e02daa38337a77e86e8dc269d6f805f2c5c26d09",
+    "match_2398727.html": "87df699e506078258e3d197d54649d06ef164c0596c66fe0cdfc3af564686d58",
+    "match_2398728.html": "9b512fb03eaefc0c8518643aa2ee869249b75f69deca23310cf6d464ad1e500a",
+    "match_2398729.html": "3796a7ac166aa41a7d01924f627eb0697013c9e3de3a1d1de91feb6ac6ecf003",
+    "match_2398730.html": "8bceb8f4dad86bf1fb9907f509fcfd23b584e7e9c44220d222d0b7e547297c10",
+    "match_2398731.html": "14862c846df9cff0bcc598e70ef40fd0befaf088dc13a8a5a1631430592a7860",
+    "match_2398732.html": "b32c44fb757b63e1211f3d159ecb0ac2ffeda3fe1206da0d7db88fba32516e00",
+    "match_2398734.html": "97297794b72ebea81f14bf2b39958e4a5f4a0d4effc0d0f2aeff5e0fbbb56dcc",
+    "match_2398733.html": "bfa8b9e1f8e521550f73e3323d8b4bc8dd5dac6bdb0c23935d42cc9612e70b7d",
+    "match_2398736.html": "51361618497e96e55e5505ec9eab613e0c8378a92402468cd903fd55f7357186",
+    "match_2398735.html": "847cce34fd6cb83e4ae271aecd291b5a7a9170062a9943632aaffc34b511a07b",
+    "match_2398737.html": "44778f26b81b3fad6fe17dcc2d705cd570922c65b156c30707479ccef614702b",
+    "match_2398738.html": "f21faf8a3ca225d83b975ab2906d7c6c6a44410289bb8fb01af99b4275617c10",
+    "match_2398739.html": "fc098769b8aa05c9b1bc92ca02223c255b6a405392bba045eced0e08df5ee9bd",
+    "match_2398740.html": "36f6c201fa8bae51ee1a6880556e1abf1327a5298ef13f4270871b1df4b1081a",
+    "match_2398742.html": "b64121fde6987f745edc6a112b20f83e14284f13e9b480f2f85f2a095e17a28e",
+    "match_2398741.html": "15733b23e0a4279d3111f0b3497e39736295e8856c8feb04e2275bcb6ecbca24",
+    "match_2398744.html": "b04e82c520d57862ee257275936b7d4df958c971783e01af321f8d0054d9513d",
+    "match_2398743.html": "5230ac73cecd092f6be9f6355c9f3f72cd0b585fda0d14f2597cc0e727ac4d25",
+    "match_2398746.html": "ce625f352b28d8aa2c815c312744d2c634ecd34a3b57c226dfd497857919fd15",
+    "match_2398745.html": "4f30bd9ada6493a36687fe755ec8424ad9d083c1f8ae185ece85ce986e15ac4f",
+    "match_2398747.html": "0b7d908774ca311d7c11e052631a2da8ab159917c9da453d3f51a3032f7576fc",
+    "match_2398748.html": "92ba08879502b24a32a7fbb99b09af4aa4298805e7f779df0b091ea2ac6d63d4",
+    "match_2398749.html": "c35c06bfda19b27a863b85bc58a7804eef88190d372ea97c97af0eeeb4bab104",
+    "match_2398750.html": "b19e7681f91d14d84eeaa2f0911f724369667a4656f72e16e5c9ba2f511b2f34",
+    "match_2398751.html": "140c524d0ceaf34dc4aa5c78c7e0666bde9c439102844222c03fc239868e5fa3",
+    "match_2398752.html": "25d19c49b2225be64c8c46167038117661b6bfabc5c7e8c3ce4214bfde61d52f",
+    "match_2398753.html": "f5817afbe4e80bd1a63f6225a4bdba91b3caf26a0efde2b82c9a36716aab73d3",
+    "match_2398754.html": "882799d6965210e4cf6bc409e507577086c6149f298a3e137310141a5e0bcce5",
+    "match_2398755.html": "adce477f1a98f76f648f29667d7d00e62960e0a96f43818cfaba9514fd004b22",
+    "match_2398756.html": "780f7f175816299c33b716d8e7fa9dc6c08b304906a50c5b9cdf27de9f1b1da8",
+    "match_2398757.html": "d1b473af4fe6683644c67fd72c016db24d65ba91e8d0fddc24926850003194ef",
+    "event_8932.html": "d5be73721aa5d6a06c4be47119214f5c1d567ee38f798d4047a42860ef38e750",
+    "match_2399384.html": "6bb486bd68bd981f53021d19dc6cca7c4b15e3b3c5b68f248edff745f3b899cb",
+    "match_2399385.html": "be61af842abe98289e9f7d5f3bda2a274156a0cab1ae35145d280f68f2c23870",
+    "match_2399386.html": "22c205e42bbe0563a263d5555b63a3bb9a61b8b3f6a34b3770fe9f636161d9b9",
+    "match_2399387.html": "b2d37f6b4024f83df084a94f63fc6051e91c376ee7b87d3758c94256409960b7",
+    "match_2399408.html": "311682cb8ba64ccc1770f5323c0ce2bc47ee0fe4049ee27af4b5ab40e20e503b",
+    "match_2399409.html": "cc9936fc112cbcaebd73156fe9f9a0ccdacfefc32873e43c609e785d0d094c28",
+    "match_2399410.html": "49f0a119231667de09296498f152c0a941fc606928418d33e686407ebde7d208",
+    "match_2399411.html": "16998d61977c7522ac210565a5496f5f180c97c3152c0c354312ae37b1545794",
+    "match_2399412.html": "6d5a460b3681888ccde6e3d6b79a580258de080756ee72cf0a020cf10ed8f95a",
+    "match_2399415.html": "5eae69e7d3b49c771ce05f8c0c4a65816edc0e270219c1c05b12e8105c4cb1eb",
+    "match_2399417.html": "bf85756aa3e68197a1c5a6d07a0389ad8187360bfdb3fabc0cfb3d1c8c4e9908"
+  },
+  "failures": [
+    {
+      "match_id": "2399413",
+      "reason": "HTTPError"
+    },
+    {
+      "match_id": "2399414",
+      "reason": "HTTPError"
+    },
+    {
+      "match_id": "2399416",
+      "reason": "HTTPError"
+    }
+  ],
+  "limits": [
+    "May and October events are mixed: newly acquired series, not a chronological future-only split.",
+    "Shared teams remain; three event strata do not establish independent random sampling.",
+    "No archives or model outputs were acquired by this script."
+  ],
+  "frozen_utc": "2026-10-25T16:17:40.146837+00:00",
+  "metadata_browser_receipt_sha256": "b31ee2dbcf350d6ea0a397fffcd4be0f915de250fe59b7e87030e4b42e9b067f",
+  "source_excluded_series": [
+    "2396595",
+    "2396609",
+    "2396613",
+    "2396940",
+    "2396944",
+    "2396945",
+    "2396949",
+    "2396950",
+    "furia_falcons_existing_local"
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "status": "metadata_frozen_archive_acquisition_in_progress",
+  "date": "2026-10-26",
+  "initial_preflight": {
+    "status": "acquisition_preparation_blocked",
+    "date": "2026-10-25",
+    "scope": "Metadata/access preflight only; no new archives or model outputs.",
+    "candidate_match_urls": 85,
+    "cached_match_pages": 3,
+    "uncached_match_pages": 82,
+    "balanced_cohort_selected": false,
+    "metadata_solver_result": "infeasible with the three available candidate pages",
+    "observed_access_probes": {
+      "match_2394200": "HTTP 403 with Just a moment title",
+      "download_108146": "HEAD HTTP 403",
+      "download_112344": "HEAD HTTP 403",
+      "download_112743": "HEAD HTTP 403"
+    },
+    "RAM_preflight": {
+      "observed_available_GiB": 1.782,
+      "demo_parse_minimum_GiB": 2.0,
+      "browser_probe_start_minimum_GiB": 2.44140625,
+      "browser_started": false
+    },
+    "no_archives_downloaded": true,
+    "no_new_test_predictions": true,
+    "scope_preserved": "Six map quotas and 12-series target were not relaxed to fit incomplete metadata.",
+    "metadata_cache_sha256": {
+      "event_8244.html": "f653bd852ae7f97c2d39ea59e41c18ef85a0983d2e78130e9636803774f40ef8",
+      "event_8263.html": "e7a4521cde671526a249ae92cbee876b15f72566a85209a4f9de01306402d671",
+      "event_8932.html": "d5be73721aa5d6a06c4be47119214f5c1d567ee38f798d4047a42860ef38e750",
+      "match_2394199.html": "45c0d151c058fec1f7b32f0090b811c071c8b09cfe33192d76021a28264e90d7",
+      "match_2398717.html": "8043b47188c4975b42b8b8372810305ee3a3e86978e1547d4d10dbbfc80328da",
+      "match_2399384.html": "6bb486bd68bd981f53021d19dc6cca7c4b15e3b3c5b68f248edff745f3b899cb"
+    }
+  },
+  "metadata_update": {
+    "listed_series": 85,
+    "available_match_pages": 82,
+    "primary_series": 12,
+    "alternates": 6,
+    "frozen_checkpoints": 108,
+    "cohort_sha256": "1d302b576d7f8281aa51ba042de7e596f33df0aebea475e58f444dc26711d549",
+    "access_method": "Isolated headed Chromium using the existing project recipe; HEAD requests through native browser verified an archive of 260250863 bytes. Python HTTP requests remained blocked.",
+    "observed_browser_available_RAM_min_GiB": 3.0
+  },
+  "new_test_predictions": false,
+  "progress_snapshot": {
+    "retained_demos": 6,
+    "files": [
+      {
+        "match_id": "2394204",
+        "event_id": 8263,
+        "map": "de_dust2",
+        "demo_path": "output/tagnet/ct_independent_demos/2394204__de_dust2.dem",
+        "sha256": "db7c9ac4ce8a28983acc306f1f402ffba53f3286b62914dac6792d20856c11b5",
+        "bytes": 444073502,
+        "archive_sha256": "bd41ede58d0317a5f057c4e096fa4054d8fa708d9ea04a5c0d1bb8117c12d428",
+        "archive_member": "parivision-vs-liquid-dust2.dem"
+      },
+      {
+        "match_id": "2394203",
+        "event_id": 8263,
+        "map": "de_anubis",
+        "demo_path": "output/tagnet/ct_independent_demos/2394203__de_anubis.dem",
+        "sha256": "d29232cb13e38b94e076fb156171fd5a46d186a7ca20da249477878e8ea9dc2e",
+        "bytes": 403372383,
+        "archive_sha256": "b1a8fc8fe1e028b7b93ff18afb0139678f0fa493e2d13e8b1d5ec7d4e141ea1f",
+        "archive_member": "3dmax-vs-mibr-anubis.dem"
+      },
+      {
+        "match_id": "2394205",
+        "event_id": 8263,
+        "map": "de_ancient",
+        "demo_path": "output/tagnet/ct_independent_demos/2394205__de_ancient.dem",
+        "sha256": "57434abd8c498f569bc322ec7094ed86944c5641bc34883d8b8ee0bc6797b99f",
+        "bytes": 315363460,
+        "archive_sha256": "23108954fec9185aa5367937e2b1bf1721efc28daa7fef3ee8be0ab82054fdc1",
+        "archive_member": "the-mongolz-vs-lynn-vision-ancient.dem"
+      },
+      {
+        "match_id": "2394200",
+        "event_id": 8263,
+        "map": "de_inferno",
+        "demo_path": "output/tagnet/ct_independent_demos/2394200__de_inferno.dem",
+        "sha256": "1388e119fe8773c20b5ac1dda497c0b9e5e2403f67b93eb80dea1eb44aae9dfd",
+        "bytes": 464982302,
+        "archive_sha256": "ba36c613efafc194235eb80b29aa5333572425c602f1691ad5676863ada67bd2",
+        "archive_member": "mouz-vs-tyloo-inferno.dem"
+      },
+      {
+        "match_id": "2398717",
+        "event_id": 8244,
+        "map": "de_anubis",
+        "demo_path": "output/tagnet/ct_independent_demos/2398717__de_anubis.dem",
+        "sha256": "e454e16b96a15bcaa6dd1fb61f88bfb816dc9da4229ad0b34294b1c1b0de2f43",
+        "bytes": 295296092,
+        "archive_sha256": "c40b4a2abb5a982652d2de938cc03d32a96147c64952373177e86c40d0334bac",
+        "archive_member": "falcons-vs-tyloo-m2-anubis.dem"
+      },
+      {
+        "match_id": "2398718",
+        "event_id": 8244,
+        "map": "de_inferno",
+        "demo_path": "output/tagnet/ct_independent_demos/2398718__de_inferno.dem",
+        "sha256": "86c38e0db4646195347a5fc966e0b8241b2668fbae5633bf39d6a900af06a220",
+        "bytes": 285438008,
+        "archive_sha256": "32528876a28eba7ad1dc186cc0d9638469802d74e8f6f768839059842e27827c",
+        "archive_member": "legacy-vs-parivision-m2-inferno.dem"
+      }
+    ],
+    "archive_attempts": 7,
+    "reserved_archive_bytes": 2340575461,
+    "new_model_outputs": false
+  }
+}

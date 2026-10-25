@@ -8,7 +8,7 @@
 
 通用学术网页发现查询：`"TAGNet" "Counter-Strike" defensive pattern recognition`、`Counter Strike defensive strategy pattern clustering player trajectories paper`、`Counter Strike cross map tactical representation graph retrieval paper`。随后直接打开arXiv原始记录、作者全文与出版页。搜索总命中数和数据库全量记录未取得，不给出PRISMA计数或覆盖率。只将已打开的原始来源写入主文；搜索摘要、媒体转述和未读论文不作为证据。
 
-优先纳入Counter-Strike部署/移动/团队表征及本研究直接使用的集合建模原则；不将其他游戏的行为聚类或本科论文当作本研究已经超越的正式基准。未完成完整引文追踪，跨域检索和聚类稳定性的方法文献仍待补充。
+优先纳入Counter-Strike部署/移动/团队表征、集合建模、跨域评价、聚类稳定性及不完整相关性判断的方法文献；不将其他游戏的行为聚类当作本研究已经超越的正式基准。尚未完成完整引文追踪。
 
 ## 任务、地图与结论边界
 
@@ -31,4 +31,18 @@ Durst等文献的[出版页](https://onlinelibrary.wiley.com/doi/10.1111/cgf.151
 
 本地PDF SHA256：`15b38b517e3663971d69414100d88207640e18eaa03f2d67dfec0ca7fde0aaf4`，Git blob `804572a21d6d2fee1a416d5efa09f1a505623010`。核读的是作者仓库定稿，未独立核对出版平台版本。
 
-主文已补入相应任务区别，保留`RW`槽位：还需覆盖更完整的跨域评价、部署检索和模式稳定性文献。文献比较不代替这些待完成工作。
+## 跨域、稳定性和检索评价补充
+
+| 来源 | 已核读范围 | 本项目采用的边界 |
+| --- | --- | --- |
+| [Gulrajani与Lopez-Paz](https://arxiv.org/abs/2007.01434) | 作者arXiv记录/摘要及官方DomainBed说明 | 将模型选择与架构比较分开；不依据新目标结果调配方 |
+| [WILDS](https://proceedings.mlr.press/v139/koh21a.html) | 官方PMLR页、摘要和引用导出 | 明确迁移轴；新获取的比赛不自动成为向未来迁移测试 |
+| [von Luxburg](https://arxiv.org/abs/1007.1075) | 理想化/实际K-means稳定性及展望；Crossref出版元数据 | 稳定性依赖数据/优化假设，不等于功能职责或参考价值 |
+| [Buckley与Voorhees](https://www.nist.gov/publications/retrieval-evaluation-incomplete-information) | 作者机构摘要及Crossref元数据 | 旧已评分池的结果不外推为全库效果；不将未评计零 |
+| [Järvelin与Kekäläinen](https://doi.org/10.1145/582415.582418) | 出版方登记的元数据；本文采用分级累计增益概念 | `2^g−1`是本实验明确指定的增益，不冒称照搬其全部公式 |
+
+[元数据核查](../../datasets/evaluation/ct_citation_metadata_audit.json)记录了出版方登记和访问限制。聚类稳定性文献采用Crossref出版年份2010、卷2期3、页235–274；原稿的名义期年与出版年不同，未凭记忆填成卷3。DomainBed的最终OpenReview入口要求浏览器校验，API返回限流；本轮保留已直接核对的2020作者预印本，不猜会议页码或独立确认最终会议信息。
+
+TAGNet的作者、题名、IEEE ToG、2026年、DOI和登记页码1–13已通过出版方存入Crossref的记录核对；卷期和完整上线日期未提供，不补写。1–13按Early Access登记理解，出版PDF仍未独立核读。
+
+主文已补入对应论证，保留`RW`槽位用于FPS检索的进一步引文追踪和作者核读。文献对照不替代独立新系列与独立语义证据。

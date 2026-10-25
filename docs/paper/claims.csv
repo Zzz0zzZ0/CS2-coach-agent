@@ -12,7 +12,7 @@ C114,main.tex,numeric,940f4d724fd44e70e59156f4e61a89189531b74b11229ac2589703f1f6
 C115,main.tex,numeric,f07aa275274f92c6e466c6f7fde5500f66a0a3bc9faa67e631dc7b4b14f3dda4,E101,unverified,not_estimated,descriptive
 C116,main.tex,numeric,4024d2ba28bddc1cfda52877fcc7859e6bea4979e0faa7065f468eb6b33d541f,E101,unverified,not_estimated,descriptive
 C106,main.tex,numeric,f9ca03f6884e783f80ab8458705480aeb41b28cc16d35f4ab9cfb9d52bbcde97,E101,unverified,not_estimated,descriptive
-C107,main.tex,factual,c094fb4615f5f1302b9f74eb235ce9b276e039b6eddd078812be5317c934a4cc,E106;E128,unverified,not_estimated,descriptive
+C107,main.tex,factual,73210fe810b8ff1d2f1caf57dd71cb53b64ffaa6c62d4b1ca87c3e49a8c04dd0,E106;E128,unverified,not_estimated,descriptive
 C109,main.tex,method,8b8717d30bd9499a600bc1dfa30efdd29a8b60e2caed12c50ba045b16e8ccdc9,E101;E103,unverified,not_estimated,descriptive
 C110,main.tex,method,0992504a2e8510fb6690bad93138c2267fce5ce55a67ac487d9987d0c977272d,E101;E103,unverified,not_estimated,not_applicable
 C201,main.tex,factual,914a73d467e086bf750db96c569d90c9eaa8fc788705418c64d3e91c216fdf53,E201;E103,unverified,not_estimated,descriptive
@@ -60,4 +60,7 @@ C164,main.tex,numeric,52366efacd2fe31dcdf1e59aa68be5c83c54a70266dbc461d36c2cbfb9
 C165,main.tex,numeric,9898c961b414568997ffc542ccc7f510d238de73fb5da211f204367f411b17e7,E126,unverified,Development or conditional planning evidence; limited old rated pools and current context do not establish independent tactical generalization.,descriptive
 C166,main.tex,numeric,cb4ae7f17625c7cc04cce9c69fcf9804900ae380b0753a56cb7a863a2092e737,E126,unverified,Development or conditional planning evidence; limited old rated pools and current context do not establish independent tactical generalization.,descriptive
 C167,main.tex,numeric,882e2d6909a340b722985b7b1a6c403c92df59c175cfd600292c66e00105e80e,E126,unverified,Development or conditional planning evidence; limited old rated pools and current context do not establish independent tactical generalization.,descriptive
-C157,main.tex,numeric,f0af3564d690f166151edb6808194eb6ccf10565a8243e64ccd6133c14c281b7,E127,unverified,Development or conditional planning evidence; limited old rated pools and current context do not establish independent tactical generalization.,descriptive
+C157,main.tex,numeric,c5588c67580d60fd5b0ab709671ab5949bffd5cfc79d81c6e87362d75e0757eb,E127;E129,unverified,Development or conditional planning evidence; limited old rated pools and current context do not establish independent tactical generalization.,descriptive
+C207,main.tex,factual,3a015a3ab0c4b7522c86b550a6fd59f494bd5576dcc2eb22dd255b1eddf8b3e7,E206;E207,unverified,Targeted primary-source reading; theoretical evaluation principles do not independently validate the CS2 task.,descriptive
+C208,main.tex,factual,990c19161daaa6d6edb0bdd6f45f1f7cf306f486c792606d4ff6c293bf52d136,E208,unverified,Targeted primary-source reading; theoretical evaluation principles do not independently validate the CS2 task.,descriptive
+C209,main.tex,factual,d5b5ee223b038befd617159ae438445923afeecfc4e6ca17ec5627f5a813e9c6,E210;E211,unverified,Targeted primary-source reading; theoretical evaluation principles do not independently validate the CS2 task.,descriptive

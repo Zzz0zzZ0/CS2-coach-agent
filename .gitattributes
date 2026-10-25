@@ -30,6 +30,8 @@ scripts/evaluate_ct_context_retrieval.py -text whitespace=cr-at-eol
 scripts/analyze_ct_context_patterns.py -text whitespace=cr-at-eol
 scripts/audit_ct_context_dominance.py -text whitespace=cr-at-eol
 scripts/plan_ct_independent_precision.py -text whitespace=cr-at-eol
+scripts/prepare_ct_independent_cohort.py -text whitespace=cr-at-eol
+test_ct_independent_cohort.py -text whitespace=cr-at-eol
 scripts/audit_ct_existing_judgments.py -text whitespace=cr-at-eol
 scripts/evaluate_ct_existing_pool.py -text whitespace=cr-at-eol
 test_ct_existing_pool.py -text whitespace=cr-at-eol
@@ -61,3 +63,7 @@ docs/paper/manuscript/figures/* -text whitespace=-blank-at-eol
 datasets/selections/ct_*.json -text whitespace=cr-at-eol
 # Preserve this pre-existing LF-based frozen expression checksum on Windows.
 datasets/evaluation/relation_expression_v2_cases.json text eol=lf
+
+scripts/acquire_ct_independent_demos.py -text
+test_ct_independent_acquisition.py -text
+scripts/export_ct_independent_inputs.py -text

@@ -1,0 +1,106 @@
+{
+  "date": "2026-10-25",
+  "scope": "agent-checked primary bibliographic metadata; human review pending",
+  "crossref": [
+    {
+      "label": "TAGNet",
+      "source": "https://api.crossref.org/works/10.1109/TG.2026.3745970",
+      "response_sha256": "7f22c2be13dff2d53afde7e01aa98fe1e2c7a078cc0d27ba8d2ffe6342cdff23",
+      "doi": "10.1109/tg.2026.3745970",
+      "title": "TAGNet: Temporal Attention Graph Network for Defensive Tactical Pattern Recognition in Professional Counter-Strike 2",
+      "authors": [
+        "Xiang Zhang",
+        "RongQi Zhang",
+        "Guancheng Chen",
+        "Xinlei Cao",
+        "ChaoFan Yue",
+        "Chunhong Yuan"
+      ],
+      "venue": "IEEE Transactions on Games",
+      "year": 2026,
+      "volume": null,
+      "issue": null,
+      "pages": "1-13"
+    },
+    {
+      "label": "Clustering stability",
+      "source": "https://api.crossref.org/works/10.1561/2200000008",
+      "response_sha256": "1446c07cb6ce28aecc69ed42115d04c69b024abbdd943fa3fe1f45240fd809e7",
+      "doi": "10.1561/2200000008",
+      "title": "Clustering Stability: An Overview",
+      "authors": [
+        "Ulrike von Luxburg"
+      ],
+      "venue": "Foundations and Trends® in Machine Learning",
+      "year": 2010,
+      "volume": "2",
+      "issue": "3",
+      "pages": "235-274"
+    },
+    {
+      "label": "Incomplete judgments",
+      "source": "https://api.crossref.org/works/10.1145/1008992.1009000",
+      "response_sha256": "ae5b6a2eec7ed8dc74f37c903e6af9d9e16b3ae563161c653a61fe97d5360980",
+      "doi": "10.1145/1008992.1009000",
+      "title": "Retrieval evaluation with incomplete information",
+      "authors": [
+        "Chris Buckley",
+        "Ellen M. Voorhees"
+      ],
+      "venue": "Proceedings of the 27th annual international ACM SIGIR conference on Research and development in information retrieval",
+      "year": 2004,
+      "volume": null,
+      "issue": null,
+      "pages": "25-32"
+    },
+    {
+      "label": "Graded gain",
+      "source": "https://api.crossref.org/works/10.1145/582415.582418",
+      "response_sha256": "c0142c5257a041b16dd94f29a9b9fadf63998b02708fd560eb122e2392505651",
+      "doi": "10.1145/582415.582418",
+      "title": "Cumulated gain-based evaluation of IR techniques",
+      "authors": [
+        "Kalervo Järvelin",
+        "Jaana Kekäläinen"
+      ],
+      "venue": "ACM Transactions on Information Systems",
+      "year": 2002,
+      "volume": "20",
+      "issue": "4",
+      "pages": "422-446"
+    }
+  ],
+  "additional_checks": {
+    "DomainBed": {
+      "arxiv": "https://arxiv.org/abs/2007.01434",
+      "verified_authors": [
+        "Ishaan Gulrajani",
+        "David Lopez-Paz"
+      ],
+      "verified_preprint_year": 2020,
+      "conference_record_status": "OpenReview browser verification and API rate limit; final venue not independently confirmed in this check",
+      "author_repository": "https://github.com/facebookresearch/DomainBed"
+    },
+    "WILDS": {
+      "primary_url": "https://proceedings.mlr.press/v139/koh21a.html",
+      "response_sha256": "981c51511977b9d154701cacf813b343fd4de6b3a3146d550222b80c177bb640",
+      "year": 2021,
+      "volume": "139",
+      "pages": "5637--5664"
+    },
+    "stability": {
+      "author_institution": "https://is.mpg.de/ics/publications/6333",
+      "author_text": "https://arxiv.org/abs/1007.1075",
+      "scope": "Theory sections on idealized versus actual K-means and their stability; publisher metadata via Crossref. Nominal issue year differs from published year."
+    },
+    "incomplete_judgments": {
+      "author_institution": "https://www.nist.gov/publications/retrieval-evaluation-incomplete-information"
+    }
+  },
+  "limitations": [
+    "TAGNet publisher-deposited metadata is verified against the author citation, but the publisher PDF is not independently checked.",
+    "TAGNet 1-13 is deposited Early Access pagination; no volume, issue, or full online publication date is supplied.",
+    "DomainBed preprint metadata is retained until the final conference record is directly confirmed.",
+    "This targeted source set is not an exhaustive literature search."
+  ]
+}

@@ -1,6 +1,8 @@
 # P4独立技术确认预案
 
-2026-10-25；状态：已完成精度计算，具体新系列清单尚未冻结，尚未下载或评估本预案的新测试。主计划仍为[CT_PUBLICATION_ROADMAP.md](CT_PUBLICATION_ROADMAP.md)。
+2026-10-26；状态：12系列清单、6个替补和108份源模型权重哈希已冻结，进入串行采集；尚无新模型评估结果。主计划仍为[CT_PUBLICATION_ROADMAP.md](CT_PUBLICATION_ROADMAP.md)。
+
+[采集记录](../datasets/evaluation/ct_independent_acquisition_preflight.json)保留了先前内存不足的预检。释放内存后，隔离的普通浏览器成功获取82/85个比赛页面，按既定规则选出六图各两系列、每赛事四系列，完成[清单冻结](../datasets/selections/ct_independent_cohort.json)及[权重/技术协议冻结](../datasets/selections/ct_independent_confirmation.json)。Python HTTP下载入口仍受限制，采用项目现有普通浏览器方式采集。候选含5月和10月赛事，属于新系列确认，不能称时间向前留出；所选档案没有预列的Cache补充。
 
 ## 要回答的问题
 
