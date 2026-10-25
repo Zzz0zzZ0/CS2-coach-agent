@@ -12,7 +12,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from app.services.ct_deployment_service import (
-    DEPLOYMENT_VERSION, EDGE_FEATURES, NODE_FEATURES, deployment_sequence,
+    DEPLOYMENT_VERSION, EDGE_FEATURES, MOTION_SCALE, NODE_FEATURES, deployment_sequence,
 )
 from scripts.confirm_ct_generalization import load_records, sha, write
 
@@ -81,6 +81,9 @@ def main():
             "airborne": int(result["nodes"][..., 10].sum()),
             "grounded": int(result["nodes"][..., 11].sum()),
             "ground_unknown": int(result["nodes"][..., 12].sum()),
+            "motion_known": int(result["node_feature_mask"][..., 13].sum()),
+            "motion_unknown_live": int((alive & ~result["node_feature_mask"][..., 13]).sum()),
+            "horizontal_displacement_nonzero": int((result["nodes"][..., 13] > 0).sum()),
             "nav_diagnostic_valid": int(result["nav_diagnostic_valid"].sum()),
             "live_unordered_pairs": int(np.triu(pair, 1).sum()),
             "close_xy_large_height_pairs": int((np.triu(pair, 1) & (result["edges"][..., 1] * 5000 <= 200)
@@ -105,6 +108,14 @@ def main():
         "edge_features": EDGE_FEATURES,
         "model_input_keys": ["nodes", "edges", "node_mask", "node_feature_mask", "pair_mask", "ground_known"],
         "excluded_from_model": ["raw_places", "nav_diagnostic_valid"],
+        "motion_contract": {"scale_game_units_per_second": MOTION_SCALE,
+            "horizontal": "norm(current_xy - previous_xy) / elapsed_seconds / scale",
+            "vertical": "(current_z - previous_z) / elapsed_seconds / scale",
+            "alignment": "steamid, even if player order changes between frames",
+            "validity": "Both adjacent endpoints alive; first frame and invalid intervals masked, zero-filled",
+            "time": "Current and immediately preceding supplied snapshot only; no future observation",
+            "invariance": "Global constant translation and horizontal rotation/reflection",
+            "limits": "Sampled displacement, not path speed, route, horizontal direction or intent; no clipping"},
         "shape": {k: list(np.stack([r[k] for r in arrays]).shape) for k in arrays[0]},
         "by_map": {name: {**dict(counts), "coarse_other_fraction": counts["coarse_other"] / counts["live_observations"],
                            "place_counts": dict(sorted(places[name].items()))} for name, counts in sorted(maps.items())},
@@ -125,7 +136,7 @@ def main():
         "limits": ["No new training, no tactical-role inference or efficacy result.",
                    "Original coarse categories describe geographic place membership, not tactical duty.",
                    "NAV projection validity is diagnostic only and is excluded from model input.",
-                   "Only current-frame observations; fixed scales; no map/team identity or outcome input.",
+                   "Current/past observations only; fixed scales; no map/team identity or outcome input.",
                    "All existing series are development data; context-specific tactical evaluation remains pending."],
         "human_verification": {"status": "pending", "verified_by": None}}
     write(args.output_dir / "report.json", report)

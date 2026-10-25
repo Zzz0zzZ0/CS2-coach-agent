@@ -12,7 +12,7 @@ from test_ct_linear import snapshots
 def test_original_information_dead_pairs_and_no_static_duty_labels():
     rows = snapshots()
     result = deployment_sequence(rows, [])
-    assert result["nodes"].shape == (5, 5, 13)
+    assert result["nodes"].shape == (5, 5, 15)
     assert result["edges"].shape == (5, 5, 5, 3)
     base = feature_sequence(rows)
     np.testing.assert_array_equal(result["nodes"][..., :8], base["nodes"] * base["alive"][..., None])
@@ -22,6 +22,41 @@ def test_original_information_dead_pairs_and_no_static_duty_labels():
     assert not result["ground_known"].any() and not result["node_feature_mask"][..., 10:12].any()
     assert result["node_feature_mask"][..., 12].sum() == result["node_mask"].sum()
     assert result["raw_places"][0, 0] == rows[0]["players"][0]["place"]
+
+
+def test_motion_separates_rigid_translation_and_masks_unknown_intervals():
+    stationary = snapshots()
+    for frame in stationary:
+        for i, player in enumerate(frame["players"]):
+            player["position"] = [i * 100, i * 40, 20]
+    base = deployment_sequence(stationary, [])
+    assert not base["nodes"][..., 13:].any()
+    assert not base["node_feature_mask"][0, :, 13:].any()
+    assert base["node_feature_mask"][1:, :4, 13:].all()
+    moving = copy.deepcopy(stationary)
+    for frame in moving:
+        for player in frame["players"]:
+            player["position"][0] += (frame["second"] - 10) * 100
+            player["position"][2] -= (frame["second"] - 10) * 20
+    result = deployment_sequence(moving, [])
+    np.testing.assert_allclose(result["nodes"][1:, :4, 13:], np.broadcast_to([.4, -.08], (4, 4, 2)))
+    np.testing.assert_allclose(result["nodes"][..., :13], base["nodes"][..., :13])
+    np.testing.assert_allclose(result["edges"], base["edges"])
+    for t, frame in enumerate(moving):
+        frame["players"] = frame["players"][t:] + frame["players"][:t]
+        for player in frame["players"]:
+            x, y, z = player["position"]
+            player["position"] = [-y + 500, x - 800, z + 200]
+    reordered = deployment_sequence(moving, [])
+    for t, frame in enumerate(moving):
+        order = [int(p["steamid"]) for p in frame["players"]]
+        np.testing.assert_allclose(reordered["nodes"][t], result["nodes"][t, order], atol=1e-6)
+        np.testing.assert_array_equal(reordered["node_feature_mask"][t], result["node_feature_mask"][t, order])
+    stationary[1]["players"][0]["health"] = 0
+    masked = deployment_sequence(stationary, [])
+    assert not masked["node_feature_mask"][1:3, 0, 13:].any()
+    assert not masked["nodes"][1:3, 0, 13:].any()
+    assert masked["node_feature_mask"][3:, 0, 13:].all()
 
 
 def test_same_place_keeps_resource_and_teammate_context_distinguishable():

@@ -3,7 +3,7 @@
   "sources": [
     {
       "evidence_id": "E101",
-      "title": "Observational deployment input audit v0.2 without static duty labels",
+      "title": "Observational deployment input audit v0.3 with causal sampled motion",
       "source_type": "report",
       "authors": [],
       "year": 2026,
@@ -12,9 +12,9 @@
         "isbn": "",
         "pmcid": "",
         "pmid": "",
-        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_deployment_input_v02_report.json"
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_deployment_input_v03_report.json"
       },
-      "locator": "datasets/evaluation/ct_deployment_input_v02_report.json; shape; by_map; tactical_interpretation; revision_note; context_information_limits; targeted_checks; sha256=ecb78e67c9b4c2a650c5106655e21b47c242c7e1cabcd2c4e2b299c9451b4f7c",
+      "locator": "datasets/evaluation/ct_deployment_input_v03_report.json; shape; by_map; motion_contract; motion_coverage; targeted_checks; sha256=04a458d002d136675968470f9937cd1d1567a78fd53867f75ea88b1b9eae037f",
       "confidentiality": "public",
       "verification": {
         "source_opened": false,
@@ -58,7 +58,7 @@
         "pmid": "",
         "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/app/services/ct_deployment_service.py"
       },
-      "locator": "app/services/ct_deployment_service.py; deployment_sequence; observable fields and masks; no duty-label output; sha256=1b92d68d719ba5bbbf764f55c860748564db5c891c5e761327b3c07ff7933f48",
+      "locator": "app/services/ct_deployment_service.py; deployment_sequence; causal motion and validity masks; no duty-label output; sha256=c5791ec8db5dc01ed5f54b7c30c01308eb636d7210b04c5eaff04f607bfb1769",
       "confidentiality": "public",
       "verification": {
         "source_opened": false,

@@ -93,12 +93,15 @@ A separate geometry export implements relative height, airborne/grounded/unknown
 
 
 \subsection{Candidate input implementation and validity masks}
-A separately versioned candidate combines the original eight node fields with relative height and ground-state descriptors, producing 13 node channels and three pair channels; NAV projection features are excluded from the model input. % [claim:C101] [evidence:E101,E103]
+A separately versioned candidate combines the original eight node fields with relative height, ground-state descriptors and two sampled-motion quantities, producing 15 node channels and three pair channels; NAV projection features are excluded from the model input. % [claim:C101] [evidence:E101,E103]
 The input contract supplies no fixed place-to-duty vocabulary or duty-label array. Place membership describes geography; tactical interpretation is conditional on the particular deployment window and available context, with multiple interpretations or insufficient evidence allowed. % [claim:C102] [evidence:E101,E103]
 Death masks zero invalid nodes and pairs. Ground-state feature masks distinguish physical observations from an explicit unknown indicator; raw place names remain available for traceability. This input candidate supplies observations for later representation learning and does not assign duties. % [claim:C103] [evidence:E101,E103]
 
 \paragraph{Information boundary}
-The joined encoder observations are five ordered snapshots of coarse geographic membership, survival, health, equipment, relative geometry and ground state. Utility events, facing/visibility and round-level score/economy have not been joined to this input; missing context is not assumed known. % [claim:C108] [evidence:E101,E103]
+The joined encoder observations are five ordered snapshots of coarse geographic membership, survival, health, equipment, relative geometry, ground state and adjacent-sample displacement rates. Utility events, facing/visibility and round-level score/economy have not been joined to this input; missing context is not assumed known. % [claim:C108] [evidence:E101,E103]
+
+\paragraph{Causal sampled motion}
+For each player, the two appended quantities are horizontal displacement magnitude and signed vertical displacement between adjacent supplied observations, divided by elapsed seconds and a fixed scale of 250 game units per second. Identities align endpoints even when player order changes. Both endpoints must be alive; the first observation and invalid intervals are zero-filled and masked, whereas observed stationarity remains a valid zero. Only the current and preceding observations are used. The scale is not a speed bound, and values are not clipped. These quantities retain neither the intervening path nor horizontal movement direction. % [claim:C110] [evidence:E101,E103]
 
 \subsection{Asset and navigation validity}
 Patch-number agreement alone does not establish exact map-asset compatibility. NAV residuals, traversable distances and visibility require their respective evidence; structural validity is separate from context-specific tactical interpretation.
@@ -140,7 +143,7 @@ The independent unit must follow the actual sampling design; frames, rounds, or 
 
 \section{Results}
 \subsection{Representation validity and coverage: E1}
-The E1 engineering export covers 465 development windows and 11,368 live player observations; four targeted synthetic contract checks passed. Table~\ref{tab:inputaudit} reports the exact live-observation denominators. These entries are agent-audited draft evidence awaiting accountable human source review. % [claim:C104] [evidence:E101]
+The E1 engineering export covers 465 development windows and 11,368 live player observations; five targeted synthetic contract checks passed. Table~\ref{tab:inputaudit} reports the exact live-observation denominators. These entries are agent-audited draft evidence awaiting accountable human source review. % [claim:C104] [evidence:E101]
 The original coarse vocabulary maps 50.57--81.01\% of live observations to other across the six maps. This loss of named-place detail motivates representation work, but a smaller other category would not alone establish semantic correctness. % [claim:C105] [evidence:E101,E104]
 \begin{table}[t]
 \caption{E1 computational input audit on the development cohort. Other refers to the original coarse vocabulary. No fixed geographic duty labels are defined; airborne counts are observations, not independent samples.}
@@ -160,7 +163,7 @@ Nuke & 62 & 1511 & 81.01 & 123 \\ % [claim:C116] [evidence:E101]
 \bottomrule
 \end{tabular}
 \end{table}
-The export retains 8,979 patch-gated NAV candidates for diagnostics only; those flags are excluded from encoder inputs. The v0.2 export retains the same numerical model inputs as v0.1 and did not train a model. % [claim:C106] [evidence:E101]
+The export retains 8,979 patch-gated NAV candidates for diagnostics only; those flags are excluded from encoder inputs. The v0.3 export preserves the original 13 node channels, their masks and all remaining shared arrays from v0.2. Motion is observed for 9,049 live player observations and unknown for 2,319; 8,679 valid intervals have nonzero horizontal displacement. No new model has been trained on this export. % [claim:C106] [evidence:E101]
 \pending{RES1}{Complete context-validity checks, main representation experiments and window-specific relevance judgments. Map-place duty annotation is not an input prerequisite. The export does not establish tactical correctness or main-model performance.}
 
 
@@ -206,7 +209,7 @@ The new non-graph conditions did not establish a stable advantage over ridge. Th
 \subsection{What the evidence can establish}
 Existing predictive controls help separate raw-input availability from architecture choice. Euclidean geometry and pooled occupancy cannot, by themselves, certify tactical responsibilities, walkable routes, or useful deployment analogies. The current development cohort is small and contains repeated teams.
 
-A synthetic information-loss probe preserves coarse place categories, resources and relative formation while translating the whole team over time. The current node and edge summaries remain identical, so a time sequence of these summaries does not necessarily retain team movement. This diagnostic motivates an explicit observed-motion comparison; it is not evidence about real tactical intent or task accuracy. % [claim:C109] [evidence:E101,E103]
+A synthetic information-loss probe preserves coarse place categories, resources and relative formation while translating the whole team over time. The preceding 13-channel node and three-channel pair summaries remain identical, while the appended motion quantities distinguish the constructed moving and stationary windows. Endpoint displacement still cannot recover an intervening out-and-back path or identify horizontal direction. This diagnostic checks information retention, not real tactical intent or model accuracy. % [claim:C109] [evidence:E101,E103]
 
 \pending{DISC}{After E1--E5, interpret the main findings, competing explanations, component failures, and deployment-use conditions. Distinguish stable descriptive patterns from tactical correctness and association from causation. Do not turn non-significance into equivalence.}
 
