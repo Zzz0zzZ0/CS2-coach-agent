@@ -84,3 +84,4 @@ scripts/investigate_ct_utility_events.py -text
 scripts/export_ct_independent_context_v3.py -text
 scripts/replay_ct_confirmation.py -text
 test_ct_confirmation_replay.py -text
+docs/paper/templates/ieee/bare_jrnl.tex -text whitespace=-blank-at-eol,-blank-at-eof

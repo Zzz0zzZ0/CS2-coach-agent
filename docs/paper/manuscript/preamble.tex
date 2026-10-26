@@ -1,0 +1,24 @@
+% IEEEtran initializes legacy Times metrics before fontspec enables Unicode text.
+\def\encodingdefault{OT1}
+\documentclass[journal]{IEEEtran}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage{microtype}
+\else
+  \usepackage{fontspec}
+  \setmainfont{texgyretermes}[
+    Extension=.otf,
+    UprightFont=*-regular,
+    BoldFont=*-bold,
+    ItalicFont=*-italic,
+    BoldItalicFont=*-bolditalic]
+  \usepackage[expansion=false]{microtype}
+\fi
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{placeins}
+\usepackage{xurl}
+\newcommand{\pending}[2]{\par\smallskip\noindent\textbf{Pending [#1].} #2\par\smallskip}

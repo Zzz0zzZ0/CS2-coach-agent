@@ -1,6 +1,6 @@
 # CT 论文工作区
 
-当前英文主文是 [manuscript/main.tex](manuscript/main.tex)，文献库是 [references.bib](manuscript/references.bib)。研究顺序以[唯一研究总计划](../CT_PUBLICATION_ROADMAP.md)为准。主文按完整研究论文建立，不改为预测短稿。
+当前英文主文是 [manuscript/main.tex](manuscript/main.tex)，独立补充材料是 [manuscript/supplement.tex](manuscript/supplement.tex)，共用字体配置为 [manuscript/preamble.tex](manuscript/preamble.tex)，文献库是 [references.bib](manuscript/references.bib)。研究顺序以[唯一研究总计划](../CT_PUBLICATION_ROADMAP.md)为准。主文按完整研究论文建立，不改为预测短稿。
 
 使用方式：在主文里逐节填写，实验完成后替换对应 `Pending [ID]`，同时更新下表中的证据链接和状态。没有结果的格子不填0、不写成功结论；阶段完成必须有实际制品。摘要与最终贡献在主结果齐备后定稿。
 
@@ -10,7 +10,13 @@
 
 2026-10-26：现有英文摘要按170词填写；当前13篇参考文献、107个绑定主张、62条来源，2个待完成标记（复现发布与作者声明）。新系列技术确认已经完成：12系列、246窗口、108份冻结源权重；图/非图主要损失比1.01576，95%条件区间包含持平。所有来源仍待作者核读，不把自动核查当成人类验收。
 
-此前整篇LaTeX编译返回 `Compilation timed out`；本轮更新后的主文已通过内置编译器。两张结果图、六张固定查询观测图的PDF/SVG/PNG均已逐图检查。本轮已导出11页工作稿，渲染全页总览并放大核查第1/4/9/11页；修正两处表格溢出，最终无Overfull警告、字体全部嵌入且无Type3。视觉核查与人类作者核读、投稿核验分开。
+本轮修正IEEEtran在Unicode编译时缺失Times映射、回退字体及粗斜体替换的问题；采用Times兼容的TeX Gyre Termes，并核查字体正常、粗体、斜体、粗斜体。窄列表格改为左对齐，长路径允许自然换行；正文仍为IEEE标准两端对齐，不承诺每行词距恒定。[官方模板与来源](templates/ieee/README.md)保存了未经改动的IEEE期刊骨架。
+
+按零超页费预算组织：主稿9页（含参考文献），独立补充材料3页；标准字号和页边距未缩小。正文保留图/非图×静态/时序的四个核心条件。两项输入消融、完整情境分量/权重表、逐系列完整图、辅助预测和详细核查放入独立补充材料，所有实验条件与数值保留。107条绑定主张分布于主稿83条、补充24条；claims.csv的section与各文件一致。跨文件引用使用明确的“Supplementary Appendix”和“main-paper Table”称呼；主稿表IV/V/VII与补充内引用一并核对。
+
+[ToG现行说明](https://transactions.games/submit/submission-guidelines)将完整论文10页基准计入参考文献，排除独立补充材料；每页110美元为自愿费用，超过10页的部分才涉及强制超页费。本机9页留出排版余量，不等于出版社最终页数承诺。预算按传统发表准备，不主动选择付费开放获取；投稿选项由作者最终确认。
+
+两份PDF已编译并逐页渲染核查，无Overfull、未定义引用或字体替换警告，字体全部嵌入。最终页数、源与PDF哈希见[构建收据](../../datasets/evaluation/ct_manuscript_build_report.json)。视觉核查与人类作者核读、投稿核验分开；未新增模型训练或改变冻结实验。
 
 ## 章节与实验对应
 

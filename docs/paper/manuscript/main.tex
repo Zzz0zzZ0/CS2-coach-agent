@@ -1,9 +1,4 @@
-\documentclass[journal]{IEEEtran}
-\usepackage{amsmath}
-\usepackage{booktabs}
-\usepackage{graphicx}
-\usepackage{url}
-\newcommand{\pending}[2]{\par\smallskip\noindent\textbf{Pending [#1].} #2\par\smallskip}
+\input{preamble}
 \title{Cross-Map Representation and Generalization of Defensive Openings in Counter-Strike 2}
 \author{Working draft: author details pending}
 \begin{document}
@@ -33,7 +28,7 @@ Our contribution is an empirical framework for cross-map CT opening analysis. It
 \label{tab:questions}
 \centering\small
 \setlength{\tabcolsep}{5pt}
-\begin{tabular}{p{.08\linewidth}p{.36\linewidth}p{.43\linewidth}}
+\begin{tabular}{>{\raggedright\arraybackslash}p{.08\linewidth}>{\raggedright\arraybackslash}p{.36\linewidth}>{\raggedright\arraybackslash}p{.43\linewidth}}
 \toprule
 RQ & Comparison & Evidence required\\
 \midrule
@@ -51,10 +46,9 @@ TAGNet is the reference for the original snapshot-reconstruction and defensive-p
 
 The released author manuscript explicitly keeps its GRU and context projection at seeded initialization because snapshot reconstruction bypasses them; it fits its reported clustering to embeddings from all reported rounds. Our window decoder instead trains the temporal path, and development centroids are fitted only on source-training embeddings. These are changes in objective and evaluation scope, not repairs to an unintended missing-gradient defect. Absolute reconstruction losses across the two tasks are not directly comparable. % [claim:C206] [evidence:E205,E107,E111]
 
-\subsection{Permutation-invariant and graph controls}
+\subsection{Team and spatial representations}
 Deep Sets develops a framework for permutation-invariant set functions~\cite{NIPS2017_f22e4747}. Janossy pooling constructs invariance through averaging an order-sensitive function over reorderings~\cite{murphy2019janossy}. Our existing five-player non-graph control applies this symmetrization principle to jointly permuted nodes and edge endpoints. It serves as a comparator and is not presented as a new pooling algorithm.
 
-\subsection{Team observation, movement and spatial context}
 X-Ego learns team-level video representations and evaluates teammate/opponent location prediction; its reported dataset uses Mirage and a round-based partition~\cite{wang2025xego}. Our offline CT-window task uses structured team observations, rather than enforcing individual first-person visibility, and addresses a different endpoint. % [claim:C201] [evidence:E201,E103]
 
 Durst et al. learn movement control for CS:GO Retakes on Dust2~\cite{durst2024move}. Human-like movement generation is distinct from retrieving comparable observed openings. Their map-specific training design does not supply a zero-shot multi-map result for the present task. % [claim:C202] [evidence:E202,E109]
@@ -101,26 +95,22 @@ The external technical cohort is fixed at twelve new series, with one selected m
 Existing participant returns and developer-involved AI silver judgments remain separate pilot sources with incomplete coverage. They do not establish the formal independent tactical endpoint. Previously distributed unanswered items are not automatically reopened.
 
 \section{Common Deployment Representation}
-\subsection{Recorded common-input baseline}
+\subsection{Common observations and validity}
 The current common-input implementation uses five place categories: BombsiteA, BombsiteB, CTSpawn, TSpawn, and other. Each node contains their one-hot encoding, normalized health, transformed equipment value, and an alive indicator, giving eight channels. This coarse vocabulary is not a validated tactical-role taxonomy.
 
 The existing auxiliary state contains the five live-category fractions, dead-player fraction, and mean and maximum live-pair Euclidean distances. Distances use a fixed 5,000-game-unit scale. Undefined pair statistics are masked.
 
-\subsection{Implemented geometric descriptors}
 The v0.3 model input includes relative height, airborne/grounded/unknown state, horizontal distance, height difference, and validity masks. NAV-candidate and patch-matching diagnostics remain excluded from the model. These fields describe observations and do not establish tactical semantics.
 
 The representation is an observable feature interface, not a latent tactical-duty annotation. Similar recorded windows may differ in visibility, opponents or unobserved intent. The separate context facets expose additional information without converting a location into a universal role.
 
 
-\subsection{Implemented node and pair contract}
 The implemented input combines the original eight node fields with relative height, ground-state descriptors and two sampled-motion quantities, producing 15 node channels and three pair channels; NAV projection features are excluded from the model input. % [claim:C101] [evidence:E101,E103]
 The input contract supplies no fixed place-to-duty vocabulary or duty-label array. Place membership describes geography; tactical interpretation is conditional on the particular deployment window and available context, with multiple interpretations or insufficient evidence allowed. % [claim:C102] [evidence:E101,E103]
 Death masks zero invalid nodes and pairs. Ground-state feature masks distinguish physical observations from an explicit unknown indicator; raw place names remain available for traceability. These observations drive the reported representation learning without assigning duties. % [claim:C103] [evidence:E101,E103,E107]
 
-\paragraph{Information boundary}
 The joined encoder observations are five ordered snapshots of coarse geographic membership, survival, health, equipment, relative geometry, ground state and adjacent-sample displacement rates. Utility events, facing/visibility and round-level score/economy have not been joined to this input; missing context is not assumed known. % [claim:C108] [evidence:E101,E103]
 
-\paragraph{Causal sampled motion}
 For each player, the two appended quantities are horizontal displacement magnitude and signed vertical displacement between adjacent supplied observations, divided by elapsed seconds and a fixed scale of 250 game units per second. Identities align endpoints even when player order changes. Both endpoints must be alive; the first observation and invalid intervals are zero-filled and masked, whereas observed stationarity remains a valid zero. Only the current and preceding observations are used. The scale is not a speed bound, and values are not clipped. These quantities retain neither the intervening path nor horizontal movement direction. % [claim:C110] [evidence:E101,E103]
 
 \subsection{Asset and navigation validity}
@@ -151,7 +141,6 @@ Here the same $\pi$ acts on every supplied time and both pair endpoints; indepen
 \subsection{Reference and comparison families}
 The implemented development comparison includes direct common-feature sequences, a full-input non-graph encoder, a distance-aware graph encoder, and corresponding static and learned-temporal conditions. Original TAGNet context and fixed aggregation are described separately; the revised matrix does not reproduce that complete context branch.
 
-The completed v17 non-graph control reads the full masked node matrix, distance matrix, and alive mask. It averages a shared MLP over all 120 joint player permutations, preserving edge-endpoint correspondence in every input. Static and causal-GRU prediction variants were compared under the recorded development recipe.
 
 All six conditions were trained from scratch under the fixed development recipe: AdamW with learning rate $10^{-3}$ and weight decay $10^{-4}$, batch size 16, 100 epochs, gradient clipping at 5, and seeds 0, 1 and 42. The earliest epoch minimizing source-validation reconstruction was selected. Nine series-exclusion folds and six map-plus-series-exclusion folds yielded 270 selected checkpoints; pilots were excluded. The graph and MLP models share input observations, 64-dimensional bottlenecks and the decoder, but their parameter counts are not exactly matched. % [claim:C122] [evidence:E109,E110]
 
@@ -168,6 +157,8 @@ For a source vector group of dimension $d$, let $a$ be its mean squared Euclidea
  \|\widetilde{c}_{g,q}-\widetilde{c}_{g,s}\|_2^2.
 \end{equation}
 The same source-only scaling applies to embedding distances. Statistics first use their recorded source-fitted feature standardization; complete observation matching normalizes its permutation-minimized distance by the mean distinct-source-pair distance. Joint clustering concatenates the correspondingly square-root-weighted vectors. Context-only drops the representation term. All means and scales are source-fitted, including when query availability changes. % [claim:C220] [evidence:E121,E123,E147]
+
+Each state or context-group squared distance is divided by its source-library mean off-diagonal pair distance. The contextual distance equally averages equipment, score and utility groups. The fixed mixture is $d_\lambda=(1-\lambda)d_{\mathrm{state}}+\lambda d_{\mathrm{context}}$, with $\lambda=0.5$ and prespecified sensitivities 0.25 and 0.75. Single-group and context-only controls are retained. Unknown source context makes that condition unsupported; an unknown query is not assigned a zero distance. No encoder weights are updated. % [claim:C151] [evidence:E121]
 
 The development pattern-analysis implementation uses scikit-learn~\cite{pedregosa2011sklearn}. Candidate cluster counts are two through six, selected solely by source-training silhouette; the query embeddings do not select or refit centroids. Numeric cluster IDs are retained without tactical names. A source-radius and minimum-support rule records rejected queries as a diagnostic, with cross-seed agreement reported only where both assignments are accepted and vary across at least two clusters. The separate source-series bootstrap fixes the neural encoder and selected cluster count. % [claim:C204] [evidence:E111,E112,E204]
 
@@ -193,7 +184,7 @@ The common-variance interval uses six residual degrees of freedom. The prespecif
 The primary external quantity is the equal-map mean of series log loss ratios after averaging windows and seeds within each series. A pooled within-map normal-residual t interval has N minus six residual degrees of freedom; the prespecified variance sensitivity uses the map-specific variance contributions and Welch--Satterthwaite approximation. Neither procedure resolves shared-team/event dependence. Other reconstruction conditions and retrieval/pattern diagnostics are descriptive; no target-side model, policy or sample-size selection is performed. % [claim:C187] [evidence:E129,E131,E132]
 
 \section{Results}
-\subsection{Representation validity and coverage: E1}
+\subsection{Observation validity and coverage}
 The E1 engineering export covers 465 development windows and 11,368 live player observations; five targeted synthetic contract checks passed. Table~\ref{tab:inputaudit} reports the exact live-observation denominators. These entries are agent-audited draft evidence awaiting accountable human source review. % [claim:C104] [evidence:E101]
 The original coarse vocabulary maps 50.57--81.01\% of live observations to other across the six maps. This loss of named-place detail motivates representation work, but a smaller other category would not alone establish semantic correctness. % [claim:C105] [evidence:E101,E104]
 \begin{table}[t]
@@ -215,14 +206,14 @@ Nuke & 62 & 1511 & 81.01 & 123 \\ % [claim:C116] [evidence:E101]
 \end{tabular}
 \end{table}
 The export retains 8,979 patch-gated NAV candidates for diagnostics only; those flags are excluded from encoder inputs. The v0.3 export preserves the original 13 node channels, their masks and all remaining shared arrays from v0.2. Motion is observed for 9,049 live player observations and unknown for 2,319; 8,679 valid intervals have nonzero horizontal displacement. These are input-audit counts, separate from E2 model performance. % [claim:C106] [evidence:E101]
-Native export on the new cohort preserves the same fifteen-node/three-pair-channel contract and yields finite, mask-consistent inputs. This verifies computational availability, not tactical semantics. The throw-event stream is unavailable for the four May series, while all selected windows have pre-round scores and CT equipment; unavailable throw counts remain unknown. % [claim:C188] [evidence:E130,E135]
+Native export on the new cohort preserves the same fifteen-node/three-pair-channel contract and yields finite, mask-consistent inputs. This verifies computational availability, not tactical semantics. Dedicated throw events are not exposed for the four May series; subsequent event-stage adapters recover qualified release observations while preserving unresolved counts as unknown. Pre-round scores and CT equipment are available for all selected windows. % [claim:C188] [evidence:E130,E135,E150]
 
 
-\subsection{Main representation and temporal comparison: E2}
+\subsection{Architecture and temporal comparison}
 The complete development matrix covers the same 465 windows under each exclusion regime, rather than 930 independent windows. We average seed-specific losses within each window, then within each series, and finally weight the nine series equally. Table~\ref{tab:mainrec} reports the seven-group reconstruction objective; it is not a tactical accuracy score. % [claim:C123] [evidence:E110]
 
 \begin{table}[t]
-\caption{Completed development window reconstruction, E2. Lower is better. Every condition reconstructs the same v0.3 target; three seeds are averaged before equal-series aggregation.}
+\caption{Core architecture comparison for development reconstruction, E2. Lower is better. Every condition reconstructs the same v0.3 target; three seeds are averaged before equal-series aggregation.}
 \label{tab:mainrec}
 \centering\small
 \begin{tabular}{lrr}
@@ -233,37 +224,21 @@ MLP, static & 0.104151 & 0.130487 \\ % [claim:C130] [evidence:E110]
 MLP + GRU & 0.091641 & 0.123633 \\ % [claim:C131] [evidence:E110]
 Graph, static & 0.101017 & 0.130968 \\ % [claim:C132] [evidence:E110]
 Graph + GRU & 0.092370 & 0.125391 \\ % [claim:C133] [evidence:E110]
-Graph + GRU, no motion & 0.096085 & 0.126011 \\ % [claim:C134] [evidence:E110]
-Graph + GRU, common input & 0.096766 & 0.125923 \\ % [claim:C135] [evidence:E110]
 \bottomrule
 \end{tabular}
 \end{table}
 
 Temporal graph and MLP conditions reduced the objective against their static counterparts by 8.56\%/4.26\% and 12.01\%/5.25\% in G3/G4, respectively. Graph + GRU nevertheless had 0.79\%/1.42\% higher loss than full-input MLP + GRU. The corresponding descriptive paired reduction intervals were [-2.54, 0.69]\% and [-3.36, 0.25]\%; a stable graph advantage is not established. These conditional series-resampling summaries do not remove shared-team or overlapping-fold dependence. % [claim:C124] [evidence:E110]
 
-Adding motion to the specified graph-temporal architecture reduced the G3 objective by 3.87\%, with descriptive interval [1.45, 6.01]\%. The G4 reduction was 0.49\%, with interval [-0.68, 1.60]\%, so this development experiment does not establish a reliable cross-map motion gain. Input-ablation results are conditional on this architecture. % [claim:C126] [evidence:E110]
 
-\begin{figure*}[t]
-\centering
-\includegraphics[width=\textwidth]{figures/reconstruction.pdf}
-\caption{Development reconstruction by series. Each dot averages the three neural seeds within windows and then the windows within one series; the square is the equal-series mean. The panels use a common objective scale. These are descriptive development observations, not independent tactical judgments.}
-\label{fig:reconstruction}
-\end{figure*}
 
-\subsection{Failure decomposition and contextual availability}
-The G4 Nuke diagnostic contains 62 windows from three series. Full Graph + GRU has 8.44\% higher loss than MLP + GRU and 3.72\% higher loss than its common-input control. Against the common-input control, the total loss reduction is $-0.003703$, with the region group contributing $-0.003193$ after division by seven. Against the no-motion control, the largest negative contribution is instead the ground-state group ($-0.003691$). These post-hoc component differences use the fixed CE/MSE scales and model-specific optimal player matchings; they do not identify a causal input-field failure. % [claim:C146] [evidence:E117]
+The two input-reduction conditions, the paired motion analysis and the complete per-series reconstruction plot are reported in Supplementary Appendix~A. Supporting component and telemetry audits are in Supplementary Appendix~B.
 
-A separate context audit reread the same 22 development demos without changing any encoder input. It recovered pre-round scores for all 465 windows, CT and T equipment totals at all 2,325 query times, and finite angle pairs for all 11,368 live CT observations. Dead-player angle slots are masked. This establishes field availability, not improved representation or tactical generalization. % [claim:C147] [evidence:E118]
-
-Throw counts start at freeze end and stop at each query tick; they count recorded releases rather than active smoke or fire effects. Previous outcomes are restricted to completed earlier rounds, with score attributed to stable team identities across side switches. Opponent equipment is privileged observer information, and recorded view direction alone does not establish visibility or tactical duty. These fields remain outside the frozen common encoder input. % [claim:C148] [evidence:E118,E119]
-
-The unchanged six fixed query cases now have CT-only equipment, score and throw-count sidecars. All six queries are first-round windows under the original first-in-index selection rule, so their resource conditions are not representative of the full cohort. Context differences are observable, but neither agreement nor disagreement supplies a tactical relevance judgment. % [claim:C149] [evidence:E120]
-
-\subsection{Stable patterns and relevant retrieval: E3--E4}
+\subsection{Patterns, context and retrieval}
 Source-only cluster selection and assignment were completed for all 270 encoder fits. For example, the full graph-temporal condition selected two clusters in 24 of its 27 G3 fits, rather than recovering a predetermined six-pattern taxonomy. Table~\ref{tab:stability} reports descriptive agreement and diagnostic assignment coverage; numeric cluster IDs are local to each fit and do not name duties. % [claim:C127] [evidence:E114]
 
 \begin{table*}[t]
-\caption{Descriptive pattern diagnostics. ARI is averaged over fold/seed pairs on their common accepted queries; different K and method-specific eligible subsets limit direct comparisons. G3 has 27 computed pairs for each condition. G4 pair counts show missing comparisons. G4 coverage pools 1,395 query-seed assignments per condition, not independent samples.}
+\caption{Core-architecture pattern diagnostics; input reductions are in Supplementary Appendix~A. ARI is averaged over fold/seed pairs on their common accepted queries; different K and method-specific eligible subsets limit direct comparisons. G3 has 27 computed pairs for each condition. G4 pair counts show missing comparisons. G4 coverage pools 1,395 query-seed assignments per condition, not independent samples.}
 \label{tab:stability}
 \centering\small
 \begin{tabular}{lrrrr}
@@ -274,18 +249,13 @@ MLP, static & 0.684 & 0.582 & 18/18 & 83.7 \\ % [claim:C140] [evidence:E114]
 MLP + GRU & 0.353 & 0.520 & 18/18 & 86.0 \\ % [claim:C141] [evidence:E114]
 Graph, static & 0.578 & 0.534 & 16/18 & 85.8 \\ % [claim:C142] [evidence:E114]
 Graph + GRU & 0.502 & 0.406 & 18/18 & 93.0 \\ % [claim:C143] [evidence:E114]
-Graph + GRU, no motion & 0.586 & 0.346 & 16/18 & 89.5 \\ % [claim:C144] [evidence:E114]
-Graph + GRU, common input & 0.387 & 0.566 & 18/18 & 85.0 \\ % [claim:C145] [evidence:E114]
 \bottomrule
 \end{tabular}
 \end{table*}
 
 The same-library exports contain 18,600 query-method-seed ranking records across the two regimes, including the direct observation/statistical controls. Six fixed first-in-index G4 query cases show the top candidate from each of two prespecified temporal encoders at seed zero. Their relevance is unjudged; no tactical nDCG or recall is reported for these new rankings. % [claim:C128] [evidence:E110,E116]
 
-\subsubsection{Explicit context facets}
-We retain the frozen state encoders and add explicit CT context: five log equipment totals, two public pre-round scores, and thirty log throw counts over the five times and six grenade types, for 37 coordinates. Equipment reweights information already present in the node input; score and recorded utility supply additional observations. Opponent equipment and raw view angles are excluded. % [claim:C150] [evidence:E121]
 
-Each state or context-group squared distance is divided by its source-library mean off-diagonal pair distance. The contextual distance equally averages equipment, score and utility groups. The fixed mixture is $d_\lambda=(1-\lambda)d_{\mathrm{state}}+\lambda d_{\mathrm{context}}$, with $\lambda=0.5$ and prespecified sensitivities 0.25 and 0.75. Single-group and context-only controls are retained. Unknown source context makes that condition unsupported; an unknown query is not assigned a zero distance. No encoder weights are updated. % [claim:C151] [evidence:E121]
 
 The development replay produced 315 method/fold/seed entries and 131,130 query-method-policy records. These new full-library rankings remain unjudged. % [claim:C152] [evidence:E122]
 
@@ -293,7 +263,6 @@ With context, full graph-temporal seed ARI was 1.000 in G3 and 0.995 in G4; full
 
 A post-hoc source-centroid decomposition explains much of this stability. For G4 Graph + GRU with context, state coordinates contributed 2.66\% of squared centroid separation, equipment 66.55\%, score 6.34\%, and utility 24.45\%. Its query partition agreed with context-only clustering at mean ARI 0.987 on eligible common assignments. These are properties of the normalized representation, not causal feature importance. Stable resource groups do not establish tactical duties; deployment descriptions and contextual facets remain separate. % [claim:C154] [evidence:E124]
 
-\subsubsection{Exploratory replay of previously judged pairs}
 An exact-stimulus audit checked the old packet hashes and displayed coordinates, places, health and equipment against the same frozen windows. Restricting candidates to the current source-training library leaves 17 complete numeric pairs across three queries. A sensitivity subset retains existing numeric scores without requiring the original completion flag: 30 usefulness and 29 similarity records across five queries. Original scores, missing values and abstentions remain unchanged. % [claim:C155] [evidence:E125]
 
 Table~\ref{tab:oldpool} ranks only the eligible rated candidates for each old query, with gains $2^g-1$ and cutoff $\min(5,N)$. Neural seeds are averaged within each query before the query macro-average. The old materials omitted the new utility/score facets, candidate selection depended on earlier methods, and grader independence was not verified. This is an information-limited development observation, not a new independent tactical test or full-library retrieval metric. % [claim:C156] [evidence:E125,E126]
@@ -328,7 +297,7 @@ The restricted old judged-pool replay and all new rankings have different eviden
 \label{fig:deployment}
 \end{figure*}
 
-\subsection{New-series transfer and technical confirmation: E5}
+\subsection{New-series transfer}
 The technical-confirmation planning scenario balances six maps with two series per map. Under independent normal within-map log-ratio residuals with SD 0.05, a 12-series design has approximately 93.9\% probability that the nominal 95\% interval half-width is at most 0.05 log units; SD 0.10 requires 24 series for 80\% width assurance under the same model. These are assumption-dependent precision calculations, not tactical-effect power or proof that 12 series suffice for the full study. The new cohort and source checkpoints were locally frozen before archive acquisition; its technical results are reported below. % [claim:C157] [evidence:E127,E129]
 
 The acquired cohort contains 12 series from three events, two per map. Native parsing yields 246 eligible CT windows from 247 completed rounds; one window ends before the final supplied time. The prelisted same-event Mirage alternate replaces a primary archive containing split map fragments, before any model output. Newly acquired series include May and October matches, so this is not a chronological future-only split or an entirely researcher-unseen map evaluation. % [claim:C170] [evidence:E130]
@@ -345,7 +314,7 @@ The prespecified unequal-variance sensitivity gives a ratio interval of [0.98218
 \end{figure*}
 
 \begin{table}[t]
-\caption{New-series reconstruction, E5. Losses average seeds and windows within series, then weight the six two-series map groups equally. Lower is better. Secondary conditions are descriptive.}
+\caption{New-series reconstruction for the four core conditions, E5. Losses average seeds and windows within series, then weight the six two-series map groups equally. Lower is better. Secondary conditions are descriptive.}
 \label{tab:external}
 \centering
 \begin{tabular}{lr}
@@ -356,63 +325,24 @@ MLP static & 0.128612 \\ % [claim:C174] [evidence:E131]
 MLP + GRU & 0.122492 \\ % [claim:C175] [evidence:E131]
 Graph static & 0.129249 \\ % [claim:C176] [evidence:E131]
 Graph + GRU & 0.124658 \\ % [claim:C177] [evidence:E131]
-Graph + GRU, no motion & 0.124499 \\ % [claim:C178] [evidence:E131]
-Graph + GRU, common input & 0.125665 \\ % [claim:C179] [evidence:E131]
 \bottomrule
 \end{tabular}
 \end{table}
 
 The new-series state-only source prototypes accept 93.2\% of Graph+GRU query-seed assignments and 87.0\% for MLP+GRU. Their eligible seed-pair ARI means are 0.430 and 0.527, each from eighteen comparisons. Coverage is not calibrated confidence, and the method-specific common-accepted populations limit direct stability comparisons. % [claim:C190] [evidence:E134]
 
-Pre-round score and CT equipment are known for all 246 windows. Corrective telemetry adapters recover 79 of the 80 originally unavailable May windows, raising complete utility support from 166 to 245. One Inferno window retains unknown HE death-drop semantics at 12, 15, 18 and 20 seconds, with its 10-second count known. All original policies and controls are retained; missing counts are not zero-imputed. The native event-stage audit is described in Appendix~\ref{app:telemetry}. % [claim:C191] [evidence:E150,E151]
+Pre-round score and CT equipment are known for all 246 windows. Corrective telemetry adapters recover 79 of the 80 originally unavailable May windows, raising complete utility support from 166 to 245. One Inferno window retains unknown HE death-drop semantics at 12, 15, 18 and 20 seconds, with its 10-second count known. All original policies and controls are retained; missing counts are not zero-imputed. The native event-stage audit is described in Supplementary Appendix~D. % [claim:C191] [evidence:E150,E151]
 
 For Graph+GRU plus joint context, acceptance is 91.3\% across all query-seed assignments and 91.7\% among the context-known subset. Seed ARI is 0.963 across eighteen eligible pairs, while agreement with context-only assignments is 1.000 on eighteen common-accepted comparisons. The source prototypes were already resource-dominated; neither conditional stability nor this agreement establishes tactical correctness. Availability and acceptance subsets differ from the state-only summaries. % [claim:C192] [evidence:E124,E152]
 
 
 
-\begin{table}[t]
-\caption{New-series unjudged retrieval turnover. Counts pool twenty method/seed variants, not independent participants. Utility-dependent policies use the 245 context-known windows. Changing the first result is not evidence of improved relevance.}
-\label{tab:transferretrieval}
-\centering\small
-\setlength{\tabcolsep}{4pt}
-\begin{tabular}{lrr}
-\toprule
-Policy & Queries & Top-1 changes/comparisons\\
-\midrule
-Base & 246 & 0/4920 \\ % [claim:C193] [evidence:E151]
-CT equipment & 246 & 2408/4920 \\ % [claim:C194] [evidence:E151]
-Public score & 246 & 3892/4920 \\ % [claim:C195] [evidence:E151]
-CT utility & 245 & 4112/4900 \\ % [claim:C196] [evidence:E151]
-Joint context, 0.25 & 245 & 3084/4900 \\ % [claim:C197] [evidence:E151]
-Joint context, 0.50 & 245 & 4007/4900 \\ % [claim:C198] [evidence:E151]
-Joint context, 0.75 & 245 & 4509/4900 \\ % [claim:C199] [evidence:E151]
-\bottomrule
-\end{tabular}
-\end{table}
+
+The complete seven-policy context intervention and weight-sensitivity table is in Supplementary Appendix~A-A. These controls change the observation weighting, rather than providing additional independent trials.
 
 The telemetry correction follows the initial secondary analysis and is reported as an amendment; both result versions are retained. No source cluster, radius, context weight or encoder is refitted for these transfers. G4 has no same-map source candidates, so same-map retrieval is unsupported and all-source and other-map strata coincide. The evidence supports reporting computational transfer and telemetry limits; independent semantic retrieval validity remains unresolved.
 
-\subsection{Completed auxiliary state-prediction controls: E6}
-Table~\ref{tab:aux} reports the completed v17 development comparison using the original common inputs and masks. Values are equal-series relative MSE reductions against persistence. Neural scores average errors over seeds 0, 1, and 42; they are not a prediction ensemble.
-
-\begin{table}[t]
-\caption{Completed auxiliary development prediction, E6. Relative MSE reduction against persistence (\%). These values do not measure tactical relevance or the revised main representation.}
-\label{tab:aux}
-\centering
-\begin{tabular}{lrr}
-\toprule
-Method & G3 & G4\\
-\midrule
-Ridge & 18.06 & 14.71 \\
-Graph & 14.51 & 12.07 \\
-Graph + GRU & 16.76 & 11.46 \\
-Full-input MLP & 15.88 & 13.03 \\
-Full-input MLP + GRU & 17.07 & 10.80 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-The new non-graph conditions did not establish a stable advantage over ridge. This result bounds the current predictive probe; it neither validates the revised deployment representation nor rules out graph usefulness for the original pattern task. The full v7 and v14 controls, paired descriptive intervals, seeds, and failures remain in the evidence supplement.
+The separate next-state prediction probe is retained in Supplementary Appendix~B-B; it is not the main representation endpoint.
 
 \section{Discussion and Limitations}
 \subsection{What the evidence can establish}
@@ -440,33 +370,8 @@ This CT study targets offline deployment representation and evidence retrieval. 
 \section{Conclusion}
 We report an auditable CT opening schema and matched architecture, pattern, and retrieval controls across maps. The frozen new-series technical comparison does not establish a stable graph advantage. Recorded context can stabilize clusters while changing what those clusters represent, so computational stability must not substitute for tactical interpretation. The limited existing judged-pool replay remains auxiliary; independent semantic retrieval and coaching efficacy are unresolved. % [claim:C182] [evidence:E124,E126,E131]
 
-\appendices
-\section{Evidence and Reproducibility}
-Recorded auxiliary evidence is in
-\path{datasets/evaluation/ct_information_control_v17_report.json}.
-Geometry coverage is in
-\path{datasets/evaluation/ct_geometry_features_v17_report.json}.
-Cohort and historical protocols are linked in the manuscript writing guide. Raw Demos, human returns, environments, and most weights remain local; the public summaries alone are not a fresh-clone training dataset.
 
-A local CPU reference bundle contains 124 checksummed payload files, including 108 cached prediction archives and six sample indices. Its independently extracted copy reproduces 216 series/condition/seed records, all twelve series summaries, and both primary intervals within absolute tolerance $10^{-10}$. This replays aggregation from cached losses; it does not recompute decoder losses, model inference, training or raw observations. The installed software environments and executable routes are recorded separately. % [claim:C217] [evidence:E145,E146,E148]
-
-The reproducibility guide distinguishes cached-loss replay, frozen-checkpoint inference, from-scratch training, native parsing and the private old-judgment audit. Model weights, training inputs and original human returns are not in the numerical bundle. The local artifact has not been approved for redistribution or anonymous submission; the software license does not establish rights to every underlying material.
-
-\pending{REPRO}{Author review remains necessary for permitted redistribution, anonymized review artifacts and access conditions for raw/native/training materials. The local numerical replay and source entry points are prepared; this is not a claim of complete public reproduction.}
-\subsection{Research workflow assistance}
-Scientific Agent Skills~\cite{kassis2026skills} informed evidence organization, paired observational comparisons, precision planning and citation checks. The earlier scientific-writing installation was recorded at repository revision \path{593377bb048752abb0152deab9fbb1083a6087df}; current procedural files are recorded separately by content hash, without asserting the same upstream revision for all files. This is workflow assistance, not independent validation of sources, models, or scientific conclusions. % [claim:C107] [evidence:E106,E128]
-
-\section{Telemetry Compatibility}
-\label{app:telemetry}
-A version-sensitivity probe reparsed one unchanged May Dust2 Demo with demoparser2 0.42.1 instead of 0.41.3. The dedicated throw event remained unavailable, while opening snapshots, timing audits and all five model-input arrays matched exactly. This single-file result does not determine whether recording differences or a remaining compatibility issue causes the event gap, and it does not validate other parser-version substitutions. % [claim:C189] [evidence:E138]
-
-On one October Dust2 control, all 535 paired dedicated releases occur 6--14 game ticks after firing and exactly at the first observed projectile tick; firing timestamps are not interchangeable with releases. After the conservative correction, all 330,660 candidate positions supported in the preceding context version and 4,766 previously known prototype assignments retain their candidate identities or cluster labels and acceptance, with distances checked to absolute tolerance $10^{-10}$. These are telemetry and replay checks, not semantic judgments. % [claim:C200] [evidence:E139,E153]
-
-Native fields distinguish firing from completed release: in one unmatched T-side Molotov action, a positive planned throw time follows pin release, but the owner dies before that time, outside all query windows. Across eight dedicated-event controls, 3,553 normal releases and 830 CT query counts match. Two smoke projectiles instead appear at owner death without a started release or dedicated throw event. These smoke counterexamples are not extrapolated to the unmatched target HE projectile, whose affected counts remain unknown. % [claim:C221] [evidence:E149,E150]
-
-\section{Declarations and Pilot Sources}
-\pending{DECL}{Before submission, supply factual author contributions, applicable participant/consent information for any human evidence actually used, data/code availability, funding/conflicts if applicable, and the venue-required AI assistance disclosure. No approval, consent, authorship, or funding statement is invented here.}
-
+\FloatBarrier
 \bibliographystyle{IEEEtran}
 \bibliography{references}
 \end{document}

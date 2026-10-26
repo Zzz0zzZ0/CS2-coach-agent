@@ -56,4 +56,13 @@ python scripts/run_ct_reconstruction.py --protocol datasets/selections/ct_recons
 
 ## 工作稿PDF构建
 
-本轮使用本地便携Tectonic0.17.0编译原IEEEtran源，未上传文稿到在线编译服务。由`main.tex`所在目录执行`tectonic --keep-logs --outdir <输出目录> main.tex`；保留相对图表/参考文献路径。软件来源及SHA、最终11页PDF和页面核查范围见`ct_manuscript_build_report.json`。PDF在本机`output/pdf/ct_cross_map_draft.pdf`，属于工作稿；数值包只复现聚合，不承担整份PDF构建。
+本轮使用本地便携Tectonic0.17.0编译原IEEEtran源，未上传文稿到在线编译服务。在`docs/paper/manuscript`目录分别编译`main.tex`和`supplement.tex`，两者均读取同目录的`preamble.tex`、文献库和图表。建议两个输出目录分别保存辅助文件：
+
+```powershell
+tectonic --keep-logs --outdir <主稿构建目录> main.tex
+tectonic --keep-logs --outdir <补充构建目录> supplement.tex
+```
+
+主稿9页（含参考文献），独立补充3页；字体映射修正为Times兼容正常/粗体/斜体/粗斜体，不改IEEE标准字号、页边距和双栏尺寸。Tectonic编译通过；桌面内置编译器亦核查两份源。pdfLaTeX分支保留IEEEtran的Times配置，未在本机单独运行pdfLaTeX。
+
+软件来源、源文件和PDF的SHA及页面核查范围见`ct_manuscript_build_report.json`。本机PDF为`output/pdf/ct_cross_map_draft.pdf`和`output/pdf/ct_cross_map_supplement.pdf`，均为工作稿；数值包只复现聚合，不承担整份PDF构建。官方参考骨架在`templates/ieee/`，未经改动且保留原许可。

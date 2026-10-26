@@ -1,9 +1,9 @@
 {
   "status": "compiled_working_draft_reviewed_not_submission_ready",
-  "pages": 11,
-  "source_sha256": "9493af7c299b7fc7bbb0795b3490077e85cce2c9dfacfa61d833a8b0b485b212",
+  "pages": 9,
+  "source_sha256": "ec095ef9fce8f21ead519afc46a6de92b9e84fd8324282f12652b005589b95b3",
   "PDF_path": "output/pdf/ct_cross_map_draft.pdf",
-  "PDF_sha256": "3586e8b7f6951bd6a8cb26248598cbb17bbf0b0d6aabe7d28e87616bb6ea0638",
+  "PDF_sha256": "b75e82d87e5842485036b62c93310c06a964846af3af8eea30ec02df6c0449aa",
   "compiler": "Tectonic0.17.0",
   "official_compiler_release": "https://github.com/tectonic-typesetting/tectonic/releases/tag/tectonic%400.17.0",
   "compiler_executable_sha256": "99ffcfdbf1ebf8bdda9e791942e3d06aedb12463fddc33f07de6f5211c8bf08d",
@@ -23,15 +23,11 @@
     6,
     7,
     8,
-    9,
-    10,
-    11
+    9
   ],
   "enlarged_pages_reviewed": [
     1,
-    4,
-    9,
-    11
+    9
   ],
   "visual_review_scope": "Model inspection of rendered pages; not human author approval.",
   "bound_claims": 107,
@@ -39,7 +35,7 @@
   "registry_schema_unexpected_errors": [],
   "author_verification_gate_counts": {
     "CLAIM_NOT_VERIFIED": 107,
-    "UNVERIFIED_CLAIM_EVIDENCE": 167
+    "UNVERIFIED_CLAIM_EVIDENCE": 168
   },
   "remaining_pending_markers": [
     "REPRO",
@@ -50,5 +46,95 @@
     "Rights and anonymous redistribution remain unapproved.",
     "Responsible human source verification, declarations and final approval are pending.",
     "Independent semantic retrieval/coaching efficacy not established."
-  ]
+  ],
+  "font_warning_count": 0,
+  "body_font_family": "TeX Gyre Termes (Times-compatible)",
+  "body_bold_italic_styles_verified": true,
+  "main_core_architecture_conditions": 4,
+  "font_names": [
+    "AKHCZK+CMMI7",
+    "BMQQDV+DejaVuSans",
+    "BZIVMZ+TeXGyreTermes-Bold-Identity-H",
+    "CAFSZL+CMEX10",
+    "DDIEWW+CMR7",
+    "EBWHKJ+ArialMT",
+    "FKPJSN+CMSY10",
+    "IHAIZV+TeXGyreTermes-Regular-Identity-H",
+    "IXFAWU+TeXGyreTermes-BoldItalic-Identity-H",
+    "JAGKKY+CMR5",
+    "NOMARO+CMMI5",
+    "PVTTLK+CMSY7",
+    "TQTHRL+TeXGyreTermes-Italic-Identity-H",
+    "VDVGTR+CMR10",
+    "YEUUOC+CMMI10"
+  ],
+  "undefined_references": 0,
+  "source_files": {
+    "docs/paper/manuscript/main.tex": "ec095ef9fce8f21ead519afc46a6de92b9e84fd8324282f12652b005589b95b3",
+    "docs/paper/manuscript/supplement.tex": "e323e4abeafa82b1c90cf504f8da6d12a8baf55aeb0c1506f8cce62f134043e4",
+    "docs/paper/manuscript/preamble.tex": "a037af445dce5270fa6b4ba548ae8394a56d95291444bc0c298919e253d98928",
+    "docs/paper/manuscript/references.bib": "b1b1b3cfc59e4c1cfe3288e5f96474731fa50db39fc697ad9b83b911a82dc544"
+  },
+  "supplement": {
+    "PDF_path": "output/pdf/ct_cross_map_supplement.pdf",
+    "PDF_sha256": "78802804670493da40ff9ea86ba8daa10ce9273196e2f0dc6727cbe02935eac4",
+    "pages": 3,
+    "font_names": [
+      "AKHCZK+CMR10",
+      "BZIVMZ+TeXGyreTermes-Italic-Identity-H",
+      "CAFSZL+CMSY7",
+      "DDIEWW+CMR7",
+      "EBWHKJ+ArialMT",
+      "IHAIZV+TeXGyreTermes-Regular-Identity-H",
+      "IXFAWU+LMMono10-Regular-Identity-H",
+      "TQTHRL+TeXGyreTermes-Bold-Identity-H",
+      "VDVGTR+CMMI10",
+      "YEUUOC+CMSY10"
+    ],
+    "font_types": [
+      "Type0",
+      "Type1"
+    ],
+    "all_fonts_embedded": true,
+    "overfull_boxes": 0,
+    "font_warning_count": 0,
+    "undefined_references": 0,
+    "page_contactsheet_reviewed": [
+      1,
+      2,
+      3
+    ],
+    "enlarged_pages_reviewed": [
+      1,
+      2,
+      3
+    ]
+  },
+  "claims_by_document": {
+    "main.tex": 83,
+    "supplement.tex": 24
+  },
+  "source_hash_bindings_checked": 51,
+  "page_budget": {
+    "main_max_including_references": 10,
+    "main_actual": 9,
+    "headroom_pages": 1,
+    "separate_supplement_pages": 3,
+    "standard_IEEE_journal_dimensions_retained": true,
+    "fees_policy_source": "https://transactions.games/submit/submission-guidelines",
+    "policy_checked_on": "2026-10-26",
+    "voluntary_page_charges_not_required_for_publication": true,
+    "mandatory_overlength_starts_above_full_paper_pages": 10,
+    "publisher_final_pagination_requires_review": true,
+    "paid_open_access_in_budget_plan": false
+  },
+  "input_ablations_in_separate_supplement": 2,
+  "full_context_policy_table_in_separate_supplement": true,
+  "auxiliary_prediction_in_separate_supplement": true,
+  "desktop_compiler": {
+    "main.tex": "success",
+    "supplement.tex": "success"
+  },
+  "new_model_experiments": false,
+  "frozen_experiment_code_or_protocol_changes": false
 }
