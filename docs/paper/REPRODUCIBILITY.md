@@ -63,6 +63,6 @@ tectonic --keep-logs --outdir <主稿构建目录> main.tex
 tectonic --keep-logs --outdir <补充构建目录> supplement.tex
 ```
 
-主稿9页（含参考文献），独立补充3页；字体映射修正为Times兼容正常/粗体/斜体/粗斜体，不改IEEE标准字号、页边距和双栏尺寸。Tectonic编译通过；桌面内置编译器亦核查两份源。pdfLaTeX分支保留IEEEtran的Times配置，未在本机单独运行pdfLaTeX。
+主稿9页（含参考文献），独立补充4页；字体映射修正为Times兼容正常/粗体/斜体/粗斜体，不改IEEE标准字号、页边距和双栏尺寸。Tectonic编译通过；桌面内置编译器亦核查两份源。pdfLaTeX分支保留IEEEtran的Times配置，未在本机单独运行pdfLaTeX。
 
 软件来源、源文件和PDF的SHA及页面核查范围见`ct_manuscript_build_report.json`。本机PDF为`output/pdf/ct_cross_map_draft.pdf`和`output/pdf/ct_cross_map_supplement.pdf`，均为工作稿；数值包只复现聚合，不承担整份PDF构建。官方参考骨架在`templates/ieee/`，未经改动且保留原许可。

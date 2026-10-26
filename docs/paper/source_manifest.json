@@ -395,7 +395,7 @@
         "pmid": "",
         "url": "https://github.com/weyoung-open-lab/TAGNet-CS2/blob/1a7ac7cf817ba5ba476e94b3bee36046f4fef56c/TAGNet_ToG_final%E5%AE%9A%E7%A8%BF.pdf"
       },
-      "locator": "Author PDF, 13 pages; sections III-D/E/F and IV-I, pages 4-6 and 9-10; blob 804572a21d6d2fee1a416d5efa09f1a505623010; SHA256 15b38b517e3663971d69414100d88207640e18eaa03f2d67dfec0ca7fde0aaf4; publisher version not independently checked",
+      "locator": "Author-provided PDF, 13 pages; narrative comparison: introduction pp.1-2, feature/workflow and fixed aggregation pp.3-6, results/controls pp.6-11, limitations/future directions and conclusion pp.11-12; blob 804572a21d6d2fee1a416d5efa09f1a505623010; SHA256 15b38b517e3663971d69414100d88207640e18eaa03f2d67dfec0ca7fde0aaf4; publisher version not independently checked",
       "confidentiality": "public",
       "verification": {
         "source_opened": false,
