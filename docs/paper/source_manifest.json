@@ -1195,6 +1195,226 @@
         "verified_by": "",
         "verified_on": ""
       }
+    },
+    {
+      "evidence_id": "E144",
+      "title": "Frozen development and new-series cohort counts including observed casualties",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_manuscript_cohort_summary.json"
+      },
+      "locator": "datasets/evaluation/ct_manuscript_cohort_summary.json; sha256=f4706d4c45a9a6d30500ea01aff027ffbe69a33992263b3aa4290c14557cd2b8",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E145",
+      "title": "Observed software versions separated by execution stage",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_paper_environment.json"
+      },
+      "locator": "datasets/evaluation/ct_paper_environment.json; sha256=f71d860d2d5e05ef943da87d24e8e21376c659570cec8470486281ea8edb3fa4",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E146",
+      "title": "Standalone extracted cached-loss numerical replay",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_confirmation_extracted_replay_report.json"
+      },
+      "locator": "datasets/evaluation/ct_confirmation_extracted_replay_report.json; sha256=c1bdc3c3b5a166a867babd6e64b9171beed7557c165d4296f9fafb98d678c525",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E147",
+      "title": "Source-only CT context scaling and fused-vector implementation",
+      "source_type": "software",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/app/services/ct_context_retrieval_service.py"
+      },
+      "locator": "app/services/ct_context_retrieval_service.py; sha256=c47146325124ed276a0d3f7c6be0930e1026883a796f0b49483837d858fe90db",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E148",
+      "title": "Local numerical bundle construction, hash and access status",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_confirmation_numerical_replay_report.json"
+      },
+      "locator": "datasets/evaluation/ct_confirmation_numerical_replay_report.json; sha256=3ab9060fb80630c4f44f77602a76539bd11373093a9ef22b9c171818c072140a",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E149",
+      "title": "Bounded event-stage investigation including cancellation and smoke death-drop controls",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_utility_event_investigation.json"
+      },
+      "locator": "datasets/evaluation/ct_utility_event_investigation.json; sha256=ff59e2d994f6b914e21d28f056d645e268cdf3d395db265ae12668a48f18cefc",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E150",
+      "title": "Conservative v3 recovery retaining unvalidated HE counts as unknown",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_independent_context_v3_report.json"
+      },
+      "locator": "datasets/evaluation/ct_independent_context_v3_report.json; sha256=c3d6f39089656e95693ab302fe7117aaa26df3610184174682c4fe107c60aafa",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E151",
+      "title": "Original context policy matrix on conservative v3 observations",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_independent_retrieval_report_v3.json"
+      },
+      "locator": "datasets/evaluation/ct_independent_retrieval_report_v3.json; sha256=7cd21682df5e1c2420f8827572c5d5d4e6a8d72281f3590afe341ff28320f706",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E152",
+      "title": "Frozen joint prototypes on conservative v3 observations",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_independent_context_pattern_report_v3.json"
+      },
+      "locator": "datasets/evaluation/ct_independent_context_pattern_report_v3.json; sha256=338527c72bdfcf51c167eb8c010a221dabf52da14bb16d8d063fe32f5a8f9c51",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E153",
+      "title": "Parity of all previously supported v2 rankings and prototype assignments",
+      "source_type": "report",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "isbn": "",
+        "pmcid": "",
+        "pmid": "",
+        "url": "https://github.com/Zzz0zzZ0/CS2-coach-agent/blob/main/datasets/evaluation/ct_utility_v3_replay_parity.json"
+      },
+      "locator": "datasets/evaluation/ct_utility_v3_replay_parity.json; sha256=ba3d973f5d472474a9ce078ba788c553819392557d88e6ad3fe070b2d541d931",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
     }
   ]
 }

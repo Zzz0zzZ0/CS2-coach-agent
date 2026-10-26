@@ -1,0 +1,67 @@
+{
+  "status": "observed_local_metadata",
+  "checked_date": "2026-10-26",
+  "environments": {
+    "reference_metrics": {
+      "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+      "packages": {
+        "numpy": "2.3.5",
+        "scipy": "1.16.3",
+        "pandas": "2.3.3",
+        "scikit-learn": "1.7.2",
+        "torch": null,
+        "demoparser2": "0.41.3",
+        "awpy": "3.1.1",
+        "psutil": "7.0.0",
+        "matplotlib": "3.10.6",
+        "pytest": "8.4.2"
+      }
+    },
+    "frozen_gpu": {
+      "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+      "packages": {
+        "numpy": "2.3.5",
+        "scipy": null,
+        "pandas": "2.3.3",
+        "scikit-learn": null,
+        "torch": "2.14.1+cu130",
+        "demoparser2": "0.41.3",
+        "awpy": null,
+        "psutil": "7.2.2",
+        "matplotlib": null,
+        "pytest": null
+      }
+    },
+    "regression": {
+      "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+      "packages": {
+        "numpy": "2.3.5",
+        "scipy": "1.16.3",
+        "pandas": "2.3.3",
+        "scikit-learn": "1.7.2",
+        "torch": null,
+        "demoparser2": "0.41.3",
+        "awpy": "3.1.1",
+        "psutil": "7.0.0",
+        "matplotlib": "3.10.6",
+        "pytest": "8.4.2"
+      }
+    },
+    "parser_diagnostic": {
+      "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+      "packages": {
+        "numpy": "2.3.5",
+        "scipy": "1.16.3",
+        "pandas": "2.3.3",
+        "scikit-learn": "1.7.2",
+        "torch": null,
+        "demoparser2": "0.42.1",
+        "awpy": "3.1.1",
+        "psutil": "7.0.0",
+        "matplotlib": "3.10.6",
+        "pytest": "8.4.2"
+      }
+    }
+  },
+  "limits": "Installed-version record, not a portable lock or a claim that all stages run in one environment. Parser0.42.1 is diagnostic only; frozen input extraction uses0.41.3."
+}

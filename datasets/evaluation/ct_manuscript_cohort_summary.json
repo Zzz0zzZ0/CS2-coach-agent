@@ -1,0 +1,33 @@
+{
+  "status": "complete_frozen_cohort_summary",
+  "development": {
+    "series": 9,
+    "demos": 22,
+    "maps": 6,
+    "eligible_windows": 465,
+    "windows_with_observed_casualties": 74
+  },
+  "independent": {
+    "series": 12,
+    "demos": 12,
+    "maps": 6,
+    "eligible_windows": 246,
+    "windows_with_observed_casualties": 41
+  },
+  "casualty_definition": "At least one of the five CT players has a false alive mask at any supplied observation; windows, not death events or independent players.",
+  "input_sha256": {
+    "output/tagnet/ct_deployment_inputs_p1_v03/features.npz": "f7bc4b100a654250f13b646b3dc5ed136f0295faad1b2283f33ed485adecf799",
+    "output/tagnet/ct_independent_inputs/2394204/features.npz": "05f689c525fae00fa5d1bf41b9732808ab9baab28e59b3859b72d6b5cf8dc4ba",
+    "output/tagnet/ct_independent_inputs/2394203/features.npz": "61f731fa925491645c87603aec71ddcd402dae58c04ee3746c3eaf4ae7fd87d5",
+    "output/tagnet/ct_independent_inputs/2394205/features.npz": "462ce271505be5b9b73e41e108f9571041421e8f5700816adc0b35fc536a4ac2",
+    "output/tagnet/ct_independent_inputs/2394200/features.npz": "2dc457ca42337fd3c50dcd376fd19393e78692c11eae8aadca3288fc78b5f8f0",
+    "output/tagnet/ct_independent_inputs/2398717/features.npz": "2f24e9ab4d4cff4a40dc401f1843b29b60f01c27d5c1f09d3bfee4a58f337cf7",
+    "output/tagnet/ct_independent_inputs/2398718/features.npz": "3058572bfec489680dcaf6ba3acecc6544bbbb62175d4a8f03e8ae20f92c4896",
+    "output/tagnet/ct_independent_inputs/2398720/features.npz": "6a68002c20fcf299b18515a0f6e7de74822cedf440b01398d2347b9ed9718fdc",
+    "output/tagnet/ct_independent_inputs/2398722/features.npz": "d5188a0d22b4d2838337fbb36179f05f7c6a7a658503b8afbe4a8c8597026e32",
+    "output/tagnet/ct_independent_inputs/2399384/features.npz": "e89a16a5dc10c80808015f72e52d2e147a9639e9b2fbef74ce4361426cb44d1f",
+    "output/tagnet/ct_independent_inputs/2399385/features.npz": "1957b9fb4a041f1fe30bd4405a993e01af3db755fac48826cc014bc86577c980",
+    "output/tagnet/ct_independent_inputs/2399386/features.npz": "2817611261cb71bc47a6fc6ab62827ee656506d00166f94cab4dd06b07f7938a",
+    "output/tagnet/ct_independent_inputs/2399387/features.npz": "52f5e33b8afa7e8a1c0fd4fdbff84d81a31d60ddf86b0c442ae73b23a8695139"
+  }
+}

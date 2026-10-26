@@ -1,0 +1,27 @@
+{
+  "scope": "Independent conservative v3 export after bounded event-stage investigation; no old result changes.",
+  "parent_revision": "c4991c80e5b508f1ea434b89f925db033e4579c0",
+  "frozen_parser_version": "0.41.3",
+  "input_sha256": {
+    "scripts/export_ct_independent_context_v3.py": "63abfffa9ccccacb1b0921de39915752e15bd4f090b7ca59f8ab5f608648a1ea",
+    "scripts/investigate_ct_utility_events.py": "59f05d31bd6c82290d1eadba9a132a754aca44958b2840e97c2c14bbb8e4cee2",
+    "scripts/repair_ct_independent_utility.py": "eed64f5b23788ad5f8c47a7ae2f07bc0de19520f03ccdfab10883bc854a46c1e",
+    "scripts/audit_ct_context_availability.py": "4f220bb770b3c028e97db36b05c526b462f0e39778b3d2285bd54777c35b9b59",
+    "app/services/ct_context_retrieval_service.py": "c47146325124ed276a0d3f7c6be0930e1026883a796f0b49483837d858fe90db",
+    "datasets/evaluation/ct_utility_event_investigation.json": "ff59e2d994f6b914e21d28f056d645e268cdf3d395db265ae12668a48f18cefc",
+    "output/tagnet/ct_independent_context_v2/context.json": "6633308809f1a1eac743bce09c8253298498f0087a230c63ec1f5052bcc1e2f6",
+    "datasets/evaluation/ct_independent_context_repair_report.json": "6a18d8b050e0e9e5dcf50c2d19bb19daa55f98c0eff4f0b5014994b004d00233"
+  },
+  "query_seconds": [
+    10,
+    12,
+    15,
+    18,
+    20
+  ],
+  "expected_utility_complete_windows": 245,
+  "death_drop_semantics": "Only smoke has dedicated-event counterexamples. The target CT HE death-drop leaves round20 at12/15/18/20 seconds unknown. T-side projectiles do not add CT throw counts.",
+  "canceled_release": "Only the unmatched Molotov case with raw pin=false, positive future throw time, death before that time, and outside all original query ranges is excluded. No empirical tick correction.",
+  "controls": "Reuse the completed8-Demo diagnostic ledger:3553 normal releases have full identity/time/type/side parity and830/830 CT query counts match; two smoke death drops are separately reported. Do not reparse or expand controls for this export.",
+  "post_output_amendment": "Corrective telemetry follow-up, not new preregistration; no model/weight/cluster/policy selection. Parent v1/v2 preserved. This export does not rerun rankings or write the manuscript."
+}

@@ -1,0 +1,41 @@
+{
+  "status": "pass_cached_loss_metric_replay",
+  "bundle_integrity_checked": false,
+  "windows": 246,
+  "series": 12,
+  "prediction_files": 108,
+  "series_condition_seed_rows": 216,
+  "primary": {
+    "log_ratio": 0.015640534025819025,
+    "geometric_loss_ratio": 1.0157634873603703,
+    "SE": 0.008086169882565128,
+    "pooled_df": 6,
+    "pooled_log_CI95": [
+      -0.004145610890201108,
+      0.03542667894183916
+    ],
+    "pooled_ratio_CI95": [
+      0.9958629702924485,
+      1.036061680204362
+    ],
+    "Welch_Satterthwaite_df": 2.074791158082971,
+    "heteroscedastic_log_CI95": [
+      -0.01797679885532672,
+      0.04925786690696477
+    ]
+  },
+  "heteroscedastic_ratio_CI95": [
+    0.9821838198828522,
+    1.050491202733887
+  ],
+  "maximum_comparison_absolute_tolerance": 1e-10,
+  "scope": "Aggregation from cached losses, not fresh model inference, training, raw-Demo parsing or semantic validation.",
+  "bundle": {
+    "bundle_path": "output/tagnet/ct_confirmation_numerical_replay.zip",
+    "bundle_sha256": "2637dccad7814f705a79aab7da1a03b9f0e5c859723405cc5d314e33cd633f7b",
+    "bytes": 1305317,
+    "files": 124,
+    "uncompressed_bytes": 1452038,
+    "redistribution_approved": false
+  }
+}

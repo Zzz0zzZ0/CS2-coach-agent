@@ -44,3 +44,7 @@
 保持demoparser2 0.41.3，依次执行`repair_ct_independent_utility.py`、`retrieve_ct_independent_context.py`、`transfer_ct_independent_context_patterns.py`。需要对应本地Demo及源制品；脚本拒绝覆盖已有输出。当前脚本使用v2协议和新目录；修复前v1脚本/协议在提交`3336003`，原输出目录保留。
 
 本轮恢复耗时约22.4秒、进程峰值RAM约872 MiB。0.42.1仅用于隔离版本诊断，未替换冻结实验环境。
+
+## 当前版本补充：v3
+
+后续[原生状态调查](CT_UTILITY_EVENT_INVESTIGATION.md)解释了取消释放和死亡掉落。8对照3553个正常释放、830个CT查询计数匹配。烟雾死亡掉落反例不外推HE。保守v3将完整支持提升至245/246：R20在10秒已知，之后四时刻未知；原定检索与联合聚类已重放。上文60个恢复、226支持及828/830指v2历史阶段，不代表当前可用量。

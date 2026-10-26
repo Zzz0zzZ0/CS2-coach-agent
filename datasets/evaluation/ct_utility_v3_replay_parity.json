@@ -1,0 +1,15 @@
+{
+  "status": "existing_v2_supported_outputs_unchanged",
+  "retrieval_files": 126,
+  "previously_supported_candidate_slots": 330660,
+  "previously_known_prototype_assignments": 4766,
+  "absolute_distance_tolerance": 1e-10,
+  "query_context_known_windows": 245,
+  "no_new_source_fit": true,
+  "input_sha256": {
+    "output/tagnet/ct_independent_context_v2/context.json": "6633308809f1a1eac743bce09c8253298498f0087a230c63ec1f5052bcc1e2f6",
+    "output/tagnet/ct_independent_context_v3/context.json": "f39b3ef4de24b0ddb357727f1d48bd8b793fa0eb1f8d26fb8f0dc3457eda8a9f",
+    "datasets/evaluation/ct_independent_retrieval_report_v3.json": "7cd21682df5e1c2420f8827572c5d5d4e6a8d72281f3590afe341ff28320f706",
+    "datasets/evaluation/ct_independent_context_pattern_report_v3.json": "338527c72bdfcf51c167eb8c010a221dabf52da14bb16d8d063fe32f5a8f9c51"
+  }
+}

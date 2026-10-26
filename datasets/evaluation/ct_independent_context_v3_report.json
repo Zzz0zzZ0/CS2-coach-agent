@@ -1,0 +1,72 @@
+{
+  "status": "complete_conservative_context_v3_export_only",
+  "protocol_sha256": "5d8d06cccd72ce600b691d749413697a6903d14bbcb4eb0cc89c64fa930203cd",
+  "parser_version": "0.41.3",
+  "windows": 246,
+  "complete_windows_by_group": {
+    "equipment": 246,
+    "score": 246,
+    "utility": 245
+  },
+  "newly_complete_utility_windows": 19,
+  "newly_known_utility_snapshots": 96,
+  "remaining_unknown_utility_snapshots": [
+    {
+      "id": "1388e119fe8773c20b5ac1dda497c0b9e5e2403f67b93eb80dea1eb44aae9dfd:20:CT",
+      "second": 12,
+      "tick": 183601
+    },
+    {
+      "id": "1388e119fe8773c20b5ac1dda497c0b9e5e2403f67b93eb80dea1eb44aae9dfd:20:CT",
+      "second": 15,
+      "tick": 183793
+    },
+    {
+      "id": "1388e119fe8773c20b5ac1dda497c0b9e5e2403f67b93eb80dea1eb44aae9dfd:20:CT",
+      "second": 18,
+      "tick": 183985
+    },
+    {
+      "id": "1388e119fe8773c20b5ac1dda497c0b9e5e2403f67b93eb80dea1eb44aae9dfd:20:CT",
+      "second": 20,
+      "tick": 184113
+    }
+  ],
+  "remaining_unknown_window": {
+    "round": 20,
+    "known_seconds": [
+      10
+    ],
+    "unknown_seconds": [
+      12,
+      15,
+      18,
+      20
+    ]
+  },
+  "source_control_receipt_sha256": "ff59e2d994f6b914e21d28f056d645e268cdf3d395db265ae12668a48f18cefc",
+  "source_control_summary": {
+    "attempted": 8,
+    "full_event_parity_passed": 8,
+    "query_counts_matched": 830,
+    "query_counts_compared": 830,
+    "total_dedicated_releases": 3553
+  },
+  "source_control_receipt_reused_not_reparsed": true,
+  "validated_death_drop_classes": [
+    "CSmokeGrenadeProjectile"
+  ],
+  "death_drop_counterexamples": 2,
+  "target_paired_releases": 482,
+  "target_stationary_gaps_merged": 0,
+  "parent_context_sha256": "6633308809f1a1eac743bce09c8253298498f0087a230c63ec1f5052bcc1e2f6",
+  "context_sha256": "f39b3ef4de24b0ddb357727f1d48bd8b793fa0eb1f8d26fb8f0dc3457eda8a9f",
+  "elapsed_seconds": 2.713638200017158,
+  "peak_RAM_MiB": 792.1953125,
+  "limits": [
+    "The two dedicated-event death-drop counterexamples are smoke only; no extrapolation to HE.",
+    "Normal-release parity covers3553 records and830 CT query counts across8 Demos; this export reuses that receipt.",
+    "The unmatched Molotov firing occurs83 seconds after freeze, and native death precedes its planned release.",
+    "No v1/v2 overwrite, source fit, new model evaluation, ranking replay, manuscript edit or semantic label."
+  ]
+}

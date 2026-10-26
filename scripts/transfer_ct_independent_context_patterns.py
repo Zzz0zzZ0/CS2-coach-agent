@@ -21,7 +21,7 @@ from app.services.ct_context_retrieval_service import context_embedding, fused_e
 
 def main():
     import psutil
-    protocol=ROOT/'datasets/selections/ct_independent_context_patterns_v2.json'
+    protocol=ROOT/'datasets/selections/ct_independent_context_patterns_v3.json'
     cfg=json.loads(protocol.read_text(encoding='utf-8'))
     for name,expected in cfg['input_sha256'].items():assert digest(ROOT/name)==expected,name
     old_index,new_index,old_data,new_data,old_context,new_context,folds=load_transfer_inputs()
@@ -29,7 +29,7 @@ def main():
     original=json.loads((ROOT/'datasets/selections/ct_independent_confirmation.json').read_text(encoding='utf-8'))
     parameters=json.loads((ROOT/'datasets/selections/ct_context_pattern_analysis.json').read_text(encoding='utf-8'))
     source_stats=statistics_sequence(old_data);query_stats=statistics_sequence(new_data)
-    out=ROOT/'output/tagnet/ct_independent_context_patterns_v2';assert not out.exists();out.mkdir()
+    out=ROOT/'output/tagnet/ct_independent_context_patterns_v3';assert not out.exists();out.mkdir()
     started=time.monotonic();models=[];saved={};assignments={}
     for row in legacy['models']:
         if row['task']!='G4':continue

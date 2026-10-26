@@ -1,0 +1,1558 @@
+{
+  "status": "diagnostic_only_no_study_inputs_changed",
+  "base_revision": "c4991c80e5b508f1ea434b89f925db033e4579c0",
+  "script_sha256": "59f05d31bd6c82290d1eadba9a132a754aca44958b2840e97c2c14bbb8e4cee2",
+  "demos": [
+    {
+      "status": "diagnostic_only_no_study_inputs_changed",
+      "match_id": "2394200",
+      "parser_version": "0.41.3",
+      "script_sha256": "59f05d31bd6c82290d1eadba9a132a754aca44958b2840e97c2c14bbb8e4cee2",
+      "demo_sha256": "1388e119fe8773c20b5ac1dda497c0b9e5e2403f67b93eb80dea1eb44aae9dfd",
+      "utility_firing_events": 483,
+      "paired_releases": 482,
+      "issue_counts": {
+        "unpaired_projectile_birth": 3,
+        "unpaired_weapon_fire": 1
+      },
+      "issues": [
+        {
+          "kind": "unpaired_projectile_birth",
+          "tick": 97537,
+          "user_steamid": "76561198360407641",
+          "grenade_type": "CFlashbangProjectile",
+          "entity_id": 945,
+          "native_state_at_tick": [
+            {
+              "CCSPlayerController.m_nTickBase": 132997,
+              "health": 0,
+              "team_name": "TERRORIST",
+              "Grenade.m_bPinPulled": null,
+              "Grenade.m_fThrowTime": null,
+              "active_weapon_name": null,
+              "game_time": 2078.078125,
+              "tick": 97537,
+              "steamid": "76561198360407641",
+              "name": "Jee"
+            }
+          ],
+          "native_state_window": [
+            {
+              "CCSPlayerController.m_nTickBase": 132996,
+              "health": 41,
+              "team_name": "TERRORIST",
+              "Grenade.m_bPinPulled": true,
+              "Grenade.m_fThrowTime": 0.0,
+              "active_weapon_name": "Flashbang",
+              "game_time": 2078.0625,
+              "tick": 97536,
+              "steamid": "76561198360407641",
+              "name": "Jee"
+            },
+            {
+              "CCSPlayerController.m_nTickBase": 132997,
+              "health": 0,
+              "team_name": "TERRORIST",
+              "Grenade.m_bPinPulled": null,
+              "Grenade.m_fThrowTime": null,
+              "active_weapon_name": null,
+              "game_time": 2078.078125,
+              "tick": 97537,
+              "steamid": "76561198360407641",
+              "name": "Jee"
+            },
+            {
+              "CCSPlayerController.m_nTickBase": 132998,
+              "health": 0,
+              "team_name": "TERRORIST",
+              "Grenade.m_bPinPulled": null,
+              "Grenade.m_fThrowTime": null,
+              "active_weapon_name": null,
+              "game_time": 2078.09375,
+              "tick": 97538,
+              "steamid": "76561198360407641",
+              "name": "Jee"
+            }
+          ],
+          "nearby_death_ticks": [
+            97537
+          ],
+          "query_rounds_containing_issue": [
+            11
+          ],
+          "round": 11,
+          "seconds_since_freeze": 12.953125,
+          "nearest_same_owner_class_fire_ticks": [
+            89262,
+            89184,
+            108522,
+            108645
+          ],
+          "primed_death_drop_pattern": true,
+          "dedicated_events_same_owner_tick": null
+        },
+        {
+          "kind": "unpaired_weapon_fire",
+          "tick": 60307,
+          "user_steamid": "76561198956909643",
+          "weapon": "molotov",
+          "grenade_type": "CMolotovProjectile",
+          "native_state_at_tick": [
+            {
+              "CCSPlayerController.m_nTickBase": 95767,
+              "health": 3,
+              "team_name": "TERRORIST",
+              "Grenade.m_bPinPulled": false,
+              "Grenade.m_fThrowTime": 1496.4481201172,
+              "active_weapon_name": "Molotov",
+              "game_time": 1496.359375,
+              "tick": 60307,
+              "steamid": "76561198956909643",
+              "name": "Zero"
+            }
+          ],
+          "native_state_window": [
+            {
+              "CCSPlayerController.m_nTickBase": 95766,
+              "health": 3,
+              "team_name": "TERRORIST",
+              "Grenade.m_bPinPulled": true,
+              "Grenade.m_fThrowTime": 0.0,
+              "active_weapon_name": "Molotov",
+              "game_time": 1496.34375,
+              "tick": 60306,
+              "steamid": "76561198956909643",
+              "name": "Zero"
+            },
+            {
+              "CCSPlayerController.m_nTickBase": 95767,
+              "health": 3,
+              "team_name": "TERRORIST",
+              "Grenade.m_bPinPulled": false,
+              "Grenade.m_fThrowTime": 1496.4481201172,
+              "active_weapon_name": "Molotov",
+              "game_time": 1496.359375,
+              "tick": 60307,
+              "steamid": "76561198956909643",
+              "name": "Zero"
+            },
+            {
+              "CCSPlayerController.m_nTickBase": 95768,
+              "health": 3,
+              "team_name": "TERRORIST",
+              "Grenade.m_bPinPulled": false,
+              "Grenade.m_fThrowTime": 1496.4481201172,
+              "active_weapon_name": "Molotov",
+              "game_time": 1496.375,
+              "tick": 60308,
+              "steamid": "76561198956909643",
+              "name": "Zero"
+            },
+            {
+              "CCSPlayerController.m_nTickBase": 95769,
+              "health": 3,
+              "team_name": "TERRORIST",
+              "Grenade.m_bPinPulled": false,
+              "Grenade.m_fThrowTime": 1496.4481201172,
+              "active_weapon_name": "Molotov",
+              "game_time": 1496.390625,
+              "tick": 60309,
+              "steamid": "76561198956909643",
+              "name": "Zero"
+            },
+            {
+              "CCSPlayerController.m_nTickBase": 95770,
+              "health": 3,
+              "team_name": "TERRORIST",
+              "Grenade.m_bPinPulled": false,
+              "Grenade.m_fThrowTime": 1496.4481201172,
+              "active_weapon_name": "Molotov",
+              "game_time": 1496.40625,
+              "tick": 60310,
+              "steamid": "76561198956909643",
+              "name": "Zero"
+            },
+            {
+              "CCSPlayerController.m_nTickBase": 95771,
+              "health": 0,
+              "team_name": "TERRORIST",
+              "Grenade.m_bPinPulled": null,
+              "Grenade.m_fThrowTime": null,
+              "active_weapon_name": null,
+              "game_time": 1496.421875,
+              "tick": 60311,
+              "steamid": "76561198956909643",
+              "name": "Zero"
+            },
+            {
+              "CCSPlayerController.m_nTickBase": 95772,
+              "health": 0,
+              "team_name": "TERRORIST",
+              "Grenade.m_bPinPulled": null,
+              "Grenade.m_fThrowTime": null,
+              "active_weapon_name": null,
+              "game_time": 1496.4375,
+              "tick": 60312,
+              "steamid": "76561198956909643",
+              "name": "Zero"
+            },
+            {
+              "CCSPlayerController.m_nTickBase": 95773,
+              "health": 0,
+              "team_name": "TERRORIST",
+              "Grenade.m_bPinPulled": null,
+              "Grenade.m_fThrowTime": null,
+              "active_weapon_name": null,
+              "game_time": 1496.453125,
+              "tick": 60313,
+              "steamid": "76561198956909643",
+              "name": "Zero"
+            },
+            {
+              "CCSPlayerController.m_nTickBase": 95774,
+              "health": 0,
+              "team_name": "TERRORIST",
+              "Grenade.m_bPinPulled": null,
+              "Grenade.m_fThrowTime": null,
+              "active_weapon_name": null,
+              "game_time": 1496.46875,
+              "tick": 60314,
+              "steamid": "76561198956909643",
+              "name": "Zero"
+            },
+            {
+              "CCSPlayerController.m_nTickBase": 95775,
+              "health": 0,
+              "team_name": "TERRORIST",
+              "Grenade.m_bPinPulled": null,
+              "Grenade.m_fThrowTime": null,
+              "active_weapon_name": null,
+              "game_time": 1496.484375,
+              "tick": 60315,
+              "steamid": "76561198956909643",
+              "name": "Zero"
+            },
+            {
+              "CCSPlayerController.m_nTickBase": 95776,
+              "health": 0,
+              "team_name": "TERRORIST",
+              "Grenade.m_bPinPulled": null,
+              "Grenade.m_fThrowTime": null,
+              "active_weapon_name": null,
+              "game_time": 1496.5,
+              "tick": 60316,
+              "steamid": "76561198956909643",
+              "name": "Zero"
+            },
+            {
+              "CCSPlayerController.m_nTickBase": 95777,
+              "health": 0,
+              "team_name": "TERRORIST",
+              "Grenade.m_bPinPulled": null,
+              "Grenade.m_fThrowTime": null,
+              "active_weapon_name": null,
+              "game_time": 1496.515625,
+              "tick": 60317,
+              "steamid": "76561198956909643",
+              "name": "Zero"
+            }
+          ],
+          "nearby_death_ticks": [
+            60311
+          ],
+          "query_rounds_containing_issue": [],
+          "round": 7,
+          "seconds_since_freeze": 83.15625,
+          "nearest_same_owner_class_fire_ticks": [
+            60307,
+            56777,
+            41489,
+            79323
+          ],
+          "primed_death_drop_pattern": false,
+          "dedicated_events_same_owner_tick": null
+        },
+        {
+          "kind": "unpaired_projectile_birth",
+          "tick": 188352,
+          "user_steamid": "76561198355739212",
+          "grenade_type": "CHEGrenadeProjectile",
+          "entity_id": 1015,
+          "native_state_at_tick": [
+            {
+              "CCSPlayerController.m_nTickBase": 223812,
+              "health": 0,
+              "team_name": "TERRORIST",
+              "Grenade.m_bPinPulled": null,
+              "Grenade.m_fThrowTime": null,
+              "active_weapon_name": null,
+              "game_time": 3497.0625,
+              "tick": 188352,
+              "steamid": "76561198355739212",
+              "name": "torzsi"
+            }
+          ],
+          "native_state_window": [
+            {
+              "CCSPlayerController.m_nTickBase": 223811,
+              "health": 10,
+              "team_name": "TERRORIST",
+              "Grenade.m_bPinPulled": true,
+              "Grenade.m_fThrowTime": 0.0,
+              "active_weapon_name": "High Explosive Grenade",
+              "game_time": 3497.046875,
+              "tick": 188351,
+              "steamid": "76561198355739212",
+              "name": "torzsi"
+            },
+            {
+              "CCSPlayerController.m_nTickBase": 223812,
+              "health": 0,
+              "team_name": "TERRORIST",
+              "Grenade.m_bPinPulled": null,
+              "Grenade.m_fThrowTime": null,
+              "active_weapon_name": null,
+              "game_time": 3497.0625,
+              "tick": 188352,
+              "steamid": "76561198355739212",
+              "name": "torzsi"
+            },
+            {
+              "CCSPlayerController.m_nTickBase": 223813,
+              "health": 0,
+              "team_name": "TERRORIST",
+              "Grenade.m_bPinPulled": null,
+              "Grenade.m_fThrowTime": null,
+              "active_weapon_name": null,
+              "game_time": 3497.078125,
+              "tick": 188353,
+              "steamid": "76561198355739212",
+              "name": "torzsi"
+            }
+          ],
+          "nearby_death_ticks": [
+            188352
+          ],
+          "query_rounds_containing_issue": [],
+          "round": 20,
+          "seconds_since_freeze": 86.234375,
+          "nearest_same_owner_class_fire_ticks": [
+            60306
+          ],
+          "primed_death_drop_pattern": true,
+          "dedicated_events_same_owner_tick": null
+        },
+        {
+          "kind": "unpaired_projectile_birth",
+          "tick": 183539,
+          "user_steamid": "76561198360407641",
+          "grenade_type": "CHEGrenadeProjectile",
+          "entity_id": 889,
+          "native_state_at_tick": [
+            {
+              "CCSPlayerController.m_nTickBase": 218999,
+              "health": 0,
+              "team_name": "CT",
+              "Grenade.m_bPinPulled": null,
+              "Grenade.m_fThrowTime": null,
+              "active_weapon_name": null,
+              "game_time": 3421.859375,
+              "tick": 183539,
+              "steamid": "76561198360407641",
+              "name": "Jee"
+            }
+          ],
+          "native_state_window": [
+            {
+              "CCSPlayerController.m_nTickBase": 218998,
+              "health": 100,
+              "team_name": "CT",
+              "Grenade.m_bPinPulled": true,
+              "Grenade.m_fThrowTime": 0.0,
+              "active_weapon_name": "High Explosive Grenade",
+              "game_time": 3421.84375,
+              "tick": 183538,
+              "steamid": "76561198360407641",
+              "name": "Jee"
+            },
+            {
+              "CCSPlayerController.m_nTickBase": 218999,
+              "health": 0,
+              "team_name": "CT",
+              "Grenade.m_bPinPulled": null,
+              "Grenade.m_fThrowTime": null,
+              "active_weapon_name": null,
+              "game_time": 3421.859375,
+              "tick": 183539,
+              "steamid": "76561198360407641",
+              "name": "Jee"
+            },
+            {
+              "CCSPlayerController.m_nTickBase": 219000,
+              "health": 0,
+              "team_name": "CT",
+              "Grenade.m_bPinPulled": null,
+              "Grenade.m_fThrowTime": null,
+              "active_weapon_name": null,
+              "game_time": 3421.875,
+              "tick": 183540,
+              "steamid": "76561198360407641",
+              "name": "Jee"
+            }
+          ],
+          "nearby_death_ticks": [
+            183539
+          ],
+          "query_rounds_containing_issue": [
+            20
+          ],
+          "round": 20,
+          "seconds_since_freeze": 11.03125,
+          "nearest_same_owner_class_fire_ticks": [],
+          "primed_death_drop_pattern": true,
+          "dedicated_events_same_owner_tick": null
+        }
+      ],
+      "stationary_recording_gaps_merged": 0,
+      "paired_release_lag_ticks": {
+        "6": 276,
+        "7": 171,
+        "13": 21,
+        "14": 14
+      },
+      "sample_paired_flash": {
+        "tick": 3678,
+        "user_steamid": "76561198063336407",
+        "grenade_type": "CFlashbangProjectile",
+        "entity_id": 805,
+        "weapon": "flashbang",
+        "fire_tick": 3672,
+        "native_state_window": [
+          {
+            "CCSPlayerController.m_nTickBase": 39131,
+            "health": 100,
+            "team_name": "CT",
+            "Grenade.m_bPinPulled": true,
+            "Grenade.m_fThrowTime": 0.0,
+            "active_weapon_name": "Flashbang",
+            "game_time": 611.421875,
+            "tick": 3671,
+            "steamid": "76561198063336407",
+            "name": "Spinx"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 39132,
+            "health": 100,
+            "team_name": "CT",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 611.5257568359,
+            "active_weapon_name": "Flashbang",
+            "game_time": 611.4375,
+            "tick": 3672,
+            "steamid": "76561198063336407",
+            "name": "Spinx"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 39133,
+            "health": 100,
+            "team_name": "CT",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 611.5257568359,
+            "active_weapon_name": "Flashbang",
+            "game_time": 611.453125,
+            "tick": 3673,
+            "steamid": "76561198063336407",
+            "name": "Spinx"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 39137,
+            "health": 100,
+            "team_name": "CT",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 611.5257568359,
+            "active_weapon_name": "Flashbang",
+            "game_time": 611.515625,
+            "tick": 3677,
+            "steamid": "76561198063336407",
+            "name": "Spinx"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 39138,
+            "health": 100,
+            "team_name": "CT",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 0.0,
+            "active_weapon_name": "Flashbang",
+            "game_time": 611.53125,
+            "tick": 3678,
+            "steamid": "76561198063336407",
+            "name": "Spinx"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 39139,
+            "health": 100,
+            "team_name": "CT",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 0.0,
+            "active_weapon_name": "Flashbang",
+            "game_time": 611.546875,
+            "tick": 3679,
+            "steamid": "76561198063336407",
+            "name": "Spinx"
+          }
+        ]
+      },
+      "dedicated_event_available": false,
+      "full_identity_tick_weapon_side_parity": null,
+      "CT_query_counts_compared": null,
+      "CT_query_counts_matched": null,
+      "elapsed_seconds": 2.5906137000129092,
+      "peak_RAM_MiB": 788.86328125,
+      "limits": [
+        "No recovered context adopted. Death coincidence alone does not prove automatic-drop semantics.",
+        "The event ledger mirrors the existing pairing; entity serial and server action stages require separate evidence."
+      ]
+    },
+    {
+      "status": "diagnostic_only_no_study_inputs_changed",
+      "match_id": "2398717",
+      "parser_version": "0.41.3",
+      "script_sha256": "59f05d31bd6c82290d1eadba9a132a754aca44958b2840e97c2c14bbb8e4cee2",
+      "demo_sha256": "e454e16b96a15bcaa6dd1fb61f88bfb816dc9da4229ad0b34294b1c1b0de2f43",
+      "utility_firing_events": 360,
+      "paired_releases": 360,
+      "issue_counts": {},
+      "issues": [],
+      "stationary_recording_gaps_merged": 0,
+      "paired_release_lag_ticks": {
+        "6": 239,
+        "14": 13,
+        "7": 104,
+        "13": 4
+      },
+      "sample_paired_flash": {
+        "tick": 2258,
+        "user_steamid": "76561198108796479",
+        "grenade_type": "CFlashbangProjectile",
+        "entity_id": 272,
+        "weapon": "flashbang",
+        "fire_tick": 2252,
+        "native_state_window": [
+          {
+            "CCSPlayerController.m_nTickBase": 59914,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": true,
+            "Grenade.m_fThrowTime": 0.0,
+            "active_weapon_name": "Flashbang",
+            "game_time": 936.15625,
+            "tick": 2251,
+            "steamid": "76561198108796479",
+            "name": "Mercury"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 59915,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 936.2620849609,
+            "active_weapon_name": "Flashbang",
+            "game_time": 936.171875,
+            "tick": 2252,
+            "steamid": "76561198108796479",
+            "name": "Mercury"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 59916,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 936.2620849609,
+            "active_weapon_name": "Flashbang",
+            "game_time": 936.1875,
+            "tick": 2253,
+            "steamid": "76561198108796479",
+            "name": "Mercury"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 59920,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 936.2620849609,
+            "active_weapon_name": "Flashbang",
+            "game_time": 936.25,
+            "tick": 2257,
+            "steamid": "76561198108796479",
+            "name": "Mercury"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 59921,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 0.0,
+            "active_weapon_name": "Flashbang",
+            "game_time": 936.265625,
+            "tick": 2258,
+            "steamid": "76561198108796479",
+            "name": "Mercury"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 59922,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 0.0,
+            "active_weapon_name": "Flashbang",
+            "game_time": 936.28125,
+            "tick": 2259,
+            "steamid": "76561198108796479",
+            "name": "Mercury"
+          }
+        ]
+      },
+      "dedicated_event_available": true,
+      "full_identity_tick_weapon_side_parity": true,
+      "CT_query_counts_compared": 100,
+      "CT_query_counts_matched": 100,
+      "elapsed_seconds": 2.055725300015183,
+      "peak_RAM_MiB": 788.86328125,
+      "limits": [
+        "No recovered context adopted. Death coincidence alone does not prove automatic-drop semantics.",
+        "The event ledger mirrors the existing pairing; entity serial and server action stages require separate evidence."
+      ]
+    },
+    {
+      "status": "diagnostic_only_no_study_inputs_changed",
+      "match_id": "2398718",
+      "parser_version": "0.41.3",
+      "script_sha256": "59f05d31bd6c82290d1eadba9a132a754aca44958b2840e97c2c14bbb8e4cee2",
+      "demo_sha256": "86c38e0db4646195347a5fc966e0b8241b2668fbae5633bf39d6a900af06a220",
+      "utility_firing_events": 331,
+      "paired_releases": 331,
+      "issue_counts": {
+        "unpaired_projectile_birth": 1
+      },
+      "issues": [
+        {
+          "kind": "unpaired_projectile_birth",
+          "tick": 45017,
+          "user_steamid": "76561198850020186",
+          "grenade_type": "CSmokeGrenadeProjectile",
+          "entity_id": 165,
+          "native_state_at_tick": [
+            {
+              "CCSPlayerController.m_nTickBase": 96550,
+              "health": 0,
+              "team_name": "TERRORIST",
+              "Grenade.m_bPinPulled": null,
+              "Grenade.m_fThrowTime": null,
+              "active_weapon_name": null,
+              "game_time": 1508.59375,
+              "tick": 45017,
+              "steamid": "76561198850020186",
+              "name": "latto"
+            }
+          ],
+          "native_state_window": [
+            {
+              "CCSPlayerController.m_nTickBase": 96549,
+              "health": 100,
+              "team_name": "TERRORIST",
+              "Grenade.m_bPinPulled": true,
+              "Grenade.m_fThrowTime": 0.0,
+              "active_weapon_name": "Smoke Grenade",
+              "game_time": 1508.578125,
+              "tick": 45016,
+              "steamid": "76561198850020186",
+              "name": "latto"
+            },
+            {
+              "CCSPlayerController.m_nTickBase": 96550,
+              "health": 0,
+              "team_name": "TERRORIST",
+              "Grenade.m_bPinPulled": null,
+              "Grenade.m_fThrowTime": null,
+              "active_weapon_name": null,
+              "game_time": 1508.59375,
+              "tick": 45017,
+              "steamid": "76561198850020186",
+              "name": "latto"
+            },
+            {
+              "CCSPlayerController.m_nTickBase": 96551,
+              "health": 0,
+              "team_name": "TERRORIST",
+              "Grenade.m_bPinPulled": null,
+              "Grenade.m_fThrowTime": null,
+              "active_weapon_name": null,
+              "game_time": 1508.609375,
+              "tick": 45018,
+              "steamid": "76561198850020186",
+              "name": "latto"
+            }
+          ],
+          "nearby_death_ticks": [
+            45017
+          ],
+          "query_rounds_containing_issue": [],
+          "round": 7,
+          "seconds_since_freeze": 29.171875,
+          "nearest_same_owner_class_fire_ticks": [
+            50601,
+            35937,
+            23109,
+            69074
+          ],
+          "primed_death_drop_pattern": true,
+          "dedicated_events_same_owner_tick": []
+        }
+      ],
+      "stationary_recording_gaps_merged": 0,
+      "paired_release_lag_ticks": {
+        "7": 139,
+        "6": 164,
+        "14": 10,
+        "13": 18
+      },
+      "sample_paired_flash": {
+        "tick": 3988,
+        "user_steamid": "76561198061763596",
+        "grenade_type": "CFlashbangProjectile",
+        "entity_id": 282,
+        "weapon": "flashbang",
+        "fire_tick": 3981,
+        "native_state_window": [
+          {
+            "CCSPlayerController.m_nTickBase": 55513,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": true,
+            "Grenade.m_fThrowTime": 0.0,
+            "active_weapon_name": "Flashbang",
+            "game_time": 867.390625,
+            "tick": 3980,
+            "steamid": "76561198061763596",
+            "name": "n1ssim"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 55514,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 867.5040283203,
+            "active_weapon_name": "Flashbang",
+            "game_time": 867.40625,
+            "tick": 3981,
+            "steamid": "76561198061763596",
+            "name": "n1ssim"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 55515,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 867.5040283203,
+            "active_weapon_name": "Flashbang",
+            "game_time": 867.421875,
+            "tick": 3982,
+            "steamid": "76561198061763596",
+            "name": "n1ssim"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 55520,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 867.5040283203,
+            "active_weapon_name": "Flashbang",
+            "game_time": 867.5,
+            "tick": 3987,
+            "steamid": "76561198061763596",
+            "name": "n1ssim"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 55521,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": null,
+            "Grenade.m_fThrowTime": null,
+            "active_weapon_name": "Skeleton Knife",
+            "game_time": 867.515625,
+            "tick": 3988,
+            "steamid": "76561198061763596",
+            "name": "n1ssim"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 55522,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": null,
+            "Grenade.m_fThrowTime": null,
+            "active_weapon_name": "Skeleton Knife",
+            "game_time": 867.53125,
+            "tick": 3989,
+            "steamid": "76561198061763596",
+            "name": "n1ssim"
+          }
+        ]
+      },
+      "dedicated_event_available": true,
+      "full_identity_tick_weapon_side_parity": true,
+      "CT_query_counts_compared": 75,
+      "CT_query_counts_matched": 75,
+      "elapsed_seconds": 1.9602543999790214,
+      "peak_RAM_MiB": 788.86328125,
+      "limits": [
+        "No recovered context adopted. Death coincidence alone does not prove automatic-drop semantics.",
+        "The event ledger mirrors the existing pairing; entity serial and server action stages require separate evidence."
+      ]
+    },
+    {
+      "status": "diagnostic_only_no_study_inputs_changed",
+      "match_id": "2398720",
+      "parser_version": "0.41.3",
+      "script_sha256": "59f05d31bd6c82290d1eadba9a132a754aca44958b2840e97c2c14bbb8e4cee2",
+      "demo_sha256": "ba251cebf7d1e0438d1bac28a8e250c1b386c643dade0fc97fefd5a814019ea3",
+      "utility_firing_events": 510,
+      "paired_releases": 510,
+      "issue_counts": {},
+      "issues": [],
+      "stationary_recording_gaps_merged": 0,
+      "paired_release_lag_ticks": {
+        "7": 181,
+        "6": 319,
+        "14": 6,
+        "13": 4
+      },
+      "sample_paired_flash": {
+        "tick": 1811,
+        "user_steamid": "76561198375857603",
+        "grenade_type": "CFlashbangProjectile",
+        "entity_id": 363,
+        "weapon": "flashbang",
+        "fire_tick": 1804,
+        "native_state_window": [
+          {
+            "CCSPlayerController.m_nTickBase": 57442,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": true,
+            "Grenade.m_fThrowTime": 0.0,
+            "active_weapon_name": "Flashbang",
+            "game_time": 897.53125,
+            "tick": 1803,
+            "steamid": "76561198375857603",
+            "name": "FraGuTy"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 57443,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 897.6419677734,
+            "active_weapon_name": "Flashbang",
+            "game_time": 897.546875,
+            "tick": 1804,
+            "steamid": "76561198375857603",
+            "name": "FraGuTy"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 57444,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 897.6419677734,
+            "active_weapon_name": "Flashbang",
+            "game_time": 897.5625,
+            "tick": 1805,
+            "steamid": "76561198375857603",
+            "name": "FraGuTy"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 57449,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 897.6419677734,
+            "active_weapon_name": "Flashbang",
+            "game_time": 897.640625,
+            "tick": 1810,
+            "steamid": "76561198375857603",
+            "name": "FraGuTy"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 57450,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 0.0,
+            "active_weapon_name": "Flashbang",
+            "game_time": 897.65625,
+            "tick": 1811,
+            "steamid": "76561198375857603",
+            "name": "FraGuTy"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 57451,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 0.0,
+            "active_weapon_name": "Flashbang",
+            "game_time": 897.671875,
+            "tick": 1812,
+            "steamid": "76561198375857603",
+            "name": "FraGuTy"
+          }
+        ]
+      },
+      "dedicated_event_available": true,
+      "full_identity_tick_weapon_side_parity": true,
+      "CT_query_counts_compared": 120,
+      "CT_query_counts_matched": 120,
+      "elapsed_seconds": 2.3527774999965914,
+      "peak_RAM_MiB": 800.8828125,
+      "limits": [
+        "No recovered context adopted. Death coincidence alone does not prove automatic-drop semantics.",
+        "The event ledger mirrors the existing pairing; entity serial and server action stages require separate evidence."
+      ]
+    },
+    {
+      "status": "diagnostic_only_no_study_inputs_changed",
+      "match_id": "2398722",
+      "parser_version": "0.41.3",
+      "script_sha256": "59f05d31bd6c82290d1eadba9a132a754aca44958b2840e97c2c14bbb8e4cee2",
+      "demo_sha256": "907a6982ca4947498d70a76f06a43ed3abd47bec1272a74bf97e664de807dc7d",
+      "utility_firing_events": 348,
+      "paired_releases": 348,
+      "issue_counts": {},
+      "issues": [],
+      "stationary_recording_gaps_merged": 0,
+      "paired_release_lag_ticks": {
+        "7": 127,
+        "6": 207,
+        "14": 6,
+        "13": 8
+      },
+      "sample_paired_flash": {
+        "tick": 3576,
+        "user_steamid": "76561198355739212",
+        "grenade_type": "CFlashbangProjectile",
+        "entity_id": 194,
+        "weapon": "flashbang",
+        "fire_tick": 3563,
+        "native_state_window": [
+          {
+            "CCSPlayerController.m_nTickBase": 58018,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": true,
+            "Grenade.m_fThrowTime": 0.0,
+            "active_weapon_name": "Flashbang",
+            "game_time": 906.53125,
+            "tick": 3562,
+            "steamid": "76561198355739212",
+            "name": "torzsi"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 58019,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 906.6373291016,
+            "active_weapon_name": "Flashbang",
+            "game_time": 906.546875,
+            "tick": 3563,
+            "steamid": "76561198355739212",
+            "name": "torzsi"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 58020,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 906.6373291016,
+            "active_weapon_name": "Flashbang",
+            "game_time": 906.5625,
+            "tick": 3564,
+            "steamid": "76561198355739212",
+            "name": "torzsi"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 58031,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 906.7406005859,
+            "active_weapon_name": "Flashbang",
+            "game_time": 906.734375,
+            "tick": 3575,
+            "steamid": "76561198355739212",
+            "name": "torzsi"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 58032,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": null,
+            "Grenade.m_fThrowTime": null,
+            "active_weapon_name": "Butterfly Knife",
+            "game_time": 906.75,
+            "tick": 3576,
+            "steamid": "76561198355739212",
+            "name": "torzsi"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 58033,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": null,
+            "Grenade.m_fThrowTime": null,
+            "active_weapon_name": "Butterfly Knife",
+            "game_time": 906.765625,
+            "tick": 3577,
+            "steamid": "76561198355739212",
+            "name": "torzsi"
+          }
+        ]
+      },
+      "dedicated_event_available": true,
+      "full_identity_tick_weapon_side_parity": true,
+      "CT_query_counts_compared": 95,
+      "CT_query_counts_matched": 95,
+      "elapsed_seconds": 1.7917697000084445,
+      "peak_RAM_MiB": 800.8828125,
+      "limits": [
+        "No recovered context adopted. Death coincidence alone does not prove automatic-drop semantics.",
+        "The event ledger mirrors the existing pairing; entity serial and server action stages require separate evidence."
+      ]
+    },
+    {
+      "status": "diagnostic_only_no_study_inputs_changed",
+      "match_id": "2399384",
+      "parser_version": "0.41.3",
+      "script_sha256": "59f05d31bd6c82290d1eadba9a132a754aca44958b2840e97c2c14bbb8e4cee2",
+      "demo_sha256": "c6b05969f72a6d7751cb2fd495c07c540720573a12440f40ec4356309383704d",
+      "utility_firing_events": 275,
+      "paired_releases": 275,
+      "issue_counts": {
+        "unpaired_projectile_birth": 1
+      },
+      "issues": [
+        {
+          "kind": "unpaired_projectile_birth",
+          "tick": 7297,
+          "user_steamid": "76561198067722198",
+          "grenade_type": "CSmokeGrenadeProjectile",
+          "entity_id": 175,
+          "native_state_at_tick": [
+            {
+              "CCSPlayerController.m_nTickBase": 65741,
+              "health": 0,
+              "team_name": "CT",
+              "Grenade.m_bPinPulled": null,
+              "Grenade.m_fThrowTime": null,
+              "active_weapon_name": null,
+              "game_time": 1027.203125,
+              "tick": 7297,
+              "steamid": "76561198067722198",
+              "name": "luchov"
+            }
+          ],
+          "native_state_window": [
+            {
+              "CCSPlayerController.m_nTickBase": 65740,
+              "health": 96,
+              "team_name": "CT",
+              "Grenade.m_bPinPulled": true,
+              "Grenade.m_fThrowTime": 0.0,
+              "active_weapon_name": "Smoke Grenade",
+              "game_time": 1027.1875,
+              "tick": 7296,
+              "steamid": "76561198067722198",
+              "name": "luchov"
+            },
+            {
+              "CCSPlayerController.m_nTickBase": 65741,
+              "health": 0,
+              "team_name": "CT",
+              "Grenade.m_bPinPulled": null,
+              "Grenade.m_fThrowTime": null,
+              "active_weapon_name": null,
+              "game_time": 1027.203125,
+              "tick": 7297,
+              "steamid": "76561198067722198",
+              "name": "luchov"
+            },
+            {
+              "CCSPlayerController.m_nTickBase": 65742,
+              "health": 0,
+              "team_name": "CT",
+              "Grenade.m_bPinPulled": null,
+              "Grenade.m_fThrowTime": null,
+              "active_weapon_name": null,
+              "game_time": 1027.21875,
+              "tick": 7298,
+              "steamid": "76561198067722198",
+              "name": "luchov"
+            }
+          ],
+          "nearby_death_ticks": [
+            7297
+          ],
+          "query_rounds_containing_issue": [
+            2
+          ],
+          "round": 2,
+          "seconds_since_freeze": 16.609375,
+          "nearest_same_owner_class_fire_ticks": [
+            17597,
+            19521,
+            23890,
+            34193
+          ],
+          "primed_death_drop_pattern": true,
+          "dedicated_events_same_owner_tick": []
+        }
+      ],
+      "stationary_recording_gaps_merged": 0,
+      "paired_release_lag_ticks": {
+        "6": 168,
+        "7": 99,
+        "14": 3,
+        "13": 5
+      },
+      "sample_paired_flash": {
+        "tick": 2275,
+        "user_steamid": "76561198057282432",
+        "grenade_type": "CFlashbangProjectile",
+        "entity_id": 385,
+        "weapon": "flashbang",
+        "fire_tick": 2269,
+        "native_state_window": [
+          {
+            "CCSPlayerController.m_nTickBase": 60712,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": true,
+            "Grenade.m_fThrowTime": 0.0,
+            "active_weapon_name": "Flashbang",
+            "game_time": 948.625,
+            "tick": 2268,
+            "steamid": "76561198057282432",
+            "name": "kyxsan"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 60713,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 948.7279052734,
+            "active_weapon_name": "Flashbang",
+            "game_time": 948.640625,
+            "tick": 2269,
+            "steamid": "76561198057282432",
+            "name": "kyxsan"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 60714,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 948.7279052734,
+            "active_weapon_name": "Flashbang",
+            "game_time": 948.65625,
+            "tick": 2270,
+            "steamid": "76561198057282432",
+            "name": "kyxsan"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 60718,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 948.7279052734,
+            "active_weapon_name": "Flashbang",
+            "game_time": 948.71875,
+            "tick": 2274,
+            "steamid": "76561198057282432",
+            "name": "kyxsan"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 60719,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 0.0,
+            "active_weapon_name": "Flashbang",
+            "game_time": 948.734375,
+            "tick": 2275,
+            "steamid": "76561198057282432",
+            "name": "kyxsan"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 60720,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 0.0,
+            "active_weapon_name": "Flashbang",
+            "game_time": 948.75,
+            "tick": 2276,
+            "steamid": "76561198057282432",
+            "name": "kyxsan"
+          }
+        ]
+      },
+      "dedicated_event_available": true,
+      "full_identity_tick_weapon_side_parity": true,
+      "CT_query_counts_compared": 70,
+      "CT_query_counts_matched": 70,
+      "elapsed_seconds": 1.2239849000179674,
+      "peak_RAM_MiB": 800.8828125,
+      "limits": [
+        "No recovered context adopted. Death coincidence alone does not prove automatic-drop semantics.",
+        "The event ledger mirrors the existing pairing; entity serial and server action stages require separate evidence."
+      ]
+    },
+    {
+      "status": "diagnostic_only_no_study_inputs_changed",
+      "match_id": "2399385",
+      "parser_version": "0.41.3",
+      "script_sha256": "59f05d31bd6c82290d1eadba9a132a754aca44958b2840e97c2c14bbb8e4cee2",
+      "demo_sha256": "a7820924acf2c1b08312a317099c8eb54e2d44879558d62d4bb9754e8500523f",
+      "utility_firing_events": 682,
+      "paired_releases": 682,
+      "issue_counts": {},
+      "issues": [],
+      "stationary_recording_gaps_merged": 0,
+      "paired_release_lag_ticks": {
+        "6": 372,
+        "13": 40,
+        "14": 27,
+        "7": 243
+      },
+      "sample_paired_flash": {
+        "tick": 2874,
+        "user_steamid": "76561197989430253",
+        "grenade_type": "CFlashbangProjectile",
+        "entity_id": 137,
+        "weapon": "flashbang",
+        "fire_tick": 2867,
+        "native_state_window": [
+          {
+            "CCSPlayerController.m_nTickBase": 185244,
+            "health": 100,
+            "team_name": "CT",
+            "Grenade.m_bPinPulled": true,
+            "Grenade.m_fThrowTime": 0.0,
+            "active_weapon_name": "Flashbang",
+            "game_time": 2894.4375,
+            "tick": 2866,
+            "steamid": "76561197989430253",
+            "name": "karrigan"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 185245,
+            "health": 100,
+            "team_name": "CT",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 2894.5510253906,
+            "active_weapon_name": "Flashbang",
+            "game_time": 2894.453125,
+            "tick": 2867,
+            "steamid": "76561197989430253",
+            "name": "karrigan"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 185246,
+            "health": 100,
+            "team_name": "CT",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 2894.5510253906,
+            "active_weapon_name": "Flashbang",
+            "game_time": 2894.46875,
+            "tick": 2868,
+            "steamid": "76561197989430253",
+            "name": "karrigan"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 185251,
+            "health": 100,
+            "team_name": "CT",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 2894.5510253906,
+            "active_weapon_name": "Flashbang",
+            "game_time": 2894.546875,
+            "tick": 2873,
+            "steamid": "76561197989430253",
+            "name": "karrigan"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 185252,
+            "health": 100,
+            "team_name": "CT",
+            "Grenade.m_bPinPulled": null,
+            "Grenade.m_fThrowTime": null,
+            "active_weapon_name": "USP-S",
+            "game_time": 2894.5625,
+            "tick": 2874,
+            "steamid": "76561197989430253",
+            "name": "karrigan"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 185253,
+            "health": 100,
+            "team_name": "CT",
+            "Grenade.m_bPinPulled": null,
+            "Grenade.m_fThrowTime": null,
+            "active_weapon_name": "USP-S",
+            "game_time": 2894.578125,
+            "tick": 2875,
+            "steamid": "76561197989430253",
+            "name": "karrigan"
+          }
+        ]
+      },
+      "dedicated_event_available": true,
+      "full_identity_tick_weapon_side_parity": true,
+      "CT_query_counts_compared": 140,
+      "CT_query_counts_matched": 140,
+      "elapsed_seconds": 2.4818740999908186,
+      "peak_RAM_MiB": 853.125,
+      "limits": [
+        "No recovered context adopted. Death coincidence alone does not prove automatic-drop semantics.",
+        "The event ledger mirrors the existing pairing; entity serial and server action stages require separate evidence."
+      ]
+    },
+    {
+      "status": "diagnostic_only_no_study_inputs_changed",
+      "match_id": "2399386",
+      "parser_version": "0.41.3",
+      "script_sha256": "59f05d31bd6c82290d1eadba9a132a754aca44958b2840e97c2c14bbb8e4cee2",
+      "demo_sha256": "90f0131dc840c294d673421093dadaa06adb86e1ce6526a7194afe8eb390c07f",
+      "utility_firing_events": 535,
+      "paired_releases": 535,
+      "issue_counts": {},
+      "issues": [],
+      "stationary_recording_gaps_merged": 0,
+      "paired_release_lag_ticks": {
+        "6": 297,
+        "7": 208,
+        "13": 15,
+        "14": 15
+      },
+      "sample_paired_flash": {
+        "tick": 4007,
+        "user_steamid": "76561198036125584",
+        "grenade_type": "CFlashbangProjectile",
+        "entity_id": 141,
+        "weapon": "flashbang",
+        "fire_tick": 4000,
+        "native_state_window": [
+          {
+            "CCSPlayerController.m_nTickBase": 197118,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": true,
+            "Grenade.m_fThrowTime": 0.0,
+            "active_weapon_name": "Flashbang",
+            "game_time": 3079.96875,
+            "tick": 3999,
+            "steamid": "76561198036125584",
+            "name": "Jame"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 197119,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 3080.08203125,
+            "active_weapon_name": "Flashbang",
+            "game_time": 3079.984375,
+            "tick": 4000,
+            "steamid": "76561198036125584",
+            "name": "Jame"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 197120,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 3080.08203125,
+            "active_weapon_name": "Flashbang",
+            "game_time": 3080.0,
+            "tick": 4001,
+            "steamid": "76561198036125584",
+            "name": "Jame"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 197125,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 3080.08203125,
+            "active_weapon_name": "Flashbang",
+            "game_time": 3080.078125,
+            "tick": 4006,
+            "steamid": "76561198036125584",
+            "name": "Jame"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 197126,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 0.0,
+            "active_weapon_name": "Flashbang",
+            "game_time": 3080.09375,
+            "tick": 4007,
+            "steamid": "76561198036125584",
+            "name": "Jame"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 197127,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": null,
+            "Grenade.m_fThrowTime": null,
+            "active_weapon_name": "Glock-18",
+            "game_time": 3080.109375,
+            "tick": 4008,
+            "steamid": "76561198036125584",
+            "name": "Jame"
+          }
+        ]
+      },
+      "dedicated_event_available": true,
+      "full_identity_tick_weapon_side_parity": true,
+      "CT_query_counts_compared": 120,
+      "CT_query_counts_matched": 120,
+      "elapsed_seconds": 2.5165266999974847,
+      "peak_RAM_MiB": 853.125,
+      "limits": [
+        "No recovered context adopted. Death coincidence alone does not prove automatic-drop semantics.",
+        "The event ledger mirrors the existing pairing; entity serial and server action stages require separate evidence."
+      ]
+    },
+    {
+      "status": "diagnostic_only_no_study_inputs_changed",
+      "match_id": "2399387",
+      "parser_version": "0.41.3",
+      "script_sha256": "59f05d31bd6c82290d1eadba9a132a754aca44958b2840e97c2c14bbb8e4cee2",
+      "demo_sha256": "373e87be6115667b89048af1b27c7e1fc06b4f25d4776bd8d5cec48aa4a9e43e",
+      "utility_firing_events": 512,
+      "paired_releases": 512,
+      "issue_counts": {},
+      "issues": [],
+      "stationary_recording_gaps_merged": 0,
+      "paired_release_lag_ticks": {
+        "6": 297,
+        "7": 172,
+        "14": 16,
+        "13": 27
+      },
+      "sample_paired_flash": {
+        "tick": 3427,
+        "user_steamid": "76561197960690195",
+        "grenade_type": "CFlashbangProjectile",
+        "entity_id": 906,
+        "weapon": "flashbang",
+        "fire_tick": 3413,
+        "native_state_window": [
+          {
+            "CCSPlayerController.m_nTickBase": 61138,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": true,
+            "Grenade.m_fThrowTime": 0.0,
+            "active_weapon_name": "Flashbang",
+            "game_time": 955.28125,
+            "tick": 3412,
+            "steamid": "76561197960690195",
+            "name": "FalleN"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 61139,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 955.3927001953,
+            "active_weapon_name": "Flashbang",
+            "game_time": 955.296875,
+            "tick": 3413,
+            "steamid": "76561197960690195",
+            "name": "FalleN"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 61140,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 955.3927001953,
+            "active_weapon_name": "Flashbang",
+            "game_time": 955.3125,
+            "tick": 3414,
+            "steamid": "76561197960690195",
+            "name": "FalleN"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 61152,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": false,
+            "Grenade.m_fThrowTime": 955.5062255859,
+            "active_weapon_name": "Flashbang",
+            "game_time": 955.5,
+            "tick": 3426,
+            "steamid": "76561197960690195",
+            "name": "FalleN"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 61153,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": null,
+            "Grenade.m_fThrowTime": null,
+            "active_weapon_name": "Huntsman Knife",
+            "game_time": 955.515625,
+            "tick": 3427,
+            "steamid": "76561197960690195",
+            "name": "FalleN"
+          },
+          {
+            "CCSPlayerController.m_nTickBase": 61154,
+            "health": 100,
+            "team_name": "TERRORIST",
+            "Grenade.m_bPinPulled": null,
+            "Grenade.m_fThrowTime": null,
+            "active_weapon_name": "Huntsman Knife",
+            "game_time": 955.53125,
+            "tick": 3428,
+            "steamid": "76561197960690195",
+            "name": "FalleN"
+          }
+        ]
+      },
+      "dedicated_event_available": true,
+      "full_identity_tick_weapon_side_parity": true,
+      "CT_query_counts_compared": 110,
+      "CT_query_counts_matched": 110,
+      "elapsed_seconds": 2.1234831000037957,
+      "peak_RAM_MiB": 853.125,
+      "limits": [
+        "No recovered context adopted. Death coincidence alone does not prove automatic-drop semantics.",
+        "The event ledger mirrors the existing pairing; entity serial and server action stages require separate evidence."
+      ]
+    }
+  ],
+  "controls": {
+    "attempted": 8,
+    "full_event_parity_passed": 8,
+    "query_counts_matched": 830,
+    "query_counts_compared": 830,
+    "total_dedicated_releases": 3553
+  }
+}

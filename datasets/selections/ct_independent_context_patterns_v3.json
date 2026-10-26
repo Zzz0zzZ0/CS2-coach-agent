@@ -1,0 +1,23 @@
+{
+  "scope": "Fixed source-prototype transfer, follow-up diagnostics; no new fit or semantic labels.",
+  "input_sha256": {
+    "scripts/transfer_ct_independent_context_patterns.py": "81dd8ec3ca5d2b17bb049db38b035a135c419cfabc863e2fa871f52adcc0e52b",
+    "scripts/transfer_ct_independent_patterns.py": "75d6c5139bb570cdd8865b420eccd45653828f26e21041391f93149ea0efda3f",
+    "scripts/retrieve_ct_independent_context.py": "80ad4bb7126dd060f8f5e645ab4d4a006a183b6fe6d6a54bae1fed846cad211d",
+    "app/services/ct_context_retrieval_service.py": "c47146325124ed276a0d3f7c6be0930e1026883a796f0b49483837d858fe90db",
+    "datasets/evaluation/ct_context_pattern_report.json": "1b9192e7d6fcf7caeb35d363c141f684c77ac5aa55c7fe20355e483a343dff8b",
+    "datasets/selections/ct_context_pattern_analysis.json": "20108a53b041e61de77fc06d1892b6273dc7d526df75b2da20bf52baa6b30fe1",
+    "datasets/selections/ct_independent_confirmation.json": "192a73a97447afd9cafda880d81476dafb1fb483cbd5337ec424766fcea3b442",
+    "output/tagnet/ct_independent_context_v3/context.json": "f39b3ef4de24b0ddb357727f1d48bd8b793fa0eb1f8d26fb8f0dc3457eda8a9f",
+    "output/tagnet/ct_independent_inputs/report.json": "36e30a29d39335434bcffead73a3788f1ce66172de018d5578669d7e36008c78",
+    "datasets/evaluation/ct_independent_context_repair_report.json": "6a18d8b050e0e9e5dcf50c2d19bb19daa55f98c0eff4f0b5014994b004d00233",
+    "datasets/selections/ct_independent_utility_repair.json": "9a3e1e58c0e2573ff11dabd22ef748ff7e0dbfeeb6656eb32dd2f475c9ed4a89",
+    "datasets/selections/ct_independent_context_v3.json": "5d8d06cccd72ce600b691d749413697a6903d14bbcb4eb0cc89c64fa930203cd",
+    "datasets/evaluation/ct_independent_context_v3_report.json": "c3d6f39089656e95693ab302fe7117aaa26df3610184174682c4fe107c60aafa"
+  },
+  "availability": "All-query and known-query coverage both reported; unavailable throw streams stay unknown.",
+  "source_validation": "Reproduce the stored old query labels, acceptance and centroid distances before applying every existing source prototype.",
+  "parent_protocol_sha256": "058d002980fb4a14a432e35946fb765730875b5edb2a66352f733fdd14c7cfe1",
+  "parent_revision": "c4991c80e5b508f1ea434b89f925db033e4579c0",
+  "corrective_amendment": "Conservative v3 query-context recovery after raw event-stage audit.245 complete utility windows; round20 HE death-drop leaves12/15/18/20 unknown. Same source, encoders, centroids and policies; no source fit or target selection."
+}

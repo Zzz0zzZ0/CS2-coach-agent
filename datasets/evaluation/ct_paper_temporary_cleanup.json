@@ -1,0 +1,17 @@
+{
+  "scope": "Only obsolete first bundle build and verified compiler installer removed; final ZIP/PDF, compiler executable/cache, rendered review pages, evidence, raw Demos and weights retained",
+  "removed": [
+    {
+      "path": "output/tagnet/ct_confirmation_numerical_replay_build1.zip",
+      "bytes": 1301066
+    },
+    {
+      "path": "output/tagnet/ct_confirmation_numerical_replay_build1.json",
+      "bytes": 1250
+    },
+    {
+      "path": "output/tagnet/ct_paper_tools/tectonic-0.17.0.zip",
+      "bytes": 21060223
+    }
+  ]
+}

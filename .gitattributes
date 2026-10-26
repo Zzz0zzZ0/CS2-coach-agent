@@ -80,3 +80,7 @@ test_ct_independent_retrieval.py -text
 scripts/transfer_ct_independent_context_patterns.py -text
 scripts/repair_ct_independent_utility.py -text
 test_ct_utility_event_compatibility.py -text
+scripts/investigate_ct_utility_events.py -text
+scripts/export_ct_independent_context_v3.py -text
+scripts/replay_ct_confirmation.py -text
+test_ct_confirmation_replay.py -text

@@ -1,0 +1,54 @@
+{
+  "status": "compiled_working_draft_reviewed_not_submission_ready",
+  "pages": 11,
+  "source_sha256": "9493af7c299b7fc7bbb0795b3490077e85cce2c9dfacfa61d833a8b0b485b212",
+  "PDF_path": "output/pdf/ct_cross_map_draft.pdf",
+  "PDF_sha256": "3586e8b7f6951bd6a8cb26248598cbb17bbf0b0d6aabe7d28e87616bb6ea0638",
+  "compiler": "Tectonic0.17.0",
+  "official_compiler_release": "https://github.com/tectonic-typesetting/tectonic/releases/tag/tectonic%400.17.0",
+  "compiler_executable_sha256": "99ffcfdbf1ebf8bdda9e791942e3d06aedb12463fddc33f07de6f5211c8bf08d",
+  "official_compiler_archive_sha256": "f61ce51f0b0ade1015b7de7ef368541c5424e9756ecbd0d7af97d6d48030845f",
+  "overfull_boxes": 0,
+  "font_types": [
+    "Type0",
+    "Type1"
+  ],
+  "all_fonts_embedded": true,
+  "page_contactsheet_reviewed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "enlarged_pages_reviewed": [
+    1,
+    4,
+    9,
+    11
+  ],
+  "visual_review_scope": "Model inspection of rendered pages; not human author approval.",
+  "bound_claims": 107,
+  "source_records": 62,
+  "registry_schema_unexpected_errors": [],
+  "author_verification_gate_counts": {
+    "CLAIM_NOT_VERIFIED": 107,
+    "UNVERIFIED_CLAIM_EVIDENCE": 167
+  },
+  "remaining_pending_markers": [
+    "REPRO",
+    "DECL"
+  ],
+  "submission_ready": false,
+  "limits": [
+    "Rights and anonymous redistribution remain unapproved.",
+    "Responsible human source verification, declarations and final approval are pending.",
+    "Independent semantic retrieval/coaching efficacy not established."
+  ]
+}
